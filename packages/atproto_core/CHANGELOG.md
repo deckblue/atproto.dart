@@ -18,7 +18,7 @@
 
 ## v1.0.2
 
-- Fix SDK constraint to '">=3.8.0 <4.0.0"'.
+- Fix SDK constraint to '">=3.6.0 <4.0.0"'.
 
 ## v1.0.1
 

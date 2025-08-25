@@ -8,31 +8,31 @@ part of 'main.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_EmbedExternal _$EmbedExternalFromJson(Map json) =>
-    $checkedCreate('_EmbedExternal', json, ($checkedConvert) {
-      final val = _EmbedExternal(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.embed.external',
-        ),
-        external: $checkedConvert(
-          'external',
-          (v) => const EmbedExternalExternalConverter().fromJson(
-            v as Map<String, dynamic>,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$EmbedExternalImpl _$$EmbedExternalImplFromJson(Map json) => $checkedCreate(
+      r'_$EmbedExternalImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$EmbedExternalImpl(
+          $type: $checkedConvert(
+              r'$type', (v) => v as String? ?? 'app.bsky.embed.external'),
+          external: $checkedConvert(
+              'external',
+              (v) => const EmbedExternalExternalConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$EmbedExternalToJson(
-  _EmbedExternal instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'external': const EmbedExternalExternalConverter().toJson(instance.external),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$EmbedExternalImplToJson(_$EmbedExternalImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'external':
+          const EmbedExternalExternalConverter().toJson(instance.external),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

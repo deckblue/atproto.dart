@@ -13,6 +13,8 @@ dependency_overrides:
     path: ../packages/lex_annotation
   atproto_core:
     path: ../packages/atproto_core
+  atproto_oauth:
+    path: ../packages/atproto_oauth
   atproto:
     path: ../packages/atproto
   bluesky:

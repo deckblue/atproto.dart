@@ -8,26 +8,32 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FeedGetLikesInput _$FeedGetLikesInputFromJson(Map json) =>
-    $checkedCreate('_FeedGetLikesInput', json, ($checkedConvert) {
-      final val = _FeedGetLikesInput(
-        uri: $checkedConvert('uri', (v) => v as String),
-        cid: $checkedConvert('cid', (v) => v as String?),
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$FeedGetLikesInputImpl _$$FeedGetLikesInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$FeedGetLikesInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FeedGetLikesInputImpl(
+          uri: $checkedConvert('uri', (v) => v as String),
+          cid: $checkedConvert('cid', (v) => v as String?),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$FeedGetLikesInputToJson(_FeedGetLikesInput instance) =>
+Map<String, dynamic> _$$FeedGetLikesInputImplToJson(
+        _$FeedGetLikesInputImpl instance) =>
     <String, dynamic>{
       'uri': instance.uri,
-      'cid': ?instance.cid,
+      if (instance.cid case final value?) 'cid': value,
       'limit': instance.limit,
-      'cursor': ?instance.cursor,
-      r'$unknown': ?instance.$unknown,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

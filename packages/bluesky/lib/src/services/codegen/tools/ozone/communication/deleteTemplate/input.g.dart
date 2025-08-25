@@ -8,21 +8,26 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CommunicationDeleteTemplateInput _$CommunicationDeleteTemplateInputFromJson(
-  Map json,
-) => $checkedCreate('_CommunicationDeleteTemplateInput', json, (
-  $checkedConvert,
-) {
-  final val = _CommunicationDeleteTemplateInput(
-    id: $checkedConvert('id', (v) => v as String),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$CommunicationDeleteTemplateInputImpl
+    _$$CommunicationDeleteTemplateInputImplFromJson(Map json) => $checkedCreate(
+          r'_$CommunicationDeleteTemplateInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$CommunicationDeleteTemplateInputImpl(
+              id: $checkedConvert('id', (v) => v as String),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$CommunicationDeleteTemplateInputToJson(
-  _CommunicationDeleteTemplateInput instance,
-) => <String, dynamic>{'id': instance.id, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$CommunicationDeleteTemplateInputImplToJson(
+        _$CommunicationDeleteTemplateInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

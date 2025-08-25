@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,381 @@ part of 'content_label_pref_visibility.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$ContentLabelPrefVisibility {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContentLabelPrefVisibility&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'ContentLabelPrefVisibility(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownContentLabelPrefVisibility data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownContentLabelPrefVisibility data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownContentLabelPrefVisibility data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ContentLabelPrefVisibilityKnownValue value)
+        knownValue,
+    required TResult Function(ContentLabelPrefVisibilityUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ContentLabelPrefVisibilityKnownValue value)? knownValue,
+    TResult? Function(ContentLabelPrefVisibilityUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ContentLabelPrefVisibilityKnownValue value)? knownValue,
+    TResult Function(ContentLabelPrefVisibilityUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $ContentLabelPrefVisibilityCopyWith<$Res>  {
-$ContentLabelPrefVisibilityCopyWith(ContentLabelPrefVisibility _, $Res Function(ContentLabelPrefVisibility) __);
+abstract class $ContentLabelPrefVisibilityCopyWith<$Res> {
+  factory $ContentLabelPrefVisibilityCopyWith(ContentLabelPrefVisibility value,
+          $Res Function(ContentLabelPrefVisibility) then) =
+      _$ContentLabelPrefVisibilityCopyWithImpl<$Res,
+          ContentLabelPrefVisibility>;
 }
 
+/// @nodoc
+class _$ContentLabelPrefVisibilityCopyWithImpl<$Res,
+        $Val extends ContentLabelPrefVisibility>
+    implements $ContentLabelPrefVisibilityCopyWith<$Res> {
+  _$ContentLabelPrefVisibilityCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [ContentLabelPrefVisibility].
-extension ContentLabelPrefVisibilityPatterns on ContentLabelPrefVisibility {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ContentLabelPrefVisibilityKnownValue value)?  knownValue,TResult Function( ContentLabelPrefVisibilityUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case ContentLabelPrefVisibilityKnownValue() when knownValue != null:
-return knownValue(_that);case ContentLabelPrefVisibilityUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ContentLabelPrefVisibilityKnownValue value)  knownValue,required TResult Function( ContentLabelPrefVisibilityUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case ContentLabelPrefVisibilityKnownValue():
-return knownValue(_that);case ContentLabelPrefVisibilityUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ContentLabelPrefVisibilityKnownValue value)?  knownValue,TResult? Function( ContentLabelPrefVisibilityUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case ContentLabelPrefVisibilityKnownValue() when knownValue != null:
-return knownValue(_that);case ContentLabelPrefVisibilityUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownContentLabelPrefVisibility data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case ContentLabelPrefVisibilityKnownValue() when knownValue != null:
-return knownValue(_that.data);case ContentLabelPrefVisibilityUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownContentLabelPrefVisibility data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case ContentLabelPrefVisibilityKnownValue():
-return knownValue(_that.data);case ContentLabelPrefVisibilityUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownContentLabelPrefVisibility data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case ContentLabelPrefVisibilityKnownValue() when knownValue != null:
-return knownValue(_that.data);case ContentLabelPrefVisibilityUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of ContentLabelPrefVisibility
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$ContentLabelPrefVisibilityKnownValueImplCopyWith<$Res> {
+  factory _$$ContentLabelPrefVisibilityKnownValueImplCopyWith(
+          _$ContentLabelPrefVisibilityKnownValueImpl value,
+          $Res Function(_$ContentLabelPrefVisibilityKnownValueImpl) then) =
+      __$$ContentLabelPrefVisibilityKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownContentLabelPrefVisibility data});
+}
+
+/// @nodoc
+class __$$ContentLabelPrefVisibilityKnownValueImplCopyWithImpl<$Res>
+    extends _$ContentLabelPrefVisibilityCopyWithImpl<$Res,
+        _$ContentLabelPrefVisibilityKnownValueImpl>
+    implements _$$ContentLabelPrefVisibilityKnownValueImplCopyWith<$Res> {
+  __$$ContentLabelPrefVisibilityKnownValueImplCopyWithImpl(
+      _$ContentLabelPrefVisibilityKnownValueImpl _value,
+      $Res Function(_$ContentLabelPrefVisibilityKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ContentLabelPrefVisibility
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ContentLabelPrefVisibilityKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownContentLabelPrefVisibility,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$ContentLabelPrefVisibilityKnownValueImpl
+    extends ContentLabelPrefVisibilityKnownValue {
+  const _$ContentLabelPrefVisibilityKnownValueImpl({required this.data})
+      : super._();
 
-class ContentLabelPrefVisibilityKnownValue extends ContentLabelPrefVisibility {
-  const ContentLabelPrefVisibilityKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownContentLabelPrefVisibility data;
 
-@override final  KnownContentLabelPrefVisibility data;
+  @override
+  String toString() {
+    return 'ContentLabelPrefVisibility.knownValue(data: $data)';
+  }
 
-/// Create a copy of ContentLabelPrefVisibility
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ContentLabelPrefVisibilityKnownValueCopyWith<ContentLabelPrefVisibilityKnownValue> get copyWith => _$ContentLabelPrefVisibilityKnownValueCopyWithImpl<ContentLabelPrefVisibilityKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ContentLabelPrefVisibilityKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of ContentLabelPrefVisibility
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ContentLabelPrefVisibilityKnownValueImplCopyWith<
+          _$ContentLabelPrefVisibilityKnownValueImpl>
+      get copyWith => __$$ContentLabelPrefVisibilityKnownValueImplCopyWithImpl<
+          _$ContentLabelPrefVisibilityKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContentLabelPrefVisibilityKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownContentLabelPrefVisibility data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownContentLabelPrefVisibility data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownContentLabelPrefVisibility data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ContentLabelPrefVisibilityKnownValue value)
+        knownValue,
+    required TResult Function(ContentLabelPrefVisibilityUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ContentLabelPrefVisibilityKnownValue value)? knownValue,
+    TResult? Function(ContentLabelPrefVisibilityUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ContentLabelPrefVisibilityKnownValue value)? knownValue,
+    TResult Function(ContentLabelPrefVisibilityUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class ContentLabelPrefVisibilityKnownValue
+    extends ContentLabelPrefVisibility {
+  const factory ContentLabelPrefVisibilityKnownValue(
+          {required final KnownContentLabelPrefVisibility data}) =
+      _$ContentLabelPrefVisibilityKnownValueImpl;
+  const ContentLabelPrefVisibilityKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownContentLabelPrefVisibility get data;
 
-@override
-String toString() {
-  return 'ContentLabelPrefVisibility.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of ContentLabelPrefVisibility
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ContentLabelPrefVisibilityKnownValueImplCopyWith<
+          _$ContentLabelPrefVisibilityKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ContentLabelPrefVisibilityKnownValueCopyWith<$Res> implements $ContentLabelPrefVisibilityCopyWith<$Res> {
-  factory $ContentLabelPrefVisibilityKnownValueCopyWith(ContentLabelPrefVisibilityKnownValue value, $Res Function(ContentLabelPrefVisibilityKnownValue) _then) = _$ContentLabelPrefVisibilityKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownContentLabelPrefVisibility data
-});
-
-
-
-
-}
-/// @nodoc
-class _$ContentLabelPrefVisibilityKnownValueCopyWithImpl<$Res>
-    implements $ContentLabelPrefVisibilityKnownValueCopyWith<$Res> {
-  _$ContentLabelPrefVisibilityKnownValueCopyWithImpl(this._self, this._then);
-
-  final ContentLabelPrefVisibilityKnownValue _self;
-  final $Res Function(ContentLabelPrefVisibilityKnownValue) _then;
-
-/// Create a copy of ContentLabelPrefVisibility
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ContentLabelPrefVisibilityKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownContentLabelPrefVisibility,
-  ));
-}
-
-
+abstract class _$$ContentLabelPrefVisibilityUnknownImplCopyWith<$Res> {
+  factory _$$ContentLabelPrefVisibilityUnknownImplCopyWith(
+          _$ContentLabelPrefVisibilityUnknownImpl value,
+          $Res Function(_$ContentLabelPrefVisibilityUnknownImpl) then) =
+      __$$ContentLabelPrefVisibilityUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$ContentLabelPrefVisibilityUnknownImplCopyWithImpl<$Res>
+    extends _$ContentLabelPrefVisibilityCopyWithImpl<$Res,
+        _$ContentLabelPrefVisibilityUnknownImpl>
+    implements _$$ContentLabelPrefVisibilityUnknownImplCopyWith<$Res> {
+  __$$ContentLabelPrefVisibilityUnknownImplCopyWithImpl(
+      _$ContentLabelPrefVisibilityUnknownImpl _value,
+      $Res Function(_$ContentLabelPrefVisibilityUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class ContentLabelPrefVisibilityUnknown extends ContentLabelPrefVisibility {
-  const ContentLabelPrefVisibilityUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of ContentLabelPrefVisibility
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ContentLabelPrefVisibilityUnknownCopyWith<ContentLabelPrefVisibilityUnknown> get copyWith => _$ContentLabelPrefVisibilityUnknownCopyWithImpl<ContentLabelPrefVisibilityUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContentLabelPrefVisibilityUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'ContentLabelPrefVisibility.unknown(data: $data)';
-}
-
-
+  /// Create a copy of ContentLabelPrefVisibility
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ContentLabelPrefVisibilityUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $ContentLabelPrefVisibilityUnknownCopyWith<$Res> implements $ContentLabelPrefVisibilityCopyWith<$Res> {
-  factory $ContentLabelPrefVisibilityUnknownCopyWith(ContentLabelPrefVisibilityUnknown value, $Res Function(ContentLabelPrefVisibilityUnknown) _then) = _$ContentLabelPrefVisibilityUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$ContentLabelPrefVisibilityUnknownImpl
+    extends ContentLabelPrefVisibilityUnknown {
+  const _$ContentLabelPrefVisibilityUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'ContentLabelPrefVisibility.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ContentLabelPrefVisibilityUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of ContentLabelPrefVisibility
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ContentLabelPrefVisibilityUnknownImplCopyWith<
+          _$ContentLabelPrefVisibilityUnknownImpl>
+      get copyWith => __$$ContentLabelPrefVisibilityUnknownImplCopyWithImpl<
+          _$ContentLabelPrefVisibilityUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownContentLabelPrefVisibility data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownContentLabelPrefVisibility data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownContentLabelPrefVisibility data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ContentLabelPrefVisibilityKnownValue value)
+        knownValue,
+    required TResult Function(ContentLabelPrefVisibilityUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ContentLabelPrefVisibilityKnownValue value)? knownValue,
+    TResult? Function(ContentLabelPrefVisibilityUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ContentLabelPrefVisibilityKnownValue value)? knownValue,
+    TResult Function(ContentLabelPrefVisibilityUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$ContentLabelPrefVisibilityUnknownCopyWithImpl<$Res>
-    implements $ContentLabelPrefVisibilityUnknownCopyWith<$Res> {
-  _$ContentLabelPrefVisibilityUnknownCopyWithImpl(this._self, this._then);
 
-  final ContentLabelPrefVisibilityUnknown _self;
-  final $Res Function(ContentLabelPrefVisibilityUnknown) _then;
+abstract class ContentLabelPrefVisibilityUnknown
+    extends ContentLabelPrefVisibility {
+  const factory ContentLabelPrefVisibilityUnknown(
+      {required final String data}) = _$ContentLabelPrefVisibilityUnknownImpl;
+  const ContentLabelPrefVisibilityUnknown._() : super._();
 
-/// Create a copy of ContentLabelPrefVisibility
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ContentLabelPrefVisibilityUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of ContentLabelPrefVisibility
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ContentLabelPrefVisibilityUnknownImplCopyWith<
+          _$ContentLabelPrefVisibilityUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

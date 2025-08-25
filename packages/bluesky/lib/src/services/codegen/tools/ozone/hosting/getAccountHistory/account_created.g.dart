@@ -8,29 +8,33 @@ part of 'account_created.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AccountCreated _$AccountCreatedFromJson(Map json) =>
-    $checkedCreate('_AccountCreated', json, ($checkedConvert) {
-      final val = _AccountCreated(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'tools.ozone.hosting.getAccountHistory#accountCreated',
-        ),
-        email: $checkedConvert('email', (v) => v as String?),
-        handle: $checkedConvert('handle', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AccountCreatedImpl _$$AccountCreatedImplFromJson(Map json) => $checkedCreate(
+      r'_$AccountCreatedImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AccountCreatedImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.hosting.getAccountHistory#accountCreated'),
+          email: $checkedConvert('email', (v) => v as String?),
+          handle: $checkedConvert('handle', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AccountCreatedToJson(_AccountCreated instance) =>
+Map<String, dynamic> _$$AccountCreatedImplToJson(
+        _$AccountCreatedImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'email': ?instance.email,
-      'handle': ?instance.handle,
-      r'$unknown': ?instance.$unknown,
+      if (instance.email case final value?) 'email': value,
+      if (instance.handle case final value?) 'handle': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

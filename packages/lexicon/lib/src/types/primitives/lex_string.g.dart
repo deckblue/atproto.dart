@@ -8,48 +8,38 @@ part of 'lex_string.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LexString _$LexStringFromJson(Map json) => $checkedCreate(
-  '_LexString',
-  json,
-  ($checkedConvert) {
-    final val = _LexString(
-      type: $checkedConvert('type', (v) => v as String? ?? 'string'),
-      format: $checkedConvert(
-        'format',
-        (v) => $enumDecodeNullable(_$LexStringFormatEnumMap, v),
-      ),
-      description: $checkedConvert('description', (v) => v as String?),
-      defaultValue: $checkedConvert('default', (v) => v as String?),
-      minLength: $checkedConvert('minLength', (v) => (v as num?)?.toInt()),
-      maxLength: $checkedConvert('maxLength', (v) => (v as num?)?.toInt()),
-      minGraphemes: $checkedConvert(
-        'minGraphemes',
-        (v) => (v as num?)?.toInt(),
-      ),
-      maxGraphemes: $checkedConvert(
-        'maxGraphemes',
-        (v) => (v as num?)?.toInt(),
-      ),
-      enumValues: $checkedConvert(
-        'enum',
-        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-      ),
-      constValue: $checkedConvert('const', (v) => v as String?),
-      knownValues: $checkedConvert(
-        'knownValues',
-        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-      ),
+_$LexStringImpl _$$LexStringImplFromJson(Map json) => $checkedCreate(
+      r'_$LexStringImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$LexStringImpl(
+          type: $checkedConvert('type', (v) => v as String? ?? 'string'),
+          format: $checkedConvert('format',
+              (v) => $enumDecodeNullable(_$LexStringFormatEnumMap, v)),
+          description: $checkedConvert('description', (v) => v as String?),
+          defaultValue: $checkedConvert('default', (v) => v as String?),
+          minLength: $checkedConvert('minLength', (v) => (v as num?)?.toInt()),
+          maxLength: $checkedConvert('maxLength', (v) => (v as num?)?.toInt()),
+          minGraphemes:
+              $checkedConvert('minGraphemes', (v) => (v as num?)?.toInt()),
+          maxGraphemes:
+              $checkedConvert('maxGraphemes', (v) => (v as num?)?.toInt()),
+          enumValues: $checkedConvert('enum',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          constValue: $checkedConvert('const', (v) => v as String?),
+          knownValues: $checkedConvert('knownValues',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'defaultValue': 'default',
+        'enumValues': 'enum',
+        'constValue': 'const'
+      },
     );
-    return val;
-  },
-  fieldKeyMap: const {
-    'defaultValue': 'default',
-    'enumValues': 'enum',
-    'constValue': 'const',
-  },
-);
 
-Map<String, dynamic> _$LexStringToJson(_LexString instance) =>
+Map<String, dynamic> _$$LexStringImplToJson(_$LexStringImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
       if (_$LexStringFormatEnumMap[instance.format] case final value?)

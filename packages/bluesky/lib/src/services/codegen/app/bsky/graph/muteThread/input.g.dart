@@ -8,18 +8,26 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GraphMuteThreadInput _$GraphMuteThreadInputFromJson(Map json) =>
-    $checkedCreate('_GraphMuteThreadInput', json, ($checkedConvert) {
-      final val = _GraphMuteThreadInput(
-        root: $checkedConvert('root', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GraphMuteThreadInputImpl _$$GraphMuteThreadInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GraphMuteThreadInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GraphMuteThreadInputImpl(
+          root: $checkedConvert('root', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GraphMuteThreadInputToJson(
-  _GraphMuteThreadInput instance,
-) => <String, dynamic>{'root': instance.root, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$GraphMuteThreadInputImplToJson(
+        _$GraphMuteThreadInputImpl instance) =>
+    <String, dynamic>{
+      'root': instance.root,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,40 +8,42 @@ part of 'account_stats.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AccountStats _$AccountStatsFromJson(
-  Map json,
-) => $checkedCreate('_AccountStats', json, ($checkedConvert) {
-  final val = _AccountStats(
-    $type: $checkedConvert(
-      r'$type',
-      (v) => v as String? ?? 'tools.ozone.moderation.defs#accountStats',
-    ),
-    reportCount: $checkedConvert('reportCount', (v) => (v as num?)?.toInt()),
-    appealCount: $checkedConvert('appealCount', (v) => (v as num?)?.toInt()),
-    suspendCount: $checkedConvert('suspendCount', (v) => (v as num?)?.toInt()),
-    escalateCount: $checkedConvert(
-      'escalateCount',
-      (v) => (v as num?)?.toInt(),
-    ),
-    takedownCount: $checkedConvert(
-      'takedownCount',
-      (v) => (v as num?)?.toInt(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$AccountStatsImpl _$$AccountStatsImplFromJson(Map json) => $checkedCreate(
+      r'_$AccountStatsImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AccountStatsImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'tools.ozone.moderation.defs#accountStats'),
+          reportCount:
+              $checkedConvert('reportCount', (v) => (v as num?)?.toInt()),
+          appealCount:
+              $checkedConvert('appealCount', (v) => (v as num?)?.toInt()),
+          suspendCount:
+              $checkedConvert('suspendCount', (v) => (v as num?)?.toInt()),
+          escalateCount:
+              $checkedConvert('escalateCount', (v) => (v as num?)?.toInt()),
+          takedownCount:
+              $checkedConvert('takedownCount', (v) => (v as num?)?.toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AccountStatsToJson(_AccountStats instance) =>
+Map<String, dynamic> _$$AccountStatsImplToJson(_$AccountStatsImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'reportCount': ?instance.reportCount,
-      'appealCount': ?instance.appealCount,
-      'suspendCount': ?instance.suspendCount,
-      'escalateCount': ?instance.escalateCount,
-      'takedownCount': ?instance.takedownCount,
-      r'$unknown': ?instance.$unknown,
+      if (instance.reportCount case final value?) 'reportCount': value,
+      if (instance.appealCount case final value?) 'appealCount': value,
+      if (instance.suspendCount case final value?) 'suspendCount': value,
+      if (instance.escalateCount case final value?) 'escalateCount': value,
+      if (instance.takedownCount case final value?) 'takedownCount': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

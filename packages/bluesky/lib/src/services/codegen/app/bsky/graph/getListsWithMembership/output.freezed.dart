@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,289 +9,245 @@ part of 'output.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+GraphGetListsWithMembershipOutput _$GraphGetListsWithMembershipOutputFromJson(
+    Map<String, dynamic> json) {
+  return _GraphGetListsWithMembershipOutput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$GraphGetListsWithMembershipOutput {
-
- String? get cursor;@ListWithMembershipConverter() List<ListWithMembership> get listsWithMembership; Map<String, dynamic>? get $unknown;
-/// Create a copy of GraphGetListsWithMembershipOutput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GraphGetListsWithMembershipOutputCopyWith<GraphGetListsWithMembershipOutput> get copyWith => _$GraphGetListsWithMembershipOutputCopyWithImpl<GraphGetListsWithMembershipOutput>(this as GraphGetListsWithMembershipOutput, _$identity);
+  String? get cursor => throw _privateConstructorUsedError;
+  @ListWithMembershipConverter()
+  List<ListWithMembership> get listsWithMembership =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GraphGetListsWithMembershipOutput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GraphGetListsWithMembershipOutput&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other.listsWithMembership, listsWithMembership)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,cursor,const DeepCollectionEquality().hash(listsWithMembership),const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'GraphGetListsWithMembershipOutput(cursor: $cursor, listsWithMembership: $listsWithMembership, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of GraphGetListsWithMembershipOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GraphGetListsWithMembershipOutputCopyWith<GraphGetListsWithMembershipOutput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $GraphGetListsWithMembershipOutputCopyWith<$Res>  {
-  factory $GraphGetListsWithMembershipOutputCopyWith(GraphGetListsWithMembershipOutput value, $Res Function(GraphGetListsWithMembershipOutput) _then) = _$GraphGetListsWithMembershipOutputCopyWithImpl;
-@useResult
-$Res call({
- String? cursor,@ListWithMembershipConverter() List<ListWithMembership> listsWithMembership, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $GraphGetListsWithMembershipOutputCopyWith<$Res> {
+  factory $GraphGetListsWithMembershipOutputCopyWith(
+          GraphGetListsWithMembershipOutput value,
+          $Res Function(GraphGetListsWithMembershipOutput) then) =
+      _$GraphGetListsWithMembershipOutputCopyWithImpl<$Res,
+          GraphGetListsWithMembershipOutput>;
+  @useResult
+  $Res call(
+      {String? cursor,
+      @ListWithMembershipConverter()
+      List<ListWithMembership> listsWithMembership,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$GraphGetListsWithMembershipOutputCopyWithImpl<$Res>
+class _$GraphGetListsWithMembershipOutputCopyWithImpl<$Res,
+        $Val extends GraphGetListsWithMembershipOutput>
     implements $GraphGetListsWithMembershipOutputCopyWith<$Res> {
-  _$GraphGetListsWithMembershipOutputCopyWithImpl(this._self, this._then);
+  _$GraphGetListsWithMembershipOutputCopyWithImpl(this._value, this._then);
 
-  final GraphGetListsWithMembershipOutput _self;
-  final $Res Function(GraphGetListsWithMembershipOutput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of GraphGetListsWithMembershipOutput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? cursor = freezed,Object? listsWithMembership = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,listsWithMembership: null == listsWithMembership ? _self.listsWithMembership : listsWithMembership // ignore: cast_nullable_to_non_nullable
-as List<ListWithMembership>,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of GraphGetListsWithMembershipOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cursor = freezed,
+    Object? listsWithMembership = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      listsWithMembership: null == listsWithMembership
+          ? _value.listsWithMembership
+          : listsWithMembership // ignore: cast_nullable_to_non_nullable
+              as List<ListWithMembership>,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$GraphGetListsWithMembershipOutputImplCopyWith<$Res>
+    implements $GraphGetListsWithMembershipOutputCopyWith<$Res> {
+  factory _$$GraphGetListsWithMembershipOutputImplCopyWith(
+          _$GraphGetListsWithMembershipOutputImpl value,
+          $Res Function(_$GraphGetListsWithMembershipOutputImpl) then) =
+      __$$GraphGetListsWithMembershipOutputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? cursor,
+      @ListWithMembershipConverter()
+      List<ListWithMembership> listsWithMembership,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$GraphGetListsWithMembershipOutputImplCopyWithImpl<$Res>
+    extends _$GraphGetListsWithMembershipOutputCopyWithImpl<$Res,
+        _$GraphGetListsWithMembershipOutputImpl>
+    implements _$$GraphGetListsWithMembershipOutputImplCopyWith<$Res> {
+  __$$GraphGetListsWithMembershipOutputImplCopyWithImpl(
+      _$GraphGetListsWithMembershipOutputImpl _value,
+      $Res Function(_$GraphGetListsWithMembershipOutputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [GraphGetListsWithMembershipOutput].
-extension GraphGetListsWithMembershipOutputPatterns on GraphGetListsWithMembershipOutput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GraphGetListsWithMembershipOutput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GraphGetListsWithMembershipOutput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GraphGetListsWithMembershipOutput value)  $default,){
-final _that = this;
-switch (_that) {
-case _GraphGetListsWithMembershipOutput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GraphGetListsWithMembershipOutput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _GraphGetListsWithMembershipOutput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? cursor, @ListWithMembershipConverter()  List<ListWithMembership> listsWithMembership,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GraphGetListsWithMembershipOutput() when $default != null:
-return $default(_that.cursor,_that.listsWithMembership,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? cursor, @ListWithMembershipConverter()  List<ListWithMembership> listsWithMembership,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _GraphGetListsWithMembershipOutput():
-return $default(_that.cursor,_that.listsWithMembership,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? cursor, @ListWithMembershipConverter()  List<ListWithMembership> listsWithMembership,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _GraphGetListsWithMembershipOutput() when $default != null:
-return $default(_that.cursor,_that.listsWithMembership,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of GraphGetListsWithMembershipOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cursor = freezed,
+    Object? listsWithMembership = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$GraphGetListsWithMembershipOutputImpl(
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      listsWithMembership: null == listsWithMembership
+          ? _value._listsWithMembership
+          : listsWithMembership // ignore: cast_nullable_to_non_nullable
+              as List<ListWithMembership>,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GraphGetListsWithMembershipOutput implements GraphGetListsWithMembershipOutput {
-  const _GraphGetListsWithMembershipOutput({this.cursor, @ListWithMembershipConverter() required final  List<ListWithMembership> listsWithMembership, final  Map<String, dynamic>? $unknown}): _listsWithMembership = listsWithMembership,_$unknown = $unknown;
-  factory _GraphGetListsWithMembershipOutput.fromJson(Map<String, dynamic> json) => _$GraphGetListsWithMembershipOutputFromJson(json);
+class _$GraphGetListsWithMembershipOutputImpl
+    implements _GraphGetListsWithMembershipOutput {
+  const _$GraphGetListsWithMembershipOutputImpl(
+      {this.cursor,
+      @ListWithMembershipConverter()
+      required final List<ListWithMembership> listsWithMembership,
+      final Map<String, dynamic>? $unknown})
+      : _listsWithMembership = listsWithMembership,
+        _$unknown = $unknown;
 
-@override final  String? cursor;
- final  List<ListWithMembership> _listsWithMembership;
-@override@ListWithMembershipConverter() List<ListWithMembership> get listsWithMembership {
-  if (_listsWithMembership is EqualUnmodifiableListView) return _listsWithMembership;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_listsWithMembership);
+  factory _$GraphGetListsWithMembershipOutputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GraphGetListsWithMembershipOutputImplFromJson(json);
+
+  @override
+  final String? cursor;
+  final List<ListWithMembership> _listsWithMembership;
+  @override
+  @ListWithMembershipConverter()
+  List<ListWithMembership> get listsWithMembership {
+    if (_listsWithMembership is EqualUnmodifiableListView)
+      return _listsWithMembership;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listsWithMembership);
+  }
+
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'GraphGetListsWithMembershipOutput(cursor: $cursor, listsWithMembership: $listsWithMembership, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GraphGetListsWithMembershipOutputImpl &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            const DeepCollectionEquality()
+                .equals(other._listsWithMembership, _listsWithMembership) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      cursor,
+      const DeepCollectionEquality().hash(_listsWithMembership),
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of GraphGetListsWithMembershipOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GraphGetListsWithMembershipOutputImplCopyWith<
+          _$GraphGetListsWithMembershipOutputImpl>
+      get copyWith => __$$GraphGetListsWithMembershipOutputImplCopyWithImpl<
+          _$GraphGetListsWithMembershipOutputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GraphGetListsWithMembershipOutputImplToJson(
+      this,
+    );
+  }
 }
 
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+abstract class _GraphGetListsWithMembershipOutput
+    implements GraphGetListsWithMembershipOutput {
+  const factory _GraphGetListsWithMembershipOutput(
+          {final String? cursor,
+          @ListWithMembershipConverter()
+          required final List<ListWithMembership> listsWithMembership,
+          final Map<String, dynamic>? $unknown}) =
+      _$GraphGetListsWithMembershipOutputImpl;
+
+  factory _GraphGetListsWithMembershipOutput.fromJson(
+          Map<String, dynamic> json) =
+      _$GraphGetListsWithMembershipOutputImpl.fromJson;
+
+  @override
+  String? get cursor;
+  @override
+  @ListWithMembershipConverter()
+  List<ListWithMembership> get listsWithMembership;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of GraphGetListsWithMembershipOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GraphGetListsWithMembershipOutputImplCopyWith<
+          _$GraphGetListsWithMembershipOutputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-/// Create a copy of GraphGetListsWithMembershipOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$GraphGetListsWithMembershipOutputCopyWith<_GraphGetListsWithMembershipOutput> get copyWith => __$GraphGetListsWithMembershipOutputCopyWithImpl<_GraphGetListsWithMembershipOutput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$GraphGetListsWithMembershipOutputToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GraphGetListsWithMembershipOutput&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other._listsWithMembership, _listsWithMembership)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,cursor,const DeepCollectionEquality().hash(_listsWithMembership),const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'GraphGetListsWithMembershipOutput(cursor: $cursor, listsWithMembership: $listsWithMembership, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$GraphGetListsWithMembershipOutputCopyWith<$Res> implements $GraphGetListsWithMembershipOutputCopyWith<$Res> {
-  factory _$GraphGetListsWithMembershipOutputCopyWith(_GraphGetListsWithMembershipOutput value, $Res Function(_GraphGetListsWithMembershipOutput) _then) = __$GraphGetListsWithMembershipOutputCopyWithImpl;
-@override @useResult
-$Res call({
- String? cursor,@ListWithMembershipConverter() List<ListWithMembership> listsWithMembership, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$GraphGetListsWithMembershipOutputCopyWithImpl<$Res>
-    implements _$GraphGetListsWithMembershipOutputCopyWith<$Res> {
-  __$GraphGetListsWithMembershipOutputCopyWithImpl(this._self, this._then);
-
-  final _GraphGetListsWithMembershipOutput _self;
-  final $Res Function(_GraphGetListsWithMembershipOutput) _then;
-
-/// Create a copy of GraphGetListsWithMembershipOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? cursor = freezed,Object? listsWithMembership = null,Object? $unknown = freezed,}) {
-  return _then(_GraphGetListsWithMembershipOutput(
-cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,listsWithMembership: null == listsWithMembership ? _self._listsWithMembership : listsWithMembership // ignore: cast_nullable_to_non_nullable
-as List<ListWithMembership>,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

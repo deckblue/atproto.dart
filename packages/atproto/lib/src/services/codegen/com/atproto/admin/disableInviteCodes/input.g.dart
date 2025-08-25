@@ -8,30 +8,31 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminDisableInviteCodesInput _$AdminDisableInviteCodesInputFromJson(
-  Map json,
-) => $checkedCreate('_AdminDisableInviteCodesInput', json, ($checkedConvert) {
-  final val = _AdminDisableInviteCodesInput(
-    codes: $checkedConvert(
-      'codes',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
-    accounts: $checkedConvert(
-      'accounts',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$AdminDisableInviteCodesInputImpl _$$AdminDisableInviteCodesInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$AdminDisableInviteCodesInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AdminDisableInviteCodesInputImpl(
+          codes: $checkedConvert('codes',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          accounts: $checkedConvert('accounts',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AdminDisableInviteCodesInputToJson(
-  _AdminDisableInviteCodesInput instance,
-) => <String, dynamic>{
-  'codes': ?instance.codes,
-  'accounts': ?instance.accounts,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$AdminDisableInviteCodesInputImplToJson(
+        _$AdminDisableInviteCodesInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.codes case final value?) 'codes': value,
+      if (instance.accounts case final value?) 'accounts': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

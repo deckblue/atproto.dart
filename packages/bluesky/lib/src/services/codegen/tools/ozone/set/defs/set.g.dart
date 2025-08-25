@@ -8,25 +8,28 @@ part of 'set.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Set _$SetFromJson(Map json) => $checkedCreate('_Set', json, ($checkedConvert) {
-  final val = _Set(
-    $type: $checkedConvert(
-      r'$type',
-      (v) => v as String? ?? 'tools.ozone.set.defs#set',
-    ),
-    name: $checkedConvert('name', (v) => v as String),
-    description: $checkedConvert('description', (v) => v as String?),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$SetImpl _$$SetImplFromJson(Map json) => $checkedCreate(
+      r'_$SetImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SetImpl(
+          $type: $checkedConvert(
+              r'$type', (v) => v as String? ?? 'tools.ozone.set.defs#set'),
+          name: $checkedConvert('name', (v) => v as String),
+          description: $checkedConvert('description', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SetToJson(_Set instance) => <String, dynamic>{
-  r'$type': instance.$type,
-  'name': instance.name,
-  'description': ?instance.description,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SetImplToJson(_$SetImpl instance) => <String, dynamic>{
+      r'$type': instance.$type,
+      'name': instance.name,
+      if (instance.description case final value?) 'description': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,38 +8,37 @@ part of 'known_followers.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_KnownFollowers _$KnownFollowersFromJson(Map json) =>
-    $checkedCreate('_KnownFollowers', json, ($checkedConvert) {
-      final val = _KnownFollowers(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.actor.defs#knownFollowers',
-        ),
-        count: $checkedConvert('count', (v) => (v as num).toInt()),
-        followers: $checkedConvert(
-          'followers',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const ProfileViewBasicConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$KnownFollowersImpl _$$KnownFollowersImplFromJson(Map json) => $checkedCreate(
+      r'_$KnownFollowersImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$KnownFollowersImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.actor.defs#knownFollowers'),
+          count: $checkedConvert('count', (v) => (v as num).toInt()),
+          followers: $checkedConvert(
+              'followers',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const ProfileViewBasicConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$KnownFollowersToJson(_KnownFollowers instance) =>
+Map<String, dynamic> _$$KnownFollowersImplToJson(
+        _$KnownFollowersImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'count': instance.count,
       'followers': instance.followers
           .map(const ProfileViewBasicConverter().toJson)
           .toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

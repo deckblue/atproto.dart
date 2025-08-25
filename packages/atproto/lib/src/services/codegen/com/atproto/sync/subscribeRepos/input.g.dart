@@ -8,21 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SyncSubscribeReposInput _$SyncSubscribeReposInputFromJson(Map json) =>
-    $checkedCreate('_SyncSubscribeReposInput', json, ($checkedConvert) {
-      final val = _SyncSubscribeReposInput(
-        cursor: $checkedConvert('cursor', (v) => (v as num?)?.toInt()),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SyncSubscribeReposInputImpl _$$SyncSubscribeReposInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$SyncSubscribeReposInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SyncSubscribeReposInputImpl(
+          cursor: $checkedConvert('cursor', (v) => (v as num?)?.toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SyncSubscribeReposInputToJson(
-  _SyncSubscribeReposInput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SyncSubscribeReposInputImplToJson(
+        _$SyncSubscribeReposInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

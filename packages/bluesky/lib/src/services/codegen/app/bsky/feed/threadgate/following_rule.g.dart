@@ -8,23 +8,25 @@ part of 'following_rule.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FollowingRule _$FollowingRuleFromJson(Map json) =>
-    $checkedCreate('_FollowingRule', json, ($checkedConvert) {
-      final val = _FollowingRule(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.feed.threadgate#followingRule',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$FollowingRuleImpl _$$FollowingRuleImplFromJson(Map json) => $checkedCreate(
+      r'_$FollowingRuleImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FollowingRuleImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.feed.threadgate#followingRule'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$FollowingRuleToJson(_FollowingRule instance) =>
+Map<String, dynamic> _$$FollowingRuleImplToJson(_$FollowingRuleImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

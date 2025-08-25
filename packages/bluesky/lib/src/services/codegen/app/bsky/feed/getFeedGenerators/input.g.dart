@@ -8,24 +8,28 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FeedGetFeedGeneratorsInput _$FeedGetFeedGeneratorsInputFromJson(Map json) =>
-    $checkedCreate('_FeedGetFeedGeneratorsInput', json, ($checkedConvert) {
-      final val = _FeedGetFeedGeneratorsInput(
-        feeds: $checkedConvert(
-          'feeds',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$FeedGetFeedGeneratorsInputImpl _$$FeedGetFeedGeneratorsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$FeedGetFeedGeneratorsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FeedGetFeedGeneratorsInputImpl(
+          feeds: $checkedConvert('feeds',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$FeedGetFeedGeneratorsInputToJson(
-  _FeedGetFeedGeneratorsInput instance,
-) => <String, dynamic>{
-  'feeds': instance.feeds,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$FeedGetFeedGeneratorsInputImplToJson(
+        _$FeedGetFeedGeneratorsInputImpl instance) =>
+    <String, dynamic>{
+      'feeds': instance.feeds,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

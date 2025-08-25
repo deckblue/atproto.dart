@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,427 @@ part of 'main_age_assurance_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$ModerationQueryEventsAgeAssuranceState {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationQueryEventsAgeAssuranceState&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'ModerationQueryEventsAgeAssuranceState(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownModerationQueryEventsAgeAssuranceState data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownModerationQueryEventsAgeAssuranceState data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownModerationQueryEventsAgeAssuranceState data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            ModerationQueryEventsAgeAssuranceStateKnownValue value)
+        knownValue,
+    required TResult Function(
+            ModerationQueryEventsAgeAssuranceStateUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModerationQueryEventsAgeAssuranceStateKnownValue value)?
+        knownValue,
+    TResult? Function(ModerationQueryEventsAgeAssuranceStateUnknown value)?
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModerationQueryEventsAgeAssuranceStateKnownValue value)?
+        knownValue,
+    TResult Function(ModerationQueryEventsAgeAssuranceStateUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $ModerationQueryEventsAgeAssuranceStateCopyWith<$Res>  {
-$ModerationQueryEventsAgeAssuranceStateCopyWith(ModerationQueryEventsAgeAssuranceState _, $Res Function(ModerationQueryEventsAgeAssuranceState) __);
+abstract class $ModerationQueryEventsAgeAssuranceStateCopyWith<$Res> {
+  factory $ModerationQueryEventsAgeAssuranceStateCopyWith(
+          ModerationQueryEventsAgeAssuranceState value,
+          $Res Function(ModerationQueryEventsAgeAssuranceState) then) =
+      _$ModerationQueryEventsAgeAssuranceStateCopyWithImpl<$Res,
+          ModerationQueryEventsAgeAssuranceState>;
 }
 
+/// @nodoc
+class _$ModerationQueryEventsAgeAssuranceStateCopyWithImpl<$Res,
+        $Val extends ModerationQueryEventsAgeAssuranceState>
+    implements $ModerationQueryEventsAgeAssuranceStateCopyWith<$Res> {
+  _$ModerationQueryEventsAgeAssuranceStateCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [ModerationQueryEventsAgeAssuranceState].
-extension ModerationQueryEventsAgeAssuranceStatePatterns on ModerationQueryEventsAgeAssuranceState {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ModerationQueryEventsAgeAssuranceStateKnownValue value)?  knownValue,TResult Function( ModerationQueryEventsAgeAssuranceStateUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case ModerationQueryEventsAgeAssuranceStateKnownValue() when knownValue != null:
-return knownValue(_that);case ModerationQueryEventsAgeAssuranceStateUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ModerationQueryEventsAgeAssuranceStateKnownValue value)  knownValue,required TResult Function( ModerationQueryEventsAgeAssuranceStateUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case ModerationQueryEventsAgeAssuranceStateKnownValue():
-return knownValue(_that);case ModerationQueryEventsAgeAssuranceStateUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ModerationQueryEventsAgeAssuranceStateKnownValue value)?  knownValue,TResult? Function( ModerationQueryEventsAgeAssuranceStateUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case ModerationQueryEventsAgeAssuranceStateKnownValue() when knownValue != null:
-return knownValue(_that);case ModerationQueryEventsAgeAssuranceStateUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownModerationQueryEventsAgeAssuranceState data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case ModerationQueryEventsAgeAssuranceStateKnownValue() when knownValue != null:
-return knownValue(_that.data);case ModerationQueryEventsAgeAssuranceStateUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownModerationQueryEventsAgeAssuranceState data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case ModerationQueryEventsAgeAssuranceStateKnownValue():
-return knownValue(_that.data);case ModerationQueryEventsAgeAssuranceStateUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownModerationQueryEventsAgeAssuranceState data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case ModerationQueryEventsAgeAssuranceStateKnownValue() when knownValue != null:
-return knownValue(_that.data);case ModerationQueryEventsAgeAssuranceStateUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of ModerationQueryEventsAgeAssuranceState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWith<
+    $Res> {
+  factory _$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWith(
+          _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl value,
+          $Res Function(_$ModerationQueryEventsAgeAssuranceStateKnownValueImpl)
+              then) =
+      __$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({KnownModerationQueryEventsAgeAssuranceState data});
+}
+
+/// @nodoc
+class __$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWithImpl<$Res>
+    extends _$ModerationQueryEventsAgeAssuranceStateCopyWithImpl<$Res,
+        _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl>
+    implements
+        _$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWith<$Res> {
+  __$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWithImpl(
+      _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl _value,
+      $Res Function(_$ModerationQueryEventsAgeAssuranceStateKnownValueImpl)
+          _then)
+      : super(_value, _then);
+
+  /// Create a copy of ModerationQueryEventsAgeAssuranceState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ModerationQueryEventsAgeAssuranceStateKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownModerationQueryEventsAgeAssuranceState,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl
+    extends ModerationQueryEventsAgeAssuranceStateKnownValue {
+  const _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl(
+      {required this.data})
+      : super._();
 
-class ModerationQueryEventsAgeAssuranceStateKnownValue extends ModerationQueryEventsAgeAssuranceState {
-  const ModerationQueryEventsAgeAssuranceStateKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownModerationQueryEventsAgeAssuranceState data;
 
-@override final  KnownModerationQueryEventsAgeAssuranceState data;
+  @override
+  String toString() {
+    return 'ModerationQueryEventsAgeAssuranceState.knownValue(data: $data)';
+  }
 
-/// Create a copy of ModerationQueryEventsAgeAssuranceState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ModerationQueryEventsAgeAssuranceStateKnownValueCopyWith<ModerationQueryEventsAgeAssuranceStateKnownValue> get copyWith => _$ModerationQueryEventsAgeAssuranceStateKnownValueCopyWithImpl<ModerationQueryEventsAgeAssuranceStateKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of ModerationQueryEventsAgeAssuranceState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWith<
+          _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl>
+      get copyWith =>
+          __$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWithImpl<
+                  _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationQueryEventsAgeAssuranceStateKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownModerationQueryEventsAgeAssuranceState data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownModerationQueryEventsAgeAssuranceState data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownModerationQueryEventsAgeAssuranceState data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            ModerationQueryEventsAgeAssuranceStateKnownValue value)
+        knownValue,
+    required TResult Function(
+            ModerationQueryEventsAgeAssuranceStateUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModerationQueryEventsAgeAssuranceStateKnownValue value)?
+        knownValue,
+    TResult? Function(ModerationQueryEventsAgeAssuranceStateUnknown value)?
+        unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModerationQueryEventsAgeAssuranceStateKnownValue value)?
+        knownValue,
+    TResult Function(ModerationQueryEventsAgeAssuranceStateUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class ModerationQueryEventsAgeAssuranceStateKnownValue
+    extends ModerationQueryEventsAgeAssuranceState {
+  const factory ModerationQueryEventsAgeAssuranceStateKnownValue(
+          {required final KnownModerationQueryEventsAgeAssuranceState data}) =
+      _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl;
+  const ModerationQueryEventsAgeAssuranceStateKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownModerationQueryEventsAgeAssuranceState get data;
 
-@override
-String toString() {
-  return 'ModerationQueryEventsAgeAssuranceState.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of ModerationQueryEventsAgeAssuranceState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ModerationQueryEventsAgeAssuranceStateKnownValueImplCopyWith<
+          _$ModerationQueryEventsAgeAssuranceStateKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ModerationQueryEventsAgeAssuranceStateKnownValueCopyWith<$Res> implements $ModerationQueryEventsAgeAssuranceStateCopyWith<$Res> {
-  factory $ModerationQueryEventsAgeAssuranceStateKnownValueCopyWith(ModerationQueryEventsAgeAssuranceStateKnownValue value, $Res Function(ModerationQueryEventsAgeAssuranceStateKnownValue) _then) = _$ModerationQueryEventsAgeAssuranceStateKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownModerationQueryEventsAgeAssuranceState data
-});
-
-
-
-
-}
-/// @nodoc
-class _$ModerationQueryEventsAgeAssuranceStateKnownValueCopyWithImpl<$Res>
-    implements $ModerationQueryEventsAgeAssuranceStateKnownValueCopyWith<$Res> {
-  _$ModerationQueryEventsAgeAssuranceStateKnownValueCopyWithImpl(this._self, this._then);
-
-  final ModerationQueryEventsAgeAssuranceStateKnownValue _self;
-  final $Res Function(ModerationQueryEventsAgeAssuranceStateKnownValue) _then;
-
-/// Create a copy of ModerationQueryEventsAgeAssuranceState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ModerationQueryEventsAgeAssuranceStateKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownModerationQueryEventsAgeAssuranceState,
-  ));
-}
-
-
+abstract class _$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWith<
+    $Res> {
+  factory _$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWith(
+          _$ModerationQueryEventsAgeAssuranceStateUnknownImpl value,
+          $Res Function(_$ModerationQueryEventsAgeAssuranceStateUnknownImpl)
+              then) =
+      __$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWithImpl<$Res>
+    extends _$ModerationQueryEventsAgeAssuranceStateCopyWithImpl<$Res,
+        _$ModerationQueryEventsAgeAssuranceStateUnknownImpl>
+    implements
+        _$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWith<$Res> {
+  __$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWithImpl(
+      _$ModerationQueryEventsAgeAssuranceStateUnknownImpl _value,
+      $Res Function(_$ModerationQueryEventsAgeAssuranceStateUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class ModerationQueryEventsAgeAssuranceStateUnknown extends ModerationQueryEventsAgeAssuranceState {
-  const ModerationQueryEventsAgeAssuranceStateUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of ModerationQueryEventsAgeAssuranceState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ModerationQueryEventsAgeAssuranceStateUnknownCopyWith<ModerationQueryEventsAgeAssuranceStateUnknown> get copyWith => _$ModerationQueryEventsAgeAssuranceStateUnknownCopyWithImpl<ModerationQueryEventsAgeAssuranceStateUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationQueryEventsAgeAssuranceStateUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'ModerationQueryEventsAgeAssuranceState.unknown(data: $data)';
-}
-
-
+  /// Create a copy of ModerationQueryEventsAgeAssuranceState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ModerationQueryEventsAgeAssuranceStateUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $ModerationQueryEventsAgeAssuranceStateUnknownCopyWith<$Res> implements $ModerationQueryEventsAgeAssuranceStateCopyWith<$Res> {
-  factory $ModerationQueryEventsAgeAssuranceStateUnknownCopyWith(ModerationQueryEventsAgeAssuranceStateUnknown value, $Res Function(ModerationQueryEventsAgeAssuranceStateUnknown) _then) = _$ModerationQueryEventsAgeAssuranceStateUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$ModerationQueryEventsAgeAssuranceStateUnknownImpl
+    extends ModerationQueryEventsAgeAssuranceStateUnknown {
+  const _$ModerationQueryEventsAgeAssuranceStateUnknownImpl(
+      {required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'ModerationQueryEventsAgeAssuranceState.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModerationQueryEventsAgeAssuranceStateUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of ModerationQueryEventsAgeAssuranceState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWith<
+          _$ModerationQueryEventsAgeAssuranceStateUnknownImpl>
+      get copyWith =>
+          __$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWithImpl<
+                  _$ModerationQueryEventsAgeAssuranceStateUnknownImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownModerationQueryEventsAgeAssuranceState data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownModerationQueryEventsAgeAssuranceState data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownModerationQueryEventsAgeAssuranceState data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            ModerationQueryEventsAgeAssuranceStateKnownValue value)
+        knownValue,
+    required TResult Function(
+            ModerationQueryEventsAgeAssuranceStateUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModerationQueryEventsAgeAssuranceStateKnownValue value)?
+        knownValue,
+    TResult? Function(ModerationQueryEventsAgeAssuranceStateUnknown value)?
+        unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModerationQueryEventsAgeAssuranceStateKnownValue value)?
+        knownValue,
+    TResult Function(ModerationQueryEventsAgeAssuranceStateUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$ModerationQueryEventsAgeAssuranceStateUnknownCopyWithImpl<$Res>
-    implements $ModerationQueryEventsAgeAssuranceStateUnknownCopyWith<$Res> {
-  _$ModerationQueryEventsAgeAssuranceStateUnknownCopyWithImpl(this._self, this._then);
 
-  final ModerationQueryEventsAgeAssuranceStateUnknown _self;
-  final $Res Function(ModerationQueryEventsAgeAssuranceStateUnknown) _then;
+abstract class ModerationQueryEventsAgeAssuranceStateUnknown
+    extends ModerationQueryEventsAgeAssuranceState {
+  const factory ModerationQueryEventsAgeAssuranceStateUnknown(
+          {required final String data}) =
+      _$ModerationQueryEventsAgeAssuranceStateUnknownImpl;
+  const ModerationQueryEventsAgeAssuranceStateUnknown._() : super._();
 
-/// Create a copy of ModerationQueryEventsAgeAssuranceState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ModerationQueryEventsAgeAssuranceStateUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of ModerationQueryEventsAgeAssuranceState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ModerationQueryEventsAgeAssuranceStateUnknownImplCopyWith<
+          _$ModerationQueryEventsAgeAssuranceStateUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

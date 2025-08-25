@@ -8,34 +8,35 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminSearchAccountsOutput _$AdminSearchAccountsOutputFromJson(Map json) =>
-    $checkedCreate('_AdminSearchAccountsOutput', json, ($checkedConvert) {
-      final val = _AdminSearchAccountsOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        accounts: $checkedConvert(
-          'accounts',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const AccountViewConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AdminSearchAccountsOutputImpl _$$AdminSearchAccountsOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$AdminSearchAccountsOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AdminSearchAccountsOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          accounts: $checkedConvert(
+              'accounts',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const AccountViewConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AdminSearchAccountsOutputToJson(
-  _AdminSearchAccountsOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'accounts': instance.accounts
-      .map(const AccountViewConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$AdminSearchAccountsOutputImplToJson(
+        _$AdminSearchAccountsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'accounts':
+          instance.accounts.map(const AccountViewConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -71,7 +71,7 @@ name: my_bluesky_app
 description: A Bluesky client application
 
 environment:
-  sdk: ">=3.8.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.32.0"
 
 dependencies:
@@ -82,7 +82,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
+  flutter_lints: ^5.0.0
 ```
 
 ## Quick Test

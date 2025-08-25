@@ -8,27 +8,32 @@ part of 'record_blob.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RecordBlob _$RecordBlobFromJson(Map json) =>
-    $checkedCreate('_RecordBlob', json, ($checkedConvert) {
-      final val = _RecordBlob(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'com.atproto.repo.listMissingBlobs#recordBlob',
-        ),
-        cid: $checkedConvert('cid', (v) => v as String),
-        recordUri: $checkedConvert('recordUri', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$RecordBlobImpl _$$RecordBlobImplFromJson(Map json) => $checkedCreate(
+      r'_$RecordBlobImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$RecordBlobImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'com.atproto.repo.listMissingBlobs#recordBlob'),
+          cid: $checkedConvert('cid', (v) => v as String),
+          recordUri: $checkedConvert('recordUri', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$RecordBlobToJson(_RecordBlob instance) =>
+Map<String, dynamic> _$$RecordBlobImplToJson(_$RecordBlobImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'cid': instance.cid,
       'recordUri': instance.recordUri,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

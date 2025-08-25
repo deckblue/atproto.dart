@@ -5,7 +5,6 @@ import 'package:test/test.dart';
 
 // Project imports:
 import 'package:bluesky/src/moderation.dart';
-import 'package:bluesky/src/moderation/types/behaviors/moderation_cause.dart';
 import 'package:bluesky/src/moderation/types/behaviors/moderation_opts.dart';
 import 'package:bluesky/src/moderation/types/behaviors/moderation_prefs.dart';
 import 'package:bluesky/src/moderation/types/behaviors/moderation_prefs_labeler.dart';

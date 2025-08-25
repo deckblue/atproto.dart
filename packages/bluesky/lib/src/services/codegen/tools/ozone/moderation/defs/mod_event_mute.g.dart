@@ -8,30 +8,32 @@ part of 'mod_event_mute.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModEventMute _$ModEventMuteFromJson(Map json) =>
-    $checkedCreate('_ModEventMute', json, ($checkedConvert) {
-      final val = _ModEventMute(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.moderation.defs#modEventMute',
-        ),
-        comment: $checkedConvert('comment', (v) => v as String?),
-        durationInHours: $checkedConvert(
-          'durationInHours',
-          (v) => (v as num).toInt(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ModEventMuteImpl _$$ModEventMuteImplFromJson(Map json) => $checkedCreate(
+      r'_$ModEventMuteImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ModEventMuteImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'tools.ozone.moderation.defs#modEventMute'),
+          comment: $checkedConvert('comment', (v) => v as String?),
+          durationInHours:
+              $checkedConvert('durationInHours', (v) => (v as num).toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ModEventMuteToJson(_ModEventMute instance) =>
+Map<String, dynamic> _$$ModEventMuteImplToJson(_$ModEventMuteImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'comment': ?instance.comment,
+      if (instance.comment case final value?) 'comment': value,
       'durationInHours': instance.durationInHours,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

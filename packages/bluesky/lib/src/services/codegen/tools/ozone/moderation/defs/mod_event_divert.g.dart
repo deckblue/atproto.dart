@@ -8,25 +8,30 @@ part of 'mod_event_divert.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModEventDivert _$ModEventDivertFromJson(Map json) =>
-    $checkedCreate('_ModEventDivert', json, ($checkedConvert) {
-      final val = _ModEventDivert(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.moderation.defs#modEventDivert',
-        ),
-        comment: $checkedConvert('comment', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ModEventDivertImpl _$$ModEventDivertImplFromJson(Map json) => $checkedCreate(
+      r'_$ModEventDivertImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ModEventDivertImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'tools.ozone.moderation.defs#modEventDivert'),
+          comment: $checkedConvert('comment', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ModEventDivertToJson(_ModEventDivert instance) =>
+Map<String, dynamic> _$$ModEventDivertImplToJson(
+        _$ModEventDivertImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'comment': ?instance.comment,
-      r'$unknown': ?instance.$unknown,
+      if (instance.comment case final value?) 'comment': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

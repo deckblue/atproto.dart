@@ -8,30 +8,32 @@ part of 'main.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GraphBlockRecord _$GraphBlockRecordFromJson(Map json) =>
-    $checkedCreate('_GraphBlockRecord', json, ($checkedConvert) {
-      final val = _GraphBlockRecord(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.graph.block',
-        ),
-        subject: $checkedConvert('subject', (v) => v as String),
-        createdAt: $checkedConvert(
-          'createdAt',
-          (v) => DateTime.parse(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GraphBlockRecordImpl _$$GraphBlockRecordImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GraphBlockRecordImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GraphBlockRecordImpl(
+          $type: $checkedConvert(
+              r'$type', (v) => v as String? ?? 'app.bsky.graph.block'),
+          subject: $checkedConvert('subject', (v) => v as String),
+          createdAt:
+              $checkedConvert('createdAt', (v) => DateTime.parse(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GraphBlockRecordToJson(_GraphBlockRecord instance) =>
+Map<String, dynamic> _$$GraphBlockRecordImplToJson(
+        _$GraphBlockRecordImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'subject': instance.subject,
       'createdAt': instance.createdAt.toIso8601String(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,288 +9,253 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+GraphGetStarterPacksWithMembershipInput
+    _$GraphGetStarterPacksWithMembershipInputFromJson(
+        Map<String, dynamic> json) {
+  return _GraphGetStarterPacksWithMembershipInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$GraphGetStarterPacksWithMembershipInput {
-
-/// The account (actor) to check for membership.
- String get actor; int get limit; String? get cursor; Map<String, dynamic>? get $unknown;
-/// Create a copy of GraphGetStarterPacksWithMembershipInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GraphGetStarterPacksWithMembershipInputCopyWith<GraphGetStarterPacksWithMembershipInput> get copyWith => _$GraphGetStarterPacksWithMembershipInputCopyWithImpl<GraphGetStarterPacksWithMembershipInput>(this as GraphGetStarterPacksWithMembershipInput, _$identity);
+  /// The account (actor) to check for membership.
+  String get actor => throw _privateConstructorUsedError;
+  int get limit => throw _privateConstructorUsedError;
+  String? get cursor => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GraphGetStarterPacksWithMembershipInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GraphGetStarterPacksWithMembershipInput&&(identical(other.actor, actor) || other.actor == actor)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,actor,limit,cursor,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'GraphGetStarterPacksWithMembershipInput(actor: $actor, limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of GraphGetStarterPacksWithMembershipInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GraphGetStarterPacksWithMembershipInputCopyWith<
+          GraphGetStarterPacksWithMembershipInput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $GraphGetStarterPacksWithMembershipInputCopyWith<$Res>  {
-  factory $GraphGetStarterPacksWithMembershipInputCopyWith(GraphGetStarterPacksWithMembershipInput value, $Res Function(GraphGetStarterPacksWithMembershipInput) _then) = _$GraphGetStarterPacksWithMembershipInputCopyWithImpl;
-@useResult
-$Res call({
- String actor, int limit, String? cursor, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $GraphGetStarterPacksWithMembershipInputCopyWith<$Res> {
+  factory $GraphGetStarterPacksWithMembershipInputCopyWith(
+          GraphGetStarterPacksWithMembershipInput value,
+          $Res Function(GraphGetStarterPacksWithMembershipInput) then) =
+      _$GraphGetStarterPacksWithMembershipInputCopyWithImpl<$Res,
+          GraphGetStarterPacksWithMembershipInput>;
+  @useResult
+  $Res call(
+      {String actor,
+      int limit,
+      String? cursor,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$GraphGetStarterPacksWithMembershipInputCopyWithImpl<$Res>
+class _$GraphGetStarterPacksWithMembershipInputCopyWithImpl<$Res,
+        $Val extends GraphGetStarterPacksWithMembershipInput>
     implements $GraphGetStarterPacksWithMembershipInputCopyWith<$Res> {
-  _$GraphGetStarterPacksWithMembershipInputCopyWithImpl(this._self, this._then);
+  _$GraphGetStarterPacksWithMembershipInputCopyWithImpl(
+      this._value, this._then);
 
-  final GraphGetStarterPacksWithMembershipInput _self;
-  final $Res Function(GraphGetStarterPacksWithMembershipInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of GraphGetStarterPacksWithMembershipInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? actor = null,Object? limit = null,Object? cursor = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-actor: null == actor ? _self.actor : actor // ignore: cast_nullable_to_non_nullable
-as String,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of GraphGetStarterPacksWithMembershipInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? actor = null,
+    Object? limit = null,
+    Object? cursor = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      actor: null == actor
+          ? _value.actor
+          : actor // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$GraphGetStarterPacksWithMembershipInputImplCopyWith<$Res>
+    implements $GraphGetStarterPacksWithMembershipInputCopyWith<$Res> {
+  factory _$$GraphGetStarterPacksWithMembershipInputImplCopyWith(
+          _$GraphGetStarterPacksWithMembershipInputImpl value,
+          $Res Function(_$GraphGetStarterPacksWithMembershipInputImpl) then) =
+      __$$GraphGetStarterPacksWithMembershipInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String actor,
+      int limit,
+      String? cursor,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$GraphGetStarterPacksWithMembershipInputImplCopyWithImpl<$Res>
+    extends _$GraphGetStarterPacksWithMembershipInputCopyWithImpl<$Res,
+        _$GraphGetStarterPacksWithMembershipInputImpl>
+    implements _$$GraphGetStarterPacksWithMembershipInputImplCopyWith<$Res> {
+  __$$GraphGetStarterPacksWithMembershipInputImplCopyWithImpl(
+      _$GraphGetStarterPacksWithMembershipInputImpl _value,
+      $Res Function(_$GraphGetStarterPacksWithMembershipInputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [GraphGetStarterPacksWithMembershipInput].
-extension GraphGetStarterPacksWithMembershipInputPatterns on GraphGetStarterPacksWithMembershipInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GraphGetStarterPacksWithMembershipInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GraphGetStarterPacksWithMembershipInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GraphGetStarterPacksWithMembershipInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _GraphGetStarterPacksWithMembershipInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GraphGetStarterPacksWithMembershipInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _GraphGetStarterPacksWithMembershipInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String actor,  int limit,  String? cursor,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GraphGetStarterPacksWithMembershipInput() when $default != null:
-return $default(_that.actor,_that.limit,_that.cursor,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String actor,  int limit,  String? cursor,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _GraphGetStarterPacksWithMembershipInput():
-return $default(_that.actor,_that.limit,_that.cursor,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String actor,  int limit,  String? cursor,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _GraphGetStarterPacksWithMembershipInput() when $default != null:
-return $default(_that.actor,_that.limit,_that.cursor,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of GraphGetStarterPacksWithMembershipInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? actor = null,
+    Object? limit = null,
+    Object? cursor = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$GraphGetStarterPacksWithMembershipInputImpl(
+      actor: null == actor
+          ? _value.actor
+          : actor // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GraphGetStarterPacksWithMembershipInput implements GraphGetStarterPacksWithMembershipInput {
-  const _GraphGetStarterPacksWithMembershipInput({required this.actor, this.limit = 50, this.cursor, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _GraphGetStarterPacksWithMembershipInput.fromJson(Map<String, dynamic> json) => _$GraphGetStarterPacksWithMembershipInputFromJson(json);
+class _$GraphGetStarterPacksWithMembershipInputImpl
+    implements _GraphGetStarterPacksWithMembershipInput {
+  const _$GraphGetStarterPacksWithMembershipInputImpl(
+      {required this.actor,
+      this.limit = 50,
+      this.cursor,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// The account (actor) to check for membership.
-@override final  String actor;
-@override@JsonKey() final  int limit;
-@override final  String? cursor;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$GraphGetStarterPacksWithMembershipInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GraphGetStarterPacksWithMembershipInputImplFromJson(json);
+
+  /// The account (actor) to check for membership.
+  @override
+  final String actor;
+  @override
+  @JsonKey()
+  final int limit;
+  @override
+  final String? cursor;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'GraphGetStarterPacksWithMembershipInput(actor: $actor, limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GraphGetStarterPacksWithMembershipInputImpl &&
+            (identical(other.actor, actor) || other.actor == actor) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, actor, limit, cursor,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of GraphGetStarterPacksWithMembershipInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GraphGetStarterPacksWithMembershipInputImplCopyWith<
+          _$GraphGetStarterPacksWithMembershipInputImpl>
+      get copyWith =>
+          __$$GraphGetStarterPacksWithMembershipInputImplCopyWithImpl<
+              _$GraphGetStarterPacksWithMembershipInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GraphGetStarterPacksWithMembershipInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _GraphGetStarterPacksWithMembershipInput
+    implements GraphGetStarterPacksWithMembershipInput {
+  const factory _GraphGetStarterPacksWithMembershipInput(
+          {required final String actor,
+          final int limit,
+          final String? cursor,
+          final Map<String, dynamic>? $unknown}) =
+      _$GraphGetStarterPacksWithMembershipInputImpl;
 
-/// Create a copy of GraphGetStarterPacksWithMembershipInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$GraphGetStarterPacksWithMembershipInputCopyWith<_GraphGetStarterPacksWithMembershipInput> get copyWith => __$GraphGetStarterPacksWithMembershipInputCopyWithImpl<_GraphGetStarterPacksWithMembershipInput>(this, _$identity);
+  factory _GraphGetStarterPacksWithMembershipInput.fromJson(
+          Map<String, dynamic> json) =
+      _$GraphGetStarterPacksWithMembershipInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GraphGetStarterPacksWithMembershipInputToJson(this, );
+  /// The account (actor) to check for membership.
+  @override
+  String get actor;
+  @override
+  int get limit;
+  @override
+  String? get cursor;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of GraphGetStarterPacksWithMembershipInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GraphGetStarterPacksWithMembershipInputImplCopyWith<
+          _$GraphGetStarterPacksWithMembershipInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GraphGetStarterPacksWithMembershipInput&&(identical(other.actor, actor) || other.actor == actor)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,actor,limit,cursor,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'GraphGetStarterPacksWithMembershipInput(actor: $actor, limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$GraphGetStarterPacksWithMembershipInputCopyWith<$Res> implements $GraphGetStarterPacksWithMembershipInputCopyWith<$Res> {
-  factory _$GraphGetStarterPacksWithMembershipInputCopyWith(_GraphGetStarterPacksWithMembershipInput value, $Res Function(_GraphGetStarterPacksWithMembershipInput) _then) = __$GraphGetStarterPacksWithMembershipInputCopyWithImpl;
-@override @useResult
-$Res call({
- String actor, int limit, String? cursor, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$GraphGetStarterPacksWithMembershipInputCopyWithImpl<$Res>
-    implements _$GraphGetStarterPacksWithMembershipInputCopyWith<$Res> {
-  __$GraphGetStarterPacksWithMembershipInputCopyWithImpl(this._self, this._then);
-
-  final _GraphGetStarterPacksWithMembershipInput _self;
-  final $Res Function(_GraphGetStarterPacksWithMembershipInput) _then;
-
-/// Create a copy of GraphGetStarterPacksWithMembershipInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? actor = null,Object? limit = null,Object? cursor = freezed,Object? $unknown = freezed,}) {
-  return _then(_GraphGetStarterPacksWithMembershipInput(
-actor: null == actor ? _self.actor : actor // ignore: cast_nullable_to_non_nullable
-as String,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

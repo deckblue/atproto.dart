@@ -8,35 +8,34 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SignatureSearchAccountsOutput _$SignatureSearchAccountsOutputFromJson(
-  Map json,
-) => $checkedCreate('_SignatureSearchAccountsOutput', json, ($checkedConvert) {
-  final val = _SignatureSearchAccountsOutput(
-    cursor: $checkedConvert('cursor', (v) => v as String?),
-    accounts: $checkedConvert(
-      'accounts',
-      (v) => (v as List<dynamic>)
-          .map(
-            (e) => const AccountViewConverter().fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$SignatureSearchAccountsOutputImpl
+    _$$SignatureSearchAccountsOutputImplFromJson(Map json) => $checkedCreate(
+          r'_$SignatureSearchAccountsOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$SignatureSearchAccountsOutputImpl(
+              cursor: $checkedConvert('cursor', (v) => v as String?),
+              accounts: $checkedConvert(
+                  'accounts',
+                  (v) => (v as List<dynamic>)
+                      .map((e) => const AccountViewConverter()
+                          .fromJson(e as Map<String, dynamic>))
+                      .toList()),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$SignatureSearchAccountsOutputToJson(
-  _SignatureSearchAccountsOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'accounts': instance.accounts
-      .map(const AccountViewConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SignatureSearchAccountsOutputImplToJson(
+        _$SignatureSearchAccountsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'accounts':
+          instance.accounts.map(const AccountViewConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

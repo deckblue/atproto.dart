@@ -8,23 +8,27 @@ part of 'skeleton_reason_pin.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SkeletonReasonPin _$SkeletonReasonPinFromJson(Map json) =>
-    $checkedCreate('_SkeletonReasonPin', json, ($checkedConvert) {
-      final val = _SkeletonReasonPin(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.feed.defs#skeletonReasonPin',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SkeletonReasonPinImpl _$$SkeletonReasonPinImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$SkeletonReasonPinImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SkeletonReasonPinImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.feed.defs#skeletonReasonPin'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SkeletonReasonPinToJson(_SkeletonReasonPin instance) =>
+Map<String, dynamic> _$$SkeletonReasonPinImplToJson(
+        _$SkeletonReasonPinImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

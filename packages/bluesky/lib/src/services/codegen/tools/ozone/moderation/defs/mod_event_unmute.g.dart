@@ -8,25 +8,30 @@ part of 'mod_event_unmute.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModEventUnmute _$ModEventUnmuteFromJson(Map json) =>
-    $checkedCreate('_ModEventUnmute', json, ($checkedConvert) {
-      final val = _ModEventUnmute(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.moderation.defs#modEventUnmute',
-        ),
-        comment: $checkedConvert('comment', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ModEventUnmuteImpl _$$ModEventUnmuteImplFromJson(Map json) => $checkedCreate(
+      r'_$ModEventUnmuteImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ModEventUnmuteImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'tools.ozone.moderation.defs#modEventUnmute'),
+          comment: $checkedConvert('comment', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ModEventUnmuteToJson(_ModEventUnmute instance) =>
+Map<String, dynamic> _$$ModEventUnmuteImplToJson(
+        _$ModEventUnmuteImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'comment': ?instance.comment,
-      r'$unknown': ?instance.$unknown,
+      if (instance.comment case final value?) 'comment': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

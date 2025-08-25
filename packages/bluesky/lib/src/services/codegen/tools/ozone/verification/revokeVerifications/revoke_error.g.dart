@@ -8,29 +8,32 @@ part of 'revoke_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RevokeError _$RevokeErrorFromJson(Map json) =>
-    $checkedCreate('_RevokeError', json, ($checkedConvert) {
-      final val = _RevokeError(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'tools.ozone.verification.revokeVerifications#revokeError',
-        ),
-        uri: $checkedConvert('uri', (v) => v as String),
-        error: $checkedConvert('error', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$RevokeErrorImpl _$$RevokeErrorImplFromJson(Map json) => $checkedCreate(
+      r'_$RevokeErrorImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$RevokeErrorImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.verification.revokeVerifications#revokeError'),
+          uri: $checkedConvert('uri', (v) => v as String),
+          error: $checkedConvert('error', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$RevokeErrorToJson(_RevokeError instance) =>
+Map<String, dynamic> _$$RevokeErrorImplToJson(_$RevokeErrorImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'uri': instance.uri,
       'error': instance.error,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

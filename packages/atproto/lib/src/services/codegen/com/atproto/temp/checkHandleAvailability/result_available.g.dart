@@ -8,25 +8,30 @@ part of 'result_available.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ResultAvailable _$ResultAvailableFromJson(Map json) =>
-    $checkedCreate('_ResultAvailable', json, ($checkedConvert) {
-      final val = _ResultAvailable(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'com.atproto.temp.checkHandleAvailability#resultAvailable',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ResultAvailableImpl _$$ResultAvailableImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ResultAvailableImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ResultAvailableImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'com.atproto.temp.checkHandleAvailability#resultAvailable'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ResultAvailableToJson(_ResultAvailable instance) =>
+Map<String, dynamic> _$$ResultAvailableImplToJson(
+        _$ResultAvailableImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

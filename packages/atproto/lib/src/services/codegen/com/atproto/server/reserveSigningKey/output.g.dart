@@ -8,22 +8,26 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ServerReserveSigningKeyOutput _$ServerReserveSigningKeyOutputFromJson(
-  Map json,
-) => $checkedCreate('_ServerReserveSigningKeyOutput', json, ($checkedConvert) {
-  final val = _ServerReserveSigningKeyOutput(
-    signingKey: $checkedConvert('signingKey', (v) => v as String),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$ServerReserveSigningKeyOutputImpl
+    _$$ServerReserveSigningKeyOutputImplFromJson(Map json) => $checkedCreate(
+          r'_$ServerReserveSigningKeyOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$ServerReserveSigningKeyOutputImpl(
+              signingKey: $checkedConvert('signingKey', (v) => v as String),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$ServerReserveSigningKeyOutputToJson(
-  _ServerReserveSigningKeyOutput instance,
-) => <String, dynamic>{
-  'signingKey': instance.signingKey,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ServerReserveSigningKeyOutputImplToJson(
+        _$ServerReserveSigningKeyOutputImpl instance) =>
+    <String, dynamic>{
+      'signingKey': instance.signingKey,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,32 +8,34 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModerationSearchReposOutput _$ModerationSearchReposOutputFromJson(Map json) =>
-    $checkedCreate('_ModerationSearchReposOutput', json, ($checkedConvert) {
-      final val = _ModerationSearchReposOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        repos: $checkedConvert(
-          'repos',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const RepoViewConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ModerationSearchReposOutputImpl _$$ModerationSearchReposOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ModerationSearchReposOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ModerationSearchReposOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          repos: $checkedConvert(
+              'repos',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const RepoViewConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ModerationSearchReposOutputToJson(
-  _ModerationSearchReposOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'repos': instance.repos.map(const RepoViewConverter().toJson).toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ModerationSearchReposOutputImplToJson(
+        _$ModerationSearchReposOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'repos': instance.repos.map(const RepoViewConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

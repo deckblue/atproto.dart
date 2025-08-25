@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,440 @@ part of 'main_allow_subscriptions.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$NotificationDeclarationAllowSubscriptions {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationDeclarationAllowSubscriptions&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'NotificationDeclarationAllowSubscriptions(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            KnownNotificationDeclarationAllowSubscriptions data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationDeclarationAllowSubscriptions data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationDeclarationAllowSubscriptions data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationDeclarationAllowSubscriptionsKnownValue value)
+        knownValue,
+    required TResult Function(
+            NotificationDeclarationAllowSubscriptionsUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(
+            NotificationDeclarationAllowSubscriptionsKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationDeclarationAllowSubscriptionsUnknown value)?
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationDeclarationAllowSubscriptionsKnownValue value)?
+        knownValue,
+    TResult Function(NotificationDeclarationAllowSubscriptionsUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $NotificationDeclarationAllowSubscriptionsCopyWith<$Res>  {
-$NotificationDeclarationAllowSubscriptionsCopyWith(NotificationDeclarationAllowSubscriptions _, $Res Function(NotificationDeclarationAllowSubscriptions) __);
+abstract class $NotificationDeclarationAllowSubscriptionsCopyWith<$Res> {
+  factory $NotificationDeclarationAllowSubscriptionsCopyWith(
+          NotificationDeclarationAllowSubscriptions value,
+          $Res Function(NotificationDeclarationAllowSubscriptions) then) =
+      _$NotificationDeclarationAllowSubscriptionsCopyWithImpl<$Res,
+          NotificationDeclarationAllowSubscriptions>;
 }
 
+/// @nodoc
+class _$NotificationDeclarationAllowSubscriptionsCopyWithImpl<$Res,
+        $Val extends NotificationDeclarationAllowSubscriptions>
+    implements $NotificationDeclarationAllowSubscriptionsCopyWith<$Res> {
+  _$NotificationDeclarationAllowSubscriptionsCopyWithImpl(
+      this._value, this._then);
 
-/// Adds pattern-matching-related methods to [NotificationDeclarationAllowSubscriptions].
-extension NotificationDeclarationAllowSubscriptionsPatterns on NotificationDeclarationAllowSubscriptions {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( NotificationDeclarationAllowSubscriptionsKnownValue value)?  knownValue,TResult Function( NotificationDeclarationAllowSubscriptionsUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case NotificationDeclarationAllowSubscriptionsKnownValue() when knownValue != null:
-return knownValue(_that);case NotificationDeclarationAllowSubscriptionsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( NotificationDeclarationAllowSubscriptionsKnownValue value)  knownValue,required TResult Function( NotificationDeclarationAllowSubscriptionsUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case NotificationDeclarationAllowSubscriptionsKnownValue():
-return knownValue(_that);case NotificationDeclarationAllowSubscriptionsUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( NotificationDeclarationAllowSubscriptionsKnownValue value)?  knownValue,TResult? Function( NotificationDeclarationAllowSubscriptionsUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case NotificationDeclarationAllowSubscriptionsKnownValue() when knownValue != null:
-return knownValue(_that);case NotificationDeclarationAllowSubscriptionsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownNotificationDeclarationAllowSubscriptions data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case NotificationDeclarationAllowSubscriptionsKnownValue() when knownValue != null:
-return knownValue(_that.data);case NotificationDeclarationAllowSubscriptionsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownNotificationDeclarationAllowSubscriptions data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case NotificationDeclarationAllowSubscriptionsKnownValue():
-return knownValue(_that.data);case NotificationDeclarationAllowSubscriptionsUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownNotificationDeclarationAllowSubscriptions data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case NotificationDeclarationAllowSubscriptionsKnownValue() when knownValue != null:
-return knownValue(_that.data);case NotificationDeclarationAllowSubscriptionsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of NotificationDeclarationAllowSubscriptions
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWith<
+    $Res> {
+  factory _$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWith(
+          _$NotificationDeclarationAllowSubscriptionsKnownValueImpl value,
+          $Res Function(
+                  _$NotificationDeclarationAllowSubscriptionsKnownValueImpl)
+              then) =
+      __$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({KnownNotificationDeclarationAllowSubscriptions data});
+}
+
+/// @nodoc
+class __$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWithImpl<
+        $Res>
+    extends _$NotificationDeclarationAllowSubscriptionsCopyWithImpl<$Res,
+        _$NotificationDeclarationAllowSubscriptionsKnownValueImpl>
+    implements
+        _$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWith<
+            $Res> {
+  __$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWithImpl(
+      _$NotificationDeclarationAllowSubscriptionsKnownValueImpl _value,
+      $Res Function(_$NotificationDeclarationAllowSubscriptionsKnownValueImpl)
+          _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationDeclarationAllowSubscriptions
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$NotificationDeclarationAllowSubscriptionsKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownNotificationDeclarationAllowSubscriptions,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$NotificationDeclarationAllowSubscriptionsKnownValueImpl
+    extends NotificationDeclarationAllowSubscriptionsKnownValue {
+  const _$NotificationDeclarationAllowSubscriptionsKnownValueImpl(
+      {required this.data})
+      : super._();
 
-class NotificationDeclarationAllowSubscriptionsKnownValue extends NotificationDeclarationAllowSubscriptions {
-  const NotificationDeclarationAllowSubscriptionsKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownNotificationDeclarationAllowSubscriptions data;
 
-@override final  KnownNotificationDeclarationAllowSubscriptions data;
+  @override
+  String toString() {
+    return 'NotificationDeclarationAllowSubscriptions.knownValue(data: $data)';
+  }
 
-/// Create a copy of NotificationDeclarationAllowSubscriptions
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$NotificationDeclarationAllowSubscriptionsKnownValueCopyWith<NotificationDeclarationAllowSubscriptionsKnownValue> get copyWith => _$NotificationDeclarationAllowSubscriptionsKnownValueCopyWithImpl<NotificationDeclarationAllowSubscriptionsKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other
+                is _$NotificationDeclarationAllowSubscriptionsKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of NotificationDeclarationAllowSubscriptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWith<
+          _$NotificationDeclarationAllowSubscriptionsKnownValueImpl>
+      get copyWith =>
+          __$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWithImpl<
+                  _$NotificationDeclarationAllowSubscriptionsKnownValueImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationDeclarationAllowSubscriptionsKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            KnownNotificationDeclarationAllowSubscriptions data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationDeclarationAllowSubscriptions data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationDeclarationAllowSubscriptions data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationDeclarationAllowSubscriptionsKnownValue value)
+        knownValue,
+    required TResult Function(
+            NotificationDeclarationAllowSubscriptionsUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(
+            NotificationDeclarationAllowSubscriptionsKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationDeclarationAllowSubscriptionsUnknown value)?
+        unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationDeclarationAllowSubscriptionsKnownValue value)?
+        knownValue,
+    TResult Function(NotificationDeclarationAllowSubscriptionsUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class NotificationDeclarationAllowSubscriptionsKnownValue
+    extends NotificationDeclarationAllowSubscriptions {
+  const factory NotificationDeclarationAllowSubscriptionsKnownValue(
+      {required final KnownNotificationDeclarationAllowSubscriptions
+          data}) = _$NotificationDeclarationAllowSubscriptionsKnownValueImpl;
+  const NotificationDeclarationAllowSubscriptionsKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownNotificationDeclarationAllowSubscriptions get data;
 
-@override
-String toString() {
-  return 'NotificationDeclarationAllowSubscriptions.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of NotificationDeclarationAllowSubscriptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NotificationDeclarationAllowSubscriptionsKnownValueImplCopyWith<
+          _$NotificationDeclarationAllowSubscriptionsKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $NotificationDeclarationAllowSubscriptionsKnownValueCopyWith<$Res> implements $NotificationDeclarationAllowSubscriptionsCopyWith<$Res> {
-  factory $NotificationDeclarationAllowSubscriptionsKnownValueCopyWith(NotificationDeclarationAllowSubscriptionsKnownValue value, $Res Function(NotificationDeclarationAllowSubscriptionsKnownValue) _then) = _$NotificationDeclarationAllowSubscriptionsKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownNotificationDeclarationAllowSubscriptions data
-});
-
-
-
-
-}
-/// @nodoc
-class _$NotificationDeclarationAllowSubscriptionsKnownValueCopyWithImpl<$Res>
-    implements $NotificationDeclarationAllowSubscriptionsKnownValueCopyWith<$Res> {
-  _$NotificationDeclarationAllowSubscriptionsKnownValueCopyWithImpl(this._self, this._then);
-
-  final NotificationDeclarationAllowSubscriptionsKnownValue _self;
-  final $Res Function(NotificationDeclarationAllowSubscriptionsKnownValue) _then;
-
-/// Create a copy of NotificationDeclarationAllowSubscriptions
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(NotificationDeclarationAllowSubscriptionsKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownNotificationDeclarationAllowSubscriptions,
-  ));
-}
-
-
+abstract class _$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWith<
+    $Res> {
+  factory _$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWith(
+          _$NotificationDeclarationAllowSubscriptionsUnknownImpl value,
+          $Res Function(_$NotificationDeclarationAllowSubscriptionsUnknownImpl)
+              then) =
+      __$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWithImpl<$Res>
+    extends _$NotificationDeclarationAllowSubscriptionsCopyWithImpl<$Res,
+        _$NotificationDeclarationAllowSubscriptionsUnknownImpl>
+    implements
+        _$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWith<$Res> {
+  __$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWithImpl(
+      _$NotificationDeclarationAllowSubscriptionsUnknownImpl _value,
+      $Res Function(_$NotificationDeclarationAllowSubscriptionsUnknownImpl)
+          _then)
+      : super(_value, _then);
 
-
-class NotificationDeclarationAllowSubscriptionsUnknown extends NotificationDeclarationAllowSubscriptions {
-  const NotificationDeclarationAllowSubscriptionsUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of NotificationDeclarationAllowSubscriptions
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$NotificationDeclarationAllowSubscriptionsUnknownCopyWith<NotificationDeclarationAllowSubscriptionsUnknown> get copyWith => _$NotificationDeclarationAllowSubscriptionsUnknownCopyWithImpl<NotificationDeclarationAllowSubscriptionsUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationDeclarationAllowSubscriptionsUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'NotificationDeclarationAllowSubscriptions.unknown(data: $data)';
-}
-
-
+  /// Create a copy of NotificationDeclarationAllowSubscriptions
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$NotificationDeclarationAllowSubscriptionsUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $NotificationDeclarationAllowSubscriptionsUnknownCopyWith<$Res> implements $NotificationDeclarationAllowSubscriptionsCopyWith<$Res> {
-  factory $NotificationDeclarationAllowSubscriptionsUnknownCopyWith(NotificationDeclarationAllowSubscriptionsUnknown value, $Res Function(NotificationDeclarationAllowSubscriptionsUnknown) _then) = _$NotificationDeclarationAllowSubscriptionsUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$NotificationDeclarationAllowSubscriptionsUnknownImpl
+    extends NotificationDeclarationAllowSubscriptionsUnknown {
+  const _$NotificationDeclarationAllowSubscriptionsUnknownImpl(
+      {required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'NotificationDeclarationAllowSubscriptions.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationDeclarationAllowSubscriptionsUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of NotificationDeclarationAllowSubscriptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWith<
+          _$NotificationDeclarationAllowSubscriptionsUnknownImpl>
+      get copyWith =>
+          __$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWithImpl<
+                  _$NotificationDeclarationAllowSubscriptionsUnknownImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            KnownNotificationDeclarationAllowSubscriptions data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationDeclarationAllowSubscriptions data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationDeclarationAllowSubscriptions data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationDeclarationAllowSubscriptionsKnownValue value)
+        knownValue,
+    required TResult Function(
+            NotificationDeclarationAllowSubscriptionsUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(
+            NotificationDeclarationAllowSubscriptionsKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationDeclarationAllowSubscriptionsUnknown value)?
+        unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationDeclarationAllowSubscriptionsKnownValue value)?
+        knownValue,
+    TResult Function(NotificationDeclarationAllowSubscriptionsUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$NotificationDeclarationAllowSubscriptionsUnknownCopyWithImpl<$Res>
-    implements $NotificationDeclarationAllowSubscriptionsUnknownCopyWith<$Res> {
-  _$NotificationDeclarationAllowSubscriptionsUnknownCopyWithImpl(this._self, this._then);
 
-  final NotificationDeclarationAllowSubscriptionsUnknown _self;
-  final $Res Function(NotificationDeclarationAllowSubscriptionsUnknown) _then;
+abstract class NotificationDeclarationAllowSubscriptionsUnknown
+    extends NotificationDeclarationAllowSubscriptions {
+  const factory NotificationDeclarationAllowSubscriptionsUnknown(
+          {required final String data}) =
+      _$NotificationDeclarationAllowSubscriptionsUnknownImpl;
+  const NotificationDeclarationAllowSubscriptionsUnknown._() : super._();
 
-/// Create a copy of NotificationDeclarationAllowSubscriptions
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(NotificationDeclarationAllowSubscriptionsUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of NotificationDeclarationAllowSubscriptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NotificationDeclarationAllowSubscriptionsUnknownImplCopyWith<
+          _$NotificationDeclarationAllowSubscriptionsUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

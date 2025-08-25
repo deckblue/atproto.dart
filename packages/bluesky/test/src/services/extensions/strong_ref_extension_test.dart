@@ -4,7 +4,6 @@ import 'package:test/test.dart';
 
 // Project imports:
 import 'package:bluesky/src/services/codegen/app/bsky/embed/record/main.dart';
-import 'package:bluesky/src/services/codegen/app/bsky/feed/post/union_main_embed.dart';
 import 'package:bluesky/src/tools/extensions/strong_ref.dart';
 
 void main() {

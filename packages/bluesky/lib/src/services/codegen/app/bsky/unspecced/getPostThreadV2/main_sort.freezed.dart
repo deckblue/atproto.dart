@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,389 @@ part of 'main_sort.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$UnspeccedGetPostThreadV2Sort {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnspeccedGetPostThreadV2Sort&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'UnspeccedGetPostThreadV2Sort(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownUnspeccedGetPostThreadV2Sort data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownUnspeccedGetPostThreadV2Sort data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownUnspeccedGetPostThreadV2Sort data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnspeccedGetPostThreadV2SortKnownValue value)
+        knownValue,
+    required TResult Function(UnspeccedGetPostThreadV2SortUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UnspeccedGetPostThreadV2SortKnownValue value)? knownValue,
+    TResult? Function(UnspeccedGetPostThreadV2SortUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnspeccedGetPostThreadV2SortKnownValue value)? knownValue,
+    TResult Function(UnspeccedGetPostThreadV2SortUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $UnspeccedGetPostThreadV2SortCopyWith<$Res>  {
-$UnspeccedGetPostThreadV2SortCopyWith(UnspeccedGetPostThreadV2Sort _, $Res Function(UnspeccedGetPostThreadV2Sort) __);
+abstract class $UnspeccedGetPostThreadV2SortCopyWith<$Res> {
+  factory $UnspeccedGetPostThreadV2SortCopyWith(
+          UnspeccedGetPostThreadV2Sort value,
+          $Res Function(UnspeccedGetPostThreadV2Sort) then) =
+      _$UnspeccedGetPostThreadV2SortCopyWithImpl<$Res,
+          UnspeccedGetPostThreadV2Sort>;
 }
 
+/// @nodoc
+class _$UnspeccedGetPostThreadV2SortCopyWithImpl<$Res,
+        $Val extends UnspeccedGetPostThreadV2Sort>
+    implements $UnspeccedGetPostThreadV2SortCopyWith<$Res> {
+  _$UnspeccedGetPostThreadV2SortCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [UnspeccedGetPostThreadV2Sort].
-extension UnspeccedGetPostThreadV2SortPatterns on UnspeccedGetPostThreadV2Sort {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UnspeccedGetPostThreadV2SortKnownValue value)?  knownValue,TResult Function( UnspeccedGetPostThreadV2SortUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case UnspeccedGetPostThreadV2SortKnownValue() when knownValue != null:
-return knownValue(_that);case UnspeccedGetPostThreadV2SortUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UnspeccedGetPostThreadV2SortKnownValue value)  knownValue,required TResult Function( UnspeccedGetPostThreadV2SortUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case UnspeccedGetPostThreadV2SortKnownValue():
-return knownValue(_that);case UnspeccedGetPostThreadV2SortUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UnspeccedGetPostThreadV2SortKnownValue value)?  knownValue,TResult? Function( UnspeccedGetPostThreadV2SortUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case UnspeccedGetPostThreadV2SortKnownValue() when knownValue != null:
-return knownValue(_that);case UnspeccedGetPostThreadV2SortUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownUnspeccedGetPostThreadV2Sort data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case UnspeccedGetPostThreadV2SortKnownValue() when knownValue != null:
-return knownValue(_that.data);case UnspeccedGetPostThreadV2SortUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownUnspeccedGetPostThreadV2Sort data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case UnspeccedGetPostThreadV2SortKnownValue():
-return knownValue(_that.data);case UnspeccedGetPostThreadV2SortUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownUnspeccedGetPostThreadV2Sort data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case UnspeccedGetPostThreadV2SortKnownValue() when knownValue != null:
-return knownValue(_that.data);case UnspeccedGetPostThreadV2SortUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of UnspeccedGetPostThreadV2Sort
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWith<$Res> {
+  factory _$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWith(
+          _$UnspeccedGetPostThreadV2SortKnownValueImpl value,
+          $Res Function(_$UnspeccedGetPostThreadV2SortKnownValueImpl) then) =
+      __$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownUnspeccedGetPostThreadV2Sort data});
+}
+
+/// @nodoc
+class __$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWithImpl<$Res>
+    extends _$UnspeccedGetPostThreadV2SortCopyWithImpl<$Res,
+        _$UnspeccedGetPostThreadV2SortKnownValueImpl>
+    implements _$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWith<$Res> {
+  __$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWithImpl(
+      _$UnspeccedGetPostThreadV2SortKnownValueImpl _value,
+      $Res Function(_$UnspeccedGetPostThreadV2SortKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UnspeccedGetPostThreadV2Sort
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UnspeccedGetPostThreadV2SortKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownUnspeccedGetPostThreadV2Sort,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$UnspeccedGetPostThreadV2SortKnownValueImpl
+    extends UnspeccedGetPostThreadV2SortKnownValue {
+  const _$UnspeccedGetPostThreadV2SortKnownValueImpl({required this.data})
+      : super._();
 
-class UnspeccedGetPostThreadV2SortKnownValue extends UnspeccedGetPostThreadV2Sort {
-  const UnspeccedGetPostThreadV2SortKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownUnspeccedGetPostThreadV2Sort data;
 
-@override final  KnownUnspeccedGetPostThreadV2Sort data;
+  @override
+  String toString() {
+    return 'UnspeccedGetPostThreadV2Sort.knownValue(data: $data)';
+  }
 
-/// Create a copy of UnspeccedGetPostThreadV2Sort
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UnspeccedGetPostThreadV2SortKnownValueCopyWith<UnspeccedGetPostThreadV2SortKnownValue> get copyWith => _$UnspeccedGetPostThreadV2SortKnownValueCopyWithImpl<UnspeccedGetPostThreadV2SortKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnspeccedGetPostThreadV2SortKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UnspeccedGetPostThreadV2Sort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWith<
+          _$UnspeccedGetPostThreadV2SortKnownValueImpl>
+      get copyWith =>
+          __$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWithImpl<
+              _$UnspeccedGetPostThreadV2SortKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnspeccedGetPostThreadV2SortKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownUnspeccedGetPostThreadV2Sort data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownUnspeccedGetPostThreadV2Sort data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownUnspeccedGetPostThreadV2Sort data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnspeccedGetPostThreadV2SortKnownValue value)
+        knownValue,
+    required TResult Function(UnspeccedGetPostThreadV2SortUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UnspeccedGetPostThreadV2SortKnownValue value)? knownValue,
+    TResult? Function(UnspeccedGetPostThreadV2SortUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnspeccedGetPostThreadV2SortKnownValue value)? knownValue,
+    TResult Function(UnspeccedGetPostThreadV2SortUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UnspeccedGetPostThreadV2SortKnownValue
+    extends UnspeccedGetPostThreadV2Sort {
+  const factory UnspeccedGetPostThreadV2SortKnownValue(
+          {required final KnownUnspeccedGetPostThreadV2Sort data}) =
+      _$UnspeccedGetPostThreadV2SortKnownValueImpl;
+  const UnspeccedGetPostThreadV2SortKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownUnspeccedGetPostThreadV2Sort get data;
 
-@override
-String toString() {
-  return 'UnspeccedGetPostThreadV2Sort.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of UnspeccedGetPostThreadV2Sort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnspeccedGetPostThreadV2SortKnownValueImplCopyWith<
+          _$UnspeccedGetPostThreadV2SortKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UnspeccedGetPostThreadV2SortKnownValueCopyWith<$Res> implements $UnspeccedGetPostThreadV2SortCopyWith<$Res> {
-  factory $UnspeccedGetPostThreadV2SortKnownValueCopyWith(UnspeccedGetPostThreadV2SortKnownValue value, $Res Function(UnspeccedGetPostThreadV2SortKnownValue) _then) = _$UnspeccedGetPostThreadV2SortKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownUnspeccedGetPostThreadV2Sort data
-});
-
-
-
-
-}
-/// @nodoc
-class _$UnspeccedGetPostThreadV2SortKnownValueCopyWithImpl<$Res>
-    implements $UnspeccedGetPostThreadV2SortKnownValueCopyWith<$Res> {
-  _$UnspeccedGetPostThreadV2SortKnownValueCopyWithImpl(this._self, this._then);
-
-  final UnspeccedGetPostThreadV2SortKnownValue _self;
-  final $Res Function(UnspeccedGetPostThreadV2SortKnownValue) _then;
-
-/// Create a copy of UnspeccedGetPostThreadV2Sort
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UnspeccedGetPostThreadV2SortKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownUnspeccedGetPostThreadV2Sort,
-  ));
-}
-
-
+abstract class _$$UnspeccedGetPostThreadV2SortUnknownImplCopyWith<$Res> {
+  factory _$$UnspeccedGetPostThreadV2SortUnknownImplCopyWith(
+          _$UnspeccedGetPostThreadV2SortUnknownImpl value,
+          $Res Function(_$UnspeccedGetPostThreadV2SortUnknownImpl) then) =
+      __$$UnspeccedGetPostThreadV2SortUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$UnspeccedGetPostThreadV2SortUnknownImplCopyWithImpl<$Res>
+    extends _$UnspeccedGetPostThreadV2SortCopyWithImpl<$Res,
+        _$UnspeccedGetPostThreadV2SortUnknownImpl>
+    implements _$$UnspeccedGetPostThreadV2SortUnknownImplCopyWith<$Res> {
+  __$$UnspeccedGetPostThreadV2SortUnknownImplCopyWithImpl(
+      _$UnspeccedGetPostThreadV2SortUnknownImpl _value,
+      $Res Function(_$UnspeccedGetPostThreadV2SortUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class UnspeccedGetPostThreadV2SortUnknown extends UnspeccedGetPostThreadV2Sort {
-  const UnspeccedGetPostThreadV2SortUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of UnspeccedGetPostThreadV2Sort
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UnspeccedGetPostThreadV2SortUnknownCopyWith<UnspeccedGetPostThreadV2SortUnknown> get copyWith => _$UnspeccedGetPostThreadV2SortUnknownCopyWithImpl<UnspeccedGetPostThreadV2SortUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnspeccedGetPostThreadV2SortUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UnspeccedGetPostThreadV2Sort.unknown(data: $data)';
-}
-
-
+  /// Create a copy of UnspeccedGetPostThreadV2Sort
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UnspeccedGetPostThreadV2SortUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $UnspeccedGetPostThreadV2SortUnknownCopyWith<$Res> implements $UnspeccedGetPostThreadV2SortCopyWith<$Res> {
-  factory $UnspeccedGetPostThreadV2SortUnknownCopyWith(UnspeccedGetPostThreadV2SortUnknown value, $Res Function(UnspeccedGetPostThreadV2SortUnknown) _then) = _$UnspeccedGetPostThreadV2SortUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$UnspeccedGetPostThreadV2SortUnknownImpl
+    extends UnspeccedGetPostThreadV2SortUnknown {
+  const _$UnspeccedGetPostThreadV2SortUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'UnspeccedGetPostThreadV2Sort.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnspeccedGetPostThreadV2SortUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UnspeccedGetPostThreadV2Sort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnspeccedGetPostThreadV2SortUnknownImplCopyWith<
+          _$UnspeccedGetPostThreadV2SortUnknownImpl>
+      get copyWith => __$$UnspeccedGetPostThreadV2SortUnknownImplCopyWithImpl<
+          _$UnspeccedGetPostThreadV2SortUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownUnspeccedGetPostThreadV2Sort data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownUnspeccedGetPostThreadV2Sort data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownUnspeccedGetPostThreadV2Sort data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnspeccedGetPostThreadV2SortKnownValue value)
+        knownValue,
+    required TResult Function(UnspeccedGetPostThreadV2SortUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UnspeccedGetPostThreadV2SortKnownValue value)? knownValue,
+    TResult? Function(UnspeccedGetPostThreadV2SortUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnspeccedGetPostThreadV2SortKnownValue value)? knownValue,
+    TResult Function(UnspeccedGetPostThreadV2SortUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$UnspeccedGetPostThreadV2SortUnknownCopyWithImpl<$Res>
-    implements $UnspeccedGetPostThreadV2SortUnknownCopyWith<$Res> {
-  _$UnspeccedGetPostThreadV2SortUnknownCopyWithImpl(this._self, this._then);
 
-  final UnspeccedGetPostThreadV2SortUnknown _self;
-  final $Res Function(UnspeccedGetPostThreadV2SortUnknown) _then;
+abstract class UnspeccedGetPostThreadV2SortUnknown
+    extends UnspeccedGetPostThreadV2Sort {
+  const factory UnspeccedGetPostThreadV2SortUnknown(
+      {required final String data}) = _$UnspeccedGetPostThreadV2SortUnknownImpl;
+  const UnspeccedGetPostThreadV2SortUnknown._() : super._();
 
-/// Create a copy of UnspeccedGetPostThreadV2Sort
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UnspeccedGetPostThreadV2SortUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of UnspeccedGetPostThreadV2Sort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnspeccedGetPostThreadV2SortUnknownImplCopyWith<
+          _$UnspeccedGetPostThreadV2SortUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

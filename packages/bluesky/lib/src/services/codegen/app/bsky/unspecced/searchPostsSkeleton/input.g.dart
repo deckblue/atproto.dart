@@ -8,79 +8,83 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedSearchPostsSkeletonInput _$UnspeccedSearchPostsSkeletonInputFromJson(
-  Map json,
-) => $checkedCreate('_UnspeccedSearchPostsSkeletonInput', json, (
-  $checkedConvert,
-) {
-  final val = _UnspeccedSearchPostsSkeletonInput(
-    q: $checkedConvert('q', (v) => v as String),
-    sort: $checkedConvert(
-      'sort',
-      (v) => _$JsonConverterFromJson<String, UnspeccedSearchPostsSkeletonSort>(
-        v,
-        const UnspeccedSearchPostsSkeletonSortConverter().fromJson,
-      ),
-    ),
-    since: $checkedConvert('since', (v) => v as String?),
-    until: $checkedConvert('until', (v) => v as String?),
-    mentions: $checkedConvert('mentions', (v) => v as String?),
-    author: $checkedConvert('author', (v) => v as String?),
-    lang: $checkedConvert('lang', (v) => v as String?),
-    domain: $checkedConvert('domain', (v) => v as String?),
-    url: $checkedConvert(
-      'url',
-      (v) => _$JsonConverterFromJson<String, AtUri>(
-        v,
-        const AtUriConverter().fromJson,
-      ),
-    ),
-    tag: $checkedConvert(
-      'tag',
-      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-    ),
-    viewer: $checkedConvert('viewer', (v) => v as String?),
-    limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
-    cursor: $checkedConvert('cursor', (v) => v as String?),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$UnspeccedSearchPostsSkeletonInputImpl
+    _$$UnspeccedSearchPostsSkeletonInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedSearchPostsSkeletonInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$UnspeccedSearchPostsSkeletonInputImpl(
+              q: $checkedConvert('q', (v) => v as String),
+              sort: $checkedConvert(
+                  'sort',
+                  (v) => _$JsonConverterFromJson<String,
+                          UnspeccedSearchPostsSkeletonSort>(
+                      v,
+                      const UnspeccedSearchPostsSkeletonSortConverter()
+                          .fromJson)),
+              since: $checkedConvert('since', (v) => v as String?),
+              until: $checkedConvert('until', (v) => v as String?),
+              mentions: $checkedConvert('mentions', (v) => v as String?),
+              author: $checkedConvert('author', (v) => v as String?),
+              lang: $checkedConvert('lang', (v) => v as String?),
+              domain: $checkedConvert('domain', (v) => v as String?),
+              url: $checkedConvert(
+                  'url',
+                  (v) => _$JsonConverterFromJson<String, AtUri>(
+                      v, const AtUriConverter().fromJson)),
+              tag: $checkedConvert(
+                  'tag',
+                  (v) =>
+                      (v as List<dynamic>?)?.map((e) => e as String).toList()),
+              viewer: $checkedConvert('viewer', (v) => v as String?),
+              limit:
+                  $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
+              cursor: $checkedConvert('cursor', (v) => v as String?),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$UnspeccedSearchPostsSkeletonInputToJson(
-  _UnspeccedSearchPostsSkeletonInput instance,
-) => <String, dynamic>{
-  'q': instance.q,
-  'sort': ?_$JsonConverterToJson<String, UnspeccedSearchPostsSkeletonSort>(
-    instance.sort,
-    const UnspeccedSearchPostsSkeletonSortConverter().toJson,
-  ),
-  'since': ?instance.since,
-  'until': ?instance.until,
-  'mentions': ?instance.mentions,
-  'author': ?instance.author,
-  'lang': ?instance.lang,
-  'domain': ?instance.domain,
-  'url': ?_$JsonConverterToJson<String, AtUri>(
-    instance.url,
-    const AtUriConverter().toJson,
-  ),
-  'tag': ?instance.tag,
-  'viewer': ?instance.viewer,
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$UnspeccedSearchPostsSkeletonInputImplToJson(
+        _$UnspeccedSearchPostsSkeletonInputImpl instance) =>
+    <String, dynamic>{
+      'q': instance.q,
+      if (_$JsonConverterToJson<String, UnspeccedSearchPostsSkeletonSort>(
+              instance.sort,
+              const UnspeccedSearchPostsSkeletonSortConverter().toJson)
+          case final value?)
+        'sort': value,
+      if (instance.since case final value?) 'since': value,
+      if (instance.until case final value?) 'until': value,
+      if (instance.mentions case final value?) 'mentions': value,
+      if (instance.author case final value?) 'author': value,
+      if (instance.lang case final value?) 'lang': value,
+      if (instance.domain case final value?) 'domain': value,
+      if (_$JsonConverterToJson<String, AtUri>(
+              instance.url, const AtUriConverter().toJson)
+          case final value?)
+        'url': value,
+      if (instance.tag case final value?) 'tag': value,
+      if (instance.viewer case final value?) 'viewer': value,
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

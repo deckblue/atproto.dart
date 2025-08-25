@@ -8,16 +8,19 @@ part of 'lex_unknown.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LexUnknown _$LexUnknownFromJson(Map json) =>
-    $checkedCreate('_LexUnknown', json, ($checkedConvert) {
-      final val = _LexUnknown(
-        type: $checkedConvert('type', (v) => v as String? ?? 'unknown'),
-        description: $checkedConvert('description', (v) => v as String?),
-      );
-      return val;
-    });
+_$LexUnknownImpl _$$LexUnknownImplFromJson(Map json) => $checkedCreate(
+      r'_$LexUnknownImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$LexUnknownImpl(
+          type: $checkedConvert('type', (v) => v as String? ?? 'unknown'),
+          description: $checkedConvert('description', (v) => v as String?),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$LexUnknownToJson(_LexUnknown instance) =>
+Map<String, dynamic> _$$LexUnknownImplToJson(_$LexUnknownImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
       if (instance.description case final value?) 'description': value,

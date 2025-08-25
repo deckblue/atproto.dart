@@ -8,25 +8,28 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetSuggestedUsersSkeletonOutput
-_$UnspeccedGetSuggestedUsersSkeletonOutputFromJson(Map json) => $checkedCreate(
-  '_UnspeccedGetSuggestedUsersSkeletonOutput',
-  json,
-  ($checkedConvert) {
-    final val = _UnspeccedGetSuggestedUsersSkeletonOutput(
-      dids: $checkedConvert(
-        'dids',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$UnspeccedGetSuggestedUsersSkeletonOutputImpl
+    _$$UnspeccedGetSuggestedUsersSkeletonOutputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedGetSuggestedUsersSkeletonOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$UnspeccedGetSuggestedUsersSkeletonOutputImpl(
+              dids: $checkedConvert('dids',
+                  (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$UnspeccedGetSuggestedUsersSkeletonOutputToJson(
-  _UnspeccedGetSuggestedUsersSkeletonOutput instance,
-) => <String, dynamic>{'dids': instance.dids, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$UnspeccedGetSuggestedUsersSkeletonOutputImplToJson(
+        _$UnspeccedGetSuggestedUsersSkeletonOutputImpl instance) =>
+    <String, dynamic>{
+      'dids': instance.dids,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

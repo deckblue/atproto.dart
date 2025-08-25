@@ -8,28 +8,33 @@ part of 'mod_event_reverse_takedown.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModEventReverseTakedown _$ModEventReverseTakedownFromJson(Map json) =>
-    $checkedCreate('_ModEventReverseTakedown', json, ($checkedConvert) {
-      final val = _ModEventReverseTakedown(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'tools.ozone.moderation.defs#modEventReverseTakedown',
-        ),
-        comment: $checkedConvert('comment', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ModEventReverseTakedownImpl _$$ModEventReverseTakedownImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ModEventReverseTakedownImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ModEventReverseTakedownImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.moderation.defs#modEventReverseTakedown'),
+          comment: $checkedConvert('comment', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ModEventReverseTakedownToJson(
-  _ModEventReverseTakedown instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'comment': ?instance.comment,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ModEventReverseTakedownImplToJson(
+        _$ModEventReverseTakedownImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      if (instance.comment case final value?) 'comment': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

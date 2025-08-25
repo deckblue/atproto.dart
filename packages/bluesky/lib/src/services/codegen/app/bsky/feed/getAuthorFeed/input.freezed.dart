@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,318 +9,307 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+FeedGetAuthorFeedInput _$FeedGetAuthorFeedInputFromJson(
+    Map<String, dynamic> json) {
+  return _FeedGetAuthorFeedInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$FeedGetAuthorFeedInput {
+  String get actor => throw _privateConstructorUsedError;
+  int get limit => throw _privateConstructorUsedError;
+  String? get cursor => throw _privateConstructorUsedError;
 
- String get actor; int get limit; String? get cursor;/// Combinations of post/repost types to include in response.
-@FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? get filter; bool get includePins; Map<String, dynamic>? get $unknown;
-/// Create a copy of FeedGetAuthorFeedInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$FeedGetAuthorFeedInputCopyWith<FeedGetAuthorFeedInput> get copyWith => _$FeedGetAuthorFeedInputCopyWithImpl<FeedGetAuthorFeedInput>(this as FeedGetAuthorFeedInput, _$identity);
+  /// Combinations of post/repost types to include in response.
+  @FeedGetAuthorFeedFilterConverter()
+  FeedGetAuthorFeedFilter? get filter => throw _privateConstructorUsedError;
+  bool get includePins => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this FeedGetAuthorFeedInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeedGetAuthorFeedInput&&(identical(other.actor, actor) || other.actor == actor)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.cursor, cursor) || other.cursor == cursor)&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.includePins, includePins) || other.includePins == includePins)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,actor,limit,cursor,filter,includePins,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'FeedGetAuthorFeedInput(actor: $actor, limit: $limit, cursor: $cursor, filter: $filter, includePins: $includePins, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of FeedGetAuthorFeedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $FeedGetAuthorFeedInputCopyWith<FeedGetAuthorFeedInput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $FeedGetAuthorFeedInputCopyWith<$Res>  {
-  factory $FeedGetAuthorFeedInputCopyWith(FeedGetAuthorFeedInput value, $Res Function(FeedGetAuthorFeedInput) _then) = _$FeedGetAuthorFeedInputCopyWithImpl;
-@useResult
-$Res call({
- String actor, int limit, String? cursor,@FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? filter, bool includePins, Map<String, dynamic>? $unknown
-});
+abstract class $FeedGetAuthorFeedInputCopyWith<$Res> {
+  factory $FeedGetAuthorFeedInputCopyWith(FeedGetAuthorFeedInput value,
+          $Res Function(FeedGetAuthorFeedInput) then) =
+      _$FeedGetAuthorFeedInputCopyWithImpl<$Res, FeedGetAuthorFeedInput>;
+  @useResult
+  $Res call(
+      {String actor,
+      int limit,
+      String? cursor,
+      @FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? filter,
+      bool includePins,
+      Map<String, dynamic>? $unknown});
 
-
-$FeedGetAuthorFeedFilterCopyWith<$Res>? get filter;
-
+  $FeedGetAuthorFeedFilterCopyWith<$Res>? get filter;
 }
+
 /// @nodoc
-class _$FeedGetAuthorFeedInputCopyWithImpl<$Res>
+class _$FeedGetAuthorFeedInputCopyWithImpl<$Res,
+        $Val extends FeedGetAuthorFeedInput>
     implements $FeedGetAuthorFeedInputCopyWith<$Res> {
-  _$FeedGetAuthorFeedInputCopyWithImpl(this._self, this._then);
+  _$FeedGetAuthorFeedInputCopyWithImpl(this._value, this._then);
 
-  final FeedGetAuthorFeedInput _self;
-  final $Res Function(FeedGetAuthorFeedInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of FeedGetAuthorFeedInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? actor = null,Object? limit = null,Object? cursor = freezed,Object? filter = freezed,Object? includePins = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-actor: null == actor ? _self.actor : actor // ignore: cast_nullable_to_non_nullable
-as String,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,filter: freezed == filter ? _self.filter : filter // ignore: cast_nullable_to_non_nullable
-as FeedGetAuthorFeedFilter?,includePins: null == includePins ? _self.includePins : includePins // ignore: cast_nullable_to_non_nullable
-as bool,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of FeedGetAuthorFeedInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$FeedGetAuthorFeedFilterCopyWith<$Res>? get filter {
-    if (_self.filter == null) {
-    return null;
+  /// Create a copy of FeedGetAuthorFeedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? actor = null,
+    Object? limit = null,
+    Object? cursor = freezed,
+    Object? filter = freezed,
+    Object? includePins = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      actor: null == actor
+          ? _value.actor
+          : actor // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as FeedGetAuthorFeedFilter?,
+      includePins: null == includePins
+          ? _value.includePins
+          : includePins // ignore: cast_nullable_to_non_nullable
+              as bool,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
   }
 
-  return $FeedGetAuthorFeedFilterCopyWith<$Res>(_self.filter!, (value) {
-    return _then(_self.copyWith(filter: value));
-  });
-}
-}
+  /// Create a copy of FeedGetAuthorFeedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FeedGetAuthorFeedFilterCopyWith<$Res>? get filter {
+    if (_value.filter == null) {
+      return null;
+    }
 
-
-/// Adds pattern-matching-related methods to [FeedGetAuthorFeedInput].
-extension FeedGetAuthorFeedInputPatterns on FeedGetAuthorFeedInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _FeedGetAuthorFeedInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _FeedGetAuthorFeedInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _FeedGetAuthorFeedInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _FeedGetAuthorFeedInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _FeedGetAuthorFeedInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _FeedGetAuthorFeedInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String actor,  int limit,  String? cursor, @FeedGetAuthorFeedFilterConverter()  FeedGetAuthorFeedFilter? filter,  bool includePins,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _FeedGetAuthorFeedInput() when $default != null:
-return $default(_that.actor,_that.limit,_that.cursor,_that.filter,_that.includePins,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String actor,  int limit,  String? cursor, @FeedGetAuthorFeedFilterConverter()  FeedGetAuthorFeedFilter? filter,  bool includePins,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _FeedGetAuthorFeedInput():
-return $default(_that.actor,_that.limit,_that.cursor,_that.filter,_that.includePins,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String actor,  int limit,  String? cursor, @FeedGetAuthorFeedFilterConverter()  FeedGetAuthorFeedFilter? filter,  bool includePins,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _FeedGetAuthorFeedInput() when $default != null:
-return $default(_that.actor,_that.limit,_that.cursor,_that.filter,_that.includePins,_that.$unknown);case _:
-  return null;
-
-}
+    return $FeedGetAuthorFeedFilterCopyWith<$Res>(_value.filter!, (value) {
+      return _then(_value.copyWith(filter: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$FeedGetAuthorFeedInputImplCopyWith<$Res>
+    implements $FeedGetAuthorFeedInputCopyWith<$Res> {
+  factory _$$FeedGetAuthorFeedInputImplCopyWith(
+          _$FeedGetAuthorFeedInputImpl value,
+          $Res Function(_$FeedGetAuthorFeedInputImpl) then) =
+      __$$FeedGetAuthorFeedInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String actor,
+      int limit,
+      String? cursor,
+      @FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? filter,
+      bool includePins,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $FeedGetAuthorFeedFilterCopyWith<$Res>? get filter;
+}
+
+/// @nodoc
+class __$$FeedGetAuthorFeedInputImplCopyWithImpl<$Res>
+    extends _$FeedGetAuthorFeedInputCopyWithImpl<$Res,
+        _$FeedGetAuthorFeedInputImpl>
+    implements _$$FeedGetAuthorFeedInputImplCopyWith<$Res> {
+  __$$FeedGetAuthorFeedInputImplCopyWithImpl(
+      _$FeedGetAuthorFeedInputImpl _value,
+      $Res Function(_$FeedGetAuthorFeedInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FeedGetAuthorFeedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? actor = null,
+    Object? limit = null,
+    Object? cursor = freezed,
+    Object? filter = freezed,
+    Object? includePins = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$FeedGetAuthorFeedInputImpl(
+      actor: null == actor
+          ? _value.actor
+          : actor // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      filter: freezed == filter
+          ? _value.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as FeedGetAuthorFeedFilter?,
+      includePins: null == includePins
+          ? _value.includePins
+          : includePins // ignore: cast_nullable_to_non_nullable
+              as bool,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _FeedGetAuthorFeedInput implements FeedGetAuthorFeedInput {
-  const _FeedGetAuthorFeedInput({required this.actor, this.limit = 50, this.cursor, @FeedGetAuthorFeedFilterConverter() this.filter, this.includePins = false, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _FeedGetAuthorFeedInput.fromJson(Map<String, dynamic> json) => _$FeedGetAuthorFeedInputFromJson(json);
+class _$FeedGetAuthorFeedInputImpl implements _FeedGetAuthorFeedInput {
+  const _$FeedGetAuthorFeedInputImpl(
+      {required this.actor,
+      this.limit = 50,
+      this.cursor,
+      @FeedGetAuthorFeedFilterConverter() this.filter,
+      this.includePins = false,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override final  String actor;
-@override@JsonKey() final  int limit;
-@override final  String? cursor;
-/// Combinations of post/repost types to include in response.
-@override@FeedGetAuthorFeedFilterConverter() final  FeedGetAuthorFeedFilter? filter;
-@override@JsonKey() final  bool includePins;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+  factory _$FeedGetAuthorFeedInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FeedGetAuthorFeedInputImplFromJson(json);
 
+  @override
+  final String actor;
+  @override
+  @JsonKey()
+  final int limit;
+  @override
+  final String? cursor;
 
-/// Create a copy of FeedGetAuthorFeedInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$FeedGetAuthorFeedInputCopyWith<_FeedGetAuthorFeedInput> get copyWith => __$FeedGetAuthorFeedInputCopyWithImpl<_FeedGetAuthorFeedInput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$FeedGetAuthorFeedInputToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FeedGetAuthorFeedInput&&(identical(other.actor, actor) || other.actor == actor)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.cursor, cursor) || other.cursor == cursor)&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.includePins, includePins) || other.includePins == includePins)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,actor,limit,cursor,filter,includePins,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'FeedGetAuthorFeedInput(actor: $actor, limit: $limit, cursor: $cursor, filter: $filter, includePins: $includePins, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$FeedGetAuthorFeedInputCopyWith<$Res> implements $FeedGetAuthorFeedInputCopyWith<$Res> {
-  factory _$FeedGetAuthorFeedInputCopyWith(_FeedGetAuthorFeedInput value, $Res Function(_FeedGetAuthorFeedInput) _then) = __$FeedGetAuthorFeedInputCopyWithImpl;
-@override @useResult
-$Res call({
- String actor, int limit, String? cursor,@FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? filter, bool includePins, Map<String, dynamic>? $unknown
-});
-
-
-@override $FeedGetAuthorFeedFilterCopyWith<$Res>? get filter;
-
-}
-/// @nodoc
-class __$FeedGetAuthorFeedInputCopyWithImpl<$Res>
-    implements _$FeedGetAuthorFeedInputCopyWith<$Res> {
-  __$FeedGetAuthorFeedInputCopyWithImpl(this._self, this._then);
-
-  final _FeedGetAuthorFeedInput _self;
-  final $Res Function(_FeedGetAuthorFeedInput) _then;
-
-/// Create a copy of FeedGetAuthorFeedInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? actor = null,Object? limit = null,Object? cursor = freezed,Object? filter = freezed,Object? includePins = null,Object? $unknown = freezed,}) {
-  return _then(_FeedGetAuthorFeedInput(
-actor: null == actor ? _self.actor : actor // ignore: cast_nullable_to_non_nullable
-as String,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,filter: freezed == filter ? _self.filter : filter // ignore: cast_nullable_to_non_nullable
-as FeedGetAuthorFeedFilter?,includePins: null == includePins ? _self.includePins : includePins // ignore: cast_nullable_to_non_nullable
-as bool,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of FeedGetAuthorFeedInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$FeedGetAuthorFeedFilterCopyWith<$Res>? get filter {
-    if (_self.filter == null) {
-    return null;
+  /// Combinations of post/repost types to include in response.
+  @override
+  @FeedGetAuthorFeedFilterConverter()
+  final FeedGetAuthorFeedFilter? filter;
+  @override
+  @JsonKey()
+  final bool includePins;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
   }
 
-  return $FeedGetAuthorFeedFilterCopyWith<$Res>(_self.filter!, (value) {
-    return _then(_self.copyWith(filter: value));
-  });
-}
+  @override
+  String toString() {
+    return 'FeedGetAuthorFeedInput(actor: $actor, limit: $limit, cursor: $cursor, filter: $filter, includePins: $includePins, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FeedGetAuthorFeedInputImpl &&
+            (identical(other.actor, actor) || other.actor == actor) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            (identical(other.filter, filter) || other.filter == filter) &&
+            (identical(other.includePins, includePins) ||
+                other.includePins == includePins) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, actor, limit, cursor, filter,
+      includePins, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of FeedGetAuthorFeedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FeedGetAuthorFeedInputImplCopyWith<_$FeedGetAuthorFeedInputImpl>
+      get copyWith => __$$FeedGetAuthorFeedInputImplCopyWithImpl<
+          _$FeedGetAuthorFeedInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FeedGetAuthorFeedInputImplToJson(
+      this,
+    );
+  }
 }
 
-// dart format on
+abstract class _FeedGetAuthorFeedInput implements FeedGetAuthorFeedInput {
+  const factory _FeedGetAuthorFeedInput(
+      {required final String actor,
+      final int limit,
+      final String? cursor,
+      @FeedGetAuthorFeedFilterConverter() final FeedGetAuthorFeedFilter? filter,
+      final bool includePins,
+      final Map<String, dynamic>? $unknown}) = _$FeedGetAuthorFeedInputImpl;
+
+  factory _FeedGetAuthorFeedInput.fromJson(Map<String, dynamic> json) =
+      _$FeedGetAuthorFeedInputImpl.fromJson;
+
+  @override
+  String get actor;
+  @override
+  int get limit;
+  @override
+  String? get cursor;
+
+  /// Combinations of post/repost types to include in response.
+  @override
+  @FeedGetAuthorFeedFilterConverter()
+  FeedGetAuthorFeedFilter? get filter;
+  @override
+  bool get includePins;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of FeedGetAuthorFeedInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FeedGetAuthorFeedInputImplCopyWith<_$FeedGetAuthorFeedInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

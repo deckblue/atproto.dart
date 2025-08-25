@@ -8,18 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminGetAccountInfoInput _$AdminGetAccountInfoInputFromJson(Map json) =>
-    $checkedCreate('_AdminGetAccountInfoInput', json, ($checkedConvert) {
-      final val = _AdminGetAccountInfoInput(
-        did: $checkedConvert('did', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AdminGetAccountInfoInputImpl _$$AdminGetAccountInfoInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$AdminGetAccountInfoInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AdminGetAccountInfoInputImpl(
+          did: $checkedConvert('did', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AdminGetAccountInfoInputToJson(
-  _AdminGetAccountInfoInput instance,
-) => <String, dynamic>{'did': instance.did, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$AdminGetAccountInfoInputImplToJson(
+        _$AdminGetAccountInfoInputImpl instance) =>
+    <String, dynamic>{
+      'did': instance.did,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

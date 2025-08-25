@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,365 @@ part of 'status_view_status.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$StatusViewStatus {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusViewStatus&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'StatusViewStatus(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownStatusViewStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownStatusViewStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownStatusViewStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StatusViewStatusKnownValue value) knownValue,
+    required TResult Function(StatusViewStatusUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StatusViewStatusKnownValue value)? knownValue,
+    TResult? Function(StatusViewStatusUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StatusViewStatusKnownValue value)? knownValue,
+    TResult Function(StatusViewStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $StatusViewStatusCopyWith<$Res>  {
-$StatusViewStatusCopyWith(StatusViewStatus _, $Res Function(StatusViewStatus) __);
+abstract class $StatusViewStatusCopyWith<$Res> {
+  factory $StatusViewStatusCopyWith(
+          StatusViewStatus value, $Res Function(StatusViewStatus) then) =
+      _$StatusViewStatusCopyWithImpl<$Res, StatusViewStatus>;
 }
 
+/// @nodoc
+class _$StatusViewStatusCopyWithImpl<$Res, $Val extends StatusViewStatus>
+    implements $StatusViewStatusCopyWith<$Res> {
+  _$StatusViewStatusCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [StatusViewStatus].
-extension StatusViewStatusPatterns on StatusViewStatus {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( StatusViewStatusKnownValue value)?  knownValue,TResult Function( StatusViewStatusUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case StatusViewStatusKnownValue() when knownValue != null:
-return knownValue(_that);case StatusViewStatusUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( StatusViewStatusKnownValue value)  knownValue,required TResult Function( StatusViewStatusUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case StatusViewStatusKnownValue():
-return knownValue(_that);case StatusViewStatusUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( StatusViewStatusKnownValue value)?  knownValue,TResult? Function( StatusViewStatusUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case StatusViewStatusKnownValue() when knownValue != null:
-return knownValue(_that);case StatusViewStatusUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownStatusViewStatus data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case StatusViewStatusKnownValue() when knownValue != null:
-return knownValue(_that.data);case StatusViewStatusUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownStatusViewStatus data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case StatusViewStatusKnownValue():
-return knownValue(_that.data);case StatusViewStatusUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownStatusViewStatus data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case StatusViewStatusKnownValue() when knownValue != null:
-return knownValue(_that.data);case StatusViewStatusUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of StatusViewStatus
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$StatusViewStatusKnownValueImplCopyWith<$Res> {
+  factory _$$StatusViewStatusKnownValueImplCopyWith(
+          _$StatusViewStatusKnownValueImpl value,
+          $Res Function(_$StatusViewStatusKnownValueImpl) then) =
+      __$$StatusViewStatusKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownStatusViewStatus data});
+}
+
+/// @nodoc
+class __$$StatusViewStatusKnownValueImplCopyWithImpl<$Res>
+    extends _$StatusViewStatusCopyWithImpl<$Res,
+        _$StatusViewStatusKnownValueImpl>
+    implements _$$StatusViewStatusKnownValueImplCopyWith<$Res> {
+  __$$StatusViewStatusKnownValueImplCopyWithImpl(
+      _$StatusViewStatusKnownValueImpl _value,
+      $Res Function(_$StatusViewStatusKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StatusViewStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$StatusViewStatusKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownStatusViewStatus,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$StatusViewStatusKnownValueImpl extends StatusViewStatusKnownValue {
+  const _$StatusViewStatusKnownValueImpl({required this.data}) : super._();
 
-class StatusViewStatusKnownValue extends StatusViewStatus {
-  const StatusViewStatusKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownStatusViewStatus data;
 
-@override final  KnownStatusViewStatus data;
+  @override
+  String toString() {
+    return 'StatusViewStatus.knownValue(data: $data)';
+  }
 
-/// Create a copy of StatusViewStatus
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$StatusViewStatusKnownValueCopyWith<StatusViewStatusKnownValue> get copyWith => _$StatusViewStatusKnownValueCopyWithImpl<StatusViewStatusKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StatusViewStatusKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of StatusViewStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StatusViewStatusKnownValueImplCopyWith<_$StatusViewStatusKnownValueImpl>
+      get copyWith => __$$StatusViewStatusKnownValueImplCopyWithImpl<
+          _$StatusViewStatusKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusViewStatusKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownStatusViewStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownStatusViewStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownStatusViewStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StatusViewStatusKnownValue value) knownValue,
+    required TResult Function(StatusViewStatusUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StatusViewStatusKnownValue value)? knownValue,
+    TResult? Function(StatusViewStatusUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StatusViewStatusKnownValue value)? knownValue,
+    TResult Function(StatusViewStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class StatusViewStatusKnownValue extends StatusViewStatus {
+  const factory StatusViewStatusKnownValue(
+          {required final KnownStatusViewStatus data}) =
+      _$StatusViewStatusKnownValueImpl;
+  const StatusViewStatusKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownStatusViewStatus get data;
 
-@override
-String toString() {
-  return 'StatusViewStatus.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of StatusViewStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StatusViewStatusKnownValueImplCopyWith<_$StatusViewStatusKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $StatusViewStatusKnownValueCopyWith<$Res> implements $StatusViewStatusCopyWith<$Res> {
-  factory $StatusViewStatusKnownValueCopyWith(StatusViewStatusKnownValue value, $Res Function(StatusViewStatusKnownValue) _then) = _$StatusViewStatusKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownStatusViewStatus data
-});
-
-
-
-
-}
-/// @nodoc
-class _$StatusViewStatusKnownValueCopyWithImpl<$Res>
-    implements $StatusViewStatusKnownValueCopyWith<$Res> {
-  _$StatusViewStatusKnownValueCopyWithImpl(this._self, this._then);
-
-  final StatusViewStatusKnownValue _self;
-  final $Res Function(StatusViewStatusKnownValue) _then;
-
-/// Create a copy of StatusViewStatus
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(StatusViewStatusKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownStatusViewStatus,
-  ));
-}
-
-
+abstract class _$$StatusViewStatusUnknownImplCopyWith<$Res> {
+  factory _$$StatusViewStatusUnknownImplCopyWith(
+          _$StatusViewStatusUnknownImpl value,
+          $Res Function(_$StatusViewStatusUnknownImpl) then) =
+      __$$StatusViewStatusUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$StatusViewStatusUnknownImplCopyWithImpl<$Res>
+    extends _$StatusViewStatusCopyWithImpl<$Res, _$StatusViewStatusUnknownImpl>
+    implements _$$StatusViewStatusUnknownImplCopyWith<$Res> {
+  __$$StatusViewStatusUnknownImplCopyWithImpl(
+      _$StatusViewStatusUnknownImpl _value,
+      $Res Function(_$StatusViewStatusUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class StatusViewStatusUnknown extends StatusViewStatus {
-  const StatusViewStatusUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of StatusViewStatus
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$StatusViewStatusUnknownCopyWith<StatusViewStatusUnknown> get copyWith => _$StatusViewStatusUnknownCopyWithImpl<StatusViewStatusUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StatusViewStatusUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'StatusViewStatus.unknown(data: $data)';
-}
-
-
+  /// Create a copy of StatusViewStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$StatusViewStatusUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $StatusViewStatusUnknownCopyWith<$Res> implements $StatusViewStatusCopyWith<$Res> {
-  factory $StatusViewStatusUnknownCopyWith(StatusViewStatusUnknown value, $Res Function(StatusViewStatusUnknown) _then) = _$StatusViewStatusUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$StatusViewStatusUnknownImpl extends StatusViewStatusUnknown {
+  const _$StatusViewStatusUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'StatusViewStatus.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StatusViewStatusUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of StatusViewStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StatusViewStatusUnknownImplCopyWith<_$StatusViewStatusUnknownImpl>
+      get copyWith => __$$StatusViewStatusUnknownImplCopyWithImpl<
+          _$StatusViewStatusUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownStatusViewStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownStatusViewStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownStatusViewStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StatusViewStatusKnownValue value) knownValue,
+    required TResult Function(StatusViewStatusUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StatusViewStatusKnownValue value)? knownValue,
+    TResult? Function(StatusViewStatusUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StatusViewStatusKnownValue value)? knownValue,
+    TResult Function(StatusViewStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$StatusViewStatusUnknownCopyWithImpl<$Res>
-    implements $StatusViewStatusUnknownCopyWith<$Res> {
-  _$StatusViewStatusUnknownCopyWithImpl(this._self, this._then);
 
-  final StatusViewStatusUnknown _self;
-  final $Res Function(StatusViewStatusUnknown) _then;
+abstract class StatusViewStatusUnknown extends StatusViewStatus {
+  const factory StatusViewStatusUnknown({required final String data}) =
+      _$StatusViewStatusUnknownImpl;
+  const StatusViewStatusUnknown._() : super._();
 
-/// Create a copy of StatusViewStatus
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(StatusViewStatusUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of StatusViewStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StatusViewStatusUnknownImplCopyWith<_$StatusViewStatusUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

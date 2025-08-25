@@ -8,42 +8,41 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetSuggestionsSkeletonOutput
-_$UnspeccedGetSuggestionsSkeletonOutputFromJson(Map json) => $checkedCreate(
-  '_UnspeccedGetSuggestionsSkeletonOutput',
-  json,
-  ($checkedConvert) {
-    final val = _UnspeccedGetSuggestionsSkeletonOutput(
-      cursor: $checkedConvert('cursor', (v) => v as String?),
-      actors: $checkedConvert(
-        'actors',
-        (v) => (v as List<dynamic>)
-            .map(
-              (e) => const SkeletonSearchActorConverter().fromJson(
-                e as Map<String, dynamic>,
-              ),
-            )
-            .toList(),
-      ),
-      relativeToDid: $checkedConvert('relativeToDid', (v) => v as String?),
-      recId: $checkedConvert('recId', (v) => (v as num?)?.toInt()),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$UnspeccedGetSuggestionsSkeletonOutputImpl
+    _$$UnspeccedGetSuggestionsSkeletonOutputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedGetSuggestionsSkeletonOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$UnspeccedGetSuggestionsSkeletonOutputImpl(
+              cursor: $checkedConvert('cursor', (v) => v as String?),
+              actors: $checkedConvert(
+                  'actors',
+                  (v) => (v as List<dynamic>)
+                      .map((e) => const SkeletonSearchActorConverter()
+                          .fromJson(e as Map<String, dynamic>))
+                      .toList()),
+              relativeToDid:
+                  $checkedConvert('relativeToDid', (v) => v as String?),
+              recId: $checkedConvert('recId', (v) => (v as num?)?.toInt()),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$UnspeccedGetSuggestionsSkeletonOutputToJson(
-  _UnspeccedGetSuggestionsSkeletonOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'actors': instance.actors
-      .map(const SkeletonSearchActorConverter().toJson)
-      .toList(),
-  'relativeToDid': ?instance.relativeToDid,
-  'recId': ?instance.recId,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$UnspeccedGetSuggestionsSkeletonOutputImplToJson(
+        _$UnspeccedGetSuggestionsSkeletonOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'actors': instance.actors
+          .map(const SkeletonSearchActorConverter().toJson)
+          .toList(),
+      if (instance.relativeToDid case final value?) 'relativeToDid': value,
+      if (instance.recId case final value?) 'recId': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

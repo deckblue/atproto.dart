@@ -8,44 +8,49 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminGetInviteCodesInput _$AdminGetInviteCodesInputFromJson(Map json) =>
-    $checkedCreate('_AdminGetInviteCodesInput', json, ($checkedConvert) {
-      final val = _AdminGetInviteCodesInput(
-        sort: $checkedConvert(
-          'sort',
-          (v) => _$JsonConverterFromJson<String, AdminGetInviteCodesSort>(
-            v,
-            const AdminGetInviteCodesSortConverter().fromJson,
-          ),
-        ),
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 100),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AdminGetInviteCodesInputImpl _$$AdminGetInviteCodesInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$AdminGetInviteCodesInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AdminGetInviteCodesInputImpl(
+          sort: $checkedConvert(
+              'sort',
+              (v) => _$JsonConverterFromJson<String, AdminGetInviteCodesSort>(
+                  v, const AdminGetInviteCodesSortConverter().fromJson)),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 100),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AdminGetInviteCodesInputToJson(
-  _AdminGetInviteCodesInput instance,
-) => <String, dynamic>{
-  'sort': ?_$JsonConverterToJson<String, AdminGetInviteCodesSort>(
-    instance.sort,
-    const AdminGetInviteCodesSortConverter().toJson,
-  ),
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$AdminGetInviteCodesInputImplToJson(
+        _$AdminGetInviteCodesInputImpl instance) =>
+    <String, dynamic>{
+      if (_$JsonConverterToJson<String, AdminGetInviteCodesSort>(
+              instance.sort, const AdminGetInviteCodesSortConverter().toJson)
+          case final value?)
+        'sort': value,
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

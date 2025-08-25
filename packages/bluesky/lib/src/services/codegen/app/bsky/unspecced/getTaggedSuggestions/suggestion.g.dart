@@ -8,39 +8,39 @@ part of 'suggestion.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Suggestion _$SuggestionFromJson(Map json) =>
-    $checkedCreate('_Suggestion', json, ($checkedConvert) {
-      final val = _Suggestion(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'app.bsky.unspecced.getTaggedSuggestions#suggestion',
-        ),
-        tag: $checkedConvert('tag', (v) => v as String),
-        subjectType: $checkedConvert(
-          'subjectType',
-          (v) => const SuggestionSubjectTypeConverter().fromJson(v as String),
-        ),
-        subject: $checkedConvert(
-          'subject',
-          (v) => const AtUriConverter().fromJson(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SuggestionImpl _$$SuggestionImplFromJson(Map json) => $checkedCreate(
+      r'_$SuggestionImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SuggestionImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.unspecced.getTaggedSuggestions#suggestion'),
+          tag: $checkedConvert('tag', (v) => v as String),
+          subjectType: $checkedConvert(
+              'subjectType',
+              (v) =>
+                  const SuggestionSubjectTypeConverter().fromJson(v as String)),
+          subject: $checkedConvert(
+              'subject', (v) => const AtUriConverter().fromJson(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SuggestionToJson(_Suggestion instance) =>
+Map<String, dynamic> _$$SuggestionImplToJson(_$SuggestionImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'tag': instance.tag,
-      'subjectType': const SuggestionSubjectTypeConverter().toJson(
-        instance.subjectType,
-      ),
+      'subjectType':
+          const SuggestionSubjectTypeConverter().toJson(instance.subjectType),
       'subject': const AtUriConverter().toJson(instance.subject),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

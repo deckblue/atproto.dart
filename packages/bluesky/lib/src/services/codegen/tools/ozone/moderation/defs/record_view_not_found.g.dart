@@ -8,26 +8,32 @@ part of 'record_view_not_found.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RecordViewNotFound _$RecordViewNotFoundFromJson(Map json) =>
-    $checkedCreate('_RecordViewNotFound', json, ($checkedConvert) {
-      final val = _RecordViewNotFound(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ?? 'tools.ozone.moderation.defs#recordViewNotFound',
-        ),
-        uri: $checkedConvert('uri', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$RecordViewNotFoundImpl _$$RecordViewNotFoundImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$RecordViewNotFoundImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$RecordViewNotFoundImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.moderation.defs#recordViewNotFound'),
+          uri: $checkedConvert('uri', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$RecordViewNotFoundToJson(_RecordViewNotFound instance) =>
+Map<String, dynamic> _$$RecordViewNotFoundImplToJson(
+        _$RecordViewNotFoundImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'uri': instance.uri,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -8,23 +8,28 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GraphGetBlocksInput _$GraphGetBlocksInputFromJson(Map json) =>
-    $checkedCreate('_GraphGetBlocksInput', json, ($checkedConvert) {
-      final val = _GraphGetBlocksInput(
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GraphGetBlocksInputImpl _$$GraphGetBlocksInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GraphGetBlocksInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GraphGetBlocksInputImpl(
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GraphGetBlocksInputToJson(
-  _GraphGetBlocksInput instance,
-) => <String, dynamic>{
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GraphGetBlocksInputImplToJson(
+        _$GraphGetBlocksInputImpl instance) =>
+    <String, dynamic>{
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

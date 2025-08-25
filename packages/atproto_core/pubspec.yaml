@@ -9,7 +9,7 @@ funding:
   - https://github.com/sponsors/myConsciousness
 
 environment:
-  sdk: ">=3.8.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
 
 topics:
   - atproto
@@ -20,18 +20,18 @@ topics:
 dependencies:
   xrpc: ^1.0.2
   at_uri: ^1.0.2
-  freezed_annotation: ^3.1.0
+  freezed_annotation: ^2.4.1
   json_annotation: ^4.9.0
-  cbor: ^6.3.7
+  cbor: ^6.3.5
   multiformats: ^1.0.2
   atproto_oauth: ^0.1.2
 
 dev_dependencies:
-  lints: ^6.0.0
+  lints: ^5.0.0
   test: ^1.26.2
-  build_runner: ^2.5.4
+  build_runner: ^2.4.15
   json_serializable: ^6.9.5
-  freezed: ^3.2.0
+  freezed: ^2.4.7
   import_sorter: ^4.6.0
 
   atproto_test:

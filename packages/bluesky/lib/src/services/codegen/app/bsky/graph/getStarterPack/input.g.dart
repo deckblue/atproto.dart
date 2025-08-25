@@ -8,21 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GraphGetStarterPackInput _$GraphGetStarterPackInputFromJson(Map json) =>
-    $checkedCreate('_GraphGetStarterPackInput', json, ($checkedConvert) {
-      final val = _GraphGetStarterPackInput(
-        starterPack: $checkedConvert('starterPack', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GraphGetStarterPackInputImpl _$$GraphGetStarterPackInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GraphGetStarterPackInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GraphGetStarterPackInputImpl(
+          starterPack: $checkedConvert('starterPack', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GraphGetStarterPackInputToJson(
-  _GraphGetStarterPackInput instance,
-) => <String, dynamic>{
-  'starterPack': instance.starterPack,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GraphGetStarterPackInputImplToJson(
+        _$GraphGetStarterPackInputImpl instance) =>
+    <String, dynamic>{
+      'starterPack': instance.starterPack,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

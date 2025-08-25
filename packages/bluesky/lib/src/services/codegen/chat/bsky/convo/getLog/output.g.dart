@@ -8,32 +8,34 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoGetLogOutput _$ConvoGetLogOutputFromJson(Map json) =>
-    $checkedCreate('_ConvoGetLogOutput', json, ($checkedConvert) {
-      final val = _ConvoGetLogOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        logs: $checkedConvert(
-          'logs',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const UConvoGetLogLogsConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ConvoGetLogOutputImpl _$$ConvoGetLogOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ConvoGetLogOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoGetLogOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          logs: $checkedConvert(
+              'logs',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const UConvoGetLogLogsConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoGetLogOutputToJson(
-  _ConvoGetLogOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'logs': instance.logs.map(const UConvoGetLogLogsConverter().toJson).toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConvoGetLogOutputImplToJson(
+        _$ConvoGetLogOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'logs':
+          instance.logs.map(const UConvoGetLogLogsConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

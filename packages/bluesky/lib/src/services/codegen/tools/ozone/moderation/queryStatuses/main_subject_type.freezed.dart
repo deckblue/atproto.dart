@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,405 @@ part of 'main_subject_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$ModerationQueryStatusesSubjectType {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationQueryStatusesSubjectType&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'ModerationQueryStatusesSubjectType(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownModerationQueryStatusesSubjectType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownModerationQueryStatusesSubjectType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownModerationQueryStatusesSubjectType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            ModerationQueryStatusesSubjectTypeKnownValue value)
+        knownValue,
+    required TResult Function(ModerationQueryStatusesSubjectTypeUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModerationQueryStatusesSubjectTypeKnownValue value)?
+        knownValue,
+    TResult? Function(ModerationQueryStatusesSubjectTypeUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModerationQueryStatusesSubjectTypeKnownValue value)?
+        knownValue,
+    TResult Function(ModerationQueryStatusesSubjectTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $ModerationQueryStatusesSubjectTypeCopyWith<$Res>  {
-$ModerationQueryStatusesSubjectTypeCopyWith(ModerationQueryStatusesSubjectType _, $Res Function(ModerationQueryStatusesSubjectType) __);
+abstract class $ModerationQueryStatusesSubjectTypeCopyWith<$Res> {
+  factory $ModerationQueryStatusesSubjectTypeCopyWith(
+          ModerationQueryStatusesSubjectType value,
+          $Res Function(ModerationQueryStatusesSubjectType) then) =
+      _$ModerationQueryStatusesSubjectTypeCopyWithImpl<$Res,
+          ModerationQueryStatusesSubjectType>;
 }
 
+/// @nodoc
+class _$ModerationQueryStatusesSubjectTypeCopyWithImpl<$Res,
+        $Val extends ModerationQueryStatusesSubjectType>
+    implements $ModerationQueryStatusesSubjectTypeCopyWith<$Res> {
+  _$ModerationQueryStatusesSubjectTypeCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [ModerationQueryStatusesSubjectType].
-extension ModerationQueryStatusesSubjectTypePatterns on ModerationQueryStatusesSubjectType {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ModerationQueryStatusesSubjectTypeKnownValue value)?  knownValue,TResult Function( ModerationQueryStatusesSubjectTypeUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case ModerationQueryStatusesSubjectTypeKnownValue() when knownValue != null:
-return knownValue(_that);case ModerationQueryStatusesSubjectTypeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ModerationQueryStatusesSubjectTypeKnownValue value)  knownValue,required TResult Function( ModerationQueryStatusesSubjectTypeUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case ModerationQueryStatusesSubjectTypeKnownValue():
-return knownValue(_that);case ModerationQueryStatusesSubjectTypeUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ModerationQueryStatusesSubjectTypeKnownValue value)?  knownValue,TResult? Function( ModerationQueryStatusesSubjectTypeUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case ModerationQueryStatusesSubjectTypeKnownValue() when knownValue != null:
-return knownValue(_that);case ModerationQueryStatusesSubjectTypeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownModerationQueryStatusesSubjectType data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case ModerationQueryStatusesSubjectTypeKnownValue() when knownValue != null:
-return knownValue(_that.data);case ModerationQueryStatusesSubjectTypeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownModerationQueryStatusesSubjectType data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case ModerationQueryStatusesSubjectTypeKnownValue():
-return knownValue(_that.data);case ModerationQueryStatusesSubjectTypeUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownModerationQueryStatusesSubjectType data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case ModerationQueryStatusesSubjectTypeKnownValue() when knownValue != null:
-return knownValue(_that.data);case ModerationQueryStatusesSubjectTypeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of ModerationQueryStatusesSubjectType
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWith<
+    $Res> {
+  factory _$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWith(
+          _$ModerationQueryStatusesSubjectTypeKnownValueImpl value,
+          $Res Function(_$ModerationQueryStatusesSubjectTypeKnownValueImpl)
+              then) =
+      __$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownModerationQueryStatusesSubjectType data});
+}
+
+/// @nodoc
+class __$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWithImpl<$Res>
+    extends _$ModerationQueryStatusesSubjectTypeCopyWithImpl<$Res,
+        _$ModerationQueryStatusesSubjectTypeKnownValueImpl>
+    implements
+        _$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWith<$Res> {
+  __$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWithImpl(
+      _$ModerationQueryStatusesSubjectTypeKnownValueImpl _value,
+      $Res Function(_$ModerationQueryStatusesSubjectTypeKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ModerationQueryStatusesSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ModerationQueryStatusesSubjectTypeKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownModerationQueryStatusesSubjectType,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$ModerationQueryStatusesSubjectTypeKnownValueImpl
+    extends ModerationQueryStatusesSubjectTypeKnownValue {
+  const _$ModerationQueryStatusesSubjectTypeKnownValueImpl({required this.data})
+      : super._();
 
-class ModerationQueryStatusesSubjectTypeKnownValue extends ModerationQueryStatusesSubjectType {
-  const ModerationQueryStatusesSubjectTypeKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownModerationQueryStatusesSubjectType data;
 
-@override final  KnownModerationQueryStatusesSubjectType data;
+  @override
+  String toString() {
+    return 'ModerationQueryStatusesSubjectType.knownValue(data: $data)';
+  }
 
-/// Create a copy of ModerationQueryStatusesSubjectType
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ModerationQueryStatusesSubjectTypeKnownValueCopyWith<ModerationQueryStatusesSubjectTypeKnownValue> get copyWith => _$ModerationQueryStatusesSubjectTypeKnownValueCopyWithImpl<ModerationQueryStatusesSubjectTypeKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModerationQueryStatusesSubjectTypeKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of ModerationQueryStatusesSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWith<
+          _$ModerationQueryStatusesSubjectTypeKnownValueImpl>
+      get copyWith =>
+          __$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWithImpl<
+                  _$ModerationQueryStatusesSubjectTypeKnownValueImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationQueryStatusesSubjectTypeKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownModerationQueryStatusesSubjectType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownModerationQueryStatusesSubjectType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownModerationQueryStatusesSubjectType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            ModerationQueryStatusesSubjectTypeKnownValue value)
+        knownValue,
+    required TResult Function(ModerationQueryStatusesSubjectTypeUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModerationQueryStatusesSubjectTypeKnownValue value)?
+        knownValue,
+    TResult? Function(ModerationQueryStatusesSubjectTypeUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModerationQueryStatusesSubjectTypeKnownValue value)?
+        knownValue,
+    TResult Function(ModerationQueryStatusesSubjectTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class ModerationQueryStatusesSubjectTypeKnownValue
+    extends ModerationQueryStatusesSubjectType {
+  const factory ModerationQueryStatusesSubjectTypeKnownValue(
+          {required final KnownModerationQueryStatusesSubjectType data}) =
+      _$ModerationQueryStatusesSubjectTypeKnownValueImpl;
+  const ModerationQueryStatusesSubjectTypeKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownModerationQueryStatusesSubjectType get data;
 
-@override
-String toString() {
-  return 'ModerationQueryStatusesSubjectType.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of ModerationQueryStatusesSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ModerationQueryStatusesSubjectTypeKnownValueImplCopyWith<
+          _$ModerationQueryStatusesSubjectTypeKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ModerationQueryStatusesSubjectTypeKnownValueCopyWith<$Res> implements $ModerationQueryStatusesSubjectTypeCopyWith<$Res> {
-  factory $ModerationQueryStatusesSubjectTypeKnownValueCopyWith(ModerationQueryStatusesSubjectTypeKnownValue value, $Res Function(ModerationQueryStatusesSubjectTypeKnownValue) _then) = _$ModerationQueryStatusesSubjectTypeKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownModerationQueryStatusesSubjectType data
-});
-
-
-
-
-}
-/// @nodoc
-class _$ModerationQueryStatusesSubjectTypeKnownValueCopyWithImpl<$Res>
-    implements $ModerationQueryStatusesSubjectTypeKnownValueCopyWith<$Res> {
-  _$ModerationQueryStatusesSubjectTypeKnownValueCopyWithImpl(this._self, this._then);
-
-  final ModerationQueryStatusesSubjectTypeKnownValue _self;
-  final $Res Function(ModerationQueryStatusesSubjectTypeKnownValue) _then;
-
-/// Create a copy of ModerationQueryStatusesSubjectType
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ModerationQueryStatusesSubjectTypeKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownModerationQueryStatusesSubjectType,
-  ));
-}
-
-
+abstract class _$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWith<$Res> {
+  factory _$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWith(
+          _$ModerationQueryStatusesSubjectTypeUnknownImpl value,
+          $Res Function(_$ModerationQueryStatusesSubjectTypeUnknownImpl) then) =
+      __$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWithImpl<$Res>
+    extends _$ModerationQueryStatusesSubjectTypeCopyWithImpl<$Res,
+        _$ModerationQueryStatusesSubjectTypeUnknownImpl>
+    implements _$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWith<$Res> {
+  __$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWithImpl(
+      _$ModerationQueryStatusesSubjectTypeUnknownImpl _value,
+      $Res Function(_$ModerationQueryStatusesSubjectTypeUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class ModerationQueryStatusesSubjectTypeUnknown extends ModerationQueryStatusesSubjectType {
-  const ModerationQueryStatusesSubjectTypeUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of ModerationQueryStatusesSubjectType
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ModerationQueryStatusesSubjectTypeUnknownCopyWith<ModerationQueryStatusesSubjectTypeUnknown> get copyWith => _$ModerationQueryStatusesSubjectTypeUnknownCopyWithImpl<ModerationQueryStatusesSubjectTypeUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationQueryStatusesSubjectTypeUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'ModerationQueryStatusesSubjectType.unknown(data: $data)';
-}
-
-
+  /// Create a copy of ModerationQueryStatusesSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ModerationQueryStatusesSubjectTypeUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $ModerationQueryStatusesSubjectTypeUnknownCopyWith<$Res> implements $ModerationQueryStatusesSubjectTypeCopyWith<$Res> {
-  factory $ModerationQueryStatusesSubjectTypeUnknownCopyWith(ModerationQueryStatusesSubjectTypeUnknown value, $Res Function(ModerationQueryStatusesSubjectTypeUnknown) _then) = _$ModerationQueryStatusesSubjectTypeUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$ModerationQueryStatusesSubjectTypeUnknownImpl
+    extends ModerationQueryStatusesSubjectTypeUnknown {
+  const _$ModerationQueryStatusesSubjectTypeUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'ModerationQueryStatusesSubjectType.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModerationQueryStatusesSubjectTypeUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of ModerationQueryStatusesSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWith<
+          _$ModerationQueryStatusesSubjectTypeUnknownImpl>
+      get copyWith =>
+          __$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWithImpl<
+                  _$ModerationQueryStatusesSubjectTypeUnknownImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownModerationQueryStatusesSubjectType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownModerationQueryStatusesSubjectType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownModerationQueryStatusesSubjectType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            ModerationQueryStatusesSubjectTypeKnownValue value)
+        knownValue,
+    required TResult Function(ModerationQueryStatusesSubjectTypeUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModerationQueryStatusesSubjectTypeKnownValue value)?
+        knownValue,
+    TResult? Function(ModerationQueryStatusesSubjectTypeUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModerationQueryStatusesSubjectTypeKnownValue value)?
+        knownValue,
+    TResult Function(ModerationQueryStatusesSubjectTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$ModerationQueryStatusesSubjectTypeUnknownCopyWithImpl<$Res>
-    implements $ModerationQueryStatusesSubjectTypeUnknownCopyWith<$Res> {
-  _$ModerationQueryStatusesSubjectTypeUnknownCopyWithImpl(this._self, this._then);
 
-  final ModerationQueryStatusesSubjectTypeUnknown _self;
-  final $Res Function(ModerationQueryStatusesSubjectTypeUnknown) _then;
+abstract class ModerationQueryStatusesSubjectTypeUnknown
+    extends ModerationQueryStatusesSubjectType {
+  const factory ModerationQueryStatusesSubjectTypeUnknown(
+          {required final String data}) =
+      _$ModerationQueryStatusesSubjectTypeUnknownImpl;
+  const ModerationQueryStatusesSubjectTypeUnknown._() : super._();
 
-/// Create a copy of ModerationQueryStatusesSubjectType
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ModerationQueryStatusesSubjectTypeUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of ModerationQueryStatusesSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ModerationQueryStatusesSubjectTypeUnknownImplCopyWith<
+          _$ModerationQueryStatusesSubjectTypeUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

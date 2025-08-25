@@ -8,29 +8,31 @@ part of 'repo_blob_ref.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RepoBlobRef _$RepoBlobRefFromJson(Map json) =>
-    $checkedCreate('_RepoBlobRef', json, ($checkedConvert) {
-      final val = _RepoBlobRef(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'com.atproto.admin.defs#repoBlobRef',
-        ),
-        did: $checkedConvert('did', (v) => v as String),
-        cid: $checkedConvert('cid', (v) => v as String),
-        recordUri: $checkedConvert('recordUri', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$RepoBlobRefImpl _$$RepoBlobRefImplFromJson(Map json) => $checkedCreate(
+      r'_$RepoBlobRefImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$RepoBlobRefImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'com.atproto.admin.defs#repoBlobRef'),
+          did: $checkedConvert('did', (v) => v as String),
+          cid: $checkedConvert('cid', (v) => v as String),
+          recordUri: $checkedConvert('recordUri', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$RepoBlobRefToJson(_RepoBlobRef instance) =>
+Map<String, dynamic> _$$RepoBlobRefImplToJson(_$RepoBlobRefImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'did': instance.did,
       'cid': instance.cid,
-      'recordUri': ?instance.recordUri,
-      r'$unknown': ?instance.$unknown,
+      if (instance.recordUri case final value?) 'recordUri': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

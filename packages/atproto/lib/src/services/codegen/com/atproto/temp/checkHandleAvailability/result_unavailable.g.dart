@@ -8,38 +8,38 @@ part of 'result_unavailable.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ResultUnavailable _$ResultUnavailableFromJson(Map json) =>
-    $checkedCreate('_ResultUnavailable', json, ($checkedConvert) {
-      final val = _ResultUnavailable(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'com.atproto.temp.checkHandleAvailability#resultUnavailable',
-        ),
-        suggestions: $checkedConvert(
-          'suggestions',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const SuggestionConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ResultUnavailableImpl _$$ResultUnavailableImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ResultUnavailableImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ResultUnavailableImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'com.atproto.temp.checkHandleAvailability#resultUnavailable'),
+          suggestions: $checkedConvert(
+              'suggestions',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const SuggestionConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ResultUnavailableToJson(_ResultUnavailable instance) =>
+Map<String, dynamic> _$$ResultUnavailableImplToJson(
+        _$ResultUnavailableImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'suggestions': instance.suggestions
-          .map(const SuggestionConverter().toJson)
-          .toList(),
-      r'$unknown': ?instance.$unknown,
+      'suggestions':
+          instance.suggestions.map(const SuggestionConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

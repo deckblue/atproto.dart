@@ -8,31 +8,32 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TempCheckHandleAvailabilityInput _$TempCheckHandleAvailabilityInputFromJson(
-  Map json,
-) => $checkedCreate('_TempCheckHandleAvailabilityInput', json, (
-  $checkedConvert,
-) {
-  final val = _TempCheckHandleAvailabilityInput(
-    handle: $checkedConvert('handle', (v) => v as String),
-    email: $checkedConvert('email', (v) => v as String?),
-    birthDate: $checkedConvert(
-      'birthDate',
-      (v) => v == null ? null : DateTime.parse(v as String),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$TempCheckHandleAvailabilityInputImpl
+    _$$TempCheckHandleAvailabilityInputImplFromJson(Map json) => $checkedCreate(
+          r'_$TempCheckHandleAvailabilityInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$TempCheckHandleAvailabilityInputImpl(
+              handle: $checkedConvert('handle', (v) => v as String),
+              email: $checkedConvert('email', (v) => v as String?),
+              birthDate: $checkedConvert('birthDate',
+                  (v) => v == null ? null : DateTime.parse(v as String)),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$TempCheckHandleAvailabilityInputToJson(
-  _TempCheckHandleAvailabilityInput instance,
-) => <String, dynamic>{
-  'handle': instance.handle,
-  'email': ?instance.email,
-  'birthDate': ?instance.birthDate?.toIso8601String(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$TempCheckHandleAvailabilityInputImplToJson(
+        _$TempCheckHandleAvailabilityInputImpl instance) =>
+    <String, dynamic>{
+      'handle': instance.handle,
+      if (instance.email case final value?) 'email': value,
+      if (instance.birthDate?.toIso8601String() case final value?)
+        'birthDate': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

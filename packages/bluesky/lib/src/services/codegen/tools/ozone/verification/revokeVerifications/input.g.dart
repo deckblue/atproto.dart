@@ -8,30 +8,31 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_VerificationRevokeVerificationsInput
-_$VerificationRevokeVerificationsInputFromJson(Map json) => $checkedCreate(
-  '_VerificationRevokeVerificationsInput',
-  json,
-  ($checkedConvert) {
-    final val = _VerificationRevokeVerificationsInput(
-      uris: $checkedConvert(
-        'uris',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-      revokeReason: $checkedConvert('revokeReason', (v) => v as String?),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$VerificationRevokeVerificationsInputImpl
+    _$$VerificationRevokeVerificationsInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$VerificationRevokeVerificationsInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$VerificationRevokeVerificationsInputImpl(
+              uris: $checkedConvert('uris',
+                  (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+              revokeReason:
+                  $checkedConvert('revokeReason', (v) => v as String?),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$VerificationRevokeVerificationsInputToJson(
-  _VerificationRevokeVerificationsInput instance,
-) => <String, dynamic>{
-  'uris': instance.uris,
-  'revokeReason': ?instance.revokeReason,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$VerificationRevokeVerificationsInputImplToJson(
+        _$VerificationRevokeVerificationsInputImpl instance) =>
+    <String, dynamic>{
+      'uris': instance.uris,
+      if (instance.revokeReason case final value?) 'revokeReason': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

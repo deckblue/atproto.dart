@@ -8,33 +8,37 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GraphGetRelationshipsOutput _$GraphGetRelationshipsOutputFromJson(Map json) =>
-    $checkedCreate('_GraphGetRelationshipsOutput', json, ($checkedConvert) {
-      final val = _GraphGetRelationshipsOutput(
-        actor: $checkedConvert('actor', (v) => v as String?),
-        relationships: $checkedConvert(
-          'relationships',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const UGraphGetRelationshipsRelationshipsConverter()
-                    .fromJson(e as Map<String, dynamic>),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GraphGetRelationshipsOutputImpl _$$GraphGetRelationshipsOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GraphGetRelationshipsOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GraphGetRelationshipsOutputImpl(
+          actor: $checkedConvert('actor', (v) => v as String?),
+          relationships: $checkedConvert(
+              'relationships',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      const UGraphGetRelationshipsRelationshipsConverter()
+                          .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GraphGetRelationshipsOutputToJson(
-  _GraphGetRelationshipsOutput instance,
-) => <String, dynamic>{
-  'actor': ?instance.actor,
-  'relationships': instance.relationships
-      .map(const UGraphGetRelationshipsRelationshipsConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GraphGetRelationshipsOutputImplToJson(
+        _$GraphGetRelationshipsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.actor case final value?) 'actor': value,
+      'relationships': instance.relationships
+          .map(const UGraphGetRelationshipsRelationshipsConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

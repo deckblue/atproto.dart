@@ -8,37 +8,38 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetConfigOutput _$UnspeccedGetConfigOutputFromJson(Map json) =>
-    $checkedCreate('_UnspeccedGetConfigOutput', json, ($checkedConvert) {
-      final val = _UnspeccedGetConfigOutput(
-        checkEmailConfirmed: $checkedConvert(
-          'checkEmailConfirmed',
-          (v) => v as bool?,
-        ),
-        liveNow: $checkedConvert(
-          'liveNow',
-          (v) => (v as List<dynamic>?)
-              ?.map(
-                (e) => const LiveNowConfigConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$UnspeccedGetConfigOutputImpl _$$UnspeccedGetConfigOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$UnspeccedGetConfigOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$UnspeccedGetConfigOutputImpl(
+          checkEmailConfirmed:
+              $checkedConvert('checkEmailConfirmed', (v) => v as bool?),
+          liveNow: $checkedConvert(
+              'liveNow',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => const LiveNowConfigConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$UnspeccedGetConfigOutputToJson(
-  _UnspeccedGetConfigOutput instance,
-) => <String, dynamic>{
-  'checkEmailConfirmed': ?instance.checkEmailConfirmed,
-  'liveNow': ?instance.liveNow
-      ?.map(const LiveNowConfigConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$UnspeccedGetConfigOutputImplToJson(
+        _$UnspeccedGetConfigOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.checkEmailConfirmed case final value?)
+        'checkEmailConfirmed': value,
+      if (instance.liveNow?.map(const LiveNowConfigConverter().toJson).toList()
+          case final value?)
+        'liveNow': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

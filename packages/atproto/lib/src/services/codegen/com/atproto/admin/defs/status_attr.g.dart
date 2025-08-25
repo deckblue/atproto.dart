@@ -8,27 +8,29 @@ part of 'status_attr.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StatusAttr _$StatusAttrFromJson(Map json) =>
-    $checkedCreate('_StatusAttr', json, ($checkedConvert) {
-      final val = _StatusAttr(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'com.atproto.admin.defs#statusAttr',
-        ),
-        applied: $checkedConvert('applied', (v) => v as bool),
-        ref: $checkedConvert('ref', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$StatusAttrImpl _$$StatusAttrImplFromJson(Map json) => $checkedCreate(
+      r'_$StatusAttrImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$StatusAttrImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'com.atproto.admin.defs#statusAttr'),
+          applied: $checkedConvert('applied', (v) => v as bool),
+          ref: $checkedConvert('ref', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$StatusAttrToJson(_StatusAttr instance) =>
+Map<String, dynamic> _$$StatusAttrImplToJson(_$StatusAttrImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'applied': instance.applied,
-      'ref': ?instance.ref,
-      r'$unknown': ?instance.$unknown,
+      if (instance.ref case final value?) 'ref': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,320 +9,306 @@ part of 'interaction.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+Interaction _$InteractionFromJson(Map<String, dynamic> json) {
+  return _Interaction.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Interaction {
+  String get $type => throw _privateConstructorUsedError;
+  String? get item => throw _privateConstructorUsedError;
+  @InteractionEventConverter()
+  InteractionEvent? get event => throw _privateConstructorUsedError;
 
- String get $type; String? get item;@InteractionEventConverter() InteractionEvent? get event;/// Context on a feed item that was originally supplied by the feed generator on getFeedSkeleton.
- String? get feedContext;/// Unique identifier per request that may be passed back alongside interactions.
- String? get reqId; Map<String, dynamic>? get $unknown;
-/// Create a copy of Interaction
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InteractionCopyWith<Interaction> get copyWith => _$InteractionCopyWithImpl<Interaction>(this as Interaction, _$identity);
+  /// Context on a feed item that was originally supplied by the feed generator on getFeedSkeleton.
+  String? get feedContext => throw _privateConstructorUsedError;
+
+  /// Unique identifier per request that may be passed back alongside interactions.
+  String? get reqId => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this Interaction to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Interaction&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.item, item) || other.item == item)&&(identical(other.event, event) || other.event == event)&&(identical(other.feedContext, feedContext) || other.feedContext == feedContext)&&(identical(other.reqId, reqId) || other.reqId == reqId)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,item,event,feedContext,reqId,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'Interaction(\$type: ${$type}, item: $item, event: $event, feedContext: $feedContext, reqId: $reqId, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of Interaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $InteractionCopyWith<Interaction> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $InteractionCopyWith<$Res>  {
-  factory $InteractionCopyWith(Interaction value, $Res Function(Interaction) _then) = _$InteractionCopyWithImpl;
-@useResult
-$Res call({
- String $type, String? item,@InteractionEventConverter() InteractionEvent? event, String? feedContext, String? reqId, Map<String, dynamic>? $unknown
-});
+abstract class $InteractionCopyWith<$Res> {
+  factory $InteractionCopyWith(
+          Interaction value, $Res Function(Interaction) then) =
+      _$InteractionCopyWithImpl<$Res, Interaction>;
+  @useResult
+  $Res call(
+      {String $type,
+      String? item,
+      @InteractionEventConverter() InteractionEvent? event,
+      String? feedContext,
+      String? reqId,
+      Map<String, dynamic>? $unknown});
 
-
-$InteractionEventCopyWith<$Res>? get event;
-
+  $InteractionEventCopyWith<$Res>? get event;
 }
+
 /// @nodoc
-class _$InteractionCopyWithImpl<$Res>
+class _$InteractionCopyWithImpl<$Res, $Val extends Interaction>
     implements $InteractionCopyWith<$Res> {
-  _$InteractionCopyWithImpl(this._self, this._then);
+  _$InteractionCopyWithImpl(this._value, this._then);
 
-  final Interaction _self;
-  final $Res Function(Interaction) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of Interaction
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? item = freezed,Object? event = freezed,Object? feedContext = freezed,Object? reqId = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,item: freezed == item ? _self.item : item // ignore: cast_nullable_to_non_nullable
-as String?,event: freezed == event ? _self.event : event // ignore: cast_nullable_to_non_nullable
-as InteractionEvent?,feedContext: freezed == feedContext ? _self.feedContext : feedContext // ignore: cast_nullable_to_non_nullable
-as String?,reqId: freezed == reqId ? _self.reqId : reqId // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of Interaction
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$InteractionEventCopyWith<$Res>? get event {
-    if (_self.event == null) {
-    return null;
+  /// Create a copy of Interaction
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? item = freezed,
+    Object? event = freezed,
+    Object? feedContext = freezed,
+    Object? reqId = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      item: freezed == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as String?,
+      event: freezed == event
+          ? _value.event
+          : event // ignore: cast_nullable_to_non_nullable
+              as InteractionEvent?,
+      feedContext: freezed == feedContext
+          ? _value.feedContext
+          : feedContext // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reqId: freezed == reqId
+          ? _value.reqId
+          : reqId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
   }
 
-  return $InteractionEventCopyWith<$Res>(_self.event!, (value) {
-    return _then(_self.copyWith(event: value));
-  });
-}
-}
+  /// Create a copy of Interaction
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $InteractionEventCopyWith<$Res>? get event {
+    if (_value.event == null) {
+      return null;
+    }
 
-
-/// Adds pattern-matching-related methods to [Interaction].
-extension InteractionPatterns on Interaction {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Interaction value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _Interaction() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Interaction value)  $default,){
-final _that = this;
-switch (_that) {
-case _Interaction():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Interaction value)?  $default,){
-final _that = this;
-switch (_that) {
-case _Interaction() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  String? item, @InteractionEventConverter()  InteractionEvent? event,  String? feedContext,  String? reqId,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _Interaction() when $default != null:
-return $default(_that.$type,_that.item,_that.event,_that.feedContext,_that.reqId,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  String? item, @InteractionEventConverter()  InteractionEvent? event,  String? feedContext,  String? reqId,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _Interaction():
-return $default(_that.$type,_that.item,_that.event,_that.feedContext,_that.reqId,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  String? item, @InteractionEventConverter()  InteractionEvent? event,  String? feedContext,  String? reqId,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _Interaction() when $default != null:
-return $default(_that.$type,_that.item,_that.event,_that.feedContext,_that.reqId,_that.$unknown);case _:
-  return null;
-
-}
+    return $InteractionEventCopyWith<$Res>(_value.event!, (value) {
+      return _then(_value.copyWith(event: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$InteractionImplCopyWith<$Res>
+    implements $InteractionCopyWith<$Res> {
+  factory _$$InteractionImplCopyWith(
+          _$InteractionImpl value, $Res Function(_$InteractionImpl) then) =
+      __$$InteractionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      String? item,
+      @InteractionEventConverter() InteractionEvent? event,
+      String? feedContext,
+      String? reqId,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $InteractionEventCopyWith<$Res>? get event;
+}
+
+/// @nodoc
+class __$$InteractionImplCopyWithImpl<$Res>
+    extends _$InteractionCopyWithImpl<$Res, _$InteractionImpl>
+    implements _$$InteractionImplCopyWith<$Res> {
+  __$$InteractionImplCopyWithImpl(
+      _$InteractionImpl _value, $Res Function(_$InteractionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Interaction
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? item = freezed,
+    Object? event = freezed,
+    Object? feedContext = freezed,
+    Object? reqId = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$InteractionImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      item: freezed == item
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as String?,
+      event: freezed == event
+          ? _value.event
+          : event // ignore: cast_nullable_to_non_nullable
+              as InteractionEvent?,
+      feedContext: freezed == feedContext
+          ? _value.feedContext
+          : feedContext // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reqId: freezed == reqId
+          ? _value.reqId
+          : reqId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _Interaction implements Interaction {
-  const _Interaction({this.$type = 'app.bsky.feed.defs#interaction', this.item, @InteractionEventConverter() this.event, this.feedContext, this.reqId, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _Interaction.fromJson(Map<String, dynamic> json) => _$InteractionFromJson(json);
+class _$InteractionImpl implements _Interaction {
+  const _$InteractionImpl(
+      {this.$type = 'app.bsky.feed.defs#interaction',
+      this.item,
+      @InteractionEventConverter() this.event,
+      this.feedContext,
+      this.reqId,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-@override final  String? item;
-@override@InteractionEventConverter() final  InteractionEvent? event;
-/// Context on a feed item that was originally supplied by the feed generator on getFeedSkeleton.
-@override final  String? feedContext;
-/// Unique identifier per request that may be passed back alongside interactions.
-@override final  String? reqId;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+  factory _$InteractionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InteractionImplFromJson(json);
 
+  @override
+  @JsonKey()
+  final String $type;
+  @override
+  final String? item;
+  @override
+  @InteractionEventConverter()
+  final InteractionEvent? event;
 
-/// Create a copy of Interaction
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$InteractionCopyWith<_Interaction> get copyWith => __$InteractionCopyWithImpl<_Interaction>(this, _$identity);
+  /// Context on a feed item that was originally supplied by the feed generator on getFeedSkeleton.
+  @override
+  final String? feedContext;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$InteractionToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Interaction&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.item, item) || other.item == item)&&(identical(other.event, event) || other.event == event)&&(identical(other.feedContext, feedContext) || other.feedContext == feedContext)&&(identical(other.reqId, reqId) || other.reqId == reqId)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,item,event,feedContext,reqId,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'Interaction(\$type: ${$type}, item: $item, event: $event, feedContext: $feedContext, reqId: $reqId, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$InteractionCopyWith<$Res> implements $InteractionCopyWith<$Res> {
-  factory _$InteractionCopyWith(_Interaction value, $Res Function(_Interaction) _then) = __$InteractionCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, String? item,@InteractionEventConverter() InteractionEvent? event, String? feedContext, String? reqId, Map<String, dynamic>? $unknown
-});
-
-
-@override $InteractionEventCopyWith<$Res>? get event;
-
-}
-/// @nodoc
-class __$InteractionCopyWithImpl<$Res>
-    implements _$InteractionCopyWith<$Res> {
-  __$InteractionCopyWithImpl(this._self, this._then);
-
-  final _Interaction _self;
-  final $Res Function(_Interaction) _then;
-
-/// Create a copy of Interaction
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? item = freezed,Object? event = freezed,Object? feedContext = freezed,Object? reqId = freezed,Object? $unknown = freezed,}) {
-  return _then(_Interaction(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,item: freezed == item ? _self.item : item // ignore: cast_nullable_to_non_nullable
-as String?,event: freezed == event ? _self.event : event // ignore: cast_nullable_to_non_nullable
-as InteractionEvent?,feedContext: freezed == feedContext ? _self.feedContext : feedContext // ignore: cast_nullable_to_non_nullable
-as String?,reqId: freezed == reqId ? _self.reqId : reqId // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of Interaction
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$InteractionEventCopyWith<$Res>? get event {
-    if (_self.event == null) {
-    return null;
+  /// Unique identifier per request that may be passed back alongside interactions.
+  @override
+  final String? reqId;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
   }
 
-  return $InteractionEventCopyWith<$Res>(_self.event!, (value) {
-    return _then(_self.copyWith(event: value));
-  });
-}
+  @override
+  String toString() {
+    return 'Interaction(\$type: ${$type}, item: $item, event: $event, feedContext: $feedContext, reqId: $reqId, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InteractionImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.item, item) || other.item == item) &&
+            (identical(other.event, event) || other.event == event) &&
+            (identical(other.feedContext, feedContext) ||
+                other.feedContext == feedContext) &&
+            (identical(other.reqId, reqId) || other.reqId == reqId) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, item, event, feedContext,
+      reqId, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of Interaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InteractionImplCopyWith<_$InteractionImpl> get copyWith =>
+      __$$InteractionImplCopyWithImpl<_$InteractionImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InteractionImplToJson(
+      this,
+    );
+  }
 }
 
-// dart format on
+abstract class _Interaction implements Interaction {
+  const factory _Interaction(
+      {final String $type,
+      final String? item,
+      @InteractionEventConverter() final InteractionEvent? event,
+      final String? feedContext,
+      final String? reqId,
+      final Map<String, dynamic>? $unknown}) = _$InteractionImpl;
+
+  factory _Interaction.fromJson(Map<String, dynamic> json) =
+      _$InteractionImpl.fromJson;
+
+  @override
+  String get $type;
+  @override
+  String? get item;
+  @override
+  @InteractionEventConverter()
+  InteractionEvent? get event;
+
+  /// Context on a feed item that was originally supplied by the feed generator on getFeedSkeleton.
+  @override
+  String? get feedContext;
+
+  /// Unique identifier per request that may be passed back alongside interactions.
+  @override
+  String? get reqId;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of Interaction
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InteractionImplCopyWith<_$InteractionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

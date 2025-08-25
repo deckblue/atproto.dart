@@ -8,49 +8,54 @@ part of 'create_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CreateResult _$CreateResultFromJson(Map json) =>
-    $checkedCreate('_CreateResult', json, ($checkedConvert) {
-      final val = _CreateResult(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'com.atproto.repo.applyWrites#createResult',
-        ),
-        uri: $checkedConvert('uri', (v) => v as String),
-        cid: $checkedConvert('cid', (v) => v as String),
-        validationStatus: $checkedConvert(
-          'validationStatus',
-          (v) => _$JsonConverterFromJson<String, CreateResultValidationStatus>(
-            v,
-            const CreateResultValidationStatusConverter().fromJson,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$CreateResultImpl _$$CreateResultImplFromJson(Map json) => $checkedCreate(
+      r'_$CreateResultImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$CreateResultImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'com.atproto.repo.applyWrites#createResult'),
+          uri: $checkedConvert('uri', (v) => v as String),
+          cid: $checkedConvert('cid', (v) => v as String),
+          validationStatus: $checkedConvert(
+              'validationStatus',
+              (v) =>
+                  _$JsonConverterFromJson<String, CreateResultValidationStatus>(
+                      v,
+                      const CreateResultValidationStatusConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$CreateResultToJson(_CreateResult instance) =>
+Map<String, dynamic> _$$CreateResultImplToJson(_$CreateResultImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'uri': instance.uri,
       'cid': instance.cid,
-      'validationStatus':
-          ?_$JsonConverterToJson<String, CreateResultValidationStatus>(
-            instance.validationStatus,
-            const CreateResultValidationStatusConverter().toJson,
-          ),
-      r'$unknown': ?instance.$unknown,
+      if (_$JsonConverterToJson<String, CreateResultValidationStatus>(
+              instance.validationStatus,
+              const CreateResultValidationStatusConverter().toJson)
+          case final value?)
+        'validationStatus': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

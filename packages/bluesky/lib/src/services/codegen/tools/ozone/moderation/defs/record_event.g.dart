@@ -8,37 +8,35 @@ part of 'record_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RecordEvent _$RecordEventFromJson(Map json) =>
-    $checkedCreate('_RecordEvent', json, ($checkedConvert) {
-      final val = _RecordEvent(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.moderation.defs#recordEvent',
-        ),
-        comment: $checkedConvert('comment', (v) => v as String?),
-        op: $checkedConvert(
-          'op',
-          (v) => const RecordEventOpConverter().fromJson(v as String),
-        ),
-        cid: $checkedConvert('cid', (v) => v as String?),
-        timestamp: $checkedConvert(
-          'timestamp',
-          (v) => DateTime.parse(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$RecordEventImpl _$$RecordEventImplFromJson(Map json) => $checkedCreate(
+      r'_$RecordEventImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$RecordEventImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'tools.ozone.moderation.defs#recordEvent'),
+          comment: $checkedConvert('comment', (v) => v as String?),
+          op: $checkedConvert('op',
+              (v) => const RecordEventOpConverter().fromJson(v as String)),
+          cid: $checkedConvert('cid', (v) => v as String?),
+          timestamp:
+              $checkedConvert('timestamp', (v) => DateTime.parse(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$RecordEventToJson(_RecordEvent instance) =>
+Map<String, dynamic> _$$RecordEventImplToJson(_$RecordEventImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'comment': ?instance.comment,
+      if (instance.comment case final value?) 'comment': value,
       'op': const RecordEventOpConverter().toJson(instance.op),
-      'cid': ?instance.cid,
+      if (instance.cid case final value?) 'cid': value,
       'timestamp': instance.timestamp.toIso8601String(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -8,34 +8,37 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FeedGetLikesOutput _$FeedGetLikesOutputFromJson(Map json) =>
-    $checkedCreate('_FeedGetLikesOutput', json, ($checkedConvert) {
-      final val = _FeedGetLikesOutput(
-        uri: $checkedConvert('uri', (v) => v as String),
-        cid: $checkedConvert('cid', (v) => v as String?),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        likes: $checkedConvert(
-          'likes',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) =>
-                    const LikeConverter().fromJson(e as Map<String, dynamic>),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$FeedGetLikesOutputImpl _$$FeedGetLikesOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$FeedGetLikesOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FeedGetLikesOutputImpl(
+          uri: $checkedConvert('uri', (v) => v as String),
+          cid: $checkedConvert('cid', (v) => v as String?),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          likes: $checkedConvert(
+              'likes',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      const LikeConverter().fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$FeedGetLikesOutputToJson(_FeedGetLikesOutput instance) =>
+Map<String, dynamic> _$$FeedGetLikesOutputImplToJson(
+        _$FeedGetLikesOutputImpl instance) =>
     <String, dynamic>{
       'uri': instance.uri,
-      'cid': ?instance.cid,
-      'cursor': ?instance.cursor,
+      if (instance.cid case final value?) 'cid': value,
+      if (instance.cursor case final value?) 'cursor': value,
       'likes': instance.likes.map(const LikeConverter().toJson).toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };
