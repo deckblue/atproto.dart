@@ -126,7 +126,6 @@ export 'app_bsky_unspecced_searchstarterpacksskeleton.dart';
 export 'app_bsky_video_defs.dart';
 export 'app_bsky_video_getjobstatus.dart';
 export 'app_bsky_video_getuploadlimits.dart';
-export 'app_bsky_video_uploadvideo.dart';
 export 'atproto_oauth.dart';
 export 'atproto.dart';
 export 'bluesky_chat.dart';

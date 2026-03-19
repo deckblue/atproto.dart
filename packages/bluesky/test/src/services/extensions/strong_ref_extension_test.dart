@@ -1,7 +1,6 @@
 // Package imports:
 import 'package:atproto/com_atproto_repo_strongref.dart';
 import 'package:atproto_core/atproto_core.dart';
-import 'package:bluesky/app_bsky_feed_post.dart';
 import 'package:test/test.dart';
 
 // Project imports:

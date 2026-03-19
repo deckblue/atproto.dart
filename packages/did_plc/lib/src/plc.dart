@@ -7,7 +7,6 @@ import 'dart:convert';
 
 // Project imports:
 import 'client/http_client.dart';
-import 'client/response.dart';
 import 'client/retry_policy.dart';
 import 'exceptions.dart';
 import 'streaming/batch_processor.dart';
