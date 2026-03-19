@@ -27,7 +27,7 @@ dependencies:
   multiformats: ^1.0.2
   atproto_oauth: ^0.2.0
   nanoid: ^1.0.0
-  meta: ^1.17.0
+  meta: ^1.15.0
 
 dev_dependencies:
   lints: ^5.0.0
