@@ -8,22 +8,28 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SyncGetRepoInput _$SyncGetRepoInputFromJson(Map json) =>
-    $checkedCreate('_SyncGetRepoInput', json, ($checkedConvert) {
-      final val = _SyncGetRepoInput(
-        did: $checkedConvert('did', (v) => v as String),
-        since: $checkedConvert('since', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SyncGetRepoInputImpl _$$SyncGetRepoInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$SyncGetRepoInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SyncGetRepoInputImpl(
+          did: $checkedConvert('did', (v) => v as String),
+          since: $checkedConvert('since', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SyncGetRepoInputToJson(_SyncGetRepoInput instance) =>
+Map<String, dynamic> _$$SyncGetRepoInputImplToJson(
+        _$SyncGetRepoInputImpl instance) =>
     <String, dynamic>{
       'did': instance.did,
-      'since': ?instance.since,
-      r'$unknown': ?instance.$unknown,
+      if (instance.since case final value?) 'since': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

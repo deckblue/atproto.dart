@@ -8,21 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetTrendsInput _$UnspeccedGetTrendsInputFromJson(Map json) =>
-    $checkedCreate('_UnspeccedGetTrendsInput', json, ($checkedConvert) {
-      final val = _UnspeccedGetTrendsInput(
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 10),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$UnspeccedGetTrendsInputImpl _$$UnspeccedGetTrendsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$UnspeccedGetTrendsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$UnspeccedGetTrendsInputImpl(
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 10),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$UnspeccedGetTrendsInputToJson(
-  _UnspeccedGetTrendsInput instance,
-) => <String, dynamic>{
-  'limit': instance.limit,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$UnspeccedGetTrendsInputImplToJson(
+        _$UnspeccedGetTrendsInputImpl instance) =>
+    <String, dynamic>{
+      'limit': instance.limit,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

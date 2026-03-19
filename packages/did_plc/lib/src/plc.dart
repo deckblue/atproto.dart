@@ -374,12 +374,11 @@ abstract class PLC {
 /// Internal implementation of the PLC client.
 final class _PLCImpl implements PLC {
   _PLCImpl({String? service, HttpClient? httpClient, RetryPolicy? retryPolicy})
-    : _httpClient =
-          httpClient ??
-          HttpClient(
-            baseUrl: service ?? _defaultService,
-            retryPolicy: retryPolicy,
-          );
+      : _httpClient = httpClient ??
+            HttpClient(
+              baseUrl: service ?? _defaultService,
+              retryPolicy: retryPolicy,
+            );
 
   final HttpClient _httpClient;
 
@@ -394,7 +393,7 @@ final class _PLCImpl implements PLC {
       );
 
       return response.when(
-        success: (_, _, data) => data,
+        success: (_, __, data) => data,
         error: (statusCode, _, message, details) => throw _createException(
           statusCode,
           message,
@@ -419,7 +418,7 @@ final class _PLCImpl implements PLC {
       );
 
       return response.when(
-        success: (_, _, data) => data,
+        success: (_, __, data) => data,
         error: (statusCode, _, message, details) => throw _createException(
           statusCode,
           message,
@@ -444,7 +443,7 @@ final class _PLCImpl implements PLC {
       );
 
       return response.when(
-        success: (_, _, data) {
+        success: (_, __, data) {
           // The HTTP client already wrapped List responses in a 'log' key
           return OperationLog.fromJson(data);
         },
@@ -472,7 +471,7 @@ final class _PLCImpl implements PLC {
       );
 
       return response.when(
-        success: (_, _, data) {
+        success: (_, __, data) {
           // The HTTP client already wrapped List responses in a 'log' key
           return AuditableLog.fromJson(data);
         },
@@ -500,7 +499,7 @@ final class _PLCImpl implements PLC {
       );
 
       return response.when(
-        success: (_, _, data) => data,
+        success: (_, __, data) => data,
         error: (statusCode, _, message, details) => throw _createException(
           statusCode,
           message,
@@ -532,7 +531,7 @@ final class _PLCImpl implements PLC {
       );
 
       return response.when(
-        success: (_, _, data) {
+        success: (_, __, data) {
           // Convert the raw response to compatible format for JSONL
           final compatibleData = _toCompatibleBody('log', data, jsonl: true);
           return AuditableLog.fromJson(compatibleData);
@@ -559,7 +558,7 @@ final class _PLCImpl implements PLC {
       );
 
       return response.when(
-        success: (_, _, data) => data,
+        success: (_, __, data) => data,
         error: (statusCode, _, message, details) => throw _createException(
           statusCode,
           message,

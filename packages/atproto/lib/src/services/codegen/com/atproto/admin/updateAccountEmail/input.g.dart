@@ -8,24 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminUpdateAccountEmailInput _$AdminUpdateAccountEmailInputFromJson(
-  Map json,
-) => $checkedCreate('_AdminUpdateAccountEmailInput', json, ($checkedConvert) {
-  final val = _AdminUpdateAccountEmailInput(
-    account: $checkedConvert('account', (v) => v as String),
-    email: $checkedConvert('email', (v) => v as String),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$AdminUpdateAccountEmailInputImpl _$$AdminUpdateAccountEmailInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$AdminUpdateAccountEmailInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AdminUpdateAccountEmailInputImpl(
+          account: $checkedConvert('account', (v) => v as String),
+          email: $checkedConvert('email', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AdminUpdateAccountEmailInputToJson(
-  _AdminUpdateAccountEmailInput instance,
-) => <String, dynamic>{
-  'account': instance.account,
-  'email': instance.email,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$AdminUpdateAccountEmailInputImplToJson(
+        _$AdminUpdateAccountEmailInputImpl instance) =>
+    <String, dynamic>{
+      'account': instance.account,
+      'email': instance.email,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

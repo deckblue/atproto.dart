@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,251 @@ part of 'draft_embed_image.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+DraftEmbedImage _$DraftEmbedImageFromJson(Map<String, dynamic> json) {
+  return _DraftEmbedImage.fromJson(json);
+}
 
 /// @nodoc
 mixin _$DraftEmbedImage {
-
- String get $type;@DraftEmbedLocalRefConverter() DraftEmbedLocalRef get localRef; String? get alt; Map<String, dynamic>? get $unknown;
-/// Create a copy of DraftEmbedImage
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$DraftEmbedImageCopyWith<DraftEmbedImage> get copyWith => _$DraftEmbedImageCopyWithImpl<DraftEmbedImage>(this as DraftEmbedImage, _$identity);
+  String get $type => throw _privateConstructorUsedError;
+  @DraftEmbedLocalRefConverter()
+  DraftEmbedLocalRef get localRef => throw _privateConstructorUsedError;
+  String? get alt => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this DraftEmbedImage to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DraftEmbedImage&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.localRef, localRef) || other.localRef == localRef)&&(identical(other.alt, alt) || other.alt == alt)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,localRef,alt,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'DraftEmbedImage(\$type: ${$type}, localRef: $localRef, alt: $alt, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of DraftEmbedImage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $DraftEmbedImageCopyWith<DraftEmbedImage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $DraftEmbedImageCopyWith<$Res>  {
-  factory $DraftEmbedImageCopyWith(DraftEmbedImage value, $Res Function(DraftEmbedImage) _then) = _$DraftEmbedImageCopyWithImpl;
-@useResult
-$Res call({
- String $type,@DraftEmbedLocalRefConverter() DraftEmbedLocalRef localRef, String? alt, Map<String, dynamic>? $unknown
-});
+abstract class $DraftEmbedImageCopyWith<$Res> {
+  factory $DraftEmbedImageCopyWith(
+          DraftEmbedImage value, $Res Function(DraftEmbedImage) then) =
+      _$DraftEmbedImageCopyWithImpl<$Res, DraftEmbedImage>;
+  @useResult
+  $Res call(
+      {String $type,
+      @DraftEmbedLocalRefConverter() DraftEmbedLocalRef localRef,
+      String? alt,
+      Map<String, dynamic>? $unknown});
 
-
-$DraftEmbedLocalRefCopyWith<$Res> get localRef;
-
+  $DraftEmbedLocalRefCopyWith<$Res> get localRef;
 }
+
 /// @nodoc
-class _$DraftEmbedImageCopyWithImpl<$Res>
+class _$DraftEmbedImageCopyWithImpl<$Res, $Val extends DraftEmbedImage>
     implements $DraftEmbedImageCopyWith<$Res> {
-  _$DraftEmbedImageCopyWithImpl(this._self, this._then);
+  _$DraftEmbedImageCopyWithImpl(this._value, this._then);
 
-  final DraftEmbedImage _self;
-  final $Res Function(DraftEmbedImage) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of DraftEmbedImage
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? localRef = null,Object? alt = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,localRef: null == localRef ? _self.localRef : localRef // ignore: cast_nullable_to_non_nullable
-as DraftEmbedLocalRef,alt: freezed == alt ? _self.alt : alt // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of DraftEmbedImage
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$DraftEmbedLocalRefCopyWith<$Res> get localRef {
-  
-  return $DraftEmbedLocalRefCopyWith<$Res>(_self.localRef, (value) {
-    return _then(_self.copyWith(localRef: value));
-  });
-}
-}
+  /// Create a copy of DraftEmbedImage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? localRef = null,
+    Object? alt = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      localRef: null == localRef
+          ? _value.localRef
+          : localRef // ignore: cast_nullable_to_non_nullable
+              as DraftEmbedLocalRef,
+      alt: freezed == alt
+          ? _value.alt
+          : alt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [DraftEmbedImage].
-extension DraftEmbedImagePatterns on DraftEmbedImage {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _DraftEmbedImage value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _DraftEmbedImage() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _DraftEmbedImage value)  $default,){
-final _that = this;
-switch (_that) {
-case _DraftEmbedImage():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _DraftEmbedImage value)?  $default,){
-final _that = this;
-switch (_that) {
-case _DraftEmbedImage() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type, @DraftEmbedLocalRefConverter()  DraftEmbedLocalRef localRef,  String? alt,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _DraftEmbedImage() when $default != null:
-return $default(_that.$type,_that.localRef,_that.alt,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type, @DraftEmbedLocalRefConverter()  DraftEmbedLocalRef localRef,  String? alt,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _DraftEmbedImage():
-return $default(_that.$type,_that.localRef,_that.alt,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type, @DraftEmbedLocalRefConverter()  DraftEmbedLocalRef localRef,  String? alt,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _DraftEmbedImage() when $default != null:
-return $default(_that.$type,_that.localRef,_that.alt,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of DraftEmbedImage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DraftEmbedLocalRefCopyWith<$Res> get localRef {
+    return $DraftEmbedLocalRefCopyWith<$Res>(_value.localRef, (value) {
+      return _then(_value.copyWith(localRef: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$DraftEmbedImageImplCopyWith<$Res>
+    implements $DraftEmbedImageCopyWith<$Res> {
+  factory _$$DraftEmbedImageImplCopyWith(_$DraftEmbedImageImpl value,
+          $Res Function(_$DraftEmbedImageImpl) then) =
+      __$$DraftEmbedImageImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      @DraftEmbedLocalRefConverter() DraftEmbedLocalRef localRef,
+      String? alt,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $DraftEmbedLocalRefCopyWith<$Res> get localRef;
+}
+
+/// @nodoc
+class __$$DraftEmbedImageImplCopyWithImpl<$Res>
+    extends _$DraftEmbedImageCopyWithImpl<$Res, _$DraftEmbedImageImpl>
+    implements _$$DraftEmbedImageImplCopyWith<$Res> {
+  __$$DraftEmbedImageImplCopyWithImpl(
+      _$DraftEmbedImageImpl _value, $Res Function(_$DraftEmbedImageImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DraftEmbedImage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? localRef = null,
+    Object? alt = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$DraftEmbedImageImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      localRef: null == localRef
+          ? _value.localRef
+          : localRef // ignore: cast_nullable_to_non_nullable
+              as DraftEmbedLocalRef,
+      alt: freezed == alt
+          ? _value.alt
+          : alt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _DraftEmbedImage implements DraftEmbedImage {
-  const _DraftEmbedImage({this.$type = 'app.bsky.draft.defs#draftEmbedImage', @DraftEmbedLocalRefConverter() required this.localRef, this.alt, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _DraftEmbedImage.fromJson(Map<String, dynamic> json) => _$DraftEmbedImageFromJson(json);
+class _$DraftEmbedImageImpl implements _DraftEmbedImage {
+  const _$DraftEmbedImageImpl(
+      {this.$type = 'app.bsky.draft.defs#draftEmbedImage',
+      @DraftEmbedLocalRefConverter() required this.localRef,
+      this.alt,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-@override@DraftEmbedLocalRefConverter() final  DraftEmbedLocalRef localRef;
-@override final  String? alt;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$DraftEmbedImageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DraftEmbedImageImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+  @override
+  @DraftEmbedLocalRefConverter()
+  final DraftEmbedLocalRef localRef;
+  @override
+  final String? alt;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'DraftEmbedImage(\$type: ${$type}, localRef: $localRef, alt: $alt, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DraftEmbedImageImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.localRef, localRef) ||
+                other.localRef == localRef) &&
+            (identical(other.alt, alt) || other.alt == alt) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, localRef, alt,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of DraftEmbedImage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DraftEmbedImageImplCopyWith<_$DraftEmbedImageImpl> get copyWith =>
+      __$$DraftEmbedImageImplCopyWithImpl<_$DraftEmbedImageImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DraftEmbedImageImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _DraftEmbedImage implements DraftEmbedImage {
+  const factory _DraftEmbedImage(
+      {final String $type,
+      @DraftEmbedLocalRefConverter() required final DraftEmbedLocalRef localRef,
+      final String? alt,
+      final Map<String, dynamic>? $unknown}) = _$DraftEmbedImageImpl;
 
-/// Create a copy of DraftEmbedImage
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$DraftEmbedImageCopyWith<_DraftEmbedImage> get copyWith => __$DraftEmbedImageCopyWithImpl<_DraftEmbedImage>(this, _$identity);
+  factory _DraftEmbedImage.fromJson(Map<String, dynamic> json) =
+      _$DraftEmbedImageImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$DraftEmbedImageToJson(this, );
+  @override
+  String get $type;
+  @override
+  @DraftEmbedLocalRefConverter()
+  DraftEmbedLocalRef get localRef;
+  @override
+  String? get alt;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of DraftEmbedImage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DraftEmbedImageImplCopyWith<_$DraftEmbedImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DraftEmbedImage&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.localRef, localRef) || other.localRef == localRef)&&(identical(other.alt, alt) || other.alt == alt)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,localRef,alt,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'DraftEmbedImage(\$type: ${$type}, localRef: $localRef, alt: $alt, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$DraftEmbedImageCopyWith<$Res> implements $DraftEmbedImageCopyWith<$Res> {
-  factory _$DraftEmbedImageCopyWith(_DraftEmbedImage value, $Res Function(_DraftEmbedImage) _then) = __$DraftEmbedImageCopyWithImpl;
-@override @useResult
-$Res call({
- String $type,@DraftEmbedLocalRefConverter() DraftEmbedLocalRef localRef, String? alt, Map<String, dynamic>? $unknown
-});
-
-
-@override $DraftEmbedLocalRefCopyWith<$Res> get localRef;
-
-}
-/// @nodoc
-class __$DraftEmbedImageCopyWithImpl<$Res>
-    implements _$DraftEmbedImageCopyWith<$Res> {
-  __$DraftEmbedImageCopyWithImpl(this._self, this._then);
-
-  final _DraftEmbedImage _self;
-  final $Res Function(_DraftEmbedImage) _then;
-
-/// Create a copy of DraftEmbedImage
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? localRef = null,Object? alt = freezed,Object? $unknown = freezed,}) {
-  return _then(_DraftEmbedImage(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,localRef: null == localRef ? _self.localRef : localRef // ignore: cast_nullable_to_non_nullable
-as DraftEmbedLocalRef,alt: freezed == alt ? _self.alt : alt // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of DraftEmbedImage
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$DraftEmbedLocalRefCopyWith<$Res> get localRef {
-  
-  return $DraftEmbedLocalRefCopyWith<$Res>(_self.localRef, (value) {
-    return _then(_self.copyWith(localRef: value));
-  });
-}
-}
-
-// dart format on

@@ -8,44 +8,43 @@ part of 'related_account.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RelatedAccount _$RelatedAccountFromJson(Map json) =>
-    $checkedCreate('_RelatedAccount', json, ($checkedConvert) {
-      final val = _RelatedAccount(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'tools.ozone.signature.findRelatedAccounts#relatedAccount',
-        ),
-        account: $checkedConvert(
-          'account',
-          (v) =>
-              const AccountViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        similarities: $checkedConvert(
-          'similarities',
-          (v) => (v as List<dynamic>?)
-              ?.map(
-                (e) => const SigDetailConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$RelatedAccountImpl _$$RelatedAccountImplFromJson(Map json) => $checkedCreate(
+      r'_$RelatedAccountImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$RelatedAccountImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.signature.findRelatedAccounts#relatedAccount'),
+          account: $checkedConvert(
+              'account',
+              (v) => const AccountViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          similarities: $checkedConvert(
+              'similarities',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => const SigDetailConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$RelatedAccountToJson(_RelatedAccount instance) =>
+Map<String, dynamic> _$$RelatedAccountImplToJson(
+        _$RelatedAccountImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'account': const AccountViewConverter().toJson(instance.account),
-      'similarities': ?instance.similarities
-          ?.map(const SigDetailConverter().toJson)
-          .toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.similarities?.map(const SigDetailConverter().toJson).toList()
+          case final value?)
+        'similarities': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

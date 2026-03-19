@@ -8,32 +8,34 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ContactImportContactsOutput _$ContactImportContactsOutputFromJson(Map json) =>
-    $checkedCreate('_ContactImportContactsOutput', json, ($checkedConvert) {
-      final val = _ContactImportContactsOutput(
-        matchesAndContactIndexes: $checkedConvert(
-          'matchesAndContactIndexes',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const MatchAndContactIndexConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ContactImportContactsOutputImpl _$$ContactImportContactsOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ContactImportContactsOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ContactImportContactsOutputImpl(
+          matchesAndContactIndexes: $checkedConvert(
+              'matchesAndContactIndexes',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const MatchAndContactIndexConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ContactImportContactsOutputToJson(
-  _ContactImportContactsOutput instance,
-) => <String, dynamic>{
-  'matchesAndContactIndexes': instance.matchesAndContactIndexes
-      .map(const MatchAndContactIndexConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ContactImportContactsOutputImplToJson(
+        _$ContactImportContactsOutputImpl instance) =>
+    <String, dynamic>{
+      'matchesAndContactIndexes': instance.matchesAndContactIndexes
+          .map(const MatchAndContactIndexConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

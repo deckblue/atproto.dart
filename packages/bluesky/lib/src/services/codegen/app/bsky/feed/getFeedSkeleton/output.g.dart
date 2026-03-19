@@ -8,34 +8,37 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FeedGetFeedSkeletonOutput _$FeedGetFeedSkeletonOutputFromJson(Map json) =>
-    $checkedCreate('_FeedGetFeedSkeletonOutput', json, ($checkedConvert) {
-      final val = _FeedGetFeedSkeletonOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        feed: $checkedConvert(
-          'feed',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const SkeletonFeedPostConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        reqId: $checkedConvert('reqId', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$FeedGetFeedSkeletonOutputImpl _$$FeedGetFeedSkeletonOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$FeedGetFeedSkeletonOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FeedGetFeedSkeletonOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          feed: $checkedConvert(
+              'feed',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const SkeletonFeedPostConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          reqId: $checkedConvert('reqId', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$FeedGetFeedSkeletonOutputToJson(
-  _FeedGetFeedSkeletonOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'feed': instance.feed.map(const SkeletonFeedPostConverter().toJson).toList(),
-  'reqId': ?instance.reqId,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$FeedGetFeedSkeletonOutputImplToJson(
+        _$FeedGetFeedSkeletonOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'feed':
+          instance.feed.map(const SkeletonFeedPostConverter().toJson).toList(),
+      if (instance.reqId case final value?) 'reqId': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

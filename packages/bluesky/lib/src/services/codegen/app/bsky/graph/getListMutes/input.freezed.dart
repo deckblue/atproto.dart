@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,283 +9,209 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+GraphGetListMutesInput _$GraphGetListMutesInputFromJson(
+    Map<String, dynamic> json) {
+  return _GraphGetListMutesInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$GraphGetListMutesInput {
-
- int get limit; String? get cursor; Map<String, dynamic>? get $unknown;
-/// Create a copy of GraphGetListMutesInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GraphGetListMutesInputCopyWith<GraphGetListMutesInput> get copyWith => _$GraphGetListMutesInputCopyWithImpl<GraphGetListMutesInput>(this as GraphGetListMutesInput, _$identity);
+  int get limit => throw _privateConstructorUsedError;
+  String? get cursor => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GraphGetListMutesInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GraphGetListMutesInput&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,limit,cursor,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'GraphGetListMutesInput(limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of GraphGetListMutesInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GraphGetListMutesInputCopyWith<GraphGetListMutesInput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $GraphGetListMutesInputCopyWith<$Res>  {
-  factory $GraphGetListMutesInputCopyWith(GraphGetListMutesInput value, $Res Function(GraphGetListMutesInput) _then) = _$GraphGetListMutesInputCopyWithImpl;
-@useResult
-$Res call({
- int limit, String? cursor, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $GraphGetListMutesInputCopyWith<$Res> {
+  factory $GraphGetListMutesInputCopyWith(GraphGetListMutesInput value,
+          $Res Function(GraphGetListMutesInput) then) =
+      _$GraphGetListMutesInputCopyWithImpl<$Res, GraphGetListMutesInput>;
+  @useResult
+  $Res call({int limit, String? cursor, Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$GraphGetListMutesInputCopyWithImpl<$Res>
+class _$GraphGetListMutesInputCopyWithImpl<$Res,
+        $Val extends GraphGetListMutesInput>
     implements $GraphGetListMutesInputCopyWith<$Res> {
-  _$GraphGetListMutesInputCopyWithImpl(this._self, this._then);
+  _$GraphGetListMutesInputCopyWithImpl(this._value, this._then);
 
-  final GraphGetListMutesInput _self;
-  final $Res Function(GraphGetListMutesInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of GraphGetListMutesInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? limit = null,Object? cursor = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of GraphGetListMutesInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = null,
+    Object? cursor = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$GraphGetListMutesInputImplCopyWith<$Res>
+    implements $GraphGetListMutesInputCopyWith<$Res> {
+  factory _$$GraphGetListMutesInputImplCopyWith(
+          _$GraphGetListMutesInputImpl value,
+          $Res Function(_$GraphGetListMutesInputImpl) then) =
+      __$$GraphGetListMutesInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int limit, String? cursor, Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$GraphGetListMutesInputImplCopyWithImpl<$Res>
+    extends _$GraphGetListMutesInputCopyWithImpl<$Res,
+        _$GraphGetListMutesInputImpl>
+    implements _$$GraphGetListMutesInputImplCopyWith<$Res> {
+  __$$GraphGetListMutesInputImplCopyWithImpl(
+      _$GraphGetListMutesInputImpl _value,
+      $Res Function(_$GraphGetListMutesInputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [GraphGetListMutesInput].
-extension GraphGetListMutesInputPatterns on GraphGetListMutesInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GraphGetListMutesInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GraphGetListMutesInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GraphGetListMutesInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _GraphGetListMutesInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GraphGetListMutesInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _GraphGetListMutesInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int limit,  String? cursor,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GraphGetListMutesInput() when $default != null:
-return $default(_that.limit,_that.cursor,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int limit,  String? cursor,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _GraphGetListMutesInput():
-return $default(_that.limit,_that.cursor,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int limit,  String? cursor,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _GraphGetListMutesInput() when $default != null:
-return $default(_that.limit,_that.cursor,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of GraphGetListMutesInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = null,
+    Object? cursor = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$GraphGetListMutesInputImpl(
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GraphGetListMutesInput implements GraphGetListMutesInput {
-  const _GraphGetListMutesInput({this.limit = 50, this.cursor, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _GraphGetListMutesInput.fromJson(Map<String, dynamic> json) => _$GraphGetListMutesInputFromJson(json);
+class _$GraphGetListMutesInputImpl implements _GraphGetListMutesInput {
+  const _$GraphGetListMutesInputImpl(
+      {this.limit = 50, this.cursor, final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  int limit;
-@override final  String? cursor;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$GraphGetListMutesInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GraphGetListMutesInputImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final int limit;
+  @override
+  final String? cursor;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'GraphGetListMutesInput(limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GraphGetListMutesInputImpl &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, limit, cursor,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of GraphGetListMutesInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GraphGetListMutesInputImplCopyWith<_$GraphGetListMutesInputImpl>
+      get copyWith => __$$GraphGetListMutesInputImplCopyWithImpl<
+          _$GraphGetListMutesInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GraphGetListMutesInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _GraphGetListMutesInput implements GraphGetListMutesInput {
+  const factory _GraphGetListMutesInput(
+      {final int limit,
+      final String? cursor,
+      final Map<String, dynamic>? $unknown}) = _$GraphGetListMutesInputImpl;
 
-/// Create a copy of GraphGetListMutesInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$GraphGetListMutesInputCopyWith<_GraphGetListMutesInput> get copyWith => __$GraphGetListMutesInputCopyWithImpl<_GraphGetListMutesInput>(this, _$identity);
+  factory _GraphGetListMutesInput.fromJson(Map<String, dynamic> json) =
+      _$GraphGetListMutesInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GraphGetListMutesInputToJson(this, );
+  @override
+  int get limit;
+  @override
+  String? get cursor;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of GraphGetListMutesInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GraphGetListMutesInputImplCopyWith<_$GraphGetListMutesInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GraphGetListMutesInput&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,limit,cursor,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'GraphGetListMutesInput(limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$GraphGetListMutesInputCopyWith<$Res> implements $GraphGetListMutesInputCopyWith<$Res> {
-  factory _$GraphGetListMutesInputCopyWith(_GraphGetListMutesInput value, $Res Function(_GraphGetListMutesInput) _then) = __$GraphGetListMutesInputCopyWithImpl;
-@override @useResult
-$Res call({
- int limit, String? cursor, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$GraphGetListMutesInputCopyWithImpl<$Res>
-    implements _$GraphGetListMutesInputCopyWith<$Res> {
-  __$GraphGetListMutesInputCopyWithImpl(this._self, this._then);
-
-  final _GraphGetListMutesInput _self;
-  final $Res Function(_GraphGetListMutesInput) _then;
-
-/// Create a copy of GraphGetListMutesInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? limit = null,Object? cursor = freezed,Object? $unknown = freezed,}) {
-  return _then(_GraphGetListMutesInput(
-limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

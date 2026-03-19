@@ -8,36 +8,38 @@ part of 'identity_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_IdentityEvent _$IdentityEventFromJson(Map json) =>
-    $checkedCreate('_IdentityEvent', json, ($checkedConvert) {
-      final val = _IdentityEvent(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.moderation.defs#identityEvent',
-        ),
-        comment: $checkedConvert('comment', (v) => v as String?),
-        handle: $checkedConvert('handle', (v) => v as String?),
-        pdsHost: $checkedConvert('pdsHost', (v) => v as String?),
-        tombstone: $checkedConvert('tombstone', (v) => v as bool?),
-        timestamp: $checkedConvert(
-          'timestamp',
-          (v) => DateTime.parse(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$IdentityEventImpl _$$IdentityEventImplFromJson(Map json) => $checkedCreate(
+      r'_$IdentityEventImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$IdentityEventImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'tools.ozone.moderation.defs#identityEvent'),
+          comment: $checkedConvert('comment', (v) => v as String?),
+          handle: $checkedConvert('handle', (v) => v as String?),
+          pdsHost: $checkedConvert('pdsHost', (v) => v as String?),
+          tombstone: $checkedConvert('tombstone', (v) => v as bool?),
+          timestamp:
+              $checkedConvert('timestamp', (v) => DateTime.parse(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$IdentityEventToJson(_IdentityEvent instance) =>
+Map<String, dynamic> _$$IdentityEventImplToJson(_$IdentityEventImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'comment': ?instance.comment,
-      'handle': ?instance.handle,
-      'pdsHost': ?instance.pdsHost,
-      'tombstone': ?instance.tombstone,
+      if (instance.comment case final value?) 'comment': value,
+      if (instance.handle case final value?) 'handle': value,
+      if (instance.pdsHost case final value?) 'pdsHost': value,
+      if (instance.tombstone case final value?) 'tombstone': value,
       'timestamp': instance.timestamp.toIso8601String(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

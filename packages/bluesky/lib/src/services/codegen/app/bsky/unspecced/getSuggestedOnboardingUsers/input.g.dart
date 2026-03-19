@@ -8,27 +8,30 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetSuggestedOnboardingUsersInput
-_$UnspeccedGetSuggestedOnboardingUsersInputFromJson(Map json) => $checkedCreate(
-  '_UnspeccedGetSuggestedOnboardingUsersInput',
-  json,
-  ($checkedConvert) {
-    final val = _UnspeccedGetSuggestedOnboardingUsersInput(
-      category: $checkedConvert('category', (v) => v as String?),
-      limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$UnspeccedGetSuggestedOnboardingUsersInputImpl
+    _$$UnspeccedGetSuggestedOnboardingUsersInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedGetSuggestedOnboardingUsersInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$UnspeccedGetSuggestedOnboardingUsersInputImpl(
+              category: $checkedConvert('category', (v) => v as String?),
+              limit:
+                  $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$UnspeccedGetSuggestedOnboardingUsersInputToJson(
-  _UnspeccedGetSuggestedOnboardingUsersInput instance,
-) => <String, dynamic>{
-  'category': ?instance.category,
-  'limit': instance.limit,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$UnspeccedGetSuggestedOnboardingUsersInputImplToJson(
+        _$UnspeccedGetSuggestedOnboardingUsersInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.category case final value?) 'category': value,
+      'limit': instance.limit,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

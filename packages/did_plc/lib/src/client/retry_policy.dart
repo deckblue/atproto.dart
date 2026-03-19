@@ -54,20 +54,18 @@ extension RetryPolicyExtension on RetryPolicy {
     return when(
       (maxAttempts, initialDelay, backoffMultiplier, maxDelay, _) {
         final delay = Duration(
-          milliseconds:
-              (initialDelay.inMilliseconds *
-                      math.pow(backoffMultiplier, attempt))
-                  .round(),
+          milliseconds: (initialDelay.inMilliseconds *
+                  math.pow(backoffMultiplier, attempt))
+              .round(),
         );
         return delay > maxDelay ? maxDelay : delay;
       },
       none: () => Duration.zero,
       aggressive: (_, initialDelay, backoffMultiplier, maxDelay) {
         final delay = Duration(
-          milliseconds:
-              (initialDelay.inMilliseconds *
-                      math.pow(backoffMultiplier, attempt))
-                  .round(),
+          milliseconds: (initialDelay.inMilliseconds *
+                  math.pow(backoffMultiplier, attempt))
+              .round(),
         );
         return delay > maxDelay ? maxDelay : delay;
       },
@@ -79,10 +77,10 @@ extension RetryPolicyExtension on RetryPolicy {
   /// [statusCode] - HTTP status code to check
   bool shouldRetry(int statusCode) {
     return when(
-      (_, _, _, _, retryableStatusCodes) =>
+      (_, __, ___, ____, retryableStatusCodes) =>
           retryableStatusCodes.contains(statusCode),
       none: () => false,
-      aggressive: (_, _, _, _) =>
+      aggressive: (_, __, ___, ____) =>
           [408, 429, 500, 502, 503, 504].contains(statusCode),
     );
   }
@@ -92,9 +90,9 @@ extension RetryPolicyExtension on RetryPolicy {
   /// [currentAttempt] - Current attempt number (0-based)
   bool hasMoreAttempts(int currentAttempt) {
     return when(
-      (maxAttempts, _, _, _, _) => currentAttempt < maxAttempts,
+      (maxAttempts, _, __, ___, ____) => currentAttempt < maxAttempts,
       none: () => false,
-      aggressive: (maxAttempts, _, _, _) => currentAttempt < maxAttempts,
+      aggressive: (maxAttempts, _, __, ___) => currentAttempt < maxAttempts,
     );
   }
 
@@ -132,9 +130,9 @@ extension RetryPolicyExtension on RetryPolicy {
             ? rateLimitDelay
             : exponentialDelay;
         return when(
-          (_, _, _, maxDelay, _) => delay > maxDelay ? maxDelay : delay,
+          (_, __, ___, maxDelay, ____) => delay > maxDelay ? maxDelay : delay,
           none: () => Duration.zero,
-          aggressive: (_, _, _, maxDelay) =>
+          aggressive: (_, __, ___, maxDelay) =>
               delay > maxDelay ? maxDelay : delay,
         );
       }
@@ -150,7 +148,7 @@ extension RetryPolicyExtension on RetryPolicy {
   /// [exception] - The exception to check
   bool shouldRetryException(Exception exception) {
     return when(
-      (_, _, _, _, _) {
+      (_, __, ___, ____, _____) {
         // Network-related exceptions that should be retried
         if (exception.toString().contains('timeout') ||
             exception.toString().contains('connection') ||
@@ -160,7 +158,7 @@ extension RetryPolicyExtension on RetryPolicy {
         return false;
       },
       none: () => false,
-      aggressive: (_, _, _, _) {
+      aggressive: (_, __, ___, ____) {
         // More aggressive retry for network issues
         if (exception.toString().contains('timeout') ||
             exception.toString().contains('connection') ||

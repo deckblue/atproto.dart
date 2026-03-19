@@ -8,27 +8,29 @@ part of 'not_found_actor.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotFoundActor _$NotFoundActorFromJson(Map json) =>
-    $checkedCreate('_NotFoundActor', json, ($checkedConvert) {
-      final val = _NotFoundActor(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.graph.defs#notFoundActor',
-        ),
-        actor: $checkedConvert('actor', (v) => v as String),
-        notFound: $checkedConvert('notFound', (v) => v as bool),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$NotFoundActorImpl _$$NotFoundActorImplFromJson(Map json) => $checkedCreate(
+      r'_$NotFoundActorImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$NotFoundActorImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.graph.defs#notFoundActor'),
+          actor: $checkedConvert('actor', (v) => v as String),
+          notFound: $checkedConvert('notFound', (v) => v as bool),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$NotFoundActorToJson(_NotFoundActor instance) =>
+Map<String, dynamic> _$$NotFoundActorImplToJson(_$NotFoundActorImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'actor': instance.actor,
       'notFound': instance.notFound,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

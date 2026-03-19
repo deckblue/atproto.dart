@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,368 @@ part of 'thread_view_pref_sort.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$ThreadViewPrefSort {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ThreadViewPrefSort&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'ThreadViewPrefSort(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownThreadViewPrefSort data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownThreadViewPrefSort data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownThreadViewPrefSort data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ThreadViewPrefSortKnownValue value) knownValue,
+    required TResult Function(ThreadViewPrefSortUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ThreadViewPrefSortKnownValue value)? knownValue,
+    TResult? Function(ThreadViewPrefSortUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ThreadViewPrefSortKnownValue value)? knownValue,
+    TResult Function(ThreadViewPrefSortUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $ThreadViewPrefSortCopyWith<$Res>  {
-$ThreadViewPrefSortCopyWith(ThreadViewPrefSort _, $Res Function(ThreadViewPrefSort) __);
+abstract class $ThreadViewPrefSortCopyWith<$Res> {
+  factory $ThreadViewPrefSortCopyWith(
+          ThreadViewPrefSort value, $Res Function(ThreadViewPrefSort) then) =
+      _$ThreadViewPrefSortCopyWithImpl<$Res, ThreadViewPrefSort>;
 }
 
+/// @nodoc
+class _$ThreadViewPrefSortCopyWithImpl<$Res, $Val extends ThreadViewPrefSort>
+    implements $ThreadViewPrefSortCopyWith<$Res> {
+  _$ThreadViewPrefSortCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [ThreadViewPrefSort].
-extension ThreadViewPrefSortPatterns on ThreadViewPrefSort {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ThreadViewPrefSortKnownValue value)?  knownValue,TResult Function( ThreadViewPrefSortUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case ThreadViewPrefSortKnownValue() when knownValue != null:
-return knownValue(_that);case ThreadViewPrefSortUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ThreadViewPrefSortKnownValue value)  knownValue,required TResult Function( ThreadViewPrefSortUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case ThreadViewPrefSortKnownValue():
-return knownValue(_that);case ThreadViewPrefSortUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ThreadViewPrefSortKnownValue value)?  knownValue,TResult? Function( ThreadViewPrefSortUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case ThreadViewPrefSortKnownValue() when knownValue != null:
-return knownValue(_that);case ThreadViewPrefSortUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownThreadViewPrefSort data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case ThreadViewPrefSortKnownValue() when knownValue != null:
-return knownValue(_that.data);case ThreadViewPrefSortUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownThreadViewPrefSort data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case ThreadViewPrefSortKnownValue():
-return knownValue(_that.data);case ThreadViewPrefSortUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownThreadViewPrefSort data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case ThreadViewPrefSortKnownValue() when knownValue != null:
-return knownValue(_that.data);case ThreadViewPrefSortUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of ThreadViewPrefSort
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$ThreadViewPrefSortKnownValueImplCopyWith<$Res> {
+  factory _$$ThreadViewPrefSortKnownValueImplCopyWith(
+          _$ThreadViewPrefSortKnownValueImpl value,
+          $Res Function(_$ThreadViewPrefSortKnownValueImpl) then) =
+      __$$ThreadViewPrefSortKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownThreadViewPrefSort data});
+}
+
+/// @nodoc
+class __$$ThreadViewPrefSortKnownValueImplCopyWithImpl<$Res>
+    extends _$ThreadViewPrefSortCopyWithImpl<$Res,
+        _$ThreadViewPrefSortKnownValueImpl>
+    implements _$$ThreadViewPrefSortKnownValueImplCopyWith<$Res> {
+  __$$ThreadViewPrefSortKnownValueImplCopyWithImpl(
+      _$ThreadViewPrefSortKnownValueImpl _value,
+      $Res Function(_$ThreadViewPrefSortKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ThreadViewPrefSort
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ThreadViewPrefSortKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownThreadViewPrefSort,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$ThreadViewPrefSortKnownValueImpl extends ThreadViewPrefSortKnownValue {
+  const _$ThreadViewPrefSortKnownValueImpl({required this.data}) : super._();
 
-class ThreadViewPrefSortKnownValue extends ThreadViewPrefSort {
-  const ThreadViewPrefSortKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownThreadViewPrefSort data;
 
-@override final  KnownThreadViewPrefSort data;
+  @override
+  String toString() {
+    return 'ThreadViewPrefSort.knownValue(data: $data)';
+  }
 
-/// Create a copy of ThreadViewPrefSort
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ThreadViewPrefSortKnownValueCopyWith<ThreadViewPrefSortKnownValue> get copyWith => _$ThreadViewPrefSortKnownValueCopyWithImpl<ThreadViewPrefSortKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ThreadViewPrefSortKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of ThreadViewPrefSort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ThreadViewPrefSortKnownValueImplCopyWith<
+          _$ThreadViewPrefSortKnownValueImpl>
+      get copyWith => __$$ThreadViewPrefSortKnownValueImplCopyWithImpl<
+          _$ThreadViewPrefSortKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ThreadViewPrefSortKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownThreadViewPrefSort data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownThreadViewPrefSort data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownThreadViewPrefSort data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ThreadViewPrefSortKnownValue value) knownValue,
+    required TResult Function(ThreadViewPrefSortUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ThreadViewPrefSortKnownValue value)? knownValue,
+    TResult? Function(ThreadViewPrefSortUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ThreadViewPrefSortKnownValue value)? knownValue,
+    TResult Function(ThreadViewPrefSortUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class ThreadViewPrefSortKnownValue extends ThreadViewPrefSort {
+  const factory ThreadViewPrefSortKnownValue(
+          {required final KnownThreadViewPrefSort data}) =
+      _$ThreadViewPrefSortKnownValueImpl;
+  const ThreadViewPrefSortKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownThreadViewPrefSort get data;
 
-@override
-String toString() {
-  return 'ThreadViewPrefSort.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of ThreadViewPrefSort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ThreadViewPrefSortKnownValueImplCopyWith<
+          _$ThreadViewPrefSortKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ThreadViewPrefSortKnownValueCopyWith<$Res> implements $ThreadViewPrefSortCopyWith<$Res> {
-  factory $ThreadViewPrefSortKnownValueCopyWith(ThreadViewPrefSortKnownValue value, $Res Function(ThreadViewPrefSortKnownValue) _then) = _$ThreadViewPrefSortKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownThreadViewPrefSort data
-});
-
-
-
-
-}
-/// @nodoc
-class _$ThreadViewPrefSortKnownValueCopyWithImpl<$Res>
-    implements $ThreadViewPrefSortKnownValueCopyWith<$Res> {
-  _$ThreadViewPrefSortKnownValueCopyWithImpl(this._self, this._then);
-
-  final ThreadViewPrefSortKnownValue _self;
-  final $Res Function(ThreadViewPrefSortKnownValue) _then;
-
-/// Create a copy of ThreadViewPrefSort
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ThreadViewPrefSortKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownThreadViewPrefSort,
-  ));
-}
-
-
+abstract class _$$ThreadViewPrefSortUnknownImplCopyWith<$Res> {
+  factory _$$ThreadViewPrefSortUnknownImplCopyWith(
+          _$ThreadViewPrefSortUnknownImpl value,
+          $Res Function(_$ThreadViewPrefSortUnknownImpl) then) =
+      __$$ThreadViewPrefSortUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$ThreadViewPrefSortUnknownImplCopyWithImpl<$Res>
+    extends _$ThreadViewPrefSortCopyWithImpl<$Res,
+        _$ThreadViewPrefSortUnknownImpl>
+    implements _$$ThreadViewPrefSortUnknownImplCopyWith<$Res> {
+  __$$ThreadViewPrefSortUnknownImplCopyWithImpl(
+      _$ThreadViewPrefSortUnknownImpl _value,
+      $Res Function(_$ThreadViewPrefSortUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class ThreadViewPrefSortUnknown extends ThreadViewPrefSort {
-  const ThreadViewPrefSortUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of ThreadViewPrefSort
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ThreadViewPrefSortUnknownCopyWith<ThreadViewPrefSortUnknown> get copyWith => _$ThreadViewPrefSortUnknownCopyWithImpl<ThreadViewPrefSortUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ThreadViewPrefSortUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'ThreadViewPrefSort.unknown(data: $data)';
-}
-
-
+  /// Create a copy of ThreadViewPrefSort
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ThreadViewPrefSortUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $ThreadViewPrefSortUnknownCopyWith<$Res> implements $ThreadViewPrefSortCopyWith<$Res> {
-  factory $ThreadViewPrefSortUnknownCopyWith(ThreadViewPrefSortUnknown value, $Res Function(ThreadViewPrefSortUnknown) _then) = _$ThreadViewPrefSortUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$ThreadViewPrefSortUnknownImpl extends ThreadViewPrefSortUnknown {
+  const _$ThreadViewPrefSortUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'ThreadViewPrefSort.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ThreadViewPrefSortUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of ThreadViewPrefSort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ThreadViewPrefSortUnknownImplCopyWith<_$ThreadViewPrefSortUnknownImpl>
+      get copyWith => __$$ThreadViewPrefSortUnknownImplCopyWithImpl<
+          _$ThreadViewPrefSortUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownThreadViewPrefSort data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownThreadViewPrefSort data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownThreadViewPrefSort data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ThreadViewPrefSortKnownValue value) knownValue,
+    required TResult Function(ThreadViewPrefSortUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ThreadViewPrefSortKnownValue value)? knownValue,
+    TResult? Function(ThreadViewPrefSortUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ThreadViewPrefSortKnownValue value)? knownValue,
+    TResult Function(ThreadViewPrefSortUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$ThreadViewPrefSortUnknownCopyWithImpl<$Res>
-    implements $ThreadViewPrefSortUnknownCopyWith<$Res> {
-  _$ThreadViewPrefSortUnknownCopyWithImpl(this._self, this._then);
 
-  final ThreadViewPrefSortUnknown _self;
-  final $Res Function(ThreadViewPrefSortUnknown) _then;
+abstract class ThreadViewPrefSortUnknown extends ThreadViewPrefSort {
+  const factory ThreadViewPrefSortUnknown({required final String data}) =
+      _$ThreadViewPrefSortUnknownImpl;
+  const ThreadViewPrefSortUnknown._() : super._();
 
-/// Create a copy of ThreadViewPrefSort
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ThreadViewPrefSortUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of ThreadViewPrefSort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ThreadViewPrefSortUnknownImplCopyWith<_$ThreadViewPrefSortUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

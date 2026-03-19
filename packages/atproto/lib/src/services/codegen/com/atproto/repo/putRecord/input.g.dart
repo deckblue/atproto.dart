@@ -8,35 +8,39 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RepoPutRecordInput _$RepoPutRecordInputFromJson(Map json) =>
-    $checkedCreate('_RepoPutRecordInput', json, ($checkedConvert) {
-      final val = _RepoPutRecordInput(
-        repo: $checkedConvert('repo', (v) => v as String),
-        collection: $checkedConvert('collection', (v) => v as String),
-        rkey: $checkedConvert('rkey', (v) => v as String),
-        validate: $checkedConvert('validate', (v) => v as bool?),
-        record: $checkedConvert(
-          'record',
-          (v) => Map<String, dynamic>.from(v as Map),
-        ),
-        swapRecord: $checkedConvert('swapRecord', (v) => v as String?),
-        swapCommit: $checkedConvert('swapCommit', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$RepoPutRecordInputImpl _$$RepoPutRecordInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$RepoPutRecordInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$RepoPutRecordInputImpl(
+          repo: $checkedConvert('repo', (v) => v as String),
+          collection: $checkedConvert('collection', (v) => v as String),
+          rkey: $checkedConvert('rkey', (v) => v as String),
+          validate: $checkedConvert('validate', (v) => v as bool?),
+          record: $checkedConvert(
+              'record', (v) => Map<String, dynamic>.from(v as Map)),
+          swapRecord: $checkedConvert('swapRecord', (v) => v as String?),
+          swapCommit: $checkedConvert('swapCommit', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$RepoPutRecordInputToJson(_RepoPutRecordInput instance) =>
+Map<String, dynamic> _$$RepoPutRecordInputImplToJson(
+        _$RepoPutRecordInputImpl instance) =>
     <String, dynamic>{
       'repo': instance.repo,
       'collection': instance.collection,
       'rkey': instance.rkey,
-      'validate': ?instance.validate,
+      if (instance.validate case final value?) 'validate': value,
       'record': instance.record,
-      'swapRecord': ?instance.swapRecord,
-      'swapCommit': ?instance.swapCommit,
-      r'$unknown': ?instance.$unknown,
+      if (instance.swapRecord case final value?) 'swapRecord': value,
+      if (instance.swapCommit case final value?) 'swapCommit': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

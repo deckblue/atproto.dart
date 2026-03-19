@@ -8,20 +8,26 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoGetLogInput _$ConvoGetLogInputFromJson(Map json) =>
-    $checkedCreate('_ConvoGetLogInput', json, ($checkedConvert) {
-      final val = _ConvoGetLogInput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ConvoGetLogInputImpl _$$ConvoGetLogInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ConvoGetLogInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoGetLogInputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoGetLogInputToJson(_ConvoGetLogInput instance) =>
+Map<String, dynamic> _$$ConvoGetLogInputImplToJson(
+        _$ConvoGetLogInputImpl instance) =>
     <String, dynamic>{
-      'cursor': ?instance.cursor,
-      r'$unknown': ?instance.$unknown,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

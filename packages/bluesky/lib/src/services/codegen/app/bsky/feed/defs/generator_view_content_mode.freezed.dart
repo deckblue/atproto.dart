@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,379 @@ part of 'generator_view_content_mode.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$GeneratorViewContentMode {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GeneratorViewContentMode&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'GeneratorViewContentMode(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownGeneratorViewContentMode data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownGeneratorViewContentMode data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownGeneratorViewContentMode data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GeneratorViewContentModeKnownValue value)
+        knownValue,
+    required TResult Function(GeneratorViewContentModeUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GeneratorViewContentModeKnownValue value)? knownValue,
+    TResult? Function(GeneratorViewContentModeUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GeneratorViewContentModeKnownValue value)? knownValue,
+    TResult Function(GeneratorViewContentModeUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $GeneratorViewContentModeCopyWith<$Res>  {
-$GeneratorViewContentModeCopyWith(GeneratorViewContentMode _, $Res Function(GeneratorViewContentMode) __);
+abstract class $GeneratorViewContentModeCopyWith<$Res> {
+  factory $GeneratorViewContentModeCopyWith(GeneratorViewContentMode value,
+          $Res Function(GeneratorViewContentMode) then) =
+      _$GeneratorViewContentModeCopyWithImpl<$Res, GeneratorViewContentMode>;
 }
 
+/// @nodoc
+class _$GeneratorViewContentModeCopyWithImpl<$Res,
+        $Val extends GeneratorViewContentMode>
+    implements $GeneratorViewContentModeCopyWith<$Res> {
+  _$GeneratorViewContentModeCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [GeneratorViewContentMode].
-extension GeneratorViewContentModePatterns on GeneratorViewContentMode {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( GeneratorViewContentModeKnownValue value)?  knownValue,TResult Function( GeneratorViewContentModeUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case GeneratorViewContentModeKnownValue() when knownValue != null:
-return knownValue(_that);case GeneratorViewContentModeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( GeneratorViewContentModeKnownValue value)  knownValue,required TResult Function( GeneratorViewContentModeUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case GeneratorViewContentModeKnownValue():
-return knownValue(_that);case GeneratorViewContentModeUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( GeneratorViewContentModeKnownValue value)?  knownValue,TResult? Function( GeneratorViewContentModeUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case GeneratorViewContentModeKnownValue() when knownValue != null:
-return knownValue(_that);case GeneratorViewContentModeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownGeneratorViewContentMode data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case GeneratorViewContentModeKnownValue() when knownValue != null:
-return knownValue(_that.data);case GeneratorViewContentModeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownGeneratorViewContentMode data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case GeneratorViewContentModeKnownValue():
-return knownValue(_that.data);case GeneratorViewContentModeUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownGeneratorViewContentMode data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case GeneratorViewContentModeKnownValue() when knownValue != null:
-return knownValue(_that.data);case GeneratorViewContentModeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of GeneratorViewContentMode
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$GeneratorViewContentModeKnownValueImplCopyWith<$Res> {
+  factory _$$GeneratorViewContentModeKnownValueImplCopyWith(
+          _$GeneratorViewContentModeKnownValueImpl value,
+          $Res Function(_$GeneratorViewContentModeKnownValueImpl) then) =
+      __$$GeneratorViewContentModeKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownGeneratorViewContentMode data});
+}
+
+/// @nodoc
+class __$$GeneratorViewContentModeKnownValueImplCopyWithImpl<$Res>
+    extends _$GeneratorViewContentModeCopyWithImpl<$Res,
+        _$GeneratorViewContentModeKnownValueImpl>
+    implements _$$GeneratorViewContentModeKnownValueImplCopyWith<$Res> {
+  __$$GeneratorViewContentModeKnownValueImplCopyWithImpl(
+      _$GeneratorViewContentModeKnownValueImpl _value,
+      $Res Function(_$GeneratorViewContentModeKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GeneratorViewContentMode
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GeneratorViewContentModeKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownGeneratorViewContentMode,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$GeneratorViewContentModeKnownValueImpl
+    extends GeneratorViewContentModeKnownValue {
+  const _$GeneratorViewContentModeKnownValueImpl({required this.data})
+      : super._();
 
-class GeneratorViewContentModeKnownValue extends GeneratorViewContentMode {
-  const GeneratorViewContentModeKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownGeneratorViewContentMode data;
 
-@override final  KnownGeneratorViewContentMode data;
+  @override
+  String toString() {
+    return 'GeneratorViewContentMode.knownValue(data: $data)';
+  }
 
-/// Create a copy of GeneratorViewContentMode
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GeneratorViewContentModeKnownValueCopyWith<GeneratorViewContentModeKnownValue> get copyWith => _$GeneratorViewContentModeKnownValueCopyWithImpl<GeneratorViewContentModeKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GeneratorViewContentModeKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of GeneratorViewContentMode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GeneratorViewContentModeKnownValueImplCopyWith<
+          _$GeneratorViewContentModeKnownValueImpl>
+      get copyWith => __$$GeneratorViewContentModeKnownValueImplCopyWithImpl<
+          _$GeneratorViewContentModeKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GeneratorViewContentModeKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownGeneratorViewContentMode data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownGeneratorViewContentMode data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownGeneratorViewContentMode data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GeneratorViewContentModeKnownValue value)
+        knownValue,
+    required TResult Function(GeneratorViewContentModeUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GeneratorViewContentModeKnownValue value)? knownValue,
+    TResult? Function(GeneratorViewContentModeUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GeneratorViewContentModeKnownValue value)? knownValue,
+    TResult Function(GeneratorViewContentModeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class GeneratorViewContentModeKnownValue
+    extends GeneratorViewContentMode {
+  const factory GeneratorViewContentModeKnownValue(
+          {required final KnownGeneratorViewContentMode data}) =
+      _$GeneratorViewContentModeKnownValueImpl;
+  const GeneratorViewContentModeKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownGeneratorViewContentMode get data;
 
-@override
-String toString() {
-  return 'GeneratorViewContentMode.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of GeneratorViewContentMode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GeneratorViewContentModeKnownValueImplCopyWith<
+          _$GeneratorViewContentModeKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $GeneratorViewContentModeKnownValueCopyWith<$Res> implements $GeneratorViewContentModeCopyWith<$Res> {
-  factory $GeneratorViewContentModeKnownValueCopyWith(GeneratorViewContentModeKnownValue value, $Res Function(GeneratorViewContentModeKnownValue) _then) = _$GeneratorViewContentModeKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownGeneratorViewContentMode data
-});
-
-
-
-
-}
-/// @nodoc
-class _$GeneratorViewContentModeKnownValueCopyWithImpl<$Res>
-    implements $GeneratorViewContentModeKnownValueCopyWith<$Res> {
-  _$GeneratorViewContentModeKnownValueCopyWithImpl(this._self, this._then);
-
-  final GeneratorViewContentModeKnownValue _self;
-  final $Res Function(GeneratorViewContentModeKnownValue) _then;
-
-/// Create a copy of GeneratorViewContentMode
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(GeneratorViewContentModeKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownGeneratorViewContentMode,
-  ));
-}
-
-
+abstract class _$$GeneratorViewContentModeUnknownImplCopyWith<$Res> {
+  factory _$$GeneratorViewContentModeUnknownImplCopyWith(
+          _$GeneratorViewContentModeUnknownImpl value,
+          $Res Function(_$GeneratorViewContentModeUnknownImpl) then) =
+      __$$GeneratorViewContentModeUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$GeneratorViewContentModeUnknownImplCopyWithImpl<$Res>
+    extends _$GeneratorViewContentModeCopyWithImpl<$Res,
+        _$GeneratorViewContentModeUnknownImpl>
+    implements _$$GeneratorViewContentModeUnknownImplCopyWith<$Res> {
+  __$$GeneratorViewContentModeUnknownImplCopyWithImpl(
+      _$GeneratorViewContentModeUnknownImpl _value,
+      $Res Function(_$GeneratorViewContentModeUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class GeneratorViewContentModeUnknown extends GeneratorViewContentMode {
-  const GeneratorViewContentModeUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of GeneratorViewContentMode
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GeneratorViewContentModeUnknownCopyWith<GeneratorViewContentModeUnknown> get copyWith => _$GeneratorViewContentModeUnknownCopyWithImpl<GeneratorViewContentModeUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GeneratorViewContentModeUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'GeneratorViewContentMode.unknown(data: $data)';
-}
-
-
+  /// Create a copy of GeneratorViewContentMode
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GeneratorViewContentModeUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $GeneratorViewContentModeUnknownCopyWith<$Res> implements $GeneratorViewContentModeCopyWith<$Res> {
-  factory $GeneratorViewContentModeUnknownCopyWith(GeneratorViewContentModeUnknown value, $Res Function(GeneratorViewContentModeUnknown) _then) = _$GeneratorViewContentModeUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$GeneratorViewContentModeUnknownImpl
+    extends GeneratorViewContentModeUnknown {
+  const _$GeneratorViewContentModeUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'GeneratorViewContentMode.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GeneratorViewContentModeUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of GeneratorViewContentMode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GeneratorViewContentModeUnknownImplCopyWith<
+          _$GeneratorViewContentModeUnknownImpl>
+      get copyWith => __$$GeneratorViewContentModeUnknownImplCopyWithImpl<
+          _$GeneratorViewContentModeUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownGeneratorViewContentMode data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownGeneratorViewContentMode data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownGeneratorViewContentMode data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GeneratorViewContentModeKnownValue value)
+        knownValue,
+    required TResult Function(GeneratorViewContentModeUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GeneratorViewContentModeKnownValue value)? knownValue,
+    TResult? Function(GeneratorViewContentModeUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GeneratorViewContentModeKnownValue value)? knownValue,
+    TResult Function(GeneratorViewContentModeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$GeneratorViewContentModeUnknownCopyWithImpl<$Res>
-    implements $GeneratorViewContentModeUnknownCopyWith<$Res> {
-  _$GeneratorViewContentModeUnknownCopyWithImpl(this._self, this._then);
 
-  final GeneratorViewContentModeUnknown _self;
-  final $Res Function(GeneratorViewContentModeUnknown) _then;
+abstract class GeneratorViewContentModeUnknown
+    extends GeneratorViewContentMode {
+  const factory GeneratorViewContentModeUnknown({required final String data}) =
+      _$GeneratorViewContentModeUnknownImpl;
+  const GeneratorViewContentModeUnknown._() : super._();
 
-/// Create a copy of GeneratorViewContentMode
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(GeneratorViewContentModeUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of GeneratorViewContentMode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GeneratorViewContentModeUnknownImplCopyWith<
+          _$GeneratorViewContentModeUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

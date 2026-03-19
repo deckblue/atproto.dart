@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,282 +9,194 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+TempDereferenceScopeInput _$TempDereferenceScopeInputFromJson(
+    Map<String, dynamic> json) {
+  return _TempDereferenceScopeInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$TempDereferenceScopeInput {
-
-/// The scope reference (starts with 'ref:')
- String get scope; Map<String, dynamic>? get $unknown;
-/// Create a copy of TempDereferenceScopeInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$TempDereferenceScopeInputCopyWith<TempDereferenceScopeInput> get copyWith => _$TempDereferenceScopeInputCopyWithImpl<TempDereferenceScopeInput>(this as TempDereferenceScopeInput, _$identity);
+  /// The scope reference (starts with 'ref:')
+  String get scope => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this TempDereferenceScopeInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TempDereferenceScopeInput&&(identical(other.scope, scope) || other.scope == scope)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,scope,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'TempDereferenceScopeInput(scope: $scope, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of TempDereferenceScopeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $TempDereferenceScopeInputCopyWith<TempDereferenceScopeInput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $TempDereferenceScopeInputCopyWith<$Res>  {
-  factory $TempDereferenceScopeInputCopyWith(TempDereferenceScopeInput value, $Res Function(TempDereferenceScopeInput) _then) = _$TempDereferenceScopeInputCopyWithImpl;
-@useResult
-$Res call({
- String scope, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $TempDereferenceScopeInputCopyWith<$Res> {
+  factory $TempDereferenceScopeInputCopyWith(TempDereferenceScopeInput value,
+          $Res Function(TempDereferenceScopeInput) then) =
+      _$TempDereferenceScopeInputCopyWithImpl<$Res, TempDereferenceScopeInput>;
+  @useResult
+  $Res call({String scope, Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$TempDereferenceScopeInputCopyWithImpl<$Res>
+class _$TempDereferenceScopeInputCopyWithImpl<$Res,
+        $Val extends TempDereferenceScopeInput>
     implements $TempDereferenceScopeInputCopyWith<$Res> {
-  _$TempDereferenceScopeInputCopyWithImpl(this._self, this._then);
+  _$TempDereferenceScopeInputCopyWithImpl(this._value, this._then);
 
-  final TempDereferenceScopeInput _self;
-  final $Res Function(TempDereferenceScopeInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of TempDereferenceScopeInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? scope = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-scope: null == scope ? _self.scope : scope // ignore: cast_nullable_to_non_nullable
-as String,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of TempDereferenceScopeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scope = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      scope: null == scope
+          ? _value.scope
+          : scope // ignore: cast_nullable_to_non_nullable
+              as String,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$TempDereferenceScopeInputImplCopyWith<$Res>
+    implements $TempDereferenceScopeInputCopyWith<$Res> {
+  factory _$$TempDereferenceScopeInputImplCopyWith(
+          _$TempDereferenceScopeInputImpl value,
+          $Res Function(_$TempDereferenceScopeInputImpl) then) =
+      __$$TempDereferenceScopeInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String scope, Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$TempDereferenceScopeInputImplCopyWithImpl<$Res>
+    extends _$TempDereferenceScopeInputCopyWithImpl<$Res,
+        _$TempDereferenceScopeInputImpl>
+    implements _$$TempDereferenceScopeInputImplCopyWith<$Res> {
+  __$$TempDereferenceScopeInputImplCopyWithImpl(
+      _$TempDereferenceScopeInputImpl _value,
+      $Res Function(_$TempDereferenceScopeInputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [TempDereferenceScopeInput].
-extension TempDereferenceScopeInputPatterns on TempDereferenceScopeInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _TempDereferenceScopeInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _TempDereferenceScopeInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _TempDereferenceScopeInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _TempDereferenceScopeInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _TempDereferenceScopeInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _TempDereferenceScopeInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String scope,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _TempDereferenceScopeInput() when $default != null:
-return $default(_that.scope,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String scope,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _TempDereferenceScopeInput():
-return $default(_that.scope,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String scope,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _TempDereferenceScopeInput() when $default != null:
-return $default(_that.scope,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of TempDereferenceScopeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scope = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$TempDereferenceScopeInputImpl(
+      scope: null == scope
+          ? _value.scope
+          : scope // ignore: cast_nullable_to_non_nullable
+              as String,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _TempDereferenceScopeInput implements TempDereferenceScopeInput {
-  const _TempDereferenceScopeInput({required this.scope, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _TempDereferenceScopeInput.fromJson(Map<String, dynamic> json) => _$TempDereferenceScopeInputFromJson(json);
+class _$TempDereferenceScopeInputImpl implements _TempDereferenceScopeInput {
+  const _$TempDereferenceScopeInputImpl(
+      {required this.scope, final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// The scope reference (starts with 'ref:')
-@override final  String scope;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$TempDereferenceScopeInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TempDereferenceScopeInputImplFromJson(json);
+
+  /// The scope reference (starts with 'ref:')
+  @override
+  final String scope;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'TempDereferenceScopeInput(scope: $scope, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TempDereferenceScopeInputImpl &&
+            (identical(other.scope, scope) || other.scope == scope) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, scope, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of TempDereferenceScopeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TempDereferenceScopeInputImplCopyWith<_$TempDereferenceScopeInputImpl>
+      get copyWith => __$$TempDereferenceScopeInputImplCopyWithImpl<
+          _$TempDereferenceScopeInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TempDereferenceScopeInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _TempDereferenceScopeInput implements TempDereferenceScopeInput {
+  const factory _TempDereferenceScopeInput(
+      {required final String scope,
+      final Map<String, dynamic>? $unknown}) = _$TempDereferenceScopeInputImpl;
 
-/// Create a copy of TempDereferenceScopeInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$TempDereferenceScopeInputCopyWith<_TempDereferenceScopeInput> get copyWith => __$TempDereferenceScopeInputCopyWithImpl<_TempDereferenceScopeInput>(this, _$identity);
+  factory _TempDereferenceScopeInput.fromJson(Map<String, dynamic> json) =
+      _$TempDereferenceScopeInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$TempDereferenceScopeInputToJson(this, );
+  /// The scope reference (starts with 'ref:')
+  @override
+  String get scope;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of TempDereferenceScopeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TempDereferenceScopeInputImplCopyWith<_$TempDereferenceScopeInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TempDereferenceScopeInput&&(identical(other.scope, scope) || other.scope == scope)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,scope,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'TempDereferenceScopeInput(scope: $scope, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$TempDereferenceScopeInputCopyWith<$Res> implements $TempDereferenceScopeInputCopyWith<$Res> {
-  factory _$TempDereferenceScopeInputCopyWith(_TempDereferenceScopeInput value, $Res Function(_TempDereferenceScopeInput) _then) = __$TempDereferenceScopeInputCopyWithImpl;
-@override @useResult
-$Res call({
- String scope, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$TempDereferenceScopeInputCopyWithImpl<$Res>
-    implements _$TempDereferenceScopeInputCopyWith<$Res> {
-  __$TempDereferenceScopeInputCopyWithImpl(this._self, this._then);
-
-  final _TempDereferenceScopeInput _self;
-  final $Res Function(_TempDereferenceScopeInput) _then;
-
-/// Create a copy of TempDereferenceScopeInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? scope = null,Object? $unknown = freezed,}) {
-  return _then(_TempDereferenceScopeInput(
-scope: null == scope ? _self.scope : scope // ignore: cast_nullable_to_non_nullable
-as String,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

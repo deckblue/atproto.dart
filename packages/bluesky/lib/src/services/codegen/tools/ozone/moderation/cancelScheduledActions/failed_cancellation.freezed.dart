@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,289 +9,254 @@ part of 'failed_cancellation.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+FailedCancellation _$FailedCancellationFromJson(Map<String, dynamic> json) {
+  return _FailedCancellation.fromJson(json);
+}
 
 /// @nodoc
 mixin _$FailedCancellation {
-
- String get $type; String get did; String get error; String? get errorCode; Map<String, dynamic>? get $unknown;
-/// Create a copy of FailedCancellation
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$FailedCancellationCopyWith<FailedCancellation> get copyWith => _$FailedCancellationCopyWithImpl<FailedCancellation>(this as FailedCancellation, _$identity);
+  String get $type => throw _privateConstructorUsedError;
+  String get did => throw _privateConstructorUsedError;
+  String get error => throw _privateConstructorUsedError;
+  String? get errorCode => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this FailedCancellation to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FailedCancellation&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.did, did) || other.did == did)&&(identical(other.error, error) || other.error == error)&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,did,error,errorCode,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'FailedCancellation(\$type: ${$type}, did: $did, error: $error, errorCode: $errorCode, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of FailedCancellation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $FailedCancellationCopyWith<FailedCancellation> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $FailedCancellationCopyWith<$Res>  {
-  factory $FailedCancellationCopyWith(FailedCancellation value, $Res Function(FailedCancellation) _then) = _$FailedCancellationCopyWithImpl;
-@useResult
-$Res call({
- String $type, String did, String error, String? errorCode, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $FailedCancellationCopyWith<$Res> {
+  factory $FailedCancellationCopyWith(
+          FailedCancellation value, $Res Function(FailedCancellation) then) =
+      _$FailedCancellationCopyWithImpl<$Res, FailedCancellation>;
+  @useResult
+  $Res call(
+      {String $type,
+      String did,
+      String error,
+      String? errorCode,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$FailedCancellationCopyWithImpl<$Res>
+class _$FailedCancellationCopyWithImpl<$Res, $Val extends FailedCancellation>
     implements $FailedCancellationCopyWith<$Res> {
-  _$FailedCancellationCopyWithImpl(this._self, this._then);
+  _$FailedCancellationCopyWithImpl(this._value, this._then);
 
-  final FailedCancellation _self;
-  final $Res Function(FailedCancellation) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of FailedCancellation
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? did = null,Object? error = null,Object? errorCode = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,did: null == did ? _self.did : did // ignore: cast_nullable_to_non_nullable
-as String,error: null == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
-as String,errorCode: freezed == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of FailedCancellation
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? did = null,
+    Object? error = null,
+    Object? errorCode = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      did: null == did
+          ? _value.did
+          : did // ignore: cast_nullable_to_non_nullable
+              as String,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorCode: freezed == errorCode
+          ? _value.errorCode
+          : errorCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$FailedCancellationImplCopyWith<$Res>
+    implements $FailedCancellationCopyWith<$Res> {
+  factory _$$FailedCancellationImplCopyWith(_$FailedCancellationImpl value,
+          $Res Function(_$FailedCancellationImpl) then) =
+      __$$FailedCancellationImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      String did,
+      String error,
+      String? errorCode,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$FailedCancellationImplCopyWithImpl<$Res>
+    extends _$FailedCancellationCopyWithImpl<$Res, _$FailedCancellationImpl>
+    implements _$$FailedCancellationImplCopyWith<$Res> {
+  __$$FailedCancellationImplCopyWithImpl(_$FailedCancellationImpl _value,
+      $Res Function(_$FailedCancellationImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [FailedCancellation].
-extension FailedCancellationPatterns on FailedCancellation {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _FailedCancellation value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _FailedCancellation() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _FailedCancellation value)  $default,){
-final _that = this;
-switch (_that) {
-case _FailedCancellation():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _FailedCancellation value)?  $default,){
-final _that = this;
-switch (_that) {
-case _FailedCancellation() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  String did,  String error,  String? errorCode,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _FailedCancellation() when $default != null:
-return $default(_that.$type,_that.did,_that.error,_that.errorCode,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  String did,  String error,  String? errorCode,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _FailedCancellation():
-return $default(_that.$type,_that.did,_that.error,_that.errorCode,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  String did,  String error,  String? errorCode,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _FailedCancellation() when $default != null:
-return $default(_that.$type,_that.did,_that.error,_that.errorCode,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of FailedCancellation
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? did = null,
+    Object? error = null,
+    Object? errorCode = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$FailedCancellationImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      did: null == did
+          ? _value.did
+          : did // ignore: cast_nullable_to_non_nullable
+              as String,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorCode: freezed == errorCode
+          ? _value.errorCode
+          : errorCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _FailedCancellation implements FailedCancellation {
-  const _FailedCancellation({this.$type = 'tools.ozone.moderation.cancelScheduledActions#failedCancellation', required this.did, required this.error, this.errorCode, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _FailedCancellation.fromJson(Map<String, dynamic> json) => _$FailedCancellationFromJson(json);
+class _$FailedCancellationImpl implements _FailedCancellation {
+  const _$FailedCancellationImpl(
+      {this.$type =
+          'tools.ozone.moderation.cancelScheduledActions#failedCancellation',
+      required this.did,
+      required this.error,
+      this.errorCode,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-@override final  String did;
-@override final  String error;
-@override final  String? errorCode;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$FailedCancellationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FailedCancellationImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+  @override
+  final String did;
+  @override
+  final String error;
+  @override
+  final String? errorCode;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'FailedCancellation(\$type: ${$type}, did: $did, error: $error, errorCode: $errorCode, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailedCancellationImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.did, did) || other.did == did) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.errorCode, errorCode) ||
+                other.errorCode == errorCode) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, did, error, errorCode,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of FailedCancellation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailedCancellationImplCopyWith<_$FailedCancellationImpl> get copyWith =>
+      __$$FailedCancellationImplCopyWithImpl<_$FailedCancellationImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FailedCancellationImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _FailedCancellation implements FailedCancellation {
+  const factory _FailedCancellation(
+      {final String $type,
+      required final String did,
+      required final String error,
+      final String? errorCode,
+      final Map<String, dynamic>? $unknown}) = _$FailedCancellationImpl;
 
-/// Create a copy of FailedCancellation
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$FailedCancellationCopyWith<_FailedCancellation> get copyWith => __$FailedCancellationCopyWithImpl<_FailedCancellation>(this, _$identity);
+  factory _FailedCancellation.fromJson(Map<String, dynamic> json) =
+      _$FailedCancellationImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$FailedCancellationToJson(this, );
+  @override
+  String get $type;
+  @override
+  String get did;
+  @override
+  String get error;
+  @override
+  String? get errorCode;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of FailedCancellation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FailedCancellationImplCopyWith<_$FailedCancellationImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FailedCancellation&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.did, did) || other.did == did)&&(identical(other.error, error) || other.error == error)&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,did,error,errorCode,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'FailedCancellation(\$type: ${$type}, did: $did, error: $error, errorCode: $errorCode, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$FailedCancellationCopyWith<$Res> implements $FailedCancellationCopyWith<$Res> {
-  factory _$FailedCancellationCopyWith(_FailedCancellation value, $Res Function(_FailedCancellation) _then) = __$FailedCancellationCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, String did, String error, String? errorCode, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$FailedCancellationCopyWithImpl<$Res>
-    implements _$FailedCancellationCopyWith<$Res> {
-  __$FailedCancellationCopyWithImpl(this._self, this._then);
-
-  final _FailedCancellation _self;
-  final $Res Function(_FailedCancellation) _then;
-
-/// Create a copy of FailedCancellation
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? did = null,Object? error = null,Object? errorCode = freezed,Object? $unknown = freezed,}) {
-  return _then(_FailedCancellation(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,did: null == did ? _self.did : did // ignore: cast_nullable_to_non_nullable
-as String,error: null == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
-as String,errorCode: freezed == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

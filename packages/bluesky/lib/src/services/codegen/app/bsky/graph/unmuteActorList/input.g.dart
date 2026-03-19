@@ -8,24 +8,28 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GraphUnmuteActorListInput _$GraphUnmuteActorListInputFromJson(Map json) =>
-    $checkedCreate('_GraphUnmuteActorListInput', json, ($checkedConvert) {
-      final val = _GraphUnmuteActorListInput(
-        list: $checkedConvert(
-          'list',
-          (v) => const AtUriConverter().fromJson(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GraphUnmuteActorListInputImpl _$$GraphUnmuteActorListInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GraphUnmuteActorListInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GraphUnmuteActorListInputImpl(
+          list: $checkedConvert(
+              'list', (v) => const AtUriConverter().fromJson(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GraphUnmuteActorListInputToJson(
-  _GraphUnmuteActorListInput instance,
-) => <String, dynamic>{
-  'list': const AtUriConverter().toJson(instance.list),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GraphUnmuteActorListInputImplToJson(
+        _$GraphUnmuteActorListInputImpl instance) =>
+    <String, dynamic>{
+      'list': const AtUriConverter().toJson(instance.list),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

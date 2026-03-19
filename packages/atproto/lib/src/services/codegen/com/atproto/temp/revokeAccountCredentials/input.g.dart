@@ -8,24 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TempRevokeAccountCredentialsInput _$TempRevokeAccountCredentialsInputFromJson(
-  Map json,
-) => $checkedCreate('_TempRevokeAccountCredentialsInput', json, (
-  $checkedConvert,
-) {
-  final val = _TempRevokeAccountCredentialsInput(
-    account: $checkedConvert('account', (v) => v as String),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$TempRevokeAccountCredentialsInputImpl
+    _$$TempRevokeAccountCredentialsInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$TempRevokeAccountCredentialsInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$TempRevokeAccountCredentialsInputImpl(
+              account: $checkedConvert('account', (v) => v as String),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$TempRevokeAccountCredentialsInputToJson(
-  _TempRevokeAccountCredentialsInput instance,
-) => <String, dynamic>{
-  'account': instance.account,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$TempRevokeAccountCredentialsInputImplToJson(
+        _$TempRevokeAccountCredentialsInputImpl instance) =>
+    <String, dynamic>{
+      'account': instance.account,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

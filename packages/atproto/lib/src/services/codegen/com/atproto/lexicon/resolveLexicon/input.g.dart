@@ -8,18 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LexiconResolveLexiconInput _$LexiconResolveLexiconInputFromJson(Map json) =>
-    $checkedCreate('_LexiconResolveLexiconInput', json, ($checkedConvert) {
-      final val = _LexiconResolveLexiconInput(
-        nsid: $checkedConvert('nsid', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$LexiconResolveLexiconInputImpl _$$LexiconResolveLexiconInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$LexiconResolveLexiconInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$LexiconResolveLexiconInputImpl(
+          nsid: $checkedConvert('nsid', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$LexiconResolveLexiconInputToJson(
-  _LexiconResolveLexiconInput instance,
-) => <String, dynamic>{'nsid': instance.nsid, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$LexiconResolveLexiconInputImplToJson(
+        _$LexiconResolveLexiconInputImpl instance) =>
+    <String, dynamic>{
+      'nsid': instance.nsid,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

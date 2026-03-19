@@ -8,24 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetOnboardingSuggestedStarterPacksInput
-_$UnspeccedGetOnboardingSuggestedStarterPacksInputFromJson(Map json) =>
-    $checkedCreate('_UnspeccedGetOnboardingSuggestedStarterPacksInput', json, (
-      $checkedConvert,
-    ) {
-      final val = _UnspeccedGetOnboardingSuggestedStarterPacksInput(
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 10),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl
+    _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl(
+              limit:
+                  $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 10),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$UnspeccedGetOnboardingSuggestedStarterPacksInputToJson(
-  _UnspeccedGetOnboardingSuggestedStarterPacksInput instance,
-) => <String, dynamic>{
-  'limit': instance.limit,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic>
+    _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplToJson(
+            _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl instance) =>
+        <String, dynamic>{
+          'limit': instance.limit,
+          if (instance.$unknown case final value?) r'$unknown': value,
+        };

@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,357 @@ part of 'access.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$Access {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Access&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'Access(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownAccess data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownAccess data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownAccess data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AccessKnownValue value) knownValue,
+    required TResult Function(AccessUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AccessKnownValue value)? knownValue,
+    TResult? Function(AccessUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AccessKnownValue value)? knownValue,
+    TResult Function(AccessUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $AccessCopyWith<$Res>  {
-$AccessCopyWith(Access _, $Res Function(Access) __);
+abstract class $AccessCopyWith<$Res> {
+  factory $AccessCopyWith(Access value, $Res Function(Access) then) =
+      _$AccessCopyWithImpl<$Res, Access>;
 }
 
+/// @nodoc
+class _$AccessCopyWithImpl<$Res, $Val extends Access>
+    implements $AccessCopyWith<$Res> {
+  _$AccessCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [Access].
-extension AccessPatterns on Access {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( AccessKnownValue value)?  knownValue,TResult Function( AccessUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case AccessKnownValue() when knownValue != null:
-return knownValue(_that);case AccessUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( AccessKnownValue value)  knownValue,required TResult Function( AccessUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case AccessKnownValue():
-return knownValue(_that);case AccessUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( AccessKnownValue value)?  knownValue,TResult? Function( AccessUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case AccessKnownValue() when knownValue != null:
-return knownValue(_that);case AccessUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownAccess data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case AccessKnownValue() when knownValue != null:
-return knownValue(_that.data);case AccessUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownAccess data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case AccessKnownValue():
-return knownValue(_that.data);case AccessUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownAccess data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case AccessKnownValue() when knownValue != null:
-return knownValue(_that.data);case AccessUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of Access
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$AccessKnownValueImplCopyWith<$Res> {
+  factory _$$AccessKnownValueImplCopyWith(_$AccessKnownValueImpl value,
+          $Res Function(_$AccessKnownValueImpl) then) =
+      __$$AccessKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownAccess data});
+}
+
+/// @nodoc
+class __$$AccessKnownValueImplCopyWithImpl<$Res>
+    extends _$AccessCopyWithImpl<$Res, _$AccessKnownValueImpl>
+    implements _$$AccessKnownValueImplCopyWith<$Res> {
+  __$$AccessKnownValueImplCopyWithImpl(_$AccessKnownValueImpl _value,
+      $Res Function(_$AccessKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Access
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$AccessKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownAccess,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$AccessKnownValueImpl extends AccessKnownValue {
+  const _$AccessKnownValueImpl({required this.data}) : super._();
 
-class AccessKnownValue extends Access {
-  const AccessKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownAccess data;
 
-@override final  KnownAccess data;
+  @override
+  String toString() {
+    return 'Access.knownValue(data: $data)';
+  }
 
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AccessKnownValueCopyWith<AccessKnownValue> get copyWith => _$AccessKnownValueCopyWithImpl<AccessKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AccessKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of Access
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AccessKnownValueImplCopyWith<_$AccessKnownValueImpl> get copyWith =>
+      __$$AccessKnownValueImplCopyWithImpl<_$AccessKnownValueImpl>(
+          this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccessKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownAccess data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownAccess data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownAccess data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AccessKnownValue value) knownValue,
+    required TResult Function(AccessUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AccessKnownValue value)? knownValue,
+    TResult? Function(AccessUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AccessKnownValue value)? knownValue,
+    TResult Function(AccessUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class AccessKnownValue extends Access {
+  const factory AccessKnownValue({required final KnownAccess data}) =
+      _$AccessKnownValueImpl;
+  const AccessKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownAccess get data;
 
-@override
-String toString() {
-  return 'Access.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of Access
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AccessKnownValueImplCopyWith<_$AccessKnownValueImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AccessKnownValueCopyWith<$Res> implements $AccessCopyWith<$Res> {
-  factory $AccessKnownValueCopyWith(AccessKnownValue value, $Res Function(AccessKnownValue) _then) = _$AccessKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownAccess data
-});
-
-
-
-
-}
-/// @nodoc
-class _$AccessKnownValueCopyWithImpl<$Res>
-    implements $AccessKnownValueCopyWith<$Res> {
-  _$AccessKnownValueCopyWithImpl(this._self, this._then);
-
-  final AccessKnownValue _self;
-  final $Res Function(AccessKnownValue) _then;
-
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(AccessKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownAccess,
-  ));
-}
-
-
+abstract class _$$AccessUnknownImplCopyWith<$Res> {
+  factory _$$AccessUnknownImplCopyWith(
+          _$AccessUnknownImpl value, $Res Function(_$AccessUnknownImpl) then) =
+      __$$AccessUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$AccessUnknownImplCopyWithImpl<$Res>
+    extends _$AccessCopyWithImpl<$Res, _$AccessUnknownImpl>
+    implements _$$AccessUnknownImplCopyWith<$Res> {
+  __$$AccessUnknownImplCopyWithImpl(
+      _$AccessUnknownImpl _value, $Res Function(_$AccessUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class AccessUnknown extends Access {
-  const AccessUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AccessUnknownCopyWith<AccessUnknown> get copyWith => _$AccessUnknownCopyWithImpl<AccessUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccessUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'Access.unknown(data: $data)';
-}
-
-
+  /// Create a copy of Access
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$AccessUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $AccessUnknownCopyWith<$Res> implements $AccessCopyWith<$Res> {
-  factory $AccessUnknownCopyWith(AccessUnknown value, $Res Function(AccessUnknown) _then) = _$AccessUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$AccessUnknownImpl extends AccessUnknown {
+  const _$AccessUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'Access.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AccessUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of Access
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AccessUnknownImplCopyWith<_$AccessUnknownImpl> get copyWith =>
+      __$$AccessUnknownImplCopyWithImpl<_$AccessUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownAccess data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownAccess data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownAccess data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AccessKnownValue value) knownValue,
+    required TResult Function(AccessUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AccessKnownValue value)? knownValue,
+    TResult? Function(AccessUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AccessKnownValue value)? knownValue,
+    TResult Function(AccessUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$AccessUnknownCopyWithImpl<$Res>
-    implements $AccessUnknownCopyWith<$Res> {
-  _$AccessUnknownCopyWithImpl(this._self, this._then);
 
-  final AccessUnknown _self;
-  final $Res Function(AccessUnknown) _then;
+abstract class AccessUnknown extends Access {
+  const factory AccessUnknown({required final String data}) =
+      _$AccessUnknownImpl;
+  const AccessUnknown._() : super._();
 
-/// Create a copy of Access
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(AccessUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of Access
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AccessUnknownImplCopyWith<_$AccessUnknownImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

@@ -8,25 +8,30 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FeedGetPostsInput _$FeedGetPostsInputFromJson(Map json) =>
-    $checkedCreate('_FeedGetPostsInput', json, ($checkedConvert) {
-      final val = _FeedGetPostsInput(
-        uris: $checkedConvert(
-          'uris',
-          (v) => (v as List<dynamic>)
-              .map((e) => const AtUriConverter().fromJson(e as String))
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$FeedGetPostsInputImpl _$$FeedGetPostsInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$FeedGetPostsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FeedGetPostsInputImpl(
+          uris: $checkedConvert(
+              'uris',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const AtUriConverter().fromJson(e as String))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$FeedGetPostsInputToJson(_FeedGetPostsInput instance) =>
+Map<String, dynamic> _$$FeedGetPostsInputImplToJson(
+        _$FeedGetPostsInputImpl instance) =>
     <String, dynamic>{
       'uris': instance.uris.map(const AtUriConverter().toJson).toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

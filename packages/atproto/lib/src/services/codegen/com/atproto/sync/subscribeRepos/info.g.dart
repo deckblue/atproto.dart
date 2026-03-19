@@ -8,29 +8,30 @@ part of 'info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Info _$InfoFromJson(Map json) =>
-    $checkedCreate('_Info', json, ($checkedConvert) {
-      final val = _Info(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'com.atproto.sync.subscribeRepos#info',
-        ),
-        name: $checkedConvert(
-          'name',
-          (v) => const InfoNameConverter().fromJson(v as String),
-        ),
-        message: $checkedConvert('message', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$InfoImpl _$$InfoImplFromJson(Map json) => $checkedCreate(
+      r'_$InfoImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$InfoImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'com.atproto.sync.subscribeRepos#info'),
+          name: $checkedConvert(
+              'name', (v) => const InfoNameConverter().fromJson(v as String)),
+          message: $checkedConvert('message', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$InfoToJson(_Info instance) => <String, dynamic>{
-  r'$type': instance.$type,
-  'name': const InfoNameConverter().toJson(instance.name),
-  'message': ?instance.message,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$InfoImplToJson(_$InfoImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'name': const InfoNameConverter().toJson(instance.name),
+      if (instance.message case final value?) 'message': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

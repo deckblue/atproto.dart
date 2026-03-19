@@ -9,6 +9,8 @@ dependency_overrides:
     path: ../packages/did_plc
   atproto_core:
     path: ../packages/atproto_core
+  atproto_oauth:
+    path: ../packages/atproto_oauth
   atproto:
     path: ../packages/atproto
   bluesky:

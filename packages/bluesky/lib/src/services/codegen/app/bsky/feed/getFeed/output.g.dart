@@ -8,34 +8,33 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FeedGetFeedOutput _$FeedGetFeedOutputFromJson(Map json) => $checkedCreate(
-  '_FeedGetFeedOutput',
-  json,
-  ($checkedConvert) {
-    final val = _FeedGetFeedOutput(
-      cursor: $checkedConvert('cursor', (v) => v as String?),
-      feed: $checkedConvert(
-        'feed',
-        (v) => (v as List<dynamic>)
-            .map(
-              (e) => const FeedViewPostConverter().fromJson(
-                e as Map<String, dynamic>,
-              ),
-            )
-            .toList(),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
+_$FeedGetFeedOutputImpl _$$FeedGetFeedOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$FeedGetFeedOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FeedGetFeedOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          feed: $checkedConvert(
+              'feed',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const FeedViewPostConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
     );
-    return val;
-  },
-);
 
-Map<String, dynamic> _$FeedGetFeedOutputToJson(_FeedGetFeedOutput instance) =>
+Map<String, dynamic> _$$FeedGetFeedOutputImplToJson(
+        _$FeedGetFeedOutputImpl instance) =>
     <String, dynamic>{
-      'cursor': ?instance.cursor,
+      if (instance.cursor case final value?) 'cursor': value,
       'feed': instance.feed.map(const FeedViewPostConverter().toJson).toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,378 @@ part of 'age_assurance_state_status.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$AgeAssuranceStateStatus {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AgeAssuranceStateStatus&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'AgeAssuranceStateStatus(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownAgeAssuranceStateStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownAgeAssuranceStateStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownAgeAssuranceStateStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AgeAssuranceStateStatusKnownValue value)
+        knownValue,
+    required TResult Function(AgeAssuranceStateStatusUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AgeAssuranceStateStatusKnownValue value)? knownValue,
+    TResult? Function(AgeAssuranceStateStatusUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AgeAssuranceStateStatusKnownValue value)? knownValue,
+    TResult Function(AgeAssuranceStateStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $AgeAssuranceStateStatusCopyWith<$Res>  {
-$AgeAssuranceStateStatusCopyWith(AgeAssuranceStateStatus _, $Res Function(AgeAssuranceStateStatus) __);
+abstract class $AgeAssuranceStateStatusCopyWith<$Res> {
+  factory $AgeAssuranceStateStatusCopyWith(AgeAssuranceStateStatus value,
+          $Res Function(AgeAssuranceStateStatus) then) =
+      _$AgeAssuranceStateStatusCopyWithImpl<$Res, AgeAssuranceStateStatus>;
 }
 
+/// @nodoc
+class _$AgeAssuranceStateStatusCopyWithImpl<$Res,
+        $Val extends AgeAssuranceStateStatus>
+    implements $AgeAssuranceStateStatusCopyWith<$Res> {
+  _$AgeAssuranceStateStatusCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [AgeAssuranceStateStatus].
-extension AgeAssuranceStateStatusPatterns on AgeAssuranceStateStatus {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( AgeAssuranceStateStatusKnownValue value)?  knownValue,TResult Function( AgeAssuranceStateStatusUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case AgeAssuranceStateStatusKnownValue() when knownValue != null:
-return knownValue(_that);case AgeAssuranceStateStatusUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( AgeAssuranceStateStatusKnownValue value)  knownValue,required TResult Function( AgeAssuranceStateStatusUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case AgeAssuranceStateStatusKnownValue():
-return knownValue(_that);case AgeAssuranceStateStatusUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( AgeAssuranceStateStatusKnownValue value)?  knownValue,TResult? Function( AgeAssuranceStateStatusUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case AgeAssuranceStateStatusKnownValue() when knownValue != null:
-return knownValue(_that);case AgeAssuranceStateStatusUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownAgeAssuranceStateStatus data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case AgeAssuranceStateStatusKnownValue() when knownValue != null:
-return knownValue(_that.data);case AgeAssuranceStateStatusUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownAgeAssuranceStateStatus data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case AgeAssuranceStateStatusKnownValue():
-return knownValue(_that.data);case AgeAssuranceStateStatusUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownAgeAssuranceStateStatus data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case AgeAssuranceStateStatusKnownValue() when knownValue != null:
-return knownValue(_that.data);case AgeAssuranceStateStatusUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of AgeAssuranceStateStatus
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$AgeAssuranceStateStatusKnownValueImplCopyWith<$Res> {
+  factory _$$AgeAssuranceStateStatusKnownValueImplCopyWith(
+          _$AgeAssuranceStateStatusKnownValueImpl value,
+          $Res Function(_$AgeAssuranceStateStatusKnownValueImpl) then) =
+      __$$AgeAssuranceStateStatusKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownAgeAssuranceStateStatus data});
+}
+
+/// @nodoc
+class __$$AgeAssuranceStateStatusKnownValueImplCopyWithImpl<$Res>
+    extends _$AgeAssuranceStateStatusCopyWithImpl<$Res,
+        _$AgeAssuranceStateStatusKnownValueImpl>
+    implements _$$AgeAssuranceStateStatusKnownValueImplCopyWith<$Res> {
+  __$$AgeAssuranceStateStatusKnownValueImplCopyWithImpl(
+      _$AgeAssuranceStateStatusKnownValueImpl _value,
+      $Res Function(_$AgeAssuranceStateStatusKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AgeAssuranceStateStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$AgeAssuranceStateStatusKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownAgeAssuranceStateStatus,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$AgeAssuranceStateStatusKnownValueImpl
+    extends AgeAssuranceStateStatusKnownValue {
+  const _$AgeAssuranceStateStatusKnownValueImpl({required this.data})
+      : super._();
 
-class AgeAssuranceStateStatusKnownValue extends AgeAssuranceStateStatus {
-  const AgeAssuranceStateStatusKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownAgeAssuranceStateStatus data;
 
-@override final  KnownAgeAssuranceStateStatus data;
+  @override
+  String toString() {
+    return 'AgeAssuranceStateStatus.knownValue(data: $data)';
+  }
 
-/// Create a copy of AgeAssuranceStateStatus
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AgeAssuranceStateStatusKnownValueCopyWith<AgeAssuranceStateStatusKnownValue> get copyWith => _$AgeAssuranceStateStatusKnownValueCopyWithImpl<AgeAssuranceStateStatusKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AgeAssuranceStateStatusKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of AgeAssuranceStateStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AgeAssuranceStateStatusKnownValueImplCopyWith<
+          _$AgeAssuranceStateStatusKnownValueImpl>
+      get copyWith => __$$AgeAssuranceStateStatusKnownValueImplCopyWithImpl<
+          _$AgeAssuranceStateStatusKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AgeAssuranceStateStatusKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownAgeAssuranceStateStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownAgeAssuranceStateStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownAgeAssuranceStateStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AgeAssuranceStateStatusKnownValue value)
+        knownValue,
+    required TResult Function(AgeAssuranceStateStatusUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AgeAssuranceStateStatusKnownValue value)? knownValue,
+    TResult? Function(AgeAssuranceStateStatusUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AgeAssuranceStateStatusKnownValue value)? knownValue,
+    TResult Function(AgeAssuranceStateStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class AgeAssuranceStateStatusKnownValue
+    extends AgeAssuranceStateStatus {
+  const factory AgeAssuranceStateStatusKnownValue(
+          {required final KnownAgeAssuranceStateStatus data}) =
+      _$AgeAssuranceStateStatusKnownValueImpl;
+  const AgeAssuranceStateStatusKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownAgeAssuranceStateStatus get data;
 
-@override
-String toString() {
-  return 'AgeAssuranceStateStatus.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of AgeAssuranceStateStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AgeAssuranceStateStatusKnownValueImplCopyWith<
+          _$AgeAssuranceStateStatusKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AgeAssuranceStateStatusKnownValueCopyWith<$Res> implements $AgeAssuranceStateStatusCopyWith<$Res> {
-  factory $AgeAssuranceStateStatusKnownValueCopyWith(AgeAssuranceStateStatusKnownValue value, $Res Function(AgeAssuranceStateStatusKnownValue) _then) = _$AgeAssuranceStateStatusKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownAgeAssuranceStateStatus data
-});
-
-
-
-
-}
-/// @nodoc
-class _$AgeAssuranceStateStatusKnownValueCopyWithImpl<$Res>
-    implements $AgeAssuranceStateStatusKnownValueCopyWith<$Res> {
-  _$AgeAssuranceStateStatusKnownValueCopyWithImpl(this._self, this._then);
-
-  final AgeAssuranceStateStatusKnownValue _self;
-  final $Res Function(AgeAssuranceStateStatusKnownValue) _then;
-
-/// Create a copy of AgeAssuranceStateStatus
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(AgeAssuranceStateStatusKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownAgeAssuranceStateStatus,
-  ));
-}
-
-
+abstract class _$$AgeAssuranceStateStatusUnknownImplCopyWith<$Res> {
+  factory _$$AgeAssuranceStateStatusUnknownImplCopyWith(
+          _$AgeAssuranceStateStatusUnknownImpl value,
+          $Res Function(_$AgeAssuranceStateStatusUnknownImpl) then) =
+      __$$AgeAssuranceStateStatusUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$AgeAssuranceStateStatusUnknownImplCopyWithImpl<$Res>
+    extends _$AgeAssuranceStateStatusCopyWithImpl<$Res,
+        _$AgeAssuranceStateStatusUnknownImpl>
+    implements _$$AgeAssuranceStateStatusUnknownImplCopyWith<$Res> {
+  __$$AgeAssuranceStateStatusUnknownImplCopyWithImpl(
+      _$AgeAssuranceStateStatusUnknownImpl _value,
+      $Res Function(_$AgeAssuranceStateStatusUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class AgeAssuranceStateStatusUnknown extends AgeAssuranceStateStatus {
-  const AgeAssuranceStateStatusUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of AgeAssuranceStateStatus
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AgeAssuranceStateStatusUnknownCopyWith<AgeAssuranceStateStatusUnknown> get copyWith => _$AgeAssuranceStateStatusUnknownCopyWithImpl<AgeAssuranceStateStatusUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AgeAssuranceStateStatusUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'AgeAssuranceStateStatus.unknown(data: $data)';
-}
-
-
+  /// Create a copy of AgeAssuranceStateStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$AgeAssuranceStateStatusUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $AgeAssuranceStateStatusUnknownCopyWith<$Res> implements $AgeAssuranceStateStatusCopyWith<$Res> {
-  factory $AgeAssuranceStateStatusUnknownCopyWith(AgeAssuranceStateStatusUnknown value, $Res Function(AgeAssuranceStateStatusUnknown) _then) = _$AgeAssuranceStateStatusUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$AgeAssuranceStateStatusUnknownImpl
+    extends AgeAssuranceStateStatusUnknown {
+  const _$AgeAssuranceStateStatusUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'AgeAssuranceStateStatus.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AgeAssuranceStateStatusUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of AgeAssuranceStateStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AgeAssuranceStateStatusUnknownImplCopyWith<
+          _$AgeAssuranceStateStatusUnknownImpl>
+      get copyWith => __$$AgeAssuranceStateStatusUnknownImplCopyWithImpl<
+          _$AgeAssuranceStateStatusUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownAgeAssuranceStateStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownAgeAssuranceStateStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownAgeAssuranceStateStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AgeAssuranceStateStatusKnownValue value)
+        knownValue,
+    required TResult Function(AgeAssuranceStateStatusUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AgeAssuranceStateStatusKnownValue value)? knownValue,
+    TResult? Function(AgeAssuranceStateStatusUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AgeAssuranceStateStatusKnownValue value)? knownValue,
+    TResult Function(AgeAssuranceStateStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$AgeAssuranceStateStatusUnknownCopyWithImpl<$Res>
-    implements $AgeAssuranceStateStatusUnknownCopyWith<$Res> {
-  _$AgeAssuranceStateStatusUnknownCopyWithImpl(this._self, this._then);
 
-  final AgeAssuranceStateStatusUnknown _self;
-  final $Res Function(AgeAssuranceStateStatusUnknown) _then;
+abstract class AgeAssuranceStateStatusUnknown extends AgeAssuranceStateStatus {
+  const factory AgeAssuranceStateStatusUnknown({required final String data}) =
+      _$AgeAssuranceStateStatusUnknownImpl;
+  const AgeAssuranceStateStatusUnknown._() : super._();
 
-/// Create a copy of AgeAssuranceStateStatus
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(AgeAssuranceStateStatusUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of AgeAssuranceStateStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AgeAssuranceStateStatusUnknownImplCopyWith<
+          _$AgeAssuranceStateStatusUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

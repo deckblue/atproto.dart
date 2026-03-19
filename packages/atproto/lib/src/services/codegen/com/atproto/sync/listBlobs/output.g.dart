@@ -8,26 +8,29 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SyncListBlobsOutput _$SyncListBlobsOutputFromJson(Map json) =>
-    $checkedCreate('_SyncListBlobsOutput', json, ($checkedConvert) {
-      final val = _SyncListBlobsOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        cids: $checkedConvert(
-          'cids',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SyncListBlobsOutputImpl _$$SyncListBlobsOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$SyncListBlobsOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SyncListBlobsOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          cids: $checkedConvert('cids',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SyncListBlobsOutputToJson(
-  _SyncListBlobsOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'cids': instance.cids,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SyncListBlobsOutputImplToJson(
+        _$SyncListBlobsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'cids': instance.cids,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

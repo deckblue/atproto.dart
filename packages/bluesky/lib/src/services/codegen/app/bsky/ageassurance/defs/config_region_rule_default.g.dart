@@ -8,31 +8,34 @@ part of 'config_region_rule_default.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConfigRegionRuleDefault _$ConfigRegionRuleDefaultFromJson(Map json) =>
-    $checkedCreate('_ConfigRegionRuleDefault', json, ($checkedConvert) {
-      final val = _ConfigRegionRuleDefault(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'app.bsky.ageassurance.defs#configRegionRuleDefault',
-        ),
-        access: $checkedConvert(
-          'access',
-          (v) => const AccessConverter().fromJson(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ConfigRegionRuleDefaultImpl _$$ConfigRegionRuleDefaultImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ConfigRegionRuleDefaultImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConfigRegionRuleDefaultImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.ageassurance.defs#configRegionRuleDefault'),
+          access: $checkedConvert(
+              'access', (v) => const AccessConverter().fromJson(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConfigRegionRuleDefaultToJson(
-  _ConfigRegionRuleDefault instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'access': const AccessConverter().toJson(instance.access),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConfigRegionRuleDefaultImplToJson(
+        _$ConfigRegionRuleDefaultImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'access': const AccessConverter().toJson(instance.access),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

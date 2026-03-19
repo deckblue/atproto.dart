@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,369 @@ part of 'skeleton_trend_status.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$SkeletonTrendStatus {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SkeletonTrendStatus&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'SkeletonTrendStatus(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownSkeletonTrendStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownSkeletonTrendStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownSkeletonTrendStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SkeletonTrendStatusKnownValue value) knownValue,
+    required TResult Function(SkeletonTrendStatusUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SkeletonTrendStatusKnownValue value)? knownValue,
+    TResult? Function(SkeletonTrendStatusUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SkeletonTrendStatusKnownValue value)? knownValue,
+    TResult Function(SkeletonTrendStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $SkeletonTrendStatusCopyWith<$Res>  {
-$SkeletonTrendStatusCopyWith(SkeletonTrendStatus _, $Res Function(SkeletonTrendStatus) __);
+abstract class $SkeletonTrendStatusCopyWith<$Res> {
+  factory $SkeletonTrendStatusCopyWith(
+          SkeletonTrendStatus value, $Res Function(SkeletonTrendStatus) then) =
+      _$SkeletonTrendStatusCopyWithImpl<$Res, SkeletonTrendStatus>;
 }
 
+/// @nodoc
+class _$SkeletonTrendStatusCopyWithImpl<$Res, $Val extends SkeletonTrendStatus>
+    implements $SkeletonTrendStatusCopyWith<$Res> {
+  _$SkeletonTrendStatusCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [SkeletonTrendStatus].
-extension SkeletonTrendStatusPatterns on SkeletonTrendStatus {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( SkeletonTrendStatusKnownValue value)?  knownValue,TResult Function( SkeletonTrendStatusUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case SkeletonTrendStatusKnownValue() when knownValue != null:
-return knownValue(_that);case SkeletonTrendStatusUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( SkeletonTrendStatusKnownValue value)  knownValue,required TResult Function( SkeletonTrendStatusUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case SkeletonTrendStatusKnownValue():
-return knownValue(_that);case SkeletonTrendStatusUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( SkeletonTrendStatusKnownValue value)?  knownValue,TResult? Function( SkeletonTrendStatusUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case SkeletonTrendStatusKnownValue() when knownValue != null:
-return knownValue(_that);case SkeletonTrendStatusUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownSkeletonTrendStatus data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case SkeletonTrendStatusKnownValue() when knownValue != null:
-return knownValue(_that.data);case SkeletonTrendStatusUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownSkeletonTrendStatus data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case SkeletonTrendStatusKnownValue():
-return knownValue(_that.data);case SkeletonTrendStatusUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownSkeletonTrendStatus data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case SkeletonTrendStatusKnownValue() when knownValue != null:
-return knownValue(_that.data);case SkeletonTrendStatusUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of SkeletonTrendStatus
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$SkeletonTrendStatusKnownValueImplCopyWith<$Res> {
+  factory _$$SkeletonTrendStatusKnownValueImplCopyWith(
+          _$SkeletonTrendStatusKnownValueImpl value,
+          $Res Function(_$SkeletonTrendStatusKnownValueImpl) then) =
+      __$$SkeletonTrendStatusKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownSkeletonTrendStatus data});
+}
+
+/// @nodoc
+class __$$SkeletonTrendStatusKnownValueImplCopyWithImpl<$Res>
+    extends _$SkeletonTrendStatusCopyWithImpl<$Res,
+        _$SkeletonTrendStatusKnownValueImpl>
+    implements _$$SkeletonTrendStatusKnownValueImplCopyWith<$Res> {
+  __$$SkeletonTrendStatusKnownValueImplCopyWithImpl(
+      _$SkeletonTrendStatusKnownValueImpl _value,
+      $Res Function(_$SkeletonTrendStatusKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SkeletonTrendStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SkeletonTrendStatusKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownSkeletonTrendStatus,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$SkeletonTrendStatusKnownValueImpl
+    extends SkeletonTrendStatusKnownValue {
+  const _$SkeletonTrendStatusKnownValueImpl({required this.data}) : super._();
 
-class SkeletonTrendStatusKnownValue extends SkeletonTrendStatus {
-  const SkeletonTrendStatusKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownSkeletonTrendStatus data;
 
-@override final  KnownSkeletonTrendStatus data;
+  @override
+  String toString() {
+    return 'SkeletonTrendStatus.knownValue(data: $data)';
+  }
 
-/// Create a copy of SkeletonTrendStatus
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SkeletonTrendStatusKnownValueCopyWith<SkeletonTrendStatusKnownValue> get copyWith => _$SkeletonTrendStatusKnownValueCopyWithImpl<SkeletonTrendStatusKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SkeletonTrendStatusKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of SkeletonTrendStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SkeletonTrendStatusKnownValueImplCopyWith<
+          _$SkeletonTrendStatusKnownValueImpl>
+      get copyWith => __$$SkeletonTrendStatusKnownValueImplCopyWithImpl<
+          _$SkeletonTrendStatusKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SkeletonTrendStatusKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownSkeletonTrendStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownSkeletonTrendStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownSkeletonTrendStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SkeletonTrendStatusKnownValue value) knownValue,
+    required TResult Function(SkeletonTrendStatusUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SkeletonTrendStatusKnownValue value)? knownValue,
+    TResult? Function(SkeletonTrendStatusUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SkeletonTrendStatusKnownValue value)? knownValue,
+    TResult Function(SkeletonTrendStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class SkeletonTrendStatusKnownValue extends SkeletonTrendStatus {
+  const factory SkeletonTrendStatusKnownValue(
+          {required final KnownSkeletonTrendStatus data}) =
+      _$SkeletonTrendStatusKnownValueImpl;
+  const SkeletonTrendStatusKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownSkeletonTrendStatus get data;
 
-@override
-String toString() {
-  return 'SkeletonTrendStatus.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of SkeletonTrendStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SkeletonTrendStatusKnownValueImplCopyWith<
+          _$SkeletonTrendStatusKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SkeletonTrendStatusKnownValueCopyWith<$Res> implements $SkeletonTrendStatusCopyWith<$Res> {
-  factory $SkeletonTrendStatusKnownValueCopyWith(SkeletonTrendStatusKnownValue value, $Res Function(SkeletonTrendStatusKnownValue) _then) = _$SkeletonTrendStatusKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownSkeletonTrendStatus data
-});
-
-
-
-
-}
-/// @nodoc
-class _$SkeletonTrendStatusKnownValueCopyWithImpl<$Res>
-    implements $SkeletonTrendStatusKnownValueCopyWith<$Res> {
-  _$SkeletonTrendStatusKnownValueCopyWithImpl(this._self, this._then);
-
-  final SkeletonTrendStatusKnownValue _self;
-  final $Res Function(SkeletonTrendStatusKnownValue) _then;
-
-/// Create a copy of SkeletonTrendStatus
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(SkeletonTrendStatusKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownSkeletonTrendStatus,
-  ));
-}
-
-
+abstract class _$$SkeletonTrendStatusUnknownImplCopyWith<$Res> {
+  factory _$$SkeletonTrendStatusUnknownImplCopyWith(
+          _$SkeletonTrendStatusUnknownImpl value,
+          $Res Function(_$SkeletonTrendStatusUnknownImpl) then) =
+      __$$SkeletonTrendStatusUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$SkeletonTrendStatusUnknownImplCopyWithImpl<$Res>
+    extends _$SkeletonTrendStatusCopyWithImpl<$Res,
+        _$SkeletonTrendStatusUnknownImpl>
+    implements _$$SkeletonTrendStatusUnknownImplCopyWith<$Res> {
+  __$$SkeletonTrendStatusUnknownImplCopyWithImpl(
+      _$SkeletonTrendStatusUnknownImpl _value,
+      $Res Function(_$SkeletonTrendStatusUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class SkeletonTrendStatusUnknown extends SkeletonTrendStatus {
-  const SkeletonTrendStatusUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of SkeletonTrendStatus
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SkeletonTrendStatusUnknownCopyWith<SkeletonTrendStatusUnknown> get copyWith => _$SkeletonTrendStatusUnknownCopyWithImpl<SkeletonTrendStatusUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SkeletonTrendStatusUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'SkeletonTrendStatus.unknown(data: $data)';
-}
-
-
+  /// Create a copy of SkeletonTrendStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SkeletonTrendStatusUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $SkeletonTrendStatusUnknownCopyWith<$Res> implements $SkeletonTrendStatusCopyWith<$Res> {
-  factory $SkeletonTrendStatusUnknownCopyWith(SkeletonTrendStatusUnknown value, $Res Function(SkeletonTrendStatusUnknown) _then) = _$SkeletonTrendStatusUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$SkeletonTrendStatusUnknownImpl extends SkeletonTrendStatusUnknown {
+  const _$SkeletonTrendStatusUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'SkeletonTrendStatus.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SkeletonTrendStatusUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of SkeletonTrendStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SkeletonTrendStatusUnknownImplCopyWith<_$SkeletonTrendStatusUnknownImpl>
+      get copyWith => __$$SkeletonTrendStatusUnknownImplCopyWithImpl<
+          _$SkeletonTrendStatusUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownSkeletonTrendStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownSkeletonTrendStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownSkeletonTrendStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SkeletonTrendStatusKnownValue value) knownValue,
+    required TResult Function(SkeletonTrendStatusUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SkeletonTrendStatusKnownValue value)? knownValue,
+    TResult? Function(SkeletonTrendStatusUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SkeletonTrendStatusKnownValue value)? knownValue,
+    TResult Function(SkeletonTrendStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$SkeletonTrendStatusUnknownCopyWithImpl<$Res>
-    implements $SkeletonTrendStatusUnknownCopyWith<$Res> {
-  _$SkeletonTrendStatusUnknownCopyWithImpl(this._self, this._then);
 
-  final SkeletonTrendStatusUnknown _self;
-  final $Res Function(SkeletonTrendStatusUnknown) _then;
+abstract class SkeletonTrendStatusUnknown extends SkeletonTrendStatus {
+  const factory SkeletonTrendStatusUnknown({required final String data}) =
+      _$SkeletonTrendStatusUnknownImpl;
+  const SkeletonTrendStatusUnknown._() : super._();
 
-/// Create a copy of SkeletonTrendStatus
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(SkeletonTrendStatusUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of SkeletonTrendStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SkeletonTrendStatusUnknownImplCopyWith<_$SkeletonTrendStatusUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

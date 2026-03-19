@@ -8,37 +8,36 @@ part of 'config_region_rule_if_account_older_than.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConfigRegionRuleIfAccountOlderThan
-_$ConfigRegionRuleIfAccountOlderThanFromJson(Map json) => $checkedCreate(
-  '_ConfigRegionRuleIfAccountOlderThan',
-  json,
-  ($checkedConvert) {
-    final val = _ConfigRegionRuleIfAccountOlderThan(
-      $type: $checkedConvert(
-        r'$type',
-        (v) =>
-            v as String? ??
-            'app.bsky.ageassurance.defs#configRegionRuleIfAccountOlderThan',
-      ),
-      date: $checkedConvert('date', (v) => DateTime.parse(v as String)),
-      access: $checkedConvert(
-        'access',
-        (v) => const AccessConverter().fromJson(v as String),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$ConfigRegionRuleIfAccountOlderThanImpl
+    _$$ConfigRegionRuleIfAccountOlderThanImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$ConfigRegionRuleIfAccountOlderThanImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$ConfigRegionRuleIfAccountOlderThanImpl(
+              $type: $checkedConvert(
+                  r'$type',
+                  (v) =>
+                      v as String? ??
+                      'app.bsky.ageassurance.defs#configRegionRuleIfAccountOlderThan'),
+              date: $checkedConvert('date', (v) => DateTime.parse(v as String)),
+              access: $checkedConvert('access',
+                  (v) => const AccessConverter().fromJson(v as String)),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$ConfigRegionRuleIfAccountOlderThanToJson(
-  _ConfigRegionRuleIfAccountOlderThan instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'date': instance.date.toIso8601String(),
-  'access': const AccessConverter().toJson(instance.access),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConfigRegionRuleIfAccountOlderThanImplToJson(
+        _$ConfigRegionRuleIfAccountOlderThanImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'date': instance.date.toIso8601String(),
+      'access': const AccessConverter().toJson(instance.access),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

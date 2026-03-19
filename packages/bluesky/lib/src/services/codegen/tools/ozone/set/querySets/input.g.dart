@@ -8,31 +8,35 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SetQuerySetsInput _$SetQuerySetsInputFromJson(Map json) =>
-    $checkedCreate('_SetQuerySetsInput', json, ($checkedConvert) {
-      final val = _SetQuerySetsInput(
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        namePrefix: $checkedConvert('namePrefix', (v) => v as String?),
-        sortBy: $checkedConvert('sortBy', (v) => v as String? ?? 'name'),
-        sortDirection: $checkedConvert(
-          'sortDirection',
-          (v) => v as String? ?? 'asc',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SetQuerySetsInputImpl _$$SetQuerySetsInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$SetQuerySetsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SetQuerySetsInputImpl(
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          namePrefix: $checkedConvert('namePrefix', (v) => v as String?),
+          sortBy: $checkedConvert('sortBy', (v) => v as String? ?? 'name'),
+          sortDirection:
+              $checkedConvert('sortDirection', (v) => v as String? ?? 'asc'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SetQuerySetsInputToJson(_SetQuerySetsInput instance) =>
+Map<String, dynamic> _$$SetQuerySetsInputImplToJson(
+        _$SetQuerySetsInputImpl instance) =>
     <String, dynamic>{
       'limit': instance.limit,
-      'cursor': ?instance.cursor,
-      'namePrefix': ?instance.namePrefix,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.namePrefix case final value?) 'namePrefix': value,
       'sortBy': instance.sortBy,
       'sortDirection': instance.sortDirection,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

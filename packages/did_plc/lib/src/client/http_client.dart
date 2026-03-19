@@ -78,13 +78,13 @@ final class _HttpClientImpl implements HttpClient {
     Duration? timeout,
     Map<String, String>? headers,
     RetryPolicy? retryPolicy,
-  }) : _baseUrl = baseUrl.endsWith('/')
-           ? baseUrl.substring(0, baseUrl.length - 1)
-           : baseUrl,
-       _timeout = timeout ?? const Duration(seconds: 30),
-       _headers = headers ?? {},
-       _retryPolicy = retryPolicy ?? const RetryPolicy(),
-       _client = http.Client();
+  })  : _baseUrl = baseUrl.endsWith('/')
+            ? baseUrl.substring(0, baseUrl.length - 1)
+            : baseUrl,
+        _timeout = timeout ?? const Duration(seconds: 30),
+        _headers = headers ?? {},
+        _retryPolicy = retryPolicy ?? const RetryPolicy(),
+        _client = http.Client();
 
   final String _baseUrl;
   final Duration _timeout;
@@ -102,9 +102,8 @@ final class _HttpClientImpl implements HttpClient {
       final uri = _buildUri(path, queryParameters);
       final headers = _buildHeaders();
 
-      final response = await _client
-          .get(uri, headers: headers)
-          .timeout(_timeout);
+      final response =
+          await _client.get(uri, headers: headers).timeout(_timeout);
 
       return _handleResponse<T>(response, fromJson);
     });
@@ -161,8 +160,7 @@ final class _HttpClientImpl implements HttpClient {
 
         try {
           final errorJson = jsonDecode(errorBody) as Map<String, dynamic>;
-          errorMessage =
-              errorJson['message'] as String? ??
+          errorMessage = errorJson['message'] as String? ??
               errorJson['error'] as String? ??
               errorMessage;
         } catch (_) {
@@ -280,8 +278,7 @@ final class _HttpClientImpl implements HttpClient {
 
     try {
       final errorBody = jsonDecode(response.body) as Map<String, dynamic>;
-      errorMessage =
-          errorBody['message'] as String? ??
+      errorMessage = errorBody['message'] as String? ??
           errorBody['error'] as String? ??
           errorMessage;
       errorDetails = errorBody;
@@ -316,18 +313,18 @@ final class _HttpClientImpl implements HttpClient {
 
         // Handle error responses
         final statusCode = response.when(
-          success: (statusCode, _, _) => statusCode,
-          error: (statusCode, _, _, _) => statusCode,
+          success: (statusCode, _, __) => statusCode,
+          error: (statusCode, _, __, ___) => statusCode,
         );
 
         final headers = response.when(
-          success: (_, headers, _) => headers,
-          error: (_, headers, _, _) => headers,
+          success: (_, headers, __) => headers,
+          error: (_, headers, __, ___) => headers,
         );
 
         final message = response.when(
-          success: (_, _, _) => 'Unexpected success in retry logic',
-          error: (_, _, message, _) => message,
+          success: (_, __, ___) => 'Unexpected success in retry logic',
+          error: (_, __, message, ___) => message,
         );
 
         // Check if we should retry based on status code

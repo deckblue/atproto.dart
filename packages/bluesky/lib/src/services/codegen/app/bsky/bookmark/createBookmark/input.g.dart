@@ -8,26 +8,30 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_BookmarkCreateBookmarkInput _$BookmarkCreateBookmarkInputFromJson(Map json) =>
-    $checkedCreate('_BookmarkCreateBookmarkInput', json, ($checkedConvert) {
-      final val = _BookmarkCreateBookmarkInput(
-        uri: $checkedConvert(
-          'uri',
-          (v) => const AtUriConverter().fromJson(v as String),
-        ),
-        cid: $checkedConvert('cid', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$BookmarkCreateBookmarkInputImpl _$$BookmarkCreateBookmarkInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$BookmarkCreateBookmarkInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$BookmarkCreateBookmarkInputImpl(
+          uri: $checkedConvert(
+              'uri', (v) => const AtUriConverter().fromJson(v as String)),
+          cid: $checkedConvert('cid', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$BookmarkCreateBookmarkInputToJson(
-  _BookmarkCreateBookmarkInput instance,
-) => <String, dynamic>{
-  'uri': const AtUriConverter().toJson(instance.uri),
-  'cid': instance.cid,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$BookmarkCreateBookmarkInputImplToJson(
+        _$BookmarkCreateBookmarkInputImpl instance) =>
+    <String, dynamic>{
+      'uri': const AtUriConverter().toJson(instance.uri),
+      'cid': instance.cid,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

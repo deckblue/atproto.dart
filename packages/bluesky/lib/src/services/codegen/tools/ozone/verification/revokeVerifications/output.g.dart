@@ -8,45 +8,42 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_VerificationRevokeVerificationsOutput
-_$VerificationRevokeVerificationsOutputFromJson(Map json) => $checkedCreate(
-  '_VerificationRevokeVerificationsOutput',
-  json,
-  ($checkedConvert) {
-    final val = _VerificationRevokeVerificationsOutput(
-      revokedVerifications: $checkedConvert(
-        'revokedVerifications',
-        (v) => (v as List<dynamic>)
-            .map((e) => const AtUriConverter().fromJson(e as String))
-            .toList(),
-      ),
-      failedRevocations: $checkedConvert(
-        'failedRevocations',
-        (v) => (v as List<dynamic>)
-            .map(
-              (e) => const RevokeErrorConverter().fromJson(
-                e as Map<String, dynamic>,
-              ),
-            )
-            .toList(),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$VerificationRevokeVerificationsOutputImpl
+    _$$VerificationRevokeVerificationsOutputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$VerificationRevokeVerificationsOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$VerificationRevokeVerificationsOutputImpl(
+              revokedVerifications: $checkedConvert(
+                  'revokedVerifications',
+                  (v) => (v as List<dynamic>)
+                      .map((e) => const AtUriConverter().fromJson(e as String))
+                      .toList()),
+              failedRevocations: $checkedConvert(
+                  'failedRevocations',
+                  (v) => (v as List<dynamic>)
+                      .map((e) => const RevokeErrorConverter()
+                          .fromJson(e as Map<String, dynamic>))
+                      .toList()),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$VerificationRevokeVerificationsOutputToJson(
-  _VerificationRevokeVerificationsOutput instance,
-) => <String, dynamic>{
-  'revokedVerifications': instance.revokedVerifications
-      .map(const AtUriConverter().toJson)
-      .toList(),
-  'failedRevocations': instance.failedRevocations
-      .map(const RevokeErrorConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$VerificationRevokeVerificationsOutputImplToJson(
+        _$VerificationRevokeVerificationsOutputImpl instance) =>
+    <String, dynamic>{
+      'revokedVerifications': instance.revokedVerifications
+          .map(const AtUriConverter().toJson)
+          .toList(),
+      'failedRevocations': instance.failedRevocations
+          .map(const RevokeErrorConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

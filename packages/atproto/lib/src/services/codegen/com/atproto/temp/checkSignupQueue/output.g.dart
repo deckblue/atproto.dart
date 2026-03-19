@@ -8,31 +8,33 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TempCheckSignupQueueOutput _$TempCheckSignupQueueOutputFromJson(Map json) =>
-    $checkedCreate('_TempCheckSignupQueueOutput', json, ($checkedConvert) {
-      final val = _TempCheckSignupQueueOutput(
-        activated: $checkedConvert('activated', (v) => v as bool),
-        placeInQueue: $checkedConvert(
-          'placeInQueue',
-          (v) => (v as num?)?.toInt(),
-        ),
-        estimatedTimeMs: $checkedConvert(
-          'estimatedTimeMs',
-          (v) => (v as num?)?.toInt(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$TempCheckSignupQueueOutputImpl _$$TempCheckSignupQueueOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$TempCheckSignupQueueOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$TempCheckSignupQueueOutputImpl(
+          activated: $checkedConvert('activated', (v) => v as bool),
+          placeInQueue:
+              $checkedConvert('placeInQueue', (v) => (v as num?)?.toInt()),
+          estimatedTimeMs:
+              $checkedConvert('estimatedTimeMs', (v) => (v as num?)?.toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$TempCheckSignupQueueOutputToJson(
-  _TempCheckSignupQueueOutput instance,
-) => <String, dynamic>{
-  'activated': instance.activated,
-  'placeInQueue': ?instance.placeInQueue,
-  'estimatedTimeMs': ?instance.estimatedTimeMs,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$TempCheckSignupQueueOutputImplToJson(
+        _$TempCheckSignupQueueOutputImpl instance) =>
+    <String, dynamic>{
+      'activated': instance.activated,
+      if (instance.placeInQueue case final value?) 'placeInQueue': value,
+      if (instance.estimatedTimeMs case final value?) 'estimatedTimeMs': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

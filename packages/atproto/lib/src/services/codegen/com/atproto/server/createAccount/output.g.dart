@@ -8,32 +8,39 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ServerCreateAccountOutput _$ServerCreateAccountOutputFromJson(Map json) =>
-    $checkedCreate('_ServerCreateAccountOutput', json, ($checkedConvert) {
-      final val = _ServerCreateAccountOutput(
-        accessJwt: $checkedConvert('accessJwt', (v) => v as String),
-        refreshJwt: $checkedConvert('refreshJwt', (v) => v as String),
-        handle: $checkedConvert('handle', (v) => v as String),
-        did: $checkedConvert('did', (v) => v as String),
-        didDoc: $checkedConvert(
-          'didDoc',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ServerCreateAccountOutputImpl _$$ServerCreateAccountOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ServerCreateAccountOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ServerCreateAccountOutputImpl(
+          accessJwt: $checkedConvert('accessJwt', (v) => v as String),
+          refreshJwt: $checkedConvert('refreshJwt', (v) => v as String),
+          handle: $checkedConvert('handle', (v) => v as String),
+          did: $checkedConvert('did', (v) => v as String),
+          didDoc: $checkedConvert(
+              'didDoc',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ServerCreateAccountOutputToJson(
-  _ServerCreateAccountOutput instance,
-) => <String, dynamic>{
-  'accessJwt': instance.accessJwt,
-  'refreshJwt': instance.refreshJwt,
-  'handle': instance.handle,
-  'did': instance.did,
-  'didDoc': ?instance.didDoc,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ServerCreateAccountOutputImplToJson(
+        _$ServerCreateAccountOutputImpl instance) =>
+    <String, dynamic>{
+      'accessJwt': instance.accessJwt,
+      'refreshJwt': instance.refreshJwt,
+      'handle': instance.handle,
+      'did': instance.did,
+      if (instance.didDoc case final value?) 'didDoc': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

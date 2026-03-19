@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,280 +9,211 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+UnspeccedGetOnboardingSuggestedStarterPacksInput
+    _$UnspeccedGetOnboardingSuggestedStarterPacksInputFromJson(
+        Map<String, dynamic> json) {
+  return _UnspeccedGetOnboardingSuggestedStarterPacksInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$UnspeccedGetOnboardingSuggestedStarterPacksInput {
-
- int get limit; Map<String, dynamic>? get $unknown;
-/// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<UnspeccedGetOnboardingSuggestedStarterPacksInput> get copyWith => _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl<UnspeccedGetOnboardingSuggestedStarterPacksInput>(this as UnspeccedGetOnboardingSuggestedStarterPacksInput, _$identity);
+  int get limit => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this UnspeccedGetOnboardingSuggestedStarterPacksInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnspeccedGetOnboardingSuggestedStarterPacksInput&&(identical(other.limit, limit) || other.limit == limit)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,limit,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'UnspeccedGetOnboardingSuggestedStarterPacksInput(limit: $limit, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<
+          UnspeccedGetOnboardingSuggestedStarterPacksInput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<$Res>  {
-  factory $UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith(UnspeccedGetOnboardingSuggestedStarterPacksInput value, $Res Function(UnspeccedGetOnboardingSuggestedStarterPacksInput) _then) = _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl;
-@useResult
-$Res call({
- int limit, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<$Res> {
+  factory $UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith(
+          UnspeccedGetOnboardingSuggestedStarterPacksInput value,
+          $Res Function(UnspeccedGetOnboardingSuggestedStarterPacksInput)
+              then) =
+      _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl<$Res,
+          UnspeccedGetOnboardingSuggestedStarterPacksInput>;
+  @useResult
+  $Res call({int limit, Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl<$Res>
+class _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl<$Res,
+        $Val extends UnspeccedGetOnboardingSuggestedStarterPacksInput>
     implements $UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<$Res> {
-  _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl(this._self, this._then);
+  _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl(
+      this._value, this._then);
 
-  final UnspeccedGetOnboardingSuggestedStarterPacksInput _self;
-  final $Res Function(UnspeccedGetOnboardingSuggestedStarterPacksInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? limit = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWith<
+        $Res>
+    implements $UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<$Res> {
+  factory _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWith(
+          _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl value,
+          $Res Function(_$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl)
+              then) =
+      __$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWithImpl<
+          $Res>;
+  @override
+  @useResult
+  $Res call({int limit, Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWithImpl<$Res>
+    extends _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl<$Res,
+        _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl>
+    implements
+        _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWith<$Res> {
+  __$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWithImpl(
+      _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl _value,
+      $Res Function(_$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl)
+          _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [UnspeccedGetOnboardingSuggestedStarterPacksInput].
-extension UnspeccedGetOnboardingSuggestedStarterPacksInputPatterns on UnspeccedGetOnboardingSuggestedStarterPacksInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UnspeccedGetOnboardingSuggestedStarterPacksInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedStarterPacksInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UnspeccedGetOnboardingSuggestedStarterPacksInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedStarterPacksInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UnspeccedGetOnboardingSuggestedStarterPacksInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedStarterPacksInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int limit,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedStarterPacksInput() when $default != null:
-return $default(_that.limit,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int limit,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedStarterPacksInput():
-return $default(_that.limit,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int limit,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedStarterPacksInput() when $default != null:
-return $default(_that.limit,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl(
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _UnspeccedGetOnboardingSuggestedStarterPacksInput implements UnspeccedGetOnboardingSuggestedStarterPacksInput {
-  const _UnspeccedGetOnboardingSuggestedStarterPacksInput({this.limit = 10, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _UnspeccedGetOnboardingSuggestedStarterPacksInput.fromJson(Map<String, dynamic> json) => _$UnspeccedGetOnboardingSuggestedStarterPacksInputFromJson(json);
+class _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl
+    implements _UnspeccedGetOnboardingSuggestedStarterPacksInput {
+  const _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl(
+      {this.limit = 10, final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  int limit;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final int limit;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'UnspeccedGetOnboardingSuggestedStarterPacksInput(limit: $limit, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, limit, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWith<
+          _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl>
+      get copyWith =>
+          __$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWithImpl<
+                  _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _UnspeccedGetOnboardingSuggestedStarterPacksInput
+    implements UnspeccedGetOnboardingSuggestedStarterPacksInput {
+  const factory _UnspeccedGetOnboardingSuggestedStarterPacksInput(
+          {final int limit, final Map<String, dynamic>? $unknown}) =
+      _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl;
 
-/// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<_UnspeccedGetOnboardingSuggestedStarterPacksInput> get copyWith => __$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl<_UnspeccedGetOnboardingSuggestedStarterPacksInput>(this, _$identity);
+  factory _UnspeccedGetOnboardingSuggestedStarterPacksInput.fromJson(
+          Map<String, dynamic> json) =
+      _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$UnspeccedGetOnboardingSuggestedStarterPacksInputToJson(this, );
+  @override
+  int get limit;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnspeccedGetOnboardingSuggestedStarterPacksInputImplCopyWith<
+          _$UnspeccedGetOnboardingSuggestedStarterPacksInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnspeccedGetOnboardingSuggestedStarterPacksInput&&(identical(other.limit, limit) || other.limit == limit)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,limit,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'UnspeccedGetOnboardingSuggestedStarterPacksInput(limit: $limit, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<$Res> implements $UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<$Res> {
-  factory _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith(_UnspeccedGetOnboardingSuggestedStarterPacksInput value, $Res Function(_UnspeccedGetOnboardingSuggestedStarterPacksInput) _then) = __$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl;
-@override @useResult
-$Res call({
- int limit, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl<$Res>
-    implements _$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWith<$Res> {
-  __$UnspeccedGetOnboardingSuggestedStarterPacksInputCopyWithImpl(this._self, this._then);
-
-  final _UnspeccedGetOnboardingSuggestedStarterPacksInput _self;
-  final $Res Function(_UnspeccedGetOnboardingSuggestedStarterPacksInput) _then;
-
-/// Create a copy of UnspeccedGetOnboardingSuggestedStarterPacksInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? limit = null,Object? $unknown = freezed,}) {
-  return _then(_UnspeccedGetOnboardingSuggestedStarterPacksInput(
-limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

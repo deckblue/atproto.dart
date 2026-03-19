@@ -8,25 +8,31 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminSearchAccountsInput _$AdminSearchAccountsInputFromJson(Map json) =>
-    $checkedCreate('_AdminSearchAccountsInput', json, ($checkedConvert) {
-      final val = _AdminSearchAccountsInput(
-        email: $checkedConvert('email', (v) => v as String?),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AdminSearchAccountsInputImpl _$$AdminSearchAccountsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$AdminSearchAccountsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AdminSearchAccountsInputImpl(
+          email: $checkedConvert('email', (v) => v as String?),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AdminSearchAccountsInputToJson(
-  _AdminSearchAccountsInput instance,
-) => <String, dynamic>{
-  'email': ?instance.email,
-  'cursor': ?instance.cursor,
-  'limit': instance.limit,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$AdminSearchAccountsInputImplToJson(
+        _$AdminSearchAccountsInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.email case final value?) 'email': value,
+      if (instance.cursor case final value?) 'cursor': value,
+      'limit': instance.limit,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

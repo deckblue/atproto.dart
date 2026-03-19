@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,405 @@ part of 'main_platform.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$NotificationUnregisterPushPlatform {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationUnregisterPushPlatform&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'NotificationUnregisterPushPlatform(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownNotificationUnregisterPushPlatform data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationUnregisterPushPlatform data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationUnregisterPushPlatform data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationUnregisterPushPlatformKnownValue value)
+        knownValue,
+    required TResult Function(NotificationUnregisterPushPlatformUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationUnregisterPushPlatformKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationUnregisterPushPlatformUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationUnregisterPushPlatformKnownValue value)?
+        knownValue,
+    TResult Function(NotificationUnregisterPushPlatformUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $NotificationUnregisterPushPlatformCopyWith<$Res>  {
-$NotificationUnregisterPushPlatformCopyWith(NotificationUnregisterPushPlatform _, $Res Function(NotificationUnregisterPushPlatform) __);
+abstract class $NotificationUnregisterPushPlatformCopyWith<$Res> {
+  factory $NotificationUnregisterPushPlatformCopyWith(
+          NotificationUnregisterPushPlatform value,
+          $Res Function(NotificationUnregisterPushPlatform) then) =
+      _$NotificationUnregisterPushPlatformCopyWithImpl<$Res,
+          NotificationUnregisterPushPlatform>;
 }
 
+/// @nodoc
+class _$NotificationUnregisterPushPlatformCopyWithImpl<$Res,
+        $Val extends NotificationUnregisterPushPlatform>
+    implements $NotificationUnregisterPushPlatformCopyWith<$Res> {
+  _$NotificationUnregisterPushPlatformCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [NotificationUnregisterPushPlatform].
-extension NotificationUnregisterPushPlatformPatterns on NotificationUnregisterPushPlatform {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( NotificationUnregisterPushPlatformKnownValue value)?  knownValue,TResult Function( NotificationUnregisterPushPlatformUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case NotificationUnregisterPushPlatformKnownValue() when knownValue != null:
-return knownValue(_that);case NotificationUnregisterPushPlatformUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( NotificationUnregisterPushPlatformKnownValue value)  knownValue,required TResult Function( NotificationUnregisterPushPlatformUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case NotificationUnregisterPushPlatformKnownValue():
-return knownValue(_that);case NotificationUnregisterPushPlatformUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( NotificationUnregisterPushPlatformKnownValue value)?  knownValue,TResult? Function( NotificationUnregisterPushPlatformUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case NotificationUnregisterPushPlatformKnownValue() when knownValue != null:
-return knownValue(_that);case NotificationUnregisterPushPlatformUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownNotificationUnregisterPushPlatform data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case NotificationUnregisterPushPlatformKnownValue() when knownValue != null:
-return knownValue(_that.data);case NotificationUnregisterPushPlatformUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownNotificationUnregisterPushPlatform data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case NotificationUnregisterPushPlatformKnownValue():
-return knownValue(_that.data);case NotificationUnregisterPushPlatformUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownNotificationUnregisterPushPlatform data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case NotificationUnregisterPushPlatformKnownValue() when knownValue != null:
-return knownValue(_that.data);case NotificationUnregisterPushPlatformUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of NotificationUnregisterPushPlatform
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$NotificationUnregisterPushPlatformKnownValueImplCopyWith<
+    $Res> {
+  factory _$$NotificationUnregisterPushPlatformKnownValueImplCopyWith(
+          _$NotificationUnregisterPushPlatformKnownValueImpl value,
+          $Res Function(_$NotificationUnregisterPushPlatformKnownValueImpl)
+              then) =
+      __$$NotificationUnregisterPushPlatformKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownNotificationUnregisterPushPlatform data});
+}
+
+/// @nodoc
+class __$$NotificationUnregisterPushPlatformKnownValueImplCopyWithImpl<$Res>
+    extends _$NotificationUnregisterPushPlatformCopyWithImpl<$Res,
+        _$NotificationUnregisterPushPlatformKnownValueImpl>
+    implements
+        _$$NotificationUnregisterPushPlatformKnownValueImplCopyWith<$Res> {
+  __$$NotificationUnregisterPushPlatformKnownValueImplCopyWithImpl(
+      _$NotificationUnregisterPushPlatformKnownValueImpl _value,
+      $Res Function(_$NotificationUnregisterPushPlatformKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationUnregisterPushPlatform
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$NotificationUnregisterPushPlatformKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownNotificationUnregisterPushPlatform,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$NotificationUnregisterPushPlatformKnownValueImpl
+    extends NotificationUnregisterPushPlatformKnownValue {
+  const _$NotificationUnregisterPushPlatformKnownValueImpl({required this.data})
+      : super._();
 
-class NotificationUnregisterPushPlatformKnownValue extends NotificationUnregisterPushPlatform {
-  const NotificationUnregisterPushPlatformKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownNotificationUnregisterPushPlatform data;
 
-@override final  KnownNotificationUnregisterPushPlatform data;
+  @override
+  String toString() {
+    return 'NotificationUnregisterPushPlatform.knownValue(data: $data)';
+  }
 
-/// Create a copy of NotificationUnregisterPushPlatform
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$NotificationUnregisterPushPlatformKnownValueCopyWith<NotificationUnregisterPushPlatformKnownValue> get copyWith => _$NotificationUnregisterPushPlatformKnownValueCopyWithImpl<NotificationUnregisterPushPlatformKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationUnregisterPushPlatformKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of NotificationUnregisterPushPlatform
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationUnregisterPushPlatformKnownValueImplCopyWith<
+          _$NotificationUnregisterPushPlatformKnownValueImpl>
+      get copyWith =>
+          __$$NotificationUnregisterPushPlatformKnownValueImplCopyWithImpl<
+                  _$NotificationUnregisterPushPlatformKnownValueImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationUnregisterPushPlatformKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownNotificationUnregisterPushPlatform data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationUnregisterPushPlatform data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationUnregisterPushPlatform data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationUnregisterPushPlatformKnownValue value)
+        knownValue,
+    required TResult Function(NotificationUnregisterPushPlatformUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationUnregisterPushPlatformKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationUnregisterPushPlatformUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationUnregisterPushPlatformKnownValue value)?
+        knownValue,
+    TResult Function(NotificationUnregisterPushPlatformUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class NotificationUnregisterPushPlatformKnownValue
+    extends NotificationUnregisterPushPlatform {
+  const factory NotificationUnregisterPushPlatformKnownValue(
+          {required final KnownNotificationUnregisterPushPlatform data}) =
+      _$NotificationUnregisterPushPlatformKnownValueImpl;
+  const NotificationUnregisterPushPlatformKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownNotificationUnregisterPushPlatform get data;
 
-@override
-String toString() {
-  return 'NotificationUnregisterPushPlatform.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of NotificationUnregisterPushPlatform
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NotificationUnregisterPushPlatformKnownValueImplCopyWith<
+          _$NotificationUnregisterPushPlatformKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $NotificationUnregisterPushPlatformKnownValueCopyWith<$Res> implements $NotificationUnregisterPushPlatformCopyWith<$Res> {
-  factory $NotificationUnregisterPushPlatformKnownValueCopyWith(NotificationUnregisterPushPlatformKnownValue value, $Res Function(NotificationUnregisterPushPlatformKnownValue) _then) = _$NotificationUnregisterPushPlatformKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownNotificationUnregisterPushPlatform data
-});
-
-
-
-
-}
-/// @nodoc
-class _$NotificationUnregisterPushPlatformKnownValueCopyWithImpl<$Res>
-    implements $NotificationUnregisterPushPlatformKnownValueCopyWith<$Res> {
-  _$NotificationUnregisterPushPlatformKnownValueCopyWithImpl(this._self, this._then);
-
-  final NotificationUnregisterPushPlatformKnownValue _self;
-  final $Res Function(NotificationUnregisterPushPlatformKnownValue) _then;
-
-/// Create a copy of NotificationUnregisterPushPlatform
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(NotificationUnregisterPushPlatformKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownNotificationUnregisterPushPlatform,
-  ));
-}
-
-
+abstract class _$$NotificationUnregisterPushPlatformUnknownImplCopyWith<$Res> {
+  factory _$$NotificationUnregisterPushPlatformUnknownImplCopyWith(
+          _$NotificationUnregisterPushPlatformUnknownImpl value,
+          $Res Function(_$NotificationUnregisterPushPlatformUnknownImpl) then) =
+      __$$NotificationUnregisterPushPlatformUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$NotificationUnregisterPushPlatformUnknownImplCopyWithImpl<$Res>
+    extends _$NotificationUnregisterPushPlatformCopyWithImpl<$Res,
+        _$NotificationUnregisterPushPlatformUnknownImpl>
+    implements _$$NotificationUnregisterPushPlatformUnknownImplCopyWith<$Res> {
+  __$$NotificationUnregisterPushPlatformUnknownImplCopyWithImpl(
+      _$NotificationUnregisterPushPlatformUnknownImpl _value,
+      $Res Function(_$NotificationUnregisterPushPlatformUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class NotificationUnregisterPushPlatformUnknown extends NotificationUnregisterPushPlatform {
-  const NotificationUnregisterPushPlatformUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of NotificationUnregisterPushPlatform
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$NotificationUnregisterPushPlatformUnknownCopyWith<NotificationUnregisterPushPlatformUnknown> get copyWith => _$NotificationUnregisterPushPlatformUnknownCopyWithImpl<NotificationUnregisterPushPlatformUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationUnregisterPushPlatformUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'NotificationUnregisterPushPlatform.unknown(data: $data)';
-}
-
-
+  /// Create a copy of NotificationUnregisterPushPlatform
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$NotificationUnregisterPushPlatformUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $NotificationUnregisterPushPlatformUnknownCopyWith<$Res> implements $NotificationUnregisterPushPlatformCopyWith<$Res> {
-  factory $NotificationUnregisterPushPlatformUnknownCopyWith(NotificationUnregisterPushPlatformUnknown value, $Res Function(NotificationUnregisterPushPlatformUnknown) _then) = _$NotificationUnregisterPushPlatformUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$NotificationUnregisterPushPlatformUnknownImpl
+    extends NotificationUnregisterPushPlatformUnknown {
+  const _$NotificationUnregisterPushPlatformUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'NotificationUnregisterPushPlatform.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationUnregisterPushPlatformUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of NotificationUnregisterPushPlatform
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationUnregisterPushPlatformUnknownImplCopyWith<
+          _$NotificationUnregisterPushPlatformUnknownImpl>
+      get copyWith =>
+          __$$NotificationUnregisterPushPlatformUnknownImplCopyWithImpl<
+                  _$NotificationUnregisterPushPlatformUnknownImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownNotificationUnregisterPushPlatform data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationUnregisterPushPlatform data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationUnregisterPushPlatform data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationUnregisterPushPlatformKnownValue value)
+        knownValue,
+    required TResult Function(NotificationUnregisterPushPlatformUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationUnregisterPushPlatformKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationUnregisterPushPlatformUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationUnregisterPushPlatformKnownValue value)?
+        knownValue,
+    TResult Function(NotificationUnregisterPushPlatformUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$NotificationUnregisterPushPlatformUnknownCopyWithImpl<$Res>
-    implements $NotificationUnregisterPushPlatformUnknownCopyWith<$Res> {
-  _$NotificationUnregisterPushPlatformUnknownCopyWithImpl(this._self, this._then);
 
-  final NotificationUnregisterPushPlatformUnknown _self;
-  final $Res Function(NotificationUnregisterPushPlatformUnknown) _then;
+abstract class NotificationUnregisterPushPlatformUnknown
+    extends NotificationUnregisterPushPlatform {
+  const factory NotificationUnregisterPushPlatformUnknown(
+          {required final String data}) =
+      _$NotificationUnregisterPushPlatformUnknownImpl;
+  const NotificationUnregisterPushPlatformUnknown._() : super._();
 
-/// Create a copy of NotificationUnregisterPushPlatform
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(NotificationUnregisterPushPlatformUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of NotificationUnregisterPushPlatform
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NotificationUnregisterPushPlatformUnknownImplCopyWith<
+          _$NotificationUnregisterPushPlatformUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

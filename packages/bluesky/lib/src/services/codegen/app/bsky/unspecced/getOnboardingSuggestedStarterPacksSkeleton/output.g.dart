@@ -8,34 +8,36 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutput
-_$UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutputFromJson(Map json) =>
-    $checkedCreate(
-      '_UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutput',
-      json,
-      ($checkedConvert) {
-        final val = _UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutput(
-          starterPacks: $checkedConvert(
-            'starterPacks',
-            (v) => (v as List<dynamic>)
-                .map((e) => const AtUriConverter().fromJson(e as String))
-                .toList(),
-          ),
-          $unknown: $checkedConvert(
-            r'$unknown',
-            (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-          ),
+_$UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutputImpl
+    _$$UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutputImplFromJson(
+            Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val =
+                _$UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutputImpl(
+              starterPacks: $checkedConvert(
+                  'starterPacks',
+                  (v) => (v as List<dynamic>)
+                      .map((e) => const AtUriConverter().fromJson(e as String))
+                      .toList()),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
         );
-        return val;
-      },
-    );
 
 Map<String, dynamic>
-_$UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutputToJson(
-  _UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutput instance,
-) => <String, dynamic>{
-  'starterPacks': instance.starterPacks
-      .map(const AtUriConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+    _$$UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutputImplToJson(
+            _$UnspeccedGetOnboardingSuggestedStarterPacksSkeletonOutputImpl
+                instance) =>
+        <String, dynamic>{
+          'starterPacks':
+              instance.starterPacks.map(const AtUriConverter().toJson).toList(),
+          if (instance.$unknown case final value?) r'$unknown': value,
+        };

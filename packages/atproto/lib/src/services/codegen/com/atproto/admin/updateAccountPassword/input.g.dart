@@ -8,25 +8,28 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminUpdateAccountPasswordInput _$AdminUpdateAccountPasswordInputFromJson(
-  Map json,
-) =>
-    $checkedCreate('_AdminUpdateAccountPasswordInput', json, ($checkedConvert) {
-      final val = _AdminUpdateAccountPasswordInput(
-        did: $checkedConvert('did', (v) => v as String),
-        password: $checkedConvert('password', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AdminUpdateAccountPasswordInputImpl
+    _$$AdminUpdateAccountPasswordInputImplFromJson(Map json) => $checkedCreate(
+          r'_$AdminUpdateAccountPasswordInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$AdminUpdateAccountPasswordInputImpl(
+              did: $checkedConvert('did', (v) => v as String),
+              password: $checkedConvert('password', (v) => v as String),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$AdminUpdateAccountPasswordInputToJson(
-  _AdminUpdateAccountPasswordInput instance,
-) => <String, dynamic>{
-  'did': instance.did,
-  'password': instance.password,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$AdminUpdateAccountPasswordInputImplToJson(
+        _$AdminUpdateAccountPasswordInputImpl instance) =>
+    <String, dynamic>{
+      'did': instance.did,
+      'password': instance.password,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

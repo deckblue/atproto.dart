@@ -46,33 +46,33 @@ class CachePolicy with _$CachePolicy {
 extension CachePolicyExtension on CachePolicy {
   /// Returns true if caching is effectively enabled.
   bool get isEnabled => when(
-    (enabled, _, _, _) => enabled,
-    disabled: () => false,
-    aggressive: (_, _) => true,
-    minimal: (_, _) => true,
-  );
+        (enabled, _, __, ___) => enabled,
+        disabled: () => false,
+        aggressive: (_, __) => true,
+        minimal: (_, __) => true,
+      );
 
   /// Returns the effective TTL duration.
   Duration get effectiveTtl => when(
-    (_, ttl, _, _) => ttl,
-    disabled: () => Duration.zero,
-    aggressive: (ttl, _) => ttl,
-    minimal: (ttl, _) => ttl,
-  );
+        (_, ttl, __, ___) => ttl,
+        disabled: () => Duration.zero,
+        aggressive: (ttl, _) => ttl,
+        minimal: (ttl, _) => ttl,
+      );
 
   /// Returns the effective maximum cache size.
   int get effectiveMaxSize => when(
-    (_, _, maxSize, _) => maxSize,
-    disabled: () => 0,
-    aggressive: (_, maxSize) => maxSize,
-    minimal: (_, maxSize) => maxSize,
-  );
+        (_, __, maxSize, ___) => maxSize,
+        disabled: () => 0,
+        aggressive: (_, maxSize) => maxSize,
+        minimal: (_, maxSize) => maxSize,
+      );
 
   /// Returns true if LRU eviction should be used.
   bool get shouldUseLru => when(
-    (_, _, _, enableLru) => enableLru,
-    disabled: () => false,
-    aggressive: (_, _) => true,
-    minimal: (_, _) => true,
-  );
+        (_, __, ___, enableLru) => enableLru,
+        disabled: () => false,
+        aggressive: (_, __) => true,
+        minimal: (_, __) => true,
+      );
 }

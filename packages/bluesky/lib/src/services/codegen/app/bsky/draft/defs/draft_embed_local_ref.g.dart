@@ -8,25 +8,29 @@ part of 'draft_embed_local_ref.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_DraftEmbedLocalRef _$DraftEmbedLocalRefFromJson(Map json) =>
-    $checkedCreate('_DraftEmbedLocalRef', json, ($checkedConvert) {
-      final val = _DraftEmbedLocalRef(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.draft.defs#draftEmbedLocalRef',
-        ),
-        path: $checkedConvert('path', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$DraftEmbedLocalRefImpl _$$DraftEmbedLocalRefImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$DraftEmbedLocalRefImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$DraftEmbedLocalRefImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.draft.defs#draftEmbedLocalRef'),
+          path: $checkedConvert('path', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$DraftEmbedLocalRefToJson(_DraftEmbedLocalRef instance) =>
+Map<String, dynamic> _$$DraftEmbedLocalRefImplToJson(
+        _$DraftEmbedLocalRefImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'path': instance.path,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

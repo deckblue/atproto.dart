@@ -8,18 +8,26 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_DraftCreateDraftOutput _$DraftCreateDraftOutputFromJson(Map json) =>
-    $checkedCreate('_DraftCreateDraftOutput', json, ($checkedConvert) {
-      final val = _DraftCreateDraftOutput(
-        id: $checkedConvert('id', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$DraftCreateDraftOutputImpl _$$DraftCreateDraftOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$DraftCreateDraftOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$DraftCreateDraftOutputImpl(
+          id: $checkedConvert('id', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$DraftCreateDraftOutputToJson(
-  _DraftCreateDraftOutput instance,
-) => <String, dynamic>{'id': instance.id, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$DraftCreateDraftOutputImplToJson(
+        _$DraftCreateDraftOutputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,32 +8,33 @@ part of 'view.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_EmbedExternalView _$EmbedExternalViewFromJson(Map json) =>
-    $checkedCreate('_EmbedExternalView', json, ($checkedConvert) {
-      final val = _EmbedExternalView(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.embed.external#view',
-        ),
-        external: $checkedConvert(
-          'external',
-          (v) => const EmbedExternalViewExternalConverter().fromJson(
-            v as Map<String, dynamic>,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$EmbedExternalViewImpl _$$EmbedExternalViewImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$EmbedExternalViewImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$EmbedExternalViewImpl(
+          $type: $checkedConvert(
+              r'$type', (v) => v as String? ?? 'app.bsky.embed.external#view'),
+          external: $checkedConvert(
+              'external',
+              (v) => const EmbedExternalViewExternalConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$EmbedExternalViewToJson(_EmbedExternalView instance) =>
+Map<String, dynamic> _$$EmbedExternalViewImplToJson(
+        _$EmbedExternalViewImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'external': const EmbedExternalViewExternalConverter().toJson(
-        instance.external,
-      ),
-      r'$unknown': ?instance.$unknown,
+      'external':
+          const EmbedExternalViewExternalConverter().toJson(instance.external),
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

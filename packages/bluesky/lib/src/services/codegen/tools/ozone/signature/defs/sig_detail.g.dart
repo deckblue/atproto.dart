@@ -8,27 +8,29 @@ part of 'sig_detail.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SigDetail _$SigDetailFromJson(Map json) =>
-    $checkedCreate('_SigDetail', json, ($checkedConvert) {
-      final val = _SigDetail(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.signature.defs#sigDetail',
-        ),
-        property: $checkedConvert('property', (v) => v as String),
-        value: $checkedConvert('value', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SigDetailImpl _$$SigDetailImplFromJson(Map json) => $checkedCreate(
+      r'_$SigDetailImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SigDetailImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'tools.ozone.signature.defs#sigDetail'),
+          property: $checkedConvert('property', (v) => v as String),
+          value: $checkedConvert('value', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SigDetailToJson(_SigDetail instance) =>
+Map<String, dynamic> _$$SigDetailImplToJson(_$SigDetailImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'property': instance.property,
       'value': instance.value,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -8,23 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_BookmarkGetBookmarksInput _$BookmarkGetBookmarksInputFromJson(Map json) =>
-    $checkedCreate('_BookmarkGetBookmarksInput', json, ($checkedConvert) {
-      final val = _BookmarkGetBookmarksInput(
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$BookmarkGetBookmarksInputImpl _$$BookmarkGetBookmarksInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$BookmarkGetBookmarksInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$BookmarkGetBookmarksInputImpl(
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$BookmarkGetBookmarksInputToJson(
-  _BookmarkGetBookmarksInput instance,
-) => <String, dynamic>{
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$BookmarkGetBookmarksInputImplToJson(
+        _$BookmarkGetBookmarksInputImpl instance) =>
+    <String, dynamic>{
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

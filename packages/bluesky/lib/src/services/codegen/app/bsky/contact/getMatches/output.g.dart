@@ -8,32 +8,35 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ContactGetMatchesOutput _$ContactGetMatchesOutputFromJson(Map json) =>
-    $checkedCreate('_ContactGetMatchesOutput', json, ($checkedConvert) {
-      final val = _ContactGetMatchesOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        matches: $checkedConvert(
-          'matches',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const ProfileViewConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ContactGetMatchesOutputImpl _$$ContactGetMatchesOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ContactGetMatchesOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ContactGetMatchesOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          matches: $checkedConvert(
+              'matches',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const ProfileViewConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ContactGetMatchesOutputToJson(
-  _ContactGetMatchesOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'matches': instance.matches.map(const ProfileViewConverter().toJson).toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ContactGetMatchesOutputImplToJson(
+        _$ContactGetMatchesOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'matches':
+          instance.matches.map(const ProfileViewConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

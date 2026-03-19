@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,366 @@ part of 'main_role.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$TeamAddMemberRole {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TeamAddMemberRole&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'TeamAddMemberRole(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownTeamAddMemberRole data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownTeamAddMemberRole data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownTeamAddMemberRole data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TeamAddMemberRoleKnownValue value) knownValue,
+    required TResult Function(TeamAddMemberRoleUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TeamAddMemberRoleKnownValue value)? knownValue,
+    TResult? Function(TeamAddMemberRoleUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TeamAddMemberRoleKnownValue value)? knownValue,
+    TResult Function(TeamAddMemberRoleUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $TeamAddMemberRoleCopyWith<$Res>  {
-$TeamAddMemberRoleCopyWith(TeamAddMemberRole _, $Res Function(TeamAddMemberRole) __);
+abstract class $TeamAddMemberRoleCopyWith<$Res> {
+  factory $TeamAddMemberRoleCopyWith(
+          TeamAddMemberRole value, $Res Function(TeamAddMemberRole) then) =
+      _$TeamAddMemberRoleCopyWithImpl<$Res, TeamAddMemberRole>;
 }
 
+/// @nodoc
+class _$TeamAddMemberRoleCopyWithImpl<$Res, $Val extends TeamAddMemberRole>
+    implements $TeamAddMemberRoleCopyWith<$Res> {
+  _$TeamAddMemberRoleCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [TeamAddMemberRole].
-extension TeamAddMemberRolePatterns on TeamAddMemberRole {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( TeamAddMemberRoleKnownValue value)?  knownValue,TResult Function( TeamAddMemberRoleUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case TeamAddMemberRoleKnownValue() when knownValue != null:
-return knownValue(_that);case TeamAddMemberRoleUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( TeamAddMemberRoleKnownValue value)  knownValue,required TResult Function( TeamAddMemberRoleUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case TeamAddMemberRoleKnownValue():
-return knownValue(_that);case TeamAddMemberRoleUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( TeamAddMemberRoleKnownValue value)?  knownValue,TResult? Function( TeamAddMemberRoleUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case TeamAddMemberRoleKnownValue() when knownValue != null:
-return knownValue(_that);case TeamAddMemberRoleUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownTeamAddMemberRole data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case TeamAddMemberRoleKnownValue() when knownValue != null:
-return knownValue(_that.data);case TeamAddMemberRoleUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownTeamAddMemberRole data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case TeamAddMemberRoleKnownValue():
-return knownValue(_that.data);case TeamAddMemberRoleUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownTeamAddMemberRole data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case TeamAddMemberRoleKnownValue() when knownValue != null:
-return knownValue(_that.data);case TeamAddMemberRoleUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of TeamAddMemberRole
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$TeamAddMemberRoleKnownValueImplCopyWith<$Res> {
+  factory _$$TeamAddMemberRoleKnownValueImplCopyWith(
+          _$TeamAddMemberRoleKnownValueImpl value,
+          $Res Function(_$TeamAddMemberRoleKnownValueImpl) then) =
+      __$$TeamAddMemberRoleKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownTeamAddMemberRole data});
+}
+
+/// @nodoc
+class __$$TeamAddMemberRoleKnownValueImplCopyWithImpl<$Res>
+    extends _$TeamAddMemberRoleCopyWithImpl<$Res,
+        _$TeamAddMemberRoleKnownValueImpl>
+    implements _$$TeamAddMemberRoleKnownValueImplCopyWith<$Res> {
+  __$$TeamAddMemberRoleKnownValueImplCopyWithImpl(
+      _$TeamAddMemberRoleKnownValueImpl _value,
+      $Res Function(_$TeamAddMemberRoleKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TeamAddMemberRole
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$TeamAddMemberRoleKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownTeamAddMemberRole,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$TeamAddMemberRoleKnownValueImpl extends TeamAddMemberRoleKnownValue {
+  const _$TeamAddMemberRoleKnownValueImpl({required this.data}) : super._();
 
-class TeamAddMemberRoleKnownValue extends TeamAddMemberRole {
-  const TeamAddMemberRoleKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownTeamAddMemberRole data;
 
-@override final  KnownTeamAddMemberRole data;
+  @override
+  String toString() {
+    return 'TeamAddMemberRole.knownValue(data: $data)';
+  }
 
-/// Create a copy of TeamAddMemberRole
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$TeamAddMemberRoleKnownValueCopyWith<TeamAddMemberRoleKnownValue> get copyWith => _$TeamAddMemberRoleKnownValueCopyWithImpl<TeamAddMemberRoleKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TeamAddMemberRoleKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of TeamAddMemberRole
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TeamAddMemberRoleKnownValueImplCopyWith<_$TeamAddMemberRoleKnownValueImpl>
+      get copyWith => __$$TeamAddMemberRoleKnownValueImplCopyWithImpl<
+          _$TeamAddMemberRoleKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TeamAddMemberRoleKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownTeamAddMemberRole data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownTeamAddMemberRole data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownTeamAddMemberRole data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TeamAddMemberRoleKnownValue value) knownValue,
+    required TResult Function(TeamAddMemberRoleUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TeamAddMemberRoleKnownValue value)? knownValue,
+    TResult? Function(TeamAddMemberRoleUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TeamAddMemberRoleKnownValue value)? knownValue,
+    TResult Function(TeamAddMemberRoleUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class TeamAddMemberRoleKnownValue extends TeamAddMemberRole {
+  const factory TeamAddMemberRoleKnownValue(
+          {required final KnownTeamAddMemberRole data}) =
+      _$TeamAddMemberRoleKnownValueImpl;
+  const TeamAddMemberRoleKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownTeamAddMemberRole get data;
 
-@override
-String toString() {
-  return 'TeamAddMemberRole.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of TeamAddMemberRole
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TeamAddMemberRoleKnownValueImplCopyWith<_$TeamAddMemberRoleKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $TeamAddMemberRoleKnownValueCopyWith<$Res> implements $TeamAddMemberRoleCopyWith<$Res> {
-  factory $TeamAddMemberRoleKnownValueCopyWith(TeamAddMemberRoleKnownValue value, $Res Function(TeamAddMemberRoleKnownValue) _then) = _$TeamAddMemberRoleKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownTeamAddMemberRole data
-});
-
-
-
-
-}
-/// @nodoc
-class _$TeamAddMemberRoleKnownValueCopyWithImpl<$Res>
-    implements $TeamAddMemberRoleKnownValueCopyWith<$Res> {
-  _$TeamAddMemberRoleKnownValueCopyWithImpl(this._self, this._then);
-
-  final TeamAddMemberRoleKnownValue _self;
-  final $Res Function(TeamAddMemberRoleKnownValue) _then;
-
-/// Create a copy of TeamAddMemberRole
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(TeamAddMemberRoleKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownTeamAddMemberRole,
-  ));
-}
-
-
+abstract class _$$TeamAddMemberRoleUnknownImplCopyWith<$Res> {
+  factory _$$TeamAddMemberRoleUnknownImplCopyWith(
+          _$TeamAddMemberRoleUnknownImpl value,
+          $Res Function(_$TeamAddMemberRoleUnknownImpl) then) =
+      __$$TeamAddMemberRoleUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$TeamAddMemberRoleUnknownImplCopyWithImpl<$Res>
+    extends _$TeamAddMemberRoleCopyWithImpl<$Res,
+        _$TeamAddMemberRoleUnknownImpl>
+    implements _$$TeamAddMemberRoleUnknownImplCopyWith<$Res> {
+  __$$TeamAddMemberRoleUnknownImplCopyWithImpl(
+      _$TeamAddMemberRoleUnknownImpl _value,
+      $Res Function(_$TeamAddMemberRoleUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class TeamAddMemberRoleUnknown extends TeamAddMemberRole {
-  const TeamAddMemberRoleUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of TeamAddMemberRole
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$TeamAddMemberRoleUnknownCopyWith<TeamAddMemberRoleUnknown> get copyWith => _$TeamAddMemberRoleUnknownCopyWithImpl<TeamAddMemberRoleUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TeamAddMemberRoleUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'TeamAddMemberRole.unknown(data: $data)';
-}
-
-
+  /// Create a copy of TeamAddMemberRole
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$TeamAddMemberRoleUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $TeamAddMemberRoleUnknownCopyWith<$Res> implements $TeamAddMemberRoleCopyWith<$Res> {
-  factory $TeamAddMemberRoleUnknownCopyWith(TeamAddMemberRoleUnknown value, $Res Function(TeamAddMemberRoleUnknown) _then) = _$TeamAddMemberRoleUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$TeamAddMemberRoleUnknownImpl extends TeamAddMemberRoleUnknown {
+  const _$TeamAddMemberRoleUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'TeamAddMemberRole.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TeamAddMemberRoleUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of TeamAddMemberRole
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TeamAddMemberRoleUnknownImplCopyWith<_$TeamAddMemberRoleUnknownImpl>
+      get copyWith => __$$TeamAddMemberRoleUnknownImplCopyWithImpl<
+          _$TeamAddMemberRoleUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownTeamAddMemberRole data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownTeamAddMemberRole data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownTeamAddMemberRole data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TeamAddMemberRoleKnownValue value) knownValue,
+    required TResult Function(TeamAddMemberRoleUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TeamAddMemberRoleKnownValue value)? knownValue,
+    TResult? Function(TeamAddMemberRoleUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TeamAddMemberRoleKnownValue value)? knownValue,
+    TResult Function(TeamAddMemberRoleUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$TeamAddMemberRoleUnknownCopyWithImpl<$Res>
-    implements $TeamAddMemberRoleUnknownCopyWith<$Res> {
-  _$TeamAddMemberRoleUnknownCopyWithImpl(this._self, this._then);
 
-  final TeamAddMemberRoleUnknown _self;
-  final $Res Function(TeamAddMemberRoleUnknown) _then;
+abstract class TeamAddMemberRoleUnknown extends TeamAddMemberRole {
+  const factory TeamAddMemberRoleUnknown({required final String data}) =
+      _$TeamAddMemberRoleUnknownImpl;
+  const TeamAddMemberRoleUnknown._() : super._();
 
-/// Create a copy of TeamAddMemberRole
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(TeamAddMemberRoleUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of TeamAddMemberRole
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TeamAddMemberRoleUnknownImplCopyWith<_$TeamAddMemberRoleUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

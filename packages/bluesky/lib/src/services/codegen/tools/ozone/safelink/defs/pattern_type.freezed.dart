@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,360 @@ part of 'pattern_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$PatternType {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PatternType&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'PatternType(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownPatternType data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownPatternType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownPatternType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PatternTypeKnownValue value) knownValue,
+    required TResult Function(PatternTypeUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PatternTypeKnownValue value)? knownValue,
+    TResult? Function(PatternTypeUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PatternTypeKnownValue value)? knownValue,
+    TResult Function(PatternTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $PatternTypeCopyWith<$Res>  {
-$PatternTypeCopyWith(PatternType _, $Res Function(PatternType) __);
+abstract class $PatternTypeCopyWith<$Res> {
+  factory $PatternTypeCopyWith(
+          PatternType value, $Res Function(PatternType) then) =
+      _$PatternTypeCopyWithImpl<$Res, PatternType>;
 }
 
+/// @nodoc
+class _$PatternTypeCopyWithImpl<$Res, $Val extends PatternType>
+    implements $PatternTypeCopyWith<$Res> {
+  _$PatternTypeCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [PatternType].
-extension PatternTypePatterns on PatternType {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( PatternTypeKnownValue value)?  knownValue,TResult Function( PatternTypeUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case PatternTypeKnownValue() when knownValue != null:
-return knownValue(_that);case PatternTypeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( PatternTypeKnownValue value)  knownValue,required TResult Function( PatternTypeUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case PatternTypeKnownValue():
-return knownValue(_that);case PatternTypeUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( PatternTypeKnownValue value)?  knownValue,TResult? Function( PatternTypeUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case PatternTypeKnownValue() when knownValue != null:
-return knownValue(_that);case PatternTypeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownPatternType data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case PatternTypeKnownValue() when knownValue != null:
-return knownValue(_that.data);case PatternTypeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownPatternType data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case PatternTypeKnownValue():
-return knownValue(_that.data);case PatternTypeUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownPatternType data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case PatternTypeKnownValue() when knownValue != null:
-return knownValue(_that.data);case PatternTypeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of PatternType
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$PatternTypeKnownValueImplCopyWith<$Res> {
+  factory _$$PatternTypeKnownValueImplCopyWith(
+          _$PatternTypeKnownValueImpl value,
+          $Res Function(_$PatternTypeKnownValueImpl) then) =
+      __$$PatternTypeKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownPatternType data});
+}
+
+/// @nodoc
+class __$$PatternTypeKnownValueImplCopyWithImpl<$Res>
+    extends _$PatternTypeCopyWithImpl<$Res, _$PatternTypeKnownValueImpl>
+    implements _$$PatternTypeKnownValueImplCopyWith<$Res> {
+  __$$PatternTypeKnownValueImplCopyWithImpl(_$PatternTypeKnownValueImpl _value,
+      $Res Function(_$PatternTypeKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PatternType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$PatternTypeKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownPatternType,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$PatternTypeKnownValueImpl extends PatternTypeKnownValue {
+  const _$PatternTypeKnownValueImpl({required this.data}) : super._();
 
-class PatternTypeKnownValue extends PatternType {
-  const PatternTypeKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownPatternType data;
 
-@override final  KnownPatternType data;
+  @override
+  String toString() {
+    return 'PatternType.knownValue(data: $data)';
+  }
 
-/// Create a copy of PatternType
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$PatternTypeKnownValueCopyWith<PatternTypeKnownValue> get copyWith => _$PatternTypeKnownValueCopyWithImpl<PatternTypeKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PatternTypeKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of PatternType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PatternTypeKnownValueImplCopyWith<_$PatternTypeKnownValueImpl>
+      get copyWith => __$$PatternTypeKnownValueImplCopyWithImpl<
+          _$PatternTypeKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PatternTypeKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownPatternType data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownPatternType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownPatternType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PatternTypeKnownValue value) knownValue,
+    required TResult Function(PatternTypeUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PatternTypeKnownValue value)? knownValue,
+    TResult? Function(PatternTypeUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PatternTypeKnownValue value)? knownValue,
+    TResult Function(PatternTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class PatternTypeKnownValue extends PatternType {
+  const factory PatternTypeKnownValue({required final KnownPatternType data}) =
+      _$PatternTypeKnownValueImpl;
+  const PatternTypeKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownPatternType get data;
 
-@override
-String toString() {
-  return 'PatternType.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of PatternType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PatternTypeKnownValueImplCopyWith<_$PatternTypeKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $PatternTypeKnownValueCopyWith<$Res> implements $PatternTypeCopyWith<$Res> {
-  factory $PatternTypeKnownValueCopyWith(PatternTypeKnownValue value, $Res Function(PatternTypeKnownValue) _then) = _$PatternTypeKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownPatternType data
-});
-
-
-
-
-}
-/// @nodoc
-class _$PatternTypeKnownValueCopyWithImpl<$Res>
-    implements $PatternTypeKnownValueCopyWith<$Res> {
-  _$PatternTypeKnownValueCopyWithImpl(this._self, this._then);
-
-  final PatternTypeKnownValue _self;
-  final $Res Function(PatternTypeKnownValue) _then;
-
-/// Create a copy of PatternType
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(PatternTypeKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownPatternType,
-  ));
-}
-
-
+abstract class _$$PatternTypeUnknownImplCopyWith<$Res> {
+  factory _$$PatternTypeUnknownImplCopyWith(_$PatternTypeUnknownImpl value,
+          $Res Function(_$PatternTypeUnknownImpl) then) =
+      __$$PatternTypeUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$PatternTypeUnknownImplCopyWithImpl<$Res>
+    extends _$PatternTypeCopyWithImpl<$Res, _$PatternTypeUnknownImpl>
+    implements _$$PatternTypeUnknownImplCopyWith<$Res> {
+  __$$PatternTypeUnknownImplCopyWithImpl(_$PatternTypeUnknownImpl _value,
+      $Res Function(_$PatternTypeUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class PatternTypeUnknown extends PatternType {
-  const PatternTypeUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of PatternType
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$PatternTypeUnknownCopyWith<PatternTypeUnknown> get copyWith => _$PatternTypeUnknownCopyWithImpl<PatternTypeUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PatternTypeUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'PatternType.unknown(data: $data)';
-}
-
-
+  /// Create a copy of PatternType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$PatternTypeUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $PatternTypeUnknownCopyWith<$Res> implements $PatternTypeCopyWith<$Res> {
-  factory $PatternTypeUnknownCopyWith(PatternTypeUnknown value, $Res Function(PatternTypeUnknown) _then) = _$PatternTypeUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$PatternTypeUnknownImpl extends PatternTypeUnknown {
+  const _$PatternTypeUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'PatternType.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PatternTypeUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of PatternType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PatternTypeUnknownImplCopyWith<_$PatternTypeUnknownImpl> get copyWith =>
+      __$$PatternTypeUnknownImplCopyWithImpl<_$PatternTypeUnknownImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownPatternType data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownPatternType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownPatternType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PatternTypeKnownValue value) knownValue,
+    required TResult Function(PatternTypeUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PatternTypeKnownValue value)? knownValue,
+    TResult? Function(PatternTypeUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PatternTypeKnownValue value)? knownValue,
+    TResult Function(PatternTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$PatternTypeUnknownCopyWithImpl<$Res>
-    implements $PatternTypeUnknownCopyWith<$Res> {
-  _$PatternTypeUnknownCopyWithImpl(this._self, this._then);
 
-  final PatternTypeUnknown _self;
-  final $Res Function(PatternTypeUnknown) _then;
+abstract class PatternTypeUnknown extends PatternType {
+  const factory PatternTypeUnknown({required final String data}) =
+      _$PatternTypeUnknownImpl;
+  const PatternTypeUnknown._() : super._();
 
-/// Create a copy of PatternType
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(PatternTypeUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of PatternType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PatternTypeUnknownImplCopyWith<_$PatternTypeUnknownImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

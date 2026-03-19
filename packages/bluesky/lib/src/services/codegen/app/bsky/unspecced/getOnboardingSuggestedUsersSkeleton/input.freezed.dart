@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,290 +9,271 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+UnspeccedGetOnboardingSuggestedUsersSkeletonInput
+    _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputFromJson(
+        Map<String, dynamic> json) {
+  return _UnspeccedGetOnboardingSuggestedUsersSkeletonInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$UnspeccedGetOnboardingSuggestedUsersSkeletonInput {
+  /// DID of the account making the request (not included for public/unauthenticated queries).
+  String? get viewer => throw _privateConstructorUsedError;
 
-/// DID of the account making the request (not included for public/unauthenticated queries).
- String? get viewer;/// Category of users to get suggestions for.
- String? get category; int get limit; Map<String, dynamic>? get $unknown;
-/// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<UnspeccedGetOnboardingSuggestedUsersSkeletonInput> get copyWith => _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl<UnspeccedGetOnboardingSuggestedUsersSkeletonInput>(this as UnspeccedGetOnboardingSuggestedUsersSkeletonInput, _$identity);
+  /// Category of users to get suggestions for.
+  String? get category => throw _privateConstructorUsedError;
+  int get limit => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this UnspeccedGetOnboardingSuggestedUsersSkeletonInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnspeccedGetOnboardingSuggestedUsersSkeletonInput&&(identical(other.viewer, viewer) || other.viewer == viewer)&&(identical(other.category, category) || other.category == category)&&(identical(other.limit, limit) || other.limit == limit)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,viewer,category,limit,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'UnspeccedGetOnboardingSuggestedUsersSkeletonInput(viewer: $viewer, category: $category, limit: $limit, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<
+          UnspeccedGetOnboardingSuggestedUsersSkeletonInput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<$Res>  {
-  factory $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith(UnspeccedGetOnboardingSuggestedUsersSkeletonInput value, $Res Function(UnspeccedGetOnboardingSuggestedUsersSkeletonInput) _then) = _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl;
-@useResult
-$Res call({
- String? viewer, String? category, int limit, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<
+    $Res> {
+  factory $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith(
+          UnspeccedGetOnboardingSuggestedUsersSkeletonInput value,
+          $Res Function(UnspeccedGetOnboardingSuggestedUsersSkeletonInput)
+              then) =
+      _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl<$Res,
+          UnspeccedGetOnboardingSuggestedUsersSkeletonInput>;
+  @useResult
+  $Res call(
+      {String? viewer,
+      String? category,
+      int limit,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl<$Res>
-    implements $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<$Res> {
-  _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl(this._self, this._then);
+class _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl<$Res,
+        $Val extends UnspeccedGetOnboardingSuggestedUsersSkeletonInput>
+    implements
+        $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<$Res> {
+  _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl(
+      this._value, this._then);
 
-  final UnspeccedGetOnboardingSuggestedUsersSkeletonInput _self;
-  final $Res Function(UnspeccedGetOnboardingSuggestedUsersSkeletonInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? viewer = freezed,Object? category = freezed,Object? limit = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-viewer: freezed == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
-as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewer = freezed,
+    Object? category = freezed,
+    Object? limit = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      viewer: freezed == viewer
+          ? _value.viewer
+          : viewer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWith<
+        $Res>
+    implements
+        $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<$Res> {
+  factory _$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWith(
+          _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl value,
+          $Res Function(_$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl)
+              then) =
+      __$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWithImpl<
+          $Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? viewer,
+      String? category,
+      int limit,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWithImpl<
+        $Res>
+    extends _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl<
+        $Res, _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl>
+    implements
+        _$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWith<$Res> {
+  __$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWithImpl(
+      _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl _value,
+      $Res Function(_$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl)
+          _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [UnspeccedGetOnboardingSuggestedUsersSkeletonInput].
-extension UnspeccedGetOnboardingSuggestedUsersSkeletonInputPatterns on UnspeccedGetOnboardingSuggestedUsersSkeletonInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UnspeccedGetOnboardingSuggestedUsersSkeletonInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedUsersSkeletonInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UnspeccedGetOnboardingSuggestedUsersSkeletonInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedUsersSkeletonInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UnspeccedGetOnboardingSuggestedUsersSkeletonInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedUsersSkeletonInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? viewer,  String? category,  int limit,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedUsersSkeletonInput() when $default != null:
-return $default(_that.viewer,_that.category,_that.limit,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? viewer,  String? category,  int limit,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedUsersSkeletonInput():
-return $default(_that.viewer,_that.category,_that.limit,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? viewer,  String? category,  int limit,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _UnspeccedGetOnboardingSuggestedUsersSkeletonInput() when $default != null:
-return $default(_that.viewer,_that.category,_that.limit,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewer = freezed,
+    Object? category = freezed,
+    Object? limit = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl(
+      viewer: freezed == viewer
+          ? _value.viewer
+          : viewer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _UnspeccedGetOnboardingSuggestedUsersSkeletonInput implements UnspeccedGetOnboardingSuggestedUsersSkeletonInput {
-  const _UnspeccedGetOnboardingSuggestedUsersSkeletonInput({this.viewer, this.category, this.limit = 25, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _UnspeccedGetOnboardingSuggestedUsersSkeletonInput.fromJson(Map<String, dynamic> json) => _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputFromJson(json);
+class _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl
+    implements _UnspeccedGetOnboardingSuggestedUsersSkeletonInput {
+  const _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl(
+      {this.viewer,
+      this.category,
+      this.limit = 25,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// DID of the account making the request (not included for public/unauthenticated queries).
-@override final  String? viewer;
-/// Category of users to get suggestions for.
-@override final  String? category;
-@override@JsonKey() final  int limit;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplFromJson(json);
+
+  /// DID of the account making the request (not included for public/unauthenticated queries).
+  @override
+  final String? viewer;
+
+  /// Category of users to get suggestions for.
+  @override
+  final String? category;
+  @override
+  @JsonKey()
+  final int limit;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'UnspeccedGetOnboardingSuggestedUsersSkeletonInput(viewer: $viewer, category: $category, limit: $limit, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl &&
+            (identical(other.viewer, viewer) || other.viewer == viewer) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, viewer, category, limit,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWith<
+          _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl>
+      get copyWith =>
+          __$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWithImpl<
+                  _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _UnspeccedGetOnboardingSuggestedUsersSkeletonInput
+    implements UnspeccedGetOnboardingSuggestedUsersSkeletonInput {
+  const factory _UnspeccedGetOnboardingSuggestedUsersSkeletonInput(
+          {final String? viewer,
+          final String? category,
+          final int limit,
+          final Map<String, dynamic>? $unknown}) =
+      _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl;
 
-/// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<_UnspeccedGetOnboardingSuggestedUsersSkeletonInput> get copyWith => __$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl<_UnspeccedGetOnboardingSuggestedUsersSkeletonInput>(this, _$identity);
+  factory _UnspeccedGetOnboardingSuggestedUsersSkeletonInput.fromJson(
+          Map<String, dynamic> json) =
+      _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputToJson(this, );
+  /// DID of the account making the request (not included for public/unauthenticated queries).
+  @override
+  String? get viewer;
+
+  /// Category of users to get suggestions for.
+  @override
+  String? get category;
+  @override
+  int get limit;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImplCopyWith<
+          _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnspeccedGetOnboardingSuggestedUsersSkeletonInput&&(identical(other.viewer, viewer) || other.viewer == viewer)&&(identical(other.category, category) || other.category == category)&&(identical(other.limit, limit) || other.limit == limit)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,viewer,category,limit,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'UnspeccedGetOnboardingSuggestedUsersSkeletonInput(viewer: $viewer, category: $category, limit: $limit, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<$Res> implements $UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<$Res> {
-  factory _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith(_UnspeccedGetOnboardingSuggestedUsersSkeletonInput value, $Res Function(_UnspeccedGetOnboardingSuggestedUsersSkeletonInput) _then) = __$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? viewer, String? category, int limit, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl<$Res>
-    implements _$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWith<$Res> {
-  __$UnspeccedGetOnboardingSuggestedUsersSkeletonInputCopyWithImpl(this._self, this._then);
-
-  final _UnspeccedGetOnboardingSuggestedUsersSkeletonInput _self;
-  final $Res Function(_UnspeccedGetOnboardingSuggestedUsersSkeletonInput) _then;
-
-/// Create a copy of UnspeccedGetOnboardingSuggestedUsersSkeletonInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? viewer = freezed,Object? category = freezed,Object? limit = null,Object? $unknown = freezed,}) {
-  return _then(_UnspeccedGetOnboardingSuggestedUsersSkeletonInput(
-viewer: freezed == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
-as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

@@ -8,31 +8,35 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AgeassuranceGetStateOutput _$AgeassuranceGetStateOutputFromJson(Map json) =>
-    $checkedCreate('_AgeassuranceGetStateOutput', json, ($checkedConvert) {
-      final val = _AgeassuranceGetStateOutput(
-        state: $checkedConvert(
-          'state',
-          (v) => const StateConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        metadata: $checkedConvert(
-          'metadata',
-          (v) => const StateMetadataConverter().fromJson(
-            v as Map<String, dynamic>,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AgeassuranceGetStateOutputImpl _$$AgeassuranceGetStateOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$AgeassuranceGetStateOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AgeassuranceGetStateOutputImpl(
+          state: $checkedConvert(
+              'state',
+              (v) =>
+                  const StateConverter().fromJson(v as Map<String, dynamic>)),
+          metadata: $checkedConvert(
+              'metadata',
+              (v) => const StateMetadataConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AgeassuranceGetStateOutputToJson(
-  _AgeassuranceGetStateOutput instance,
-) => <String, dynamic>{
-  'state': const StateConverter().toJson(instance.state),
-  'metadata': const StateMetadataConverter().toJson(instance.metadata),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$AgeassuranceGetStateOutputImplToJson(
+        _$AgeassuranceGetStateOutputImpl instance) =>
+    <String, dynamic>{
+      'state': const StateConverter().toJson(instance.state),
+      'metadata': const StateMetadataConverter().toJson(instance.metadata),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

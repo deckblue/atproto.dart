@@ -8,25 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ContactStartPhoneVerificationInput
-_$ContactStartPhoneVerificationInputFromJson(Map json) => $checkedCreate(
-  '_ContactStartPhoneVerificationInput',
-  json,
-  ($checkedConvert) {
-    final val = _ContactStartPhoneVerificationInput(
-      phone: $checkedConvert('phone', (v) => v as String),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$ContactStartPhoneVerificationInputImpl
+    _$$ContactStartPhoneVerificationInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$ContactStartPhoneVerificationInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$ContactStartPhoneVerificationInputImpl(
+              phone: $checkedConvert('phone', (v) => v as String),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$ContactStartPhoneVerificationInputToJson(
-  _ContactStartPhoneVerificationInput instance,
-) => <String, dynamic>{
-  'phone': instance.phone,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ContactStartPhoneVerificationInputImplToJson(
+        _$ContactStartPhoneVerificationInputImpl instance) =>
+    <String, dynamic>{
+      'phone': instance.phone,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

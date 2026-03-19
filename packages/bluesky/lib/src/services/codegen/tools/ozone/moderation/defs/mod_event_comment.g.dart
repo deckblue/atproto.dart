@@ -8,27 +8,34 @@ part of 'mod_event_comment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModEventComment _$ModEventCommentFromJson(Map json) =>
-    $checkedCreate('_ModEventComment', json, ($checkedConvert) {
-      final val = _ModEventComment(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.moderation.defs#modEventComment',
-        ),
-        comment: $checkedConvert('comment', (v) => v as String?),
-        sticky: $checkedConvert('sticky', (v) => v as bool?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ModEventCommentImpl _$$ModEventCommentImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ModEventCommentImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ModEventCommentImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.moderation.defs#modEventComment'),
+          comment: $checkedConvert('comment', (v) => v as String?),
+          sticky: $checkedConvert('sticky', (v) => v as bool?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ModEventCommentToJson(_ModEventComment instance) =>
+Map<String, dynamic> _$$ModEventCommentImplToJson(
+        _$ModEventCommentImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'comment': ?instance.comment,
-      'sticky': ?instance.sticky,
-      r'$unknown': ?instance.$unknown,
+      if (instance.comment case final value?) 'comment': value,
+      if (instance.sticky case final value?) 'sticky': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

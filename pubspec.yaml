@@ -2,7 +2,7 @@ name: atproto_dart
 publish_to: none
 
 environment:
-  sdk: ">=3.8.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
 
 workspace:
   - packages/at_primitives
@@ -26,8 +26,8 @@ dependencies:
   test: ^1.26.2
 
 dev_dependencies:
-  lints: ^6.0.0
-  melos: ^7.1.0
+  lints: ^5.0.0
+  melos: ^6.3.2
   import_sorter:
     git:
       url: https://github.com/myConsciousness/import_sorter.git
@@ -43,7 +43,7 @@ melos:
 
     get:
       run: melos exec -c 20 -- \
-            dart pub get
+        dart pub get
       description: Run `dart pub get` command in all packages.
 
     analyze:

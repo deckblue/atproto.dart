@@ -8,39 +8,37 @@ part of 'invite_code.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_InviteCode _$InviteCodeFromJson(
-  Map json,
-) => $checkedCreate('_InviteCode', json, ($checkedConvert) {
-  final val = _InviteCode(
-    $type: $checkedConvert(
-      r'$type',
-      (v) => v as String? ?? 'com.atproto.server.defs#inviteCode',
-    ),
-    code: $checkedConvert('code', (v) => v as String),
-    available: $checkedConvert('available', (v) => (v as num).toInt()),
-    disabled: $checkedConvert('disabled', (v) => v as bool),
-    forAccount: $checkedConvert('forAccount', (v) => v as String),
-    createdBy: $checkedConvert('createdBy', (v) => v as String),
-    createdAt: $checkedConvert('createdAt', (v) => DateTime.parse(v as String)),
-    uses: $checkedConvert(
-      'uses',
-      (v) => (v as List<dynamic>)
-          .map(
-            (e) => const InviteCodeUseConverter().fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$InviteCodeImpl _$$InviteCodeImplFromJson(Map json) => $checkedCreate(
+      r'_$InviteCodeImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$InviteCodeImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'com.atproto.server.defs#inviteCode'),
+          code: $checkedConvert('code', (v) => v as String),
+          available: $checkedConvert('available', (v) => (v as num).toInt()),
+          disabled: $checkedConvert('disabled', (v) => v as bool),
+          forAccount: $checkedConvert('forAccount', (v) => v as String),
+          createdBy: $checkedConvert('createdBy', (v) => v as String),
+          createdAt:
+              $checkedConvert('createdAt', (v) => DateTime.parse(v as String)),
+          uses: $checkedConvert(
+              'uses',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const InviteCodeUseConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$InviteCodeToJson(_InviteCode instance) =>
+Map<String, dynamic> _$$InviteCodeImplToJson(_$InviteCodeImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'code': instance.code,
@@ -50,5 +48,5 @@ Map<String, dynamic> _$InviteCodeToJson(_InviteCode instance) =>
       'createdBy': instance.createdBy,
       'createdAt': instance.createdAt.toIso8601String(),
       'uses': instance.uses.map(const InviteCodeUseConverter().toJson).toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

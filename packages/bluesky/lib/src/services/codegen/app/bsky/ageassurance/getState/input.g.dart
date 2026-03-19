@@ -8,23 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AgeassuranceGetStateInput _$AgeassuranceGetStateInputFromJson(Map json) =>
-    $checkedCreate('_AgeassuranceGetStateInput', json, ($checkedConvert) {
-      final val = _AgeassuranceGetStateInput(
-        countryCode: $checkedConvert('countryCode', (v) => v as String),
-        regionCode: $checkedConvert('regionCode', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AgeassuranceGetStateInputImpl _$$AgeassuranceGetStateInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$AgeassuranceGetStateInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AgeassuranceGetStateInputImpl(
+          countryCode: $checkedConvert('countryCode', (v) => v as String),
+          regionCode: $checkedConvert('regionCode', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AgeassuranceGetStateInputToJson(
-  _AgeassuranceGetStateInput instance,
-) => <String, dynamic>{
-  'countryCode': instance.countryCode,
-  'regionCode': ?instance.regionCode,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$AgeassuranceGetStateInputImplToJson(
+        _$AgeassuranceGetStateInputImpl instance) =>
+    <String, dynamic>{
+      'countryCode': instance.countryCode,
+      if (instance.regionCode case final value?) 'regionCode': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

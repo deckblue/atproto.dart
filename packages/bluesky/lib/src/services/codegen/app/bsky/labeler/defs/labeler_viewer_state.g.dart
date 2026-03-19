@@ -8,44 +8,49 @@ part of 'labeler_viewer_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LabelerViewerState _$LabelerViewerStateFromJson(Map json) =>
-    $checkedCreate('_LabelerViewerState', json, ($checkedConvert) {
-      final val = _LabelerViewerState(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.labeler.defs#labelerViewerState',
-        ),
-        like: $checkedConvert(
-          'like',
-          (v) => _$JsonConverterFromJson<String, AtUri>(
-            v,
-            const AtUriConverter().fromJson,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$LabelerViewerStateImpl _$$LabelerViewerStateImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$LabelerViewerStateImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$LabelerViewerStateImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'app.bsky.labeler.defs#labelerViewerState'),
+          like: $checkedConvert(
+              'like',
+              (v) => _$JsonConverterFromJson<String, AtUri>(
+                  v, const AtUriConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$LabelerViewerStateToJson(_LabelerViewerState instance) =>
+Map<String, dynamic> _$$LabelerViewerStateImplToJson(
+        _$LabelerViewerStateImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'like': ?_$JsonConverterToJson<String, AtUri>(
-        instance.like,
-        const AtUriConverter().toJson,
-      ),
-      r'$unknown': ?instance.$unknown,
+      if (_$JsonConverterToJson<String, AtUri>(
+              instance.like, const AtUriConverter().toJson)
+          case final value?)
+        'like': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

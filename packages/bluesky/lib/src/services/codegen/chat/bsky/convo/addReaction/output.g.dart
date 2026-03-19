@@ -8,25 +8,29 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoAddReactionOutput _$ConvoAddReactionOutputFromJson(Map json) =>
-    $checkedCreate('_ConvoAddReactionOutput', json, ($checkedConvert) {
-      final val = _ConvoAddReactionOutput(
-        message: $checkedConvert(
-          'message',
-          (v) =>
-              const MessageViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ConvoAddReactionOutputImpl _$$ConvoAddReactionOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ConvoAddReactionOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoAddReactionOutputImpl(
+          message: $checkedConvert(
+              'message',
+              (v) => const MessageViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoAddReactionOutputToJson(
-  _ConvoAddReactionOutput instance,
-) => <String, dynamic>{
-  'message': const MessageViewConverter().toJson(instance.message),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConvoAddReactionOutputImplToJson(
+        _$ConvoAddReactionOutputImpl instance) =>
+    <String, dynamic>{
+      'message': const MessageViewConverter().toJson(instance.message),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,310 @@ part of 'config_region.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+ConfigRegion _$ConfigRegionFromJson(Map<String, dynamic> json) {
+  return _ConfigRegion.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ConfigRegion {
+  String get $type => throw _privateConstructorUsedError;
 
- String get $type;/// The ISO 3166-1 alpha-2 country code this configuration applies to.
- String get countryCode;/// The ISO 3166-2 region code this configuration applies to. If omitted, the configuration applies to the entire country.
- String? get regionCode;/// The minimum age (as a whole integer) required to use Bluesky in this region.
- int get minAccessAge;@UConfigRegionRulesConverter() List<UConfigRegionRules> get rules; Map<String, dynamic>? get $unknown;
-/// Create a copy of ConfigRegion
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ConfigRegionCopyWith<ConfigRegion> get copyWith => _$ConfigRegionCopyWithImpl<ConfigRegion>(this as ConfigRegion, _$identity);
+  /// The ISO 3166-1 alpha-2 country code this configuration applies to.
+  String get countryCode => throw _privateConstructorUsedError;
+
+  /// The ISO 3166-2 region code this configuration applies to. If omitted, the configuration applies to the entire country.
+  String? get regionCode => throw _privateConstructorUsedError;
+
+  /// The minimum age (as a whole integer) required to use Bluesky in this region.
+  int get minAccessAge => throw _privateConstructorUsedError;
+  @UConfigRegionRulesConverter()
+  List<UConfigRegionRules> get rules => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ConfigRegion to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ConfigRegion&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.countryCode, countryCode) || other.countryCode == countryCode)&&(identical(other.regionCode, regionCode) || other.regionCode == regionCode)&&(identical(other.minAccessAge, minAccessAge) || other.minAccessAge == minAccessAge)&&const DeepCollectionEquality().equals(other.rules, rules)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,countryCode,regionCode,minAccessAge,const DeepCollectionEquality().hash(rules),const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'ConfigRegion(\$type: ${$type}, countryCode: $countryCode, regionCode: $regionCode, minAccessAge: $minAccessAge, rules: $rules, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of ConfigRegion
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ConfigRegionCopyWith<ConfigRegion> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ConfigRegionCopyWith<$Res>  {
-  factory $ConfigRegionCopyWith(ConfigRegion value, $Res Function(ConfigRegion) _then) = _$ConfigRegionCopyWithImpl;
-@useResult
-$Res call({
- String $type, String countryCode, String? regionCode, int minAccessAge,@UConfigRegionRulesConverter() List<UConfigRegionRules> rules, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $ConfigRegionCopyWith<$Res> {
+  factory $ConfigRegionCopyWith(
+          ConfigRegion value, $Res Function(ConfigRegion) then) =
+      _$ConfigRegionCopyWithImpl<$Res, ConfigRegion>;
+  @useResult
+  $Res call(
+      {String $type,
+      String countryCode,
+      String? regionCode,
+      int minAccessAge,
+      @UConfigRegionRulesConverter() List<UConfigRegionRules> rules,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$ConfigRegionCopyWithImpl<$Res>
+class _$ConfigRegionCopyWithImpl<$Res, $Val extends ConfigRegion>
     implements $ConfigRegionCopyWith<$Res> {
-  _$ConfigRegionCopyWithImpl(this._self, this._then);
+  _$ConfigRegionCopyWithImpl(this._value, this._then);
 
-  final ConfigRegion _self;
-  final $Res Function(ConfigRegion) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ConfigRegion
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? countryCode = null,Object? regionCode = freezed,Object? minAccessAge = null,Object? rules = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,countryCode: null == countryCode ? _self.countryCode : countryCode // ignore: cast_nullable_to_non_nullable
-as String,regionCode: freezed == regionCode ? _self.regionCode : regionCode // ignore: cast_nullable_to_non_nullable
-as String?,minAccessAge: null == minAccessAge ? _self.minAccessAge : minAccessAge // ignore: cast_nullable_to_non_nullable
-as int,rules: null == rules ? _self.rules : rules // ignore: cast_nullable_to_non_nullable
-as List<UConfigRegionRules>,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of ConfigRegion
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? countryCode = null,
+    Object? regionCode = freezed,
+    Object? minAccessAge = null,
+    Object? rules = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      countryCode: null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      regionCode: freezed == regionCode
+          ? _value.regionCode
+          : regionCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      minAccessAge: null == minAccessAge
+          ? _value.minAccessAge
+          : minAccessAge // ignore: cast_nullable_to_non_nullable
+              as int,
+      rules: null == rules
+          ? _value.rules
+          : rules // ignore: cast_nullable_to_non_nullable
+              as List<UConfigRegionRules>,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$ConfigRegionImplCopyWith<$Res>
+    implements $ConfigRegionCopyWith<$Res> {
+  factory _$$ConfigRegionImplCopyWith(
+          _$ConfigRegionImpl value, $Res Function(_$ConfigRegionImpl) then) =
+      __$$ConfigRegionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      String countryCode,
+      String? regionCode,
+      int minAccessAge,
+      @UConfigRegionRulesConverter() List<UConfigRegionRules> rules,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$ConfigRegionImplCopyWithImpl<$Res>
+    extends _$ConfigRegionCopyWithImpl<$Res, _$ConfigRegionImpl>
+    implements _$$ConfigRegionImplCopyWith<$Res> {
+  __$$ConfigRegionImplCopyWithImpl(
+      _$ConfigRegionImpl _value, $Res Function(_$ConfigRegionImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [ConfigRegion].
-extension ConfigRegionPatterns on ConfigRegion {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ConfigRegion value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ConfigRegion() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ConfigRegion value)  $default,){
-final _that = this;
-switch (_that) {
-case _ConfigRegion():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ConfigRegion value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ConfigRegion() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  String countryCode,  String? regionCode,  int minAccessAge, @UConfigRegionRulesConverter()  List<UConfigRegionRules> rules,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ConfigRegion() when $default != null:
-return $default(_that.$type,_that.countryCode,_that.regionCode,_that.minAccessAge,_that.rules,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  String countryCode,  String? regionCode,  int minAccessAge, @UConfigRegionRulesConverter()  List<UConfigRegionRules> rules,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _ConfigRegion():
-return $default(_that.$type,_that.countryCode,_that.regionCode,_that.minAccessAge,_that.rules,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  String countryCode,  String? regionCode,  int minAccessAge, @UConfigRegionRulesConverter()  List<UConfigRegionRules> rules,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _ConfigRegion() when $default != null:
-return $default(_that.$type,_that.countryCode,_that.regionCode,_that.minAccessAge,_that.rules,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of ConfigRegion
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? countryCode = null,
+    Object? regionCode = freezed,
+    Object? minAccessAge = null,
+    Object? rules = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$ConfigRegionImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      countryCode: null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      regionCode: freezed == regionCode
+          ? _value.regionCode
+          : regionCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      minAccessAge: null == minAccessAge
+          ? _value.minAccessAge
+          : minAccessAge // ignore: cast_nullable_to_non_nullable
+              as int,
+      rules: null == rules
+          ? _value._rules
+          : rules // ignore: cast_nullable_to_non_nullable
+              as List<UConfigRegionRules>,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _ConfigRegion implements ConfigRegion {
-  const _ConfigRegion({this.$type = 'app.bsky.ageassurance.defs#configRegion', required this.countryCode, this.regionCode, required this.minAccessAge, @UConfigRegionRulesConverter() required final  List<UConfigRegionRules> rules, final  Map<String, dynamic>? $unknown}): _rules = rules,_$unknown = $unknown;
-  factory _ConfigRegion.fromJson(Map<String, dynamic> json) => _$ConfigRegionFromJson(json);
+class _$ConfigRegionImpl implements _ConfigRegion {
+  const _$ConfigRegionImpl(
+      {this.$type = 'app.bsky.ageassurance.defs#configRegion',
+      required this.countryCode,
+      this.regionCode,
+      required this.minAccessAge,
+      @UConfigRegionRulesConverter()
+      required final List<UConfigRegionRules> rules,
+      final Map<String, dynamic>? $unknown})
+      : _rules = rules,
+        _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-/// The ISO 3166-1 alpha-2 country code this configuration applies to.
-@override final  String countryCode;
-/// The ISO 3166-2 region code this configuration applies to. If omitted, the configuration applies to the entire country.
-@override final  String? regionCode;
-/// The minimum age (as a whole integer) required to use Bluesky in this region.
-@override final  int minAccessAge;
- final  List<UConfigRegionRules> _rules;
-@override@UConfigRegionRulesConverter() List<UConfigRegionRules> get rules {
-  if (_rules is EqualUnmodifiableListView) return _rules;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_rules);
+  factory _$ConfigRegionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConfigRegionImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+
+  /// The ISO 3166-1 alpha-2 country code this configuration applies to.
+  @override
+  final String countryCode;
+
+  /// The ISO 3166-2 region code this configuration applies to. If omitted, the configuration applies to the entire country.
+  @override
+  final String? regionCode;
+
+  /// The minimum age (as a whole integer) required to use Bluesky in this region.
+  @override
+  final int minAccessAge;
+  final List<UConfigRegionRules> _rules;
+  @override
+  @UConfigRegionRulesConverter()
+  List<UConfigRegionRules> get rules {
+    if (_rules is EqualUnmodifiableListView) return _rules;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rules);
+  }
+
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ConfigRegion(\$type: ${$type}, countryCode: $countryCode, regionCode: $regionCode, minAccessAge: $minAccessAge, rules: $rules, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfigRegionImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode) &&
+            (identical(other.regionCode, regionCode) ||
+                other.regionCode == regionCode) &&
+            (identical(other.minAccessAge, minAccessAge) ||
+                other.minAccessAge == minAccessAge) &&
+            const DeepCollectionEquality().equals(other._rules, _rules) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      $type,
+      countryCode,
+      regionCode,
+      minAccessAge,
+      const DeepCollectionEquality().hash(_rules),
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of ConfigRegion
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfigRegionImplCopyWith<_$ConfigRegionImpl> get copyWith =>
+      __$$ConfigRegionImplCopyWithImpl<_$ConfigRegionImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConfigRegionImplToJson(
+      this,
+    );
+  }
 }
 
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+abstract class _ConfigRegion implements ConfigRegion {
+  const factory _ConfigRegion(
+      {final String $type,
+      required final String countryCode,
+      final String? regionCode,
+      required final int minAccessAge,
+      @UConfigRegionRulesConverter()
+      required final List<UConfigRegionRules> rules,
+      final Map<String, dynamic>? $unknown}) = _$ConfigRegionImpl;
+
+  factory _ConfigRegion.fromJson(Map<String, dynamic> json) =
+      _$ConfigRegionImpl.fromJson;
+
+  @override
+  String get $type;
+
+  /// The ISO 3166-1 alpha-2 country code this configuration applies to.
+  @override
+  String get countryCode;
+
+  /// The ISO 3166-2 region code this configuration applies to. If omitted, the configuration applies to the entire country.
+  @override
+  String? get regionCode;
+
+  /// The minimum age (as a whole integer) required to use Bluesky in this region.
+  @override
+  int get minAccessAge;
+  @override
+  @UConfigRegionRulesConverter()
+  List<UConfigRegionRules> get rules;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of ConfigRegion
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConfigRegionImplCopyWith<_$ConfigRegionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-
-/// Create a copy of ConfigRegion
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ConfigRegionCopyWith<_ConfigRegion> get copyWith => __$ConfigRegionCopyWithImpl<_ConfigRegion>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$ConfigRegionToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ConfigRegion&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.countryCode, countryCode) || other.countryCode == countryCode)&&(identical(other.regionCode, regionCode) || other.regionCode == regionCode)&&(identical(other.minAccessAge, minAccessAge) || other.minAccessAge == minAccessAge)&&const DeepCollectionEquality().equals(other._rules, _rules)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,countryCode,regionCode,minAccessAge,const DeepCollectionEquality().hash(_rules),const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'ConfigRegion(\$type: ${$type}, countryCode: $countryCode, regionCode: $regionCode, minAccessAge: $minAccessAge, rules: $rules, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ConfigRegionCopyWith<$Res> implements $ConfigRegionCopyWith<$Res> {
-  factory _$ConfigRegionCopyWith(_ConfigRegion value, $Res Function(_ConfigRegion) _then) = __$ConfigRegionCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, String countryCode, String? regionCode, int minAccessAge,@UConfigRegionRulesConverter() List<UConfigRegionRules> rules, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$ConfigRegionCopyWithImpl<$Res>
-    implements _$ConfigRegionCopyWith<$Res> {
-  __$ConfigRegionCopyWithImpl(this._self, this._then);
-
-  final _ConfigRegion _self;
-  final $Res Function(_ConfigRegion) _then;
-
-/// Create a copy of ConfigRegion
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? countryCode = null,Object? regionCode = freezed,Object? minAccessAge = null,Object? rules = null,Object? $unknown = freezed,}) {
-  return _then(_ConfigRegion(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,countryCode: null == countryCode ? _self.countryCode : countryCode // ignore: cast_nullable_to_non_nullable
-as String,regionCode: freezed == regionCode ? _self.regionCode : regionCode // ignore: cast_nullable_to_non_nullable
-as String?,minAccessAge: null == minAccessAge ? _self.minAccessAge : minAccessAge // ignore: cast_nullable_to_non_nullable
-as int,rules: null == rules ? _self._rules : rules // ignore: cast_nullable_to_non_nullable
-as List<UConfigRegionRules>,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

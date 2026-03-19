@@ -8,29 +8,32 @@ part of 'grant_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GrantError _$GrantErrorFromJson(Map json) =>
-    $checkedCreate('_GrantError', json, ($checkedConvert) {
-      final val = _GrantError(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'tools.ozone.verification.grantVerifications#grantError',
-        ),
-        error: $checkedConvert('error', (v) => v as String),
-        subject: $checkedConvert('subject', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GrantErrorImpl _$$GrantErrorImplFromJson(Map json) => $checkedCreate(
+      r'_$GrantErrorImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GrantErrorImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.verification.grantVerifications#grantError'),
+          error: $checkedConvert('error', (v) => v as String),
+          subject: $checkedConvert('subject', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GrantErrorToJson(_GrantError instance) =>
+Map<String, dynamic> _$$GrantErrorImplToJson(_$GrantErrorImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'error': instance.error,
       'subject': instance.subject,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -8,23 +8,25 @@ part of 'disable_rule.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_DisableRule _$DisableRuleFromJson(Map json) =>
-    $checkedCreate('_DisableRule', json, ($checkedConvert) {
-      final val = _DisableRule(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.feed.postgate#disableRule',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$DisableRuleImpl _$$DisableRuleImplFromJson(Map json) => $checkedCreate(
+      r'_$DisableRuleImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$DisableRuleImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.feed.postgate#disableRule'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$DisableRuleToJson(_DisableRule instance) =>
+Map<String, dynamic> _$$DisableRuleImplToJson(_$DisableRuleImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

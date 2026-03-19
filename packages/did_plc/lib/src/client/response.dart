@@ -42,19 +42,21 @@ sealed class HttpResponse<T> with _$HttpResponse<T> {
 extension HttpResponseExtension<T> on HttpResponse<T> {
   /// Returns true if the response is successful.
   bool get isSuccess =>
-      when(success: (_, _, _) => true, error: (_, _, _, _) => false);
+      when(success: (_, __, ___) => true, error: (_, __, ___, ____) => false);
 
   /// Returns true if the response is an error.
   bool get isError => !isSuccess;
 
   /// Gets the data from a successful response, or throws if error.
   T get data => when(
-    success: (_, _, data) => data,
-    error: (statusCode, _, message, _) =>
-        throw Exception('HTTP $statusCode: $message'),
-  );
+        success: (_, __, data) => data,
+        error: (statusCode, _, message, __) =>
+            throw Exception('HTTP $statusCode: $message'),
+      );
 
   /// Gets the data from a successful response, or returns null if error.
-  T? get dataOrNull =>
-      when(success: (_, _, data) => data, error: (_, _, _, _) => null);
+  T? get dataOrNull => when(
+        success: (_, __, data) => data,
+        error: (_, __, ___, ____) => null,
+      );
 }

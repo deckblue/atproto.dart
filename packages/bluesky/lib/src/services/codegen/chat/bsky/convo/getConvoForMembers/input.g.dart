@@ -8,25 +8,28 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoGetConvoForMembersInput _$ConvoGetConvoForMembersInputFromJson(
-  Map json,
-) => $checkedCreate('_ConvoGetConvoForMembersInput', json, ($checkedConvert) {
-  final val = _ConvoGetConvoForMembersInput(
-    members: $checkedConvert(
-      'members',
-      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$ConvoGetConvoForMembersInputImpl _$$ConvoGetConvoForMembersInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ConvoGetConvoForMembersInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoGetConvoForMembersInputImpl(
+          members: $checkedConvert('members',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoGetConvoForMembersInputToJson(
-  _ConvoGetConvoForMembersInput instance,
-) => <String, dynamic>{
-  'members': instance.members,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConvoGetConvoForMembersInputImplToJson(
+        _$ConvoGetConvoForMembersInputImpl instance) =>
+    <String, dynamic>{
+      'members': instance.members,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,24 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ContactSendNotificationInput _$ContactSendNotificationInputFromJson(
-  Map json,
-) => $checkedCreate('_ContactSendNotificationInput', json, ($checkedConvert) {
-  final val = _ContactSendNotificationInput(
-    from: $checkedConvert('from', (v) => v as String),
-    to: $checkedConvert('to', (v) => v as String),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$ContactSendNotificationInputImpl _$$ContactSendNotificationInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ContactSendNotificationInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ContactSendNotificationInputImpl(
+          from: $checkedConvert('from', (v) => v as String),
+          to: $checkedConvert('to', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ContactSendNotificationInputToJson(
-  _ContactSendNotificationInput instance,
-) => <String, dynamic>{
-  'from': instance.from,
-  'to': instance.to,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ContactSendNotificationInputImplToJson(
+        _$ContactSendNotificationInputImpl instance) =>
+    <String, dynamic>{
+      'from': instance.from,
+      'to': instance.to,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

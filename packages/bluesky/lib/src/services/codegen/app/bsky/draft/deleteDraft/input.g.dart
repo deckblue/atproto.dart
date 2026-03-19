@@ -8,18 +8,26 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_DraftDeleteDraftInput _$DraftDeleteDraftInputFromJson(Map json) =>
-    $checkedCreate('_DraftDeleteDraftInput', json, ($checkedConvert) {
-      final val = _DraftDeleteDraftInput(
-        id: $checkedConvert('id', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$DraftDeleteDraftInputImpl _$$DraftDeleteDraftInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$DraftDeleteDraftInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$DraftDeleteDraftInputImpl(
+          id: $checkedConvert('id', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$DraftDeleteDraftInputToJson(
-  _DraftDeleteDraftInput instance,
-) => <String, dynamic>{'id': instance.id, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$DraftDeleteDraftInputImplToJson(
+        _$DraftDeleteDraftInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

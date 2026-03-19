@@ -8,42 +8,48 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_IdentityGetRecommendedDidCredentialsOutput
-_$IdentityGetRecommendedDidCredentialsOutputFromJson(Map json) =>
-    $checkedCreate('_IdentityGetRecommendedDidCredentialsOutput', json, (
-      $checkedConvert,
-    ) {
-      final val = _IdentityGetRecommendedDidCredentialsOutput(
-        rotationKeys: $checkedConvert(
-          'rotationKeys',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        alsoKnownAs: $checkedConvert(
-          'alsoKnownAs',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        verificationMethods: $checkedConvert(
-          'verificationMethods',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-        services: $checkedConvert(
-          'services',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$IdentityGetRecommendedDidCredentialsOutputImpl
+    _$$IdentityGetRecommendedDidCredentialsOutputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$IdentityGetRecommendedDidCredentialsOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$IdentityGetRecommendedDidCredentialsOutputImpl(
+              rotationKeys: $checkedConvert(
+                  'rotationKeys',
+                  (v) =>
+                      (v as List<dynamic>?)?.map((e) => e as String).toList()),
+              alsoKnownAs: $checkedConvert(
+                  'alsoKnownAs',
+                  (v) =>
+                      (v as List<dynamic>?)?.map((e) => e as String).toList()),
+              verificationMethods: $checkedConvert(
+                  'verificationMethods',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+              services: $checkedConvert(
+                  'services',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$IdentityGetRecommendedDidCredentialsOutputToJson(
-  _IdentityGetRecommendedDidCredentialsOutput instance,
-) => <String, dynamic>{
-  'rotationKeys': ?instance.rotationKeys,
-  'alsoKnownAs': ?instance.alsoKnownAs,
-  'verificationMethods': ?instance.verificationMethods,
-  'services': ?instance.services,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$IdentityGetRecommendedDidCredentialsOutputImplToJson(
+        _$IdentityGetRecommendedDidCredentialsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.rotationKeys case final value?) 'rotationKeys': value,
+      if (instance.alsoKnownAs case final value?) 'alsoKnownAs': value,
+      if (instance.verificationMethods case final value?)
+        'verificationMethods': value,
+      if (instance.services case final value?) 'services': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

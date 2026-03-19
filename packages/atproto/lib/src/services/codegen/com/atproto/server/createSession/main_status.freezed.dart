@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,380 @@ part of 'main_status.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$ServerCreateSessionStatus {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ServerCreateSessionStatus&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'ServerCreateSessionStatus(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownServerCreateSessionStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownServerCreateSessionStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownServerCreateSessionStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerCreateSessionStatusKnownValue value)
+        knownValue,
+    required TResult Function(ServerCreateSessionStatusUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerCreateSessionStatusKnownValue value)? knownValue,
+    TResult? Function(ServerCreateSessionStatusUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerCreateSessionStatusKnownValue value)? knownValue,
+    TResult Function(ServerCreateSessionStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $ServerCreateSessionStatusCopyWith<$Res>  {
-$ServerCreateSessionStatusCopyWith(ServerCreateSessionStatus _, $Res Function(ServerCreateSessionStatus) __);
+abstract class $ServerCreateSessionStatusCopyWith<$Res> {
+  factory $ServerCreateSessionStatusCopyWith(ServerCreateSessionStatus value,
+          $Res Function(ServerCreateSessionStatus) then) =
+      _$ServerCreateSessionStatusCopyWithImpl<$Res, ServerCreateSessionStatus>;
 }
 
+/// @nodoc
+class _$ServerCreateSessionStatusCopyWithImpl<$Res,
+        $Val extends ServerCreateSessionStatus>
+    implements $ServerCreateSessionStatusCopyWith<$Res> {
+  _$ServerCreateSessionStatusCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [ServerCreateSessionStatus].
-extension ServerCreateSessionStatusPatterns on ServerCreateSessionStatus {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ServerCreateSessionStatusKnownValue value)?  knownValue,TResult Function( ServerCreateSessionStatusUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case ServerCreateSessionStatusKnownValue() when knownValue != null:
-return knownValue(_that);case ServerCreateSessionStatusUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ServerCreateSessionStatusKnownValue value)  knownValue,required TResult Function( ServerCreateSessionStatusUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case ServerCreateSessionStatusKnownValue():
-return knownValue(_that);case ServerCreateSessionStatusUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ServerCreateSessionStatusKnownValue value)?  knownValue,TResult? Function( ServerCreateSessionStatusUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case ServerCreateSessionStatusKnownValue() when knownValue != null:
-return knownValue(_that);case ServerCreateSessionStatusUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownServerCreateSessionStatus data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case ServerCreateSessionStatusKnownValue() when knownValue != null:
-return knownValue(_that.data);case ServerCreateSessionStatusUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownServerCreateSessionStatus data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case ServerCreateSessionStatusKnownValue():
-return knownValue(_that.data);case ServerCreateSessionStatusUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownServerCreateSessionStatus data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case ServerCreateSessionStatusKnownValue() when knownValue != null:
-return knownValue(_that.data);case ServerCreateSessionStatusUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of ServerCreateSessionStatus
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$ServerCreateSessionStatusKnownValueImplCopyWith<$Res> {
+  factory _$$ServerCreateSessionStatusKnownValueImplCopyWith(
+          _$ServerCreateSessionStatusKnownValueImpl value,
+          $Res Function(_$ServerCreateSessionStatusKnownValueImpl) then) =
+      __$$ServerCreateSessionStatusKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownServerCreateSessionStatus data});
+}
+
+/// @nodoc
+class __$$ServerCreateSessionStatusKnownValueImplCopyWithImpl<$Res>
+    extends _$ServerCreateSessionStatusCopyWithImpl<$Res,
+        _$ServerCreateSessionStatusKnownValueImpl>
+    implements _$$ServerCreateSessionStatusKnownValueImplCopyWith<$Res> {
+  __$$ServerCreateSessionStatusKnownValueImplCopyWithImpl(
+      _$ServerCreateSessionStatusKnownValueImpl _value,
+      $Res Function(_$ServerCreateSessionStatusKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ServerCreateSessionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ServerCreateSessionStatusKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownServerCreateSessionStatus,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$ServerCreateSessionStatusKnownValueImpl
+    extends ServerCreateSessionStatusKnownValue {
+  const _$ServerCreateSessionStatusKnownValueImpl({required this.data})
+      : super._();
 
-class ServerCreateSessionStatusKnownValue extends ServerCreateSessionStatus {
-  const ServerCreateSessionStatusKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownServerCreateSessionStatus data;
 
-@override final  KnownServerCreateSessionStatus data;
+  @override
+  String toString() {
+    return 'ServerCreateSessionStatus.knownValue(data: $data)';
+  }
 
-/// Create a copy of ServerCreateSessionStatus
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ServerCreateSessionStatusKnownValueCopyWith<ServerCreateSessionStatusKnownValue> get copyWith => _$ServerCreateSessionStatusKnownValueCopyWithImpl<ServerCreateSessionStatusKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ServerCreateSessionStatusKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of ServerCreateSessionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ServerCreateSessionStatusKnownValueImplCopyWith<
+          _$ServerCreateSessionStatusKnownValueImpl>
+      get copyWith => __$$ServerCreateSessionStatusKnownValueImplCopyWithImpl<
+          _$ServerCreateSessionStatusKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ServerCreateSessionStatusKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownServerCreateSessionStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownServerCreateSessionStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownServerCreateSessionStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerCreateSessionStatusKnownValue value)
+        knownValue,
+    required TResult Function(ServerCreateSessionStatusUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerCreateSessionStatusKnownValue value)? knownValue,
+    TResult? Function(ServerCreateSessionStatusUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerCreateSessionStatusKnownValue value)? knownValue,
+    TResult Function(ServerCreateSessionStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class ServerCreateSessionStatusKnownValue
+    extends ServerCreateSessionStatus {
+  const factory ServerCreateSessionStatusKnownValue(
+          {required final KnownServerCreateSessionStatus data}) =
+      _$ServerCreateSessionStatusKnownValueImpl;
+  const ServerCreateSessionStatusKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownServerCreateSessionStatus get data;
 
-@override
-String toString() {
-  return 'ServerCreateSessionStatus.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of ServerCreateSessionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ServerCreateSessionStatusKnownValueImplCopyWith<
+          _$ServerCreateSessionStatusKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ServerCreateSessionStatusKnownValueCopyWith<$Res> implements $ServerCreateSessionStatusCopyWith<$Res> {
-  factory $ServerCreateSessionStatusKnownValueCopyWith(ServerCreateSessionStatusKnownValue value, $Res Function(ServerCreateSessionStatusKnownValue) _then) = _$ServerCreateSessionStatusKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownServerCreateSessionStatus data
-});
-
-
-
-
-}
-/// @nodoc
-class _$ServerCreateSessionStatusKnownValueCopyWithImpl<$Res>
-    implements $ServerCreateSessionStatusKnownValueCopyWith<$Res> {
-  _$ServerCreateSessionStatusKnownValueCopyWithImpl(this._self, this._then);
-
-  final ServerCreateSessionStatusKnownValue _self;
-  final $Res Function(ServerCreateSessionStatusKnownValue) _then;
-
-/// Create a copy of ServerCreateSessionStatus
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ServerCreateSessionStatusKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownServerCreateSessionStatus,
-  ));
-}
-
-
+abstract class _$$ServerCreateSessionStatusUnknownImplCopyWith<$Res> {
+  factory _$$ServerCreateSessionStatusUnknownImplCopyWith(
+          _$ServerCreateSessionStatusUnknownImpl value,
+          $Res Function(_$ServerCreateSessionStatusUnknownImpl) then) =
+      __$$ServerCreateSessionStatusUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$ServerCreateSessionStatusUnknownImplCopyWithImpl<$Res>
+    extends _$ServerCreateSessionStatusCopyWithImpl<$Res,
+        _$ServerCreateSessionStatusUnknownImpl>
+    implements _$$ServerCreateSessionStatusUnknownImplCopyWith<$Res> {
+  __$$ServerCreateSessionStatusUnknownImplCopyWithImpl(
+      _$ServerCreateSessionStatusUnknownImpl _value,
+      $Res Function(_$ServerCreateSessionStatusUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class ServerCreateSessionStatusUnknown extends ServerCreateSessionStatus {
-  const ServerCreateSessionStatusUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of ServerCreateSessionStatus
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ServerCreateSessionStatusUnknownCopyWith<ServerCreateSessionStatusUnknown> get copyWith => _$ServerCreateSessionStatusUnknownCopyWithImpl<ServerCreateSessionStatusUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ServerCreateSessionStatusUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'ServerCreateSessionStatus.unknown(data: $data)';
-}
-
-
+  /// Create a copy of ServerCreateSessionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ServerCreateSessionStatusUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $ServerCreateSessionStatusUnknownCopyWith<$Res> implements $ServerCreateSessionStatusCopyWith<$Res> {
-  factory $ServerCreateSessionStatusUnknownCopyWith(ServerCreateSessionStatusUnknown value, $Res Function(ServerCreateSessionStatusUnknown) _then) = _$ServerCreateSessionStatusUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$ServerCreateSessionStatusUnknownImpl
+    extends ServerCreateSessionStatusUnknown {
+  const _$ServerCreateSessionStatusUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'ServerCreateSessionStatus.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ServerCreateSessionStatusUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of ServerCreateSessionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ServerCreateSessionStatusUnknownImplCopyWith<
+          _$ServerCreateSessionStatusUnknownImpl>
+      get copyWith => __$$ServerCreateSessionStatusUnknownImplCopyWithImpl<
+          _$ServerCreateSessionStatusUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownServerCreateSessionStatus data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownServerCreateSessionStatus data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownServerCreateSessionStatus data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerCreateSessionStatusKnownValue value)
+        knownValue,
+    required TResult Function(ServerCreateSessionStatusUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerCreateSessionStatusKnownValue value)? knownValue,
+    TResult? Function(ServerCreateSessionStatusUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerCreateSessionStatusKnownValue value)? knownValue,
+    TResult Function(ServerCreateSessionStatusUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$ServerCreateSessionStatusUnknownCopyWithImpl<$Res>
-    implements $ServerCreateSessionStatusUnknownCopyWith<$Res> {
-  _$ServerCreateSessionStatusUnknownCopyWithImpl(this._self, this._then);
 
-  final ServerCreateSessionStatusUnknown _self;
-  final $Res Function(ServerCreateSessionStatusUnknown) _then;
+abstract class ServerCreateSessionStatusUnknown
+    extends ServerCreateSessionStatus {
+  const factory ServerCreateSessionStatusUnknown({required final String data}) =
+      _$ServerCreateSessionStatusUnknownImpl;
+  const ServerCreateSessionStatusUnknown._() : super._();
 
-/// Create a copy of ServerCreateSessionStatus
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ServerCreateSessionStatusUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of ServerCreateSessionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ServerCreateSessionStatusUnknownImplCopyWith<
+          _$ServerCreateSessionStatusUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on
