@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bluesky/bluesky.dart';
+import 'package:bluesky/bluesky_chat.dart';
 import 'package:bluesky/com_atproto_sync_subscriberepos.dart';
 
 import 'package:bluesky/firehose.dart' as firehose;
