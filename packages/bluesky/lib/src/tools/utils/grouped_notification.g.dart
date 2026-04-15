@@ -67,8 +67,8 @@ Map<String, dynamic> _$$GroupedNotificationImplToJson(
     };
 
 const _$GroupedNotificationReasonEnumMap = {
-  GroupedNotificationReason.likeViaRepost: 'likeViaRepost',
-  GroupedNotificationReason.repostViaRepost: 'repostViaRepost',
+  GroupedNotificationReason.likeViaRepost: 'like-via-repost',
+  GroupedNotificationReason.repostViaRepost: 'repost-via-repost',
   GroupedNotificationReason.like: 'like',
   GroupedNotificationReason.customFeedLike: 'customFeedLike',
   GroupedNotificationReason.repost: 'repost',

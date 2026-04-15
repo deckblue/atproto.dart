@@ -8,10 +8,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 /// A class that encapsulates a reason for grouped notification.
 enum GroupedNotificationReason {
   /// Indicates likes via reposts.
-  likeViaRepost('likeViaRepost'),
+  @JsonValue('like-via-repost')
+  likeViaRepost('like-via-repost'),
 
   /// Indicates reposts via reposts.
-  repostViaRepost('repostViaRepost'),
+  @JsonValue('repost-via-repost')
+  repostViaRepost('repost-via-repost'),
 
   /// Indicates likes.
   like('like'),
