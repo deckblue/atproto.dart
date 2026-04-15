@@ -7,6 +7,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 /// A class that encapsulates a reason for grouped notification.
 enum GroupedNotificationReason {
+  /// Indicates likes via reposts.
+  likeViaRepost('likeViaRepost'),
+
+  /// Indicates reposts via reposts.
+  repostViaRepost('repostViaRepost'),
+
   /// Indicates likes.
   like('like'),
 
@@ -35,6 +41,18 @@ enum GroupedNotificationReason {
   final String value;
 
   const GroupedNotificationReason(this.value);
+
+  /// Returns true if this reason is [likeViaRepost], otherwise false.
+  bool get isLikeViaRepost => this == likeViaRepost;
+
+  /// Returns true if this reason is not [likeViaRepost], otherwise false.
+  bool get isNotLikeViaRepost => !isLikeViaRepost;
+
+  /// Returns true if this reason is [repostViaRepost], otherwise false.
+  bool get isRepostViaRepost => this == repostViaRepost;
+
+  /// Returns true if this reason is not [repostViaRepost], otherwise false.
+  bool get isNotRepostViaRepost => !isRepostViaRepost;
 
   /// Returns true if this reason is [like], otherwise false.
   bool get isLike => this == like;

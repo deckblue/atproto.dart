@@ -21,9 +21,11 @@ extension GroupedNotificationExtension on GroupedNotification {
   /// for follow event.
   AtUri? get uri {
     switch (reason) {
-      case GroupedNotificationReason.like:
       case GroupedNotificationReason.customFeedLike:
+      case GroupedNotificationReason.like:
+      case GroupedNotificationReason.likeViaRepost:
       case GroupedNotificationReason.repost:
+      case GroupedNotificationReason.repostViaRepost:
         return reasonSubject;
       case GroupedNotificationReason.reply:
       case GroupedNotificationReason.quote:
