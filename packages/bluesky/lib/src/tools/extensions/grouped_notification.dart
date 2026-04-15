@@ -6,7 +6,8 @@
 import 'package:atproto_core/atproto_core.dart';
 
 // Project imports:
-import '../../../bluesky.dart' show GroupedNotificationReason;
+import '../../../bluesky.dart'
+    show FeedLikeRecord, FeedRepostRecord, GroupedNotificationReason;
 import '../utils/grouped_notification.dart';
 import '../utils/grouped_notification_reason.dart';
 
@@ -23,10 +24,20 @@ extension GroupedNotificationExtension on GroupedNotification {
     switch (reason) {
       case GroupedNotificationReason.customFeedLike:
       case GroupedNotificationReason.like:
-      case GroupedNotificationReason.likeViaRepost:
       case GroupedNotificationReason.repost:
-      case GroupedNotificationReason.repostViaRepost:
         return reasonSubject;
+      case GroupedNotificationReason.likeViaRepost:
+        if (record != null) {
+          final likeRecord = FeedLikeRecord.fromJson(record!);
+          return likeRecord.subject.uri;
+        }
+        return null;
+      case GroupedNotificationReason.repostViaRepost:
+        if (record != null) {
+          final recordRecord = FeedRepostRecord.fromJson(record!);
+          return recordRecord.subject.uri;
+        }
+        return null;
       case GroupedNotificationReason.reply:
       case GroupedNotificationReason.quote:
       case GroupedNotificationReason.mention:
