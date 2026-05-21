@@ -37,7 +37,7 @@ final class RejectJoinRequestCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "convoId": argResults!["convoId"],
-    "member": argResults!["member"],
-  };
+        "convoId": argResults!["convoId"],
+        "member": argResults!["member"],
+      };
 }

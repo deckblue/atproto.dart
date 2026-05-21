@@ -58,10 +58,11 @@ final class GetMessageContextCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["convoId"] != null) "convoId": argResults!["convoId"],
-    "messageId": argResults!["messageId"],
-    "before": argResults!["before"],
-    "after": argResults!["after"],
-    "maxInterleavedSystemMessages": argResults!["maxInterleavedSystemMessages"],
-  };
+        if (argResults!["convoId"] != null) "convoId": argResults!["convoId"],
+        "messageId": argResults!["messageId"],
+        "before": argResults!["before"],
+        "after": argResults!["after"],
+        "maxInterleavedSystemMessages":
+            argResults!["maxInterleavedSystemMessages"],
+      };
 }

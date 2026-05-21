@@ -41,10 +41,10 @@ final class EditJoinLinkCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "convoId": argResults!["convoId"],
-    if (argResults!["requireApproval"] != null)
-      "requireApproval": argResults!["requireApproval"],
-    if (argResults!["joinRule"] != null)
-      "joinRule": jsonDecode(argResults!["joinRule"]),
-  };
+        "convoId": argResults!["convoId"],
+        if (argResults!["requireApproval"] != null)
+          "requireApproval": argResults!["requireApproval"],
+        if (argResults!["joinRule"] != null)
+          "joinRule": jsonDecode(argResults!["joinRule"]),
+      };
 }

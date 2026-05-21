@@ -42,7 +42,6 @@ abstract class ViewerState with _$ViewerState {
     bool? replyDisabled,
     bool? embeddingDisabled,
     bool? pinned,
-
     Map<String, dynamic>? $unknown,
   }) = _ViewerState;
 

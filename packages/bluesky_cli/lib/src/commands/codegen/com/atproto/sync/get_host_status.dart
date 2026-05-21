@@ -16,11 +16,12 @@ import '../../../../query_command.dart';
 
 final class GetHostStatusCommand extends QueryCommand {
   GetHostStatusCommand() {
-    argParser..addOption(
-      "hostname",
-      help: r"Hostname of the host (eg, PDS or relay) being queried.",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "hostname",
+        help: r"Hostname of the host (eg, PDS or relay) being queried.",
+        mandatory: true,
+      );
   }
 
   @override

@@ -32,7 +32,6 @@ abstract class ReportReassignQueueInput with _$ReportReassignQueueInput {
 
     /// Optional moderator-only note recorded on the resulting queueActivity as internalNote.
     String? comment,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportReassignQueueInput;
 

@@ -64,8 +64,7 @@ final class UFeedGeneratorLabelsConverter
 
   @override
   Map<String, dynamic> toJson(UFeedGeneratorLabels object) => object.when(
-    selfLabels: (data) => const SelfLabelsConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        selfLabels: (data) => const SelfLabelsConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

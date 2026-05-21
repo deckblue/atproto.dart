@@ -29,7 +29,6 @@ abstract class QueueDeleteQueueInput with _$QueueDeleteQueueInput {
 
     /// Optional: migrate all reports to this queue. If not specified, reports will be set to unassigned (-1).
     int? migrateToQueueId,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueDeleteQueueInput;
 

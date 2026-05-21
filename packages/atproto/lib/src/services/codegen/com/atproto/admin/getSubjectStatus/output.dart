@@ -32,7 +32,6 @@ abstract class AdminGetSubjectStatusOutput with _$AdminGetSubjectStatusOutput {
     required UAdminGetSubjectStatusSubject subject,
     @StatusAttrConverter() StatusAttr? takedown,
     @StatusAttrConverter() StatusAttr? deactivated,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminGetSubjectStatusOutput;
 

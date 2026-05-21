@@ -28,7 +28,6 @@ abstract class DraftCreateDraftInput with _$DraftCreateDraftInput {
   @JsonSerializable(includeIfNull: false)
   const factory DraftCreateDraftInput({
     @DraftConverter() required Draft draft,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftCreateDraftInput;
 

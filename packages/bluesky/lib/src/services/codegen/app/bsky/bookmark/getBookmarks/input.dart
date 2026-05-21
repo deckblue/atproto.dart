@@ -26,7 +26,6 @@ abstract class BookmarkGetBookmarksInput with _$BookmarkGetBookmarksInput {
   const factory BookmarkGetBookmarksInput({
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _BookmarkGetBookmarksInput;
 

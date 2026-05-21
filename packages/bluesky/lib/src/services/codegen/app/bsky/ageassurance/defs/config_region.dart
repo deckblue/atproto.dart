@@ -44,7 +44,6 @@ abstract class ConfigRegion with _$ConfigRegion {
     /// The minimum age (as a whole integer) required to use Bluesky in this region.
     required int minAccessAge,
     @UConfigRegionRulesConverter() required List<UConfigRegionRules> rules,
-
     Map<String, dynamic>? $unknown,
   }) = _ConfigRegion;
 

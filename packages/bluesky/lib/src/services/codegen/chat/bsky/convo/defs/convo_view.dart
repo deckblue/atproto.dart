@@ -53,7 +53,6 @@ abstract class ConvoView with _$ConvoView {
     @ConvoStatusConverter() ConvoStatus? status,
     required int unreadCount,
     @UConvoViewKindConverter() UConvoViewKind? kind,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoView;
 

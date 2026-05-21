@@ -46,7 +46,6 @@ abstract class ReportCreateActivityInput with _$ReportCreateActivityInput {
 
     /// Set true when this activity is triggered by an automated process. Defaults to false.
     @Default(false) bool isAutomated,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportCreateActivityInput;
 

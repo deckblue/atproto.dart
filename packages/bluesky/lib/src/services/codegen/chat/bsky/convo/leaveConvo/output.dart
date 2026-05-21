@@ -26,7 +26,6 @@ abstract class ConvoLeaveConvoOutput with _$ConvoLeaveConvoOutput {
   const factory ConvoLeaveConvoOutput({
     required String convoId,
     required String rev,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoLeaveConvoOutput;
 

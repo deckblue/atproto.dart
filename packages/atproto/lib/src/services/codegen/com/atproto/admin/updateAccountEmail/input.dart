@@ -28,7 +28,6 @@ abstract class AdminUpdateAccountEmailInput
     /// The handle or DID of the repo.
     required String account,
     required String email,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminUpdateAccountEmailInput;
 

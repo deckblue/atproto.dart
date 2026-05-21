@@ -36,7 +36,6 @@ abstract class ReportGetAssignmentsInput with _$ReportGetAssignmentsInput {
     List<String>? dids,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportGetAssignmentsInput;
 

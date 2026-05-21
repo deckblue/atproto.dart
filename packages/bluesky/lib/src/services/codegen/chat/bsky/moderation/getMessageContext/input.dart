@@ -43,13 +43,13 @@ abstract class ModerationGetMessageContextInput
 
     /// Maximum number of system messages to include per gap between consecutive returned messages (and per side when there are no user messages on that side). Within a gap, the system messages closest to the earlier message are kept.
     @Default(10) int maxInterleavedSystemMessages,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetMessageContextInput;
 
   factory ModerationGetMessageContextInput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationGetMessageContextInputFromJson(json);
+  ) =>
+      _$ModerationGetMessageContextInputFromJson(json);
 }
 
 extension ModerationGetMessageContextInputExtension
@@ -58,9 +58,8 @@ extension ModerationGetMessageContextInputExtension
   bool get hasNotConvoId => !hasConvoId;
 }
 
-final class ModerationGetMessageContextInputConverter
-    extends
-        JsonConverter<ModerationGetMessageContextInput, Map<String, dynamic>> {
+final class ModerationGetMessageContextInputConverter extends JsonConverter<
+    ModerationGetMessageContextInput, Map<String, dynamic>> {
   const ModerationGetMessageContextInputConverter();
 
   @override

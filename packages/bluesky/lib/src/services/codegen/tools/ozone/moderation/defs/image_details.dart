@@ -27,7 +27,6 @@ abstract class ImageDetails with _$ImageDetails {
     @Default('tools.ozone.moderation.defs#imageDetails') String $type,
     required int width,
     required int height,
-
     Map<String, dynamic>? $unknown,
   }) = _ImageDetails;
 

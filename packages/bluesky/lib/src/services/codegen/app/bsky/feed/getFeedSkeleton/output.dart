@@ -32,7 +32,6 @@ abstract class FeedGetFeedSkeletonOutput with _$FeedGetFeedSkeletonOutput {
 
     /// Unique identifier per request that may be passed back alongside interactions.
     String? reqId,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetFeedSkeletonOutput;
 

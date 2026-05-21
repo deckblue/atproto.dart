@@ -26,7 +26,6 @@ abstract class ConvoGetConvoAvailabilityInput
   @JsonSerializable(includeIfNull: false)
   const factory ConvoGetConvoAvailabilityInput({
     required List<String> members,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetConvoAvailabilityInput;
 
@@ -34,9 +33,8 @@ abstract class ConvoGetConvoAvailabilityInput
       _$ConvoGetConvoAvailabilityInputFromJson(json);
 }
 
-final class ConvoGetConvoAvailabilityInputConverter
-    extends
-        JsonConverter<ConvoGetConvoAvailabilityInput, Map<String, dynamic>> {
+final class ConvoGetConvoAvailabilityInputConverter extends JsonConverter<
+    ConvoGetConvoAvailabilityInput, Map<String, dynamic>> {
   const ConvoGetConvoAvailabilityInputConverter();
 
   @override

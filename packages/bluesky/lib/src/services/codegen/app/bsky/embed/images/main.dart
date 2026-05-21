@@ -29,7 +29,6 @@ abstract class EmbedImages with _$EmbedImages {
   const factory EmbedImages({
     @Default('app.bsky.embed.images') String $type,
     @EmbedImagesImageConverter() required List<EmbedImagesImage> images,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedImages;
 

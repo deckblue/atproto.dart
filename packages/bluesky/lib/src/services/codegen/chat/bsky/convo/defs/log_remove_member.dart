@@ -42,7 +42,6 @@ abstract class LogRemoveMember with _$LogRemoveMember {
     @SystemMessageViewConverter() required SystemMessageView message,
     @ProfileViewBasicConverter()
     required List<ProfileViewBasic> relatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _LogRemoveMember;
 

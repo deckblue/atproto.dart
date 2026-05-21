@@ -27,7 +27,6 @@ abstract class GraphGetFollowsInput with _$GraphGetFollowsInput {
     required String actor,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetFollowsInput;
 

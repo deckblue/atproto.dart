@@ -29,7 +29,6 @@ abstract class SyncGetBlobInput with _$SyncGetBlobInput {
 
     /// The CID of the blob to fetch
     required String cid,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetBlobInput;
 

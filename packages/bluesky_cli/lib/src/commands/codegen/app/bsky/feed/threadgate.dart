@@ -77,12 +77,12 @@ final class _CreateThreadgateCommand extends CreateRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "post": argResults!["post"],
-    if (argResults!["allow"] != null) "allow": argResults!["allow"],
-    "createdAt": argResults!["createdAt"],
-    if (argResults!["hiddenReplies"] != null)
-      "hiddenReplies": argResults!["hiddenReplies"],
-  };
+        "post": argResults!["post"],
+        if (argResults!["allow"] != null) "allow": argResults!["allow"],
+        "createdAt": argResults!["createdAt"],
+        if (argResults!["hiddenReplies"] != null)
+          "hiddenReplies": argResults!["hiddenReplies"],
+      };
 }
 
 final class _PutThreadgateCommand extends PutRecordCommand {
@@ -121,12 +121,12 @@ final class _PutThreadgateCommand extends PutRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "post": argResults!["post"],
-    if (argResults!["allow"] != null) "allow": argResults!["allow"],
-    "createdAt": argResults!["createdAt"],
-    if (argResults!["hiddenReplies"] != null)
-      "hiddenReplies": argResults!["hiddenReplies"],
-  };
+        "post": argResults!["post"],
+        if (argResults!["allow"] != null) "allow": argResults!["allow"],
+        "createdAt": argResults!["createdAt"],
+        if (argResults!["hiddenReplies"] != null)
+          "hiddenReplies": argResults!["hiddenReplies"],
+      };
 }
 
 final class _DeleteThreadgateCommand extends DeleteRecordCommand {
@@ -171,11 +171,11 @@ final class _GetThreadgateCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListThreadgateCommand extends QueryCommand {
@@ -201,10 +201,10 @@ final class _ListThreadgateCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'limit': argResults!['limit'],
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'limit': argResults!['limit'],
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

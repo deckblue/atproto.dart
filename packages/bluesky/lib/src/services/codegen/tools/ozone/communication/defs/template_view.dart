@@ -54,7 +54,6 @@ abstract class TemplateView with _$TemplateView {
     required String lastUpdatedBy,
     required DateTime createdAt,
     required DateTime updatedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _TemplateView;
 

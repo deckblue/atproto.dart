@@ -29,7 +29,6 @@ abstract class RepoBlobRef with _$RepoBlobRef {
     required String did,
     required String cid,
     @AtUriConverter() AtUri? recordUri,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoBlobRef;
 

@@ -28,7 +28,6 @@ abstract class ReplyRef with _$ReplyRef {
     @Default('app.bsky.feed.post#replyRef') String $type,
     @RepoStrongRefConverter() required RepoStrongRef root,
     @RepoStrongRefConverter() required RepoStrongRef parent,
-
     Map<String, dynamic>? $unknown,
   }) = _ReplyRef;
 

@@ -26,7 +26,6 @@ abstract class ActorGetProfileInput with _$ActorGetProfileInput {
   const factory ActorGetProfileInput({
     /// Handle or DID of account to fetch profile of.
     required String actor,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorGetProfileInput;
 

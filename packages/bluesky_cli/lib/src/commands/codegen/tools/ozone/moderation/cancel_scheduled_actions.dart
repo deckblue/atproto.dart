@@ -43,7 +43,7 @@ final class CancelScheduledActionsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "subjects": argResults!["subjects"],
-    if (argResults!["comment"] != null) "comment": argResults!["comment"],
-  };
+        "subjects": argResults!["subjects"],
+        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+      };
 }

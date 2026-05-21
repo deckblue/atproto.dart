@@ -27,7 +27,6 @@ abstract class HiddenPostsPref with _$HiddenPostsPref {
   const factory HiddenPostsPref({
     @Default('app.bsky.actor.defs#hiddenPostsPref') String $type,
     @AtUriConverter() required List<AtUri> items,
-
     Map<String, dynamic>? $unknown,
   }) = _HiddenPostsPref;
 

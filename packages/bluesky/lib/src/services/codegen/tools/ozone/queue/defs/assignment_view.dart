@@ -44,7 +44,6 @@ abstract class AssignmentView with _$AssignmentView {
     @QueueViewConverter() required QueueView queue,
     required DateTime startAt,
     DateTime? endAt,
-
     Map<String, dynamic>? $unknown,
   }) = _AssignmentView;
 

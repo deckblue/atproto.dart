@@ -32,7 +32,6 @@ abstract class BlockedPost with _$BlockedPost {
     @AtUriConverter() required AtUri uri,
     required bool blocked,
     @BlockedAuthorConverter() required BlockedAuthor author,
-
     Map<String, dynamic>? $unknown,
   }) = _BlockedPost;
 

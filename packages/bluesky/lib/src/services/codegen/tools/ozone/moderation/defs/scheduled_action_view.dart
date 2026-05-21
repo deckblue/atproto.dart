@@ -91,7 +91,6 @@ abstract class ScheduledActionView with _$ScheduledActionView {
 
     /// ID of the moderation event created when action was successfully executed
     int? executionEventId,
-
     Map<String, dynamic>? $unknown,
   }) = _ScheduledActionView;
 

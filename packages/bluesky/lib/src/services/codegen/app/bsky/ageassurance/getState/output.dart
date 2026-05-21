@@ -30,7 +30,6 @@ abstract class AgeassuranceGetStateOutput with _$AgeassuranceGetStateOutput {
   const factory AgeassuranceGetStateOutput({
     @StateConverter() required State state,
     @StateMetadataConverter() required StateMetadata metadata,
-
     Map<String, dynamic>? $unknown,
   }) = _AgeassuranceGetStateOutput;
 

@@ -25,13 +25,14 @@ Future<XRPCResponse<ServerGetConfigOutput>> toolsOzoneServerGetConfig({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.toolsOzoneServerGetConfig,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown},
-  to: const ServerGetConfigOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.toolsOzoneServerGetConfig,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown},
+      to: const ServerGetConfigOutputConverter().fromJson,
+    );
 
 /// `tools.ozone.server.*`
 base class ServerService {
@@ -45,10 +46,11 @@ base class ServerService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await toolsOzoneServerGetConfig(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await toolsOzoneServerGetConfig(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

@@ -43,7 +43,6 @@ abstract class LogRemoveReaction with _$LogRemoveReaction {
     required ULogRemoveReactionMessage message,
     @ReactionViewConverter() required ReactionView reaction,
     @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _LogRemoveReaction;
 

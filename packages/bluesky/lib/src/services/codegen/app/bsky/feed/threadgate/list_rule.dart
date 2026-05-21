@@ -28,7 +28,6 @@ abstract class ListRule with _$ListRule {
   const factory ListRule({
     @Default('app.bsky.feed.threadgate#listRule') String $type,
     @AtUriConverter() required AtUri list,
-
     Map<String, dynamic>? $unknown,
   }) = _ListRule;
 

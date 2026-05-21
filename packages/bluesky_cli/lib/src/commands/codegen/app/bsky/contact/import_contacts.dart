@@ -46,7 +46,7 @@ final class ImportContactsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "token": argResults!["token"],
-    "contacts": argResults!["contacts"],
-  };
+        "token": argResults!["token"],
+        "contacts": argResults!["contacts"],
+      };
 }

@@ -29,21 +29,18 @@ abstract class UnspeccedGetOnboardingSuggestedStarterPacksOutput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetOnboardingSuggestedStarterPacksOutput({
     @StarterPackViewConverter() required List<StarterPackView> starterPacks,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetOnboardingSuggestedStarterPacksOutput;
 
   factory UnspeccedGetOnboardingSuggestedStarterPacksOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetOnboardingSuggestedStarterPacksOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetOnboardingSuggestedStarterPacksOutputFromJson(json);
 }
 
 final class UnspeccedGetOnboardingSuggestedStarterPacksOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetOnboardingSuggestedStarterPacksOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetOnboardingSuggestedStarterPacksOutput,
+        Map<String, dynamic>> {
   const UnspeccedGetOnboardingSuggestedStarterPacksOutputConverter();
 
   @override
@@ -61,5 +58,6 @@ final class UnspeccedGetOnboardingSuggestedStarterPacksOutputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetOnboardingSuggestedStarterPacksOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

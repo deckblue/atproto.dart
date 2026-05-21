@@ -27,7 +27,6 @@ abstract class SetGetValuesInput with _$SetGetValuesInput {
     required String name,
     @Default(100) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _SetGetValuesInput;
 

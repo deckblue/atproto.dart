@@ -27,7 +27,6 @@ abstract class GraphGetStarterPackInput with _$GraphGetStarterPackInput {
   const factory GraphGetStarterPackInput({
     /// Reference (AT-URI) of the starter pack record.
     @AtUriConverter() required AtUri starterPack,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetStarterPackInput;
 

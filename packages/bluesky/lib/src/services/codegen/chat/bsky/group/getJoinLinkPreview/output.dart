@@ -30,7 +30,6 @@ abstract class GroupGetJoinLinkPreviewOutput
   const factory GroupGetJoinLinkPreviewOutput({
     @JoinLinkPreviewViewConverter()
     required JoinLinkPreviewView joinLinkPreview,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupGetJoinLinkPreviewOutput;
 

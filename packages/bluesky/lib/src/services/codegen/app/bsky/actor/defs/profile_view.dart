@@ -61,7 +61,6 @@ abstract class ProfileView with _$ProfileView {
     @VerificationStateConverter() VerificationState? verification,
     @StatusViewConverter() StatusView? status,
     Map<String, dynamic>? debug,
-
     Map<String, dynamic>? $unknown,
   }) = _ProfileView;
 

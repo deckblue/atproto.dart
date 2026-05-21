@@ -34,7 +34,6 @@ abstract class ReportAction with _$ReportAction {
 
     /// Note to send to reporter(s) when actioning their report
     String? note,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportAction;
 

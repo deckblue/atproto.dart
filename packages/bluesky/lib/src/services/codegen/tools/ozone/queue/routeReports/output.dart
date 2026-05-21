@@ -29,7 +29,6 @@ abstract class QueueRouteReportsOutput with _$QueueRouteReportsOutput {
 
     /// The number of reports with no matching queue.
     required int unmatched,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueRouteReportsOutput;
 

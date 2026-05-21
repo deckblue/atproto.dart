@@ -42,7 +42,6 @@ abstract class RepoListRecordsInput with _$RepoListRecordsInput {
 
     /// Flag to reverse the order of the returned records.
     bool? reverse,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoListRecordsInput;
 

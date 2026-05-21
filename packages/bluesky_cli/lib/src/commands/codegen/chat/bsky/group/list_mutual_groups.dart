@@ -38,8 +38,8 @@ final class ListMutualGroupsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "subject": argResults!["subject"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "subject": argResults!["subject"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

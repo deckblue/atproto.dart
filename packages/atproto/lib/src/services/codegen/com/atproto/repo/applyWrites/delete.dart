@@ -28,7 +28,6 @@ abstract class Delete with _$Delete {
     @Default('com.atproto.repo.applyWrites#delete') String $type,
     required String collection,
     required String rkey,
-
     Map<String, dynamic>? $unknown,
   }) = _Delete;
 

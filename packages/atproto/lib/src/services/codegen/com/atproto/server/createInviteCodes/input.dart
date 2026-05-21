@@ -28,7 +28,6 @@ abstract class ServerCreateInviteCodesInput
     @Default(1) int codeCount,
     required int useCount,
     List<String>? forAccounts,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateInviteCodesInput;
 

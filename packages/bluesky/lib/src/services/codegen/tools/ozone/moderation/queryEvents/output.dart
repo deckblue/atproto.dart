@@ -29,7 +29,6 @@ abstract class ModerationQueryEventsOutput with _$ModerationQueryEventsOutput {
   const factory ModerationQueryEventsOutput({
     String? cursor,
     @ModEventViewConverter() required List<ModEventView> events,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationQueryEventsOutput;
 

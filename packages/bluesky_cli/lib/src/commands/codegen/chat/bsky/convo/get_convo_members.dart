@@ -38,8 +38,8 @@ final class GetConvoMembersCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "convoId": argResults!["convoId"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "convoId": argResults!["convoId"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

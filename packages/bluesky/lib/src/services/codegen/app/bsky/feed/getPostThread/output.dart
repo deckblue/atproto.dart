@@ -31,7 +31,6 @@ abstract class FeedGetPostThreadOutput with _$FeedGetPostThreadOutput {
     @UFeedGetPostThreadThreadConverter()
     required UFeedGetPostThreadThread thread,
     @ThreadgateViewConverter() ThreadgateView? threadgate,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetPostThreadOutput;
 

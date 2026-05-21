@@ -38,8 +38,8 @@ final class GetFeedCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "feed": argResults!["feed"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "feed": argResults!["feed"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

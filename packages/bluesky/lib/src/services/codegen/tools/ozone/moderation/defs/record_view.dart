@@ -45,7 +45,6 @@ abstract class RecordView with _$RecordView {
     required DateTime indexedAt,
     @ModerationConverter() required Moderation moderation,
     @RepoViewConverter() required RepoView repo,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordView;
 

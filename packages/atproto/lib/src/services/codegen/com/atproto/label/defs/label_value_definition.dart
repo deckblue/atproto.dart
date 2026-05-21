@@ -59,7 +59,6 @@ abstract class LabelValueDefinition with _$LabelValueDefinition {
     bool? adultOnly,
     @LabelValueDefinitionStringsConverter()
     required List<LabelValueDefinitionStrings> locales,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelValueDefinition;
 

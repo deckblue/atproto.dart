@@ -43,7 +43,6 @@ abstract class ModerationCreateReportOutput
     required UModerationCreateReportSubject subject,
     required String reportedBy,
     required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationCreateReportOutput;
 

@@ -88,7 +88,6 @@ final class UConvoListConvoRequestsRequestsConverter
         convoView: (data) => const ConvoViewConverter().toJson(data),
         joinRequestView: (data) =>
             const JoinRequestViewConverter().toJson(data),
-
         unknown: (data) => data,
       );
 }

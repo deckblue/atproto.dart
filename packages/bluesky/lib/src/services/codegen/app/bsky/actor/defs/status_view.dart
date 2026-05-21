@@ -58,7 +58,6 @@ abstract class StatusView with _$StatusView {
 
     /// True if the user's go-live access has been disabled by a moderator, false otherwise.
     bool? isDisabled,
-
     Map<String, dynamic>? $unknown,
   }) = _StatusView;
 

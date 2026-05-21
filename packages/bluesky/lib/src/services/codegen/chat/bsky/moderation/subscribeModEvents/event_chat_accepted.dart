@@ -61,7 +61,6 @@ abstract class EventChatAccepted with _$EventChatAccepted {
     /// The DID of the group chat owner. Only present for group convos.
     String? ownerDid,
     required String rev,
-
     Map<String, dynamic>? $unknown,
   }) = _EventChatAccepted;
 

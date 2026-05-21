@@ -28,7 +28,6 @@ abstract class LogLeaveConvo with _$LogLeaveConvo {
     @Default('chat.bsky.convo.defs#logLeaveConvo') String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogLeaveConvo;
 

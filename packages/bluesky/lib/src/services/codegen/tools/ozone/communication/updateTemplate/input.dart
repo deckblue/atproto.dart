@@ -51,13 +51,13 @@ abstract class CommunicationUpdateTemplateInput
     /// DID of the user who is updating the template.
     String? updatedBy,
     bool? disabled,
-
     Map<String, dynamic>? $unknown,
   }) = _CommunicationUpdateTemplateInput;
 
   factory CommunicationUpdateTemplateInput.fromJson(
     Map<String, Object?> json,
-  ) => _$CommunicationUpdateTemplateInputFromJson(json);
+  ) =>
+      _$CommunicationUpdateTemplateInputFromJson(json);
 }
 
 extension CommunicationUpdateTemplateInputExtension
@@ -76,9 +76,8 @@ extension CommunicationUpdateTemplateInputExtension
   bool get isNotDisabled => !isDisabled;
 }
 
-final class CommunicationUpdateTemplateInputConverter
-    extends
-        JsonConverter<CommunicationUpdateTemplateInput, Map<String, dynamic>> {
+final class CommunicationUpdateTemplateInputConverter extends JsonConverter<
+    CommunicationUpdateTemplateInput, Map<String, dynamic>> {
   const CommunicationUpdateTemplateInputConverter();
 
   @override

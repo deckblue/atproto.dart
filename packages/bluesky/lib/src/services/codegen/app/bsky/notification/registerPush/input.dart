@@ -42,7 +42,6 @@ abstract class NotificationRegisterPushInput
 
     /// Set to true when the actor is age restricted
     bool? ageRestricted,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationRegisterPushInput;
 

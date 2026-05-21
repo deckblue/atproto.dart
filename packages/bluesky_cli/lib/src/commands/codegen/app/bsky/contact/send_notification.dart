@@ -45,7 +45,7 @@ final class SendNotificationCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "from": argResults!["from"],
-    "to": argResults!["to"],
-  };
+        "from": argResults!["from"],
+        "to": argResults!["to"],
+      };
 }

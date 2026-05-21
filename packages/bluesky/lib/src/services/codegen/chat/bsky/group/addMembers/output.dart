@@ -30,7 +30,6 @@ abstract class GroupAddMembersOutput with _$GroupAddMembersOutput {
   const factory GroupAddMembersOutput({
     @ConvoViewConverter() required ConvoView convo,
     @ProfileViewBasicConverter() List<ProfileViewBasic>? addedMembers,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupAddMembersOutput;
 

@@ -29,7 +29,6 @@ abstract class ConvoListConvosOutput with _$ConvoListConvosOutput {
   const factory ConvoListConvosOutput({
     String? cursor,
     @ConvoViewConverter() required List<ConvoView> convos,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoListConvosOutput;
 

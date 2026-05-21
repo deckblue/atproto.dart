@@ -34,7 +34,6 @@ abstract class Entity with _$Entity {
     /// Expected values are 'mention' and 'link'.
     required String type,
     required String value,
-
     Map<String, dynamic>? $unknown,
   }) = _Entity;
 

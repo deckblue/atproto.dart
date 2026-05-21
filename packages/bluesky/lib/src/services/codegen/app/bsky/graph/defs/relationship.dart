@@ -54,7 +54,6 @@ abstract class Relationship with _$Relationship {
 
     /// if the actor is blocked by this DID via a block list, contains the AT-URI of the listblock record
     @AtUriConverter() AtUri? blockedByList,
-
     Map<String, dynamic>? $unknown,
   }) = _Relationship;
 

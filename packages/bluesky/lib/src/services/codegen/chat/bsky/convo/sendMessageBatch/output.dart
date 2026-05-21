@@ -28,7 +28,6 @@ abstract class ConvoSendMessageBatchOutput with _$ConvoSendMessageBatchOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoSendMessageBatchOutput({
     @MessageViewConverter() required List<MessageView> items,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoSendMessageBatchOutput;
 

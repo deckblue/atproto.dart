@@ -28,7 +28,6 @@ abstract class ReportGetLatestReportOutput with _$ReportGetLatestReportOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ReportGetLatestReportOutput({
     @ReportViewConverter() required ReportView report,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportGetLatestReportOutput;
 

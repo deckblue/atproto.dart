@@ -54,12 +54,12 @@ final class CreateQueueCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "name": argResults!["name"],
-    "subjectTypes": argResults!["subjectTypes"],
-    if (argResults!["collection"] != null)
-      "collection": argResults!["collection"],
-    "reportTypes": argResults!["reportTypes"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-  };
+        "name": argResults!["name"],
+        "subjectTypes": argResults!["subjectTypes"],
+        if (argResults!["collection"] != null)
+          "collection": argResults!["collection"],
+        "reportTypes": argResults!["reportTypes"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+      };
 }

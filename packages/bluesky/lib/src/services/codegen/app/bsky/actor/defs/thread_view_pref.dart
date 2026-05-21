@@ -31,7 +31,6 @@ abstract class ThreadViewPref with _$ThreadViewPref {
 
     /// Sorting mode for threads.
     @ThreadViewPrefSortConverter() ThreadViewPrefSort? sort,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadViewPref;
 

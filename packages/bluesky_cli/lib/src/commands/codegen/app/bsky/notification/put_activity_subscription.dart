@@ -40,7 +40,7 @@ final class PutActivitySubscriptionCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "subject": argResults!["subject"],
-    "activitySubscription": jsonDecode(argResults!["activitySubscription"]),
-  };
+        "subject": argResults!["subject"],
+        "activitySubscription": jsonDecode(argResults!["activitySubscription"]),
+      };
 }

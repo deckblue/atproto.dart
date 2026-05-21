@@ -37,7 +37,7 @@ final class CreateBookmarkCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "uri": argResults!["uri"],
-    "cid": argResults!["cid"],
-  };
+        "uri": argResults!["uri"],
+        "cid": argResults!["cid"],
+      };
 }

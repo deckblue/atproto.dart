@@ -28,7 +28,6 @@ abstract class UnspeccedGetTrendingTopicsInput
     /// DID of the account making the request (not included for public/unauthenticated queries). Used to boost followed accounts in ranking.
     String? viewer,
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTrendingTopicsInput;
 
@@ -42,9 +41,8 @@ extension UnspeccedGetTrendingTopicsInputExtension
   bool get hasNotViewer => !hasViewer;
 }
 
-final class UnspeccedGetTrendingTopicsInputConverter
-    extends
-        JsonConverter<UnspeccedGetTrendingTopicsInput, Map<String, dynamic>> {
+final class UnspeccedGetTrendingTopicsInputConverter extends JsonConverter<
+    UnspeccedGetTrendingTopicsInput, Map<String, dynamic>> {
   const UnspeccedGetTrendingTopicsInputConverter();
 
   @override

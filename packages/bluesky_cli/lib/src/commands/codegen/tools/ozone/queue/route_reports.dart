@@ -46,7 +46,7 @@ final class RouteReportsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "startReportId": argResults!["startReportId"],
-    "endReportId": argResults!["endReportId"],
-  };
+        "startReportId": argResults!["startReportId"],
+        "endReportId": argResults!["endReportId"],
+      };
 }

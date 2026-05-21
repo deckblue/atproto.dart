@@ -107,7 +107,6 @@ abstract class ReportView with _$ReportView {
 
     /// Whether this report is muted. A report is muted if the reporter was muted or the subject was muted at the time the report was created.
     bool? isMuted,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportView;
 

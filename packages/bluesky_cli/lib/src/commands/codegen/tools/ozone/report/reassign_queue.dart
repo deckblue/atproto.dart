@@ -50,8 +50,8 @@ final class ReassignQueueCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "reportId": argResults!["reportId"],
-    "queueId": argResults!["queueId"],
-    if (argResults!["comment"] != null) "comment": argResults!["comment"],
-  };
+        "reportId": argResults!["reportId"],
+        "queueId": argResults!["queueId"],
+        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+      };
 }

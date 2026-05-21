@@ -27,7 +27,6 @@ abstract class ActivitySubscription with _$ActivitySubscription {
     @Default('app.bsky.notification.defs#activitySubscription') String $type,
     required bool post,
     required bool reply,
-
     Map<String, dynamic>? $unknown,
   }) = _ActivitySubscription;
 

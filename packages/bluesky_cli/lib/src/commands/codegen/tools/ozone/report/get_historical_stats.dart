@@ -49,14 +49,15 @@ final class GetHistoricalStatsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
-    if (argResults!["moderatorDid"] != null)
-      "moderatorDid": argResults!["moderatorDid"],
-    if (argResults!["reportTypes"] != null)
-      "reportTypes": argResults!["reportTypes"],
-    if (argResults!["startDate"] != null) "startDate": argResults!["startDate"],
-    if (argResults!["endDate"] != null) "endDate": argResults!["endDate"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
+        if (argResults!["moderatorDid"] != null)
+          "moderatorDid": argResults!["moderatorDid"],
+        if (argResults!["reportTypes"] != null)
+          "reportTypes": argResults!["reportTypes"],
+        if (argResults!["startDate"] != null)
+          "startDate": argResults!["startDate"],
+        if (argResults!["endDate"] != null) "endDate": argResults!["endDate"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

@@ -27,7 +27,6 @@ abstract class SyncGetBlocksInput with _$SyncGetBlocksInput {
     /// The DID of the repo.
     required String did,
     required List<String> cids,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetBlocksInput;
 

@@ -34,7 +34,6 @@ abstract class SystemMessageDataUnlockConvo
     /// Current view of the member who unlocked the group.
     @SystemMessageReferredUserConverter()
     required SystemMessageReferredUser unlockedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataUnlockConvo;
 

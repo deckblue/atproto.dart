@@ -29,7 +29,6 @@ abstract class EmbedRecordView with _$EmbedRecordView {
   const factory EmbedRecordView({
     @Default('app.bsky.embed.record#view') String $type,
     @UEmbedRecordViewRecordConverter() required UEmbedRecordViewRecord record,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedRecordView;
 

@@ -27,13 +27,13 @@ abstract class ModerationSubscribeModEventsInput
   const factory ModerationSubscribeModEventsInput({
     /// The last known event seq number to backfill from. Use '2222222222222' to backfill from the beginning. Don't specify a cursor to listen only for new events.
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationSubscribeModEventsInput;
 
   factory ModerationSubscribeModEventsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationSubscribeModEventsInputFromJson(json);
+  ) =>
+      _$ModerationSubscribeModEventsInputFromJson(json);
 }
 
 extension ModerationSubscribeModEventsInputExtension
@@ -42,9 +42,8 @@ extension ModerationSubscribeModEventsInputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class ModerationSubscribeModEventsInputConverter
-    extends
-        JsonConverter<ModerationSubscribeModEventsInput, Map<String, dynamic>> {
+final class ModerationSubscribeModEventsInputConverter extends JsonConverter<
+    ModerationSubscribeModEventsInput, Map<String, dynamic>> {
   const ModerationSubscribeModEventsInputConverter();
 
   @override

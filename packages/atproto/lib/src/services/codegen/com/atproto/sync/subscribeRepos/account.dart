@@ -38,7 +38,6 @@ abstract class Account with _$Account {
 
     /// If active=false, this optional field indicates a reason for why the account is not active.
     @AccountStatusConverter() AccountStatus? status,
-
     Map<String, dynamic>? $unknown,
   }) = _Account;
 

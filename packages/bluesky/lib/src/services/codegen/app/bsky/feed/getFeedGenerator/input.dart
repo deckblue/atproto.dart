@@ -27,7 +27,6 @@ abstract class FeedGetFeedGeneratorInput with _$FeedGetFeedGeneratorInput {
   const factory FeedGetFeedGeneratorInput({
     /// AT-URI of the feed generator record.
     @AtUriConverter() required AtUri feed,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetFeedGeneratorInput;
 

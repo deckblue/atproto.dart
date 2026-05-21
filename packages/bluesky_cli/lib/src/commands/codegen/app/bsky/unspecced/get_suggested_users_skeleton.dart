@@ -45,8 +45,9 @@ final class GetSuggestedUsersSkeletonCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
-    if (argResults!["category"] != null) "category": argResults!["category"],
-    "limit": argResults!["limit"],
-  };
+        if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
+        if (argResults!["category"] != null)
+          "category": argResults!["category"],
+        "limit": argResults!["limit"],
+      };
 }

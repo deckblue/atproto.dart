@@ -32,7 +32,6 @@ abstract class GroupRequestJoinOutput with _$GroupRequestJoinOutput {
 
     /// The group convo joined. This is only present in the case of status=joined
     @ConvoViewConverter() ConvoView? convo,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupRequestJoinOutput;
 

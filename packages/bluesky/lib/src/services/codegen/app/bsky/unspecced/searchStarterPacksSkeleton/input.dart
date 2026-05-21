@@ -34,13 +34,13 @@ abstract class UnspeccedSearchStarterPacksSkeletonInput
 
     /// Optional pagination mechanism; may not necessarily allow scrolling through entire result set.
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedSearchStarterPacksSkeletonInput;
 
   factory UnspeccedSearchStarterPacksSkeletonInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedSearchStarterPacksSkeletonInputFromJson(json);
+  ) =>
+      _$UnspeccedSearchStarterPacksSkeletonInputFromJson(json);
 }
 
 extension UnspeccedSearchStarterPacksSkeletonInputExtension
@@ -52,11 +52,8 @@ extension UnspeccedSearchStarterPacksSkeletonInputExtension
 }
 
 final class UnspeccedSearchStarterPacksSkeletonInputConverter
-    extends
-        JsonConverter<
-          UnspeccedSearchStarterPacksSkeletonInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedSearchStarterPacksSkeletonInput,
+        Map<String, dynamic>> {
   const UnspeccedSearchStarterPacksSkeletonInputConverter();
 
   @override
@@ -69,5 +66,6 @@ final class UnspeccedSearchStarterPacksSkeletonInputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedSearchStarterPacksSkeletonInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

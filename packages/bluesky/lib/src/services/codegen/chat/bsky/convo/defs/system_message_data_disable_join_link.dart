@@ -28,13 +28,13 @@ abstract class SystemMessageDataDisableJoinLink
   const factory SystemMessageDataDisableJoinLink({
     @Default('chat.bsky.convo.defs#systemMessageDataDisableJoinLink')
     String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataDisableJoinLink;
 
   factory SystemMessageDataDisableJoinLink.fromJson(
     Map<String, Object?> json,
-  ) => _$SystemMessageDataDisableJoinLinkFromJson(json);
+  ) =>
+      _$SystemMessageDataDisableJoinLinkFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('\$type')) return false;
@@ -43,9 +43,8 @@ abstract class SystemMessageDataDisableJoinLink
   }
 }
 
-final class SystemMessageDataDisableJoinLinkConverter
-    extends
-        JsonConverter<SystemMessageDataDisableJoinLink, Map<String, dynamic>> {
+final class SystemMessageDataDisableJoinLinkConverter extends JsonConverter<
+    SystemMessageDataDisableJoinLink, Map<String, dynamic>> {
   const SystemMessageDataDisableJoinLinkConverter();
 
   @override

@@ -60,7 +60,6 @@ abstract class ReporterStats with _$ReporterStats {
 
     /// The total number of records labeled as a result of the user's reports.
     required int labeledRecordCount,
-
     Map<String, dynamic>? $unknown,
   }) = _ReporterStats;
 

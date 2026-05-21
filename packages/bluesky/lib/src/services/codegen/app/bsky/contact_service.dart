@@ -29,12 +29,13 @@ Future<XRPCResponse<EmptyData>> appBskyContactDismissMatch({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyContactDismissMatch,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'subject': subject},
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyContactDismissMatch,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'subject': subject},
+    );
 
 /// Returns the matched contacts (contacts that were mutually imported). Excludes dismissed matches. Requires authentication.
 Future<XRPCResponse<ContactGetMatchesOutput>> appBskyContactGetMatches({
@@ -44,17 +45,18 @@ Future<XRPCResponse<ContactGetMatchesOutput>> appBskyContactGetMatches({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyContactGetMatches,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const ContactGetMatchesOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.appBskyContactGetMatches,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        if (limit != null) 'limit': limit,
+        if (cursor != null) 'cursor': cursor,
+      },
+      to: const ContactGetMatchesOutputConverter().fromJson,
+    );
 
 /// Gets the user's current contact import status. Requires authentication.
 Future<XRPCResponse<ContactGetSyncStatusOutput>> appBskyContactGetSyncStatus({
@@ -62,13 +64,14 @@ Future<XRPCResponse<ContactGetSyncStatusOutput>> appBskyContactGetSyncStatus({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyContactGetSyncStatus,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown},
-  to: const ContactGetSyncStatusOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.appBskyContactGetSyncStatus,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown},
+      to: const ContactGetSyncStatusOutputConverter().fromJson,
+    );
 
 /// Import contacts for securely matching with other users. This follows the protocol explained in https://docs.bsky.app/blog/contact-import-rfc. Requires authentication.
 Future<XRPCResponse<ContactImportContactsOutput>> appBskyContactImportContacts({
@@ -78,24 +81,26 @@ Future<XRPCResponse<ContactImportContactsOutput>> appBskyContactImportContacts({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyContactImportContacts,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'token': token, 'contacts': contacts},
-  to: const ContactImportContactsOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyContactImportContacts,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'token': token, 'contacts': contacts},
+      to: const ContactImportContactsOutputConverter().fromJson,
+    );
 
 /// Removes all stored hashes used for contact matching, existing matches, and sync status. Requires authentication.
 Future<XRPCResponse<EmptyData>> appBskyContactRemoveData({
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
-}) async => await $ctx.post(
-  ns.appBskyContactRemoveData,
-  service: $service,
-  headers: {...?$headers},
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyContactRemoveData,
+      service: $service,
+      headers: {...?$headers},
+    );
 
 /// System endpoint to send notifications related to contact imports. Requires role authentication.
 Future<XRPCResponse<EmptyData>> appBskyContactSendNotification({
@@ -105,12 +110,13 @@ Future<XRPCResponse<EmptyData>> appBskyContactSendNotification({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyContactSendNotification,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'from': from, 'to': to},
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyContactSendNotification,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'from': from, 'to': to},
+    );
 
 /// Starts a phone verification flow. The phone passed will receive a code via SMS that should be passed to `app.bsky.contact.verifyPhone`. Requires authentication.
 Future<XRPCResponse<EmptyData>> appBskyContactStartPhoneVerification({
@@ -119,12 +125,13 @@ Future<XRPCResponse<EmptyData>> appBskyContactStartPhoneVerification({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyContactStartPhoneVerification,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'phone': phone},
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyContactStartPhoneVerification,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'phone': phone},
+    );
 
 /// Verifies control over a phone number with a code received via SMS and starts a contact import session. Requires authentication.
 Future<XRPCResponse<ContactVerifyPhoneOutput>> appBskyContactVerifyPhone({
@@ -134,13 +141,14 @@ Future<XRPCResponse<ContactVerifyPhoneOutput>> appBskyContactVerifyPhone({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyContactVerifyPhone,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'phone': phone, 'code': code},
-  to: const ContactVerifyPhoneOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyContactVerifyPhone,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'phone': phone, 'code': code},
+      to: const ContactVerifyPhoneOutputConverter().fromJson,
+    );
 
 /// `app.bsky.contact.*`
 base class ContactService {
@@ -155,13 +163,14 @@ base class ContactService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyContactDismissMatch(
-    subject: subject,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyContactDismissMatch(
+        subject: subject,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Returns the matched contacts (contacts that were mutually imported). Excludes dismissed matches. Requires authentication.
   Future<XRPCResponse<ContactGetMatchesOutput>> getMatches({
@@ -170,26 +179,28 @@ base class ContactService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyContactGetMatches(
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyContactGetMatches(
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Gets the user's current contact import status. Requires authentication.
   Future<XRPCResponse<ContactGetSyncStatusOutput>> getSyncStatus({
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyContactGetSyncStatus(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyContactGetSyncStatus(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Import contacts for securely matching with other users. This follows the protocol explained in https://docs.bsky.app/blog/contact-import-rfc. Requires authentication.
   Future<XRPCResponse<ContactImportContactsOutput>> importContacts({
@@ -198,24 +209,26 @@ base class ContactService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyContactImportContacts(
-    token: token,
-    contacts: contacts,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyContactImportContacts(
+        token: token,
+        contacts: contacts,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Removes all stored hashes used for contact matching, existing matches, and sync status. Requires authentication.
   Future<XRPCResponse<EmptyData>> removeData({
     String? $service,
     Map<String, String>? $headers,
-  }) async => await appBskyContactRemoveData(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-  );
+  }) async =>
+      await appBskyContactRemoveData(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+      );
 
   /// System endpoint to send notifications related to contact imports. Requires role authentication.
   Future<XRPCResponse<EmptyData>> sendNotification({
@@ -224,14 +237,15 @@ base class ContactService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyContactSendNotification(
-    from: from,
-    to: to,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyContactSendNotification(
+        from: from,
+        to: to,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Starts a phone verification flow. The phone passed will receive a code via SMS that should be passed to `app.bsky.contact.verifyPhone`. Requires authentication.
   Future<XRPCResponse<EmptyData>> startPhoneVerification({
@@ -239,13 +253,14 @@ base class ContactService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyContactStartPhoneVerification(
-    phone: phone,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyContactStartPhoneVerification(
+        phone: phone,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Verifies control over a phone number with a code received via SMS and starts a contact import session. Requires authentication.
   Future<XRPCResponse<ContactVerifyPhoneOutput>> verifyPhone({
@@ -254,12 +269,13 @@ base class ContactService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyContactVerifyPhone(
-    phone: phone,
-    code: code,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyContactVerifyPhone(
+        phone: phone,
+        code: code,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

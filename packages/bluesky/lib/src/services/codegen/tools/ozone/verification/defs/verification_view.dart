@@ -82,7 +82,6 @@ abstract class VerificationView with _$VerificationView {
     UVerificationViewSubjectRepo? subjectRepo,
     @UVerificationViewIssuerRepoConverter()
     UVerificationViewIssuerRepo? issuerRepo,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationView;
 

@@ -27,7 +27,6 @@ abstract class CommitMeta with _$CommitMeta {
     @Default('com.atproto.repo.defs#commitMeta') String $type,
     required String cid,
     required String rev,
-
     Map<String, dynamic>? $unknown,
   }) = _CommitMeta;
 

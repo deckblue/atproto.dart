@@ -36,7 +36,6 @@ abstract class SystemMessageDataRemoveMember
     required SystemMessageReferredUser member,
     @SystemMessageReferredUserConverter()
     required SystemMessageReferredUser removedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataRemoveMember;
 

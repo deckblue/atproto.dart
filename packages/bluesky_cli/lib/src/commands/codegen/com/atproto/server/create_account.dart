@@ -62,18 +62,19 @@ final class CreateAccountCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["email"] != null) "email": argResults!["email"],
-    "handle": argResults!["handle"],
-    if (argResults!["did"] != null) "did": argResults!["did"],
-    if (argResults!["inviteCode"] != null)
-      "inviteCode": argResults!["inviteCode"],
-    if (argResults!["verificationCode"] != null)
-      "verificationCode": argResults!["verificationCode"],
-    if (argResults!["verificationPhone"] != null)
-      "verificationPhone": argResults!["verificationPhone"],
-    if (argResults!["password"] != null) "password": argResults!["password"],
-    if (argResults!["recoveryKey"] != null)
-      "recoveryKey": argResults!["recoveryKey"],
-    if (argResults!["plcOp"] != null) "plcOp": argResults!["plcOp"],
-  };
+        if (argResults!["email"] != null) "email": argResults!["email"],
+        "handle": argResults!["handle"],
+        if (argResults!["did"] != null) "did": argResults!["did"],
+        if (argResults!["inviteCode"] != null)
+          "inviteCode": argResults!["inviteCode"],
+        if (argResults!["verificationCode"] != null)
+          "verificationCode": argResults!["verificationCode"],
+        if (argResults!["verificationPhone"] != null)
+          "verificationPhone": argResults!["verificationPhone"],
+        if (argResults!["password"] != null)
+          "password": argResults!["password"],
+        if (argResults!["recoveryKey"] != null)
+          "recoveryKey": argResults!["recoveryKey"],
+        if (argResults!["plcOp"] != null) "plcOp": argResults!["plcOp"],
+      };
 }

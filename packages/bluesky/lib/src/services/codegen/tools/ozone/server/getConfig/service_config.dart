@@ -26,7 +26,6 @@ abstract class ServiceConfig with _$ServiceConfig {
   const factory ServiceConfig({
     @Default('tools.ozone.server.getConfig#serviceConfig') String $type,
     String? url,
-
     Map<String, dynamic>? $unknown,
   }) = _ServiceConfig;
 

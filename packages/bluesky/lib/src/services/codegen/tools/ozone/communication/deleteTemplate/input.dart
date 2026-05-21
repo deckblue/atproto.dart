@@ -26,18 +26,17 @@ abstract class CommunicationDeleteTemplateInput
   @JsonSerializable(includeIfNull: false)
   const factory CommunicationDeleteTemplateInput({
     required String id,
-
     Map<String, dynamic>? $unknown,
   }) = _CommunicationDeleteTemplateInput;
 
   factory CommunicationDeleteTemplateInput.fromJson(
     Map<String, Object?> json,
-  ) => _$CommunicationDeleteTemplateInputFromJson(json);
+  ) =>
+      _$CommunicationDeleteTemplateInputFromJson(json);
 }
 
-final class CommunicationDeleteTemplateInputConverter
-    extends
-        JsonConverter<CommunicationDeleteTemplateInput, Map<String, dynamic>> {
+final class CommunicationDeleteTemplateInputConverter extends JsonConverter<
+    CommunicationDeleteTemplateInput, Map<String, dynamic>> {
   const CommunicationDeleteTemplateInputConverter();
 
   @override

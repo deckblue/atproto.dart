@@ -29,7 +29,6 @@ abstract class SavedFeedsPrefV2 with _$SavedFeedsPrefV2 {
   const factory SavedFeedsPrefV2({
     @Default('app.bsky.actor.defs#savedFeedsPrefV2') String $type,
     @SavedFeedConverter() required List<SavedFeed> items,
-
     Map<String, dynamic>? $unknown,
   }) = _SavedFeedsPrefV2;
 

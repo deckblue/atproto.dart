@@ -37,7 +37,6 @@ abstract class IdentityEvent with _$IdentityEvent {
     String? pdsHost,
     bool? tombstone,
     required DateTime timestamp,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityEvent;
 

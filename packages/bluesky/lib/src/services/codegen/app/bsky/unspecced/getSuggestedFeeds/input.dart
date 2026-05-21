@@ -26,7 +26,6 @@ abstract class UnspeccedGetSuggestedFeedsInput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetSuggestedFeedsInput({
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedFeedsInput;
 
@@ -34,9 +33,8 @@ abstract class UnspeccedGetSuggestedFeedsInput
       _$UnspeccedGetSuggestedFeedsInputFromJson(json);
 }
 
-final class UnspeccedGetSuggestedFeedsInputConverter
-    extends
-        JsonConverter<UnspeccedGetSuggestedFeedsInput, Map<String, dynamic>> {
+final class UnspeccedGetSuggestedFeedsInputConverter extends JsonConverter<
+    UnspeccedGetSuggestedFeedsInput, Map<String, dynamic>> {
   const UnspeccedGetSuggestedFeedsInputConverter();
 
   @override

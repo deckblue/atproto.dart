@@ -30,13 +30,13 @@ abstract class NotificationListActivitySubscriptionsOutput
   const factory NotificationListActivitySubscriptionsOutput({
     String? cursor,
     @ProfileViewConverter() required List<ProfileView> subscriptions,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationListActivitySubscriptionsOutput;
 
   factory NotificationListActivitySubscriptionsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$NotificationListActivitySubscriptionsOutputFromJson(json);
+  ) =>
+      _$NotificationListActivitySubscriptionsOutputFromJson(json);
 }
 
 extension NotificationListActivitySubscriptionsOutputExtension
@@ -46,11 +46,8 @@ extension NotificationListActivitySubscriptionsOutputExtension
 }
 
 final class NotificationListActivitySubscriptionsOutputConverter
-    extends
-        JsonConverter<
-          NotificationListActivitySubscriptionsOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<NotificationListActivitySubscriptionsOutput,
+        Map<String, dynamic>> {
   const NotificationListActivitySubscriptionsOutputConverter();
 
   @override
@@ -65,5 +62,6 @@ final class NotificationListActivitySubscriptionsOutputConverter
   @override
   Map<String, dynamic> toJson(
     NotificationListActivitySubscriptionsOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

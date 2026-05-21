@@ -30,7 +30,6 @@ abstract class GroupEditJoinLinkInput with _$GroupEditJoinLinkInput {
     required String convoId,
     bool? requireApproval,
     @JoinRuleConverter() JoinRule? joinRule,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupEditJoinLinkInput;
 

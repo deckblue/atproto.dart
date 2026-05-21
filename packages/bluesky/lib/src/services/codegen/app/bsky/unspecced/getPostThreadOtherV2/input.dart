@@ -28,21 +28,17 @@ abstract class UnspeccedGetPostThreadOtherV2Input
   const factory UnspeccedGetPostThreadOtherV2Input({
     /// Reference (AT-URI) to post record. This is the anchor post.
     @AtUriConverter() required AtUri anchor,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetPostThreadOtherV2Input;
 
   factory UnspeccedGetPostThreadOtherV2Input.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetPostThreadOtherV2InputFromJson(json);
+  ) =>
+      _$UnspeccedGetPostThreadOtherV2InputFromJson(json);
 }
 
-final class UnspeccedGetPostThreadOtherV2InputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetPostThreadOtherV2Input,
-          Map<String, dynamic>
-        > {
+final class UnspeccedGetPostThreadOtherV2InputConverter extends JsonConverter<
+    UnspeccedGetPostThreadOtherV2Input, Map<String, dynamic>> {
   const UnspeccedGetPostThreadOtherV2InputConverter();
 
   @override

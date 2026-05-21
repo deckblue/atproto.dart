@@ -40,7 +40,6 @@ abstract class ThreadViewPost with _$ThreadViewPost {
     @UThreadViewPostParentConverter() UThreadViewPostParent? parent,
     @UThreadViewPostRepliesConverter() List<UThreadViewPostReplies>? replies,
     @ThreadContextConverter() ThreadContext? threadContext,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadViewPost;
 

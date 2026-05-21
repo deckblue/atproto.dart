@@ -25,7 +25,6 @@ abstract class ServerGetServiceAuthOutput with _$ServerGetServiceAuthOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ServerGetServiceAuthOutput({
     required String token,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerGetServiceAuthOutput;
 

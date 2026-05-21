@@ -59,9 +59,8 @@ class MockPlcDirectory {
 
   /// Adds operations to the mock directory
   void addOperations(String did, List<Operation> operations) {
-    _operationLogs[did] = operations
-        .map((op) => CompatibleOpOrTombstone.op(data: op))
-        .toList();
+    _operationLogs[did] =
+        operations.map((op) => CompatibleOpOrTombstone.op(data: op)).toList();
   }
 
   /// Adds audit log entries to the mock directory
@@ -219,9 +218,8 @@ class _MockHttpClient implements HttpClient {
       if (path.startsWith('did:plc:') && !path.contains('/')) {
         // Direct DID document request
         final document = await _directory.getDocument(path);
-        final data = fromJson != null
-            ? fromJson(document.toJson())
-            : document as T;
+        final data =
+            fromJson != null ? fromJson(document.toJson()) : document as T;
         return HttpResponse.success(
           statusCode: 200,
           headers: {'content-type': 'application/json'},
@@ -249,9 +247,8 @@ class _MockHttpClient implements HttpClient {
           },
         };
 
-        final data = fromJson != null
-            ? fromJson(documentData)
-            : documentData as T;
+        final data =
+            fromJson != null ? fromJson(documentData) : documentData as T;
         return HttpResponse.success(
           statusCode: 200,
           headers: {'content-type': 'application/json'},
@@ -261,9 +258,8 @@ class _MockHttpClient implements HttpClient {
         // Auditable log request
         final did = path.split('/log/audit')[0];
         final auditLog = await _directory.getAuditableLog(did);
-        final data = fromJson != null
-            ? fromJson(auditLog.toJson())
-            : auditLog as T;
+        final data =
+            fromJson != null ? fromJson(auditLog.toJson()) : auditLog as T;
         return HttpResponse.success(
           statusCode: 200,
           headers: {'content-type': 'application/json'},
@@ -339,9 +335,8 @@ class _MockHttpClient implements HttpClient {
         'operationId':
             'mock-operation-${DateTime.now().millisecondsSinceEpoch}',
       };
-      final data = fromJson != null
-          ? fromJson(responseData)
-          : responseData as T;
+      final data =
+          fromJson != null ? fromJson(responseData) : responseData as T;
       return HttpResponse.success(
         statusCode: 201,
         headers: {'content-type': 'application/json'},

@@ -29,18 +29,17 @@ abstract class ActorSearchActorsTypeaheadOutput
   @JsonSerializable(includeIfNull: false)
   const factory ActorSearchActorsTypeaheadOutput({
     @ProfileViewBasicConverter() required List<ProfileViewBasic> actors,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorSearchActorsTypeaheadOutput;
 
   factory ActorSearchActorsTypeaheadOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$ActorSearchActorsTypeaheadOutputFromJson(json);
+  ) =>
+      _$ActorSearchActorsTypeaheadOutputFromJson(json);
 }
 
-final class ActorSearchActorsTypeaheadOutputConverter
-    extends
-        JsonConverter<ActorSearchActorsTypeaheadOutput, Map<String, dynamic>> {
+final class ActorSearchActorsTypeaheadOutputConverter extends JsonConverter<
+    ActorSearchActorsTypeaheadOutput, Map<String, dynamic>> {
   const ActorSearchActorsTypeaheadOutputConverter();
 
   @override

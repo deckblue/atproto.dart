@@ -42,7 +42,6 @@ abstract class JoinLinkPreviewView with _$JoinLinkPreviewView {
 
     /// Present only if the request is authenticated and the user is a member of the group.
     @ConvoViewConverter() ConvoView? convo,
-
     Map<String, dynamic>? $unknown,
   }) = _JoinLinkPreviewView;
 

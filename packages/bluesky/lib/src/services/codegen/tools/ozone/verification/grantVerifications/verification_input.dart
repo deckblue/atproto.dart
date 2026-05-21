@@ -43,7 +43,6 @@ abstract class VerificationInput with _$VerificationInput {
 
     /// Timestamp for verification record. Defaults to current time when not specified.
     DateTime? createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationInput;
 

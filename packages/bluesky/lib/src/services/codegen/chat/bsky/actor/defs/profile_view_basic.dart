@@ -55,7 +55,6 @@ abstract class ProfileViewBasic with _$ProfileViewBasic {
     bool? chatDisabled,
     @VerificationStateConverter() VerificationState? verification,
     @UProfileViewBasicKindConverter() UProfileViewBasicKind? kind,
-
     Map<String, dynamic>? $unknown,
   }) = _ProfileViewBasic;
 

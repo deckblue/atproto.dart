@@ -28,7 +28,6 @@ abstract class ConvoAddReactionOutput with _$ConvoAddReactionOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoAddReactionOutput({
     @MessageViewConverter() required MessageView message,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoAddReactionOutput;
 

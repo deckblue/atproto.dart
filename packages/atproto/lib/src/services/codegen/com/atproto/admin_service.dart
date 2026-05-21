@@ -35,12 +35,13 @@ Future<XRPCResponse<EmptyData>> comAtprotoAdminDeleteAccount({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminDeleteAccount,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'did': did},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminDeleteAccount,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'did': did},
+    );
 
 /// Disable an account from receiving new invite codes, but does not invalidate existing codes.
 Future<XRPCResponse<EmptyData>> comAtprotoAdminDisableAccountInvites({
@@ -50,12 +51,13 @@ Future<XRPCResponse<EmptyData>> comAtprotoAdminDisableAccountInvites({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminDisableAccountInvites,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'account': account, if (note != null) 'note': note},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminDisableAccountInvites,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'account': account, if (note != null) 'note': note},
+    );
 
 /// Disable some set of codes and/or all codes associated with a set of users.
 Future<XRPCResponse<EmptyData>> comAtprotoAdminDisableInviteCodes({
@@ -65,16 +67,17 @@ Future<XRPCResponse<EmptyData>> comAtprotoAdminDisableInviteCodes({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminDisableInviteCodes,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    if (codes != null) 'codes': codes,
-    if (accounts != null) 'accounts': accounts,
-  },
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminDisableInviteCodes,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {
+        ...?$unknown,
+        if (codes != null) 'codes': codes,
+        if (accounts != null) 'accounts': accounts,
+      },
+    );
 
 /// Re-enable an account's ability to receive invite codes.
 Future<XRPCResponse<EmptyData>> comAtprotoAdminEnableAccountInvites({
@@ -84,12 +87,13 @@ Future<XRPCResponse<EmptyData>> comAtprotoAdminEnableAccountInvites({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminEnableAccountInvites,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'account': account, if (note != null) 'note': note},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminEnableAccountInvites,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'account': account, if (note != null) 'note': note},
+    );
 
 /// Get details about an account.
 Future<XRPCResponse<AccountView>> comAtprotoAdminGetAccountInfo({
@@ -98,29 +102,31 @@ Future<XRPCResponse<AccountView>> comAtprotoAdminGetAccountInfo({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoAdminGetAccountInfo,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'did': did},
-  to: const AccountViewConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.comAtprotoAdminGetAccountInfo,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown, 'did': did},
+      to: const AccountViewConverter().fromJson,
+    );
 
 /// Get details about some accounts.
 Future<XRPCResponse<AdminGetAccountInfosOutput>>
-comAtprotoAdminGetAccountInfos({
+    comAtprotoAdminGetAccountInfos({
   required List<String> dids,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoAdminGetAccountInfos,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'dids': dids},
-  to: const AdminGetAccountInfosOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.comAtprotoAdminGetAccountInfos,
+          service: $service,
+          headers: $headers,
+          parameters: {...?$unknown, 'dids': dids},
+          to: const AdminGetAccountInfosOutputConverter().fromJson,
+        );
 
 /// Get an admin view of invite codes.
 Future<XRPCResponse<AdminGetInviteCodesOutput>> comAtprotoAdminGetInviteCodes({
@@ -131,22 +137,23 @@ Future<XRPCResponse<AdminGetInviteCodesOutput>> comAtprotoAdminGetInviteCodes({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoAdminGetInviteCodes,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    if (sort != null) 'sort': sort.toJson(),
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const AdminGetInviteCodesOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.comAtprotoAdminGetInviteCodes,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        if (sort != null) 'sort': sort.toJson(),
+        if (limit != null) 'limit': limit,
+        if (cursor != null) 'cursor': cursor,
+      },
+      to: const AdminGetInviteCodesOutputConverter().fromJson,
+    );
 
 /// Get the service-specific admin status of a subject (account, record, or blob).
 Future<XRPCResponse<AdminGetSubjectStatusOutput>>
-comAtprotoAdminGetSubjectStatus({
+    comAtprotoAdminGetSubjectStatus({
   String? did,
   AtUri? uri,
   String? blob,
@@ -154,18 +161,19 @@ comAtprotoAdminGetSubjectStatus({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoAdminGetSubjectStatus,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    if (did != null) 'did': did,
-    if (uri != null) 'uri': uri.toString(),
-    if (blob != null) 'blob': blob,
-  },
-  to: const AdminGetSubjectStatusOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.comAtprotoAdminGetSubjectStatus,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            if (did != null) 'did': did,
+            if (uri != null) 'uri': uri.toString(),
+            if (blob != null) 'blob': blob,
+          },
+          to: const AdminGetSubjectStatusOutputConverter().fromJson,
+        );
 
 /// Get list of accounts that matches your search query.
 Future<XRPCResponse<AdminSearchAccountsOutput>> comAtprotoAdminSearchAccounts({
@@ -176,18 +184,19 @@ Future<XRPCResponse<AdminSearchAccountsOutput>> comAtprotoAdminSearchAccounts({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoAdminSearchAccounts,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    if (email != null) 'email': email,
-    if (cursor != null) 'cursor': cursor,
-    if (limit != null) 'limit': limit,
-  },
-  to: const AdminSearchAccountsOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.comAtprotoAdminSearchAccounts,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        if (email != null) 'email': email,
+        if (cursor != null) 'cursor': cursor,
+        if (limit != null) 'limit': limit,
+      },
+      to: const AdminSearchAccountsOutputConverter().fromJson,
+    );
 
 /// Send email to a user's account email address.
 Future<XRPCResponse<AdminSendEmailOutput>> comAtprotoAdminSendEmail({
@@ -200,20 +209,21 @@ Future<XRPCResponse<AdminSendEmailOutput>> comAtprotoAdminSendEmail({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminSendEmail,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    'recipientDid': recipientDid,
-    'content': content,
-    if (subject != null) 'subject': subject,
-    'senderDid': senderDid,
-    if (comment != null) 'comment': comment,
-  },
-  to: const AdminSendEmailOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminSendEmail,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {
+        ...?$unknown,
+        'recipientDid': recipientDid,
+        'content': content,
+        if (subject != null) 'subject': subject,
+        'senderDid': senderDid,
+        if (comment != null) 'comment': comment,
+      },
+      to: const AdminSendEmailOutputConverter().fromJson,
+    );
 
 /// Administrative action to update an account's email.
 Future<XRPCResponse<EmptyData>> comAtprotoAdminUpdateAccountEmail({
@@ -223,12 +233,13 @@ Future<XRPCResponse<EmptyData>> comAtprotoAdminUpdateAccountEmail({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminUpdateAccountEmail,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'account': account, 'email': email},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminUpdateAccountEmail,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'account': account, 'email': email},
+    );
 
 /// Administrative action to update an account's handle.
 Future<XRPCResponse<EmptyData>> comAtprotoAdminUpdateAccountHandle({
@@ -238,12 +249,13 @@ Future<XRPCResponse<EmptyData>> comAtprotoAdminUpdateAccountHandle({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminUpdateAccountHandle,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'did': did, 'handle': handle},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminUpdateAccountHandle,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'did': did, 'handle': handle},
+    );
 
 /// Update the password for a user account as an administrator.
 Future<XRPCResponse<EmptyData>> comAtprotoAdminUpdateAccountPassword({
@@ -253,12 +265,13 @@ Future<XRPCResponse<EmptyData>> comAtprotoAdminUpdateAccountPassword({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminUpdateAccountPassword,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'did': did, 'password': password},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminUpdateAccountPassword,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'did': did, 'password': password},
+    );
 
 /// Administrative action to update an account's signing key in their Did document.
 Future<XRPCResponse<EmptyData>> comAtprotoAdminUpdateAccountSigningKey({
@@ -268,16 +281,17 @@ Future<XRPCResponse<EmptyData>> comAtprotoAdminUpdateAccountSigningKey({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminUpdateAccountSigningKey,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'did': did, 'signingKey': signingKey},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoAdminUpdateAccountSigningKey,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'did': did, 'signingKey': signingKey},
+    );
 
 /// Update the service-specific admin status of a subject (account, record, or blob).
 Future<XRPCResponse<AdminUpdateSubjectStatusOutput>>
-comAtprotoAdminUpdateSubjectStatus({
+    comAtprotoAdminUpdateSubjectStatus({
   required UAdminUpdateSubjectStatusSubject subject,
   StatusAttr? takedown,
   StatusAttr? deactivated,
@@ -285,18 +299,19 @@ comAtprotoAdminUpdateSubjectStatus({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoAdminUpdateSubjectStatus,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    'subject': subject.toJson(),
-    if (takedown != null) 'takedown': takedown.toJson(),
-    if (deactivated != null) 'deactivated': deactivated.toJson(),
-  },
-  to: const AdminUpdateSubjectStatusOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.post(
+          ns.comAtprotoAdminUpdateSubjectStatus,
+          service: $service,
+          headers: {'Content-type': 'application/json', ...?$headers},
+          body: {
+            ...?$unknown,
+            'subject': subject.toJson(),
+            if (takedown != null) 'takedown': takedown.toJson(),
+            if (deactivated != null) 'deactivated': deactivated.toJson(),
+          },
+          to: const AdminUpdateSubjectStatusOutputConverter().fromJson,
+        );
 
 /// `com.atproto.admin.*`
 base class AdminService {
@@ -311,13 +326,14 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminDeleteAccount(
-    did: did,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminDeleteAccount(
+        did: did,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Disable an account from receiving new invite codes, but does not invalidate existing codes.
   Future<XRPCResponse<EmptyData>> disableAccountInvites({
@@ -326,14 +342,15 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminDisableAccountInvites(
-    account: account,
-    note: note,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminDisableAccountInvites(
+        account: account,
+        note: note,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Disable some set of codes and/or all codes associated with a set of users.
   Future<XRPCResponse<EmptyData>> disableInviteCodes({
@@ -342,14 +359,15 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminDisableInviteCodes(
-    codes: codes,
-    accounts: accounts,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminDisableInviteCodes(
+        codes: codes,
+        accounts: accounts,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Re-enable an account's ability to receive invite codes.
   Future<XRPCResponse<EmptyData>> enableAccountInvites({
@@ -358,14 +376,15 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminEnableAccountInvites(
-    account: account,
-    note: note,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminEnableAccountInvites(
+        account: account,
+        note: note,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Get details about an account.
   Future<XRPCResponse<AccountView>> getAccountInfo({
@@ -373,13 +392,14 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminGetAccountInfo(
-    did: did,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminGetAccountInfo(
+        did: did,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Get details about some accounts.
   Future<XRPCResponse<AdminGetAccountInfosOutput>> getAccountInfos({
@@ -387,13 +407,14 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminGetAccountInfos(
-    dids: dids,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminGetAccountInfos(
+        dids: dids,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Get an admin view of invite codes.
   Future<XRPCResponse<AdminGetInviteCodesOutput>> getInviteCodes({
@@ -403,15 +424,16 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminGetInviteCodes(
-    sort: sort,
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminGetInviteCodes(
+        sort: sort,
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Get the service-specific admin status of a subject (account, record, or blob).
   Future<XRPCResponse<AdminGetSubjectStatusOutput>> getSubjectStatus({
@@ -421,15 +443,16 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminGetSubjectStatus(
-    did: did,
-    uri: uri,
-    blob: blob,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminGetSubjectStatus(
+        did: did,
+        uri: uri,
+        blob: blob,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Get list of accounts that matches your search query.
   Future<XRPCResponse<AdminSearchAccountsOutput>> searchAccounts({
@@ -439,15 +462,16 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminSearchAccounts(
-    email: email,
-    cursor: cursor,
-    limit: limit,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminSearchAccounts(
+        email: email,
+        cursor: cursor,
+        limit: limit,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Send email to a user's account email address.
   Future<XRPCResponse<AdminSendEmailOutput>> sendEmail({
@@ -459,17 +483,18 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminSendEmail(
-    recipientDid: recipientDid,
-    content: content,
-    subject: subject,
-    senderDid: senderDid,
-    comment: comment,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminSendEmail(
+        recipientDid: recipientDid,
+        content: content,
+        subject: subject,
+        senderDid: senderDid,
+        comment: comment,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Administrative action to update an account's email.
   Future<XRPCResponse<EmptyData>> updateAccountEmail({
@@ -478,14 +503,15 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminUpdateAccountEmail(
-    account: account,
-    email: email,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminUpdateAccountEmail(
+        account: account,
+        email: email,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Administrative action to update an account's handle.
   Future<XRPCResponse<EmptyData>> updateAccountHandle({
@@ -494,14 +520,15 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminUpdateAccountHandle(
-    did: did,
-    handle: handle,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminUpdateAccountHandle(
+        did: did,
+        handle: handle,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Update the password for a user account as an administrator.
   Future<XRPCResponse<EmptyData>> updateAccountPassword({
@@ -510,14 +537,15 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminUpdateAccountPassword(
-    did: did,
-    password: password,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminUpdateAccountPassword(
+        did: did,
+        password: password,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Administrative action to update an account's signing key in their Did document.
   Future<XRPCResponse<EmptyData>> updateAccountSigningKey({
@@ -526,14 +554,15 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminUpdateAccountSigningKey(
-    did: did,
-    signingKey: signingKey,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminUpdateAccountSigningKey(
+        did: did,
+        signingKey: signingKey,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Update the service-specific admin status of a subject (account, record, or blob).
   Future<XRPCResponse<AdminUpdateSubjectStatusOutput>> updateSubjectStatus({
@@ -543,13 +572,14 @@ base class AdminService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoAdminUpdateSubjectStatus(
-    subject: subject,
-    takedown: takedown,
-    deactivated: deactivated,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoAdminUpdateSubjectStatus(
+        subject: subject,
+        takedown: takedown,
+        deactivated: deactivated,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

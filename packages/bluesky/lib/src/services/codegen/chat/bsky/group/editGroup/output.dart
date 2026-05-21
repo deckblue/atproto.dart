@@ -28,7 +28,6 @@ abstract class GroupEditGroupOutput with _$GroupEditGroupOutput {
   @JsonSerializable(includeIfNull: false)
   const factory GroupEditGroupOutput({
     @ConvoViewConverter() required ConvoView convo,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupEditGroupOutput;
 

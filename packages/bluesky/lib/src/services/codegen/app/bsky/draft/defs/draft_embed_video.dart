@@ -32,7 +32,6 @@ abstract class DraftEmbedVideo with _$DraftEmbedVideo {
     @DraftEmbedLocalRefConverter() required DraftEmbedLocalRef localRef,
     String? alt,
     @DraftEmbedCaptionConverter() List<DraftEmbedCaption>? captions,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftEmbedVideo;
 

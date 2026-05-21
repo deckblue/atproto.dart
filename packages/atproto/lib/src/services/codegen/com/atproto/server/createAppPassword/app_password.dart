@@ -34,7 +34,6 @@ abstract class AppPassword with _$AppPassword {
     required String password,
     required DateTime createdAt,
     bool? privileged,
-
     Map<String, dynamic>? $unknown,
   }) = _AppPassword;
 

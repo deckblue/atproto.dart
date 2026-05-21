@@ -44,10 +44,10 @@ final class GetAuthorFeedCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "actor": argResults!["actor"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    "filter": argResults!["filter"],
-    "includePins": argResults!["includePins"],
-  };
+        "actor": argResults!["actor"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "filter": argResults!["filter"],
+        "includePins": argResults!["includePins"],
+      };
 }

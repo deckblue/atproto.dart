@@ -26,7 +26,6 @@ abstract class SetDeleteSetInput with _$SetDeleteSetInput {
   const factory SetDeleteSetInput({
     /// Name of the set to delete
     required String name,
-
     Map<String, dynamic>? $unknown,
   }) = _SetDeleteSetInput;
 

@@ -51,7 +51,6 @@ abstract class ReportGetHistoricalStatsInput
 
     /// Pagination cursor.
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportGetHistoricalStatsInput;
 

@@ -42,7 +42,6 @@ abstract class EventConvoFirstMessage with _$EventConvoFirstMessage {
 
     /// The DID of the message author.
     required String user,
-
     Map<String, dynamic>? $unknown,
   }) = _EventConvoFirstMessage;
 

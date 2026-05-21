@@ -41,10 +41,10 @@ final class GetLiveStatsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
-    if (argResults!["moderatorDid"] != null)
-      "moderatorDid": argResults!["moderatorDid"],
-    if (argResults!["reportTypes"] != null)
-      "reportTypes": argResults!["reportTypes"],
-  };
+        if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
+        if (argResults!["moderatorDid"] != null)
+          "moderatorDid": argResults!["moderatorDid"],
+        if (argResults!["reportTypes"] != null)
+          "reportTypes": argResults!["reportTypes"],
+      };
 }

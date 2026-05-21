@@ -28,13 +28,13 @@ abstract class UnspeccedGetSuggestedStarterPacksSkeletonInput
     /// DID of the account making the request (not included for public/unauthenticated queries).
     String? viewer,
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedStarterPacksSkeletonInput;
 
   factory UnspeccedGetSuggestedStarterPacksSkeletonInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedStarterPacksSkeletonInputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedStarterPacksSkeletonInputFromJson(json);
 }
 
 extension UnspeccedGetSuggestedStarterPacksSkeletonInputExtension
@@ -44,11 +44,8 @@ extension UnspeccedGetSuggestedStarterPacksSkeletonInputExtension
 }
 
 final class UnspeccedGetSuggestedStarterPacksSkeletonInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedStarterPacksSkeletonInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedStarterPacksSkeletonInput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedStarterPacksSkeletonInputConverter();
 
   @override
@@ -66,5 +63,6 @@ final class UnspeccedGetSuggestedStarterPacksSkeletonInputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetSuggestedStarterPacksSkeletonInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

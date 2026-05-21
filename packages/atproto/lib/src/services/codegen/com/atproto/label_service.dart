@@ -32,28 +32,30 @@ Future<XRPCResponse<LabelQueryLabelsOutput>> comAtprotoLabelQueryLabels({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoLabelQueryLabels,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    'uriPatterns': uriPatterns,
-    if (sources != null) 'sources': sources,
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const LabelQueryLabelsOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.comAtprotoLabelQueryLabels,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        'uriPatterns': uriPatterns,
+        if (sources != null) 'sources': sources,
+        if (limit != null) 'limit': limit,
+        if (cursor != null) 'cursor': cursor,
+      },
+      to: const LabelQueryLabelsOutputConverter().fromJson,
+    );
 
 /// Subscribe to stream of labels (and negations). Public endpoint implemented by mod services. Uses same sequencing scheme as repo event stream.
 Future<XRPCResponse<Subscription<Uint8List>>> comAtprotoLabelSubscribeLabels({
   int? cursor,
   required ServiceContext $ctx,
-}) async => await $ctx.stream(
-  ns.comAtprotoLabelSubscribeLabels,
-  parameters: {if (cursor != null) 'cursor': cursor},
-);
+}) async =>
+    await $ctx.stream(
+      ns.comAtprotoLabelSubscribeLabels,
+      parameters: {if (cursor != null) 'cursor': cursor},
+    );
 
 /// `com.atproto.label.*`
 base class LabelService {
@@ -71,19 +73,21 @@ base class LabelService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoLabelQueryLabels(
-    uriPatterns: uriPatterns,
-    sources: sources,
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoLabelQueryLabels(
+        uriPatterns: uriPatterns,
+        sources: sources,
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Subscribe to stream of labels (and negations). Public endpoint implemented by mod services. Uses same sequencing scheme as repo event stream.
   Future<XRPCResponse<Subscription<Uint8List>>> subscribeLabels({
     int? cursor,
-  }) async => await comAtprotoLabelSubscribeLabels(cursor: cursor, $ctx: ctx);
+  }) async =>
+      await comAtprotoLabelSubscribeLabels(cursor: cursor, $ctx: ctx);
 }

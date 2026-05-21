@@ -26,7 +26,6 @@ abstract class ConvoGetConvoForMembersInput
   @JsonSerializable(includeIfNull: false)
   const factory ConvoGetConvoForMembersInput({
     required List<String> members,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetConvoForMembersInput;
 

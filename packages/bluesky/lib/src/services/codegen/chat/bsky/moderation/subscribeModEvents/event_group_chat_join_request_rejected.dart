@@ -59,13 +59,13 @@ abstract class EventGroupChatJoinRequestRejected
 
     /// The DID of the member whose request was rejected.
     required String subjectDid,
-
     Map<String, dynamic>? $unknown,
   }) = _EventGroupChatJoinRequestRejected;
 
   factory EventGroupChatJoinRequestRejected.fromJson(
     Map<String, Object?> json,
-  ) => _$EventGroupChatJoinRequestRejectedFromJson(json);
+  ) =>
+      _$EventGroupChatJoinRequestRejectedFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('t')) return false;
@@ -73,9 +73,8 @@ abstract class EventGroupChatJoinRequestRejected
   }
 }
 
-final class EventGroupChatJoinRequestRejectedConverter
-    extends
-        JsonConverter<EventGroupChatJoinRequestRejected, Map<String, dynamic>> {
+final class EventGroupChatJoinRequestRejectedConverter extends JsonConverter<
+    EventGroupChatJoinRequestRejected, Map<String, dynamic>> {
   const EventGroupChatJoinRequestRejectedConverter();
 
   @override

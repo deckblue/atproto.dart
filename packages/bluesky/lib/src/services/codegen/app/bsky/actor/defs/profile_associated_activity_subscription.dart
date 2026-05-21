@@ -32,14 +32,14 @@ abstract class ProfileAssociatedActivitySubscription
     String $type,
     @ProfileAssociatedActivitySubscriptionAllowSubscriptionsConverter()
     required ProfileAssociatedActivitySubscriptionAllowSubscriptions
-    allowSubscriptions,
-
+        allowSubscriptions,
     Map<String, dynamic>? $unknown,
   }) = _ProfileAssociatedActivitySubscription;
 
   factory ProfileAssociatedActivitySubscription.fromJson(
     Map<String, Object?> json,
-  ) => _$ProfileAssociatedActivitySubscriptionFromJson(json);
+  ) =>
+      _$ProfileAssociatedActivitySubscriptionFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('\$type')) return false;
@@ -49,11 +49,8 @@ abstract class ProfileAssociatedActivitySubscription
 }
 
 final class ProfileAssociatedActivitySubscriptionConverter
-    extends
-        JsonConverter<
-          ProfileAssociatedActivitySubscription,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<ProfileAssociatedActivitySubscription,
+        Map<String, dynamic>> {
   const ProfileAssociatedActivitySubscriptionConverter();
 
   @override

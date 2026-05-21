@@ -29,7 +29,6 @@ abstract class SyncListReposOutput with _$SyncListReposOutput {
   const factory SyncListReposOutput({
     String? cursor,
     @RepoConverter() required List<Repo> repos,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncListReposOutput;
 

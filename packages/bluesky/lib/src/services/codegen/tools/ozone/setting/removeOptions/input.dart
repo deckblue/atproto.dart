@@ -30,7 +30,6 @@ abstract class SettingRemoveOptionsInput with _$SettingRemoveOptionsInput {
     required List<String> keys,
     @SettingRemoveOptionsScopeConverter()
     required SettingRemoveOptionsScope scope,
-
     Map<String, dynamic>? $unknown,
   }) = _SettingRemoveOptionsInput;
 

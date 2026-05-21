@@ -33,7 +33,6 @@ abstract class UpdateResult with _$UpdateResult {
     required String cid,
     @UpdateResultValidationStatusConverter()
     UpdateResultValidationStatus? validationStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _UpdateResult;
 

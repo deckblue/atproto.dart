@@ -29,7 +29,6 @@ abstract class QueueUnassignModeratorInput with _$QueueUnassignModeratorInput {
 
     /// DID to be unassigned.
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueUnassignModeratorInput;
 

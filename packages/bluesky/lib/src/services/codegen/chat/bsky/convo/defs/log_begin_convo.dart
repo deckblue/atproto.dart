@@ -28,7 +28,6 @@ abstract class LogBeginConvo with _$LogBeginConvo {
     @Default('chat.bsky.convo.defs#logBeginConvo') String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogBeginConvo;
 

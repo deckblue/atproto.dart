@@ -28,7 +28,6 @@ abstract class ActorSearchActorsTypeaheadInput
     /// Search query prefix; not a full query string.
     String? q,
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorSearchActorsTypeaheadInput;
 
@@ -42,9 +41,8 @@ extension ActorSearchActorsTypeaheadInputExtension
   bool get hasNotQ => !hasQ;
 }
 
-final class ActorSearchActorsTypeaheadInputConverter
-    extends
-        JsonConverter<ActorSearchActorsTypeaheadInput, Map<String, dynamic>> {
+final class ActorSearchActorsTypeaheadInputConverter extends JsonConverter<
+    ActorSearchActorsTypeaheadInput, Map<String, dynamic>> {
   const ActorSearchActorsTypeaheadInputConverter();
 
   @override

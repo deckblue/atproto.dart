@@ -29,7 +29,6 @@ abstract class ModEventResolveAppeal with _$ModEventResolveAppeal {
 
     /// Describe resolution.
     String? comment,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventResolveAppeal;
 

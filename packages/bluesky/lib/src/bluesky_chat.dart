@@ -29,30 +29,31 @@ sealed class BlueskyChat {
     final core.RetryConfig? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _BlueskyChat(
-    core.ServiceContext(
-      headers: {...?headers, ..._kBskyChatProxyHeaders},
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      session: session,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-    atp.ATProto.fromSession(
-      headers: {...?headers, ..._kBskyChatProxyHeaders},
-      session,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _BlueskyChat(
+        core.ServiceContext(
+          headers: {...?headers, ..._kBskyChatProxyHeaders},
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          session: session,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+        atp.ATProto.fromSession(
+          headers: {...?headers, ..._kBskyChatProxyHeaders},
+          session,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the new instance of [BlueskyChat].
   factory BlueskyChat.fromOAuthSession(
@@ -65,30 +66,31 @@ sealed class BlueskyChat {
     final core.RetryConfig? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _BlueskyChat(
-    core.ServiceContext(
-      headers: {...?headers, ..._kBskyChatProxyHeaders},
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      oAuthSession: session,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-    atp.ATProto.fromOAuthSession(
-      headers: {...?headers, ..._kBskyChatProxyHeaders},
-      session,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _BlueskyChat(
+        core.ServiceContext(
+          headers: {...?headers, ..._kBskyChatProxyHeaders},
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          oAuthSession: session,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+        atp.ATProto.fromOAuthSession(
+          headers: {...?headers, ..._kBskyChatProxyHeaders},
+          session,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the global headers without auth header.
   Map<String, String> get headers;
@@ -125,10 +127,10 @@ sealed class BlueskyChat {
 
 final class _BlueskyChat implements BlueskyChat {
   _BlueskyChat(final core.ServiceContext ctx, this.atproto)
-    : actor = ActorService(ctx),
-      convo = ConvoService(ctx),
-      moderation = ModerationService(ctx),
-      _ctx = ctx;
+      : actor = ActorService(ctx),
+        convo = ConvoService(ctx),
+        moderation = ModerationService(ctx),
+        _ctx = ctx;
 
   final core.ServiceContext _ctx;
 

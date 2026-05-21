@@ -45,13 +45,13 @@ abstract class CommunicationCreateTemplateInput
 
     /// DID of the user who is creating the template.
     String? createdBy,
-
     Map<String, dynamic>? $unknown,
   }) = _CommunicationCreateTemplateInput;
 
   factory CommunicationCreateTemplateInput.fromJson(
     Map<String, Object?> json,
-  ) => _$CommunicationCreateTemplateInputFromJson(json);
+  ) =>
+      _$CommunicationCreateTemplateInputFromJson(json);
 }
 
 extension CommunicationCreateTemplateInputExtension
@@ -62,9 +62,8 @@ extension CommunicationCreateTemplateInputExtension
   bool get hasNotCreatedBy => !hasCreatedBy;
 }
 
-final class CommunicationCreateTemplateInputConverter
-    extends
-        JsonConverter<CommunicationCreateTemplateInput, Map<String, dynamic>> {
+final class CommunicationCreateTemplateInputConverter extends JsonConverter<
+    CommunicationCreateTemplateInput, Map<String, dynamic>> {
   const CommunicationCreateTemplateInputConverter();
 
   @override

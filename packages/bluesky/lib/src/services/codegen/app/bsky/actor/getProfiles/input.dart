@@ -25,7 +25,6 @@ abstract class ActorGetProfilesInput with _$ActorGetProfilesInput {
   @JsonSerializable(includeIfNull: false)
   const factory ActorGetProfilesInput({
     required List<String> actors,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorGetProfilesInput;
 

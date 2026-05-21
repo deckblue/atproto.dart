@@ -28,7 +28,6 @@ abstract class EmbedRecordViewDetached with _$EmbedRecordViewDetached {
     @Default('app.bsky.embed.record#viewDetached') String $type,
     @AtUriConverter() required AtUri uri,
     required bool detached,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedRecordViewDetached;
 

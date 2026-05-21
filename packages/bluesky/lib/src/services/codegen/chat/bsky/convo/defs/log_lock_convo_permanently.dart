@@ -42,7 +42,6 @@ abstract class LogLockConvoPermanently with _$LogLockConvoPermanently {
     @SystemMessageViewConverter() required SystemMessageView message,
     @ProfileViewBasicConverter()
     required List<ProfileViewBasic> relatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _LogLockConvoPermanently;
 

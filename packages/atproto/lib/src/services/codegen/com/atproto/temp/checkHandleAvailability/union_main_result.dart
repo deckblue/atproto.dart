@@ -61,10 +61,8 @@ extension UTempCheckHandleAvailabilityResultExtension
 
 final class UTempCheckHandleAvailabilityResultConverter
     implements
-        JsonConverter<
-          UTempCheckHandleAvailabilityResult,
-          Map<String, dynamic>
-        > {
+        JsonConverter<UTempCheckHandleAvailabilityResult,
+            Map<String, dynamic>> {
   const UTempCheckHandleAvailabilityResultConverter();
 
   @override
@@ -94,7 +92,6 @@ final class UTempCheckHandleAvailabilityResultConverter
             const ResultAvailableConverter().toJson(data),
         resultUnavailable: (data) =>
             const ResultUnavailableConverter().toJson(data),
-
         unknown: (data) => data,
       );
 }

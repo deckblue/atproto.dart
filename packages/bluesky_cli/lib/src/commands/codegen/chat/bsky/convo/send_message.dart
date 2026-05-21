@@ -39,7 +39,7 @@ final class SendMessageCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "convoId": argResults!["convoId"],
-    "message": jsonDecode(argResults!["message"]),
-  };
+        "convoId": argResults!["convoId"],
+        "message": jsonDecode(argResults!["message"]),
+      };
 }

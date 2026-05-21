@@ -29,18 +29,17 @@ abstract class UnspeccedGetSuggestedFeedsOutput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetSuggestedFeedsOutput({
     @GeneratorViewConverter() required List<GeneratorView> feeds,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedFeedsOutput;
 
   factory UnspeccedGetSuggestedFeedsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedFeedsOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedFeedsOutputFromJson(json);
 }
 
-final class UnspeccedGetSuggestedFeedsOutputConverter
-    extends
-        JsonConverter<UnspeccedGetSuggestedFeedsOutput, Map<String, dynamic>> {
+final class UnspeccedGetSuggestedFeedsOutputConverter extends JsonConverter<
+    UnspeccedGetSuggestedFeedsOutput, Map<String, dynamic>> {
   const UnspeccedGetSuggestedFeedsOutputConverter();
 
   @override

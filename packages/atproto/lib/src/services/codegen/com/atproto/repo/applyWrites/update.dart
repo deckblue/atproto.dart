@@ -29,7 +29,6 @@ abstract class Update with _$Update {
     required String collection,
     required String rkey,
     required Map<String, dynamic> value,
-
     Map<String, dynamic>? $unknown,
   }) = _Update;
 

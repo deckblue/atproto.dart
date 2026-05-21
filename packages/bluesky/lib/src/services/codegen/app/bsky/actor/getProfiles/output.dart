@@ -28,7 +28,6 @@ abstract class ActorGetProfilesOutput with _$ActorGetProfilesOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ActorGetProfilesOutput({
     @ProfileViewDetailedConverter() required List<ProfileViewDetailed> profiles,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorGetProfilesOutput;
 

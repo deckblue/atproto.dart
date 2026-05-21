@@ -27,7 +27,6 @@ abstract class GroupListMutualGroupsInput with _$GroupListMutualGroupsInput {
     required String subject,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupListMutualGroupsInput;
 

@@ -42,8 +42,8 @@ final class ListActivitiesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "reportId": argResults!["reportId"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "reportId": argResults!["reportId"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

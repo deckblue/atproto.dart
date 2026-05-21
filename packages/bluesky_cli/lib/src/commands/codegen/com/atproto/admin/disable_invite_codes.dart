@@ -37,7 +37,8 @@ final class DisableInviteCodesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["codes"] != null) "codes": argResults!["codes"],
-    if (argResults!["accounts"] != null) "accounts": argResults!["accounts"],
-  };
+        if (argResults!["codes"] != null) "codes": argResults!["codes"],
+        if (argResults!["accounts"] != null)
+          "accounts": argResults!["accounts"],
+      };
 }

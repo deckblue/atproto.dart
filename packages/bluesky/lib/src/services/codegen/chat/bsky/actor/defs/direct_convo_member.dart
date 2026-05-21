@@ -26,7 +26,6 @@ abstract class DirectConvoMember with _$DirectConvoMember {
   @JsonSerializable(includeIfNull: false)
   const factory DirectConvoMember({
     @Default('chat.bsky.actor.defs#directConvoMember') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _DirectConvoMember;
 

@@ -164,66 +164,70 @@ final class QueryStatusesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["queueCount"] != null)
-      "queueCount": argResults!["queueCount"],
-    if (argResults!["queueIndex"] != null)
-      "queueIndex": argResults!["queueIndex"],
-    if (argResults!["queueSeed"] != null) "queueSeed": argResults!["queueSeed"],
-    if (argResults!["includeAllUserRecords"] != null)
-      "includeAllUserRecords": argResults!["includeAllUserRecords"],
-    if (argResults!["subject"] != null) "subject": argResults!["subject"],
-    if (argResults!["comment"] != null) "comment": argResults!["comment"],
-    if (argResults!["reportedAfter"] != null)
-      "reportedAfter": argResults!["reportedAfter"],
-    if (argResults!["reportedBefore"] != null)
-      "reportedBefore": argResults!["reportedBefore"],
-    if (argResults!["reviewedAfter"] != null)
-      "reviewedAfter": argResults!["reviewedAfter"],
-    if (argResults!["hostingDeletedAfter"] != null)
-      "hostingDeletedAfter": argResults!["hostingDeletedAfter"],
-    if (argResults!["hostingDeletedBefore"] != null)
-      "hostingDeletedBefore": argResults!["hostingDeletedBefore"],
-    if (argResults!["hostingUpdatedAfter"] != null)
-      "hostingUpdatedAfter": argResults!["hostingUpdatedAfter"],
-    if (argResults!["hostingUpdatedBefore"] != null)
-      "hostingUpdatedBefore": argResults!["hostingUpdatedBefore"],
-    if (argResults!["hostingStatuses"] != null)
-      "hostingStatuses": argResults!["hostingStatuses"],
-    if (argResults!["reviewedBefore"] != null)
-      "reviewedBefore": argResults!["reviewedBefore"],
-    if (argResults!["includeMuted"] != null)
-      "includeMuted": argResults!["includeMuted"],
-    if (argResults!["onlyMuted"] != null) "onlyMuted": argResults!["onlyMuted"],
-    if (argResults!["reviewState"] != null)
-      "reviewState": argResults!["reviewState"],
-    if (argResults!["ignoreSubjects"] != null)
-      "ignoreSubjects": argResults!["ignoreSubjects"],
-    if (argResults!["lastReviewedBy"] != null)
-      "lastReviewedBy": argResults!["lastReviewedBy"],
-    "sortField": argResults!["sortField"],
-    "sortDirection": argResults!["sortDirection"],
-    if (argResults!["takendown"] != null) "takendown": argResults!["takendown"],
-    if (argResults!["appealed"] != null) "appealed": argResults!["appealed"],
-    "limit": argResults!["limit"],
-    if (argResults!["tags"] != null) "tags": argResults!["tags"],
-    if (argResults!["excludeTags"] != null)
-      "excludeTags": argResults!["excludeTags"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    if (argResults!["collections"] != null)
-      "collections": argResults!["collections"],
-    if (argResults!["subjectType"] != null)
-      "subjectType": argResults!["subjectType"],
-    if (argResults!["minAccountSuspendCount"] != null)
-      "minAccountSuspendCount": argResults!["minAccountSuspendCount"],
-    if (argResults!["minReportedRecordsCount"] != null)
-      "minReportedRecordsCount": argResults!["minReportedRecordsCount"],
-    if (argResults!["minTakendownRecordsCount"] != null)
-      "minTakendownRecordsCount": argResults!["minTakendownRecordsCount"],
-    if (argResults!["minPriorityScore"] != null)
-      "minPriorityScore": argResults!["minPriorityScore"],
-    if (argResults!["minStrikeCount"] != null)
-      "minStrikeCount": argResults!["minStrikeCount"],
-    if (argResults!["ageAssuranceState"] != null)
-      "ageAssuranceState": argResults!["ageAssuranceState"],
-  };
+        if (argResults!["queueCount"] != null)
+          "queueCount": argResults!["queueCount"],
+        if (argResults!["queueIndex"] != null)
+          "queueIndex": argResults!["queueIndex"],
+        if (argResults!["queueSeed"] != null)
+          "queueSeed": argResults!["queueSeed"],
+        if (argResults!["includeAllUserRecords"] != null)
+          "includeAllUserRecords": argResults!["includeAllUserRecords"],
+        if (argResults!["subject"] != null) "subject": argResults!["subject"],
+        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+        if (argResults!["reportedAfter"] != null)
+          "reportedAfter": argResults!["reportedAfter"],
+        if (argResults!["reportedBefore"] != null)
+          "reportedBefore": argResults!["reportedBefore"],
+        if (argResults!["reviewedAfter"] != null)
+          "reviewedAfter": argResults!["reviewedAfter"],
+        if (argResults!["hostingDeletedAfter"] != null)
+          "hostingDeletedAfter": argResults!["hostingDeletedAfter"],
+        if (argResults!["hostingDeletedBefore"] != null)
+          "hostingDeletedBefore": argResults!["hostingDeletedBefore"],
+        if (argResults!["hostingUpdatedAfter"] != null)
+          "hostingUpdatedAfter": argResults!["hostingUpdatedAfter"],
+        if (argResults!["hostingUpdatedBefore"] != null)
+          "hostingUpdatedBefore": argResults!["hostingUpdatedBefore"],
+        if (argResults!["hostingStatuses"] != null)
+          "hostingStatuses": argResults!["hostingStatuses"],
+        if (argResults!["reviewedBefore"] != null)
+          "reviewedBefore": argResults!["reviewedBefore"],
+        if (argResults!["includeMuted"] != null)
+          "includeMuted": argResults!["includeMuted"],
+        if (argResults!["onlyMuted"] != null)
+          "onlyMuted": argResults!["onlyMuted"],
+        if (argResults!["reviewState"] != null)
+          "reviewState": argResults!["reviewState"],
+        if (argResults!["ignoreSubjects"] != null)
+          "ignoreSubjects": argResults!["ignoreSubjects"],
+        if (argResults!["lastReviewedBy"] != null)
+          "lastReviewedBy": argResults!["lastReviewedBy"],
+        "sortField": argResults!["sortField"],
+        "sortDirection": argResults!["sortDirection"],
+        if (argResults!["takendown"] != null)
+          "takendown": argResults!["takendown"],
+        if (argResults!["appealed"] != null)
+          "appealed": argResults!["appealed"],
+        "limit": argResults!["limit"],
+        if (argResults!["tags"] != null) "tags": argResults!["tags"],
+        if (argResults!["excludeTags"] != null)
+          "excludeTags": argResults!["excludeTags"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!["collections"] != null)
+          "collections": argResults!["collections"],
+        if (argResults!["subjectType"] != null)
+          "subjectType": argResults!["subjectType"],
+        if (argResults!["minAccountSuspendCount"] != null)
+          "minAccountSuspendCount": argResults!["minAccountSuspendCount"],
+        if (argResults!["minReportedRecordsCount"] != null)
+          "minReportedRecordsCount": argResults!["minReportedRecordsCount"],
+        if (argResults!["minTakendownRecordsCount"] != null)
+          "minTakendownRecordsCount": argResults!["minTakendownRecordsCount"],
+        if (argResults!["minPriorityScore"] != null)
+          "minPriorityScore": argResults!["minPriorityScore"],
+        if (argResults!["minStrikeCount"] != null)
+          "minStrikeCount": argResults!["minStrikeCount"],
+        if (argResults!["ageAssuranceState"] != null)
+          "ageAssuranceState": argResults!["ageAssuranceState"],
+      };
 }

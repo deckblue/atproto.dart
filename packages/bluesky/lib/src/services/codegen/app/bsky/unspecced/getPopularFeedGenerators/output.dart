@@ -30,13 +30,13 @@ abstract class UnspeccedGetPopularFeedGeneratorsOutput
   const factory UnspeccedGetPopularFeedGeneratorsOutput({
     String? cursor,
     @GeneratorViewConverter() required List<GeneratorView> feeds,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetPopularFeedGeneratorsOutput;
 
   factory UnspeccedGetPopularFeedGeneratorsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetPopularFeedGeneratorsOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetPopularFeedGeneratorsOutputFromJson(json);
 }
 
 extension UnspeccedGetPopularFeedGeneratorsOutputExtension
@@ -46,11 +46,8 @@ extension UnspeccedGetPopularFeedGeneratorsOutputExtension
 }
 
 final class UnspeccedGetPopularFeedGeneratorsOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetPopularFeedGeneratorsOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetPopularFeedGeneratorsOutput,
+        Map<String, dynamic>> {
   const UnspeccedGetPopularFeedGeneratorsOutputConverter();
 
   @override

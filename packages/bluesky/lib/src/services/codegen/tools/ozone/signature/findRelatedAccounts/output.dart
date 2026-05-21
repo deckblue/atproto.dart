@@ -30,13 +30,13 @@ abstract class SignatureFindRelatedAccountsOutput
   const factory SignatureFindRelatedAccountsOutput({
     String? cursor,
     @RelatedAccountConverter() required List<RelatedAccount> accounts,
-
     Map<String, dynamic>? $unknown,
   }) = _SignatureFindRelatedAccountsOutput;
 
   factory SignatureFindRelatedAccountsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$SignatureFindRelatedAccountsOutputFromJson(json);
+  ) =>
+      _$SignatureFindRelatedAccountsOutputFromJson(json);
 }
 
 extension SignatureFindRelatedAccountsOutputExtension
@@ -45,12 +45,8 @@ extension SignatureFindRelatedAccountsOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class SignatureFindRelatedAccountsOutputConverter
-    extends
-        JsonConverter<
-          SignatureFindRelatedAccountsOutput,
-          Map<String, dynamic>
-        > {
+final class SignatureFindRelatedAccountsOutputConverter extends JsonConverter<
+    SignatureFindRelatedAccountsOutput, Map<String, dynamic>> {
   const SignatureFindRelatedAccountsOutputConverter();
 
   @override

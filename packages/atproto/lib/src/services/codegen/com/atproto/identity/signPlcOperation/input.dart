@@ -37,7 +37,6 @@ abstract class IdentitySignPlcOperationInput
     List<String>? alsoKnownAs,
     Map<String, dynamic>? verificationMethods,
     Map<String, dynamic>? services,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentitySignPlcOperationInput;
 

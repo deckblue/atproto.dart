@@ -49,12 +49,13 @@ final class ListConvosCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    if (argResults!["readState"] != null) "readState": argResults!["readState"],
-    if (argResults!["status"] != null) "status": argResults!["status"],
-    if (argResults!["kind"] != null) "kind": argResults!["kind"],
-    if (argResults!["lockStatus"] != null)
-      "lockStatus": argResults!["lockStatus"],
-  };
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!["readState"] != null)
+          "readState": argResults!["readState"],
+        if (argResults!["status"] != null) "status": argResults!["status"],
+        if (argResults!["kind"] != null) "kind": argResults!["kind"],
+        if (argResults!["lockStatus"] != null)
+          "lockStatus": argResults!["lockStatus"],
+      };
 }

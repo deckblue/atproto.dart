@@ -42,7 +42,6 @@ abstract class BlobView with _$BlobView {
     required DateTime createdAt,
     @UBlobViewDetailsConverter() UBlobViewDetails? details,
     @ModerationConverter() Moderation? moderation,
-
     Map<String, dynamic>? $unknown,
   }) = _BlobView;
 

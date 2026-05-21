@@ -62,7 +62,6 @@ abstract class GeneratorView with _$GeneratorView {
     @GeneratorViewerStateConverter() GeneratorViewerState? viewer,
     @GeneratorViewContentModeConverter() GeneratorViewContentMode? contentMode,
     required DateTime indexedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _GeneratorView;
 

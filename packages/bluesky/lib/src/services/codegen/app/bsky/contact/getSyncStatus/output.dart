@@ -29,7 +29,6 @@ abstract class ContactGetSyncStatusOutput with _$ContactGetSyncStatusOutput {
   const factory ContactGetSyncStatusOutput({
     /// If present, indicates the user has imported their contacts. If not present, indicates the user never used the feature or called `app.bsky.contact.removeData` and didn't import again since.
     @SyncStatusConverter() SyncStatus? syncStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactGetSyncStatusOutput;
 

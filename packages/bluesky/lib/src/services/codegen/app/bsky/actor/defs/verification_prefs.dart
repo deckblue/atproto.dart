@@ -29,7 +29,6 @@ abstract class VerificationPrefs with _$VerificationPrefs {
 
     /// Hide the blue check badges for verified accounts and trusted verifiers.
     @Default(false) bool hideBadges,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationPrefs;
 

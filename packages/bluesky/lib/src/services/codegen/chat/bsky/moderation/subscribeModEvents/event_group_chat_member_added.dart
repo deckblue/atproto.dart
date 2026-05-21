@@ -66,7 +66,6 @@ abstract class EventGroupChatMemberAdded with _$EventGroupChatMemberAdded {
 
     /// Whether the added member follows the group owner.
     required bool subjectFollowsOwner,
-
     Map<String, dynamic>? $unknown,
   }) = _EventGroupChatMemberAdded;
 

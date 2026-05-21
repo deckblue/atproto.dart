@@ -26,7 +26,6 @@ abstract class GraphUnmuteThreadInput with _$GraphUnmuteThreadInput {
   @JsonSerializable(includeIfNull: false)
   const factory GraphUnmuteThreadInput({
     @AtUriConverter() required AtUri root,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphUnmuteThreadInput;
 

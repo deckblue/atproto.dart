@@ -26,7 +26,6 @@ abstract class GroupCreateGroupInput with _$GroupCreateGroupInput {
   const factory GroupCreateGroupInput({
     required List<String> members,
     required String name,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupCreateGroupInput;
 

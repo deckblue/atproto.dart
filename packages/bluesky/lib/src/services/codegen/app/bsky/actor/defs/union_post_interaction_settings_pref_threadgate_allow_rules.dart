@@ -80,10 +80,8 @@ extension UPostInteractionSettingsPrefThreadgateAllowRulesExtension
 
 final class UPostInteractionSettingsPrefThreadgateAllowRulesConverter
     implements
-        JsonConverter<
-          UPostInteractionSettingsPrefThreadgateAllowRules,
-          Map<String, dynamic>
-        > {
+        JsonConverter<UPostInteractionSettingsPrefThreadgateAllowRules,
+            Map<String, dynamic>> {
   const UPostInteractionSettingsPrefThreadgateAllowRulesConverter();
 
   @override
@@ -125,12 +123,12 @@ final class UPostInteractionSettingsPrefThreadgateAllowRulesConverter
   @override
   Map<String, dynamic> toJson(
     UPostInteractionSettingsPrefThreadgateAllowRules object,
-  ) => object.when(
-    mentionRule: (data) => const MentionRuleConverter().toJson(data),
-    followerRule: (data) => const FollowerRuleConverter().toJson(data),
-    followingRule: (data) => const FollowingRuleConverter().toJson(data),
-    listRule: (data) => const ListRuleConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+  ) =>
+      object.when(
+        mentionRule: (data) => const MentionRuleConverter().toJson(data),
+        followerRule: (data) => const FollowerRuleConverter().toJson(data),
+        followingRule: (data) => const FollowingRuleConverter().toJson(data),
+        listRule: (data) => const ListRuleConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

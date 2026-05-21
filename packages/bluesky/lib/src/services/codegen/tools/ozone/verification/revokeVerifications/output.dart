@@ -34,21 +34,18 @@ abstract class VerificationRevokeVerificationsOutput
   const factory VerificationRevokeVerificationsOutput({
     @AtUriConverter() required List<AtUri> revokedVerifications,
     @RevokeErrorConverter() required List<RevokeError> failedRevocations,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationRevokeVerificationsOutput;
 
   factory VerificationRevokeVerificationsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$VerificationRevokeVerificationsOutputFromJson(json);
+  ) =>
+      _$VerificationRevokeVerificationsOutputFromJson(json);
 }
 
 final class VerificationRevokeVerificationsOutputConverter
-    extends
-        JsonConverter<
-          VerificationRevokeVerificationsOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<VerificationRevokeVerificationsOutput,
+        Map<String, dynamic>> {
   const VerificationRevokeVerificationsOutputConverter();
 
   @override

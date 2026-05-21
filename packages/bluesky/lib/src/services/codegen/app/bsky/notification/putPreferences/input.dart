@@ -26,7 +26,6 @@ abstract class NotificationPutPreferencesInput
   @JsonSerializable(includeIfNull: false)
   const factory NotificationPutPreferencesInput({
     required bool priority,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationPutPreferencesInput;
 
@@ -40,9 +39,8 @@ extension NotificationPutPreferencesInputExtension
   bool get isNotPriority => !isPriority;
 }
 
-final class NotificationPutPreferencesInputConverter
-    extends
-        JsonConverter<NotificationPutPreferencesInput, Map<String, dynamic>> {
+final class NotificationPutPreferencesInputConverter extends JsonConverter<
+    NotificationPutPreferencesInput, Map<String, dynamic>> {
   const NotificationPutPreferencesInputConverter();
 
   @override

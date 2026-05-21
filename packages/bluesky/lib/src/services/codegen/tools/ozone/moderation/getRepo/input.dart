@@ -25,7 +25,6 @@ abstract class ModerationGetRepoInput with _$ModerationGetRepoInput {
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetRepoInput({
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetRepoInput;
 

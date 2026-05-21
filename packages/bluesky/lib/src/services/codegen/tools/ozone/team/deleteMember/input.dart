@@ -25,7 +25,6 @@ abstract class TeamDeleteMemberInput with _$TeamDeleteMemberInput {
   @JsonSerializable(includeIfNull: false)
   const factory TeamDeleteMemberInput({
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _TeamDeleteMemberInput;
 

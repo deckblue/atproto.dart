@@ -40,7 +40,8 @@ final class GetSuggestedUsersForSeeMoreCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["category"] != null) "category": argResults!["category"],
-    "limit": argResults!["limit"],
-  };
+        if (argResults!["category"] != null)
+          "category": argResults!["category"],
+        "limit": argResults!["limit"],
+      };
 }

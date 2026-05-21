@@ -35,7 +35,6 @@ abstract class AgeAssuranceState with _$AgeAssuranceState {
 
     /// The status of the age assurance process.
     @AgeAssuranceStateStatusConverter() required AgeAssuranceStateStatus status,
-
     Map<String, dynamic>? $unknown,
   }) = _AgeAssuranceState;
 

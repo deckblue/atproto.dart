@@ -41,7 +41,6 @@ abstract class AccountHosting with _$AccountHosting {
     DateTime? deletedAt,
     DateTime? deactivatedAt,
     DateTime? reactivatedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _AccountHosting;
 

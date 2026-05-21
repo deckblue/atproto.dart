@@ -27,7 +27,6 @@ abstract class AdminUpdateAccountPasswordInput
   const factory AdminUpdateAccountPasswordInput({
     required String did,
     required String password,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminUpdateAccountPasswordInput;
 
@@ -35,9 +34,8 @@ abstract class AdminUpdateAccountPasswordInput
       _$AdminUpdateAccountPasswordInputFromJson(json);
 }
 
-final class AdminUpdateAccountPasswordInputConverter
-    extends
-        JsonConverter<AdminUpdateAccountPasswordInput, Map<String, dynamic>> {
+final class AdminUpdateAccountPasswordInputConverter extends JsonConverter<
+    AdminUpdateAccountPasswordInput, Map<String, dynamic>> {
   const AdminUpdateAccountPasswordInputConverter();
 
   @override

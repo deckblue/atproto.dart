@@ -50,7 +50,6 @@ abstract class Option with _$Option {
     @OptionScopeConverter() required OptionScope scope,
     required String createdBy,
     required String lastUpdatedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _Option;
 

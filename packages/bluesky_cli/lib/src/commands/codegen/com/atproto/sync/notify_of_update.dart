@@ -16,12 +16,13 @@ import '../../../../procedure_command.dart';
 
 final class NotifyOfUpdateCommand extends ProcedureCommand {
   NotifyOfUpdateCommand() {
-    argParser..addOption(
-      "hostname",
-      help:
-          r"Hostname of the current service (usually a PDS) that is notifying of update.",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "hostname",
+        help:
+            r"Hostname of the current service (usually a PDS) that is notifying of update.",
+        mandatory: true,
+      );
   }
 
   @override

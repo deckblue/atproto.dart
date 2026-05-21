@@ -26,7 +26,6 @@ abstract class AdultContentPref with _$AdultContentPref {
   const factory AdultContentPref({
     @Default('app.bsky.actor.defs#adultContentPref') String $type,
     @Default(false) bool enabled,
-
     Map<String, dynamic>? $unknown,
   }) = _AdultContentPref;
 

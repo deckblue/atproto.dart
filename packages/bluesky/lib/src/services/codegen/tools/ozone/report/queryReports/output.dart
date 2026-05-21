@@ -29,7 +29,6 @@ abstract class ReportQueryReportsOutput with _$ReportQueryReportsOutput {
   const factory ReportQueryReportsOutput({
     String? cursor,
     @ReportViewConverter() required List<ReportView> reports,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportQueryReportsOutput;
 

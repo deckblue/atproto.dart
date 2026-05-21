@@ -29,7 +29,6 @@ abstract class FailedCancellation with _$FailedCancellation {
     required String did,
     required String error,
     String? errorCode,
-
     Map<String, dynamic>? $unknown,
   }) = _FailedCancellation;
 

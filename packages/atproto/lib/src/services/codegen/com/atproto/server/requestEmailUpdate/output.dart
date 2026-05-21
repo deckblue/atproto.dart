@@ -26,7 +26,6 @@ abstract class ServerRequestEmailUpdateOutput
   @JsonSerializable(includeIfNull: false)
   const factory ServerRequestEmailUpdateOutput({
     required bool tokenRequired,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerRequestEmailUpdateOutput;
 
@@ -40,9 +39,8 @@ extension ServerRequestEmailUpdateOutputExtension
   bool get isNotTokenRequired => !isTokenRequired;
 }
 
-final class ServerRequestEmailUpdateOutputConverter
-    extends
-        JsonConverter<ServerRequestEmailUpdateOutput, Map<String, dynamic>> {
+final class ServerRequestEmailUpdateOutputConverter extends JsonConverter<
+    ServerRequestEmailUpdateOutput, Map<String, dynamic>> {
   const ServerRequestEmailUpdateOutputConverter();
 
   @override

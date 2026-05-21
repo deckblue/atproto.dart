@@ -49,7 +49,6 @@ abstract class ConvoListConvosInput with _$ConvoListConvosInput {
 
     /// Filter by conversation lock status. Values follow chat.bsky.convo.defs#convoLockStatus.
     @ConvoListConvosLockStatusConverter() ConvoListConvosLockStatus? lockStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoListConvosInput;
 

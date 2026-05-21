@@ -16,12 +16,13 @@ import '../../../../procedure_command.dart';
 
 final class RequestCrawlCommand extends ProcedureCommand {
   RequestCrawlCommand() {
-    argParser..addOption(
-      "hostname",
-      help:
-          r"Hostname of the current service (eg, PDS) that is requesting to be crawled.",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "hostname",
+        help:
+            r"Hostname of the current service (eg, PDS) that is requesting to be crawled.",
+        mandatory: true,
+      );
   }
 
   @override

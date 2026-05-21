@@ -52,9 +52,10 @@ final class RemoveRuleCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "url": argResults!["url"],
-    "pattern": jsonDecode(argResults!["pattern"]),
-    if (argResults!["comment"] != null) "comment": argResults!["comment"],
-    if (argResults!["createdBy"] != null) "createdBy": argResults!["createdBy"],
-  };
+        "url": argResults!["url"],
+        "pattern": jsonDecode(argResults!["pattern"]),
+        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+        if (argResults!["createdBy"] != null)
+          "createdBy": argResults!["createdBy"],
+      };
 }

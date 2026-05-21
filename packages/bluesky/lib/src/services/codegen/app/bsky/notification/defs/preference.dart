@@ -27,7 +27,6 @@ abstract class Preference with _$Preference {
     @Default('app.bsky.notification.defs#preference') String $type,
     required bool list,
     required bool push,
-
     Map<String, dynamic>? $unknown,
   }) = _Preference;
 

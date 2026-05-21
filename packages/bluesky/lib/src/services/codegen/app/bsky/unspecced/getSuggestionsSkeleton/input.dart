@@ -37,13 +37,13 @@ abstract class UnspeccedGetSuggestionsSkeletonInput
 
     /// DID of the account to get suggestions relative to. If not provided, suggestions will be based on the viewer.
     String? relativeToDid,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestionsSkeletonInput;
 
   factory UnspeccedGetSuggestionsSkeletonInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestionsSkeletonInputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestionsSkeletonInputFromJson(json);
 }
 
 extension UnspeccedGetSuggestionsSkeletonInputExtension
@@ -56,12 +56,8 @@ extension UnspeccedGetSuggestionsSkeletonInputExtension
   bool get hasNotRelativeToDid => !hasRelativeToDid;
 }
 
-final class UnspeccedGetSuggestionsSkeletonInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestionsSkeletonInput,
-          Map<String, dynamic>
-        > {
+final class UnspeccedGetSuggestionsSkeletonInputConverter extends JsonConverter<
+    UnspeccedGetSuggestionsSkeletonInput, Map<String, dynamic>> {
   const UnspeccedGetSuggestionsSkeletonInputConverter();
 
   @override

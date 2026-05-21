@@ -37,7 +37,7 @@ final class FetchLabelsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["since"] != null) "since": argResults!["since"],
-    "limit": argResults!["limit"],
-  };
+        if (argResults!["since"] != null) "since": argResults!["since"],
+        "limit": argResults!["limit"],
+      };
 }

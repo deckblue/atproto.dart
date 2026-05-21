@@ -53,7 +53,6 @@ abstract class Notification with _$Notification {
     required bool isRead,
     required DateTime indexedAt,
     @LabelConverter() List<Label>? labels,
-
     Map<String, dynamic>? $unknown,
   }) = _Notification;
 

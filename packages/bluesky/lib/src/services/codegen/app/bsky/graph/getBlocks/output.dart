@@ -29,7 +29,6 @@ abstract class GraphGetBlocksOutput with _$GraphGetBlocksOutput {
   const factory GraphGetBlocksOutput({
     String? cursor,
     @ProfileViewConverter() required List<ProfileView> blocks,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetBlocksOutput;
 

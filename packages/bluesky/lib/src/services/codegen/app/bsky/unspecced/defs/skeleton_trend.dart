@@ -45,7 +45,6 @@ abstract class SkeletonTrend with _$SkeletonTrend {
     @SkeletonTrendStatusConverter() SkeletonTrendStatus? status,
     String? category,
     required List<String> dids,
-
     Map<String, dynamic>? $unknown,
   }) = _SkeletonTrend;
 

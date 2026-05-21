@@ -28,7 +28,6 @@ abstract class GroupRemoveMembersOutput with _$GroupRemoveMembersOutput {
   @JsonSerializable(includeIfNull: false)
   const factory GroupRemoveMembersOutput({
     @ConvoViewConverter() required ConvoView convo,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupRemoveMembersOutput;
 

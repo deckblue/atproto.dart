@@ -28,7 +28,6 @@ abstract class ConvoMuteConvoOutput with _$ConvoMuteConvoOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoMuteConvoOutput({
     @ConvoViewConverter() required ConvoView convo,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoMuteConvoOutput;
 

@@ -26,7 +26,6 @@ abstract class TempDereferenceScopeInput with _$TempDereferenceScopeInput {
   const factory TempDereferenceScopeInput({
     /// The scope reference (starts with 'ref:')
     required String scope,
-
     Map<String, dynamic>? $unknown,
   }) = _TempDereferenceScopeInput;
 

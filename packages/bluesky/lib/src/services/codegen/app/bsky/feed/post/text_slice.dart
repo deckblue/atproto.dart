@@ -28,7 +28,6 @@ abstract class TextSlice with _$TextSlice {
     @Default('app.bsky.feed.post#textSlice') String $type,
     required int start,
     required int end,
-
     Map<String, dynamic>? $unknown,
   }) = _TextSlice;
 

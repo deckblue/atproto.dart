@@ -32,7 +32,6 @@ abstract class EmbedRecordWithMediaView with _$EmbedRecordWithMediaView {
     @EmbedRecordViewConverter() required EmbedRecordView record,
     @UEmbedRecordWithMediaViewMediaConverter()
     required UEmbedRecordWithMediaViewMedia media,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedRecordWithMediaView;
 

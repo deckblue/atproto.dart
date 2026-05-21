@@ -28,7 +28,6 @@ abstract class ConvoUnlockConvoOutput with _$ConvoUnlockConvoOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoUnlockConvoOutput({
     @ConvoViewConverter() required ConvoView convo,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoUnlockConvoOutput;
 

@@ -51,7 +51,6 @@ abstract class ModerationEmitEventInput with _$ModerationEmitEventInput {
 
     /// Optional report-level targeting. If provided, this event will be linked to specific reports and reporters may be notified.
     @ReportActionConverter() ReportAction? reportAction,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationEmitEventInput;
 

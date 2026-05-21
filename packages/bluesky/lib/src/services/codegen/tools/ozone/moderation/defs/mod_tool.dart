@@ -30,7 +30,6 @@ abstract class ModTool with _$ModTool {
     /// Name/identifier of the source (e.g., 'automod', 'ozone/workspace')
     required String name,
     Map<String, dynamic>? meta,
-
     Map<String, dynamic>? $unknown,
   }) = _ModTool;
 

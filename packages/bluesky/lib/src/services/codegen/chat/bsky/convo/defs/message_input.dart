@@ -32,7 +32,6 @@ abstract class MessageInput with _$MessageInput {
     required String text,
     @RichtextFacetConverter() List<RichtextFacet>? facets,
     @UMessageInputEmbedConverter() UMessageInputEmbed? embed,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageInput;
 

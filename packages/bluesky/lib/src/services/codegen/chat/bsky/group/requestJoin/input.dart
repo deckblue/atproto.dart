@@ -25,7 +25,6 @@ abstract class GroupRequestJoinInput with _$GroupRequestJoinInput {
   @JsonSerializable(includeIfNull: false)
   const factory GroupRequestJoinInput({
     required String code,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupRequestJoinInput;
 

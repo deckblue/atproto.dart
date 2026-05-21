@@ -33,7 +33,6 @@ abstract class FeedGetPostThreadInput with _$FeedGetPostThreadInput {
 
     /// How many levels of parent (and grandparent, etc) post to include.
     @Default(80) int parentHeight,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetPostThreadInput;
 

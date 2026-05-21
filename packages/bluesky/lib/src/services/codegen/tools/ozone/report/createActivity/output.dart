@@ -28,7 +28,6 @@ abstract class ReportCreateActivityOutput with _$ReportCreateActivityOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ReportCreateActivityOutput({
     @ReportActivityViewConverter() required ReportActivityView activity,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportCreateActivityOutput;
 

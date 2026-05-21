@@ -32,7 +32,6 @@ abstract class LogReadMessage with _$LogReadMessage {
     required String rev,
     required String convoId,
     @ULogReadMessageMessageConverter() required ULogReadMessageMessage message,
-
     Map<String, dynamic>? $unknown,
   }) = _LogReadMessage;
 

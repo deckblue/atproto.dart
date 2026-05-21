@@ -32,7 +32,6 @@ abstract class FeedDescribeFeedGeneratorOutput
     required String did,
     @FeedConverter() required List<Feed> feeds,
     @LinksConverter() Links? links,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedDescribeFeedGeneratorOutput;
 
@@ -46,9 +45,8 @@ extension FeedDescribeFeedGeneratorOutputExtension
   bool get hasNotLinks => !hasLinks;
 }
 
-final class FeedDescribeFeedGeneratorOutputConverter
-    extends
-        JsonConverter<FeedDescribeFeedGeneratorOutput, Map<String, dynamic>> {
+final class FeedDescribeFeedGeneratorOutputConverter extends JsonConverter<
+    FeedDescribeFeedGeneratorOutput, Map<String, dynamic>> {
   const FeedDescribeFeedGeneratorOutputConverter();
 
   @override

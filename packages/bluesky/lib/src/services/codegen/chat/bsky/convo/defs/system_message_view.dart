@@ -33,7 +33,6 @@ abstract class SystemMessageView with _$SystemMessageView {
     required String rev,
     required DateTime sentAt,
     @USystemMessageViewDataConverter() required USystemMessageViewData data,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageView;
 

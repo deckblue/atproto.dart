@@ -36,7 +36,6 @@ abstract class GroupConvoMember with _$GroupConvoMember {
 
     /// The member's role within this conversation. Only present in group conversation member lists.
     @MemberRoleConverter() required MemberRole role,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupConvoMember;
 

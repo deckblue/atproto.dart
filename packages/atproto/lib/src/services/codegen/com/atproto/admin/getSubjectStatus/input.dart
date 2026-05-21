@@ -28,7 +28,6 @@ abstract class AdminGetSubjectStatusInput with _$AdminGetSubjectStatusInput {
     String? did,
     @AtUriConverter() AtUri? uri,
     String? blob,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminGetSubjectStatusInput;
 

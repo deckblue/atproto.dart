@@ -26,7 +26,6 @@ abstract class GroupAddMembersInput with _$GroupAddMembersInput {
   const factory GroupAddMembersInput({
     required String convoId,
     required List<String> members,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupAddMembersInput;
 

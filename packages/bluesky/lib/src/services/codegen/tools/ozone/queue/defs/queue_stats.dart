@@ -54,7 +54,6 @@ abstract class QueueStats with _$QueueStats {
 
     /// When these statistics were last computed
     DateTime? lastUpdated,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueStats;
 

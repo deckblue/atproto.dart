@@ -26,7 +26,6 @@ abstract class ServerResetPasswordInput with _$ServerResetPasswordInput {
   const factory ServerResetPasswordInput({
     required String token,
     required String password,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerResetPasswordInput;
 

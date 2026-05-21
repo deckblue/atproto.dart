@@ -40,7 +40,6 @@ abstract class ReportAssignModeratorInput with _$ReportAssignModeratorInput {
 
     /// When true, the assignment has no expiry (endAt is null). Throws AlreadyAssigned if another user already has a permanent assignment on this report.
     bool? isPermanent,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportAssignModeratorInput;
 

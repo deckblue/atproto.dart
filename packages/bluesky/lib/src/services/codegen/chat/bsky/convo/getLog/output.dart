@@ -29,7 +29,6 @@ abstract class ConvoGetLogOutput with _$ConvoGetLogOutput {
   const factory ConvoGetLogOutput({
     String? cursor,
     @UConvoGetLogLogsConverter() required List<UConvoGetLogLogs> logs,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetLogOutput;
 

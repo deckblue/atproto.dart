@@ -63,12 +63,12 @@ final class CreateActivityCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "reportId": argResults!["reportId"],
-    "activity": jsonDecode(argResults!["activity"]),
-    if (argResults!["internalNote"] != null)
-      "internalNote": argResults!["internalNote"],
-    if (argResults!["publicNote"] != null)
-      "publicNote": argResults!["publicNote"],
-    "isAutomated": argResults!["isAutomated"],
-  };
+        "reportId": argResults!["reportId"],
+        "activity": jsonDecode(argResults!["activity"]),
+        if (argResults!["internalNote"] != null)
+          "internalNote": argResults!["internalNote"],
+        if (argResults!["publicNote"] != null)
+          "publicNote": argResults!["publicNote"],
+        "isAutomated": argResults!["isAutomated"],
+      };
 }

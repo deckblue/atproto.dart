@@ -25,7 +25,6 @@ abstract class ConvoGetLogInput with _$ConvoGetLogInput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoGetLogInput({
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetLogInput;
 

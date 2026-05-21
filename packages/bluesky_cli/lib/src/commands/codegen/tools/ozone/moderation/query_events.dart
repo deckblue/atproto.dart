@@ -124,39 +124,42 @@ final class QueryEventsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["types"] != null) "types": argResults!["types"],
-    if (argResults!["createdBy"] != null) "createdBy": argResults!["createdBy"],
-    "sortDirection": argResults!["sortDirection"],
-    if (argResults!["createdAfter"] != null)
-      "createdAfter": argResults!["createdAfter"],
-    if (argResults!["createdBefore"] != null)
-      "createdBefore": argResults!["createdBefore"],
-    if (argResults!["subject"] != null) "subject": argResults!["subject"],
-    if (argResults!["collections"] != null)
-      "collections": argResults!["collections"],
-    if (argResults!["subjectType"] != null)
-      "subjectType": argResults!["subjectType"],
-    "includeAllUserRecords": argResults!["includeAllUserRecords"],
-    "limit": argResults!["limit"],
-    if (argResults!["hasComment"] != null)
-      "hasComment": argResults!["hasComment"],
-    if (argResults!["comment"] != null) "comment": argResults!["comment"],
-    if (argResults!["addedLabels"] != null)
-      "addedLabels": argResults!["addedLabels"],
-    if (argResults!["removedLabels"] != null)
-      "removedLabels": argResults!["removedLabels"],
-    if (argResults!["addedTags"] != null) "addedTags": argResults!["addedTags"],
-    if (argResults!["removedTags"] != null)
-      "removedTags": argResults!["removedTags"],
-    if (argResults!["reportTypes"] != null)
-      "reportTypes": argResults!["reportTypes"],
-    if (argResults!["policies"] != null) "policies": argResults!["policies"],
-    if (argResults!["modTool"] != null) "modTool": argResults!["modTool"],
-    if (argResults!["batchId"] != null) "batchId": argResults!["batchId"],
-    if (argResults!["ageAssuranceState"] != null)
-      "ageAssuranceState": argResults!["ageAssuranceState"],
-    if (argResults!["withStrike"] != null)
-      "withStrike": argResults!["withStrike"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        if (argResults!["types"] != null) "types": argResults!["types"],
+        if (argResults!["createdBy"] != null)
+          "createdBy": argResults!["createdBy"],
+        "sortDirection": argResults!["sortDirection"],
+        if (argResults!["createdAfter"] != null)
+          "createdAfter": argResults!["createdAfter"],
+        if (argResults!["createdBefore"] != null)
+          "createdBefore": argResults!["createdBefore"],
+        if (argResults!["subject"] != null) "subject": argResults!["subject"],
+        if (argResults!["collections"] != null)
+          "collections": argResults!["collections"],
+        if (argResults!["subjectType"] != null)
+          "subjectType": argResults!["subjectType"],
+        "includeAllUserRecords": argResults!["includeAllUserRecords"],
+        "limit": argResults!["limit"],
+        if (argResults!["hasComment"] != null)
+          "hasComment": argResults!["hasComment"],
+        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+        if (argResults!["addedLabels"] != null)
+          "addedLabels": argResults!["addedLabels"],
+        if (argResults!["removedLabels"] != null)
+          "removedLabels": argResults!["removedLabels"],
+        if (argResults!["addedTags"] != null)
+          "addedTags": argResults!["addedTags"],
+        if (argResults!["removedTags"] != null)
+          "removedTags": argResults!["removedTags"],
+        if (argResults!["reportTypes"] != null)
+          "reportTypes": argResults!["reportTypes"],
+        if (argResults!["policies"] != null)
+          "policies": argResults!["policies"],
+        if (argResults!["modTool"] != null) "modTool": argResults!["modTool"],
+        if (argResults!["batchId"] != null) "batchId": argResults!["batchId"],
+        if (argResults!["ageAssuranceState"] != null)
+          "ageAssuranceState": argResults!["ageAssuranceState"],
+        if (argResults!["withStrike"] != null)
+          "withStrike": argResults!["withStrike"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

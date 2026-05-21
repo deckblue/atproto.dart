@@ -33,7 +33,6 @@ abstract class ReopenActivity with _$ReopenActivity {
     /// The report's status before this activity. Populated automatically from the report row; not required in input.
     @ReopenActivityPreviousStatusConverter()
     ReopenActivityPreviousStatus? previousStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _ReopenActivity;
 

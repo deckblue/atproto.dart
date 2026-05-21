@@ -35,7 +35,6 @@ abstract class TeamListMembersInput with _$TeamListMembersInput {
     List<String>? roles,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _TeamListMembersInput;
 

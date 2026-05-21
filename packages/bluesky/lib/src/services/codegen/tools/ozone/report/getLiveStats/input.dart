@@ -30,7 +30,6 @@ abstract class ReportGetLiveStatsInput with _$ReportGetLiveStatsInput {
     /// Filter stats by moderator DID.
     String? moderatorDid,
     List<String>? reportTypes,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportGetLiveStatsInput;
 

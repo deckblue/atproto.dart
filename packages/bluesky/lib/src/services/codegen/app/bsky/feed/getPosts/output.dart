@@ -28,7 +28,6 @@ abstract class FeedGetPostsOutput with _$FeedGetPostsOutput {
   @JsonSerializable(includeIfNull: false)
   const factory FeedGetPostsOutput({
     @PostViewConverter() required List<PostView> posts,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetPostsOutput;
 

@@ -27,7 +27,6 @@ abstract class Set with _$Set {
     @Default('tools.ozone.set.defs#set') String $type,
     required String name,
     String? description,
-
     Map<String, dynamic>? $unknown,
   }) = _Set;
 

@@ -52,16 +52,16 @@ final class EmitEventCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "event": jsonDecode(argResults!["event"]),
-    "subject": jsonDecode(argResults!["subject"]),
-    if (argResults!["subjectBlobCids"] != null)
-      "subjectBlobCids": argResults!["subjectBlobCids"],
-    "createdBy": argResults!["createdBy"],
-    if (argResults!["modTool"] != null)
-      "modTool": jsonDecode(argResults!["modTool"]),
-    if (argResults!["externalId"] != null)
-      "externalId": argResults!["externalId"],
-    if (argResults!["reportAction"] != null)
-      "reportAction": jsonDecode(argResults!["reportAction"]),
-  };
+        "event": jsonDecode(argResults!["event"]),
+        "subject": jsonDecode(argResults!["subject"]),
+        if (argResults!["subjectBlobCids"] != null)
+          "subjectBlobCids": argResults!["subjectBlobCids"],
+        "createdBy": argResults!["createdBy"],
+        if (argResults!["modTool"] != null)
+          "modTool": jsonDecode(argResults!["modTool"]),
+        if (argResults!["externalId"] != null)
+          "externalId": argResults!["externalId"],
+        if (argResults!["reportAction"] != null)
+          "reportAction": jsonDecode(argResults!["reportAction"]),
+      };
 }

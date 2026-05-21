@@ -29,7 +29,6 @@ abstract class QueueGetAssignmentsOutput with _$QueueGetAssignmentsOutput {
   const factory QueueGetAssignmentsOutput({
     String? cursor,
     @AssignmentViewConverter() required List<AssignmentView> assignments,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueGetAssignmentsOutput;
 

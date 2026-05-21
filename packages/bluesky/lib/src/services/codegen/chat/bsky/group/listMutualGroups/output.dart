@@ -29,7 +29,6 @@ abstract class GroupListMutualGroupsOutput with _$GroupListMutualGroupsOutput {
   const factory GroupListMutualGroupsOutput({
     String? cursor,
     @ConvoViewConverter() required List<ConvoView> convos,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupListMutualGroupsOutput;
 

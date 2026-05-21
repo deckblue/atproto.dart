@@ -31,7 +31,6 @@ abstract class ListItemView with _$ListItemView {
     @Default('app.bsky.graph.defs#listItemView') String $type,
     @AtUriConverter() required AtUri uri,
     @ProfileViewConverter() required ProfileView subject,
-
     Map<String, dynamic>? $unknown,
   }) = _ListItemView;
 

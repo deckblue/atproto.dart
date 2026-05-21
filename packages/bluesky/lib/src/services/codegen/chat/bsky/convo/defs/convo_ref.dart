@@ -27,7 +27,6 @@ abstract class ConvoRef with _$ConvoRef {
     @Default('chat.bsky.convo.defs#convoRef') String $type,
     required String did,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoRef;
 

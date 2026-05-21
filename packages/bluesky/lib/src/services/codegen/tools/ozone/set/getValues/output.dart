@@ -30,7 +30,6 @@ abstract class SetGetValuesOutput with _$SetGetValuesOutput {
     @SetViewConverter() required SetView set,
     required List<String> values,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _SetGetValuesOutput;
 

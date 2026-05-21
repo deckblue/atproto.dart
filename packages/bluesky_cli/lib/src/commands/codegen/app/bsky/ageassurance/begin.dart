@@ -56,10 +56,10 @@ final class BeginCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "email": argResults!["email"],
-    "language": argResults!["language"],
-    "countryCode": argResults!["countryCode"],
-    if (argResults!["regionCode"] != null)
-      "regionCode": argResults!["regionCode"],
-  };
+        "email": argResults!["email"],
+        "language": argResults!["language"],
+        "countryCode": argResults!["countryCode"],
+        if (argResults!["regionCode"] != null)
+          "regionCode": argResults!["regionCode"],
+      };
 }

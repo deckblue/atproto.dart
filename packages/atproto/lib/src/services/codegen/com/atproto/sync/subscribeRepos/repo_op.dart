@@ -37,7 +37,6 @@ abstract class RepoOp with _$RepoOp {
 
     /// For updates and deletes, the previous record CID (required for inductive firehose). For creations, field should not be defined.
     String? prev,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoOp;
 

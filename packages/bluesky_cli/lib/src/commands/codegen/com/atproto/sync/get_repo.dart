@@ -39,7 +39,7 @@ final class GetRepoCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "did": argResults!["did"],
-    if (argResults!["since"] != null) "since": argResults!["since"],
-  };
+        "did": argResults!["did"],
+        if (argResults!["since"] != null) "since": argResults!["since"],
+      };
 }

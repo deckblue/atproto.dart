@@ -58,7 +58,6 @@ abstract class UrlRule with _$UrlRule {
 
     /// Timestamp when the rule was last updated
     required DateTime updatedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _UrlRule;
 

@@ -27,7 +27,6 @@ abstract class ServerReserveSigningKeyOutput
   const factory ServerReserveSigningKeyOutput({
     /// The public key for the reserved signing key, in did:key serialization.
     required String signingKey,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerReserveSigningKeyOutput;
 

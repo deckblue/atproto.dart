@@ -46,7 +46,6 @@ abstract class ProfileAssociated with _$ProfileAssociated {
     @ProfileAssociatedActivitySubscriptionConverter()
     ProfileAssociatedActivitySubscription? activitySubscription,
     @ProfileAssociatedGermConverter() ProfileAssociatedGerm? germ,
-
     Map<String, dynamic>? $unknown,
   }) = _ProfileAssociated;
 

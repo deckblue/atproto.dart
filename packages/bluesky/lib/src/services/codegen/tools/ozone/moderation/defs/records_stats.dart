@@ -59,7 +59,6 @@ abstract class RecordsStats with _$RecordsStats {
 
     /// Number of item currently taken down
     int? takendownCount,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordsStats;
 

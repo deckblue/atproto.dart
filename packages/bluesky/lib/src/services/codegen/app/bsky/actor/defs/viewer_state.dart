@@ -55,7 +55,6 @@ abstract class ViewerState with _$ViewerState {
 
     /// This property is present only in selected cases, as an optimization.
     @ActivitySubscriptionConverter() ActivitySubscription? activitySubscription,
-
     Map<String, dynamic>? $unknown,
   }) = _ViewerState;
 

@@ -30,7 +30,6 @@ abstract class FeedSendInteractionsInput with _$FeedSendInteractionsInput {
   const factory FeedSendInteractionsInput({
     @AtUriConverter() AtUri? feed,
     @InteractionConverter() required List<Interaction> interactions,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedSendInteractionsInput;
 

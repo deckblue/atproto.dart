@@ -27,7 +27,6 @@ abstract class StatusAttr with _$StatusAttr {
     @Default('com.atproto.admin.defs#statusAttr') String $type,
     required bool applied,
     String? ref,
-
     Map<String, dynamic>? $unknown,
   }) = _StatusAttr;
 

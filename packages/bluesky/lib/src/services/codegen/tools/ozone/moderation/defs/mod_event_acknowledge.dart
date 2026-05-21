@@ -29,7 +29,6 @@ abstract class ModEventAcknowledge with _$ModEventAcknowledge {
 
     /// If true, all other reports on content authored by this account will be resolved (acknowledged).
     bool? acknowledgeAccountSubjects,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventAcknowledge;
 

@@ -37,7 +37,6 @@ abstract class RepoDescribeRepoOutput with _$RepoDescribeRepoOutput {
 
     /// Indicates if handle is currently valid (resolves bi-directionally)
     required bool handleIsCorrect,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoDescribeRepoOutput;
 

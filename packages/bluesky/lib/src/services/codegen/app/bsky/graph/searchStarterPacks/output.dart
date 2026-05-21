@@ -31,7 +31,6 @@ abstract class GraphSearchStarterPacksOutput
     String? cursor,
     @StarterPackViewBasicConverter()
     required List<StarterPackViewBasic> starterPacks,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphSearchStarterPacksOutput;
 

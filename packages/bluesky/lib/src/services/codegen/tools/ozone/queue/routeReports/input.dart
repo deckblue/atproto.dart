@@ -29,7 +29,6 @@ abstract class QueueRouteReportsInput with _$QueueRouteReportsInput {
 
     /// End of report ID range (inclusive). Difference between start and end must be less than 5,000.
     required int endReportId,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueRouteReportsInput;
 

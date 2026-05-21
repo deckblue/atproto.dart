@@ -26,18 +26,17 @@ abstract class ModerationGetAccountTimelineInput
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetAccountTimelineInput({
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetAccountTimelineInput;
 
   factory ModerationGetAccountTimelineInput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationGetAccountTimelineInputFromJson(json);
+  ) =>
+      _$ModerationGetAccountTimelineInputFromJson(json);
 }
 
-final class ModerationGetAccountTimelineInputConverter
-    extends
-        JsonConverter<ModerationGetAccountTimelineInput, Map<String, dynamic>> {
+final class ModerationGetAccountTimelineInputConverter extends JsonConverter<
+    ModerationGetAccountTimelineInput, Map<String, dynamic>> {
   const ModerationGetAccountTimelineInputConverter();
 
   @override

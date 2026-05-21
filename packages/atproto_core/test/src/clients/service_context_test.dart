@@ -276,9 +276,8 @@ void main() {
 }
 
 String _jwt(Map<String, Object?> payload) {
-  final encodedPayload = base64Url
-      .encode(utf8.encode(jsonEncode(payload)))
-      .replaceAll('=', '');
+  final encodedPayload =
+      base64Url.encode(utf8.encode(jsonEncode(payload))).replaceAll('=', '');
 
   return 'header.$encodedPayload.signature';
 }
@@ -286,7 +285,6 @@ String _jwt(Map<String, Object?> payload) {
 Map<String, Object?> _decodeJwtPayload(String jwt) {
   final parts = jwt.split('.');
   return jsonDecode(
-        utf8.decode(base64Url.decode(base64Url.normalize(parts[1]))),
-      )
-      as Map<String, Object?>;
+    utf8.decode(base64Url.decode(base64Url.normalize(parts[1]))),
+  ) as Map<String, Object?>;
 }

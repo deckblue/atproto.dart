@@ -28,7 +28,6 @@ abstract class LogOutgoingJoinRequest with _$LogOutgoingJoinRequest {
     @Default('chat.bsky.convo.defs#logOutgoingJoinRequest') String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogOutgoingJoinRequest;
 

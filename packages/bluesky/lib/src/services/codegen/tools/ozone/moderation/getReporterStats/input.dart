@@ -26,7 +26,6 @@ abstract class ModerationGetReporterStatsInput
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetReporterStatsInput({
     required List<String> dids,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetReporterStatsInput;
 
@@ -34,9 +33,8 @@ abstract class ModerationGetReporterStatsInput
       _$ModerationGetReporterStatsInputFromJson(json);
 }
 
-final class ModerationGetReporterStatsInputConverter
-    extends
-        JsonConverter<ModerationGetReporterStatsInput, Map<String, dynamic>> {
+final class ModerationGetReporterStatsInputConverter extends JsonConverter<
+    ModerationGetReporterStatsInput, Map<String, dynamic>> {
   const ModerationGetReporterStatsInputConverter();
 
   @override

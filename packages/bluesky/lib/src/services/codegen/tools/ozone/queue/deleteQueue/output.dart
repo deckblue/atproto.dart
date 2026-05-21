@@ -28,7 +28,6 @@ abstract class QueueDeleteQueueOutput with _$QueueDeleteQueueOutput {
 
     /// Number of reports that were migrated (if migration occurred)
     int? reportsMigrated,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueDeleteQueueOutput;
 

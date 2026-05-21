@@ -26,7 +26,6 @@ abstract class GraphMuteActorListInput with _$GraphMuteActorListInput {
   @JsonSerializable(includeIfNull: false)
   const factory GraphMuteActorListInput({
     @AtUriConverter() required AtUri list,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphMuteActorListInput;
 

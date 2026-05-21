@@ -25,7 +25,6 @@ abstract class SyncGetHeadOutput with _$SyncGetHeadOutput {
   @JsonSerializable(includeIfNull: false)
   const factory SyncGetHeadOutput({
     required String root,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetHeadOutput;
 

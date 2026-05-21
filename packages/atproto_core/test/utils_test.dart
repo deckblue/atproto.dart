@@ -74,9 +74,8 @@ void main() {
 }
 
 String _jwt(Map<String, Object?> payload) {
-  final encodedPayload = base64Url
-      .encode(utf8.encode(jsonEncode(payload)))
-      .replaceAll('=', '');
+  final encodedPayload =
+      base64Url.encode(utf8.encode(jsonEncode(payload))).replaceAll('=', '');
 
   return 'header.$encodedPayload.signature';
 }

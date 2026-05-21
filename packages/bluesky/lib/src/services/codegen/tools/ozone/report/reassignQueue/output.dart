@@ -28,7 +28,6 @@ abstract class ReportReassignQueueOutput with _$ReportReassignQueueOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ReportReassignQueueOutput({
     @ReportViewConverter() required ReportView report,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportReassignQueueOutput;
 

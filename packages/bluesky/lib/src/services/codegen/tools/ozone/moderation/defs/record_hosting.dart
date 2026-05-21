@@ -37,7 +37,6 @@ abstract class RecordHosting with _$RecordHosting {
     DateTime? updatedAt,
     DateTime? createdAt,
     DateTime? deletedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordHosting;
 

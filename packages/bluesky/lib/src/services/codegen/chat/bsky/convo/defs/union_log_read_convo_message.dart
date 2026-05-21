@@ -94,12 +94,11 @@ final class ULogReadConvoMessageConverter
 
   @override
   Map<String, dynamic> toJson(ULogReadConvoMessage object) => object.when(
-    messageView: (data) => const MessageViewConverter().toJson(data),
-    deletedMessageView: (data) =>
-        const DeletedMessageViewConverter().toJson(data),
-    systemMessageView: (data) =>
-        const SystemMessageViewConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        messageView: (data) => const MessageViewConverter().toJson(data),
+        deletedMessageView: (data) =>
+            const DeletedMessageViewConverter().toJson(data),
+        systemMessageView: (data) =>
+            const SystemMessageViewConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

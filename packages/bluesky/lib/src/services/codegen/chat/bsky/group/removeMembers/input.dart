@@ -26,7 +26,6 @@ abstract class GroupRemoveMembersInput with _$GroupRemoveMembersInput {
   const factory GroupRemoveMembersInput({
     required String convoId,
     required List<String> members,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupRemoveMembersInput;
 

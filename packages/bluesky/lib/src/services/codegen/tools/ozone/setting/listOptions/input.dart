@@ -40,7 +40,6 @@ abstract class SettingListOptionsInput with _$SettingListOptionsInput {
     /// Filter keys by prefix
     String? prefix,
     List<String>? keys,
-
     Map<String, dynamic>? $unknown,
   }) = _SettingListOptionsInput;
 

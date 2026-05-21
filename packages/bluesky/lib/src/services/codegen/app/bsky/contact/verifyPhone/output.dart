@@ -26,7 +26,6 @@ abstract class ContactVerifyPhoneOutput with _$ContactVerifyPhoneOutput {
   const factory ContactVerifyPhoneOutput({
     /// JWT to be used in a call to `app.bsky.contact.importContacts`. It is only valid for a single call.
     required String token,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactVerifyPhoneOutput;
 

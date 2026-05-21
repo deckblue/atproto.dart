@@ -53,7 +53,6 @@ abstract class RepoView with _$RepoView {
     String? inviteNote,
     DateTime? deactivatedAt,
     @ThreatSignatureConverter() List<ThreatSignature>? threatSignatures,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoView;
 

@@ -26,7 +26,6 @@ abstract class DraftCreateDraftOutput with _$DraftCreateDraftOutput {
   const factory DraftCreateDraftOutput({
     /// The ID of the created draft.
     required String id,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftCreateDraftOutput;
 

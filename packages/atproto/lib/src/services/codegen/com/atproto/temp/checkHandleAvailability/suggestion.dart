@@ -30,7 +30,6 @@ abstract class Suggestion with _$Suggestion {
 
     /// Method used to build this suggestion. Should be considered opaque to clients. Can be used for metrics.
     required String method,
-
     Map<String, dynamic>? $unknown,
   }) = _Suggestion;
 

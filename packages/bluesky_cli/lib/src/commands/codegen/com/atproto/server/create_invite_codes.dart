@@ -37,9 +37,9 @@ final class CreateInviteCodesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "codeCount": argResults!["codeCount"],
-    "useCount": argResults!["useCount"],
-    if (argResults!["forAccounts"] != null)
-      "forAccounts": argResults!["forAccounts"],
-  };
+        "codeCount": argResults!["codeCount"],
+        "useCount": argResults!["useCount"],
+        if (argResults!["forAccounts"] != null)
+          "forAccounts": argResults!["forAccounts"],
+      };
 }

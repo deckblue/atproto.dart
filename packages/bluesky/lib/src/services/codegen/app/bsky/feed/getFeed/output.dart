@@ -29,7 +29,6 @@ abstract class FeedGetFeedOutput with _$FeedGetFeedOutput {
   const factory FeedGetFeedOutput({
     String? cursor,
     @FeedViewPostConverter() required List<FeedViewPost> feed,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetFeedOutput;
 

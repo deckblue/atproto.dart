@@ -26,7 +26,6 @@ abstract class ModerationGetActorMetadataInput
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetActorMetadataInput({
     required String actor,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetActorMetadataInput;
 
@@ -34,9 +33,8 @@ abstract class ModerationGetActorMetadataInput
       _$ModerationGetActorMetadataInputFromJson(json);
 }
 
-final class ModerationGetActorMetadataInputConverter
-    extends
-        JsonConverter<ModerationGetActorMetadataInput, Map<String, dynamic>> {
+final class ModerationGetActorMetadataInputConverter extends JsonConverter<
+    ModerationGetActorMetadataInput, Map<String, dynamic>> {
   const ModerationGetActorMetadataInputConverter();
 
   @override

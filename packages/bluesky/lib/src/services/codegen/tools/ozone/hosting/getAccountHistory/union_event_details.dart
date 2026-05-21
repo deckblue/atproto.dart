@@ -113,12 +113,12 @@ final class UEventDetailsConverter
 
   @override
   Map<String, dynamic> toJson(UEventDetails object) => object.when(
-    accountCreated: (data) => const AccountCreatedConverter().toJson(data),
-    emailUpdated: (data) => const EmailUpdatedConverter().toJson(data),
-    emailConfirmed: (data) => const EmailConfirmedConverter().toJson(data),
-    passwordUpdated: (data) => const PasswordUpdatedConverter().toJson(data),
-    handleUpdated: (data) => const HandleUpdatedConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        accountCreated: (data) => const AccountCreatedConverter().toJson(data),
+        emailUpdated: (data) => const EmailUpdatedConverter().toJson(data),
+        emailConfirmed: (data) => const EmailConfirmedConverter().toJson(data),
+        passwordUpdated: (data) =>
+            const PasswordUpdatedConverter().toJson(data),
+        handleUpdated: (data) => const HandleUpdatedConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

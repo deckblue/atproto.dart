@@ -26,18 +26,17 @@ abstract class NotificationGetUnreadCountOutput
   @JsonSerializable(includeIfNull: false)
   const factory NotificationGetUnreadCountOutput({
     required int count,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationGetUnreadCountOutput;
 
   factory NotificationGetUnreadCountOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$NotificationGetUnreadCountOutputFromJson(json);
+  ) =>
+      _$NotificationGetUnreadCountOutputFromJson(json);
 }
 
-final class NotificationGetUnreadCountOutputConverter
-    extends
-        JsonConverter<NotificationGetUnreadCountOutput, Map<String, dynamic>> {
+final class NotificationGetUnreadCountOutputConverter extends JsonConverter<
+    NotificationGetUnreadCountOutput, Map<String, dynamic>> {
   const NotificationGetUnreadCountOutputConverter();
 
   @override

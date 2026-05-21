@@ -42,7 +42,7 @@ final class GetAccountInviteCodesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "includeUsed": argResults!["includeUsed"],
-    "createAvailable": argResults!["createAvailable"],
-  };
+        "includeUsed": argResults!["includeUsed"],
+        "createAvailable": argResults!["createAvailable"],
+      };
 }

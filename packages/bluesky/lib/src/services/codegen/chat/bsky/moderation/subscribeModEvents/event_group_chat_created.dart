@@ -56,7 +56,6 @@ abstract class EventGroupChatCreated with _$EventGroupChatCreated {
     /// The DID of the group chat owner.
     required String ownerDid,
     required String rev,
-
     Map<String, dynamic>? $unknown,
   }) = _EventGroupChatCreated;
 

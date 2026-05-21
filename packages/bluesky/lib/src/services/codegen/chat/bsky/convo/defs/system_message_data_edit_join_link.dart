@@ -27,7 +27,6 @@ abstract class SystemMessageDataEditJoinLink
   @JsonSerializable(includeIfNull: false)
   const factory SystemMessageDataEditJoinLink({
     @Default('chat.bsky.convo.defs#systemMessageDataEditJoinLink') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataEditJoinLink;
 

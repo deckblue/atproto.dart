@@ -79,7 +79,7 @@ class BatchProcessor<T, R> {
   ///
   /// [config] - Configuration for the processor behavior
   BatchProcessor({BatchProcessorConfig? config})
-    : _config = config ?? const BatchProcessorConfig();
+      : _config = config ?? const BatchProcessorConfig();
 
   final BatchProcessorConfig _config;
 
@@ -171,14 +171,13 @@ class BatchProcessor<T, R> {
         for (final batch in batches) {
           _processBatchWithStreaming(batch, processor, controller, semaphore)
               .then((_) {
-                completedBatches++;
-                if (completedBatches >= batches.length) {
-                  controller.close();
-                }
-              })
-              .catchError((error, stackTrace) {
-                controller.addError(error, stackTrace);
-              });
+            completedBatches++;
+            if (completedBatches >= batches.length) {
+              controller.close();
+            }
+          }).catchError((error, stackTrace) {
+            controller.addError(error, stackTrace);
+          });
         }
       },
     );

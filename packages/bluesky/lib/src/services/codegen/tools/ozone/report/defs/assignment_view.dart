@@ -46,7 +46,6 @@ abstract class AssignmentView with _$AssignmentView {
     required int reportId,
     required DateTime startAt,
     DateTime? endAt,
-
     Map<String, dynamic>? $unknown,
   }) = _AssignmentView;
 

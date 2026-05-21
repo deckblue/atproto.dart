@@ -26,7 +26,6 @@ abstract class EmailUpdated with _$EmailUpdated {
   const factory EmailUpdated({
     @Default('tools.ozone.hosting.getAccountHistory#emailUpdated') String $type,
     required String email,
-
     Map<String, dynamic>? $unknown,
   }) = _EmailUpdated;
 

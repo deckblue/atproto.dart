@@ -28,7 +28,6 @@ abstract class ConvoUpdateAllReadInput with _$ConvoUpdateAllReadInput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoUpdateAllReadInput({
     @ConvoUpdateAllReadStatusConverter() ConvoUpdateAllReadStatus? status,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoUpdateAllReadInput;
 

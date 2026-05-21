@@ -51,7 +51,6 @@ abstract class ThreadItemPost with _$ThreadItemPost {
 
     /// This is by an account muted by the viewer requesting it.
     required bool mutedByViewer,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadItemPost;
 

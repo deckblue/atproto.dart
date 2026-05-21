@@ -47,9 +47,10 @@ final class GetListsWithMembershipCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "actor": argResults!["actor"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    if (argResults!["purposes"] != null) "purposes": argResults!["purposes"],
-  };
+        "actor": argResults!["actor"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!["purposes"] != null)
+          "purposes": argResults!["purposes"],
+      };
 }

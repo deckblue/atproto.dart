@@ -36,7 +36,6 @@ abstract class ActorDeclarationRecord with _$ActorDeclarationRecord {
     /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
     @ActorDeclarationAllowGroupInvitesConverter()
     ActorDeclarationAllowGroupInvites? allowGroupInvites,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorDeclarationRecord;
 

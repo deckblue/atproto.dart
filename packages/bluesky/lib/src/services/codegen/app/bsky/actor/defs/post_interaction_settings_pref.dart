@@ -35,11 +35,10 @@ abstract class PostInteractionSettingsPref with _$PostInteractionSettingsPref {
     @Default('app.bsky.actor.defs#postInteractionSettingsPref') String $type,
     @UPostInteractionSettingsPrefThreadgateAllowRulesConverter()
     List<UPostInteractionSettingsPrefThreadgateAllowRules>?
-    threadgateAllowRules,
+        threadgateAllowRules,
     @UPostInteractionSettingsPrefPostgateEmbeddingRulesConverter()
     List<UPostInteractionSettingsPrefPostgateEmbeddingRules>?
-    postgateEmbeddingRules,
-
+        postgateEmbeddingRules,
     Map<String, dynamic>? $unknown,
   }) = _PostInteractionSettingsPref;
 

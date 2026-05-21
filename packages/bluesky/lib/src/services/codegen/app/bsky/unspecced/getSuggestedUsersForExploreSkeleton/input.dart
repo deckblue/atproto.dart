@@ -31,13 +31,13 @@ abstract class UnspeccedGetSuggestedUsersForExploreSkeletonInput
     /// Category of users to get suggestions for.
     String? category,
     @Default(25) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedUsersForExploreSkeletonInput;
 
   factory UnspeccedGetSuggestedUsersForExploreSkeletonInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedUsersForExploreSkeletonInputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedUsersForExploreSkeletonInputFromJson(json);
 }
 
 extension UnspeccedGetSuggestedUsersForExploreSkeletonInputExtension
@@ -49,11 +49,8 @@ extension UnspeccedGetSuggestedUsersForExploreSkeletonInputExtension
 }
 
 final class UnspeccedGetSuggestedUsersForExploreSkeletonInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedUsersForExploreSkeletonInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedUsersForExploreSkeletonInput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedUsersForExploreSkeletonInputConverter();
 
   @override
@@ -71,5 +68,6 @@ final class UnspeccedGetSuggestedUsersForExploreSkeletonInputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetSuggestedUsersForExploreSkeletonInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

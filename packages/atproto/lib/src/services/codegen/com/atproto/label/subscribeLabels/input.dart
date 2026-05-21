@@ -26,7 +26,6 @@ abstract class LabelSubscribeLabelsInput with _$LabelSubscribeLabelsInput {
   const factory LabelSubscribeLabelsInput({
     /// The last known event seq number to backfill from.
     int? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelSubscribeLabelsInput;
 

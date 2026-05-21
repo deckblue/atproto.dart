@@ -40,7 +40,6 @@ abstract class LogCreateMessage with _$LogCreateMessage {
     @ULogCreateMessageMessageConverter()
     required ULogCreateMessageMessage message,
     @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _LogCreateMessage;
 

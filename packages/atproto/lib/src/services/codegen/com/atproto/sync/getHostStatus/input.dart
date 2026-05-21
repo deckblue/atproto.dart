@@ -26,7 +26,6 @@ abstract class SyncGetHostStatusInput with _$SyncGetHostStatusInput {
   const factory SyncGetHostStatusInput({
     /// Hostname of the host (eg, PDS or relay) being queried.
     required String hostname,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetHostStatusInput;
 

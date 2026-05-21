@@ -40,10 +40,11 @@ final class ListMembersCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["q"] != null) "q": argResults!["q"],
-    if (argResults!["disabled"] != null) "disabled": argResults!["disabled"],
-    if (argResults!["roles"] != null) "roles": argResults!["roles"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        if (argResults!["q"] != null) "q": argResults!["q"],
+        if (argResults!["disabled"] != null)
+          "disabled": argResults!["disabled"],
+        if (argResults!["roles"] != null) "roles": argResults!["roles"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

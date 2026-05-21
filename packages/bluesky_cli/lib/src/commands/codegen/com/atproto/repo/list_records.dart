@@ -55,10 +55,10 @@ final class ListRecordsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "repo": argResults!["repo"],
-    "collection": argResults!["collection"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    if (argResults!["reverse"] != null) "reverse": argResults!["reverse"],
-  };
+        "repo": argResults!["repo"],
+        "collection": argResults!["collection"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!["reverse"] != null) "reverse": argResults!["reverse"],
+      };
 }

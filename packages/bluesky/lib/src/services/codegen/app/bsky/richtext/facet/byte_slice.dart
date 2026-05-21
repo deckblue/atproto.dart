@@ -28,7 +28,6 @@ abstract class RichtextFacetByteSlice with _$RichtextFacetByteSlice {
     @Default('app.bsky.richtext.facet#byteSlice') String $type,
     required int byteStart,
     required int byteEnd,
-
     Map<String, dynamic>? $unknown,
   }) = _RichtextFacetByteSlice;
 

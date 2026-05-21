@@ -27,7 +27,6 @@ abstract class Links with _$Links {
     @Default('com.atproto.server.describeServer#links') String $type,
     String? privacyPolicy,
     String? termsOfService,
-
     Map<String, dynamic>? $unknown,
   }) = _Links;
 

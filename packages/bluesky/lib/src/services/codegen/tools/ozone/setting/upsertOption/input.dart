@@ -41,7 +41,6 @@ abstract class SettingUpsertOptionInput with _$SettingUpsertOptionInput {
     String? description,
     @SettingUpsertOptionManagerRoleConverter()
     SettingUpsertOptionManagerRole? managerRole,
-
     Map<String, dynamic>? $unknown,
   }) = _SettingUpsertOptionInput;
 

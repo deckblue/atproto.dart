@@ -26,7 +26,6 @@ abstract class ReportGetReportInput with _$ReportGetReportInput {
   const factory ReportGetReportInput({
     /// The ID of the report to retrieve.
     required int id,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportGetReportInput;
 

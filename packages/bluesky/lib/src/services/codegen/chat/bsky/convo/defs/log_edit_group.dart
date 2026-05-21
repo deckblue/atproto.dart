@@ -34,7 +34,6 @@ abstract class LogEditGroup with _$LogEditGroup {
 
     /// A system message with data of type #systemMessageDataEditGroup
     @SystemMessageViewConverter() required SystemMessageView message,
-
     Map<String, dynamic>? $unknown,
   }) = _LogEditGroup;
 

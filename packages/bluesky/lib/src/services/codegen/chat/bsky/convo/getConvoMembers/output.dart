@@ -29,7 +29,6 @@ abstract class ConvoGetConvoMembersOutput with _$ConvoGetConvoMembersOutput {
   const factory ConvoGetConvoMembersOutput({
     String? cursor,
     @ProfileViewBasicConverter() required List<ProfileViewBasic> members,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetConvoMembersOutput;
 

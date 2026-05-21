@@ -31,7 +31,6 @@ abstract class GraphGetListOutput with _$GraphGetListOutput {
     String? cursor,
     @ListViewConverter() required ListView list,
     @ListItemViewConverter() required List<ListItemView> items,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetListOutput;
 

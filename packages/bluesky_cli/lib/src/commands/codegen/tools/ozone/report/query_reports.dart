@@ -84,26 +84,26 @@ final class QueryReportsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
-    if (argResults!["reportTypes"] != null)
-      "reportTypes": argResults!["reportTypes"],
-    "status": argResults!["status"],
-    if (argResults!["subject"] != null) "subject": argResults!["subject"],
-    if (argResults!["did"] != null) "did": argResults!["did"],
-    if (argResults!["subjectType"] != null)
-      "subjectType": argResults!["subjectType"],
-    if (argResults!["collections"] != null)
-      "collections": argResults!["collections"],
-    if (argResults!["reportedAfter"] != null)
-      "reportedAfter": argResults!["reportedAfter"],
-    if (argResults!["reportedBefore"] != null)
-      "reportedBefore": argResults!["reportedBefore"],
-    "isMuted": argResults!["isMuted"],
-    if (argResults!["assignedTo"] != null)
-      "assignedTo": argResults!["assignedTo"],
-    "sortField": argResults!["sortField"],
-    "sortDirection": argResults!["sortDirection"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
+        if (argResults!["reportTypes"] != null)
+          "reportTypes": argResults!["reportTypes"],
+        "status": argResults!["status"],
+        if (argResults!["subject"] != null) "subject": argResults!["subject"],
+        if (argResults!["did"] != null) "did": argResults!["did"],
+        if (argResults!["subjectType"] != null)
+          "subjectType": argResults!["subjectType"],
+        if (argResults!["collections"] != null)
+          "collections": argResults!["collections"],
+        if (argResults!["reportedAfter"] != null)
+          "reportedAfter": argResults!["reportedAfter"],
+        if (argResults!["reportedBefore"] != null)
+          "reportedBefore": argResults!["reportedBefore"],
+        "isMuted": argResults!["isMuted"],
+        if (argResults!["assignedTo"] != null)
+          "assignedTo": argResults!["assignedTo"],
+        "sortField": argResults!["sortField"],
+        "sortDirection": argResults!["sortDirection"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

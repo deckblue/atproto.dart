@@ -30,18 +30,17 @@ abstract class ModerationGetMessageContextOutput
   const factory ModerationGetMessageContextOutput({
     @UModerationGetMessageContextMessagesConverter()
     required List<UModerationGetMessageContextMessages> messages,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetMessageContextOutput;
 
   factory ModerationGetMessageContextOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationGetMessageContextOutputFromJson(json);
+  ) =>
+      _$ModerationGetMessageContextOutputFromJson(json);
 }
 
-final class ModerationGetMessageContextOutputConverter
-    extends
-        JsonConverter<ModerationGetMessageContextOutput, Map<String, dynamic>> {
+final class ModerationGetMessageContextOutputConverter extends JsonConverter<
+    ModerationGetMessageContextOutput, Map<String, dynamic>> {
   const ModerationGetMessageContextOutputConverter();
 
   @override

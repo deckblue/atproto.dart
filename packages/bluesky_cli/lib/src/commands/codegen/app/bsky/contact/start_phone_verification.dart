@@ -16,11 +16,12 @@ import '../../../../procedure_command.dart';
 
 final class StartPhoneVerificationCommand extends ProcedureCommand {
   StartPhoneVerificationCommand() {
-    argParser..addOption(
-      "phone",
-      help: r"The phone number to receive the code via SMS.",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "phone",
+        help: r"The phone number to receive the code via SMS.",
+        mandatory: true,
+      );
   }
 
   @override

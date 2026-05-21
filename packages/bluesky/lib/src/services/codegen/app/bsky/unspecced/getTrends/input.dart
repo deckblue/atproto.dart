@@ -25,7 +25,6 @@ abstract class UnspeccedGetTrendsInput with _$UnspeccedGetTrendsInput {
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetTrendsInput({
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTrendsInput;
 

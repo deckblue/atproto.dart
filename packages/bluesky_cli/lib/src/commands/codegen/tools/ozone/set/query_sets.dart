@@ -43,11 +43,11 @@ final class QuerySetsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    if (argResults!["namePrefix"] != null)
-      "namePrefix": argResults!["namePrefix"],
-    "sortBy": argResults!["sortBy"],
-    "sortDirection": argResults!["sortDirection"],
-  };
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!["namePrefix"] != null)
+          "namePrefix": argResults!["namePrefix"],
+        "sortBy": argResults!["sortBy"],
+        "sortDirection": argResults!["sortDirection"],
+      };
 }

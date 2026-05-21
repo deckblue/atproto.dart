@@ -28,13 +28,13 @@ abstract class UnspeccedGetSuggestedUsersForDiscoverSkeletonInput
     /// DID of the account making the request (not included for public/unauthenticated queries).
     String? viewer,
     @Default(25) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedUsersForDiscoverSkeletonInput;
 
   factory UnspeccedGetSuggestedUsersForDiscoverSkeletonInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedUsersForDiscoverSkeletonInputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedUsersForDiscoverSkeletonInputFromJson(json);
 }
 
 extension UnspeccedGetSuggestedUsersForDiscoverSkeletonInputExtension
@@ -44,11 +44,8 @@ extension UnspeccedGetSuggestedUsersForDiscoverSkeletonInputExtension
 }
 
 final class UnspeccedGetSuggestedUsersForDiscoverSkeletonInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedUsersForDiscoverSkeletonInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedUsersForDiscoverSkeletonInput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedUsersForDiscoverSkeletonInputConverter();
 
   @override
@@ -66,5 +63,6 @@ final class UnspeccedGetSuggestedUsersForDiscoverSkeletonInputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetSuggestedUsersForDiscoverSkeletonInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

@@ -25,18 +25,20 @@ import 'identity/signPlcOperation/output.dart';
 
 /// Describe the credentials that should be included in the DID doc of an account that is migrating to this service.
 Future<XRPCResponse<IdentityGetRecommendedDidCredentialsOutput>>
-comAtprotoIdentityGetRecommendedDidCredentials({
+    comAtprotoIdentityGetRecommendedDidCredentials({
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoIdentityGetRecommendedDidCredentials,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown},
-  to: const IdentityGetRecommendedDidCredentialsOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.comAtprotoIdentityGetRecommendedDidCredentials,
+          service: $service,
+          headers: $headers,
+          parameters: {...?$unknown},
+          to: const IdentityGetRecommendedDidCredentialsOutputConverter()
+              .fromJson,
+        );
 
 /// Request that the server re-resolve an identity (DID and handle). The server may ignore this request, or require authentication, depending on the role, implementation, and policy of the server.
 Future<XRPCResponse<IdentityInfo>> comAtprotoIdentityRefreshIdentity({
@@ -45,24 +47,26 @@ Future<XRPCResponse<IdentityInfo>> comAtprotoIdentityRefreshIdentity({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoIdentityRefreshIdentity,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'identifier': identifier},
-  to: const IdentityInfoConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoIdentityRefreshIdentity,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'identifier': identifier},
+      to: const IdentityInfoConverter().fromJson,
+    );
 
 /// Request an email with a code to in order to request a signed PLC operation. Requires Auth.
 Future<XRPCResponse<EmptyData>> comAtprotoIdentityRequestPlcOperationSignature({
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
-}) async => await $ctx.post(
-  ns.comAtprotoIdentityRequestPlcOperationSignature,
-  service: $service,
-  headers: {...?$headers},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoIdentityRequestPlcOperationSignature,
+      service: $service,
+      headers: {...?$headers},
+    );
 
 /// Resolves DID to DID document. Does not bi-directionally verify handle.
 Future<XRPCResponse<IdentityResolveDidOutput>> comAtprotoIdentityResolveDid({
@@ -71,29 +75,31 @@ Future<XRPCResponse<IdentityResolveDidOutput>> comAtprotoIdentityResolveDid({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoIdentityResolveDid,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'did': did},
-  to: const IdentityResolveDidOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.comAtprotoIdentityResolveDid,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown, 'did': did},
+      to: const IdentityResolveDidOutputConverter().fromJson,
+    );
 
 /// Resolves an atproto handle (hostname) to a DID. Does not necessarily bi-directionally verify against the the DID document.
 Future<XRPCResponse<IdentityResolveHandleOutput>>
-comAtprotoIdentityResolveHandle({
+    comAtprotoIdentityResolveHandle({
   required String handle,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoIdentityResolveHandle,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'handle': handle},
-  to: const IdentityResolveHandleOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.comAtprotoIdentityResolveHandle,
+          service: $service,
+          headers: $headers,
+          parameters: {...?$unknown, 'handle': handle},
+          to: const IdentityResolveHandleOutputConverter().fromJson,
+        );
 
 /// Resolves an identity (DID or Handle) to a full identity (DID document and verified handle).
 Future<XRPCResponse<IdentityInfo>> comAtprotoIdentityResolveIdentity({
@@ -102,17 +108,18 @@ Future<XRPCResponse<IdentityInfo>> comAtprotoIdentityResolveIdentity({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.comAtprotoIdentityResolveIdentity,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'identifier': identifier},
-  to: const IdentityInfoConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.comAtprotoIdentityResolveIdentity,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown, 'identifier': identifier},
+      to: const IdentityInfoConverter().fromJson,
+    );
 
 /// Signs a PLC operation to update some value(s) in the requesting DID's document.
 Future<XRPCResponse<IdentitySignPlcOperationOutput>>
-comAtprotoIdentitySignPlcOperation({
+    comAtprotoIdentitySignPlcOperation({
   String? token,
   List<String>? rotationKeys,
   List<String>? alsoKnownAs,
@@ -122,20 +129,22 @@ comAtprotoIdentitySignPlcOperation({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoIdentitySignPlcOperation,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    if (token != null) 'token': token,
-    if (rotationKeys != null) 'rotationKeys': rotationKeys,
-    if (alsoKnownAs != null) 'alsoKnownAs': alsoKnownAs,
-    if (verificationMethods != null) 'verificationMethods': verificationMethods,
-    if (services != null) 'services': services,
-  },
-  to: const IdentitySignPlcOperationOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.post(
+          ns.comAtprotoIdentitySignPlcOperation,
+          service: $service,
+          headers: {'Content-type': 'application/json', ...?$headers},
+          body: {
+            ...?$unknown,
+            if (token != null) 'token': token,
+            if (rotationKeys != null) 'rotationKeys': rotationKeys,
+            if (alsoKnownAs != null) 'alsoKnownAs': alsoKnownAs,
+            if (verificationMethods != null)
+              'verificationMethods': verificationMethods,
+            if (services != null) 'services': services,
+          },
+          to: const IdentitySignPlcOperationOutputConverter().fromJson,
+        );
 
 /// Validates a PLC operation to ensure that it doesn't violate a service's constraints or get the identity into a bad state, then submits it to the PLC registry
 Future<XRPCResponse<EmptyData>> comAtprotoIdentitySubmitPlcOperation({
@@ -144,12 +153,13 @@ Future<XRPCResponse<EmptyData>> comAtprotoIdentitySubmitPlcOperation({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoIdentitySubmitPlcOperation,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'operation': operation},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoIdentitySubmitPlcOperation,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'operation': operation},
+    );
 
 /// Updates the current account's handle. Verifies handle validity, and updates did:plc document if necessary. Implemented by PDS, and requires auth.
 Future<XRPCResponse<EmptyData>> comAtprotoIdentityUpdateHandle({
@@ -158,12 +168,13 @@ Future<XRPCResponse<EmptyData>> comAtprotoIdentityUpdateHandle({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoIdentityUpdateHandle,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'handle': handle},
-);
+}) async =>
+    await $ctx.post(
+      ns.comAtprotoIdentityUpdateHandle,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'handle': handle},
+    );
 
 /// `com.atproto.identity.*`
 base class IdentityService {
@@ -174,16 +185,17 @@ base class IdentityService {
 
   /// Describe the credentials that should be included in the DID doc of an account that is migrating to this service.
   Future<XRPCResponse<IdentityGetRecommendedDidCredentialsOutput>>
-  getRecommendedDidCredentials({
+      getRecommendedDidCredentials({
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoIdentityGetRecommendedDidCredentials(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+          await comAtprotoIdentityGetRecommendedDidCredentials(
+            $ctx: ctx,
+            $service: $service,
+            $headers: $headers,
+            $unknown: $unknown,
+          );
 
   /// Request that the server re-resolve an identity (DID and handle). The server may ignore this request, or require authentication, depending on the role, implementation, and policy of the server.
   Future<XRPCResponse<IdentityInfo>> refreshIdentity({
@@ -191,23 +203,25 @@ base class IdentityService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoIdentityRefreshIdentity(
-    identifier: identifier,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoIdentityRefreshIdentity(
+        identifier: identifier,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Request an email with a code to in order to request a signed PLC operation. Requires Auth.
   Future<XRPCResponse<EmptyData>> requestPlcOperationSignature({
     String? $service,
     Map<String, String>? $headers,
-  }) async => await comAtprotoIdentityRequestPlcOperationSignature(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoIdentityRequestPlcOperationSignature(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+      );
 
   /// Resolves DID to DID document. Does not bi-directionally verify handle.
   Future<XRPCResponse<IdentityResolveDidOutput>> resolveDid({
@@ -215,13 +229,14 @@ base class IdentityService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoIdentityResolveDid(
-    did: did,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoIdentityResolveDid(
+        did: did,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Resolves an atproto handle (hostname) to a DID. Does not necessarily bi-directionally verify against the the DID document.
   Future<XRPCResponse<IdentityResolveHandleOutput>> resolveHandle({
@@ -229,13 +244,14 @@ base class IdentityService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoIdentityResolveHandle(
-    handle: handle,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoIdentityResolveHandle(
+        handle: handle,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Resolves an identity (DID or Handle) to a full identity (DID document and verified handle).
   Future<XRPCResponse<IdentityInfo>> resolveIdentity({
@@ -243,13 +259,14 @@ base class IdentityService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoIdentityResolveIdentity(
-    identifier: identifier,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoIdentityResolveIdentity(
+        identifier: identifier,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Signs a PLC operation to update some value(s) in the requesting DID's document.
   Future<XRPCResponse<IdentitySignPlcOperationOutput>> signPlcOperation({
@@ -261,17 +278,18 @@ base class IdentityService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoIdentitySignPlcOperation(
-    token: token,
-    rotationKeys: rotationKeys,
-    alsoKnownAs: alsoKnownAs,
-    verificationMethods: verificationMethods,
-    services: services,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoIdentitySignPlcOperation(
+        token: token,
+        rotationKeys: rotationKeys,
+        alsoKnownAs: alsoKnownAs,
+        verificationMethods: verificationMethods,
+        services: services,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Validates a PLC operation to ensure that it doesn't violate a service's constraints or get the identity into a bad state, then submits it to the PLC registry
   Future<XRPCResponse<EmptyData>> submitPlcOperation({
@@ -279,13 +297,14 @@ base class IdentityService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoIdentitySubmitPlcOperation(
-    operation: operation,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoIdentitySubmitPlcOperation(
+        operation: operation,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Updates the current account's handle. Verifies handle validity, and updates did:plc document if necessary. Implemented by PDS, and requires auth.
   Future<XRPCResponse<EmptyData>> updateHandle({
@@ -293,11 +312,12 @@ base class IdentityService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoIdentityUpdateHandle(
-    handle: handle,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoIdentityUpdateHandle(
+        handle: handle,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

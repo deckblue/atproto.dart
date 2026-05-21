@@ -33,7 +33,6 @@ abstract class CloseActivity with _$CloseActivity {
     /// The report's status before this activity. Populated automatically from the report row; not required in input.
     @CloseActivityPreviousStatusConverter()
     CloseActivityPreviousStatus? previousStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _CloseActivity;
 

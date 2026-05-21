@@ -45,8 +45,8 @@ final class DeleteQueueCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "queueId": argResults!["queueId"],
-    if (argResults!["migrateToQueueId"] != null)
-      "migrateToQueueId": argResults!["migrateToQueueId"],
-  };
+        "queueId": argResults!["queueId"],
+        if (argResults!["migrateToQueueId"] != null)
+          "migrateToQueueId": argResults!["migrateToQueueId"],
+      };
 }

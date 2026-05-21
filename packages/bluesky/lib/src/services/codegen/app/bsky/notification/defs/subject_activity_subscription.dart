@@ -33,7 +33,6 @@ abstract class SubjectActivitySubscription with _$SubjectActivitySubscription {
     required String subject,
     @ActivitySubscriptionConverter()
     required ActivitySubscription activitySubscription,
-
     Map<String, dynamic>? $unknown,
   }) = _SubjectActivitySubscription;
 

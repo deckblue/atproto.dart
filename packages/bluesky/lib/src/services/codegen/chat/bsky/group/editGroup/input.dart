@@ -26,7 +26,6 @@ abstract class GroupEditGroupInput with _$GroupEditGroupInput {
   const factory GroupEditGroupInput({
     required String convoId,
     required String name,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupEditGroupInput;
 

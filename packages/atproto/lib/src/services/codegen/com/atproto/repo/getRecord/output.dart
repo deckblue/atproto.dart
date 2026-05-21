@@ -28,7 +28,6 @@ abstract class RepoGetRecordOutput with _$RepoGetRecordOutput {
     @AtUriConverter() required AtUri uri,
     String? cid,
     required Map<String, dynamic> value,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoGetRecordOutput;
 

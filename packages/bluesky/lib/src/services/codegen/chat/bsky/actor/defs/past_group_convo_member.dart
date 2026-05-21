@@ -26,7 +26,6 @@ abstract class PastGroupConvoMember with _$PastGroupConvoMember {
   @JsonSerializable(includeIfNull: false)
   const factory PastGroupConvoMember({
     @Default('chat.bsky.actor.defs#pastGroupConvoMember') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _PastGroupConvoMember;
 

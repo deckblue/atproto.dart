@@ -29,7 +29,6 @@ abstract class SetQuerySetsOutput with _$SetQuerySetsOutput {
   const factory SetQuerySetsOutput({
     @SetViewConverter() required List<SetView> sets,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _SetQuerySetsOutput;
 

@@ -25,7 +25,6 @@ abstract class GroupDisableJoinLinkInput with _$GroupDisableJoinLinkInput {
   @JsonSerializable(includeIfNull: false)
   const factory GroupDisableJoinLinkInput({
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupDisableJoinLinkInput;
 

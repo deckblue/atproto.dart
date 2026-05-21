@@ -26,7 +26,6 @@ abstract class ServerRequestPasswordResetInput
   @JsonSerializable(includeIfNull: false)
   const factory ServerRequestPasswordResetInput({
     required String email,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerRequestPasswordResetInput;
 
@@ -34,9 +33,8 @@ abstract class ServerRequestPasswordResetInput
       _$ServerRequestPasswordResetInputFromJson(json);
 }
 
-final class ServerRequestPasswordResetInputConverter
-    extends
-        JsonConverter<ServerRequestPasswordResetInput, Map<String, dynamic>> {
+final class ServerRequestPasswordResetInputConverter extends JsonConverter<
+    ServerRequestPasswordResetInput, Map<String, dynamic>> {
   const ServerRequestPasswordResetInputConverter();
 
   @override

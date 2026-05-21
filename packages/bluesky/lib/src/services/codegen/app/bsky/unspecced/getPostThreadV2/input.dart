@@ -49,7 +49,6 @@ abstract class UnspeccedGetPostThreadV2Input
 
     /// Sorting for the thread replies.
     @UnspeccedGetPostThreadV2SortConverter() UnspeccedGetPostThreadV2Sort? sort,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetPostThreadV2Input;
 

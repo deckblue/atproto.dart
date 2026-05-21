@@ -30,7 +30,6 @@ abstract class SyncGetRecordInput with _$SyncGetRecordInput {
 
     /// Record Key
     required String rkey,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetRecordInput;
 

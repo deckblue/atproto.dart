@@ -28,7 +28,6 @@ abstract class VideoGetJobStatusOutput with _$VideoGetJobStatusOutput {
   @JsonSerializable(includeIfNull: false)
   const factory VideoGetJobStatusOutput({
     @JobStatusConverter() required JobStatus jobStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _VideoGetJobStatusOutput;
 

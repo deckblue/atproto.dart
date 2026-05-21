@@ -68,7 +68,6 @@ abstract class ReportActivityView with _$ReportActivityView {
 
     /// When this activity was created
     required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportActivityView;
 

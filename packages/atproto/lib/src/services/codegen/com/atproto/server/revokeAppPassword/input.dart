@@ -26,7 +26,6 @@ abstract class ServerRevokeAppPasswordInput
   @JsonSerializable(includeIfNull: false)
   const factory ServerRevokeAppPasswordInput({
     required String name,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerRevokeAppPasswordInput;
 

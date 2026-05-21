@@ -39,7 +39,6 @@ abstract class SystemMessageDataAddMember with _$SystemMessageDataAddMember {
     @MemberRoleConverter() required MemberRole role,
     @SystemMessageReferredUserConverter()
     required SystemMessageReferredUser addedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataAddMember;
 

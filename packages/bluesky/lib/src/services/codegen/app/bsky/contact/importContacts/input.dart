@@ -27,7 +27,6 @@ abstract class ContactImportContactsInput with _$ContactImportContactsInput {
     /// JWT to authenticate the call. Use the JWT received as a response to the call to `app.bsky.contact.verifyPhone`.
     required String token,
     required List<String> contacts,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactImportContactsInput;
 

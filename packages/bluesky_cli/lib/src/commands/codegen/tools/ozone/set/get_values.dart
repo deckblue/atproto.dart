@@ -37,8 +37,8 @@ final class GetValuesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "name": argResults!["name"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "name": argResults!["name"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

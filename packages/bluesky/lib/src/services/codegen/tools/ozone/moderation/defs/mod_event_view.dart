@@ -49,7 +49,6 @@ abstract class ModEventView with _$ModEventView {
     String? creatorHandle,
     String? subjectHandle,
     @ModToolConverter() ModTool? modTool,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventView;
 

@@ -30,7 +30,6 @@ abstract class SafelinkQueryEventsOutput with _$SafelinkQueryEventsOutput {
     /// Next cursor for pagination. Only present if there are more results.
     String? cursor,
     @EventConverter() required List<Event> events,
-
     Map<String, dynamic>? $unknown,
   }) = _SafelinkQueryEventsOutput;
 

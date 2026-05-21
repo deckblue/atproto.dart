@@ -25,7 +25,6 @@ abstract class ConvoAcceptConvoInput with _$ConvoAcceptConvoInput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoAcceptConvoInput({
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoAcceptConvoInput;
 

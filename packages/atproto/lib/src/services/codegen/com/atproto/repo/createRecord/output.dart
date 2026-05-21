@@ -39,7 +39,6 @@ abstract class RepoCreateRecordOutput with _$RepoCreateRecordOutput {
     @CommitMetaConverter() CommitMeta? commit,
     @RepoCreateRecordValidationStatusConverter()
     RepoCreateRecordValidationStatus? validationStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoCreateRecordOutput;
 

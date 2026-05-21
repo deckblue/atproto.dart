@@ -25,7 +25,6 @@ abstract class NotificationUpdateSeenInput with _$NotificationUpdateSeenInput {
   @JsonSerializable(includeIfNull: false)
   const factory NotificationUpdateSeenInput({
     required DateTime seenAt,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationUpdateSeenInput;
 

@@ -34,6 +34,6 @@ final class ReserveSigningKeyCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["did"] != null) "did": argResults!["did"],
-  };
+        if (argResults!["did"] != null) "did": argResults!["did"],
+      };
 }

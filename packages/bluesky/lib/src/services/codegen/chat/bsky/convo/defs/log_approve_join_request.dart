@@ -34,7 +34,6 @@ abstract class LogApproveJoinRequest with _$LogApproveJoinRequest {
 
     /// Prospective member who requested to join.
     @ProfileViewBasicConverter() required ProfileViewBasic member,
-
     Map<String, dynamic>? $unknown,
   }) = _LogApproveJoinRequest;
 

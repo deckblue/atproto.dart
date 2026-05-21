@@ -25,7 +25,6 @@ abstract class AdminDeleteAccountInput with _$AdminDeleteAccountInput {
   @JsonSerializable(includeIfNull: false)
   const factory AdminDeleteAccountInput({
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminDeleteAccountInput;
 

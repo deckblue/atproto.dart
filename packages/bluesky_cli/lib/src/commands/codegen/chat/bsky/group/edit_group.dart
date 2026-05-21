@@ -36,7 +36,7 @@ final class EditGroupCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "convoId": argResults!["convoId"],
-    "name": argResults!["name"],
-  };
+        "convoId": argResults!["convoId"],
+        "name": argResults!["name"],
+      };
 }

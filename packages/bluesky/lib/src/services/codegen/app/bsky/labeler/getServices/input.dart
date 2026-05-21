@@ -26,7 +26,6 @@ abstract class LabelerGetServicesInput with _$LabelerGetServicesInput {
   const factory LabelerGetServicesInput({
     required List<String> dids,
     @Default(false) bool detailed,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelerGetServicesInput;
 

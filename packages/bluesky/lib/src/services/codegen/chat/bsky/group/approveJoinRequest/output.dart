@@ -29,7 +29,6 @@ abstract class GroupApproveJoinRequestOutput
   @JsonSerializable(includeIfNull: false)
   const factory GroupApproveJoinRequestOutput({
     @ConvoViewConverter() required ConvoView convo,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupApproveJoinRequestOutput;
 

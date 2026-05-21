@@ -42,7 +42,6 @@ abstract class LogLockConvo with _$LogLockConvo {
     @SystemMessageViewConverter() required SystemMessageView message,
     @ProfileViewBasicConverter()
     required List<ProfileViewBasic> relatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _LogLockConvo;
 

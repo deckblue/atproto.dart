@@ -42,7 +42,6 @@ abstract class QueueListQueuesInput with _$QueueListQueuesInput {
     List<String>? reportTypes,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueListQueuesInput;
 

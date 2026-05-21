@@ -30,7 +30,6 @@ abstract class ReportRefreshStatsInput with _$ReportRefreshStatsInput {
     /// End date for recomputation, inclusive (YYYY-MM-DD).
     required String endDate,
     List<int>? queueIds,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportRefreshStatsInput;
 

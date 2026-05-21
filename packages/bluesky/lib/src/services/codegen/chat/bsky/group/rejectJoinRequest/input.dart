@@ -26,7 +26,6 @@ abstract class GroupRejectJoinRequestInput with _$GroupRejectJoinRequestInput {
   const factory GroupRejectJoinRequestInput({
     required String convoId,
     required String member,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupRejectJoinRequestInput;
 

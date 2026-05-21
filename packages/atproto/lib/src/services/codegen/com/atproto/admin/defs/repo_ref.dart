@@ -26,7 +26,6 @@ abstract class RepoRef with _$RepoRef {
   const factory RepoRef({
     @Default('com.atproto.admin.defs#repoRef') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoRef;
 

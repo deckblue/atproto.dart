@@ -29,7 +29,6 @@ abstract class GraphSearchStarterPacksInput
     required String q,
     @Default(25) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphSearchStarterPacksInput;
 

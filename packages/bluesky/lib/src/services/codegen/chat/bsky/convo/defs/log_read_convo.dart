@@ -32,7 +32,6 @@ abstract class LogReadConvo with _$LogReadConvo {
     required String rev,
     required String convoId,
     @ULogReadConvoMessageConverter() required ULogReadConvoMessage message,
-
     Map<String, dynamic>? $unknown,
   }) = _LogReadConvo;
 

@@ -72,7 +72,6 @@ final class UModerationScheduleActionActionConverter
   Map<String, dynamic> toJson(UModerationScheduleActionAction object) =>
       object.when(
         takedown: (data) => const TakedownConverter().toJson(data),
-
         unknown: (data) => data,
       );
 }

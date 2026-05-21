@@ -32,7 +32,6 @@ abstract class SystemMessageDataEditGroup with _$SystemMessageDataEditGroup {
 
     /// Group name that replaced the old.
     String? newName,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataEditGroup;
 

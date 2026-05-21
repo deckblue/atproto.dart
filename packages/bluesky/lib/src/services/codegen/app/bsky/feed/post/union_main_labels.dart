@@ -63,8 +63,7 @@ final class UFeedPostLabelsConverter
 
   @override
   Map<String, dynamic> toJson(UFeedPostLabels object) => object.when(
-    selfLabels: (data) => const SelfLabelsConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        selfLabels: (data) => const SelfLabelsConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

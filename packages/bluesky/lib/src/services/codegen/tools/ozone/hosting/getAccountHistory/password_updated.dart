@@ -26,7 +26,6 @@ abstract class PasswordUpdated with _$PasswordUpdated {
   const factory PasswordUpdated({
     @Default('tools.ozone.hosting.getAccountHistory#passwordUpdated')
     String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _PasswordUpdated;
 

@@ -51,7 +51,6 @@ abstract class ServerCreateAccountInput with _$ServerCreateAccountInput {
     /// DID PLC rotation key (aka, recovery key) to be included in PLC creation operation.
     String? recoveryKey,
     Map<String, dynamic>? plcOp,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateAccountInput;
 

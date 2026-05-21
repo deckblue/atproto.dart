@@ -25,7 +25,6 @@ abstract class AdminGetAccountInfosInput with _$AdminGetAccountInfosInput {
   @JsonSerializable(includeIfNull: false)
   const factory AdminGetAccountInfosInput({
     required List<String> dids,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminGetAccountInfosInput;
 

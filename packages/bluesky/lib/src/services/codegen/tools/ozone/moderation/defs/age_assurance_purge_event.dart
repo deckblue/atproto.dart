@@ -29,7 +29,6 @@ abstract class AgeAssurancePurgeEvent with _$AgeAssurancePurgeEvent {
 
     /// Comment describing the reason for the purge.
     required String comment,
-
     Map<String, dynamic>? $unknown,
   }) = _AgeAssurancePurgeEvent;
 

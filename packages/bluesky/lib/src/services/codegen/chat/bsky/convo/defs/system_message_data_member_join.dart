@@ -40,7 +40,6 @@ abstract class SystemMessageDataMemberJoin with _$SystemMessageDataMemberJoin {
 
     /// If join link was configured to require approval, this will be set to who approved the request. Undefined if approval was not required.
     @SystemMessageReferredUserConverter() SystemMessageReferredUser? approvedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataMemberJoin;
 

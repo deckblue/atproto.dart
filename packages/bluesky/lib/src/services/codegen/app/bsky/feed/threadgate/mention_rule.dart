@@ -26,7 +26,6 @@ abstract class MentionRule with _$MentionRule {
   @JsonSerializable(includeIfNull: false)
   const factory MentionRule({
     @Default('app.bsky.feed.threadgate#mentionRule') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _MentionRule;
 

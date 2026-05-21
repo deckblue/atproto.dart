@@ -31,7 +31,6 @@ abstract class ProfileAssociatedGerm with _$ProfileAssociatedGerm {
     required String messageMeUrl,
     @ProfileAssociatedGermShowButtonToConverter()
     required ProfileAssociatedGermShowButtonTo showButtonTo,
-
     Map<String, dynamic>? $unknown,
   }) = _ProfileAssociatedGerm;
 

@@ -32,7 +32,6 @@ abstract class SavedFeed with _$SavedFeed {
     @SavedFeedTypeConverter() required SavedFeedType type,
     required String value,
     required bool pinned,
-
     Map<String, dynamic>? $unknown,
   }) = _SavedFeed;
 

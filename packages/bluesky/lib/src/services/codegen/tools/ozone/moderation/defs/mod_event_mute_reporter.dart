@@ -30,7 +30,6 @@ abstract class ModEventMuteReporter with _$ModEventMuteReporter {
 
     /// Indicates how long the account should remain muted. Falsy value here means a permanent mute.
     int? durationInHours,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventMuteReporter;
 

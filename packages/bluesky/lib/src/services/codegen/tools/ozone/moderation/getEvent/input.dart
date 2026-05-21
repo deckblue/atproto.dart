@@ -25,7 +25,6 @@ abstract class ModerationGetEventInput with _$ModerationGetEventInput {
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetEventInput({
     required int id,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetEventInput;
 

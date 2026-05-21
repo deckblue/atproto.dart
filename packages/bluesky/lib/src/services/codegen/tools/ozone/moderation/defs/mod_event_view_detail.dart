@@ -48,7 +48,6 @@ abstract class ModEventViewDetail with _$ModEventViewDetail {
     required String createdBy,
     required DateTime createdAt,
     @ModToolConverter() ModTool? modTool,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventViewDetail;
 

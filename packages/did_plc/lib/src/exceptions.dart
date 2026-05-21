@@ -73,7 +73,7 @@ class RetryExhaustedException extends PlcException {
 /// Exception thrown when a request times out.
 class TimeoutException extends NetworkException {
   const TimeoutException(String message, this.timeoutDuration)
-    : super(message, 408);
+      : super(message, 408);
 
   /// The timeout duration that was exceeded.
   final Duration timeoutDuration;
@@ -85,7 +85,7 @@ class TimeoutException extends NetworkException {
 /// Exception thrown when rate limiting is encountered.
 class RateLimitException extends NetworkException {
   const RateLimitException(String message, this.retryAfter)
-    : super(message, 429);
+      : super(message, 429);
 
   /// The duration to wait before retrying, if provided by the server.
   final Duration? retryAfter;
@@ -98,7 +98,7 @@ class RateLimitException extends NetworkException {
 /// Exception thrown when the server is temporarily unavailable.
 class ServiceUnavailableException extends NetworkException {
   const ServiceUnavailableException(String message, this.retryAfter)
-    : super(message, 503);
+      : super(message, 503);
 
   /// The duration to wait before retrying, if provided by the server.
   final Duration? retryAfter;

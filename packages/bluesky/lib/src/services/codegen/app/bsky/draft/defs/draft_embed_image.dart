@@ -30,7 +30,6 @@ abstract class DraftEmbedImage with _$DraftEmbedImage {
     @Default('app.bsky.draft.defs#draftEmbedImage') String $type,
     @DraftEmbedLocalRefConverter() required DraftEmbedLocalRef localRef,
     String? alt,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftEmbedImage;
 

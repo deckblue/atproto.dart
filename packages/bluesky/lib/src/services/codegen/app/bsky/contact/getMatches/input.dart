@@ -26,7 +26,6 @@ abstract class ContactGetMatchesInput with _$ContactGetMatchesInput {
   const factory ContactGetMatchesInput({
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactGetMatchesInput;
 

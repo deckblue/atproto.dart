@@ -35,13 +35,13 @@ abstract class ConfigRegionRuleIfAccountOlderThan
     /// The date threshold as a datetime string.
     required DateTime date,
     @AccessConverter() required Access access,
-
     Map<String, dynamic>? $unknown,
   }) = _ConfigRegionRuleIfAccountOlderThan;
 
   factory ConfigRegionRuleIfAccountOlderThan.fromJson(
     Map<String, Object?> json,
-  ) => _$ConfigRegionRuleIfAccountOlderThanFromJson(json);
+  ) =>
+      _$ConfigRegionRuleIfAccountOlderThanFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('\$type')) return false;
@@ -50,12 +50,8 @@ abstract class ConfigRegionRuleIfAccountOlderThan
   }
 }
 
-final class ConfigRegionRuleIfAccountOlderThanConverter
-    extends
-        JsonConverter<
-          ConfigRegionRuleIfAccountOlderThan,
-          Map<String, dynamic>
-        > {
+final class ConfigRegionRuleIfAccountOlderThanConverter extends JsonConverter<
+    ConfigRegionRuleIfAccountOlderThan, Map<String, dynamic>> {
   const ConfigRegionRuleIfAccountOlderThanConverter();
 
   @override

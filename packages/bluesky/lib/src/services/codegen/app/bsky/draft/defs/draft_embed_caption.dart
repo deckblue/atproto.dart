@@ -27,7 +27,6 @@ abstract class DraftEmbedCaption with _$DraftEmbedCaption {
     @Default('app.bsky.draft.defs#draftEmbedCaption') String $type,
     required String lang,
     required String content,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftEmbedCaption;
 

@@ -29,7 +29,6 @@ abstract class GroupListJoinRequestsOutput with _$GroupListJoinRequestsOutput {
   const factory GroupListJoinRequestsOutput({
     String? cursor,
     @JoinRequestViewConverter() required List<JoinRequestView> requests,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupListJoinRequestsOutput;
 

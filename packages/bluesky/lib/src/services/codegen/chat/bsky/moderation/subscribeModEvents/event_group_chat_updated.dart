@@ -88,7 +88,6 @@ abstract class EventGroupChatUpdated with _$EventGroupChatUpdated {
     /// What changed.
     @EventGroupChatUpdatedUpdateTypeConverter()
     required EventGroupChatUpdatedUpdateType updateType,
-
     Map<String, dynamic>? $unknown,
   }) = _EventGroupChatUpdated;
 

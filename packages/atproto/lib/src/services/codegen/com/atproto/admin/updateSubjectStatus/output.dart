@@ -32,7 +32,6 @@ abstract class AdminUpdateSubjectStatusOutput
     @UAdminUpdateSubjectStatusSubjectConverter()
     required UAdminUpdateSubjectStatusSubject subject,
     @StatusAttrConverter() StatusAttr? takedown,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminUpdateSubjectStatusOutput;
 
@@ -46,9 +45,8 @@ extension AdminUpdateSubjectStatusOutputExtension
   bool get hasNotTakedown => !hasTakedown;
 }
 
-final class AdminUpdateSubjectStatusOutputConverter
-    extends
-        JsonConverter<AdminUpdateSubjectStatusOutput, Map<String, dynamic>> {
+final class AdminUpdateSubjectStatusOutputConverter extends JsonConverter<
+    AdminUpdateSubjectStatusOutput, Map<String, dynamic>> {
   const AdminUpdateSubjectStatusOutputConverter();
 
   @override

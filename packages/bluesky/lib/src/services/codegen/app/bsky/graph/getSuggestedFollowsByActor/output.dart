@@ -32,13 +32,13 @@ abstract class GraphGetSuggestedFollowsByActorOutput
 
     /// Snowflake for this recommendation, use when submitting recommendation events.
     String? recIdStr,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetSuggestedFollowsByActorOutput;
 
   factory GraphGetSuggestedFollowsByActorOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$GraphGetSuggestedFollowsByActorOutputFromJson(json);
+  ) =>
+      _$GraphGetSuggestedFollowsByActorOutputFromJson(json);
 }
 
 extension GraphGetSuggestedFollowsByActorOutputExtension
@@ -48,11 +48,8 @@ extension GraphGetSuggestedFollowsByActorOutputExtension
 }
 
 final class GraphGetSuggestedFollowsByActorOutputConverter
-    extends
-        JsonConverter<
-          GraphGetSuggestedFollowsByActorOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<GraphGetSuggestedFollowsByActorOutput,
+        Map<String, dynamic>> {
   const GraphGetSuggestedFollowsByActorOutputConverter();
 
   @override

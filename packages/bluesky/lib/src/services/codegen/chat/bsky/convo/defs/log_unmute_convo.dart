@@ -28,7 +28,6 @@ abstract class LogUnmuteConvo with _$LogUnmuteConvo {
     @Default('chat.bsky.convo.defs#logUnmuteConvo') String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogUnmuteConvo;
 

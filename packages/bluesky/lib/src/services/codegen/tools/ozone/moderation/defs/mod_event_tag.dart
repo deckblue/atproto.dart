@@ -39,7 +39,6 @@ abstract class ModEventTag with _$ModEventTag {
 
     /// Indicates how long the tags being added should remain before automatically being removed. Only applies to tags being added.
     int? durationInHours,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventTag;
 

@@ -30,7 +30,6 @@ abstract class LiveEventPreferences with _$LiveEventPreferences {
 
     /// Whether to hide all feeds from live events.
     @Default(false) bool hideAllFeeds,
-
     Map<String, dynamic>? $unknown,
   }) = _LiveEventPreferences;
 

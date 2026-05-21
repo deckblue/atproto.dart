@@ -90,10 +90,9 @@ final class UModEventViewSubjectConverter
 
   @override
   Map<String, dynamic> toJson(UModEventViewSubject object) => object.when(
-    repoRef: (data) => const RepoRefConverter().toJson(data),
-    repoStrongRef: (data) => const RepoStrongRefConverter().toJson(data),
-    messageRef: (data) => const MessageRefConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        repoRef: (data) => const RepoRefConverter().toJson(data),
+        repoStrongRef: (data) => const RepoStrongRefConverter().toJson(data),
+        messageRef: (data) => const MessageRefConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

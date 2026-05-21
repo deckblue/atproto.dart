@@ -30,7 +30,6 @@ abstract class TeamUpdateMemberInput with _$TeamUpdateMemberInput {
     required String did,
     bool? disabled,
     @TeamUpdateMemberRoleConverter() TeamUpdateMemberRole? role,
-
     Map<String, dynamic>? $unknown,
   }) = _TeamUpdateMemberInput;
 

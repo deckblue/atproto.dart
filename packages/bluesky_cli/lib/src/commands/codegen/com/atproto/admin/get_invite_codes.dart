@@ -37,8 +37,8 @@ final class GetInviteCodesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "sort": argResults!["sort"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "sort": argResults!["sort"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

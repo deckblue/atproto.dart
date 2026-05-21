@@ -30,7 +30,6 @@ abstract class ReportGetHistoricalStatsOutput
   const factory ReportGetHistoricalStatsOutput({
     @HistoricalStatsConverter() required List<HistoricalStats> stats,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportGetHistoricalStatsOutput;
 
@@ -44,9 +43,8 @@ extension ReportGetHistoricalStatsOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class ReportGetHistoricalStatsOutputConverter
-    extends
-        JsonConverter<ReportGetHistoricalStatsOutput, Map<String, dynamic>> {
+final class ReportGetHistoricalStatsOutputConverter extends JsonConverter<
+    ReportGetHistoricalStatsOutput, Map<String, dynamic>> {
   const ReportGetHistoricalStatsOutputConverter();
 
   @override

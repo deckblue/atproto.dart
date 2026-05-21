@@ -26,7 +26,6 @@ abstract class ConvoUpdateAllReadOutput with _$ConvoUpdateAllReadOutput {
   const factory ConvoUpdateAllReadOutput({
     /// The count of updated convos.
     required int updatedCount,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoUpdateAllReadOutput;
 

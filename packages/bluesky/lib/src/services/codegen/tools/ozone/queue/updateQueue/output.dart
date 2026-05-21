@@ -28,7 +28,6 @@ abstract class QueueUpdateQueueOutput with _$QueueUpdateQueueOutput {
   @JsonSerializable(includeIfNull: false)
   const factory QueueUpdateQueueOutput({
     @QueueViewConverter() required QueueView queue,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueUpdateQueueOutput;
 

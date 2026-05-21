@@ -37,7 +37,6 @@ abstract class BskyAppStatePref with _$BskyAppStatePref {
     @BskyAppProgressGuideConverter() BskyAppProgressGuide? activeProgressGuide,
     List<String>? queuedNudges,
     @NuxConverter() List<Nux>? nuxs,
-
     Map<String, dynamic>? $unknown,
   }) = _BskyAppStatePref;
 

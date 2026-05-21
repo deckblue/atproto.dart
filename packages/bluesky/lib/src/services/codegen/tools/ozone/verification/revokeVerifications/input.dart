@@ -31,13 +31,13 @@ abstract class VerificationRevokeVerificationsInput
 
     /// Reason for revoking the verification. This is optional and can be omitted if not needed.
     String? revokeReason,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationRevokeVerificationsInput;
 
   factory VerificationRevokeVerificationsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$VerificationRevokeVerificationsInputFromJson(json);
+  ) =>
+      _$VerificationRevokeVerificationsInputFromJson(json);
 }
 
 extension VerificationRevokeVerificationsInputExtension
@@ -46,12 +46,8 @@ extension VerificationRevokeVerificationsInputExtension
   bool get hasNotRevokeReason => !hasRevokeReason;
 }
 
-final class VerificationRevokeVerificationsInputConverter
-    extends
-        JsonConverter<
-          VerificationRevokeVerificationsInput,
-          Map<String, dynamic>
-        > {
+final class VerificationRevokeVerificationsInputConverter extends JsonConverter<
+    VerificationRevokeVerificationsInput, Map<String, dynamic>> {
   const VerificationRevokeVerificationsInputConverter();
 
   @override

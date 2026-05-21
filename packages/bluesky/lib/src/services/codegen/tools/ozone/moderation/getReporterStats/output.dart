@@ -29,18 +29,17 @@ abstract class ModerationGetReporterStatsOutput
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetReporterStatsOutput({
     @ReporterStatsConverter() required List<ReporterStats> stats,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetReporterStatsOutput;
 
   factory ModerationGetReporterStatsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationGetReporterStatsOutputFromJson(json);
+  ) =>
+      _$ModerationGetReporterStatsOutputFromJson(json);
 }
 
-final class ModerationGetReporterStatsOutputConverter
-    extends
-        JsonConverter<ModerationGetReporterStatsOutput, Map<String, dynamic>> {
+final class ModerationGetReporterStatsOutputConverter extends JsonConverter<
+    ModerationGetReporterStatsOutput, Map<String, dynamic>> {
   const ModerationGetReporterStatsOutputConverter();
 
   @override

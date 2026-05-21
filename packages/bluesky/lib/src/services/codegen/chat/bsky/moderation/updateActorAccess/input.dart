@@ -28,13 +28,13 @@ abstract class ModerationUpdateActorAccessInput
     required String actor,
     required bool allowAccess,
     String? ref,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationUpdateActorAccessInput;
 
   factory ModerationUpdateActorAccessInput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationUpdateActorAccessInputFromJson(json);
+  ) =>
+      _$ModerationUpdateActorAccessInputFromJson(json);
 }
 
 extension ModerationUpdateActorAccessInputExtension
@@ -45,9 +45,8 @@ extension ModerationUpdateActorAccessInputExtension
   bool get hasNotRef => !hasRef;
 }
 
-final class ModerationUpdateActorAccessInputConverter
-    extends
-        JsonConverter<ModerationUpdateActorAccessInput, Map<String, dynamic>> {
+final class ModerationUpdateActorAccessInputConverter extends JsonConverter<
+    ModerationUpdateActorAccessInput, Map<String, dynamic>> {
   const ModerationUpdateActorAccessInputConverter();
 
   @override

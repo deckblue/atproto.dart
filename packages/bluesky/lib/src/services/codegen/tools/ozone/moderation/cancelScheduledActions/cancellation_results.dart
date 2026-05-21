@@ -33,7 +33,6 @@ abstract class CancellationResults with _$CancellationResults {
     String $type,
     required List<String> succeeded,
     @FailedCancellationConverter() required List<FailedCancellation> failed,
-
     Map<String, dynamic>? $unknown,
   }) = _CancellationResults;
 

@@ -59,7 +59,6 @@ abstract class HistoricalStats with _$HistoricalStats {
 
     /// Average time in seconds from report creation (or moderator assignment) to close.
     int? avgHandlingTimeSec,
-
     Map<String, dynamic>? $unknown,
   }) = _HistoricalStats;
 

@@ -62,7 +62,6 @@ abstract class EventGroupChatJoinRequest with _$EventGroupChatJoinRequest {
 
     /// Whether the requesting member follows the group owner.
     required bool subjectFollowsOwner,
-
     Map<String, dynamic>? $unknown,
   }) = _EventGroupChatJoinRequest;
 

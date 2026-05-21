@@ -50,7 +50,6 @@ abstract class Draft with _$Draft {
     List<UDraftPostgateEmbeddingRules>? postgateEmbeddingRules,
     @UDraftThreadgateAllowConverter()
     List<UDraftThreadgateAllow>? threadgateAllow,
-
     Map<String, dynamic>? $unknown,
   }) = _Draft;
 

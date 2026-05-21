@@ -51,10 +51,11 @@ final class ApplyWritesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "repo": argResults!["repo"],
-    if (argResults!["validate"] != null) "validate": argResults!["validate"],
-    "writes": argResults!["writes"],
-    if (argResults!["swapCommit"] != null)
-      "swapCommit": argResults!["swapCommit"],
-  };
+        "repo": argResults!["repo"],
+        if (argResults!["validate"] != null)
+          "validate": argResults!["validate"],
+        "writes": argResults!["writes"],
+        if (argResults!["swapCommit"] != null)
+          "swapCommit": argResults!["swapCommit"],
+      };
 }

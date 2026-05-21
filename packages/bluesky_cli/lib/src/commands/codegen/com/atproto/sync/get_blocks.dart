@@ -36,7 +36,7 @@ final class GetBlocksCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "did": argResults!["did"],
-    "cids": argResults!["cids"],
-  };
+        "did": argResults!["did"],
+        "cids": argResults!["cids"],
+      };
 }

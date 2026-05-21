@@ -26,7 +26,6 @@ abstract class RepoDescribeRepoInput with _$RepoDescribeRepoInput {
   const factory RepoDescribeRepoInput({
     /// The handle or DID of the repo.
     required String repo,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoDescribeRepoInput;
 

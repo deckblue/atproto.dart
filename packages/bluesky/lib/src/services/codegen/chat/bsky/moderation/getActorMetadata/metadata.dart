@@ -34,7 +34,6 @@ abstract class Metadata with _$Metadata {
     required int messagesReceived,
     required int convos,
     required int convosStarted,
-
     Map<String, dynamic>? $unknown,
   }) = _Metadata;
 

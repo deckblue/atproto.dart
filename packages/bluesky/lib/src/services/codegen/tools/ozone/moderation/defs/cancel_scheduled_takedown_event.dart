@@ -29,7 +29,6 @@ abstract class CancelScheduledTakedownEvent
     @Default('tools.ozone.moderation.defs#cancelScheduledTakedownEvent')
     String $type,
     String? comment,
-
     Map<String, dynamic>? $unknown,
   }) = _CancelScheduledTakedownEvent;
 

@@ -28,7 +28,6 @@ abstract class ThreadContext with _$ThreadContext {
   const factory ThreadContext({
     @Default('app.bsky.feed.defs#threadContext') String $type,
     @AtUriConverter() AtUri? rootAuthorLike,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadContext;
 

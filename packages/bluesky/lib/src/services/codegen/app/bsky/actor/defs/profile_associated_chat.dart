@@ -33,7 +33,6 @@ abstract class ProfileAssociatedChat with _$ProfileAssociatedChat {
     required ProfileAssociatedChatAllowIncoming allowIncoming,
     @ProfileAssociatedChatAllowGroupInvitesConverter()
     ProfileAssociatedChatAllowGroupInvites? allowGroupInvites,
-
     Map<String, dynamic>? $unknown,
   }) = _ProfileAssociatedChat;
 

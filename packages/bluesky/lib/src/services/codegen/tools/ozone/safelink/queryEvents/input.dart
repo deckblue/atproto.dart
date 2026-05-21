@@ -46,7 +46,6 @@ abstract class SafelinkQueryEventsInput with _$SafelinkQueryEventsInput {
     /// Sort direction
     @SafelinkQueryEventsSortDirectionConverter()
     SafelinkQueryEventsSortDirection? sortDirection,
-
     Map<String, dynamic>? $unknown,
   }) = _SafelinkQueryEventsInput;
 

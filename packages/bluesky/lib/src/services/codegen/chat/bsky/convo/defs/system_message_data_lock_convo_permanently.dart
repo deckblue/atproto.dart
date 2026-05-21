@@ -35,13 +35,13 @@ abstract class SystemMessageDataLockConvoPermanently
     /// Current view of the member who locked the group.
     @SystemMessageReferredUserConverter()
     required SystemMessageReferredUser lockedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataLockConvoPermanently;
 
   factory SystemMessageDataLockConvoPermanently.fromJson(
     Map<String, Object?> json,
-  ) => _$SystemMessageDataLockConvoPermanentlyFromJson(json);
+  ) =>
+      _$SystemMessageDataLockConvoPermanentlyFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('\$type')) return false;
@@ -51,11 +51,8 @@ abstract class SystemMessageDataLockConvoPermanently
 }
 
 final class SystemMessageDataLockConvoPermanentlyConverter
-    extends
-        JsonConverter<
-          SystemMessageDataLockConvoPermanently,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<SystemMessageDataLockConvoPermanently,
+        Map<String, dynamic>> {
   const SystemMessageDataLockConvoPermanentlyConverter();
 
   @override

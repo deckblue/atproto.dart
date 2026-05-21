@@ -35,7 +35,6 @@ abstract class State with _$State {
     DateTime? lastInitiatedAt,
     @StatusConverter() required Status status,
     @AccessConverter() required Access access,
-
     Map<String, dynamic>? $unknown,
   }) = _State;
 

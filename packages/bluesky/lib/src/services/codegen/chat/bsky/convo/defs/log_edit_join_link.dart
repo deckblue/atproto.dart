@@ -34,7 +34,6 @@ abstract class LogEditJoinLink with _$LogEditJoinLink {
 
     /// A system message with data of type #systemMessageDataEditJoinLink
     @SystemMessageViewConverter() required SystemMessageView message,
-
     Map<String, dynamic>? $unknown,
   }) = _LogEditJoinLink;
 

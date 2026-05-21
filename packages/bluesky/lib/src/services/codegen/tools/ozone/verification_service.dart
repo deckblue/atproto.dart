@@ -25,26 +25,27 @@ import 'verification/revokeVerifications/output.dart';
 
 /// Grant verifications to multiple subjects. Allows batch processing of up to 100 verifications at once.
 Future<XRPCResponse<VerificationGrantVerificationsOutput>>
-toolsOzoneVerificationGrantVerifications({
+    toolsOzoneVerificationGrantVerifications({
   required List<VerificationInput> verifications,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.toolsOzoneVerificationGrantVerifications,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    'verifications': verifications.map((e) => e.toJson()).toList(),
-  },
-  to: const VerificationGrantVerificationsOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.post(
+          ns.toolsOzoneVerificationGrantVerifications,
+          service: $service,
+          headers: {'Content-type': 'application/json', ...?$headers},
+          body: {
+            ...?$unknown,
+            'verifications': verifications.map((e) => e.toJson()).toList(),
+          },
+          to: const VerificationGrantVerificationsOutputConverter().fromJson,
+        );
 
 /// List verifications
 Future<XRPCResponse<VerificationListVerificationsOutput>>
-toolsOzoneVerificationListVerifications({
+    toolsOzoneVerificationListVerifications({
   String? cursor,
   int? limit,
   DateTime? createdAfter,
@@ -57,44 +58,46 @@ toolsOzoneVerificationListVerifications({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.toolsOzoneVerificationListVerifications,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    if (cursor != null) 'cursor': cursor,
-    if (limit != null) 'limit': limit,
-    if (createdAfter != null) 'createdAfter': iso8601(createdAfter),
-    if (createdBefore != null) 'createdBefore': iso8601(createdBefore),
-    if (issuers != null) 'issuers': issuers,
-    if (subjects != null) 'subjects': subjects,
-    if (sortDirection != null) 'sortDirection': sortDirection,
-    if (isRevoked != null) 'isRevoked': isRevoked,
-  },
-  to: const VerificationListVerificationsOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.toolsOzoneVerificationListVerifications,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            if (cursor != null) 'cursor': cursor,
+            if (limit != null) 'limit': limit,
+            if (createdAfter != null) 'createdAfter': iso8601(createdAfter),
+            if (createdBefore != null) 'createdBefore': iso8601(createdBefore),
+            if (issuers != null) 'issuers': issuers,
+            if (subjects != null) 'subjects': subjects,
+            if (sortDirection != null) 'sortDirection': sortDirection,
+            if (isRevoked != null) 'isRevoked': isRevoked,
+          },
+          to: const VerificationListVerificationsOutputConverter().fromJson,
+        );
 
 /// Revoke previously granted verifications in batches of up to 100.
 Future<XRPCResponse<VerificationRevokeVerificationsOutput>>
-toolsOzoneVerificationRevokeVerifications({
+    toolsOzoneVerificationRevokeVerifications({
   required List<AtUri> uris,
   String? revokeReason,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.toolsOzoneVerificationRevokeVerifications,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    'uris': uris.map((e) => e.toString()).toList(),
-    if (revokeReason != null) 'revokeReason': revokeReason,
-  },
-  to: const VerificationRevokeVerificationsOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.post(
+          ns.toolsOzoneVerificationRevokeVerifications,
+          service: $service,
+          headers: {'Content-type': 'application/json', ...?$headers},
+          body: {
+            ...?$unknown,
+            'uris': uris.map((e) => e.toString()).toList(),
+            if (revokeReason != null) 'revokeReason': revokeReason,
+          },
+          to: const VerificationRevokeVerificationsOutputConverter().fromJson,
+        );
 
 /// `tools.ozone.verification.*`
 base class VerificationService {
@@ -105,18 +108,19 @@ base class VerificationService {
 
   /// Grant verifications to multiple subjects. Allows batch processing of up to 100 verifications at once.
   Future<XRPCResponse<VerificationGrantVerificationsOutput>>
-  grantVerifications({
+      grantVerifications({
     required List<VerificationInput> verifications,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await toolsOzoneVerificationGrantVerifications(
-    verifications: verifications,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+          await toolsOzoneVerificationGrantVerifications(
+            verifications: verifications,
+            $ctx: ctx,
+            $service: $service,
+            $headers: $headers,
+            $unknown: $unknown,
+          );
 
   /// List verifications
   Future<XRPCResponse<VerificationListVerificationsOutput>> listVerifications({
@@ -131,35 +135,37 @@ base class VerificationService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await toolsOzoneVerificationListVerifications(
-    cursor: cursor,
-    limit: limit,
-    createdAfter: createdAfter,
-    createdBefore: createdBefore,
-    issuers: issuers,
-    subjects: subjects,
-    sortDirection: sortDirection,
-    isRevoked: isRevoked,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await toolsOzoneVerificationListVerifications(
+        cursor: cursor,
+        limit: limit,
+        createdAfter: createdAfter,
+        createdBefore: createdBefore,
+        issuers: issuers,
+        subjects: subjects,
+        sortDirection: sortDirection,
+        isRevoked: isRevoked,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Revoke previously granted verifications in batches of up to 100.
   Future<XRPCResponse<VerificationRevokeVerificationsOutput>>
-  revokeVerifications({
+      revokeVerifications({
     required List<AtUri> uris,
     String? revokeReason,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await toolsOzoneVerificationRevokeVerifications(
-    uris: uris,
-    revokeReason: revokeReason,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+          await toolsOzoneVerificationRevokeVerifications(
+            uris: uris,
+            revokeReason: revokeReason,
+            $ctx: ctx,
+            $service: $service,
+            $headers: $headers,
+            $unknown: $unknown,
+          );
 }

@@ -33,7 +33,6 @@ abstract class AssignmentActivity with _$AssignmentActivity {
     /// The report's status before this activity. Populated automatically from the report row; not required in input.
     @AssignmentActivityPreviousStatusConverter()
     AssignmentActivityPreviousStatus? previousStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _AssignmentActivity;
 

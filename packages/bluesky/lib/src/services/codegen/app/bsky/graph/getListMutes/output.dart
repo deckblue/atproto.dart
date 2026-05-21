@@ -29,7 +29,6 @@ abstract class GraphGetListMutesOutput with _$GraphGetListMutesOutput {
   const factory GraphGetListMutesOutput({
     String? cursor,
     @ListViewConverter() required List<ListView> lists,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetListMutesOutput;
 

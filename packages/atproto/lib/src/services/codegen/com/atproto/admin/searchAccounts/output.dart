@@ -29,7 +29,6 @@ abstract class AdminSearchAccountsOutput with _$AdminSearchAccountsOutput {
   const factory AdminSearchAccountsOutput({
     String? cursor,
     @AccountViewConverter() required List<AccountView> accounts,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminSearchAccountsOutput;
 

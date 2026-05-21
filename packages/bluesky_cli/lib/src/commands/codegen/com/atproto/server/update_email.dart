@@ -41,9 +41,9 @@ final class UpdateEmailCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "email": argResults!["email"],
-    if (argResults!["emailAuthFactor"] != null)
-      "emailAuthFactor": argResults!["emailAuthFactor"],
-    if (argResults!["token"] != null) "token": argResults!["token"],
-  };
+        "email": argResults!["email"],
+        if (argResults!["emailAuthFactor"] != null)
+          "emailAuthFactor": argResults!["emailAuthFactor"],
+        if (argResults!["token"] != null) "token": argResults!["token"],
+      };
 }

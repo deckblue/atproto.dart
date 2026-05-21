@@ -46,7 +46,6 @@ abstract class RepoCreateRecordInput with _$RepoCreateRecordInput {
 
     /// Compare and swap with the previous commit by CID.
     String? swapCommit,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoCreateRecordInput;
 

@@ -28,7 +28,6 @@ abstract class EmbedVideoCaption with _$EmbedVideoCaption {
     @Default('app.bsky.embed.video#caption') String $type,
     required String lang,
     @BlobConverter() required Blob file,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedVideoCaption;
 

@@ -29,13 +29,13 @@ abstract class UnspeccedGetSuggestedUsersForExploreSkeletonOutput
 
     /// Snowflake for this recommendation, use when submitting recommendation events.
     String? recIdStr,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedUsersForExploreSkeletonOutput;
 
   factory UnspeccedGetSuggestedUsersForExploreSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedUsersForExploreSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedUsersForExploreSkeletonOutputFromJson(json);
 }
 
 extension UnspeccedGetSuggestedUsersForExploreSkeletonOutputExtension
@@ -45,11 +45,8 @@ extension UnspeccedGetSuggestedUsersForExploreSkeletonOutputExtension
 }
 
 final class UnspeccedGetSuggestedUsersForExploreSkeletonOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedUsersForExploreSkeletonOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedUsersForExploreSkeletonOutput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedUsersForExploreSkeletonOutputConverter();
 
   @override
@@ -67,5 +64,6 @@ final class UnspeccedGetSuggestedUsersForExploreSkeletonOutputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetSuggestedUsersForExploreSkeletonOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

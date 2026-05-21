@@ -29,7 +29,6 @@ abstract class BookmarkGetBookmarksOutput with _$BookmarkGetBookmarksOutput {
   const factory BookmarkGetBookmarksOutput({
     String? cursor,
     @BookmarkViewConverter() required List<BookmarkView> bookmarks,
-
     Map<String, dynamic>? $unknown,
   }) = _BookmarkGetBookmarksOutput;
 

@@ -31,7 +31,6 @@ abstract class MessageAndReactionView with _$MessageAndReactionView {
     @Default('chat.bsky.convo.defs#messageAndReactionView') String $type,
     @MessageViewConverter() required MessageView message,
     @ReactionViewConverter() required ReactionView reaction,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageAndReactionView;
 

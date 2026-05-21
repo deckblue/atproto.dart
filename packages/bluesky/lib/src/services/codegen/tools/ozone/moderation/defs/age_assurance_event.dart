@@ -69,7 +69,6 @@ abstract class AgeAssuranceEvent with _$AgeAssuranceEvent {
 
     /// The user agent used when completing the AA flow.
     String? completeUa,
-
     Map<String, dynamic>? $unknown,
   }) = _AgeAssuranceEvent;
 

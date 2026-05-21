@@ -16,10 +16,11 @@ import '../../../../query_command.dart';
 
 final class GetPostsCommand extends QueryCommand {
   GetPostsCommand() {
-    argParser..addMultiOption(
-      "uris",
-      help: r"List of post AT-URIs to return hydrated views for.",
-    );
+    argParser
+      ..addMultiOption(
+        "uris",
+        help: r"List of post AT-URIs to return hydrated views for.",
+      );
   }
 
   @override

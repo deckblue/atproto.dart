@@ -49,10 +49,11 @@ final class GetAssignmentsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "onlyActive": argResults!["onlyActive"],
-    if (argResults!["reportIds"] != null) "reportIds": argResults!["reportIds"],
-    if (argResults!["dids"] != null) "dids": argResults!["dids"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "onlyActive": argResults!["onlyActive"],
+        if (argResults!["reportIds"] != null)
+          "reportIds": argResults!["reportIds"],
+        if (argResults!["dids"] != null) "dids": argResults!["dids"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

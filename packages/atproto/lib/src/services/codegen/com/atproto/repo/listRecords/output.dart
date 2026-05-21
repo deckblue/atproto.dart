@@ -30,7 +30,6 @@ abstract class RepoListRecordsOutput with _$RepoListRecordsOutput {
     String? cursor,
     @RepoListRecordsRecordConverter()
     required List<RepoListRecordsRecord> records,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoListRecordsOutput;
 

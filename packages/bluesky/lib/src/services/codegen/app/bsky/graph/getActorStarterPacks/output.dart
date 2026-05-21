@@ -31,7 +31,6 @@ abstract class GraphGetActorStarterPacksOutput
     String? cursor,
     @StarterPackViewBasicConverter()
     required List<StarterPackViewBasic> starterPacks,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetActorStarterPacksOutput;
 
@@ -45,9 +44,8 @@ extension GraphGetActorStarterPacksOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class GraphGetActorStarterPacksOutputConverter
-    extends
-        JsonConverter<GraphGetActorStarterPacksOutput, Map<String, dynamic>> {
+final class GraphGetActorStarterPacksOutputConverter extends JsonConverter<
+    GraphGetActorStarterPacksOutput, Map<String, dynamic>> {
   const GraphGetActorStarterPacksOutputConverter();
 
   @override

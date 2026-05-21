@@ -28,7 +28,6 @@ abstract class GroupCreateJoinLinkOutput with _$GroupCreateJoinLinkOutput {
   @JsonSerializable(includeIfNull: false)
   const factory GroupCreateJoinLinkOutput({
     @JoinLinkViewConverter() required JoinLinkView joinLink,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupCreateJoinLinkOutput;
 

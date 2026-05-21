@@ -27,7 +27,6 @@ abstract class ResultAvailable with _$ResultAvailable {
   const factory ResultAvailable({
     @Default('com.atproto.temp.checkHandleAvailability#resultAvailable')
     String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _ResultAvailable;
 

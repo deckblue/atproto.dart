@@ -29,7 +29,6 @@ abstract class QueueAssignModeratorInput with _$QueueAssignModeratorInput {
 
     /// DID to be assigned.
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueAssignModeratorInput;
 

@@ -16,11 +16,12 @@ import '../../../../query_command.dart';
 
 final class DereferenceScopeCommand extends QueryCommand {
   DereferenceScopeCommand() {
-    argParser..addOption(
-      "scope",
-      help: r"The scope reference (starts with 'ref:')",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "scope",
+        help: r"The scope reference (starts with 'ref:')",
+        mandatory: true,
+      );
   }
 
   @override

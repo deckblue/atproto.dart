@@ -37,7 +37,7 @@ final class ListMissingBlobsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

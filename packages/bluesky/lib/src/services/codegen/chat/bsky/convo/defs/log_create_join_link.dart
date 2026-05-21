@@ -34,7 +34,6 @@ abstract class LogCreateJoinLink with _$LogCreateJoinLink {
 
     /// A system message with data of type #systemMessageDataCreateJoinLink
     @SystemMessageViewConverter() required SystemMessageView message,
-
     Map<String, dynamic>? $unknown,
   }) = _LogCreateJoinLink;
 

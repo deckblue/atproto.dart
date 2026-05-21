@@ -30,7 +30,6 @@ abstract class RepoApplyWritesOutput with _$RepoApplyWritesOutput {
   const factory RepoApplyWritesOutput({
     @CommitMetaConverter() CommitMeta? commit,
     @URepoApplyWritesResultsConverter() List<URepoApplyWritesResults>? results,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoApplyWritesOutput;
 

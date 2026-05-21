@@ -41,7 +41,6 @@ abstract class FeedThreadgateRecord with _$FeedThreadgateRecord {
     @UFeedThreadgateAllowConverter() List<UFeedThreadgateAllow>? allow,
     required DateTime createdAt,
     @AtUriConverter() List<AtUri>? hiddenReplies,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedThreadgateRecord;
 

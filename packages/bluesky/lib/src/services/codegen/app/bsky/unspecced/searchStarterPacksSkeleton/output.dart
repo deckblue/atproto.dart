@@ -34,13 +34,13 @@ abstract class UnspeccedSearchStarterPacksSkeletonOutput
     int? hitsTotal,
     @SkeletonSearchStarterPackConverter()
     required List<SkeletonSearchStarterPack> starterPacks,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedSearchStarterPacksSkeletonOutput;
 
   factory UnspeccedSearchStarterPacksSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedSearchStarterPacksSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedSearchStarterPacksSkeletonOutputFromJson(json);
 }
 
 extension UnspeccedSearchStarterPacksSkeletonOutputExtension
@@ -52,11 +52,8 @@ extension UnspeccedSearchStarterPacksSkeletonOutputExtension
 }
 
 final class UnspeccedSearchStarterPacksSkeletonOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedSearchStarterPacksSkeletonOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedSearchStarterPacksSkeletonOutput,
+        Map<String, dynamic>> {
   const UnspeccedSearchStarterPacksSkeletonOutputConverter();
 
   @override
@@ -71,5 +68,6 @@ final class UnspeccedSearchStarterPacksSkeletonOutputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedSearchStarterPacksSkeletonOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

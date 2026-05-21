@@ -28,7 +28,6 @@ abstract class AdminGetAccountInfosOutput with _$AdminGetAccountInfosOutput {
   @JsonSerializable(includeIfNull: false)
   const factory AdminGetAccountInfosOutput({
     @AccountViewConverter() required List<AccountView> infos,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminGetAccountInfosOutput;
 

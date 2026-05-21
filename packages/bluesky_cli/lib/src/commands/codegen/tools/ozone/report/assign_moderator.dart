@@ -55,10 +55,10 @@ final class AssignModeratorCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "reportId": argResults!["reportId"],
-    if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
-    if (argResults!["did"] != null) "did": argResults!["did"],
-    if (argResults!["isPermanent"] != null)
-      "isPermanent": argResults!["isPermanent"],
-  };
+        "reportId": argResults!["reportId"],
+        if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
+        if (argResults!["did"] != null) "did": argResults!["did"],
+        if (argResults!["isPermanent"] != null)
+          "isPermanent": argResults!["isPermanent"],
+      };
 }

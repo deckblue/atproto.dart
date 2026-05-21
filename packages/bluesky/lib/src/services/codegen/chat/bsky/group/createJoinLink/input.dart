@@ -30,7 +30,6 @@ abstract class GroupCreateJoinLinkInput with _$GroupCreateJoinLinkInput {
     required String convoId,
     @Default(false) bool requireApproval,
     @JoinRuleConverter() required JoinRule joinRule,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupCreateJoinLinkInput;
 

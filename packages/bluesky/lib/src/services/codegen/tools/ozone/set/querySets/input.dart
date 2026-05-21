@@ -37,7 +37,6 @@ abstract class SetQuerySetsInput with _$SetQuerySetsInput {
 
     /// Defaults to ascending order of name field.
     @Default('asc') String sortDirection,
-
     Map<String, dynamic>? $unknown,
   }) = _SetQuerySetsInput;
 

@@ -29,7 +29,6 @@ abstract class FeedGetActorLikesOutput with _$FeedGetActorLikesOutput {
   const factory FeedGetActorLikesOutput({
     String? cursor,
     @FeedViewPostConverter() required List<FeedViewPost> feed,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetActorLikesOutput;
 

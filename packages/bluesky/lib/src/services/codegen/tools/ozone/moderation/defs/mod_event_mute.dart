@@ -30,7 +30,6 @@ abstract class ModEventMute with _$ModEventMute {
 
     /// Indicates how long the subject should remain muted.
     required int durationInHours,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventMute;
 

@@ -28,7 +28,6 @@ abstract class UnspeccedGetTrendsSkeletonInput
     /// DID of the account making the request (not included for public/unauthenticated queries).
     String? viewer,
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTrendsSkeletonInput;
 
@@ -42,9 +41,8 @@ extension UnspeccedGetTrendsSkeletonInputExtension
   bool get hasNotViewer => !hasViewer;
 }
 
-final class UnspeccedGetTrendsSkeletonInputConverter
-    extends
-        JsonConverter<UnspeccedGetTrendsSkeletonInput, Map<String, dynamic>> {
+final class UnspeccedGetTrendsSkeletonInputConverter extends JsonConverter<
+    UnspeccedGetTrendsSkeletonInput, Map<String, dynamic>> {
   const UnspeccedGetTrendsSkeletonInputConverter();
 
   @override

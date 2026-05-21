@@ -30,7 +30,6 @@ abstract class ContactSendNotificationInput
 
     /// The DID of who this notification should go to.
     required String to,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactSendNotificationInput;
 

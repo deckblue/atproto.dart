@@ -28,7 +28,6 @@ abstract class ReportListActivitiesInput with _$ReportListActivitiesInput {
     required int reportId,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportListActivitiesInput;
 

@@ -31,7 +31,6 @@ abstract class TempCheckSignupQueueOutput with _$TempCheckSignupQueueOutput {
     required bool activated,
     int? placeInQueue,
     int? estimatedTimeMs,
-
     Map<String, dynamic>? $unknown,
   }) = _TempCheckSignupQueueOutput;
 

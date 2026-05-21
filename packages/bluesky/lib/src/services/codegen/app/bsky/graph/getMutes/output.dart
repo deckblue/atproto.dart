@@ -29,7 +29,6 @@ abstract class GraphGetMutesOutput with _$GraphGetMutesOutput {
   const factory GraphGetMutesOutput({
     String? cursor,
     @ProfileViewConverter() required List<ProfileView> mutes,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetMutesOutput;
 

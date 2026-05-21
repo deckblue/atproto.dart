@@ -78,7 +78,6 @@ abstract class ReportQueryReportsInput with _$ReportQueryReportsInput {
     @Default('desc') String sortDirection,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportQueryReportsInput;
 

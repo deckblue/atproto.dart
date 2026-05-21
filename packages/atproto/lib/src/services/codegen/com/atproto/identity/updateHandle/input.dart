@@ -26,7 +26,6 @@ abstract class IdentityUpdateHandleInput with _$IdentityUpdateHandleInput {
   const factory IdentityUpdateHandleInput({
     /// The new handle.
     required String handle,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityUpdateHandleInput;
 

@@ -32,18 +32,17 @@ abstract class TempCheckHandleAvailabilityOutput
     required String handle,
     @UTempCheckHandleAvailabilityResultConverter()
     required UTempCheckHandleAvailabilityResult result,
-
     Map<String, dynamic>? $unknown,
   }) = _TempCheckHandleAvailabilityOutput;
 
   factory TempCheckHandleAvailabilityOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$TempCheckHandleAvailabilityOutputFromJson(json);
+  ) =>
+      _$TempCheckHandleAvailabilityOutputFromJson(json);
 }
 
-final class TempCheckHandleAvailabilityOutputConverter
-    extends
-        JsonConverter<TempCheckHandleAvailabilityOutput, Map<String, dynamic>> {
+final class TempCheckHandleAvailabilityOutputConverter extends JsonConverter<
+    TempCheckHandleAvailabilityOutput, Map<String, dynamic>> {
   const TempCheckHandleAvailabilityOutputConverter();
 
   @override

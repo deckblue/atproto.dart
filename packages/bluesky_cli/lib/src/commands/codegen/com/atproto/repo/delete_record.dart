@@ -54,12 +54,12 @@ final class DeleteRecordCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "repo": argResults!["repo"],
-    "collection": argResults!["collection"],
-    "rkey": argResults!["rkey"],
-    if (argResults!["swapRecord"] != null)
-      "swapRecord": argResults!["swapRecord"],
-    if (argResults!["swapCommit"] != null)
-      "swapCommit": argResults!["swapCommit"],
-  };
+        "repo": argResults!["repo"],
+        "collection": argResults!["collection"],
+        "rkey": argResults!["rkey"],
+        if (argResults!["swapRecord"] != null)
+          "swapRecord": argResults!["swapRecord"],
+        if (argResults!["swapCommit"] != null)
+          "swapCommit": argResults!["swapCommit"],
+      };
 }

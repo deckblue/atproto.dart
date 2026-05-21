@@ -42,7 +42,6 @@ abstract class LogAddReaction with _$LogAddReaction {
     @ULogAddReactionMessageConverter() required ULogAddReactionMessage message,
     @ReactionViewConverter() required ReactionView reaction,
     @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _LogAddReaction;
 

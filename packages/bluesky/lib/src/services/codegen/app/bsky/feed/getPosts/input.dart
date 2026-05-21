@@ -26,7 +26,6 @@ abstract class FeedGetPostsInput with _$FeedGetPostsInput {
   @JsonSerializable(includeIfNull: false)
   const factory FeedGetPostsInput({
     @AtUriConverter() required List<AtUri> uris,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetPostsInput;
 

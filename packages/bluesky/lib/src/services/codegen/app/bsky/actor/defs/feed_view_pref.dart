@@ -50,7 +50,6 @@ abstract class FeedViewPref with _$FeedViewPref {
 
     /// Hide quote posts in the feed.
     bool? hideQuotePosts,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedViewPref;
 

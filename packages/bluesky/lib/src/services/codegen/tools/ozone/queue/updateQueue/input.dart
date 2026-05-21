@@ -40,7 +40,6 @@ abstract class QueueUpdateQueueInput with _$QueueUpdateQueueInput {
 
     /// Optional description of the queue
     String? description,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueUpdateQueueInput;
 

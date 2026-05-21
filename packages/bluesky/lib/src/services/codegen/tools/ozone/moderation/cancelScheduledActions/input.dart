@@ -29,13 +29,13 @@ abstract class ModerationCancelScheduledActionsInput
 
     /// Optional comment describing the reason for cancellation
     String? comment,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationCancelScheduledActionsInput;
 
   factory ModerationCancelScheduledActionsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationCancelScheduledActionsInputFromJson(json);
+  ) =>
+      _$ModerationCancelScheduledActionsInputFromJson(json);
 }
 
 extension ModerationCancelScheduledActionsInputExtension
@@ -45,11 +45,8 @@ extension ModerationCancelScheduledActionsInputExtension
 }
 
 final class ModerationCancelScheduledActionsInputConverter
-    extends
-        JsonConverter<
-          ModerationCancelScheduledActionsInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<ModerationCancelScheduledActionsInput,
+        Map<String, dynamic>> {
   const ModerationCancelScheduledActionsInputConverter();
 
   @override

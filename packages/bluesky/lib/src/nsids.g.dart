@@ -815,14 +815,14 @@ const chatBskyModerationSubscribeModEventsEventGroupChatJoinRequest = NSID(
 /// `chat.bsky.moderation.subscribeModEvents#eventGroupChatJoinRequestApproved`
 const chatBskyModerationSubscribeModEventsEventGroupChatJoinRequestApproved =
     NSID(
-      ids.chatBskyModerationSubscribeModEventsEventGroupChatJoinRequestApproved,
-    );
+  ids.chatBskyModerationSubscribeModEventsEventGroupChatJoinRequestApproved,
+);
 
 /// `chat.bsky.moderation.subscribeModEvents#eventGroupChatJoinRequestRejected`
 const chatBskyModerationSubscribeModEventsEventGroupChatJoinRequestRejected =
     NSID(
-      ids.chatBskyModerationSubscribeModEventsEventGroupChatJoinRequestRejected,
-    );
+  ids.chatBskyModerationSubscribeModEventsEventGroupChatJoinRequestRejected,
+);
 
 /// `chat.bsky.moderation.subscribeModEvents#eventGroupChatMemberAdded`
 const chatBskyModerationSubscribeModEventsEventGroupChatMemberAdded = NSID(

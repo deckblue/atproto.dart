@@ -34,13 +34,13 @@ abstract class IdentityGetRecommendedDidCredentialsOutput
     List<String>? alsoKnownAs,
     Map<String, dynamic>? verificationMethods,
     Map<String, dynamic>? services,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityGetRecommendedDidCredentialsOutput;
 
   factory IdentityGetRecommendedDidCredentialsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$IdentityGetRecommendedDidCredentialsOutputFromJson(json);
+  ) =>
+      _$IdentityGetRecommendedDidCredentialsOutputFromJson(json);
 }
 
 extension IdentityGetRecommendedDidCredentialsOutputExtension
@@ -52,11 +52,8 @@ extension IdentityGetRecommendedDidCredentialsOutputExtension
 }
 
 final class IdentityGetRecommendedDidCredentialsOutputConverter
-    extends
-        JsonConverter<
-          IdentityGetRecommendedDidCredentialsOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<IdentityGetRecommendedDidCredentialsOutput,
+        Map<String, dynamic>> {
   const IdentityGetRecommendedDidCredentialsOutputConverter();
 
   @override
@@ -71,5 +68,6 @@ final class IdentityGetRecommendedDidCredentialsOutputConverter
   @override
   Map<String, dynamic> toJson(
     IdentityGetRecommendedDidCredentialsOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

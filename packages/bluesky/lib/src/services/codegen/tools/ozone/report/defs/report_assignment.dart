@@ -38,7 +38,6 @@ abstract class ReportAssignment with _$ReportAssignment {
 
     /// When the report was assigned
     required DateTime assignedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportAssignment;
 

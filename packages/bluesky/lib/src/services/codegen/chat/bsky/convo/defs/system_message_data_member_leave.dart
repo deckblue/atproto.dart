@@ -34,7 +34,6 @@ abstract class SystemMessageDataMemberLeave
     /// Current view of the member who left the group.
     @SystemMessageReferredUserConverter()
     required SystemMessageReferredUser member,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataMemberLeave;
 

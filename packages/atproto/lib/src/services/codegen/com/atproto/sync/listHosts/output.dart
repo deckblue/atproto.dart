@@ -29,7 +29,6 @@ abstract class SyncListHostsOutput with _$SyncListHostsOutput {
   const factory SyncListHostsOutput({
     String? cursor,
     @HostConverter() required List<Host> hosts,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncListHostsOutput;
 

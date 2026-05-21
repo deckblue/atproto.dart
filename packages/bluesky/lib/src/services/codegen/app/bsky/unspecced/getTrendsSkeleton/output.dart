@@ -29,18 +29,17 @@ abstract class UnspeccedGetTrendsSkeletonOutput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetTrendsSkeletonOutput({
     @SkeletonTrendConverter() required List<SkeletonTrend> trends,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTrendsSkeletonOutput;
 
   factory UnspeccedGetTrendsSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetTrendsSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetTrendsSkeletonOutputFromJson(json);
 }
 
-final class UnspeccedGetTrendsSkeletonOutputConverter
-    extends
-        JsonConverter<UnspeccedGetTrendsSkeletonOutput, Map<String, dynamic>> {
+final class UnspeccedGetTrendsSkeletonOutputConverter extends JsonConverter<
+    UnspeccedGetTrendsSkeletonOutput, Map<String, dynamic>> {
   const UnspeccedGetTrendsSkeletonOutputConverter();
 
   @override

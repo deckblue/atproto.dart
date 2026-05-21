@@ -26,7 +26,6 @@ abstract class SkeletonSearchActor with _$SkeletonSearchActor {
   const factory SkeletonSearchActor({
     @Default('app.bsky.unspecced.defs#skeletonSearchActor') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _SkeletonSearchActor;
 

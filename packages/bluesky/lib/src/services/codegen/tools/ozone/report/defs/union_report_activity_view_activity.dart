@@ -148,7 +148,6 @@ final class UReportActivityViewActivityConverter
         closeActivity: (data) => const CloseActivityConverter().toJson(data),
         reopenActivity: (data) => const ReopenActivityConverter().toJson(data),
         noteActivity: (data) => const NoteActivityConverter().toJson(data),
-
         unknown: (data) => data,
       );
 }

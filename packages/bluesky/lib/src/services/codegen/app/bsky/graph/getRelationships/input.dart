@@ -27,7 +27,6 @@ abstract class GraphGetRelationshipsInput with _$GraphGetRelationshipsInput {
     /// Primary account requesting relationships for.
     required String actor,
     List<String>? others,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetRelationshipsInput;
 

@@ -33,13 +33,13 @@ abstract class UnspeccedSearchPostsSkeletonOutput
     /// Count of search hits. Optional, may be rounded/truncated, and may not be possible to paginate through all hits.
     int? hitsTotal,
     @SkeletonSearchPostConverter() required List<SkeletonSearchPost> posts,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedSearchPostsSkeletonOutput;
 
   factory UnspeccedSearchPostsSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedSearchPostsSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedSearchPostsSkeletonOutputFromJson(json);
 }
 
 extension UnspeccedSearchPostsSkeletonOutputExtension
@@ -50,12 +50,8 @@ extension UnspeccedSearchPostsSkeletonOutputExtension
   bool get hasNotHitsTotal => !hasHitsTotal;
 }
 
-final class UnspeccedSearchPostsSkeletonOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedSearchPostsSkeletonOutput,
-          Map<String, dynamic>
-        > {
+final class UnspeccedSearchPostsSkeletonOutputConverter extends JsonConverter<
+    UnspeccedSearchPostsSkeletonOutput, Map<String, dynamic>> {
   const UnspeccedSearchPostsSkeletonOutputConverter();
 
   @override

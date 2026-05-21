@@ -31,19 +31,20 @@ Future<XRPCResponse<State>> appBskyAgeassuranceBegin({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyAgeassuranceBegin,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    'email': email,
-    'language': language,
-    'countryCode': countryCode,
-    if (regionCode != null) 'regionCode': regionCode,
-  },
-  to: const StateConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyAgeassuranceBegin,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {
+        ...?$unknown,
+        'email': email,
+        'language': language,
+        'countryCode': countryCode,
+        if (regionCode != null) 'regionCode': regionCode,
+      },
+      to: const StateConverter().fromJson,
+    );
 
 /// Returns Age Assurance configuration for use on the client.
 Future<XRPCResponse<Config>> appBskyAgeassuranceGetConfig({
@@ -51,13 +52,14 @@ Future<XRPCResponse<Config>> appBskyAgeassuranceGetConfig({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyAgeassuranceGetConfig,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown},
-  to: const ConfigConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.appBskyAgeassuranceGetConfig,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown},
+      to: const ConfigConverter().fromJson,
+    );
 
 /// Returns server-computed Age Assurance state, if available, and any additional metadata needed to compute Age Assurance state client-side.
 Future<XRPCResponse<AgeassuranceGetStateOutput>> appBskyAgeassuranceGetState({
@@ -67,17 +69,18 @@ Future<XRPCResponse<AgeassuranceGetStateOutput>> appBskyAgeassuranceGetState({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyAgeassuranceGetState,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    'countryCode': countryCode,
-    if (regionCode != null) 'regionCode': regionCode,
-  },
-  to: const AgeassuranceGetStateOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.appBskyAgeassuranceGetState,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        'countryCode': countryCode,
+        if (regionCode != null) 'regionCode': regionCode,
+      },
+      to: const AgeassuranceGetStateOutputConverter().fromJson,
+    );
 
 /// `app.bsky.ageassurance.*`
 base class AgeassuranceService {
@@ -95,28 +98,30 @@ base class AgeassuranceService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyAgeassuranceBegin(
-    email: email,
-    language: language,
-    countryCode: countryCode,
-    regionCode: regionCode,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyAgeassuranceBegin(
+        email: email,
+        language: language,
+        countryCode: countryCode,
+        regionCode: regionCode,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Returns Age Assurance configuration for use on the client.
   Future<XRPCResponse<Config>> getConfig({
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyAgeassuranceGetConfig(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyAgeassuranceGetConfig(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Returns server-computed Age Assurance state, if available, and any additional metadata needed to compute Age Assurance state client-side.
   Future<XRPCResponse<AgeassuranceGetStateOutput>> getState({
@@ -125,12 +130,13 @@ base class AgeassuranceService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyAgeassuranceGetState(
-    countryCode: countryCode,
-    regionCode: regionCode,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyAgeassuranceGetState(
+        countryCode: countryCode,
+        regionCode: regionCode,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

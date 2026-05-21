@@ -59,7 +59,6 @@ abstract class Takedown with _$Takedown {
 
     /// Subject of the email to be sent to the user upon takedown.
     String? emailSubject,
-
     Map<String, dynamic>? $unknown,
   }) = _Takedown;
 

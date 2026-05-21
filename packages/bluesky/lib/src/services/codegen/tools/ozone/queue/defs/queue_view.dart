@@ -71,7 +71,6 @@ abstract class QueueView with _$QueueView {
 
     /// Statistics about this queue
     @QueueStatsConverter() required QueueStats stats,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueView;
 

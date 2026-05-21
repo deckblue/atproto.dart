@@ -30,7 +30,6 @@ abstract class FeedRepostRecord with _$FeedRepostRecord {
     @RepoStrongRefConverter() required RepoStrongRef subject,
     required DateTime createdAt,
     @RepoStrongRefConverter() RepoStrongRef? via,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedRepostRecord;
 

@@ -28,7 +28,6 @@ abstract class MessageRef with _$MessageRef {
     required String did,
     required String convoId,
     required String messageId,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageRef;
 

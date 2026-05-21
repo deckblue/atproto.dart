@@ -59,13 +59,13 @@ abstract class EventGroupChatJoinRequestApproved
 
     /// The DID of the member whose request was approved.
     required String subjectDid,
-
     Map<String, dynamic>? $unknown,
   }) = _EventGroupChatJoinRequestApproved;
 
   factory EventGroupChatJoinRequestApproved.fromJson(
     Map<String, Object?> json,
-  ) => _$EventGroupChatJoinRequestApprovedFromJson(json);
+  ) =>
+      _$EventGroupChatJoinRequestApprovedFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('t')) return false;
@@ -73,9 +73,8 @@ abstract class EventGroupChatJoinRequestApproved
   }
 }
 
-final class EventGroupChatJoinRequestApprovedConverter
-    extends
-        JsonConverter<EventGroupChatJoinRequestApproved, Map<String, dynamic>> {
+final class EventGroupChatJoinRequestApprovedConverter extends JsonConverter<
+    EventGroupChatJoinRequestApproved, Map<String, dynamic>> {
   const EventGroupChatJoinRequestApprovedConverter();
 
   @override

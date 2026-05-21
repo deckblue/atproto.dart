@@ -29,7 +29,6 @@ abstract class FeedGetSuggestedFeedsOutput with _$FeedGetSuggestedFeedsOutput {
   const factory FeedGetSuggestedFeedsOutput({
     String? cursor,
     @GeneratorViewConverter() required List<GeneratorView> feeds,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetSuggestedFeedsOutput;
 

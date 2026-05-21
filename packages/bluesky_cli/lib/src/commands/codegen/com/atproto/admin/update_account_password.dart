@@ -37,7 +37,7 @@ final class UpdateAccountPasswordCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "did": argResults!["did"],
-    "password": argResults!["password"],
-  };
+        "did": argResults!["did"],
+        "password": argResults!["password"],
+      };
 }

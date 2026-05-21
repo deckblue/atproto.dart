@@ -28,7 +28,6 @@ abstract class GroupCreateGroupOutput with _$GroupCreateGroupOutput {
   @JsonSerializable(includeIfNull: false)
   const factory GroupCreateGroupOutput({
     @ConvoViewConverter() required ConvoView convo,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupCreateGroupOutput;
 

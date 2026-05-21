@@ -30,7 +30,6 @@ abstract class Info with _$Info {
     @Default('com.atproto.label.subscribeLabels#info') String $type,
     @InfoNameConverter() required InfoName name,
     String? message,
-
     Map<String, dynamic>? $unknown,
   }) = _Info;
 

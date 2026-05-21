@@ -26,21 +26,18 @@ abstract class UnspeccedGetSuggestedUsersForDiscoverInput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetSuggestedUsersForDiscoverInput({
     @Default(25) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedUsersForDiscoverInput;
 
   factory UnspeccedGetSuggestedUsersForDiscoverInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedUsersForDiscoverInputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedUsersForDiscoverInputFromJson(json);
 }
 
 final class UnspeccedGetSuggestedUsersForDiscoverInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedUsersForDiscoverInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedUsersForDiscoverInput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedUsersForDiscoverInputConverter();
 
   @override
@@ -55,5 +52,6 @@ final class UnspeccedGetSuggestedUsersForDiscoverInputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetSuggestedUsersForDiscoverInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

@@ -37,7 +37,7 @@ final class ConfirmEmailCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "email": argResults!["email"],
-    "token": argResults!["token"],
-  };
+        "email": argResults!["email"],
+        "token": argResults!["token"],
+      };
 }

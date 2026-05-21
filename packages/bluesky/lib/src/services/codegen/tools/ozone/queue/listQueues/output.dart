@@ -29,7 +29,6 @@ abstract class QueueListQueuesOutput with _$QueueListQueuesOutput {
   const factory QueueListQueuesOutput({
     String? cursor,
     @QueueViewConverter() required List<QueueView> queues,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueListQueuesOutput;
 

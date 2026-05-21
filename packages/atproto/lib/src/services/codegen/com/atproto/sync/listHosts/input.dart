@@ -26,7 +26,6 @@ abstract class SyncListHostsInput with _$SyncListHostsInput {
   const factory SyncListHostsInput({
     @Default(200) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncListHostsInput;
 

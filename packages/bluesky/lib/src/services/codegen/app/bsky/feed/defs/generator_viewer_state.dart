@@ -27,7 +27,6 @@ abstract class GeneratorViewerState with _$GeneratorViewerState {
   const factory GeneratorViewerState({
     @Default('app.bsky.feed.defs#generatorViewerState') String $type,
     @AtUriConverter() AtUri? like,
-
     Map<String, dynamic>? $unknown,
   }) = _GeneratorViewerState;
 

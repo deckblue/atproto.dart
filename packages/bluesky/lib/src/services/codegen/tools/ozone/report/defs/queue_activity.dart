@@ -33,7 +33,6 @@ abstract class QueueActivity with _$QueueActivity {
     /// The report's status before this activity. Populated automatically from the report row; not required in input.
     @QueueActivityPreviousStatusConverter()
     QueueActivityPreviousStatus? previousStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _QueueActivity;
 

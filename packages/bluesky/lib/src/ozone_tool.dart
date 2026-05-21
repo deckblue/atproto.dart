@@ -31,30 +31,31 @@ sealed class OzoneTool {
     final core.RetryConfig? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _OzoneTool(
-    core.ServiceContext(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      session: session,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-    atp.ATProto.fromSession(
-      session,
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _OzoneTool(
+        core.ServiceContext(
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          session: session,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+        atp.ATProto.fromSession(
+          session,
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the global headers without auth header.
   Map<String, String> get headers;
@@ -119,17 +120,17 @@ sealed class OzoneTool {
 
 final class _OzoneTool implements OzoneTool {
   _OzoneTool(final core.ServiceContext ctx, this.atproto)
-    : communication = CommunicationService(ctx),
-      hosting = HostingService(ctx),
-      moderation = ModerationService(ctx),
-      safelink = SafelinkService(ctx),
-      server = ServerService(ctx),
-      set = SetService(ctx),
-      setting = SettingService(ctx),
-      signature = SignatureService(ctx),
-      team = TeamService(ctx),
-      verification = VerificationService(ctx),
-      _ctx = ctx;
+      : communication = CommunicationService(ctx),
+        hosting = HostingService(ctx),
+        moderation = ModerationService(ctx),
+        safelink = SafelinkService(ctx),
+        server = ServerService(ctx),
+        set = SetService(ctx),
+        setting = SettingService(ctx),
+        signature = SignatureService(ctx),
+        team = TeamService(ctx),
+        verification = VerificationService(ctx),
+        _ctx = ctx;
 
   final core.ServiceContext _ctx;
 

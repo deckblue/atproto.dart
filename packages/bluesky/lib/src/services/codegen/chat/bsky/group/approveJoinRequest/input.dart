@@ -27,7 +27,6 @@ abstract class GroupApproveJoinRequestInput
   const factory GroupApproveJoinRequestInput({
     required String convoId,
     required String member,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupApproveJoinRequestInput;
 

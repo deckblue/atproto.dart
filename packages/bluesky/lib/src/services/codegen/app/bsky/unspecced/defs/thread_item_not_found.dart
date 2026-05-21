@@ -25,7 +25,6 @@ abstract class ThreadItemNotFound with _$ThreadItemNotFound {
   @JsonSerializable(includeIfNull: false)
   const factory ThreadItemNotFound({
     @Default('app.bsky.unspecced.defs#threadItemNotFound') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadItemNotFound;
 

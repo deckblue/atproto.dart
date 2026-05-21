@@ -31,7 +31,6 @@ abstract class ConvoListConvoRequestsOutput
     String? cursor,
     @UConvoListConvoRequestsRequestsConverter()
     required List<UConvoListConvoRequestsRequests> requests,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoListConvoRequestsOutput;
 

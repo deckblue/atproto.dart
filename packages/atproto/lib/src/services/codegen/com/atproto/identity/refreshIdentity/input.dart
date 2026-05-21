@@ -26,7 +26,6 @@ abstract class IdentityRefreshIdentityInput
   @JsonSerializable(includeIfNull: false)
   const factory IdentityRefreshIdentityInput({
     required String identifier,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityRefreshIdentityInput;
 

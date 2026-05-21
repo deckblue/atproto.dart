@@ -48,7 +48,6 @@ abstract class ServerDescribeServerOutput with _$ServerDescribeServerOutput {
     /// Contact information
     @ContactConverter() Contact? contact,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerDescribeServerOutput;
 

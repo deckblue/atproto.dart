@@ -27,7 +27,6 @@ abstract class GroupListJoinRequestsInput with _$GroupListJoinRequestsInput {
     required String convoId,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupListJoinRequestsInput;
 

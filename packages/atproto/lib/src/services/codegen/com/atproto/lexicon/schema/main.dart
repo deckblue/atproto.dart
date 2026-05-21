@@ -29,7 +29,6 @@ abstract class LexiconSchemaRecord with _$LexiconSchemaRecord {
 
     /// Indicates the 'version' of the Lexicon language. Must be '1' for the current atproto/Lexicon schema system.
     required int lexicon,
-
     Map<String, dynamic>? $unknown,
   }) = _LexiconSchemaRecord;
 

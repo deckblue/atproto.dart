@@ -30,7 +30,6 @@ abstract class SelfLabels with _$SelfLabels {
   const factory SelfLabels({
     @Default('com.atproto.label.defs#selfLabels') String $type,
     @SelfLabelConverter() required List<SelfLabel> values,
-
     Map<String, dynamic>? $unknown,
   }) = _SelfLabels;
 

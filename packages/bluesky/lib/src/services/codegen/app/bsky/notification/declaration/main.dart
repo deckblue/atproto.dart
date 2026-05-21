@@ -34,7 +34,6 @@ abstract class NotificationDeclarationRecord
     /// A declaration of the user's preference for allowing activity subscriptions from other users. Absence of a record implies 'followers'.
     @NotificationDeclarationAllowSubscriptionsConverter()
     required NotificationDeclarationAllowSubscriptions allowSubscriptions,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationDeclarationRecord;
 

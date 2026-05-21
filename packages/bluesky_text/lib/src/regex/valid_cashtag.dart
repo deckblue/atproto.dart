@@ -15,8 +15,7 @@ import 'cashtag_boundary.dart';
 /// The pattern intentionally mirrors the spirit of [validHashtag] regarding
 /// boundary detection but constrains the body to ticker-like symbols, which
 /// is the de-facto convention for cashtags.
-const validCashtag =
-    '($cashtagBoundary)'
+const validCashtag = '($cashtagBoundary)'
     '($cashSigns)'
     r'([A-Za-z][A-Za-z0-9]*)'
     r'(?![A-Za-z0-9])';

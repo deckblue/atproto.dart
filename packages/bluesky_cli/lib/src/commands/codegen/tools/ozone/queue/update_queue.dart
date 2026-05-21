@@ -43,10 +43,10 @@ final class UpdateQueueCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "queueId": argResults!["queueId"],
-    if (argResults!["name"] != null) "name": argResults!["name"],
-    if (argResults!["enabled"] != null) "enabled": argResults!["enabled"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-  };
+        "queueId": argResults!["queueId"],
+        if (argResults!["name"] != null) "name": argResults!["name"],
+        if (argResults!["enabled"] != null) "enabled": argResults!["enabled"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+      };
 }

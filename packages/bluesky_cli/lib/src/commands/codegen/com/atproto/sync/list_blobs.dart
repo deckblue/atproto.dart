@@ -42,9 +42,9 @@ final class ListBlobsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "did": argResults!["did"],
-    if (argResults!["since"] != null) "since": argResults!["since"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "did": argResults!["did"],
+        if (argResults!["since"] != null) "since": argResults!["since"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

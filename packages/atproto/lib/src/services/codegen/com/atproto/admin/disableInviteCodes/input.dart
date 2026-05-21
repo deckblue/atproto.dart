@@ -27,7 +27,6 @@ abstract class AdminDisableInviteCodesInput
   const factory AdminDisableInviteCodesInput({
     List<String>? codes,
     List<String>? accounts,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminDisableInviteCodesInput;
 

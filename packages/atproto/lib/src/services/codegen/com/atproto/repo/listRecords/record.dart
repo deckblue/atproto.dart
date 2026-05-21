@@ -29,7 +29,6 @@ abstract class RepoListRecordsRecord with _$RepoListRecordsRecord {
     @AtUriConverter() required AtUri uri,
     required String cid,
     required Map<String, dynamic> value,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoListRecordsRecord;
 

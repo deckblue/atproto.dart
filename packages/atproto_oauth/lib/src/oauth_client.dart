@@ -282,8 +282,8 @@ final class OAuthClient {
       tokenType: body['token_type'],
       scope: body['scope'],
       expiresAt: DateTime.now().toUtc().add(
-        Duration(seconds: body['expires_in']),
-      ),
+            Duration(seconds: body['expires_in']),
+          ),
       sub: body['sub'],
       $clientId: metadata.clientId,
       $dPoPNonce: response.headers['dpop-nonce']!,
@@ -376,8 +376,8 @@ final class OAuthClient {
       tokenType: body['token_type'],
       scope: body['scope'],
       expiresAt: DateTime.now().toUtc().add(
-        Duration(seconds: body['expires_in']),
-      ),
+            Duration(seconds: body['expires_in']),
+          ),
       sub: body['sub'],
       $clientId: metadata.clientId,
       $dPoPNonce: response.headers['dpop-nonce']!,

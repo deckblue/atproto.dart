@@ -29,7 +29,6 @@ abstract class FeedGetAuthorFeedOutput with _$FeedGetAuthorFeedOutput {
   const factory FeedGetAuthorFeedOutput({
     String? cursor,
     @FeedViewPostConverter() required List<FeedViewPost> feed,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetAuthorFeedOutput;
 

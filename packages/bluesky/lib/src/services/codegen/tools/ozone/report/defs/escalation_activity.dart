@@ -33,7 +33,6 @@ abstract class EscalationActivity with _$EscalationActivity {
     /// The report's status before this activity. Populated automatically from the report row; not required in input.
     @EscalationActivityPreviousStatusConverter()
     EscalationActivityPreviousStatus? previousStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _EscalationActivity;
 

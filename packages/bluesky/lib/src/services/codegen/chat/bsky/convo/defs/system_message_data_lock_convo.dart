@@ -33,7 +33,6 @@ abstract class SystemMessageDataLockConvo with _$SystemMessageDataLockConvo {
     /// Current view of the member who locked the group.
     @SystemMessageReferredUserConverter()
     required SystemMessageReferredUser lockedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataLockConvo;
 

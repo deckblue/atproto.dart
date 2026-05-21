@@ -29,7 +29,6 @@ abstract class ContactImportContactsOutput with _$ContactImportContactsOutput {
   const factory ContactImportContactsOutput({
     @MatchAndContactIndexConverter()
     required List<MatchAndContactIndex> matchesAndContactIndexes,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactImportContactsOutput;
 

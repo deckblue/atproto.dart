@@ -27,7 +27,6 @@ abstract class ReportUnassignModeratorInput
   const factory ReportUnassignModeratorInput({
     /// The ID of the report to unassign.
     required int reportId,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportUnassignModeratorInput;
 

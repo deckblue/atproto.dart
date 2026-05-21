@@ -47,7 +47,6 @@ abstract class GroupConvo with _$GroupConvo {
 
     /// The lock status of the conversation.
     @ConvoLockStatusConverter() required ConvoLockStatus lockStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupConvo;
 

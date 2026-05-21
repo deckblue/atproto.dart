@@ -30,7 +30,6 @@ abstract class EmbedExternal with _$EmbedExternal {
   const factory EmbedExternal({
     @Default('app.bsky.embed.external') String $type,
     @EmbedExternalExternalConverter() required EmbedExternalExternal external,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedExternal;
 

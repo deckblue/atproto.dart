@@ -30,13 +30,13 @@ abstract class NotificationPutActivitySubscriptionOutput
   const factory NotificationPutActivitySubscriptionOutput({
     required String subject,
     @ActivitySubscriptionConverter() ActivitySubscription? activitySubscription,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationPutActivitySubscriptionOutput;
 
   factory NotificationPutActivitySubscriptionOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$NotificationPutActivitySubscriptionOutputFromJson(json);
+  ) =>
+      _$NotificationPutActivitySubscriptionOutputFromJson(json);
 }
 
 extension NotificationPutActivitySubscriptionOutputExtension
@@ -46,11 +46,8 @@ extension NotificationPutActivitySubscriptionOutputExtension
 }
 
 final class NotificationPutActivitySubscriptionOutputConverter
-    extends
-        JsonConverter<
-          NotificationPutActivitySubscriptionOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<NotificationPutActivitySubscriptionOutput,
+        Map<String, dynamic>> {
   const NotificationPutActivitySubscriptionOutputConverter();
 
   @override
@@ -65,5 +62,6 @@ final class NotificationPutActivitySubscriptionOutputConverter
   @override
   Map<String, dynamic> toJson(
     NotificationPutActivitySubscriptionOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

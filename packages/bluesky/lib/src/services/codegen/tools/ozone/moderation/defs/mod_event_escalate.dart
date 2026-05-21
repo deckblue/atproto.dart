@@ -26,7 +26,6 @@ abstract class ModEventEscalate with _$ModEventEscalate {
   const factory ModEventEscalate({
     @Default('tools.ozone.moderation.defs#modEventEscalate') String $type,
     String? comment,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventEscalate;
 

@@ -31,7 +31,6 @@ abstract class SyncStatus with _$SyncStatus {
 
     /// Number of existing contact matches resulting of the user imports and of their imported contacts having imported the user. Matches stop being counted when the user either follows the matched contact or dismisses the match.
     required int matchesCount,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncStatus;
 

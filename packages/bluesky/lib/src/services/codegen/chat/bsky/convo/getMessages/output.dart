@@ -32,7 +32,6 @@ abstract class ConvoGetMessagesOutput with _$ConvoGetMessagesOutput {
     @UConvoGetMessagesMessagesConverter()
     required List<UConvoGetMessagesMessages> messages,
     @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetMessagesOutput;
 

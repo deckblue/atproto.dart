@@ -86,22 +86,25 @@ final class _CreateProfileCommand extends CreateRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    if (argResults!["displayName"] != null)
-      "displayName": argResults!["displayName"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-    if (argResults!["pronouns"] != null) "pronouns": argResults!["pronouns"],
-    if (argResults!["website"] != null) "website": argResults!["website"],
-    if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
-    if (argResults!["banner"] != null) "banner": argResults!["banner"],
-    if (argResults!["labels"] != null)
-      "labels": jsonDecode(argResults!["labels"]),
-    if (argResults!["joinedViaStarterPack"] != null)
-      "joinedViaStarterPack": jsonDecode(argResults!["joinedViaStarterPack"]),
-    if (argResults!["pinnedPost"] != null)
-      "pinnedPost": jsonDecode(argResults!["pinnedPost"]),
-    if (argResults!["createdAt"] != null) "createdAt": argResults!["createdAt"],
-  };
+        if (argResults!["displayName"] != null)
+          "displayName": argResults!["displayName"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+        if (argResults!["pronouns"] != null)
+          "pronouns": argResults!["pronouns"],
+        if (argResults!["website"] != null) "website": argResults!["website"],
+        if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
+        if (argResults!["banner"] != null) "banner": argResults!["banner"],
+        if (argResults!["labels"] != null)
+          "labels": jsonDecode(argResults!["labels"]),
+        if (argResults!["joinedViaStarterPack"] != null)
+          "joinedViaStarterPack":
+              jsonDecode(argResults!["joinedViaStarterPack"]),
+        if (argResults!["pinnedPost"] != null)
+          "pinnedPost": jsonDecode(argResults!["pinnedPost"]),
+        if (argResults!["createdAt"] != null)
+          "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutProfileCommand extends PutRecordCommand {
@@ -149,22 +152,25 @@ final class _PutProfileCommand extends PutRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    if (argResults!["displayName"] != null)
-      "displayName": argResults!["displayName"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-    if (argResults!["pronouns"] != null) "pronouns": argResults!["pronouns"],
-    if (argResults!["website"] != null) "website": argResults!["website"],
-    if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
-    if (argResults!["banner"] != null) "banner": argResults!["banner"],
-    if (argResults!["labels"] != null)
-      "labels": jsonDecode(argResults!["labels"]),
-    if (argResults!["joinedViaStarterPack"] != null)
-      "joinedViaStarterPack": jsonDecode(argResults!["joinedViaStarterPack"]),
-    if (argResults!["pinnedPost"] != null)
-      "pinnedPost": jsonDecode(argResults!["pinnedPost"]),
-    if (argResults!["createdAt"] != null) "createdAt": argResults!["createdAt"],
-  };
+        if (argResults!["displayName"] != null)
+          "displayName": argResults!["displayName"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+        if (argResults!["pronouns"] != null)
+          "pronouns": argResults!["pronouns"],
+        if (argResults!["website"] != null) "website": argResults!["website"],
+        if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
+        if (argResults!["banner"] != null) "banner": argResults!["banner"],
+        if (argResults!["labels"] != null)
+          "labels": jsonDecode(argResults!["labels"]),
+        if (argResults!["joinedViaStarterPack"] != null)
+          "joinedViaStarterPack":
+              jsonDecode(argResults!["joinedViaStarterPack"]),
+        if (argResults!["pinnedPost"] != null)
+          "pinnedPost": jsonDecode(argResults!["pinnedPost"]),
+        if (argResults!["createdAt"] != null)
+          "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteProfileCommand extends DeleteRecordCommand {
@@ -209,11 +215,11 @@ final class _GetProfileCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListProfileCommand extends QueryCommand {
@@ -239,10 +245,10 @@ final class _ListProfileCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'limit': argResults!['limit'],
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'limit': argResults!['limit'],
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

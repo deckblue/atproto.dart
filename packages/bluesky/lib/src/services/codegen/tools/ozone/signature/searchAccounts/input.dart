@@ -28,7 +28,6 @@ abstract class SignatureSearchAccountsInput
     required List<String> values,
     String? cursor,
     @Default(50) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _SignatureSearchAccountsInput;
 

@@ -32,7 +32,6 @@ abstract class Suggestion with _$Suggestion {
     @SuggestionSubjectTypeConverter()
     required SuggestionSubjectType subjectType,
     required String subject,
-
     Map<String, dynamic>? $unknown,
   }) = _Suggestion;
 

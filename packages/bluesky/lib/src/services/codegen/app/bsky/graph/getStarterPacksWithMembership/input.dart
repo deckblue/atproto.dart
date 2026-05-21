@@ -29,13 +29,13 @@ abstract class GraphGetStarterPacksWithMembershipInput
     required String actor,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetStarterPacksWithMembershipInput;
 
   factory GraphGetStarterPacksWithMembershipInput.fromJson(
     Map<String, Object?> json,
-  ) => _$GraphGetStarterPacksWithMembershipInputFromJson(json);
+  ) =>
+      _$GraphGetStarterPacksWithMembershipInputFromJson(json);
 }
 
 extension GraphGetStarterPacksWithMembershipInputExtension
@@ -45,11 +45,8 @@ extension GraphGetStarterPacksWithMembershipInputExtension
 }
 
 final class GraphGetStarterPacksWithMembershipInputConverter
-    extends
-        JsonConverter<
-          GraphGetStarterPacksWithMembershipInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<GraphGetStarterPacksWithMembershipInput,
+        Map<String, dynamic>> {
   const GraphGetStarterPacksWithMembershipInputConverter();
 
   @override

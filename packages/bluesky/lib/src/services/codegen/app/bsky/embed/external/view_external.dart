@@ -29,7 +29,6 @@ abstract class EmbedExternalViewExternal with _$EmbedExternalViewExternal {
     required String title,
     required String description,
     String? thumb,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedExternalViewExternal;
 

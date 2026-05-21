@@ -26,7 +26,6 @@ abstract class IdentityResolveDidInput with _$IdentityResolveDidInput {
   const factory IdentityResolveDidInput({
     /// DID to resolve.
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityResolveDidInput;
 

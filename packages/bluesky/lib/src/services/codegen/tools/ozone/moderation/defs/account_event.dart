@@ -40,7 +40,6 @@ abstract class AccountEvent with _$AccountEvent {
     required bool active,
     @AccountEventStatusConverter() AccountEventStatus? status,
     required DateTime timestamp,
-
     Map<String, dynamic>? $unknown,
   }) = _AccountEvent;
 

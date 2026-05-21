@@ -27,7 +27,6 @@ abstract class LabelerViewerState with _$LabelerViewerState {
   const factory LabelerViewerState({
     @Default('app.bsky.labeler.defs#labelerViewerState') String $type,
     @AtUriConverter() AtUri? like,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelerViewerState;
 

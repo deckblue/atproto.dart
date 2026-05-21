@@ -64,7 +64,6 @@ abstract class EventGroupChatMemberLeft with _$EventGroupChatMemberLeft {
 
     /// The DID of the member who left or was removed.
     required String subjectDid,
-
     Map<String, dynamic>? $unknown,
   }) = _EventGroupChatMemberLeft;
 

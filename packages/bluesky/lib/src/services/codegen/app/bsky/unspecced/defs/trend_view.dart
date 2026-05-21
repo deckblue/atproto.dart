@@ -46,7 +46,6 @@ abstract class TrendView with _$TrendView {
     @TrendViewStatusConverter() TrendViewStatus? status,
     String? category,
     @ProfileViewBasicConverter() required List<ProfileViewBasic> actors,
-
     Map<String, dynamic>? $unknown,
   }) = _TrendView;
 

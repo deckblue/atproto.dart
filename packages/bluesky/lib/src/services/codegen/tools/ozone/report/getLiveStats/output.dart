@@ -29,7 +29,6 @@ abstract class ReportGetLiveStatsOutput with _$ReportGetLiveStatsOutput {
   const factory ReportGetLiveStatsOutput({
     /// Statistics for the requested filter.
     @LiveStatsConverter() required LiveStats stats,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportGetLiveStatsOutput;
 

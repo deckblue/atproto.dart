@@ -28,7 +28,6 @@ abstract class SystemMessageDataCreateJoinLink
   const factory SystemMessageDataCreateJoinLink({
     @Default('chat.bsky.convo.defs#systemMessageDataCreateJoinLink')
     String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageDataCreateJoinLink;
 
@@ -42,9 +41,8 @@ abstract class SystemMessageDataCreateJoinLink
   }
 }
 
-final class SystemMessageDataCreateJoinLinkConverter
-    extends
-        JsonConverter<SystemMessageDataCreateJoinLink, Map<String, dynamic>> {
+final class SystemMessageDataCreateJoinLinkConverter extends JsonConverter<
+    SystemMessageDataCreateJoinLink, Map<String, dynamic>> {
   const SystemMessageDataCreateJoinLinkConverter();
 
   @override

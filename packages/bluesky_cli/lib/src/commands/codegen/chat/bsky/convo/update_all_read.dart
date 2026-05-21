@@ -34,6 +34,6 @@ final class UpdateAllReadCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["status"] != null) "status": argResults!["status"],
-  };
+        if (argResults!["status"] != null) "status": argResults!["status"],
+      };
 }

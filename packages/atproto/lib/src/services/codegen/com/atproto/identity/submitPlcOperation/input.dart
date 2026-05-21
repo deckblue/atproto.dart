@@ -26,7 +26,6 @@ abstract class IdentitySubmitPlcOperationInput
   @JsonSerializable(includeIfNull: false)
   const factory IdentitySubmitPlcOperationInput({
     required Map<String, dynamic> operation,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentitySubmitPlcOperationInput;
 
@@ -34,9 +33,8 @@ abstract class IdentitySubmitPlcOperationInput
       _$IdentitySubmitPlcOperationInputFromJson(json);
 }
 
-final class IdentitySubmitPlcOperationInputConverter
-    extends
-        JsonConverter<IdentitySubmitPlcOperationInput, Map<String, dynamic>> {
+final class IdentitySubmitPlcOperationInputConverter extends JsonConverter<
+    IdentitySubmitPlcOperationInput, Map<String, dynamic>> {
   const IdentitySubmitPlcOperationInputConverter();
 
   @override

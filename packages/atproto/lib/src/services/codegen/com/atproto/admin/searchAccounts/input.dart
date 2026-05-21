@@ -27,7 +27,6 @@ abstract class AdminSearchAccountsInput with _$AdminSearchAccountsInput {
     String? email,
     String? cursor,
     @Default(50) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminSearchAccountsInput;
 

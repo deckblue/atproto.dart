@@ -25,7 +25,6 @@ abstract class DraftDeleteDraftInput with _$DraftDeleteDraftInput {
   @JsonSerializable(includeIfNull: false)
   const factory DraftDeleteDraftInput({
     required String id,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftDeleteDraftInput;
 

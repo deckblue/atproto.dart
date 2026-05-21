@@ -59,7 +59,6 @@ abstract class Event with _$Event {
 
     /// Optional comment about the decision
     String? comment,
-
     Map<String, dynamic>? $unknown,
   }) = _Event;
 

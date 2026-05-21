@@ -44,7 +44,6 @@ abstract class VerificationState with _$VerificationState {
     /// The user's status as a trusted verifier.
     @VerificationStateTrustedVerifierStatusConverter()
     required VerificationStateTrustedVerifierStatus trustedVerifierStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationState;
 

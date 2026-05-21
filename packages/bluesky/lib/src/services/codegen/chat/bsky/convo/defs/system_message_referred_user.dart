@@ -26,7 +26,6 @@ abstract class SystemMessageReferredUser with _$SystemMessageReferredUser {
   const factory SystemMessageReferredUser({
     @Default('chat.bsky.convo.defs#systemMessageReferredUser') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageReferredUser;
 

@@ -26,7 +26,6 @@ abstract class SyncGetHeadInput with _$SyncGetHeadInput {
   const factory SyncGetHeadInput({
     /// The DID of the repo.
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetHeadInput;
 

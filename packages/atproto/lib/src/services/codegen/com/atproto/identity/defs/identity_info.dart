@@ -30,7 +30,6 @@ abstract class IdentityInfo with _$IdentityInfo {
     /// The validated handle of the account; or 'handle.invalid' if the handle did not bi-directionally match the DID document.
     required String handle,
     required Map<String, dynamic> didDoc,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityInfo;
 

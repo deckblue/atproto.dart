@@ -37,7 +37,7 @@ final class CreateGroupCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "members": argResults!["members"],
-    "name": argResults!["name"],
-  };
+        "members": argResults!["members"],
+        "name": argResults!["name"],
+      };
 }

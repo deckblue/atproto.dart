@@ -28,7 +28,6 @@ abstract class ConvoRemoveReactionOutput with _$ConvoRemoveReactionOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoRemoveReactionOutput({
     @MessageViewConverter() required MessageView message,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoRemoveReactionOutput;
 

@@ -33,7 +33,6 @@ abstract class HostingGetAccountHistoryInput
     List<HostingGetAccountHistoryEvents>? events,
     String? cursor,
     @Default(50) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _HostingGetAccountHistoryInput;
 

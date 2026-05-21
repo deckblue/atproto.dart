@@ -29,7 +29,6 @@ abstract class EmbedImagesView with _$EmbedImagesView {
   const factory EmbedImagesView({
     @Default('app.bsky.embed.images#view') String $type,
     @EmbedImagesViewImageConverter() required List<EmbedImagesViewImage> images,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedImagesView;
 

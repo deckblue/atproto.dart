@@ -31,7 +31,6 @@ abstract class GraphGetKnownFollowersOutput
     @ProfileViewConverter() required ProfileView subject,
     String? cursor,
     @ProfileViewConverter() required List<ProfileView> followers,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetKnownFollowersOutput;
 

@@ -26,7 +26,6 @@ abstract class NoteActivity with _$NoteActivity {
   @JsonSerializable(includeIfNull: false)
   const factory NoteActivity({
     @Default('tools.ozone.report.defs#noteActivity') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _NoteActivity;
 

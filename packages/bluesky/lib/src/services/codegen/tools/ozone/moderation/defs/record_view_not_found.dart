@@ -27,7 +27,6 @@ abstract class RecordViewNotFound with _$RecordViewNotFound {
   const factory RecordViewNotFound({
     @Default('tools.ozone.moderation.defs#recordViewNotFound') String $type,
     @AtUriConverter() required AtUri uri,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordViewNotFound;
 

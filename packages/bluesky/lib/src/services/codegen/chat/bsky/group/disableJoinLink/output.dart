@@ -28,7 +28,6 @@ abstract class GroupDisableJoinLinkOutput with _$GroupDisableJoinLinkOutput {
   @JsonSerializable(includeIfNull: false)
   const factory GroupDisableJoinLinkOutput({
     @JoinLinkViewConverter() required JoinLinkView joinLink,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupDisableJoinLinkOutput;
 

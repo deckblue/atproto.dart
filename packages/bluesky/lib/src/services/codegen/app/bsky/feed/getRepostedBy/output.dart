@@ -32,7 +32,6 @@ abstract class FeedGetRepostedByOutput with _$FeedGetRepostedByOutput {
     String? cid,
     String? cursor,
     @ProfileViewConverter() required List<ProfileView> repostedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetRepostedByOutput;
 

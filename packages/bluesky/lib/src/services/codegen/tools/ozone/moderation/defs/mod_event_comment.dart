@@ -30,7 +30,6 @@ abstract class ModEventComment with _$ModEventComment {
 
     /// Make the comment persistent on the subject
     bool? sticky,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventComment;
 

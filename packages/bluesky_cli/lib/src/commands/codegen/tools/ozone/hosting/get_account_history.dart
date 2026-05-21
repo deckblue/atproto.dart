@@ -39,9 +39,9 @@ final class GetAccountHistoryCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "did": argResults!["did"],
-    if (argResults!["events"] != null) "events": argResults!["events"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    "limit": argResults!["limit"],
-  };
+        "did": argResults!["did"],
+        if (argResults!["events"] != null) "events": argResults!["events"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": argResults!["limit"],
+      };
 }

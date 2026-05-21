@@ -38,8 +38,8 @@ final class GetRecordCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "did": argResults!["did"],
-    "collection": argResults!["collection"],
-    "rkey": argResults!["rkey"],
-  };
+        "did": argResults!["did"],
+        "collection": argResults!["collection"],
+        "rkey": argResults!["rkey"],
+      };
 }

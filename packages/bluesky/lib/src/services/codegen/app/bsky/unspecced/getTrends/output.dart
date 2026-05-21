@@ -28,7 +28,6 @@ abstract class UnspeccedGetTrendsOutput with _$UnspeccedGetTrendsOutput {
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetTrendsOutput({
     @TrendViewConverter() required List<TrendView> trends,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTrendsOutput;
 

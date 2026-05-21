@@ -29,7 +29,6 @@ abstract class ThreadItemBlocked with _$ThreadItemBlocked {
   const factory ThreadItemBlocked({
     @Default('app.bsky.unspecced.defs#threadItemBlocked') String $type,
     @BlockedAuthorConverter() required BlockedAuthor author,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadItemBlocked;
 

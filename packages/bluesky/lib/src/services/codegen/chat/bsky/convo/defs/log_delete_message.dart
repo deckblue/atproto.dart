@@ -33,7 +33,6 @@ abstract class LogDeleteMessage with _$LogDeleteMessage {
     required String convoId,
     @ULogDeleteMessageMessageConverter()
     required ULogDeleteMessageMessage message,
-
     Map<String, dynamic>? $unknown,
   }) = _LogDeleteMessage;
 

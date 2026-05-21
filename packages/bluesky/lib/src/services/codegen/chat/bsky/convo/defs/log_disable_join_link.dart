@@ -34,7 +34,6 @@ abstract class LogDisableJoinLink with _$LogDisableJoinLink {
 
     /// A system message with data of type #systemMessageDataDisableJoinLink
     @SystemMessageViewConverter() required SystemMessageView message,
-
     Map<String, dynamic>? $unknown,
   }) = _LogDisableJoinLink;
 

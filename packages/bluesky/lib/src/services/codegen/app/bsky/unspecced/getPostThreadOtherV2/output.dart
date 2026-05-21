@@ -29,21 +29,17 @@ abstract class UnspeccedGetPostThreadOtherV2Output
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetPostThreadOtherV2Output({
     @ThreadItemConverter() required List<ThreadItem> thread,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetPostThreadOtherV2Output;
 
   factory UnspeccedGetPostThreadOtherV2Output.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetPostThreadOtherV2OutputFromJson(json);
+  ) =>
+      _$UnspeccedGetPostThreadOtherV2OutputFromJson(json);
 }
 
-final class UnspeccedGetPostThreadOtherV2OutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetPostThreadOtherV2Output,
-          Map<String, dynamic>
-        > {
+final class UnspeccedGetPostThreadOtherV2OutputConverter extends JsonConverter<
+    UnspeccedGetPostThreadOtherV2Output, Map<String, dynamic>> {
   const UnspeccedGetPostThreadOtherV2OutputConverter();
 
   @override

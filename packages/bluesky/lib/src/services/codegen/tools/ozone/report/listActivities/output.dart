@@ -29,7 +29,6 @@ abstract class ReportListActivitiesOutput with _$ReportListActivitiesOutput {
   const factory ReportListActivitiesOutput({
     @ReportActivityViewConverter() required List<ReportActivityView> activities,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportListActivitiesOutput;
 

@@ -63,15 +63,17 @@ final class ListVerificationsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    "limit": argResults!["limit"],
-    if (argResults!["createdAfter"] != null)
-      "createdAfter": argResults!["createdAfter"],
-    if (argResults!["createdBefore"] != null)
-      "createdBefore": argResults!["createdBefore"],
-    if (argResults!["issuers"] != null) "issuers": argResults!["issuers"],
-    if (argResults!["subjects"] != null) "subjects": argResults!["subjects"],
-    "sortDirection": argResults!["sortDirection"],
-    if (argResults!["isRevoked"] != null) "isRevoked": argResults!["isRevoked"],
-  };
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": argResults!["limit"],
+        if (argResults!["createdAfter"] != null)
+          "createdAfter": argResults!["createdAfter"],
+        if (argResults!["createdBefore"] != null)
+          "createdBefore": argResults!["createdBefore"],
+        if (argResults!["issuers"] != null) "issuers": argResults!["issuers"],
+        if (argResults!["subjects"] != null)
+          "subjects": argResults!["subjects"],
+        "sortDirection": argResults!["sortDirection"],
+        if (argResults!["isRevoked"] != null)
+          "isRevoked": argResults!["isRevoked"],
+      };
 }

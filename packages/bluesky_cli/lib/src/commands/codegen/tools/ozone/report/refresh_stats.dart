@@ -50,8 +50,9 @@ final class RefreshStatsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "startDate": argResults!["startDate"],
-    "endDate": argResults!["endDate"],
-    if (argResults!["queueIds"] != null) "queueIds": argResults!["queueIds"],
-  };
+        "startDate": argResults!["startDate"],
+        "endDate": argResults!["endDate"],
+        if (argResults!["queueIds"] != null)
+          "queueIds": argResults!["queueIds"],
+      };
 }

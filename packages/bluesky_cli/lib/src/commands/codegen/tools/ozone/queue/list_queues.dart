@@ -55,14 +55,14 @@ final class ListQueuesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["enabled"] != null) "enabled": argResults!["enabled"],
-    if (argResults!["subjectType"] != null)
-      "subjectType": argResults!["subjectType"],
-    if (argResults!["collection"] != null)
-      "collection": argResults!["collection"],
-    if (argResults!["reportTypes"] != null)
-      "reportTypes": argResults!["reportTypes"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        if (argResults!["enabled"] != null) "enabled": argResults!["enabled"],
+        if (argResults!["subjectType"] != null)
+          "subjectType": argResults!["subjectType"],
+        if (argResults!["collection"] != null)
+          "collection": argResults!["collection"],
+        if (argResults!["reportTypes"] != null)
+          "reportTypes": argResults!["reportTypes"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

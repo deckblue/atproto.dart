@@ -61,14 +61,15 @@ final class PutRecordCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "repo": argResults!["repo"],
-    "collection": argResults!["collection"],
-    "rkey": argResults!["rkey"],
-    if (argResults!["validate"] != null) "validate": argResults!["validate"],
-    "record": argResults!["record"],
-    if (argResults!["swapRecord"] != null)
-      "swapRecord": argResults!["swapRecord"],
-    if (argResults!["swapCommit"] != null)
-      "swapCommit": argResults!["swapCommit"],
-  };
+        "repo": argResults!["repo"],
+        "collection": argResults!["collection"],
+        "rkey": argResults!["rkey"],
+        if (argResults!["validate"] != null)
+          "validate": argResults!["validate"],
+        "record": argResults!["record"],
+        if (argResults!["swapRecord"] != null)
+          "swapRecord": argResults!["swapRecord"],
+        if (argResults!["swapCommit"] != null)
+          "swapCommit": argResults!["swapCommit"],
+      };
 }

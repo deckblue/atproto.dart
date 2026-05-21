@@ -30,21 +30,17 @@ abstract class VerificationGrantVerificationsInput
   const factory VerificationGrantVerificationsInput({
     @VerificationInputConverter()
     required List<VerificationInput> verifications,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationGrantVerificationsInput;
 
   factory VerificationGrantVerificationsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$VerificationGrantVerificationsInputFromJson(json);
+  ) =>
+      _$VerificationGrantVerificationsInputFromJson(json);
 }
 
-final class VerificationGrantVerificationsInputConverter
-    extends
-        JsonConverter<
-          VerificationGrantVerificationsInput,
-          Map<String, dynamic>
-        > {
+final class VerificationGrantVerificationsInputConverter extends JsonConverter<
+    VerificationGrantVerificationsInput, Map<String, dynamic>> {
   const VerificationGrantVerificationsInputConverter();
 
   @override

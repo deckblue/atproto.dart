@@ -79,12 +79,13 @@ final class _CreateStatusCommand extends CreateRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "status": argResults!["status"],
-    if (argResults!["embed"] != null) "embed": jsonDecode(argResults!["embed"]),
-    if (argResults!["durationMinutes"] != null)
-      "durationMinutes": argResults!["durationMinutes"],
-    "createdAt": argResults!["createdAt"],
-  };
+        "status": argResults!["status"],
+        if (argResults!["embed"] != null)
+          "embed": jsonDecode(argResults!["embed"]),
+        if (argResults!["durationMinutes"] != null)
+          "durationMinutes": argResults!["durationMinutes"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutStatusCommand extends PutRecordCommand {
@@ -126,12 +127,13 @@ final class _PutStatusCommand extends PutRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "status": argResults!["status"],
-    if (argResults!["embed"] != null) "embed": jsonDecode(argResults!["embed"]),
-    if (argResults!["durationMinutes"] != null)
-      "durationMinutes": argResults!["durationMinutes"],
-    "createdAt": argResults!["createdAt"],
-  };
+        "status": argResults!["status"],
+        if (argResults!["embed"] != null)
+          "embed": jsonDecode(argResults!["embed"]),
+        if (argResults!["durationMinutes"] != null)
+          "durationMinutes": argResults!["durationMinutes"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteStatusCommand extends DeleteRecordCommand {
@@ -176,11 +178,11 @@ final class _GetStatusCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListStatusCommand extends QueryCommand {
@@ -206,10 +208,10 @@ final class _ListStatusCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'limit': argResults!['limit'],
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'limit': argResults!['limit'],
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

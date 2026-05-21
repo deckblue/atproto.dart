@@ -27,7 +27,6 @@ abstract class ConvoRemoveReactionInput with _$ConvoRemoveReactionInput {
     required String convoId,
     required String messageId,
     required String value,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoRemoveReactionInput;
 

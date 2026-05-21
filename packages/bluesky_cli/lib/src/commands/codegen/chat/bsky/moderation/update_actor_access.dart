@@ -37,8 +37,8 @@ final class UpdateActorAccessCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "actor": argResults!["actor"],
-    "allowAccess": argResults!["allowAccess"],
-    if (argResults!["ref"] != null) "ref": argResults!["ref"],
-  };
+        "actor": argResults!["actor"],
+        "allowAccess": argResults!["allowAccess"],
+        if (argResults!["ref"] != null) "ref": argResults!["ref"],
+      };
 }

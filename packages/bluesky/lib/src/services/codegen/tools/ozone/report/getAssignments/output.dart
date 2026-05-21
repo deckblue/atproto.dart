@@ -29,7 +29,6 @@ abstract class ReportGetAssignmentsOutput with _$ReportGetAssignmentsOutput {
   const factory ReportGetAssignmentsOutput({
     String? cursor,
     @AssignmentViewConverter() required List<AssignmentView> assignments,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportGetAssignmentsOutput;
 

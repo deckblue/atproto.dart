@@ -31,13 +31,13 @@ abstract class GraphGetListsWithMembershipOutput
     String? cursor,
     @ListWithMembershipConverter()
     required List<ListWithMembership> listsWithMembership,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetListsWithMembershipOutput;
 
   factory GraphGetListsWithMembershipOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$GraphGetListsWithMembershipOutputFromJson(json);
+  ) =>
+      _$GraphGetListsWithMembershipOutputFromJson(json);
 }
 
 extension GraphGetListsWithMembershipOutputExtension
@@ -46,9 +46,8 @@ extension GraphGetListsWithMembershipOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class GraphGetListsWithMembershipOutputConverter
-    extends
-        JsonConverter<GraphGetListsWithMembershipOutput, Map<String, dynamic>> {
+final class GraphGetListsWithMembershipOutputConverter extends JsonConverter<
+    GraphGetListsWithMembershipOutput, Map<String, dynamic>> {
   const GraphGetListsWithMembershipOutputConverter();
 
   @override

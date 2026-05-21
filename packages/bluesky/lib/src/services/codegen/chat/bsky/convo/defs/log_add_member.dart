@@ -42,7 +42,6 @@ abstract class LogAddMember with _$LogAddMember {
     @SystemMessageViewConverter() required SystemMessageView message,
     @ProfileViewBasicConverter()
     required List<ProfileViewBasic> relatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _LogAddMember;
 
