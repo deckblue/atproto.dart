@@ -112,13 +112,12 @@ final class UFeedPostEmbedConverter
 
   @override
   Map<String, dynamic> toJson(UFeedPostEmbed object) => object.when(
-    embedImages: (data) => const EmbedImagesConverter().toJson(data),
-    embedVideo: (data) => const EmbedVideoConverter().toJson(data),
-    embedExternal: (data) => const EmbedExternalConverter().toJson(data),
-    embedRecord: (data) => const EmbedRecordConverter().toJson(data),
-    embedRecordWithMedia: (data) =>
-        const EmbedRecordWithMediaConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        embedImages: (data) => const EmbedImagesConverter().toJson(data),
+        embedVideo: (data) => const EmbedVideoConverter().toJson(data),
+        embedExternal: (data) => const EmbedExternalConverter().toJson(data),
+        embedRecord: (data) => const EmbedRecordConverter().toJson(data),
+        embedRecordWithMedia: (data) =>
+            const EmbedRecordWithMediaConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

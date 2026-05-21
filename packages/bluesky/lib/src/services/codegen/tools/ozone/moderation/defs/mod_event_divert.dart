@@ -27,7 +27,6 @@ abstract class ModEventDivert with _$ModEventDivert {
   const factory ModEventDivert({
     @Default('tools.ozone.moderation.defs#modEventDivert') String $type,
     String? comment,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventDivert;
 

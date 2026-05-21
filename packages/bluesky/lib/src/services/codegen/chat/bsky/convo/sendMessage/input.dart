@@ -29,7 +29,6 @@ abstract class ConvoSendMessageInput with _$ConvoSendMessageInput {
   const factory ConvoSendMessageInput({
     required String convoId,
     @MessageInputConverter() required MessageInput message,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoSendMessageInput;
 

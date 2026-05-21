@@ -26,7 +26,6 @@ abstract class RepoViewNotFound with _$RepoViewNotFound {
   const factory RepoViewNotFound({
     @Default('tools.ozone.moderation.defs#repoViewNotFound') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoViewNotFound;
 

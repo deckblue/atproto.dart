@@ -38,8 +38,8 @@ final class DeleteAccountCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "did": argResults!["did"],
-    "password": argResults!["password"],
-    "token": argResults!["token"],
-  };
+        "did": argResults!["did"],
+        "password": argResults!["password"],
+        "token": argResults!["token"],
+      };
 }

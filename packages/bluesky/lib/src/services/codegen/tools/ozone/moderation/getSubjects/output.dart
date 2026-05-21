@@ -28,7 +28,6 @@ abstract class ModerationGetSubjectsOutput with _$ModerationGetSubjectsOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetSubjectsOutput({
     @SubjectViewConverter() required List<SubjectView> subjects,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetSubjectsOutput;
 

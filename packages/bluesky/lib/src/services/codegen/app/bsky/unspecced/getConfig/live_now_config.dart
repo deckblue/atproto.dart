@@ -27,7 +27,6 @@ abstract class LiveNowConfig with _$LiveNowConfig {
     @Default('app.bsky.unspecced.getConfig#liveNowConfig') String $type,
     required String did,
     required List<String> domains,
-
     Map<String, dynamic>? $unknown,
   }) = _LiveNowConfig;
 

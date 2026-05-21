@@ -36,7 +36,6 @@ abstract class ModEventReport with _$ModEventReport {
     /// Set to true if the reporter was muted from reporting at the time of the event. These reports won't impact the reviewState of the subject.
     bool? isReporterMuted,
     @ReasonTypeConverter() required ReasonType reportType,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventReport;
 

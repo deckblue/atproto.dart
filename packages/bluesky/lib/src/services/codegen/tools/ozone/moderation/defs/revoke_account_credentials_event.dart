@@ -31,7 +31,6 @@ abstract class RevokeAccountCredentialsEvent
 
     /// Comment describing the reason for the revocation.
     required String comment,
-
     Map<String, dynamic>? $unknown,
   }) = _RevokeAccountCredentialsEvent;
 

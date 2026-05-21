@@ -30,7 +30,6 @@ abstract class HostingGetAccountHistoryOutput
   const factory HostingGetAccountHistoryOutput({
     String? cursor,
     @EventConverter() required List<Event> events,
-
     Map<String, dynamic>? $unknown,
   }) = _HostingGetAccountHistoryOutput;
 
@@ -44,9 +43,8 @@ extension HostingGetAccountHistoryOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class HostingGetAccountHistoryOutputConverter
-    extends
-        JsonConverter<HostingGetAccountHistoryOutput, Map<String, dynamic>> {
+final class HostingGetAccountHistoryOutputConverter extends JsonConverter<
+    HostingGetAccountHistoryOutput, Map<String, dynamic>> {
   const HostingGetAccountHistoryOutputConverter();
 
   @override

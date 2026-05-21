@@ -37,7 +37,6 @@ abstract class ServerCreateAccountOutput with _$ServerCreateAccountOutput {
     /// The DID of the new account.
     required String did,
     Map<String, dynamic>? didDoc,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateAccountOutput;
 

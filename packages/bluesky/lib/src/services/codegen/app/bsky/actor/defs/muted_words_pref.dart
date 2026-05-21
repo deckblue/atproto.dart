@@ -29,7 +29,6 @@ abstract class MutedWordsPref with _$MutedWordsPref {
   const factory MutedWordsPref({
     @Default('app.bsky.actor.defs#mutedWordsPref') String $type,
     @MutedWordConverter() required List<MutedWord> items,
-
     Map<String, dynamic>? $unknown,
   }) = _MutedWordsPref;
 

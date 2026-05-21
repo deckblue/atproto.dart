@@ -35,12 +35,19 @@ _$ProfileViewBasicImpl _$$ProfileViewBasicImplFromJson(Map json) =>
                   ?.map((e) => const LabelConverter()
                       .fromJson(e as Map<String, dynamic>))
                   .toList()),
+          createdAt: $checkedConvert('createdAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           chatDisabled: $checkedConvert('chatDisabled', (v) => v as bool?),
           verification: $checkedConvert(
               'verification',
               (v) => _$JsonConverterFromJson<Map<String, dynamic>,
                       VerificationState>(
                   v, const VerificationStateConverter().fromJson)),
+          kind: $checkedConvert(
+              'kind',
+              (v) => _$JsonConverterFromJson<Map<String, dynamic>,
+                      UProfileViewBasicKind>(
+                  v, const UProfileViewBasicKindConverter().fromJson)),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -70,11 +77,17 @@ Map<String, dynamic> _$$ProfileViewBasicImplToJson(
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)
         'labels': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
       if (instance.chatDisabled case final value?) 'chatDisabled': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, VerificationState>(
               instance.verification, const VerificationStateConverter().toJson)
           case final value?)
         'verification': value,
+      if (_$JsonConverterToJson<Map<String, dynamic>, UProfileViewBasicKind>(
+              instance.kind, const UProfileViewBasicKindConverter().toJson)
+          case final value?)
+        'kind': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

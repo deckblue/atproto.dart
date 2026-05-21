@@ -34,7 +34,6 @@ abstract class BookmarkView with _$BookmarkView {
     @RepoStrongRefConverter() required RepoStrongRef subject,
     DateTime? createdAt,
     @UBookmarkViewItemConverter() required UBookmarkViewItem item,
-
     Map<String, dynamic>? $unknown,
   }) = _BookmarkView;
 

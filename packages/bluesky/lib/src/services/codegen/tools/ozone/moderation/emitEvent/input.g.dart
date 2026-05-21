@@ -31,6 +31,11 @@ _$ModerationEmitEventInputImpl _$$ModerationEmitEventInputImplFromJson(
               (v) => _$JsonConverterFromJson<Map<String, dynamic>, ModTool>(
                   v, const ModToolConverter().fromJson)),
           externalId: $checkedConvert('externalId', (v) => v as String?),
+          reportAction: $checkedConvert(
+              'reportAction',
+              (v) =>
+                  _$JsonConverterFromJson<Map<String, dynamic>, ReportAction>(
+                      v, const ReportActionConverter().fromJson)),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -55,6 +60,10 @@ Map<String, dynamic> _$$ModerationEmitEventInputImplToJson(
           case final value?)
         'modTool': value,
       if (instance.externalId case final value?) 'externalId': value,
+      if (_$JsonConverterToJson<Map<String, dynamic>, ReportAction>(
+              instance.reportAction, const ReportActionConverter().toJson)
+          case final value?)
+        'reportAction': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

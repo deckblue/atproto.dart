@@ -31,7 +31,6 @@ abstract class ModerationQueryStatusesOutput
     String? cursor,
     @SubjectStatusViewConverter()
     required List<SubjectStatusView> subjectStatuses,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationQueryStatusesOutput;
 

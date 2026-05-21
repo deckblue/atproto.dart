@@ -26,7 +26,6 @@ abstract class IdentityResolveHandleInput with _$IdentityResolveHandleInput {
   const factory IdentityResolveHandleInput({
     /// The handle to resolve.
     required String handle,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityResolveHandleInput;
 

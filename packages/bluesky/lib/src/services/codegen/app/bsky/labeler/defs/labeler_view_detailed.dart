@@ -56,7 +56,6 @@ abstract class LabelerViewDetailed with _$LabelerViewDetailed {
     @ReasonTypeConverter() List<ReasonType>? reasonTypes,
     @SubjectTypeConverter() List<SubjectType>? subjectTypes,
     List<String>? subjectCollections,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelerViewDetailed;
 

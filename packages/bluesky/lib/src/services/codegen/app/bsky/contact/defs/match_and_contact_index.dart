@@ -35,7 +35,6 @@ abstract class MatchAndContactIndex with _$MatchAndContactIndex {
 
     /// The index of this match in the import contact input.
     required int contactIndex,
-
     Map<String, dynamic>? $unknown,
   }) = _MatchAndContactIndex;
 

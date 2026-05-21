@@ -45,7 +45,6 @@ abstract class FeedViewPost with _$FeedViewPost {
 
     /// Unique identifier per request that may be passed back alongside interactions.
     String? reqId,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedViewPost;
 

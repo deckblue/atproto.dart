@@ -33,13 +33,13 @@ abstract class UnspeccedSearchActorsSkeletonOutput
     /// Count of search hits. Optional, may be rounded/truncated, and may not be possible to paginate through all hits.
     int? hitsTotal,
     @SkeletonSearchActorConverter() required List<SkeletonSearchActor> actors,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedSearchActorsSkeletonOutput;
 
   factory UnspeccedSearchActorsSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedSearchActorsSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedSearchActorsSkeletonOutputFromJson(json);
 }
 
 extension UnspeccedSearchActorsSkeletonOutputExtension
@@ -50,12 +50,8 @@ extension UnspeccedSearchActorsSkeletonOutputExtension
   bool get hasNotHitsTotal => !hasHitsTotal;
 }
 
-final class UnspeccedSearchActorsSkeletonOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedSearchActorsSkeletonOutput,
-          Map<String, dynamic>
-        > {
+final class UnspeccedSearchActorsSkeletonOutputConverter extends JsonConverter<
+    UnspeccedSearchActorsSkeletonOutput, Map<String, dynamic>> {
   const UnspeccedSearchActorsSkeletonOutputConverter();
 
   @override

@@ -39,7 +39,6 @@ abstract class DeclaredAgePref with _$DeclaredAgePref {
 
     /// Indicates if the user has declared that they are over 18 years of age.
     bool? isOverAge18,
-
     Map<String, dynamic>? $unknown,
   }) = _DeclaredAgePref;
 

@@ -30,7 +30,6 @@ abstract class EmbedExternalView with _$EmbedExternalView {
     @Default('app.bsky.embed.external#view') String $type,
     @EmbedExternalViewExternalConverter()
     required EmbedExternalViewExternal external,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedExternalView;
 

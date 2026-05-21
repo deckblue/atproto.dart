@@ -43,10 +43,10 @@ final class SendEmailCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "recipientDid": argResults!["recipientDid"],
-    "content": argResults!["content"],
-    if (argResults!["subject"] != null) "subject": argResults!["subject"],
-    "senderDid": argResults!["senderDid"],
-    if (argResults!["comment"] != null) "comment": argResults!["comment"],
-  };
+        "recipientDid": argResults!["recipientDid"],
+        "content": argResults!["content"],
+        if (argResults!["subject"] != null) "subject": argResults!["subject"],
+        "senderDid": argResults!["senderDid"],
+        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+      };
 }

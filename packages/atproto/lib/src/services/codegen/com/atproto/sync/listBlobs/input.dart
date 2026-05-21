@@ -31,7 +31,6 @@ abstract class SyncListBlobsInput with _$SyncListBlobsInput {
     String? since,
     @Default(500) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncListBlobsInput;
 

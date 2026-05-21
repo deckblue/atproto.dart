@@ -29,7 +29,6 @@ abstract class TeamAddMemberInput with _$TeamAddMemberInput {
   const factory TeamAddMemberInput({
     required String did,
     @TeamAddMemberRoleConverter() required TeamAddMemberRole role,
-
     Map<String, dynamic>? $unknown,
   }) = _TeamAddMemberInput;
 

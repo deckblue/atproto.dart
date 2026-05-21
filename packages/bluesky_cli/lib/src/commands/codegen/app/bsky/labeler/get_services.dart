@@ -37,7 +37,7 @@ final class GetServicesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "dids": argResults!["dids"],
-    "detailed": argResults!["detailed"],
-  };
+        "dids": argResults!["dids"],
+        "detailed": argResults!["detailed"],
+      };
 }

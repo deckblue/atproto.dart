@@ -27,7 +27,6 @@ abstract class ConvoGetMessagesInput with _$ConvoGetMessagesInput {
     required String convoId,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetMessagesInput;
 

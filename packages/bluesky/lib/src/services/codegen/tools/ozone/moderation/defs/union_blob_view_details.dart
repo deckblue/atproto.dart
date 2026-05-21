@@ -78,9 +78,8 @@ final class UBlobViewDetailsConverter
 
   @override
   Map<String, dynamic> toJson(UBlobViewDetails object) => object.when(
-    imageDetails: (data) => const ImageDetailsConverter().toJson(data),
-    videoDetails: (data) => const VideoDetailsConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        imageDetails: (data) => const ImageDetailsConverter().toJson(data),
+        videoDetails: (data) => const VideoDetailsConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

@@ -25,7 +25,6 @@ abstract class ModerationGetSubjectsInput with _$ModerationGetSubjectsInput {
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetSubjectsInput({
     required List<String> subjects,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetSubjectsInput;
 

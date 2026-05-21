@@ -30,18 +30,17 @@ base class ServiceContext {
     RetryConfig? retryConfig,
     final xrpc.GetClient? getClient,
     final xrpc.PostClient? postClient,
-  }) : _headers = headers,
-       _protocol = protocol ?? defaultProtocol,
-       service =
-           service ??
-           session?.atprotoPdsEndpoint ??
-           oAuthSession?.atprotoPdsEndpoint ??
-           defaultService,
-       relayService = relayService ?? defaultRelayService,
-       _challenge = Challenge(RetryPolicy(retryConfig)),
-       _timeout = timeout ?? defaultTimeout,
-       _getClient = getClient,
-       _postClient = postClient;
+  })  : _headers = headers,
+        _protocol = protocol ?? defaultProtocol,
+        service = service ??
+            session?.atprotoPdsEndpoint ??
+            oAuthSession?.atprotoPdsEndpoint ??
+            defaultService,
+        relayService = relayService ?? defaultRelayService,
+        _challenge = Challenge(RetryPolicy(retryConfig)),
+        _timeout = timeout ?? defaultTimeout,
+        _getClient = getClient,
+        _postClient = postClient;
 
   /// The global headers without auth header.
   final Map<String, String>? _headers;
@@ -84,21 +83,22 @@ base class ServiceContext {
     final xrpc.ResponseDataBuilder<T>? to,
     final xrpc.ResponseDataAdaptor? adaptor,
     final xrpc.GetClient? client,
-  }) async => await _challenge.execute(
-    () async => await xrpc.query(
-      methodId,
-      protocol: _protocol,
-      service: service ?? this.service,
-      headers: {..._headers ?? const {}, ...headers ?? const {}},
-      parameters: parameters,
-      to: to,
-      adaptor: adaptor,
-      timeout: _timeout,
-      headerBuilder: _buildAuthHeader,
-      getClient: client ?? _getClient,
-    ),
-    onUpdateDpopNonce: _onUpdateDpopNonce,
-  );
+  }) async =>
+      await _challenge.execute(
+        () async => await xrpc.query(
+          methodId,
+          protocol: _protocol,
+          service: service ?? this.service,
+          headers: {..._headers ?? const {}, ...headers ?? const {}},
+          parameters: parameters,
+          to: to,
+          adaptor: adaptor,
+          timeout: _timeout,
+          headerBuilder: _buildAuthHeader,
+          getClient: client ?? _getClient,
+        ),
+        onUpdateDpopNonce: _onUpdateDpopNonce,
+      );
 
   Future<xrpc.XRPCResponse<T>> post<T>(
     final NSID methodId, {
@@ -108,36 +108,38 @@ base class ServiceContext {
     final dynamic body,
     final xrpc.ResponseDataBuilder<T>? to,
     final xrpc.PostClient? client,
-  }) async => await _challenge.execute(
-    () async => await xrpc.procedure(
-      methodId,
-      protocol: _protocol,
-      service: service ?? this.service,
-      headers: {..._headers ?? const {}, ...headers ?? const {}},
-      parameters: parameters,
-      body: body,
-      to: to,
-      timeout: _timeout,
-      headerBuilder: _buildAuthHeader,
-      postClient: client ?? _postClient,
-    ),
-    onUpdateDpopNonce: _onUpdateDpopNonce,
-  );
+  }) async =>
+      await _challenge.execute(
+        () async => await xrpc.procedure(
+          methodId,
+          protocol: _protocol,
+          service: service ?? this.service,
+          headers: {..._headers ?? const {}, ...headers ?? const {}},
+          parameters: parameters,
+          body: body,
+          to: to,
+          timeout: _timeout,
+          headerBuilder: _buildAuthHeader,
+          postClient: client ?? _postClient,
+        ),
+        onUpdateDpopNonce: _onUpdateDpopNonce,
+      );
 
   Future<xrpc.XRPCResponse<xrpc.Subscription<T>>> stream<T>(
     final NSID methodId, {
     final Map<String, dynamic>? parameters,
     final xrpc.ResponseDataBuilder<T>? to,
     final xrpc.ResponseDataAdaptor? adaptor,
-  }) async => await _challenge.execute(
-    () => xrpc.subscribe(
-      methodId,
-      service: relayService,
-      parameters: parameters,
-      to: to,
-      adaptor: adaptor,
-    ),
-  );
+  }) async =>
+      await _challenge.execute(
+        () => xrpc.subscribe(
+          methodId,
+          service: relayService,
+          parameters: parameters,
+          to: to,
+          adaptor: adaptor,
+        ),
+      );
 
   Map<String, String> _buildAuthHeader(
     final Map<String, String> header,
@@ -149,20 +151,27 @@ base class ServiceContext {
     }
 
     if (oAuthSession != null) {
-      final jwt = oAuthSession!.accessTokenJwt;
+      final oauthSession = oAuthSession!;
+      final clientId = oauthSession.clientId;
+
+      if (clientId == null || clientId.isEmpty) {
+        throw const FormatException(
+          'OAuth token is missing client_id and cannot build DPoP headers.',
+        );
+      }
+
       final dPoPHeader = getDPoPHeader(
-        clientId: jwt.clientId!,
+        clientId: clientId,
         endpoint: endpoint.toString(),
         method: method,
-        authorizationServer: jwt.iss,
-        accessToken: oAuthSession!.accessToken,
-        dPoPNonce: oAuthSession!.$dPoPNonce,
-        publicKey: oAuthSession!.$publicKey,
-        privateKey: oAuthSession!.$privateKey,
+        accessToken: oauthSession.accessToken,
+        dPoPNonce: oauthSession.$dPoPNonce,
+        publicKey: oauthSession.$publicKey,
+        privateKey: oauthSession.$privateKey,
       );
 
       return {
-        'Authorization': 'DPoP ${oAuthSession!.accessToken}',
+        'Authorization': 'DPoP ${oauthSession.accessToken}',
         'DPoP': dPoPHeader,
         ...header,
       };

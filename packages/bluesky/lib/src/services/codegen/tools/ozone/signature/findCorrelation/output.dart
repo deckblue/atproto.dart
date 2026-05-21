@@ -29,7 +29,6 @@ abstract class SignatureFindCorrelationOutput
   @JsonSerializable(includeIfNull: false)
   const factory SignatureFindCorrelationOutput({
     @SigDetailConverter() required List<SigDetail> details,
-
     Map<String, dynamic>? $unknown,
   }) = _SignatureFindCorrelationOutput;
 
@@ -37,9 +36,8 @@ abstract class SignatureFindCorrelationOutput
       _$SignatureFindCorrelationOutputFromJson(json);
 }
 
-final class SignatureFindCorrelationOutputConverter
-    extends
-        JsonConverter<SignatureFindCorrelationOutput, Map<String, dynamic>> {
+final class SignatureFindCorrelationOutputConverter extends JsonConverter<
+    SignatureFindCorrelationOutput, Map<String, dynamic>> {
   const SignatureFindCorrelationOutputConverter();
 
   @override

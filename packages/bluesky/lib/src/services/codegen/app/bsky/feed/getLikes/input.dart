@@ -32,7 +32,6 @@ abstract class FeedGetLikesInput with _$FeedGetLikesInput {
     String? cid,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetLikesInput;
 

@@ -30,7 +30,6 @@ abstract class BlockedAuthor with _$BlockedAuthor {
     @Default('app.bsky.feed.defs#blockedAuthor') String $type,
     required String did,
     @ViewerStateConverter() ViewerState? viewer,
-
     Map<String, dynamic>? $unknown,
   }) = _BlockedAuthor;
 

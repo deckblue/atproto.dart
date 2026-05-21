@@ -26,7 +26,6 @@ abstract class FeedGetSuggestedFeedsInput with _$FeedGetSuggestedFeedsInput {
   const factory FeedGetSuggestedFeedsInput({
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetSuggestedFeedsInput;
 

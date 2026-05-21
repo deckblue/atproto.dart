@@ -31,7 +31,6 @@ abstract class Like with _$Like {
     required DateTime indexedAt,
     required DateTime createdAt,
     @ProfileViewConverter() required ProfileView actor,
-
     Map<String, dynamic>? $unknown,
   }) = _Like;
 

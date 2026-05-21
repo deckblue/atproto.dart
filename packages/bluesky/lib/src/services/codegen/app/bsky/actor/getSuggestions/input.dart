@@ -26,7 +26,6 @@ abstract class ActorGetSuggestionsInput with _$ActorGetSuggestionsInput {
   const factory ActorGetSuggestionsInput({
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorGetSuggestionsInput;
 

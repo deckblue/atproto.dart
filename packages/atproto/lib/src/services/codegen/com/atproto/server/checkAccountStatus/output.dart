@@ -44,7 +44,6 @@ abstract class ServerCheckAccountStatusOutput
     required int privateStateValues,
     required int expectedBlobs,
     required int importedBlobs,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCheckAccountStatusOutput;
 
@@ -60,9 +59,8 @@ extension ServerCheckAccountStatusOutputExtension
   bool get isNotValidDid => !isValidDid;
 }
 
-final class ServerCheckAccountStatusOutputConverter
-    extends
-        JsonConverter<ServerCheckAccountStatusOutput, Map<String, dynamic>> {
+final class ServerCheckAccountStatusOutputConverter extends JsonConverter<
+    ServerCheckAccountStatusOutput, Map<String, dynamic>> {
   const ServerCheckAccountStatusOutputConverter();
 
   @override

@@ -25,7 +25,8 @@ final class DeleteMessageForSelfCommand extends ProcedureCommand {
   final String name = "delete-message-for-self";
 
   @override
-  final String description = r"";
+  final String description =
+      r"Marks a message as deleted for the viewer, so they won't see that message in future enumerations.";
 
   @override
   final String invocation =
@@ -36,7 +37,7 @@ final class DeleteMessageForSelfCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "convoId": argResults!["convoId"],
-    "messageId": argResults!["messageId"],
-  };
+        "convoId": argResults!["convoId"],
+        "messageId": argResults!["messageId"],
+      };
 }

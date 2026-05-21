@@ -24,9 +24,6 @@ mixin _$GraphGetSuggestedFollowsByActorOutput {
   @ProfileViewConverter()
   List<ProfileView> get suggestions => throw _privateConstructorUsedError;
 
-  /// If true, response has fallen-back to generic results, and is not scoped using relativeToDid
-  bool get isFallback => throw _privateConstructorUsedError;
-
   /// Snowflake for this recommendation, use when submitting recommendation events.
   String? get recIdStr => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
@@ -52,7 +49,6 @@ abstract class $GraphGetSuggestedFollowsByActorOutputCopyWith<$Res> {
   @useResult
   $Res call(
       {@ProfileViewConverter() List<ProfileView> suggestions,
-      bool isFallback,
       String? recIdStr,
       Map<String, dynamic>? $unknown});
 }
@@ -74,7 +70,6 @@ class _$GraphGetSuggestedFollowsByActorOutputCopyWithImpl<$Res,
   @override
   $Res call({
     Object? suggestions = null,
-    Object? isFallback = null,
     Object? recIdStr = freezed,
     Object? $unknown = freezed,
   }) {
@@ -83,10 +78,6 @@ class _$GraphGetSuggestedFollowsByActorOutputCopyWithImpl<$Res,
           ? _value.suggestions
           : suggestions // ignore: cast_nullable_to_non_nullable
               as List<ProfileView>,
-      isFallback: null == isFallback
-          ? _value.isFallback
-          : isFallback // ignore: cast_nullable_to_non_nullable
-              as bool,
       recIdStr: freezed == recIdStr
           ? _value.recIdStr
           : recIdStr // ignore: cast_nullable_to_non_nullable
@@ -110,7 +101,6 @@ abstract class _$$GraphGetSuggestedFollowsByActorOutputImplCopyWith<$Res>
   @useResult
   $Res call(
       {@ProfileViewConverter() List<ProfileView> suggestions,
-      bool isFallback,
       String? recIdStr,
       Map<String, dynamic>? $unknown});
 }
@@ -131,7 +121,6 @@ class __$$GraphGetSuggestedFollowsByActorOutputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? suggestions = null,
-    Object? isFallback = null,
     Object? recIdStr = freezed,
     Object? $unknown = freezed,
   }) {
@@ -140,10 +129,6 @@ class __$$GraphGetSuggestedFollowsByActorOutputImplCopyWithImpl<$Res>
           ? _value._suggestions
           : suggestions // ignore: cast_nullable_to_non_nullable
               as List<ProfileView>,
-      isFallback: null == isFallback
-          ? _value.isFallback
-          : isFallback // ignore: cast_nullable_to_non_nullable
-              as bool,
       recIdStr: freezed == recIdStr
           ? _value.recIdStr
           : recIdStr // ignore: cast_nullable_to_non_nullable
@@ -163,7 +148,6 @@ class _$GraphGetSuggestedFollowsByActorOutputImpl
     implements _GraphGetSuggestedFollowsByActorOutput {
   const _$GraphGetSuggestedFollowsByActorOutputImpl(
       {@ProfileViewConverter() required final List<ProfileView> suggestions,
-      this.isFallback = false,
       this.recIdStr,
       final Map<String, dynamic>? $unknown})
       : _suggestions = suggestions,
@@ -182,11 +166,6 @@ class _$GraphGetSuggestedFollowsByActorOutputImpl
     return EqualUnmodifiableListView(_suggestions);
   }
 
-  /// If true, response has fallen-back to generic results, and is not scoped using relativeToDid
-  @override
-  @JsonKey()
-  final bool isFallback;
-
   /// Snowflake for this recommendation, use when submitting recommendation events.
   @override
   final String? recIdStr;
@@ -202,7 +181,7 @@ class _$GraphGetSuggestedFollowsByActorOutputImpl
 
   @override
   String toString() {
-    return 'GraphGetSuggestedFollowsByActorOutput(suggestions: $suggestions, isFallback: $isFallback, recIdStr: $recIdStr, \$unknown: ${$unknown})';
+    return 'GraphGetSuggestedFollowsByActorOutput(suggestions: $suggestions, recIdStr: $recIdStr, \$unknown: ${$unknown})';
   }
 
   @override
@@ -212,8 +191,6 @@ class _$GraphGetSuggestedFollowsByActorOutputImpl
             other is _$GraphGetSuggestedFollowsByActorOutputImpl &&
             const DeepCollectionEquality()
                 .equals(other._suggestions, _suggestions) &&
-            (identical(other.isFallback, isFallback) ||
-                other.isFallback == isFallback) &&
             (identical(other.recIdStr, recIdStr) ||
                 other.recIdStr == recIdStr) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
@@ -224,7 +201,6 @@ class _$GraphGetSuggestedFollowsByActorOutputImpl
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_suggestions),
-      isFallback,
       recIdStr,
       const DeepCollectionEquality().hash(_$unknown));
 
@@ -250,7 +226,6 @@ abstract class _GraphGetSuggestedFollowsByActorOutput
     implements GraphGetSuggestedFollowsByActorOutput {
   const factory _GraphGetSuggestedFollowsByActorOutput(
           {@ProfileViewConverter() required final List<ProfileView> suggestions,
-          final bool isFallback,
           final String? recIdStr,
           final Map<String, dynamic>? $unknown}) =
       _$GraphGetSuggestedFollowsByActorOutputImpl;
@@ -262,10 +237,6 @@ abstract class _GraphGetSuggestedFollowsByActorOutput
   @override
   @ProfileViewConverter()
   List<ProfileView> get suggestions;
-
-  /// If true, response has fallen-back to generic results, and is not scoped using relativeToDid
-  @override
-  bool get isFallback;
 
   /// Snowflake for this recommendation, use when submitting recommendation events.
   @override

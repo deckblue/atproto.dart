@@ -26,7 +26,6 @@ abstract class SyncListBlobsOutput with _$SyncListBlobsOutput {
   const factory SyncListBlobsOutput({
     String? cursor,
     required List<String> cids,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncListBlobsOutput;
 

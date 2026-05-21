@@ -19,12 +19,12 @@ import 'memory_cache.dart';
 class CacheManager {
   /// Creates a new cache manager with the specified policy.
   CacheManager(CachePolicy policy)
-    : _policy = policy,
-      _didDocumentCache = MemoryCache<DidDocument>(policy),
-      _documentDataCache = MemoryCache<DocumentData>(policy),
-      _operationLogCache = MemoryCache<OperationLog>(policy),
-      _auditableLogCache = MemoryCache<AuditableLog>(policy),
-      _instanceCache = MemoryCache<Instance>(policy);
+      : _policy = policy,
+        _didDocumentCache = MemoryCache<DidDocument>(policy),
+        _documentDataCache = MemoryCache<DocumentData>(policy),
+        _operationLogCache = MemoryCache<OperationLog>(policy),
+        _auditableLogCache = MemoryCache<AuditableLog>(policy),
+        _instanceCache = MemoryCache<Instance>(policy);
 
   final CachePolicy _policy;
   final MemoryCache<DidDocument> _didDocumentCache;

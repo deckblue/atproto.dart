@@ -28,7 +28,6 @@ abstract class AccountCreated with _$AccountCreated {
     String $type,
     String? email,
     String? handle,
-
     Map<String, dynamic>? $unknown,
   }) = _AccountCreated;
 

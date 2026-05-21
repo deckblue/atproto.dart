@@ -41,7 +41,6 @@ abstract class Sync with _$Sync {
 
     /// Timestamp of when this message was originally broadcast.
     required DateTime time,
-
     Map<String, dynamic>? $unknown,
   }) = _Sync;
 

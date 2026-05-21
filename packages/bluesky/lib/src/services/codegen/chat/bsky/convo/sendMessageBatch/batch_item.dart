@@ -30,7 +30,6 @@ abstract class BatchItem with _$BatchItem {
     @Default('chat.bsky.convo.sendMessageBatch#batchItem') String $type,
     required String convoId,
     @MessageInputConverter() required MessageInput message,
-
     Map<String, dynamic>? $unknown,
   }) = _BatchItem;
 

@@ -22,7 +22,7 @@ import 'hosting/getAccountHistory/output.dart';
 
 /// Get account history, e.g. log of updated email addresses or other identity information.
 Future<XRPCResponse<HostingGetAccountHistoryOutput>>
-toolsOzoneHostingGetAccountHistory({
+    toolsOzoneHostingGetAccountHistory({
   required String did,
   List<HostingGetAccountHistoryEvents>? events,
   String? cursor,
@@ -31,19 +31,21 @@ toolsOzoneHostingGetAccountHistory({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.toolsOzoneHostingGetAccountHistory,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    'did': did,
-    if (events != null) 'events': events.map((e) => e.toJson()).toList(),
-    if (cursor != null) 'cursor': cursor,
-    if (limit != null) 'limit': limit,
-  },
-  to: const HostingGetAccountHistoryOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.toolsOzoneHostingGetAccountHistory,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            'did': did,
+            if (events != null)
+              'events': events.map((e) => e.toJson()).toList(),
+            if (cursor != null) 'cursor': cursor,
+            if (limit != null) 'limit': limit,
+          },
+          to: const HostingGetAccountHistoryOutputConverter().fromJson,
+        );
 
 /// `tools.ozone.hosting.*`
 base class HostingService {
@@ -61,14 +63,15 @@ base class HostingService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await toolsOzoneHostingGetAccountHistory(
-    did: did,
-    events: events,
-    cursor: cursor,
-    limit: limit,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await toolsOzoneHostingGetAccountHistory(
+        did: did,
+        events: events,
+        cursor: cursor,
+        limit: limit,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

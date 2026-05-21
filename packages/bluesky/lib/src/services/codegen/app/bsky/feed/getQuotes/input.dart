@@ -32,7 +32,6 @@ abstract class FeedGetQuotesInput with _$FeedGetQuotesInput {
     String? cid,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetQuotesInput;
 

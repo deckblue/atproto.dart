@@ -49,7 +49,6 @@ abstract class RecordViewDetail with _$RecordViewDetail {
     required DateTime indexedAt,
     @ModerationDetailConverter() required ModerationDetail moderation,
     @RepoViewConverter() required RepoView repo,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordViewDetail;
 

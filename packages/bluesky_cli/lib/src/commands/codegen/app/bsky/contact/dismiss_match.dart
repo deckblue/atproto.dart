@@ -16,11 +16,12 @@ import '../../../../procedure_command.dart';
 
 final class DismissMatchCommand extends ProcedureCommand {
   DismissMatchCommand() {
-    argParser..addOption(
-      "subject",
-      help: r"The subject's DID to dismiss the match with.",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "subject",
+        help: r"The subject's DID to dismiss the match with.",
+        mandatory: true,
+      );
   }
 
   @override

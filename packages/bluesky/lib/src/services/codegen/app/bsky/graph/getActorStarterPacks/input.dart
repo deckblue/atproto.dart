@@ -28,7 +28,6 @@ abstract class GraphGetActorStarterPacksInput
     required String actor,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetActorStarterPacksInput;
 
@@ -42,9 +41,8 @@ extension GraphGetActorStarterPacksInputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class GraphGetActorStarterPacksInputConverter
-    extends
-        JsonConverter<GraphGetActorStarterPacksInput, Map<String, dynamic>> {
+final class GraphGetActorStarterPacksInputConverter extends JsonConverter<
+    GraphGetActorStarterPacksInput, Map<String, dynamic>> {
   const GraphGetActorStarterPacksInputConverter();
 
   @override

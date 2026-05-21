@@ -31,7 +31,6 @@ abstract class ResultUnavailable with _$ResultUnavailable {
     @Default('com.atproto.temp.checkHandleAvailability#resultUnavailable')
     String $type,
     @SuggestionConverter() required List<Suggestion> suggestions,
-
     Map<String, dynamic>? $unknown,
   }) = _ResultUnavailable;
 

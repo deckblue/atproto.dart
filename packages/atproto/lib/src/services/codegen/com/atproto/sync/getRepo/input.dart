@@ -29,7 +29,6 @@ abstract class SyncGetRepoInput with _$SyncGetRepoInput {
 
     /// The revision ('rev') of the repo to create a diff from.
     String? since,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetRepoInput;
 

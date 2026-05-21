@@ -25,7 +25,6 @@ abstract class DeleteResult with _$DeleteResult {
   @JsonSerializable(includeIfNull: false)
   const factory DeleteResult({
     @Default('com.atproto.repo.applyWrites#deleteResult') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _DeleteResult;
 

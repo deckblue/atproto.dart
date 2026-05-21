@@ -33,7 +33,6 @@ abstract class UnspeccedInitAgeAssuranceInput
 
     /// An ISO 3166-1 alpha-2 code of the user's location.
     required String countryCode,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedInitAgeAssuranceInput;
 
@@ -41,9 +40,8 @@ abstract class UnspeccedInitAgeAssuranceInput
       _$UnspeccedInitAgeAssuranceInputFromJson(json);
 }
 
-final class UnspeccedInitAgeAssuranceInputConverter
-    extends
-        JsonConverter<UnspeccedInitAgeAssuranceInput, Map<String, dynamic>> {
+final class UnspeccedInitAgeAssuranceInputConverter extends JsonConverter<
+    UnspeccedInitAgeAssuranceInput, Map<String, dynamic>> {
   const UnspeccedInitAgeAssuranceInputConverter();
 
   @override

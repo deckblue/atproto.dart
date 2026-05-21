@@ -43,11 +43,11 @@ final class RegisterPushCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "serviceDid": argResults!["serviceDid"],
-    "token": argResults!["token"],
-    "platform": argResults!["platform"],
-    "appId": argResults!["appId"],
-    if (argResults!["ageRestricted"] != null)
-      "ageRestricted": argResults!["ageRestricted"],
-  };
+        "serviceDid": argResults!["serviceDid"],
+        "token": argResults!["token"],
+        "platform": argResults!["platform"],
+        "appId": argResults!["appId"],
+        if (argResults!["ageRestricted"] != null)
+          "ageRestricted": argResults!["ageRestricted"],
+      };
 }

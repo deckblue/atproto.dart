@@ -32,7 +32,6 @@ abstract class EmbedRecordViewBlocked with _$EmbedRecordViewBlocked {
     @AtUriConverter() required AtUri uri,
     required bool blocked,
     @BlockedAuthorConverter() required BlockedAuthor author,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedRecordViewBlocked;
 

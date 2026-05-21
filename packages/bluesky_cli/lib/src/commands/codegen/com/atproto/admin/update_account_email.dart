@@ -41,7 +41,7 @@ final class UpdateAccountEmailCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "account": argResults!["account"],
-    "email": argResults!["email"],
-  };
+        "account": argResults!["account"],
+        "email": argResults!["email"],
+      };
 }

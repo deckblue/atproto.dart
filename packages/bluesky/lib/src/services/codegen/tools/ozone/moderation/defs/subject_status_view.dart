@@ -111,7 +111,6 @@ abstract class SubjectStatusView with _$SubjectStatusView {
     /// Whether or not the last successful update to age assurance was made by the user or admin.
     @SubjectStatusViewAgeAssuranceUpdatedByConverter()
     SubjectStatusViewAgeAssuranceUpdatedBy? ageAssuranceUpdatedBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SubjectStatusView;
 

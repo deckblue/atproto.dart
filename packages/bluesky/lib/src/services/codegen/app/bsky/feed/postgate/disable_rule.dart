@@ -26,7 +26,6 @@ abstract class DisableRule with _$DisableRule {
   @JsonSerializable(includeIfNull: false)
   const factory DisableRule({
     @Default('app.bsky.feed.postgate#disableRule') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _DisableRule;
 

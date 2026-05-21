@@ -28,7 +28,6 @@ abstract class GraphGetStarterPackOutput with _$GraphGetStarterPackOutput {
   @JsonSerializable(includeIfNull: false)
   const factory GraphGetStarterPackOutput({
     @StarterPackViewConverter() required StarterPackView starterPack,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetStarterPackOutput;
 

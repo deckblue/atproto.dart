@@ -21,6 +21,7 @@ mixin _$UConvoGetMessagesMessages {
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
     required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,6 +29,7 @@ mixin _$UConvoGetMessagesMessages {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
     TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) =>
       throw _privateConstructorUsedError;
@@ -35,6 +37,7 @@ mixin _$UConvoGetMessagesMessages {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
     TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) =>
@@ -45,6 +48,8 @@ mixin _$UConvoGetMessagesMessages {
         messageView,
     required TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)
         deletedMessageView,
+    required TResult Function(UConvoGetMessagesMessagesSystemMessageView value)
+        systemMessageView,
     required TResult Function(UConvoGetMessagesMessagesUnknown value) unknown,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +58,8 @@ mixin _$UConvoGetMessagesMessages {
     TResult? Function(UConvoGetMessagesMessagesMessageView value)? messageView,
     TResult? Function(UConvoGetMessagesMessagesDeletedMessageView value)?
         deletedMessageView,
+    TResult? Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
     TResult? Function(UConvoGetMessagesMessagesUnknown value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,6 +68,8 @@ mixin _$UConvoGetMessagesMessages {
     TResult Function(UConvoGetMessagesMessagesMessageView value)? messageView,
     TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)?
         deletedMessageView,
+    TResult Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
     TResult Function(UConvoGetMessagesMessagesUnknown value)? unknown,
     required TResult orElse(),
   }) =>
@@ -178,6 +187,7 @@ class _$UConvoGetMessagesMessagesMessageViewImpl
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
     required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
     return messageView(data);
@@ -188,6 +198,7 @@ class _$UConvoGetMessagesMessagesMessageViewImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
     TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
     return messageView?.call(data);
@@ -198,6 +209,7 @@ class _$UConvoGetMessagesMessagesMessageViewImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
     TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
@@ -214,6 +226,8 @@ class _$UConvoGetMessagesMessagesMessageViewImpl
         messageView,
     required TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)
         deletedMessageView,
+    required TResult Function(UConvoGetMessagesMessagesSystemMessageView value)
+        systemMessageView,
     required TResult Function(UConvoGetMessagesMessagesUnknown value) unknown,
   }) {
     return messageView(this);
@@ -225,6 +239,8 @@ class _$UConvoGetMessagesMessagesMessageViewImpl
     TResult? Function(UConvoGetMessagesMessagesMessageView value)? messageView,
     TResult? Function(UConvoGetMessagesMessagesDeletedMessageView value)?
         deletedMessageView,
+    TResult? Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
     TResult? Function(UConvoGetMessagesMessagesUnknown value)? unknown,
   }) {
     return messageView?.call(this);
@@ -236,6 +252,8 @@ class _$UConvoGetMessagesMessagesMessageViewImpl
     TResult Function(UConvoGetMessagesMessagesMessageView value)? messageView,
     TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)?
         deletedMessageView,
+    TResult Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
     TResult Function(UConvoGetMessagesMessagesUnknown value)? unknown,
     required TResult orElse(),
   }) {
@@ -358,6 +376,7 @@ class _$UConvoGetMessagesMessagesDeletedMessageViewImpl
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
     required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
     return deletedMessageView(data);
@@ -368,6 +387,7 @@ class _$UConvoGetMessagesMessagesDeletedMessageViewImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
     TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
     return deletedMessageView?.call(data);
@@ -378,6 +398,7 @@ class _$UConvoGetMessagesMessagesDeletedMessageViewImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
     TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
@@ -394,6 +415,8 @@ class _$UConvoGetMessagesMessagesDeletedMessageViewImpl
         messageView,
     required TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)
         deletedMessageView,
+    required TResult Function(UConvoGetMessagesMessagesSystemMessageView value)
+        systemMessageView,
     required TResult Function(UConvoGetMessagesMessagesUnknown value) unknown,
   }) {
     return deletedMessageView(this);
@@ -405,6 +428,8 @@ class _$UConvoGetMessagesMessagesDeletedMessageViewImpl
     TResult? Function(UConvoGetMessagesMessagesMessageView value)? messageView,
     TResult? Function(UConvoGetMessagesMessagesDeletedMessageView value)?
         deletedMessageView,
+    TResult? Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
     TResult? Function(UConvoGetMessagesMessagesUnknown value)? unknown,
   }) {
     return deletedMessageView?.call(this);
@@ -416,6 +441,8 @@ class _$UConvoGetMessagesMessagesDeletedMessageViewImpl
     TResult Function(UConvoGetMessagesMessagesMessageView value)? messageView,
     TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)?
         deletedMessageView,
+    TResult Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
     TResult Function(UConvoGetMessagesMessagesUnknown value)? unknown,
     required TResult orElse(),
   }) {
@@ -441,6 +468,193 @@ abstract class UConvoGetMessagesMessagesDeletedMessageView
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UConvoGetMessagesMessagesDeletedMessageViewImplCopyWith<
           _$UConvoGetMessagesMessagesDeletedMessageViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWith<$Res> {
+  factory _$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWith(
+          _$UConvoGetMessagesMessagesSystemMessageViewImpl value,
+          $Res Function(_$UConvoGetMessagesMessagesSystemMessageViewImpl)
+              then) =
+      __$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SystemMessageView data});
+
+  $SystemMessageViewCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWithImpl<$Res>
+    extends _$UConvoGetMessagesMessagesCopyWithImpl<$Res,
+        _$UConvoGetMessagesMessagesSystemMessageViewImpl>
+    implements _$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWith<$Res> {
+  __$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWithImpl(
+      _$UConvoGetMessagesMessagesSystemMessageViewImpl _value,
+      $Res Function(_$UConvoGetMessagesMessagesSystemMessageViewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UConvoGetMessagesMessages
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UConvoGetMessagesMessagesSystemMessageViewImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as SystemMessageView,
+    ));
+  }
+
+  /// Create a copy of UConvoGetMessagesMessages
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SystemMessageViewCopyWith<$Res> get data {
+    return $SystemMessageViewCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UConvoGetMessagesMessagesSystemMessageViewImpl
+    extends UConvoGetMessagesMessagesSystemMessageView {
+  const _$UConvoGetMessagesMessagesSystemMessageViewImpl({required this.data})
+      : super._();
+
+  @override
+  final SystemMessageView data;
+
+  @override
+  String toString() {
+    return 'UConvoGetMessagesMessages.systemMessageView(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UConvoGetMessagesMessagesSystemMessageViewImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UConvoGetMessagesMessages
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWith<
+          _$UConvoGetMessagesMessagesSystemMessageViewImpl>
+      get copyWith =>
+          __$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWithImpl<
+                  _$UConvoGetMessagesMessagesSystemMessageViewImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MessageView data) messageView,
+    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return systemMessageView(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MessageView data)? messageView,
+    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return systemMessageView?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MessageView data)? messageView,
+    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (systemMessageView != null) {
+      return systemMessageView(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UConvoGetMessagesMessagesMessageView value)
+        messageView,
+    required TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)
+        deletedMessageView,
+    required TResult Function(UConvoGetMessagesMessagesSystemMessageView value)
+        systemMessageView,
+    required TResult Function(UConvoGetMessagesMessagesUnknown value) unknown,
+  }) {
+    return systemMessageView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UConvoGetMessagesMessagesMessageView value)? messageView,
+    TResult? Function(UConvoGetMessagesMessagesDeletedMessageView value)?
+        deletedMessageView,
+    TResult? Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
+    TResult? Function(UConvoGetMessagesMessagesUnknown value)? unknown,
+  }) {
+    return systemMessageView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UConvoGetMessagesMessagesMessageView value)? messageView,
+    TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)?
+        deletedMessageView,
+    TResult Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
+    TResult Function(UConvoGetMessagesMessagesUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (systemMessageView != null) {
+      return systemMessageView(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UConvoGetMessagesMessagesSystemMessageView
+    extends UConvoGetMessagesMessages {
+  const factory UConvoGetMessagesMessagesSystemMessageView(
+          {required final SystemMessageView data}) =
+      _$UConvoGetMessagesMessagesSystemMessageViewImpl;
+  const UConvoGetMessagesMessagesSystemMessageView._() : super._();
+
+  @override
+  SystemMessageView get data;
+
+  /// Create a copy of UConvoGetMessagesMessages
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UConvoGetMessagesMessagesSystemMessageViewImplCopyWith<
+          _$UConvoGetMessagesMessagesSystemMessageViewImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -529,6 +743,7 @@ class _$UConvoGetMessagesMessagesUnknownImpl
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
     required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
     return unknown(data);
@@ -539,6 +754,7 @@ class _$UConvoGetMessagesMessagesUnknownImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
     TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
     return unknown?.call(data);
@@ -549,6 +765,7 @@ class _$UConvoGetMessagesMessagesUnknownImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
     TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
@@ -565,6 +782,8 @@ class _$UConvoGetMessagesMessagesUnknownImpl
         messageView,
     required TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)
         deletedMessageView,
+    required TResult Function(UConvoGetMessagesMessagesSystemMessageView value)
+        systemMessageView,
     required TResult Function(UConvoGetMessagesMessagesUnknown value) unknown,
   }) {
     return unknown(this);
@@ -576,6 +795,8 @@ class _$UConvoGetMessagesMessagesUnknownImpl
     TResult? Function(UConvoGetMessagesMessagesMessageView value)? messageView,
     TResult? Function(UConvoGetMessagesMessagesDeletedMessageView value)?
         deletedMessageView,
+    TResult? Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
     TResult? Function(UConvoGetMessagesMessagesUnknown value)? unknown,
   }) {
     return unknown?.call(this);
@@ -587,6 +808,8 @@ class _$UConvoGetMessagesMessagesUnknownImpl
     TResult Function(UConvoGetMessagesMessagesMessageView value)? messageView,
     TResult Function(UConvoGetMessagesMessagesDeletedMessageView value)?
         deletedMessageView,
+    TResult Function(UConvoGetMessagesMessagesSystemMessageView value)?
+        systemMessageView,
     TResult Function(UConvoGetMessagesMessagesUnknown value)? unknown,
     required TResult orElse(),
   }) {

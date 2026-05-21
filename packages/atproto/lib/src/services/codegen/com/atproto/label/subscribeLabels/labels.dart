@@ -30,7 +30,6 @@ abstract class Labels with _$Labels {
     @Default('com.atproto.label.subscribeLabels#labels') String $type,
     required int seq,
     @LabelConverter() required List<Label> labels,
-
     Map<String, dynamic>? $unknown,
   }) = _Labels;
 

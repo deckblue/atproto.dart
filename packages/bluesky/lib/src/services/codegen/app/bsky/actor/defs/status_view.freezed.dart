@@ -31,6 +31,8 @@ mixin _$StatusView {
   Map<String, dynamic> get record => throw _privateConstructorUsedError;
   @UStatusViewEmbedConverter()
   UStatusViewEmbed? get embed => throw _privateConstructorUsedError;
+  @LabelConverter()
+  List<Label>? get labels => throw _privateConstructorUsedError;
 
   /// The date when this status will expire. The application might choose to no longer return the status after expiration.
   DateTime? get expiresAt => throw _privateConstructorUsedError;
@@ -65,6 +67,7 @@ abstract class $StatusViewCopyWith<$Res> {
       @StatusViewStatusConverter() StatusViewStatus status,
       Map<String, dynamic> record,
       @UStatusViewEmbedConverter() UStatusViewEmbed? embed,
+      @LabelConverter() List<Label>? labels,
       DateTime? expiresAt,
       bool? isActive,
       bool? isDisabled,
@@ -95,6 +98,7 @@ class _$StatusViewCopyWithImpl<$Res, $Val extends StatusView>
     Object? status = null,
     Object? record = null,
     Object? embed = freezed,
+    Object? labels = freezed,
     Object? expiresAt = freezed,
     Object? isActive = freezed,
     Object? isDisabled = freezed,
@@ -125,6 +129,10 @@ class _$StatusViewCopyWithImpl<$Res, $Val extends StatusView>
           ? _value.embed
           : embed // ignore: cast_nullable_to_non_nullable
               as UStatusViewEmbed?,
+      labels: freezed == labels
+          ? _value.labels
+          : labels // ignore: cast_nullable_to_non_nullable
+              as List<Label>?,
       expiresAt: freezed == expiresAt
           ? _value.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
@@ -184,6 +192,7 @@ abstract class _$$StatusViewImplCopyWith<$Res>
       @StatusViewStatusConverter() StatusViewStatus status,
       Map<String, dynamic> record,
       @UStatusViewEmbedConverter() UStatusViewEmbed? embed,
+      @LabelConverter() List<Label>? labels,
       DateTime? expiresAt,
       bool? isActive,
       bool? isDisabled,
@@ -214,6 +223,7 @@ class __$$StatusViewImplCopyWithImpl<$Res>
     Object? status = null,
     Object? record = null,
     Object? embed = freezed,
+    Object? labels = freezed,
     Object? expiresAt = freezed,
     Object? isActive = freezed,
     Object? isDisabled = freezed,
@@ -244,6 +254,10 @@ class __$$StatusViewImplCopyWithImpl<$Res>
           ? _value.embed
           : embed // ignore: cast_nullable_to_non_nullable
               as UStatusViewEmbed?,
+      labels: freezed == labels
+          ? _value._labels
+          : labels // ignore: cast_nullable_to_non_nullable
+              as List<Label>?,
       expiresAt: freezed == expiresAt
           ? _value.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
@@ -275,11 +289,13 @@ class _$StatusViewImpl implements _StatusView {
       @StatusViewStatusConverter() required this.status,
       required final Map<String, dynamic> record,
       @UStatusViewEmbedConverter() this.embed,
+      @LabelConverter() final List<Label>? labels,
       this.expiresAt,
       this.isActive,
       this.isDisabled,
       final Map<String, dynamic>? $unknown})
       : _record = record,
+        _labels = labels,
         _$unknown = $unknown;
 
   factory _$StatusViewImpl.fromJson(Map<String, dynamic> json) =>
@@ -309,6 +325,16 @@ class _$StatusViewImpl implements _StatusView {
   @override
   @UStatusViewEmbedConverter()
   final UStatusViewEmbed? embed;
+  final List<Label>? _labels;
+  @override
+  @LabelConverter()
+  List<Label>? get labels {
+    final value = _labels;
+    if (value == null) return null;
+    if (_labels is EqualUnmodifiableListView) return _labels;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// The date when this status will expire. The application might choose to no longer return the status after expiration.
   @override
@@ -333,7 +359,7 @@ class _$StatusViewImpl implements _StatusView {
 
   @override
   String toString() {
-    return 'StatusView(\$type: ${$type}, uri: $uri, cid: $cid, status: $status, record: $record, embed: $embed, expiresAt: $expiresAt, isActive: $isActive, isDisabled: $isDisabled, \$unknown: ${$unknown})';
+    return 'StatusView(\$type: ${$type}, uri: $uri, cid: $cid, status: $status, record: $record, embed: $embed, labels: $labels, expiresAt: $expiresAt, isActive: $isActive, isDisabled: $isDisabled, \$unknown: ${$unknown})';
   }
 
   @override
@@ -347,6 +373,7 @@ class _$StatusViewImpl implements _StatusView {
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._record, _record) &&
             (identical(other.embed, embed) || other.embed == embed) &&
+            const DeepCollectionEquality().equals(other._labels, _labels) &&
             (identical(other.expiresAt, expiresAt) ||
                 other.expiresAt == expiresAt) &&
             (identical(other.isActive, isActive) ||
@@ -366,6 +393,7 @@ class _$StatusViewImpl implements _StatusView {
       status,
       const DeepCollectionEquality().hash(_record),
       embed,
+      const DeepCollectionEquality().hash(_labels),
       expiresAt,
       isActive,
       isDisabled,
@@ -395,6 +423,7 @@ abstract class _StatusView implements StatusView {
       @StatusViewStatusConverter() required final StatusViewStatus status,
       required final Map<String, dynamic> record,
       @UStatusViewEmbedConverter() final UStatusViewEmbed? embed,
+      @LabelConverter() final List<Label>? labels,
       final DateTime? expiresAt,
       final bool? isActive,
       final bool? isDisabled,
@@ -420,6 +449,9 @@ abstract class _StatusView implements StatusView {
   @override
   @UStatusViewEmbedConverter()
   UStatusViewEmbed? get embed;
+  @override
+  @LabelConverter()
+  List<Label>? get labels;
 
   /// The date when this status will expire. The application might choose to no longer return the status after expiration.
   @override

@@ -29,7 +29,6 @@ abstract class SettingListOptionsOutput with _$SettingListOptionsOutput {
   const factory SettingListOptionsOutput({
     String? cursor,
     @OptionConverter() required List<Option> options,
-
     Map<String, dynamic>? $unknown,
   }) = _SettingListOptionsOutput;
 

@@ -26,7 +26,6 @@ abstract class GraphGetBlocksInput with _$GraphGetBlocksInput {
   const factory GraphGetBlocksInput({
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetBlocksInput;
 

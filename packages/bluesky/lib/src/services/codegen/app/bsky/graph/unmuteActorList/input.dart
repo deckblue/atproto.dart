@@ -26,7 +26,6 @@ abstract class GraphUnmuteActorListInput with _$GraphUnmuteActorListInput {
   @JsonSerializable(includeIfNull: false)
   const factory GraphUnmuteActorListInput({
     @AtUriConverter() required AtUri list,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphUnmuteActorListInput;
 

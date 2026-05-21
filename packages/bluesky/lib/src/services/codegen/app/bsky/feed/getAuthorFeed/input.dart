@@ -40,7 +40,6 @@ abstract class FeedGetAuthorFeedInput with _$FeedGetAuthorFeedInput {
     /// Combinations of post/repost types to include in response.
     @FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? filter,
     @Default(false) bool includePins,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetAuthorFeedInput;
 

@@ -26,7 +26,6 @@ abstract class SyncNotifyOfUpdateInput with _$SyncNotifyOfUpdateInput {
   const factory SyncNotifyOfUpdateInput({
     /// Hostname of the current service (usually a PDS) that is notifying of update.
     required String hostname,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncNotifyOfUpdateInput;
 

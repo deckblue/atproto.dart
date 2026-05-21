@@ -26,18 +26,17 @@ abstract class TempRequestPhoneVerificationInput
   @JsonSerializable(includeIfNull: false)
   const factory TempRequestPhoneVerificationInput({
     required String phoneNumber,
-
     Map<String, dynamic>? $unknown,
   }) = _TempRequestPhoneVerificationInput;
 
   factory TempRequestPhoneVerificationInput.fromJson(
     Map<String, Object?> json,
-  ) => _$TempRequestPhoneVerificationInputFromJson(json);
+  ) =>
+      _$TempRequestPhoneVerificationInputFromJson(json);
 }
 
-final class TempRequestPhoneVerificationInputConverter
-    extends
-        JsonConverter<TempRequestPhoneVerificationInput, Map<String, dynamic>> {
+final class TempRequestPhoneVerificationInputConverter extends JsonConverter<
+    TempRequestPhoneVerificationInput, Map<String, dynamic>> {
   const TempRequestPhoneVerificationInputConverter();
 
   @override

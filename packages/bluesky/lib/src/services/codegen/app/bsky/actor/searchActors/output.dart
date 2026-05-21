@@ -29,7 +29,6 @@ abstract class ActorSearchActorsOutput with _$ActorSearchActorsOutput {
   const factory ActorSearchActorsOutput({
     String? cursor,
     @ProfileViewConverter() required List<ProfileView> actors,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorSearchActorsOutput;
 

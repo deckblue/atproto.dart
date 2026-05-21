@@ -34,7 +34,6 @@ abstract class ThreadItem with _$ThreadItem {
     /// The nesting level of this item in the thread. Depth 0 means the anchor item. Items above have negative depths, items below have positive depths.
     required int depth,
     @UThreadItemValueConverter() required UThreadItemValue value,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadItem;
 

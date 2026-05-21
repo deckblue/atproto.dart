@@ -48,7 +48,6 @@ abstract class DraftPost with _$DraftPost {
     @DraftEmbedVideoConverter() List<DraftEmbedVideo>? embedVideos,
     @DraftEmbedExternalConverter() List<DraftEmbedExternal>? embedExternals,
     @DraftEmbedRecordConverter() List<DraftEmbedRecord>? embedRecords,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftPost;
 

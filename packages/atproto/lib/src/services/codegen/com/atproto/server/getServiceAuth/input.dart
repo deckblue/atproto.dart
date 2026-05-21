@@ -32,7 +32,6 @@ abstract class ServerGetServiceAuthInput with _$ServerGetServiceAuthInput {
 
     /// Lexicon (XRPC) method to bind the requested token to
     String? lxm,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerGetServiceAuthInput;
 

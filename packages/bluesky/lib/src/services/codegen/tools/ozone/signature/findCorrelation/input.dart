@@ -26,7 +26,6 @@ abstract class SignatureFindCorrelationInput
   @JsonSerializable(includeIfNull: false)
   const factory SignatureFindCorrelationInput({
     required List<String> dids,
-
     Map<String, dynamic>? $unknown,
   }) = _SignatureFindCorrelationInput;
 

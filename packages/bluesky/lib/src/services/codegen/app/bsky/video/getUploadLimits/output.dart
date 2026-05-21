@@ -35,7 +35,6 @@ abstract class VideoGetUploadLimitsOutput with _$VideoGetUploadLimitsOutput {
     int? remainingDailyBytes,
     String? message,
     String? error,
-
     Map<String, dynamic>? $unknown,
   }) = _VideoGetUploadLimitsOutput;
 

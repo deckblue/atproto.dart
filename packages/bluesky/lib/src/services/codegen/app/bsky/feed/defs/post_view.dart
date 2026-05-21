@@ -64,7 +64,6 @@ abstract class PostView with _$PostView {
     @LabelConverter() List<Label>? labels,
     @ThreadgateViewConverter() ThreadgateView? threadgate,
     Map<String, dynamic>? debug,
-
     Map<String, dynamic>? $unknown,
   }) = _PostView;
 

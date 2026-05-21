@@ -26,21 +26,18 @@ abstract class UnspeccedGetOnboardingSuggestedStarterPacksInput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetOnboardingSuggestedStarterPacksInput({
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetOnboardingSuggestedStarterPacksInput;
 
   factory UnspeccedGetOnboardingSuggestedStarterPacksInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetOnboardingSuggestedStarterPacksInputFromJson(json);
+  ) =>
+      _$UnspeccedGetOnboardingSuggestedStarterPacksInputFromJson(json);
 }
 
 final class UnspeccedGetOnboardingSuggestedStarterPacksInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetOnboardingSuggestedStarterPacksInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetOnboardingSuggestedStarterPacksInput,
+        Map<String, dynamic>> {
   const UnspeccedGetOnboardingSuggestedStarterPacksInputConverter();
 
   @override
@@ -58,5 +55,6 @@ final class UnspeccedGetOnboardingSuggestedStarterPacksInputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetOnboardingSuggestedStarterPacksInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

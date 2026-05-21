@@ -27,7 +27,6 @@ abstract class SetDeleteValuesInput with _$SetDeleteValuesInput {
     /// Name of the set to delete values from
     required String name,
     required List<String> values,
-
     Map<String, dynamic>? $unknown,
   }) = _SetDeleteValuesInput;
 

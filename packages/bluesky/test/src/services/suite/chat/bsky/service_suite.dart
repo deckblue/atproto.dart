@@ -11,19 +11,22 @@ void testActor<D>(
   final atp_test.ServiceCallback<ActorService, D> endpoint, {
   required String id,
   String? label,
-}) => atp_test.testService<ActorService, D>(_runner, endpoint, id, label);
+}) =>
+    atp_test.testService<ActorService, D>(_runner, endpoint, id, label);
 
 void testConvo<D>(
   final atp_test.ServiceCallback<ConvoService, D> endpoint, {
   required String id,
   String? label,
-}) => atp_test.testService<ConvoService, D>(_runner, endpoint, id, label);
+}) =>
+    atp_test.testService<ConvoService, D>(_runner, endpoint, id, label);
 
 void testModeration<D>(
   final atp_test.ServiceCallback<ModerationService, D> endpoint, {
   required String id,
   String? label,
-}) => atp_test.testService<ModerationService, D>(_runner, endpoint, id, label);
+}) =>
+    atp_test.testService<ModerationService, D>(_runner, endpoint, id, label);
 
 final class _ServiceRunner extends atp_test.ServiceRunner {
   const _ServiceRunner();
@@ -47,21 +50,24 @@ final class _ServiceRunner extends atp_test.ServiceRunner {
   ActorService _getActorService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => ActorService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      ActorService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   ConvoService _getConvoService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => ConvoService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      ConvoService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   ModerationService _getModerationService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => ModerationService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      ModerationService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 }

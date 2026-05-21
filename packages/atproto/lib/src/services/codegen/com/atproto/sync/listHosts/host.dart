@@ -41,7 +41,6 @@ abstract class Host with _$Host {
     int? seq,
     int? accountCount,
     @HostStatusConverter() HostStatus? status,
-
     Map<String, dynamic>? $unknown,
   }) = _Host;
 

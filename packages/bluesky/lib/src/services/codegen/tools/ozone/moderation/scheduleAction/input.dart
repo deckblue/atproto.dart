@@ -44,7 +44,6 @@ abstract class ModerationScheduleActionInput
 
     /// This will be propagated to the moderation event when it is applied
     @ModToolConverter() ModTool? modTool,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationScheduleActionInput;
 

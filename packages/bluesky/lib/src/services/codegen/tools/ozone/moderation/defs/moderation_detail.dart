@@ -29,7 +29,6 @@ abstract class ModerationDetail with _$ModerationDetail {
   const factory ModerationDetail({
     @Default('tools.ozone.moderation.defs#moderationDetail') String $type,
     @SubjectStatusViewConverter() SubjectStatusView? subjectStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationDetail;
 

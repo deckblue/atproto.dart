@@ -46,7 +46,6 @@ abstract class LabelerView with _$LabelerView {
     @LabelerViewerStateConverter() LabelerViewerState? viewer,
     required DateTime indexedAt,
     @LabelConverter() List<Label>? labels,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelerView;
 

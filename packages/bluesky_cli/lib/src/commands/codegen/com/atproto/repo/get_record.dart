@@ -51,9 +51,9 @@ final class GetRecordCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "repo": argResults!["repo"],
-    "collection": argResults!["collection"],
-    "rkey": argResults!["rkey"],
-    if (argResults!["cid"] != null) "cid": argResults!["cid"],
-  };
+        "repo": argResults!["repo"],
+        "collection": argResults!["collection"],
+        "rkey": argResults!["rkey"],
+        if (argResults!["cid"] != null) "cid": argResults!["cid"],
+      };
 }

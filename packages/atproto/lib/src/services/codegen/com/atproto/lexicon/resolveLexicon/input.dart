@@ -26,7 +26,6 @@ abstract class LexiconResolveLexiconInput with _$LexiconResolveLexiconInput {
   const factory LexiconResolveLexiconInput({
     /// The lexicon NSID to resolve.
     required String nsid,
-
     Map<String, dynamic>? $unknown,
   }) = _LexiconResolveLexiconInput;
 

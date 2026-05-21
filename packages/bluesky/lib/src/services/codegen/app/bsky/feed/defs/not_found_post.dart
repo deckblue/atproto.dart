@@ -28,7 +28,6 @@ abstract class NotFoundPost with _$NotFoundPost {
     @Default('app.bsky.feed.defs#notFoundPost') String $type,
     @AtUriConverter() required AtUri uri,
     required bool notFound,
-
     Map<String, dynamic>? $unknown,
   }) = _NotFoundPost;
 

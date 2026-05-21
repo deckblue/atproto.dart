@@ -47,10 +47,10 @@ final class GetSuggestionsSkeletonCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    if (argResults!["relativeToDid"] != null)
-      "relativeToDid": argResults!["relativeToDid"],
-  };
+        if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!["relativeToDid"] != null)
+          "relativeToDid": argResults!["relativeToDid"],
+      };
 }

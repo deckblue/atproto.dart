@@ -35,7 +35,6 @@ abstract class TimelineItemSummary with _$TimelineItemSummary {
     @TimelineItemSummaryEventTypeConverter()
     required TimelineItemSummaryEventType eventType,
     required int count,
-
     Map<String, dynamic>? $unknown,
   }) = _TimelineItemSummary;
 

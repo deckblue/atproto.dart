@@ -42,8 +42,9 @@ final class GetTimelineCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["algorithm"] != null) "algorithm": argResults!["algorithm"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        if (argResults!["algorithm"] != null)
+          "algorithm": argResults!["algorithm"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

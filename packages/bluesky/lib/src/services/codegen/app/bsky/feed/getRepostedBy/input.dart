@@ -32,7 +32,6 @@ abstract class FeedGetRepostedByInput with _$FeedGetRepostedByInput {
     String? cid,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetRepostedByInput;
 

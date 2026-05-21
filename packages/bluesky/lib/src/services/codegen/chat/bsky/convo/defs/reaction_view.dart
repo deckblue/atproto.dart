@@ -31,7 +31,6 @@ abstract class ReactionView with _$ReactionView {
     required String value,
     @ReactionViewSenderConverter() required ReactionViewSender sender,
     required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ReactionView;
 

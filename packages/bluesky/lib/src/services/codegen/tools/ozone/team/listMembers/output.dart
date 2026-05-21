@@ -29,7 +29,6 @@ abstract class TeamListMembersOutput with _$TeamListMembersOutput {
   const factory TeamListMembersOutput({
     String? cursor,
     @MemberConverter() required List<Member> members,
-
     Map<String, dynamic>? $unknown,
   }) = _TeamListMembersOutput;
 

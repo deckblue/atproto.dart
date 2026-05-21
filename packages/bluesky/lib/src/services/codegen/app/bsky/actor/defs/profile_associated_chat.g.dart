@@ -22,6 +22,13 @@ _$ProfileAssociatedChatImpl _$$ProfileAssociatedChatImplFromJson(Map json) =>
               'allowIncoming',
               (v) => const ProfileAssociatedChatAllowIncomingConverter()
                   .fromJson(v as String)),
+          allowGroupInvites: $checkedConvert(
+              'allowGroupInvites',
+              (v) => _$JsonConverterFromJson<String,
+                      ProfileAssociatedChatAllowGroupInvites>(
+                  v,
+                  const ProfileAssociatedChatAllowGroupInvitesConverter()
+                      .fromJson)),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -38,5 +45,22 @@ Map<String, dynamic> _$$ProfileAssociatedChatImplToJson(
       r'$type': instance.$type,
       'allowIncoming': const ProfileAssociatedChatAllowIncomingConverter()
           .toJson(instance.allowIncoming),
+      if (_$JsonConverterToJson<String, ProfileAssociatedChatAllowGroupInvites>(
+              instance.allowGroupInvites,
+              const ProfileAssociatedChatAllowGroupInvitesConverter().toJson)
+          case final value?)
+        'allowGroupInvites': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

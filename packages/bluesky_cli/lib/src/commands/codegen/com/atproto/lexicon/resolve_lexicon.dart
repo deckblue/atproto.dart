@@ -16,11 +16,12 @@ import '../../../../query_command.dart';
 
 final class ResolveLexiconCommand extends QueryCommand {
   ResolveLexiconCommand() {
-    argParser..addOption(
-      "nsid",
-      help: r"The lexicon NSID to resolve.",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "nsid",
+        help: r"The lexicon NSID to resolve.",
+        mandatory: true,
+      );
   }
 
   @override

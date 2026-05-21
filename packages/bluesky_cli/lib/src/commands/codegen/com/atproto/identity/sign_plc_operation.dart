@@ -44,13 +44,14 @@ final class SignPlcOperationCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["token"] != null) "token": argResults!["token"],
-    if (argResults!["rotationKeys"] != null)
-      "rotationKeys": argResults!["rotationKeys"],
-    if (argResults!["alsoKnownAs"] != null)
-      "alsoKnownAs": argResults!["alsoKnownAs"],
-    if (argResults!["verificationMethods"] != null)
-      "verificationMethods": argResults!["verificationMethods"],
-    if (argResults!["services"] != null) "services": argResults!["services"],
-  };
+        if (argResults!["token"] != null) "token": argResults!["token"],
+        if (argResults!["rotationKeys"] != null)
+          "rotationKeys": argResults!["rotationKeys"],
+        if (argResults!["alsoKnownAs"] != null)
+          "alsoKnownAs": argResults!["alsoKnownAs"],
+        if (argResults!["verificationMethods"] != null)
+          "verificationMethods": argResults!["verificationMethods"],
+        if (argResults!["services"] != null)
+          "services": argResults!["services"],
+      };
 }

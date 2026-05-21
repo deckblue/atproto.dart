@@ -30,7 +30,6 @@ abstract class SafelinkQueryRulesOutput with _$SafelinkQueryRulesOutput {
     /// Next cursor for pagination. Only present if there are more results.
     String? cursor,
     @UrlRuleConverter() required List<UrlRule> rules,
-
     Map<String, dynamic>? $unknown,
   }) = _SafelinkQueryRulesOutput;
 

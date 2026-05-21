@@ -26,7 +26,6 @@ abstract class ThreadItemNoUnauthenticated with _$ThreadItemNoUnauthenticated {
   const factory ThreadItemNoUnauthenticated({
     @Default('app.bsky.unspecced.defs#threadItemNoUnauthenticated')
     String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadItemNoUnauthenticated;
 

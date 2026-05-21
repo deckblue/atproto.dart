@@ -26,7 +26,6 @@ abstract class RepoListMissingBlobsInput with _$RepoListMissingBlobsInput {
   const factory RepoListMissingBlobsInput({
     @Default(500) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoListMissingBlobsInput;
 

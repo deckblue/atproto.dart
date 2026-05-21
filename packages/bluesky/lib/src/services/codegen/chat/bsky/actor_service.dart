@@ -22,6 +22,7 @@ import 'package:atproto_core/internals.dart' show protected;
 // Project imports:
 import '../../../../ids.g.dart' as ids;
 import '../../../../nsids.g.dart' as ns;
+import 'actor/declaration/main_allow_group_invites.dart';
 import 'actor/declaration/main_allow_incoming.dart';
 
 import 'package:atproto/com_atproto_services.dart'
@@ -40,22 +41,24 @@ Future<XRPCResponse<EmptyData>> chatBskyActorDeleteAccount({
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
-}) async => await $ctx.post(
-  ns.chatBskyActorDeleteAccount,
-  service: $service,
-  headers: {...?$headers},
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyActorDeleteAccount,
+      service: $service,
+      headers: {...?$headers},
+    );
 Future<XRPCResponse<Uint8List>> chatBskyActorExportAccountData({
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyActorExportAccountData,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown},
-);
+}) async =>
+    await $ctx.get(
+      ns.chatBskyActorExportAccountData,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown},
+    );
 
 /// `chat.bsky.actor.*`
 base class ActorService {
@@ -66,27 +69,28 @@ base class ActorService {
 
   ActorService(this.ctx) : _declaration = ActorDeclarationRecordAccessor(ctx);
 
+  /// A declaration of a Bluesky chat account.
+  ActorDeclarationRecordAccessor get declaration => _declaration;
   Future<XRPCResponse<EmptyData>> deleteAccount({
     String? $service,
     Map<String, String>? $headers,
-  }) async => await chatBskyActorDeleteAccount(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-  );
+  }) async =>
+      await chatBskyActorDeleteAccount(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+      );
   Future<XRPCResponse<Uint8List>> exportAccountData({
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyActorExportAccountData(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
-
-  /// A declaration of a Bluesky chat account.
-  ActorDeclarationRecordAccessor get declaration => _declaration;
+  }) async =>
+      await chatBskyActorExportAccountData(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }
 
 final class ActorDeclarationRecordAccessor {
@@ -100,15 +104,16 @@ final class ActorDeclarationRecordAccessor {
     String? cid,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoGetRecord(
-    repo: repo,
-    collection: ids.chatBskyActorDeclaration,
-    rkey: rkey,
-    cid: cid,
-    $ctx: ctx,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoRepoGetRecord(
+        repo: repo,
+        collection: ids.chatBskyActorDeclaration,
+        rkey: rkey,
+        cid: cid,
+        $ctx: ctx,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   Future<XRPCResponse<RepoListRecordsOutput>> list({
     required String repo,
@@ -117,54 +122,69 @@ final class ActorDeclarationRecordAccessor {
     bool? reverse,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoListRecords(
-    repo: repo,
-    collection: ids.chatBskyActorDeclaration,
-    limit: limit,
-    cursor: cursor,
-    reverse: reverse,
-    $ctx: ctx,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoRepoListRecords(
+        repo: repo,
+        collection: ids.chatBskyActorDeclaration,
+        limit: limit,
+        cursor: cursor,
+        reverse: reverse,
+        $ctx: ctx,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   Future<XRPCResponse<RepoCreateRecordOutput>> create({
     required ActorDeclarationAllowIncoming allowIncoming,
+    ActorDeclarationAllowGroupInvites? allowGroupInvites,
     String rkey = 'self',
     bool? validate,
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoCreateRecord(
-    repo: ctx.repo,
-    collection: ids.chatBskyActorDeclaration,
-    rkey: rkey,
-    validate: validate,
-    record: {...?$unknown, 'allowIncoming': allowIncoming.toJson()},
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoCreateRecord(
+        repo: ctx.repo,
+        collection: ids.chatBskyActorDeclaration,
+        rkey: rkey,
+        validate: validate,
+        record: {
+          ...?$unknown,
+          'allowIncoming': allowIncoming.toJson(),
+          if (allowGroupInvites != null)
+            'allowGroupInvites': allowGroupInvites.toJson(),
+        },
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 
   Future<XRPCResponse<RepoPutRecordOutput>> put({
     required ActorDeclarationAllowIncoming allowIncoming,
+    ActorDeclarationAllowGroupInvites? allowGroupInvites,
     String rkey = 'self',
     bool? validate,
     String? swapRecord,
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoPutRecord(
-    repo: ctx.repo,
-    collection: ids.chatBskyActorDeclaration,
-    rkey: rkey,
-    validate: validate,
-    record: {...?$unknown, 'allowIncoming': allowIncoming.toJson()},
-    swapRecord: swapRecord,
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoPutRecord(
+        repo: ctx.repo,
+        collection: ids.chatBskyActorDeclaration,
+        rkey: rkey,
+        validate: validate,
+        record: {
+          ...?$unknown,
+          'allowIncoming': allowIncoming.toJson(),
+          if (allowGroupInvites != null)
+            'allowGroupInvites': allowGroupInvites.toJson(),
+        },
+        swapRecord: swapRecord,
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 
   Future<XRPCResponse<RepoDeleteRecordOutput>> delete({
     String rkey = 'self',
@@ -172,13 +192,14 @@ final class ActorDeclarationRecordAccessor {
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoDeleteRecord(
-    repo: ctx.repo,
-    collection: ids.chatBskyActorDeclaration,
-    rkey: rkey,
-    swapRecord: swapRecord,
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoDeleteRecord(
+        repo: ctx.repo,
+        collection: ids.chatBskyActorDeclaration,
+        rkey: rkey,
+        swapRecord: swapRecord,
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 }

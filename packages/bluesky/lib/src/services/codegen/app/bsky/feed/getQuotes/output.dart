@@ -32,7 +32,6 @@ abstract class FeedGetQuotesOutput with _$FeedGetQuotesOutput {
     String? cid,
     String? cursor,
     @PostViewConverter() required List<PostView> posts,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetQuotesOutput;
 

@@ -19,6 +19,9 @@ _$ModerationGetMessageContextInputImpl
               before:
                   $checkedConvert('before', (v) => (v as num?)?.toInt() ?? 5),
               after: $checkedConvert('after', (v) => (v as num?)?.toInt() ?? 5),
+              maxInterleavedSystemMessages: $checkedConvert(
+                  'maxInterleavedSystemMessages',
+                  (v) => (v as num?)?.toInt() ?? 10),
               $unknown: $checkedConvert(
                   r'$unknown',
                   (v) => (v as Map?)?.map(
@@ -36,5 +39,6 @@ Map<String, dynamic> _$$ModerationGetMessageContextInputImplToJson(
       'messageId': instance.messageId,
       'before': instance.before,
       'after': instance.after,
+      'maxInterleavedSystemMessages': instance.maxInterleavedSystemMessages,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

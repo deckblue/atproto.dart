@@ -47,7 +47,6 @@ abstract class AccountStats with _$AccountStats {
 
     /// Number of times the account was taken down
     int? takedownCount,
-
     Map<String, dynamic>? $unknown,
   }) = _AccountStats;
 

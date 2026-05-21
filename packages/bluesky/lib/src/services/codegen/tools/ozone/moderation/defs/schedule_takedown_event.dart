@@ -35,7 +35,6 @@ abstract class ScheduleTakedownEvent with _$ScheduleTakedownEvent {
     DateTime? executeAt,
     DateTime? executeAfter,
     DateTime? executeUntil,
-
     Map<String, dynamic>? $unknown,
   }) = _ScheduleTakedownEvent;
 

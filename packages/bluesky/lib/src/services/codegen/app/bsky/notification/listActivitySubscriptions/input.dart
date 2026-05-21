@@ -27,13 +27,13 @@ abstract class NotificationListActivitySubscriptionsInput
   const factory NotificationListActivitySubscriptionsInput({
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationListActivitySubscriptionsInput;
 
   factory NotificationListActivitySubscriptionsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$NotificationListActivitySubscriptionsInputFromJson(json);
+  ) =>
+      _$NotificationListActivitySubscriptionsInputFromJson(json);
 }
 
 extension NotificationListActivitySubscriptionsInputExtension
@@ -43,11 +43,8 @@ extension NotificationListActivitySubscriptionsInputExtension
 }
 
 final class NotificationListActivitySubscriptionsInputConverter
-    extends
-        JsonConverter<
-          NotificationListActivitySubscriptionsInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<NotificationListActivitySubscriptionsInput,
+        Map<String, dynamic>> {
   const NotificationListActivitySubscriptionsInputConverter();
 
   @override
@@ -62,5 +59,6 @@ final class NotificationListActivitySubscriptionsInputConverter
   @override
   Map<String, dynamic> toJson(
     NotificationListActivitySubscriptionsInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

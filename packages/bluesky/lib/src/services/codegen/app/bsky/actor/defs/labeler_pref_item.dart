@@ -26,7 +26,6 @@ abstract class LabelerPrefItem with _$LabelerPrefItem {
   const factory LabelerPrefItem({
     @Default('app.bsky.actor.defs#labelerPrefItem') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelerPrefItem;
 

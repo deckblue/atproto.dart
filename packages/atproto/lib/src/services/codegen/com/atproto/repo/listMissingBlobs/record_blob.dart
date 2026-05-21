@@ -28,7 +28,6 @@ abstract class RecordBlob with _$RecordBlob {
     @Default('com.atproto.repo.listMissingBlobs#recordBlob') String $type,
     required String cid,
     @AtUriConverter() required AtUri recordUri,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordBlob;
 

@@ -79,21 +79,21 @@ final class _CreateGeneratorCommand extends CreateRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "did": argResults!["did"],
-    "displayName": argResults!["displayName"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-    if (argResults!["descriptionFacets"] != null)
-      "descriptionFacets": argResults!["descriptionFacets"],
-    if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
-    if (argResults!["acceptsInteractions"] != null)
-      "acceptsInteractions": argResults!["acceptsInteractions"],
-    if (argResults!["labels"] != null)
-      "labels": jsonDecode(argResults!["labels"]),
-    if (argResults!["contentMode"] != null)
-      "contentMode": argResults!["contentMode"],
-    "createdAt": argResults!["createdAt"],
-  };
+        "did": argResults!["did"],
+        "displayName": argResults!["displayName"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+        if (argResults!["descriptionFacets"] != null)
+          "descriptionFacets": argResults!["descriptionFacets"],
+        if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
+        if (argResults!["acceptsInteractions"] != null)
+          "acceptsInteractions": argResults!["acceptsInteractions"],
+        if (argResults!["labels"] != null)
+          "labels": jsonDecode(argResults!["labels"]),
+        if (argResults!["contentMode"] != null)
+          "contentMode": argResults!["contentMode"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutGeneratorCommand extends PutRecordCommand {
@@ -133,21 +133,21 @@ final class _PutGeneratorCommand extends PutRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "did": argResults!["did"],
-    "displayName": argResults!["displayName"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-    if (argResults!["descriptionFacets"] != null)
-      "descriptionFacets": argResults!["descriptionFacets"],
-    if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
-    if (argResults!["acceptsInteractions"] != null)
-      "acceptsInteractions": argResults!["acceptsInteractions"],
-    if (argResults!["labels"] != null)
-      "labels": jsonDecode(argResults!["labels"]),
-    if (argResults!["contentMode"] != null)
-      "contentMode": argResults!["contentMode"],
-    "createdAt": argResults!["createdAt"],
-  };
+        "did": argResults!["did"],
+        "displayName": argResults!["displayName"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+        if (argResults!["descriptionFacets"] != null)
+          "descriptionFacets": argResults!["descriptionFacets"],
+        if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
+        if (argResults!["acceptsInteractions"] != null)
+          "acceptsInteractions": argResults!["acceptsInteractions"],
+        if (argResults!["labels"] != null)
+          "labels": jsonDecode(argResults!["labels"]),
+        if (argResults!["contentMode"] != null)
+          "contentMode": argResults!["contentMode"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteGeneratorCommand extends DeleteRecordCommand {
@@ -192,11 +192,11 @@ final class _GetGeneratorCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListGeneratorCommand extends QueryCommand {
@@ -222,10 +222,10 @@ final class _ListGeneratorCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'limit': argResults!['limit'],
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'limit': argResults!['limit'],
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

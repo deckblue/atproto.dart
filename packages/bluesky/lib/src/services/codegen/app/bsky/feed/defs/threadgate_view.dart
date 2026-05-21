@@ -33,7 +33,6 @@ abstract class ThreadgateView with _$ThreadgateView {
     String? cid,
     Map<String, dynamic>? record,
     @ListViewBasicConverter() List<ListViewBasic>? lists,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreadgateView;
 

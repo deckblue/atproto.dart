@@ -26,7 +26,6 @@ abstract class AgeassuranceGetStateInput with _$AgeassuranceGetStateInput {
   const factory AgeassuranceGetStateInput({
     required String countryCode,
     String? regionCode,
-
     Map<String, dynamic>? $unknown,
   }) = _AgeassuranceGetStateInput;
 

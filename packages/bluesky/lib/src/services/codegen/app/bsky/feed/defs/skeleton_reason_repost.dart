@@ -27,7 +27,6 @@ abstract class SkeletonReasonRepost with _$SkeletonReasonRepost {
   const factory SkeletonReasonRepost({
     @Default('app.bsky.feed.defs#skeletonReasonRepost') String $type,
     @AtUriConverter() required AtUri repost,
-
     Map<String, dynamic>? $unknown,
   }) = _SkeletonReasonRepost;
 

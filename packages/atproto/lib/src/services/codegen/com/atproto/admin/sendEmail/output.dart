@@ -25,7 +25,6 @@ abstract class AdminSendEmailOutput with _$AdminSendEmailOutput {
   @JsonSerializable(includeIfNull: false)
   const factory AdminSendEmailOutput({
     required bool sent,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminSendEmailOutput;
 

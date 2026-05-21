@@ -29,7 +29,6 @@ abstract class ContactVerifyPhoneInput with _$ContactVerifyPhoneInput {
 
     /// The code received via SMS as a result of the call to `app.bsky.contact.startPhoneVerification`.
     required String code,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactVerifyPhoneInput;
 

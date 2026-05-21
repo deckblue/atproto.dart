@@ -16,11 +16,12 @@ import '../../../../query_command.dart';
 
 final class GetProfileCommand extends QueryCommand {
   GetProfileCommand() {
-    argParser..addOption(
-      "actor",
-      help: r"Handle or DID of account to fetch profile of.",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "actor",
+        help: r"Handle or DID of account to fetch profile of.",
+        mandatory: true,
+      );
   }
 
   @override

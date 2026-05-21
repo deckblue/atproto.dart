@@ -27,7 +27,6 @@ abstract class ServerReserveSigningKeyInput
   const factory ServerReserveSigningKeyInput({
     /// The DID to reserve a key for.
     String? did,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerReserveSigningKeyInput;
 

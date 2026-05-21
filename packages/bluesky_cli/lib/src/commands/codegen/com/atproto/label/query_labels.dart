@@ -46,9 +46,9 @@ final class QueryLabelsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "uriPatterns": argResults!["uriPatterns"],
-    if (argResults!["sources"] != null) "sources": argResults!["sources"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "uriPatterns": argResults!["uriPatterns"],
+        if (argResults!["sources"] != null) "sources": argResults!["sources"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

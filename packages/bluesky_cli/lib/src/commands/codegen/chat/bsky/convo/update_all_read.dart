@@ -23,7 +23,8 @@ final class UpdateAllReadCommand extends ProcedureCommand {
   final String name = "update-all-read";
 
   @override
-  final String description = r"";
+  final String description =
+      r"Sets conversations from a user as read to the latest message, with filters.";
 
   @override
   final String invocation = "bsky chat-bsky-convo update-all-read [status]";
@@ -33,6 +34,6 @@ final class UpdateAllReadCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["status"] != null) "status": argResults!["status"],
-  };
+        if (argResults!["status"] != null) "status": argResults!["status"],
+      };
 }

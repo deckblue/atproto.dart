@@ -28,7 +28,6 @@ abstract class DraftUpdateDraftInput with _$DraftUpdateDraftInput {
   @JsonSerializable(includeIfNull: false)
   const factory DraftUpdateDraftInput({
     @DraftWithIdConverter() required DraftWithId draft,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftUpdateDraftInput;
 

@@ -26,6 +26,9 @@ mixin _$ModEventTag {
 
   /// Additional comment about added/removed tags.
   String? get comment => throw _privateConstructorUsedError;
+
+  /// Indicates how long the tags being added should remain before automatically being removed. Only applies to tags being added.
+  int? get durationInHours => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ModEventTag to a JSON map.
@@ -49,6 +52,7 @@ abstract class $ModEventTagCopyWith<$Res> {
       List<String> add,
       List<String> remove,
       String? comment,
+      int? durationInHours,
       Map<String, dynamic>? $unknown});
 }
 
@@ -71,6 +75,7 @@ class _$ModEventTagCopyWithImpl<$Res, $Val extends ModEventTag>
     Object? add = null,
     Object? remove = null,
     Object? comment = freezed,
+    Object? durationInHours = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -90,6 +95,10 @@ class _$ModEventTagCopyWithImpl<$Res, $Val extends ModEventTag>
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
+      durationInHours: freezed == durationInHours
+          ? _value.durationInHours
+          : durationInHours // ignore: cast_nullable_to_non_nullable
+              as int?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -111,6 +120,7 @@ abstract class _$$ModEventTagImplCopyWith<$Res>
       List<String> add,
       List<String> remove,
       String? comment,
+      int? durationInHours,
       Map<String, dynamic>? $unknown});
 }
 
@@ -131,6 +141,7 @@ class __$$ModEventTagImplCopyWithImpl<$Res>
     Object? add = null,
     Object? remove = null,
     Object? comment = freezed,
+    Object? durationInHours = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ModEventTagImpl(
@@ -150,6 +161,10 @@ class __$$ModEventTagImplCopyWithImpl<$Res>
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
+      durationInHours: freezed == durationInHours
+          ? _value.durationInHours
+          : durationInHours // ignore: cast_nullable_to_non_nullable
+              as int?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -167,6 +182,7 @@ class _$ModEventTagImpl implements _ModEventTag {
       required final List<String> add,
       required final List<String> remove,
       this.comment,
+      this.durationInHours,
       final Map<String, dynamic>? $unknown})
       : _add = add,
         _remove = remove,
@@ -197,6 +213,10 @@ class _$ModEventTagImpl implements _ModEventTag {
   /// Additional comment about added/removed tags.
   @override
   final String? comment;
+
+  /// Indicates how long the tags being added should remain before automatically being removed. Only applies to tags being added.
+  @override
+  final int? durationInHours;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -209,7 +229,7 @@ class _$ModEventTagImpl implements _ModEventTag {
 
   @override
   String toString() {
-    return 'ModEventTag(\$type: ${$type}, add: $add, remove: $remove, comment: $comment, \$unknown: ${$unknown})';
+    return 'ModEventTag(\$type: ${$type}, add: $add, remove: $remove, comment: $comment, durationInHours: $durationInHours, \$unknown: ${$unknown})';
   }
 
   @override
@@ -221,6 +241,8 @@ class _$ModEventTagImpl implements _ModEventTag {
             const DeepCollectionEquality().equals(other._add, _add) &&
             const DeepCollectionEquality().equals(other._remove, _remove) &&
             (identical(other.comment, comment) || other.comment == comment) &&
+            (identical(other.durationInHours, durationInHours) ||
+                other.durationInHours == durationInHours) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -232,6 +254,7 @@ class _$ModEventTagImpl implements _ModEventTag {
       const DeepCollectionEquality().hash(_add),
       const DeepCollectionEquality().hash(_remove),
       comment,
+      durationInHours,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ModEventTag
@@ -256,6 +279,7 @@ abstract class _ModEventTag implements ModEventTag {
       required final List<String> add,
       required final List<String> remove,
       final String? comment,
+      final int? durationInHours,
       final Map<String, dynamic>? $unknown}) = _$ModEventTagImpl;
 
   factory _ModEventTag.fromJson(Map<String, dynamic> json) =
@@ -271,6 +295,10 @@ abstract class _ModEventTag implements ModEventTag {
   /// Additional comment about added/removed tags.
   @override
   String? get comment;
+
+  /// Indicates how long the tags being added should remain before automatically being removed. Only applies to tags being added.
+  @override
+  int? get durationInHours;
   @override
   Map<String, dynamic>? get $unknown;
 

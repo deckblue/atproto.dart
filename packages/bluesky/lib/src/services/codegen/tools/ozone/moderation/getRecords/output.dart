@@ -29,7 +29,6 @@ abstract class ModerationGetRecordsOutput with _$ModerationGetRecordsOutput {
   const factory ModerationGetRecordsOutput({
     @UModerationGetRecordsRecordsConverter()
     required List<UModerationGetRecordsRecords> records,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetRecordsOutput;
 

@@ -50,7 +50,6 @@ abstract class ServerRefreshSessionOutput with _$ServerRefreshSessionOutput {
 
     /// Hosting status of the account. If not specified, then assume 'active'.
     @ServerRefreshSessionStatusConverter() ServerRefreshSessionStatus? status,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerRefreshSessionOutput;
 

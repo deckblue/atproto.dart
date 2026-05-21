@@ -60,12 +60,13 @@ final class CreateRecordCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "repo": argResults!["repo"],
-    "collection": argResults!["collection"],
-    if (argResults!["rkey"] != null) "rkey": argResults!["rkey"],
-    if (argResults!["validate"] != null) "validate": argResults!["validate"],
-    "record": argResults!["record"],
-    if (argResults!["swapCommit"] != null)
-      "swapCommit": argResults!["swapCommit"],
-  };
+        "repo": argResults!["repo"],
+        "collection": argResults!["collection"],
+        if (argResults!["rkey"] != null) "rkey": argResults!["rkey"],
+        if (argResults!["validate"] != null)
+          "validate": argResults!["validate"],
+        "record": argResults!["record"],
+        if (argResults!["swapCommit"] != null)
+          "swapCommit": argResults!["swapCommit"],
+      };
 }

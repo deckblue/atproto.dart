@@ -36,7 +36,6 @@ abstract class SafelinkRemoveRuleInput with _$SafelinkRemoveRuleInput {
 
     /// Optional DID of the user. Only respected when using admin auth.
     String? createdBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SafelinkRemoveRuleInput;
 

@@ -33,7 +33,6 @@ abstract class GrantError with _$GrantError {
 
     /// The did of the subject being verified
     required String subject,
-
     Map<String, dynamic>? $unknown,
   }) = _GrantError;
 

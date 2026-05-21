@@ -26,7 +26,6 @@ abstract class ModerationGetRecordsInput with _$ModerationGetRecordsInput {
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetRecordsInput({
     @AtUriConverter() required List<AtUri> uris,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetRecordsInput;
 

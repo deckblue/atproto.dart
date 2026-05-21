@@ -30,7 +30,6 @@ abstract class FeedLikeRecord with _$FeedLikeRecord {
     @RepoStrongRefConverter() required RepoStrongRef subject,
     required DateTime createdAt,
     @RepoStrongRefConverter() RepoStrongRef? via,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedLikeRecord;
 

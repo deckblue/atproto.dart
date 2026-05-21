@@ -26,7 +26,6 @@ abstract class BookmarkDeleteBookmarkInput with _$BookmarkDeleteBookmarkInput {
   @JsonSerializable(includeIfNull: false)
   const factory BookmarkDeleteBookmarkInput({
     @AtUriConverter() required AtUri uri,
-
     Map<String, dynamic>? $unknown,
   }) = _BookmarkDeleteBookmarkInput;
 

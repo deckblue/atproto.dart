@@ -30,7 +30,6 @@ abstract class ConvoGetConvoAvailabilityOutput
   const factory ConvoGetConvoAvailabilityOutput({
     required bool canChat,
     @ConvoViewConverter() ConvoView? convo,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetConvoAvailabilityOutput;
 
@@ -46,9 +45,8 @@ extension ConvoGetConvoAvailabilityOutputExtension
   bool get hasNotConvo => !hasConvo;
 }
 
-final class ConvoGetConvoAvailabilityOutputConverter
-    extends
-        JsonConverter<ConvoGetConvoAvailabilityOutput, Map<String, dynamic>> {
+final class ConvoGetConvoAvailabilityOutputConverter extends JsonConverter<
+    ConvoGetConvoAvailabilityOutput, Map<String, dynamic>> {
   const ConvoGetConvoAvailabilityOutputConverter();
 
   @override

@@ -27,7 +27,6 @@ abstract class EmailConfirmed with _$EmailConfirmed {
     @Default('tools.ozone.hosting.getAccountHistory#emailConfirmed')
     String $type,
     required String email,
-
     Map<String, dynamic>? $unknown,
   }) = _EmailConfirmed;
 

@@ -28,7 +28,6 @@ abstract class ActorGetPreferencesOutput with _$ActorGetPreferencesOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ActorGetPreferencesOutput({
     @UPreferencesConverter() required List<UPreferences> preferences,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorGetPreferencesOutput;
 

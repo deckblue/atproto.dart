@@ -28,7 +28,6 @@ abstract class ModEventPriorityScore with _$ModEventPriorityScore {
     @Default('tools.ozone.moderation.defs#modEventPriorityScore') String $type,
     String? comment,
     required int score,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventPriorityScore;
 

@@ -20,18 +20,19 @@ Future<core.XRPCResponse<core.Session>> createSession({
   String? service,
   core.RetryConfig? retryConfig,
   final core.PostClient? client,
-}) async => _toSessionResponse(
-  await comAtprotoServerCreateSession(
-    identifier: identifier,
-    password: password,
-    authFactorToken: authFactorToken,
-    $ctx: core.ServiceContext(
-      service: service,
-      retryConfig: retryConfig,
-      postClient: client,
-    ),
-  ),
-);
+}) async =>
+    _toSessionResponse(
+      await comAtprotoServerCreateSession(
+        identifier: identifier,
+        password: password,
+        authFactorToken: authFactorToken,
+        $ctx: core.ServiceContext(
+          service: service,
+          retryConfig: retryConfig,
+          postClient: client,
+        ),
+      ),
+    );
 
 /// https://atprotodart.com/docs/lexicons/com/atproto/server/refreshSession
 Future<core.XRPCResponse<core.Session>> refreshSession({
@@ -39,16 +40,17 @@ Future<core.XRPCResponse<core.Session>> refreshSession({
   String? service,
   core.RetryConfig? retryConfig,
   final core.PostClient? client,
-}) async => _toSessionResponse(
-  await comAtprotoServerRefreshSession(
-    $headers: {'Authorization': 'Bearer $refreshJwt'},
-    $ctx: core.ServiceContext(
-      service: service,
-      retryConfig: retryConfig,
-      postClient: client,
-    ),
-  ),
-);
+}) async =>
+    _toSessionResponse(
+      await comAtprotoServerRefreshSession(
+        $headers: {'Authorization': 'Bearer $refreshJwt'},
+        $ctx: core.ServiceContext(
+          service: service,
+          retryConfig: retryConfig,
+          postClient: client,
+        ),
+      ),
+    );
 
 /// https://atprotodart.com/docs/lexicons/com/atproto/server/deleteSession
 Future<core.XRPCResponse<core.EmptyData>> deleteSession({
@@ -57,21 +59,23 @@ Future<core.XRPCResponse<core.EmptyData>> deleteSession({
   required String refreshJwt,
   core.RetryConfig? retryConfig,
   final core.PostClient? client,
-}) async => await comAtprotoServerDeleteSession(
-  $headers: {'Authorization': 'Bearer $refreshJwt'},
-  $ctx: core.ServiceContext(
-    service: service,
-    retryConfig: retryConfig,
-    postClient: client,
-  ),
-);
+}) async =>
+    await comAtprotoServerDeleteSession(
+      $headers: {'Authorization': 'Bearer $refreshJwt'},
+      $ctx: core.ServiceContext(
+        service: service,
+        retryConfig: retryConfig,
+        postClient: client,
+      ),
+    );
 
 core.XRPCResponse<core.Session> _toSessionResponse(
   final core.XRPCResponse response,
-) => core.XRPCResponse(
-  headers: response.headers,
-  status: response.status,
-  request: response.request,
-  rateLimit: response.rateLimit,
-  data: core.Session.fromJson(response.data.toJson()),
-);
+) =>
+    core.XRPCResponse(
+      headers: response.headers,
+      status: response.status,
+      request: response.request,
+      rateLimit: response.rateLimit,
+      data: core.Session.fromJson(response.data.toJson()),
+    );

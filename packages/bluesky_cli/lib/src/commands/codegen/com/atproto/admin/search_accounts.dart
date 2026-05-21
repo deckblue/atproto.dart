@@ -38,8 +38,8 @@ final class SearchAccountsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["email"] != null) "email": argResults!["email"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    "limit": argResults!["limit"],
-  };
+        if (argResults!["email"] != null) "email": argResults!["email"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": argResults!["limit"],
+      };
 }

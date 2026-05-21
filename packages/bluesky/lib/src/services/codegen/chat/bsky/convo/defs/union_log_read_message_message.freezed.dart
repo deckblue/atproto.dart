@@ -21,6 +21,7 @@ mixin _$ULogReadMessageMessage {
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
     required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,6 +29,7 @@ mixin _$ULogReadMessageMessage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
     TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) =>
       throw _privateConstructorUsedError;
@@ -35,6 +37,7 @@ mixin _$ULogReadMessageMessage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
     TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) =>
@@ -45,6 +48,8 @@ mixin _$ULogReadMessageMessage {
         messageView,
     required TResult Function(ULogReadMessageMessageDeletedMessageView value)
         deletedMessageView,
+    required TResult Function(ULogReadMessageMessageSystemMessageView value)
+        systemMessageView,
     required TResult Function(ULogReadMessageMessageUnknown value) unknown,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +58,8 @@ mixin _$ULogReadMessageMessage {
     TResult? Function(ULogReadMessageMessageMessageView value)? messageView,
     TResult? Function(ULogReadMessageMessageDeletedMessageView value)?
         deletedMessageView,
+    TResult? Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
     TResult? Function(ULogReadMessageMessageUnknown value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,6 +68,8 @@ mixin _$ULogReadMessageMessage {
     TResult Function(ULogReadMessageMessageMessageView value)? messageView,
     TResult Function(ULogReadMessageMessageDeletedMessageView value)?
         deletedMessageView,
+    TResult Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
     TResult Function(ULogReadMessageMessageUnknown value)? unknown,
     required TResult orElse(),
   }) =>
@@ -178,6 +187,7 @@ class _$ULogReadMessageMessageMessageViewImpl
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
     required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
     return messageView(data);
@@ -188,6 +198,7 @@ class _$ULogReadMessageMessageMessageViewImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
     TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
     return messageView?.call(data);
@@ -198,6 +209,7 @@ class _$ULogReadMessageMessageMessageViewImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
     TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
@@ -214,6 +226,8 @@ class _$ULogReadMessageMessageMessageViewImpl
         messageView,
     required TResult Function(ULogReadMessageMessageDeletedMessageView value)
         deletedMessageView,
+    required TResult Function(ULogReadMessageMessageSystemMessageView value)
+        systemMessageView,
     required TResult Function(ULogReadMessageMessageUnknown value) unknown,
   }) {
     return messageView(this);
@@ -225,6 +239,8 @@ class _$ULogReadMessageMessageMessageViewImpl
     TResult? Function(ULogReadMessageMessageMessageView value)? messageView,
     TResult? Function(ULogReadMessageMessageDeletedMessageView value)?
         deletedMessageView,
+    TResult? Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
     TResult? Function(ULogReadMessageMessageUnknown value)? unknown,
   }) {
     return messageView?.call(this);
@@ -236,6 +252,8 @@ class _$ULogReadMessageMessageMessageViewImpl
     TResult Function(ULogReadMessageMessageMessageView value)? messageView,
     TResult Function(ULogReadMessageMessageDeletedMessageView value)?
         deletedMessageView,
+    TResult Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
     TResult Function(ULogReadMessageMessageUnknown value)? unknown,
     required TResult orElse(),
   }) {
@@ -354,6 +372,7 @@ class _$ULogReadMessageMessageDeletedMessageViewImpl
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
     required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
     return deletedMessageView(data);
@@ -364,6 +383,7 @@ class _$ULogReadMessageMessageDeletedMessageViewImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
     TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
     return deletedMessageView?.call(data);
@@ -374,6 +394,7 @@ class _$ULogReadMessageMessageDeletedMessageViewImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
     TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
@@ -390,6 +411,8 @@ class _$ULogReadMessageMessageDeletedMessageViewImpl
         messageView,
     required TResult Function(ULogReadMessageMessageDeletedMessageView value)
         deletedMessageView,
+    required TResult Function(ULogReadMessageMessageSystemMessageView value)
+        systemMessageView,
     required TResult Function(ULogReadMessageMessageUnknown value) unknown,
   }) {
     return deletedMessageView(this);
@@ -401,6 +424,8 @@ class _$ULogReadMessageMessageDeletedMessageViewImpl
     TResult? Function(ULogReadMessageMessageMessageView value)? messageView,
     TResult? Function(ULogReadMessageMessageDeletedMessageView value)?
         deletedMessageView,
+    TResult? Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
     TResult? Function(ULogReadMessageMessageUnknown value)? unknown,
   }) {
     return deletedMessageView?.call(this);
@@ -412,6 +437,8 @@ class _$ULogReadMessageMessageDeletedMessageViewImpl
     TResult Function(ULogReadMessageMessageMessageView value)? messageView,
     TResult Function(ULogReadMessageMessageDeletedMessageView value)?
         deletedMessageView,
+    TResult Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
     TResult Function(ULogReadMessageMessageUnknown value)? unknown,
     required TResult orElse(),
   }) {
@@ -437,6 +464,191 @@ abstract class ULogReadMessageMessageDeletedMessageView
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ULogReadMessageMessageDeletedMessageViewImplCopyWith<
           _$ULogReadMessageMessageDeletedMessageViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ULogReadMessageMessageSystemMessageViewImplCopyWith<$Res> {
+  factory _$$ULogReadMessageMessageSystemMessageViewImplCopyWith(
+          _$ULogReadMessageMessageSystemMessageViewImpl value,
+          $Res Function(_$ULogReadMessageMessageSystemMessageViewImpl) then) =
+      __$$ULogReadMessageMessageSystemMessageViewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SystemMessageView data});
+
+  $SystemMessageViewCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$ULogReadMessageMessageSystemMessageViewImplCopyWithImpl<$Res>
+    extends _$ULogReadMessageMessageCopyWithImpl<$Res,
+        _$ULogReadMessageMessageSystemMessageViewImpl>
+    implements _$$ULogReadMessageMessageSystemMessageViewImplCopyWith<$Res> {
+  __$$ULogReadMessageMessageSystemMessageViewImplCopyWithImpl(
+      _$ULogReadMessageMessageSystemMessageViewImpl _value,
+      $Res Function(_$ULogReadMessageMessageSystemMessageViewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ULogReadMessageMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ULogReadMessageMessageSystemMessageViewImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as SystemMessageView,
+    ));
+  }
+
+  /// Create a copy of ULogReadMessageMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SystemMessageViewCopyWith<$Res> get data {
+    return $SystemMessageViewCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ULogReadMessageMessageSystemMessageViewImpl
+    extends ULogReadMessageMessageSystemMessageView {
+  const _$ULogReadMessageMessageSystemMessageViewImpl({required this.data})
+      : super._();
+
+  @override
+  final SystemMessageView data;
+
+  @override
+  String toString() {
+    return 'ULogReadMessageMessage.systemMessageView(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ULogReadMessageMessageSystemMessageViewImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of ULogReadMessageMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ULogReadMessageMessageSystemMessageViewImplCopyWith<
+          _$ULogReadMessageMessageSystemMessageViewImpl>
+      get copyWith =>
+          __$$ULogReadMessageMessageSystemMessageViewImplCopyWithImpl<
+              _$ULogReadMessageMessageSystemMessageViewImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MessageView data) messageView,
+    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return systemMessageView(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MessageView data)? messageView,
+    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return systemMessageView?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MessageView data)? messageView,
+    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (systemMessageView != null) {
+      return systemMessageView(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ULogReadMessageMessageMessageView value)
+        messageView,
+    required TResult Function(ULogReadMessageMessageDeletedMessageView value)
+        deletedMessageView,
+    required TResult Function(ULogReadMessageMessageSystemMessageView value)
+        systemMessageView,
+    required TResult Function(ULogReadMessageMessageUnknown value) unknown,
+  }) {
+    return systemMessageView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ULogReadMessageMessageMessageView value)? messageView,
+    TResult? Function(ULogReadMessageMessageDeletedMessageView value)?
+        deletedMessageView,
+    TResult? Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
+    TResult? Function(ULogReadMessageMessageUnknown value)? unknown,
+  }) {
+    return systemMessageView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ULogReadMessageMessageMessageView value)? messageView,
+    TResult Function(ULogReadMessageMessageDeletedMessageView value)?
+        deletedMessageView,
+    TResult Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
+    TResult Function(ULogReadMessageMessageUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (systemMessageView != null) {
+      return systemMessageView(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ULogReadMessageMessageSystemMessageView
+    extends ULogReadMessageMessage {
+  const factory ULogReadMessageMessageSystemMessageView(
+          {required final SystemMessageView data}) =
+      _$ULogReadMessageMessageSystemMessageViewImpl;
+  const ULogReadMessageMessageSystemMessageView._() : super._();
+
+  @override
+  SystemMessageView get data;
+
+  /// Create a copy of ULogReadMessageMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ULogReadMessageMessageSystemMessageViewImplCopyWith<
+          _$ULogReadMessageMessageSystemMessageViewImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -525,6 +737,7 @@ class _$ULogReadMessageMessageUnknownImpl
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
     required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
     return unknown(data);
@@ -535,6 +748,7 @@ class _$ULogReadMessageMessageUnknownImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
     TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
     return unknown?.call(data);
@@ -545,6 +759,7 @@ class _$ULogReadMessageMessageUnknownImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
     TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
@@ -561,6 +776,8 @@ class _$ULogReadMessageMessageUnknownImpl
         messageView,
     required TResult Function(ULogReadMessageMessageDeletedMessageView value)
         deletedMessageView,
+    required TResult Function(ULogReadMessageMessageSystemMessageView value)
+        systemMessageView,
     required TResult Function(ULogReadMessageMessageUnknown value) unknown,
   }) {
     return unknown(this);
@@ -572,6 +789,8 @@ class _$ULogReadMessageMessageUnknownImpl
     TResult? Function(ULogReadMessageMessageMessageView value)? messageView,
     TResult? Function(ULogReadMessageMessageDeletedMessageView value)?
         deletedMessageView,
+    TResult? Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
     TResult? Function(ULogReadMessageMessageUnknown value)? unknown,
   }) {
     return unknown?.call(this);
@@ -583,6 +802,8 @@ class _$ULogReadMessageMessageUnknownImpl
     TResult Function(ULogReadMessageMessageMessageView value)? messageView,
     TResult Function(ULogReadMessageMessageDeletedMessageView value)?
         deletedMessageView,
+    TResult Function(ULogReadMessageMessageSystemMessageView value)?
+        systemMessageView,
     TResult Function(ULogReadMessageMessageUnknown value)? unknown,
     required TResult orElse(),
   }) {

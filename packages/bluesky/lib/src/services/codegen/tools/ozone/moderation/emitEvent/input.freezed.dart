@@ -32,6 +32,10 @@ mixin _$ModerationEmitEventInput {
 
   /// An optional external ID for the event, used to deduplicate events from external systems. Fails when an event of same type with the same external ID exists for the same subject.
   String? get externalId => throw _privateConstructorUsedError;
+
+  /// Optional report-level targeting. If provided, this event will be linked to specific reports and reporters may be notified.
+  @ReportActionConverter()
+  ReportAction? get reportAction => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ModerationEmitEventInput to a JSON map.
@@ -58,11 +62,13 @@ abstract class $ModerationEmitEventInputCopyWith<$Res> {
       String createdBy,
       @ModToolConverter() ModTool? modTool,
       String? externalId,
+      @ReportActionConverter() ReportAction? reportAction,
       Map<String, dynamic>? $unknown});
 
   $UModerationEmitEventEventCopyWith<$Res> get event;
   $UModerationEmitEventSubjectCopyWith<$Res> get subject;
   $ModToolCopyWith<$Res>? get modTool;
+  $ReportActionCopyWith<$Res>? get reportAction;
 }
 
 /// @nodoc
@@ -87,6 +93,7 @@ class _$ModerationEmitEventInputCopyWithImpl<$Res,
     Object? createdBy = null,
     Object? modTool = freezed,
     Object? externalId = freezed,
+    Object? reportAction = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -114,6 +121,10 @@ class _$ModerationEmitEventInputCopyWithImpl<$Res,
           ? _value.externalId
           : externalId // ignore: cast_nullable_to_non_nullable
               as String?,
+      reportAction: freezed == reportAction
+          ? _value.reportAction
+          : reportAction // ignore: cast_nullable_to_non_nullable
+              as ReportAction?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -154,6 +165,20 @@ class _$ModerationEmitEventInputCopyWithImpl<$Res,
       return _then(_value.copyWith(modTool: value) as $Val);
     });
   }
+
+  /// Create a copy of ModerationEmitEventInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReportActionCopyWith<$Res>? get reportAction {
+    if (_value.reportAction == null) {
+      return null;
+    }
+
+    return $ReportActionCopyWith<$Res>(_value.reportAction!, (value) {
+      return _then(_value.copyWith(reportAction: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -173,6 +198,7 @@ abstract class _$$ModerationEmitEventInputImplCopyWith<$Res>
       String createdBy,
       @ModToolConverter() ModTool? modTool,
       String? externalId,
+      @ReportActionConverter() ReportAction? reportAction,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -181,6 +207,8 @@ abstract class _$$ModerationEmitEventInputImplCopyWith<$Res>
   $UModerationEmitEventSubjectCopyWith<$Res> get subject;
   @override
   $ModToolCopyWith<$Res>? get modTool;
+  @override
+  $ReportActionCopyWith<$Res>? get reportAction;
 }
 
 /// @nodoc
@@ -204,6 +232,7 @@ class __$$ModerationEmitEventInputImplCopyWithImpl<$Res>
     Object? createdBy = null,
     Object? modTool = freezed,
     Object? externalId = freezed,
+    Object? reportAction = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ModerationEmitEventInputImpl(
@@ -231,6 +260,10 @@ class __$$ModerationEmitEventInputImplCopyWithImpl<$Res>
           ? _value.externalId
           : externalId // ignore: cast_nullable_to_non_nullable
               as String?,
+      reportAction: freezed == reportAction
+          ? _value.reportAction
+          : reportAction // ignore: cast_nullable_to_non_nullable
+              as ReportAction?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -250,6 +283,7 @@ class _$ModerationEmitEventInputImpl implements _ModerationEmitEventInput {
       required this.createdBy,
       @ModToolConverter() this.modTool,
       this.externalId,
+      @ReportActionConverter() this.reportAction,
       final Map<String, dynamic>? $unknown})
       : _subjectBlobCids = subjectBlobCids,
         _$unknown = $unknown;
@@ -282,6 +316,11 @@ class _$ModerationEmitEventInputImpl implements _ModerationEmitEventInput {
   /// An optional external ID for the event, used to deduplicate events from external systems. Fails when an event of same type with the same external ID exists for the same subject.
   @override
   final String? externalId;
+
+  /// Optional report-level targeting. If provided, this event will be linked to specific reports and reporters may be notified.
+  @override
+  @ReportActionConverter()
+  final ReportAction? reportAction;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -294,7 +333,7 @@ class _$ModerationEmitEventInputImpl implements _ModerationEmitEventInput {
 
   @override
   String toString() {
-    return 'ModerationEmitEventInput(event: $event, subject: $subject, subjectBlobCids: $subjectBlobCids, createdBy: $createdBy, modTool: $modTool, externalId: $externalId, \$unknown: ${$unknown})';
+    return 'ModerationEmitEventInput(event: $event, subject: $subject, subjectBlobCids: $subjectBlobCids, createdBy: $createdBy, modTool: $modTool, externalId: $externalId, reportAction: $reportAction, \$unknown: ${$unknown})';
   }
 
   @override
@@ -311,6 +350,8 @@ class _$ModerationEmitEventInputImpl implements _ModerationEmitEventInput {
             (identical(other.modTool, modTool) || other.modTool == modTool) &&
             (identical(other.externalId, externalId) ||
                 other.externalId == externalId) &&
+            (identical(other.reportAction, reportAction) ||
+                other.reportAction == reportAction) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -324,6 +365,7 @@ class _$ModerationEmitEventInputImpl implements _ModerationEmitEventInput {
       createdBy,
       modTool,
       externalId,
+      reportAction,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ModerationEmitEventInput
@@ -353,6 +395,7 @@ abstract class _ModerationEmitEventInput implements ModerationEmitEventInput {
       required final String createdBy,
       @ModToolConverter() final ModTool? modTool,
       final String? externalId,
+      @ReportActionConverter() final ReportAction? reportAction,
       final Map<String, dynamic>? $unknown}) = _$ModerationEmitEventInputImpl;
 
   factory _ModerationEmitEventInput.fromJson(Map<String, dynamic> json) =
@@ -375,6 +418,11 @@ abstract class _ModerationEmitEventInput implements ModerationEmitEventInput {
   /// An optional external ID for the event, used to deduplicate events from external systems. Fails when an event of same type with the same external ID exists for the same subject.
   @override
   String? get externalId;
+
+  /// Optional report-level targeting. If provided, this event will be linked to specific reports and reporters may be notified.
+  @override
+  @ReportActionConverter()
+  ReportAction? get reportAction;
   @override
   Map<String, dynamic>? get $unknown;
 

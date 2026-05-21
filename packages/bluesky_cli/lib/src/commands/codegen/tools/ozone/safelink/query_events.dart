@@ -43,11 +43,11 @@ final class QueryEventsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    "limit": argResults!["limit"],
-    if (argResults!["urls"] != null) "urls": argResults!["urls"],
-    if (argResults!["patternType"] != null)
-      "patternType": argResults!["patternType"],
-    "sortDirection": argResults!["sortDirection"],
-  };
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": argResults!["limit"],
+        if (argResults!["urls"] != null) "urls": argResults!["urls"],
+        if (argResults!["patternType"] != null)
+          "patternType": argResults!["patternType"],
+        "sortDirection": argResults!["sortDirection"],
+      };
 }

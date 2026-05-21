@@ -43,7 +43,6 @@ abstract class ServerGetConfigOutput with _$ServerGetConfigOutput {
 
     /// The did of the verifier used for verification.
     String? verifierDid,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerGetConfigOutput;
 

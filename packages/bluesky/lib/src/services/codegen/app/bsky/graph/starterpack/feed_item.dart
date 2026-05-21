@@ -27,7 +27,6 @@ abstract class FeedItem with _$FeedItem {
   const factory FeedItem({
     @Default('app.bsky.graph.starterpack#feedItem') String $type,
     @AtUriConverter() required AtUri uri,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedItem;
 

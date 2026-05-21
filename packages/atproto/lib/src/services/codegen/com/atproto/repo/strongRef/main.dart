@@ -28,7 +28,6 @@ abstract class RepoStrongRef with _$RepoStrongRef {
     @Default('com.atproto.repo.strongRef') String $type,
     @AtUriConverter() required AtUri uri,
     required String cid,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoStrongRef;
 

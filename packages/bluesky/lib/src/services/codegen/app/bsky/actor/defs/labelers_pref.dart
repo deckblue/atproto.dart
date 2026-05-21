@@ -29,7 +29,6 @@ abstract class LabelersPref with _$LabelersPref {
   const factory LabelersPref({
     @Default('app.bsky.actor.defs#labelersPref') String $type,
     @LabelerPrefItemConverter() required List<LabelerPrefItem> labelers,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelersPref;
 

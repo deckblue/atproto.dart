@@ -18,6 +18,7 @@ part 'log_begin_convo.g.dart';
 // LexGenerator
 // **************************************************************************
 
+/// Event indicating a convo containing the viewer was started. Can be direct or group. When a member is added to a group convo, they also get this event.
 @freezed
 abstract class LogBeginConvo with _$LogBeginConvo {
   static const knownProps = <String>['rev', 'convoId'];
@@ -27,7 +28,6 @@ abstract class LogBeginConvo with _$LogBeginConvo {
     @Default('chat.bsky.convo.defs#logBeginConvo') String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogBeginConvo;
 

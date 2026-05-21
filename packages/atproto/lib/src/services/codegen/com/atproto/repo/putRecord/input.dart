@@ -50,7 +50,6 @@ abstract class RepoPutRecordInput with _$RepoPutRecordInput {
 
     /// Compare and swap with the previous commit by CID.
     String? swapCommit,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoPutRecordInput;
 

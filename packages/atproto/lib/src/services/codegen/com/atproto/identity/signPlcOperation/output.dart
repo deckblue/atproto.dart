@@ -26,7 +26,6 @@ abstract class IdentitySignPlcOperationOutput
   @JsonSerializable(includeIfNull: false)
   const factory IdentitySignPlcOperationOutput({
     required Map<String, dynamic> operation,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentitySignPlcOperationOutput;
 
@@ -34,9 +33,8 @@ abstract class IdentitySignPlcOperationOutput
       _$IdentitySignPlcOperationOutputFromJson(json);
 }
 
-final class IdentitySignPlcOperationOutputConverter
-    extends
-        JsonConverter<IdentitySignPlcOperationOutput, Map<String, dynamic>> {
+final class IdentitySignPlcOperationOutputConverter extends JsonConverter<
+    IdentitySignPlcOperationOutput, Map<String, dynamic>> {
   const IdentitySignPlcOperationOutputConverter();
 
   @override

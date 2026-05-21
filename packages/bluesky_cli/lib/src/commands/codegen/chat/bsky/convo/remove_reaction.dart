@@ -38,8 +38,8 @@ final class RemoveReactionCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "convoId": argResults!["convoId"],
-    "messageId": argResults!["messageId"],
-    "value": argResults!["value"],
-  };
+        "convoId": argResults!["convoId"],
+        "messageId": argResults!["messageId"],
+        "value": argResults!["value"],
+      };
 }

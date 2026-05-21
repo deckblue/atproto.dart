@@ -25,7 +25,6 @@ abstract class IdentityResolveDidOutput with _$IdentityResolveDidOutput {
   @JsonSerializable(includeIfNull: false)
   const factory IdentityResolveDidOutput({
     required Map<String, dynamic> didDoc,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityResolveDidOutput;
 

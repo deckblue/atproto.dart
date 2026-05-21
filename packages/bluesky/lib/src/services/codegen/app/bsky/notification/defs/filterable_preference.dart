@@ -32,7 +32,6 @@ abstract class FilterablePreference with _$FilterablePreference {
     required FilterablePreferenceInclude include,
     required bool list,
     required bool push,
-
     Map<String, dynamic>? $unknown,
   }) = _FilterablePreference;
 

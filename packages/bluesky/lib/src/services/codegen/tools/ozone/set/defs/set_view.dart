@@ -36,7 +36,6 @@ abstract class SetView with _$SetView {
     required int setSize,
     required DateTime createdAt,
     required DateTime updatedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _SetView;
 

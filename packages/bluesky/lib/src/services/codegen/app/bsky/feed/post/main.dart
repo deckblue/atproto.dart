@@ -53,7 +53,6 @@ abstract class FeedPostRecord with _$FeedPostRecord {
 
     /// Client-declared timestamp when this post was originally created.
     required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedPostRecord;
 

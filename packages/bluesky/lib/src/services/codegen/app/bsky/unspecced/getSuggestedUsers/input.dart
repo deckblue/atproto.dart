@@ -28,7 +28,6 @@ abstract class UnspeccedGetSuggestedUsersInput
     /// Category of users to get suggestions for.
     String? category,
     @Default(25) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedUsersInput;
 
@@ -42,9 +41,8 @@ extension UnspeccedGetSuggestedUsersInputExtension
   bool get hasNotCategory => !hasCategory;
 }
 
-final class UnspeccedGetSuggestedUsersInputConverter
-    extends
-        JsonConverter<UnspeccedGetSuggestedUsersInput, Map<String, dynamic>> {
+final class UnspeccedGetSuggestedUsersInputConverter extends JsonConverter<
+    UnspeccedGetSuggestedUsersInput, Map<String, dynamic>> {
   const UnspeccedGetSuggestedUsersInputConverter();
 
   @override

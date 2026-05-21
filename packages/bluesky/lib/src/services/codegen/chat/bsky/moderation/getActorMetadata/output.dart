@@ -31,18 +31,17 @@ abstract class ModerationGetActorMetadataOutput
     @MetadataConverter() required Metadata day,
     @MetadataConverter() required Metadata month,
     @MetadataConverter() required Metadata all,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetActorMetadataOutput;
 
   factory ModerationGetActorMetadataOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationGetActorMetadataOutputFromJson(json);
+  ) =>
+      _$ModerationGetActorMetadataOutputFromJson(json);
 }
 
-final class ModerationGetActorMetadataOutputConverter
-    extends
-        JsonConverter<ModerationGetActorMetadataOutput, Map<String, dynamic>> {
+final class ModerationGetActorMetadataOutputConverter extends JsonConverter<
+    ModerationGetActorMetadataOutput, Map<String, dynamic>> {
   const ModerationGetActorMetadataOutputConverter();
 
   @override

@@ -29,12 +29,13 @@ abstract class EmbedImagesImage with _$EmbedImagesImage {
   @JsonSerializable(includeIfNull: false)
   const factory EmbedImagesImage({
     @Default('app.bsky.embed.images#image') String $type,
+
+    /// The raw image file. May be up to 2 MB, formerly limited to 1 MB.
     @BlobConverter() required Blob image,
 
     /// Alt text description of the image, for accessibility.
     required String alt,
     @AspectRatioConverter() AspectRatio? aspectRatio,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedImagesImage;
 

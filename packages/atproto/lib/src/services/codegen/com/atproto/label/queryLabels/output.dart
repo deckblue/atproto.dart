@@ -29,7 +29,6 @@ abstract class LabelQueryLabelsOutput with _$LabelQueryLabelsOutput {
   const factory LabelQueryLabelsOutput({
     String? cursor,
     @LabelConverter() required List<Label> labels,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelQueryLabelsOutput;
 

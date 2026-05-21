@@ -29,7 +29,6 @@ abstract class ModerationSearchReposOutput with _$ModerationSearchReposOutput {
   const factory ModerationSearchReposOutput({
     String? cursor,
     @RepoViewConverter() required List<RepoView> repos,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationSearchReposOutput;
 

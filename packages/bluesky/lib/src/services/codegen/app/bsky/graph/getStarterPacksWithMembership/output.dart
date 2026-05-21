@@ -31,13 +31,13 @@ abstract class GraphGetStarterPacksWithMembershipOutput
     String? cursor,
     @StarterPackWithMembershipConverter()
     required List<StarterPackWithMembership> starterPacksWithMembership,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetStarterPacksWithMembershipOutput;
 
   factory GraphGetStarterPacksWithMembershipOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$GraphGetStarterPacksWithMembershipOutputFromJson(json);
+  ) =>
+      _$GraphGetStarterPacksWithMembershipOutputFromJson(json);
 }
 
 extension GraphGetStarterPacksWithMembershipOutputExtension
@@ -47,11 +47,8 @@ extension GraphGetStarterPacksWithMembershipOutputExtension
 }
 
 final class GraphGetStarterPacksWithMembershipOutputConverter
-    extends
-        JsonConverter<
-          GraphGetStarterPacksWithMembershipOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<GraphGetStarterPacksWithMembershipOutput,
+        Map<String, dynamic>> {
   const GraphGetStarterPacksWithMembershipOutputConverter();
 
   @override
@@ -64,5 +61,6 @@ final class GraphGetStarterPacksWithMembershipOutputConverter
   @override
   Map<String, dynamic> toJson(
     GraphGetStarterPacksWithMembershipOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

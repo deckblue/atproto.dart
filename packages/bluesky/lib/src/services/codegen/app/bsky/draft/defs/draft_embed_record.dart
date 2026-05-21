@@ -27,7 +27,6 @@ abstract class DraftEmbedRecord with _$DraftEmbedRecord {
   const factory DraftEmbedRecord({
     @Default('app.bsky.draft.defs#draftEmbedRecord') String $type,
     @RepoStrongRefConverter() required RepoStrongRef record,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftEmbedRecord;
 

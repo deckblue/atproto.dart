@@ -22,20 +22,6 @@ import 'draft/getDrafts/output.dart';
 // LexGenerator
 // **************************************************************************
 
-/// Deletes a draft by ID. Requires authentication.
-Future<XRPCResponse<EmptyData>> appBskyDraftDeleteDraft({
-  required String id,
-  required ServiceContext $ctx,
-  String? $service,
-  Map<String, String>? $headers,
-  Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyDraftDeleteDraft,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'id': id},
-);
-
 /// Inserts a draft using private storage (stash). An upper limit of drafts might be enforced. Requires authentication.
 Future<XRPCResponse<DraftCreateDraftOutput>> appBskyDraftCreateDraft({
   required Draft draft,
@@ -43,13 +29,29 @@ Future<XRPCResponse<DraftCreateDraftOutput>> appBskyDraftCreateDraft({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyDraftCreateDraft,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'draft': draft.toJson()},
-  to: const DraftCreateDraftOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyDraftCreateDraft,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'draft': draft.toJson()},
+      to: const DraftCreateDraftOutputConverter().fromJson,
+    );
+
+/// Deletes a draft by ID. Requires authentication.
+Future<XRPCResponse<EmptyData>> appBskyDraftDeleteDraft({
+  required String id,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async =>
+    await $ctx.post(
+      ns.appBskyDraftDeleteDraft,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'id': id},
+    );
 
 /// Gets views of user drafts. Requires authentication.
 Future<XRPCResponse<DraftGetDraftsOutput>> appBskyDraftGetDrafts({
@@ -59,17 +61,18 @@ Future<XRPCResponse<DraftGetDraftsOutput>> appBskyDraftGetDrafts({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyDraftGetDrafts,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const DraftGetDraftsOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.appBskyDraftGetDrafts,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        if (limit != null) 'limit': limit,
+        if (cursor != null) 'cursor': cursor,
+      },
+      to: const DraftGetDraftsOutputConverter().fromJson,
+    );
 
 /// Updates a draft using private storage (stash). If the draft ID points to a non-existing ID, the update will be silently ignored. This is done because updates don't enforce draft limit, so it accepts all writes, but will ignore invalid ones. Requires authentication.
 Future<XRPCResponse<EmptyData>> appBskyDraftUpdateDraft({
@@ -78,12 +81,13 @@ Future<XRPCResponse<EmptyData>> appBskyDraftUpdateDraft({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyDraftUpdateDraft,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'draft': draft.toJson()},
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyDraftUpdateDraft,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'draft': draft.toJson()},
+    );
 
 /// `app.bsky.draft.*`
 base class DraftService {
@@ -92,33 +96,35 @@ base class DraftService {
 
   DraftService(this.ctx);
 
-  /// Deletes a draft by ID. Requires authentication.
-  Future<XRPCResponse<EmptyData>> deleteDraft({
-    required String id,
-    String? $service,
-    Map<String, String>? $headers,
-    Map<String, String>? $unknown,
-  }) async => await appBskyDraftDeleteDraft(
-    id: id,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
-
   /// Inserts a draft using private storage (stash). An upper limit of drafts might be enforced. Requires authentication.
   Future<XRPCResponse<DraftCreateDraftOutput>> createDraft({
     required Draft draft,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyDraftCreateDraft(
-    draft: draft,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyDraftCreateDraft(
+        draft: draft,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
+
+  /// Deletes a draft by ID. Requires authentication.
+  Future<XRPCResponse<EmptyData>> deleteDraft({
+    required String id,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async =>
+      await appBskyDraftDeleteDraft(
+        id: id,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Gets views of user drafts. Requires authentication.
   Future<XRPCResponse<DraftGetDraftsOutput>> getDrafts({
@@ -127,14 +133,15 @@ base class DraftService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyDraftGetDrafts(
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyDraftGetDrafts(
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Updates a draft using private storage (stash). If the draft ID points to a non-existing ID, the update will be silently ignored. This is done because updates don't enforce draft limit, so it accepts all writes, but will ignore invalid ones. Requires authentication.
   Future<XRPCResponse<EmptyData>> updateDraft({
@@ -142,11 +149,12 @@ base class DraftService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyDraftUpdateDraft(
-    draft: draft,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyDraftUpdateDraft(
+        draft: draft,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

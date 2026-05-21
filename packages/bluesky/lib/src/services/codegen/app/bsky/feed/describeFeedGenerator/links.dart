@@ -27,7 +27,6 @@ abstract class Links with _$Links {
     @Default('app.bsky.feed.describeFeedGenerator#links') String $type,
     String? privacyPolicy,
     String? termsOfService,
-
     Map<String, dynamic>? $unknown,
   }) = _Links;
 

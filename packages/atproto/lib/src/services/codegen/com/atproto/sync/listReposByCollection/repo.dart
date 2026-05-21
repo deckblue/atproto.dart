@@ -26,7 +26,6 @@ abstract class Repo with _$Repo {
   const factory Repo({
     @Default('com.atproto.sync.listReposByCollection#repo') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _Repo;
 

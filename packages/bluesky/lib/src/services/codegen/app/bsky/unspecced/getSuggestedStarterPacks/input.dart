@@ -26,21 +26,18 @@ abstract class UnspeccedGetSuggestedStarterPacksInput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetSuggestedStarterPacksInput({
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedStarterPacksInput;
 
   factory UnspeccedGetSuggestedStarterPacksInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedStarterPacksInputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedStarterPacksInputFromJson(json);
 }
 
 final class UnspeccedGetSuggestedStarterPacksInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedStarterPacksInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedStarterPacksInput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedStarterPacksInputConverter();
 
   @override

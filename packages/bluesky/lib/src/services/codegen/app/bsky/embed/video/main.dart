@@ -48,7 +48,6 @@ abstract class EmbedVideo with _$EmbedVideo {
 
     /// A hint to the client about how to present the video.
     @EmbedVideoPresentationConverter() EmbedVideoPresentation? presentation,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedVideo;
 

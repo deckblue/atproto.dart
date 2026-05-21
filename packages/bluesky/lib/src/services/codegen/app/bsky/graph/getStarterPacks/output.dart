@@ -29,7 +29,6 @@ abstract class GraphGetStarterPacksOutput with _$GraphGetStarterPacksOutput {
   const factory GraphGetStarterPacksOutput({
     @StarterPackViewBasicConverter()
     required List<StarterPackViewBasic> starterPacks,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetStarterPacksOutput;
 

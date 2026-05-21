@@ -26,7 +26,6 @@ abstract class SyncGetCheckoutInput with _$SyncGetCheckoutInput {
   const factory SyncGetCheckoutInput({
     /// The DID of the repo.
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetCheckoutInput;
 

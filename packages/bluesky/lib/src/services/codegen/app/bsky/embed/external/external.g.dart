@@ -23,6 +23,12 @@ _$EmbedExternalExternalImpl _$$EmbedExternalExternalImplFromJson(Map json) =>
               'thumb',
               (v) => _$JsonConverterFromJson<Map<String, dynamic>, Blob>(
                   v, const BlobConverter().fromJson)),
+          associatedRecords: $checkedConvert(
+              'associatedRecords',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => const RepoStrongRefConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -44,6 +50,11 @@ Map<String, dynamic> _$$EmbedExternalExternalImplToJson(
               instance.thumb, const BlobConverter().toJson)
           case final value?)
         'thumb': value,
+      if (instance.associatedRecords
+              ?.map(const RepoStrongRefConverter().toJson)
+              .toList()
+          case final value?)
+        'associatedRecords': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

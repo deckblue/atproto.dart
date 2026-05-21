@@ -24,7 +24,7 @@ import 'moderation/defs/reason_type.dart';
 
 /// Submit a moderation report regarding an atproto account or record. Implemented by moderation services (with PDS proxying), and requires auth.
 Future<XRPCResponse<ModerationCreateReportOutput>>
-comAtprotoModerationCreateReport({
+    comAtprotoModerationCreateReport({
   required ReasonType reasonType,
   String? reason,
   required UModerationCreateReportSubject subject,
@@ -33,19 +33,20 @@ comAtprotoModerationCreateReport({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.comAtprotoModerationCreateReport,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    'reasonType': reasonType.toJson(),
-    if (reason != null) 'reason': reason,
-    'subject': subject.toJson(),
-    if (modTool != null) 'modTool': modTool.toJson(),
-  },
-  to: const ModerationCreateReportOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.post(
+          ns.comAtprotoModerationCreateReport,
+          service: $service,
+          headers: {'Content-type': 'application/json', ...?$headers},
+          body: {
+            ...?$unknown,
+            'reasonType': reasonType.toJson(),
+            if (reason != null) 'reason': reason,
+            'subject': subject.toJson(),
+            if (modTool != null) 'modTool': modTool.toJson(),
+          },
+          to: const ModerationCreateReportOutputConverter().fromJson,
+        );
 
 /// `com.atproto.moderation.*`
 base class ModerationService {
@@ -63,14 +64,15 @@ base class ModerationService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoModerationCreateReport(
-    reasonType: reasonType,
-    reason: reason,
-    subject: subject,
-    modTool: modTool,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoModerationCreateReport(
+        reasonType: reasonType,
+        reason: reason,
+        subject: subject,
+        modTool: modTool,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

@@ -24,30 +24,31 @@ sealed class Bluesky {
     final core.RetryConfig? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _Bluesky(
-    core.ServiceContext(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      session: session,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-    atp.ATProto.fromSession(
-      headers: headers,
-      session,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _Bluesky(
+        core.ServiceContext(
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          session: session,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+        atp.ATProto.fromSession(
+          headers: headers,
+          session,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the new instance of [Bluesky].
   factory Bluesky.fromOAuthSession(
@@ -60,30 +61,31 @@ sealed class Bluesky {
     final core.RetryConfig? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _Bluesky(
-    core.ServiceContext(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      oAuthSession: session,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-    atp.ATProto.fromOAuthSession(
-      headers: headers,
-      session,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _Bluesky(
+        core.ServiceContext(
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          oAuthSession: session,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+        atp.ATProto.fromOAuthSession(
+          headers: headers,
+          session,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the new instance of [Bluesky] as anonymous.
   factory Bluesky.anonymous({
@@ -95,28 +97,29 @@ sealed class Bluesky {
     final core.RetryConfig? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _Bluesky(
-    core.ServiceContext(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-    atp.ATProto.anonymous(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _Bluesky(
+        core.ServiceContext(
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+        atp.ATProto.anonymous(
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the global headers without auth header.
   Map<String, String> get headers;
@@ -191,18 +194,18 @@ sealed class Bluesky {
 
 final class _Bluesky implements Bluesky {
   _Bluesky(final core.ServiceContext ctx, this.atproto)
-    : actor = ActorService(ctx),
-      ageassurance = AgeassuranceService(ctx),
-      feed = FeedService(ctx),
-      notification = NotificationService(ctx),
-      graph = GraphService(ctx),
-      unspecced = UnspeccedService(ctx),
-      labeler = LabelerService(ctx),
-      video = VideoServiceImpl(ctx),
-      bookmark = BookmarkService(ctx),
-      contact = ContactService(ctx),
-      draft = DraftService(ctx),
-      _ctx = ctx;
+      : actor = ActorService(ctx),
+        ageassurance = AgeassuranceService(ctx),
+        feed = FeedService(ctx),
+        notification = NotificationService(ctx),
+        graph = GraphService(ctx),
+        unspecced = UnspeccedService(ctx),
+        labeler = LabelerService(ctx),
+        video = VideoServiceImpl(ctx),
+        bookmark = BookmarkService(ctx),
+        contact = ContactService(ctx),
+        draft = DraftService(ctx),
+        _ctx = ctx;
 
   final core.ServiceContext _ctx;
 

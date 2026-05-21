@@ -26,7 +26,6 @@ abstract class GraphGetMutesInput with _$GraphGetMutesInput {
   const factory GraphGetMutesInput({
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetMutesInput;
 

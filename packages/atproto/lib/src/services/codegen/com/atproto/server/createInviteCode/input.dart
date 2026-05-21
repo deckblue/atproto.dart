@@ -26,7 +26,6 @@ abstract class ServerCreateInviteCodeInput with _$ServerCreateInviteCodeInput {
   const factory ServerCreateInviteCodeInput({
     required int useCount,
     String? forAccount,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateInviteCodeInput;
 

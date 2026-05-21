@@ -26,7 +26,6 @@ abstract class ServerCreateInviteCodeOutput
   @JsonSerializable(includeIfNull: false)
   const factory ServerCreateInviteCodeOutput({
     required String code,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateInviteCodeOutput;
 

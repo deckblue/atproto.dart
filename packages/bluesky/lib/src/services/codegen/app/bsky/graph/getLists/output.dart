@@ -29,7 +29,6 @@ abstract class GraphGetListsOutput with _$GraphGetListsOutput {
   const factory GraphGetListsOutput({
     String? cursor,
     @ListViewConverter() required List<ListView> lists,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetListsOutput;
 

@@ -20,6 +20,11 @@ _$ActorDeclarationRecordImpl _$$ActorDeclarationRecordImplFromJson(Map json) =>
               'allowIncoming',
               (v) => const ActorDeclarationAllowIncomingConverter()
                   .fromJson(v as String)),
+          allowGroupInvites: $checkedConvert(
+              'allowGroupInvites',
+              (v) => _$JsonConverterFromJson<String,
+                      ActorDeclarationAllowGroupInvites>(v,
+                  const ActorDeclarationAllowGroupInvitesConverter().fromJson)),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -36,5 +41,22 @@ Map<String, dynamic> _$$ActorDeclarationRecordImplToJson(
       r'$type': instance.$type,
       'allowIncoming': const ActorDeclarationAllowIncomingConverter()
           .toJson(instance.allowIncoming),
+      if (_$JsonConverterToJson<String, ActorDeclarationAllowGroupInvites>(
+              instance.allowGroupInvites,
+              const ActorDeclarationAllowGroupInvitesConverter().toJson)
+          case final value?)
+        'allowGroupInvites': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

@@ -57,7 +57,6 @@ abstract class ModEventEmail with _$ModEventEmail {
 
     /// Indicates whether the email was successfully delivered to the user's inbox.
     bool? isDelivered,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventEmail;
 

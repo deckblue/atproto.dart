@@ -56,7 +56,6 @@ abstract class SafelinkQueryRulesInput with _$SafelinkQueryRulesInput {
     /// Sort direction
     @SafelinkQueryRulesSortDirectionConverter()
     SafelinkQueryRulesSortDirection? sortDirection,
-
     Map<String, dynamic>? $unknown,
   }) = _SafelinkQueryRulesInput;
 

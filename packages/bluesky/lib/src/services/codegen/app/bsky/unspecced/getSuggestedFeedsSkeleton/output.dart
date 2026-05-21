@@ -27,21 +27,18 @@ abstract class UnspeccedGetSuggestedFeedsSkeletonOutput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetSuggestedFeedsSkeletonOutput({
     @AtUriConverter() required List<AtUri> feeds,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedFeedsSkeletonOutput;
 
   factory UnspeccedGetSuggestedFeedsSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedFeedsSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedFeedsSkeletonOutputFromJson(json);
 }
 
 final class UnspeccedGetSuggestedFeedsSkeletonOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedFeedsSkeletonOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedFeedsSkeletonOutput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedFeedsSkeletonOutputConverter();
 
   @override
@@ -54,5 +51,6 @@ final class UnspeccedGetSuggestedFeedsSkeletonOutputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetSuggestedFeedsSkeletonOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

@@ -38,8 +38,8 @@ final class SearchActorsTypeaheadCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["term"] != null) "term": argResults!["term"],
-    if (argResults!["q"] != null) "q": argResults!["q"],
-    "limit": argResults!["limit"],
-  };
+        if (argResults!["term"] != null) "term": argResults!["term"],
+        if (argResults!["q"] != null) "q": argResults!["q"],
+        "limit": argResults!["limit"],
+      };
 }

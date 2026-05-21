@@ -35,7 +35,6 @@ abstract class SyncGetRepoStatusOutput with _$SyncGetRepoStatusOutput {
 
     /// Optional field, the current rev of the repo, if active=true
     String? rev,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetRepoStatusOutput;
 

@@ -32,7 +32,6 @@ abstract class Notification with _$Notification {
 
     /// The DID of who this notification should go to.
     required String to,
-
     Map<String, dynamic>? $unknown,
   }) = _Notification;
 

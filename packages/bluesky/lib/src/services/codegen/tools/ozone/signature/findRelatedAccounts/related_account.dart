@@ -32,7 +32,6 @@ abstract class RelatedAccount with _$RelatedAccount {
     String $type,
     @AccountViewConverter() required AccountView account,
     @SigDetailConverter() List<SigDetail>? similarities,
-
     Map<String, dynamic>? $unknown,
   }) = _RelatedAccount;
 

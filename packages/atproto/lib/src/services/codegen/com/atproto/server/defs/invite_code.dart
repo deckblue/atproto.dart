@@ -43,7 +43,6 @@ abstract class InviteCode with _$InviteCode {
     required String createdBy,
     required DateTime createdAt,
     @InviteCodeUseConverter() required List<InviteCodeUse> uses,
-
     Map<String, dynamic>? $unknown,
   }) = _InviteCode;
 

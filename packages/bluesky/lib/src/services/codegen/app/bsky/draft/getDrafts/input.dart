@@ -26,7 +26,6 @@ abstract class DraftGetDraftsInput with _$DraftGetDraftsInput {
   const factory DraftGetDraftsInput({
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftGetDraftsInput;
 

@@ -39,7 +39,6 @@ abstract class VerificationView with _$VerificationView {
 
     /// Timestamp when the verification was created.
     required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationView;
 

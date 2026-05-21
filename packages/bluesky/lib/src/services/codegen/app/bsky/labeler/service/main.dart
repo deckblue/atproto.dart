@@ -44,7 +44,6 @@ abstract class LabelerServiceRecord with _$LabelerServiceRecord {
     @ReasonTypeConverter() List<ReasonType>? reasonTypes,
     @SubjectTypeConverter() List<SubjectType>? subjectTypes,
     List<String>? subjectCollections,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelerServiceRecord;
 

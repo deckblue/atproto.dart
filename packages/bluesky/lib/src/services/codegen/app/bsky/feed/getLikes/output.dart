@@ -32,7 +32,6 @@ abstract class FeedGetLikesOutput with _$FeedGetLikesOutput {
     String? cid,
     String? cursor,
     @LikeConverter() required List<Like> likes,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetLikesOutput;
 

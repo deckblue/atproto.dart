@@ -27,7 +27,6 @@ abstract class AdminUpdateAccountHandleInput
   const factory AdminUpdateAccountHandleInput({
     required String did,
     required String handle,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminUpdateAccountHandleInput;
 

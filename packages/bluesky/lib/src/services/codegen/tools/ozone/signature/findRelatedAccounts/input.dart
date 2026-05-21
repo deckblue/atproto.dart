@@ -28,13 +28,13 @@ abstract class SignatureFindRelatedAccountsInput
     required String did,
     String? cursor,
     @Default(50) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _SignatureFindRelatedAccountsInput;
 
   factory SignatureFindRelatedAccountsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$SignatureFindRelatedAccountsInputFromJson(json);
+  ) =>
+      _$SignatureFindRelatedAccountsInputFromJson(json);
 }
 
 extension SignatureFindRelatedAccountsInputExtension
@@ -43,9 +43,8 @@ extension SignatureFindRelatedAccountsInputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class SignatureFindRelatedAccountsInputConverter
-    extends
-        JsonConverter<SignatureFindRelatedAccountsInput, Map<String, dynamic>> {
+final class SignatureFindRelatedAccountsInputConverter extends JsonConverter<
+    SignatureFindRelatedAccountsInput, Map<String, dynamic>> {
   const SignatureFindRelatedAccountsInputConverter();
 
   @override

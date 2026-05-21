@@ -42,7 +42,6 @@ abstract class RepoApplyWritesInput with _$RepoApplyWritesInput {
 
     /// If provided, the entire operation will fail if the current repo commit CID does not match this value. Used to prevent conflicting repo mutations.
     String? swapCommit,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoApplyWritesInput;
 

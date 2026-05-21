@@ -42,8 +42,8 @@ final class GetStarterPacksWithMembershipCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "actor": argResults!["actor"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "actor": argResults!["actor"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

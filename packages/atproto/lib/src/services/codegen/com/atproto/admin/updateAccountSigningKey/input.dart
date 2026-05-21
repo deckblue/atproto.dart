@@ -29,18 +29,17 @@ abstract class AdminUpdateAccountSigningKeyInput
 
     /// Did-key formatted public key
     required String signingKey,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminUpdateAccountSigningKeyInput;
 
   factory AdminUpdateAccountSigningKeyInput.fromJson(
     Map<String, Object?> json,
-  ) => _$AdminUpdateAccountSigningKeyInputFromJson(json);
+  ) =>
+      _$AdminUpdateAccountSigningKeyInputFromJson(json);
 }
 
-final class AdminUpdateAccountSigningKeyInputConverter
-    extends
-        JsonConverter<AdminUpdateAccountSigningKeyInput, Map<String, dynamic>> {
+final class AdminUpdateAccountSigningKeyInputConverter extends JsonConverter<
+    AdminUpdateAccountSigningKeyInput, Map<String, dynamic>> {
   const AdminUpdateAccountSigningKeyInputConverter();
 
   @override

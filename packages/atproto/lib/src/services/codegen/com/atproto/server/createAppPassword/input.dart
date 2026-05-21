@@ -30,7 +30,6 @@ abstract class ServerCreateAppPasswordInput
 
     /// If an app password has 'privileged' access to possibly sensitive account state. Meant for use with trusted clients.
     bool? privileged,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateAppPasswordInput;
 

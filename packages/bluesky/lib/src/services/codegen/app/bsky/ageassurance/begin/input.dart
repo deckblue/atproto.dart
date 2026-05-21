@@ -40,7 +40,6 @@ abstract class AgeassuranceBeginInput with _$AgeassuranceBeginInput {
 
     /// An optional ISO 3166-2 code of the user's region or state within the country.
     String? regionCode,
-
     Map<String, dynamic>? $unknown,
   }) = _AgeassuranceBeginInput;
 

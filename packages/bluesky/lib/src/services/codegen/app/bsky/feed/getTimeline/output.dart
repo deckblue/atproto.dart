@@ -29,7 +29,6 @@ abstract class FeedGetTimelineOutput with _$FeedGetTimelineOutput {
   const factory FeedGetTimelineOutput({
     String? cursor,
     @FeedViewPostConverter() required List<FeedViewPost> feed,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetTimelineOutput;
 

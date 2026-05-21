@@ -44,7 +44,6 @@ abstract class RepoDeleteRecordInput with _$RepoDeleteRecordInput {
 
     /// Compare and swap with the previous commit by CID.
     String? swapCommit,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoDeleteRecordInput;
 

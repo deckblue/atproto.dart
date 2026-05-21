@@ -28,7 +28,6 @@ abstract class ConvoSendMessageBatchInput with _$ConvoSendMessageBatchInput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoSendMessageBatchInput({
     @BatchItemConverter() required List<BatchItem> items,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoSendMessageBatchInput;
 

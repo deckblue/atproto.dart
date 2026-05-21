@@ -35,7 +35,6 @@ abstract class RepoGetRecordInput with _$RepoGetRecordInput {
 
     /// The CID of the version of the record. If not specified, then return the most recent version.
     String? cid,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoGetRecordInput;
 

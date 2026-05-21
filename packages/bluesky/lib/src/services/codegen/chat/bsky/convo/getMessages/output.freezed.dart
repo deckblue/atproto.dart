@@ -25,6 +25,9 @@ mixin _$ConvoGetMessagesOutput {
   @UConvoGetMessagesMessagesConverter()
   List<UConvoGetMessagesMessages> get messages =>
       throw _privateConstructorUsedError;
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ConvoGetMessagesOutput to a JSON map.
@@ -47,6 +50,7 @@ abstract class $ConvoGetMessagesOutputCopyWith<$Res> {
       {String? cursor,
       @UConvoGetMessagesMessagesConverter()
       List<UConvoGetMessagesMessages> messages,
+      @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
       Map<String, dynamic>? $unknown});
 }
 
@@ -68,6 +72,7 @@ class _$ConvoGetMessagesOutputCopyWithImpl<$Res,
   $Res call({
     Object? cursor = freezed,
     Object? messages = null,
+    Object? relatedProfiles = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -79,6 +84,10 @@ class _$ConvoGetMessagesOutputCopyWithImpl<$Res,
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<UConvoGetMessagesMessages>,
+      relatedProfiles: freezed == relatedProfiles
+          ? _value.relatedProfiles
+          : relatedProfiles // ignore: cast_nullable_to_non_nullable
+              as List<ProfileViewBasic>?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -100,6 +109,7 @@ abstract class _$$ConvoGetMessagesOutputImplCopyWith<$Res>
       {String? cursor,
       @UConvoGetMessagesMessagesConverter()
       List<UConvoGetMessagesMessages> messages,
+      @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
       Map<String, dynamic>? $unknown});
 }
 
@@ -120,6 +130,7 @@ class __$$ConvoGetMessagesOutputImplCopyWithImpl<$Res>
   $Res call({
     Object? cursor = freezed,
     Object? messages = null,
+    Object? relatedProfiles = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ConvoGetMessagesOutputImpl(
@@ -131,6 +142,10 @@ class __$$ConvoGetMessagesOutputImplCopyWithImpl<$Res>
           ? _value._messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<UConvoGetMessagesMessages>,
+      relatedProfiles: freezed == relatedProfiles
+          ? _value._relatedProfiles
+          : relatedProfiles // ignore: cast_nullable_to_non_nullable
+              as List<ProfileViewBasic>?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -147,8 +162,11 @@ class _$ConvoGetMessagesOutputImpl implements _ConvoGetMessagesOutput {
       {this.cursor,
       @UConvoGetMessagesMessagesConverter()
       required final List<UConvoGetMessagesMessages> messages,
+      @ProfileViewBasicConverter()
+      final List<ProfileViewBasic>? relatedProfiles,
       final Map<String, dynamic>? $unknown})
       : _messages = messages,
+        _relatedProfiles = relatedProfiles,
         _$unknown = $unknown;
 
   factory _$ConvoGetMessagesOutputImpl.fromJson(Map<String, dynamic> json) =>
@@ -165,6 +183,17 @@ class _$ConvoGetMessagesOutputImpl implements _ConvoGetMessagesOutput {
     return EqualUnmodifiableListView(_messages);
   }
 
+  final List<ProfileViewBasic>? _relatedProfiles;
+  @override
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles {
+    final value = _relatedProfiles;
+    if (value == null) return null;
+    if (_relatedProfiles is EqualUnmodifiableListView) return _relatedProfiles;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -177,7 +206,7 @@ class _$ConvoGetMessagesOutputImpl implements _ConvoGetMessagesOutput {
 
   @override
   String toString() {
-    return 'ConvoGetMessagesOutput(cursor: $cursor, messages: $messages, \$unknown: ${$unknown})';
+    return 'ConvoGetMessagesOutput(cursor: $cursor, messages: $messages, relatedProfiles: $relatedProfiles, \$unknown: ${$unknown})';
   }
 
   @override
@@ -187,6 +216,8 @@ class _$ConvoGetMessagesOutputImpl implements _ConvoGetMessagesOutput {
             other is _$ConvoGetMessagesOutputImpl &&
             (identical(other.cursor, cursor) || other.cursor == cursor) &&
             const DeepCollectionEquality().equals(other._messages, _messages) &&
+            const DeepCollectionEquality()
+                .equals(other._relatedProfiles, _relatedProfiles) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -196,6 +227,7 @@ class _$ConvoGetMessagesOutputImpl implements _ConvoGetMessagesOutput {
       runtimeType,
       cursor,
       const DeepCollectionEquality().hash(_messages),
+      const DeepCollectionEquality().hash(_relatedProfiles),
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ConvoGetMessagesOutput
@@ -220,6 +252,8 @@ abstract class _ConvoGetMessagesOutput implements ConvoGetMessagesOutput {
       {final String? cursor,
       @UConvoGetMessagesMessagesConverter()
       required final List<UConvoGetMessagesMessages> messages,
+      @ProfileViewBasicConverter()
+      final List<ProfileViewBasic>? relatedProfiles,
       final Map<String, dynamic>? $unknown}) = _$ConvoGetMessagesOutputImpl;
 
   factory _ConvoGetMessagesOutput.fromJson(Map<String, dynamic> json) =
@@ -230,6 +264,9 @@ abstract class _ConvoGetMessagesOutput implements ConvoGetMessagesOutput {
   @override
   @UConvoGetMessagesMessagesConverter()
   List<UConvoGetMessagesMessages> get messages;
+  @override
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles;
   @override
   Map<String, dynamic>? get $unknown;
 

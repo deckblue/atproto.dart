@@ -37,7 +37,7 @@ final class UpdateAccountHandleCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "did": argResults!["did"],
-    "handle": argResults!["handle"],
-  };
+        "did": argResults!["did"],
+        "handle": argResults!["handle"],
+      };
 }

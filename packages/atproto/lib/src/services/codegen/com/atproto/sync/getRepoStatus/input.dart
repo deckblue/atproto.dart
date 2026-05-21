@@ -26,7 +26,6 @@ abstract class SyncGetRepoStatusInput with _$SyncGetRepoStatusInput {
   const factory SyncGetRepoStatusInput({
     /// The DID of the repo.
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetRepoStatusInput;
 

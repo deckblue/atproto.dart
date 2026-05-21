@@ -29,7 +29,6 @@ abstract class LabelerGetServicesOutput with _$LabelerGetServicesOutput {
   const factory LabelerGetServicesOutput({
     @ULabelerGetServicesViewsConverter()
     required List<ULabelerGetServicesViews> views,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelerGetServicesOutput;
 

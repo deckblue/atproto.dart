@@ -28,7 +28,6 @@ abstract class SettingUpsertOptionOutput with _$SettingUpsertOptionOutput {
   @JsonSerializable(includeIfNull: false)
   const factory SettingUpsertOptionOutput({
     @OptionConverter() required Option option,
-
     Map<String, dynamic>? $unknown,
   }) = _SettingUpsertOptionOutput;
 

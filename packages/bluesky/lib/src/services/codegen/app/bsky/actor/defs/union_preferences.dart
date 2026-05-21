@@ -144,8 +144,8 @@ extension UPreferencesExtension on UPreferences {
   bool get isNotPostInteractionSettingsPref => !isPostInteractionSettingsPref;
   PostInteractionSettingsPref? get postInteractionSettingsPref =>
       isPostInteractionSettingsPref
-      ? data as PostInteractionSettingsPref
-      : null;
+          ? data as PostInteractionSettingsPref
+          : null;
   bool get isVerificationPrefs => isA<UPreferencesVerificationPrefs>(this);
   bool get isNotVerificationPrefs => !isVerificationPrefs;
   VerificationPrefs? get verificationPrefs =>
@@ -257,27 +257,32 @@ final class UPreferencesConverter
 
   @override
   Map<String, dynamic> toJson(UPreferences object) => object.when(
-    adultContentPref: (data) => const AdultContentPrefConverter().toJson(data),
-    contentLabelPref: (data) => const ContentLabelPrefConverter().toJson(data),
-    savedFeedsPref: (data) => const SavedFeedsPrefConverter().toJson(data),
-    savedFeedsPrefV2: (data) => const SavedFeedsPrefV2Converter().toJson(data),
-    personalDetailsPref: (data) =>
-        const PersonalDetailsPrefConverter().toJson(data),
-    declaredAgePref: (data) => const DeclaredAgePrefConverter().toJson(data),
-    feedViewPref: (data) => const FeedViewPrefConverter().toJson(data),
-    threadViewPref: (data) => const ThreadViewPrefConverter().toJson(data),
-    interestsPref: (data) => const InterestsPrefConverter().toJson(data),
-    mutedWordsPref: (data) => const MutedWordsPrefConverter().toJson(data),
-    hiddenPostsPref: (data) => const HiddenPostsPrefConverter().toJson(data),
-    bskyAppStatePref: (data) => const BskyAppStatePrefConverter().toJson(data),
-    labelersPref: (data) => const LabelersPrefConverter().toJson(data),
-    postInteractionSettingsPref: (data) =>
-        const PostInteractionSettingsPrefConverter().toJson(data),
-    verificationPrefs: (data) =>
-        const VerificationPrefsConverter().toJson(data),
-    liveEventPreferences: (data) =>
-        const LiveEventPreferencesConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        adultContentPref: (data) =>
+            const AdultContentPrefConverter().toJson(data),
+        contentLabelPref: (data) =>
+            const ContentLabelPrefConverter().toJson(data),
+        savedFeedsPref: (data) => const SavedFeedsPrefConverter().toJson(data),
+        savedFeedsPrefV2: (data) =>
+            const SavedFeedsPrefV2Converter().toJson(data),
+        personalDetailsPref: (data) =>
+            const PersonalDetailsPrefConverter().toJson(data),
+        declaredAgePref: (data) =>
+            const DeclaredAgePrefConverter().toJson(data),
+        feedViewPref: (data) => const FeedViewPrefConverter().toJson(data),
+        threadViewPref: (data) => const ThreadViewPrefConverter().toJson(data),
+        interestsPref: (data) => const InterestsPrefConverter().toJson(data),
+        mutedWordsPref: (data) => const MutedWordsPrefConverter().toJson(data),
+        hiddenPostsPref: (data) =>
+            const HiddenPostsPrefConverter().toJson(data),
+        bskyAppStatePref: (data) =>
+            const BskyAppStatePrefConverter().toJson(data),
+        labelersPref: (data) => const LabelersPrefConverter().toJson(data),
+        postInteractionSettingsPref: (data) =>
+            const PostInteractionSettingsPrefConverter().toJson(data),
+        verificationPrefs: (data) =>
+            const VerificationPrefsConverter().toJson(data),
+        liveEventPreferences: (data) =>
+            const LiveEventPreferencesConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

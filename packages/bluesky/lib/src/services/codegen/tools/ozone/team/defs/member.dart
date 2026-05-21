@@ -44,7 +44,6 @@ abstract class Member with _$Member {
     DateTime? updatedAt,
     String? lastUpdatedBy,
     @MemberRoleConverter() required MemberRole role,
-
     Map<String, dynamic>? $unknown,
   }) = _Member;
 

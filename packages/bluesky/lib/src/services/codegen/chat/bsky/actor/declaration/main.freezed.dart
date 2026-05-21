@@ -25,6 +25,11 @@ mixin _$ActorDeclarationRecord {
   @ActorDeclarationAllowIncomingConverter()
   ActorDeclarationAllowIncoming get allowIncoming =>
       throw _privateConstructorUsedError;
+
+  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  @ActorDeclarationAllowGroupInvitesConverter()
+  ActorDeclarationAllowGroupInvites? get allowGroupInvites =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ActorDeclarationRecord to a JSON map.
@@ -47,9 +52,12 @@ abstract class $ActorDeclarationRecordCopyWith<$Res> {
       {String $type,
       @ActorDeclarationAllowIncomingConverter()
       ActorDeclarationAllowIncoming allowIncoming,
+      @ActorDeclarationAllowGroupInvitesConverter()
+      ActorDeclarationAllowGroupInvites? allowGroupInvites,
       Map<String, dynamic>? $unknown});
 
   $ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming;
+  $ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites;
 }
 
 /// @nodoc
@@ -70,6 +78,7 @@ class _$ActorDeclarationRecordCopyWithImpl<$Res,
   $Res call({
     Object? $type = null,
     Object? allowIncoming = null,
+    Object? allowGroupInvites = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -81,6 +90,10 @@ class _$ActorDeclarationRecordCopyWithImpl<$Res,
           ? _value.allowIncoming
           : allowIncoming // ignore: cast_nullable_to_non_nullable
               as ActorDeclarationAllowIncoming,
+      allowGroupInvites: freezed == allowGroupInvites
+          ? _value.allowGroupInvites
+          : allowGroupInvites // ignore: cast_nullable_to_non_nullable
+              as ActorDeclarationAllowGroupInvites?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -98,6 +111,21 @@ class _$ActorDeclarationRecordCopyWithImpl<$Res,
       return _then(_value.copyWith(allowIncoming: value) as $Val);
     });
   }
+
+  /// Create a copy of ActorDeclarationRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites {
+    if (_value.allowGroupInvites == null) {
+      return null;
+    }
+
+    return $ActorDeclarationAllowGroupInvitesCopyWith<$Res>(
+        _value.allowGroupInvites!, (value) {
+      return _then(_value.copyWith(allowGroupInvites: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -113,10 +141,14 @@ abstract class _$$ActorDeclarationRecordImplCopyWith<$Res>
       {String $type,
       @ActorDeclarationAllowIncomingConverter()
       ActorDeclarationAllowIncoming allowIncoming,
+      @ActorDeclarationAllowGroupInvitesConverter()
+      ActorDeclarationAllowGroupInvites? allowGroupInvites,
       Map<String, dynamic>? $unknown});
 
   @override
   $ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming;
+  @override
+  $ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites;
 }
 
 /// @nodoc
@@ -136,6 +168,7 @@ class __$$ActorDeclarationRecordImplCopyWithImpl<$Res>
   $Res call({
     Object? $type = null,
     Object? allowIncoming = null,
+    Object? allowGroupInvites = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ActorDeclarationRecordImpl(
@@ -147,6 +180,10 @@ class __$$ActorDeclarationRecordImplCopyWithImpl<$Res>
           ? _value.allowIncoming
           : allowIncoming // ignore: cast_nullable_to_non_nullable
               as ActorDeclarationAllowIncoming,
+      allowGroupInvites: freezed == allowGroupInvites
+          ? _value.allowGroupInvites
+          : allowGroupInvites // ignore: cast_nullable_to_non_nullable
+              as ActorDeclarationAllowGroupInvites?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -162,6 +199,7 @@ class _$ActorDeclarationRecordImpl implements _ActorDeclarationRecord {
   const _$ActorDeclarationRecordImpl(
       {this.$type = 'chat.bsky.actor.declaration',
       @ActorDeclarationAllowIncomingConverter() required this.allowIncoming,
+      @ActorDeclarationAllowGroupInvitesConverter() this.allowGroupInvites,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -174,6 +212,11 @@ class _$ActorDeclarationRecordImpl implements _ActorDeclarationRecord {
   @override
   @ActorDeclarationAllowIncomingConverter()
   final ActorDeclarationAllowIncoming allowIncoming;
+
+  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  @override
+  @ActorDeclarationAllowGroupInvitesConverter()
+  final ActorDeclarationAllowGroupInvites? allowGroupInvites;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -186,7 +229,7 @@ class _$ActorDeclarationRecordImpl implements _ActorDeclarationRecord {
 
   @override
   String toString() {
-    return 'ActorDeclarationRecord(\$type: ${$type}, allowIncoming: $allowIncoming, \$unknown: ${$unknown})';
+    return 'ActorDeclarationRecord(\$type: ${$type}, allowIncoming: $allowIncoming, allowGroupInvites: $allowGroupInvites, \$unknown: ${$unknown})';
   }
 
   @override
@@ -197,13 +240,15 @@ class _$ActorDeclarationRecordImpl implements _ActorDeclarationRecord {
             (identical(other.$type, $type) || other.$type == $type) &&
             (identical(other.allowIncoming, allowIncoming) ||
                 other.allowIncoming == allowIncoming) &&
+            (identical(other.allowGroupInvites, allowGroupInvites) ||
+                other.allowGroupInvites == allowGroupInvites) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, $type, allowIncoming,
-      const DeepCollectionEquality().hash(_$unknown));
+      allowGroupInvites, const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ActorDeclarationRecord
   /// with the given fields replaced by the non-null parameter values.
@@ -227,6 +272,8 @@ abstract class _ActorDeclarationRecord implements ActorDeclarationRecord {
       {final String $type,
       @ActorDeclarationAllowIncomingConverter()
       required final ActorDeclarationAllowIncoming allowIncoming,
+      @ActorDeclarationAllowGroupInvitesConverter()
+      final ActorDeclarationAllowGroupInvites? allowGroupInvites,
       final Map<String, dynamic>? $unknown}) = _$ActorDeclarationRecordImpl;
 
   factory _ActorDeclarationRecord.fromJson(Map<String, dynamic> json) =
@@ -237,6 +284,11 @@ abstract class _ActorDeclarationRecord implements ActorDeclarationRecord {
   @override
   @ActorDeclarationAllowIncomingConverter()
   ActorDeclarationAllowIncoming get allowIncoming;
+
+  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  @override
+  @ActorDeclarationAllowGroupInvitesConverter()
+  ActorDeclarationAllowGroupInvites? get allowGroupInvites;
   @override
   Map<String, dynamic>? get $unknown;
 

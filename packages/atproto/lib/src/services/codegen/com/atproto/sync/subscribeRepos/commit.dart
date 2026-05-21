@@ -66,7 +66,6 @@ abstract class Commit with _$Commit {
 
     /// Timestamp of when this message was originally broadcast.
     required DateTime time,
-
     Map<String, dynamic>? $unknown,
   }) = _Commit;
 

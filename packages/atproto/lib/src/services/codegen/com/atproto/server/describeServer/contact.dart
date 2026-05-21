@@ -26,7 +26,6 @@ abstract class Contact with _$Contact {
   const factory Contact({
     @Default('com.atproto.server.describeServer#contact') String $type,
     String? email,
-
     Map<String, dynamic>? $unknown,
   }) = _Contact;
 

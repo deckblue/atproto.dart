@@ -36,7 +36,6 @@ abstract class LexiconResolveLexiconOutput with _$LexiconResolveLexiconOutput {
 
     /// The AT-URI of the lexicon schema record.
     @AtUriConverter() required AtUri uri,
-
     Map<String, dynamic>? $unknown,
   }) = _LexiconResolveLexiconOutput;
 

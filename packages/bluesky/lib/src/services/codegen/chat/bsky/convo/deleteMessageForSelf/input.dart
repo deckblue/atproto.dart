@@ -27,7 +27,6 @@ abstract class ConvoDeleteMessageForSelfInput
   const factory ConvoDeleteMessageForSelfInput({
     required String convoId,
     required String messageId,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoDeleteMessageForSelfInput;
 
@@ -35,9 +34,8 @@ abstract class ConvoDeleteMessageForSelfInput
       _$ConvoDeleteMessageForSelfInputFromJson(json);
 }
 
-final class ConvoDeleteMessageForSelfInputConverter
-    extends
-        JsonConverter<ConvoDeleteMessageForSelfInput, Map<String, dynamic>> {
+final class ConvoDeleteMessageForSelfInputConverter extends JsonConverter<
+    ConvoDeleteMessageForSelfInput, Map<String, dynamic>> {
   const ConvoDeleteMessageForSelfInputConverter();
 
   @override

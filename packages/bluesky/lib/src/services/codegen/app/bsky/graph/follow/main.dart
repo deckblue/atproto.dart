@@ -30,7 +30,6 @@ abstract class GraphFollowRecord with _$GraphFollowRecord {
     required String subject,
     required DateTime createdAt,
     @RepoStrongRefConverter() RepoStrongRef? via,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphFollowRecord;
 

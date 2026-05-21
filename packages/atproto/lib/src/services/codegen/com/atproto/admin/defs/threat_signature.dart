@@ -27,7 +27,6 @@ abstract class ThreatSignature with _$ThreatSignature {
     @Default('com.atproto.admin.defs#threatSignature') String $type,
     required String property,
     required String value,
-
     Map<String, dynamic>? $unknown,
   }) = _ThreatSignature;
 

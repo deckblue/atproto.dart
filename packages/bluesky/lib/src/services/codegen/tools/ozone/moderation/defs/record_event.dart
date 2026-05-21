@@ -33,7 +33,6 @@ abstract class RecordEvent with _$RecordEvent {
     @RecordEventOpConverter() required RecordEventOp op,
     String? cid,
     required DateTime timestamp,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordEvent;
 

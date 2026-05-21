@@ -27,7 +27,6 @@ abstract class ServerDeleteAccountInput with _$ServerDeleteAccountInput {
     required String did,
     required String password,
     required String token,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerDeleteAccountInput;
 

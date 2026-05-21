@@ -48,7 +48,6 @@ abstract class MessageView with _$MessageView {
     @ReactionViewConverter() List<ReactionView>? reactions,
     @MessageViewSenderConverter() required MessageViewSender sender,
     required DateTime sentAt,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageView;
 

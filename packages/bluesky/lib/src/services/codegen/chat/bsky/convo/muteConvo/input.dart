@@ -25,7 +25,6 @@ abstract class ConvoMuteConvoInput with _$ConvoMuteConvoInput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoMuteConvoInput({
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoMuteConvoInput;
 

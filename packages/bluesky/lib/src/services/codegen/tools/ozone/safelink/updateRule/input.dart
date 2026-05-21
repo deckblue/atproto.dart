@@ -47,7 +47,6 @@ abstract class SafelinkUpdateRuleInput with _$SafelinkUpdateRuleInput {
 
     /// Optional DID to credit as the creator. Only respected for admin_token authentication.
     String? createdBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SafelinkUpdateRuleInput;
 

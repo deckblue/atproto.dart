@@ -31,7 +31,6 @@ abstract class Create with _$Create {
     /// NOTE: maxLength is redundant with record-key format. Keeping it temporarily to ensure backwards compatibility.
     String? rkey,
     required Map<String, dynamic> value,
-
     Map<String, dynamic>? $unknown,
   }) = _Create;
 

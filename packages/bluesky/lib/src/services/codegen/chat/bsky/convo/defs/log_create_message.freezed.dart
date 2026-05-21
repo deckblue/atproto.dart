@@ -25,6 +25,9 @@ mixin _$LogCreateMessage {
   String get convoId => throw _privateConstructorUsedError;
   @ULogCreateMessageMessageConverter()
   ULogCreateMessageMessage get message => throw _privateConstructorUsedError;
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this LogCreateMessage to a JSON map.
@@ -48,6 +51,7 @@ abstract class $LogCreateMessageCopyWith<$Res> {
       String rev,
       String convoId,
       @ULogCreateMessageMessageConverter() ULogCreateMessageMessage message,
+      @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
       Map<String, dynamic>? $unknown});
 
   $ULogCreateMessageMessageCopyWith<$Res> get message;
@@ -72,6 +76,7 @@ class _$LogCreateMessageCopyWithImpl<$Res, $Val extends LogCreateMessage>
     Object? rev = null,
     Object? convoId = null,
     Object? message = null,
+    Object? relatedProfiles = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -91,6 +96,10 @@ class _$LogCreateMessageCopyWithImpl<$Res, $Val extends LogCreateMessage>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as ULogCreateMessageMessage,
+      relatedProfiles: freezed == relatedProfiles
+          ? _value.relatedProfiles
+          : relatedProfiles // ignore: cast_nullable_to_non_nullable
+              as List<ProfileViewBasic>?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -122,6 +131,7 @@ abstract class _$$LogCreateMessageImplCopyWith<$Res>
       String rev,
       String convoId,
       @ULogCreateMessageMessageConverter() ULogCreateMessageMessage message,
+      @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -145,6 +155,7 @@ class __$$LogCreateMessageImplCopyWithImpl<$Res>
     Object? rev = null,
     Object? convoId = null,
     Object? message = null,
+    Object? relatedProfiles = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$LogCreateMessageImpl(
@@ -164,6 +175,10 @@ class __$$LogCreateMessageImplCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as ULogCreateMessageMessage,
+      relatedProfiles: freezed == relatedProfiles
+          ? _value._relatedProfiles
+          : relatedProfiles // ignore: cast_nullable_to_non_nullable
+              as List<ProfileViewBasic>?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -181,8 +196,11 @@ class _$LogCreateMessageImpl implements _LogCreateMessage {
       required this.rev,
       required this.convoId,
       @ULogCreateMessageMessageConverter() required this.message,
+      @ProfileViewBasicConverter()
+      final List<ProfileViewBasic>? relatedProfiles,
       final Map<String, dynamic>? $unknown})
-      : _$unknown = $unknown;
+      : _relatedProfiles = relatedProfiles,
+        _$unknown = $unknown;
 
   factory _$LogCreateMessageImpl.fromJson(Map<String, dynamic> json) =>
       _$$LogCreateMessageImplFromJson(json);
@@ -197,6 +215,17 @@ class _$LogCreateMessageImpl implements _LogCreateMessage {
   @override
   @ULogCreateMessageMessageConverter()
   final ULogCreateMessageMessage message;
+  final List<ProfileViewBasic>? _relatedProfiles;
+  @override
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles {
+    final value = _relatedProfiles;
+    if (value == null) return null;
+    if (_relatedProfiles is EqualUnmodifiableListView) return _relatedProfiles;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -209,7 +238,7 @@ class _$LogCreateMessageImpl implements _LogCreateMessage {
 
   @override
   String toString() {
-    return 'LogCreateMessage(\$type: ${$type}, rev: $rev, convoId: $convoId, message: $message, \$unknown: ${$unknown})';
+    return 'LogCreateMessage(\$type: ${$type}, rev: $rev, convoId: $convoId, message: $message, relatedProfiles: $relatedProfiles, \$unknown: ${$unknown})';
   }
 
   @override
@@ -221,12 +250,20 @@ class _$LogCreateMessageImpl implements _LogCreateMessage {
             (identical(other.rev, rev) || other.rev == rev) &&
             (identical(other.convoId, convoId) || other.convoId == convoId) &&
             (identical(other.message, message) || other.message == message) &&
+            const DeepCollectionEquality()
+                .equals(other._relatedProfiles, _relatedProfiles) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, $type, rev, convoId, message,
+  int get hashCode => Object.hash(
+      runtimeType,
+      $type,
+      rev,
+      convoId,
+      message,
+      const DeepCollectionEquality().hash(_relatedProfiles),
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of LogCreateMessage
@@ -253,6 +290,8 @@ abstract class _LogCreateMessage implements LogCreateMessage {
       required final String convoId,
       @ULogCreateMessageMessageConverter()
       required final ULogCreateMessageMessage message,
+      @ProfileViewBasicConverter()
+      final List<ProfileViewBasic>? relatedProfiles,
       final Map<String, dynamic>? $unknown}) = _$LogCreateMessageImpl;
 
   factory _LogCreateMessage.fromJson(Map<String, dynamic> json) =
@@ -267,6 +306,9 @@ abstract class _LogCreateMessage implements LogCreateMessage {
   @override
   @ULogCreateMessageMessageConverter()
   ULogCreateMessageMessage get message;
+  @override
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles;
   @override
   Map<String, dynamic>? get $unknown;
 

@@ -57,7 +57,6 @@ abstract class ModEventTakedown with _$ModEventTakedown {
 
     /// When the strike should expire. If not provided, the strike never expires.
     DateTime? strikeExpiresAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventTakedown;
 

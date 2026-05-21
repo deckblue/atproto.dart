@@ -27,7 +27,6 @@ abstract class SkeletonSearchStarterPack with _$SkeletonSearchStarterPack {
   const factory SkeletonSearchStarterPack({
     @Default('app.bsky.unspecced.defs#skeletonSearchStarterPack') String $type,
     @AtUriConverter() required AtUri uri,
-
     Map<String, dynamic>? $unknown,
   }) = _SkeletonSearchStarterPack;
 

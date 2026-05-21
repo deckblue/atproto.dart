@@ -37,7 +37,6 @@ abstract class ModEventLabel with _$ModEventLabel {
 
     /// Indicates how long the label will remain on the subject. Only applies on labels that are being added.
     int? durationInHours,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventLabel;
 

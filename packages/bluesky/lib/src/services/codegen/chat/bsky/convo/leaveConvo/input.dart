@@ -25,7 +25,6 @@ abstract class ConvoLeaveConvoInput with _$ConvoLeaveConvoInput {
   @JsonSerializable(includeIfNull: false)
   const factory ConvoLeaveConvoInput({
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoLeaveConvoInput;
 

@@ -82,7 +82,6 @@ final class ULabelSubscribeLabelsMessageConverter
       object.when(
         labels: (data) => const LabelsConverter().toJson(data),
         info: (data) => const InfoConverter().toJson(data),
-
         unknown: (data) => data,
       );
 }

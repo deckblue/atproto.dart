@@ -40,7 +40,6 @@ abstract class SyncGetHostStatusOutput with _$SyncGetHostStatusOutput {
     /// Number of accounts on the server which are associated with the upstream host. Note that the upstream may actually have more accounts.
     int? accountCount,
     @HostStatusConverter() HostStatus? status,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetHostStatusOutput;
 

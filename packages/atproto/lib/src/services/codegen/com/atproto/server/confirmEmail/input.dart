@@ -26,7 +26,6 @@ abstract class ServerConfirmEmailInput with _$ServerConfirmEmailInput {
   const factory ServerConfirmEmailInput({
     required String email,
     required String token,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerConfirmEmailInput;
 

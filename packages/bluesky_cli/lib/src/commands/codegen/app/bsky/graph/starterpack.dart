@@ -79,15 +79,15 @@ final class _CreateStarterpackCommand extends CreateRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "name": argResults!["name"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-    if (argResults!["descriptionFacets"] != null)
-      "descriptionFacets": argResults!["descriptionFacets"],
-    "list": argResults!["list"],
-    if (argResults!["feeds"] != null) "feeds": argResults!["feeds"],
-    "createdAt": argResults!["createdAt"],
-  };
+        "name": argResults!["name"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+        if (argResults!["descriptionFacets"] != null)
+          "descriptionFacets": argResults!["descriptionFacets"],
+        "list": argResults!["list"],
+        if (argResults!["feeds"] != null) "feeds": argResults!["feeds"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutStarterpackCommand extends PutRecordCommand {
@@ -129,15 +129,15 @@ final class _PutStarterpackCommand extends PutRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "name": argResults!["name"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-    if (argResults!["descriptionFacets"] != null)
-      "descriptionFacets": argResults!["descriptionFacets"],
-    "list": argResults!["list"],
-    if (argResults!["feeds"] != null) "feeds": argResults!["feeds"],
-    "createdAt": argResults!["createdAt"],
-  };
+        "name": argResults!["name"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+        if (argResults!["descriptionFacets"] != null)
+          "descriptionFacets": argResults!["descriptionFacets"],
+        "list": argResults!["list"],
+        if (argResults!["feeds"] != null) "feeds": argResults!["feeds"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteStarterpackCommand extends DeleteRecordCommand {
@@ -183,11 +183,11 @@ final class _GetStarterpackCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListStarterpackCommand extends QueryCommand {
@@ -213,10 +213,10 @@ final class _ListStarterpackCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'limit': argResults!['limit'],
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'limit': argResults!['limit'],
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

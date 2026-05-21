@@ -36,7 +36,6 @@ abstract class ServerCreateSessionInput with _$ServerCreateSessionInput {
 
     /// When true, instead of throwing error for takendown accounts, a valid response with a narrow scoped token will be returned
     bool? allowTakendown,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateSessionInput;
 

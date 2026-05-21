@@ -30,7 +30,6 @@ abstract class GraphGetRelationshipsOutput with _$GraphGetRelationshipsOutput {
     String? actor,
     @UGraphGetRelationshipsRelationshipsConverter()
     required List<UGraphGetRelationshipsRelationships> relationships,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetRelationshipsOutput;
 

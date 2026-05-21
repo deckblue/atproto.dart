@@ -27,6 +27,9 @@ mixin _$LogRemoveReaction {
   ULogRemoveReactionMessage get message => throw _privateConstructorUsedError;
   @ReactionViewConverter()
   ReactionView get reaction => throw _privateConstructorUsedError;
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this LogRemoveReaction to a JSON map.
@@ -51,6 +54,7 @@ abstract class $LogRemoveReactionCopyWith<$Res> {
       String convoId,
       @ULogRemoveReactionMessageConverter() ULogRemoveReactionMessage message,
       @ReactionViewConverter() ReactionView reaction,
+      @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
       Map<String, dynamic>? $unknown});
 
   $ULogRemoveReactionMessageCopyWith<$Res> get message;
@@ -77,6 +81,7 @@ class _$LogRemoveReactionCopyWithImpl<$Res, $Val extends LogRemoveReaction>
     Object? convoId = null,
     Object? message = null,
     Object? reaction = null,
+    Object? relatedProfiles = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -100,6 +105,10 @@ class _$LogRemoveReactionCopyWithImpl<$Res, $Val extends LogRemoveReaction>
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as ReactionView,
+      relatedProfiles: freezed == relatedProfiles
+          ? _value.relatedProfiles
+          : relatedProfiles // ignore: cast_nullable_to_non_nullable
+              as List<ProfileViewBasic>?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -142,6 +151,7 @@ abstract class _$$LogRemoveReactionImplCopyWith<$Res>
       String convoId,
       @ULogRemoveReactionMessageConverter() ULogRemoveReactionMessage message,
       @ReactionViewConverter() ReactionView reaction,
+      @ProfileViewBasicConverter() List<ProfileViewBasic>? relatedProfiles,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -168,6 +178,7 @@ class __$$LogRemoveReactionImplCopyWithImpl<$Res>
     Object? convoId = null,
     Object? message = null,
     Object? reaction = null,
+    Object? relatedProfiles = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$LogRemoveReactionImpl(
@@ -191,6 +202,10 @@ class __$$LogRemoveReactionImplCopyWithImpl<$Res>
           ? _value.reaction
           : reaction // ignore: cast_nullable_to_non_nullable
               as ReactionView,
+      relatedProfiles: freezed == relatedProfiles
+          ? _value._relatedProfiles
+          : relatedProfiles // ignore: cast_nullable_to_non_nullable
+              as List<ProfileViewBasic>?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -209,8 +224,11 @@ class _$LogRemoveReactionImpl implements _LogRemoveReaction {
       required this.convoId,
       @ULogRemoveReactionMessageConverter() required this.message,
       @ReactionViewConverter() required this.reaction,
+      @ProfileViewBasicConverter()
+      final List<ProfileViewBasic>? relatedProfiles,
       final Map<String, dynamic>? $unknown})
-      : _$unknown = $unknown;
+      : _relatedProfiles = relatedProfiles,
+        _$unknown = $unknown;
 
   factory _$LogRemoveReactionImpl.fromJson(Map<String, dynamic> json) =>
       _$$LogRemoveReactionImplFromJson(json);
@@ -228,6 +246,17 @@ class _$LogRemoveReactionImpl implements _LogRemoveReaction {
   @override
   @ReactionViewConverter()
   final ReactionView reaction;
+  final List<ProfileViewBasic>? _relatedProfiles;
+  @override
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles {
+    final value = _relatedProfiles;
+    if (value == null) return null;
+    if (_relatedProfiles is EqualUnmodifiableListView) return _relatedProfiles;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -240,7 +269,7 @@ class _$LogRemoveReactionImpl implements _LogRemoveReaction {
 
   @override
   String toString() {
-    return 'LogRemoveReaction(\$type: ${$type}, rev: $rev, convoId: $convoId, message: $message, reaction: $reaction, \$unknown: ${$unknown})';
+    return 'LogRemoveReaction(\$type: ${$type}, rev: $rev, convoId: $convoId, message: $message, reaction: $reaction, relatedProfiles: $relatedProfiles, \$unknown: ${$unknown})';
   }
 
   @override
@@ -254,13 +283,22 @@ class _$LogRemoveReactionImpl implements _LogRemoveReaction {
             (identical(other.message, message) || other.message == message) &&
             (identical(other.reaction, reaction) ||
                 other.reaction == reaction) &&
+            const DeepCollectionEquality()
+                .equals(other._relatedProfiles, _relatedProfiles) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, $type, rev, convoId, message,
-      reaction, const DeepCollectionEquality().hash(_$unknown));
+  int get hashCode => Object.hash(
+      runtimeType,
+      $type,
+      rev,
+      convoId,
+      message,
+      reaction,
+      const DeepCollectionEquality().hash(_relatedProfiles),
+      const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of LogRemoveReaction
   /// with the given fields replaced by the non-null parameter values.
@@ -287,6 +325,8 @@ abstract class _LogRemoveReaction implements LogRemoveReaction {
       @ULogRemoveReactionMessageConverter()
       required final ULogRemoveReactionMessage message,
       @ReactionViewConverter() required final ReactionView reaction,
+      @ProfileViewBasicConverter()
+      final List<ProfileViewBasic>? relatedProfiles,
       final Map<String, dynamic>? $unknown}) = _$LogRemoveReactionImpl;
 
   factory _LogRemoveReaction.fromJson(Map<String, dynamic> json) =
@@ -304,6 +344,9 @@ abstract class _LogRemoveReaction implements LogRemoveReaction {
   @override
   @ReactionViewConverter()
   ReactionView get reaction;
+  @override
+  @ProfileViewBasicConverter()
+  List<ProfileViewBasic>? get relatedProfiles;
   @override
   Map<String, dynamic>? get $unknown;
 

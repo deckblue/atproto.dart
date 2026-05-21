@@ -29,7 +29,6 @@ abstract class LabelerPolicies with _$LabelerPolicies {
     @LabelValueConverter() required List<LabelValue> labelValues,
     @LabelValueDefinitionConverter()
     List<LabelValueDefinition>? labelValueDefinitions,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelerPolicies;
 

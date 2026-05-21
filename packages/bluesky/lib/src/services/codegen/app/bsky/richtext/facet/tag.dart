@@ -27,7 +27,6 @@ abstract class RichtextFacetTag with _$RichtextFacetTag {
   const factory RichtextFacetTag({
     @Default('app.bsky.richtext.facet#tag') String $type,
     required String tag,
-
     Map<String, dynamic>? $unknown,
   }) = _RichtextFacetTag;
 

@@ -29,7 +29,6 @@ abstract class ModEventUnmuteReporter with _$ModEventUnmuteReporter {
 
     /// Describe reasoning behind the reversal.
     String? comment,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventUnmuteReporter;
 

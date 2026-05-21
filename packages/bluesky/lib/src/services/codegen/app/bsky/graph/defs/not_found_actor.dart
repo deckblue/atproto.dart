@@ -28,7 +28,6 @@ abstract class NotFoundActor with _$NotFoundActor {
     @Default('app.bsky.graph.defs#notFoundActor') String $type,
     required String actor,
     required bool notFound,
-
     Map<String, dynamic>? $unknown,
   }) = _NotFoundActor;
 

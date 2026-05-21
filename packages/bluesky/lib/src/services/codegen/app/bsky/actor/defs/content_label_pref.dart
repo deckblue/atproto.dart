@@ -34,7 +34,6 @@ abstract class ContentLabelPref with _$ContentLabelPref {
     required String label,
     @ContentLabelPrefVisibilityConverter()
     required ContentLabelPrefVisibility visibility,
-
     Map<String, dynamic>? $unknown,
   }) = _ContentLabelPref;
 

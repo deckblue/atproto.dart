@@ -27,7 +27,6 @@ abstract class HandleUpdated with _$HandleUpdated {
     @Default('tools.ozone.hosting.getAccountHistory#handleUpdated')
     String $type,
     required String handle,
-
     Map<String, dynamic>? $unknown,
   }) = _HandleUpdated;
 

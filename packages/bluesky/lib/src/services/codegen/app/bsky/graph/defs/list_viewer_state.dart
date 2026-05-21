@@ -28,7 +28,6 @@ abstract class ListViewerState with _$ListViewerState {
     @Default('app.bsky.graph.defs#listViewerState') String $type,
     bool? muted,
     @AtUriConverter() AtUri? blocked,
-
     Map<String, dynamic>? $unknown,
   }) = _ListViewerState;
 

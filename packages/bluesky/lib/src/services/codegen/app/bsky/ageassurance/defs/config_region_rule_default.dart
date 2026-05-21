@@ -30,7 +30,6 @@ abstract class ConfigRegionRuleDefault with _$ConfigRegionRuleDefault {
   const factory ConfigRegionRuleDefault({
     @Default('app.bsky.ageassurance.defs#configRegionRuleDefault') String $type,
     @AccessConverter() required Access access,
-
     Map<String, dynamic>? $unknown,
   }) = _ConfigRegionRuleDefault;
 

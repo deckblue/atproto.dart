@@ -28,13 +28,13 @@ abstract class UnspeccedGetSuggestedFeedsSkeletonInput
     /// DID of the account making the request (not included for public/unauthenticated queries).
     String? viewer,
     @Default(10) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedFeedsSkeletonInput;
 
   factory UnspeccedGetSuggestedFeedsSkeletonInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedFeedsSkeletonInputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedFeedsSkeletonInputFromJson(json);
 }
 
 extension UnspeccedGetSuggestedFeedsSkeletonInputExtension
@@ -44,11 +44,8 @@ extension UnspeccedGetSuggestedFeedsSkeletonInputExtension
 }
 
 final class UnspeccedGetSuggestedFeedsSkeletonInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedFeedsSkeletonInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedFeedsSkeletonInput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedFeedsSkeletonInputConverter();
 
   @override

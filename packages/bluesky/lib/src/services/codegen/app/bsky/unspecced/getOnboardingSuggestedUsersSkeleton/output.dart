@@ -29,13 +29,13 @@ abstract class UnspeccedGetOnboardingSuggestedUsersSkeletonOutput
 
     /// Snowflake for this recommendation, use when submitting recommendation events.
     String? recIdStr,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetOnboardingSuggestedUsersSkeletonOutput;
 
   factory UnspeccedGetOnboardingSuggestedUsersSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetOnboardingSuggestedUsersSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetOnboardingSuggestedUsersSkeletonOutputFromJson(json);
 }
 
 extension UnspeccedGetOnboardingSuggestedUsersSkeletonOutputExtension
@@ -45,11 +45,8 @@ extension UnspeccedGetOnboardingSuggestedUsersSkeletonOutputExtension
 }
 
 final class UnspeccedGetOnboardingSuggestedUsersSkeletonOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetOnboardingSuggestedUsersSkeletonOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetOnboardingSuggestedUsersSkeletonOutput,
+        Map<String, dynamic>> {
   const UnspeccedGetOnboardingSuggestedUsersSkeletonOutputConverter();
 
   @override
@@ -67,5 +64,6 @@ final class UnspeccedGetOnboardingSuggestedUsersSkeletonOutputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetOnboardingSuggestedUsersSkeletonOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

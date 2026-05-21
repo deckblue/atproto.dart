@@ -43,6 +43,11 @@ final class _CreateDeclarationCommand extends CreateRecordCommand {
   _CreateDeclarationCommand() {
     argParser
       ..addOption("allowIncoming", mandatory: true)
+      ..addOption(
+        "allowGroupInvites",
+        help:
+            r"[NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.",
+      )
       ..addOption("rkey");
   }
 
@@ -55,7 +60,7 @@ final class _CreateDeclarationCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky chat-bsky-actor declaration create [allowIncoming] [rkey]";
+      "bsky chat-bsky-actor declaration create [allowIncoming] [allowGroupInvites] [rkey]";
 
   @override
   String get rkey => "self";
@@ -65,14 +70,21 @@ final class _CreateDeclarationCommand extends CreateRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "allowIncoming": argResults!["allowIncoming"],
-  };
+        "allowIncoming": argResults!["allowIncoming"],
+        if (argResults!["allowGroupInvites"] != null)
+          "allowGroupInvites": argResults!["allowGroupInvites"],
+      };
 }
 
 final class _PutDeclarationCommand extends PutRecordCommand {
   _PutDeclarationCommand() {
     argParser
       ..addOption("allowIncoming", mandatory: true)
+      ..addOption(
+        "allowGroupInvites",
+        help:
+            r"[NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.",
+      )
       ..addOption("rkey");
   }
 
@@ -85,7 +97,7 @@ final class _PutDeclarationCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky chat-bsky-actor declaration put [allowIncoming] [rkey]";
+      "bsky chat-bsky-actor declaration put [allowIncoming] [allowGroupInvites] [rkey]";
 
   @override
   String get rkey => "self";
@@ -95,8 +107,10 @@ final class _PutDeclarationCommand extends PutRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "allowIncoming": argResults!["allowIncoming"],
-  };
+        "allowIncoming": argResults!["allowIncoming"],
+        if (argResults!["allowGroupInvites"] != null)
+          "allowGroupInvites": argResults!["allowGroupInvites"],
+      };
 }
 
 final class _DeleteDeclarationCommand extends DeleteRecordCommand {
@@ -142,11 +156,11 @@ final class _GetDeclarationCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListDeclarationCommand extends QueryCommand {
@@ -172,10 +186,10 @@ final class _ListDeclarationCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'limit': argResults!['limit'],
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'limit': argResults!['limit'],
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

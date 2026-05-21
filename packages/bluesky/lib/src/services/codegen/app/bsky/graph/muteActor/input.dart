@@ -25,7 +25,6 @@ abstract class GraphMuteActorInput with _$GraphMuteActorInput {
   @JsonSerializable(includeIfNull: false)
   const factory GraphMuteActorInput({
     required String actor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphMuteActorInput;
 

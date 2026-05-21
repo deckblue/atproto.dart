@@ -28,7 +28,6 @@ abstract class TempFetchLabelsOutput with _$TempFetchLabelsOutput {
   @JsonSerializable(includeIfNull: false)
   const factory TempFetchLabelsOutput({
     @LabelConverter() required List<Label> labels,
-
     Map<String, dynamic>? $unknown,
   }) = _TempFetchLabelsOutput;
 

@@ -25,7 +25,6 @@ abstract class TempAddReservedHandleInput with _$TempAddReservedHandleInput {
   @JsonSerializable(includeIfNull: false)
   const factory TempAddReservedHandleInput({
     required String handle,
-
     Map<String, dynamic>? $unknown,
   }) = _TempAddReservedHandleInput;
 

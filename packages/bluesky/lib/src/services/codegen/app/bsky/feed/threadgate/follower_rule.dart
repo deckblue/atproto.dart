@@ -26,7 +26,6 @@ abstract class FollowerRule with _$FollowerRule {
   @JsonSerializable(includeIfNull: false)
   const factory FollowerRule({
     @Default('app.bsky.feed.threadgate#followerRule') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _FollowerRule;
 

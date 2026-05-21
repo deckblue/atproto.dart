@@ -43,10 +43,10 @@ final class ListOptionsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    "scope": argResults!["scope"],
-    if (argResults!["prefix"] != null) "prefix": argResults!["prefix"],
-    if (argResults!["keys"] != null) "keys": argResults!["keys"],
-  };
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "scope": argResults!["scope"],
+        if (argResults!["prefix"] != null) "prefix": argResults!["prefix"],
+        if (argResults!["keys"] != null) "keys": argResults!["keys"],
+      };
 }

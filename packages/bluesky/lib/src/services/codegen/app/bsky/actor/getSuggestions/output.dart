@@ -32,7 +32,6 @@ abstract class ActorGetSuggestionsOutput with _$ActorGetSuggestionsOutput {
 
     /// Snowflake for this recommendation, use when submitting recommendation events.
     String? recIdStr,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorGetSuggestionsOutput;
 

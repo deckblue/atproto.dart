@@ -29,7 +29,6 @@ abstract class FeedGetActorFeedsOutput with _$FeedGetActorFeedsOutput {
   const factory FeedGetActorFeedsOutput({
     String? cursor,
     @GeneratorViewConverter() required List<GeneratorView> feeds,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetActorFeedsOutput;
 

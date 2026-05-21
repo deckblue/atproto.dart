@@ -60,7 +60,6 @@ abstract class RepoViewDetail with _$RepoViewDetail {
     DateTime? emailConfirmedAt,
     DateTime? deactivatedAt,
     @ThreatSignatureConverter() List<ThreatSignature>? threatSignatures,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoViewDetail;
 

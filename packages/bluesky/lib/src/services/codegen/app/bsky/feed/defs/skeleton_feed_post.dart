@@ -34,7 +34,6 @@ abstract class SkeletonFeedPost with _$SkeletonFeedPost {
 
     /// Context that will be passed through to client and may be passed to feed generator back alongside interactions.
     String? feedContext,
-
     Map<String, dynamic>? $unknown,
   }) = _SkeletonFeedPost;
 

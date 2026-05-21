@@ -28,7 +28,6 @@ abstract class VideoDetails with _$VideoDetails {
     required int width,
     required int height,
     required int length,
-
     Map<String, dynamic>? $unknown,
   }) = _VideoDetails;
 

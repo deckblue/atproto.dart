@@ -37,6 +37,6 @@ final class PutPreferencesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "preferences": jsonDecode(argResults!["preferences"]),
-  };
+        "preferences": jsonDecode(argResults!["preferences"]),
+      };
 }

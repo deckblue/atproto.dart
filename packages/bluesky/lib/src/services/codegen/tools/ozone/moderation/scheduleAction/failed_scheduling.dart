@@ -29,7 +29,6 @@ abstract class FailedScheduling with _$FailedScheduling {
     required String subject,
     required String error,
     String? errorCode,
-
     Map<String, dynamic>? $unknown,
   }) = _FailedScheduling;
 

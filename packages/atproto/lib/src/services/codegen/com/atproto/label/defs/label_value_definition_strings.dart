@@ -35,7 +35,6 @@ abstract class LabelValueDefinitionStrings with _$LabelValueDefinitionStrings {
 
     /// A longer description of what the label means and why it might be applied.
     required String description,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelValueDefinitionStrings;
 

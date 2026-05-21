@@ -26,7 +26,6 @@ abstract class MessageViewSender with _$MessageViewSender {
   const factory MessageViewSender({
     @Default('chat.bsky.convo.defs#messageViewSender') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageViewSender;
 

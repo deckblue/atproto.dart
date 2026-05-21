@@ -31,7 +31,6 @@ abstract class KnownFollowers with _$KnownFollowers {
     @Default('app.bsky.actor.defs#knownFollowers') String $type,
     required int count,
     @ProfileViewBasicConverter() required List<ProfileViewBasic> followers,
-
     Map<String, dynamic>? $unknown,
   }) = _KnownFollowers;
 

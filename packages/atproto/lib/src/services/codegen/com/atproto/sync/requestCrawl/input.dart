@@ -26,7 +26,6 @@ abstract class SyncRequestCrawlInput with _$SyncRequestCrawlInput {
   const factory SyncRequestCrawlInput({
     /// Hostname of the current service (eg, PDS) that is requesting to be crawled.
     required String hostname,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncRequestCrawlInput;
 

@@ -52,21 +52,19 @@ final class LexKnownValues extends LexType {
 
   @override
   String format() {
-    final elements = values
-        .map((e) {
-          final buffer = StringBuffer();
-          if (e.startsWith('#')) {
-            buffer.writeln("@JsonValue('$lexiconId$e')");
-            buffer.write(
-              "${rule.getLexKnownValuesElementName(e, lexiconId: lexiconId)}('$lexiconId$e'),",
-            );
-          } else {
-            buffer.writeln("@JsonValue('$e')");
-            buffer.write("${rule.getLexKnownValuesElementName(e)}('$e'),");
-          }
-          return buffer.toString();
-        })
-        .join('\n');
+    final elements = values.map((e) {
+      final buffer = StringBuffer();
+      if (e.startsWith('#')) {
+        buffer.writeln("@JsonValue('$lexiconId$e')");
+        buffer.write(
+          "${rule.getLexKnownValuesElementName(e, lexiconId: lexiconId)}('$lexiconId$e'),",
+        );
+      } else {
+        buffer.writeln("@JsonValue('$e')");
+        buffer.write("${rule.getLexKnownValuesElementName(e)}('$e'),");
+      }
+      return buffer.toString();
+    }).join('\n');
 
     final fileName = getFileName();
 

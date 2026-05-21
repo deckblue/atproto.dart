@@ -32,13 +32,13 @@ abstract class ModerationListScheduledActionsOutput
 
     /// Cursor for next page of results
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationListScheduledActionsOutput;
 
   factory ModerationListScheduledActionsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$ModerationListScheduledActionsOutputFromJson(json);
+  ) =>
+      _$ModerationListScheduledActionsOutputFromJson(json);
 }
 
 extension ModerationListScheduledActionsOutputExtension
@@ -47,12 +47,8 @@ extension ModerationListScheduledActionsOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class ModerationListScheduledActionsOutputConverter
-    extends
-        JsonConverter<
-          ModerationListScheduledActionsOutput,
-          Map<String, dynamic>
-        > {
+final class ModerationListScheduledActionsOutputConverter extends JsonConverter<
+    ModerationListScheduledActionsOutput, Map<String, dynamic>> {
   const ModerationListScheduledActionsOutputConverter();
 
   @override

@@ -31,21 +31,18 @@ abstract class NotificationPutActivitySubscriptionInput
     required String subject,
     @ActivitySubscriptionConverter()
     required ActivitySubscription activitySubscription,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationPutActivitySubscriptionInput;
 
   factory NotificationPutActivitySubscriptionInput.fromJson(
     Map<String, Object?> json,
-  ) => _$NotificationPutActivitySubscriptionInputFromJson(json);
+  ) =>
+      _$NotificationPutActivitySubscriptionInputFromJson(json);
 }
 
 final class NotificationPutActivitySubscriptionInputConverter
-    extends
-        JsonConverter<
-          NotificationPutActivitySubscriptionInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<NotificationPutActivitySubscriptionInput,
+        Map<String, dynamic>> {
   const NotificationPutActivitySubscriptionInputConverter();
 
   @override
@@ -58,5 +55,6 @@ final class NotificationPutActivitySubscriptionInputConverter
   @override
   Map<String, dynamic> toJson(
     NotificationPutActivitySubscriptionInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

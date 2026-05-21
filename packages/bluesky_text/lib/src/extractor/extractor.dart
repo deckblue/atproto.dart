@@ -10,8 +10,10 @@ import '../entities/entities.dart';
 import '../entities/entity.dart';
 import '../entities/markdown/markdown_link_entity.dart';
 import '../entities/replacement.dart';
+import '../regex/end_cashtag.dart';
 import '../regex/end_hashtag.dart';
 import '../regex/valid_ascii_domain.dart';
+import '../regex/valid_cashtag.dart';
 import '../regex/valid_hashtag.dart';
 import '../regex/valid_mention.dart';
 import '../regex/valid_url.dart';
@@ -23,6 +25,7 @@ const allExtractor = Extractor.all();
 const handlesExtractor = Extractor.handles();
 const linksExtractor = Extractor.links();
 const tagsExtractor = Extractor.tags();
+const cashtagsExtractor = Extractor.cashtags();
 
 List<Entity> orderByIndicesStart(final List<Entity> entities) {
   if (entities.isEmpty) return const [];
@@ -52,6 +55,7 @@ sealed class Extractor {
   const factory Extractor.handles() = _HandlesExtractor;
   const factory Extractor.links() = _LinksExtractor;
   const factory Extractor.tags() = _TagsExtractor;
+  const factory Extractor.cashtags() = _CashtagsExtractor;
 
   List<Entity> execute(final BlueskyText text, [final ExtractorConfig? config]);
 }
@@ -63,11 +67,13 @@ final class _AllExtractor implements Extractor {
   List<Entity> execute(
     final BlueskyText text, [
     final ExtractorConfig? config,
-  ]) => orderByIndicesStart([
-    ...config!.handles!,
-    ...linksExtractor.execute(text, config),
-    ...tagsExtractor.execute(text),
-  ]);
+  ]) =>
+      orderByIndicesStart([
+        ...config!.handles!,
+        ...linksExtractor.execute(text, config),
+        ...tagsExtractor.execute(text),
+        ...cashtagsExtractor.execute(text),
+      ]);
 }
 
 final class _HandlesExtractor implements Extractor {
@@ -180,8 +186,7 @@ final class _LinksExtractor implements Extractor {
           );
         }
       } else {
-        final uri =
-            '$protocol${getFirstValidDomain(domain)}'
+        final uri = '$protocol${getFirstValidDomain(domain)}'
             '$portNumber$urlPath$urlQuery';
 
         _addLinkEntity(
@@ -231,18 +236,19 @@ final class _LinksExtractor implements Extractor {
   List<Entity> _getLinkEntitiesFromReplacements(
     final List<Replacement> replacements,
     final String value,
-  ) => replacements
-      .map(
-        (e) => Entity(
-          type: EntityType.link,
-          value: e.value,
-          indices: ByteIndices(
-            start: value.toUtf8Index(e.start),
-            end: value.toUtf8Index(e.end),
-          ),
-        ),
-      )
-      .toList();
+  ) =>
+      replacements
+          .map(
+            (e) => Entity(
+              type: EntityType.link,
+              value: e.value,
+              indices: ByteIndices(
+                start: value.toUtf8Index(e.start),
+                end: value.toUtf8Index(e.end),
+              ),
+            ),
+          )
+          .toList();
 
   bool _isHandle(final int end, final List<Entity> handles) {
     for (final handle in handles) {
@@ -303,6 +309,49 @@ final class _TagsExtractor implements Extractor {
           indices: ByteIndices(
             start: text.value.toUtf8Index(start),
             end: text.value.toUtf8Index(start + tag.length),
+          ),
+        ),
+      );
+    }
+
+    return entities;
+  }
+}
+
+final class _CashtagsExtractor implements Extractor {
+  const _CashtagsExtractor();
+
+  @override
+  List<Entity> execute(
+    final BlueskyText text, [
+    final ExtractorConfig? config,
+  ]) {
+    if (text.isEmpty) return const [];
+    if (!text.value.contains(r'$')) return const [];
+
+    final entities = <Entity>[];
+
+    for (final match in validCashtagRegex.allMatches(text.value)) {
+      final after = match.input.substring(match.start + match.group(0)!.length);
+      if (endCashtagRegex.hasMatch(after)) continue;
+
+      //* Unlike hashtags (`##tag`), Bluesky's richtext lexicon does not
+      //* define a notion of "double cash tags", so reject candidates that
+      //* are immediately preceded by another `$` character.
+      if (match.cashBoundary == r'$') continue;
+
+      final cashtag = '${match.cashMark}${match.symbol}';
+      if (cashtag.length > tagMaxLength) continue;
+
+      final start = text.value.indexOf(cashtag, match.start);
+
+      entities.add(
+        Entity(
+          type: EntityType.cashtag,
+          value: cashtag.substring(1),
+          indices: ByteIndices(
+            start: text.value.toUtf8Index(start),
+            end: text.value.toUtf8Index(start + cashtag.length),
           ),
         ),
       );

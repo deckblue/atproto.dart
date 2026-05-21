@@ -37,7 +37,7 @@ final class SendInteractionsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["feed"] != null) "feed": argResults!["feed"],
-    "interactions": argResults!["interactions"],
-  };
+        if (argResults!["feed"] != null) "feed": argResults!["feed"],
+        "interactions": argResults!["interactions"],
+      };
 }

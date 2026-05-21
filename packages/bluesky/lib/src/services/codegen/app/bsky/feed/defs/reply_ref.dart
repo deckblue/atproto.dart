@@ -35,7 +35,6 @@ abstract class ReplyRef with _$ReplyRef {
 
     /// When parent is a reply to another post, this is the author of that post.
     @ProfileViewBasicConverter() ProfileViewBasic? grandparentAuthor,
-
     Map<String, dynamic>? $unknown,
   }) = _ReplyRef;
 

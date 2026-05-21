@@ -56,7 +56,6 @@ abstract class StarterPackView with _$StarterPackView {
     int? joinedAllTimeCount,
     @LabelConverter() List<Label>? labels,
     required DateTime indexedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _StarterPackView;
 

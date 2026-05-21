@@ -25,6 +25,9 @@ mixin _$ProfileAssociatedChat {
   @ProfileAssociatedChatAllowIncomingConverter()
   ProfileAssociatedChatAllowIncoming get allowIncoming =>
       throw _privateConstructorUsedError;
+  @ProfileAssociatedChatAllowGroupInvitesConverter()
+  ProfileAssociatedChatAllowGroupInvites? get allowGroupInvites =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ProfileAssociatedChat to a JSON map.
@@ -47,9 +50,12 @@ abstract class $ProfileAssociatedChatCopyWith<$Res> {
       {String $type,
       @ProfileAssociatedChatAllowIncomingConverter()
       ProfileAssociatedChatAllowIncoming allowIncoming,
+      @ProfileAssociatedChatAllowGroupInvitesConverter()
+      ProfileAssociatedChatAllowGroupInvites? allowGroupInvites,
       Map<String, dynamic>? $unknown});
 
   $ProfileAssociatedChatAllowIncomingCopyWith<$Res> get allowIncoming;
+  $ProfileAssociatedChatAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites;
 }
 
 /// @nodoc
@@ -70,6 +76,7 @@ class _$ProfileAssociatedChatCopyWithImpl<$Res,
   $Res call({
     Object? $type = null,
     Object? allowIncoming = null,
+    Object? allowGroupInvites = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -81,6 +88,10 @@ class _$ProfileAssociatedChatCopyWithImpl<$Res,
           ? _value.allowIncoming
           : allowIncoming // ignore: cast_nullable_to_non_nullable
               as ProfileAssociatedChatAllowIncoming,
+      allowGroupInvites: freezed == allowGroupInvites
+          ? _value.allowGroupInvites
+          : allowGroupInvites // ignore: cast_nullable_to_non_nullable
+              as ProfileAssociatedChatAllowGroupInvites?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -98,6 +109,21 @@ class _$ProfileAssociatedChatCopyWithImpl<$Res,
       return _then(_value.copyWith(allowIncoming: value) as $Val);
     });
   }
+
+  /// Create a copy of ProfileAssociatedChat
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileAssociatedChatAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites {
+    if (_value.allowGroupInvites == null) {
+      return null;
+    }
+
+    return $ProfileAssociatedChatAllowGroupInvitesCopyWith<$Res>(
+        _value.allowGroupInvites!, (value) {
+      return _then(_value.copyWith(allowGroupInvites: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -113,10 +139,14 @@ abstract class _$$ProfileAssociatedChatImplCopyWith<$Res>
       {String $type,
       @ProfileAssociatedChatAllowIncomingConverter()
       ProfileAssociatedChatAllowIncoming allowIncoming,
+      @ProfileAssociatedChatAllowGroupInvitesConverter()
+      ProfileAssociatedChatAllowGroupInvites? allowGroupInvites,
       Map<String, dynamic>? $unknown});
 
   @override
   $ProfileAssociatedChatAllowIncomingCopyWith<$Res> get allowIncoming;
+  @override
+  $ProfileAssociatedChatAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites;
 }
 
 /// @nodoc
@@ -135,6 +165,7 @@ class __$$ProfileAssociatedChatImplCopyWithImpl<$Res>
   $Res call({
     Object? $type = null,
     Object? allowIncoming = null,
+    Object? allowGroupInvites = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ProfileAssociatedChatImpl(
@@ -146,6 +177,10 @@ class __$$ProfileAssociatedChatImplCopyWithImpl<$Res>
           ? _value.allowIncoming
           : allowIncoming // ignore: cast_nullable_to_non_nullable
               as ProfileAssociatedChatAllowIncoming,
+      allowGroupInvites: freezed == allowGroupInvites
+          ? _value.allowGroupInvites
+          : allowGroupInvites // ignore: cast_nullable_to_non_nullable
+              as ProfileAssociatedChatAllowGroupInvites?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -162,6 +197,7 @@ class _$ProfileAssociatedChatImpl implements _ProfileAssociatedChat {
       {this.$type = 'app.bsky.actor.defs#profileAssociatedChat',
       @ProfileAssociatedChatAllowIncomingConverter()
       required this.allowIncoming,
+      @ProfileAssociatedChatAllowGroupInvitesConverter() this.allowGroupInvites,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -174,6 +210,9 @@ class _$ProfileAssociatedChatImpl implements _ProfileAssociatedChat {
   @override
   @ProfileAssociatedChatAllowIncomingConverter()
   final ProfileAssociatedChatAllowIncoming allowIncoming;
+  @override
+  @ProfileAssociatedChatAllowGroupInvitesConverter()
+  final ProfileAssociatedChatAllowGroupInvites? allowGroupInvites;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -186,7 +225,7 @@ class _$ProfileAssociatedChatImpl implements _ProfileAssociatedChat {
 
   @override
   String toString() {
-    return 'ProfileAssociatedChat(\$type: ${$type}, allowIncoming: $allowIncoming, \$unknown: ${$unknown})';
+    return 'ProfileAssociatedChat(\$type: ${$type}, allowIncoming: $allowIncoming, allowGroupInvites: $allowGroupInvites, \$unknown: ${$unknown})';
   }
 
   @override
@@ -197,13 +236,15 @@ class _$ProfileAssociatedChatImpl implements _ProfileAssociatedChat {
             (identical(other.$type, $type) || other.$type == $type) &&
             (identical(other.allowIncoming, allowIncoming) ||
                 other.allowIncoming == allowIncoming) &&
+            (identical(other.allowGroupInvites, allowGroupInvites) ||
+                other.allowGroupInvites == allowGroupInvites) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, $type, allowIncoming,
-      const DeepCollectionEquality().hash(_$unknown));
+      allowGroupInvites, const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ProfileAssociatedChat
   /// with the given fields replaced by the non-null parameter values.
@@ -227,6 +268,8 @@ abstract class _ProfileAssociatedChat implements ProfileAssociatedChat {
       {final String $type,
       @ProfileAssociatedChatAllowIncomingConverter()
       required final ProfileAssociatedChatAllowIncoming allowIncoming,
+      @ProfileAssociatedChatAllowGroupInvitesConverter()
+      final ProfileAssociatedChatAllowGroupInvites? allowGroupInvites,
       final Map<String, dynamic>? $unknown}) = _$ProfileAssociatedChatImpl;
 
   factory _ProfileAssociatedChat.fromJson(Map<String, dynamic> json) =
@@ -237,6 +280,9 @@ abstract class _ProfileAssociatedChat implements ProfileAssociatedChat {
   @override
   @ProfileAssociatedChatAllowIncomingConverter()
   ProfileAssociatedChatAllowIncoming get allowIncoming;
+  @override
+  @ProfileAssociatedChatAllowGroupInvitesConverter()
+  ProfileAssociatedChatAllowGroupInvites? get allowGroupInvites;
   @override
   Map<String, dynamic>? get $unknown;
 

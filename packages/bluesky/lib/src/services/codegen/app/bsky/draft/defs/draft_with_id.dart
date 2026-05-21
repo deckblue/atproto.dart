@@ -33,7 +33,6 @@ abstract class DraftWithId with _$DraftWithId {
     /// A TID to be used as a draft identifier.
     required String id,
     @DraftConverter() required Draft draft,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftWithId;
 

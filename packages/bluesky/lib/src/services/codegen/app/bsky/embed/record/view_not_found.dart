@@ -28,7 +28,6 @@ abstract class EmbedRecordViewNotFound with _$EmbedRecordViewNotFound {
     @Default('app.bsky.embed.record#viewNotFound') String $type,
     @AtUriConverter() required AtUri uri,
     required bool notFound,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedRecordViewNotFound;
 

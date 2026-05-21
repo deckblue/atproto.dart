@@ -25,7 +25,6 @@ abstract class RecordDeleted with _$RecordDeleted {
   @JsonSerializable(includeIfNull: false)
   const factory RecordDeleted({
     @Default('app.bsky.notification.defs#recordDeleted') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordDeleted;
 

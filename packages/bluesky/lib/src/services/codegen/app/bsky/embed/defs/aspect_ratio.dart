@@ -28,7 +28,6 @@ abstract class AspectRatio with _$AspectRatio {
     @Default('app.bsky.embed.defs#aspectRatio') String $type,
     required int width,
     required int height,
-
     Map<String, dynamic>? $unknown,
   }) = _AspectRatio;
 

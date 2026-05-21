@@ -27,7 +27,6 @@ abstract class EmbedRecord with _$EmbedRecord {
   const factory EmbedRecord({
     @Default('app.bsky.embed.record') String $type,
     @RepoStrongRefConverter() required RepoStrongRef record,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedRecord;
 

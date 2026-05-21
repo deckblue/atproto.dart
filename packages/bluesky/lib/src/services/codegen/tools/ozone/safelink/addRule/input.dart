@@ -47,7 +47,6 @@ abstract class SafelinkAddRuleInput with _$SafelinkAddRuleInput {
 
     /// Author DID. Only respected when using admin auth
     String? createdBy,
-
     Map<String, dynamic>? $unknown,
   }) = _SafelinkAddRuleInput;
 

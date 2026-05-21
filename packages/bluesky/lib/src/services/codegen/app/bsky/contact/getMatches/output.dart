@@ -29,7 +29,6 @@ abstract class ContactGetMatchesOutput with _$ContactGetMatchesOutput {
   const factory ContactGetMatchesOutput({
     String? cursor,
     @ProfileViewConverter() required List<ProfileView> matches,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactGetMatchesOutput;
 

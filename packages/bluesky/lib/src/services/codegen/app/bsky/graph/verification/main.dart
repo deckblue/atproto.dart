@@ -43,7 +43,6 @@ abstract class GraphVerificationRecord with _$GraphVerificationRecord {
 
     /// Date of when the verification was created.
     required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphVerificationRecord;
 

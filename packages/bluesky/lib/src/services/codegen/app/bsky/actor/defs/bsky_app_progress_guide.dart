@@ -27,7 +27,6 @@ abstract class BskyAppProgressGuide with _$BskyAppProgressGuide {
   const factory BskyAppProgressGuide({
     @Default('app.bsky.actor.defs#bskyAppProgressGuide') String $type,
     required String guide,
-
     Map<String, dynamic>? $unknown,
   }) = _BskyAppProgressGuide;
 

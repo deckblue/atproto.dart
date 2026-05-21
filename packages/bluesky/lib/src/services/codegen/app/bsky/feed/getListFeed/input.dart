@@ -29,7 +29,6 @@ abstract class FeedGetListFeedInput with _$FeedGetListFeedInput {
     @AtUriConverter() required AtUri list,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetListFeedInput;
 

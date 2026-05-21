@@ -27,7 +27,6 @@ abstract class Feed with _$Feed {
   const factory Feed({
     @Default('app.bsky.feed.describeFeedGenerator#feed') String $type,
     @AtUriConverter() required AtUri uri,
-
     Map<String, dynamic>? $unknown,
   }) = _Feed;
 

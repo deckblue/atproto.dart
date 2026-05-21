@@ -29,21 +29,18 @@ abstract class UnspeccedGetSuggestedStarterPacksOutput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetSuggestedStarterPacksOutput({
     @StarterPackViewConverter() required List<StarterPackView> starterPacks,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedStarterPacksOutput;
 
   factory UnspeccedGetSuggestedStarterPacksOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedStarterPacksOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedStarterPacksOutputFromJson(json);
 }
 
 final class UnspeccedGetSuggestedStarterPacksOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedStarterPacksOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedStarterPacksOutput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedStarterPacksOutputConverter();
 
   @override

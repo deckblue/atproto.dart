@@ -55,7 +55,6 @@ abstract class EmbedRecordViewRecord with _$EmbedRecordViewRecord {
     @UEmbedRecordViewRecordEmbedsConverter()
     List<UEmbedRecordViewRecordEmbeds>? embeds,
     required DateTime indexedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedRecordViewRecord;
 

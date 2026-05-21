@@ -29,7 +29,6 @@ abstract class AdminGetInviteCodesOutput with _$AdminGetInviteCodesOutput {
   const factory AdminGetInviteCodesOutput({
     String? cursor,
     @InviteCodeConverter() required List<InviteCode> codes,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminGetInviteCodesOutput;
 

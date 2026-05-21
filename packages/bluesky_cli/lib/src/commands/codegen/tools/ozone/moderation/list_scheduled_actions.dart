@@ -54,13 +54,14 @@ final class ListScheduledActionsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["startsAfter"] != null)
-      "startsAfter": argResults!["startsAfter"],
-    if (argResults!["endsBefore"] != null)
-      "endsBefore": argResults!["endsBefore"],
-    if (argResults!["subjects"] != null) "subjects": argResults!["subjects"],
-    "statuses": argResults!["statuses"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        if (argResults!["startsAfter"] != null)
+          "startsAfter": argResults!["startsAfter"],
+        if (argResults!["endsBefore"] != null)
+          "endsBefore": argResults!["endsBefore"],
+        if (argResults!["subjects"] != null)
+          "subjects": argResults!["subjects"],
+        "statuses": argResults!["statuses"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

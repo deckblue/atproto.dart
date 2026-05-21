@@ -28,7 +28,6 @@ abstract class SignatureSearchAccountsOutput
   const factory SignatureSearchAccountsOutput({
     String? cursor,
     @AccountViewConverter() required List<AccountView> accounts,
-
     Map<String, dynamic>? $unknown,
   }) = _SignatureSearchAccountsOutput;
 

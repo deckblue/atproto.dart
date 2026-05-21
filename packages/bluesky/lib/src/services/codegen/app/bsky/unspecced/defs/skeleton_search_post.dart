@@ -27,7 +27,6 @@ abstract class SkeletonSearchPost with _$SkeletonSearchPost {
   const factory SkeletonSearchPost({
     @Default('app.bsky.unspecced.defs#skeletonSearchPost') String $type,
     @AtUriConverter() required AtUri uri,
-
     Map<String, dynamic>? $unknown,
   }) = _SkeletonSearchPost;
 

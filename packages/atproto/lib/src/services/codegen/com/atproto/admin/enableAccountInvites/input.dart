@@ -29,7 +29,6 @@ abstract class AdminEnableAccountInvitesInput
 
     /// Optional reason for enabled invites.
     String? note,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminEnableAccountInvitesInput;
 
@@ -43,9 +42,8 @@ extension AdminEnableAccountInvitesInputExtension
   bool get hasNotNote => !hasNote;
 }
 
-final class AdminEnableAccountInvitesInputConverter
-    extends
-        JsonConverter<AdminEnableAccountInvitesInput, Map<String, dynamic>> {
+final class AdminEnableAccountInvitesInputConverter extends JsonConverter<
+    AdminEnableAccountInvitesInput, Map<String, dynamic>> {
   const AdminEnableAccountInvitesInputConverter();
 
   @override

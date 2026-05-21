@@ -30,7 +30,6 @@ abstract class SyncListReposByCollectionOutput
   const factory SyncListReposByCollectionOutput({
     String? cursor,
     @RepoConverter() required List<Repo> repos,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncListReposByCollectionOutput;
 
@@ -44,9 +43,8 @@ extension SyncListReposByCollectionOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class SyncListReposByCollectionOutputConverter
-    extends
-        JsonConverter<SyncListReposByCollectionOutput, Map<String, dynamic>> {
+final class SyncListReposByCollectionOutputConverter extends JsonConverter<
+    SyncListReposByCollectionOutput, Map<String, dynamic>> {
   const SyncListReposByCollectionOutputConverter();
 
   @override

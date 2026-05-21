@@ -53,7 +53,6 @@ abstract class FeedGeneratorRecord with _$FeedGeneratorRecord {
     @UFeedGeneratorLabelsConverter() UFeedGeneratorLabels? labels,
     @FeedGeneratorContentModeConverter() FeedGeneratorContentMode? contentMode,
     required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGeneratorRecord;
 

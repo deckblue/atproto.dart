@@ -27,21 +27,18 @@ abstract class UnspeccedGetSuggestedStarterPacksSkeletonOutput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetSuggestedStarterPacksSkeletonOutput({
     @AtUriConverter() required List<AtUri> starterPacks,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedStarterPacksSkeletonOutput;
 
   factory UnspeccedGetSuggestedStarterPacksSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedStarterPacksSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedStarterPacksSkeletonOutputFromJson(json);
 }
 
 final class UnspeccedGetSuggestedStarterPacksSkeletonOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedStarterPacksSkeletonOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedStarterPacksSkeletonOutput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedStarterPacksSkeletonOutputConverter();
 
   @override
@@ -59,5 +56,6 @@ final class UnspeccedGetSuggestedStarterPacksSkeletonOutputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetSuggestedStarterPacksSkeletonOutput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

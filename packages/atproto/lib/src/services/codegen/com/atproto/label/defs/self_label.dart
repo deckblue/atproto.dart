@@ -29,7 +29,6 @@ abstract class SelfLabel with _$SelfLabel {
 
     /// The short string name of the value or type of this label.
     required String val,
-
     Map<String, dynamic>? $unknown,
   }) = _SelfLabel;
 

@@ -30,18 +30,17 @@ abstract class UnspeccedGetTrendingTopicsOutput
   const factory UnspeccedGetTrendingTopicsOutput({
     @TrendingTopicConverter() required List<TrendingTopic> topics,
     @TrendingTopicConverter() required List<TrendingTopic> suggested,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTrendingTopicsOutput;
 
   factory UnspeccedGetTrendingTopicsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetTrendingTopicsOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetTrendingTopicsOutputFromJson(json);
 }
 
-final class UnspeccedGetTrendingTopicsOutputConverter
-    extends
-        JsonConverter<UnspeccedGetTrendingTopicsOutput, Map<String, dynamic>> {
+final class UnspeccedGetTrendingTopicsOutputConverter extends JsonConverter<
+    UnspeccedGetTrendingTopicsOutput, Map<String, dynamic>> {
   const UnspeccedGetTrendingTopicsOutputConverter();
 
   @override

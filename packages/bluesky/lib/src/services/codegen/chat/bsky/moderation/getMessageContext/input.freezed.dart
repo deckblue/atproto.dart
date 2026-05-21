@@ -24,8 +24,15 @@ mixin _$ModerationGetMessageContextInput {
   /// Conversation that the message is from. NOTE: this field will eventually be required.
   String? get convoId => throw _privateConstructorUsedError;
   String get messageId => throw _privateConstructorUsedError;
+
+  /// Number of user messages before the target to include. System messages between the earliest returned user message and the target are also included, capped per gap by `maxInterleavedSystemMessages`. If there are no user messages before the target, up to `maxInterleavedSystemMessages` system messages immediately preceding the target are returned instead.
   int get before => throw _privateConstructorUsedError;
+
+  /// Number of user messages after the target to include. System messages between the target and the latest returned user message are also included, capped per gap by `maxInterleavedSystemMessages`. If there are no user messages after the target, up to `maxInterleavedSystemMessages` system messages immediately following the target are returned instead.
   int get after => throw _privateConstructorUsedError;
+
+  /// Maximum number of system messages to include per gap between consecutive returned messages (and per side when there are no user messages on that side). Within a gap, the system messages closest to the earlier message are kept.
+  int get maxInterleavedSystemMessages => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ModerationGetMessageContextInput to a JSON map.
@@ -51,6 +58,7 @@ abstract class $ModerationGetMessageContextInputCopyWith<$Res> {
       String messageId,
       int before,
       int after,
+      int maxInterleavedSystemMessages,
       Map<String, dynamic>? $unknown});
 }
 
@@ -74,6 +82,7 @@ class _$ModerationGetMessageContextInputCopyWithImpl<$Res,
     Object? messageId = null,
     Object? before = null,
     Object? after = null,
+    Object? maxInterleavedSystemMessages = null,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -92,6 +101,10 @@ class _$ModerationGetMessageContextInputCopyWithImpl<$Res,
       after: null == after
           ? _value.after
           : after // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxInterleavedSystemMessages: null == maxInterleavedSystemMessages
+          ? _value.maxInterleavedSystemMessages
+          : maxInterleavedSystemMessages // ignore: cast_nullable_to_non_nullable
               as int,
       $unknown: freezed == $unknown
           ? _value.$unknown
@@ -115,6 +128,7 @@ abstract class _$$ModerationGetMessageContextInputImplCopyWith<$Res>
       String messageId,
       int before,
       int after,
+      int maxInterleavedSystemMessages,
       Map<String, dynamic>? $unknown});
 }
 
@@ -137,6 +151,7 @@ class __$$ModerationGetMessageContextInputImplCopyWithImpl<$Res>
     Object? messageId = null,
     Object? before = null,
     Object? after = null,
+    Object? maxInterleavedSystemMessages = null,
     Object? $unknown = freezed,
   }) {
     return _then(_$ModerationGetMessageContextInputImpl(
@@ -156,6 +171,10 @@ class __$$ModerationGetMessageContextInputImplCopyWithImpl<$Res>
           ? _value.after
           : after // ignore: cast_nullable_to_non_nullable
               as int,
+      maxInterleavedSystemMessages: null == maxInterleavedSystemMessages
+          ? _value.maxInterleavedSystemMessages
+          : maxInterleavedSystemMessages // ignore: cast_nullable_to_non_nullable
+              as int,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -174,6 +193,7 @@ class _$ModerationGetMessageContextInputImpl
       required this.messageId,
       this.before = 5,
       this.after = 5,
+      this.maxInterleavedSystemMessages = 10,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -186,12 +206,21 @@ class _$ModerationGetMessageContextInputImpl
   final String? convoId;
   @override
   final String messageId;
+
+  /// Number of user messages before the target to include. System messages between the earliest returned user message and the target are also included, capped per gap by `maxInterleavedSystemMessages`. If there are no user messages before the target, up to `maxInterleavedSystemMessages` system messages immediately preceding the target are returned instead.
   @override
   @JsonKey()
   final int before;
+
+  /// Number of user messages after the target to include. System messages between the target and the latest returned user message are also included, capped per gap by `maxInterleavedSystemMessages`. If there are no user messages after the target, up to `maxInterleavedSystemMessages` system messages immediately following the target are returned instead.
   @override
   @JsonKey()
   final int after;
+
+  /// Maximum number of system messages to include per gap between consecutive returned messages (and per side when there are no user messages on that side). Within a gap, the system messages closest to the earlier message are kept.
+  @override
+  @JsonKey()
+  final int maxInterleavedSystemMessages;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -204,7 +233,7 @@ class _$ModerationGetMessageContextInputImpl
 
   @override
   String toString() {
-    return 'ModerationGetMessageContextInput(convoId: $convoId, messageId: $messageId, before: $before, after: $after, \$unknown: ${$unknown})';
+    return 'ModerationGetMessageContextInput(convoId: $convoId, messageId: $messageId, before: $before, after: $after, maxInterleavedSystemMessages: $maxInterleavedSystemMessages, \$unknown: ${$unknown})';
   }
 
   @override
@@ -217,13 +246,23 @@ class _$ModerationGetMessageContextInputImpl
                 other.messageId == messageId) &&
             (identical(other.before, before) || other.before == before) &&
             (identical(other.after, after) || other.after == after) &&
+            (identical(other.maxInterleavedSystemMessages,
+                    maxInterleavedSystemMessages) ||
+                other.maxInterleavedSystemMessages ==
+                    maxInterleavedSystemMessages) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, convoId, messageId, before,
-      after, const DeepCollectionEquality().hash(_$unknown));
+  int get hashCode => Object.hash(
+      runtimeType,
+      convoId,
+      messageId,
+      before,
+      after,
+      maxInterleavedSystemMessages,
+      const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ModerationGetMessageContextInput
   /// with the given fields replaced by the non-null parameter values.
@@ -250,6 +289,7 @@ abstract class _ModerationGetMessageContextInput
           required final String messageId,
           final int before,
           final int after,
+          final int maxInterleavedSystemMessages,
           final Map<String, dynamic>? $unknown}) =
       _$ModerationGetMessageContextInputImpl;
 
@@ -262,10 +302,18 @@ abstract class _ModerationGetMessageContextInput
   String? get convoId;
   @override
   String get messageId;
+
+  /// Number of user messages before the target to include. System messages between the earliest returned user message and the target are also included, capped per gap by `maxInterleavedSystemMessages`. If there are no user messages before the target, up to `maxInterleavedSystemMessages` system messages immediately preceding the target are returned instead.
   @override
   int get before;
+
+  /// Number of user messages after the target to include. System messages between the target and the latest returned user message are also included, capped per gap by `maxInterleavedSystemMessages`. If there are no user messages after the target, up to `maxInterleavedSystemMessages` system messages immediately following the target are returned instead.
   @override
   int get after;
+
+  /// Maximum number of system messages to include per gap between consecutive returned messages (and per side when there are no user messages on that side). Within a gap, the system messages closest to the earlier message are kept.
+  @override
+  int get maxInterleavedSystemMessages;
   @override
   Map<String, dynamic>? get $unknown;
 

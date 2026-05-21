@@ -21,6 +21,8 @@ EmbedImagesImage _$EmbedImagesImageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EmbedImagesImage {
   String get $type => throw _privateConstructorUsedError;
+
+  /// The raw image file. May be up to 2 MB, formerly limited to 1 MB.
   @BlobConverter()
   Blob get image => throw _privateConstructorUsedError;
 
@@ -210,6 +212,8 @@ class _$EmbedImagesImageImpl implements _EmbedImagesImage {
   @override
   @JsonKey()
   final String $type;
+
+  /// The raw image file. May be up to 2 MB, formerly limited to 1 MB.
   @override
   @BlobConverter()
   final Blob image;
@@ -283,6 +287,8 @@ abstract class _EmbedImagesImage implements EmbedImagesImage {
 
   @override
   String get $type;
+
+  /// The raw image file. May be up to 2 MB, formerly limited to 1 MB.
   @override
   @BlobConverter()
   Blob get image;

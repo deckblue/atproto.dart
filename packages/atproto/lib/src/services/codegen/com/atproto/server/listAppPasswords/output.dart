@@ -29,7 +29,6 @@ abstract class ServerListAppPasswordsOutput
   @JsonSerializable(includeIfNull: false)
   const factory ServerListAppPasswordsOutput({
     @AppPasswordConverter() required List<AppPassword> passwords,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerListAppPasswordsOutput;
 

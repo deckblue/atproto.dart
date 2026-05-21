@@ -52,9 +52,9 @@ final class SearchStarterPacksSkeletonCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "q": argResults!["q"],
-    if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "q": argResults!["q"],
+        if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

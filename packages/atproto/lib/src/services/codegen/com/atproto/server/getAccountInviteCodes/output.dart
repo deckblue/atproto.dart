@@ -29,18 +29,17 @@ abstract class ServerGetAccountInviteCodesOutput
   @JsonSerializable(includeIfNull: false)
   const factory ServerGetAccountInviteCodesOutput({
     @InviteCodeConverter() required List<InviteCode> codes,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerGetAccountInviteCodesOutput;
 
   factory ServerGetAccountInviteCodesOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$ServerGetAccountInviteCodesOutputFromJson(json);
+  ) =>
+      _$ServerGetAccountInviteCodesOutputFromJson(json);
 }
 
-final class ServerGetAccountInviteCodesOutputConverter
-    extends
-        JsonConverter<ServerGetAccountInviteCodesOutput, Map<String, dynamic>> {
+final class ServerGetAccountInviteCodesOutputConverter extends JsonConverter<
+    ServerGetAccountInviteCodesOutput, Map<String, dynamic>> {
   const ServerGetAccountInviteCodesOutputConverter();
 
   @override

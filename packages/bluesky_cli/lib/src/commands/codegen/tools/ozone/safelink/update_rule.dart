@@ -51,11 +51,12 @@ final class UpdateRuleCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "url": argResults!["url"],
-    "pattern": jsonDecode(argResults!["pattern"]),
-    "action": jsonDecode(argResults!["action"]),
-    "reason": jsonDecode(argResults!["reason"]),
-    if (argResults!["comment"] != null) "comment": argResults!["comment"],
-    if (argResults!["createdBy"] != null) "createdBy": argResults!["createdBy"],
-  };
+        "url": argResults!["url"],
+        "pattern": jsonDecode(argResults!["pattern"]),
+        "action": jsonDecode(argResults!["action"]),
+        "reason": jsonDecode(argResults!["reason"]),
+        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+        if (argResults!["createdBy"] != null)
+          "createdBy": argResults!["createdBy"],
+      };
 }

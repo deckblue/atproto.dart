@@ -34,7 +34,6 @@ abstract class FeedGetFeedGeneratorOutput with _$FeedGetFeedGeneratorOutput {
 
     /// Indicates whether the feed generator service is compatible with the record declaration.
     required bool isValid,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetFeedGeneratorOutput;
 

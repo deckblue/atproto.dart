@@ -30,7 +30,6 @@ abstract class GraphGetFollowsOutput with _$GraphGetFollowsOutput {
     @ProfileViewConverter() required ProfileView subject,
     String? cursor,
     @ProfileViewConverter() required List<ProfileView> follows,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetFollowsOutput;
 

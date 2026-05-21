@@ -37,7 +37,6 @@ abstract class Interaction with _$Interaction {
 
     /// Unique identifier per request that may be passed back alongside interactions.
     String? reqId,
-
     Map<String, dynamic>? $unknown,
   }) = _Interaction;
 

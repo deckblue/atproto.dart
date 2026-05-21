@@ -27,7 +27,6 @@ abstract class SetAddValuesInput with _$SetAddValuesInput {
     /// Name of the set to add values to
     required String name,
     required List<String> values,
-
     Map<String, dynamic>? $unknown,
   }) = _SetAddValuesInput;
 

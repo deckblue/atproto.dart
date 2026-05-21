@@ -46,7 +46,7 @@ final class VerifyPhoneCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "phone": argResults!["phone"],
-    "code": argResults!["code"],
-  };
+        "phone": argResults!["phone"],
+        "code": argResults!["code"],
+      };
 }

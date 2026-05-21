@@ -42,7 +42,6 @@ abstract class ModEventReverseTakedown with _$ModEventReverseTakedown {
 
     /// Number of strikes to subtract from the user's strike count. Usually set from the last policy infraction's severity.
     int? strikeCount,
-
     Map<String, dynamic>? $unknown,
   }) = _ModEventReverseTakedown;
 

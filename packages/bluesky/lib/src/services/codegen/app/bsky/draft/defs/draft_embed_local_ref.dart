@@ -28,7 +28,6 @@ abstract class DraftEmbedLocalRef with _$DraftEmbedLocalRef {
 
     /// Local, on-device ref to file to be embedded. Embeds are currently device-bound for drafts.
     required String path,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftEmbedLocalRef;
 

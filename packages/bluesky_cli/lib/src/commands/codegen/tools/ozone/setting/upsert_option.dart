@@ -39,12 +39,12 @@ final class UpsertOptionCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "key": argResults!["key"],
-    "scope": argResults!["scope"],
-    "value": argResults!["value"],
-    if (argResults!["description"] != null)
-      "description": argResults!["description"],
-    if (argResults!["managerRole"] != null)
-      "managerRole": argResults!["managerRole"],
-  };
+        "key": argResults!["key"],
+        "scope": argResults!["scope"],
+        "value": argResults!["value"],
+        if (argResults!["description"] != null)
+          "description": argResults!["description"],
+        if (argResults!["managerRole"] != null)
+          "managerRole": argResults!["managerRole"],
+      };
 }

@@ -29,18 +29,17 @@ abstract class CommunicationListTemplatesOutput
   @JsonSerializable(includeIfNull: false)
   const factory CommunicationListTemplatesOutput({
     @TemplateViewConverter() required List<TemplateView> communicationTemplates,
-
     Map<String, dynamic>? $unknown,
   }) = _CommunicationListTemplatesOutput;
 
   factory CommunicationListTemplatesOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$CommunicationListTemplatesOutputFromJson(json);
+  ) =>
+      _$CommunicationListTemplatesOutputFromJson(json);
 }
 
-final class CommunicationListTemplatesOutputConverter
-    extends
-        JsonConverter<CommunicationListTemplatesOutput, Map<String, dynamic>> {
+final class CommunicationListTemplatesOutputConverter extends JsonConverter<
+    CommunicationListTemplatesOutput, Map<String, dynamic>> {
   const CommunicationListTemplatesOutputConverter();
 
   @override

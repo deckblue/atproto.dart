@@ -34,7 +34,6 @@ abstract class RevokeError with _$RevokeError {
 
     /// Description of the error that occurred during revocation.
     required String error,
-
     Map<String, dynamic>? $unknown,
   }) = _RevokeError;
 

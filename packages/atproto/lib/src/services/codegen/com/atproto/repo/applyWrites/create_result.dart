@@ -33,7 +33,6 @@ abstract class CreateResult with _$CreateResult {
     required String cid,
     @CreateResultValidationStatusConverter()
     CreateResultValidationStatus? validationStatus,
-
     Map<String, dynamic>? $unknown,
   }) = _CreateResult;
 

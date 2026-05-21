@@ -26,7 +26,6 @@ abstract class GraphGetStarterPacksInput with _$GraphGetStarterPacksInput {
   @JsonSerializable(includeIfNull: false)
   const factory GraphGetStarterPacksInput({
     @AtUriConverter() required List<AtUri> uris,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetStarterPacksInput;
 

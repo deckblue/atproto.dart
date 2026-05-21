@@ -47,7 +47,7 @@ class StreamProcessor<T> {
   ///
   /// [config] - Configuration for the processor behavior
   StreamProcessor({StreamProcessorConfig? config})
-    : _config = config ?? const StreamProcessorConfig();
+      : _config = config ?? const StreamProcessorConfig();
 
   final StreamProcessorConfig _config;
   bool hasError = false;

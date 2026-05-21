@@ -57,8 +57,8 @@ extension UThreadItemValueExtension on UThreadItemValue {
   bool get isNotThreadItemNoUnauthenticated => !isThreadItemNoUnauthenticated;
   ThreadItemNoUnauthenticated? get threadItemNoUnauthenticated =>
       isThreadItemNoUnauthenticated
-      ? data as ThreadItemNoUnauthenticated
-      : null;
+          ? data as ThreadItemNoUnauthenticated
+          : null;
   bool get isThreadItemNotFound =>
       isA<UThreadItemValueThreadItemNotFound>(this);
   bool get isNotThreadItemNotFound => !isThreadItemNotFound;
@@ -110,14 +110,13 @@ final class UThreadItemValueConverter
 
   @override
   Map<String, dynamic> toJson(UThreadItemValue object) => object.when(
-    threadItemPost: (data) => const ThreadItemPostConverter().toJson(data),
-    threadItemNoUnauthenticated: (data) =>
-        const ThreadItemNoUnauthenticatedConverter().toJson(data),
-    threadItemNotFound: (data) =>
-        const ThreadItemNotFoundConverter().toJson(data),
-    threadItemBlocked: (data) =>
-        const ThreadItemBlockedConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        threadItemPost: (data) => const ThreadItemPostConverter().toJson(data),
+        threadItemNoUnauthenticated: (data) =>
+            const ThreadItemNoUnauthenticatedConverter().toJson(data),
+        threadItemNotFound: (data) =>
+            const ThreadItemNotFoundConverter().toJson(data),
+        threadItemBlocked: (data) =>
+            const ThreadItemBlockedConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

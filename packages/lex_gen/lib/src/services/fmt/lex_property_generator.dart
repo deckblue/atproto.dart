@@ -299,8 +299,8 @@ DartType _getLexRefVariantType(
         name: isUnion
             ? 'U$name'
             : isRecord
-            ? '${name}Record'
-            : name,
+                ? '${name}Record'
+                : name,
         lexiconId: lexiconId.toString(),
         fieldName: isUnion ? fieldName : '',
         ref: ref.data.ref!,
@@ -312,8 +312,8 @@ DartType _getLexRefVariantType(
         annotation: isUnion
             ? '@U${name}Converter()'
             : isRecord
-            ? '@${name}RecordConverter()'
-            : '@${name}Converter()',
+                ? '@${name}RecordConverter()'
+                : '@${name}Converter()',
         description: ref.data.description,
         isArray: isArray,
         isUnion: isUnion,

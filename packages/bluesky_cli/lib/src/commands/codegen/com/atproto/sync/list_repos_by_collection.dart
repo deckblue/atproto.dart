@@ -43,8 +43,8 @@ final class ListReposByCollectionCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "collection": argResults!["collection"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "collection": argResults!["collection"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

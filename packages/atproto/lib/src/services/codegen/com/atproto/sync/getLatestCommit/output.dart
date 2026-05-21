@@ -26,7 +26,6 @@ abstract class SyncGetLatestCommitOutput with _$SyncGetLatestCommitOutput {
   const factory SyncGetLatestCommitOutput({
     required String cid,
     required String rev,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetLatestCommitOutput;
 

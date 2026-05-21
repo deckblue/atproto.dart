@@ -51,7 +51,6 @@ abstract class GraphListRecord with _$GraphListRecord {
     @BlobConverter() Blob? avatar,
     @UGraphListLabelsConverter() UGraphListLabels? labels,
     required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphListRecord;
 

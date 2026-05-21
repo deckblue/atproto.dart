@@ -189,16 +189,14 @@ final class ModerationBehaviorSuiteRunner {
       handle: '$name.test',
       viewer: ViewerState(
         muted: def.muted || def.mutedByList,
-        mutedByList: def.mutedByList
-            ? m.listViewBasic(name: 'Fake List')
-            : null,
+        mutedByList:
+            def.mutedByList ? m.listViewBasic(name: 'Fake List') : null,
         blockedBy: def.blockedBy,
         blocking: def.blocking || def.blockingByList
             ? AtUri('at://did:web:self.test/app.bsky.graph.block/fake')
             : null,
-        blockingByList: def.blockingByList
-            ? m.listViewBasic(name: 'Fake List')
-            : null,
+        blockingByList:
+            def.blockingByList ? m.listViewBasic(name: 'Fake List') : null,
       ),
       labels: labels,
     );

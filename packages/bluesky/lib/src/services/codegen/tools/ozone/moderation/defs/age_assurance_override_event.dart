@@ -39,7 +39,6 @@ abstract class AgeAssuranceOverrideEvent with _$AgeAssuranceOverrideEvent {
 
     /// Comment describing the reason for the override.
     required String comment,
-
     Map<String, dynamic>? $unknown,
   }) = _AgeAssuranceOverrideEvent;
 

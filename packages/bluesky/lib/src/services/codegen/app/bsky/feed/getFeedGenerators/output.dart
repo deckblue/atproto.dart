@@ -28,7 +28,6 @@ abstract class FeedGetFeedGeneratorsOutput with _$FeedGetFeedGeneratorsOutput {
   @JsonSerializable(includeIfNull: false)
   const factory FeedGetFeedGeneratorsOutput({
     @GeneratorViewConverter() required List<GeneratorView> feeds,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetFeedGeneratorsOutput;
 

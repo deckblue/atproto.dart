@@ -26,7 +26,6 @@ abstract class ConvoAcceptConvoOutput with _$ConvoAcceptConvoOutput {
   const factory ConvoAcceptConvoOutput({
     /// Rev when the convo was accepted. If not present, the convo was already accepted.
     String? rev,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoAcceptConvoOutput;
 

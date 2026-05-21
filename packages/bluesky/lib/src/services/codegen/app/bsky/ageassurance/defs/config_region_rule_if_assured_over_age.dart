@@ -35,13 +35,13 @@ abstract class ConfigRegionRuleIfAssuredOverAge
     /// The age threshold as a whole integer.
     required int age,
     @AccessConverter() required Access access,
-
     Map<String, dynamic>? $unknown,
   }) = _ConfigRegionRuleIfAssuredOverAge;
 
   factory ConfigRegionRuleIfAssuredOverAge.fromJson(
     Map<String, Object?> json,
-  ) => _$ConfigRegionRuleIfAssuredOverAgeFromJson(json);
+  ) =>
+      _$ConfigRegionRuleIfAssuredOverAgeFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('\$type')) return false;
@@ -50,9 +50,8 @@ abstract class ConfigRegionRuleIfAssuredOverAge
   }
 }
 
-final class ConfigRegionRuleIfAssuredOverAgeConverter
-    extends
-        JsonConverter<ConfigRegionRuleIfAssuredOverAge, Map<String, dynamic>> {
+final class ConfigRegionRuleIfAssuredOverAgeConverter extends JsonConverter<
+    ConfigRegionRuleIfAssuredOverAge, Map<String, dynamic>> {
   const ConfigRegionRuleIfAssuredOverAgeConverter();
 
   @override

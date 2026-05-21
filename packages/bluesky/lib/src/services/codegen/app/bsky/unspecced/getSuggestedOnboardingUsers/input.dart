@@ -28,13 +28,13 @@ abstract class UnspeccedGetSuggestedOnboardingUsersInput
     /// Category of users to get suggestions for.
     String? category,
     @Default(25) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetSuggestedOnboardingUsersInput;
 
   factory UnspeccedGetSuggestedOnboardingUsersInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetSuggestedOnboardingUsersInputFromJson(json);
+  ) =>
+      _$UnspeccedGetSuggestedOnboardingUsersInputFromJson(json);
 }
 
 extension UnspeccedGetSuggestedOnboardingUsersInputExtension
@@ -44,11 +44,8 @@ extension UnspeccedGetSuggestedOnboardingUsersInputExtension
 }
 
 final class UnspeccedGetSuggestedOnboardingUsersInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetSuggestedOnboardingUsersInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetSuggestedOnboardingUsersInput,
+        Map<String, dynamic>> {
   const UnspeccedGetSuggestedOnboardingUsersInputConverter();
 
   @override
@@ -63,5 +60,6 @@ final class UnspeccedGetSuggestedOnboardingUsersInputConverter
   @override
   Map<String, dynamic> toJson(
     UnspeccedGetSuggestedOnboardingUsersInput object,
-  ) => untranslate(object.toJson());
+  ) =>
+      untranslate(object.toJson());
 }

@@ -31,9 +31,13 @@ mixin _$ConvoView {
   UConvoViewLastReaction? get lastReaction =>
       throw _privateConstructorUsedError;
   bool get muted => throw _privateConstructorUsedError;
-  @ConvoViewStatusConverter()
-  ConvoViewStatus? get status => throw _privateConstructorUsedError;
+
+  /// Convo status for the viewer member (not the convo itself).
+  @ConvoStatusConverter()
+  ConvoStatus? get status => throw _privateConstructorUsedError;
   int get unreadCount => throw _privateConstructorUsedError;
+  @UConvoViewKindConverter()
+  UConvoViewKind? get kind => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ConvoView to a JSON map.
@@ -59,13 +63,15 @@ abstract class $ConvoViewCopyWith<$Res> {
       @UConvoViewLastMessageConverter() UConvoViewLastMessage? lastMessage,
       @UConvoViewLastReactionConverter() UConvoViewLastReaction? lastReaction,
       bool muted,
-      @ConvoViewStatusConverter() ConvoViewStatus? status,
+      @ConvoStatusConverter() ConvoStatus? status,
       int unreadCount,
+      @UConvoViewKindConverter() UConvoViewKind? kind,
       Map<String, dynamic>? $unknown});
 
   $UConvoViewLastMessageCopyWith<$Res>? get lastMessage;
   $UConvoViewLastReactionCopyWith<$Res>? get lastReaction;
-  $ConvoViewStatusCopyWith<$Res>? get status;
+  $ConvoStatusCopyWith<$Res>? get status;
+  $UConvoViewKindCopyWith<$Res>? get kind;
 }
 
 /// @nodoc
@@ -92,6 +98,7 @@ class _$ConvoViewCopyWithImpl<$Res, $Val extends ConvoView>
     Object? muted = null,
     Object? status = freezed,
     Object? unreadCount = null,
+    Object? kind = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -126,11 +133,15 @@ class _$ConvoViewCopyWithImpl<$Res, $Val extends ConvoView>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as ConvoViewStatus?,
+              as ConvoStatus?,
       unreadCount: null == unreadCount
           ? _value.unreadCount
           : unreadCount // ignore: cast_nullable_to_non_nullable
               as int,
+      kind: freezed == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as UConvoViewKind?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -170,13 +181,27 @@ class _$ConvoViewCopyWithImpl<$Res, $Val extends ConvoView>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ConvoViewStatusCopyWith<$Res>? get status {
+  $ConvoStatusCopyWith<$Res>? get status {
     if (_value.status == null) {
       return null;
     }
 
-    return $ConvoViewStatusCopyWith<$Res>(_value.status!, (value) {
+    return $ConvoStatusCopyWith<$Res>(_value.status!, (value) {
       return _then(_value.copyWith(status: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ConvoView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UConvoViewKindCopyWith<$Res>? get kind {
+    if (_value.kind == null) {
+      return null;
+    }
+
+    return $UConvoViewKindCopyWith<$Res>(_value.kind!, (value) {
+      return _then(_value.copyWith(kind: value) as $Val);
     });
   }
 }
@@ -197,8 +222,9 @@ abstract class _$$ConvoViewImplCopyWith<$Res>
       @UConvoViewLastMessageConverter() UConvoViewLastMessage? lastMessage,
       @UConvoViewLastReactionConverter() UConvoViewLastReaction? lastReaction,
       bool muted,
-      @ConvoViewStatusConverter() ConvoViewStatus? status,
+      @ConvoStatusConverter() ConvoStatus? status,
       int unreadCount,
+      @UConvoViewKindConverter() UConvoViewKind? kind,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -206,7 +232,9 @@ abstract class _$$ConvoViewImplCopyWith<$Res>
   @override
   $UConvoViewLastReactionCopyWith<$Res>? get lastReaction;
   @override
-  $ConvoViewStatusCopyWith<$Res>? get status;
+  $ConvoStatusCopyWith<$Res>? get status;
+  @override
+  $UConvoViewKindCopyWith<$Res>? get kind;
 }
 
 /// @nodoc
@@ -231,6 +259,7 @@ class __$$ConvoViewImplCopyWithImpl<$Res>
     Object? muted = null,
     Object? status = freezed,
     Object? unreadCount = null,
+    Object? kind = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ConvoViewImpl(
@@ -265,11 +294,15 @@ class __$$ConvoViewImplCopyWithImpl<$Res>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as ConvoViewStatus?,
+              as ConvoStatus?,
       unreadCount: null == unreadCount
           ? _value.unreadCount
           : unreadCount // ignore: cast_nullable_to_non_nullable
               as int,
+      kind: freezed == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as UConvoViewKind?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -291,8 +324,9 @@ class _$ConvoViewImpl implements _ConvoView {
       @UConvoViewLastMessageConverter() this.lastMessage,
       @UConvoViewLastReactionConverter() this.lastReaction,
       required this.muted,
-      @ConvoViewStatusConverter() this.status,
+      @ConvoStatusConverter() this.status,
       required this.unreadCount,
+      @UConvoViewKindConverter() this.kind,
       final Map<String, dynamic>? $unknown})
       : _members = members,
         _$unknown = $unknown;
@@ -324,11 +358,16 @@ class _$ConvoViewImpl implements _ConvoView {
   final UConvoViewLastReaction? lastReaction;
   @override
   final bool muted;
+
+  /// Convo status for the viewer member (not the convo itself).
   @override
-  @ConvoViewStatusConverter()
-  final ConvoViewStatus? status;
+  @ConvoStatusConverter()
+  final ConvoStatus? status;
   @override
   final int unreadCount;
+  @override
+  @UConvoViewKindConverter()
+  final UConvoViewKind? kind;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -341,7 +380,7 @@ class _$ConvoViewImpl implements _ConvoView {
 
   @override
   String toString() {
-    return 'ConvoView(\$type: ${$type}, id: $id, rev: $rev, members: $members, lastMessage: $lastMessage, lastReaction: $lastReaction, muted: $muted, status: $status, unreadCount: $unreadCount, \$unknown: ${$unknown})';
+    return 'ConvoView(\$type: ${$type}, id: $id, rev: $rev, members: $members, lastMessage: $lastMessage, lastReaction: $lastReaction, muted: $muted, status: $status, unreadCount: $unreadCount, kind: $kind, \$unknown: ${$unknown})';
   }
 
   @override
@@ -361,6 +400,7 @@ class _$ConvoViewImpl implements _ConvoView {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.unreadCount, unreadCount) ||
                 other.unreadCount == unreadCount) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -377,6 +417,7 @@ class _$ConvoViewImpl implements _ConvoView {
       muted,
       status,
       unreadCount,
+      kind,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ConvoView
@@ -407,8 +448,9 @@ abstract class _ConvoView implements ConvoView {
       @UConvoViewLastReactionConverter()
       final UConvoViewLastReaction? lastReaction,
       required final bool muted,
-      @ConvoViewStatusConverter() final ConvoViewStatus? status,
+      @ConvoStatusConverter() final ConvoStatus? status,
       required final int unreadCount,
+      @UConvoViewKindConverter() final UConvoViewKind? kind,
       final Map<String, dynamic>? $unknown}) = _$ConvoViewImpl;
 
   factory _ConvoView.fromJson(Map<String, dynamic> json) =
@@ -431,11 +473,16 @@ abstract class _ConvoView implements ConvoView {
   UConvoViewLastReaction? get lastReaction;
   @override
   bool get muted;
+
+  /// Convo status for the viewer member (not the convo itself).
   @override
-  @ConvoViewStatusConverter()
-  ConvoViewStatus? get status;
+  @ConvoStatusConverter()
+  ConvoStatus? get status;
   @override
   int get unreadCount;
+  @override
+  @UConvoViewKindConverter()
+  UConvoViewKind? get kind;
   @override
   Map<String, dynamic>? get $unknown;
 

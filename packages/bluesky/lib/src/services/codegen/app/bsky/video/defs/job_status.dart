@@ -48,7 +48,6 @@ abstract class JobStatus with _$JobStatus {
     @BlobConverter() Blob? blob,
     String? error,
     String? message,
-
     Map<String, dynamic>? $unknown,
   }) = _JobStatus;
 

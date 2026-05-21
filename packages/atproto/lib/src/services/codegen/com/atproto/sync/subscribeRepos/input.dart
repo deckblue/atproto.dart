@@ -26,7 +26,6 @@ abstract class SyncSubscribeReposInput with _$SyncSubscribeReposInput {
   const factory SyncSubscribeReposInput({
     /// The last known event seq number to backfill from.
     int? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncSubscribeReposInput;
 

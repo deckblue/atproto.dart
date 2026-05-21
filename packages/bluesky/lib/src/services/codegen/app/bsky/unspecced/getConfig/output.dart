@@ -29,7 +29,6 @@ abstract class UnspeccedGetConfigOutput with _$UnspeccedGetConfigOutput {
   const factory UnspeccedGetConfigOutput({
     bool? checkEmailConfirmed,
     @LiveNowConfigConverter() List<LiveNowConfig>? liveNow,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetConfigOutput;
 

@@ -40,7 +40,7 @@ final class GetBlobCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "did": argResults!["did"],
-    "cid": argResults!["cid"],
-  };
+        "did": argResults!["did"],
+        "cid": argResults!["cid"],
+      };
 }

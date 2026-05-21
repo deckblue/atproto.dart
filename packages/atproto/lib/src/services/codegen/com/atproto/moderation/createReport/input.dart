@@ -42,7 +42,6 @@ abstract class ModerationCreateReportInput with _$ModerationCreateReportInput {
     @UModerationCreateReportSubjectConverter()
     required UModerationCreateReportSubject subject,
     @ModToolConverter() ModTool? modTool,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationCreateReportInput;
 

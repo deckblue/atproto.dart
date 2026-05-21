@@ -36,7 +36,7 @@ final class ResetPasswordCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "token": argResults!["token"],
-    "password": argResults!["password"],
-  };
+        "token": argResults!["token"],
+        "password": argResults!["password"],
+      };
 }

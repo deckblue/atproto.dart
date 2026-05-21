@@ -27,6 +27,9 @@ mixin _$EmbedExternalExternal {
   String get description => throw _privateConstructorUsedError;
   @BlobConverter()
   Blob? get thumb => throw _privateConstructorUsedError;
+  @RepoStrongRefConverter()
+  List<RepoStrongRef>? get associatedRecords =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this EmbedExternalExternal to a JSON map.
@@ -51,6 +54,7 @@ abstract class $EmbedExternalExternalCopyWith<$Res> {
       String title,
       String description,
       @BlobConverter() Blob? thumb,
+      @RepoStrongRefConverter() List<RepoStrongRef>? associatedRecords,
       Map<String, dynamic>? $unknown});
 
   $BlobCopyWith<$Res>? get thumb;
@@ -77,6 +81,7 @@ class _$EmbedExternalExternalCopyWithImpl<$Res,
     Object? title = null,
     Object? description = null,
     Object? thumb = freezed,
+    Object? associatedRecords = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -100,6 +105,10 @@ class _$EmbedExternalExternalCopyWithImpl<$Res,
           ? _value.thumb
           : thumb // ignore: cast_nullable_to_non_nullable
               as Blob?,
+      associatedRecords: freezed == associatedRecords
+          ? _value.associatedRecords
+          : associatedRecords // ignore: cast_nullable_to_non_nullable
+              as List<RepoStrongRef>?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -137,6 +146,7 @@ abstract class _$$EmbedExternalExternalImplCopyWith<$Res>
       String title,
       String description,
       @BlobConverter() Blob? thumb,
+      @RepoStrongRefConverter() List<RepoStrongRef>? associatedRecords,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -162,6 +172,7 @@ class __$$EmbedExternalExternalImplCopyWithImpl<$Res>
     Object? title = null,
     Object? description = null,
     Object? thumb = freezed,
+    Object? associatedRecords = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$EmbedExternalExternalImpl(
@@ -185,6 +196,10 @@ class __$$EmbedExternalExternalImplCopyWithImpl<$Res>
           ? _value.thumb
           : thumb // ignore: cast_nullable_to_non_nullable
               as Blob?,
+      associatedRecords: freezed == associatedRecords
+          ? _value._associatedRecords
+          : associatedRecords // ignore: cast_nullable_to_non_nullable
+              as List<RepoStrongRef>?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -203,8 +218,10 @@ class _$EmbedExternalExternalImpl implements _EmbedExternalExternal {
       required this.title,
       required this.description,
       @BlobConverter() this.thumb,
+      @RepoStrongRefConverter() final List<RepoStrongRef>? associatedRecords,
       final Map<String, dynamic>? $unknown})
-      : _$unknown = $unknown;
+      : _associatedRecords = associatedRecords,
+        _$unknown = $unknown;
 
   factory _$EmbedExternalExternalImpl.fromJson(Map<String, dynamic> json) =>
       _$$EmbedExternalExternalImplFromJson(json);
@@ -221,6 +238,18 @@ class _$EmbedExternalExternalImpl implements _EmbedExternalExternal {
   @override
   @BlobConverter()
   final Blob? thumb;
+  final List<RepoStrongRef>? _associatedRecords;
+  @override
+  @RepoStrongRefConverter()
+  List<RepoStrongRef>? get associatedRecords {
+    final value = _associatedRecords;
+    if (value == null) return null;
+    if (_associatedRecords is EqualUnmodifiableListView)
+      return _associatedRecords;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -233,7 +262,7 @@ class _$EmbedExternalExternalImpl implements _EmbedExternalExternal {
 
   @override
   String toString() {
-    return 'EmbedExternalExternal(\$type: ${$type}, uri: $uri, title: $title, description: $description, thumb: $thumb, \$unknown: ${$unknown})';
+    return 'EmbedExternalExternal(\$type: ${$type}, uri: $uri, title: $title, description: $description, thumb: $thumb, associatedRecords: $associatedRecords, \$unknown: ${$unknown})';
   }
 
   @override
@@ -247,13 +276,22 @@ class _$EmbedExternalExternalImpl implements _EmbedExternalExternal {
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.thumb, thumb) || other.thumb == thumb) &&
+            const DeepCollectionEquality()
+                .equals(other._associatedRecords, _associatedRecords) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, $type, uri, title, description,
-      thumb, const DeepCollectionEquality().hash(_$unknown));
+  int get hashCode => Object.hash(
+      runtimeType,
+      $type,
+      uri,
+      title,
+      description,
+      thumb,
+      const DeepCollectionEquality().hash(_associatedRecords),
+      const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of EmbedExternalExternal
   /// with the given fields replaced by the non-null parameter values.
@@ -279,6 +317,7 @@ abstract class _EmbedExternalExternal implements EmbedExternalExternal {
       required final String title,
       required final String description,
       @BlobConverter() final Blob? thumb,
+      @RepoStrongRefConverter() final List<RepoStrongRef>? associatedRecords,
       final Map<String, dynamic>? $unknown}) = _$EmbedExternalExternalImpl;
 
   factory _EmbedExternalExternal.fromJson(Map<String, dynamic> json) =
@@ -295,6 +334,9 @@ abstract class _EmbedExternalExternal implements EmbedExternalExternal {
   @override
   @BlobConverter()
   Blob? get thumb;
+  @override
+  @RepoStrongRefConverter()
+  List<RepoStrongRef>? get associatedRecords;
   @override
   Map<String, dynamic>? get $unknown;
 

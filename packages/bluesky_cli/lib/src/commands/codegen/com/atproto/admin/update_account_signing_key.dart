@@ -41,7 +41,7 @@ final class UpdateAccountSigningKeyCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "did": argResults!["did"],
-    "signingKey": argResults!["signingKey"],
-  };
+        "did": argResults!["did"],
+        "signingKey": argResults!["signingKey"],
+      };
 }

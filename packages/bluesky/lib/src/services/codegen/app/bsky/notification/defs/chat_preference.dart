@@ -30,7 +30,6 @@ abstract class ChatPreference with _$ChatPreference {
     @Default('app.bsky.notification.defs#chatPreference') String $type,
     @ChatPreferenceIncludeConverter() required ChatPreferenceInclude include,
     required bool push,
-
     Map<String, dynamic>? $unknown,
   }) = _ChatPreference;
 

@@ -18,6 +18,7 @@ part 'log_accept_convo.g.dart';
 // LexGenerator
 // **************************************************************************
 
+/// Event indicating the viewer accepted a convo, and it can be moved out of the request inbox. Can be direct or group.
 @freezed
 abstract class LogAcceptConvo with _$LogAcceptConvo {
   static const knownProps = <String>['rev', 'convoId'];
@@ -27,7 +28,6 @@ abstract class LogAcceptConvo with _$LogAcceptConvo {
     @Default('chat.bsky.convo.defs#logAcceptConvo') String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogAcceptConvo;
 

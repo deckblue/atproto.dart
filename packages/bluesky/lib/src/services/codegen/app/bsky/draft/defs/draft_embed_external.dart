@@ -26,7 +26,6 @@ abstract class DraftEmbedExternal with _$DraftEmbedExternal {
   const factory DraftEmbedExternal({
     @Default('app.bsky.draft.defs#draftEmbedExternal') String $type,
     required String uri,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftEmbedExternal;
 

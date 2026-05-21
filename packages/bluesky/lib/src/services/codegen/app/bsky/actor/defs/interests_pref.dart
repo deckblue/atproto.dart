@@ -26,7 +26,6 @@ abstract class InterestsPref with _$InterestsPref {
   const factory InterestsPref({
     @Default('app.bsky.actor.defs#interestsPref') String $type,
     required List<String> tags,
-
     Map<String, dynamic>? $unknown,
   }) = _InterestsPref;
 

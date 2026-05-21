@@ -29,7 +29,6 @@ abstract class GraphGetListBlocksOutput with _$GraphGetListBlocksOutput {
   const factory GraphGetListBlocksOutput({
     String? cursor,
     @ListViewConverter() required List<ListView> lists,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetListBlocksOutput;
 

@@ -18,6 +18,7 @@ part 'log_leave_convo.g.dart';
 // LexGenerator
 // **************************************************************************
 
+/// Event indicating the viewer left a convo. Can be direct or group.
 @freezed
 abstract class LogLeaveConvo with _$LogLeaveConvo {
   static const knownProps = <String>['rev', 'convoId'];
@@ -27,7 +28,6 @@ abstract class LogLeaveConvo with _$LogLeaveConvo {
     @Default('chat.bsky.convo.defs#logLeaveConvo') String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogLeaveConvo;
 

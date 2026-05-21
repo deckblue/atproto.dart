@@ -99,7 +99,6 @@ abstract class ModerationQueryEventsInput with _$ModerationQueryEventsInput {
     /// If specified, only events where strikeCount value is set are returned.
     bool? withStrike,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationQueryEventsInput;
 

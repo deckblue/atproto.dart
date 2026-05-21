@@ -27,7 +27,6 @@ abstract class AccountCodes with _$AccountCodes {
     @Default('com.atproto.server.createInviteCodes#accountCodes') String $type,
     required String account,
     required List<String> codes,
-
     Map<String, dynamic>? $unknown,
   }) = _AccountCodes;
 

@@ -32,7 +32,6 @@ abstract class DeletedMessageView with _$DeletedMessageView {
     required String rev,
     @MessageViewSenderConverter() required MessageViewSender sender,
     required DateTime sentAt,
-
     Map<String, dynamic>? $unknown,
   }) = _DeletedMessageView;
 

@@ -31,11 +31,14 @@ mixin _$ProfileViewBasic {
   ViewerState? get viewer => throw _privateConstructorUsedError;
   @LabelConverter()
   List<Label>? get labels => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// Set to true when the actor cannot actively participate in conversations
   bool? get chatDisabled => throw _privateConstructorUsedError;
   @VerificationStateConverter()
   VerificationState? get verification => throw _privateConstructorUsedError;
+  @UProfileViewBasicKindConverter()
+  UProfileViewBasicKind? get kind => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ProfileViewBasic to a JSON map.
@@ -63,13 +66,16 @@ abstract class $ProfileViewBasicCopyWith<$Res> {
       @ProfileAssociatedConverter() ProfileAssociated? associated,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
+      DateTime? createdAt,
       bool? chatDisabled,
       @VerificationStateConverter() VerificationState? verification,
+      @UProfileViewBasicKindConverter() UProfileViewBasicKind? kind,
       Map<String, dynamic>? $unknown});
 
   $ProfileAssociatedCopyWith<$Res>? get associated;
   $ViewerStateCopyWith<$Res>? get viewer;
   $VerificationStateCopyWith<$Res>? get verification;
+  $UProfileViewBasicKindCopyWith<$Res>? get kind;
 }
 
 /// @nodoc
@@ -95,8 +101,10 @@ class _$ProfileViewBasicCopyWithImpl<$Res, $Val extends ProfileViewBasic>
     Object? associated = freezed,
     Object? viewer = freezed,
     Object? labels = freezed,
+    Object? createdAt = freezed,
     Object? chatDisabled = freezed,
     Object? verification = freezed,
+    Object? kind = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -132,6 +140,10 @@ class _$ProfileViewBasicCopyWithImpl<$Res, $Val extends ProfileViewBasic>
           ? _value.labels
           : labels // ignore: cast_nullable_to_non_nullable
               as List<Label>?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       chatDisabled: freezed == chatDisabled
           ? _value.chatDisabled
           : chatDisabled // ignore: cast_nullable_to_non_nullable
@@ -140,6 +152,10 @@ class _$ProfileViewBasicCopyWithImpl<$Res, $Val extends ProfileViewBasic>
           ? _value.verification
           : verification // ignore: cast_nullable_to_non_nullable
               as VerificationState?,
+      kind: freezed == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as UProfileViewBasicKind?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -188,6 +204,20 @@ class _$ProfileViewBasicCopyWithImpl<$Res, $Val extends ProfileViewBasic>
       return _then(_value.copyWith(verification: value) as $Val);
     });
   }
+
+  /// Create a copy of ProfileViewBasic
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UProfileViewBasicKindCopyWith<$Res>? get kind {
+    if (_value.kind == null) {
+      return null;
+    }
+
+    return $UProfileViewBasicKindCopyWith<$Res>(_value.kind!, (value) {
+      return _then(_value.copyWith(kind: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -207,8 +237,10 @@ abstract class _$$ProfileViewBasicImplCopyWith<$Res>
       @ProfileAssociatedConverter() ProfileAssociated? associated,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
+      DateTime? createdAt,
       bool? chatDisabled,
       @VerificationStateConverter() VerificationState? verification,
+      @UProfileViewBasicKindConverter() UProfileViewBasicKind? kind,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -217,6 +249,8 @@ abstract class _$$ProfileViewBasicImplCopyWith<$Res>
   $ViewerStateCopyWith<$Res>? get viewer;
   @override
   $VerificationStateCopyWith<$Res>? get verification;
+  @override
+  $UProfileViewBasicKindCopyWith<$Res>? get kind;
 }
 
 /// @nodoc
@@ -240,8 +274,10 @@ class __$$ProfileViewBasicImplCopyWithImpl<$Res>
     Object? associated = freezed,
     Object? viewer = freezed,
     Object? labels = freezed,
+    Object? createdAt = freezed,
     Object? chatDisabled = freezed,
     Object? verification = freezed,
+    Object? kind = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ProfileViewBasicImpl(
@@ -277,6 +313,10 @@ class __$$ProfileViewBasicImplCopyWithImpl<$Res>
           ? _value._labels
           : labels // ignore: cast_nullable_to_non_nullable
               as List<Label>?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       chatDisabled: freezed == chatDisabled
           ? _value.chatDisabled
           : chatDisabled // ignore: cast_nullable_to_non_nullable
@@ -285,6 +325,10 @@ class __$$ProfileViewBasicImplCopyWithImpl<$Res>
           ? _value.verification
           : verification // ignore: cast_nullable_to_non_nullable
               as VerificationState?,
+      kind: freezed == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as UProfileViewBasicKind?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -306,8 +350,10 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
       @ProfileAssociatedConverter() this.associated,
       @ViewerStateConverter() this.viewer,
       @LabelConverter() final List<Label>? labels,
+      this.createdAt,
       this.chatDisabled,
       @VerificationStateConverter() this.verification,
+      @UProfileViewBasicKindConverter() this.kind,
       final Map<String, dynamic>? $unknown})
       : _labels = labels,
         _$unknown = $unknown;
@@ -343,12 +389,18 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
     return EqualUnmodifiableListView(value);
   }
 
+  @override
+  final DateTime? createdAt;
+
   /// Set to true when the actor cannot actively participate in conversations
   @override
   final bool? chatDisabled;
   @override
   @VerificationStateConverter()
   final VerificationState? verification;
+  @override
+  @UProfileViewBasicKindConverter()
+  final UProfileViewBasicKind? kind;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -361,7 +413,7 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
 
   @override
   String toString() {
-    return 'ProfileViewBasic(\$type: ${$type}, did: $did, handle: $handle, displayName: $displayName, avatar: $avatar, associated: $associated, viewer: $viewer, labels: $labels, chatDisabled: $chatDisabled, verification: $verification, \$unknown: ${$unknown})';
+    return 'ProfileViewBasic(\$type: ${$type}, did: $did, handle: $handle, displayName: $displayName, avatar: $avatar, associated: $associated, viewer: $viewer, labels: $labels, createdAt: $createdAt, chatDisabled: $chatDisabled, verification: $verification, kind: $kind, \$unknown: ${$unknown})';
   }
 
   @override
@@ -379,10 +431,13 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
                 other.associated == associated) &&
             (identical(other.viewer, viewer) || other.viewer == viewer) &&
             const DeepCollectionEquality().equals(other._labels, _labels) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             (identical(other.chatDisabled, chatDisabled) ||
                 other.chatDisabled == chatDisabled) &&
             (identical(other.verification, verification) ||
                 other.verification == verification) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -398,8 +453,10 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
       associated,
       viewer,
       const DeepCollectionEquality().hash(_labels),
+      createdAt,
       chatDisabled,
       verification,
+      kind,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ProfileViewBasic
@@ -429,8 +486,10 @@ abstract class _ProfileViewBasic implements ProfileViewBasic {
       @ProfileAssociatedConverter() final ProfileAssociated? associated,
       @ViewerStateConverter() final ViewerState? viewer,
       @LabelConverter() final List<Label>? labels,
+      final DateTime? createdAt,
       final bool? chatDisabled,
       @VerificationStateConverter() final VerificationState? verification,
+      @UProfileViewBasicKindConverter() final UProfileViewBasicKind? kind,
       final Map<String, dynamic>? $unknown}) = _$ProfileViewBasicImpl;
 
   factory _ProfileViewBasic.fromJson(Map<String, dynamic> json) =
@@ -455,6 +514,8 @@ abstract class _ProfileViewBasic implements ProfileViewBasic {
   @override
   @LabelConverter()
   List<Label>? get labels;
+  @override
+  DateTime? get createdAt;
 
   /// Set to true when the actor cannot actively participate in conversations
   @override
@@ -462,6 +523,9 @@ abstract class _ProfileViewBasic implements ProfileViewBasic {
   @override
   @VerificationStateConverter()
   VerificationState? get verification;
+  @override
+  @UProfileViewBasicKindConverter()
+  UProfileViewBasicKind? get kind;
   @override
   Map<String, dynamic>? get $unknown;
 

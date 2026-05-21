@@ -25,7 +25,6 @@ abstract class GraphUnmuteActorInput with _$GraphUnmuteActorInput {
   @JsonSerializable(includeIfNull: false)
   const factory GraphUnmuteActorInput({
     required String actor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphUnmuteActorInput;
 

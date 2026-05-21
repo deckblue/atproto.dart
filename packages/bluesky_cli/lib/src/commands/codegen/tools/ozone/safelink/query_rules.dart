@@ -46,14 +46,15 @@ final class QueryRulesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-    "limit": argResults!["limit"],
-    if (argResults!["urls"] != null) "urls": argResults!["urls"],
-    if (argResults!["patternType"] != null)
-      "patternType": argResults!["patternType"],
-    if (argResults!["actions"] != null) "actions": argResults!["actions"],
-    if (argResults!["reason"] != null) "reason": argResults!["reason"],
-    if (argResults!["createdBy"] != null) "createdBy": argResults!["createdBy"],
-    "sortDirection": argResults!["sortDirection"],
-  };
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": argResults!["limit"],
+        if (argResults!["urls"] != null) "urls": argResults!["urls"],
+        if (argResults!["patternType"] != null)
+          "patternType": argResults!["patternType"],
+        if (argResults!["actions"] != null) "actions": argResults!["actions"],
+        if (argResults!["reason"] != null) "reason": argResults!["reason"],
+        if (argResults!["createdBy"] != null)
+          "createdBy": argResults!["createdBy"],
+        "sortDirection": argResults!["sortDirection"],
+      };
 }

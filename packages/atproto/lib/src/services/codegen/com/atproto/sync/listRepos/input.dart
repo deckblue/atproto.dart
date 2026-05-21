@@ -26,7 +26,6 @@ abstract class SyncListReposInput with _$SyncListReposInput {
   const factory SyncListReposInput({
     @Default(500) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncListReposInput;
 

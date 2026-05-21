@@ -33,7 +33,6 @@ abstract class ListWithMembership with _$ListWithMembership {
     String $type,
     @ListViewConverter() required ListView list,
     @ListItemViewConverter() ListItemView? listItem,
-
     Map<String, dynamic>? $unknown,
   }) = _ListWithMembership;
 

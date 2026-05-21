@@ -29,13 +29,13 @@ abstract class ServerGetAccountInviteCodesInput
 
     /// Controls whether any new 'earned' but not 'created' invites should be created.
     @Default(true) bool createAvailable,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerGetAccountInviteCodesInput;
 
   factory ServerGetAccountInviteCodesInput.fromJson(
     Map<String, Object?> json,
-  ) => _$ServerGetAccountInviteCodesInputFromJson(json);
+  ) =>
+      _$ServerGetAccountInviteCodesInputFromJson(json);
 }
 
 extension ServerGetAccountInviteCodesInputExtension
@@ -46,9 +46,8 @@ extension ServerGetAccountInviteCodesInputExtension
   bool get isNotCreateAvailable => !isCreateAvailable;
 }
 
-final class ServerGetAccountInviteCodesInputConverter
-    extends
-        JsonConverter<ServerGetAccountInviteCodesInput, Map<String, dynamic>> {
+final class ServerGetAccountInviteCodesInputConverter extends JsonConverter<
+    ServerGetAccountInviteCodesInput, Map<String, dynamic>> {
   const ServerGetAccountInviteCodesInputConverter();
 
   @override

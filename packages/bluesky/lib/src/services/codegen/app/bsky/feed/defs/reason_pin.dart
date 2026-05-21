@@ -25,7 +25,6 @@ abstract class ReasonPin with _$ReasonPin {
   @JsonSerializable(includeIfNull: false)
   const factory ReasonPin({
     @Default('app.bsky.feed.defs#reasonPin') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _ReasonPin;
 

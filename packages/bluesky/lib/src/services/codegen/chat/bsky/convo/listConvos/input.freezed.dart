@@ -24,8 +24,19 @@ mixin _$ConvoListConvosInput {
   String? get cursor => throw _privateConstructorUsedError;
   @ConvoListConvosReadStateConverter()
   ConvoListConvosReadState? get readState => throw _privateConstructorUsedError;
+
+  /// Filter convos by their status. It is discouraged to call with "request" and preferred to call chat.bsky.convo.listConvoRequests, which also includes group join requests made by the user.
   @ConvoListConvosStatusConverter()
   ConvoListConvosStatus? get status => throw _privateConstructorUsedError;
+
+  /// Filter by conversation kind.
+  @ConvoListConvosKindConverter()
+  ConvoListConvosKind? get kind => throw _privateConstructorUsedError;
+
+  /// Filter by conversation lock status. Values follow chat.bsky.convo.defs#convoLockStatus.
+  @ConvoListConvosLockStatusConverter()
+  ConvoListConvosLockStatus? get lockStatus =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ConvoListConvosInput to a JSON map.
@@ -49,10 +60,15 @@ abstract class $ConvoListConvosInputCopyWith<$Res> {
       String? cursor,
       @ConvoListConvosReadStateConverter() ConvoListConvosReadState? readState,
       @ConvoListConvosStatusConverter() ConvoListConvosStatus? status,
+      @ConvoListConvosKindConverter() ConvoListConvosKind? kind,
+      @ConvoListConvosLockStatusConverter()
+      ConvoListConvosLockStatus? lockStatus,
       Map<String, dynamic>? $unknown});
 
   $ConvoListConvosReadStateCopyWith<$Res>? get readState;
   $ConvoListConvosStatusCopyWith<$Res>? get status;
+  $ConvoListConvosKindCopyWith<$Res>? get kind;
+  $ConvoListConvosLockStatusCopyWith<$Res>? get lockStatus;
 }
 
 /// @nodoc
@@ -75,6 +91,8 @@ class _$ConvoListConvosInputCopyWithImpl<$Res,
     Object? cursor = freezed,
     Object? readState = freezed,
     Object? status = freezed,
+    Object? kind = freezed,
+    Object? lockStatus = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -94,6 +112,14 @@ class _$ConvoListConvosInputCopyWithImpl<$Res,
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ConvoListConvosStatus?,
+      kind: freezed == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConvoListConvosKind?,
+      lockStatus: freezed == lockStatus
+          ? _value.lockStatus
+          : lockStatus // ignore: cast_nullable_to_non_nullable
+              as ConvoListConvosLockStatus?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -128,6 +154,35 @@ class _$ConvoListConvosInputCopyWithImpl<$Res,
       return _then(_value.copyWith(status: value) as $Val);
     });
   }
+
+  /// Create a copy of ConvoListConvosInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConvoListConvosKindCopyWith<$Res>? get kind {
+    if (_value.kind == null) {
+      return null;
+    }
+
+    return $ConvoListConvosKindCopyWith<$Res>(_value.kind!, (value) {
+      return _then(_value.copyWith(kind: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ConvoListConvosInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConvoListConvosLockStatusCopyWith<$Res>? get lockStatus {
+    if (_value.lockStatus == null) {
+      return null;
+    }
+
+    return $ConvoListConvosLockStatusCopyWith<$Res>(_value.lockStatus!,
+        (value) {
+      return _then(_value.copyWith(lockStatus: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -143,12 +198,19 @@ abstract class _$$ConvoListConvosInputImplCopyWith<$Res>
       String? cursor,
       @ConvoListConvosReadStateConverter() ConvoListConvosReadState? readState,
       @ConvoListConvosStatusConverter() ConvoListConvosStatus? status,
+      @ConvoListConvosKindConverter() ConvoListConvosKind? kind,
+      @ConvoListConvosLockStatusConverter()
+      ConvoListConvosLockStatus? lockStatus,
       Map<String, dynamic>? $unknown});
 
   @override
   $ConvoListConvosReadStateCopyWith<$Res>? get readState;
   @override
   $ConvoListConvosStatusCopyWith<$Res>? get status;
+  @override
+  $ConvoListConvosKindCopyWith<$Res>? get kind;
+  @override
+  $ConvoListConvosLockStatusCopyWith<$Res>? get lockStatus;
 }
 
 /// @nodoc
@@ -168,6 +230,8 @@ class __$$ConvoListConvosInputImplCopyWithImpl<$Res>
     Object? cursor = freezed,
     Object? readState = freezed,
     Object? status = freezed,
+    Object? kind = freezed,
+    Object? lockStatus = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ConvoListConvosInputImpl(
@@ -187,6 +251,14 @@ class __$$ConvoListConvosInputImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ConvoListConvosStatus?,
+      kind: freezed == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConvoListConvosKind?,
+      lockStatus: freezed == lockStatus
+          ? _value.lockStatus
+          : lockStatus // ignore: cast_nullable_to_non_nullable
+              as ConvoListConvosLockStatus?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -204,6 +276,8 @@ class _$ConvoListConvosInputImpl implements _ConvoListConvosInput {
       this.cursor,
       @ConvoListConvosReadStateConverter() this.readState,
       @ConvoListConvosStatusConverter() this.status,
+      @ConvoListConvosKindConverter() this.kind,
+      @ConvoListConvosLockStatusConverter() this.lockStatus,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -218,9 +292,21 @@ class _$ConvoListConvosInputImpl implements _ConvoListConvosInput {
   @override
   @ConvoListConvosReadStateConverter()
   final ConvoListConvosReadState? readState;
+
+  /// Filter convos by their status. It is discouraged to call with "request" and preferred to call chat.bsky.convo.listConvoRequests, which also includes group join requests made by the user.
   @override
   @ConvoListConvosStatusConverter()
   final ConvoListConvosStatus? status;
+
+  /// Filter by conversation kind.
+  @override
+  @ConvoListConvosKindConverter()
+  final ConvoListConvosKind? kind;
+
+  /// Filter by conversation lock status. Values follow chat.bsky.convo.defs#convoLockStatus.
+  @override
+  @ConvoListConvosLockStatusConverter()
+  final ConvoListConvosLockStatus? lockStatus;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -233,7 +319,7 @@ class _$ConvoListConvosInputImpl implements _ConvoListConvosInput {
 
   @override
   String toString() {
-    return 'ConvoListConvosInput(limit: $limit, cursor: $cursor, readState: $readState, status: $status, \$unknown: ${$unknown})';
+    return 'ConvoListConvosInput(limit: $limit, cursor: $cursor, readState: $readState, status: $status, kind: $kind, lockStatus: $lockStatus, \$unknown: ${$unknown})';
   }
 
   @override
@@ -246,13 +332,16 @@ class _$ConvoListConvosInputImpl implements _ConvoListConvosInput {
             (identical(other.readState, readState) ||
                 other.readState == readState) &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.lockStatus, lockStatus) ||
+                other.lockStatus == lockStatus) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, limit, cursor, readState, status,
-      const DeepCollectionEquality().hash(_$unknown));
+      kind, lockStatus, const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ConvoListConvosInput
   /// with the given fields replaced by the non-null parameter values.
@@ -279,6 +368,9 @@ abstract class _ConvoListConvosInput implements ConvoListConvosInput {
       @ConvoListConvosReadStateConverter()
       final ConvoListConvosReadState? readState,
       @ConvoListConvosStatusConverter() final ConvoListConvosStatus? status,
+      @ConvoListConvosKindConverter() final ConvoListConvosKind? kind,
+      @ConvoListConvosLockStatusConverter()
+      final ConvoListConvosLockStatus? lockStatus,
       final Map<String, dynamic>? $unknown}) = _$ConvoListConvosInputImpl;
 
   factory _ConvoListConvosInput.fromJson(Map<String, dynamic> json) =
@@ -291,9 +383,21 @@ abstract class _ConvoListConvosInput implements ConvoListConvosInput {
   @override
   @ConvoListConvosReadStateConverter()
   ConvoListConvosReadState? get readState;
+
+  /// Filter convos by their status. It is discouraged to call with "request" and preferred to call chat.bsky.convo.listConvoRequests, which also includes group join requests made by the user.
   @override
   @ConvoListConvosStatusConverter()
   ConvoListConvosStatus? get status;
+
+  /// Filter by conversation kind.
+  @override
+  @ConvoListConvosKindConverter()
+  ConvoListConvosKind? get kind;
+
+  /// Filter by conversation lock status. Values follow chat.bsky.convo.defs#convoLockStatus.
+  @override
+  @ConvoListConvosLockStatusConverter()
+  ConvoListConvosLockStatus? get lockStatus;
   @override
   Map<String, dynamic>? get $unknown;
 

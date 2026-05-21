@@ -25,7 +25,6 @@ abstract class IdentityResolveHandleOutput with _$IdentityResolveHandleOutput {
   @JsonSerializable(includeIfNull: false)
   const factory IdentityResolveHandleOutput({
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _IdentityResolveHandleOutput;
 

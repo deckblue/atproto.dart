@@ -30,7 +30,6 @@ abstract class AdminGetInviteCodesInput with _$AdminGetInviteCodesInput {
     @AdminGetInviteCodesSortConverter() AdminGetInviteCodesSort? sort,
     @Default(100) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminGetInviteCodesInput;
 

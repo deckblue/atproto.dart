@@ -26,7 +26,6 @@ abstract class RepoUploadBlobOutput with _$RepoUploadBlobOutput {
   @JsonSerializable(includeIfNull: false)
   const factory RepoUploadBlobOutput({
     @BlobConverter() required Blob blob,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoUploadBlobOutput;
 

@@ -27,7 +27,6 @@ abstract class BookmarkCreateBookmarkInput with _$BookmarkCreateBookmarkInput {
   const factory BookmarkCreateBookmarkInput({
     @AtUriConverter() required AtUri uri,
     required String cid,
-
     Map<String, dynamic>? $unknown,
   }) = _BookmarkCreateBookmarkInput;
 

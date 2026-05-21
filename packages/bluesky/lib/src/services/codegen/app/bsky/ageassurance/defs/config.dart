@@ -30,7 +30,6 @@ abstract class Config with _$Config {
   const factory Config({
     @Default('app.bsky.ageassurance.defs#config') String $type,
     @ConfigRegionConverter() required List<ConfigRegion> regions,
-
     Map<String, dynamic>? $unknown,
   }) = _Config;
 

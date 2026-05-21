@@ -32,7 +32,6 @@ abstract class GraphGetListsInput with _$GraphGetListsInput {
     @Default(50) int limit,
     String? cursor,
     @GraphGetListsPurposesConverter() List<GraphGetListsPurposes>? purposes,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetListsInput;
 

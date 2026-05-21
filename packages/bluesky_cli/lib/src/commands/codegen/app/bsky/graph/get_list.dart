@@ -42,8 +42,8 @@ final class GetListCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "list": argResults!["list"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "list": argResults!["list"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

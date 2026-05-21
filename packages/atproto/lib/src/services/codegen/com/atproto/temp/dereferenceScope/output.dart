@@ -26,7 +26,6 @@ abstract class TempDereferenceScopeOutput with _$TempDereferenceScopeOutput {
   const factory TempDereferenceScopeOutput({
     /// The full oauth permission scope
     required String scope,
-
     Map<String, dynamic>? $unknown,
   }) = _TempDereferenceScopeOutput;
 

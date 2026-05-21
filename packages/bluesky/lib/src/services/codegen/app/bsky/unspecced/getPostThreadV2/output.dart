@@ -34,7 +34,6 @@ abstract class UnspeccedGetPostThreadV2Output
 
     /// Whether this thread has additional replies. If true, a call can be made to the `getPostThreadOtherV2` endpoint to retrieve them.
     required bool hasOtherReplies,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetPostThreadV2Output;
 
@@ -48,9 +47,8 @@ extension UnspeccedGetPostThreadV2OutputExtension
   bool get hasNotThreadgate => !hasThreadgate;
 }
 
-final class UnspeccedGetPostThreadV2OutputConverter
-    extends
-        JsonConverter<UnspeccedGetPostThreadV2Output, Map<String, dynamic>> {
+final class UnspeccedGetPostThreadV2OutputConverter extends JsonConverter<
+    UnspeccedGetPostThreadV2Output, Map<String, dynamic>> {
   const UnspeccedGetPostThreadV2OutputConverter();
 
   @override

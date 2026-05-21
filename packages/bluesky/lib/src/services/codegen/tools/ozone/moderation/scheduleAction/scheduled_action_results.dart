@@ -31,7 +31,6 @@ abstract class ScheduledActionResults with _$ScheduledActionResults {
     String $type,
     required List<String> succeeded,
     @FailedSchedulingConverter() required List<FailedScheduling> failed,
-
     Map<String, dynamic>? $unknown,
   }) = _ScheduledActionResults;
 

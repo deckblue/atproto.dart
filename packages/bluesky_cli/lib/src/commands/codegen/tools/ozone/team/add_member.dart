@@ -36,7 +36,7 @@ final class AddMemberCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "did": argResults!["did"],
-    "role": argResults!["role"],
-  };
+        "did": argResults!["did"],
+        "role": argResults!["role"],
+      };
 }

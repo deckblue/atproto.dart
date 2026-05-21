@@ -54,7 +54,6 @@ abstract class AccountView with _$AccountView {
     String? inviteNote,
     DateTime? deactivatedAt,
     @ThreatSignatureConverter() List<ThreatSignature>? threatSignatures,
-
     Map<String, dynamic>? $unknown,
   }) = _AccountView;
 

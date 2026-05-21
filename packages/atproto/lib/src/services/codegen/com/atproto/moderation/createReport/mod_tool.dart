@@ -30,7 +30,6 @@ abstract class ModTool with _$ModTool {
     /// Name/identifier of the source (e.g., 'bsky-app/android', 'bsky-web/chrome')
     required String name,
     Map<String, dynamic>? meta,
-
     Map<String, dynamic>? $unknown,
   }) = _ModTool;
 

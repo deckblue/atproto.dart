@@ -46,7 +46,6 @@ abstract class SubjectView with _$SubjectView {
     @RepoViewDetailConverter() RepoViewDetail? repo,
     @USubjectViewProfileConverter() USubjectViewProfile? profile,
     @RecordViewDetailConverter() RecordViewDetail? record,
-
     Map<String, dynamic>? $unknown,
   }) = _SubjectView;
 

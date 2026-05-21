@@ -29,7 +29,6 @@ abstract class SavedFeedsPref with _$SavedFeedsPref {
     @AtUriConverter() required List<AtUri> pinned,
     @AtUriConverter() required List<AtUri> saved,
     int? timelineIndex,
-
     Map<String, dynamic>? $unknown,
   }) = _SavedFeedsPref;
 

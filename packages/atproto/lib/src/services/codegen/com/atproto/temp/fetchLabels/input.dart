@@ -26,7 +26,6 @@ abstract class TempFetchLabelsInput with _$TempFetchLabelsInput {
   const factory TempFetchLabelsInput({
     int? since,
     @Default(50) int limit,
-
     Map<String, dynamic>? $unknown,
   }) = _TempFetchLabelsInput;
 

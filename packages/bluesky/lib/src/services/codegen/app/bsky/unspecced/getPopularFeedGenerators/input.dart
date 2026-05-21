@@ -28,13 +28,13 @@ abstract class UnspeccedGetPopularFeedGeneratorsInput
     @Default(50) int limit,
     String? cursor,
     String? query,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetPopularFeedGeneratorsInput;
 
   factory UnspeccedGetPopularFeedGeneratorsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetPopularFeedGeneratorsInputFromJson(json);
+  ) =>
+      _$UnspeccedGetPopularFeedGeneratorsInputFromJson(json);
 }
 
 extension UnspeccedGetPopularFeedGeneratorsInputExtension
@@ -46,11 +46,8 @@ extension UnspeccedGetPopularFeedGeneratorsInputExtension
 }
 
 final class UnspeccedGetPopularFeedGeneratorsInputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetPopularFeedGeneratorsInput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<UnspeccedGetPopularFeedGeneratorsInput,
+        Map<String, dynamic>> {
   const UnspeccedGetPopularFeedGeneratorsInputConverter();
 
   @override

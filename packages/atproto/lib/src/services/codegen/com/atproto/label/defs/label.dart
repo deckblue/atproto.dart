@@ -63,7 +63,6 @@ abstract class Label with _$Label {
 
     /// Signature of dag-cbor encoded label.
     Map<String, dynamic>? sig,
-
     Map<String, dynamic>? $unknown,
   }) = _Label;
 

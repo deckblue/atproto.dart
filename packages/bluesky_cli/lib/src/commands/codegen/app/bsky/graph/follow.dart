@@ -68,10 +68,10 @@ final class _CreateFollowCommand extends CreateRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "subject": argResults!["subject"],
-    "createdAt": argResults!["createdAt"],
-    if (argResults!["via"] != null) "via": jsonDecode(argResults!["via"]),
-  };
+        "subject": argResults!["subject"],
+        "createdAt": argResults!["createdAt"],
+        if (argResults!["via"] != null) "via": jsonDecode(argResults!["via"]),
+      };
 }
 
 final class _PutFollowCommand extends PutRecordCommand {
@@ -101,10 +101,10 @@ final class _PutFollowCommand extends PutRecordCommand {
 
   @override
   Map<String, dynamic> get record => {
-    "subject": argResults!["subject"],
-    "createdAt": argResults!["createdAt"],
-    if (argResults!["via"] != null) "via": jsonDecode(argResults!["via"]),
-  };
+        "subject": argResults!["subject"],
+        "createdAt": argResults!["createdAt"],
+        if (argResults!["via"] != null) "via": jsonDecode(argResults!["via"]),
+      };
 }
 
 final class _DeleteFollowCommand extends DeleteRecordCommand {
@@ -149,11 +149,11 @@ final class _GetFollowCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListFollowCommand extends QueryCommand {
@@ -179,10 +179,10 @@ final class _ListFollowCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'limit': argResults!['limit'],
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': await did,
+        'collection': methodId,
+        'limit': argResults!['limit'],
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

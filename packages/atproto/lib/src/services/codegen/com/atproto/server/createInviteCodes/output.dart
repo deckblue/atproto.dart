@@ -29,7 +29,6 @@ abstract class ServerCreateInviteCodesOutput
   @JsonSerializable(includeIfNull: false)
   const factory ServerCreateInviteCodesOutput({
     @AccountCodesConverter() required List<AccountCodes> codes,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateInviteCodesOutput;
 

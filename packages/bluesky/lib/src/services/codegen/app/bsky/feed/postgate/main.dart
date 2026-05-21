@@ -42,7 +42,6 @@ abstract class FeedPostgateRecord with _$FeedPostgateRecord {
     @AtUriConverter() List<AtUri>? detachedEmbeddingUris,
     @UFeedPostgateEmbeddingRulesConverter()
     List<UFeedPostgateEmbeddingRules>? embeddingRules,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedPostgateRecord;
 

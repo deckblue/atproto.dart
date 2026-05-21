@@ -33,7 +33,6 @@ abstract class RichtextFacet with _$RichtextFacet {
     @RichtextFacetByteSliceConverter() required RichtextFacetByteSlice index,
     @URichtextFacetFeaturesConverter()
     required List<URichtextFacetFeatures> features,
-
     Map<String, dynamic>? $unknown,
   }) = _RichtextFacet;
 

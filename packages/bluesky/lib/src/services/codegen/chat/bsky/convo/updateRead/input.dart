@@ -26,7 +26,6 @@ abstract class ConvoUpdateReadInput with _$ConvoUpdateReadInput {
   const factory ConvoUpdateReadInput({
     required String convoId,
     String? messageId,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoUpdateReadInput;
 

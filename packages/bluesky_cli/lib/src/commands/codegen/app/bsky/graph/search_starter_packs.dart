@@ -43,8 +43,8 @@ final class SearchStarterPacksCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "q": argResults!["q"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "q": argResults!["q"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

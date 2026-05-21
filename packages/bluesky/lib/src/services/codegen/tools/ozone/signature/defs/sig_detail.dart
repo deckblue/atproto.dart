@@ -27,7 +27,6 @@ abstract class SigDetail with _$SigDetail {
     @Default('tools.ozone.signature.defs#sigDetail') String $type,
     required String property,
     required String value,
-
     Map<String, dynamic>? $unknown,
   }) = _SigDetail;
 

@@ -26,7 +26,6 @@ abstract class FeedGetFeedGeneratorsInput with _$FeedGetFeedGeneratorsInput {
   @JsonSerializable(includeIfNull: false)
   const factory FeedGetFeedGeneratorsInput({
     @AtUriConverter() required List<AtUri> feeds,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetFeedGeneratorsInput;
 

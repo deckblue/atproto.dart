@@ -26,7 +26,6 @@ abstract class SyncGetLatestCommitInput with _$SyncGetLatestCommitInput {
   const factory SyncGetLatestCommitInput({
     /// The DID of the repo.
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _SyncGetLatestCommitInput;
 

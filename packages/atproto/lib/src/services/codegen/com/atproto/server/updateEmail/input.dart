@@ -29,7 +29,6 @@ abstract class ServerUpdateEmailInput with _$ServerUpdateEmailInput {
 
     /// Requires a token from com.atproto.sever.requestEmailUpdate if the account's email has been confirmed.
     String? token,
-
     Map<String, dynamic>? $unknown,
   }) = _ServerUpdateEmailInput;
 

@@ -30,7 +30,6 @@ abstract class Bookmark with _$Bookmark {
 
     /// A strong ref to the record to be bookmarked. Currently, only `app.bsky.feed.post` records are supported.
     @RepoStrongRefConverter() required RepoStrongRef subject,
-
     Map<String, dynamic>? $unknown,
   }) = _Bookmark;
 

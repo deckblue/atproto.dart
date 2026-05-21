@@ -32,7 +32,6 @@ abstract class FeedSearchPostsOutput with _$FeedSearchPostsOutput {
     /// Count of search hits. Optional, may be rounded/truncated, and may not be possible to paginate through all hits.
     int? hitsTotal,
     @PostViewConverter() required List<PostView> posts,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedSearchPostsOutput;
 

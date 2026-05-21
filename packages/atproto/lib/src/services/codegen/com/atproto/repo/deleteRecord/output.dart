@@ -28,7 +28,6 @@ abstract class RepoDeleteRecordOutput with _$RepoDeleteRecordOutput {
   @JsonSerializable(includeIfNull: false)
   const factory RepoDeleteRecordOutput({
     @CommitMetaConverter() CommitMeta? commit,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoDeleteRecordOutput;
 

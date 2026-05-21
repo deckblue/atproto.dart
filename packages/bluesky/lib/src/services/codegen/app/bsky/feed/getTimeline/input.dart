@@ -28,7 +28,6 @@ abstract class FeedGetTimelineInput with _$FeedGetTimelineInput {
     String? algorithm,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetTimelineInput;
 

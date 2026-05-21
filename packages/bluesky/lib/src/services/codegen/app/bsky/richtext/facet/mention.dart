@@ -27,7 +27,6 @@ abstract class RichtextFacetMention with _$RichtextFacetMention {
   const factory RichtextFacetMention({
     @Default('app.bsky.richtext.facet#mention') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _RichtextFacetMention;
 

@@ -34,7 +34,6 @@ abstract class TrendingTopic with _$TrendingTopic {
     String? displayName,
     String? description,
     required String link,
-
     Map<String, dynamic>? $unknown,
   }) = _TrendingTopic;
 

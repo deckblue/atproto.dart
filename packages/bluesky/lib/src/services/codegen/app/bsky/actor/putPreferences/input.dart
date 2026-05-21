@@ -28,7 +28,6 @@ abstract class ActorPutPreferencesInput with _$ActorPutPreferencesInput {
   @JsonSerializable(includeIfNull: false)
   const factory ActorPutPreferencesInput({
     @UPreferencesConverter() required List<UPreferences> preferences,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorPutPreferencesInput;
 

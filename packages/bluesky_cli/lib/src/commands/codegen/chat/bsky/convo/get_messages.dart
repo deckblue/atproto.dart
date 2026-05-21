@@ -26,7 +26,7 @@ final class GetMessagesCommand extends QueryCommand {
   final String name = "get-messages";
 
   @override
-  final String description = r"";
+  final String description = r"Returns a page of messages from a conversation.";
 
   @override
   final String invocation =
@@ -37,8 +37,8 @@ final class GetMessagesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "convoId": argResults!["convoId"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "convoId": argResults!["convoId"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

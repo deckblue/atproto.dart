@@ -28,7 +28,6 @@ abstract class ActorSearchActorsInput with _$ActorSearchActorsInput {
     String? q,
     @Default(25) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorSearchActorsInput;
 

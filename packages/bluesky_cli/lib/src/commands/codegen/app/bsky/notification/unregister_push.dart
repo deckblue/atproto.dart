@@ -39,9 +39,9 @@ final class UnregisterPushCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "serviceDid": argResults!["serviceDid"],
-    "token": argResults!["token"],
-    "platform": argResults!["platform"],
-    "appId": argResults!["appId"],
-  };
+        "serviceDid": argResults!["serviceDid"],
+        "token": argResults!["token"],
+        "platform": argResults!["platform"],
+        "appId": argResults!["appId"],
+      };
 }

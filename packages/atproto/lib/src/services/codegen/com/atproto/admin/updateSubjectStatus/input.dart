@@ -33,7 +33,6 @@ abstract class AdminUpdateSubjectStatusInput
     required UAdminUpdateSubjectStatusSubject subject,
     @StatusAttrConverter() StatusAttr? takedown,
     @StatusAttrConverter() StatusAttr? deactivated,
-
     Map<String, dynamic>? $unknown,
   }) = _AdminUpdateSubjectStatusInput;
 

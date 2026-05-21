@@ -26,7 +26,6 @@ abstract class ContactDismissMatchInput with _$ContactDismissMatchInput {
   const factory ContactDismissMatchInput({
     /// The subject's DID to dismiss the match with.
     required String subject,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactDismissMatchInput;
 

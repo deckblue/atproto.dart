@@ -27,7 +27,6 @@ abstract class FeedGetActorFeedsInput with _$FeedGetActorFeedsInput {
     required String actor,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetActorFeedsInput;
 

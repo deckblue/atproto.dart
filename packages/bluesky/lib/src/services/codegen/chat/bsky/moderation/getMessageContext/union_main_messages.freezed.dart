@@ -20,21 +20,21 @@ mixin _$UModerationGetMessageContextMessages {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
-    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
-    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
-    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) =>
@@ -45,8 +45,8 @@ mixin _$UModerationGetMessageContextMessages {
             UModerationGetMessageContextMessagesMessageView value)
         messageView,
     required TResult Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)
+        systemMessageView,
     required TResult Function(UModerationGetMessageContextMessagesUnknown value)
         unknown,
   }) =>
@@ -56,8 +56,8 @@ mixin _$UModerationGetMessageContextMessages {
     TResult? Function(UModerationGetMessageContextMessagesMessageView value)?
         messageView,
     TResult? Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)?
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)?
+        systemMessageView,
     TResult? Function(UModerationGetMessageContextMessagesUnknown value)?
         unknown,
   }) =>
@@ -67,8 +67,8 @@ mixin _$UModerationGetMessageContextMessages {
     TResult Function(UModerationGetMessageContextMessagesMessageView value)?
         messageView,
     TResult Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)?
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)?
+        systemMessageView,
     TResult Function(UModerationGetMessageContextMessagesUnknown value)?
         unknown,
     required TResult orElse(),
@@ -195,7 +195,7 @@ class _$UModerationGetMessageContextMessagesMessageViewImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
-    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
     return messageView(data);
@@ -205,7 +205,7 @@ class _$UModerationGetMessageContextMessagesMessageViewImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
-    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
     return messageView?.call(data);
@@ -215,7 +215,7 @@ class _$UModerationGetMessageContextMessagesMessageViewImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
-    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
@@ -232,8 +232,8 @@ class _$UModerationGetMessageContextMessagesMessageViewImpl
             UModerationGetMessageContextMessagesMessageView value)
         messageView,
     required TResult Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)
+        systemMessageView,
     required TResult Function(UModerationGetMessageContextMessagesUnknown value)
         unknown,
   }) {
@@ -246,8 +246,8 @@ class _$UModerationGetMessageContextMessagesMessageViewImpl
     TResult? Function(UModerationGetMessageContextMessagesMessageView value)?
         messageView,
     TResult? Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)?
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)?
+        systemMessageView,
     TResult? Function(UModerationGetMessageContextMessagesUnknown value)?
         unknown,
   }) {
@@ -260,8 +260,8 @@ class _$UModerationGetMessageContextMessagesMessageViewImpl
     TResult Function(UModerationGetMessageContextMessagesMessageView value)?
         messageView,
     TResult Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)?
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)?
+        systemMessageView,
     TResult Function(UModerationGetMessageContextMessagesUnknown value)?
         unknown,
     required TResult orElse(),
@@ -292,33 +292,32 @@ abstract class UModerationGetMessageContextMessagesMessageView
 }
 
 /// @nodoc
-abstract class _$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWith<
+abstract class _$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWith<
     $Res> {
-  factory _$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWith(
-          _$UModerationGetMessageContextMessagesDeletedMessageViewImpl value,
+  factory _$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWith(
+          _$UModerationGetMessageContextMessagesSystemMessageViewImpl value,
           $Res Function(
-                  _$UModerationGetMessageContextMessagesDeletedMessageViewImpl)
+                  _$UModerationGetMessageContextMessagesSystemMessageViewImpl)
               then) =
-      __$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWithImpl<
+      __$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWithImpl<
           $Res>;
   @useResult
-  $Res call({DeletedMessageView data});
+  $Res call({SystemMessageView data});
 
-  $DeletedMessageViewCopyWith<$Res> get data;
+  $SystemMessageViewCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class __$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWithImpl<
+class __$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWithImpl<
         $Res>
     extends _$UModerationGetMessageContextMessagesCopyWithImpl<$Res,
-        _$UModerationGetMessageContextMessagesDeletedMessageViewImpl>
+        _$UModerationGetMessageContextMessagesSystemMessageViewImpl>
     implements
-        _$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWith<
+        _$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWith<
             $Res> {
-  __$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWithImpl(
-      _$UModerationGetMessageContextMessagesDeletedMessageViewImpl _value,
-      $Res Function(
-              _$UModerationGetMessageContextMessagesDeletedMessageViewImpl)
+  __$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWithImpl(
+      _$UModerationGetMessageContextMessagesSystemMessageViewImpl _value,
+      $Res Function(_$UModerationGetMessageContextMessagesSystemMessageViewImpl)
           _then)
       : super(_value, _then);
 
@@ -329,11 +328,11 @@ class __$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWithImpl
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$UModerationGetMessageContextMessagesDeletedMessageViewImpl(
+    return _then(_$UModerationGetMessageContextMessagesSystemMessageViewImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as DeletedMessageView,
+              as SystemMessageView,
     ));
   }
 
@@ -341,8 +340,8 @@ class __$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWithImpl
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $DeletedMessageViewCopyWith<$Res> get data {
-    return $DeletedMessageViewCopyWith<$Res>(_value.data, (value) {
+  $SystemMessageViewCopyWith<$Res> get data {
+    return $SystemMessageViewCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
     });
   }
@@ -350,18 +349,18 @@ class __$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWithImpl
 
 /// @nodoc
 
-class _$UModerationGetMessageContextMessagesDeletedMessageViewImpl
-    extends UModerationGetMessageContextMessagesDeletedMessageView {
-  const _$UModerationGetMessageContextMessagesDeletedMessageViewImpl(
+class _$UModerationGetMessageContextMessagesSystemMessageViewImpl
+    extends UModerationGetMessageContextMessagesSystemMessageView {
+  const _$UModerationGetMessageContextMessagesSystemMessageViewImpl(
       {required this.data})
       : super._();
 
   @override
-  final DeletedMessageView data;
+  final SystemMessageView data;
 
   @override
   String toString() {
-    return 'UModerationGetMessageContextMessages.deletedMessageView(data: $data)';
+    return 'UModerationGetMessageContextMessages.systemMessageView(data: $data)';
   }
 
   @override
@@ -369,7 +368,7 @@ class _$UModerationGetMessageContextMessagesDeletedMessageViewImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other
-                is _$UModerationGetMessageContextMessagesDeletedMessageViewImpl &&
+                is _$UModerationGetMessageContextMessagesSystemMessageViewImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -381,43 +380,43 @@ class _$UModerationGetMessageContextMessagesDeletedMessageViewImpl
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWith<
-          _$UModerationGetMessageContextMessagesDeletedMessageViewImpl>
+  _$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWith<
+          _$UModerationGetMessageContextMessagesSystemMessageViewImpl>
       get copyWith =>
-          __$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWithImpl<
-                  _$UModerationGetMessageContextMessagesDeletedMessageViewImpl>(
+          __$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWithImpl<
+                  _$UModerationGetMessageContextMessagesSystemMessageViewImpl>(
               this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
-    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
-    return deletedMessageView(data);
+    return systemMessageView(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
-    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
-    return deletedMessageView?.call(data);
+    return systemMessageView?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
-    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
-    if (deletedMessageView != null) {
-      return deletedMessageView(data);
+    if (systemMessageView != null) {
+      return systemMessageView(data);
     }
     return orElse();
   }
@@ -429,12 +428,12 @@ class _$UModerationGetMessageContextMessagesDeletedMessageViewImpl
             UModerationGetMessageContextMessagesMessageView value)
         messageView,
     required TResult Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)
+        systemMessageView,
     required TResult Function(UModerationGetMessageContextMessagesUnknown value)
         unknown,
   }) {
-    return deletedMessageView(this);
+    return systemMessageView(this);
   }
 
   @override
@@ -443,12 +442,12 @@ class _$UModerationGetMessageContextMessagesDeletedMessageViewImpl
     TResult? Function(UModerationGetMessageContextMessagesMessageView value)?
         messageView,
     TResult? Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)?
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)?
+        systemMessageView,
     TResult? Function(UModerationGetMessageContextMessagesUnknown value)?
         unknown,
   }) {
-    return deletedMessageView?.call(this);
+    return systemMessageView?.call(this);
   }
 
   @override
@@ -457,34 +456,34 @@ class _$UModerationGetMessageContextMessagesDeletedMessageViewImpl
     TResult Function(UModerationGetMessageContextMessagesMessageView value)?
         messageView,
     TResult Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)?
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)?
+        systemMessageView,
     TResult Function(UModerationGetMessageContextMessagesUnknown value)?
         unknown,
     required TResult orElse(),
   }) {
-    if (deletedMessageView != null) {
-      return deletedMessageView(this);
+    if (systemMessageView != null) {
+      return systemMessageView(this);
     }
     return orElse();
   }
 }
 
-abstract class UModerationGetMessageContextMessagesDeletedMessageView
+abstract class UModerationGetMessageContextMessagesSystemMessageView
     extends UModerationGetMessageContextMessages {
-  const factory UModerationGetMessageContextMessagesDeletedMessageView(
-          {required final DeletedMessageView data}) =
-      _$UModerationGetMessageContextMessagesDeletedMessageViewImpl;
-  const UModerationGetMessageContextMessagesDeletedMessageView._() : super._();
+  const factory UModerationGetMessageContextMessagesSystemMessageView(
+          {required final SystemMessageView data}) =
+      _$UModerationGetMessageContextMessagesSystemMessageViewImpl;
+  const UModerationGetMessageContextMessagesSystemMessageView._() : super._();
 
   @override
-  DeletedMessageView get data;
+  SystemMessageView get data;
 
   /// Create a copy of UModerationGetMessageContextMessages
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UModerationGetMessageContextMessagesDeletedMessageViewImplCopyWith<
-          _$UModerationGetMessageContextMessagesDeletedMessageViewImpl>
+  _$$UModerationGetMessageContextMessagesSystemMessageViewImplCopyWith<
+          _$UModerationGetMessageContextMessagesSystemMessageViewImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -577,7 +576,7 @@ class _$UModerationGetMessageContextMessagesUnknownImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(MessageView data) messageView,
-    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(SystemMessageView data) systemMessageView,
     required TResult Function(Map<String, dynamic> data) unknown,
   }) {
     return unknown(data);
@@ -587,7 +586,7 @@ class _$UModerationGetMessageContextMessagesUnknownImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(MessageView data)? messageView,
-    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(SystemMessageView data)? systemMessageView,
     TResult? Function(Map<String, dynamic> data)? unknown,
   }) {
     return unknown?.call(data);
@@ -597,7 +596,7 @@ class _$UModerationGetMessageContextMessagesUnknownImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(MessageView data)? messageView,
-    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(SystemMessageView data)? systemMessageView,
     TResult Function(Map<String, dynamic> data)? unknown,
     required TResult orElse(),
   }) {
@@ -614,8 +613,8 @@ class _$UModerationGetMessageContextMessagesUnknownImpl
             UModerationGetMessageContextMessagesMessageView value)
         messageView,
     required TResult Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)
+        systemMessageView,
     required TResult Function(UModerationGetMessageContextMessagesUnknown value)
         unknown,
   }) {
@@ -628,8 +627,8 @@ class _$UModerationGetMessageContextMessagesUnknownImpl
     TResult? Function(UModerationGetMessageContextMessagesMessageView value)?
         messageView,
     TResult? Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)?
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)?
+        systemMessageView,
     TResult? Function(UModerationGetMessageContextMessagesUnknown value)?
         unknown,
   }) {
@@ -642,8 +641,8 @@ class _$UModerationGetMessageContextMessagesUnknownImpl
     TResult Function(UModerationGetMessageContextMessagesMessageView value)?
         messageView,
     TResult Function(
-            UModerationGetMessageContextMessagesDeletedMessageView value)?
-        deletedMessageView,
+            UModerationGetMessageContextMessagesSystemMessageView value)?
+        systemMessageView,
     TResult Function(UModerationGetMessageContextMessagesUnknown value)?
         unknown,
     required TResult orElse(),

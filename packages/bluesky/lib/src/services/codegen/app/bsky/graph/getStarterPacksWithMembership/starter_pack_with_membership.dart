@@ -35,7 +35,6 @@ abstract class StarterPackWithMembership with _$StarterPackWithMembership {
     String $type,
     @StarterPackViewConverter() required StarterPackView starterPack,
     @ListItemViewConverter() ListItemView? listItem,
-
     Map<String, dynamic>? $unknown,
   }) = _StarterPackWithMembership;
 

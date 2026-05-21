@@ -39,7 +39,6 @@ abstract class DraftView with _$DraftView {
 
     /// The time the draft was last updated.
     required DateTime updatedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftView;
 

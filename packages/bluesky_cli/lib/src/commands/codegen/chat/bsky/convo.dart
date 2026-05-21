@@ -17,14 +17,18 @@ import 'convo/delete_message_for_self.dart';
 import 'convo/get_convo.dart';
 import 'convo/get_convo_availability.dart';
 import 'convo/get_convo_for_members.dart';
+import 'convo/get_convo_members.dart';
 import 'convo/get_log.dart';
 import 'convo/get_messages.dart';
 import 'convo/leave_convo.dart';
+import 'convo/list_convo_requests.dart';
 import 'convo/list_convos.dart';
+import 'convo/lock_convo.dart';
 import 'convo/mute_convo.dart';
 import 'convo/remove_reaction.dart';
 import 'convo/send_message.dart';
 import 'convo/send_message_batch.dart';
+import 'convo/unlock_convo.dart';
 import 'convo/unmute_convo.dart';
 import 'convo/update_all_read.dart';
 import 'convo/update_read.dart';
@@ -35,23 +39,27 @@ import 'convo/update_read.dart';
 
 final class ChatBskyConvoCommand extends Command<void> {
   ChatBskyConvoCommand() {
-    addSubcommand(AddReactionCommand());
-    addSubcommand(GetLogCommand());
-    addSubcommand(RemoveReactionCommand());
-    addSubcommand(GetConvoCommand());
-    addSubcommand(SendMessageBatchCommand());
-    addSubcommand(SendMessageCommand());
-    addSubcommand(GetConvoForMembersCommand());
-    addSubcommand(UpdateAllReadCommand());
-    addSubcommand(MuteConvoCommand());
-    addSubcommand(DeleteMessageForSelfCommand());
-    addSubcommand(UnmuteConvoCommand());
-    addSubcommand(ListConvosCommand());
-    addSubcommand(LeaveConvoCommand());
     addSubcommand(AcceptConvoCommand());
-    addSubcommand(UpdateReadCommand());
+    addSubcommand(AddReactionCommand());
+    addSubcommand(DeleteMessageForSelfCommand());
+    addSubcommand(GetConvoCommand());
     addSubcommand(GetConvoAvailabilityCommand());
+    addSubcommand(GetConvoForMembersCommand());
+    addSubcommand(GetConvoMembersCommand());
+    addSubcommand(GetLogCommand());
     addSubcommand(GetMessagesCommand());
+    addSubcommand(LeaveConvoCommand());
+    addSubcommand(ListConvoRequestsCommand());
+    addSubcommand(ListConvosCommand());
+    addSubcommand(LockConvoCommand());
+    addSubcommand(MuteConvoCommand());
+    addSubcommand(RemoveReactionCommand());
+    addSubcommand(SendMessageCommand());
+    addSubcommand(SendMessageBatchCommand());
+    addSubcommand(UnlockConvoCommand());
+    addSubcommand(UnmuteConvoCommand());
+    addSubcommand(UpdateAllReadCommand());
+    addSubcommand(UpdateReadCommand());
   }
 
   @override

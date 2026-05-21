@@ -27,7 +27,6 @@ abstract class ModerationGetRecordInput with _$ModerationGetRecordInput {
   const factory ModerationGetRecordInput({
     @AtUriConverter() required AtUri uri,
     String? cid,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetRecordInput;
 

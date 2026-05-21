@@ -28,7 +28,6 @@ abstract class FeedGetFeedInput with _$FeedGetFeedInput {
     @AtUriConverter() required AtUri feed,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedGetFeedInput;
 

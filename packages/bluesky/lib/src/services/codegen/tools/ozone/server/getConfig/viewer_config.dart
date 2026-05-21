@@ -29,7 +29,6 @@ abstract class ViewerConfig with _$ViewerConfig {
   const factory ViewerConfig({
     @Default('tools.ozone.server.getConfig#viewerConfig') String $type,
     @ViewerConfigRoleConverter() ViewerConfigRole? role,
-
     Map<String, dynamic>? $unknown,
   }) = _ViewerConfig;
 

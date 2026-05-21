@@ -29,7 +29,6 @@ abstract class RepoListMissingBlobsOutput with _$RepoListMissingBlobsOutput {
   const factory RepoListMissingBlobsOutput({
     String? cursor,
     @RecordBlobConverter() required List<RecordBlob> blobs,
-
     Map<String, dynamic>? $unknown,
   }) = _RepoListMissingBlobsOutput;
 

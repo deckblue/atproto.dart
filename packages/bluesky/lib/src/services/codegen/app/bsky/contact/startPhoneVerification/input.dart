@@ -27,21 +27,17 @@ abstract class ContactStartPhoneVerificationInput
   const factory ContactStartPhoneVerificationInput({
     /// The phone number to receive the code via SMS.
     required String phone,
-
     Map<String, dynamic>? $unknown,
   }) = _ContactStartPhoneVerificationInput;
 
   factory ContactStartPhoneVerificationInput.fromJson(
     Map<String, Object?> json,
-  ) => _$ContactStartPhoneVerificationInputFromJson(json);
+  ) =>
+      _$ContactStartPhoneVerificationInputFromJson(json);
 }
 
-final class ContactStartPhoneVerificationInputConverter
-    extends
-        JsonConverter<
-          ContactStartPhoneVerificationInput,
-          Map<String, dynamic>
-        > {
+final class ContactStartPhoneVerificationInputConverter extends JsonConverter<
+    ContactStartPhoneVerificationInput, Map<String, dynamic>> {
   const ContactStartPhoneVerificationInputConverter();
 
   @override

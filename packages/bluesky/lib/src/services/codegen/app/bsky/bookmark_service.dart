@@ -27,12 +27,13 @@ Future<XRPCResponse<EmptyData>> appBskyBookmarkCreateBookmark({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyBookmarkCreateBookmark,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'uri': uri.toString(), 'cid': cid},
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyBookmarkCreateBookmark,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'uri': uri.toString(), 'cid': cid},
+    );
 
 /// Deletes a private bookmark for the specified record. Currently, only `app.bsky.feed.post` records are supported. Requires authentication.
 Future<XRPCResponse<EmptyData>> appBskyBookmarkDeleteBookmark({
@@ -41,12 +42,13 @@ Future<XRPCResponse<EmptyData>> appBskyBookmarkDeleteBookmark({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.appBskyBookmarkDeleteBookmark,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'uri': uri.toString()},
-);
+}) async =>
+    await $ctx.post(
+      ns.appBskyBookmarkDeleteBookmark,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'uri': uri.toString()},
+    );
 
 /// Gets views of records bookmarked by the authenticated user. Requires authentication.
 Future<XRPCResponse<BookmarkGetBookmarksOutput>> appBskyBookmarkGetBookmarks({
@@ -56,17 +58,18 @@ Future<XRPCResponse<BookmarkGetBookmarksOutput>> appBskyBookmarkGetBookmarks({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyBookmarkGetBookmarks,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const BookmarkGetBookmarksOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.appBskyBookmarkGetBookmarks,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        if (limit != null) 'limit': limit,
+        if (cursor != null) 'cursor': cursor,
+      },
+      to: const BookmarkGetBookmarksOutputConverter().fromJson,
+    );
 
 /// `app.bsky.bookmark.*`
 base class BookmarkService {
@@ -82,14 +85,15 @@ base class BookmarkService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyBookmarkCreateBookmark(
-    uri: uri,
-    cid: cid,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyBookmarkCreateBookmark(
+        uri: uri,
+        cid: cid,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Deletes a private bookmark for the specified record. Currently, only `app.bsky.feed.post` records are supported. Requires authentication.
   Future<XRPCResponse<EmptyData>> deleteBookmark({
@@ -97,13 +101,14 @@ base class BookmarkService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyBookmarkDeleteBookmark(
-    uri: uri,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyBookmarkDeleteBookmark(
+        uri: uri,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Gets views of records bookmarked by the authenticated user. Requires authentication.
   Future<XRPCResponse<BookmarkGetBookmarksOutput>> getBookmarks({
@@ -112,12 +117,13 @@ base class BookmarkService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyBookmarkGetBookmarks(
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyBookmarkGetBookmarks(
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

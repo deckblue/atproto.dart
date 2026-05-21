@@ -25,7 +25,6 @@ abstract class VideoGetJobStatusInput with _$VideoGetJobStatusInput {
   @JsonSerializable(includeIfNull: false)
   const factory VideoGetJobStatusInput({
     required String jobId,
-
     Map<String, dynamic>? $unknown,
   }) = _VideoGetJobStatusInput;
 

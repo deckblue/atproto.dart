@@ -92,17 +92,18 @@ final class SearchPostsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "q": argResults!["q"],
-    "sort": argResults!["sort"],
-    if (argResults!["since"] != null) "since": argResults!["since"],
-    if (argResults!["until"] != null) "until": argResults!["until"],
-    if (argResults!["mentions"] != null) "mentions": argResults!["mentions"],
-    if (argResults!["author"] != null) "author": argResults!["author"],
-    if (argResults!["lang"] != null) "lang": argResults!["lang"],
-    if (argResults!["domain"] != null) "domain": argResults!["domain"],
-    if (argResults!["url"] != null) "url": argResults!["url"],
-    if (argResults!["tag"] != null) "tag": argResults!["tag"],
-    "limit": argResults!["limit"],
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        "q": argResults!["q"],
+        "sort": argResults!["sort"],
+        if (argResults!["since"] != null) "since": argResults!["since"],
+        if (argResults!["until"] != null) "until": argResults!["until"],
+        if (argResults!["mentions"] != null)
+          "mentions": argResults!["mentions"],
+        if (argResults!["author"] != null) "author": argResults!["author"],
+        if (argResults!["lang"] != null) "lang": argResults!["lang"],
+        if (argResults!["domain"] != null) "domain": argResults!["domain"],
+        if (argResults!["url"] != null) "url": argResults!["url"],
+        if (argResults!["tag"] != null) "tag": argResults!["tag"],
+        "limit": argResults!["limit"],
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

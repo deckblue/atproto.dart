@@ -25,7 +25,6 @@ abstract class SkeletonReasonPin with _$SkeletonReasonPin {
   @JsonSerializable(includeIfNull: false)
   const factory SkeletonReasonPin({
     @Default('app.bsky.feed.defs#skeletonReasonPin') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _SkeletonReasonPin;
 

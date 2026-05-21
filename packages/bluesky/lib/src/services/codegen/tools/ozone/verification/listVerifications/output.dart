@@ -30,13 +30,13 @@ abstract class VerificationListVerificationsOutput
   const factory VerificationListVerificationsOutput({
     String? cursor,
     @VerificationViewConverter() required List<VerificationView> verifications,
-
     Map<String, dynamic>? $unknown,
   }) = _VerificationListVerificationsOutput;
 
   factory VerificationListVerificationsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$VerificationListVerificationsOutputFromJson(json);
+  ) =>
+      _$VerificationListVerificationsOutputFromJson(json);
 }
 
 extension VerificationListVerificationsOutputExtension
@@ -45,12 +45,8 @@ extension VerificationListVerificationsOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class VerificationListVerificationsOutputConverter
-    extends
-        JsonConverter<
-          VerificationListVerificationsOutput,
-          Map<String, dynamic>
-        > {
+final class VerificationListVerificationsOutputConverter extends JsonConverter<
+    VerificationListVerificationsOutput, Map<String, dynamic>> {
   const VerificationListVerificationsOutputConverter();
 
   @override

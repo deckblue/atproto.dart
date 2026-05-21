@@ -26,18 +26,17 @@ abstract class TempRevokeAccountCredentialsInput
   @JsonSerializable(includeIfNull: false)
   const factory TempRevokeAccountCredentialsInput({
     required String account,
-
     Map<String, dynamic>? $unknown,
   }) = _TempRevokeAccountCredentialsInput;
 
   factory TempRevokeAccountCredentialsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$TempRevokeAccountCredentialsInputFromJson(json);
+  ) =>
+      _$TempRevokeAccountCredentialsInputFromJson(json);
 }
 
-final class TempRevokeAccountCredentialsInputConverter
-    extends
-        JsonConverter<TempRevokeAccountCredentialsInput, Map<String, dynamic>> {
+final class TempRevokeAccountCredentialsInputConverter extends JsonConverter<
+    TempRevokeAccountCredentialsInput, Map<String, dynamic>> {
   const TempRevokeAccountCredentialsInputConverter();
 
   @override

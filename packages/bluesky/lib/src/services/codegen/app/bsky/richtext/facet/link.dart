@@ -27,7 +27,6 @@ abstract class RichtextFacetLink with _$RichtextFacetLink {
   const factory RichtextFacetLink({
     @Default('app.bsky.richtext.facet#link') String $type,
     required String uri,
-
     Map<String, dynamic>? $unknown,
   }) = _RichtextFacetLink;
 

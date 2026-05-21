@@ -33,7 +33,6 @@ abstract class LabelQueryLabelsInput with _$LabelQueryLabelsInput {
     List<String>? sources,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _LabelQueryLabelsInput;
 

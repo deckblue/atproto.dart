@@ -31,7 +31,6 @@ abstract class TimelineItem with _$TimelineItem {
     String $type,
     required String day,
     @TimelineItemSummaryConverter() required List<TimelineItemSummary> summary,
-
     Map<String, dynamic>? $unknown,
   }) = _TimelineItem;
 

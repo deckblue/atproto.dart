@@ -26,7 +26,6 @@ abstract class ReactionViewSender with _$ReactionViewSender {
   const factory ReactionViewSender({
     @Default('chat.bsky.convo.defs#reactionViewSender') String $type,
     required String did,
-
     Map<String, dynamic>? $unknown,
   }) = _ReactionViewSender;
 

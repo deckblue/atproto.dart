@@ -36,7 +36,7 @@ final class RemoveOptionsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "keys": argResults!["keys"],
-    "scope": argResults!["scope"],
-  };
+        "keys": argResults!["keys"],
+        "scope": argResults!["scope"],
+      };
 }

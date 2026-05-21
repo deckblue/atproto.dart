@@ -33,6 +33,6 @@ final class GetLogCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-  };
+        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+      };
 }

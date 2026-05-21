@@ -29,7 +29,6 @@ abstract class DraftGetDraftsOutput with _$DraftGetDraftsOutput {
   const factory DraftGetDraftsOutput({
     String? cursor,
     @DraftViewConverter() required List<DraftView> drafts,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftGetDraftsOutput;
 

@@ -29,21 +29,17 @@ abstract class UnspeccedGetTaggedSuggestionsOutput
   @JsonSerializable(includeIfNull: false)
   const factory UnspeccedGetTaggedSuggestionsOutput({
     @SuggestionConverter() required List<Suggestion> suggestions,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTaggedSuggestionsOutput;
 
   factory UnspeccedGetTaggedSuggestionsOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetTaggedSuggestionsOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetTaggedSuggestionsOutputFromJson(json);
 }
 
-final class UnspeccedGetTaggedSuggestionsOutputConverter
-    extends
-        JsonConverter<
-          UnspeccedGetTaggedSuggestionsOutput,
-          Map<String, dynamic>
-        > {
+final class UnspeccedGetTaggedSuggestionsOutputConverter extends JsonConverter<
+    UnspeccedGetTaggedSuggestionsOutput, Map<String, dynamic>> {
   const UnspeccedGetTaggedSuggestionsOutputConverter();
 
   @override

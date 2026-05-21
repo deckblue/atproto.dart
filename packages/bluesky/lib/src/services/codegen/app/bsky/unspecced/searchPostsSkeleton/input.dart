@@ -77,13 +77,13 @@ abstract class UnspeccedSearchPostsSkeletonInput
 
     /// Optional pagination mechanism; may not necessarily allow scrolling through entire result set.
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedSearchPostsSkeletonInput;
 
   factory UnspeccedSearchPostsSkeletonInput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedSearchPostsSkeletonInputFromJson(json);
+  ) =>
+      _$UnspeccedSearchPostsSkeletonInputFromJson(json);
 }
 
 extension UnspeccedSearchPostsSkeletonInputExtension
@@ -110,9 +110,8 @@ extension UnspeccedSearchPostsSkeletonInputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class UnspeccedSearchPostsSkeletonInputConverter
-    extends
-        JsonConverter<UnspeccedSearchPostsSkeletonInput, Map<String, dynamic>> {
+final class UnspeccedSearchPostsSkeletonInputConverter extends JsonConverter<
+    UnspeccedSearchPostsSkeletonInput, Map<String, dynamic>> {
   const UnspeccedSearchPostsSkeletonInputConverter();
 
   @override

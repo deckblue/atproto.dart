@@ -26,21 +26,17 @@ abstract class GraphGetSuggestedFollowsByActorInput
   @JsonSerializable(includeIfNull: false)
   const factory GraphGetSuggestedFollowsByActorInput({
     required String actor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetSuggestedFollowsByActorInput;
 
   factory GraphGetSuggestedFollowsByActorInput.fromJson(
     Map<String, Object?> json,
-  ) => _$GraphGetSuggestedFollowsByActorInputFromJson(json);
+  ) =>
+      _$GraphGetSuggestedFollowsByActorInputFromJson(json);
 }
 
-final class GraphGetSuggestedFollowsByActorInputConverter
-    extends
-        JsonConverter<
-          GraphGetSuggestedFollowsByActorInput,
-          Map<String, dynamic>
-        > {
+final class GraphGetSuggestedFollowsByActorInputConverter extends JsonConverter<
+    GraphGetSuggestedFollowsByActorInput, Map<String, dynamic>> {
   const GraphGetSuggestedFollowsByActorInputConverter();
 
   @override

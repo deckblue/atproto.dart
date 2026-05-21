@@ -29,6 +29,11 @@ final class EmitEventCommand extends ProcedureCommand {
         "externalId",
         help:
             r"An optional external ID for the event, used to deduplicate events from external systems. Fails when an event of same type with the same external ID exists for the same subject.",
+      )
+      ..addOption(
+        "reportAction",
+        help:
+            r"Optional report-level targeting. If provided, this event will be linked to specific reports and reporters may be notified.",
       );
   }
 
@@ -40,21 +45,23 @@ final class EmitEventCommand extends ProcedureCommand {
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation emit-event [event] [subject] [subjectBlobCids] [createdBy] [modTool] [externalId]";
+      "bsky tools-ozone-moderation emit-event [event] [subject] [subjectBlobCids] [createdBy] [modTool] [externalId] [reportAction]";
 
   @override
   String get methodId => "tools.ozone.moderation.emitEvent";
 
   @override
   Map<String, dynamic>? get body => {
-    "event": jsonDecode(argResults!["event"]),
-    "subject": jsonDecode(argResults!["subject"]),
-    if (argResults!["subjectBlobCids"] != null)
-      "subjectBlobCids": argResults!["subjectBlobCids"],
-    "createdBy": argResults!["createdBy"],
-    if (argResults!["modTool"] != null)
-      "modTool": jsonDecode(argResults!["modTool"]),
-    if (argResults!["externalId"] != null)
-      "externalId": argResults!["externalId"],
-  };
+        "event": jsonDecode(argResults!["event"]),
+        "subject": jsonDecode(argResults!["subject"]),
+        if (argResults!["subjectBlobCids"] != null)
+          "subjectBlobCids": argResults!["subjectBlobCids"],
+        "createdBy": argResults!["createdBy"],
+        if (argResults!["modTool"] != null)
+          "modTool": jsonDecode(argResults!["modTool"]),
+        if (argResults!["externalId"] != null)
+          "externalId": argResults!["externalId"],
+        if (argResults!["reportAction"] != null)
+          "reportAction": jsonDecode(argResults!["reportAction"]),
+      };
 }

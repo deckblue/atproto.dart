@@ -27,7 +27,6 @@ abstract class ConvoAddReactionInput with _$ConvoAddReactionInput {
     required String convoId,
     required String messageId,
     required String value,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoAddReactionInput;
 

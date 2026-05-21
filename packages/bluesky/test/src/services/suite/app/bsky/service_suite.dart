@@ -11,39 +11,43 @@ void testActor<D>(
   final atp_test.ServiceCallback<ActorService, D> endpoint, {
   required String id,
   String? label,
-}) => atp_test.testService<ActorService, D>(_runner, endpoint, id, label);
+}) =>
+    atp_test.testService<ActorService, D>(_runner, endpoint, id, label);
 
 void testBookmark<D>(
   final atp_test.ServiceCallback<BookmarkService, D> endpoint, {
   required String id,
   String? label,
-}) => atp_test.testService<BookmarkService, D>(_runner, endpoint, id, label);
+}) =>
+    atp_test.testService<BookmarkService, D>(_runner, endpoint, id, label);
 
 void testFeed<D>(
   final atp_test.ServiceCallback<FeedService, D> endpoint, {
   required String id,
   String? label,
   atp_test.BulkCallback<FeedService>? bulk,
-}) => atp_test.testService<FeedService, D>(
-  _runner,
-  endpoint,
-  id,
-  label,
-  bulk: bulk,
-);
+}) =>
+    atp_test.testService<FeedService, D>(
+      _runner,
+      endpoint,
+      id,
+      label,
+      bulk: bulk,
+    );
 
 void testGraph<D>(
   final atp_test.ServiceCallback<GraphService, D> endpoint, {
   required String id,
   String? label,
   atp_test.BulkCallback<GraphService>? bulk,
-}) => atp_test.testService<GraphService, D>(
-  _runner,
-  endpoint,
-  id,
-  label,
-  bulk: bulk,
-);
+}) =>
+    atp_test.testService<GraphService, D>(
+      _runner,
+      endpoint,
+      id,
+      label,
+      bulk: bulk,
+    );
 
 void testNotification<D>(
   final atp_test.ServiceCallback<NotificationService, D> endpoint, {
@@ -56,19 +60,22 @@ void testUnspecced<D>(
   final atp_test.ServiceCallback<UnspeccedService, D> endpoint, {
   required String id,
   String? label,
-}) => atp_test.testService<UnspeccedService, D>(_runner, endpoint, id, label);
+}) =>
+    atp_test.testService<UnspeccedService, D>(_runner, endpoint, id, label);
 
 void testLabeler<D>(
   final atp_test.ServiceCallback<LabelerService, D> endpoint, {
   required String id,
   String? label,
-}) => atp_test.testService<LabelerService, D>(_runner, endpoint, id, label);
+}) =>
+    atp_test.testService<LabelerService, D>(_runner, endpoint, id, label);
 
 void testVideo<D>(
   final atp_test.ServiceCallback<VideoService, D> endpoint, {
   required String id,
   String? label,
-}) => atp_test.testService<VideoService, D>(_runner, endpoint, id, label);
+}) =>
+    atp_test.testService<VideoService, D>(_runner, endpoint, id, label);
 
 final class _ServiceRunner extends atp_test.ServiceRunner {
   const _ServiceRunner();
@@ -102,56 +109,64 @@ final class _ServiceRunner extends atp_test.ServiceRunner {
   ActorService _getActorService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => ActorService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      ActorService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   BookmarkService _getBookmarkService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => BookmarkService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      BookmarkService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   FeedService _getFeedService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => FeedService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      FeedService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   GraphService _getGraphService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => GraphService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      GraphService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   NotificationService _getNotificationService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => NotificationService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      NotificationService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   UnspeccedService _getUnspeccedService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => UnspeccedService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      UnspeccedService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   LabelerService _getLabelerService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => LabelerService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      LabelerService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 
   VideoService _getVideoService(
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  ) => VideoService(
-    core.ServiceContext(getClient: getClient, postClient: postClient),
-  );
+  ) =>
+      VideoService(
+        core.ServiceContext(getClient: getClient, postClient: postClient),
+      );
 }

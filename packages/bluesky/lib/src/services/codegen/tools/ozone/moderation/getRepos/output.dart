@@ -29,7 +29,6 @@ abstract class ModerationGetReposOutput with _$ModerationGetReposOutput {
   const factory ModerationGetReposOutput({
     @UModerationGetReposReposConverter()
     required List<UModerationGetReposRepos> repos,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetReposOutput;
 
