@@ -8,25 +8,31 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupListMutualGroupsInput _$GroupListMutualGroupsInputFromJson(Map json) =>
-    $checkedCreate('_GroupListMutualGroupsInput', json, ($checkedConvert) {
-      final val = _GroupListMutualGroupsInput(
-        subject: $checkedConvert('subject', (v) => v as String),
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupListMutualGroupsInputImpl _$$GroupListMutualGroupsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GroupListMutualGroupsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupListMutualGroupsInputImpl(
+          subject: $checkedConvert('subject', (v) => v as String),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupListMutualGroupsInputToJson(
-  _GroupListMutualGroupsInput instance,
-) => <String, dynamic>{
-  'subject': instance.subject,
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupListMutualGroupsInputImplToJson(
+        _$GroupListMutualGroupsInputImpl instance) =>
+    <String, dynamic>{
+      'subject': instance.subject,
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

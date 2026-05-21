@@ -8,77 +8,74 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoListConvosInput _$ConvoListConvosInputFromJson(Map json) =>
-    $checkedCreate('_ConvoListConvosInput', json, ($checkedConvert) {
-      final val = _ConvoListConvosInput(
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        readState: $checkedConvert(
-          'readState',
-          (v) => _$JsonConverterFromJson<String, ConvoListConvosReadState>(
-            v,
-            const ConvoListConvosReadStateConverter().fromJson,
-          ),
-        ),
-        status: $checkedConvert(
-          'status',
-          (v) => _$JsonConverterFromJson<String, ConvoListConvosStatus>(
-            v,
-            const ConvoListConvosStatusConverter().fromJson,
-          ),
-        ),
-        kind: $checkedConvert(
-          'kind',
-          (v) => _$JsonConverterFromJson<String, ConvoListConvosKind>(
-            v,
-            const ConvoListConvosKindConverter().fromJson,
-          ),
-        ),
-        lockStatus: $checkedConvert(
-          'lockStatus',
-          (v) => _$JsonConverterFromJson<String, ConvoListConvosLockStatus>(
-            v,
-            const ConvoListConvosLockStatusConverter().fromJson,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ConvoListConvosInputImpl _$$ConvoListConvosInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ConvoListConvosInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoListConvosInputImpl(
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          readState: $checkedConvert(
+              'readState',
+              (v) => _$JsonConverterFromJson<String, ConvoListConvosReadState>(
+                  v, const ConvoListConvosReadStateConverter().fromJson)),
+          status: $checkedConvert(
+              'status',
+              (v) => _$JsonConverterFromJson<String, ConvoListConvosStatus>(
+                  v, const ConvoListConvosStatusConverter().fromJson)),
+          kind: $checkedConvert(
+              'kind',
+              (v) => _$JsonConverterFromJson<String, ConvoListConvosKind>(
+                  v, const ConvoListConvosKindConverter().fromJson)),
+          lockStatus: $checkedConvert(
+              'lockStatus',
+              (v) => _$JsonConverterFromJson<String, ConvoListConvosLockStatus>(
+                  v, const ConvoListConvosLockStatusConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoListConvosInputToJson(
-  _ConvoListConvosInput instance,
-) => <String, dynamic>{
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  'readState': ?_$JsonConverterToJson<String, ConvoListConvosReadState>(
-    instance.readState,
-    const ConvoListConvosReadStateConverter().toJson,
-  ),
-  'status': ?_$JsonConverterToJson<String, ConvoListConvosStatus>(
-    instance.status,
-    const ConvoListConvosStatusConverter().toJson,
-  ),
-  'kind': ?_$JsonConverterToJson<String, ConvoListConvosKind>(
-    instance.kind,
-    const ConvoListConvosKindConverter().toJson,
-  ),
-  'lockStatus': ?_$JsonConverterToJson<String, ConvoListConvosLockStatus>(
-    instance.lockStatus,
-    const ConvoListConvosLockStatusConverter().toJson,
-  ),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConvoListConvosInputImplToJson(
+        _$ConvoListConvosInputImpl instance) =>
+    <String, dynamic>{
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (_$JsonConverterToJson<String, ConvoListConvosReadState>(
+              instance.readState,
+              const ConvoListConvosReadStateConverter().toJson)
+          case final value?)
+        'readState': value,
+      if (_$JsonConverterToJson<String, ConvoListConvosStatus>(
+              instance.status, const ConvoListConvosStatusConverter().toJson)
+          case final value?)
+        'status': value,
+      if (_$JsonConverterToJson<String, ConvoListConvosKind>(
+              instance.kind, const ConvoListConvosKindConverter().toJson)
+          case final value?)
+        'kind': value,
+      if (_$JsonConverterToJson<String, ConvoListConvosLockStatus>(
+              instance.lockStatus,
+              const ConvoListConvosLockStatusConverter().toJson)
+          case final value?)
+        'lockStatus': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

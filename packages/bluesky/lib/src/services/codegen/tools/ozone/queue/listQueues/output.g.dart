@@ -8,32 +8,33 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_QueueListQueuesOutput _$QueueListQueuesOutputFromJson(Map json) =>
-    $checkedCreate('_QueueListQueuesOutput', json, ($checkedConvert) {
-      final val = _QueueListQueuesOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        queues: $checkedConvert(
-          'queues',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const QueueViewConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$QueueListQueuesOutputImpl _$$QueueListQueuesOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$QueueListQueuesOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$QueueListQueuesOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          queues: $checkedConvert(
+              'queues',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const QueueViewConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$QueueListQueuesOutputToJson(
-  _QueueListQueuesOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'queues': instance.queues.map(const QueueViewConverter().toJson).toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$QueueListQueuesOutputImplToJson(
+        _$QueueListQueuesOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'queues': instance.queues.map(const QueueViewConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

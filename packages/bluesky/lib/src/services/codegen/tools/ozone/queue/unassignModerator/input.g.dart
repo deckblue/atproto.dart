@@ -8,23 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_QueueUnassignModeratorInput _$QueueUnassignModeratorInputFromJson(Map json) =>
-    $checkedCreate('_QueueUnassignModeratorInput', json, ($checkedConvert) {
-      final val = _QueueUnassignModeratorInput(
-        queueId: $checkedConvert('queueId', (v) => (v as num).toInt()),
-        did: $checkedConvert('did', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$QueueUnassignModeratorInputImpl _$$QueueUnassignModeratorInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$QueueUnassignModeratorInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$QueueUnassignModeratorInputImpl(
+          queueId: $checkedConvert('queueId', (v) => (v as num).toInt()),
+          did: $checkedConvert('did', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$QueueUnassignModeratorInputToJson(
-  _QueueUnassignModeratorInput instance,
-) => <String, dynamic>{
-  'queueId': instance.queueId,
-  'did': instance.did,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$QueueUnassignModeratorInputImplToJson(
+        _$QueueUnassignModeratorInputImpl instance) =>
+    <String, dynamic>{
+      'queueId': instance.queueId,
+      'did': instance.did,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

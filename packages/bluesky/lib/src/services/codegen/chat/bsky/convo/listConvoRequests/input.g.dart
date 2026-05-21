@@ -8,23 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoListConvoRequestsInput _$ConvoListConvoRequestsInputFromJson(Map json) =>
-    $checkedCreate('_ConvoListConvoRequestsInput', json, ($checkedConvert) {
-      final val = _ConvoListConvoRequestsInput(
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ConvoListConvoRequestsInputImpl _$$ConvoListConvoRequestsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ConvoListConvoRequestsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoListConvoRequestsInputImpl(
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoListConvoRequestsInputToJson(
-  _ConvoListConvoRequestsInput instance,
-) => <String, dynamic>{
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConvoListConvoRequestsInputImplToJson(
+        _$ConvoListConvoRequestsInputImpl instance) =>
+    <String, dynamic>{
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

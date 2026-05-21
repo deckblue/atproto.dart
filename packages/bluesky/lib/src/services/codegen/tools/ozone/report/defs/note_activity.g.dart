@@ -8,23 +8,25 @@ part of 'note_activity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NoteActivity _$NoteActivityFromJson(Map json) =>
-    $checkedCreate('_NoteActivity', json, ($checkedConvert) {
-      final val = _NoteActivity(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.report.defs#noteActivity',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$NoteActivityImpl _$$NoteActivityImplFromJson(Map json) => $checkedCreate(
+      r'_$NoteActivityImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$NoteActivityImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'tools.ozone.report.defs#noteActivity'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$NoteActivityToJson(_NoteActivity instance) =>
+Map<String, dynamic> _$$NoteActivityImplToJson(_$NoteActivityImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

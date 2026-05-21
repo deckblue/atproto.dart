@@ -8,34 +8,36 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoGetConvoMembersOutput _$ConvoGetConvoMembersOutputFromJson(Map json) =>
-    $checkedCreate('_ConvoGetConvoMembersOutput', json, ($checkedConvert) {
-      final val = _ConvoGetConvoMembersOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        members: $checkedConvert(
-          'members',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const ProfileViewBasicConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ConvoGetConvoMembersOutputImpl _$$ConvoGetConvoMembersOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ConvoGetConvoMembersOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoGetConvoMembersOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          members: $checkedConvert(
+              'members',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const ProfileViewBasicConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoGetConvoMembersOutputToJson(
-  _ConvoGetConvoMembersOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'members': instance.members
-      .map(const ProfileViewBasicConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConvoGetConvoMembersOutputImplToJson(
+        _$ConvoGetConvoMembersOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'members': instance.members
+          .map(const ProfileViewBasicConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

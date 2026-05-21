@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,257 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+GroupCreateJoinLinkInput _$GroupCreateJoinLinkInputFromJson(
+    Map<String, dynamic> json) {
+  return _GroupCreateJoinLinkInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$GroupCreateJoinLinkInput {
-
- String get convoId; bool get requireApproval;@JoinRuleConverter() JoinRule get joinRule; Map<String, dynamic>? get $unknown;
-/// Create a copy of GroupCreateJoinLinkInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GroupCreateJoinLinkInputCopyWith<GroupCreateJoinLinkInput> get copyWith => _$GroupCreateJoinLinkInputCopyWithImpl<GroupCreateJoinLinkInput>(this as GroupCreateJoinLinkInput, _$identity);
+  String get convoId => throw _privateConstructorUsedError;
+  bool get requireApproval => throw _privateConstructorUsedError;
+  @JoinRuleConverter()
+  JoinRule get joinRule => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GroupCreateJoinLinkInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GroupCreateJoinLinkInput&&(identical(other.convoId, convoId) || other.convoId == convoId)&&(identical(other.requireApproval, requireApproval) || other.requireApproval == requireApproval)&&(identical(other.joinRule, joinRule) || other.joinRule == joinRule)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,convoId,requireApproval,joinRule,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'GroupCreateJoinLinkInput(convoId: $convoId, requireApproval: $requireApproval, joinRule: $joinRule, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of GroupCreateJoinLinkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GroupCreateJoinLinkInputCopyWith<GroupCreateJoinLinkInput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $GroupCreateJoinLinkInputCopyWith<$Res>  {
-  factory $GroupCreateJoinLinkInputCopyWith(GroupCreateJoinLinkInput value, $Res Function(GroupCreateJoinLinkInput) _then) = _$GroupCreateJoinLinkInputCopyWithImpl;
-@useResult
-$Res call({
- String convoId, bool requireApproval,@JoinRuleConverter() JoinRule joinRule, Map<String, dynamic>? $unknown
-});
+abstract class $GroupCreateJoinLinkInputCopyWith<$Res> {
+  factory $GroupCreateJoinLinkInputCopyWith(GroupCreateJoinLinkInput value,
+          $Res Function(GroupCreateJoinLinkInput) then) =
+      _$GroupCreateJoinLinkInputCopyWithImpl<$Res, GroupCreateJoinLinkInput>;
+  @useResult
+  $Res call(
+      {String convoId,
+      bool requireApproval,
+      @JoinRuleConverter() JoinRule joinRule,
+      Map<String, dynamic>? $unknown});
 
-
-$JoinRuleCopyWith<$Res> get joinRule;
-
+  $JoinRuleCopyWith<$Res> get joinRule;
 }
+
 /// @nodoc
-class _$GroupCreateJoinLinkInputCopyWithImpl<$Res>
+class _$GroupCreateJoinLinkInputCopyWithImpl<$Res,
+        $Val extends GroupCreateJoinLinkInput>
     implements $GroupCreateJoinLinkInputCopyWith<$Res> {
-  _$GroupCreateJoinLinkInputCopyWithImpl(this._self, this._then);
+  _$GroupCreateJoinLinkInputCopyWithImpl(this._value, this._then);
 
-  final GroupCreateJoinLinkInput _self;
-  final $Res Function(GroupCreateJoinLinkInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of GroupCreateJoinLinkInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? convoId = null,Object? requireApproval = null,Object? joinRule = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-convoId: null == convoId ? _self.convoId : convoId // ignore: cast_nullable_to_non_nullable
-as String,requireApproval: null == requireApproval ? _self.requireApproval : requireApproval // ignore: cast_nullable_to_non_nullable
-as bool,joinRule: null == joinRule ? _self.joinRule : joinRule // ignore: cast_nullable_to_non_nullable
-as JoinRule,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of GroupCreateJoinLinkInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$JoinRuleCopyWith<$Res> get joinRule {
-  
-  return $JoinRuleCopyWith<$Res>(_self.joinRule, (value) {
-    return _then(_self.copyWith(joinRule: value));
-  });
-}
-}
+  /// Create a copy of GroupCreateJoinLinkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? convoId = null,
+    Object? requireApproval = null,
+    Object? joinRule = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      convoId: null == convoId
+          ? _value.convoId
+          : convoId // ignore: cast_nullable_to_non_nullable
+              as String,
+      requireApproval: null == requireApproval
+          ? _value.requireApproval
+          : requireApproval // ignore: cast_nullable_to_non_nullable
+              as bool,
+      joinRule: null == joinRule
+          ? _value.joinRule
+          : joinRule // ignore: cast_nullable_to_non_nullable
+              as JoinRule,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [GroupCreateJoinLinkInput].
-extension GroupCreateJoinLinkInputPatterns on GroupCreateJoinLinkInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GroupCreateJoinLinkInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GroupCreateJoinLinkInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GroupCreateJoinLinkInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _GroupCreateJoinLinkInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GroupCreateJoinLinkInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _GroupCreateJoinLinkInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String convoId,  bool requireApproval, @JoinRuleConverter()  JoinRule joinRule,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GroupCreateJoinLinkInput() when $default != null:
-return $default(_that.convoId,_that.requireApproval,_that.joinRule,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String convoId,  bool requireApproval, @JoinRuleConverter()  JoinRule joinRule,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _GroupCreateJoinLinkInput():
-return $default(_that.convoId,_that.requireApproval,_that.joinRule,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String convoId,  bool requireApproval, @JoinRuleConverter()  JoinRule joinRule,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _GroupCreateJoinLinkInput() when $default != null:
-return $default(_that.convoId,_that.requireApproval,_that.joinRule,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of GroupCreateJoinLinkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $JoinRuleCopyWith<$Res> get joinRule {
+    return $JoinRuleCopyWith<$Res>(_value.joinRule, (value) {
+      return _then(_value.copyWith(joinRule: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$GroupCreateJoinLinkInputImplCopyWith<$Res>
+    implements $GroupCreateJoinLinkInputCopyWith<$Res> {
+  factory _$$GroupCreateJoinLinkInputImplCopyWith(
+          _$GroupCreateJoinLinkInputImpl value,
+          $Res Function(_$GroupCreateJoinLinkInputImpl) then) =
+      __$$GroupCreateJoinLinkInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String convoId,
+      bool requireApproval,
+      @JoinRuleConverter() JoinRule joinRule,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $JoinRuleCopyWith<$Res> get joinRule;
+}
+
+/// @nodoc
+class __$$GroupCreateJoinLinkInputImplCopyWithImpl<$Res>
+    extends _$GroupCreateJoinLinkInputCopyWithImpl<$Res,
+        _$GroupCreateJoinLinkInputImpl>
+    implements _$$GroupCreateJoinLinkInputImplCopyWith<$Res> {
+  __$$GroupCreateJoinLinkInputImplCopyWithImpl(
+      _$GroupCreateJoinLinkInputImpl _value,
+      $Res Function(_$GroupCreateJoinLinkInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GroupCreateJoinLinkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? convoId = null,
+    Object? requireApproval = null,
+    Object? joinRule = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$GroupCreateJoinLinkInputImpl(
+      convoId: null == convoId
+          ? _value.convoId
+          : convoId // ignore: cast_nullable_to_non_nullable
+              as String,
+      requireApproval: null == requireApproval
+          ? _value.requireApproval
+          : requireApproval // ignore: cast_nullable_to_non_nullable
+              as bool,
+      joinRule: null == joinRule
+          ? _value.joinRule
+          : joinRule // ignore: cast_nullable_to_non_nullable
+              as JoinRule,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GroupCreateJoinLinkInput implements GroupCreateJoinLinkInput {
-  const _GroupCreateJoinLinkInput({required this.convoId, this.requireApproval = false, @JoinRuleConverter() required this.joinRule, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _GroupCreateJoinLinkInput.fromJson(Map<String, dynamic> json) => _$GroupCreateJoinLinkInputFromJson(json);
+class _$GroupCreateJoinLinkInputImpl implements _GroupCreateJoinLinkInput {
+  const _$GroupCreateJoinLinkInputImpl(
+      {required this.convoId,
+      this.requireApproval = false,
+      @JoinRuleConverter() required this.joinRule,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override final  String convoId;
-@override@JsonKey() final  bool requireApproval;
-@override@JoinRuleConverter() final  JoinRule joinRule;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$GroupCreateJoinLinkInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GroupCreateJoinLinkInputImplFromJson(json);
+
+  @override
+  final String convoId;
+  @override
+  @JsonKey()
+  final bool requireApproval;
+  @override
+  @JoinRuleConverter()
+  final JoinRule joinRule;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'GroupCreateJoinLinkInput(convoId: $convoId, requireApproval: $requireApproval, joinRule: $joinRule, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GroupCreateJoinLinkInputImpl &&
+            (identical(other.convoId, convoId) || other.convoId == convoId) &&
+            (identical(other.requireApproval, requireApproval) ||
+                other.requireApproval == requireApproval) &&
+            (identical(other.joinRule, joinRule) ||
+                other.joinRule == joinRule) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, convoId, requireApproval,
+      joinRule, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of GroupCreateJoinLinkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GroupCreateJoinLinkInputImplCopyWith<_$GroupCreateJoinLinkInputImpl>
+      get copyWith => __$$GroupCreateJoinLinkInputImplCopyWithImpl<
+          _$GroupCreateJoinLinkInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GroupCreateJoinLinkInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _GroupCreateJoinLinkInput implements GroupCreateJoinLinkInput {
+  const factory _GroupCreateJoinLinkInput(
+      {required final String convoId,
+      final bool requireApproval,
+      @JoinRuleConverter() required final JoinRule joinRule,
+      final Map<String, dynamic>? $unknown}) = _$GroupCreateJoinLinkInputImpl;
 
-/// Create a copy of GroupCreateJoinLinkInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$GroupCreateJoinLinkInputCopyWith<_GroupCreateJoinLinkInput> get copyWith => __$GroupCreateJoinLinkInputCopyWithImpl<_GroupCreateJoinLinkInput>(this, _$identity);
+  factory _GroupCreateJoinLinkInput.fromJson(Map<String, dynamic> json) =
+      _$GroupCreateJoinLinkInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GroupCreateJoinLinkInputToJson(this, );
+  @override
+  String get convoId;
+  @override
+  bool get requireApproval;
+  @override
+  @JoinRuleConverter()
+  JoinRule get joinRule;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of GroupCreateJoinLinkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GroupCreateJoinLinkInputImplCopyWith<_$GroupCreateJoinLinkInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GroupCreateJoinLinkInput&&(identical(other.convoId, convoId) || other.convoId == convoId)&&(identical(other.requireApproval, requireApproval) || other.requireApproval == requireApproval)&&(identical(other.joinRule, joinRule) || other.joinRule == joinRule)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,convoId,requireApproval,joinRule,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'GroupCreateJoinLinkInput(convoId: $convoId, requireApproval: $requireApproval, joinRule: $joinRule, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$GroupCreateJoinLinkInputCopyWith<$Res> implements $GroupCreateJoinLinkInputCopyWith<$Res> {
-  factory _$GroupCreateJoinLinkInputCopyWith(_GroupCreateJoinLinkInput value, $Res Function(_GroupCreateJoinLinkInput) _then) = __$GroupCreateJoinLinkInputCopyWithImpl;
-@override @useResult
-$Res call({
- String convoId, bool requireApproval,@JoinRuleConverter() JoinRule joinRule, Map<String, dynamic>? $unknown
-});
-
-
-@override $JoinRuleCopyWith<$Res> get joinRule;
-
-}
-/// @nodoc
-class __$GroupCreateJoinLinkInputCopyWithImpl<$Res>
-    implements _$GroupCreateJoinLinkInputCopyWith<$Res> {
-  __$GroupCreateJoinLinkInputCopyWithImpl(this._self, this._then);
-
-  final _GroupCreateJoinLinkInput _self;
-  final $Res Function(_GroupCreateJoinLinkInput) _then;
-
-/// Create a copy of GroupCreateJoinLinkInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? convoId = null,Object? requireApproval = null,Object? joinRule = null,Object? $unknown = freezed,}) {
-  return _then(_GroupCreateJoinLinkInput(
-convoId: null == convoId ? _self.convoId : convoId // ignore: cast_nullable_to_non_nullable
-as String,requireApproval: null == requireApproval ? _self.requireApproval : requireApproval // ignore: cast_nullable_to_non_nullable
-as bool,joinRule: null == joinRule ? _self.joinRule : joinRule // ignore: cast_nullable_to_non_nullable
-as JoinRule,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of GroupCreateJoinLinkInput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$JoinRuleCopyWith<$Res> get joinRule {
-  
-  return $JoinRuleCopyWith<$Res>(_self.joinRule, (value) {
-    return _then(_self.copyWith(joinRule: value));
-  });
-}
-}
-
-// dart format on

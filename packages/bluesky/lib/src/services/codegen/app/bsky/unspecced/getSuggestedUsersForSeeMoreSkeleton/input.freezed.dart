@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,290 +9,271 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
+    _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputFromJson(
+        Map<String, dynamic> json) {
+  return _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput {
+  /// DID of the account making the request (not included for public/unauthenticated queries).
+  String? get viewer => throw _privateConstructorUsedError;
 
-/// DID of the account making the request (not included for public/unauthenticated queries).
- String? get viewer;/// Category of users to get suggestions for.
- String? get category; int get limit; Map<String, dynamic>? get $unknown;
-/// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput> get copyWith => _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl<UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput>(this as UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput, _$identity);
+  /// Category of users to get suggestions for.
+  String? get category => throw _privateConstructorUsedError;
+  int get limit => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput&&(identical(other.viewer, viewer) || other.viewer == viewer)&&(identical(other.category, category) || other.category == category)&&(identical(other.limit, limit) || other.limit == limit)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,viewer,category,limit,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput(viewer: $viewer, category: $category, limit: $limit, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<
+          UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<$Res>  {
-  factory $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith(UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput value, $Res Function(UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput) _then) = _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl;
-@useResult
-$Res call({
- String? viewer, String? category, int limit, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<
+    $Res> {
+  factory $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith(
+          UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput value,
+          $Res Function(UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput)
+              then) =
+      _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl<$Res,
+          UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput>;
+  @useResult
+  $Res call(
+      {String? viewer,
+      String? category,
+      int limit,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl<$Res>
-    implements $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<$Res> {
-  _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl(this._self, this._then);
+class _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl<$Res,
+        $Val extends UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput>
+    implements
+        $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<$Res> {
+  _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl(
+      this._value, this._then);
 
-  final UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput _self;
-  final $Res Function(UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? viewer = freezed,Object? category = freezed,Object? limit = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-viewer: freezed == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
-as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewer = freezed,
+    Object? category = freezed,
+    Object? limit = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      viewer: freezed == viewer
+          ? _value.viewer
+          : viewer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWith<
+        $Res>
+    implements
+        $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<$Res> {
+  factory _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWith(
+          _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl value,
+          $Res Function(_$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl)
+              then) =
+      __$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWithImpl<
+          $Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? viewer,
+      String? category,
+      int limit,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWithImpl<
+        $Res>
+    extends _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl<
+        $Res, _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl>
+    implements
+        _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWith<$Res> {
+  __$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWithImpl(
+      _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl _value,
+      $Res Function(_$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl)
+          _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput].
-extension UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputPatterns on UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? viewer,  String? category,  int limit,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput() when $default != null:
-return $default(_that.viewer,_that.category,_that.limit,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? viewer,  String? category,  int limit,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput():
-return $default(_that.viewer,_that.category,_that.limit,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? viewer,  String? category,  int limit,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput() when $default != null:
-return $default(_that.viewer,_that.category,_that.limit,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewer = freezed,
+    Object? category = freezed,
+    Object? limit = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl(
+      viewer: freezed == viewer
+          ? _value.viewer
+          : viewer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput implements UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput {
-  const _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput({this.viewer, this.category, this.limit = 25, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput.fromJson(Map<String, dynamic> json) => _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputFromJson(json);
+class _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl
+    implements _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput {
+  const _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl(
+      {this.viewer,
+      this.category,
+      this.limit = 25,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// DID of the account making the request (not included for public/unauthenticated queries).
-@override final  String? viewer;
-/// Category of users to get suggestions for.
-@override final  String? category;
-@override@JsonKey() final  int limit;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplFromJson(json);
+
+  /// DID of the account making the request (not included for public/unauthenticated queries).
+  @override
+  final String? viewer;
+
+  /// Category of users to get suggestions for.
+  @override
+  final String? category;
+  @override
+  @JsonKey()
+  final int limit;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput(viewer: $viewer, category: $category, limit: $limit, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl &&
+            (identical(other.viewer, viewer) || other.viewer == viewer) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, viewer, category, limit,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWith<
+          _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl>
+      get copyWith =>
+          __$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWithImpl<
+                  _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
+    implements UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput {
+  const factory _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput(
+          {final String? viewer,
+          final String? category,
+          final int limit,
+          final Map<String, dynamic>? $unknown}) =
+      _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl;
 
-/// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<_UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput> get copyWith => __$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl<_UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput>(this, _$identity);
+  factory _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput.fromJson(
+          Map<String, dynamic> json) =
+      _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputToJson(this, );
+  /// DID of the account making the request (not included for public/unauthenticated queries).
+  @override
+  String? get viewer;
+
+  /// Category of users to get suggestions for.
+  @override
+  String? get category;
+  @override
+  int get limit;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImplCopyWith<
+          _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput&&(identical(other.viewer, viewer) || other.viewer == viewer)&&(identical(other.category, category) || other.category == category)&&(identical(other.limit, limit) || other.limit == limit)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,viewer,category,limit,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput(viewer: $viewer, category: $category, limit: $limit, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<$Res> implements $UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<$Res> {
-  factory _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith(_UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput value, $Res Function(_UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput) _then) = __$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? viewer, String? category, int limit, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl<$Res>
-    implements _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWith<$Res> {
-  __$UnspeccedGetSuggestedUsersForSeeMoreSkeletonInputCopyWithImpl(this._self, this._then);
-
-  final _UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput _self;
-  final $Res Function(_UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput) _then;
-
-/// Create a copy of UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? viewer = freezed,Object? category = freezed,Object? limit = null,Object? $unknown = freezed,}) {
-  return _then(_UnspeccedGetSuggestedUsersForSeeMoreSkeletonInput(
-viewer: freezed == viewer ? _self.viewer : viewer // ignore: cast_nullable_to_non_nullable
-as String?,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

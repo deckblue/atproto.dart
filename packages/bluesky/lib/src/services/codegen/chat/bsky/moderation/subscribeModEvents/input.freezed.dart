@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,282 +9,202 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+ModerationSubscribeModEventsInput _$ModerationSubscribeModEventsInputFromJson(
+    Map<String, dynamic> json) {
+  return _ModerationSubscribeModEventsInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ModerationSubscribeModEventsInput {
-
-/// The last known event seq number to backfill from. Use '2222222222222' to backfill from the beginning. Don't specify a cursor to listen only for new events.
- String? get cursor; Map<String, dynamic>? get $unknown;
-/// Create a copy of ModerationSubscribeModEventsInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ModerationSubscribeModEventsInputCopyWith<ModerationSubscribeModEventsInput> get copyWith => _$ModerationSubscribeModEventsInputCopyWithImpl<ModerationSubscribeModEventsInput>(this as ModerationSubscribeModEventsInput, _$identity);
+  /// The last known event seq number to backfill from. Use '2222222222222' to backfill from the beginning. Don't specify a cursor to listen only for new events.
+  String? get cursor => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ModerationSubscribeModEventsInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationSubscribeModEventsInput&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,cursor,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'ModerationSubscribeModEventsInput(cursor: $cursor, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of ModerationSubscribeModEventsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ModerationSubscribeModEventsInputCopyWith<ModerationSubscribeModEventsInput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ModerationSubscribeModEventsInputCopyWith<$Res>  {
-  factory $ModerationSubscribeModEventsInputCopyWith(ModerationSubscribeModEventsInput value, $Res Function(ModerationSubscribeModEventsInput) _then) = _$ModerationSubscribeModEventsInputCopyWithImpl;
-@useResult
-$Res call({
- String? cursor, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $ModerationSubscribeModEventsInputCopyWith<$Res> {
+  factory $ModerationSubscribeModEventsInputCopyWith(
+          ModerationSubscribeModEventsInput value,
+          $Res Function(ModerationSubscribeModEventsInput) then) =
+      _$ModerationSubscribeModEventsInputCopyWithImpl<$Res,
+          ModerationSubscribeModEventsInput>;
+  @useResult
+  $Res call({String? cursor, Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$ModerationSubscribeModEventsInputCopyWithImpl<$Res>
+class _$ModerationSubscribeModEventsInputCopyWithImpl<$Res,
+        $Val extends ModerationSubscribeModEventsInput>
     implements $ModerationSubscribeModEventsInputCopyWith<$Res> {
-  _$ModerationSubscribeModEventsInputCopyWithImpl(this._self, this._then);
+  _$ModerationSubscribeModEventsInputCopyWithImpl(this._value, this._then);
 
-  final ModerationSubscribeModEventsInput _self;
-  final $Res Function(ModerationSubscribeModEventsInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ModerationSubscribeModEventsInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? cursor = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of ModerationSubscribeModEventsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cursor = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$ModerationSubscribeModEventsInputImplCopyWith<$Res>
+    implements $ModerationSubscribeModEventsInputCopyWith<$Res> {
+  factory _$$ModerationSubscribeModEventsInputImplCopyWith(
+          _$ModerationSubscribeModEventsInputImpl value,
+          $Res Function(_$ModerationSubscribeModEventsInputImpl) then) =
+      __$$ModerationSubscribeModEventsInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? cursor, Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$ModerationSubscribeModEventsInputImplCopyWithImpl<$Res>
+    extends _$ModerationSubscribeModEventsInputCopyWithImpl<$Res,
+        _$ModerationSubscribeModEventsInputImpl>
+    implements _$$ModerationSubscribeModEventsInputImplCopyWith<$Res> {
+  __$$ModerationSubscribeModEventsInputImplCopyWithImpl(
+      _$ModerationSubscribeModEventsInputImpl _value,
+      $Res Function(_$ModerationSubscribeModEventsInputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [ModerationSubscribeModEventsInput].
-extension ModerationSubscribeModEventsInputPatterns on ModerationSubscribeModEventsInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ModerationSubscribeModEventsInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ModerationSubscribeModEventsInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ModerationSubscribeModEventsInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _ModerationSubscribeModEventsInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ModerationSubscribeModEventsInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ModerationSubscribeModEventsInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? cursor,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ModerationSubscribeModEventsInput() when $default != null:
-return $default(_that.cursor,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? cursor,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _ModerationSubscribeModEventsInput():
-return $default(_that.cursor,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? cursor,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _ModerationSubscribeModEventsInput() when $default != null:
-return $default(_that.cursor,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of ModerationSubscribeModEventsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cursor = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$ModerationSubscribeModEventsInputImpl(
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _ModerationSubscribeModEventsInput implements ModerationSubscribeModEventsInput {
-  const _ModerationSubscribeModEventsInput({this.cursor, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _ModerationSubscribeModEventsInput.fromJson(Map<String, dynamic> json) => _$ModerationSubscribeModEventsInputFromJson(json);
+class _$ModerationSubscribeModEventsInputImpl
+    implements _ModerationSubscribeModEventsInput {
+  const _$ModerationSubscribeModEventsInputImpl(
+      {this.cursor, final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// The last known event seq number to backfill from. Use '2222222222222' to backfill from the beginning. Don't specify a cursor to listen only for new events.
-@override final  String? cursor;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$ModerationSubscribeModEventsInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ModerationSubscribeModEventsInputImplFromJson(json);
+
+  /// The last known event seq number to backfill from. Use '2222222222222' to backfill from the beginning. Don't specify a cursor to listen only for new events.
+  @override
+  final String? cursor;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ModerationSubscribeModEventsInput(cursor: $cursor, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModerationSubscribeModEventsInputImpl &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, cursor, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of ModerationSubscribeModEventsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModerationSubscribeModEventsInputImplCopyWith<
+          _$ModerationSubscribeModEventsInputImpl>
+      get copyWith => __$$ModerationSubscribeModEventsInputImplCopyWithImpl<
+          _$ModerationSubscribeModEventsInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ModerationSubscribeModEventsInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _ModerationSubscribeModEventsInput
+    implements ModerationSubscribeModEventsInput {
+  const factory _ModerationSubscribeModEventsInput(
+          {final String? cursor, final Map<String, dynamic>? $unknown}) =
+      _$ModerationSubscribeModEventsInputImpl;
 
-/// Create a copy of ModerationSubscribeModEventsInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ModerationSubscribeModEventsInputCopyWith<_ModerationSubscribeModEventsInput> get copyWith => __$ModerationSubscribeModEventsInputCopyWithImpl<_ModerationSubscribeModEventsInput>(this, _$identity);
+  factory _ModerationSubscribeModEventsInput.fromJson(
+          Map<String, dynamic> json) =
+      _$ModerationSubscribeModEventsInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ModerationSubscribeModEventsInputToJson(this, );
+  /// The last known event seq number to backfill from. Use '2222222222222' to backfill from the beginning. Don't specify a cursor to listen only for new events.
+  @override
+  String? get cursor;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of ModerationSubscribeModEventsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ModerationSubscribeModEventsInputImplCopyWith<
+          _$ModerationSubscribeModEventsInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ModerationSubscribeModEventsInput&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,cursor,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'ModerationSubscribeModEventsInput(cursor: $cursor, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ModerationSubscribeModEventsInputCopyWith<$Res> implements $ModerationSubscribeModEventsInputCopyWith<$Res> {
-  factory _$ModerationSubscribeModEventsInputCopyWith(_ModerationSubscribeModEventsInput value, $Res Function(_ModerationSubscribeModEventsInput) _then) = __$ModerationSubscribeModEventsInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? cursor, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$ModerationSubscribeModEventsInputCopyWithImpl<$Res>
-    implements _$ModerationSubscribeModEventsInputCopyWith<$Res> {
-  __$ModerationSubscribeModEventsInputCopyWithImpl(this._self, this._then);
-
-  final _ModerationSubscribeModEventsInput _self;
-  final $Res Function(_ModerationSubscribeModEventsInput) _then;
-
-/// Create a copy of ModerationSubscribeModEventsInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? cursor = freezed,Object? $unknown = freezed,}) {
-  return _then(_ModerationSubscribeModEventsInput(
-cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

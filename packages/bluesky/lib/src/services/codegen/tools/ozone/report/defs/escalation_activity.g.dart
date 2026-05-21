@@ -8,46 +8,51 @@ part of 'escalation_activity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_EscalationActivity _$EscalationActivityFromJson(Map json) =>
-    $checkedCreate('_EscalationActivity', json, ($checkedConvert) {
-      final val = _EscalationActivity(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.report.defs#escalationActivity',
-        ),
-        previousStatus: $checkedConvert(
-          'previousStatus',
-          (v) =>
-              _$JsonConverterFromJson<String, EscalationActivityPreviousStatus>(
-                v,
-                const EscalationActivityPreviousStatusConverter().fromJson,
-              ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$EscalationActivityImpl _$$EscalationActivityImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$EscalationActivityImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$EscalationActivityImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'tools.ozone.report.defs#escalationActivity'),
+          previousStatus: $checkedConvert(
+              'previousStatus',
+              (v) => _$JsonConverterFromJson<String,
+                      EscalationActivityPreviousStatus>(v,
+                  const EscalationActivityPreviousStatusConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$EscalationActivityToJson(_EscalationActivity instance) =>
+Map<String, dynamic> _$$EscalationActivityImplToJson(
+        _$EscalationActivityImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'previousStatus':
-          ?_$JsonConverterToJson<String, EscalationActivityPreviousStatus>(
-            instance.previousStatus,
-            const EscalationActivityPreviousStatusConverter().toJson,
-          ),
-      r'$unknown': ?instance.$unknown,
+      if (_$JsonConverterToJson<String, EscalationActivityPreviousStatus>(
+              instance.previousStatus,
+              const EscalationActivityPreviousStatusConverter().toJson)
+          case final value?)
+        'previousStatus': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

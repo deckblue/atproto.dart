@@ -8,26 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupAddMembersInput _$GroupAddMembersInputFromJson(Map json) =>
-    $checkedCreate('_GroupAddMembersInput', json, ($checkedConvert) {
-      final val = _GroupAddMembersInput(
-        convoId: $checkedConvert('convoId', (v) => v as String),
-        members: $checkedConvert(
-          'members',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupAddMembersInputImpl _$$GroupAddMembersInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GroupAddMembersInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupAddMembersInputImpl(
+          convoId: $checkedConvert('convoId', (v) => v as String),
+          members: $checkedConvert('members',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupAddMembersInputToJson(
-  _GroupAddMembersInput instance,
-) => <String, dynamic>{
-  'convoId': instance.convoId,
-  'members': instance.members,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupAddMembersInputImplToJson(
+        _$GroupAddMembersInputImpl instance) =>
+    <String, dynamic>{
+      'convoId': instance.convoId,
+      'members': instance.members,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

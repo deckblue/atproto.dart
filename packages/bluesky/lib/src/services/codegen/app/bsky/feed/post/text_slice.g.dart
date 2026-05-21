@@ -8,27 +8,29 @@ part of 'text_slice.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TextSlice _$TextSliceFromJson(Map json) =>
-    $checkedCreate('_TextSlice', json, ($checkedConvert) {
-      final val = _TextSlice(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.feed.post#textSlice',
-        ),
-        start: $checkedConvert('start', (v) => (v as num).toInt()),
-        end: $checkedConvert('end', (v) => (v as num).toInt()),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$TextSliceImpl _$$TextSliceImplFromJson(Map json) => $checkedCreate(
+      r'_$TextSliceImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$TextSliceImpl(
+          $type: $checkedConvert(
+              r'$type', (v) => v as String? ?? 'app.bsky.feed.post#textSlice'),
+          start: $checkedConvert('start', (v) => (v as num).toInt()),
+          end: $checkedConvert('end', (v) => (v as num).toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$TextSliceToJson(_TextSlice instance) =>
+Map<String, dynamic> _$$TextSliceImplToJson(_$TextSliceImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'start': instance.start,
       'end': instance.end,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

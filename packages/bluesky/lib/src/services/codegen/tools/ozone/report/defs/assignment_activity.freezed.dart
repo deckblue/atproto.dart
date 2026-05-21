@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,309 +9,246 @@ part of 'assignment_activity.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+AssignmentActivity _$AssignmentActivityFromJson(Map<String, dynamic> json) {
+  return _AssignmentActivity.fromJson(json);
+}
 
 /// @nodoc
 mixin _$AssignmentActivity {
+  String get $type => throw _privateConstructorUsedError;
 
- String get $type;/// The report's status before this activity. Populated automatically from the report row; not required in input.
-@AssignmentActivityPreviousStatusConverter() AssignmentActivityPreviousStatus? get previousStatus; Map<String, dynamic>? get $unknown;
-/// Create a copy of AssignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AssignmentActivityCopyWith<AssignmentActivity> get copyWith => _$AssignmentActivityCopyWithImpl<AssignmentActivity>(this as AssignmentActivity, _$identity);
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @AssignmentActivityPreviousStatusConverter()
+  AssignmentActivityPreviousStatus? get previousStatus =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this AssignmentActivity to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssignmentActivity&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.previousStatus, previousStatus) || other.previousStatus == previousStatus)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,previousStatus,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'AssignmentActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of AssignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AssignmentActivityCopyWith<AssignmentActivity> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AssignmentActivityCopyWith<$Res>  {
-  factory $AssignmentActivityCopyWith(AssignmentActivity value, $Res Function(AssignmentActivity) _then) = _$AssignmentActivityCopyWithImpl;
-@useResult
-$Res call({
- String $type,@AssignmentActivityPreviousStatusConverter() AssignmentActivityPreviousStatus? previousStatus, Map<String, dynamic>? $unknown
-});
+abstract class $AssignmentActivityCopyWith<$Res> {
+  factory $AssignmentActivityCopyWith(
+          AssignmentActivity value, $Res Function(AssignmentActivity) then) =
+      _$AssignmentActivityCopyWithImpl<$Res, AssignmentActivity>;
+  @useResult
+  $Res call(
+      {String $type,
+      @AssignmentActivityPreviousStatusConverter()
+      AssignmentActivityPreviousStatus? previousStatus,
+      Map<String, dynamic>? $unknown});
 
-
-$AssignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus;
-
+  $AssignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus;
 }
+
 /// @nodoc
-class _$AssignmentActivityCopyWithImpl<$Res>
+class _$AssignmentActivityCopyWithImpl<$Res, $Val extends AssignmentActivity>
     implements $AssignmentActivityCopyWith<$Res> {
-  _$AssignmentActivityCopyWithImpl(this._self, this._then);
+  _$AssignmentActivityCopyWithImpl(this._value, this._then);
 
-  final AssignmentActivity _self;
-  final $Res Function(AssignmentActivity) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of AssignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? previousStatus = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,previousStatus: freezed == previousStatus ? _self.previousStatus : previousStatus // ignore: cast_nullable_to_non_nullable
-as AssignmentActivityPreviousStatus?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of AssignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AssignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus {
-    if (_self.previousStatus == null) {
-    return null;
+  /// Create a copy of AssignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? previousStatus = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      previousStatus: freezed == previousStatus
+          ? _value.previousStatus
+          : previousStatus // ignore: cast_nullable_to_non_nullable
+              as AssignmentActivityPreviousStatus?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
   }
 
-  return $AssignmentActivityPreviousStatusCopyWith<$Res>(_self.previousStatus!, (value) {
-    return _then(_self.copyWith(previousStatus: value));
-  });
-}
-}
+  /// Create a copy of AssignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus {
+    if (_value.previousStatus == null) {
+      return null;
+    }
 
-
-/// Adds pattern-matching-related methods to [AssignmentActivity].
-extension AssignmentActivityPatterns on AssignmentActivity {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssignmentActivity value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _AssignmentActivity() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssignmentActivity value)  $default,){
-final _that = this;
-switch (_that) {
-case _AssignmentActivity():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssignmentActivity value)?  $default,){
-final _that = this;
-switch (_that) {
-case _AssignmentActivity() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type, @AssignmentActivityPreviousStatusConverter()  AssignmentActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _AssignmentActivity() when $default != null:
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type, @AssignmentActivityPreviousStatusConverter()  AssignmentActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _AssignmentActivity():
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type, @AssignmentActivityPreviousStatusConverter()  AssignmentActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _AssignmentActivity() when $default != null:
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  return null;
-
-}
+    return $AssignmentActivityPreviousStatusCopyWith<$Res>(
+        _value.previousStatus!, (value) {
+      return _then(_value.copyWith(previousStatus: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$AssignmentActivityImplCopyWith<$Res>
+    implements $AssignmentActivityCopyWith<$Res> {
+  factory _$$AssignmentActivityImplCopyWith(_$AssignmentActivityImpl value,
+          $Res Function(_$AssignmentActivityImpl) then) =
+      __$$AssignmentActivityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      @AssignmentActivityPreviousStatusConverter()
+      AssignmentActivityPreviousStatus? previousStatus,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $AssignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus;
+}
+
+/// @nodoc
+class __$$AssignmentActivityImplCopyWithImpl<$Res>
+    extends _$AssignmentActivityCopyWithImpl<$Res, _$AssignmentActivityImpl>
+    implements _$$AssignmentActivityImplCopyWith<$Res> {
+  __$$AssignmentActivityImplCopyWithImpl(_$AssignmentActivityImpl _value,
+      $Res Function(_$AssignmentActivityImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AssignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? previousStatus = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$AssignmentActivityImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      previousStatus: freezed == previousStatus
+          ? _value.previousStatus
+          : previousStatus // ignore: cast_nullable_to_non_nullable
+              as AssignmentActivityPreviousStatus?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _AssignmentActivity implements AssignmentActivity {
-  const _AssignmentActivity({this.$type = 'tools.ozone.report.defs#assignmentActivity', @AssignmentActivityPreviousStatusConverter() this.previousStatus, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _AssignmentActivity.fromJson(Map<String, dynamic> json) => _$AssignmentActivityFromJson(json);
+class _$AssignmentActivityImpl implements _AssignmentActivity {
+  const _$AssignmentActivityImpl(
+      {this.$type = 'tools.ozone.report.defs#assignmentActivity',
+      @AssignmentActivityPreviousStatusConverter() this.previousStatus,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-/// The report's status before this activity. Populated automatically from the report row; not required in input.
-@override@AssignmentActivityPreviousStatusConverter() final  AssignmentActivityPreviousStatus? previousStatus;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+  factory _$AssignmentActivityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AssignmentActivityImplFromJson(json);
 
+  @override
+  @JsonKey()
+  final String $type;
 
-/// Create a copy of AssignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$AssignmentActivityCopyWith<_AssignmentActivity> get copyWith => __$AssignmentActivityCopyWithImpl<_AssignmentActivity>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$AssignmentActivityToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssignmentActivity&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.previousStatus, previousStatus) || other.previousStatus == previousStatus)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,previousStatus,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'AssignmentActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$AssignmentActivityCopyWith<$Res> implements $AssignmentActivityCopyWith<$Res> {
-  factory _$AssignmentActivityCopyWith(_AssignmentActivity value, $Res Function(_AssignmentActivity) _then) = __$AssignmentActivityCopyWithImpl;
-@override @useResult
-$Res call({
- String $type,@AssignmentActivityPreviousStatusConverter() AssignmentActivityPreviousStatus? previousStatus, Map<String, dynamic>? $unknown
-});
-
-
-@override $AssignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus;
-
-}
-/// @nodoc
-class __$AssignmentActivityCopyWithImpl<$Res>
-    implements _$AssignmentActivityCopyWith<$Res> {
-  __$AssignmentActivityCopyWithImpl(this._self, this._then);
-
-  final _AssignmentActivity _self;
-  final $Res Function(_AssignmentActivity) _then;
-
-/// Create a copy of AssignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? previousStatus = freezed,Object? $unknown = freezed,}) {
-  return _then(_AssignmentActivity(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,previousStatus: freezed == previousStatus ? _self.previousStatus : previousStatus // ignore: cast_nullable_to_non_nullable
-as AssignmentActivityPreviousStatus?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of AssignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AssignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus {
-    if (_self.previousStatus == null) {
-    return null;
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @override
+  @AssignmentActivityPreviousStatusConverter()
+  final AssignmentActivityPreviousStatus? previousStatus;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
   }
 
-  return $AssignmentActivityPreviousStatusCopyWith<$Res>(_self.previousStatus!, (value) {
-    return _then(_self.copyWith(previousStatus: value));
-  });
-}
+  @override
+  String toString() {
+    return 'AssignmentActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AssignmentActivityImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.previousStatus, previousStatus) ||
+                other.previousStatus == previousStatus) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, previousStatus,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of AssignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssignmentActivityImplCopyWith<_$AssignmentActivityImpl> get copyWith =>
+      __$$AssignmentActivityImplCopyWithImpl<_$AssignmentActivityImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AssignmentActivityImplToJson(
+      this,
+    );
+  }
 }
 
-// dart format on
+abstract class _AssignmentActivity implements AssignmentActivity {
+  const factory _AssignmentActivity(
+      {final String $type,
+      @AssignmentActivityPreviousStatusConverter()
+      final AssignmentActivityPreviousStatus? previousStatus,
+      final Map<String, dynamic>? $unknown}) = _$AssignmentActivityImpl;
+
+  factory _AssignmentActivity.fromJson(Map<String, dynamic> json) =
+      _$AssignmentActivityImpl.fromJson;
+
+  @override
+  String get $type;
+
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @override
+  @AssignmentActivityPreviousStatusConverter()
+  AssignmentActivityPreviousStatus? get previousStatus;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of AssignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AssignmentActivityImplCopyWith<_$AssignmentActivityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

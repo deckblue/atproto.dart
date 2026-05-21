@@ -8,35 +8,36 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoListConvoRequestsOutput _$ConvoListConvoRequestsOutputFromJson(
-  Map json,
-) => $checkedCreate('_ConvoListConvoRequestsOutput', json, ($checkedConvert) {
-  final val = _ConvoListConvoRequestsOutput(
-    cursor: $checkedConvert('cursor', (v) => v as String?),
-    requests: $checkedConvert(
-      'requests',
-      (v) => (v as List<dynamic>)
-          .map(
-            (e) => const UConvoListConvoRequestsRequestsConverter().fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$ConvoListConvoRequestsOutputImpl _$$ConvoListConvoRequestsOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ConvoListConvoRequestsOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoListConvoRequestsOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          requests: $checkedConvert(
+              'requests',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const UConvoListConvoRequestsRequestsConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoListConvoRequestsOutputToJson(
-  _ConvoListConvoRequestsOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'requests': instance.requests
-      .map(const UConvoListConvoRequestsRequestsConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConvoListConvoRequestsOutputImplToJson(
+        _$ConvoListConvoRequestsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'requests': instance.requests
+          .map(const UConvoListConvoRequestsRequestsConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

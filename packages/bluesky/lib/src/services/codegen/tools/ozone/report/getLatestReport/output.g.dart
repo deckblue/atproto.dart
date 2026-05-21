@@ -8,25 +8,30 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ReportGetLatestReportOutput _$ReportGetLatestReportOutputFromJson(Map json) =>
-    $checkedCreate('_ReportGetLatestReportOutput', json, ($checkedConvert) {
-      final val = _ReportGetLatestReportOutput(
-        report: $checkedConvert(
-          'report',
-          (v) =>
-              const ReportViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ReportGetLatestReportOutputImpl _$$ReportGetLatestReportOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ReportGetLatestReportOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ReportGetLatestReportOutputImpl(
+          report: $checkedConvert(
+              'report',
+              (v) => const ReportViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ReportGetLatestReportOutputToJson(
-  _ReportGetLatestReportOutput instance,
-) => <String, dynamic>{
-  'report': const ReportViewConverter().toJson(instance.report),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ReportGetLatestReportOutputImplToJson(
+        _$ReportGetLatestReportOutputImpl instance) =>
+    <String, dynamic>{
+      'report': const ReportViewConverter().toJson(instance.report),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

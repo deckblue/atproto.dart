@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,393 @@ part of 'main_subject_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$ReportQueryReportsSubjectType {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReportQueryReportsSubjectType&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'ReportQueryReportsSubjectType(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownReportQueryReportsSubjectType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownReportQueryReportsSubjectType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownReportQueryReportsSubjectType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ReportQueryReportsSubjectTypeKnownValue value)
+        knownValue,
+    required TResult Function(ReportQueryReportsSubjectTypeUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ReportQueryReportsSubjectTypeKnownValue value)?
+        knownValue,
+    TResult? Function(ReportQueryReportsSubjectTypeUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ReportQueryReportsSubjectTypeKnownValue value)? knownValue,
+    TResult Function(ReportQueryReportsSubjectTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $ReportQueryReportsSubjectTypeCopyWith<$Res>  {
-$ReportQueryReportsSubjectTypeCopyWith(ReportQueryReportsSubjectType _, $Res Function(ReportQueryReportsSubjectType) __);
+abstract class $ReportQueryReportsSubjectTypeCopyWith<$Res> {
+  factory $ReportQueryReportsSubjectTypeCopyWith(
+          ReportQueryReportsSubjectType value,
+          $Res Function(ReportQueryReportsSubjectType) then) =
+      _$ReportQueryReportsSubjectTypeCopyWithImpl<$Res,
+          ReportQueryReportsSubjectType>;
 }
 
+/// @nodoc
+class _$ReportQueryReportsSubjectTypeCopyWithImpl<$Res,
+        $Val extends ReportQueryReportsSubjectType>
+    implements $ReportQueryReportsSubjectTypeCopyWith<$Res> {
+  _$ReportQueryReportsSubjectTypeCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [ReportQueryReportsSubjectType].
-extension ReportQueryReportsSubjectTypePatterns on ReportQueryReportsSubjectType {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ReportQueryReportsSubjectTypeKnownValue value)?  knownValue,TResult Function( ReportQueryReportsSubjectTypeUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case ReportQueryReportsSubjectTypeKnownValue() when knownValue != null:
-return knownValue(_that);case ReportQueryReportsSubjectTypeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ReportQueryReportsSubjectTypeKnownValue value)  knownValue,required TResult Function( ReportQueryReportsSubjectTypeUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case ReportQueryReportsSubjectTypeKnownValue():
-return knownValue(_that);case ReportQueryReportsSubjectTypeUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ReportQueryReportsSubjectTypeKnownValue value)?  knownValue,TResult? Function( ReportQueryReportsSubjectTypeUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case ReportQueryReportsSubjectTypeKnownValue() when knownValue != null:
-return knownValue(_that);case ReportQueryReportsSubjectTypeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownReportQueryReportsSubjectType data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case ReportQueryReportsSubjectTypeKnownValue() when knownValue != null:
-return knownValue(_that.data);case ReportQueryReportsSubjectTypeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownReportQueryReportsSubjectType data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case ReportQueryReportsSubjectTypeKnownValue():
-return knownValue(_that.data);case ReportQueryReportsSubjectTypeUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownReportQueryReportsSubjectType data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case ReportQueryReportsSubjectTypeKnownValue() when knownValue != null:
-return knownValue(_that.data);case ReportQueryReportsSubjectTypeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of ReportQueryReportsSubjectType
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$ReportQueryReportsSubjectTypeKnownValueImplCopyWith<$Res> {
+  factory _$$ReportQueryReportsSubjectTypeKnownValueImplCopyWith(
+          _$ReportQueryReportsSubjectTypeKnownValueImpl value,
+          $Res Function(_$ReportQueryReportsSubjectTypeKnownValueImpl) then) =
+      __$$ReportQueryReportsSubjectTypeKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownReportQueryReportsSubjectType data});
+}
+
+/// @nodoc
+class __$$ReportQueryReportsSubjectTypeKnownValueImplCopyWithImpl<$Res>
+    extends _$ReportQueryReportsSubjectTypeCopyWithImpl<$Res,
+        _$ReportQueryReportsSubjectTypeKnownValueImpl>
+    implements _$$ReportQueryReportsSubjectTypeKnownValueImplCopyWith<$Res> {
+  __$$ReportQueryReportsSubjectTypeKnownValueImplCopyWithImpl(
+      _$ReportQueryReportsSubjectTypeKnownValueImpl _value,
+      $Res Function(_$ReportQueryReportsSubjectTypeKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ReportQueryReportsSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ReportQueryReportsSubjectTypeKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownReportQueryReportsSubjectType,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$ReportQueryReportsSubjectTypeKnownValueImpl
+    extends ReportQueryReportsSubjectTypeKnownValue {
+  const _$ReportQueryReportsSubjectTypeKnownValueImpl({required this.data})
+      : super._();
 
-class ReportQueryReportsSubjectTypeKnownValue extends ReportQueryReportsSubjectType {
-  const ReportQueryReportsSubjectTypeKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownReportQueryReportsSubjectType data;
 
-@override final  KnownReportQueryReportsSubjectType data;
+  @override
+  String toString() {
+    return 'ReportQueryReportsSubjectType.knownValue(data: $data)';
+  }
 
-/// Create a copy of ReportQueryReportsSubjectType
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ReportQueryReportsSubjectTypeKnownValueCopyWith<ReportQueryReportsSubjectTypeKnownValue> get copyWith => _$ReportQueryReportsSubjectTypeKnownValueCopyWithImpl<ReportQueryReportsSubjectTypeKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReportQueryReportsSubjectTypeKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of ReportQueryReportsSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReportQueryReportsSubjectTypeKnownValueImplCopyWith<
+          _$ReportQueryReportsSubjectTypeKnownValueImpl>
+      get copyWith =>
+          __$$ReportQueryReportsSubjectTypeKnownValueImplCopyWithImpl<
+              _$ReportQueryReportsSubjectTypeKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReportQueryReportsSubjectTypeKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownReportQueryReportsSubjectType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownReportQueryReportsSubjectType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownReportQueryReportsSubjectType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ReportQueryReportsSubjectTypeKnownValue value)
+        knownValue,
+    required TResult Function(ReportQueryReportsSubjectTypeUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ReportQueryReportsSubjectTypeKnownValue value)?
+        knownValue,
+    TResult? Function(ReportQueryReportsSubjectTypeUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ReportQueryReportsSubjectTypeKnownValue value)? knownValue,
+    TResult Function(ReportQueryReportsSubjectTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class ReportQueryReportsSubjectTypeKnownValue
+    extends ReportQueryReportsSubjectType {
+  const factory ReportQueryReportsSubjectTypeKnownValue(
+          {required final KnownReportQueryReportsSubjectType data}) =
+      _$ReportQueryReportsSubjectTypeKnownValueImpl;
+  const ReportQueryReportsSubjectTypeKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownReportQueryReportsSubjectType get data;
 
-@override
-String toString() {
-  return 'ReportQueryReportsSubjectType.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of ReportQueryReportsSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReportQueryReportsSubjectTypeKnownValueImplCopyWith<
+          _$ReportQueryReportsSubjectTypeKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ReportQueryReportsSubjectTypeKnownValueCopyWith<$Res> implements $ReportQueryReportsSubjectTypeCopyWith<$Res> {
-  factory $ReportQueryReportsSubjectTypeKnownValueCopyWith(ReportQueryReportsSubjectTypeKnownValue value, $Res Function(ReportQueryReportsSubjectTypeKnownValue) _then) = _$ReportQueryReportsSubjectTypeKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownReportQueryReportsSubjectType data
-});
-
-
-
-
-}
-/// @nodoc
-class _$ReportQueryReportsSubjectTypeKnownValueCopyWithImpl<$Res>
-    implements $ReportQueryReportsSubjectTypeKnownValueCopyWith<$Res> {
-  _$ReportQueryReportsSubjectTypeKnownValueCopyWithImpl(this._self, this._then);
-
-  final ReportQueryReportsSubjectTypeKnownValue _self;
-  final $Res Function(ReportQueryReportsSubjectTypeKnownValue) _then;
-
-/// Create a copy of ReportQueryReportsSubjectType
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ReportQueryReportsSubjectTypeKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownReportQueryReportsSubjectType,
-  ));
-}
-
-
+abstract class _$$ReportQueryReportsSubjectTypeUnknownImplCopyWith<$Res> {
+  factory _$$ReportQueryReportsSubjectTypeUnknownImplCopyWith(
+          _$ReportQueryReportsSubjectTypeUnknownImpl value,
+          $Res Function(_$ReportQueryReportsSubjectTypeUnknownImpl) then) =
+      __$$ReportQueryReportsSubjectTypeUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$ReportQueryReportsSubjectTypeUnknownImplCopyWithImpl<$Res>
+    extends _$ReportQueryReportsSubjectTypeCopyWithImpl<$Res,
+        _$ReportQueryReportsSubjectTypeUnknownImpl>
+    implements _$$ReportQueryReportsSubjectTypeUnknownImplCopyWith<$Res> {
+  __$$ReportQueryReportsSubjectTypeUnknownImplCopyWithImpl(
+      _$ReportQueryReportsSubjectTypeUnknownImpl _value,
+      $Res Function(_$ReportQueryReportsSubjectTypeUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class ReportQueryReportsSubjectTypeUnknown extends ReportQueryReportsSubjectType {
-  const ReportQueryReportsSubjectTypeUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of ReportQueryReportsSubjectType
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ReportQueryReportsSubjectTypeUnknownCopyWith<ReportQueryReportsSubjectTypeUnknown> get copyWith => _$ReportQueryReportsSubjectTypeUnknownCopyWithImpl<ReportQueryReportsSubjectTypeUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReportQueryReportsSubjectTypeUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'ReportQueryReportsSubjectType.unknown(data: $data)';
-}
-
-
+  /// Create a copy of ReportQueryReportsSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ReportQueryReportsSubjectTypeUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $ReportQueryReportsSubjectTypeUnknownCopyWith<$Res> implements $ReportQueryReportsSubjectTypeCopyWith<$Res> {
-  factory $ReportQueryReportsSubjectTypeUnknownCopyWith(ReportQueryReportsSubjectTypeUnknown value, $Res Function(ReportQueryReportsSubjectTypeUnknown) _then) = _$ReportQueryReportsSubjectTypeUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$ReportQueryReportsSubjectTypeUnknownImpl
+    extends ReportQueryReportsSubjectTypeUnknown {
+  const _$ReportQueryReportsSubjectTypeUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'ReportQueryReportsSubjectType.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReportQueryReportsSubjectTypeUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of ReportQueryReportsSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReportQueryReportsSubjectTypeUnknownImplCopyWith<
+          _$ReportQueryReportsSubjectTypeUnknownImpl>
+      get copyWith => __$$ReportQueryReportsSubjectTypeUnknownImplCopyWithImpl<
+          _$ReportQueryReportsSubjectTypeUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownReportQueryReportsSubjectType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownReportQueryReportsSubjectType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownReportQueryReportsSubjectType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ReportQueryReportsSubjectTypeKnownValue value)
+        knownValue,
+    required TResult Function(ReportQueryReportsSubjectTypeUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ReportQueryReportsSubjectTypeKnownValue value)?
+        knownValue,
+    TResult? Function(ReportQueryReportsSubjectTypeUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ReportQueryReportsSubjectTypeKnownValue value)? knownValue,
+    TResult Function(ReportQueryReportsSubjectTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$ReportQueryReportsSubjectTypeUnknownCopyWithImpl<$Res>
-    implements $ReportQueryReportsSubjectTypeUnknownCopyWith<$Res> {
-  _$ReportQueryReportsSubjectTypeUnknownCopyWithImpl(this._self, this._then);
 
-  final ReportQueryReportsSubjectTypeUnknown _self;
-  final $Res Function(ReportQueryReportsSubjectTypeUnknown) _then;
+abstract class ReportQueryReportsSubjectTypeUnknown
+    extends ReportQueryReportsSubjectType {
+  const factory ReportQueryReportsSubjectTypeUnknown(
+          {required final String data}) =
+      _$ReportQueryReportsSubjectTypeUnknownImpl;
+  const ReportQueryReportsSubjectTypeUnknown._() : super._();
 
-/// Create a copy of ReportQueryReportsSubjectType
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ReportQueryReportsSubjectTypeUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of ReportQueryReportsSubjectType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReportQueryReportsSubjectTypeUnknownImplCopyWith<
+          _$ReportQueryReportsSubjectTypeUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

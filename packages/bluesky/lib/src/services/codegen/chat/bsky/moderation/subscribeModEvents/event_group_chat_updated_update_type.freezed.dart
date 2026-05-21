@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,398 @@ part of 'event_group_chat_updated_update_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$EventGroupChatUpdatedUpdateType {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EventGroupChatUpdatedUpdateType&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'EventGroupChatUpdatedUpdateType(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownEventGroupChatUpdatedUpdateType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownEventGroupChatUpdatedUpdateType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownEventGroupChatUpdatedUpdateType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EventGroupChatUpdatedUpdateTypeKnownValue value)
+        knownValue,
+    required TResult Function(EventGroupChatUpdatedUpdateTypeUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EventGroupChatUpdatedUpdateTypeKnownValue value)?
+        knownValue,
+    TResult? Function(EventGroupChatUpdatedUpdateTypeUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EventGroupChatUpdatedUpdateTypeKnownValue value)?
+        knownValue,
+    TResult Function(EventGroupChatUpdatedUpdateTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $EventGroupChatUpdatedUpdateTypeCopyWith<$Res>  {
-$EventGroupChatUpdatedUpdateTypeCopyWith(EventGroupChatUpdatedUpdateType _, $Res Function(EventGroupChatUpdatedUpdateType) __);
+abstract class $EventGroupChatUpdatedUpdateTypeCopyWith<$Res> {
+  factory $EventGroupChatUpdatedUpdateTypeCopyWith(
+          EventGroupChatUpdatedUpdateType value,
+          $Res Function(EventGroupChatUpdatedUpdateType) then) =
+      _$EventGroupChatUpdatedUpdateTypeCopyWithImpl<$Res,
+          EventGroupChatUpdatedUpdateType>;
 }
 
+/// @nodoc
+class _$EventGroupChatUpdatedUpdateTypeCopyWithImpl<$Res,
+        $Val extends EventGroupChatUpdatedUpdateType>
+    implements $EventGroupChatUpdatedUpdateTypeCopyWith<$Res> {
+  _$EventGroupChatUpdatedUpdateTypeCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [EventGroupChatUpdatedUpdateType].
-extension EventGroupChatUpdatedUpdateTypePatterns on EventGroupChatUpdatedUpdateType {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( EventGroupChatUpdatedUpdateTypeKnownValue value)?  knownValue,TResult Function( EventGroupChatUpdatedUpdateTypeUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case EventGroupChatUpdatedUpdateTypeKnownValue() when knownValue != null:
-return knownValue(_that);case EventGroupChatUpdatedUpdateTypeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( EventGroupChatUpdatedUpdateTypeKnownValue value)  knownValue,required TResult Function( EventGroupChatUpdatedUpdateTypeUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case EventGroupChatUpdatedUpdateTypeKnownValue():
-return knownValue(_that);case EventGroupChatUpdatedUpdateTypeUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( EventGroupChatUpdatedUpdateTypeKnownValue value)?  knownValue,TResult? Function( EventGroupChatUpdatedUpdateTypeUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case EventGroupChatUpdatedUpdateTypeKnownValue() when knownValue != null:
-return knownValue(_that);case EventGroupChatUpdatedUpdateTypeUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownEventGroupChatUpdatedUpdateType data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case EventGroupChatUpdatedUpdateTypeKnownValue() when knownValue != null:
-return knownValue(_that.data);case EventGroupChatUpdatedUpdateTypeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownEventGroupChatUpdatedUpdateType data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case EventGroupChatUpdatedUpdateTypeKnownValue():
-return knownValue(_that.data);case EventGroupChatUpdatedUpdateTypeUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownEventGroupChatUpdatedUpdateType data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case EventGroupChatUpdatedUpdateTypeKnownValue() when knownValue != null:
-return knownValue(_that.data);case EventGroupChatUpdatedUpdateTypeUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of EventGroupChatUpdatedUpdateType
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWith<$Res> {
+  factory _$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWith(
+          _$EventGroupChatUpdatedUpdateTypeKnownValueImpl value,
+          $Res Function(_$EventGroupChatUpdatedUpdateTypeKnownValueImpl) then) =
+      __$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownEventGroupChatUpdatedUpdateType data});
+}
+
+/// @nodoc
+class __$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWithImpl<$Res>
+    extends _$EventGroupChatUpdatedUpdateTypeCopyWithImpl<$Res,
+        _$EventGroupChatUpdatedUpdateTypeKnownValueImpl>
+    implements _$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWith<$Res> {
+  __$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWithImpl(
+      _$EventGroupChatUpdatedUpdateTypeKnownValueImpl _value,
+      $Res Function(_$EventGroupChatUpdatedUpdateTypeKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of EventGroupChatUpdatedUpdateType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$EventGroupChatUpdatedUpdateTypeKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownEventGroupChatUpdatedUpdateType,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$EventGroupChatUpdatedUpdateTypeKnownValueImpl
+    extends EventGroupChatUpdatedUpdateTypeKnownValue {
+  const _$EventGroupChatUpdatedUpdateTypeKnownValueImpl({required this.data})
+      : super._();
 
-class EventGroupChatUpdatedUpdateTypeKnownValue extends EventGroupChatUpdatedUpdateType {
-  const EventGroupChatUpdatedUpdateTypeKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownEventGroupChatUpdatedUpdateType data;
 
-@override final  KnownEventGroupChatUpdatedUpdateType data;
+  @override
+  String toString() {
+    return 'EventGroupChatUpdatedUpdateType.knownValue(data: $data)';
+  }
 
-/// Create a copy of EventGroupChatUpdatedUpdateType
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$EventGroupChatUpdatedUpdateTypeKnownValueCopyWith<EventGroupChatUpdatedUpdateTypeKnownValue> get copyWith => _$EventGroupChatUpdatedUpdateTypeKnownValueCopyWithImpl<EventGroupChatUpdatedUpdateTypeKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EventGroupChatUpdatedUpdateTypeKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of EventGroupChatUpdatedUpdateType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWith<
+          _$EventGroupChatUpdatedUpdateTypeKnownValueImpl>
+      get copyWith =>
+          __$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWithImpl<
+                  _$EventGroupChatUpdatedUpdateTypeKnownValueImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EventGroupChatUpdatedUpdateTypeKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownEventGroupChatUpdatedUpdateType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownEventGroupChatUpdatedUpdateType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownEventGroupChatUpdatedUpdateType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EventGroupChatUpdatedUpdateTypeKnownValue value)
+        knownValue,
+    required TResult Function(EventGroupChatUpdatedUpdateTypeUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EventGroupChatUpdatedUpdateTypeKnownValue value)?
+        knownValue,
+    TResult? Function(EventGroupChatUpdatedUpdateTypeUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EventGroupChatUpdatedUpdateTypeKnownValue value)?
+        knownValue,
+    TResult Function(EventGroupChatUpdatedUpdateTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class EventGroupChatUpdatedUpdateTypeKnownValue
+    extends EventGroupChatUpdatedUpdateType {
+  const factory EventGroupChatUpdatedUpdateTypeKnownValue(
+          {required final KnownEventGroupChatUpdatedUpdateType data}) =
+      _$EventGroupChatUpdatedUpdateTypeKnownValueImpl;
+  const EventGroupChatUpdatedUpdateTypeKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownEventGroupChatUpdatedUpdateType get data;
 
-@override
-String toString() {
-  return 'EventGroupChatUpdatedUpdateType.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of EventGroupChatUpdatedUpdateType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EventGroupChatUpdatedUpdateTypeKnownValueImplCopyWith<
+          _$EventGroupChatUpdatedUpdateTypeKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $EventGroupChatUpdatedUpdateTypeKnownValueCopyWith<$Res> implements $EventGroupChatUpdatedUpdateTypeCopyWith<$Res> {
-  factory $EventGroupChatUpdatedUpdateTypeKnownValueCopyWith(EventGroupChatUpdatedUpdateTypeKnownValue value, $Res Function(EventGroupChatUpdatedUpdateTypeKnownValue) _then) = _$EventGroupChatUpdatedUpdateTypeKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownEventGroupChatUpdatedUpdateType data
-});
-
-
-
-
-}
-/// @nodoc
-class _$EventGroupChatUpdatedUpdateTypeKnownValueCopyWithImpl<$Res>
-    implements $EventGroupChatUpdatedUpdateTypeKnownValueCopyWith<$Res> {
-  _$EventGroupChatUpdatedUpdateTypeKnownValueCopyWithImpl(this._self, this._then);
-
-  final EventGroupChatUpdatedUpdateTypeKnownValue _self;
-  final $Res Function(EventGroupChatUpdatedUpdateTypeKnownValue) _then;
-
-/// Create a copy of EventGroupChatUpdatedUpdateType
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(EventGroupChatUpdatedUpdateTypeKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownEventGroupChatUpdatedUpdateType,
-  ));
-}
-
-
+abstract class _$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWith<$Res> {
+  factory _$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWith(
+          _$EventGroupChatUpdatedUpdateTypeUnknownImpl value,
+          $Res Function(_$EventGroupChatUpdatedUpdateTypeUnknownImpl) then) =
+      __$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWithImpl<$Res>
+    extends _$EventGroupChatUpdatedUpdateTypeCopyWithImpl<$Res,
+        _$EventGroupChatUpdatedUpdateTypeUnknownImpl>
+    implements _$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWith<$Res> {
+  __$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWithImpl(
+      _$EventGroupChatUpdatedUpdateTypeUnknownImpl _value,
+      $Res Function(_$EventGroupChatUpdatedUpdateTypeUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class EventGroupChatUpdatedUpdateTypeUnknown extends EventGroupChatUpdatedUpdateType {
-  const EventGroupChatUpdatedUpdateTypeUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of EventGroupChatUpdatedUpdateType
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$EventGroupChatUpdatedUpdateTypeUnknownCopyWith<EventGroupChatUpdatedUpdateTypeUnknown> get copyWith => _$EventGroupChatUpdatedUpdateTypeUnknownCopyWithImpl<EventGroupChatUpdatedUpdateTypeUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EventGroupChatUpdatedUpdateTypeUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'EventGroupChatUpdatedUpdateType.unknown(data: $data)';
-}
-
-
+  /// Create a copy of EventGroupChatUpdatedUpdateType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$EventGroupChatUpdatedUpdateTypeUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $EventGroupChatUpdatedUpdateTypeUnknownCopyWith<$Res> implements $EventGroupChatUpdatedUpdateTypeCopyWith<$Res> {
-  factory $EventGroupChatUpdatedUpdateTypeUnknownCopyWith(EventGroupChatUpdatedUpdateTypeUnknown value, $Res Function(EventGroupChatUpdatedUpdateTypeUnknown) _then) = _$EventGroupChatUpdatedUpdateTypeUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$EventGroupChatUpdatedUpdateTypeUnknownImpl
+    extends EventGroupChatUpdatedUpdateTypeUnknown {
+  const _$EventGroupChatUpdatedUpdateTypeUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'EventGroupChatUpdatedUpdateType.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EventGroupChatUpdatedUpdateTypeUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of EventGroupChatUpdatedUpdateType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWith<
+          _$EventGroupChatUpdatedUpdateTypeUnknownImpl>
+      get copyWith =>
+          __$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWithImpl<
+              _$EventGroupChatUpdatedUpdateTypeUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownEventGroupChatUpdatedUpdateType data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownEventGroupChatUpdatedUpdateType data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownEventGroupChatUpdatedUpdateType data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EventGroupChatUpdatedUpdateTypeKnownValue value)
+        knownValue,
+    required TResult Function(EventGroupChatUpdatedUpdateTypeUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EventGroupChatUpdatedUpdateTypeKnownValue value)?
+        knownValue,
+    TResult? Function(EventGroupChatUpdatedUpdateTypeUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EventGroupChatUpdatedUpdateTypeKnownValue value)?
+        knownValue,
+    TResult Function(EventGroupChatUpdatedUpdateTypeUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$EventGroupChatUpdatedUpdateTypeUnknownCopyWithImpl<$Res>
-    implements $EventGroupChatUpdatedUpdateTypeUnknownCopyWith<$Res> {
-  _$EventGroupChatUpdatedUpdateTypeUnknownCopyWithImpl(this._self, this._then);
 
-  final EventGroupChatUpdatedUpdateTypeUnknown _self;
-  final $Res Function(EventGroupChatUpdatedUpdateTypeUnknown) _then;
+abstract class EventGroupChatUpdatedUpdateTypeUnknown
+    extends EventGroupChatUpdatedUpdateType {
+  const factory EventGroupChatUpdatedUpdateTypeUnknown(
+          {required final String data}) =
+      _$EventGroupChatUpdatedUpdateTypeUnknownImpl;
+  const EventGroupChatUpdatedUpdateTypeUnknown._() : super._();
 
-/// Create a copy of EventGroupChatUpdatedUpdateType
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(EventGroupChatUpdatedUpdateTypeUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of EventGroupChatUpdatedUpdateType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EventGroupChatUpdatedUpdateTypeUnknownImplCopyWith<
+          _$EventGroupChatUpdatedUpdateTypeUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

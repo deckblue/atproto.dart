@@ -8,28 +8,30 @@ part of 'system_message_data_enable_join_link.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SystemMessageDataEnableJoinLink _$SystemMessageDataEnableJoinLinkFromJson(
-  Map json,
-) =>
-    $checkedCreate('_SystemMessageDataEnableJoinLink', json, ($checkedConvert) {
-      final val = _SystemMessageDataEnableJoinLink(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'chat.bsky.convo.defs#systemMessageDataEnableJoinLink',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SystemMessageDataEnableJoinLinkImpl
+    _$$SystemMessageDataEnableJoinLinkImplFromJson(Map json) => $checkedCreate(
+          r'_$SystemMessageDataEnableJoinLinkImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$SystemMessageDataEnableJoinLinkImpl(
+              $type: $checkedConvert(
+                  r'$type',
+                  (v) =>
+                      v as String? ??
+                      'chat.bsky.convo.defs#systemMessageDataEnableJoinLink'),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$SystemMessageDataEnableJoinLinkToJson(
-  _SystemMessageDataEnableJoinLink instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SystemMessageDataEnableJoinLinkImplToJson(
+        _$SystemMessageDataEnableJoinLinkImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,46 +8,51 @@ part of 'assignment_activity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AssignmentActivity _$AssignmentActivityFromJson(Map json) =>
-    $checkedCreate('_AssignmentActivity', json, ($checkedConvert) {
-      final val = _AssignmentActivity(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.report.defs#assignmentActivity',
-        ),
-        previousStatus: $checkedConvert(
-          'previousStatus',
-          (v) =>
-              _$JsonConverterFromJson<String, AssignmentActivityPreviousStatus>(
-                v,
-                const AssignmentActivityPreviousStatusConverter().fromJson,
-              ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AssignmentActivityImpl _$$AssignmentActivityImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$AssignmentActivityImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AssignmentActivityImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'tools.ozone.report.defs#assignmentActivity'),
+          previousStatus: $checkedConvert(
+              'previousStatus',
+              (v) => _$JsonConverterFromJson<String,
+                      AssignmentActivityPreviousStatus>(v,
+                  const AssignmentActivityPreviousStatusConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AssignmentActivityToJson(_AssignmentActivity instance) =>
+Map<String, dynamic> _$$AssignmentActivityImplToJson(
+        _$AssignmentActivityImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'previousStatus':
-          ?_$JsonConverterToJson<String, AssignmentActivityPreviousStatus>(
-            instance.previousStatus,
-            const AssignmentActivityPreviousStatusConverter().toJson,
-          ),
-      r'$unknown': ?instance.$unknown,
+      if (_$JsonConverterToJson<String, AssignmentActivityPreviousStatus>(
+              instance.previousStatus,
+              const AssignmentActivityPreviousStatusConverter().toJson)
+          case final value?)
+        'previousStatus': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

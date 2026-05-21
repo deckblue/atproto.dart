@@ -8,25 +8,29 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupApproveJoinRequestOutput _$GroupApproveJoinRequestOutputFromJson(
-  Map json,
-) => $checkedCreate('_GroupApproveJoinRequestOutput', json, ($checkedConvert) {
-  final val = _GroupApproveJoinRequestOutput(
-    convo: $checkedConvert(
-      'convo',
-      (v) => const ConvoViewConverter().fromJson(v as Map<String, dynamic>),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$GroupApproveJoinRequestOutputImpl
+    _$$GroupApproveJoinRequestOutputImplFromJson(Map json) => $checkedCreate(
+          r'_$GroupApproveJoinRequestOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$GroupApproveJoinRequestOutputImpl(
+              convo: $checkedConvert(
+                  'convo',
+                  (v) => const ConvoViewConverter()
+                      .fromJson(v as Map<String, dynamic>)),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$GroupApproveJoinRequestOutputToJson(
-  _GroupApproveJoinRequestOutput instance,
-) => <String, dynamic>{
-  'convo': const ConvoViewConverter().toJson(instance.convo),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupApproveJoinRequestOutputImplToJson(
+        _$GroupApproveJoinRequestOutputImpl instance) =>
+    <String, dynamic>{
+      'convo': const ConvoViewConverter().toJson(instance.convo),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

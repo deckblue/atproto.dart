@@ -8,27 +8,33 @@ part of 'system_message_referred_user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SystemMessageReferredUser _$SystemMessageReferredUserFromJson(Map json) =>
-    $checkedCreate('_SystemMessageReferredUser', json, ($checkedConvert) {
-      final val = _SystemMessageReferredUser(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ?? 'chat.bsky.convo.defs#systemMessageReferredUser',
-        ),
-        did: $checkedConvert('did', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SystemMessageReferredUserImpl _$$SystemMessageReferredUserImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$SystemMessageReferredUserImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SystemMessageReferredUserImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'chat.bsky.convo.defs#systemMessageReferredUser'),
+          did: $checkedConvert('did', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SystemMessageReferredUserToJson(
-  _SystemMessageReferredUser instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'did': instance.did,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SystemMessageReferredUserImplToJson(
+        _$SystemMessageReferredUserImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'did': instance.did,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

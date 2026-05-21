@@ -8,33 +8,37 @@ part of 'system_message_data_member_leave.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SystemMessageDataMemberLeave _$SystemMessageDataMemberLeaveFromJson(
-  Map json,
-) => $checkedCreate('_SystemMessageDataMemberLeave', json, ($checkedConvert) {
-  final val = _SystemMessageDataMemberLeave(
-    $type: $checkedConvert(
-      r'$type',
-      (v) =>
-          v as String? ?? 'chat.bsky.convo.defs#systemMessageDataMemberLeave',
-    ),
-    member: $checkedConvert(
-      'member',
-      (v) => const SystemMessageReferredUserConverter().fromJson(
-        v as Map<String, dynamic>,
-      ),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$SystemMessageDataMemberLeaveImpl _$$SystemMessageDataMemberLeaveImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$SystemMessageDataMemberLeaveImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SystemMessageDataMemberLeaveImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'chat.bsky.convo.defs#systemMessageDataMemberLeave'),
+          member: $checkedConvert(
+              'member',
+              (v) => const SystemMessageReferredUserConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SystemMessageDataMemberLeaveToJson(
-  _SystemMessageDataMemberLeave instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'member': const SystemMessageReferredUserConverter().toJson(instance.member),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SystemMessageDataMemberLeaveImplToJson(
+        _$SystemMessageDataMemberLeaveImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'member':
+          const SystemMessageReferredUserConverter().toJson(instance.member),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

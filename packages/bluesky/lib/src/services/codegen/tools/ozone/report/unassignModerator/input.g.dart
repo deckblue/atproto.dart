@@ -8,22 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ReportUnassignModeratorInput _$ReportUnassignModeratorInputFromJson(
-  Map json,
-) => $checkedCreate('_ReportUnassignModeratorInput', json, ($checkedConvert) {
-  final val = _ReportUnassignModeratorInput(
-    reportId: $checkedConvert('reportId', (v) => (v as num).toInt()),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$ReportUnassignModeratorInputImpl _$$ReportUnassignModeratorInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ReportUnassignModeratorInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ReportUnassignModeratorInputImpl(
+          reportId: $checkedConvert('reportId', (v) => (v as num).toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ReportUnassignModeratorInputToJson(
-  _ReportUnassignModeratorInput instance,
-) => <String, dynamic>{
-  'reportId': instance.reportId,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ReportUnassignModeratorInputImplToJson(
+        _$ReportUnassignModeratorInputImpl instance) =>
+    <String, dynamic>{
+      'reportId': instance.reportId,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,18 +8,26 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupRequestJoinInput _$GroupRequestJoinInputFromJson(Map json) =>
-    $checkedCreate('_GroupRequestJoinInput', json, ($checkedConvert) {
-      final val = _GroupRequestJoinInput(
-        code: $checkedConvert('code', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupRequestJoinInputImpl _$$GroupRequestJoinInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GroupRequestJoinInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupRequestJoinInputImpl(
+          code: $checkedConvert('code', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupRequestJoinInputToJson(
-  _GroupRequestJoinInput instance,
-) => <String, dynamic>{'code': instance.code, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$GroupRequestJoinInputImplToJson(
+        _$GroupRequestJoinInputImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

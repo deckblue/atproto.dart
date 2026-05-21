@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,394 +9,625 @@ part of 'union_main_requests.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$UConvoListConvoRequestsRequests {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UConvoListConvoRequestsRequests&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'UConvoListConvoRequestsRequests(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ConvoView data) convoView,
+    required TResult Function(JoinRequestView data) joinRequestView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ConvoView data)? convoView,
+    TResult? Function(JoinRequestView data)? joinRequestView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ConvoView data)? convoView,
+    TResult Function(JoinRequestView data)? joinRequestView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UConvoListConvoRequestsRequestsConvoView value)
+        convoView,
+    required TResult Function(
+            UConvoListConvoRequestsRequestsJoinRequestView value)
+        joinRequestView,
+    required TResult Function(UConvoListConvoRequestsRequestsUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UConvoListConvoRequestsRequestsConvoView value)?
+        convoView,
+    TResult? Function(UConvoListConvoRequestsRequestsJoinRequestView value)?
+        joinRequestView,
+    TResult? Function(UConvoListConvoRequestsRequestsUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UConvoListConvoRequestsRequestsConvoView value)? convoView,
+    TResult Function(UConvoListConvoRequestsRequestsJoinRequestView value)?
+        joinRequestView,
+    TResult Function(UConvoListConvoRequestsRequestsUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $UConvoListConvoRequestsRequestsCopyWith<$Res>  {
-$UConvoListConvoRequestsRequestsCopyWith(UConvoListConvoRequestsRequests _, $Res Function(UConvoListConvoRequestsRequests) __);
+abstract class $UConvoListConvoRequestsRequestsCopyWith<$Res> {
+  factory $UConvoListConvoRequestsRequestsCopyWith(
+          UConvoListConvoRequestsRequests value,
+          $Res Function(UConvoListConvoRequestsRequests) then) =
+      _$UConvoListConvoRequestsRequestsCopyWithImpl<$Res,
+          UConvoListConvoRequestsRequests>;
 }
 
+/// @nodoc
+class _$UConvoListConvoRequestsRequestsCopyWithImpl<$Res,
+        $Val extends UConvoListConvoRequestsRequests>
+    implements $UConvoListConvoRequestsRequestsCopyWith<$Res> {
+  _$UConvoListConvoRequestsRequestsCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [UConvoListConvoRequestsRequests].
-extension UConvoListConvoRequestsRequestsPatterns on UConvoListConvoRequestsRequests {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UConvoListConvoRequestsRequestsConvoView value)?  convoView,TResult Function( UConvoListConvoRequestsRequestsJoinRequestView value)?  joinRequestView,TResult Function( UConvoListConvoRequestsRequestsUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case UConvoListConvoRequestsRequestsConvoView() when convoView != null:
-return convoView(_that);case UConvoListConvoRequestsRequestsJoinRequestView() when joinRequestView != null:
-return joinRequestView(_that);case UConvoListConvoRequestsRequestsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UConvoListConvoRequestsRequestsConvoView value)  convoView,required TResult Function( UConvoListConvoRequestsRequestsJoinRequestView value)  joinRequestView,required TResult Function( UConvoListConvoRequestsRequestsUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case UConvoListConvoRequestsRequestsConvoView():
-return convoView(_that);case UConvoListConvoRequestsRequestsJoinRequestView():
-return joinRequestView(_that);case UConvoListConvoRequestsRequestsUnknown():
-return unknown(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UConvoListConvoRequestsRequestsConvoView value)?  convoView,TResult? Function( UConvoListConvoRequestsRequestsJoinRequestView value)?  joinRequestView,TResult? Function( UConvoListConvoRequestsRequestsUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case UConvoListConvoRequestsRequestsConvoView() when convoView != null:
-return convoView(_that);case UConvoListConvoRequestsRequestsJoinRequestView() when joinRequestView != null:
-return joinRequestView(_that);case UConvoListConvoRequestsRequestsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( ConvoView data)?  convoView,TResult Function( JoinRequestView data)?  joinRequestView,TResult Function( Map<String, dynamic> data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case UConvoListConvoRequestsRequestsConvoView() when convoView != null:
-return convoView(_that.data);case UConvoListConvoRequestsRequestsJoinRequestView() when joinRequestView != null:
-return joinRequestView(_that.data);case UConvoListConvoRequestsRequestsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( ConvoView data)  convoView,required TResult Function( JoinRequestView data)  joinRequestView,required TResult Function( Map<String, dynamic> data)  unknown,}) {final _that = this;
-switch (_that) {
-case UConvoListConvoRequestsRequestsConvoView():
-return convoView(_that.data);case UConvoListConvoRequestsRequestsJoinRequestView():
-return joinRequestView(_that.data);case UConvoListConvoRequestsRequestsUnknown():
-return unknown(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( ConvoView data)?  convoView,TResult? Function( JoinRequestView data)?  joinRequestView,TResult? Function( Map<String, dynamic> data)?  unknown,}) {final _that = this;
-switch (_that) {
-case UConvoListConvoRequestsRequestsConvoView() when convoView != null:
-return convoView(_that.data);case UConvoListConvoRequestsRequestsJoinRequestView() when joinRequestView != null:
-return joinRequestView(_that.data);case UConvoListConvoRequestsRequestsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$UConvoListConvoRequestsRequestsConvoViewImplCopyWith<$Res> {
+  factory _$$UConvoListConvoRequestsRequestsConvoViewImplCopyWith(
+          _$UConvoListConvoRequestsRequestsConvoViewImpl value,
+          $Res Function(_$UConvoListConvoRequestsRequestsConvoViewImpl) then) =
+      __$$UConvoListConvoRequestsRequestsConvoViewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ConvoView data});
+
+  $ConvoViewCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UConvoListConvoRequestsRequestsConvoViewImplCopyWithImpl<$Res>
+    extends _$UConvoListConvoRequestsRequestsCopyWithImpl<$Res,
+        _$UConvoListConvoRequestsRequestsConvoViewImpl>
+    implements _$$UConvoListConvoRequestsRequestsConvoViewImplCopyWith<$Res> {
+  __$$UConvoListConvoRequestsRequestsConvoViewImplCopyWithImpl(
+      _$UConvoListConvoRequestsRequestsConvoViewImpl _value,
+      $Res Function(_$UConvoListConvoRequestsRequestsConvoViewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UConvoListConvoRequestsRequestsConvoViewImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ConvoView,
+    ));
+  }
+
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConvoViewCopyWith<$Res> get data {
+    return $ConvoViewCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UConvoListConvoRequestsRequestsConvoViewImpl
+    extends UConvoListConvoRequestsRequestsConvoView {
+  const _$UConvoListConvoRequestsRequestsConvoViewImpl({required this.data})
+      : super._();
 
-class UConvoListConvoRequestsRequestsConvoView extends UConvoListConvoRequestsRequests {
-  const UConvoListConvoRequestsRequestsConvoView({required this.data}): super._();
-  
+  @override
+  final ConvoView data;
 
-@override final  ConvoView data;
+  @override
+  String toString() {
+    return 'UConvoListConvoRequestsRequests.convoView(data: $data)';
+  }
 
-/// Create a copy of UConvoListConvoRequestsRequests
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UConvoListConvoRequestsRequestsConvoViewCopyWith<UConvoListConvoRequestsRequestsConvoView> get copyWith => _$UConvoListConvoRequestsRequestsConvoViewCopyWithImpl<UConvoListConvoRequestsRequestsConvoView>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UConvoListConvoRequestsRequestsConvoViewImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UConvoListConvoRequestsRequestsConvoViewImplCopyWith<
+          _$UConvoListConvoRequestsRequestsConvoViewImpl>
+      get copyWith =>
+          __$$UConvoListConvoRequestsRequestsConvoViewImplCopyWithImpl<
+              _$UConvoListConvoRequestsRequestsConvoViewImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UConvoListConvoRequestsRequestsConvoView&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ConvoView data) convoView,
+    required TResult Function(JoinRequestView data) joinRequestView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return convoView(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ConvoView data)? convoView,
+    TResult? Function(JoinRequestView data)? joinRequestView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return convoView?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ConvoView data)? convoView,
+    TResult Function(JoinRequestView data)? joinRequestView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (convoView != null) {
+      return convoView(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UConvoListConvoRequestsRequestsConvoView value)
+        convoView,
+    required TResult Function(
+            UConvoListConvoRequestsRequestsJoinRequestView value)
+        joinRequestView,
+    required TResult Function(UConvoListConvoRequestsRequestsUnknown value)
+        unknown,
+  }) {
+    return convoView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UConvoListConvoRequestsRequestsConvoView value)?
+        convoView,
+    TResult? Function(UConvoListConvoRequestsRequestsJoinRequestView value)?
+        joinRequestView,
+    TResult? Function(UConvoListConvoRequestsRequestsUnknown value)? unknown,
+  }) {
+    return convoView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UConvoListConvoRequestsRequestsConvoView value)? convoView,
+    TResult Function(UConvoListConvoRequestsRequestsJoinRequestView value)?
+        joinRequestView,
+    TResult Function(UConvoListConvoRequestsRequestsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (convoView != null) {
+      return convoView(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UConvoListConvoRequestsRequestsConvoView
+    extends UConvoListConvoRequestsRequests {
+  const factory UConvoListConvoRequestsRequestsConvoView(
+          {required final ConvoView data}) =
+      _$UConvoListConvoRequestsRequestsConvoViewImpl;
+  const UConvoListConvoRequestsRequestsConvoView._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  ConvoView get data;
 
-@override
-String toString() {
-  return 'UConvoListConvoRequestsRequests.convoView(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UConvoListConvoRequestsRequestsConvoViewCopyWith<$Res> implements $UConvoListConvoRequestsRequestsCopyWith<$Res> {
-  factory $UConvoListConvoRequestsRequestsConvoViewCopyWith(UConvoListConvoRequestsRequestsConvoView value, $Res Function(UConvoListConvoRequestsRequestsConvoView) _then) = _$UConvoListConvoRequestsRequestsConvoViewCopyWithImpl;
-@useResult
-$Res call({
- ConvoView data
-});
-
-
-$ConvoViewCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UConvoListConvoRequestsRequestsConvoViewCopyWithImpl<$Res>
-    implements $UConvoListConvoRequestsRequestsConvoViewCopyWith<$Res> {
-  _$UConvoListConvoRequestsRequestsConvoViewCopyWithImpl(this._self, this._then);
-
-  final UConvoListConvoRequestsRequestsConvoView _self;
-  final $Res Function(UConvoListConvoRequestsRequestsConvoView) _then;
-
-/// Create a copy of UConvoListConvoRequestsRequests
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UConvoListConvoRequestsRequestsConvoView(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as ConvoView,
-  ));
-}
-
-/// Create a copy of UConvoListConvoRequestsRequests
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ConvoViewCopyWith<$Res> get data {
-  
-  return $ConvoViewCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UConvoListConvoRequestsRequestsJoinRequestView extends UConvoListConvoRequestsRequests {
-  const UConvoListConvoRequestsRequestsJoinRequestView({required this.data}): super._();
-  
-
-@override final  JoinRequestView data;
-
-/// Create a copy of UConvoListConvoRequestsRequests
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UConvoListConvoRequestsRequestsJoinRequestViewCopyWith<UConvoListConvoRequestsRequestsJoinRequestView> get copyWith => _$UConvoListConvoRequestsRequestsJoinRequestViewCopyWithImpl<UConvoListConvoRequestsRequestsJoinRequestView>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UConvoListConvoRequestsRequestsJoinRequestView&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UConvoListConvoRequestsRequests.joinRequestView(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UConvoListConvoRequestsRequestsJoinRequestViewCopyWith<$Res> implements $UConvoListConvoRequestsRequestsCopyWith<$Res> {
-  factory $UConvoListConvoRequestsRequestsJoinRequestViewCopyWith(UConvoListConvoRequestsRequestsJoinRequestView value, $Res Function(UConvoListConvoRequestsRequestsJoinRequestView) _then) = _$UConvoListConvoRequestsRequestsJoinRequestViewCopyWithImpl;
-@useResult
-$Res call({
- JoinRequestView data
-});
-
-
-$JoinRequestViewCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UConvoListConvoRequestsRequestsJoinRequestViewCopyWithImpl<$Res>
-    implements $UConvoListConvoRequestsRequestsJoinRequestViewCopyWith<$Res> {
-  _$UConvoListConvoRequestsRequestsJoinRequestViewCopyWithImpl(this._self, this._then);
-
-  final UConvoListConvoRequestsRequestsJoinRequestView _self;
-  final $Res Function(UConvoListConvoRequestsRequestsJoinRequestView) _then;
-
-/// Create a copy of UConvoListConvoRequestsRequests
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UConvoListConvoRequestsRequestsJoinRequestView(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as JoinRequestView,
-  ));
-}
-
-/// Create a copy of UConvoListConvoRequestsRequests
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$JoinRequestViewCopyWith<$Res> get data {
-  
-  return $JoinRequestViewCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UConvoListConvoRequestsRequestsConvoViewImplCopyWith<
+          _$UConvoListConvoRequestsRequestsConvoViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWith<
+    $Res> {
+  factory _$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWith(
+          _$UConvoListConvoRequestsRequestsJoinRequestViewImpl value,
+          $Res Function(_$UConvoListConvoRequestsRequestsJoinRequestViewImpl)
+              then) =
+      __$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({JoinRequestView data});
 
-
-class UConvoListConvoRequestsRequestsUnknown extends UConvoListConvoRequestsRequests {
-  const UConvoListConvoRequestsRequestsUnknown({required final  Map<String, dynamic> data}): _data = data,super._();
-  
-
- final  Map<String, dynamic> _data;
-@override Map<String, dynamic> get data {
-  if (_data is EqualUnmodifiableMapView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_data);
-}
-
-
-/// Create a copy of UConvoListConvoRequestsRequests
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UConvoListConvoRequestsRequestsUnknownCopyWith<UConvoListConvoRequestsRequestsUnknown> get copyWith => _$UConvoListConvoRequestsRequestsUnknownCopyWithImpl<UConvoListConvoRequestsRequestsUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UConvoListConvoRequestsRequestsUnknown&&const DeepCollectionEquality().equals(other._data, _data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
-
-@override
-String toString() {
-  return 'UConvoListConvoRequestsRequests.unknown(data: $data)';
-}
-
-
+  $JoinRequestViewCopyWith<$Res> get data;
 }
 
 /// @nodoc
-abstract mixin class $UConvoListConvoRequestsRequestsUnknownCopyWith<$Res> implements $UConvoListConvoRequestsRequestsCopyWith<$Res> {
-  factory $UConvoListConvoRequestsRequestsUnknownCopyWith(UConvoListConvoRequestsRequestsUnknown value, $Res Function(UConvoListConvoRequestsRequestsUnknown) _then) = _$UConvoListConvoRequestsRequestsUnknownCopyWithImpl;
-@useResult
-$Res call({
- Map<String, dynamic> data
-});
+class __$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWithImpl<$Res>
+    extends _$UConvoListConvoRequestsRequestsCopyWithImpl<$Res,
+        _$UConvoListConvoRequestsRequestsJoinRequestViewImpl>
+    implements
+        _$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWith<$Res> {
+  __$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWithImpl(
+      _$UConvoListConvoRequestsRequestsJoinRequestViewImpl _value,
+      $Res Function(_$UConvoListConvoRequestsRequestsJoinRequestViewImpl) _then)
+      : super(_value, _then);
 
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UConvoListConvoRequestsRequestsJoinRequestViewImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as JoinRequestView,
+    ));
+  }
 
-
-
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $JoinRequestViewCopyWith<$Res> get data {
+    return $JoinRequestViewCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
+
 /// @nodoc
-class _$UConvoListConvoRequestsRequestsUnknownCopyWithImpl<$Res>
-    implements $UConvoListConvoRequestsRequestsUnknownCopyWith<$Res> {
-  _$UConvoListConvoRequestsRequestsUnknownCopyWithImpl(this._self, this._then);
 
-  final UConvoListConvoRequestsRequestsUnknown _self;
-  final $Res Function(UConvoListConvoRequestsRequestsUnknown) _then;
+class _$UConvoListConvoRequestsRequestsJoinRequestViewImpl
+    extends UConvoListConvoRequestsRequestsJoinRequestView {
+  const _$UConvoListConvoRequestsRequestsJoinRequestViewImpl(
+      {required this.data})
+      : super._();
 
-/// Create a copy of UConvoListConvoRequestsRequests
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UConvoListConvoRequestsRequestsUnknown(
-data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
-  ));
+  @override
+  final JoinRequestView data;
+
+  @override
+  String toString() {
+    return 'UConvoListConvoRequestsRequests.joinRequestView(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UConvoListConvoRequestsRequestsJoinRequestViewImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWith<
+          _$UConvoListConvoRequestsRequestsJoinRequestViewImpl>
+      get copyWith =>
+          __$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWithImpl<
+                  _$UConvoListConvoRequestsRequestsJoinRequestViewImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ConvoView data) convoView,
+    required TResult Function(JoinRequestView data) joinRequestView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return joinRequestView(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ConvoView data)? convoView,
+    TResult? Function(JoinRequestView data)? joinRequestView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return joinRequestView?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ConvoView data)? convoView,
+    TResult Function(JoinRequestView data)? joinRequestView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (joinRequestView != null) {
+      return joinRequestView(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UConvoListConvoRequestsRequestsConvoView value)
+        convoView,
+    required TResult Function(
+            UConvoListConvoRequestsRequestsJoinRequestView value)
+        joinRequestView,
+    required TResult Function(UConvoListConvoRequestsRequestsUnknown value)
+        unknown,
+  }) {
+    return joinRequestView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UConvoListConvoRequestsRequestsConvoView value)?
+        convoView,
+    TResult? Function(UConvoListConvoRequestsRequestsJoinRequestView value)?
+        joinRequestView,
+    TResult? Function(UConvoListConvoRequestsRequestsUnknown value)? unknown,
+  }) {
+    return joinRequestView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UConvoListConvoRequestsRequestsConvoView value)? convoView,
+    TResult Function(UConvoListConvoRequestsRequestsJoinRequestView value)?
+        joinRequestView,
+    TResult Function(UConvoListConvoRequestsRequestsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (joinRequestView != null) {
+      return joinRequestView(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UConvoListConvoRequestsRequestsJoinRequestView
+    extends UConvoListConvoRequestsRequests {
+  const factory UConvoListConvoRequestsRequestsJoinRequestView(
+          {required final JoinRequestView data}) =
+      _$UConvoListConvoRequestsRequestsJoinRequestViewImpl;
+  const UConvoListConvoRequestsRequestsJoinRequestView._() : super._();
 
+  @override
+  JoinRequestView get data;
+
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UConvoListConvoRequestsRequestsJoinRequestViewImplCopyWith<
+          _$UConvoListConvoRequestsRequestsJoinRequestViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
-// dart format on
+/// @nodoc
+abstract class _$$UConvoListConvoRequestsRequestsUnknownImplCopyWith<$Res> {
+  factory _$$UConvoListConvoRequestsRequestsUnknownImplCopyWith(
+          _$UConvoListConvoRequestsRequestsUnknownImpl value,
+          $Res Function(_$UConvoListConvoRequestsRequestsUnknownImpl) then) =
+      __$$UConvoListConvoRequestsRequestsUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Map<String, dynamic> data});
+}
+
+/// @nodoc
+class __$$UConvoListConvoRequestsRequestsUnknownImplCopyWithImpl<$Res>
+    extends _$UConvoListConvoRequestsRequestsCopyWithImpl<$Res,
+        _$UConvoListConvoRequestsRequestsUnknownImpl>
+    implements _$$UConvoListConvoRequestsRequestsUnknownImplCopyWith<$Res> {
+  __$$UConvoListConvoRequestsRequestsUnknownImplCopyWithImpl(
+      _$UConvoListConvoRequestsRequestsUnknownImpl _value,
+      $Res Function(_$UConvoListConvoRequestsRequestsUnknownImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UConvoListConvoRequestsRequestsUnknownImpl(
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UConvoListConvoRequestsRequestsUnknownImpl
+    extends UConvoListConvoRequestsRequestsUnknown {
+  const _$UConvoListConvoRequestsRequestsUnknownImpl(
+      {required final Map<String, dynamic> data})
+      : _data = data,
+        super._();
+
+  final Map<String, dynamic> _data;
+  @override
+  Map<String, dynamic> get data {
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'UConvoListConvoRequestsRequests.unknown(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UConvoListConvoRequestsRequestsUnknownImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UConvoListConvoRequestsRequestsUnknownImplCopyWith<
+          _$UConvoListConvoRequestsRequestsUnknownImpl>
+      get copyWith =>
+          __$$UConvoListConvoRequestsRequestsUnknownImplCopyWithImpl<
+              _$UConvoListConvoRequestsRequestsUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ConvoView data) convoView,
+    required TResult Function(JoinRequestView data) joinRequestView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ConvoView data)? convoView,
+    TResult? Function(JoinRequestView data)? joinRequestView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ConvoView data)? convoView,
+    TResult Function(JoinRequestView data)? joinRequestView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UConvoListConvoRequestsRequestsConvoView value)
+        convoView,
+    required TResult Function(
+            UConvoListConvoRequestsRequestsJoinRequestView value)
+        joinRequestView,
+    required TResult Function(UConvoListConvoRequestsRequestsUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UConvoListConvoRequestsRequestsConvoView value)?
+        convoView,
+    TResult? Function(UConvoListConvoRequestsRequestsJoinRequestView value)?
+        joinRequestView,
+    TResult? Function(UConvoListConvoRequestsRequestsUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UConvoListConvoRequestsRequestsConvoView value)? convoView,
+    TResult Function(UConvoListConvoRequestsRequestsJoinRequestView value)?
+        joinRequestView,
+    TResult Function(UConvoListConvoRequestsRequestsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UConvoListConvoRequestsRequestsUnknown
+    extends UConvoListConvoRequestsRequests {
+  const factory UConvoListConvoRequestsRequestsUnknown(
+          {required final Map<String, dynamic> data}) =
+      _$UConvoListConvoRequestsRequestsUnknownImpl;
+  const UConvoListConvoRequestsRequestsUnknown._() : super._();
+
+  @override
+  Map<String, dynamic> get data;
+
+  /// Create a copy of UConvoListConvoRequestsRequests
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UConvoListConvoRequestsRequestsUnknownImplCopyWith<
+          _$UConvoListConvoRequestsRequestsUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

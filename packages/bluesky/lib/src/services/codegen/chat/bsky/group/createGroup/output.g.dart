@@ -8,24 +8,29 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupCreateGroupOutput _$GroupCreateGroupOutputFromJson(Map json) =>
-    $checkedCreate('_GroupCreateGroupOutput', json, ($checkedConvert) {
-      final val = _GroupCreateGroupOutput(
-        convo: $checkedConvert(
-          'convo',
-          (v) => const ConvoViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupCreateGroupOutputImpl _$$GroupCreateGroupOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GroupCreateGroupOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupCreateGroupOutputImpl(
+          convo: $checkedConvert(
+              'convo',
+              (v) => const ConvoViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupCreateGroupOutputToJson(
-  _GroupCreateGroupOutput instance,
-) => <String, dynamic>{
-  'convo': const ConvoViewConverter().toJson(instance.convo),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupCreateGroupOutputImplToJson(
+        _$GroupCreateGroupOutputImpl instance) =>
+    <String, dynamic>{
+      'convo': const ConvoViewConverter().toJson(instance.convo),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

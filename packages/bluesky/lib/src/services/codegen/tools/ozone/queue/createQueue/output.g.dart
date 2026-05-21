@@ -8,24 +8,29 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_QueueCreateQueueOutput _$QueueCreateQueueOutputFromJson(Map json) =>
-    $checkedCreate('_QueueCreateQueueOutput', json, ($checkedConvert) {
-      final val = _QueueCreateQueueOutput(
-        queue: $checkedConvert(
-          'queue',
-          (v) => const QueueViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$QueueCreateQueueOutputImpl _$$QueueCreateQueueOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$QueueCreateQueueOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$QueueCreateQueueOutputImpl(
+          queue: $checkedConvert(
+              'queue',
+              (v) => const QueueViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$QueueCreateQueueOutputToJson(
-  _QueueCreateQueueOutput instance,
-) => <String, dynamic>{
-  'queue': const QueueViewConverter().toJson(instance.queue),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$QueueCreateQueueOutputImplToJson(
+        _$QueueCreateQueueOutputImpl instance) =>
+    <String, dynamic>{
+      'queue': const QueueViewConverter().toJson(instance.queue),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

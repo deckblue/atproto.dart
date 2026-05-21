@@ -8,28 +8,32 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ReportGetLiveStatsInput _$ReportGetLiveStatsInputFromJson(Map json) =>
-    $checkedCreate('_ReportGetLiveStatsInput', json, ($checkedConvert) {
-      final val = _ReportGetLiveStatsInput(
-        queueId: $checkedConvert('queueId', (v) => (v as num?)?.toInt()),
-        moderatorDid: $checkedConvert('moderatorDid', (v) => v as String?),
-        reportTypes: $checkedConvert(
-          'reportTypes',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ReportGetLiveStatsInputImpl _$$ReportGetLiveStatsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ReportGetLiveStatsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ReportGetLiveStatsInputImpl(
+          queueId: $checkedConvert('queueId', (v) => (v as num?)?.toInt()),
+          moderatorDid: $checkedConvert('moderatorDid', (v) => v as String?),
+          reportTypes: $checkedConvert('reportTypes',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ReportGetLiveStatsInputToJson(
-  _ReportGetLiveStatsInput instance,
-) => <String, dynamic>{
-  'queueId': ?instance.queueId,
-  'moderatorDid': ?instance.moderatorDid,
-  'reportTypes': ?instance.reportTypes,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ReportGetLiveStatsInputImplToJson(
+        _$ReportGetLiveStatsInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.queueId case final value?) 'queueId': value,
+      if (instance.moderatorDid case final value?) 'moderatorDid': value,
+      if (instance.reportTypes case final value?) 'reportTypes': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

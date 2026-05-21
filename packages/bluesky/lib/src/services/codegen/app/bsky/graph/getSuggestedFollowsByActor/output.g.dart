@@ -8,38 +8,36 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GraphGetSuggestedFollowsByActorOutput
-_$GraphGetSuggestedFollowsByActorOutputFromJson(Map json) => $checkedCreate(
-  '_GraphGetSuggestedFollowsByActorOutput',
-  json,
-  ($checkedConvert) {
-    final val = _GraphGetSuggestedFollowsByActorOutput(
-      suggestions: $checkedConvert(
-        'suggestions',
-        (v) => (v as List<dynamic>)
-            .map(
-              (e) => const ProfileViewConverter().fromJson(
-                e as Map<String, dynamic>,
-              ),
-            )
-            .toList(),
-      ),
-      recIdStr: $checkedConvert('recIdStr', (v) => v as String?),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$GraphGetSuggestedFollowsByActorOutputImpl
+    _$$GraphGetSuggestedFollowsByActorOutputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$GraphGetSuggestedFollowsByActorOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$GraphGetSuggestedFollowsByActorOutputImpl(
+              suggestions: $checkedConvert(
+                  'suggestions',
+                  (v) => (v as List<dynamic>)
+                      .map((e) => const ProfileViewConverter()
+                          .fromJson(e as Map<String, dynamic>))
+                      .toList()),
+              recIdStr: $checkedConvert('recIdStr', (v) => v as String?),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$GraphGetSuggestedFollowsByActorOutputToJson(
-  _GraphGetSuggestedFollowsByActorOutput instance,
-) => <String, dynamic>{
-  'suggestions': instance.suggestions
-      .map(const ProfileViewConverter().toJson)
-      .toList(),
-  'recIdStr': ?instance.recIdStr,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GraphGetSuggestedFollowsByActorOutputImplToJson(
+        _$GraphGetSuggestedFollowsByActorOutputImpl instance) =>
+    <String, dynamic>{
+      'suggestions': instance.suggestions
+          .map(const ProfileViewConverter().toJson)
+          .toList(),
+      if (instance.recIdStr case final value?) 'recIdStr': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

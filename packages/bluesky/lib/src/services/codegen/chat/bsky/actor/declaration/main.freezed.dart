@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,330 +9,293 @@ part of 'main.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+ActorDeclarationRecord _$ActorDeclarationRecordFromJson(
+    Map<String, dynamic> json) {
+  return _ActorDeclarationRecord.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ActorDeclarationRecord {
+  String get $type => throw _privateConstructorUsedError;
+  @ActorDeclarationAllowIncomingConverter()
+  ActorDeclarationAllowIncoming get allowIncoming =>
+      throw _privateConstructorUsedError;
 
- String get $type;@ActorDeclarationAllowIncomingConverter() ActorDeclarationAllowIncoming get allowIncoming;/// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
-@ActorDeclarationAllowGroupInvitesConverter() ActorDeclarationAllowGroupInvites? get allowGroupInvites; Map<String, dynamic>? get $unknown;
-/// Create a copy of ActorDeclarationRecord
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ActorDeclarationRecordCopyWith<ActorDeclarationRecord> get copyWith => _$ActorDeclarationRecordCopyWithImpl<ActorDeclarationRecord>(this as ActorDeclarationRecord, _$identity);
+  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  @ActorDeclarationAllowGroupInvitesConverter()
+  ActorDeclarationAllowGroupInvites? get allowGroupInvites =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ActorDeclarationRecord to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActorDeclarationRecord&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.allowIncoming, allowIncoming) || other.allowIncoming == allowIncoming)&&(identical(other.allowGroupInvites, allowGroupInvites) || other.allowGroupInvites == allowGroupInvites)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,allowIncoming,allowGroupInvites,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'ActorDeclarationRecord(\$type: ${$type}, allowIncoming: $allowIncoming, allowGroupInvites: $allowGroupInvites, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of ActorDeclarationRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ActorDeclarationRecordCopyWith<ActorDeclarationRecord> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActorDeclarationRecordCopyWith<$Res>  {
-  factory $ActorDeclarationRecordCopyWith(ActorDeclarationRecord value, $Res Function(ActorDeclarationRecord) _then) = _$ActorDeclarationRecordCopyWithImpl;
-@useResult
-$Res call({
- String $type,@ActorDeclarationAllowIncomingConverter() ActorDeclarationAllowIncoming allowIncoming,@ActorDeclarationAllowGroupInvitesConverter() ActorDeclarationAllowGroupInvites? allowGroupInvites, Map<String, dynamic>? $unknown
-});
+abstract class $ActorDeclarationRecordCopyWith<$Res> {
+  factory $ActorDeclarationRecordCopyWith(ActorDeclarationRecord value,
+          $Res Function(ActorDeclarationRecord) then) =
+      _$ActorDeclarationRecordCopyWithImpl<$Res, ActorDeclarationRecord>;
+  @useResult
+  $Res call(
+      {String $type,
+      @ActorDeclarationAllowIncomingConverter()
+      ActorDeclarationAllowIncoming allowIncoming,
+      @ActorDeclarationAllowGroupInvitesConverter()
+      ActorDeclarationAllowGroupInvites? allowGroupInvites,
+      Map<String, dynamic>? $unknown});
 
-
-$ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming;$ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites;
-
+  $ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming;
+  $ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites;
 }
+
 /// @nodoc
-class _$ActorDeclarationRecordCopyWithImpl<$Res>
+class _$ActorDeclarationRecordCopyWithImpl<$Res,
+        $Val extends ActorDeclarationRecord>
     implements $ActorDeclarationRecordCopyWith<$Res> {
-  _$ActorDeclarationRecordCopyWithImpl(this._self, this._then);
+  _$ActorDeclarationRecordCopyWithImpl(this._value, this._then);
 
-  final ActorDeclarationRecord _self;
-  final $Res Function(ActorDeclarationRecord) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ActorDeclarationRecord
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? allowIncoming = null,Object? allowGroupInvites = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,allowIncoming: null == allowIncoming ? _self.allowIncoming : allowIncoming // ignore: cast_nullable_to_non_nullable
-as ActorDeclarationAllowIncoming,allowGroupInvites: freezed == allowGroupInvites ? _self.allowGroupInvites : allowGroupInvites // ignore: cast_nullable_to_non_nullable
-as ActorDeclarationAllowGroupInvites?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of ActorDeclarationRecord
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming {
-  
-  return $ActorDeclarationAllowIncomingCopyWith<$Res>(_self.allowIncoming, (value) {
-    return _then(_self.copyWith(allowIncoming: value));
-  });
-}/// Create a copy of ActorDeclarationRecord
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites {
-    if (_self.allowGroupInvites == null) {
-    return null;
+  /// Create a copy of ActorDeclarationRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? allowIncoming = null,
+    Object? allowGroupInvites = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowIncoming: null == allowIncoming
+          ? _value.allowIncoming
+          : allowIncoming // ignore: cast_nullable_to_non_nullable
+              as ActorDeclarationAllowIncoming,
+      allowGroupInvites: freezed == allowGroupInvites
+          ? _value.allowGroupInvites
+          : allowGroupInvites // ignore: cast_nullable_to_non_nullable
+              as ActorDeclarationAllowGroupInvites?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
   }
 
-  return $ActorDeclarationAllowGroupInvitesCopyWith<$Res>(_self.allowGroupInvites!, (value) {
-    return _then(_self.copyWith(allowGroupInvites: value));
-  });
-}
-}
+  /// Create a copy of ActorDeclarationRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming {
+    return $ActorDeclarationAllowIncomingCopyWith<$Res>(_value.allowIncoming,
+        (value) {
+      return _then(_value.copyWith(allowIncoming: value) as $Val);
+    });
+  }
 
+  /// Create a copy of ActorDeclarationRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites {
+    if (_value.allowGroupInvites == null) {
+      return null;
+    }
 
-/// Adds pattern-matching-related methods to [ActorDeclarationRecord].
-extension ActorDeclarationRecordPatterns on ActorDeclarationRecord {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ActorDeclarationRecord value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ActorDeclarationRecord() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ActorDeclarationRecord value)  $default,){
-final _that = this;
-switch (_that) {
-case _ActorDeclarationRecord():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ActorDeclarationRecord value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ActorDeclarationRecord() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type, @ActorDeclarationAllowIncomingConverter()  ActorDeclarationAllowIncoming allowIncoming, @ActorDeclarationAllowGroupInvitesConverter()  ActorDeclarationAllowGroupInvites? allowGroupInvites,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ActorDeclarationRecord() when $default != null:
-return $default(_that.$type,_that.allowIncoming,_that.allowGroupInvites,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type, @ActorDeclarationAllowIncomingConverter()  ActorDeclarationAllowIncoming allowIncoming, @ActorDeclarationAllowGroupInvitesConverter()  ActorDeclarationAllowGroupInvites? allowGroupInvites,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _ActorDeclarationRecord():
-return $default(_that.$type,_that.allowIncoming,_that.allowGroupInvites,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type, @ActorDeclarationAllowIncomingConverter()  ActorDeclarationAllowIncoming allowIncoming, @ActorDeclarationAllowGroupInvitesConverter()  ActorDeclarationAllowGroupInvites? allowGroupInvites,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _ActorDeclarationRecord() when $default != null:
-return $default(_that.$type,_that.allowIncoming,_that.allowGroupInvites,_that.$unknown);case _:
-  return null;
-
-}
+    return $ActorDeclarationAllowGroupInvitesCopyWith<$Res>(
+        _value.allowGroupInvites!, (value) {
+      return _then(_value.copyWith(allowGroupInvites: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$ActorDeclarationRecordImplCopyWith<$Res>
+    implements $ActorDeclarationRecordCopyWith<$Res> {
+  factory _$$ActorDeclarationRecordImplCopyWith(
+          _$ActorDeclarationRecordImpl value,
+          $Res Function(_$ActorDeclarationRecordImpl) then) =
+      __$$ActorDeclarationRecordImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      @ActorDeclarationAllowIncomingConverter()
+      ActorDeclarationAllowIncoming allowIncoming,
+      @ActorDeclarationAllowGroupInvitesConverter()
+      ActorDeclarationAllowGroupInvites? allowGroupInvites,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming;
+  @override
+  $ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites;
+}
+
+/// @nodoc
+class __$$ActorDeclarationRecordImplCopyWithImpl<$Res>
+    extends _$ActorDeclarationRecordCopyWithImpl<$Res,
+        _$ActorDeclarationRecordImpl>
+    implements _$$ActorDeclarationRecordImplCopyWith<$Res> {
+  __$$ActorDeclarationRecordImplCopyWithImpl(
+      _$ActorDeclarationRecordImpl _value,
+      $Res Function(_$ActorDeclarationRecordImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ActorDeclarationRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? allowIncoming = null,
+    Object? allowGroupInvites = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$ActorDeclarationRecordImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowIncoming: null == allowIncoming
+          ? _value.allowIncoming
+          : allowIncoming // ignore: cast_nullable_to_non_nullable
+              as ActorDeclarationAllowIncoming,
+      allowGroupInvites: freezed == allowGroupInvites
+          ? _value.allowGroupInvites
+          : allowGroupInvites // ignore: cast_nullable_to_non_nullable
+              as ActorDeclarationAllowGroupInvites?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _ActorDeclarationRecord implements ActorDeclarationRecord {
-  const _ActorDeclarationRecord({this.$type = 'chat.bsky.actor.declaration', @ActorDeclarationAllowIncomingConverter() required this.allowIncoming, @ActorDeclarationAllowGroupInvitesConverter() this.allowGroupInvites, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _ActorDeclarationRecord.fromJson(Map<String, dynamic> json) => _$ActorDeclarationRecordFromJson(json);
+class _$ActorDeclarationRecordImpl implements _ActorDeclarationRecord {
+  const _$ActorDeclarationRecordImpl(
+      {this.$type = 'chat.bsky.actor.declaration',
+      @ActorDeclarationAllowIncomingConverter() required this.allowIncoming,
+      @ActorDeclarationAllowGroupInvitesConverter() this.allowGroupInvites,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-@override@ActorDeclarationAllowIncomingConverter() final  ActorDeclarationAllowIncoming allowIncoming;
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
-@override@ActorDeclarationAllowGroupInvitesConverter() final  ActorDeclarationAllowGroupInvites? allowGroupInvites;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+  factory _$ActorDeclarationRecordImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActorDeclarationRecordImplFromJson(json);
 
+  @override
+  @JsonKey()
+  final String $type;
+  @override
+  @ActorDeclarationAllowIncomingConverter()
+  final ActorDeclarationAllowIncoming allowIncoming;
 
-/// Create a copy of ActorDeclarationRecord
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ActorDeclarationRecordCopyWith<_ActorDeclarationRecord> get copyWith => __$ActorDeclarationRecordCopyWithImpl<_ActorDeclarationRecord>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$ActorDeclarationRecordToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ActorDeclarationRecord&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.allowIncoming, allowIncoming) || other.allowIncoming == allowIncoming)&&(identical(other.allowGroupInvites, allowGroupInvites) || other.allowGroupInvites == allowGroupInvites)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,allowIncoming,allowGroupInvites,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'ActorDeclarationRecord(\$type: ${$type}, allowIncoming: $allowIncoming, allowGroupInvites: $allowGroupInvites, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ActorDeclarationRecordCopyWith<$Res> implements $ActorDeclarationRecordCopyWith<$Res> {
-  factory _$ActorDeclarationRecordCopyWith(_ActorDeclarationRecord value, $Res Function(_ActorDeclarationRecord) _then) = __$ActorDeclarationRecordCopyWithImpl;
-@override @useResult
-$Res call({
- String $type,@ActorDeclarationAllowIncomingConverter() ActorDeclarationAllowIncoming allowIncoming,@ActorDeclarationAllowGroupInvitesConverter() ActorDeclarationAllowGroupInvites? allowGroupInvites, Map<String, dynamic>? $unknown
-});
-
-
-@override $ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming;@override $ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites;
-
-}
-/// @nodoc
-class __$ActorDeclarationRecordCopyWithImpl<$Res>
-    implements _$ActorDeclarationRecordCopyWith<$Res> {
-  __$ActorDeclarationRecordCopyWithImpl(this._self, this._then);
-
-  final _ActorDeclarationRecord _self;
-  final $Res Function(_ActorDeclarationRecord) _then;
-
-/// Create a copy of ActorDeclarationRecord
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? allowIncoming = null,Object? allowGroupInvites = freezed,Object? $unknown = freezed,}) {
-  return _then(_ActorDeclarationRecord(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,allowIncoming: null == allowIncoming ? _self.allowIncoming : allowIncoming // ignore: cast_nullable_to_non_nullable
-as ActorDeclarationAllowIncoming,allowGroupInvites: freezed == allowGroupInvites ? _self.allowGroupInvites : allowGroupInvites // ignore: cast_nullable_to_non_nullable
-as ActorDeclarationAllowGroupInvites?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of ActorDeclarationRecord
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ActorDeclarationAllowIncomingCopyWith<$Res> get allowIncoming {
-  
-  return $ActorDeclarationAllowIncomingCopyWith<$Res>(_self.allowIncoming, (value) {
-    return _then(_self.copyWith(allowIncoming: value));
-  });
-}/// Create a copy of ActorDeclarationRecord
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ActorDeclarationAllowGroupInvitesCopyWith<$Res>? get allowGroupInvites {
-    if (_self.allowGroupInvites == null) {
-    return null;
+  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  @override
+  @ActorDeclarationAllowGroupInvitesConverter()
+  final ActorDeclarationAllowGroupInvites? allowGroupInvites;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
   }
 
-  return $ActorDeclarationAllowGroupInvitesCopyWith<$Res>(_self.allowGroupInvites!, (value) {
-    return _then(_self.copyWith(allowGroupInvites: value));
-  });
-}
+  @override
+  String toString() {
+    return 'ActorDeclarationRecord(\$type: ${$type}, allowIncoming: $allowIncoming, allowGroupInvites: $allowGroupInvites, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ActorDeclarationRecordImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.allowIncoming, allowIncoming) ||
+                other.allowIncoming == allowIncoming) &&
+            (identical(other.allowGroupInvites, allowGroupInvites) ||
+                other.allowGroupInvites == allowGroupInvites) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, allowIncoming,
+      allowGroupInvites, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of ActorDeclarationRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ActorDeclarationRecordImplCopyWith<_$ActorDeclarationRecordImpl>
+      get copyWith => __$$ActorDeclarationRecordImplCopyWithImpl<
+          _$ActorDeclarationRecordImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ActorDeclarationRecordImplToJson(
+      this,
+    );
+  }
 }
 
-// dart format on
+abstract class _ActorDeclarationRecord implements ActorDeclarationRecord {
+  const factory _ActorDeclarationRecord(
+      {final String $type,
+      @ActorDeclarationAllowIncomingConverter()
+      required final ActorDeclarationAllowIncoming allowIncoming,
+      @ActorDeclarationAllowGroupInvitesConverter()
+      final ActorDeclarationAllowGroupInvites? allowGroupInvites,
+      final Map<String, dynamic>? $unknown}) = _$ActorDeclarationRecordImpl;
+
+  factory _ActorDeclarationRecord.fromJson(Map<String, dynamic> json) =
+      _$ActorDeclarationRecordImpl.fromJson;
+
+  @override
+  String get $type;
+  @override
+  @ActorDeclarationAllowIncomingConverter()
+  ActorDeclarationAllowIncoming get allowIncoming;
+
+  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  @override
+  @ActorDeclarationAllowGroupInvitesConverter()
+  ActorDeclarationAllowGroupInvites? get allowGroupInvites;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of ActorDeclarationRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActorDeclarationRecordImplCopyWith<_$ActorDeclarationRecordImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

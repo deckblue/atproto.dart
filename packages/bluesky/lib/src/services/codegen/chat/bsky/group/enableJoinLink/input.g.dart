@@ -8,21 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupEnableJoinLinkInput _$GroupEnableJoinLinkInputFromJson(Map json) =>
-    $checkedCreate('_GroupEnableJoinLinkInput', json, ($checkedConvert) {
-      final val = _GroupEnableJoinLinkInput(
-        convoId: $checkedConvert('convoId', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupEnableJoinLinkInputImpl _$$GroupEnableJoinLinkInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GroupEnableJoinLinkInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupEnableJoinLinkInputImpl(
+          convoId: $checkedConvert('convoId', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupEnableJoinLinkInputToJson(
-  _GroupEnableJoinLinkInput instance,
-) => <String, dynamic>{
-  'convoId': instance.convoId,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupEnableJoinLinkInputImplToJson(
+        _$GroupEnableJoinLinkInputImpl instance) =>
+    <String, dynamic>{
+      'convoId': instance.convoId,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

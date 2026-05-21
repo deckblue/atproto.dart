@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,298 +9,220 @@ part of 'output.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+GroupApproveJoinRequestOutput _$GroupApproveJoinRequestOutputFromJson(
+    Map<String, dynamic> json) {
+  return _GroupApproveJoinRequestOutput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$GroupApproveJoinRequestOutput {
-
-@ConvoViewConverter() ConvoView get convo; Map<String, dynamic>? get $unknown;
-/// Create a copy of GroupApproveJoinRequestOutput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GroupApproveJoinRequestOutputCopyWith<GroupApproveJoinRequestOutput> get copyWith => _$GroupApproveJoinRequestOutputCopyWithImpl<GroupApproveJoinRequestOutput>(this as GroupApproveJoinRequestOutput, _$identity);
+  @ConvoViewConverter()
+  ConvoView get convo => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GroupApproveJoinRequestOutput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GroupApproveJoinRequestOutput&&(identical(other.convo, convo) || other.convo == convo)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,convo,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'GroupApproveJoinRequestOutput(convo: $convo, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of GroupApproveJoinRequestOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GroupApproveJoinRequestOutputCopyWith<GroupApproveJoinRequestOutput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $GroupApproveJoinRequestOutputCopyWith<$Res>  {
-  factory $GroupApproveJoinRequestOutputCopyWith(GroupApproveJoinRequestOutput value, $Res Function(GroupApproveJoinRequestOutput) _then) = _$GroupApproveJoinRequestOutputCopyWithImpl;
-@useResult
-$Res call({
-@ConvoViewConverter() ConvoView convo, Map<String, dynamic>? $unknown
-});
+abstract class $GroupApproveJoinRequestOutputCopyWith<$Res> {
+  factory $GroupApproveJoinRequestOutputCopyWith(
+          GroupApproveJoinRequestOutput value,
+          $Res Function(GroupApproveJoinRequestOutput) then) =
+      _$GroupApproveJoinRequestOutputCopyWithImpl<$Res,
+          GroupApproveJoinRequestOutput>;
+  @useResult
+  $Res call(
+      {@ConvoViewConverter() ConvoView convo, Map<String, dynamic>? $unknown});
 
-
-$ConvoViewCopyWith<$Res> get convo;
-
+  $ConvoViewCopyWith<$Res> get convo;
 }
+
 /// @nodoc
-class _$GroupApproveJoinRequestOutputCopyWithImpl<$Res>
+class _$GroupApproveJoinRequestOutputCopyWithImpl<$Res,
+        $Val extends GroupApproveJoinRequestOutput>
     implements $GroupApproveJoinRequestOutputCopyWith<$Res> {
-  _$GroupApproveJoinRequestOutputCopyWithImpl(this._self, this._then);
+  _$GroupApproveJoinRequestOutputCopyWithImpl(this._value, this._then);
 
-  final GroupApproveJoinRequestOutput _self;
-  final $Res Function(GroupApproveJoinRequestOutput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of GroupApproveJoinRequestOutput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? convo = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-convo: null == convo ? _self.convo : convo // ignore: cast_nullable_to_non_nullable
-as ConvoView,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of GroupApproveJoinRequestOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ConvoViewCopyWith<$Res> get convo {
-  
-  return $ConvoViewCopyWith<$Res>(_self.convo, (value) {
-    return _then(_self.copyWith(convo: value));
-  });
-}
-}
+  /// Create a copy of GroupApproveJoinRequestOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? convo = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      convo: null == convo
+          ? _value.convo
+          : convo // ignore: cast_nullable_to_non_nullable
+              as ConvoView,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [GroupApproveJoinRequestOutput].
-extension GroupApproveJoinRequestOutputPatterns on GroupApproveJoinRequestOutput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GroupApproveJoinRequestOutput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GroupApproveJoinRequestOutput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GroupApproveJoinRequestOutput value)  $default,){
-final _that = this;
-switch (_that) {
-case _GroupApproveJoinRequestOutput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GroupApproveJoinRequestOutput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _GroupApproveJoinRequestOutput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ConvoViewConverter()  ConvoView convo,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GroupApproveJoinRequestOutput() when $default != null:
-return $default(_that.convo,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ConvoViewConverter()  ConvoView convo,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _GroupApproveJoinRequestOutput():
-return $default(_that.convo,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ConvoViewConverter()  ConvoView convo,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _GroupApproveJoinRequestOutput() when $default != null:
-return $default(_that.convo,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of GroupApproveJoinRequestOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConvoViewCopyWith<$Res> get convo {
+    return $ConvoViewCopyWith<$Res>(_value.convo, (value) {
+      return _then(_value.copyWith(convo: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$GroupApproveJoinRequestOutputImplCopyWith<$Res>
+    implements $GroupApproveJoinRequestOutputCopyWith<$Res> {
+  factory _$$GroupApproveJoinRequestOutputImplCopyWith(
+          _$GroupApproveJoinRequestOutputImpl value,
+          $Res Function(_$GroupApproveJoinRequestOutputImpl) then) =
+      __$$GroupApproveJoinRequestOutputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ConvoViewConverter() ConvoView convo, Map<String, dynamic>? $unknown});
+
+  @override
+  $ConvoViewCopyWith<$Res> get convo;
+}
+
+/// @nodoc
+class __$$GroupApproveJoinRequestOutputImplCopyWithImpl<$Res>
+    extends _$GroupApproveJoinRequestOutputCopyWithImpl<$Res,
+        _$GroupApproveJoinRequestOutputImpl>
+    implements _$$GroupApproveJoinRequestOutputImplCopyWith<$Res> {
+  __$$GroupApproveJoinRequestOutputImplCopyWithImpl(
+      _$GroupApproveJoinRequestOutputImpl _value,
+      $Res Function(_$GroupApproveJoinRequestOutputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GroupApproveJoinRequestOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? convo = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$GroupApproveJoinRequestOutputImpl(
+      convo: null == convo
+          ? _value.convo
+          : convo // ignore: cast_nullable_to_non_nullable
+              as ConvoView,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GroupApproveJoinRequestOutput implements GroupApproveJoinRequestOutput {
-  const _GroupApproveJoinRequestOutput({@ConvoViewConverter() required this.convo, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _GroupApproveJoinRequestOutput.fromJson(Map<String, dynamic> json) => _$GroupApproveJoinRequestOutputFromJson(json);
+class _$GroupApproveJoinRequestOutputImpl
+    implements _GroupApproveJoinRequestOutput {
+  const _$GroupApproveJoinRequestOutputImpl(
+      {@ConvoViewConverter() required this.convo,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@ConvoViewConverter() final  ConvoView convo;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$GroupApproveJoinRequestOutputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GroupApproveJoinRequestOutputImplFromJson(json);
+
+  @override
+  @ConvoViewConverter()
+  final ConvoView convo;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'GroupApproveJoinRequestOutput(convo: $convo, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GroupApproveJoinRequestOutputImpl &&
+            (identical(other.convo, convo) || other.convo == convo) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, convo, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of GroupApproveJoinRequestOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GroupApproveJoinRequestOutputImplCopyWith<
+          _$GroupApproveJoinRequestOutputImpl>
+      get copyWith => __$$GroupApproveJoinRequestOutputImplCopyWithImpl<
+          _$GroupApproveJoinRequestOutputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GroupApproveJoinRequestOutputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _GroupApproveJoinRequestOutput
+    implements GroupApproveJoinRequestOutput {
+  const factory _GroupApproveJoinRequestOutput(
+          {@ConvoViewConverter() required final ConvoView convo,
+          final Map<String, dynamic>? $unknown}) =
+      _$GroupApproveJoinRequestOutputImpl;
 
-/// Create a copy of GroupApproveJoinRequestOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$GroupApproveJoinRequestOutputCopyWith<_GroupApproveJoinRequestOutput> get copyWith => __$GroupApproveJoinRequestOutputCopyWithImpl<_GroupApproveJoinRequestOutput>(this, _$identity);
+  factory _GroupApproveJoinRequestOutput.fromJson(Map<String, dynamic> json) =
+      _$GroupApproveJoinRequestOutputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GroupApproveJoinRequestOutputToJson(this, );
+  @override
+  @ConvoViewConverter()
+  ConvoView get convo;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of GroupApproveJoinRequestOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GroupApproveJoinRequestOutputImplCopyWith<
+          _$GroupApproveJoinRequestOutputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GroupApproveJoinRequestOutput&&(identical(other.convo, convo) || other.convo == convo)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,convo,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'GroupApproveJoinRequestOutput(convo: $convo, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$GroupApproveJoinRequestOutputCopyWith<$Res> implements $GroupApproveJoinRequestOutputCopyWith<$Res> {
-  factory _$GroupApproveJoinRequestOutputCopyWith(_GroupApproveJoinRequestOutput value, $Res Function(_GroupApproveJoinRequestOutput) _then) = __$GroupApproveJoinRequestOutputCopyWithImpl;
-@override @useResult
-$Res call({
-@ConvoViewConverter() ConvoView convo, Map<String, dynamic>? $unknown
-});
-
-
-@override $ConvoViewCopyWith<$Res> get convo;
-
-}
-/// @nodoc
-class __$GroupApproveJoinRequestOutputCopyWithImpl<$Res>
-    implements _$GroupApproveJoinRequestOutputCopyWith<$Res> {
-  __$GroupApproveJoinRequestOutputCopyWithImpl(this._self, this._then);
-
-  final _GroupApproveJoinRequestOutput _self;
-  final $Res Function(_GroupApproveJoinRequestOutput) _then;
-
-/// Create a copy of GroupApproveJoinRequestOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? convo = null,Object? $unknown = freezed,}) {
-  return _then(_GroupApproveJoinRequestOutput(
-convo: null == convo ? _self.convo : convo // ignore: cast_nullable_to_non_nullable
-as ConvoView,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of GroupApproveJoinRequestOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ConvoViewCopyWith<$Res> get convo {
-  
-  return $ConvoViewCopyWith<$Res>(_self.convo, (value) {
-    return _then(_self.copyWith(convo: value));
-  });
-}
-}
-
-// dart format on

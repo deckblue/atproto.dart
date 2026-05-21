@@ -8,35 +8,37 @@ part of 'system_message_data_unlock_convo.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SystemMessageDataUnlockConvo _$SystemMessageDataUnlockConvoFromJson(
-  Map json,
-) => $checkedCreate('_SystemMessageDataUnlockConvo', json, ($checkedConvert) {
-  final val = _SystemMessageDataUnlockConvo(
-    $type: $checkedConvert(
-      r'$type',
-      (v) =>
-          v as String? ?? 'chat.bsky.convo.defs#systemMessageDataUnlockConvo',
-    ),
-    unlockedBy: $checkedConvert(
-      'unlockedBy',
-      (v) => const SystemMessageReferredUserConverter().fromJson(
-        v as Map<String, dynamic>,
-      ),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$SystemMessageDataUnlockConvoImpl _$$SystemMessageDataUnlockConvoImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$SystemMessageDataUnlockConvoImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SystemMessageDataUnlockConvoImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'chat.bsky.convo.defs#systemMessageDataUnlockConvo'),
+          unlockedBy: $checkedConvert(
+              'unlockedBy',
+              (v) => const SystemMessageReferredUserConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SystemMessageDataUnlockConvoToJson(
-  _SystemMessageDataUnlockConvo instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'unlockedBy': const SystemMessageReferredUserConverter().toJson(
-    instance.unlockedBy,
-  ),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SystemMessageDataUnlockConvoImplToJson(
+        _$SystemMessageDataUnlockConvoImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'unlockedBy': const SystemMessageReferredUserConverter()
+          .toJson(instance.unlockedBy),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

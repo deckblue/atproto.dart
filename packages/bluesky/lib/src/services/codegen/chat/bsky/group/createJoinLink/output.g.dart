@@ -8,25 +8,30 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupCreateJoinLinkOutput _$GroupCreateJoinLinkOutputFromJson(Map json) =>
-    $checkedCreate('_GroupCreateJoinLinkOutput', json, ($checkedConvert) {
-      final val = _GroupCreateJoinLinkOutput(
-        joinLink: $checkedConvert(
-          'joinLink',
-          (v) =>
-              const JoinLinkViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupCreateJoinLinkOutputImpl _$$GroupCreateJoinLinkOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GroupCreateJoinLinkOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupCreateJoinLinkOutputImpl(
+          joinLink: $checkedConvert(
+              'joinLink',
+              (v) => const JoinLinkViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupCreateJoinLinkOutputToJson(
-  _GroupCreateJoinLinkOutput instance,
-) => <String, dynamic>{
-  'joinLink': const JoinLinkViewConverter().toJson(instance.joinLink),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupCreateJoinLinkOutputImplToJson(
+        _$GroupCreateJoinLinkOutputImpl instance) =>
+    <String, dynamic>{
+      'joinLink': const JoinLinkViewConverter().toJson(instance.joinLink),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

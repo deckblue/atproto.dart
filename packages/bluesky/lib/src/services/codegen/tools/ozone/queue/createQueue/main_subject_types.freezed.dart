@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,389 @@ part of 'main_subject_types.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$QueueCreateQueueSubjectTypes {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueueCreateQueueSubjectTypes&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'QueueCreateQueueSubjectTypes(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownQueueCreateQueueSubjectTypes data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownQueueCreateQueueSubjectTypes data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownQueueCreateQueueSubjectTypes data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueueCreateQueueSubjectTypesKnownValue value)
+        knownValue,
+    required TResult Function(QueueCreateQueueSubjectTypesUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QueueCreateQueueSubjectTypesKnownValue value)? knownValue,
+    TResult? Function(QueueCreateQueueSubjectTypesUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueueCreateQueueSubjectTypesKnownValue value)? knownValue,
+    TResult Function(QueueCreateQueueSubjectTypesUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $QueueCreateQueueSubjectTypesCopyWith<$Res>  {
-$QueueCreateQueueSubjectTypesCopyWith(QueueCreateQueueSubjectTypes _, $Res Function(QueueCreateQueueSubjectTypes) __);
+abstract class $QueueCreateQueueSubjectTypesCopyWith<$Res> {
+  factory $QueueCreateQueueSubjectTypesCopyWith(
+          QueueCreateQueueSubjectTypes value,
+          $Res Function(QueueCreateQueueSubjectTypes) then) =
+      _$QueueCreateQueueSubjectTypesCopyWithImpl<$Res,
+          QueueCreateQueueSubjectTypes>;
 }
 
+/// @nodoc
+class _$QueueCreateQueueSubjectTypesCopyWithImpl<$Res,
+        $Val extends QueueCreateQueueSubjectTypes>
+    implements $QueueCreateQueueSubjectTypesCopyWith<$Res> {
+  _$QueueCreateQueueSubjectTypesCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [QueueCreateQueueSubjectTypes].
-extension QueueCreateQueueSubjectTypesPatterns on QueueCreateQueueSubjectTypes {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( QueueCreateQueueSubjectTypesKnownValue value)?  knownValue,TResult Function( QueueCreateQueueSubjectTypesUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case QueueCreateQueueSubjectTypesKnownValue() when knownValue != null:
-return knownValue(_that);case QueueCreateQueueSubjectTypesUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( QueueCreateQueueSubjectTypesKnownValue value)  knownValue,required TResult Function( QueueCreateQueueSubjectTypesUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case QueueCreateQueueSubjectTypesKnownValue():
-return knownValue(_that);case QueueCreateQueueSubjectTypesUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( QueueCreateQueueSubjectTypesKnownValue value)?  knownValue,TResult? Function( QueueCreateQueueSubjectTypesUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case QueueCreateQueueSubjectTypesKnownValue() when knownValue != null:
-return knownValue(_that);case QueueCreateQueueSubjectTypesUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownQueueCreateQueueSubjectTypes data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case QueueCreateQueueSubjectTypesKnownValue() when knownValue != null:
-return knownValue(_that.data);case QueueCreateQueueSubjectTypesUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownQueueCreateQueueSubjectTypes data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case QueueCreateQueueSubjectTypesKnownValue():
-return knownValue(_that.data);case QueueCreateQueueSubjectTypesUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownQueueCreateQueueSubjectTypes data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case QueueCreateQueueSubjectTypesKnownValue() when knownValue != null:
-return knownValue(_that.data);case QueueCreateQueueSubjectTypesUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of QueueCreateQueueSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$QueueCreateQueueSubjectTypesKnownValueImplCopyWith<$Res> {
+  factory _$$QueueCreateQueueSubjectTypesKnownValueImplCopyWith(
+          _$QueueCreateQueueSubjectTypesKnownValueImpl value,
+          $Res Function(_$QueueCreateQueueSubjectTypesKnownValueImpl) then) =
+      __$$QueueCreateQueueSubjectTypesKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownQueueCreateQueueSubjectTypes data});
+}
+
+/// @nodoc
+class __$$QueueCreateQueueSubjectTypesKnownValueImplCopyWithImpl<$Res>
+    extends _$QueueCreateQueueSubjectTypesCopyWithImpl<$Res,
+        _$QueueCreateQueueSubjectTypesKnownValueImpl>
+    implements _$$QueueCreateQueueSubjectTypesKnownValueImplCopyWith<$Res> {
+  __$$QueueCreateQueueSubjectTypesKnownValueImplCopyWithImpl(
+      _$QueueCreateQueueSubjectTypesKnownValueImpl _value,
+      $Res Function(_$QueueCreateQueueSubjectTypesKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QueueCreateQueueSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$QueueCreateQueueSubjectTypesKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownQueueCreateQueueSubjectTypes,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$QueueCreateQueueSubjectTypesKnownValueImpl
+    extends QueueCreateQueueSubjectTypesKnownValue {
+  const _$QueueCreateQueueSubjectTypesKnownValueImpl({required this.data})
+      : super._();
 
-class QueueCreateQueueSubjectTypesKnownValue extends QueueCreateQueueSubjectTypes {
-  const QueueCreateQueueSubjectTypesKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownQueueCreateQueueSubjectTypes data;
 
-@override final  KnownQueueCreateQueueSubjectTypes data;
+  @override
+  String toString() {
+    return 'QueueCreateQueueSubjectTypes.knownValue(data: $data)';
+  }
 
-/// Create a copy of QueueCreateQueueSubjectTypes
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$QueueCreateQueueSubjectTypesKnownValueCopyWith<QueueCreateQueueSubjectTypesKnownValue> get copyWith => _$QueueCreateQueueSubjectTypesKnownValueCopyWithImpl<QueueCreateQueueSubjectTypesKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QueueCreateQueueSubjectTypesKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of QueueCreateQueueSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$QueueCreateQueueSubjectTypesKnownValueImplCopyWith<
+          _$QueueCreateQueueSubjectTypesKnownValueImpl>
+      get copyWith =>
+          __$$QueueCreateQueueSubjectTypesKnownValueImplCopyWithImpl<
+              _$QueueCreateQueueSubjectTypesKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueueCreateQueueSubjectTypesKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownQueueCreateQueueSubjectTypes data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownQueueCreateQueueSubjectTypes data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownQueueCreateQueueSubjectTypes data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueueCreateQueueSubjectTypesKnownValue value)
+        knownValue,
+    required TResult Function(QueueCreateQueueSubjectTypesUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QueueCreateQueueSubjectTypesKnownValue value)? knownValue,
+    TResult? Function(QueueCreateQueueSubjectTypesUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueueCreateQueueSubjectTypesKnownValue value)? knownValue,
+    TResult Function(QueueCreateQueueSubjectTypesUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class QueueCreateQueueSubjectTypesKnownValue
+    extends QueueCreateQueueSubjectTypes {
+  const factory QueueCreateQueueSubjectTypesKnownValue(
+          {required final KnownQueueCreateQueueSubjectTypes data}) =
+      _$QueueCreateQueueSubjectTypesKnownValueImpl;
+  const QueueCreateQueueSubjectTypesKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownQueueCreateQueueSubjectTypes get data;
 
-@override
-String toString() {
-  return 'QueueCreateQueueSubjectTypes.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of QueueCreateQueueSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$QueueCreateQueueSubjectTypesKnownValueImplCopyWith<
+          _$QueueCreateQueueSubjectTypesKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $QueueCreateQueueSubjectTypesKnownValueCopyWith<$Res> implements $QueueCreateQueueSubjectTypesCopyWith<$Res> {
-  factory $QueueCreateQueueSubjectTypesKnownValueCopyWith(QueueCreateQueueSubjectTypesKnownValue value, $Res Function(QueueCreateQueueSubjectTypesKnownValue) _then) = _$QueueCreateQueueSubjectTypesKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownQueueCreateQueueSubjectTypes data
-});
-
-
-
-
-}
-/// @nodoc
-class _$QueueCreateQueueSubjectTypesKnownValueCopyWithImpl<$Res>
-    implements $QueueCreateQueueSubjectTypesKnownValueCopyWith<$Res> {
-  _$QueueCreateQueueSubjectTypesKnownValueCopyWithImpl(this._self, this._then);
-
-  final QueueCreateQueueSubjectTypesKnownValue _self;
-  final $Res Function(QueueCreateQueueSubjectTypesKnownValue) _then;
-
-/// Create a copy of QueueCreateQueueSubjectTypes
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(QueueCreateQueueSubjectTypesKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownQueueCreateQueueSubjectTypes,
-  ));
-}
-
-
+abstract class _$$QueueCreateQueueSubjectTypesUnknownImplCopyWith<$Res> {
+  factory _$$QueueCreateQueueSubjectTypesUnknownImplCopyWith(
+          _$QueueCreateQueueSubjectTypesUnknownImpl value,
+          $Res Function(_$QueueCreateQueueSubjectTypesUnknownImpl) then) =
+      __$$QueueCreateQueueSubjectTypesUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$QueueCreateQueueSubjectTypesUnknownImplCopyWithImpl<$Res>
+    extends _$QueueCreateQueueSubjectTypesCopyWithImpl<$Res,
+        _$QueueCreateQueueSubjectTypesUnknownImpl>
+    implements _$$QueueCreateQueueSubjectTypesUnknownImplCopyWith<$Res> {
+  __$$QueueCreateQueueSubjectTypesUnknownImplCopyWithImpl(
+      _$QueueCreateQueueSubjectTypesUnknownImpl _value,
+      $Res Function(_$QueueCreateQueueSubjectTypesUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class QueueCreateQueueSubjectTypesUnknown extends QueueCreateQueueSubjectTypes {
-  const QueueCreateQueueSubjectTypesUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of QueueCreateQueueSubjectTypes
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$QueueCreateQueueSubjectTypesUnknownCopyWith<QueueCreateQueueSubjectTypesUnknown> get copyWith => _$QueueCreateQueueSubjectTypesUnknownCopyWithImpl<QueueCreateQueueSubjectTypesUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueueCreateQueueSubjectTypesUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'QueueCreateQueueSubjectTypes.unknown(data: $data)';
-}
-
-
+  /// Create a copy of QueueCreateQueueSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$QueueCreateQueueSubjectTypesUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $QueueCreateQueueSubjectTypesUnknownCopyWith<$Res> implements $QueueCreateQueueSubjectTypesCopyWith<$Res> {
-  factory $QueueCreateQueueSubjectTypesUnknownCopyWith(QueueCreateQueueSubjectTypesUnknown value, $Res Function(QueueCreateQueueSubjectTypesUnknown) _then) = _$QueueCreateQueueSubjectTypesUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$QueueCreateQueueSubjectTypesUnknownImpl
+    extends QueueCreateQueueSubjectTypesUnknown {
+  const _$QueueCreateQueueSubjectTypesUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'QueueCreateQueueSubjectTypes.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QueueCreateQueueSubjectTypesUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of QueueCreateQueueSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$QueueCreateQueueSubjectTypesUnknownImplCopyWith<
+          _$QueueCreateQueueSubjectTypesUnknownImpl>
+      get copyWith => __$$QueueCreateQueueSubjectTypesUnknownImplCopyWithImpl<
+          _$QueueCreateQueueSubjectTypesUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownQueueCreateQueueSubjectTypes data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownQueueCreateQueueSubjectTypes data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownQueueCreateQueueSubjectTypes data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueueCreateQueueSubjectTypesKnownValue value)
+        knownValue,
+    required TResult Function(QueueCreateQueueSubjectTypesUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QueueCreateQueueSubjectTypesKnownValue value)? knownValue,
+    TResult? Function(QueueCreateQueueSubjectTypesUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueueCreateQueueSubjectTypesKnownValue value)? knownValue,
+    TResult Function(QueueCreateQueueSubjectTypesUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$QueueCreateQueueSubjectTypesUnknownCopyWithImpl<$Res>
-    implements $QueueCreateQueueSubjectTypesUnknownCopyWith<$Res> {
-  _$QueueCreateQueueSubjectTypesUnknownCopyWithImpl(this._self, this._then);
 
-  final QueueCreateQueueSubjectTypesUnknown _self;
-  final $Res Function(QueueCreateQueueSubjectTypesUnknown) _then;
+abstract class QueueCreateQueueSubjectTypesUnknown
+    extends QueueCreateQueueSubjectTypes {
+  const factory QueueCreateQueueSubjectTypesUnknown(
+      {required final String data}) = _$QueueCreateQueueSubjectTypesUnknownImpl;
+  const QueueCreateQueueSubjectTypesUnknown._() : super._();
 
-/// Create a copy of QueueCreateQueueSubjectTypes
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(QueueCreateQueueSubjectTypesUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of QueueCreateQueueSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$QueueCreateQueueSubjectTypesUnknownImplCopyWith<
+          _$QueueCreateQueueSubjectTypesUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

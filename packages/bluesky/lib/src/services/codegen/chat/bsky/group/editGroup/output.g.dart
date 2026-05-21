@@ -8,24 +8,29 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupEditGroupOutput _$GroupEditGroupOutputFromJson(Map json) =>
-    $checkedCreate('_GroupEditGroupOutput', json, ($checkedConvert) {
-      final val = _GroupEditGroupOutput(
-        convo: $checkedConvert(
-          'convo',
-          (v) => const ConvoViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupEditGroupOutputImpl _$$GroupEditGroupOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GroupEditGroupOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupEditGroupOutputImpl(
+          convo: $checkedConvert(
+              'convo',
+              (v) => const ConvoViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupEditGroupOutputToJson(
-  _GroupEditGroupOutput instance,
-) => <String, dynamic>{
-  'convo': const ConvoViewConverter().toJson(instance.convo),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupEditGroupOutputImplToJson(
+        _$GroupEditGroupOutputImpl instance) =>
+    <String, dynamic>{
+      'convo': const ConvoViewConverter().toJson(instance.convo),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,24 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModerationSubscribeModEventsInput _$ModerationSubscribeModEventsInputFromJson(
-  Map json,
-) => $checkedCreate('_ModerationSubscribeModEventsInput', json, (
-  $checkedConvert,
-) {
-  final val = _ModerationSubscribeModEventsInput(
-    cursor: $checkedConvert('cursor', (v) => v as String?),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$ModerationSubscribeModEventsInputImpl
+    _$$ModerationSubscribeModEventsInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$ModerationSubscribeModEventsInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$ModerationSubscribeModEventsInputImpl(
+              cursor: $checkedConvert('cursor', (v) => v as String?),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$ModerationSubscribeModEventsInputToJson(
-  _ModerationSubscribeModEventsInput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ModerationSubscribeModEventsInputImplToJson(
+        _$ModerationSubscribeModEventsInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

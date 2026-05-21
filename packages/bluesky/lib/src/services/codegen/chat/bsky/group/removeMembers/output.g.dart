@@ -8,24 +8,30 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupRemoveMembersOutput _$GroupRemoveMembersOutputFromJson(Map json) =>
-    $checkedCreate('_GroupRemoveMembersOutput', json, ($checkedConvert) {
-      final val = _GroupRemoveMembersOutput(
-        convo: $checkedConvert(
-          'convo',
-          (v) => const ConvoViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupRemoveMembersOutputImpl _$$GroupRemoveMembersOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GroupRemoveMembersOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupRemoveMembersOutputImpl(
+          convo: $checkedConvert(
+              'convo',
+              (v) => const ConvoViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupRemoveMembersOutputToJson(
-  _GroupRemoveMembersOutput instance,
-) => <String, dynamic>{
-  'convo': const ConvoViewConverter().toJson(instance.convo),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupRemoveMembersOutputImplToJson(
+        _$GroupRemoveMembersOutputImpl instance) =>
+    <String, dynamic>{
+      'convo': const ConvoViewConverter().toJson(instance.convo),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

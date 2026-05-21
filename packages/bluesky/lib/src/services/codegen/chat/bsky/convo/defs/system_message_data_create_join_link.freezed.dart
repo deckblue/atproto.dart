@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,280 +9,200 @@ part of 'system_message_data_create_join_link.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+SystemMessageDataCreateJoinLink _$SystemMessageDataCreateJoinLinkFromJson(
+    Map<String, dynamic> json) {
+  return _SystemMessageDataCreateJoinLink.fromJson(json);
+}
 
 /// @nodoc
 mixin _$SystemMessageDataCreateJoinLink {
-
- String get $type; Map<String, dynamic>? get $unknown;
-/// Create a copy of SystemMessageDataCreateJoinLink
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SystemMessageDataCreateJoinLinkCopyWith<SystemMessageDataCreateJoinLink> get copyWith => _$SystemMessageDataCreateJoinLinkCopyWithImpl<SystemMessageDataCreateJoinLink>(this as SystemMessageDataCreateJoinLink, _$identity);
+  String get $type => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this SystemMessageDataCreateJoinLink to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SystemMessageDataCreateJoinLink&&(identical(other.$type, $type) || other.$type == $type)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'SystemMessageDataCreateJoinLink(\$type: ${$type}, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of SystemMessageDataCreateJoinLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SystemMessageDataCreateJoinLinkCopyWith<SystemMessageDataCreateJoinLink>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SystemMessageDataCreateJoinLinkCopyWith<$Res>  {
-  factory $SystemMessageDataCreateJoinLinkCopyWith(SystemMessageDataCreateJoinLink value, $Res Function(SystemMessageDataCreateJoinLink) _then) = _$SystemMessageDataCreateJoinLinkCopyWithImpl;
-@useResult
-$Res call({
- String $type, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $SystemMessageDataCreateJoinLinkCopyWith<$Res> {
+  factory $SystemMessageDataCreateJoinLinkCopyWith(
+          SystemMessageDataCreateJoinLink value,
+          $Res Function(SystemMessageDataCreateJoinLink) then) =
+      _$SystemMessageDataCreateJoinLinkCopyWithImpl<$Res,
+          SystemMessageDataCreateJoinLink>;
+  @useResult
+  $Res call({String $type, Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$SystemMessageDataCreateJoinLinkCopyWithImpl<$Res>
+class _$SystemMessageDataCreateJoinLinkCopyWithImpl<$Res,
+        $Val extends SystemMessageDataCreateJoinLink>
     implements $SystemMessageDataCreateJoinLinkCopyWith<$Res> {
-  _$SystemMessageDataCreateJoinLinkCopyWithImpl(this._self, this._then);
+  _$SystemMessageDataCreateJoinLinkCopyWithImpl(this._value, this._then);
 
-  final SystemMessageDataCreateJoinLink _self;
-  final $Res Function(SystemMessageDataCreateJoinLink) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of SystemMessageDataCreateJoinLink
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of SystemMessageDataCreateJoinLink
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$SystemMessageDataCreateJoinLinkImplCopyWith<$Res>
+    implements $SystemMessageDataCreateJoinLinkCopyWith<$Res> {
+  factory _$$SystemMessageDataCreateJoinLinkImplCopyWith(
+          _$SystemMessageDataCreateJoinLinkImpl value,
+          $Res Function(_$SystemMessageDataCreateJoinLinkImpl) then) =
+      __$$SystemMessageDataCreateJoinLinkImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String $type, Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$SystemMessageDataCreateJoinLinkImplCopyWithImpl<$Res>
+    extends _$SystemMessageDataCreateJoinLinkCopyWithImpl<$Res,
+        _$SystemMessageDataCreateJoinLinkImpl>
+    implements _$$SystemMessageDataCreateJoinLinkImplCopyWith<$Res> {
+  __$$SystemMessageDataCreateJoinLinkImplCopyWithImpl(
+      _$SystemMessageDataCreateJoinLinkImpl _value,
+      $Res Function(_$SystemMessageDataCreateJoinLinkImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [SystemMessageDataCreateJoinLink].
-extension SystemMessageDataCreateJoinLinkPatterns on SystemMessageDataCreateJoinLink {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SystemMessageDataCreateJoinLink value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _SystemMessageDataCreateJoinLink() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SystemMessageDataCreateJoinLink value)  $default,){
-final _that = this;
-switch (_that) {
-case _SystemMessageDataCreateJoinLink():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SystemMessageDataCreateJoinLink value)?  $default,){
-final _that = this;
-switch (_that) {
-case _SystemMessageDataCreateJoinLink() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _SystemMessageDataCreateJoinLink() when $default != null:
-return $default(_that.$type,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _SystemMessageDataCreateJoinLink():
-return $default(_that.$type,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _SystemMessageDataCreateJoinLink() when $default != null:
-return $default(_that.$type,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of SystemMessageDataCreateJoinLink
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$SystemMessageDataCreateJoinLinkImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _SystemMessageDataCreateJoinLink implements SystemMessageDataCreateJoinLink {
-  const _SystemMessageDataCreateJoinLink({this.$type = 'chat.bsky.convo.defs#systemMessageDataCreateJoinLink', final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _SystemMessageDataCreateJoinLink.fromJson(Map<String, dynamic> json) => _$SystemMessageDataCreateJoinLinkFromJson(json);
+class _$SystemMessageDataCreateJoinLinkImpl
+    implements _SystemMessageDataCreateJoinLink {
+  const _$SystemMessageDataCreateJoinLinkImpl(
+      {this.$type = 'chat.bsky.convo.defs#systemMessageDataCreateJoinLink',
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$SystemMessageDataCreateJoinLinkImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$SystemMessageDataCreateJoinLinkImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'SystemMessageDataCreateJoinLink(\$type: ${$type}, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SystemMessageDataCreateJoinLinkImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, $type, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of SystemMessageDataCreateJoinLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SystemMessageDataCreateJoinLinkImplCopyWith<
+          _$SystemMessageDataCreateJoinLinkImpl>
+      get copyWith => __$$SystemMessageDataCreateJoinLinkImplCopyWithImpl<
+          _$SystemMessageDataCreateJoinLinkImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SystemMessageDataCreateJoinLinkImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _SystemMessageDataCreateJoinLink
+    implements SystemMessageDataCreateJoinLink {
+  const factory _SystemMessageDataCreateJoinLink(
+          {final String $type, final Map<String, dynamic>? $unknown}) =
+      _$SystemMessageDataCreateJoinLinkImpl;
 
-/// Create a copy of SystemMessageDataCreateJoinLink
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$SystemMessageDataCreateJoinLinkCopyWith<_SystemMessageDataCreateJoinLink> get copyWith => __$SystemMessageDataCreateJoinLinkCopyWithImpl<_SystemMessageDataCreateJoinLink>(this, _$identity);
+  factory _SystemMessageDataCreateJoinLink.fromJson(Map<String, dynamic> json) =
+      _$SystemMessageDataCreateJoinLinkImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$SystemMessageDataCreateJoinLinkToJson(this, );
+  @override
+  String get $type;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of SystemMessageDataCreateJoinLink
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SystemMessageDataCreateJoinLinkImplCopyWith<
+          _$SystemMessageDataCreateJoinLinkImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SystemMessageDataCreateJoinLink&&(identical(other.$type, $type) || other.$type == $type)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'SystemMessageDataCreateJoinLink(\$type: ${$type}, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$SystemMessageDataCreateJoinLinkCopyWith<$Res> implements $SystemMessageDataCreateJoinLinkCopyWith<$Res> {
-  factory _$SystemMessageDataCreateJoinLinkCopyWith(_SystemMessageDataCreateJoinLink value, $Res Function(_SystemMessageDataCreateJoinLink) _then) = __$SystemMessageDataCreateJoinLinkCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$SystemMessageDataCreateJoinLinkCopyWithImpl<$Res>
-    implements _$SystemMessageDataCreateJoinLinkCopyWith<$Res> {
-  __$SystemMessageDataCreateJoinLinkCopyWithImpl(this._self, this._then);
-
-  final _SystemMessageDataCreateJoinLink _self;
-  final $Res Function(_SystemMessageDataCreateJoinLink) _then;
-
-/// Create a copy of SystemMessageDataCreateJoinLink
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? $unknown = freezed,}) {
-  return _then(_SystemMessageDataCreateJoinLink(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

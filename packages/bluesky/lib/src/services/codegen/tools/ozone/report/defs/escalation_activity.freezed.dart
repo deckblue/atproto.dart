@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,309 +9,246 @@ part of 'escalation_activity.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+EscalationActivity _$EscalationActivityFromJson(Map<String, dynamic> json) {
+  return _EscalationActivity.fromJson(json);
+}
 
 /// @nodoc
 mixin _$EscalationActivity {
+  String get $type => throw _privateConstructorUsedError;
 
- String get $type;/// The report's status before this activity. Populated automatically from the report row; not required in input.
-@EscalationActivityPreviousStatusConverter() EscalationActivityPreviousStatus? get previousStatus; Map<String, dynamic>? get $unknown;
-/// Create a copy of EscalationActivity
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$EscalationActivityCopyWith<EscalationActivity> get copyWith => _$EscalationActivityCopyWithImpl<EscalationActivity>(this as EscalationActivity, _$identity);
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @EscalationActivityPreviousStatusConverter()
+  EscalationActivityPreviousStatus? get previousStatus =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this EscalationActivity to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EscalationActivity&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.previousStatus, previousStatus) || other.previousStatus == previousStatus)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,previousStatus,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'EscalationActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of EscalationActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $EscalationActivityCopyWith<EscalationActivity> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $EscalationActivityCopyWith<$Res>  {
-  factory $EscalationActivityCopyWith(EscalationActivity value, $Res Function(EscalationActivity) _then) = _$EscalationActivityCopyWithImpl;
-@useResult
-$Res call({
- String $type,@EscalationActivityPreviousStatusConverter() EscalationActivityPreviousStatus? previousStatus, Map<String, dynamic>? $unknown
-});
+abstract class $EscalationActivityCopyWith<$Res> {
+  factory $EscalationActivityCopyWith(
+          EscalationActivity value, $Res Function(EscalationActivity) then) =
+      _$EscalationActivityCopyWithImpl<$Res, EscalationActivity>;
+  @useResult
+  $Res call(
+      {String $type,
+      @EscalationActivityPreviousStatusConverter()
+      EscalationActivityPreviousStatus? previousStatus,
+      Map<String, dynamic>? $unknown});
 
-
-$EscalationActivityPreviousStatusCopyWith<$Res>? get previousStatus;
-
+  $EscalationActivityPreviousStatusCopyWith<$Res>? get previousStatus;
 }
+
 /// @nodoc
-class _$EscalationActivityCopyWithImpl<$Res>
+class _$EscalationActivityCopyWithImpl<$Res, $Val extends EscalationActivity>
     implements $EscalationActivityCopyWith<$Res> {
-  _$EscalationActivityCopyWithImpl(this._self, this._then);
+  _$EscalationActivityCopyWithImpl(this._value, this._then);
 
-  final EscalationActivity _self;
-  final $Res Function(EscalationActivity) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of EscalationActivity
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? previousStatus = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,previousStatus: freezed == previousStatus ? _self.previousStatus : previousStatus // ignore: cast_nullable_to_non_nullable
-as EscalationActivityPreviousStatus?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of EscalationActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$EscalationActivityPreviousStatusCopyWith<$Res>? get previousStatus {
-    if (_self.previousStatus == null) {
-    return null;
+  /// Create a copy of EscalationActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? previousStatus = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      previousStatus: freezed == previousStatus
+          ? _value.previousStatus
+          : previousStatus // ignore: cast_nullable_to_non_nullable
+              as EscalationActivityPreviousStatus?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
   }
 
-  return $EscalationActivityPreviousStatusCopyWith<$Res>(_self.previousStatus!, (value) {
-    return _then(_self.copyWith(previousStatus: value));
-  });
-}
-}
+  /// Create a copy of EscalationActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EscalationActivityPreviousStatusCopyWith<$Res>? get previousStatus {
+    if (_value.previousStatus == null) {
+      return null;
+    }
 
-
-/// Adds pattern-matching-related methods to [EscalationActivity].
-extension EscalationActivityPatterns on EscalationActivity {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EscalationActivity value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _EscalationActivity() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EscalationActivity value)  $default,){
-final _that = this;
-switch (_that) {
-case _EscalationActivity():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EscalationActivity value)?  $default,){
-final _that = this;
-switch (_that) {
-case _EscalationActivity() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type, @EscalationActivityPreviousStatusConverter()  EscalationActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _EscalationActivity() when $default != null:
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type, @EscalationActivityPreviousStatusConverter()  EscalationActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _EscalationActivity():
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type, @EscalationActivityPreviousStatusConverter()  EscalationActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _EscalationActivity() when $default != null:
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  return null;
-
-}
+    return $EscalationActivityPreviousStatusCopyWith<$Res>(
+        _value.previousStatus!, (value) {
+      return _then(_value.copyWith(previousStatus: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$EscalationActivityImplCopyWith<$Res>
+    implements $EscalationActivityCopyWith<$Res> {
+  factory _$$EscalationActivityImplCopyWith(_$EscalationActivityImpl value,
+          $Res Function(_$EscalationActivityImpl) then) =
+      __$$EscalationActivityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      @EscalationActivityPreviousStatusConverter()
+      EscalationActivityPreviousStatus? previousStatus,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $EscalationActivityPreviousStatusCopyWith<$Res>? get previousStatus;
+}
+
+/// @nodoc
+class __$$EscalationActivityImplCopyWithImpl<$Res>
+    extends _$EscalationActivityCopyWithImpl<$Res, _$EscalationActivityImpl>
+    implements _$$EscalationActivityImplCopyWith<$Res> {
+  __$$EscalationActivityImplCopyWithImpl(_$EscalationActivityImpl _value,
+      $Res Function(_$EscalationActivityImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of EscalationActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? previousStatus = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$EscalationActivityImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      previousStatus: freezed == previousStatus
+          ? _value.previousStatus
+          : previousStatus // ignore: cast_nullable_to_non_nullable
+              as EscalationActivityPreviousStatus?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _EscalationActivity implements EscalationActivity {
-  const _EscalationActivity({this.$type = 'tools.ozone.report.defs#escalationActivity', @EscalationActivityPreviousStatusConverter() this.previousStatus, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _EscalationActivity.fromJson(Map<String, dynamic> json) => _$EscalationActivityFromJson(json);
+class _$EscalationActivityImpl implements _EscalationActivity {
+  const _$EscalationActivityImpl(
+      {this.$type = 'tools.ozone.report.defs#escalationActivity',
+      @EscalationActivityPreviousStatusConverter() this.previousStatus,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-/// The report's status before this activity. Populated automatically from the report row; not required in input.
-@override@EscalationActivityPreviousStatusConverter() final  EscalationActivityPreviousStatus? previousStatus;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+  factory _$EscalationActivityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EscalationActivityImplFromJson(json);
 
+  @override
+  @JsonKey()
+  final String $type;
 
-/// Create a copy of EscalationActivity
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$EscalationActivityCopyWith<_EscalationActivity> get copyWith => __$EscalationActivityCopyWithImpl<_EscalationActivity>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$EscalationActivityToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EscalationActivity&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.previousStatus, previousStatus) || other.previousStatus == previousStatus)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,previousStatus,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'EscalationActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$EscalationActivityCopyWith<$Res> implements $EscalationActivityCopyWith<$Res> {
-  factory _$EscalationActivityCopyWith(_EscalationActivity value, $Res Function(_EscalationActivity) _then) = __$EscalationActivityCopyWithImpl;
-@override @useResult
-$Res call({
- String $type,@EscalationActivityPreviousStatusConverter() EscalationActivityPreviousStatus? previousStatus, Map<String, dynamic>? $unknown
-});
-
-
-@override $EscalationActivityPreviousStatusCopyWith<$Res>? get previousStatus;
-
-}
-/// @nodoc
-class __$EscalationActivityCopyWithImpl<$Res>
-    implements _$EscalationActivityCopyWith<$Res> {
-  __$EscalationActivityCopyWithImpl(this._self, this._then);
-
-  final _EscalationActivity _self;
-  final $Res Function(_EscalationActivity) _then;
-
-/// Create a copy of EscalationActivity
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? previousStatus = freezed,Object? $unknown = freezed,}) {
-  return _then(_EscalationActivity(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,previousStatus: freezed == previousStatus ? _self.previousStatus : previousStatus // ignore: cast_nullable_to_non_nullable
-as EscalationActivityPreviousStatus?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of EscalationActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$EscalationActivityPreviousStatusCopyWith<$Res>? get previousStatus {
-    if (_self.previousStatus == null) {
-    return null;
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @override
+  @EscalationActivityPreviousStatusConverter()
+  final EscalationActivityPreviousStatus? previousStatus;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
   }
 
-  return $EscalationActivityPreviousStatusCopyWith<$Res>(_self.previousStatus!, (value) {
-    return _then(_self.copyWith(previousStatus: value));
-  });
-}
+  @override
+  String toString() {
+    return 'EscalationActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EscalationActivityImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.previousStatus, previousStatus) ||
+                other.previousStatus == previousStatus) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, previousStatus,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of EscalationActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EscalationActivityImplCopyWith<_$EscalationActivityImpl> get copyWith =>
+      __$$EscalationActivityImplCopyWithImpl<_$EscalationActivityImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$EscalationActivityImplToJson(
+      this,
+    );
+  }
 }
 
-// dart format on
+abstract class _EscalationActivity implements EscalationActivity {
+  const factory _EscalationActivity(
+      {final String $type,
+      @EscalationActivityPreviousStatusConverter()
+      final EscalationActivityPreviousStatus? previousStatus,
+      final Map<String, dynamic>? $unknown}) = _$EscalationActivityImpl;
+
+  factory _EscalationActivity.fromJson(Map<String, dynamic> json) =
+      _$EscalationActivityImpl.fromJson;
+
+  @override
+  String get $type;
+
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @override
+  @EscalationActivityPreviousStatusConverter()
+  EscalationActivityPreviousStatus? get previousStatus;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of EscalationActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EscalationActivityImplCopyWith<_$EscalationActivityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

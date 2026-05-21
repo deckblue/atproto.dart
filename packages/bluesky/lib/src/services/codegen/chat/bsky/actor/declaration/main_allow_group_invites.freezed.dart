@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,401 @@ part of 'main_allow_group_invites.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$ActorDeclarationAllowGroupInvites {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActorDeclarationAllowGroupInvites&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'ActorDeclarationAllowGroupInvites(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownActorDeclarationAllowGroupInvites data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownActorDeclarationAllowGroupInvites data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownActorDeclarationAllowGroupInvites data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ActorDeclarationAllowGroupInvitesKnownValue value)
+        knownValue,
+    required TResult Function(ActorDeclarationAllowGroupInvitesUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ActorDeclarationAllowGroupInvitesKnownValue value)?
+        knownValue,
+    TResult? Function(ActorDeclarationAllowGroupInvitesUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ActorDeclarationAllowGroupInvitesKnownValue value)?
+        knownValue,
+    TResult Function(ActorDeclarationAllowGroupInvitesUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $ActorDeclarationAllowGroupInvitesCopyWith<$Res>  {
-$ActorDeclarationAllowGroupInvitesCopyWith(ActorDeclarationAllowGroupInvites _, $Res Function(ActorDeclarationAllowGroupInvites) __);
+abstract class $ActorDeclarationAllowGroupInvitesCopyWith<$Res> {
+  factory $ActorDeclarationAllowGroupInvitesCopyWith(
+          ActorDeclarationAllowGroupInvites value,
+          $Res Function(ActorDeclarationAllowGroupInvites) then) =
+      _$ActorDeclarationAllowGroupInvitesCopyWithImpl<$Res,
+          ActorDeclarationAllowGroupInvites>;
 }
 
+/// @nodoc
+class _$ActorDeclarationAllowGroupInvitesCopyWithImpl<$Res,
+        $Val extends ActorDeclarationAllowGroupInvites>
+    implements $ActorDeclarationAllowGroupInvitesCopyWith<$Res> {
+  _$ActorDeclarationAllowGroupInvitesCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [ActorDeclarationAllowGroupInvites].
-extension ActorDeclarationAllowGroupInvitesPatterns on ActorDeclarationAllowGroupInvites {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ActorDeclarationAllowGroupInvitesKnownValue value)?  knownValue,TResult Function( ActorDeclarationAllowGroupInvitesUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case ActorDeclarationAllowGroupInvitesKnownValue() when knownValue != null:
-return knownValue(_that);case ActorDeclarationAllowGroupInvitesUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ActorDeclarationAllowGroupInvitesKnownValue value)  knownValue,required TResult Function( ActorDeclarationAllowGroupInvitesUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case ActorDeclarationAllowGroupInvitesKnownValue():
-return knownValue(_that);case ActorDeclarationAllowGroupInvitesUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ActorDeclarationAllowGroupInvitesKnownValue value)?  knownValue,TResult? Function( ActorDeclarationAllowGroupInvitesUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case ActorDeclarationAllowGroupInvitesKnownValue() when knownValue != null:
-return knownValue(_that);case ActorDeclarationAllowGroupInvitesUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownActorDeclarationAllowGroupInvites data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case ActorDeclarationAllowGroupInvitesKnownValue() when knownValue != null:
-return knownValue(_that.data);case ActorDeclarationAllowGroupInvitesUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownActorDeclarationAllowGroupInvites data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case ActorDeclarationAllowGroupInvitesKnownValue():
-return knownValue(_that.data);case ActorDeclarationAllowGroupInvitesUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownActorDeclarationAllowGroupInvites data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case ActorDeclarationAllowGroupInvitesKnownValue() when knownValue != null:
-return knownValue(_that.data);case ActorDeclarationAllowGroupInvitesUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of ActorDeclarationAllowGroupInvites
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWith<
+    $Res> {
+  factory _$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWith(
+          _$ActorDeclarationAllowGroupInvitesKnownValueImpl value,
+          $Res Function(_$ActorDeclarationAllowGroupInvitesKnownValueImpl)
+              then) =
+      __$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownActorDeclarationAllowGroupInvites data});
+}
+
+/// @nodoc
+class __$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWithImpl<$Res>
+    extends _$ActorDeclarationAllowGroupInvitesCopyWithImpl<$Res,
+        _$ActorDeclarationAllowGroupInvitesKnownValueImpl>
+    implements
+        _$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWith<$Res> {
+  __$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWithImpl(
+      _$ActorDeclarationAllowGroupInvitesKnownValueImpl _value,
+      $Res Function(_$ActorDeclarationAllowGroupInvitesKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ActorDeclarationAllowGroupInvites
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ActorDeclarationAllowGroupInvitesKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownActorDeclarationAllowGroupInvites,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$ActorDeclarationAllowGroupInvitesKnownValueImpl
+    extends ActorDeclarationAllowGroupInvitesKnownValue {
+  const _$ActorDeclarationAllowGroupInvitesKnownValueImpl({required this.data})
+      : super._();
 
-class ActorDeclarationAllowGroupInvitesKnownValue extends ActorDeclarationAllowGroupInvites {
-  const ActorDeclarationAllowGroupInvitesKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownActorDeclarationAllowGroupInvites data;
 
-@override final  KnownActorDeclarationAllowGroupInvites data;
+  @override
+  String toString() {
+    return 'ActorDeclarationAllowGroupInvites.knownValue(data: $data)';
+  }
 
-/// Create a copy of ActorDeclarationAllowGroupInvites
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ActorDeclarationAllowGroupInvitesKnownValueCopyWith<ActorDeclarationAllowGroupInvitesKnownValue> get copyWith => _$ActorDeclarationAllowGroupInvitesKnownValueCopyWithImpl<ActorDeclarationAllowGroupInvitesKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ActorDeclarationAllowGroupInvitesKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of ActorDeclarationAllowGroupInvites
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWith<
+          _$ActorDeclarationAllowGroupInvitesKnownValueImpl>
+      get copyWith =>
+          __$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWithImpl<
+                  _$ActorDeclarationAllowGroupInvitesKnownValueImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActorDeclarationAllowGroupInvitesKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownActorDeclarationAllowGroupInvites data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownActorDeclarationAllowGroupInvites data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownActorDeclarationAllowGroupInvites data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ActorDeclarationAllowGroupInvitesKnownValue value)
+        knownValue,
+    required TResult Function(ActorDeclarationAllowGroupInvitesUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ActorDeclarationAllowGroupInvitesKnownValue value)?
+        knownValue,
+    TResult? Function(ActorDeclarationAllowGroupInvitesUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ActorDeclarationAllowGroupInvitesKnownValue value)?
+        knownValue,
+    TResult Function(ActorDeclarationAllowGroupInvitesUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class ActorDeclarationAllowGroupInvitesKnownValue
+    extends ActorDeclarationAllowGroupInvites {
+  const factory ActorDeclarationAllowGroupInvitesKnownValue(
+          {required final KnownActorDeclarationAllowGroupInvites data}) =
+      _$ActorDeclarationAllowGroupInvitesKnownValueImpl;
+  const ActorDeclarationAllowGroupInvitesKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownActorDeclarationAllowGroupInvites get data;
 
-@override
-String toString() {
-  return 'ActorDeclarationAllowGroupInvites.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of ActorDeclarationAllowGroupInvites
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActorDeclarationAllowGroupInvitesKnownValueImplCopyWith<
+          _$ActorDeclarationAllowGroupInvitesKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActorDeclarationAllowGroupInvitesKnownValueCopyWith<$Res> implements $ActorDeclarationAllowGroupInvitesCopyWith<$Res> {
-  factory $ActorDeclarationAllowGroupInvitesKnownValueCopyWith(ActorDeclarationAllowGroupInvitesKnownValue value, $Res Function(ActorDeclarationAllowGroupInvitesKnownValue) _then) = _$ActorDeclarationAllowGroupInvitesKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownActorDeclarationAllowGroupInvites data
-});
-
-
-
-
-}
-/// @nodoc
-class _$ActorDeclarationAllowGroupInvitesKnownValueCopyWithImpl<$Res>
-    implements $ActorDeclarationAllowGroupInvitesKnownValueCopyWith<$Res> {
-  _$ActorDeclarationAllowGroupInvitesKnownValueCopyWithImpl(this._self, this._then);
-
-  final ActorDeclarationAllowGroupInvitesKnownValue _self;
-  final $Res Function(ActorDeclarationAllowGroupInvitesKnownValue) _then;
-
-/// Create a copy of ActorDeclarationAllowGroupInvites
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ActorDeclarationAllowGroupInvitesKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownActorDeclarationAllowGroupInvites,
-  ));
-}
-
-
+abstract class _$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWith<$Res> {
+  factory _$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWith(
+          _$ActorDeclarationAllowGroupInvitesUnknownImpl value,
+          $Res Function(_$ActorDeclarationAllowGroupInvitesUnknownImpl) then) =
+      __$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWithImpl<$Res>
+    extends _$ActorDeclarationAllowGroupInvitesCopyWithImpl<$Res,
+        _$ActorDeclarationAllowGroupInvitesUnknownImpl>
+    implements _$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWith<$Res> {
+  __$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWithImpl(
+      _$ActorDeclarationAllowGroupInvitesUnknownImpl _value,
+      $Res Function(_$ActorDeclarationAllowGroupInvitesUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class ActorDeclarationAllowGroupInvitesUnknown extends ActorDeclarationAllowGroupInvites {
-  const ActorDeclarationAllowGroupInvitesUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of ActorDeclarationAllowGroupInvites
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ActorDeclarationAllowGroupInvitesUnknownCopyWith<ActorDeclarationAllowGroupInvitesUnknown> get copyWith => _$ActorDeclarationAllowGroupInvitesUnknownCopyWithImpl<ActorDeclarationAllowGroupInvitesUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActorDeclarationAllowGroupInvitesUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'ActorDeclarationAllowGroupInvites.unknown(data: $data)';
-}
-
-
+  /// Create a copy of ActorDeclarationAllowGroupInvites
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ActorDeclarationAllowGroupInvitesUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $ActorDeclarationAllowGroupInvitesUnknownCopyWith<$Res> implements $ActorDeclarationAllowGroupInvitesCopyWith<$Res> {
-  factory $ActorDeclarationAllowGroupInvitesUnknownCopyWith(ActorDeclarationAllowGroupInvitesUnknown value, $Res Function(ActorDeclarationAllowGroupInvitesUnknown) _then) = _$ActorDeclarationAllowGroupInvitesUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$ActorDeclarationAllowGroupInvitesUnknownImpl
+    extends ActorDeclarationAllowGroupInvitesUnknown {
+  const _$ActorDeclarationAllowGroupInvitesUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'ActorDeclarationAllowGroupInvites.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ActorDeclarationAllowGroupInvitesUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of ActorDeclarationAllowGroupInvites
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWith<
+          _$ActorDeclarationAllowGroupInvitesUnknownImpl>
+      get copyWith =>
+          __$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWithImpl<
+              _$ActorDeclarationAllowGroupInvitesUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownActorDeclarationAllowGroupInvites data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownActorDeclarationAllowGroupInvites data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownActorDeclarationAllowGroupInvites data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ActorDeclarationAllowGroupInvitesKnownValue value)
+        knownValue,
+    required TResult Function(ActorDeclarationAllowGroupInvitesUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ActorDeclarationAllowGroupInvitesKnownValue value)?
+        knownValue,
+    TResult? Function(ActorDeclarationAllowGroupInvitesUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ActorDeclarationAllowGroupInvitesKnownValue value)?
+        knownValue,
+    TResult Function(ActorDeclarationAllowGroupInvitesUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$ActorDeclarationAllowGroupInvitesUnknownCopyWithImpl<$Res>
-    implements $ActorDeclarationAllowGroupInvitesUnknownCopyWith<$Res> {
-  _$ActorDeclarationAllowGroupInvitesUnknownCopyWithImpl(this._self, this._then);
 
-  final ActorDeclarationAllowGroupInvitesUnknown _self;
-  final $Res Function(ActorDeclarationAllowGroupInvitesUnknown) _then;
+abstract class ActorDeclarationAllowGroupInvitesUnknown
+    extends ActorDeclarationAllowGroupInvites {
+  const factory ActorDeclarationAllowGroupInvitesUnknown(
+          {required final String data}) =
+      _$ActorDeclarationAllowGroupInvitesUnknownImpl;
+  const ActorDeclarationAllowGroupInvitesUnknown._() : super._();
 
-/// Create a copy of ActorDeclarationAllowGroupInvites
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(ActorDeclarationAllowGroupInvitesUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of ActorDeclarationAllowGroupInvites
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActorDeclarationAllowGroupInvitesUnknownImplCopyWith<
+          _$ActorDeclarationAllowGroupInvitesUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

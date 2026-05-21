@@ -8,31 +8,33 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutput
-_$UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutputFromJson(Map json) =>
-    $checkedCreate(
-      '_UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutput',
-      json,
-      ($checkedConvert) {
-        final val = _UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutput(
-          dids: $checkedConvert(
-            'dids',
-            (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-          ),
-          recIdStr: $checkedConvert('recIdStr', (v) => v as String?),
-          $unknown: $checkedConvert(
-            r'$unknown',
-            (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-          ),
+_$UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutputImpl
+    _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutputImplFromJson(
+            Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val =
+                _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutputImpl(
+              dids: $checkedConvert('dids',
+                  (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+              recIdStr: $checkedConvert('recIdStr', (v) => v as String?),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
         );
-        return val;
-      },
-    );
 
-Map<String, dynamic> _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutputToJson(
-  _UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutput instance,
-) => <String, dynamic>{
-  'dids': instance.dids,
-  'recIdStr': ?instance.recIdStr,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String,
+    dynamic> _$$UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutputImplToJson(
+        _$UnspeccedGetSuggestedUsersForSeeMoreSkeletonOutputImpl instance) =>
+    <String, dynamic>{
+      'dids': instance.dids,
+      if (instance.recIdStr case final value?) 'recIdStr': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

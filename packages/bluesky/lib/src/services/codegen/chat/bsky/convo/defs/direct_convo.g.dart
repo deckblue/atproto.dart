@@ -8,23 +8,25 @@ part of 'direct_convo.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_DirectConvo _$DirectConvoFromJson(Map json) =>
-    $checkedCreate('_DirectConvo', json, ($checkedConvert) {
-      final val = _DirectConvo(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'chat.bsky.convo.defs#directConvo',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$DirectConvoImpl _$$DirectConvoImplFromJson(Map json) => $checkedCreate(
+      r'_$DirectConvoImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$DirectConvoImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'chat.bsky.convo.defs#directConvo'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$DirectConvoToJson(_DirectConvo instance) =>
+Map<String, dynamic> _$$DirectConvoImplToJson(_$DirectConvoImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -8,52 +8,52 @@ part of 'historical_stats.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_HistoricalStats _$HistoricalStatsFromJson(
-  Map json,
-) => $checkedCreate('_HistoricalStats', json, ($checkedConvert) {
-  final val = _HistoricalStats(
-    $type: $checkedConvert(
-      r'$type',
-      (v) => v as String? ?? 'tools.ozone.report.defs#historicalStats',
-    ),
-    date: $checkedConvert('date', (v) => v as String),
-    computedAt: $checkedConvert(
-      'computedAt',
-      (v) => v == null ? null : DateTime.parse(v as String),
-    ),
-    pendingCount: $checkedConvert('pendingCount', (v) => (v as num?)?.toInt()),
-    actionedCount: $checkedConvert(
-      'actionedCount',
-      (v) => (v as num?)?.toInt(),
-    ),
-    escalatedCount: $checkedConvert(
-      'escalatedCount',
-      (v) => (v as num?)?.toInt(),
-    ),
-    inboundCount: $checkedConvert('inboundCount', (v) => (v as num?)?.toInt()),
-    actionRate: $checkedConvert('actionRate', (v) => (v as num?)?.toInt()),
-    avgHandlingTimeSec: $checkedConvert(
-      'avgHandlingTimeSec',
-      (v) => (v as num?)?.toInt(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$HistoricalStatsImpl _$$HistoricalStatsImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$HistoricalStatsImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$HistoricalStatsImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'tools.ozone.report.defs#historicalStats'),
+          date: $checkedConvert('date', (v) => v as String),
+          computedAt: $checkedConvert('computedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          pendingCount:
+              $checkedConvert('pendingCount', (v) => (v as num?)?.toInt()),
+          actionedCount:
+              $checkedConvert('actionedCount', (v) => (v as num?)?.toInt()),
+          escalatedCount:
+              $checkedConvert('escalatedCount', (v) => (v as num?)?.toInt()),
+          inboundCount:
+              $checkedConvert('inboundCount', (v) => (v as num?)?.toInt()),
+          actionRate:
+              $checkedConvert('actionRate', (v) => (v as num?)?.toInt()),
+          avgHandlingTimeSec: $checkedConvert(
+              'avgHandlingTimeSec', (v) => (v as num?)?.toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$HistoricalStatsToJson(_HistoricalStats instance) =>
+Map<String, dynamic> _$$HistoricalStatsImplToJson(
+        _$HistoricalStatsImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'date': instance.date,
-      'computedAt': ?instance.computedAt?.toIso8601String(),
-      'pendingCount': ?instance.pendingCount,
-      'actionedCount': ?instance.actionedCount,
-      'escalatedCount': ?instance.escalatedCount,
-      'inboundCount': ?instance.inboundCount,
-      'actionRate': ?instance.actionRate,
-      'avgHandlingTimeSec': ?instance.avgHandlingTimeSec,
-      r'$unknown': ?instance.$unknown,
+      if (instance.computedAt?.toIso8601String() case final value?)
+        'computedAt': value,
+      if (instance.pendingCount case final value?) 'pendingCount': value,
+      if (instance.actionedCount case final value?) 'actionedCount': value,
+      if (instance.escalatedCount case final value?) 'escalatedCount': value,
+      if (instance.inboundCount case final value?) 'inboundCount': value,
+      if (instance.actionRate case final value?) 'actionRate': value,
+      if (instance.avgHandlingTimeSec case final value?)
+        'avgHandlingTimeSec': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

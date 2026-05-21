@@ -8,45 +8,49 @@ part of 'reopen_activity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ReopenActivity _$ReopenActivityFromJson(Map json) =>
-    $checkedCreate('_ReopenActivity', json, ($checkedConvert) {
-      final val = _ReopenActivity(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.report.defs#reopenActivity',
-        ),
-        previousStatus: $checkedConvert(
-          'previousStatus',
-          (v) => _$JsonConverterFromJson<String, ReopenActivityPreviousStatus>(
-            v,
-            const ReopenActivityPreviousStatusConverter().fromJson,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ReopenActivityImpl _$$ReopenActivityImplFromJson(Map json) => $checkedCreate(
+      r'_$ReopenActivityImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ReopenActivityImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'tools.ozone.report.defs#reopenActivity'),
+          previousStatus: $checkedConvert(
+              'previousStatus',
+              (v) =>
+                  _$JsonConverterFromJson<String, ReopenActivityPreviousStatus>(
+                      v,
+                      const ReopenActivityPreviousStatusConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ReopenActivityToJson(_ReopenActivity instance) =>
+Map<String, dynamic> _$$ReopenActivityImplToJson(
+        _$ReopenActivityImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'previousStatus':
-          ?_$JsonConverterToJson<String, ReopenActivityPreviousStatus>(
-            instance.previousStatus,
-            const ReopenActivityPreviousStatusConverter().toJson,
-          ),
-      r'$unknown': ?instance.$unknown,
+      if (_$JsonConverterToJson<String, ReopenActivityPreviousStatus>(
+              instance.previousStatus,
+              const ReopenActivityPreviousStatusConverter().toJson)
+          case final value?)
+        'previousStatus': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

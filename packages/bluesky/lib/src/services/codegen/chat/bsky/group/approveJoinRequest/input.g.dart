@@ -8,24 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupApproveJoinRequestInput _$GroupApproveJoinRequestInputFromJson(
-  Map json,
-) => $checkedCreate('_GroupApproveJoinRequestInput', json, ($checkedConvert) {
-  final val = _GroupApproveJoinRequestInput(
-    convoId: $checkedConvert('convoId', (v) => v as String),
-    member: $checkedConvert('member', (v) => v as String),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$GroupApproveJoinRequestInputImpl _$$GroupApproveJoinRequestInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GroupApproveJoinRequestInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupApproveJoinRequestInputImpl(
+          convoId: $checkedConvert('convoId', (v) => v as String),
+          member: $checkedConvert('member', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupApproveJoinRequestInputToJson(
-  _GroupApproveJoinRequestInput instance,
-) => <String, dynamic>{
-  'convoId': instance.convoId,
-  'member': instance.member,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupApproveJoinRequestInputImplToJson(
+        _$GroupApproveJoinRequestInputImpl instance) =>
+    <String, dynamic>{
+      'convoId': instance.convoId,
+      'member': instance.member,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

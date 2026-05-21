@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,287 +9,219 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+QueueAssignModeratorInput _$QueueAssignModeratorInputFromJson(
+    Map<String, dynamic> json) {
+  return _QueueAssignModeratorInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$QueueAssignModeratorInput {
+  /// The ID of the queue to assign the user to.
+  int get queueId => throw _privateConstructorUsedError;
 
-/// The ID of the queue to assign the user to.
- int get queueId;/// DID to be assigned.
- String get did; Map<String, dynamic>? get $unknown;
-/// Create a copy of QueueAssignModeratorInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$QueueAssignModeratorInputCopyWith<QueueAssignModeratorInput> get copyWith => _$QueueAssignModeratorInputCopyWithImpl<QueueAssignModeratorInput>(this as QueueAssignModeratorInput, _$identity);
+  /// DID to be assigned.
+  String get did => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this QueueAssignModeratorInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueueAssignModeratorInput&&(identical(other.queueId, queueId) || other.queueId == queueId)&&(identical(other.did, did) || other.did == did)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,queueId,did,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'QueueAssignModeratorInput(queueId: $queueId, did: $did, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of QueueAssignModeratorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $QueueAssignModeratorInputCopyWith<QueueAssignModeratorInput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $QueueAssignModeratorInputCopyWith<$Res>  {
-  factory $QueueAssignModeratorInputCopyWith(QueueAssignModeratorInput value, $Res Function(QueueAssignModeratorInput) _then) = _$QueueAssignModeratorInputCopyWithImpl;
-@useResult
-$Res call({
- int queueId, String did, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $QueueAssignModeratorInputCopyWith<$Res> {
+  factory $QueueAssignModeratorInputCopyWith(QueueAssignModeratorInput value,
+          $Res Function(QueueAssignModeratorInput) then) =
+      _$QueueAssignModeratorInputCopyWithImpl<$Res, QueueAssignModeratorInput>;
+  @useResult
+  $Res call({int queueId, String did, Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$QueueAssignModeratorInputCopyWithImpl<$Res>
+class _$QueueAssignModeratorInputCopyWithImpl<$Res,
+        $Val extends QueueAssignModeratorInput>
     implements $QueueAssignModeratorInputCopyWith<$Res> {
-  _$QueueAssignModeratorInputCopyWithImpl(this._self, this._then);
+  _$QueueAssignModeratorInputCopyWithImpl(this._value, this._then);
 
-  final QueueAssignModeratorInput _self;
-  final $Res Function(QueueAssignModeratorInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of QueueAssignModeratorInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? queueId = null,Object? did = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-queueId: null == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
-as int,did: null == did ? _self.did : did // ignore: cast_nullable_to_non_nullable
-as String,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of QueueAssignModeratorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? queueId = null,
+    Object? did = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      queueId: null == queueId
+          ? _value.queueId
+          : queueId // ignore: cast_nullable_to_non_nullable
+              as int,
+      did: null == did
+          ? _value.did
+          : did // ignore: cast_nullable_to_non_nullable
+              as String,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$QueueAssignModeratorInputImplCopyWith<$Res>
+    implements $QueueAssignModeratorInputCopyWith<$Res> {
+  factory _$$QueueAssignModeratorInputImplCopyWith(
+          _$QueueAssignModeratorInputImpl value,
+          $Res Function(_$QueueAssignModeratorInputImpl) then) =
+      __$$QueueAssignModeratorInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int queueId, String did, Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$QueueAssignModeratorInputImplCopyWithImpl<$Res>
+    extends _$QueueAssignModeratorInputCopyWithImpl<$Res,
+        _$QueueAssignModeratorInputImpl>
+    implements _$$QueueAssignModeratorInputImplCopyWith<$Res> {
+  __$$QueueAssignModeratorInputImplCopyWithImpl(
+      _$QueueAssignModeratorInputImpl _value,
+      $Res Function(_$QueueAssignModeratorInputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [QueueAssignModeratorInput].
-extension QueueAssignModeratorInputPatterns on QueueAssignModeratorInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _QueueAssignModeratorInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _QueueAssignModeratorInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _QueueAssignModeratorInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _QueueAssignModeratorInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _QueueAssignModeratorInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _QueueAssignModeratorInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int queueId,  String did,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _QueueAssignModeratorInput() when $default != null:
-return $default(_that.queueId,_that.did,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int queueId,  String did,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _QueueAssignModeratorInput():
-return $default(_that.queueId,_that.did,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int queueId,  String did,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _QueueAssignModeratorInput() when $default != null:
-return $default(_that.queueId,_that.did,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of QueueAssignModeratorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? queueId = null,
+    Object? did = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$QueueAssignModeratorInputImpl(
+      queueId: null == queueId
+          ? _value.queueId
+          : queueId // ignore: cast_nullable_to_non_nullable
+              as int,
+      did: null == did
+          ? _value.did
+          : did // ignore: cast_nullable_to_non_nullable
+              as String,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _QueueAssignModeratorInput implements QueueAssignModeratorInput {
-  const _QueueAssignModeratorInput({required this.queueId, required this.did, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _QueueAssignModeratorInput.fromJson(Map<String, dynamic> json) => _$QueueAssignModeratorInputFromJson(json);
+class _$QueueAssignModeratorInputImpl implements _QueueAssignModeratorInput {
+  const _$QueueAssignModeratorInputImpl(
+      {required this.queueId,
+      required this.did,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// The ID of the queue to assign the user to.
-@override final  int queueId;
-/// DID to be assigned.
-@override final  String did;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$QueueAssignModeratorInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QueueAssignModeratorInputImplFromJson(json);
+
+  /// The ID of the queue to assign the user to.
+  @override
+  final int queueId;
+
+  /// DID to be assigned.
+  @override
+  final String did;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'QueueAssignModeratorInput(queueId: $queueId, did: $did, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QueueAssignModeratorInputImpl &&
+            (identical(other.queueId, queueId) || other.queueId == queueId) &&
+            (identical(other.did, did) || other.did == did) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, queueId, did,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of QueueAssignModeratorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$QueueAssignModeratorInputImplCopyWith<_$QueueAssignModeratorInputImpl>
+      get copyWith => __$$QueueAssignModeratorInputImplCopyWithImpl<
+          _$QueueAssignModeratorInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$QueueAssignModeratorInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _QueueAssignModeratorInput implements QueueAssignModeratorInput {
+  const factory _QueueAssignModeratorInput(
+      {required final int queueId,
+      required final String did,
+      final Map<String, dynamic>? $unknown}) = _$QueueAssignModeratorInputImpl;
 
-/// Create a copy of QueueAssignModeratorInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$QueueAssignModeratorInputCopyWith<_QueueAssignModeratorInput> get copyWith => __$QueueAssignModeratorInputCopyWithImpl<_QueueAssignModeratorInput>(this, _$identity);
+  factory _QueueAssignModeratorInput.fromJson(Map<String, dynamic> json) =
+      _$QueueAssignModeratorInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$QueueAssignModeratorInputToJson(this, );
+  /// The ID of the queue to assign the user to.
+  @override
+  int get queueId;
+
+  /// DID to be assigned.
+  @override
+  String get did;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of QueueAssignModeratorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$QueueAssignModeratorInputImplCopyWith<_$QueueAssignModeratorInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _QueueAssignModeratorInput&&(identical(other.queueId, queueId) || other.queueId == queueId)&&(identical(other.did, did) || other.did == did)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,queueId,did,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'QueueAssignModeratorInput(queueId: $queueId, did: $did, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$QueueAssignModeratorInputCopyWith<$Res> implements $QueueAssignModeratorInputCopyWith<$Res> {
-  factory _$QueueAssignModeratorInputCopyWith(_QueueAssignModeratorInput value, $Res Function(_QueueAssignModeratorInput) _then) = __$QueueAssignModeratorInputCopyWithImpl;
-@override @useResult
-$Res call({
- int queueId, String did, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$QueueAssignModeratorInputCopyWithImpl<$Res>
-    implements _$QueueAssignModeratorInputCopyWith<$Res> {
-  __$QueueAssignModeratorInputCopyWithImpl(this._self, this._then);
-
-  final _QueueAssignModeratorInput _self;
-  final $Res Function(_QueueAssignModeratorInput) _then;
-
-/// Create a copy of QueueAssignModeratorInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? queueId = null,Object? did = null,Object? $unknown = freezed,}) {
-  return _then(_QueueAssignModeratorInput(
-queueId: null == queueId ? _self.queueId : queueId // ignore: cast_nullable_to_non_nullable
-as int,did: null == did ? _self.did : did // ignore: cast_nullable_to_non_nullable
-as String,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

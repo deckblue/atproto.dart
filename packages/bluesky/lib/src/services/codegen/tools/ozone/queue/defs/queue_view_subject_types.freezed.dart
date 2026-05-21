@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,372 @@ part of 'queue_view_subject_types.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$QueueViewSubjectTypes {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueueViewSubjectTypes&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'QueueViewSubjectTypes(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownQueueViewSubjectTypes data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownQueueViewSubjectTypes data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownQueueViewSubjectTypes data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueueViewSubjectTypesKnownValue value) knownValue,
+    required TResult Function(QueueViewSubjectTypesUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QueueViewSubjectTypesKnownValue value)? knownValue,
+    TResult? Function(QueueViewSubjectTypesUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueueViewSubjectTypesKnownValue value)? knownValue,
+    TResult Function(QueueViewSubjectTypesUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $QueueViewSubjectTypesCopyWith<$Res>  {
-$QueueViewSubjectTypesCopyWith(QueueViewSubjectTypes _, $Res Function(QueueViewSubjectTypes) __);
+abstract class $QueueViewSubjectTypesCopyWith<$Res> {
+  factory $QueueViewSubjectTypesCopyWith(QueueViewSubjectTypes value,
+          $Res Function(QueueViewSubjectTypes) then) =
+      _$QueueViewSubjectTypesCopyWithImpl<$Res, QueueViewSubjectTypes>;
 }
 
+/// @nodoc
+class _$QueueViewSubjectTypesCopyWithImpl<$Res,
+        $Val extends QueueViewSubjectTypes>
+    implements $QueueViewSubjectTypesCopyWith<$Res> {
+  _$QueueViewSubjectTypesCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [QueueViewSubjectTypes].
-extension QueueViewSubjectTypesPatterns on QueueViewSubjectTypes {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( QueueViewSubjectTypesKnownValue value)?  knownValue,TResult Function( QueueViewSubjectTypesUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case QueueViewSubjectTypesKnownValue() when knownValue != null:
-return knownValue(_that);case QueueViewSubjectTypesUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( QueueViewSubjectTypesKnownValue value)  knownValue,required TResult Function( QueueViewSubjectTypesUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case QueueViewSubjectTypesKnownValue():
-return knownValue(_that);case QueueViewSubjectTypesUnknown():
-return unknown(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( QueueViewSubjectTypesKnownValue value)?  knownValue,TResult? Function( QueueViewSubjectTypesUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case QueueViewSubjectTypesKnownValue() when knownValue != null:
-return knownValue(_that);case QueueViewSubjectTypesUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownQueueViewSubjectTypes data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case QueueViewSubjectTypesKnownValue() when knownValue != null:
-return knownValue(_that.data);case QueueViewSubjectTypesUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownQueueViewSubjectTypes data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case QueueViewSubjectTypesKnownValue():
-return knownValue(_that.data);case QueueViewSubjectTypesUnknown():
-return unknown(_that.data);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownQueueViewSubjectTypes data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case QueueViewSubjectTypesKnownValue() when knownValue != null:
-return knownValue(_that.data);case QueueViewSubjectTypesUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of QueueViewSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$QueueViewSubjectTypesKnownValueImplCopyWith<$Res> {
+  factory _$$QueueViewSubjectTypesKnownValueImplCopyWith(
+          _$QueueViewSubjectTypesKnownValueImpl value,
+          $Res Function(_$QueueViewSubjectTypesKnownValueImpl) then) =
+      __$$QueueViewSubjectTypesKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownQueueViewSubjectTypes data});
+}
+
+/// @nodoc
+class __$$QueueViewSubjectTypesKnownValueImplCopyWithImpl<$Res>
+    extends _$QueueViewSubjectTypesCopyWithImpl<$Res,
+        _$QueueViewSubjectTypesKnownValueImpl>
+    implements _$$QueueViewSubjectTypesKnownValueImplCopyWith<$Res> {
+  __$$QueueViewSubjectTypesKnownValueImplCopyWithImpl(
+      _$QueueViewSubjectTypesKnownValueImpl _value,
+      $Res Function(_$QueueViewSubjectTypesKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of QueueViewSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$QueueViewSubjectTypesKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownQueueViewSubjectTypes,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$QueueViewSubjectTypesKnownValueImpl
+    extends QueueViewSubjectTypesKnownValue {
+  const _$QueueViewSubjectTypesKnownValueImpl({required this.data}) : super._();
 
-class QueueViewSubjectTypesKnownValue extends QueueViewSubjectTypes {
-  const QueueViewSubjectTypesKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownQueueViewSubjectTypes data;
 
-@override final  KnownQueueViewSubjectTypes data;
+  @override
+  String toString() {
+    return 'QueueViewSubjectTypes.knownValue(data: $data)';
+  }
 
-/// Create a copy of QueueViewSubjectTypes
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$QueueViewSubjectTypesKnownValueCopyWith<QueueViewSubjectTypesKnownValue> get copyWith => _$QueueViewSubjectTypesKnownValueCopyWithImpl<QueueViewSubjectTypesKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QueueViewSubjectTypesKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of QueueViewSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$QueueViewSubjectTypesKnownValueImplCopyWith<
+          _$QueueViewSubjectTypesKnownValueImpl>
+      get copyWith => __$$QueueViewSubjectTypesKnownValueImplCopyWithImpl<
+          _$QueueViewSubjectTypesKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueueViewSubjectTypesKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownQueueViewSubjectTypes data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownQueueViewSubjectTypes data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownQueueViewSubjectTypes data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueueViewSubjectTypesKnownValue value) knownValue,
+    required TResult Function(QueueViewSubjectTypesUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QueueViewSubjectTypesKnownValue value)? knownValue,
+    TResult? Function(QueueViewSubjectTypesUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueueViewSubjectTypesKnownValue value)? knownValue,
+    TResult Function(QueueViewSubjectTypesUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class QueueViewSubjectTypesKnownValue extends QueueViewSubjectTypes {
+  const factory QueueViewSubjectTypesKnownValue(
+          {required final KnownQueueViewSubjectTypes data}) =
+      _$QueueViewSubjectTypesKnownValueImpl;
+  const QueueViewSubjectTypesKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownQueueViewSubjectTypes get data;
 
-@override
-String toString() {
-  return 'QueueViewSubjectTypes.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of QueueViewSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$QueueViewSubjectTypesKnownValueImplCopyWith<
+          _$QueueViewSubjectTypesKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $QueueViewSubjectTypesKnownValueCopyWith<$Res> implements $QueueViewSubjectTypesCopyWith<$Res> {
-  factory $QueueViewSubjectTypesKnownValueCopyWith(QueueViewSubjectTypesKnownValue value, $Res Function(QueueViewSubjectTypesKnownValue) _then) = _$QueueViewSubjectTypesKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownQueueViewSubjectTypes data
-});
-
-
-
-
-}
-/// @nodoc
-class _$QueueViewSubjectTypesKnownValueCopyWithImpl<$Res>
-    implements $QueueViewSubjectTypesKnownValueCopyWith<$Res> {
-  _$QueueViewSubjectTypesKnownValueCopyWithImpl(this._self, this._then);
-
-  final QueueViewSubjectTypesKnownValue _self;
-  final $Res Function(QueueViewSubjectTypesKnownValue) _then;
-
-/// Create a copy of QueueViewSubjectTypes
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(QueueViewSubjectTypesKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownQueueViewSubjectTypes,
-  ));
-}
-
-
+abstract class _$$QueueViewSubjectTypesUnknownImplCopyWith<$Res> {
+  factory _$$QueueViewSubjectTypesUnknownImplCopyWith(
+          _$QueueViewSubjectTypesUnknownImpl value,
+          $Res Function(_$QueueViewSubjectTypesUnknownImpl) then) =
+      __$$QueueViewSubjectTypesUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$QueueViewSubjectTypesUnknownImplCopyWithImpl<$Res>
+    extends _$QueueViewSubjectTypesCopyWithImpl<$Res,
+        _$QueueViewSubjectTypesUnknownImpl>
+    implements _$$QueueViewSubjectTypesUnknownImplCopyWith<$Res> {
+  __$$QueueViewSubjectTypesUnknownImplCopyWithImpl(
+      _$QueueViewSubjectTypesUnknownImpl _value,
+      $Res Function(_$QueueViewSubjectTypesUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class QueueViewSubjectTypesUnknown extends QueueViewSubjectTypes {
-  const QueueViewSubjectTypesUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of QueueViewSubjectTypes
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$QueueViewSubjectTypesUnknownCopyWith<QueueViewSubjectTypesUnknown> get copyWith => _$QueueViewSubjectTypesUnknownCopyWithImpl<QueueViewSubjectTypesUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueueViewSubjectTypesUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'QueueViewSubjectTypes.unknown(data: $data)';
-}
-
-
+  /// Create a copy of QueueViewSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$QueueViewSubjectTypesUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $QueueViewSubjectTypesUnknownCopyWith<$Res> implements $QueueViewSubjectTypesCopyWith<$Res> {
-  factory $QueueViewSubjectTypesUnknownCopyWith(QueueViewSubjectTypesUnknown value, $Res Function(QueueViewSubjectTypesUnknown) _then) = _$QueueViewSubjectTypesUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$QueueViewSubjectTypesUnknownImpl extends QueueViewSubjectTypesUnknown {
+  const _$QueueViewSubjectTypesUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'QueueViewSubjectTypes.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$QueueViewSubjectTypesUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of QueueViewSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$QueueViewSubjectTypesUnknownImplCopyWith<
+          _$QueueViewSubjectTypesUnknownImpl>
+      get copyWith => __$$QueueViewSubjectTypesUnknownImplCopyWithImpl<
+          _$QueueViewSubjectTypesUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownQueueViewSubjectTypes data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownQueueViewSubjectTypes data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownQueueViewSubjectTypes data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(QueueViewSubjectTypesKnownValue value) knownValue,
+    required TResult Function(QueueViewSubjectTypesUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(QueueViewSubjectTypesKnownValue value)? knownValue,
+    TResult? Function(QueueViewSubjectTypesUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(QueueViewSubjectTypesKnownValue value)? knownValue,
+    TResult Function(QueueViewSubjectTypesUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$QueueViewSubjectTypesUnknownCopyWithImpl<$Res>
-    implements $QueueViewSubjectTypesUnknownCopyWith<$Res> {
-  _$QueueViewSubjectTypesUnknownCopyWithImpl(this._self, this._then);
 
-  final QueueViewSubjectTypesUnknown _self;
-  final $Res Function(QueueViewSubjectTypesUnknown) _then;
+abstract class QueueViewSubjectTypesUnknown extends QueueViewSubjectTypes {
+  const factory QueueViewSubjectTypesUnknown({required final String data}) =
+      _$QueueViewSubjectTypesUnknownImpl;
+  const QueueViewSubjectTypesUnknown._() : super._();
 
-/// Create a copy of QueueViewSubjectTypes
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(QueueViewSubjectTypesUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of QueueViewSubjectTypes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$QueueViewSubjectTypesUnknownImplCopyWith<
+          _$QueueViewSubjectTypesUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

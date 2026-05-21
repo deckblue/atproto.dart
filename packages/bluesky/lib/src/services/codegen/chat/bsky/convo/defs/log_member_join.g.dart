@@ -8,40 +8,36 @@ part of 'log_member_join.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LogMemberJoin _$LogMemberJoinFromJson(Map json) =>
-    $checkedCreate('_LogMemberJoin', json, ($checkedConvert) {
-      final val = _LogMemberJoin(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'chat.bsky.convo.defs#logMemberJoin',
-        ),
-        rev: $checkedConvert('rev', (v) => v as String),
-        convoId: $checkedConvert('convoId', (v) => v as String),
-        message: $checkedConvert(
-          'message',
-          (v) => const SystemMessageViewConverter().fromJson(
-            v as Map<String, dynamic>,
-          ),
-        ),
-        relatedProfiles: $checkedConvert(
-          'relatedProfiles',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const ProfileViewBasicConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$LogMemberJoinImpl _$$LogMemberJoinImplFromJson(Map json) => $checkedCreate(
+      r'_$LogMemberJoinImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$LogMemberJoinImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'chat.bsky.convo.defs#logMemberJoin'),
+          rev: $checkedConvert('rev', (v) => v as String),
+          convoId: $checkedConvert('convoId', (v) => v as String),
+          message: $checkedConvert(
+              'message',
+              (v) => const SystemMessageViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          relatedProfiles: $checkedConvert(
+              'relatedProfiles',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const ProfileViewBasicConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$LogMemberJoinToJson(_LogMemberJoin instance) =>
+Map<String, dynamic> _$$LogMemberJoinImplToJson(_$LogMemberJoinImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'rev': instance.rev,
@@ -50,5 +46,5 @@ Map<String, dynamic> _$LogMemberJoinToJson(_LogMemberJoin instance) =>
       'relatedProfiles': instance.relatedProfiles
           .map(const ProfileViewBasicConverter().toJson)
           .toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

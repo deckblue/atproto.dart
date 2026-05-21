@@ -8,18 +8,26 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ReportGetReportInput _$ReportGetReportInputFromJson(Map json) =>
-    $checkedCreate('_ReportGetReportInput', json, ($checkedConvert) {
-      final val = _ReportGetReportInput(
-        id: $checkedConvert('id', (v) => (v as num).toInt()),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ReportGetReportInputImpl _$$ReportGetReportInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ReportGetReportInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ReportGetReportInputImpl(
+          id: $checkedConvert('id', (v) => (v as num).toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ReportGetReportInputToJson(
-  _ReportGetReportInput instance,
-) => <String, dynamic>{'id': instance.id, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$ReportGetReportInputImplToJson(
+        _$ReportGetReportInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

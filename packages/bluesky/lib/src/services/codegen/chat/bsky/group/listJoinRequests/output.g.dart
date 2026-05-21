@@ -8,34 +8,36 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupListJoinRequestsOutput _$GroupListJoinRequestsOutputFromJson(Map json) =>
-    $checkedCreate('_GroupListJoinRequestsOutput', json, ($checkedConvert) {
-      final val = _GroupListJoinRequestsOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        requests: $checkedConvert(
-          'requests',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const JoinRequestViewConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupListJoinRequestsOutputImpl _$$GroupListJoinRequestsOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GroupListJoinRequestsOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupListJoinRequestsOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          requests: $checkedConvert(
+              'requests',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const JoinRequestViewConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupListJoinRequestsOutputToJson(
-  _GroupListJoinRequestsOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'requests': instance.requests
-      .map(const JoinRequestViewConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupListJoinRequestsOutputImplToJson(
+        _$GroupListJoinRequestsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'requests': instance.requests
+          .map(const JoinRequestViewConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

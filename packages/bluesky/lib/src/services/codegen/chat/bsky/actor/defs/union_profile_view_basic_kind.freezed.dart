@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,475 +9,834 @@ part of 'union_profile_view_basic_kind.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$UProfileViewBasicKind {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UProfileViewBasicKind&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'UProfileViewBasicKind(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(DirectConvoMember data) directConvoMember,
+    required TResult Function(GroupConvoMember data) groupConvoMember,
+    required TResult Function(PastGroupConvoMember data) pastGroupConvoMember,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(DirectConvoMember data)? directConvoMember,
+    TResult? Function(GroupConvoMember data)? groupConvoMember,
+    TResult? Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(DirectConvoMember data)? directConvoMember,
+    TResult Function(GroupConvoMember data)? groupConvoMember,
+    TResult Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UProfileViewBasicKindDirectConvoMember value)
+        directConvoMember,
+    required TResult Function(UProfileViewBasicKindGroupConvoMember value)
+        groupConvoMember,
+    required TResult Function(UProfileViewBasicKindPastGroupConvoMember value)
+        pastGroupConvoMember,
+    required TResult Function(UProfileViewBasicKindUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult? Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult? Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult? Function(UProfileViewBasicKindUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult Function(UProfileViewBasicKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $UProfileViewBasicKindCopyWith<$Res>  {
-$UProfileViewBasicKindCopyWith(UProfileViewBasicKind _, $Res Function(UProfileViewBasicKind) __);
+abstract class $UProfileViewBasicKindCopyWith<$Res> {
+  factory $UProfileViewBasicKindCopyWith(UProfileViewBasicKind value,
+          $Res Function(UProfileViewBasicKind) then) =
+      _$UProfileViewBasicKindCopyWithImpl<$Res, UProfileViewBasicKind>;
 }
 
+/// @nodoc
+class _$UProfileViewBasicKindCopyWithImpl<$Res,
+        $Val extends UProfileViewBasicKind>
+    implements $UProfileViewBasicKindCopyWith<$Res> {
+  _$UProfileViewBasicKindCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [UProfileViewBasicKind].
-extension UProfileViewBasicKindPatterns on UProfileViewBasicKind {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UProfileViewBasicKindDirectConvoMember value)?  directConvoMember,TResult Function( UProfileViewBasicKindGroupConvoMember value)?  groupConvoMember,TResult Function( UProfileViewBasicKindPastGroupConvoMember value)?  pastGroupConvoMember,TResult Function( UProfileViewBasicKindUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case UProfileViewBasicKindDirectConvoMember() when directConvoMember != null:
-return directConvoMember(_that);case UProfileViewBasicKindGroupConvoMember() when groupConvoMember != null:
-return groupConvoMember(_that);case UProfileViewBasicKindPastGroupConvoMember() when pastGroupConvoMember != null:
-return pastGroupConvoMember(_that);case UProfileViewBasicKindUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UProfileViewBasicKindDirectConvoMember value)  directConvoMember,required TResult Function( UProfileViewBasicKindGroupConvoMember value)  groupConvoMember,required TResult Function( UProfileViewBasicKindPastGroupConvoMember value)  pastGroupConvoMember,required TResult Function( UProfileViewBasicKindUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case UProfileViewBasicKindDirectConvoMember():
-return directConvoMember(_that);case UProfileViewBasicKindGroupConvoMember():
-return groupConvoMember(_that);case UProfileViewBasicKindPastGroupConvoMember():
-return pastGroupConvoMember(_that);case UProfileViewBasicKindUnknown():
-return unknown(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UProfileViewBasicKindDirectConvoMember value)?  directConvoMember,TResult? Function( UProfileViewBasicKindGroupConvoMember value)?  groupConvoMember,TResult? Function( UProfileViewBasicKindPastGroupConvoMember value)?  pastGroupConvoMember,TResult? Function( UProfileViewBasicKindUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case UProfileViewBasicKindDirectConvoMember() when directConvoMember != null:
-return directConvoMember(_that);case UProfileViewBasicKindGroupConvoMember() when groupConvoMember != null:
-return groupConvoMember(_that);case UProfileViewBasicKindPastGroupConvoMember() when pastGroupConvoMember != null:
-return pastGroupConvoMember(_that);case UProfileViewBasicKindUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( DirectConvoMember data)?  directConvoMember,TResult Function( GroupConvoMember data)?  groupConvoMember,TResult Function( PastGroupConvoMember data)?  pastGroupConvoMember,TResult Function( Map<String, dynamic> data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case UProfileViewBasicKindDirectConvoMember() when directConvoMember != null:
-return directConvoMember(_that.data);case UProfileViewBasicKindGroupConvoMember() when groupConvoMember != null:
-return groupConvoMember(_that.data);case UProfileViewBasicKindPastGroupConvoMember() when pastGroupConvoMember != null:
-return pastGroupConvoMember(_that.data);case UProfileViewBasicKindUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( DirectConvoMember data)  directConvoMember,required TResult Function( GroupConvoMember data)  groupConvoMember,required TResult Function( PastGroupConvoMember data)  pastGroupConvoMember,required TResult Function( Map<String, dynamic> data)  unknown,}) {final _that = this;
-switch (_that) {
-case UProfileViewBasicKindDirectConvoMember():
-return directConvoMember(_that.data);case UProfileViewBasicKindGroupConvoMember():
-return groupConvoMember(_that.data);case UProfileViewBasicKindPastGroupConvoMember():
-return pastGroupConvoMember(_that.data);case UProfileViewBasicKindUnknown():
-return unknown(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( DirectConvoMember data)?  directConvoMember,TResult? Function( GroupConvoMember data)?  groupConvoMember,TResult? Function( PastGroupConvoMember data)?  pastGroupConvoMember,TResult? Function( Map<String, dynamic> data)?  unknown,}) {final _that = this;
-switch (_that) {
-case UProfileViewBasicKindDirectConvoMember() when directConvoMember != null:
-return directConvoMember(_that.data);case UProfileViewBasicKindGroupConvoMember() when groupConvoMember != null:
-return groupConvoMember(_that.data);case UProfileViewBasicKindPastGroupConvoMember() when pastGroupConvoMember != null:
-return pastGroupConvoMember(_that.data);case UProfileViewBasicKindUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$UProfileViewBasicKindDirectConvoMemberImplCopyWith<$Res> {
+  factory _$$UProfileViewBasicKindDirectConvoMemberImplCopyWith(
+          _$UProfileViewBasicKindDirectConvoMemberImpl value,
+          $Res Function(_$UProfileViewBasicKindDirectConvoMemberImpl) then) =
+      __$$UProfileViewBasicKindDirectConvoMemberImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DirectConvoMember data});
+
+  $DirectConvoMemberCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UProfileViewBasicKindDirectConvoMemberImplCopyWithImpl<$Res>
+    extends _$UProfileViewBasicKindCopyWithImpl<$Res,
+        _$UProfileViewBasicKindDirectConvoMemberImpl>
+    implements _$$UProfileViewBasicKindDirectConvoMemberImplCopyWith<$Res> {
+  __$$UProfileViewBasicKindDirectConvoMemberImplCopyWithImpl(
+      _$UProfileViewBasicKindDirectConvoMemberImpl _value,
+      $Res Function(_$UProfileViewBasicKindDirectConvoMemberImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UProfileViewBasicKindDirectConvoMemberImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as DirectConvoMember,
+    ));
+  }
+
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DirectConvoMemberCopyWith<$Res> get data {
+    return $DirectConvoMemberCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UProfileViewBasicKindDirectConvoMemberImpl
+    extends UProfileViewBasicKindDirectConvoMember {
+  const _$UProfileViewBasicKindDirectConvoMemberImpl({required this.data})
+      : super._();
 
-class UProfileViewBasicKindDirectConvoMember extends UProfileViewBasicKind {
-  const UProfileViewBasicKindDirectConvoMember({required this.data}): super._();
-  
+  @override
+  final DirectConvoMember data;
 
-@override final  DirectConvoMember data;
+  @override
+  String toString() {
+    return 'UProfileViewBasicKind.directConvoMember(data: $data)';
+  }
 
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UProfileViewBasicKindDirectConvoMemberCopyWith<UProfileViewBasicKindDirectConvoMember> get copyWith => _$UProfileViewBasicKindDirectConvoMemberCopyWithImpl<UProfileViewBasicKindDirectConvoMember>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UProfileViewBasicKindDirectConvoMemberImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UProfileViewBasicKindDirectConvoMemberImplCopyWith<
+          _$UProfileViewBasicKindDirectConvoMemberImpl>
+      get copyWith =>
+          __$$UProfileViewBasicKindDirectConvoMemberImplCopyWithImpl<
+              _$UProfileViewBasicKindDirectConvoMemberImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UProfileViewBasicKindDirectConvoMember&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(DirectConvoMember data) directConvoMember,
+    required TResult Function(GroupConvoMember data) groupConvoMember,
+    required TResult Function(PastGroupConvoMember data) pastGroupConvoMember,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return directConvoMember(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(DirectConvoMember data)? directConvoMember,
+    TResult? Function(GroupConvoMember data)? groupConvoMember,
+    TResult? Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return directConvoMember?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(DirectConvoMember data)? directConvoMember,
+    TResult Function(GroupConvoMember data)? groupConvoMember,
+    TResult Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (directConvoMember != null) {
+      return directConvoMember(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UProfileViewBasicKindDirectConvoMember value)
+        directConvoMember,
+    required TResult Function(UProfileViewBasicKindGroupConvoMember value)
+        groupConvoMember,
+    required TResult Function(UProfileViewBasicKindPastGroupConvoMember value)
+        pastGroupConvoMember,
+    required TResult Function(UProfileViewBasicKindUnknown value) unknown,
+  }) {
+    return directConvoMember(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult? Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult? Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult? Function(UProfileViewBasicKindUnknown value)? unknown,
+  }) {
+    return directConvoMember?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult Function(UProfileViewBasicKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (directConvoMember != null) {
+      return directConvoMember(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UProfileViewBasicKindDirectConvoMember
+    extends UProfileViewBasicKind {
+  const factory UProfileViewBasicKindDirectConvoMember(
+          {required final DirectConvoMember data}) =
+      _$UProfileViewBasicKindDirectConvoMemberImpl;
+  const UProfileViewBasicKindDirectConvoMember._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  DirectConvoMember get data;
 
-@override
-String toString() {
-  return 'UProfileViewBasicKind.directConvoMember(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UProfileViewBasicKindDirectConvoMemberCopyWith<$Res> implements $UProfileViewBasicKindCopyWith<$Res> {
-  factory $UProfileViewBasicKindDirectConvoMemberCopyWith(UProfileViewBasicKindDirectConvoMember value, $Res Function(UProfileViewBasicKindDirectConvoMember) _then) = _$UProfileViewBasicKindDirectConvoMemberCopyWithImpl;
-@useResult
-$Res call({
- DirectConvoMember data
-});
-
-
-$DirectConvoMemberCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UProfileViewBasicKindDirectConvoMemberCopyWithImpl<$Res>
-    implements $UProfileViewBasicKindDirectConvoMemberCopyWith<$Res> {
-  _$UProfileViewBasicKindDirectConvoMemberCopyWithImpl(this._self, this._then);
-
-  final UProfileViewBasicKindDirectConvoMember _self;
-  final $Res Function(UProfileViewBasicKindDirectConvoMember) _then;
-
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UProfileViewBasicKindDirectConvoMember(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as DirectConvoMember,
-  ));
-}
-
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$DirectConvoMemberCopyWith<$Res> get data {
-  
-  return $DirectConvoMemberCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UProfileViewBasicKindGroupConvoMember extends UProfileViewBasicKind {
-  const UProfileViewBasicKindGroupConvoMember({required this.data}): super._();
-  
-
-@override final  GroupConvoMember data;
-
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UProfileViewBasicKindGroupConvoMemberCopyWith<UProfileViewBasicKindGroupConvoMember> get copyWith => _$UProfileViewBasicKindGroupConvoMemberCopyWithImpl<UProfileViewBasicKindGroupConvoMember>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UProfileViewBasicKindGroupConvoMember&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UProfileViewBasicKind.groupConvoMember(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UProfileViewBasicKindGroupConvoMemberCopyWith<$Res> implements $UProfileViewBasicKindCopyWith<$Res> {
-  factory $UProfileViewBasicKindGroupConvoMemberCopyWith(UProfileViewBasicKindGroupConvoMember value, $Res Function(UProfileViewBasicKindGroupConvoMember) _then) = _$UProfileViewBasicKindGroupConvoMemberCopyWithImpl;
-@useResult
-$Res call({
- GroupConvoMember data
-});
-
-
-$GroupConvoMemberCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UProfileViewBasicKindGroupConvoMemberCopyWithImpl<$Res>
-    implements $UProfileViewBasicKindGroupConvoMemberCopyWith<$Res> {
-  _$UProfileViewBasicKindGroupConvoMemberCopyWithImpl(this._self, this._then);
-
-  final UProfileViewBasicKindGroupConvoMember _self;
-  final $Res Function(UProfileViewBasicKindGroupConvoMember) _then;
-
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UProfileViewBasicKindGroupConvoMember(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as GroupConvoMember,
-  ));
-}
-
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$GroupConvoMemberCopyWith<$Res> get data {
-  
-  return $GroupConvoMemberCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UProfileViewBasicKindDirectConvoMemberImplCopyWith<
+          _$UProfileViewBasicKindDirectConvoMemberImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$UProfileViewBasicKindGroupConvoMemberImplCopyWith<$Res> {
+  factory _$$UProfileViewBasicKindGroupConvoMemberImplCopyWith(
+          _$UProfileViewBasicKindGroupConvoMemberImpl value,
+          $Res Function(_$UProfileViewBasicKindGroupConvoMemberImpl) then) =
+      __$$UProfileViewBasicKindGroupConvoMemberImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GroupConvoMember data});
 
-
-class UProfileViewBasicKindPastGroupConvoMember extends UProfileViewBasicKind {
-  const UProfileViewBasicKindPastGroupConvoMember({required this.data}): super._();
-  
-
-@override final  PastGroupConvoMember data;
-
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UProfileViewBasicKindPastGroupConvoMemberCopyWith<UProfileViewBasicKindPastGroupConvoMember> get copyWith => _$UProfileViewBasicKindPastGroupConvoMemberCopyWithImpl<UProfileViewBasicKindPastGroupConvoMember>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UProfileViewBasicKindPastGroupConvoMember&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UProfileViewBasicKind.pastGroupConvoMember(data: $data)';
-}
-
-
+  $GroupConvoMemberCopyWith<$Res> get data;
 }
 
 /// @nodoc
-abstract mixin class $UProfileViewBasicKindPastGroupConvoMemberCopyWith<$Res> implements $UProfileViewBasicKindCopyWith<$Res> {
-  factory $UProfileViewBasicKindPastGroupConvoMemberCopyWith(UProfileViewBasicKindPastGroupConvoMember value, $Res Function(UProfileViewBasicKindPastGroupConvoMember) _then) = _$UProfileViewBasicKindPastGroupConvoMemberCopyWithImpl;
-@useResult
-$Res call({
- PastGroupConvoMember data
-});
+class __$$UProfileViewBasicKindGroupConvoMemberImplCopyWithImpl<$Res>
+    extends _$UProfileViewBasicKindCopyWithImpl<$Res,
+        _$UProfileViewBasicKindGroupConvoMemberImpl>
+    implements _$$UProfileViewBasicKindGroupConvoMemberImplCopyWith<$Res> {
+  __$$UProfileViewBasicKindGroupConvoMemberImplCopyWithImpl(
+      _$UProfileViewBasicKindGroupConvoMemberImpl _value,
+      $Res Function(_$UProfileViewBasicKindGroupConvoMemberImpl) _then)
+      : super(_value, _then);
 
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UProfileViewBasicKindGroupConvoMemberImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as GroupConvoMember,
+    ));
+  }
 
-$PastGroupConvoMemberCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UProfileViewBasicKindPastGroupConvoMemberCopyWithImpl<$Res>
-    implements $UProfileViewBasicKindPastGroupConvoMemberCopyWith<$Res> {
-  _$UProfileViewBasicKindPastGroupConvoMemberCopyWithImpl(this._self, this._then);
-
-  final UProfileViewBasicKindPastGroupConvoMember _self;
-  final $Res Function(UProfileViewBasicKindPastGroupConvoMember) _then;
-
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UProfileViewBasicKindPastGroupConvoMember(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as PastGroupConvoMember,
-  ));
-}
-
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$PastGroupConvoMemberCopyWith<$Res> get data {
-  
-  return $PastGroupConvoMemberCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GroupConvoMemberCopyWith<$Res> get data {
+    return $GroupConvoMemberCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UProfileViewBasicKindGroupConvoMemberImpl
+    extends UProfileViewBasicKindGroupConvoMember {
+  const _$UProfileViewBasicKindGroupConvoMemberImpl({required this.data})
+      : super._();
 
-class UProfileViewBasicKindUnknown extends UProfileViewBasicKind {
-  const UProfileViewBasicKindUnknown({required final  Map<String, dynamic> data}): _data = data,super._();
-  
+  @override
+  final GroupConvoMember data;
 
- final  Map<String, dynamic> _data;
-@override Map<String, dynamic> get data {
-  if (_data is EqualUnmodifiableMapView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_data);
+  @override
+  String toString() {
+    return 'UProfileViewBasicKind.groupConvoMember(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UProfileViewBasicKindGroupConvoMemberImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UProfileViewBasicKindGroupConvoMemberImplCopyWith<
+          _$UProfileViewBasicKindGroupConvoMemberImpl>
+      get copyWith => __$$UProfileViewBasicKindGroupConvoMemberImplCopyWithImpl<
+          _$UProfileViewBasicKindGroupConvoMemberImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(DirectConvoMember data) directConvoMember,
+    required TResult Function(GroupConvoMember data) groupConvoMember,
+    required TResult Function(PastGroupConvoMember data) pastGroupConvoMember,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return groupConvoMember(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(DirectConvoMember data)? directConvoMember,
+    TResult? Function(GroupConvoMember data)? groupConvoMember,
+    TResult? Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return groupConvoMember?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(DirectConvoMember data)? directConvoMember,
+    TResult Function(GroupConvoMember data)? groupConvoMember,
+    TResult Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (groupConvoMember != null) {
+      return groupConvoMember(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UProfileViewBasicKindDirectConvoMember value)
+        directConvoMember,
+    required TResult Function(UProfileViewBasicKindGroupConvoMember value)
+        groupConvoMember,
+    required TResult Function(UProfileViewBasicKindPastGroupConvoMember value)
+        pastGroupConvoMember,
+    required TResult Function(UProfileViewBasicKindUnknown value) unknown,
+  }) {
+    return groupConvoMember(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult? Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult? Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult? Function(UProfileViewBasicKindUnknown value)? unknown,
+  }) {
+    return groupConvoMember?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult Function(UProfileViewBasicKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (groupConvoMember != null) {
+      return groupConvoMember(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UProfileViewBasicKindGroupConvoMember
+    extends UProfileViewBasicKind {
+  const factory UProfileViewBasicKindGroupConvoMember(
+          {required final GroupConvoMember data}) =
+      _$UProfileViewBasicKindGroupConvoMemberImpl;
+  const UProfileViewBasicKindGroupConvoMember._() : super._();
 
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UProfileViewBasicKindUnknownCopyWith<UProfileViewBasicKindUnknown> get copyWith => _$UProfileViewBasicKindUnknownCopyWithImpl<UProfileViewBasicKindUnknown>(this, _$identity);
+  @override
+  GroupConvoMember get data;
 
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UProfileViewBasicKindUnknown&&const DeepCollectionEquality().equals(other._data, _data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
-
-@override
-String toString() {
-  return 'UProfileViewBasicKind.unknown(data: $data)';
-}
-
-
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UProfileViewBasicKindGroupConvoMemberImplCopyWith<
+          _$UProfileViewBasicKindGroupConvoMemberImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UProfileViewBasicKindUnknownCopyWith<$Res> implements $UProfileViewBasicKindCopyWith<$Res> {
-  factory $UProfileViewBasicKindUnknownCopyWith(UProfileViewBasicKindUnknown value, $Res Function(UProfileViewBasicKindUnknown) _then) = _$UProfileViewBasicKindUnknownCopyWithImpl;
-@useResult
-$Res call({
- Map<String, dynamic> data
-});
+abstract class _$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWith<$Res> {
+  factory _$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWith(
+          _$UProfileViewBasicKindPastGroupConvoMemberImpl value,
+          $Res Function(_$UProfileViewBasicKindPastGroupConvoMemberImpl) then) =
+      __$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PastGroupConvoMember data});
 
-
-
-
+  $PastGroupConvoMemberCopyWith<$Res> get data;
 }
+
 /// @nodoc
-class _$UProfileViewBasicKindUnknownCopyWithImpl<$Res>
-    implements $UProfileViewBasicKindUnknownCopyWith<$Res> {
-  _$UProfileViewBasicKindUnknownCopyWithImpl(this._self, this._then);
+class __$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWithImpl<$Res>
+    extends _$UProfileViewBasicKindCopyWithImpl<$Res,
+        _$UProfileViewBasicKindPastGroupConvoMemberImpl>
+    implements _$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWith<$Res> {
+  __$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWithImpl(
+      _$UProfileViewBasicKindPastGroupConvoMemberImpl _value,
+      $Res Function(_$UProfileViewBasicKindPastGroupConvoMemberImpl) _then)
+      : super(_value, _then);
 
-  final UProfileViewBasicKindUnknown _self;
-  final $Res Function(UProfileViewBasicKindUnknown) _then;
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UProfileViewBasicKindPastGroupConvoMemberImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as PastGroupConvoMember,
+    ));
+  }
 
-/// Create a copy of UProfileViewBasicKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UProfileViewBasicKindUnknown(
-data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
-  ));
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PastGroupConvoMemberCopyWith<$Res> get data {
+    return $PastGroupConvoMemberCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
+/// @nodoc
 
+class _$UProfileViewBasicKindPastGroupConvoMemberImpl
+    extends UProfileViewBasicKindPastGroupConvoMember {
+  const _$UProfileViewBasicKindPastGroupConvoMemberImpl({required this.data})
+      : super._();
+
+  @override
+  final PastGroupConvoMember data;
+
+  @override
+  String toString() {
+    return 'UProfileViewBasicKind.pastGroupConvoMember(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UProfileViewBasicKindPastGroupConvoMemberImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWith<
+          _$UProfileViewBasicKindPastGroupConvoMemberImpl>
+      get copyWith =>
+          __$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWithImpl<
+                  _$UProfileViewBasicKindPastGroupConvoMemberImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(DirectConvoMember data) directConvoMember,
+    required TResult Function(GroupConvoMember data) groupConvoMember,
+    required TResult Function(PastGroupConvoMember data) pastGroupConvoMember,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return pastGroupConvoMember(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(DirectConvoMember data)? directConvoMember,
+    TResult? Function(GroupConvoMember data)? groupConvoMember,
+    TResult? Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return pastGroupConvoMember?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(DirectConvoMember data)? directConvoMember,
+    TResult Function(GroupConvoMember data)? groupConvoMember,
+    TResult Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (pastGroupConvoMember != null) {
+      return pastGroupConvoMember(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UProfileViewBasicKindDirectConvoMember value)
+        directConvoMember,
+    required TResult Function(UProfileViewBasicKindGroupConvoMember value)
+        groupConvoMember,
+    required TResult Function(UProfileViewBasicKindPastGroupConvoMember value)
+        pastGroupConvoMember,
+    required TResult Function(UProfileViewBasicKindUnknown value) unknown,
+  }) {
+    return pastGroupConvoMember(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult? Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult? Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult? Function(UProfileViewBasicKindUnknown value)? unknown,
+  }) {
+    return pastGroupConvoMember?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult Function(UProfileViewBasicKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (pastGroupConvoMember != null) {
+      return pastGroupConvoMember(this);
+    }
+    return orElse();
+  }
 }
 
-// dart format on
+abstract class UProfileViewBasicKindPastGroupConvoMember
+    extends UProfileViewBasicKind {
+  const factory UProfileViewBasicKindPastGroupConvoMember(
+          {required final PastGroupConvoMember data}) =
+      _$UProfileViewBasicKindPastGroupConvoMemberImpl;
+  const UProfileViewBasicKindPastGroupConvoMember._() : super._();
+
+  @override
+  PastGroupConvoMember get data;
+
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UProfileViewBasicKindPastGroupConvoMemberImplCopyWith<
+          _$UProfileViewBasicKindPastGroupConvoMemberImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UProfileViewBasicKindUnknownImplCopyWith<$Res> {
+  factory _$$UProfileViewBasicKindUnknownImplCopyWith(
+          _$UProfileViewBasicKindUnknownImpl value,
+          $Res Function(_$UProfileViewBasicKindUnknownImpl) then) =
+      __$$UProfileViewBasicKindUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Map<String, dynamic> data});
+}
+
+/// @nodoc
+class __$$UProfileViewBasicKindUnknownImplCopyWithImpl<$Res>
+    extends _$UProfileViewBasicKindCopyWithImpl<$Res,
+        _$UProfileViewBasicKindUnknownImpl>
+    implements _$$UProfileViewBasicKindUnknownImplCopyWith<$Res> {
+  __$$UProfileViewBasicKindUnknownImplCopyWithImpl(
+      _$UProfileViewBasicKindUnknownImpl _value,
+      $Res Function(_$UProfileViewBasicKindUnknownImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UProfileViewBasicKindUnknownImpl(
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UProfileViewBasicKindUnknownImpl extends UProfileViewBasicKindUnknown {
+  const _$UProfileViewBasicKindUnknownImpl(
+      {required final Map<String, dynamic> data})
+      : _data = data,
+        super._();
+
+  final Map<String, dynamic> _data;
+  @override
+  Map<String, dynamic> get data {
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'UProfileViewBasicKind.unknown(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UProfileViewBasicKindUnknownImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UProfileViewBasicKindUnknownImplCopyWith<
+          _$UProfileViewBasicKindUnknownImpl>
+      get copyWith => __$$UProfileViewBasicKindUnknownImplCopyWithImpl<
+          _$UProfileViewBasicKindUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(DirectConvoMember data) directConvoMember,
+    required TResult Function(GroupConvoMember data) groupConvoMember,
+    required TResult Function(PastGroupConvoMember data) pastGroupConvoMember,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(DirectConvoMember data)? directConvoMember,
+    TResult? Function(GroupConvoMember data)? groupConvoMember,
+    TResult? Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(DirectConvoMember data)? directConvoMember,
+    TResult Function(GroupConvoMember data)? groupConvoMember,
+    TResult Function(PastGroupConvoMember data)? pastGroupConvoMember,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UProfileViewBasicKindDirectConvoMember value)
+        directConvoMember,
+    required TResult Function(UProfileViewBasicKindGroupConvoMember value)
+        groupConvoMember,
+    required TResult Function(UProfileViewBasicKindPastGroupConvoMember value)
+        pastGroupConvoMember,
+    required TResult Function(UProfileViewBasicKindUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult? Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult? Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult? Function(UProfileViewBasicKindUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UProfileViewBasicKindDirectConvoMember value)?
+        directConvoMember,
+    TResult Function(UProfileViewBasicKindGroupConvoMember value)?
+        groupConvoMember,
+    TResult Function(UProfileViewBasicKindPastGroupConvoMember value)?
+        pastGroupConvoMember,
+    TResult Function(UProfileViewBasicKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UProfileViewBasicKindUnknown extends UProfileViewBasicKind {
+  const factory UProfileViewBasicKindUnknown(
+          {required final Map<String, dynamic> data}) =
+      _$UProfileViewBasicKindUnknownImpl;
+  const UProfileViewBasicKindUnknown._() : super._();
+
+  @override
+  Map<String, dynamic> get data;
+
+  /// Create a copy of UProfileViewBasicKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UProfileViewBasicKindUnknownImplCopyWith<
+          _$UProfileViewBasicKindUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

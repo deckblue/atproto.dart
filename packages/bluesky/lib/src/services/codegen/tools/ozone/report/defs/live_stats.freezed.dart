@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,315 +9,388 @@ part of 'live_stats.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+LiveStats _$LiveStatsFromJson(Map<String, dynamic> json) {
+  return _LiveStats.fromJson(json);
+}
 
 /// @nodoc
 mixin _$LiveStats {
+  String get $type => throw _privateConstructorUsedError;
 
- String get $type;/// Number of reports currently not closed.
- int? get pendingCount;/// Number of reports closed today.
- int? get actionedCount;/// Number of reports escalated today.
- int? get escalatedCount;/// Reports received today.
- int? get inboundCount;/// Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer.
- int? get actionRate;/// Average time in seconds from report creation (or moderator assignment) to close.
- int? get avgHandlingTimeSec;/// When these statistics were last computed.
- DateTime? get lastUpdated; Map<String, dynamic>? get $unknown;
-/// Create a copy of LiveStats
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$LiveStatsCopyWith<LiveStats> get copyWith => _$LiveStatsCopyWithImpl<LiveStats>(this as LiveStats, _$identity);
+  /// Number of reports currently not closed.
+  int? get pendingCount => throw _privateConstructorUsedError;
+
+  /// Number of reports closed today.
+  int? get actionedCount => throw _privateConstructorUsedError;
+
+  /// Number of reports escalated today.
+  int? get escalatedCount => throw _privateConstructorUsedError;
+
+  /// Reports received today.
+  int? get inboundCount => throw _privateConstructorUsedError;
+
+  /// Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer.
+  int? get actionRate => throw _privateConstructorUsedError;
+
+  /// Average time in seconds from report creation (or moderator assignment) to close.
+  int? get avgHandlingTimeSec => throw _privateConstructorUsedError;
+
+  /// When these statistics were last computed.
+  DateTime? get lastUpdated => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this LiveStats to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LiveStats&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.pendingCount, pendingCount) || other.pendingCount == pendingCount)&&(identical(other.actionedCount, actionedCount) || other.actionedCount == actionedCount)&&(identical(other.escalatedCount, escalatedCount) || other.escalatedCount == escalatedCount)&&(identical(other.inboundCount, inboundCount) || other.inboundCount == inboundCount)&&(identical(other.actionRate, actionRate) || other.actionRate == actionRate)&&(identical(other.avgHandlingTimeSec, avgHandlingTimeSec) || other.avgHandlingTimeSec == avgHandlingTimeSec)&&(identical(other.lastUpdated, lastUpdated) || other.lastUpdated == lastUpdated)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,pendingCount,actionedCount,escalatedCount,inboundCount,actionRate,avgHandlingTimeSec,lastUpdated,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'LiveStats(\$type: ${$type}, pendingCount: $pendingCount, actionedCount: $actionedCount, escalatedCount: $escalatedCount, inboundCount: $inboundCount, actionRate: $actionRate, avgHandlingTimeSec: $avgHandlingTimeSec, lastUpdated: $lastUpdated, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of LiveStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LiveStatsCopyWith<LiveStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $LiveStatsCopyWith<$Res>  {
-  factory $LiveStatsCopyWith(LiveStats value, $Res Function(LiveStats) _then) = _$LiveStatsCopyWithImpl;
-@useResult
-$Res call({
- String $type, int? pendingCount, int? actionedCount, int? escalatedCount, int? inboundCount, int? actionRate, int? avgHandlingTimeSec, DateTime? lastUpdated, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $LiveStatsCopyWith<$Res> {
+  factory $LiveStatsCopyWith(LiveStats value, $Res Function(LiveStats) then) =
+      _$LiveStatsCopyWithImpl<$Res, LiveStats>;
+  @useResult
+  $Res call(
+      {String $type,
+      int? pendingCount,
+      int? actionedCount,
+      int? escalatedCount,
+      int? inboundCount,
+      int? actionRate,
+      int? avgHandlingTimeSec,
+      DateTime? lastUpdated,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$LiveStatsCopyWithImpl<$Res>
+class _$LiveStatsCopyWithImpl<$Res, $Val extends LiveStats>
     implements $LiveStatsCopyWith<$Res> {
-  _$LiveStatsCopyWithImpl(this._self, this._then);
+  _$LiveStatsCopyWithImpl(this._value, this._then);
 
-  final LiveStats _self;
-  final $Res Function(LiveStats) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of LiveStats
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? pendingCount = freezed,Object? actionedCount = freezed,Object? escalatedCount = freezed,Object? inboundCount = freezed,Object? actionRate = freezed,Object? avgHandlingTimeSec = freezed,Object? lastUpdated = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,pendingCount: freezed == pendingCount ? _self.pendingCount : pendingCount // ignore: cast_nullable_to_non_nullable
-as int?,actionedCount: freezed == actionedCount ? _self.actionedCount : actionedCount // ignore: cast_nullable_to_non_nullable
-as int?,escalatedCount: freezed == escalatedCount ? _self.escalatedCount : escalatedCount // ignore: cast_nullable_to_non_nullable
-as int?,inboundCount: freezed == inboundCount ? _self.inboundCount : inboundCount // ignore: cast_nullable_to_non_nullable
-as int?,actionRate: freezed == actionRate ? _self.actionRate : actionRate // ignore: cast_nullable_to_non_nullable
-as int?,avgHandlingTimeSec: freezed == avgHandlingTimeSec ? _self.avgHandlingTimeSec : avgHandlingTimeSec // ignore: cast_nullable_to_non_nullable
-as int?,lastUpdated: freezed == lastUpdated ? _self.lastUpdated : lastUpdated // ignore: cast_nullable_to_non_nullable
-as DateTime?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of LiveStats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? pendingCount = freezed,
+    Object? actionedCount = freezed,
+    Object? escalatedCount = freezed,
+    Object? inboundCount = freezed,
+    Object? actionRate = freezed,
+    Object? avgHandlingTimeSec = freezed,
+    Object? lastUpdated = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingCount: freezed == pendingCount
+          ? _value.pendingCount
+          : pendingCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      actionedCount: freezed == actionedCount
+          ? _value.actionedCount
+          : actionedCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      escalatedCount: freezed == escalatedCount
+          ? _value.escalatedCount
+          : escalatedCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      inboundCount: freezed == inboundCount
+          ? _value.inboundCount
+          : inboundCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      actionRate: freezed == actionRate
+          ? _value.actionRate
+          : actionRate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      avgHandlingTimeSec: freezed == avgHandlingTimeSec
+          ? _value.avgHandlingTimeSec
+          : avgHandlingTimeSec // ignore: cast_nullable_to_non_nullable
+              as int?,
+      lastUpdated: freezed == lastUpdated
+          ? _value.lastUpdated
+          : lastUpdated // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$LiveStatsImplCopyWith<$Res>
+    implements $LiveStatsCopyWith<$Res> {
+  factory _$$LiveStatsImplCopyWith(
+          _$LiveStatsImpl value, $Res Function(_$LiveStatsImpl) then) =
+      __$$LiveStatsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      int? pendingCount,
+      int? actionedCount,
+      int? escalatedCount,
+      int? inboundCount,
+      int? actionRate,
+      int? avgHandlingTimeSec,
+      DateTime? lastUpdated,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$LiveStatsImplCopyWithImpl<$Res>
+    extends _$LiveStatsCopyWithImpl<$Res, _$LiveStatsImpl>
+    implements _$$LiveStatsImplCopyWith<$Res> {
+  __$$LiveStatsImplCopyWithImpl(
+      _$LiveStatsImpl _value, $Res Function(_$LiveStatsImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [LiveStats].
-extension LiveStatsPatterns on LiveStats {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _LiveStats value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _LiveStats() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _LiveStats value)  $default,){
-final _that = this;
-switch (_that) {
-case _LiveStats():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _LiveStats value)?  $default,){
-final _that = this;
-switch (_that) {
-case _LiveStats() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  int? pendingCount,  int? actionedCount,  int? escalatedCount,  int? inboundCount,  int? actionRate,  int? avgHandlingTimeSec,  DateTime? lastUpdated,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _LiveStats() when $default != null:
-return $default(_that.$type,_that.pendingCount,_that.actionedCount,_that.escalatedCount,_that.inboundCount,_that.actionRate,_that.avgHandlingTimeSec,_that.lastUpdated,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  int? pendingCount,  int? actionedCount,  int? escalatedCount,  int? inboundCount,  int? actionRate,  int? avgHandlingTimeSec,  DateTime? lastUpdated,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _LiveStats():
-return $default(_that.$type,_that.pendingCount,_that.actionedCount,_that.escalatedCount,_that.inboundCount,_that.actionRate,_that.avgHandlingTimeSec,_that.lastUpdated,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  int? pendingCount,  int? actionedCount,  int? escalatedCount,  int? inboundCount,  int? actionRate,  int? avgHandlingTimeSec,  DateTime? lastUpdated,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _LiveStats() when $default != null:
-return $default(_that.$type,_that.pendingCount,_that.actionedCount,_that.escalatedCount,_that.inboundCount,_that.actionRate,_that.avgHandlingTimeSec,_that.lastUpdated,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of LiveStats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? pendingCount = freezed,
+    Object? actionedCount = freezed,
+    Object? escalatedCount = freezed,
+    Object? inboundCount = freezed,
+    Object? actionRate = freezed,
+    Object? avgHandlingTimeSec = freezed,
+    Object? lastUpdated = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$LiveStatsImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingCount: freezed == pendingCount
+          ? _value.pendingCount
+          : pendingCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      actionedCount: freezed == actionedCount
+          ? _value.actionedCount
+          : actionedCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      escalatedCount: freezed == escalatedCount
+          ? _value.escalatedCount
+          : escalatedCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      inboundCount: freezed == inboundCount
+          ? _value.inboundCount
+          : inboundCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      actionRate: freezed == actionRate
+          ? _value.actionRate
+          : actionRate // ignore: cast_nullable_to_non_nullable
+              as int?,
+      avgHandlingTimeSec: freezed == avgHandlingTimeSec
+          ? _value.avgHandlingTimeSec
+          : avgHandlingTimeSec // ignore: cast_nullable_to_non_nullable
+              as int?,
+      lastUpdated: freezed == lastUpdated
+          ? _value.lastUpdated
+          : lastUpdated // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _LiveStats implements LiveStats {
-  const _LiveStats({this.$type = 'tools.ozone.report.defs#liveStats', this.pendingCount, this.actionedCount, this.escalatedCount, this.inboundCount, this.actionRate, this.avgHandlingTimeSec, this.lastUpdated, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _LiveStats.fromJson(Map<String, dynamic> json) => _$LiveStatsFromJson(json);
+class _$LiveStatsImpl implements _LiveStats {
+  const _$LiveStatsImpl(
+      {this.$type = 'tools.ozone.report.defs#liveStats',
+      this.pendingCount,
+      this.actionedCount,
+      this.escalatedCount,
+      this.inboundCount,
+      this.actionRate,
+      this.avgHandlingTimeSec,
+      this.lastUpdated,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-/// Number of reports currently not closed.
-@override final  int? pendingCount;
-/// Number of reports closed today.
-@override final  int? actionedCount;
-/// Number of reports escalated today.
-@override final  int? escalatedCount;
-/// Reports received today.
-@override final  int? inboundCount;
-/// Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer.
-@override final  int? actionRate;
-/// Average time in seconds from report creation (or moderator assignment) to close.
-@override final  int? avgHandlingTimeSec;
-/// When these statistics were last computed.
-@override final  DateTime? lastUpdated;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$LiveStatsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LiveStatsImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+
+  /// Number of reports currently not closed.
+  @override
+  final int? pendingCount;
+
+  /// Number of reports closed today.
+  @override
+  final int? actionedCount;
+
+  /// Number of reports escalated today.
+  @override
+  final int? escalatedCount;
+
+  /// Reports received today.
+  @override
+  final int? inboundCount;
+
+  /// Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer.
+  @override
+  final int? actionRate;
+
+  /// Average time in seconds from report creation (or moderator assignment) to close.
+  @override
+  final int? avgHandlingTimeSec;
+
+  /// When these statistics were last computed.
+  @override
+  final DateTime? lastUpdated;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'LiveStats(\$type: ${$type}, pendingCount: $pendingCount, actionedCount: $actionedCount, escalatedCount: $escalatedCount, inboundCount: $inboundCount, actionRate: $actionRate, avgHandlingTimeSec: $avgHandlingTimeSec, lastUpdated: $lastUpdated, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LiveStatsImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.pendingCount, pendingCount) ||
+                other.pendingCount == pendingCount) &&
+            (identical(other.actionedCount, actionedCount) ||
+                other.actionedCount == actionedCount) &&
+            (identical(other.escalatedCount, escalatedCount) ||
+                other.escalatedCount == escalatedCount) &&
+            (identical(other.inboundCount, inboundCount) ||
+                other.inboundCount == inboundCount) &&
+            (identical(other.actionRate, actionRate) ||
+                other.actionRate == actionRate) &&
+            (identical(other.avgHandlingTimeSec, avgHandlingTimeSec) ||
+                other.avgHandlingTimeSec == avgHandlingTimeSec) &&
+            (identical(other.lastUpdated, lastUpdated) ||
+                other.lastUpdated == lastUpdated) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      $type,
+      pendingCount,
+      actionedCount,
+      escalatedCount,
+      inboundCount,
+      actionRate,
+      avgHandlingTimeSec,
+      lastUpdated,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of LiveStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LiveStatsImplCopyWith<_$LiveStatsImpl> get copyWith =>
+      __$$LiveStatsImplCopyWithImpl<_$LiveStatsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LiveStatsImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _LiveStats implements LiveStats {
+  const factory _LiveStats(
+      {final String $type,
+      final int? pendingCount,
+      final int? actionedCount,
+      final int? escalatedCount,
+      final int? inboundCount,
+      final int? actionRate,
+      final int? avgHandlingTimeSec,
+      final DateTime? lastUpdated,
+      final Map<String, dynamic>? $unknown}) = _$LiveStatsImpl;
 
-/// Create a copy of LiveStats
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$LiveStatsCopyWith<_LiveStats> get copyWith => __$LiveStatsCopyWithImpl<_LiveStats>(this, _$identity);
+  factory _LiveStats.fromJson(Map<String, dynamic> json) =
+      _$LiveStatsImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$LiveStatsToJson(this, );
+  @override
+  String get $type;
+
+  /// Number of reports currently not closed.
+  @override
+  int? get pendingCount;
+
+  /// Number of reports closed today.
+  @override
+  int? get actionedCount;
+
+  /// Number of reports escalated today.
+  @override
+  int? get escalatedCount;
+
+  /// Reports received today.
+  @override
+  int? get inboundCount;
+
+  /// Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer.
+  @override
+  int? get actionRate;
+
+  /// Average time in seconds from report creation (or moderator assignment) to close.
+  @override
+  int? get avgHandlingTimeSec;
+
+  /// When these statistics were last computed.
+  @override
+  DateTime? get lastUpdated;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of LiveStats
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LiveStatsImplCopyWith<_$LiveStatsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LiveStats&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.pendingCount, pendingCount) || other.pendingCount == pendingCount)&&(identical(other.actionedCount, actionedCount) || other.actionedCount == actionedCount)&&(identical(other.escalatedCount, escalatedCount) || other.escalatedCount == escalatedCount)&&(identical(other.inboundCount, inboundCount) || other.inboundCount == inboundCount)&&(identical(other.actionRate, actionRate) || other.actionRate == actionRate)&&(identical(other.avgHandlingTimeSec, avgHandlingTimeSec) || other.avgHandlingTimeSec == avgHandlingTimeSec)&&(identical(other.lastUpdated, lastUpdated) || other.lastUpdated == lastUpdated)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,pendingCount,actionedCount,escalatedCount,inboundCount,actionRate,avgHandlingTimeSec,lastUpdated,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'LiveStats(\$type: ${$type}, pendingCount: $pendingCount, actionedCount: $actionedCount, escalatedCount: $escalatedCount, inboundCount: $inboundCount, actionRate: $actionRate, avgHandlingTimeSec: $avgHandlingTimeSec, lastUpdated: $lastUpdated, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$LiveStatsCopyWith<$Res> implements $LiveStatsCopyWith<$Res> {
-  factory _$LiveStatsCopyWith(_LiveStats value, $Res Function(_LiveStats) _then) = __$LiveStatsCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, int? pendingCount, int? actionedCount, int? escalatedCount, int? inboundCount, int? actionRate, int? avgHandlingTimeSec, DateTime? lastUpdated, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$LiveStatsCopyWithImpl<$Res>
-    implements _$LiveStatsCopyWith<$Res> {
-  __$LiveStatsCopyWithImpl(this._self, this._then);
-
-  final _LiveStats _self;
-  final $Res Function(_LiveStats) _then;
-
-/// Create a copy of LiveStats
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? pendingCount = freezed,Object? actionedCount = freezed,Object? escalatedCount = freezed,Object? inboundCount = freezed,Object? actionRate = freezed,Object? avgHandlingTimeSec = freezed,Object? lastUpdated = freezed,Object? $unknown = freezed,}) {
-  return _then(_LiveStats(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,pendingCount: freezed == pendingCount ? _self.pendingCount : pendingCount // ignore: cast_nullable_to_non_nullable
-as int?,actionedCount: freezed == actionedCount ? _self.actionedCount : actionedCount // ignore: cast_nullable_to_non_nullable
-as int?,escalatedCount: freezed == escalatedCount ? _self.escalatedCount : escalatedCount // ignore: cast_nullable_to_non_nullable
-as int?,inboundCount: freezed == inboundCount ? _self.inboundCount : inboundCount // ignore: cast_nullable_to_non_nullable
-as int?,actionRate: freezed == actionRate ? _self.actionRate : actionRate // ignore: cast_nullable_to_non_nullable
-as int?,avgHandlingTimeSec: freezed == avgHandlingTimeSec ? _self.avgHandlingTimeSec : avgHandlingTimeSec // ignore: cast_nullable_to_non_nullable
-as int?,lastUpdated: freezed == lastUpdated ? _self.lastUpdated : lastUpdated // ignore: cast_nullable_to_non_nullable
-as DateTime?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

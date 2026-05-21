@@ -8,34 +8,36 @@ part of 'log_edit_join_link.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LogEditJoinLink _$LogEditJoinLinkFromJson(Map json) =>
-    $checkedCreate('_LogEditJoinLink', json, ($checkedConvert) {
-      final val = _LogEditJoinLink(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'chat.bsky.convo.defs#logEditJoinLink',
-        ),
-        rev: $checkedConvert('rev', (v) => v as String),
-        convoId: $checkedConvert('convoId', (v) => v as String),
-        message: $checkedConvert(
-          'message',
-          (v) => const SystemMessageViewConverter().fromJson(
-            v as Map<String, dynamic>,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$LogEditJoinLinkImpl _$$LogEditJoinLinkImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$LogEditJoinLinkImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$LogEditJoinLinkImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'chat.bsky.convo.defs#logEditJoinLink'),
+          rev: $checkedConvert('rev', (v) => v as String),
+          convoId: $checkedConvert('convoId', (v) => v as String),
+          message: $checkedConvert(
+              'message',
+              (v) => const SystemMessageViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$LogEditJoinLinkToJson(_LogEditJoinLink instance) =>
+Map<String, dynamic> _$$LogEditJoinLinkImplToJson(
+        _$LogEditJoinLinkImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'rev': instance.rev,
       'convoId': instance.convoId,
       'message': const SystemMessageViewConverter().toJson(instance.message),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

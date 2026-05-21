@@ -8,23 +8,27 @@ part of 'direct_convo_member.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_DirectConvoMember _$DirectConvoMemberFromJson(Map json) =>
-    $checkedCreate('_DirectConvoMember', json, ($checkedConvert) {
-      final val = _DirectConvoMember(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'chat.bsky.actor.defs#directConvoMember',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$DirectConvoMemberImpl _$$DirectConvoMemberImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$DirectConvoMemberImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$DirectConvoMemberImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'chat.bsky.actor.defs#directConvoMember'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$DirectConvoMemberToJson(_DirectConvoMember instance) =>
+Map<String, dynamic> _$$DirectConvoMemberImplToJson(
+        _$DirectConvoMemberImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

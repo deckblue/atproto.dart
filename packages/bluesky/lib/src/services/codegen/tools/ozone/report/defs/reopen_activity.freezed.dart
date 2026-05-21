@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,309 +9,246 @@ part of 'reopen_activity.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+ReopenActivity _$ReopenActivityFromJson(Map<String, dynamic> json) {
+  return _ReopenActivity.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ReopenActivity {
+  String get $type => throw _privateConstructorUsedError;
 
- String get $type;/// The report's status before this activity. Populated automatically from the report row; not required in input.
-@ReopenActivityPreviousStatusConverter() ReopenActivityPreviousStatus? get previousStatus; Map<String, dynamic>? get $unknown;
-/// Create a copy of ReopenActivity
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ReopenActivityCopyWith<ReopenActivity> get copyWith => _$ReopenActivityCopyWithImpl<ReopenActivity>(this as ReopenActivity, _$identity);
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @ReopenActivityPreviousStatusConverter()
+  ReopenActivityPreviousStatus? get previousStatus =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ReopenActivity to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReopenActivity&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.previousStatus, previousStatus) || other.previousStatus == previousStatus)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,previousStatus,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'ReopenActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of ReopenActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ReopenActivityCopyWith<ReopenActivity> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ReopenActivityCopyWith<$Res>  {
-  factory $ReopenActivityCopyWith(ReopenActivity value, $Res Function(ReopenActivity) _then) = _$ReopenActivityCopyWithImpl;
-@useResult
-$Res call({
- String $type,@ReopenActivityPreviousStatusConverter() ReopenActivityPreviousStatus? previousStatus, Map<String, dynamic>? $unknown
-});
+abstract class $ReopenActivityCopyWith<$Res> {
+  factory $ReopenActivityCopyWith(
+          ReopenActivity value, $Res Function(ReopenActivity) then) =
+      _$ReopenActivityCopyWithImpl<$Res, ReopenActivity>;
+  @useResult
+  $Res call(
+      {String $type,
+      @ReopenActivityPreviousStatusConverter()
+      ReopenActivityPreviousStatus? previousStatus,
+      Map<String, dynamic>? $unknown});
 
-
-$ReopenActivityPreviousStatusCopyWith<$Res>? get previousStatus;
-
+  $ReopenActivityPreviousStatusCopyWith<$Res>? get previousStatus;
 }
+
 /// @nodoc
-class _$ReopenActivityCopyWithImpl<$Res>
+class _$ReopenActivityCopyWithImpl<$Res, $Val extends ReopenActivity>
     implements $ReopenActivityCopyWith<$Res> {
-  _$ReopenActivityCopyWithImpl(this._self, this._then);
+  _$ReopenActivityCopyWithImpl(this._value, this._then);
 
-  final ReopenActivity _self;
-  final $Res Function(ReopenActivity) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ReopenActivity
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? previousStatus = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,previousStatus: freezed == previousStatus ? _self.previousStatus : previousStatus // ignore: cast_nullable_to_non_nullable
-as ReopenActivityPreviousStatus?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of ReopenActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ReopenActivityPreviousStatusCopyWith<$Res>? get previousStatus {
-    if (_self.previousStatus == null) {
-    return null;
+  /// Create a copy of ReopenActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? previousStatus = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      previousStatus: freezed == previousStatus
+          ? _value.previousStatus
+          : previousStatus // ignore: cast_nullable_to_non_nullable
+              as ReopenActivityPreviousStatus?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
   }
 
-  return $ReopenActivityPreviousStatusCopyWith<$Res>(_self.previousStatus!, (value) {
-    return _then(_self.copyWith(previousStatus: value));
-  });
-}
-}
+  /// Create a copy of ReopenActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReopenActivityPreviousStatusCopyWith<$Res>? get previousStatus {
+    if (_value.previousStatus == null) {
+      return null;
+    }
 
-
-/// Adds pattern-matching-related methods to [ReopenActivity].
-extension ReopenActivityPatterns on ReopenActivity {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ReopenActivity value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ReopenActivity() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ReopenActivity value)  $default,){
-final _that = this;
-switch (_that) {
-case _ReopenActivity():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ReopenActivity value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ReopenActivity() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type, @ReopenActivityPreviousStatusConverter()  ReopenActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ReopenActivity() when $default != null:
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type, @ReopenActivityPreviousStatusConverter()  ReopenActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _ReopenActivity():
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type, @ReopenActivityPreviousStatusConverter()  ReopenActivityPreviousStatus? previousStatus,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _ReopenActivity() when $default != null:
-return $default(_that.$type,_that.previousStatus,_that.$unknown);case _:
-  return null;
-
-}
+    return $ReopenActivityPreviousStatusCopyWith<$Res>(_value.previousStatus!,
+        (value) {
+      return _then(_value.copyWith(previousStatus: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$ReopenActivityImplCopyWith<$Res>
+    implements $ReopenActivityCopyWith<$Res> {
+  factory _$$ReopenActivityImplCopyWith(_$ReopenActivityImpl value,
+          $Res Function(_$ReopenActivityImpl) then) =
+      __$$ReopenActivityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      @ReopenActivityPreviousStatusConverter()
+      ReopenActivityPreviousStatus? previousStatus,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $ReopenActivityPreviousStatusCopyWith<$Res>? get previousStatus;
+}
+
+/// @nodoc
+class __$$ReopenActivityImplCopyWithImpl<$Res>
+    extends _$ReopenActivityCopyWithImpl<$Res, _$ReopenActivityImpl>
+    implements _$$ReopenActivityImplCopyWith<$Res> {
+  __$$ReopenActivityImplCopyWithImpl(
+      _$ReopenActivityImpl _value, $Res Function(_$ReopenActivityImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ReopenActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? previousStatus = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$ReopenActivityImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      previousStatus: freezed == previousStatus
+          ? _value.previousStatus
+          : previousStatus // ignore: cast_nullable_to_non_nullable
+              as ReopenActivityPreviousStatus?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _ReopenActivity implements ReopenActivity {
-  const _ReopenActivity({this.$type = 'tools.ozone.report.defs#reopenActivity', @ReopenActivityPreviousStatusConverter() this.previousStatus, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _ReopenActivity.fromJson(Map<String, dynamic> json) => _$ReopenActivityFromJson(json);
+class _$ReopenActivityImpl implements _ReopenActivity {
+  const _$ReopenActivityImpl(
+      {this.$type = 'tools.ozone.report.defs#reopenActivity',
+      @ReopenActivityPreviousStatusConverter() this.previousStatus,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-/// The report's status before this activity. Populated automatically from the report row; not required in input.
-@override@ReopenActivityPreviousStatusConverter() final  ReopenActivityPreviousStatus? previousStatus;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+  factory _$ReopenActivityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReopenActivityImplFromJson(json);
 
+  @override
+  @JsonKey()
+  final String $type;
 
-/// Create a copy of ReopenActivity
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ReopenActivityCopyWith<_ReopenActivity> get copyWith => __$ReopenActivityCopyWithImpl<_ReopenActivity>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$ReopenActivityToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReopenActivity&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.previousStatus, previousStatus) || other.previousStatus == previousStatus)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,previousStatus,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'ReopenActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ReopenActivityCopyWith<$Res> implements $ReopenActivityCopyWith<$Res> {
-  factory _$ReopenActivityCopyWith(_ReopenActivity value, $Res Function(_ReopenActivity) _then) = __$ReopenActivityCopyWithImpl;
-@override @useResult
-$Res call({
- String $type,@ReopenActivityPreviousStatusConverter() ReopenActivityPreviousStatus? previousStatus, Map<String, dynamic>? $unknown
-});
-
-
-@override $ReopenActivityPreviousStatusCopyWith<$Res>? get previousStatus;
-
-}
-/// @nodoc
-class __$ReopenActivityCopyWithImpl<$Res>
-    implements _$ReopenActivityCopyWith<$Res> {
-  __$ReopenActivityCopyWithImpl(this._self, this._then);
-
-  final _ReopenActivity _self;
-  final $Res Function(_ReopenActivity) _then;
-
-/// Create a copy of ReopenActivity
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? previousStatus = freezed,Object? $unknown = freezed,}) {
-  return _then(_ReopenActivity(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,previousStatus: freezed == previousStatus ? _self.previousStatus : previousStatus // ignore: cast_nullable_to_non_nullable
-as ReopenActivityPreviousStatus?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of ReopenActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ReopenActivityPreviousStatusCopyWith<$Res>? get previousStatus {
-    if (_self.previousStatus == null) {
-    return null;
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @override
+  @ReopenActivityPreviousStatusConverter()
+  final ReopenActivityPreviousStatus? previousStatus;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
   }
 
-  return $ReopenActivityPreviousStatusCopyWith<$Res>(_self.previousStatus!, (value) {
-    return _then(_self.copyWith(previousStatus: value));
-  });
-}
+  @override
+  String toString() {
+    return 'ReopenActivity(\$type: ${$type}, previousStatus: $previousStatus, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReopenActivityImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.previousStatus, previousStatus) ||
+                other.previousStatus == previousStatus) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, previousStatus,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of ReopenActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReopenActivityImplCopyWith<_$ReopenActivityImpl> get copyWith =>
+      __$$ReopenActivityImplCopyWithImpl<_$ReopenActivityImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReopenActivityImplToJson(
+      this,
+    );
+  }
 }
 
-// dart format on
+abstract class _ReopenActivity implements ReopenActivity {
+  const factory _ReopenActivity(
+      {final String $type,
+      @ReopenActivityPreviousStatusConverter()
+      final ReopenActivityPreviousStatus? previousStatus,
+      final Map<String, dynamic>? $unknown}) = _$ReopenActivityImpl;
+
+  factory _ReopenActivity.fromJson(Map<String, dynamic> json) =
+      _$ReopenActivityImpl.fromJson;
+
+  @override
+  String get $type;
+
+  /// The report's status before this activity. Populated automatically from the report row; not required in input.
+  @override
+  @ReopenActivityPreviousStatusConverter()
+  ReopenActivityPreviousStatus? get previousStatus;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of ReopenActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReopenActivityImplCopyWith<_$ReopenActivityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -8,32 +8,34 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupListMutualGroupsOutput _$GroupListMutualGroupsOutputFromJson(Map json) =>
-    $checkedCreate('_GroupListMutualGroupsOutput', json, ($checkedConvert) {
-      final val = _GroupListMutualGroupsOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        convos: $checkedConvert(
-          'convos',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const ConvoViewConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupListMutualGroupsOutputImpl _$$GroupListMutualGroupsOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$GroupListMutualGroupsOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupListMutualGroupsOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          convos: $checkedConvert(
+              'convos',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const ConvoViewConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupListMutualGroupsOutputToJson(
-  _GroupListMutualGroupsOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'convos': instance.convos.map(const ConvoViewConverter().toJson).toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupListMutualGroupsOutputImplToJson(
+        _$GroupListMutualGroupsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'convos': instance.convos.map(const ConvoViewConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

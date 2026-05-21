@@ -8,50 +8,51 @@ part of 'group_convo_member.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupConvoMember _$GroupConvoMemberFromJson(Map json) =>
-    $checkedCreate('_GroupConvoMember', json, ($checkedConvert) {
-      final val = _GroupConvoMember(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'chat.bsky.actor.defs#groupConvoMember',
-        ),
-        addedBy: $checkedConvert(
-          'addedBy',
-          (v) =>
-              _$JsonConverterFromJson<Map<String, dynamic>, ProfileViewBasic>(
-                v,
-                const ProfileViewBasicConverter().fromJson,
-              ),
-        ),
-        role: $checkedConvert(
-          'role',
-          (v) => const MemberRoleConverter().fromJson(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GroupConvoMemberImpl _$$GroupConvoMemberImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GroupConvoMemberImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupConvoMemberImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'chat.bsky.actor.defs#groupConvoMember'),
+          addedBy: $checkedConvert(
+              'addedBy',
+              (v) => _$JsonConverterFromJson<Map<String, dynamic>,
+                      ProfileViewBasic>(
+                  v, const ProfileViewBasicConverter().fromJson)),
+          role: $checkedConvert(
+              'role', (v) => const MemberRoleConverter().fromJson(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupConvoMemberToJson(_GroupConvoMember instance) =>
+Map<String, dynamic> _$$GroupConvoMemberImplToJson(
+        _$GroupConvoMemberImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'addedBy': ?_$JsonConverterToJson<Map<String, dynamic>, ProfileViewBasic>(
-        instance.addedBy,
-        const ProfileViewBasicConverter().toJson,
-      ),
+      if (_$JsonConverterToJson<Map<String, dynamic>, ProfileViewBasic>(
+              instance.addedBy, const ProfileViewBasicConverter().toJson)
+          case final value?)
+        'addedBy': value,
       'role': const MemberRoleConverter().toJson(instance.role),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

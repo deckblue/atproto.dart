@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,298 +9,218 @@ part of 'output.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+GroupDisableJoinLinkOutput _$GroupDisableJoinLinkOutputFromJson(
+    Map<String, dynamic> json) {
+  return _GroupDisableJoinLinkOutput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$GroupDisableJoinLinkOutput {
-
-@JoinLinkViewConverter() JoinLinkView get joinLink; Map<String, dynamic>? get $unknown;
-/// Create a copy of GroupDisableJoinLinkOutput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GroupDisableJoinLinkOutputCopyWith<GroupDisableJoinLinkOutput> get copyWith => _$GroupDisableJoinLinkOutputCopyWithImpl<GroupDisableJoinLinkOutput>(this as GroupDisableJoinLinkOutput, _$identity);
+  @JoinLinkViewConverter()
+  JoinLinkView get joinLink => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GroupDisableJoinLinkOutput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GroupDisableJoinLinkOutput&&(identical(other.joinLink, joinLink) || other.joinLink == joinLink)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,joinLink,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'GroupDisableJoinLinkOutput(joinLink: $joinLink, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of GroupDisableJoinLinkOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GroupDisableJoinLinkOutputCopyWith<GroupDisableJoinLinkOutput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $GroupDisableJoinLinkOutputCopyWith<$Res>  {
-  factory $GroupDisableJoinLinkOutputCopyWith(GroupDisableJoinLinkOutput value, $Res Function(GroupDisableJoinLinkOutput) _then) = _$GroupDisableJoinLinkOutputCopyWithImpl;
-@useResult
-$Res call({
-@JoinLinkViewConverter() JoinLinkView joinLink, Map<String, dynamic>? $unknown
-});
+abstract class $GroupDisableJoinLinkOutputCopyWith<$Res> {
+  factory $GroupDisableJoinLinkOutputCopyWith(GroupDisableJoinLinkOutput value,
+          $Res Function(GroupDisableJoinLinkOutput) then) =
+      _$GroupDisableJoinLinkOutputCopyWithImpl<$Res,
+          GroupDisableJoinLinkOutput>;
+  @useResult
+  $Res call(
+      {@JoinLinkViewConverter() JoinLinkView joinLink,
+      Map<String, dynamic>? $unknown});
 
-
-$JoinLinkViewCopyWith<$Res> get joinLink;
-
+  $JoinLinkViewCopyWith<$Res> get joinLink;
 }
+
 /// @nodoc
-class _$GroupDisableJoinLinkOutputCopyWithImpl<$Res>
+class _$GroupDisableJoinLinkOutputCopyWithImpl<$Res,
+        $Val extends GroupDisableJoinLinkOutput>
     implements $GroupDisableJoinLinkOutputCopyWith<$Res> {
-  _$GroupDisableJoinLinkOutputCopyWithImpl(this._self, this._then);
+  _$GroupDisableJoinLinkOutputCopyWithImpl(this._value, this._then);
 
-  final GroupDisableJoinLinkOutput _self;
-  final $Res Function(GroupDisableJoinLinkOutput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of GroupDisableJoinLinkOutput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? joinLink = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-joinLink: null == joinLink ? _self.joinLink : joinLink // ignore: cast_nullable_to_non_nullable
-as JoinLinkView,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of GroupDisableJoinLinkOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$JoinLinkViewCopyWith<$Res> get joinLink {
-  
-  return $JoinLinkViewCopyWith<$Res>(_self.joinLink, (value) {
-    return _then(_self.copyWith(joinLink: value));
-  });
-}
-}
+  /// Create a copy of GroupDisableJoinLinkOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? joinLink = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      joinLink: null == joinLink
+          ? _value.joinLink
+          : joinLink // ignore: cast_nullable_to_non_nullable
+              as JoinLinkView,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [GroupDisableJoinLinkOutput].
-extension GroupDisableJoinLinkOutputPatterns on GroupDisableJoinLinkOutput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GroupDisableJoinLinkOutput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GroupDisableJoinLinkOutput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GroupDisableJoinLinkOutput value)  $default,){
-final _that = this;
-switch (_that) {
-case _GroupDisableJoinLinkOutput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GroupDisableJoinLinkOutput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _GroupDisableJoinLinkOutput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JoinLinkViewConverter()  JoinLinkView joinLink,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GroupDisableJoinLinkOutput() when $default != null:
-return $default(_that.joinLink,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JoinLinkViewConverter()  JoinLinkView joinLink,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _GroupDisableJoinLinkOutput():
-return $default(_that.joinLink,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JoinLinkViewConverter()  JoinLinkView joinLink,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _GroupDisableJoinLinkOutput() when $default != null:
-return $default(_that.joinLink,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of GroupDisableJoinLinkOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $JoinLinkViewCopyWith<$Res> get joinLink {
+    return $JoinLinkViewCopyWith<$Res>(_value.joinLink, (value) {
+      return _then(_value.copyWith(joinLink: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$GroupDisableJoinLinkOutputImplCopyWith<$Res>
+    implements $GroupDisableJoinLinkOutputCopyWith<$Res> {
+  factory _$$GroupDisableJoinLinkOutputImplCopyWith(
+          _$GroupDisableJoinLinkOutputImpl value,
+          $Res Function(_$GroupDisableJoinLinkOutputImpl) then) =
+      __$$GroupDisableJoinLinkOutputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JoinLinkViewConverter() JoinLinkView joinLink,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $JoinLinkViewCopyWith<$Res> get joinLink;
+}
+
+/// @nodoc
+class __$$GroupDisableJoinLinkOutputImplCopyWithImpl<$Res>
+    extends _$GroupDisableJoinLinkOutputCopyWithImpl<$Res,
+        _$GroupDisableJoinLinkOutputImpl>
+    implements _$$GroupDisableJoinLinkOutputImplCopyWith<$Res> {
+  __$$GroupDisableJoinLinkOutputImplCopyWithImpl(
+      _$GroupDisableJoinLinkOutputImpl _value,
+      $Res Function(_$GroupDisableJoinLinkOutputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GroupDisableJoinLinkOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? joinLink = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$GroupDisableJoinLinkOutputImpl(
+      joinLink: null == joinLink
+          ? _value.joinLink
+          : joinLink // ignore: cast_nullable_to_non_nullable
+              as JoinLinkView,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GroupDisableJoinLinkOutput implements GroupDisableJoinLinkOutput {
-  const _GroupDisableJoinLinkOutput({@JoinLinkViewConverter() required this.joinLink, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _GroupDisableJoinLinkOutput.fromJson(Map<String, dynamic> json) => _$GroupDisableJoinLinkOutputFromJson(json);
+class _$GroupDisableJoinLinkOutputImpl implements _GroupDisableJoinLinkOutput {
+  const _$GroupDisableJoinLinkOutputImpl(
+      {@JoinLinkViewConverter() required this.joinLink,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JoinLinkViewConverter() final  JoinLinkView joinLink;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$GroupDisableJoinLinkOutputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GroupDisableJoinLinkOutputImplFromJson(json);
+
+  @override
+  @JoinLinkViewConverter()
+  final JoinLinkView joinLink;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'GroupDisableJoinLinkOutput(joinLink: $joinLink, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GroupDisableJoinLinkOutputImpl &&
+            (identical(other.joinLink, joinLink) ||
+                other.joinLink == joinLink) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, joinLink, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of GroupDisableJoinLinkOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GroupDisableJoinLinkOutputImplCopyWith<_$GroupDisableJoinLinkOutputImpl>
+      get copyWith => __$$GroupDisableJoinLinkOutputImplCopyWithImpl<
+          _$GroupDisableJoinLinkOutputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GroupDisableJoinLinkOutputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _GroupDisableJoinLinkOutput
+    implements GroupDisableJoinLinkOutput {
+  const factory _GroupDisableJoinLinkOutput(
+      {@JoinLinkViewConverter() required final JoinLinkView joinLink,
+      final Map<String, dynamic>? $unknown}) = _$GroupDisableJoinLinkOutputImpl;
 
-/// Create a copy of GroupDisableJoinLinkOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$GroupDisableJoinLinkOutputCopyWith<_GroupDisableJoinLinkOutput> get copyWith => __$GroupDisableJoinLinkOutputCopyWithImpl<_GroupDisableJoinLinkOutput>(this, _$identity);
+  factory _GroupDisableJoinLinkOutput.fromJson(Map<String, dynamic> json) =
+      _$GroupDisableJoinLinkOutputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GroupDisableJoinLinkOutputToJson(this, );
+  @override
+  @JoinLinkViewConverter()
+  JoinLinkView get joinLink;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of GroupDisableJoinLinkOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GroupDisableJoinLinkOutputImplCopyWith<_$GroupDisableJoinLinkOutputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GroupDisableJoinLinkOutput&&(identical(other.joinLink, joinLink) || other.joinLink == joinLink)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,joinLink,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'GroupDisableJoinLinkOutput(joinLink: $joinLink, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$GroupDisableJoinLinkOutputCopyWith<$Res> implements $GroupDisableJoinLinkOutputCopyWith<$Res> {
-  factory _$GroupDisableJoinLinkOutputCopyWith(_GroupDisableJoinLinkOutput value, $Res Function(_GroupDisableJoinLinkOutput) _then) = __$GroupDisableJoinLinkOutputCopyWithImpl;
-@override @useResult
-$Res call({
-@JoinLinkViewConverter() JoinLinkView joinLink, Map<String, dynamic>? $unknown
-});
-
-
-@override $JoinLinkViewCopyWith<$Res> get joinLink;
-
-}
-/// @nodoc
-class __$GroupDisableJoinLinkOutputCopyWithImpl<$Res>
-    implements _$GroupDisableJoinLinkOutputCopyWith<$Res> {
-  __$GroupDisableJoinLinkOutputCopyWithImpl(this._self, this._then);
-
-  final _GroupDisableJoinLinkOutput _self;
-  final $Res Function(_GroupDisableJoinLinkOutput) _then;
-
-/// Create a copy of GroupDisableJoinLinkOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? joinLink = null,Object? $unknown = freezed,}) {
-  return _then(_GroupDisableJoinLinkOutput(
-joinLink: null == joinLink ? _self.joinLink : joinLink // ignore: cast_nullable_to_non_nullable
-as JoinLinkView,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of GroupDisableJoinLinkOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$JoinLinkViewCopyWith<$Res> get joinLink {
-  
-  return $JoinLinkViewCopyWith<$Res>(_self.joinLink, (value) {
-    return _then(_self.copyWith(joinLink: value));
-  });
-}
-}
-
-// dart format on

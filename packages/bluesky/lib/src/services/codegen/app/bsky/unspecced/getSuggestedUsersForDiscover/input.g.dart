@@ -8,24 +8,28 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetSuggestedUsersForDiscoverInput
-_$UnspeccedGetSuggestedUsersForDiscoverInputFromJson(Map json) =>
-    $checkedCreate('_UnspeccedGetSuggestedUsersForDiscoverInput', json, (
-      $checkedConvert,
-    ) {
-      final val = _UnspeccedGetSuggestedUsersForDiscoverInput(
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$UnspeccedGetSuggestedUsersForDiscoverInputImpl
+    _$$UnspeccedGetSuggestedUsersForDiscoverInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedGetSuggestedUsersForDiscoverInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$UnspeccedGetSuggestedUsersForDiscoverInputImpl(
+              limit:
+                  $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$UnspeccedGetSuggestedUsersForDiscoverInputToJson(
-  _UnspeccedGetSuggestedUsersForDiscoverInput instance,
-) => <String, dynamic>{
-  'limit': instance.limit,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$UnspeccedGetSuggestedUsersForDiscoverInputImplToJson(
+        _$UnspeccedGetSuggestedUsersForDiscoverInputImpl instance) =>
+    <String, dynamic>{
+      'limit': instance.limit,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,38 +8,38 @@ part of 'join_request_view.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_JoinRequestView _$JoinRequestViewFromJson(Map json) =>
-    $checkedCreate('_JoinRequestView', json, ($checkedConvert) {
-      final val = _JoinRequestView(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'chat.bsky.group.defs#joinRequestView',
-        ),
-        convoId: $checkedConvert('convoId', (v) => v as String),
-        requestedBy: $checkedConvert(
-          'requestedBy',
-          (v) => const ProfileViewBasicConverter().fromJson(
-            v as Map<String, dynamic>,
-          ),
-        ),
-        requestedAt: $checkedConvert(
-          'requestedAt',
-          (v) => DateTime.parse(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$JoinRequestViewImpl _$$JoinRequestViewImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$JoinRequestViewImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$JoinRequestViewImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'chat.bsky.group.defs#joinRequestView'),
+          convoId: $checkedConvert('convoId', (v) => v as String),
+          requestedBy: $checkedConvert(
+              'requestedBy',
+              (v) => const ProfileViewBasicConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          requestedAt: $checkedConvert(
+              'requestedAt', (v) => DateTime.parse(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$JoinRequestViewToJson(
-  _JoinRequestView instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'convoId': instance.convoId,
-  'requestedBy': const ProfileViewBasicConverter().toJson(instance.requestedBy),
-  'requestedAt': instance.requestedAt.toIso8601String(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$JoinRequestViewImplToJson(
+        _$JoinRequestViewImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'convoId': instance.convoId,
+      'requestedBy':
+          const ProfileViewBasicConverter().toJson(instance.requestedBy),
+      'requestedAt': instance.requestedAt.toIso8601String(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

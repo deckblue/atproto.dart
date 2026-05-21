@@ -8,64 +8,64 @@ part of 'external.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_EmbedExternalExternal _$EmbedExternalExternalFromJson(Map json) =>
-    $checkedCreate('_EmbedExternalExternal', json, ($checkedConvert) {
-      final val = _EmbedExternalExternal(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.embed.external#external',
-        ),
-        uri: $checkedConvert('uri', (v) => v as String),
-        title: $checkedConvert('title', (v) => v as String),
-        description: $checkedConvert('description', (v) => v as String),
-        thumb: $checkedConvert(
-          'thumb',
-          (v) => _$JsonConverterFromJson<Map<String, dynamic>, Blob>(
-            v,
-            const BlobConverter().fromJson,
-          ),
-        ),
-        associatedRecords: $checkedConvert(
-          'associatedRecords',
-          (v) => (v as List<dynamic>?)
-              ?.map(
-                (e) => const RepoStrongRefConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$EmbedExternalExternalImpl _$$EmbedExternalExternalImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$EmbedExternalExternalImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$EmbedExternalExternalImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.embed.external#external'),
+          uri: $checkedConvert('uri', (v) => v as String),
+          title: $checkedConvert('title', (v) => v as String),
+          description: $checkedConvert('description', (v) => v as String),
+          thumb: $checkedConvert(
+              'thumb',
+              (v) => _$JsonConverterFromJson<Map<String, dynamic>, Blob>(
+                  v, const BlobConverter().fromJson)),
+          associatedRecords: $checkedConvert(
+              'associatedRecords',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => const RepoStrongRefConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$EmbedExternalExternalToJson(
-  _EmbedExternalExternal instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'uri': instance.uri,
-  'title': instance.title,
-  'description': instance.description,
-  'thumb': ?_$JsonConverterToJson<Map<String, dynamic>, Blob>(
-    instance.thumb,
-    const BlobConverter().toJson,
-  ),
-  'associatedRecords': ?instance.associatedRecords
-      ?.map(const RepoStrongRefConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$EmbedExternalExternalImplToJson(
+        _$EmbedExternalExternalImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'uri': instance.uri,
+      'title': instance.title,
+      'description': instance.description,
+      if (_$JsonConverterToJson<Map<String, dynamic>, Blob>(
+              instance.thumb, const BlobConverter().toJson)
+          case final value?)
+        'thumb': value,
+      if (instance.associatedRecords
+              ?.map(const RepoStrongRefConverter().toJson)
+              .toList()
+          case final value?)
+        'associatedRecords': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

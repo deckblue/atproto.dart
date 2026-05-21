@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,285 +9,227 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+UnspeccedGetSuggestedUsersForExploreInput
+    _$UnspeccedGetSuggestedUsersForExploreInputFromJson(
+        Map<String, dynamic> json) {
+  return _UnspeccedGetSuggestedUsersForExploreInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$UnspeccedGetSuggestedUsersForExploreInput {
-
-/// Category of users to get suggestions for.
- String? get category; int get limit; Map<String, dynamic>? get $unknown;
-/// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UnspeccedGetSuggestedUsersForExploreInputCopyWith<UnspeccedGetSuggestedUsersForExploreInput> get copyWith => _$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl<UnspeccedGetSuggestedUsersForExploreInput>(this as UnspeccedGetSuggestedUsersForExploreInput, _$identity);
+  /// Category of users to get suggestions for.
+  String? get category => throw _privateConstructorUsedError;
+  int get limit => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this UnspeccedGetSuggestedUsersForExploreInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnspeccedGetSuggestedUsersForExploreInput&&(identical(other.category, category) || other.category == category)&&(identical(other.limit, limit) || other.limit == limit)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,category,limit,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'UnspeccedGetSuggestedUsersForExploreInput(category: $category, limit: $limit, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UnspeccedGetSuggestedUsersForExploreInputCopyWith<
+          UnspeccedGetSuggestedUsersForExploreInput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UnspeccedGetSuggestedUsersForExploreInputCopyWith<$Res>  {
-  factory $UnspeccedGetSuggestedUsersForExploreInputCopyWith(UnspeccedGetSuggestedUsersForExploreInput value, $Res Function(UnspeccedGetSuggestedUsersForExploreInput) _then) = _$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl;
-@useResult
-$Res call({
- String? category, int limit, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $UnspeccedGetSuggestedUsersForExploreInputCopyWith<$Res> {
+  factory $UnspeccedGetSuggestedUsersForExploreInputCopyWith(
+          UnspeccedGetSuggestedUsersForExploreInput value,
+          $Res Function(UnspeccedGetSuggestedUsersForExploreInput) then) =
+      _$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl<$Res,
+          UnspeccedGetSuggestedUsersForExploreInput>;
+  @useResult
+  $Res call({String? category, int limit, Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl<$Res>
+class _$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl<$Res,
+        $Val extends UnspeccedGetSuggestedUsersForExploreInput>
     implements $UnspeccedGetSuggestedUsersForExploreInputCopyWith<$Res> {
-  _$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl(this._self, this._then);
+  _$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl(
+      this._value, this._then);
 
-  final UnspeccedGetSuggestedUsersForExploreInput _self;
-  final $Res Function(UnspeccedGetSuggestedUsersForExploreInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? category = freezed,Object? limit = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = freezed,
+    Object? limit = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWith<$Res>
+    implements $UnspeccedGetSuggestedUsersForExploreInputCopyWith<$Res> {
+  factory _$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWith(
+          _$UnspeccedGetSuggestedUsersForExploreInputImpl value,
+          $Res Function(_$UnspeccedGetSuggestedUsersForExploreInputImpl) then) =
+      __$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? category, int limit, Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWithImpl<$Res>
+    extends _$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl<$Res,
+        _$UnspeccedGetSuggestedUsersForExploreInputImpl>
+    implements _$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWith<$Res> {
+  __$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWithImpl(
+      _$UnspeccedGetSuggestedUsersForExploreInputImpl _value,
+      $Res Function(_$UnspeccedGetSuggestedUsersForExploreInputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [UnspeccedGetSuggestedUsersForExploreInput].
-extension UnspeccedGetSuggestedUsersForExploreInputPatterns on UnspeccedGetSuggestedUsersForExploreInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UnspeccedGetSuggestedUsersForExploreInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForExploreInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UnspeccedGetSuggestedUsersForExploreInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForExploreInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UnspeccedGetSuggestedUsersForExploreInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForExploreInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? category,  int limit,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForExploreInput() when $default != null:
-return $default(_that.category,_that.limit,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? category,  int limit,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForExploreInput():
-return $default(_that.category,_that.limit,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? category,  int limit,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _UnspeccedGetSuggestedUsersForExploreInput() when $default != null:
-return $default(_that.category,_that.limit,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = freezed,
+    Object? limit = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$UnspeccedGetSuggestedUsersForExploreInputImpl(
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _UnspeccedGetSuggestedUsersForExploreInput implements UnspeccedGetSuggestedUsersForExploreInput {
-  const _UnspeccedGetSuggestedUsersForExploreInput({this.category, this.limit = 25, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _UnspeccedGetSuggestedUsersForExploreInput.fromJson(Map<String, dynamic> json) => _$UnspeccedGetSuggestedUsersForExploreInputFromJson(json);
+class _$UnspeccedGetSuggestedUsersForExploreInputImpl
+    implements _UnspeccedGetSuggestedUsersForExploreInput {
+  const _$UnspeccedGetSuggestedUsersForExploreInputImpl(
+      {this.category, this.limit = 25, final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// Category of users to get suggestions for.
-@override final  String? category;
-@override@JsonKey() final  int limit;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$UnspeccedGetSuggestedUsersForExploreInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$UnspeccedGetSuggestedUsersForExploreInputImplFromJson(json);
+
+  /// Category of users to get suggestions for.
+  @override
+  final String? category;
+  @override
+  @JsonKey()
+  final int limit;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'UnspeccedGetSuggestedUsersForExploreInput(category: $category, limit: $limit, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnspeccedGetSuggestedUsersForExploreInputImpl &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, category, limit,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWith<
+          _$UnspeccedGetSuggestedUsersForExploreInputImpl>
+      get copyWith =>
+          __$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWithImpl<
+                  _$UnspeccedGetSuggestedUsersForExploreInputImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnspeccedGetSuggestedUsersForExploreInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _UnspeccedGetSuggestedUsersForExploreInput
+    implements UnspeccedGetSuggestedUsersForExploreInput {
+  const factory _UnspeccedGetSuggestedUsersForExploreInput(
+          {final String? category,
+          final int limit,
+          final Map<String, dynamic>? $unknown}) =
+      _$UnspeccedGetSuggestedUsersForExploreInputImpl;
 
-/// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$UnspeccedGetSuggestedUsersForExploreInputCopyWith<_UnspeccedGetSuggestedUsersForExploreInput> get copyWith => __$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl<_UnspeccedGetSuggestedUsersForExploreInput>(this, _$identity);
+  factory _UnspeccedGetSuggestedUsersForExploreInput.fromJson(
+          Map<String, dynamic> json) =
+      _$UnspeccedGetSuggestedUsersForExploreInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$UnspeccedGetSuggestedUsersForExploreInputToJson(this, );
+  /// Category of users to get suggestions for.
+  @override
+  String? get category;
+  @override
+  int get limit;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnspeccedGetSuggestedUsersForExploreInputImplCopyWith<
+          _$UnspeccedGetSuggestedUsersForExploreInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnspeccedGetSuggestedUsersForExploreInput&&(identical(other.category, category) || other.category == category)&&(identical(other.limit, limit) || other.limit == limit)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,category,limit,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'UnspeccedGetSuggestedUsersForExploreInput(category: $category, limit: $limit, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$UnspeccedGetSuggestedUsersForExploreInputCopyWith<$Res> implements $UnspeccedGetSuggestedUsersForExploreInputCopyWith<$Res> {
-  factory _$UnspeccedGetSuggestedUsersForExploreInputCopyWith(_UnspeccedGetSuggestedUsersForExploreInput value, $Res Function(_UnspeccedGetSuggestedUsersForExploreInput) _then) = __$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? category, int limit, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl<$Res>
-    implements _$UnspeccedGetSuggestedUsersForExploreInputCopyWith<$Res> {
-  __$UnspeccedGetSuggestedUsersForExploreInputCopyWithImpl(this._self, this._then);
-
-  final _UnspeccedGetSuggestedUsersForExploreInput _self;
-  final $Res Function(_UnspeccedGetSuggestedUsersForExploreInput) _then;
-
-/// Create a copy of UnspeccedGetSuggestedUsersForExploreInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? category = freezed,Object? limit = null,Object? $unknown = freezed,}) {
-  return _then(_UnspeccedGetSuggestedUsersForExploreInput(
-category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
-as String?,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on
