@@ -22,6 +22,7 @@ import 'package:atproto_core/internals.dart' show protected;
 // Project imports:
 import '../../../../ids.g.dart' as ids;
 import '../../../../nsids.g.dart' as ns;
+import 'actor/declaration/main_allow_group_invites.dart';
 import 'actor/declaration/main_allow_incoming.dart';
 
 import 'package:atproto/com_atproto_services.dart'
@@ -66,6 +67,8 @@ base class ActorService {
 
   ActorService(this.ctx) : _declaration = ActorDeclarationRecordAccessor(ctx);
 
+  /// A declaration of a Bluesky chat account.
+  ActorDeclarationRecordAccessor get declaration => _declaration;
   Future<XRPCResponse<EmptyData>> deleteAccount({
     String? $service,
     Map<String, String>? $headers,
@@ -84,9 +87,6 @@ base class ActorService {
     $headers: $headers,
     $unknown: $unknown,
   );
-
-  /// A declaration of a Bluesky chat account.
-  ActorDeclarationRecordAccessor get declaration => _declaration;
 }
 
 final class ActorDeclarationRecordAccessor {
@@ -130,6 +130,7 @@ final class ActorDeclarationRecordAccessor {
 
   Future<XRPCResponse<RepoCreateRecordOutput>> create({
     required ActorDeclarationAllowIncoming allowIncoming,
+    ActorDeclarationAllowGroupInvites? allowGroupInvites,
     String rkey = 'self',
     bool? validate,
     String? swapCommit,
@@ -140,7 +141,12 @@ final class ActorDeclarationRecordAccessor {
     collection: ids.chatBskyActorDeclaration,
     rkey: rkey,
     validate: validate,
-    record: {...?$unknown, 'allowIncoming': allowIncoming.toJson()},
+    record: {
+      ...?$unknown,
+      'allowIncoming': allowIncoming.toJson(),
+      if (allowGroupInvites != null)
+        'allowGroupInvites': allowGroupInvites.toJson(),
+    },
     swapCommit: swapCommit,
     $ctx: ctx,
     $headers: $headers,
@@ -148,6 +154,7 @@ final class ActorDeclarationRecordAccessor {
 
   Future<XRPCResponse<RepoPutRecordOutput>> put({
     required ActorDeclarationAllowIncoming allowIncoming,
+    ActorDeclarationAllowGroupInvites? allowGroupInvites,
     String rkey = 'self',
     bool? validate,
     String? swapRecord,
@@ -159,7 +166,12 @@ final class ActorDeclarationRecordAccessor {
     collection: ids.chatBskyActorDeclaration,
     rkey: rkey,
     validate: validate,
-    record: {...?$unknown, 'allowIncoming': allowIncoming.toJson()},
+    record: {
+      ...?$unknown,
+      'allowIncoming': allowIncoming.toJson(),
+      if (allowGroupInvites != null)
+        'allowGroupInvites': allowGroupInvites.toJson(),
+    },
     swapRecord: swapRecord,
     swapCommit: swapCommit,
     $ctx: ctx,

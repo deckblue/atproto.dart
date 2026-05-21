@@ -21,6 +21,7 @@ import 'app/bsky/unspecced.dart';
 import 'app/bsky/video.dart';
 import 'chat/bsky/actor.dart';
 import 'chat/bsky/convo.dart';
+import 'chat/bsky/group.dart';
 import 'chat/bsky/moderation.dart';
 import 'com/atproto/admin.dart';
 import 'com/atproto/identity.dart';
@@ -34,6 +35,8 @@ import 'com/atproto/temp.dart';
 import 'tools/ozone/communication.dart';
 import 'tools/ozone/hosting.dart';
 import 'tools/ozone/moderation.dart';
+import 'tools/ozone/queue.dart';
+import 'tools/ozone/report.dart';
 import 'tools/ozone/safelink.dart';
 import 'tools/ozone/server.dart';
 import 'tools/ozone/set.dart';
@@ -47,37 +50,40 @@ import 'tools/ozone/verification.dart';
 // **************************************************************************
 
 final lexCommands = [
-  ComAtprotoLexiconCommand(),
-  ComAtprotoRepoCommand(),
-  ComAtprotoServerCommand(),
-  ComAtprotoAdminCommand(),
-  ComAtprotoTempCommand(),
-  ComAtprotoIdentityCommand(),
-  ComAtprotoLabelCommand(),
-  ComAtprotoModerationCommand(),
-  ComAtprotoSyncCommand(),
-  AppBskyGraphCommand(),
-  AppBskyDraftCommand(),
-  AppBskyUnspeccedCommand(),
-  AppBskyContactCommand(),
-  AppBskyAgeassuranceCommand(),
-  AppBskyFeedCommand(),
   AppBskyActorCommand(),
-  AppBskyVideoCommand(),
-  AppBskyNotificationCommand(),
-  AppBskyLabelerCommand(),
+  AppBskyAgeassuranceCommand(),
   AppBskyBookmarkCommand(),
+  AppBskyContactCommand(),
+  AppBskyDraftCommand(),
+  AppBskyFeedCommand(),
+  AppBskyGraphCommand(),
+  AppBskyLabelerCommand(),
+  AppBskyNotificationCommand(),
+  AppBskyUnspeccedCommand(),
+  AppBskyVideoCommand(),
   ChatBskyActorCommand(),
   ChatBskyConvoCommand(),
+  ChatBskyGroupCommand(),
   ChatBskyModerationCommand(),
-  ToolsOzoneSafelinkCommand(),
-  ToolsOzoneSetCommand(),
-  ToolsOzoneSettingCommand(),
-  ToolsOzoneTeamCommand(),
-  ToolsOzoneServerCommand(),
+  ComAtprotoAdminCommand(),
+  ComAtprotoIdentityCommand(),
+  ComAtprotoLabelCommand(),
+  ComAtprotoLexiconCommand(),
+  ComAtprotoModerationCommand(),
+  ComAtprotoRepoCommand(),
+  ComAtprotoServerCommand(),
+  ComAtprotoSyncCommand(),
+  ComAtprotoTempCommand(),
   ToolsOzoneCommunicationCommand(),
   ToolsOzoneHostingCommand(),
-  ToolsOzoneVerificationCommand(),
   ToolsOzoneModerationCommand(),
+  ToolsOzoneQueueCommand(),
+  ToolsOzoneReportCommand(),
+  ToolsOzoneSafelinkCommand(),
+  ToolsOzoneServerCommand(),
+  ToolsOzoneSetCommand(),
+  ToolsOzoneSettingCommand(),
   ToolsOzoneSignatureCommand(),
+  ToolsOzoneTeamCommand(),
+  ToolsOzoneVerificationCommand(),
 ];
