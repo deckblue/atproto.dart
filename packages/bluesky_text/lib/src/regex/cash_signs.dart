@@ -4,4 +4,4 @@
 
 /// Matches the cashtag prefix character. The dollar sign `$` is escaped
 /// to avoid being treated as Dart string interpolation.
-const cashSigns = r'[\$]';
+const cashSigns = r'[$]';

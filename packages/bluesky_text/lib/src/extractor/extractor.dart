@@ -327,7 +327,7 @@ final class _CashtagsExtractor implements Extractor {
     final ExtractorConfig? config,
   ]) {
     if (text.isEmpty) return const [];
-    if (!text.value.contains(r'\$')) return const [];
+    if (!text.value.contains('\$')) return const [];
 
     final entities = <Entity>[];
 
@@ -338,7 +338,7 @@ final class _CashtagsExtractor implements Extractor {
       //* Unlike hashtags (`##tag`), Bluesky's richtext lexicon does not
       //* define a notion of "double cash tags", so reject candidates that
       //* are immediately preceded by another `$` character.
-      if (match.cashBoundary == r'\$') continue;
+      if (match.cashBoundary == '\$') continue;
 
       final cashtag = '${match.cashMark}${match.symbol}';
       if (cashtag.length > tagMaxLength) continue;
