@@ -23,7 +23,7 @@ import 'hashtag_alpha_numeric.dart';
 /// 5. `$codePoint`: Matches any valid Unicode code point.
 /// 6. Unicode space characters: Various space characters including
 ///    ideographic space (U+3000) and other Unicode whitespace characters.
-const cashtagBoundary = r'(?:^|\uFE0E|\uFE0F|$|'
+const cashtagBoundary = r'(?:^|\uFE0E|\uFE0F|\$|'
     r'[ \u00A0\u3000]|'
     '(?!'
     '$hashtagAlphaNumeric|&)'
