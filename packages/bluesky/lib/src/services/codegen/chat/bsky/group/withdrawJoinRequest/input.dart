@@ -26,7 +26,6 @@ abstract class GroupWithdrawJoinRequestInput
   @JsonSerializable(includeIfNull: false)
   const factory GroupWithdrawJoinRequestInput({
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupWithdrawJoinRequestInput;
 

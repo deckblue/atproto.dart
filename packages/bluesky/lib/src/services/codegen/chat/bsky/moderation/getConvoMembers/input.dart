@@ -28,7 +28,6 @@ abstract class ModerationGetConvoMembersInput
     required String convoId,
     @Default(50) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetConvoMembersInput;
 
@@ -42,9 +41,8 @@ extension ModerationGetConvoMembersInputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class ModerationGetConvoMembersInputConverter
-    extends
-        JsonConverter<ModerationGetConvoMembersInput, Map<String, dynamic>> {
+final class ModerationGetConvoMembersInputConverter extends JsonConverter<
+    ModerationGetConvoMembersInput, Map<String, dynamic>> {
   const ModerationGetConvoMembersInputConverter();
 
   @override

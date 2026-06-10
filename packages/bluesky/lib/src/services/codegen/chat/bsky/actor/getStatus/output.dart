@@ -36,7 +36,6 @@ abstract class ActorGetStatusOutput with _$ActorGetStatusOutput {
 
     /// The maximum number of members allowed in a group conversation.
     required int groupMemberLimit,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorGetStatusOutput;
 

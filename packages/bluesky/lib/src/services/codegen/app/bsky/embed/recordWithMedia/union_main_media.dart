@@ -15,6 +15,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../app/bsky/embed/external/main.dart';
 import '../../../../app/bsky/embed/images/main.dart';
 import '../../../../app/bsky/embed/video/main.dart';
+import '../../../../app/bsky/embed/gallery/main.dart';
 
 part 'union_main_media.freezed.dart';
 
@@ -29,6 +30,9 @@ sealed class UEmbedRecordWithMediaMedia with _$UEmbedRecordWithMediaMedia {
   const factory UEmbedRecordWithMediaMedia.embedImages({
     required EmbedImages data,
   }) = UEmbedRecordWithMediaMediaEmbedImages;
+  const factory UEmbedRecordWithMediaMedia.embedGallery({
+    required EmbedGallery data,
+  }) = UEmbedRecordWithMediaMediaEmbedGallery;
   const factory UEmbedRecordWithMediaMedia.embedVideo({
     required EmbedVideo data,
   }) = UEmbedRecordWithMediaMediaEmbedVideo;
@@ -48,6 +52,10 @@ extension UEmbedRecordWithMediaMediaExtension on UEmbedRecordWithMediaMedia {
   bool get isEmbedImages => isA<UEmbedRecordWithMediaMediaEmbedImages>(this);
   bool get isNotEmbedImages => !isEmbedImages;
   EmbedImages? get embedImages => isEmbedImages ? data as EmbedImages : null;
+  bool get isEmbedGallery => isA<UEmbedRecordWithMediaMediaEmbedGallery>(this);
+  bool get isNotEmbedGallery => !isEmbedGallery;
+  EmbedGallery? get embedGallery =>
+      isEmbedGallery ? data as EmbedGallery : null;
   bool get isEmbedVideo => isA<UEmbedRecordWithMediaMediaEmbedVideo>(this);
   bool get isNotEmbedVideo => !isEmbedVideo;
   EmbedVideo? get embedVideo => isEmbedVideo ? data as EmbedVideo : null;
@@ -74,6 +82,11 @@ final class UEmbedRecordWithMediaMediaConverter
           data: const EmbedImagesConverter().fromJson(json),
         );
       }
+      if (EmbedGallery.validate(json)) {
+        return UEmbedRecordWithMediaMedia.embedGallery(
+          data: const EmbedGalleryConverter().fromJson(json),
+        );
+      }
       if (EmbedVideo.validate(json)) {
         return UEmbedRecordWithMediaMedia.embedVideo(
           data: const EmbedVideoConverter().fromJson(json),
@@ -94,6 +107,7 @@ final class UEmbedRecordWithMediaMediaConverter
   @override
   Map<String, dynamic> toJson(UEmbedRecordWithMediaMedia object) => object.when(
         embedImages: (data) => const EmbedImagesConverter().toJson(data),
+        embedGallery: (data) => const EmbedGalleryConverter().toJson(data),
         embedVideo: (data) => const EmbedVideoConverter().toJson(data),
         embedExternal: (data) => const EmbedExternalConverter().toJson(data),
         unknown: (data) => data,

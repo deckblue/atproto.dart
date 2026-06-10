@@ -26,18 +26,17 @@ abstract class GroupUpdateJoinRequestsReadInput
   @JsonSerializable(includeIfNull: false)
   const factory GroupUpdateJoinRequestsReadInput({
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupUpdateJoinRequestsReadInput;
 
   factory GroupUpdateJoinRequestsReadInput.fromJson(
     Map<String, Object?> json,
-  ) => _$GroupUpdateJoinRequestsReadInputFromJson(json);
+  ) =>
+      _$GroupUpdateJoinRequestsReadInputFromJson(json);
 }
 
-final class GroupUpdateJoinRequestsReadInputConverter
-    extends
-        JsonConverter<GroupUpdateJoinRequestsReadInput, Map<String, dynamic>> {
+final class GroupUpdateJoinRequestsReadInputConverter extends JsonConverter<
+    GroupUpdateJoinRequestsReadInput, Map<String, dynamic>> {
   const GroupUpdateJoinRequestsReadInputConverter();
 
   @override

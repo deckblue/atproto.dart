@@ -36,7 +36,6 @@ abstract class LogWithdrawIncomingJoinRequest
 
     /// Prospective member who withdrew their join request.
     @ProfileViewBasicConverter() required ProfileViewBasic member,
-
     Map<String, dynamic>? $unknown,
   }) = _LogWithdrawIncomingJoinRequest;
 
@@ -50,9 +49,8 @@ abstract class LogWithdrawIncomingJoinRequest
   }
 }
 
-final class LogWithdrawIncomingJoinRequestConverter
-    extends
-        JsonConverter<LogWithdrawIncomingJoinRequest, Map<String, dynamic>> {
+final class LogWithdrawIncomingJoinRequestConverter extends JsonConverter<
+    LogWithdrawIncomingJoinRequest, Map<String, dynamic>> {
   const LogWithdrawIncomingJoinRequestConverter();
 
   @override

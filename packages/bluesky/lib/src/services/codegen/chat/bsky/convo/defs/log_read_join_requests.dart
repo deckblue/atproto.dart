@@ -28,7 +28,6 @@ abstract class LogReadJoinRequests with _$LogReadJoinRequests {
     @Default('chat.bsky.convo.defs#logReadJoinRequests') String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogReadJoinRequests;
 

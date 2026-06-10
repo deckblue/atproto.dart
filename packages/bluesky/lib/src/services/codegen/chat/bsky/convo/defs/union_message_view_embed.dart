@@ -81,10 +81,10 @@ final class UMessageViewEmbedConverter
 
   @override
   Map<String, dynamic> toJson(UMessageViewEmbed object) => object.when(
-    embedRecordView: (data) => const EmbedRecordViewConverter().toJson(data),
-    embedJoinLinkView: (data) =>
-        const EmbedJoinLinkViewConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        embedRecordView: (data) =>
+            const EmbedRecordViewConverter().toJson(data),
+        embedJoinLinkView: (data) =>
+            const EmbedJoinLinkViewConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

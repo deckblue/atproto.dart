@@ -20,6 +20,7 @@ mixin _$UEmbedRecordWithMediaMedia {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(Map<String, dynamic> data) unknown,
@@ -28,6 +29,7 @@ mixin _$UEmbedRecordWithMediaMedia {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(Map<String, dynamic> data)? unknown,
@@ -36,6 +38,7 @@ mixin _$UEmbedRecordWithMediaMedia {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(Map<String, dynamic> data)? unknown,
@@ -46,6 +49,8 @@ mixin _$UEmbedRecordWithMediaMedia {
   TResult map<TResult extends Object?>({
     required TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)
         embedImages,
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)
+        embedGallery,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)
         embedVideo,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)
@@ -56,6 +61,8 @@ mixin _$UEmbedRecordWithMediaMedia {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -65,6 +72,8 @@ mixin _$UEmbedRecordWithMediaMedia {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -185,6 +194,7 @@ class _$UEmbedRecordWithMediaMediaEmbedImagesImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(Map<String, dynamic> data) unknown,
@@ -196,6 +206,7 @@ class _$UEmbedRecordWithMediaMediaEmbedImagesImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(Map<String, dynamic> data)? unknown,
@@ -207,6 +218,7 @@ class _$UEmbedRecordWithMediaMediaEmbedImagesImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(Map<String, dynamic> data)? unknown,
@@ -223,6 +235,8 @@ class _$UEmbedRecordWithMediaMediaEmbedImagesImpl
   TResult map<TResult extends Object?>({
     required TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)
         embedImages,
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)
+        embedGallery,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)
         embedVideo,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)
@@ -236,6 +250,8 @@ class _$UEmbedRecordWithMediaMediaEmbedImagesImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -248,6 +264,8 @@ class _$UEmbedRecordWithMediaMediaEmbedImagesImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -276,6 +294,198 @@ abstract class UEmbedRecordWithMediaMediaEmbedImages
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UEmbedRecordWithMediaMediaEmbedImagesImplCopyWith<
           _$UEmbedRecordWithMediaMediaEmbedImagesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWith<$Res> {
+  factory _$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWith(
+          _$UEmbedRecordWithMediaMediaEmbedGalleryImpl value,
+          $Res Function(_$UEmbedRecordWithMediaMediaEmbedGalleryImpl) then) =
+      __$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({EmbedGallery data});
+
+  $EmbedGalleryCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWithImpl<$Res>
+    extends _$UEmbedRecordWithMediaMediaCopyWithImpl<$Res,
+        _$UEmbedRecordWithMediaMediaEmbedGalleryImpl>
+    implements _$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWith<$Res> {
+  __$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWithImpl(
+      _$UEmbedRecordWithMediaMediaEmbedGalleryImpl _value,
+      $Res Function(_$UEmbedRecordWithMediaMediaEmbedGalleryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UEmbedRecordWithMediaMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UEmbedRecordWithMediaMediaEmbedGalleryImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as EmbedGallery,
+    ));
+  }
+
+  /// Create a copy of UEmbedRecordWithMediaMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EmbedGalleryCopyWith<$Res> get data {
+    return $EmbedGalleryCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UEmbedRecordWithMediaMediaEmbedGalleryImpl
+    extends UEmbedRecordWithMediaMediaEmbedGallery {
+  const _$UEmbedRecordWithMediaMediaEmbedGalleryImpl({required this.data})
+      : super._();
+
+  @override
+  final EmbedGallery data;
+
+  @override
+  String toString() {
+    return 'UEmbedRecordWithMediaMedia.embedGallery(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UEmbedRecordWithMediaMediaEmbedGalleryImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UEmbedRecordWithMediaMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWith<
+          _$UEmbedRecordWithMediaMediaEmbedGalleryImpl>
+      get copyWith =>
+          __$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWithImpl<
+              _$UEmbedRecordWithMediaMediaEmbedGalleryImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
+    required TResult Function(EmbedVideo data) embedVideo,
+    required TResult Function(EmbedExternal data) embedExternal,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return embedGallery(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
+    TResult? Function(EmbedVideo data)? embedVideo,
+    TResult? Function(EmbedExternal data)? embedExternal,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return embedGallery?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
+    TResult Function(EmbedVideo data)? embedVideo,
+    TResult Function(EmbedExternal data)? embedExternal,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (embedGallery != null) {
+      return embedGallery(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)
+        embedImages,
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)
+        embedGallery,
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)
+        embedVideo,
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)
+        embedExternal,
+    required TResult Function(UEmbedRecordWithMediaMediaUnknown value) unknown,
+  }) {
+    return embedGallery(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
+        embedExternal,
+    TResult? Function(UEmbedRecordWithMediaMediaUnknown value)? unknown,
+  }) {
+    return embedGallery?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
+    TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
+    TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
+        embedExternal,
+    TResult Function(UEmbedRecordWithMediaMediaUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (embedGallery != null) {
+      return embedGallery(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UEmbedRecordWithMediaMediaEmbedGallery
+    extends UEmbedRecordWithMediaMedia {
+  const factory UEmbedRecordWithMediaMediaEmbedGallery(
+          {required final EmbedGallery data}) =
+      _$UEmbedRecordWithMediaMediaEmbedGalleryImpl;
+  const UEmbedRecordWithMediaMediaEmbedGallery._() : super._();
+
+  @override
+  EmbedGallery get data;
+
+  /// Create a copy of UEmbedRecordWithMediaMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UEmbedRecordWithMediaMediaEmbedGalleryImplCopyWith<
+          _$UEmbedRecordWithMediaMediaEmbedGalleryImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -367,6 +577,7 @@ class _$UEmbedRecordWithMediaMediaEmbedVideoImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(Map<String, dynamic> data) unknown,
@@ -378,6 +589,7 @@ class _$UEmbedRecordWithMediaMediaEmbedVideoImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(Map<String, dynamic> data)? unknown,
@@ -389,6 +601,7 @@ class _$UEmbedRecordWithMediaMediaEmbedVideoImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(Map<String, dynamic> data)? unknown,
@@ -405,6 +618,8 @@ class _$UEmbedRecordWithMediaMediaEmbedVideoImpl
   TResult map<TResult extends Object?>({
     required TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)
         embedImages,
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)
+        embedGallery,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)
         embedVideo,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)
@@ -418,6 +633,8 @@ class _$UEmbedRecordWithMediaMediaEmbedVideoImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -430,6 +647,8 @@ class _$UEmbedRecordWithMediaMediaEmbedVideoImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -550,6 +769,7 @@ class _$UEmbedRecordWithMediaMediaEmbedExternalImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(Map<String, dynamic> data) unknown,
@@ -561,6 +781,7 @@ class _$UEmbedRecordWithMediaMediaEmbedExternalImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(Map<String, dynamic> data)? unknown,
@@ -572,6 +793,7 @@ class _$UEmbedRecordWithMediaMediaEmbedExternalImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(Map<String, dynamic> data)? unknown,
@@ -588,6 +810,8 @@ class _$UEmbedRecordWithMediaMediaEmbedExternalImpl
   TResult map<TResult extends Object?>({
     required TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)
         embedImages,
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)
+        embedGallery,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)
         embedVideo,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)
@@ -601,6 +825,8 @@ class _$UEmbedRecordWithMediaMediaEmbedExternalImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -613,6 +839,8 @@ class _$UEmbedRecordWithMediaMediaEmbedExternalImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -728,6 +956,7 @@ class _$UEmbedRecordWithMediaMediaUnknownImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(Map<String, dynamic> data) unknown,
@@ -739,6 +968,7 @@ class _$UEmbedRecordWithMediaMediaUnknownImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(Map<String, dynamic> data)? unknown,
@@ -750,6 +980,7 @@ class _$UEmbedRecordWithMediaMediaUnknownImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(Map<String, dynamic> data)? unknown,
@@ -766,6 +997,8 @@ class _$UEmbedRecordWithMediaMediaUnknownImpl
   TResult map<TResult extends Object?>({
     required TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)
         embedImages,
+    required TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)
+        embedGallery,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)
         embedVideo,
     required TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)
@@ -779,6 +1012,8 @@ class _$UEmbedRecordWithMediaMediaUnknownImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult? Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult? Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,
@@ -791,6 +1026,8 @@ class _$UEmbedRecordWithMediaMediaUnknownImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UEmbedRecordWithMediaMediaEmbedImages value)? embedImages,
+    TResult Function(UEmbedRecordWithMediaMediaEmbedGallery value)?
+        embedGallery,
     TResult Function(UEmbedRecordWithMediaMediaEmbedVideo value)? embedVideo,
     TResult Function(UEmbedRecordWithMediaMediaEmbedExternal value)?
         embedExternal,

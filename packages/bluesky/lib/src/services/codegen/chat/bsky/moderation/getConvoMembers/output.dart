@@ -30,7 +30,6 @@ abstract class ModerationGetConvoMembersOutput
   const factory ModerationGetConvoMembersOutput({
     String? cursor,
     @ProfileViewBasicConverter() required List<ProfileViewBasic> members,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetConvoMembersOutput;
 
@@ -44,9 +43,8 @@ extension ModerationGetConvoMembersOutputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class ModerationGetConvoMembersOutputConverter
-    extends
-        JsonConverter<ModerationGetConvoMembersOutput, Map<String, dynamic>> {
+final class ModerationGetConvoMembersOutputConverter extends JsonConverter<
+    ModerationGetConvoMembersOutput, Map<String, dynamic>> {
   const ModerationGetConvoMembersOutputConverter();
 
   @override

@@ -28,7 +28,6 @@ abstract class EmbedJoinLink with _$EmbedJoinLink {
 
     /// The join link code.
     required String code,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedJoinLink;
 

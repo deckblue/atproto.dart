@@ -26,7 +26,6 @@ abstract class DirectConvo with _$DirectConvo {
   @JsonSerializable(includeIfNull: false)
   const factory DirectConvo({
     @Default('chat.bsky.moderation.defs#directConvo') String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _DirectConvo;
 

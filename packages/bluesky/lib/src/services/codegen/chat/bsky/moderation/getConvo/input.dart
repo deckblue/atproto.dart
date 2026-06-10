@@ -25,7 +25,6 @@ abstract class ModerationGetConvoInput with _$ModerationGetConvoInput {
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetConvoInput({
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetConvoInput;
 

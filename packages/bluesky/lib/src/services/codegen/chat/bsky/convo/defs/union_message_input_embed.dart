@@ -79,9 +79,8 @@ final class UMessageInputEmbedConverter
 
   @override
   Map<String, dynamic> toJson(UMessageInputEmbed object) => object.when(
-    embedRecord: (data) => const EmbedRecordConverter().toJson(data),
-    embedJoinLink: (data) => const EmbedJoinLinkConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        embedRecord: (data) => const EmbedRecordConverter().toJson(data),
+        embedJoinLink: (data) => const EmbedJoinLinkConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

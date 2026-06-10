@@ -11,50 +11,47 @@
 import 'package:atproto_core/internals.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'join_link_viewer_state.freezed.dart';
-part 'join_link_viewer_state.g.dart';
+// Project imports:
+import './image.dart';
+
+part 'main.freezed.dart';
+part 'main.g.dart';
 
 // **************************************************************************
 // LexGenerator
 // **************************************************************************
 
 @freezed
-abstract class JoinLinkViewerState with _$JoinLinkViewerState {
-  static const knownProps = <String>['requestedAt'];
+abstract class EmbedGallery with _$EmbedGallery {
+  static const knownProps = <String>['items'];
 
   @JsonSerializable(includeIfNull: false)
-  const factory JoinLinkViewerState({
-    @Default('chat.bsky.group.defs#joinLinkViewerState') String $type,
-    DateTime? requestedAt,
+  const factory EmbedGallery({
+    @Default('app.bsky.embed.gallery') String $type,
+    @EmbedGalleryImageConverter() required List<EmbedGalleryImage> items,
     Map<String, dynamic>? $unknown,
-  }) = _JoinLinkViewerState;
+  }) = _EmbedGallery;
 
-  factory JoinLinkViewerState.fromJson(Map<String, Object?> json) =>
-      _$JoinLinkViewerStateFromJson(json);
+  factory EmbedGallery.fromJson(Map<String, Object?> json) =>
+      _$EmbedGalleryFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'chat.bsky.group.defs#joinLinkViewerState';
+    return object['\$type'] == 'app.bsky.embed.gallery' ||
+        object['\$type'] == 'app.bsky.embed.gallery#main';
   }
 }
 
-extension JoinLinkViewerStateExtension on JoinLinkViewerState {
-  bool get hasRequestedAt => requestedAt != null;
-  bool get hasNotRequestedAt => !hasRequestedAt;
-}
-
-final class JoinLinkViewerStateConverter
-    extends JsonConverter<JoinLinkViewerState, Map<String, dynamic>> {
-  const JoinLinkViewerStateConverter();
+final class EmbedGalleryConverter
+    extends JsonConverter<EmbedGallery, Map<String, dynamic>> {
+  const EmbedGalleryConverter();
 
   @override
-  JoinLinkViewerState fromJson(Map<String, dynamic> json) {
-    return JoinLinkViewerState.fromJson(
-      translate(json, JoinLinkViewerState.knownProps),
-    );
+  EmbedGallery fromJson(Map<String, dynamic> json) {
+    return EmbedGallery.fromJson(translate(json, EmbedGallery.knownProps));
   }
 
   @override
-  Map<String, dynamic> toJson(JoinLinkViewerState object) =>
+  Map<String, dynamic> toJson(EmbedGallery object) =>
       untranslate(object.toJson());
 }

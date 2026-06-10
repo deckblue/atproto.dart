@@ -26,7 +26,6 @@ abstract class GroupGetJoinLinkPreviewsInput
   @JsonSerializable(includeIfNull: false)
   const factory GroupGetJoinLinkPreviewsInput({
     required List<String> codes,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupGetJoinLinkPreviewsInput;
 

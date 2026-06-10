@@ -29,7 +29,6 @@ abstract class EmbedExternalColorRGB with _$EmbedExternalColorRGB {
     required int r,
     required int g,
     required int b,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedExternalColorRGB;
 

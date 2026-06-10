@@ -17,6 +17,7 @@ import '../../../../app/bsky/embed/images/main.dart';
 import '../../../../app/bsky/embed/record/main.dart';
 import '../../../../app/bsky/embed/recordWithMedia/main.dart';
 import '../../../../app/bsky/embed/video/main.dart';
+import '../../../../app/bsky/embed/gallery/main.dart';
 
 part 'union_main_embed.freezed.dart';
 
@@ -30,6 +31,8 @@ sealed class UFeedPostEmbed with _$UFeedPostEmbed {
 
   const factory UFeedPostEmbed.embedImages({required EmbedImages data}) =
       UFeedPostEmbedEmbedImages;
+  const factory UFeedPostEmbed.embedGallery({required EmbedGallery data}) =
+      UFeedPostEmbedEmbedGallery;
   const factory UFeedPostEmbed.embedVideo({required EmbedVideo data}) =
       UFeedPostEmbedEmbedVideo;
   const factory UFeedPostEmbed.embedExternal({required EmbedExternal data}) =
@@ -50,6 +53,10 @@ extension UFeedPostEmbedExtension on UFeedPostEmbed {
   bool get isEmbedImages => isA<UFeedPostEmbedEmbedImages>(this);
   bool get isNotEmbedImages => !isEmbedImages;
   EmbedImages? get embedImages => isEmbedImages ? data as EmbedImages : null;
+  bool get isEmbedGallery => isA<UFeedPostEmbedEmbedGallery>(this);
+  bool get isNotEmbedGallery => !isEmbedGallery;
+  EmbedGallery? get embedGallery =>
+      isEmbedGallery ? data as EmbedGallery : null;
   bool get isEmbedVideo => isA<UFeedPostEmbedEmbedVideo>(this);
   bool get isNotEmbedVideo => !isEmbedVideo;
   EmbedVideo? get embedVideo => isEmbedVideo ? data as EmbedVideo : null;
@@ -83,6 +90,11 @@ final class UFeedPostEmbedConverter
           data: const EmbedImagesConverter().fromJson(json),
         );
       }
+      if (EmbedGallery.validate(json)) {
+        return UFeedPostEmbed.embedGallery(
+          data: const EmbedGalleryConverter().fromJson(json),
+        );
+      }
       if (EmbedVideo.validate(json)) {
         return UFeedPostEmbed.embedVideo(
           data: const EmbedVideoConverter().fromJson(json),
@@ -113,6 +125,7 @@ final class UFeedPostEmbedConverter
   @override
   Map<String, dynamic> toJson(UFeedPostEmbed object) => object.when(
         embedImages: (data) => const EmbedImagesConverter().toJson(data),
+        embedGallery: (data) => const EmbedGalleryConverter().toJson(data),
         embedVideo: (data) => const EmbedVideoConverter().toJson(data),
         embedExternal: (data) => const EmbedExternalConverter().toJson(data),
         embedRecord: (data) => const EmbedRecordConverter().toJson(data),

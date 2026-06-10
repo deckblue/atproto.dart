@@ -55,7 +55,6 @@ abstract class GroupConvo with _$GroupConvo {
 
     /// The display name of the group conversation.
     required String name,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupConvo;
 

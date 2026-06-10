@@ -46,7 +46,7 @@ final class GetEmbedExternalViewCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "url": argResults!["url"],
-    "uris": argResults!["uris"],
-  };
+        "url": argResults!["url"],
+        "uris": argResults!["uris"],
+      };
 }

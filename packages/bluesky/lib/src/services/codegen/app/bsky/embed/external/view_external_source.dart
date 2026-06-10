@@ -46,7 +46,6 @@ abstract class EmbedExternalViewExternalSource
     String? description,
     @EmbedExternalViewExternalSourceThemeConverter()
     EmbedExternalViewExternalSourceTheme? theme,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedExternalViewExternalSource;
 
@@ -69,9 +68,8 @@ extension EmbedExternalViewExternalSourceExtension
   bool get hasNotTheme => !hasTheme;
 }
 
-final class EmbedExternalViewExternalSourceConverter
-    extends
-        JsonConverter<EmbedExternalViewExternalSource, Map<String, dynamic>> {
+final class EmbedExternalViewExternalSourceConverter extends JsonConverter<
+    EmbedExternalViewExternalSource, Map<String, dynamic>> {
   const EmbedExternalViewExternalSourceConverter();
 
   @override

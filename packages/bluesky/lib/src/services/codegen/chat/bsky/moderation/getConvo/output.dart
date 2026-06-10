@@ -28,7 +28,6 @@ abstract class ModerationGetConvoOutput with _$ModerationGetConvoOutput {
   @JsonSerializable(includeIfNull: false)
   const factory ModerationGetConvoOutput({
     @ConvoViewConverter() required ConvoView convo,
-
     Map<String, dynamic>? $unknown,
   }) = _ModerationGetConvoOutput;
 

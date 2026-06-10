@@ -30,7 +30,6 @@ abstract class GroupGetJoinLinkPreviewsOutput
   const factory GroupGetJoinLinkPreviewsOutput({
     @JoinLinkPreviewViewConverter()
     required List<JoinLinkPreviewView> joinLinkPreviews,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupGetJoinLinkPreviewsOutput;
 
@@ -38,9 +37,8 @@ abstract class GroupGetJoinLinkPreviewsOutput
       _$GroupGetJoinLinkPreviewsOutputFromJson(json);
 }
 
-final class GroupGetJoinLinkPreviewsOutputConverter
-    extends
-        JsonConverter<GroupGetJoinLinkPreviewsOutput, Map<String, dynamic>> {
+final class GroupGetJoinLinkPreviewsOutputConverter extends JsonConverter<
+    GroupGetJoinLinkPreviewsOutput, Map<String, dynamic>> {
   const GroupGetJoinLinkPreviewsOutputConverter();
 
   @override

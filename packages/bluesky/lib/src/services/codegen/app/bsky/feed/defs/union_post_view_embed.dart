@@ -13,6 +13,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
 import '../../../../app/bsky/embed/external/view.dart';
+import '../../../../app/bsky/embed/gallery/view.dart';
 import '../../../../app/bsky/embed/images/view.dart';
 import '../../../../app/bsky/embed/record/view.dart';
 import '../../../../app/bsky/embed/recordWithMedia/view.dart';
@@ -31,6 +32,9 @@ sealed class UPostViewEmbed with _$UPostViewEmbed {
   const factory UPostViewEmbed.embedImagesView({
     required EmbedImagesView data,
   }) = UPostViewEmbedEmbedImagesView;
+  const factory UPostViewEmbed.embedGalleryView({
+    required EmbedGalleryView data,
+  }) = UPostViewEmbedEmbedGalleryView;
   const factory UPostViewEmbed.embedVideoView({required EmbedVideoView data}) =
       UPostViewEmbedEmbedVideoView;
   const factory UPostViewEmbed.embedExternalView({
@@ -54,6 +58,10 @@ extension UPostViewEmbedExtension on UPostViewEmbed {
   bool get isNotEmbedImagesView => !isEmbedImagesView;
   EmbedImagesView? get embedImagesView =>
       isEmbedImagesView ? data as EmbedImagesView : null;
+  bool get isEmbedGalleryView => isA<UPostViewEmbedEmbedGalleryView>(this);
+  bool get isNotEmbedGalleryView => !isEmbedGalleryView;
+  EmbedGalleryView? get embedGalleryView =>
+      isEmbedGalleryView ? data as EmbedGalleryView : null;
   bool get isEmbedVideoView => isA<UPostViewEmbedEmbedVideoView>(this);
   bool get isNotEmbedVideoView => !isEmbedVideoView;
   EmbedVideoView? get embedVideoView =>
@@ -89,6 +97,11 @@ final class UPostViewEmbedConverter
           data: const EmbedImagesViewConverter().fromJson(json),
         );
       }
+      if (EmbedGalleryView.validate(json)) {
+        return UPostViewEmbed.embedGalleryView(
+          data: const EmbedGalleryViewConverter().fromJson(json),
+        );
+      }
       if (EmbedVideoView.validate(json)) {
         return UPostViewEmbed.embedVideoView(
           data: const EmbedVideoViewConverter().fromJson(json),
@@ -118,6 +131,8 @@ final class UPostViewEmbedConverter
 
   @override
   Map<String, dynamic> toJson(UPostViewEmbed object) => object.when(
+        embedGalleryView: (data) =>
+            const EmbedGalleryViewConverter().toJson(data),
         embedImagesView: (data) =>
             const EmbedImagesViewConverter().toJson(data),
         embedVideoView: (data) => const EmbedVideoViewConverter().toJson(data),

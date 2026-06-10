@@ -32,7 +32,6 @@ abstract class ConvoView with _$ConvoView {
     required String id,
     required String rev,
     @UConvoViewKindConverter() UConvoViewKind? kind,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoView;
 

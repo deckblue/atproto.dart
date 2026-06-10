@@ -27,7 +27,6 @@ abstract class ConvoView with _$ConvoView {
     @Default('tools.ozone.moderation.defs#convoView') String $type,
     required String did,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoView;
 

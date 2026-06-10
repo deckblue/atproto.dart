@@ -21,24 +21,25 @@ import 'embed/getEmbedExternalView/output.dart';
 
 /// Resolve one or more AT-URIs into the data needed to render an enhanced external embed. Returns `associatedRefs` (strongRefs to embed into a post's external.associatedRefs), the raw `associatedRecords`, and a hydrated `view`. The response is empty (`{}`) when no records were resolvable, or when validation determined the resolved records don't actually back the requested URL; clients should fall back to their own link-card rendering in that case and skip writing strongRefs to the post.
 Future<XRPCResponse<EmbedGetEmbedExternalViewOutput>>
-appBskyEmbedGetEmbedExternalView({
+    appBskyEmbedGetEmbedExternalView({
   required String url,
   required List<AtUri> uris,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyEmbedGetEmbedExternalView,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    'url': url,
-    'uris': uris.map((e) => e.toString()).toList(),
-  },
-  to: const EmbedGetEmbedExternalViewOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.appBskyEmbedGetEmbedExternalView,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            'url': url,
+            'uris': uris.map((e) => e.toString()).toList(),
+          },
+          to: const EmbedGetEmbedExternalViewOutputConverter().fromJson,
+        );
 
 /// `app.bsky.embed.*`
 base class EmbedService {
@@ -54,12 +55,13 @@ base class EmbedService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyEmbedGetEmbedExternalView(
-    url: url,
-    uris: uris,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyEmbedGetEmbedExternalView(
+        url: url,
+        uris: uris,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

@@ -30,7 +30,6 @@ abstract class LogWithdrawOutgoingJoinRequest
     String $type,
     required String rev,
     required String convoId,
-
     Map<String, dynamic>? $unknown,
   }) = _LogWithdrawOutgoingJoinRequest;
 
@@ -44,9 +43,8 @@ abstract class LogWithdrawOutgoingJoinRequest
   }
 }
 
-final class LogWithdrawOutgoingJoinRequestConverter
-    extends
-        JsonConverter<LogWithdrawOutgoingJoinRequest, Map<String, dynamic>> {
+final class LogWithdrawOutgoingJoinRequestConverter extends JsonConverter<
+    LogWithdrawOutgoingJoinRequest, Map<String, dynamic>> {
   const LogWithdrawOutgoingJoinRequestConverter();
 
   @override

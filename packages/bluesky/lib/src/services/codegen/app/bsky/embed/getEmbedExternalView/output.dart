@@ -37,7 +37,6 @@ abstract class EmbedGetEmbedExternalViewOutput
     @EmbedExternalViewConverter() EmbedExternalView? view,
     @RepoStrongRefConverter() List<RepoStrongRef>? associatedRefs,
     List<Map<String, dynamic>>? associatedRecords,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedGetEmbedExternalViewOutput;
 
@@ -51,9 +50,8 @@ extension EmbedGetEmbedExternalViewOutputExtension
   bool get hasNotView => !hasView;
 }
 
-final class EmbedGetEmbedExternalViewOutputConverter
-    extends
-        JsonConverter<EmbedGetEmbedExternalViewOutput, Map<String, dynamic>> {
+final class EmbedGetEmbedExternalViewOutputConverter extends JsonConverter<
+    EmbedGetEmbedExternalViewOutput, Map<String, dynamic>> {
   const EmbedGetEmbedExternalViewOutputConverter();
 
   @override

@@ -42,7 +42,6 @@ abstract class JoinRequestConvoView with _$JoinRequestConvoView {
     required int memberCount,
     required int memberLimit,
     required DateTime requestedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _JoinRequestConvoView;
 

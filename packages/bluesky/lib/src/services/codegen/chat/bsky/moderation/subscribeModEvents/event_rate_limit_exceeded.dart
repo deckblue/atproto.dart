@@ -40,7 +40,6 @@ abstract class EventRateLimitExceeded with _$EventRateLimitExceeded {
     /// The NSID of the endpoint that was rate limited.
     required String endpoint,
     required String rev,
-
     Map<String, dynamic>? $unknown,
   }) = _EventRateLimitExceeded;
 

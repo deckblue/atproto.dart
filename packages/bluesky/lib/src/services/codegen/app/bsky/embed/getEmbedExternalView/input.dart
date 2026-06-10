@@ -29,7 +29,6 @@ abstract class EmbedGetEmbedExternalViewInput
     /// The canonical web URL the embed represents (typically the URL the user pasted into the composer). Used as the returned view's `uri`. May be used for validation in the future.
     required String url,
     @AtUriConverter() required List<AtUri> uris,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedGetEmbedExternalViewInput;
 
@@ -37,9 +36,8 @@ abstract class EmbedGetEmbedExternalViewInput
       _$EmbedGetEmbedExternalViewInputFromJson(json);
 }
 
-final class EmbedGetEmbedExternalViewInputConverter
-    extends
-        JsonConverter<EmbedGetEmbedExternalViewInput, Map<String, dynamic>> {
+final class EmbedGetEmbedExternalViewInputConverter extends JsonConverter<
+    EmbedGetEmbedExternalViewInput, Map<String, dynamic>> {
   const EmbedGetEmbedExternalViewInputConverter();
 
   @override

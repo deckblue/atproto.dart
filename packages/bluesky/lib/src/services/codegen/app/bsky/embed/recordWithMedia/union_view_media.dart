@@ -14,6 +14,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 // Project imports:
 import '../../../../app/bsky/embed/external/view.dart';
 import '../../../../app/bsky/embed/images/view.dart';
+import '../../../../app/bsky/embed/gallery/view.dart';
 import '../../../../app/bsky/embed/video/view.dart';
 
 part 'union_view_media.freezed.dart';
@@ -30,6 +31,9 @@ sealed class UEmbedRecordWithMediaViewMedia
   const factory UEmbedRecordWithMediaViewMedia.embedImagesView({
     required EmbedImagesView data,
   }) = UEmbedRecordWithMediaViewMediaEmbedImagesView;
+  const factory UEmbedRecordWithMediaViewMedia.embedGalleryView({
+    required EmbedGalleryView data,
+  }) = UEmbedRecordWithMediaViewMediaEmbedGalleryView;
   const factory UEmbedRecordWithMediaViewMedia.embedVideoView({
     required EmbedVideoView data,
   }) = UEmbedRecordWithMediaViewMediaEmbedVideoView;
@@ -52,6 +56,11 @@ extension UEmbedRecordWithMediaViewMediaExtension
   bool get isNotEmbedImagesView => !isEmbedImagesView;
   EmbedImagesView? get embedImagesView =>
       isEmbedImagesView ? data as EmbedImagesView : null;
+  bool get isEmbedGalleryView =>
+      isA<UEmbedRecordWithMediaViewMediaEmbedGalleryView>(this);
+  bool get isNotEmbedGalleryView => !isEmbedGalleryView;
+  EmbedGalleryView? get embedGalleryView =>
+      isEmbedGalleryView ? data as EmbedGalleryView : null;
   bool get isEmbedVideoView =>
       isA<UEmbedRecordWithMediaViewMediaEmbedVideoView>(this);
   bool get isNotEmbedVideoView => !isEmbedVideoView;
@@ -81,6 +90,11 @@ final class UEmbedRecordWithMediaViewMediaConverter
           data: const EmbedImagesViewConverter().fromJson(json),
         );
       }
+      if (EmbedGalleryView.validate(json)) {
+        return UEmbedRecordWithMediaViewMedia.embedGalleryView(
+          data: const EmbedGalleryViewConverter().fromJson(json),
+        );
+      }
       if (EmbedVideoView.validate(json)) {
         return UEmbedRecordWithMediaViewMedia.embedVideoView(
           data: const EmbedVideoViewConverter().fromJson(json),
@@ -103,6 +117,8 @@ final class UEmbedRecordWithMediaViewMediaConverter
       object.when(
         embedImagesView: (data) =>
             const EmbedImagesViewConverter().toJson(data),
+        embedGalleryView: (data) =>
+            const EmbedGalleryViewConverter().toJson(data),
         embedVideoView: (data) => const EmbedVideoViewConverter().toJson(data),
         embedExternalView: (data) =>
             const EmbedExternalViewConverter().toJson(data),

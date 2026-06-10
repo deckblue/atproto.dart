@@ -20,6 +20,7 @@ mixin _$UFeedPostEmbed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(EmbedRecord data) embedRecord,
@@ -30,6 +31,7 @@ mixin _$UFeedPostEmbed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(EmbedRecord data)? embedRecord,
@@ -40,6 +42,7 @@ mixin _$UFeedPostEmbed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(EmbedRecord data)? embedRecord,
@@ -51,6 +54,7 @@ mixin _$UFeedPostEmbed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UFeedPostEmbedEmbedImages value) embedImages,
+    required TResult Function(UFeedPostEmbedEmbedGallery value) embedGallery,
     required TResult Function(UFeedPostEmbedEmbedVideo value) embedVideo,
     required TResult Function(UFeedPostEmbedEmbedExternal value) embedExternal,
     required TResult Function(UFeedPostEmbedEmbedRecord value) embedRecord,
@@ -62,6 +66,7 @@ mixin _$UFeedPostEmbed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult? Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult? Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult? Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult? Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -73,6 +78,7 @@ mixin _$UFeedPostEmbed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -189,6 +195,7 @@ class _$UFeedPostEmbedEmbedImagesImpl extends UFeedPostEmbedEmbedImages {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(EmbedRecord data) embedRecord,
@@ -202,6 +209,7 @@ class _$UFeedPostEmbedEmbedImagesImpl extends UFeedPostEmbedEmbedImages {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(EmbedRecord data)? embedRecord,
@@ -215,6 +223,7 @@ class _$UFeedPostEmbedEmbedImagesImpl extends UFeedPostEmbedEmbedImages {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(EmbedRecord data)? embedRecord,
@@ -232,6 +241,7 @@ class _$UFeedPostEmbedEmbedImagesImpl extends UFeedPostEmbedEmbedImages {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UFeedPostEmbedEmbedImages value) embedImages,
+    required TResult Function(UFeedPostEmbedEmbedGallery value) embedGallery,
     required TResult Function(UFeedPostEmbedEmbedVideo value) embedVideo,
     required TResult Function(UFeedPostEmbedEmbedExternal value) embedExternal,
     required TResult Function(UFeedPostEmbedEmbedRecord value) embedRecord,
@@ -246,6 +256,7 @@ class _$UFeedPostEmbedEmbedImagesImpl extends UFeedPostEmbedEmbedImages {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult? Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult? Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult? Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult? Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -260,6 +271,7 @@ class _$UFeedPostEmbedEmbedImagesImpl extends UFeedPostEmbedEmbedImages {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -287,6 +299,197 @@ abstract class UFeedPostEmbedEmbedImages extends UFeedPostEmbed {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UFeedPostEmbedEmbedImagesImplCopyWith<_$UFeedPostEmbedEmbedImagesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UFeedPostEmbedEmbedGalleryImplCopyWith<$Res> {
+  factory _$$UFeedPostEmbedEmbedGalleryImplCopyWith(
+          _$UFeedPostEmbedEmbedGalleryImpl value,
+          $Res Function(_$UFeedPostEmbedEmbedGalleryImpl) then) =
+      __$$UFeedPostEmbedEmbedGalleryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({EmbedGallery data});
+
+  $EmbedGalleryCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UFeedPostEmbedEmbedGalleryImplCopyWithImpl<$Res>
+    extends _$UFeedPostEmbedCopyWithImpl<$Res, _$UFeedPostEmbedEmbedGalleryImpl>
+    implements _$$UFeedPostEmbedEmbedGalleryImplCopyWith<$Res> {
+  __$$UFeedPostEmbedEmbedGalleryImplCopyWithImpl(
+      _$UFeedPostEmbedEmbedGalleryImpl _value,
+      $Res Function(_$UFeedPostEmbedEmbedGalleryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UFeedPostEmbed
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UFeedPostEmbedEmbedGalleryImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as EmbedGallery,
+    ));
+  }
+
+  /// Create a copy of UFeedPostEmbed
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EmbedGalleryCopyWith<$Res> get data {
+    return $EmbedGalleryCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UFeedPostEmbedEmbedGalleryImpl extends UFeedPostEmbedEmbedGallery {
+  const _$UFeedPostEmbedEmbedGalleryImpl({required this.data}) : super._();
+
+  @override
+  final EmbedGallery data;
+
+  @override
+  String toString() {
+    return 'UFeedPostEmbed.embedGallery(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UFeedPostEmbedEmbedGalleryImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UFeedPostEmbed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UFeedPostEmbedEmbedGalleryImplCopyWith<_$UFeedPostEmbedEmbedGalleryImpl>
+      get copyWith => __$$UFeedPostEmbedEmbedGalleryImplCopyWithImpl<
+          _$UFeedPostEmbedEmbedGalleryImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
+    required TResult Function(EmbedVideo data) embedVideo,
+    required TResult Function(EmbedExternal data) embedExternal,
+    required TResult Function(EmbedRecord data) embedRecord,
+    required TResult Function(EmbedRecordWithMedia data) embedRecordWithMedia,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return embedGallery(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
+    TResult? Function(EmbedVideo data)? embedVideo,
+    TResult? Function(EmbedExternal data)? embedExternal,
+    TResult? Function(EmbedRecord data)? embedRecord,
+    TResult? Function(EmbedRecordWithMedia data)? embedRecordWithMedia,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return embedGallery?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
+    TResult Function(EmbedVideo data)? embedVideo,
+    TResult Function(EmbedExternal data)? embedExternal,
+    TResult Function(EmbedRecord data)? embedRecord,
+    TResult Function(EmbedRecordWithMedia data)? embedRecordWithMedia,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (embedGallery != null) {
+      return embedGallery(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UFeedPostEmbedEmbedImages value) embedImages,
+    required TResult Function(UFeedPostEmbedEmbedGallery value) embedGallery,
+    required TResult Function(UFeedPostEmbedEmbedVideo value) embedVideo,
+    required TResult Function(UFeedPostEmbedEmbedExternal value) embedExternal,
+    required TResult Function(UFeedPostEmbedEmbedRecord value) embedRecord,
+    required TResult Function(UFeedPostEmbedEmbedRecordWithMedia value)
+        embedRecordWithMedia,
+    required TResult Function(UFeedPostEmbedUnknown value) unknown,
+  }) {
+    return embedGallery(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult? Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
+    TResult? Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
+    TResult? Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
+    TResult? Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
+    TResult? Function(UFeedPostEmbedEmbedRecordWithMedia value)?
+        embedRecordWithMedia,
+    TResult? Function(UFeedPostEmbedUnknown value)? unknown,
+  }) {
+    return embedGallery?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
+    TResult Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
+    TResult Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
+    TResult Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
+    TResult Function(UFeedPostEmbedEmbedRecordWithMedia value)?
+        embedRecordWithMedia,
+    TResult Function(UFeedPostEmbedUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (embedGallery != null) {
+      return embedGallery(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UFeedPostEmbedEmbedGallery extends UFeedPostEmbed {
+  const factory UFeedPostEmbedEmbedGallery({required final EmbedGallery data}) =
+      _$UFeedPostEmbedEmbedGalleryImpl;
+  const UFeedPostEmbedEmbedGallery._() : super._();
+
+  @override
+  EmbedGallery get data;
+
+  /// Create a copy of UFeedPostEmbed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UFeedPostEmbedEmbedGalleryImplCopyWith<_$UFeedPostEmbedEmbedGalleryImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -374,6 +577,7 @@ class _$UFeedPostEmbedEmbedVideoImpl extends UFeedPostEmbedEmbedVideo {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(EmbedRecord data) embedRecord,
@@ -387,6 +591,7 @@ class _$UFeedPostEmbedEmbedVideoImpl extends UFeedPostEmbedEmbedVideo {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(EmbedRecord data)? embedRecord,
@@ -400,6 +605,7 @@ class _$UFeedPostEmbedEmbedVideoImpl extends UFeedPostEmbedEmbedVideo {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(EmbedRecord data)? embedRecord,
@@ -417,6 +623,7 @@ class _$UFeedPostEmbedEmbedVideoImpl extends UFeedPostEmbedEmbedVideo {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UFeedPostEmbedEmbedImages value) embedImages,
+    required TResult Function(UFeedPostEmbedEmbedGallery value) embedGallery,
     required TResult Function(UFeedPostEmbedEmbedVideo value) embedVideo,
     required TResult Function(UFeedPostEmbedEmbedExternal value) embedExternal,
     required TResult Function(UFeedPostEmbedEmbedRecord value) embedRecord,
@@ -431,6 +638,7 @@ class _$UFeedPostEmbedEmbedVideoImpl extends UFeedPostEmbedEmbedVideo {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult? Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult? Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult? Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult? Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -445,6 +653,7 @@ class _$UFeedPostEmbedEmbedVideoImpl extends UFeedPostEmbedEmbedVideo {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -560,6 +769,7 @@ class _$UFeedPostEmbedEmbedExternalImpl extends UFeedPostEmbedEmbedExternal {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(EmbedRecord data) embedRecord,
@@ -573,6 +783,7 @@ class _$UFeedPostEmbedEmbedExternalImpl extends UFeedPostEmbedEmbedExternal {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(EmbedRecord data)? embedRecord,
@@ -586,6 +797,7 @@ class _$UFeedPostEmbedEmbedExternalImpl extends UFeedPostEmbedEmbedExternal {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(EmbedRecord data)? embedRecord,
@@ -603,6 +815,7 @@ class _$UFeedPostEmbedEmbedExternalImpl extends UFeedPostEmbedEmbedExternal {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UFeedPostEmbedEmbedImages value) embedImages,
+    required TResult Function(UFeedPostEmbedEmbedGallery value) embedGallery,
     required TResult Function(UFeedPostEmbedEmbedVideo value) embedVideo,
     required TResult Function(UFeedPostEmbedEmbedExternal value) embedExternal,
     required TResult Function(UFeedPostEmbedEmbedRecord value) embedRecord,
@@ -617,6 +830,7 @@ class _$UFeedPostEmbedEmbedExternalImpl extends UFeedPostEmbedEmbedExternal {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult? Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult? Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult? Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult? Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -631,6 +845,7 @@ class _$UFeedPostEmbedEmbedExternalImpl extends UFeedPostEmbedEmbedExternal {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -745,6 +960,7 @@ class _$UFeedPostEmbedEmbedRecordImpl extends UFeedPostEmbedEmbedRecord {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(EmbedRecord data) embedRecord,
@@ -758,6 +974,7 @@ class _$UFeedPostEmbedEmbedRecordImpl extends UFeedPostEmbedEmbedRecord {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(EmbedRecord data)? embedRecord,
@@ -771,6 +988,7 @@ class _$UFeedPostEmbedEmbedRecordImpl extends UFeedPostEmbedEmbedRecord {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(EmbedRecord data)? embedRecord,
@@ -788,6 +1006,7 @@ class _$UFeedPostEmbedEmbedRecordImpl extends UFeedPostEmbedEmbedRecord {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UFeedPostEmbedEmbedImages value) embedImages,
+    required TResult Function(UFeedPostEmbedEmbedGallery value) embedGallery,
     required TResult Function(UFeedPostEmbedEmbedVideo value) embedVideo,
     required TResult Function(UFeedPostEmbedEmbedExternal value) embedExternal,
     required TResult Function(UFeedPostEmbedEmbedRecord value) embedRecord,
@@ -802,6 +1021,7 @@ class _$UFeedPostEmbedEmbedRecordImpl extends UFeedPostEmbedEmbedRecord {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult? Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult? Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult? Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult? Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -816,6 +1036,7 @@ class _$UFeedPostEmbedEmbedRecordImpl extends UFeedPostEmbedEmbedRecord {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -934,6 +1155,7 @@ class _$UFeedPostEmbedEmbedRecordWithMediaImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(EmbedRecord data) embedRecord,
@@ -947,6 +1169,7 @@ class _$UFeedPostEmbedEmbedRecordWithMediaImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(EmbedRecord data)? embedRecord,
@@ -960,6 +1183,7 @@ class _$UFeedPostEmbedEmbedRecordWithMediaImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(EmbedRecord data)? embedRecord,
@@ -977,6 +1201,7 @@ class _$UFeedPostEmbedEmbedRecordWithMediaImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UFeedPostEmbedEmbedImages value) embedImages,
+    required TResult Function(UFeedPostEmbedEmbedGallery value) embedGallery,
     required TResult Function(UFeedPostEmbedEmbedVideo value) embedVideo,
     required TResult Function(UFeedPostEmbedEmbedExternal value) embedExternal,
     required TResult Function(UFeedPostEmbedEmbedRecord value) embedRecord,
@@ -991,6 +1216,7 @@ class _$UFeedPostEmbedEmbedRecordWithMediaImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult? Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult? Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult? Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult? Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -1005,6 +1231,7 @@ class _$UFeedPostEmbedEmbedRecordWithMediaImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -1116,6 +1343,7 @@ class _$UFeedPostEmbedUnknownImpl extends UFeedPostEmbedUnknown {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EmbedImages data) embedImages,
+    required TResult Function(EmbedGallery data) embedGallery,
     required TResult Function(EmbedVideo data) embedVideo,
     required TResult Function(EmbedExternal data) embedExternal,
     required TResult Function(EmbedRecord data) embedRecord,
@@ -1129,6 +1357,7 @@ class _$UFeedPostEmbedUnknownImpl extends UFeedPostEmbedUnknown {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EmbedImages data)? embedImages,
+    TResult? Function(EmbedGallery data)? embedGallery,
     TResult? Function(EmbedVideo data)? embedVideo,
     TResult? Function(EmbedExternal data)? embedExternal,
     TResult? Function(EmbedRecord data)? embedRecord,
@@ -1142,6 +1371,7 @@ class _$UFeedPostEmbedUnknownImpl extends UFeedPostEmbedUnknown {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EmbedImages data)? embedImages,
+    TResult Function(EmbedGallery data)? embedGallery,
     TResult Function(EmbedVideo data)? embedVideo,
     TResult Function(EmbedExternal data)? embedExternal,
     TResult Function(EmbedRecord data)? embedRecord,
@@ -1159,6 +1389,7 @@ class _$UFeedPostEmbedUnknownImpl extends UFeedPostEmbedUnknown {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UFeedPostEmbedEmbedImages value) embedImages,
+    required TResult Function(UFeedPostEmbedEmbedGallery value) embedGallery,
     required TResult Function(UFeedPostEmbedEmbedVideo value) embedVideo,
     required TResult Function(UFeedPostEmbedEmbedExternal value) embedExternal,
     required TResult Function(UFeedPostEmbedEmbedRecord value) embedRecord,
@@ -1173,6 +1404,7 @@ class _$UFeedPostEmbedUnknownImpl extends UFeedPostEmbedUnknown {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult? Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult? Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult? Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult? Function(UFeedPostEmbedEmbedRecord value)? embedRecord,
@@ -1187,6 +1419,7 @@ class _$UFeedPostEmbedUnknownImpl extends UFeedPostEmbedUnknown {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UFeedPostEmbedEmbedImages value)? embedImages,
+    TResult Function(UFeedPostEmbedEmbedGallery value)? embedGallery,
     TResult Function(UFeedPostEmbedEmbedVideo value)? embedVideo,
     TResult Function(UFeedPostEmbedEmbedExternal value)? embedExternal,
     TResult Function(UFeedPostEmbedEmbedRecord value)? embedRecord,

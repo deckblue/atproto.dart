@@ -40,13 +40,13 @@ abstract class EmbedExternalViewExternalSourceTheme
     @EmbedExternalColorRGBConverter() EmbedExternalColorRGB? accentRGB,
     @EmbedExternalColorRGBConverter()
     EmbedExternalColorRGB? accentForegroundRGB,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedExternalViewExternalSourceTheme;
 
   factory EmbedExternalViewExternalSourceTheme.fromJson(
     Map<String, Object?> json,
-  ) => _$EmbedExternalViewExternalSourceThemeFromJson(json);
+  ) =>
+      _$EmbedExternalViewExternalSourceThemeFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('\$type')) return false;
@@ -67,12 +67,8 @@ extension EmbedExternalViewExternalSourceThemeExtension
   bool get hasNotAccentForegroundRGB => !hasAccentForegroundRGB;
 }
 
-final class EmbedExternalViewExternalSourceThemeConverter
-    extends
-        JsonConverter<
-          EmbedExternalViewExternalSourceTheme,
-          Map<String, dynamic>
-        > {
+final class EmbedExternalViewExternalSourceThemeConverter extends JsonConverter<
+    EmbedExternalViewExternalSourceTheme, Map<String, dynamic>> {
   const EmbedExternalViewExternalSourceThemeConverter();
 
   @override
