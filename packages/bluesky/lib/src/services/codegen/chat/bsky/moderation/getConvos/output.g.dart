@@ -8,30 +8,32 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModerationGetConvosOutput _$ModerationGetConvosOutputFromJson(Map json) =>
-    $checkedCreate('_ModerationGetConvosOutput', json, ($checkedConvert) {
-      final val = _ModerationGetConvosOutput(
-        convos: $checkedConvert(
-          'convos',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const ConvoViewConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ModerationGetConvosOutputImpl _$$ModerationGetConvosOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ModerationGetConvosOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ModerationGetConvosOutputImpl(
+          convos: $checkedConvert(
+              'convos',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const ConvoViewConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ModerationGetConvosOutputToJson(
-  _ModerationGetConvosOutput instance,
-) => <String, dynamic>{
-  'convos': instance.convos.map(const ConvoViewConverter().toJson).toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ModerationGetConvosOutputImplToJson(
+        _$ModerationGetConvosOutputImpl instance) =>
+    <String, dynamic>{
+      'convos': instance.convos.map(const ConvoViewConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

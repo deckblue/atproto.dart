@@ -8,25 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GroupGetJoinLinkPreviewsInput _$GroupGetJoinLinkPreviewsInputFromJson(
-  Map json,
-) => $checkedCreate('_GroupGetJoinLinkPreviewsInput', json, ($checkedConvert) {
-  final val = _GroupGetJoinLinkPreviewsInput(
-    codes: $checkedConvert(
-      'codes',
-      (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$GroupGetJoinLinkPreviewsInputImpl
+    _$$GroupGetJoinLinkPreviewsInputImplFromJson(Map json) => $checkedCreate(
+          r'_$GroupGetJoinLinkPreviewsInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$GroupGetJoinLinkPreviewsInputImpl(
+              codes: $checkedConvert('codes',
+                  (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$GroupGetJoinLinkPreviewsInputToJson(
-  _GroupGetJoinLinkPreviewsInput instance,
-) => <String, dynamic>{
-  'codes': instance.codes,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupGetJoinLinkPreviewsInputImplToJson(
+        _$GroupGetJoinLinkPreviewsInputImpl instance) =>
+    <String, dynamic>{
+      'codes': instance.codes,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

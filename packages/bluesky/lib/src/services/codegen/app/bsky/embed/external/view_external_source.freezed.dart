@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,323 +9,345 @@ part of 'view_external_source.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+EmbedExternalViewExternalSource _$EmbedExternalViewExternalSourceFromJson(
+    Map<String, dynamic> json) {
+  return _EmbedExternalViewExternalSource.fromJson(json);
+}
 
 /// @nodoc
 mixin _$EmbedExternalViewExternalSource {
+  String get $type => throw _privateConstructorUsedError;
 
- String get $type;/// URI of the source, if available. Example: the https:// URL of a site.standard.publication record.
- String get uri;/// Fully-qualified URL where an icon representing the source can be fetched. For example, CDN location provided by the App View.
- String? get icon; String get title; String? get description;@EmbedExternalViewExternalSourceThemeConverter() EmbedExternalViewExternalSourceTheme? get theme; Map<String, dynamic>? get $unknown;
-/// Create a copy of EmbedExternalViewExternalSource
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$EmbedExternalViewExternalSourceCopyWith<EmbedExternalViewExternalSource> get copyWith => _$EmbedExternalViewExternalSourceCopyWithImpl<EmbedExternalViewExternalSource>(this as EmbedExternalViewExternalSource, _$identity);
+  /// URI of the source, if available. Example: the https:// URL of a site.standard.publication record.
+  String get uri => throw _privateConstructorUsedError;
+
+  /// Fully-qualified URL where an icon representing the source can be fetched. For example, CDN location provided by the App View.
+  String? get icon => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  @EmbedExternalViewExternalSourceThemeConverter()
+  EmbedExternalViewExternalSourceTheme? get theme =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this EmbedExternalViewExternalSource to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EmbedExternalViewExternalSource&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.uri, uri) || other.uri == uri)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.theme, theme) || other.theme == theme)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,uri,icon,title,description,theme,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'EmbedExternalViewExternalSource(\$type: ${$type}, uri: $uri, icon: $icon, title: $title, description: $description, theme: $theme, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of EmbedExternalViewExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $EmbedExternalViewExternalSourceCopyWith<EmbedExternalViewExternalSource>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $EmbedExternalViewExternalSourceCopyWith<$Res>  {
-  factory $EmbedExternalViewExternalSourceCopyWith(EmbedExternalViewExternalSource value, $Res Function(EmbedExternalViewExternalSource) _then) = _$EmbedExternalViewExternalSourceCopyWithImpl;
-@useResult
-$Res call({
- String $type, String uri, String? icon, String title, String? description,@EmbedExternalViewExternalSourceThemeConverter() EmbedExternalViewExternalSourceTheme? theme, Map<String, dynamic>? $unknown
-});
+abstract class $EmbedExternalViewExternalSourceCopyWith<$Res> {
+  factory $EmbedExternalViewExternalSourceCopyWith(
+          EmbedExternalViewExternalSource value,
+          $Res Function(EmbedExternalViewExternalSource) then) =
+      _$EmbedExternalViewExternalSourceCopyWithImpl<$Res,
+          EmbedExternalViewExternalSource>;
+  @useResult
+  $Res call(
+      {String $type,
+      String uri,
+      String? icon,
+      String title,
+      String? description,
+      @EmbedExternalViewExternalSourceThemeConverter()
+      EmbedExternalViewExternalSourceTheme? theme,
+      Map<String, dynamic>? $unknown});
 
-
-$EmbedExternalViewExternalSourceThemeCopyWith<$Res>? get theme;
-
+  $EmbedExternalViewExternalSourceThemeCopyWith<$Res>? get theme;
 }
+
 /// @nodoc
-class _$EmbedExternalViewExternalSourceCopyWithImpl<$Res>
+class _$EmbedExternalViewExternalSourceCopyWithImpl<$Res,
+        $Val extends EmbedExternalViewExternalSource>
     implements $EmbedExternalViewExternalSourceCopyWith<$Res> {
-  _$EmbedExternalViewExternalSourceCopyWithImpl(this._self, this._then);
+  _$EmbedExternalViewExternalSourceCopyWithImpl(this._value, this._then);
 
-  final EmbedExternalViewExternalSource _self;
-  final $Res Function(EmbedExternalViewExternalSource) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of EmbedExternalViewExternalSource
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? uri = null,Object? icon = freezed,Object? title = null,Object? description = freezed,Object? theme = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,uri: null == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
-as String,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as String?,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,theme: freezed == theme ? _self.theme : theme // ignore: cast_nullable_to_non_nullable
-as EmbedExternalViewExternalSourceTheme?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of EmbedExternalViewExternalSource
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$EmbedExternalViewExternalSourceThemeCopyWith<$Res>? get theme {
-    if (_self.theme == null) {
-    return null;
+  /// Create a copy of EmbedExternalViewExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? uri = null,
+    Object? icon = freezed,
+    Object? title = null,
+    Object? description = freezed,
+    Object? theme = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      uri: null == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      theme: freezed == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as EmbedExternalViewExternalSourceTheme?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
   }
 
-  return $EmbedExternalViewExternalSourceThemeCopyWith<$Res>(_self.theme!, (value) {
-    return _then(_self.copyWith(theme: value));
-  });
-}
-}
+  /// Create a copy of EmbedExternalViewExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EmbedExternalViewExternalSourceThemeCopyWith<$Res>? get theme {
+    if (_value.theme == null) {
+      return null;
+    }
 
-
-/// Adds pattern-matching-related methods to [EmbedExternalViewExternalSource].
-extension EmbedExternalViewExternalSourcePatterns on EmbedExternalViewExternalSource {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EmbedExternalViewExternalSource value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _EmbedExternalViewExternalSource() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EmbedExternalViewExternalSource value)  $default,){
-final _that = this;
-switch (_that) {
-case _EmbedExternalViewExternalSource():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EmbedExternalViewExternalSource value)?  $default,){
-final _that = this;
-switch (_that) {
-case _EmbedExternalViewExternalSource() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  String uri,  String? icon,  String title,  String? description, @EmbedExternalViewExternalSourceThemeConverter()  EmbedExternalViewExternalSourceTheme? theme,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _EmbedExternalViewExternalSource() when $default != null:
-return $default(_that.$type,_that.uri,_that.icon,_that.title,_that.description,_that.theme,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  String uri,  String? icon,  String title,  String? description, @EmbedExternalViewExternalSourceThemeConverter()  EmbedExternalViewExternalSourceTheme? theme,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _EmbedExternalViewExternalSource():
-return $default(_that.$type,_that.uri,_that.icon,_that.title,_that.description,_that.theme,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  String uri,  String? icon,  String title,  String? description, @EmbedExternalViewExternalSourceThemeConverter()  EmbedExternalViewExternalSourceTheme? theme,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _EmbedExternalViewExternalSource() when $default != null:
-return $default(_that.$type,_that.uri,_that.icon,_that.title,_that.description,_that.theme,_that.$unknown);case _:
-  return null;
-
-}
+    return $EmbedExternalViewExternalSourceThemeCopyWith<$Res>(_value.theme!,
+        (value) {
+      return _then(_value.copyWith(theme: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$EmbedExternalViewExternalSourceImplCopyWith<$Res>
+    implements $EmbedExternalViewExternalSourceCopyWith<$Res> {
+  factory _$$EmbedExternalViewExternalSourceImplCopyWith(
+          _$EmbedExternalViewExternalSourceImpl value,
+          $Res Function(_$EmbedExternalViewExternalSourceImpl) then) =
+      __$$EmbedExternalViewExternalSourceImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      String uri,
+      String? icon,
+      String title,
+      String? description,
+      @EmbedExternalViewExternalSourceThemeConverter()
+      EmbedExternalViewExternalSourceTheme? theme,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $EmbedExternalViewExternalSourceThemeCopyWith<$Res>? get theme;
+}
+
+/// @nodoc
+class __$$EmbedExternalViewExternalSourceImplCopyWithImpl<$Res>
+    extends _$EmbedExternalViewExternalSourceCopyWithImpl<$Res,
+        _$EmbedExternalViewExternalSourceImpl>
+    implements _$$EmbedExternalViewExternalSourceImplCopyWith<$Res> {
+  __$$EmbedExternalViewExternalSourceImplCopyWithImpl(
+      _$EmbedExternalViewExternalSourceImpl _value,
+      $Res Function(_$EmbedExternalViewExternalSourceImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of EmbedExternalViewExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? uri = null,
+    Object? icon = freezed,
+    Object? title = null,
+    Object? description = freezed,
+    Object? theme = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$EmbedExternalViewExternalSourceImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      uri: null == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      theme: freezed == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as EmbedExternalViewExternalSourceTheme?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _EmbedExternalViewExternalSource implements EmbedExternalViewExternalSource {
-  const _EmbedExternalViewExternalSource({this.$type = 'app.bsky.embed.external#viewExternalSource', required this.uri, this.icon, required this.title, this.description, @EmbedExternalViewExternalSourceThemeConverter() this.theme, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _EmbedExternalViewExternalSource.fromJson(Map<String, dynamic> json) => _$EmbedExternalViewExternalSourceFromJson(json);
+class _$EmbedExternalViewExternalSourceImpl
+    implements _EmbedExternalViewExternalSource {
+  const _$EmbedExternalViewExternalSourceImpl(
+      {this.$type = 'app.bsky.embed.external#viewExternalSource',
+      required this.uri,
+      this.icon,
+      required this.title,
+      this.description,
+      @EmbedExternalViewExternalSourceThemeConverter() this.theme,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-/// URI of the source, if available. Example: the https:// URL of a site.standard.publication record.
-@override final  String uri;
-/// Fully-qualified URL where an icon representing the source can be fetched. For example, CDN location provided by the App View.
-@override final  String? icon;
-@override final  String title;
-@override final  String? description;
-@override@EmbedExternalViewExternalSourceThemeConverter() final  EmbedExternalViewExternalSourceTheme? theme;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+  factory _$EmbedExternalViewExternalSourceImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$EmbedExternalViewExternalSourceImplFromJson(json);
 
+  @override
+  @JsonKey()
+  final String $type;
 
-/// Create a copy of EmbedExternalViewExternalSource
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$EmbedExternalViewExternalSourceCopyWith<_EmbedExternalViewExternalSource> get copyWith => __$EmbedExternalViewExternalSourceCopyWithImpl<_EmbedExternalViewExternalSource>(this, _$identity);
+  /// URI of the source, if available. Example: the https:// URL of a site.standard.publication record.
+  @override
+  final String uri;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$EmbedExternalViewExternalSourceToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EmbedExternalViewExternalSource&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.uri, uri) || other.uri == uri)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.theme, theme) || other.theme == theme)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,uri,icon,title,description,theme,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'EmbedExternalViewExternalSource(\$type: ${$type}, uri: $uri, icon: $icon, title: $title, description: $description, theme: $theme, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$EmbedExternalViewExternalSourceCopyWith<$Res> implements $EmbedExternalViewExternalSourceCopyWith<$Res> {
-  factory _$EmbedExternalViewExternalSourceCopyWith(_EmbedExternalViewExternalSource value, $Res Function(_EmbedExternalViewExternalSource) _then) = __$EmbedExternalViewExternalSourceCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, String uri, String? icon, String title, String? description,@EmbedExternalViewExternalSourceThemeConverter() EmbedExternalViewExternalSourceTheme? theme, Map<String, dynamic>? $unknown
-});
-
-
-@override $EmbedExternalViewExternalSourceThemeCopyWith<$Res>? get theme;
-
-}
-/// @nodoc
-class __$EmbedExternalViewExternalSourceCopyWithImpl<$Res>
-    implements _$EmbedExternalViewExternalSourceCopyWith<$Res> {
-  __$EmbedExternalViewExternalSourceCopyWithImpl(this._self, this._then);
-
-  final _EmbedExternalViewExternalSource _self;
-  final $Res Function(_EmbedExternalViewExternalSource) _then;
-
-/// Create a copy of EmbedExternalViewExternalSource
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? uri = null,Object? icon = freezed,Object? title = null,Object? description = freezed,Object? theme = freezed,Object? $unknown = freezed,}) {
-  return _then(_EmbedExternalViewExternalSource(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,uri: null == uri ? _self.uri : uri // ignore: cast_nullable_to_non_nullable
-as String,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
-as String?,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,theme: freezed == theme ? _self.theme : theme // ignore: cast_nullable_to_non_nullable
-as EmbedExternalViewExternalSourceTheme?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of EmbedExternalViewExternalSource
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$EmbedExternalViewExternalSourceThemeCopyWith<$Res>? get theme {
-    if (_self.theme == null) {
-    return null;
+  /// Fully-qualified URL where an icon representing the source can be fetched. For example, CDN location provided by the App View.
+  @override
+  final String? icon;
+  @override
+  final String title;
+  @override
+  final String? description;
+  @override
+  @EmbedExternalViewExternalSourceThemeConverter()
+  final EmbedExternalViewExternalSourceTheme? theme;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
   }
 
-  return $EmbedExternalViewExternalSourceThemeCopyWith<$Res>(_self.theme!, (value) {
-    return _then(_self.copyWith(theme: value));
-  });
-}
+  @override
+  String toString() {
+    return 'EmbedExternalViewExternalSource(\$type: ${$type}, uri: $uri, icon: $icon, title: $title, description: $description, theme: $theme, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EmbedExternalViewExternalSourceImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.theme, theme) || other.theme == theme) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, uri, icon, title,
+      description, theme, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of EmbedExternalViewExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmbedExternalViewExternalSourceImplCopyWith<
+          _$EmbedExternalViewExternalSourceImpl>
+      get copyWith => __$$EmbedExternalViewExternalSourceImplCopyWithImpl<
+          _$EmbedExternalViewExternalSourceImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$EmbedExternalViewExternalSourceImplToJson(
+      this,
+    );
+  }
 }
 
-// dart format on
+abstract class _EmbedExternalViewExternalSource
+    implements EmbedExternalViewExternalSource {
+  const factory _EmbedExternalViewExternalSource(
+          {final String $type,
+          required final String uri,
+          final String? icon,
+          required final String title,
+          final String? description,
+          @EmbedExternalViewExternalSourceThemeConverter()
+          final EmbedExternalViewExternalSourceTheme? theme,
+          final Map<String, dynamic>? $unknown}) =
+      _$EmbedExternalViewExternalSourceImpl;
+
+  factory _EmbedExternalViewExternalSource.fromJson(Map<String, dynamic> json) =
+      _$EmbedExternalViewExternalSourceImpl.fromJson;
+
+  @override
+  String get $type;
+
+  /// URI of the source, if available. Example: the https:// URL of a site.standard.publication record.
+  @override
+  String get uri;
+
+  /// Fully-qualified URL where an icon representing the source can be fetched. For example, CDN location provided by the App View.
+  @override
+  String? get icon;
+  @override
+  String get title;
+  @override
+  String? get description;
+  @override
+  @EmbedExternalViewExternalSourceThemeConverter()
+  EmbedExternalViewExternalSourceTheme? get theme;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of EmbedExternalViewExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EmbedExternalViewExternalSourceImplCopyWith<
+          _$EmbedExternalViewExternalSourceImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

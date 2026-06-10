@@ -59,7 +59,6 @@ abstract class GroupConvo with _$GroupConvo {
 
     /// The number of unread join requests for the group conversation. Only present for the owner.
     int? unreadJoinRequestCount,
-
     Map<String, dynamic>? $unknown,
   }) = _GroupConvo;
 

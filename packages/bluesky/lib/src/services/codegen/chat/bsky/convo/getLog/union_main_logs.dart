@@ -264,16 +264,16 @@ extension UConvoGetLogLogsExtension on UConvoGetLogLogs {
       !isLogWithdrawIncomingJoinRequest;
   LogWithdrawIncomingJoinRequest? get logWithdrawIncomingJoinRequest =>
       isLogWithdrawIncomingJoinRequest
-      ? data as LogWithdrawIncomingJoinRequest
-      : null;
+          ? data as LogWithdrawIncomingJoinRequest
+          : null;
   bool get isLogWithdrawOutgoingJoinRequest =>
       isA<UConvoGetLogLogsLogWithdrawOutgoingJoinRequest>(this);
   bool get isNotLogWithdrawOutgoingJoinRequest =>
       !isLogWithdrawOutgoingJoinRequest;
   LogWithdrawOutgoingJoinRequest? get logWithdrawOutgoingJoinRequest =>
       isLogWithdrawOutgoingJoinRequest
-      ? data as LogWithdrawOutgoingJoinRequest
-      : null;
+          ? data as LogWithdrawOutgoingJoinRequest
+          : null;
   bool get isLogReadJoinRequests =>
       isA<UConvoGetLogLogsLogReadJoinRequests>(this);
   bool get isNotLogReadJoinRequests => !isLogReadJoinRequests;
@@ -451,49 +451,52 @@ final class UConvoGetLogLogsConverter
 
   @override
   Map<String, dynamic> toJson(UConvoGetLogLogs object) => object.when(
-    logBeginConvo: (data) => const LogBeginConvoConverter().toJson(data),
-    logAcceptConvo: (data) => const LogAcceptConvoConverter().toJson(data),
-    logLeaveConvo: (data) => const LogLeaveConvoConverter().toJson(data),
-    logMuteConvo: (data) => const LogMuteConvoConverter().toJson(data),
-    logUnmuteConvo: (data) => const LogUnmuteConvoConverter().toJson(data),
-    logCreateMessage: (data) => const LogCreateMessageConverter().toJson(data),
-    logDeleteMessage: (data) => const LogDeleteMessageConverter().toJson(data),
-    logReadMessage: (data) => const LogReadMessageConverter().toJson(data),
-    logAddReaction: (data) => const LogAddReactionConverter().toJson(data),
-    logRemoveReaction: (data) =>
-        const LogRemoveReactionConverter().toJson(data),
-    logReadConvo: (data) => const LogReadConvoConverter().toJson(data),
-    logAddMember: (data) => const LogAddMemberConverter().toJson(data),
-    logRemoveMember: (data) => const LogRemoveMemberConverter().toJson(data),
-    logMemberJoin: (data) => const LogMemberJoinConverter().toJson(data),
-    logMemberLeave: (data) => const LogMemberLeaveConverter().toJson(data),
-    logLockConvo: (data) => const LogLockConvoConverter().toJson(data),
-    logUnlockConvo: (data) => const LogUnlockConvoConverter().toJson(data),
-    logLockConvoPermanently: (data) =>
-        const LogLockConvoPermanentlyConverter().toJson(data),
-    logEditGroup: (data) => const LogEditGroupConverter().toJson(data),
-    logCreateJoinLink: (data) =>
-        const LogCreateJoinLinkConverter().toJson(data),
-    logEditJoinLink: (data) => const LogEditJoinLinkConverter().toJson(data),
-    logEnableJoinLink: (data) =>
-        const LogEnableJoinLinkConverter().toJson(data),
-    logDisableJoinLink: (data) =>
-        const LogDisableJoinLinkConverter().toJson(data),
-    logIncomingJoinRequest: (data) =>
-        const LogIncomingJoinRequestConverter().toJson(data),
-    logApproveJoinRequest: (data) =>
-        const LogApproveJoinRequestConverter().toJson(data),
-    logRejectJoinRequest: (data) =>
-        const LogRejectJoinRequestConverter().toJson(data),
-    logOutgoingJoinRequest: (data) =>
-        const LogOutgoingJoinRequestConverter().toJson(data),
-    logWithdrawIncomingJoinRequest: (data) =>
-        const LogWithdrawIncomingJoinRequestConverter().toJson(data),
-    logWithdrawOutgoingJoinRequest: (data) =>
-        const LogWithdrawOutgoingJoinRequestConverter().toJson(data),
-    logReadJoinRequests: (data) =>
-        const LogReadJoinRequestsConverter().toJson(data),
-
-    unknown: (data) => data,
-  );
+        logBeginConvo: (data) => const LogBeginConvoConverter().toJson(data),
+        logAcceptConvo: (data) => const LogAcceptConvoConverter().toJson(data),
+        logLeaveConvo: (data) => const LogLeaveConvoConverter().toJson(data),
+        logMuteConvo: (data) => const LogMuteConvoConverter().toJson(data),
+        logUnmuteConvo: (data) => const LogUnmuteConvoConverter().toJson(data),
+        logCreateMessage: (data) =>
+            const LogCreateMessageConverter().toJson(data),
+        logDeleteMessage: (data) =>
+            const LogDeleteMessageConverter().toJson(data),
+        logReadMessage: (data) => const LogReadMessageConverter().toJson(data),
+        logAddReaction: (data) => const LogAddReactionConverter().toJson(data),
+        logRemoveReaction: (data) =>
+            const LogRemoveReactionConverter().toJson(data),
+        logReadConvo: (data) => const LogReadConvoConverter().toJson(data),
+        logAddMember: (data) => const LogAddMemberConverter().toJson(data),
+        logRemoveMember: (data) =>
+            const LogRemoveMemberConverter().toJson(data),
+        logMemberJoin: (data) => const LogMemberJoinConverter().toJson(data),
+        logMemberLeave: (data) => const LogMemberLeaveConverter().toJson(data),
+        logLockConvo: (data) => const LogLockConvoConverter().toJson(data),
+        logUnlockConvo: (data) => const LogUnlockConvoConverter().toJson(data),
+        logLockConvoPermanently: (data) =>
+            const LogLockConvoPermanentlyConverter().toJson(data),
+        logEditGroup: (data) => const LogEditGroupConverter().toJson(data),
+        logCreateJoinLink: (data) =>
+            const LogCreateJoinLinkConverter().toJson(data),
+        logEditJoinLink: (data) =>
+            const LogEditJoinLinkConverter().toJson(data),
+        logEnableJoinLink: (data) =>
+            const LogEnableJoinLinkConverter().toJson(data),
+        logDisableJoinLink: (data) =>
+            const LogDisableJoinLinkConverter().toJson(data),
+        logIncomingJoinRequest: (data) =>
+            const LogIncomingJoinRequestConverter().toJson(data),
+        logApproveJoinRequest: (data) =>
+            const LogApproveJoinRequestConverter().toJson(data),
+        logRejectJoinRequest: (data) =>
+            const LogRejectJoinRequestConverter().toJson(data),
+        logOutgoingJoinRequest: (data) =>
+            const LogOutgoingJoinRequestConverter().toJson(data),
+        logWithdrawIncomingJoinRequest: (data) =>
+            const LogWithdrawIncomingJoinRequestConverter().toJson(data),
+        logWithdrawOutgoingJoinRequest: (data) =>
+            const LogWithdrawOutgoingJoinRequestConverter().toJson(data),
+        logReadJoinRequests: (data) =>
+            const LogReadJoinRequestsConverter().toJson(data),
+        unknown: (data) => data,
+      );
 }

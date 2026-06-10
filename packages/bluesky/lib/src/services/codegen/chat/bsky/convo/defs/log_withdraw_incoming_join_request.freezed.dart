@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,309 +9,289 @@ part of 'log_withdraw_incoming_join_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+LogWithdrawIncomingJoinRequest _$LogWithdrawIncomingJoinRequestFromJson(
+    Map<String, dynamic> json) {
+  return _LogWithdrawIncomingJoinRequest.fromJson(json);
+}
 
 /// @nodoc
 mixin _$LogWithdrawIncomingJoinRequest {
+  String get $type => throw _privateConstructorUsedError;
+  String get rev => throw _privateConstructorUsedError;
+  String get convoId => throw _privateConstructorUsedError;
 
- String get $type; String get rev; String get convoId;/// Prospective member who withdrew their join request.
-@ProfileViewBasicConverter() ProfileViewBasic get member; Map<String, dynamic>? get $unknown;
-/// Create a copy of LogWithdrawIncomingJoinRequest
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$LogWithdrawIncomingJoinRequestCopyWith<LogWithdrawIncomingJoinRequest> get copyWith => _$LogWithdrawIncomingJoinRequestCopyWithImpl<LogWithdrawIncomingJoinRequest>(this as LogWithdrawIncomingJoinRequest, _$identity);
+  /// Prospective member who withdrew their join request.
+  @ProfileViewBasicConverter()
+  ProfileViewBasic get member => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this LogWithdrawIncomingJoinRequest to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LogWithdrawIncomingJoinRequest&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.rev, rev) || other.rev == rev)&&(identical(other.convoId, convoId) || other.convoId == convoId)&&(identical(other.member, member) || other.member == member)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,rev,convoId,member,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'LogWithdrawIncomingJoinRequest(\$type: ${$type}, rev: $rev, convoId: $convoId, member: $member, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of LogWithdrawIncomingJoinRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LogWithdrawIncomingJoinRequestCopyWith<LogWithdrawIncomingJoinRequest>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $LogWithdrawIncomingJoinRequestCopyWith<$Res>  {
-  factory $LogWithdrawIncomingJoinRequestCopyWith(LogWithdrawIncomingJoinRequest value, $Res Function(LogWithdrawIncomingJoinRequest) _then) = _$LogWithdrawIncomingJoinRequestCopyWithImpl;
-@useResult
-$Res call({
- String $type, String rev, String convoId,@ProfileViewBasicConverter() ProfileViewBasic member, Map<String, dynamic>? $unknown
-});
+abstract class $LogWithdrawIncomingJoinRequestCopyWith<$Res> {
+  factory $LogWithdrawIncomingJoinRequestCopyWith(
+          LogWithdrawIncomingJoinRequest value,
+          $Res Function(LogWithdrawIncomingJoinRequest) then) =
+      _$LogWithdrawIncomingJoinRequestCopyWithImpl<$Res,
+          LogWithdrawIncomingJoinRequest>;
+  @useResult
+  $Res call(
+      {String $type,
+      String rev,
+      String convoId,
+      @ProfileViewBasicConverter() ProfileViewBasic member,
+      Map<String, dynamic>? $unknown});
 
-
-$ProfileViewBasicCopyWith<$Res> get member;
-
+  $ProfileViewBasicCopyWith<$Res> get member;
 }
+
 /// @nodoc
-class _$LogWithdrawIncomingJoinRequestCopyWithImpl<$Res>
+class _$LogWithdrawIncomingJoinRequestCopyWithImpl<$Res,
+        $Val extends LogWithdrawIncomingJoinRequest>
     implements $LogWithdrawIncomingJoinRequestCopyWith<$Res> {
-  _$LogWithdrawIncomingJoinRequestCopyWithImpl(this._self, this._then);
+  _$LogWithdrawIncomingJoinRequestCopyWithImpl(this._value, this._then);
 
-  final LogWithdrawIncomingJoinRequest _self;
-  final $Res Function(LogWithdrawIncomingJoinRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of LogWithdrawIncomingJoinRequest
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? rev = null,Object? convoId = null,Object? member = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,rev: null == rev ? _self.rev : rev // ignore: cast_nullable_to_non_nullable
-as String,convoId: null == convoId ? _self.convoId : convoId // ignore: cast_nullable_to_non_nullable
-as String,member: null == member ? _self.member : member // ignore: cast_nullable_to_non_nullable
-as ProfileViewBasic,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of LogWithdrawIncomingJoinRequest
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ProfileViewBasicCopyWith<$Res> get member {
-  
-  return $ProfileViewBasicCopyWith<$Res>(_self.member, (value) {
-    return _then(_self.copyWith(member: value));
-  });
-}
-}
+  /// Create a copy of LogWithdrawIncomingJoinRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? rev = null,
+    Object? convoId = null,
+    Object? member = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      rev: null == rev
+          ? _value.rev
+          : rev // ignore: cast_nullable_to_non_nullable
+              as String,
+      convoId: null == convoId
+          ? _value.convoId
+          : convoId // ignore: cast_nullable_to_non_nullable
+              as String,
+      member: null == member
+          ? _value.member
+          : member // ignore: cast_nullable_to_non_nullable
+              as ProfileViewBasic,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [LogWithdrawIncomingJoinRequest].
-extension LogWithdrawIncomingJoinRequestPatterns on LogWithdrawIncomingJoinRequest {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _LogWithdrawIncomingJoinRequest value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _LogWithdrawIncomingJoinRequest() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _LogWithdrawIncomingJoinRequest value)  $default,){
-final _that = this;
-switch (_that) {
-case _LogWithdrawIncomingJoinRequest():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _LogWithdrawIncomingJoinRequest value)?  $default,){
-final _that = this;
-switch (_that) {
-case _LogWithdrawIncomingJoinRequest() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  String rev,  String convoId, @ProfileViewBasicConverter()  ProfileViewBasic member,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _LogWithdrawIncomingJoinRequest() when $default != null:
-return $default(_that.$type,_that.rev,_that.convoId,_that.member,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  String rev,  String convoId, @ProfileViewBasicConverter()  ProfileViewBasic member,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _LogWithdrawIncomingJoinRequest():
-return $default(_that.$type,_that.rev,_that.convoId,_that.member,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  String rev,  String convoId, @ProfileViewBasicConverter()  ProfileViewBasic member,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _LogWithdrawIncomingJoinRequest() when $default != null:
-return $default(_that.$type,_that.rev,_that.convoId,_that.member,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of LogWithdrawIncomingJoinRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileViewBasicCopyWith<$Res> get member {
+    return $ProfileViewBasicCopyWith<$Res>(_value.member, (value) {
+      return _then(_value.copyWith(member: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$LogWithdrawIncomingJoinRequestImplCopyWith<$Res>
+    implements $LogWithdrawIncomingJoinRequestCopyWith<$Res> {
+  factory _$$LogWithdrawIncomingJoinRequestImplCopyWith(
+          _$LogWithdrawIncomingJoinRequestImpl value,
+          $Res Function(_$LogWithdrawIncomingJoinRequestImpl) then) =
+      __$$LogWithdrawIncomingJoinRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      String rev,
+      String convoId,
+      @ProfileViewBasicConverter() ProfileViewBasic member,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $ProfileViewBasicCopyWith<$Res> get member;
+}
+
+/// @nodoc
+class __$$LogWithdrawIncomingJoinRequestImplCopyWithImpl<$Res>
+    extends _$LogWithdrawIncomingJoinRequestCopyWithImpl<$Res,
+        _$LogWithdrawIncomingJoinRequestImpl>
+    implements _$$LogWithdrawIncomingJoinRequestImplCopyWith<$Res> {
+  __$$LogWithdrawIncomingJoinRequestImplCopyWithImpl(
+      _$LogWithdrawIncomingJoinRequestImpl _value,
+      $Res Function(_$LogWithdrawIncomingJoinRequestImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LogWithdrawIncomingJoinRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? rev = null,
+    Object? convoId = null,
+    Object? member = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$LogWithdrawIncomingJoinRequestImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      rev: null == rev
+          ? _value.rev
+          : rev // ignore: cast_nullable_to_non_nullable
+              as String,
+      convoId: null == convoId
+          ? _value.convoId
+          : convoId // ignore: cast_nullable_to_non_nullable
+              as String,
+      member: null == member
+          ? _value.member
+          : member // ignore: cast_nullable_to_non_nullable
+              as ProfileViewBasic,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _LogWithdrawIncomingJoinRequest implements LogWithdrawIncomingJoinRequest {
-  const _LogWithdrawIncomingJoinRequest({this.$type = 'chat.bsky.convo.defs#logWithdrawIncomingJoinRequest', required this.rev, required this.convoId, @ProfileViewBasicConverter() required this.member, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _LogWithdrawIncomingJoinRequest.fromJson(Map<String, dynamic> json) => _$LogWithdrawIncomingJoinRequestFromJson(json);
+class _$LogWithdrawIncomingJoinRequestImpl
+    implements _LogWithdrawIncomingJoinRequest {
+  const _$LogWithdrawIncomingJoinRequestImpl(
+      {this.$type = 'chat.bsky.convo.defs#logWithdrawIncomingJoinRequest',
+      required this.rev,
+      required this.convoId,
+      @ProfileViewBasicConverter() required this.member,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-@override final  String rev;
-@override final  String convoId;
-/// Prospective member who withdrew their join request.
-@override@ProfileViewBasicConverter() final  ProfileViewBasic member;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$LogWithdrawIncomingJoinRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$LogWithdrawIncomingJoinRequestImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+  @override
+  final String rev;
+  @override
+  final String convoId;
+
+  /// Prospective member who withdrew their join request.
+  @override
+  @ProfileViewBasicConverter()
+  final ProfileViewBasic member;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'LogWithdrawIncomingJoinRequest(\$type: ${$type}, rev: $rev, convoId: $convoId, member: $member, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogWithdrawIncomingJoinRequestImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.rev, rev) || other.rev == rev) &&
+            (identical(other.convoId, convoId) || other.convoId == convoId) &&
+            (identical(other.member, member) || other.member == member) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, rev, convoId, member,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of LogWithdrawIncomingJoinRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogWithdrawIncomingJoinRequestImplCopyWith<
+          _$LogWithdrawIncomingJoinRequestImpl>
+      get copyWith => __$$LogWithdrawIncomingJoinRequestImplCopyWithImpl<
+          _$LogWithdrawIncomingJoinRequestImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LogWithdrawIncomingJoinRequestImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _LogWithdrawIncomingJoinRequest
+    implements LogWithdrawIncomingJoinRequest {
+  const factory _LogWithdrawIncomingJoinRequest(
+          {final String $type,
+          required final String rev,
+          required final String convoId,
+          @ProfileViewBasicConverter() required final ProfileViewBasic member,
+          final Map<String, dynamic>? $unknown}) =
+      _$LogWithdrawIncomingJoinRequestImpl;
 
-/// Create a copy of LogWithdrawIncomingJoinRequest
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$LogWithdrawIncomingJoinRequestCopyWith<_LogWithdrawIncomingJoinRequest> get copyWith => __$LogWithdrawIncomingJoinRequestCopyWithImpl<_LogWithdrawIncomingJoinRequest>(this, _$identity);
+  factory _LogWithdrawIncomingJoinRequest.fromJson(Map<String, dynamic> json) =
+      _$LogWithdrawIncomingJoinRequestImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$LogWithdrawIncomingJoinRequestToJson(this, );
+  @override
+  String get $type;
+  @override
+  String get rev;
+  @override
+  String get convoId;
+
+  /// Prospective member who withdrew their join request.
+  @override
+  @ProfileViewBasicConverter()
+  ProfileViewBasic get member;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of LogWithdrawIncomingJoinRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LogWithdrawIncomingJoinRequestImplCopyWith<
+          _$LogWithdrawIncomingJoinRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LogWithdrawIncomingJoinRequest&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.rev, rev) || other.rev == rev)&&(identical(other.convoId, convoId) || other.convoId == convoId)&&(identical(other.member, member) || other.member == member)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,rev,convoId,member,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'LogWithdrawIncomingJoinRequest(\$type: ${$type}, rev: $rev, convoId: $convoId, member: $member, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$LogWithdrawIncomingJoinRequestCopyWith<$Res> implements $LogWithdrawIncomingJoinRequestCopyWith<$Res> {
-  factory _$LogWithdrawIncomingJoinRequestCopyWith(_LogWithdrawIncomingJoinRequest value, $Res Function(_LogWithdrawIncomingJoinRequest) _then) = __$LogWithdrawIncomingJoinRequestCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, String rev, String convoId,@ProfileViewBasicConverter() ProfileViewBasic member, Map<String, dynamic>? $unknown
-});
-
-
-@override $ProfileViewBasicCopyWith<$Res> get member;
-
-}
-/// @nodoc
-class __$LogWithdrawIncomingJoinRequestCopyWithImpl<$Res>
-    implements _$LogWithdrawIncomingJoinRequestCopyWith<$Res> {
-  __$LogWithdrawIncomingJoinRequestCopyWithImpl(this._self, this._then);
-
-  final _LogWithdrawIncomingJoinRequest _self;
-  final $Res Function(_LogWithdrawIncomingJoinRequest) _then;
-
-/// Create a copy of LogWithdrawIncomingJoinRequest
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? rev = null,Object? convoId = null,Object? member = null,Object? $unknown = freezed,}) {
-  return _then(_LogWithdrawIncomingJoinRequest(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,rev: null == rev ? _self.rev : rev // ignore: cast_nullable_to_non_nullable
-as String,convoId: null == convoId ? _self.convoId : convoId // ignore: cast_nullable_to_non_nullable
-as String,member: null == member ? _self.member : member // ignore: cast_nullable_to_non_nullable
-as ProfileViewBasic,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of LogWithdrawIncomingJoinRequest
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ProfileViewBasicCopyWith<$Res> get member {
-  
-  return $ProfileViewBasicCopyWith<$Res>(_self.member, (value) {
-    return _then(_self.copyWith(member: value));
-  });
-}
-}
-
-// dart format on

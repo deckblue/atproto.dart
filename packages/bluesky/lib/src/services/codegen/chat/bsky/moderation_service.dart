@@ -33,13 +33,14 @@ Future<XRPCResponse<ModerationGetActorMetadataOutput>>
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyModerationGetActorMetadata,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'actor': actor},
-  to: const ModerationGetActorMetadataOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.chatBskyModerationGetActorMetadata,
+          service: $service,
+          headers: $headers,
+          parameters: {...?$unknown, 'actor': actor},
+          to: const ModerationGetActorMetadataOutputConverter().fromJson,
+        );
 
 /// [NOTE: This is under active development and should be considered unstable while this note is here]. Gets an existing conversation by its ID, for moderation purposes. Does not require the requester to be a member of the conversation.
 Future<XRPCResponse<ModerationGetConvoOutput>> chatBskyModerationGetConvo({
@@ -48,17 +49,18 @@ Future<XRPCResponse<ModerationGetConvoOutput>> chatBskyModerationGetConvo({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyModerationGetConvo,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'convoId': convoId},
-  to: const ModerationGetConvoOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.chatBskyModerationGetConvo,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown, 'convoId': convoId},
+      to: const ModerationGetConvoOutputConverter().fromJson,
+    );
 
 /// [NOTE: This is under active development and should be considered unstable while this note is here]. Returns a paginated list of members from a conversation, for moderation purposes. Does not require the requester to be a member of the conversation.
 Future<XRPCResponse<ModerationGetConvoMembersOutput>>
-chatBskyModerationGetConvoMembers({
+    chatBskyModerationGetConvoMembers({
   required String convoId,
   int? limit,
   String? cursor,
@@ -66,18 +68,19 @@ chatBskyModerationGetConvoMembers({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyModerationGetConvoMembers,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    'convoId': convoId,
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const ModerationGetConvoMembersOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.chatBskyModerationGetConvoMembers,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            'convoId': convoId,
+            if (limit != null) 'limit': limit,
+            if (cursor != null) 'cursor': cursor,
+          },
+          to: const ModerationGetConvoMembersOutputConverter().fromJson,
+        );
 
 /// [NOTE: This is under active development and should be considered unstable while this note is here]. Gets existing conversations by their IDs, for moderation purposes. Does not require the requester to be a member of the conversations. Unknown IDs are silently omitted from the response.
 Future<XRPCResponse<ModerationGetConvosOutput>> chatBskyModerationGetConvos({
@@ -86,13 +89,14 @@ Future<XRPCResponse<ModerationGetConvosOutput>> chatBskyModerationGetConvos({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyModerationGetConvos,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'convoIds': convoIds},
-  to: const ModerationGetConvosOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.chatBskyModerationGetConvos,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown, 'convoIds': convoIds},
+      to: const ModerationGetConvosOutputConverter().fromJson,
+    );
 Future<XRPCResponse<ModerationGetMessageContextOutput>>
     chatBskyModerationGetMessageContext({
   String? convoId,
@@ -164,13 +168,14 @@ base class ModerationService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyModerationGetActorMetadata(
-    actor: actor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyModerationGetActorMetadata(
+        actor: actor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// [NOTE: This is under active development and should be considered unstable while this note is here]. Gets an existing conversation by its ID, for moderation purposes. Does not require the requester to be a member of the conversation.
   Future<XRPCResponse<ModerationGetConvoOutput>> getConvo({
@@ -178,13 +183,14 @@ base class ModerationService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyModerationGetConvo(
-    convoId: convoId,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyModerationGetConvo(
+        convoId: convoId,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// [NOTE: This is under active development and should be considered unstable while this note is here]. Returns a paginated list of members from a conversation, for moderation purposes. Does not require the requester to be a member of the conversation.
   Future<XRPCResponse<ModerationGetConvoMembersOutput>> getConvoMembers({
@@ -194,15 +200,16 @@ base class ModerationService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyModerationGetConvoMembers(
-    convoId: convoId,
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyModerationGetConvoMembers(
+        convoId: convoId,
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// [NOTE: This is under active development and should be considered unstable while this note is here]. Gets existing conversations by their IDs, for moderation purposes. Does not require the requester to be a member of the conversations. Unknown IDs are silently omitted from the response.
   Future<XRPCResponse<ModerationGetConvosOutput>> getConvos({
@@ -210,13 +217,14 @@ base class ModerationService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyModerationGetConvos(
-    convoIds: convoIds,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyModerationGetConvos(
+        convoIds: convoIds,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
   Future<XRPCResponse<ModerationGetMessageContextOutput>> getMessageContext({
     String? convoId,
     required String messageId,

@@ -38,7 +38,6 @@ abstract class EmbedExternalExternal with _$EmbedExternalExternal {
     required String description,
     @BlobConverter() Blob? thumb,
     @RepoStrongRefConverter() List<RepoStrongRef>? associatedRefs,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedExternalExternal;
 

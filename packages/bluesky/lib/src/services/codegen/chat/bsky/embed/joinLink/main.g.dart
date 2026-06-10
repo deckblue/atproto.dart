@@ -8,25 +8,27 @@ part of 'main.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_EmbedJoinLink _$EmbedJoinLinkFromJson(Map json) =>
-    $checkedCreate('_EmbedJoinLink', json, ($checkedConvert) {
-      final val = _EmbedJoinLink(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'chat.bsky.embed.joinLink',
-        ),
-        code: $checkedConvert('code', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$EmbedJoinLinkImpl _$$EmbedJoinLinkImplFromJson(Map json) => $checkedCreate(
+      r'_$EmbedJoinLinkImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$EmbedJoinLinkImpl(
+          $type: $checkedConvert(
+              r'$type', (v) => v as String? ?? 'chat.bsky.embed.joinLink'),
+          code: $checkedConvert('code', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$EmbedJoinLinkToJson(_EmbedJoinLink instance) =>
+Map<String, dynamic> _$$EmbedJoinLinkImplToJson(_$EmbedJoinLinkImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'code': instance.code,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

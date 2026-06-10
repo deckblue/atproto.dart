@@ -61,7 +61,6 @@ abstract class EmbedExternalViewExternal with _$EmbedExternalViewExternal {
     EmbedExternalViewExternalSource? source,
     @RepoStrongRefConverter() List<RepoStrongRef>? associatedRefs,
     @ProfileViewBasicConverter() List<ProfileViewBasic>? associatedProfiles,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedExternalViewExternal;
 

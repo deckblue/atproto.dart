@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,298 +9,212 @@ part of 'output.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+ModerationGetConvoOutput _$ModerationGetConvoOutputFromJson(
+    Map<String, dynamic> json) {
+  return _ModerationGetConvoOutput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ModerationGetConvoOutput {
-
-@ConvoViewConverter() ConvoView get convo; Map<String, dynamic>? get $unknown;
-/// Create a copy of ModerationGetConvoOutput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ModerationGetConvoOutputCopyWith<ModerationGetConvoOutput> get copyWith => _$ModerationGetConvoOutputCopyWithImpl<ModerationGetConvoOutput>(this as ModerationGetConvoOutput, _$identity);
+  @ConvoViewConverter()
+  ConvoView get convo => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ModerationGetConvoOutput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationGetConvoOutput&&(identical(other.convo, convo) || other.convo == convo)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,convo,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'ModerationGetConvoOutput(convo: $convo, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of ModerationGetConvoOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ModerationGetConvoOutputCopyWith<ModerationGetConvoOutput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ModerationGetConvoOutputCopyWith<$Res>  {
-  factory $ModerationGetConvoOutputCopyWith(ModerationGetConvoOutput value, $Res Function(ModerationGetConvoOutput) _then) = _$ModerationGetConvoOutputCopyWithImpl;
-@useResult
-$Res call({
-@ConvoViewConverter() ConvoView convo, Map<String, dynamic>? $unknown
-});
+abstract class $ModerationGetConvoOutputCopyWith<$Res> {
+  factory $ModerationGetConvoOutputCopyWith(ModerationGetConvoOutput value,
+          $Res Function(ModerationGetConvoOutput) then) =
+      _$ModerationGetConvoOutputCopyWithImpl<$Res, ModerationGetConvoOutput>;
+  @useResult
+  $Res call(
+      {@ConvoViewConverter() ConvoView convo, Map<String, dynamic>? $unknown});
 
-
-$ConvoViewCopyWith<$Res> get convo;
-
+  $ConvoViewCopyWith<$Res> get convo;
 }
+
 /// @nodoc
-class _$ModerationGetConvoOutputCopyWithImpl<$Res>
+class _$ModerationGetConvoOutputCopyWithImpl<$Res,
+        $Val extends ModerationGetConvoOutput>
     implements $ModerationGetConvoOutputCopyWith<$Res> {
-  _$ModerationGetConvoOutputCopyWithImpl(this._self, this._then);
+  _$ModerationGetConvoOutputCopyWithImpl(this._value, this._then);
 
-  final ModerationGetConvoOutput _self;
-  final $Res Function(ModerationGetConvoOutput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ModerationGetConvoOutput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? convo = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-convo: null == convo ? _self.convo : convo // ignore: cast_nullable_to_non_nullable
-as ConvoView,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of ModerationGetConvoOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ConvoViewCopyWith<$Res> get convo {
-  
-  return $ConvoViewCopyWith<$Res>(_self.convo, (value) {
-    return _then(_self.copyWith(convo: value));
-  });
-}
-}
+  /// Create a copy of ModerationGetConvoOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? convo = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      convo: null == convo
+          ? _value.convo
+          : convo // ignore: cast_nullable_to_non_nullable
+              as ConvoView,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [ModerationGetConvoOutput].
-extension ModerationGetConvoOutputPatterns on ModerationGetConvoOutput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ModerationGetConvoOutput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ModerationGetConvoOutput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ModerationGetConvoOutput value)  $default,){
-final _that = this;
-switch (_that) {
-case _ModerationGetConvoOutput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ModerationGetConvoOutput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ModerationGetConvoOutput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ConvoViewConverter()  ConvoView convo,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ModerationGetConvoOutput() when $default != null:
-return $default(_that.convo,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ConvoViewConverter()  ConvoView convo,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _ModerationGetConvoOutput():
-return $default(_that.convo,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ConvoViewConverter()  ConvoView convo,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _ModerationGetConvoOutput() when $default != null:
-return $default(_that.convo,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of ModerationGetConvoOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConvoViewCopyWith<$Res> get convo {
+    return $ConvoViewCopyWith<$Res>(_value.convo, (value) {
+      return _then(_value.copyWith(convo: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$ModerationGetConvoOutputImplCopyWith<$Res>
+    implements $ModerationGetConvoOutputCopyWith<$Res> {
+  factory _$$ModerationGetConvoOutputImplCopyWith(
+          _$ModerationGetConvoOutputImpl value,
+          $Res Function(_$ModerationGetConvoOutputImpl) then) =
+      __$$ModerationGetConvoOutputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ConvoViewConverter() ConvoView convo, Map<String, dynamic>? $unknown});
+
+  @override
+  $ConvoViewCopyWith<$Res> get convo;
+}
+
+/// @nodoc
+class __$$ModerationGetConvoOutputImplCopyWithImpl<$Res>
+    extends _$ModerationGetConvoOutputCopyWithImpl<$Res,
+        _$ModerationGetConvoOutputImpl>
+    implements _$$ModerationGetConvoOutputImplCopyWith<$Res> {
+  __$$ModerationGetConvoOutputImplCopyWithImpl(
+      _$ModerationGetConvoOutputImpl _value,
+      $Res Function(_$ModerationGetConvoOutputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ModerationGetConvoOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? convo = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$ModerationGetConvoOutputImpl(
+      convo: null == convo
+          ? _value.convo
+          : convo // ignore: cast_nullable_to_non_nullable
+              as ConvoView,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _ModerationGetConvoOutput implements ModerationGetConvoOutput {
-  const _ModerationGetConvoOutput({@ConvoViewConverter() required this.convo, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _ModerationGetConvoOutput.fromJson(Map<String, dynamic> json) => _$ModerationGetConvoOutputFromJson(json);
+class _$ModerationGetConvoOutputImpl implements _ModerationGetConvoOutput {
+  const _$ModerationGetConvoOutputImpl(
+      {@ConvoViewConverter() required this.convo,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@ConvoViewConverter() final  ConvoView convo;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$ModerationGetConvoOutputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ModerationGetConvoOutputImplFromJson(json);
+
+  @override
+  @ConvoViewConverter()
+  final ConvoView convo;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ModerationGetConvoOutput(convo: $convo, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModerationGetConvoOutputImpl &&
+            (identical(other.convo, convo) || other.convo == convo) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, convo, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of ModerationGetConvoOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModerationGetConvoOutputImplCopyWith<_$ModerationGetConvoOutputImpl>
+      get copyWith => __$$ModerationGetConvoOutputImplCopyWithImpl<
+          _$ModerationGetConvoOutputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ModerationGetConvoOutputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _ModerationGetConvoOutput implements ModerationGetConvoOutput {
+  const factory _ModerationGetConvoOutput(
+      {@ConvoViewConverter() required final ConvoView convo,
+      final Map<String, dynamic>? $unknown}) = _$ModerationGetConvoOutputImpl;
 
-/// Create a copy of ModerationGetConvoOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ModerationGetConvoOutputCopyWith<_ModerationGetConvoOutput> get copyWith => __$ModerationGetConvoOutputCopyWithImpl<_ModerationGetConvoOutput>(this, _$identity);
+  factory _ModerationGetConvoOutput.fromJson(Map<String, dynamic> json) =
+      _$ModerationGetConvoOutputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ModerationGetConvoOutputToJson(this, );
+  @override
+  @ConvoViewConverter()
+  ConvoView get convo;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of ModerationGetConvoOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ModerationGetConvoOutputImplCopyWith<_$ModerationGetConvoOutputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ModerationGetConvoOutput&&(identical(other.convo, convo) || other.convo == convo)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,convo,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'ModerationGetConvoOutput(convo: $convo, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ModerationGetConvoOutputCopyWith<$Res> implements $ModerationGetConvoOutputCopyWith<$Res> {
-  factory _$ModerationGetConvoOutputCopyWith(_ModerationGetConvoOutput value, $Res Function(_ModerationGetConvoOutput) _then) = __$ModerationGetConvoOutputCopyWithImpl;
-@override @useResult
-$Res call({
-@ConvoViewConverter() ConvoView convo, Map<String, dynamic>? $unknown
-});
-
-
-@override $ConvoViewCopyWith<$Res> get convo;
-
-}
-/// @nodoc
-class __$ModerationGetConvoOutputCopyWithImpl<$Res>
-    implements _$ModerationGetConvoOutputCopyWith<$Res> {
-  __$ModerationGetConvoOutputCopyWithImpl(this._self, this._then);
-
-  final _ModerationGetConvoOutput _self;
-  final $Res Function(_ModerationGetConvoOutput) _then;
-
-/// Create a copy of ModerationGetConvoOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? convo = null,Object? $unknown = freezed,}) {
-  return _then(_ModerationGetConvoOutput(
-convo: null == convo ? _self.convo : convo // ignore: cast_nullable_to_non_nullable
-as ConvoView,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of ModerationGetConvoOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ConvoViewCopyWith<$Res> get convo {
-  
-  return $ConvoViewCopyWith<$Res>(_self.convo, (value) {
-    return _then(_self.copyWith(convo: value));
-  });
-}
-}
-
-// dart format on

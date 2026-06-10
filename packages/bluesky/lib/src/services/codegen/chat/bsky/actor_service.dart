@@ -53,12 +53,13 @@ Future<XRPCResponse<Uint8List>> chatBskyActorExportAccountData({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyActorExportAccountData,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown},
-);
+}) async =>
+    await $ctx.get(
+      ns.chatBskyActorExportAccountData,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown},
+    );
 
 /// Get the authenticated viewer's chat status: whether their account is chat-disabled and whether their group-membership additions are restricted to accounts they follow.
 Future<XRPCResponse<ActorGetStatusOutput>> chatBskyActorGetStatus({
@@ -66,13 +67,14 @@ Future<XRPCResponse<ActorGetStatusOutput>> chatBskyActorGetStatus({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyActorGetStatus,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown},
-  to: const ActorGetStatusOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.chatBskyActorGetStatus,
+      service: $service,
+      headers: $headers,
+      parameters: {...?$unknown},
+      to: const ActorGetStatusOutputConverter().fromJson,
+    );
 
 /// `chat.bsky.actor.*`
 base class ActorService {
@@ -98,24 +100,26 @@ base class ActorService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyActorExportAccountData(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyActorExportAccountData(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Get the authenticated viewer's chat status: whether their account is chat-disabled and whether their group-membership additions are restricted to accounts they follow.
   Future<XRPCResponse<ActorGetStatusOutput>> getStatus({
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyActorGetStatus(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyActorGetStatus(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }
 
 final class ActorDeclarationRecordAccessor {
