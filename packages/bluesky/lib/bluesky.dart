@@ -35,6 +35,7 @@ export 'app_bsky_draft_updatedraft.dart';
 export 'app_bsky_embed_defs.dart';
 export 'app_bsky_embed_external.dart';
 export 'app_bsky_embed_images.dart';
+export 'app_bsky_embed_gallery.dart';
 export 'app_bsky_embed_record.dart';
 export 'app_bsky_embed_recordwithmedia.dart';
 export 'app_bsky_embed_video.dart';
