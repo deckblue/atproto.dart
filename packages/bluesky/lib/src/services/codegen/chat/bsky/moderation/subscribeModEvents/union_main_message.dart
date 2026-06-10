@@ -22,6 +22,7 @@ import './event_group_chat_member_added.dart';
 import './event_group_chat_member_joined.dart';
 import './event_group_chat_member_left.dart';
 import './event_group_chat_updated.dart';
+import './event_rate_limit_exceeded.dart';
 
 part 'union_main_message.freezed.dart';
 
@@ -64,6 +65,9 @@ sealed class UModerationSubscribeModEventsMessage
   const factory UModerationSubscribeModEventsMessage.eventGroupChatUpdated({
     required EventGroupChatUpdated data,
   }) = UModerationSubscribeModEventsMessageEventGroupChatUpdated;
+  const factory UModerationSubscribeModEventsMessage.eventRateLimitExceeded({
+    required EventRateLimitExceeded data,
+  }) = UModerationSubscribeModEventsMessageEventRateLimitExceeded;
 
   const factory UModerationSubscribeModEventsMessage.unknown({
     required Map<String, dynamic> data,
@@ -101,23 +105,25 @@ extension UModerationSubscribeModEventsMessageExtension
   EventGroupChatJoinRequest? get eventGroupChatJoinRequest =>
       isEventGroupChatJoinRequest ? data as EventGroupChatJoinRequest : null;
   bool get isEventGroupChatJoinRequestApproved =>
-      isA<UModerationSubscribeModEventsMessageEventGroupChatJoinRequestApproved>(
-          this);
+      isA<
+        UModerationSubscribeModEventsMessageEventGroupChatJoinRequestApproved
+      >(this);
   bool get isNotEventGroupChatJoinRequestApproved =>
       !isEventGroupChatJoinRequestApproved;
   EventGroupChatJoinRequestApproved? get eventGroupChatJoinRequestApproved =>
       isEventGroupChatJoinRequestApproved
-          ? data as EventGroupChatJoinRequestApproved
-          : null;
+      ? data as EventGroupChatJoinRequestApproved
+      : null;
   bool get isEventGroupChatJoinRequestRejected =>
-      isA<UModerationSubscribeModEventsMessageEventGroupChatJoinRequestRejected>(
-          this);
+      isA<
+        UModerationSubscribeModEventsMessageEventGroupChatJoinRequestRejected
+      >(this);
   bool get isNotEventGroupChatJoinRequestRejected =>
       !isEventGroupChatJoinRequestRejected;
   EventGroupChatJoinRequestRejected? get eventGroupChatJoinRequestRejected =>
       isEventGroupChatJoinRequestRejected
-          ? data as EventGroupChatJoinRequestRejected
-          : null;
+      ? data as EventGroupChatJoinRequestRejected
+      : null;
   bool get isEventChatAccepted =>
       isA<UModerationSubscribeModEventsMessageEventChatAccepted>(this);
   bool get isNotEventChatAccepted => !isEventChatAccepted;
@@ -133,6 +139,11 @@ extension UModerationSubscribeModEventsMessageExtension
   bool get isNotEventGroupChatUpdated => !isEventGroupChatUpdated;
   EventGroupChatUpdated? get eventGroupChatUpdated =>
       isEventGroupChatUpdated ? data as EventGroupChatUpdated : null;
+  bool get isEventRateLimitExceeded =>
+      isA<UModerationSubscribeModEventsMessageEventRateLimitExceeded>(this);
+  bool get isNotEventRateLimitExceeded => !isEventRateLimitExceeded;
+  EventRateLimitExceeded? get eventRateLimitExceeded =>
+      isEventRateLimitExceeded ? data as EventRateLimitExceeded : null;
   bool get isUnknown => isA<UModerationSubscribeModEventsMessageUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
@@ -141,8 +152,10 @@ extension UModerationSubscribeModEventsMessageExtension
 
 final class UModerationSubscribeModEventsMessageConverter
     implements
-        JsonConverter<UModerationSubscribeModEventsMessage,
-            Map<String, dynamic>> {
+        JsonConverter<
+          UModerationSubscribeModEventsMessage,
+          Map<String, dynamic>
+        > {
   const UModerationSubscribeModEventsMessageConverter();
 
   @override
@@ -174,16 +187,14 @@ final class UModerationSubscribeModEventsMessageConverter
         );
       }
       if (EventGroupChatJoinRequestApproved.validate(json)) {
-        return UModerationSubscribeModEventsMessage
-            .eventGroupChatJoinRequestApproved(
+        return UModerationSubscribeModEventsMessage.eventGroupChatJoinRequestApproved(
           data: const EventGroupChatJoinRequestApprovedConverter().fromJson(
             json,
           ),
         );
       }
       if (EventGroupChatJoinRequestRejected.validate(json)) {
-        return UModerationSubscribeModEventsMessage
-            .eventGroupChatJoinRequestRejected(
+        return UModerationSubscribeModEventsMessage.eventGroupChatJoinRequestRejected(
           data: const EventGroupChatJoinRequestRejectedConverter().fromJson(
             json,
           ),
@@ -202,6 +213,11 @@ final class UModerationSubscribeModEventsMessageConverter
       if (EventGroupChatUpdated.validate(json)) {
         return UModerationSubscribeModEventsMessage.eventGroupChatUpdated(
           data: const EventGroupChatUpdatedConverter().fromJson(json),
+        );
+      }
+      if (EventRateLimitExceeded.validate(json)) {
+        return UModerationSubscribeModEventsMessage.eventRateLimitExceeded(
+          data: const EventRateLimitExceededConverter().fromJson(json),
         );
       }
 
@@ -234,6 +250,9 @@ final class UModerationSubscribeModEventsMessageConverter
             const EventGroupChatMemberLeftConverter().toJson(data),
         eventGroupChatUpdated: (data) =>
             const EventGroupChatUpdatedConverter().toJson(data),
+        eventRateLimitExceeded: (data) =>
+            const EventRateLimitExceededConverter().toJson(data),
+
         unknown: (data) => data,
       );
 }

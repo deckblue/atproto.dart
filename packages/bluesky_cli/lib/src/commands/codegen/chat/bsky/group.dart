@@ -19,12 +19,14 @@ import 'group/disable_join_link.dart';
 import 'group/edit_group.dart';
 import 'group/edit_join_link.dart';
 import 'group/enable_join_link.dart';
-import 'group/get_join_link_preview.dart';
+import 'group/get_join_link_previews.dart';
 import 'group/list_join_requests.dart';
 import 'group/list_mutual_groups.dart';
 import 'group/reject_join_request.dart';
 import 'group/remove_members.dart';
 import 'group/request_join.dart';
+import 'group/update_join_requests_read.dart';
+import 'group/withdraw_join_request.dart';
 
 // **************************************************************************
 // LexGenerator
@@ -40,12 +42,14 @@ final class ChatBskyGroupCommand extends Command<void> {
     addSubcommand(EditGroupCommand());
     addSubcommand(EditJoinLinkCommand());
     addSubcommand(EnableJoinLinkCommand());
-    addSubcommand(GetJoinLinkPreviewCommand());
+    addSubcommand(GetJoinLinkPreviewsCommand());
     addSubcommand(ListJoinRequestsCommand());
     addSubcommand(ListMutualGroupsCommand());
     addSubcommand(RejectJoinRequestCommand());
     addSubcommand(RemoveMembersCommand());
     addSubcommand(RequestJoinCommand());
+    addSubcommand(UpdateJoinRequestsReadCommand());
+    addSubcommand(WithdrawJoinRequestCommand());
   }
 
   @override

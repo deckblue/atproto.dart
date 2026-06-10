@@ -13,6 +13,7 @@ import 'package:args/command_runner.dart';
 // Project imports:
 import 'actor/declaration.dart';
 import 'actor/export_account_data.dart';
+import 'actor/get_status.dart';
 
 // **************************************************************************
 // LexGenerator
@@ -22,6 +23,7 @@ final class ChatBskyActorCommand extends Command<void> {
   ChatBskyActorCommand() {
     addSubcommand(DeclarationCommand());
     addSubcommand(ExportAccountDataCommand());
+    addSubcommand(GetStatusCommand());
   }
 
   @override

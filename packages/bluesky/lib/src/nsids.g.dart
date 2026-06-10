@@ -103,6 +103,9 @@ const appBskyDraftUpdateDraft = NSID(ids.appBskyDraftUpdateDraft);
 /// `app.bsky.embed.external`
 const appBskyEmbedExternal = NSID(ids.appBskyEmbedExternal);
 
+/// `app.bsky.embed.external#colorRGB`
+const appBskyEmbedExternalColorRGB = NSID(ids.appBskyEmbedExternalColorRGB);
+
 /// `app.bsky.embed.external#external`
 const appBskyEmbedExternalExternal = NSID(ids.appBskyEmbedExternalExternal);
 
@@ -112,6 +115,21 @@ const appBskyEmbedExternalView = NSID(ids.appBskyEmbedExternalView);
 /// `app.bsky.embed.external#viewExternal`
 const appBskyEmbedExternalViewExternal = NSID(
   ids.appBskyEmbedExternalViewExternal,
+);
+
+/// `app.bsky.embed.external#viewExternalSource`
+const appBskyEmbedExternalViewExternalSource = NSID(
+  ids.appBskyEmbedExternalViewExternalSource,
+);
+
+/// `app.bsky.embed.external#viewExternalSourceTheme`
+const appBskyEmbedExternalViewExternalSourceTheme = NSID(
+  ids.appBskyEmbedExternalViewExternalSourceTheme,
+);
+
+/// `app.bsky.embed.getEmbedExternalView`
+const appBskyEmbedGetEmbedExternalView = NSID(
+  ids.appBskyEmbedGetEmbedExternalView,
 );
 
 /// `app.bsky.embed.images`
@@ -652,6 +670,9 @@ const chatBskyActorDeleteAccount = NSID(ids.chatBskyActorDeleteAccount);
 /// `chat.bsky.actor.exportAccountData`
 const chatBskyActorExportAccountData = NSID(ids.chatBskyActorExportAccountData);
 
+/// `chat.bsky.actor.getStatus`
+const chatBskyActorGetStatus = NSID(ids.chatBskyActorGetStatus);
+
 /// `chat.bsky.convo.acceptConvo`
 const chatBskyConvoAcceptConvo = NSID(ids.chatBskyConvoAcceptConvo);
 
@@ -726,6 +747,12 @@ const chatBskyConvoUpdateAllRead = NSID(ids.chatBskyConvoUpdateAllRead);
 /// `chat.bsky.convo.updateRead`
 const chatBskyConvoUpdateRead = NSID(ids.chatBskyConvoUpdateRead);
 
+/// `chat.bsky.embed.joinLink`
+const chatBskyEmbedJoinLink = NSID(ids.chatBskyEmbedJoinLink);
+
+/// `chat.bsky.embed.joinLink#view`
+const chatBskyEmbedJoinLinkView = NSID(ids.chatBskyEmbedJoinLinkView);
+
 /// `chat.bsky.group.addMembers`
 const chatBskyGroupAddMembers = NSID(ids.chatBskyGroupAddMembers);
 
@@ -752,9 +779,9 @@ const chatBskyGroupEditJoinLink = NSID(ids.chatBskyGroupEditJoinLink);
 /// `chat.bsky.group.enableJoinLink`
 const chatBskyGroupEnableJoinLink = NSID(ids.chatBskyGroupEnableJoinLink);
 
-/// `chat.bsky.group.getJoinLinkPreview`
-const chatBskyGroupGetJoinLinkPreview = NSID(
-  ids.chatBskyGroupGetJoinLinkPreview,
+/// `chat.bsky.group.getJoinLinkPreviews`
+const chatBskyGroupGetJoinLinkPreviews = NSID(
+  ids.chatBskyGroupGetJoinLinkPreviews,
 );
 
 /// `chat.bsky.group.listJoinRequests`
@@ -772,6 +799,16 @@ const chatBskyGroupRemoveMembers = NSID(ids.chatBskyGroupRemoveMembers);
 /// `chat.bsky.group.requestJoin`
 const chatBskyGroupRequestJoin = NSID(ids.chatBskyGroupRequestJoin);
 
+/// `chat.bsky.group.updateJoinRequestsRead`
+const chatBskyGroupUpdateJoinRequestsRead = NSID(
+  ids.chatBskyGroupUpdateJoinRequestsRead,
+);
+
+/// `chat.bsky.group.withdrawJoinRequest`
+const chatBskyGroupWithdrawJoinRequest = NSID(
+  ids.chatBskyGroupWithdrawJoinRequest,
+);
+
 /// `chat.bsky.moderation.getActorMetadata`
 const chatBskyModerationGetActorMetadata = NSID(
   ids.chatBskyModerationGetActorMetadata,
@@ -781,6 +818,17 @@ const chatBskyModerationGetActorMetadata = NSID(
 const chatBskyModerationGetActorMetadataMetadata = NSID(
   ids.chatBskyModerationGetActorMetadataMetadata,
 );
+
+/// `chat.bsky.moderation.getConvo`
+const chatBskyModerationGetConvo = NSID(ids.chatBskyModerationGetConvo);
+
+/// `chat.bsky.moderation.getConvoMembers`
+const chatBskyModerationGetConvoMembers = NSID(
+  ids.chatBskyModerationGetConvoMembers,
+);
+
+/// `chat.bsky.moderation.getConvos`
+const chatBskyModerationGetConvos = NSID(ids.chatBskyModerationGetConvos);
 
 /// `chat.bsky.moderation.getMessageContext`
 const chatBskyModerationGetMessageContext = NSID(
@@ -842,6 +890,11 @@ const chatBskyModerationSubscribeModEventsEventGroupChatMemberLeft = NSID(
 /// `chat.bsky.moderation.subscribeModEvents#eventGroupChatUpdated`
 const chatBskyModerationSubscribeModEventsEventGroupChatUpdated = NSID(
   ids.chatBskyModerationSubscribeModEventsEventGroupChatUpdated,
+);
+
+/// `chat.bsky.moderation.subscribeModEvents#eventRateLimitExceeded`
+const chatBskyModerationSubscribeModEventsEventRateLimitExceeded = NSID(
+  ids.chatBskyModerationSubscribeModEventsEventRateLimitExceeded,
 );
 
 /// `chat.bsky.moderation.updateActorAccess`
