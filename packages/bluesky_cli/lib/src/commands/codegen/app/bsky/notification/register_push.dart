@@ -32,22 +32,22 @@ final class RegisterPushCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Register to receive push notifications, via a specified service, for the requesting account. Requires auth.";
+      "Register to receive push notifications, via a specified service, for the requesting account. Requires auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-notification register-push [serviceDid] [token] [platform] [appId] [ageRestricted]";
+      "bsky app-bsky-notification register-push --serviceDid=<value> --token=<value> --platform=<value> --appId=<value> [--ageRestricted]";
 
   @override
   String get methodId => "app.bsky.notification.registerPush";
 
   @override
   Map<String, dynamic>? get body => {
-        "serviceDid": argResults!["serviceDid"],
-        "token": argResults!["token"],
-        "platform": argResults!["platform"],
-        "appId": argResults!["appId"],
-        if (argResults!["ageRestricted"] != null)
-          "ageRestricted": argResults!["ageRestricted"],
-      };
+    "serviceDid": argResults!["serviceDid"],
+    "token": argResults!["token"],
+    "platform": argResults!["platform"],
+    "appId": argResults!["appId"],
+    if (argResults!.wasParsed("ageRestricted"))
+      "ageRestricted": argResults!["ageRestricted"],
+  };
 }

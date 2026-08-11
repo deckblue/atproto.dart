@@ -55,23 +55,25 @@ final class UModerationScheduleActionActionConverter
 
   @override
   UModerationScheduleActionAction fromJson(Map<String, dynamic> json) {
-    try {
-      if (Takedown.validate(json)) {
-        return UModerationScheduleActionAction.takedown(
-          data: const TakedownConverter().fromJson(json),
-        );
-      }
-
-      return UModerationScheduleActionAction.unknown(data: json);
-    } catch (_) {
-      return UModerationScheduleActionAction.unknown(data: json);
+    if (Takedown.validate(json)) {
+      return UModerationScheduleActionAction.takedown(
+        data: const TakedownConverter().fromJson(json),
+      );
     }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UModerationScheduleActionAction.unknown(data: json);
   }
 
   @override
   Map<String, dynamic> toJson(UModerationScheduleActionAction object) =>
-      object.when(
-        takedown: (data) => const TakedownConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UModerationScheduleActionActionTakedown(:final data) =>
+          const TakedownConverter().toJson(data),
+
+        UModerationScheduleActionActionUnknown(:final data) => data,
+      };
 }

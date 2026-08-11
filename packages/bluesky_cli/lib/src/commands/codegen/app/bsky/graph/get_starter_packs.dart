@@ -23,14 +23,23 @@ final class GetStarterPacksCommand extends QueryCommand {
   final String name = "get-starter-packs";
 
   @override
-  final String description = r"Get views for a list of starter packs.";
+  final String description = "Get views for a list of starter packs.";
 
   @override
-  final String invocation = "bsky app-bsky-graph get-starter-packs [uris]";
+  final String invocation =
+      "bsky app-bsky-graph get-starter-packs [--uris=<value>...]";
 
   @override
   String get methodId => "app.bsky.graph.getStarterPacks";
 
   @override
-  Map<String, dynamic>? get parameters => {"uris": argResults!["uris"]};
+  Map<String, dynamic>? get parameters => {
+    "uris": _requireNonEmpty("uris", argResults!["uris"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

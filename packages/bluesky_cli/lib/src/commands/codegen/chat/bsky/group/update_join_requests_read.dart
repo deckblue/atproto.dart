@@ -24,11 +24,11 @@ final class UpdateJoinRequestsReadCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Marks all join requests as read for the group owner.";
+      "Marks all join requests as read for the group owner.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group update-join-requests-read [convoId]";
+      "bsky chat-bsky-group update-join-requests-read --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.group.updateJoinRequestsRead";

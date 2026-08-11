@@ -48,22 +48,24 @@ final class UFeedPostLabelsConverter
 
   @override
   UFeedPostLabels fromJson(Map<String, dynamic> json) {
-    try {
-      if (SelfLabels.validate(json)) {
-        return UFeedPostLabels.selfLabels(
-          data: const SelfLabelsConverter().fromJson(json),
-        );
-      }
-
-      return UFeedPostLabels.unknown(data: json);
-    } catch (_) {
-      return UFeedPostLabels.unknown(data: json);
+    if (SelfLabels.validate(json)) {
+      return UFeedPostLabels.selfLabels(
+        data: const SelfLabelsConverter().fromJson(json),
+      );
     }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UFeedPostLabels.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UFeedPostLabels object) => object.when(
-        selfLabels: (data) => const SelfLabelsConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UFeedPostLabels object) => switch (object) {
+    UFeedPostLabelsSelfLabels(:final data) =>
+      const SelfLabelsConverter().toJson(data),
+
+    UFeedPostLabelsUnknown(:final data) => data,
+  };
 }

@@ -41,13 +41,30 @@ final class LikeCommand extends Command<void> {
       "Record declaring a 'like' of a piece of subject content.";
 }
 
-final class _CreateLikeCommand extends CreateRecordCommand {
-  _CreateLikeCommand() {
+mixin _LikeCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
     argParser
       ..addOption("subject", mandatory: true)
       ..addOption("createdAt", mandatory: true)
-      ..addOption("via")
-      ..addOption("rkey");
+      ..addOption("via");
+  }
+
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
+}
+
+final class _CreateLikeCommand extends CreateRecordCommand
+    with _LikeCommandRecordArgs {
+  _CreateLikeCommand() {
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"Specific record key to use.");
   }
 
   @override
@@ -58,29 +75,28 @@ final class _CreateLikeCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-feed like create [subject] [createdAt] [via] [rkey]";
+      "bsky app-bsky-feed like create --subject=<value> --createdAt=<value> [--via=<value>] [--rkey=<value>]";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.feed.like";
 
   @override
   Map<String, dynamic> get record => {
-        "subject": jsonDecode(argResults!["subject"]),
-        "createdAt": argResults!["createdAt"],
-        if (argResults!["via"] != null) "via": jsonDecode(argResults!["via"]),
-      };
+    r"$type": "app.bsky.feed.like",
+    "subject": _decodeJson("subject"),
+    "createdAt": argResults!["createdAt"],
+    if (argResults!.wasParsed("via")) "via": _decodeJson("via"),
+  };
 }
 
-final class _PutLikeCommand extends PutRecordCommand {
+final class _PutLikeCommand extends PutRecordCommand
+    with _LikeCommandRecordArgs {
   _PutLikeCommand() {
-    argParser
-      ..addOption("subject", mandatory: true)
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("via")
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -91,25 +107,26 @@ final class _PutLikeCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-feed like put [subject] [createdAt] [via] [rkey]";
+      "bsky app-bsky-feed like put --subject=<value> --createdAt=<value> [--via=<value>] --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.feed.like";
 
   @override
   Map<String, dynamic> get record => {
-        "subject": jsonDecode(argResults!["subject"]),
-        "createdAt": argResults!["createdAt"],
-        if (argResults!["via"] != null) "via": jsonDecode(argResults!["via"]),
-      };
+    r"$type": "app.bsky.feed.like",
+    "subject": _decodeJson("subject"),
+    "createdAt": argResults!["createdAt"],
+    if (argResults!.wasParsed("via")) "via": _decodeJson("via"),
+  };
 }
 
 final class _DeleteLikeCommand extends DeleteRecordCommand {
   _DeleteLikeCommand() {
-    argParser..addOption("rkey", mandatory: true);
+    argParser..addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -119,10 +136,10 @@ final class _DeleteLikeCommand extends DeleteRecordCommand {
   final String description = r"Deletes a record for app.bsky.feed.like.";
 
   @override
-  final String invocation = "bsky app-bsky-feed like delete [rkey]";
+  final String invocation = "bsky app-bsky-feed like delete --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.feed.like";
@@ -131,7 +148,11 @@ final class _DeleteLikeCommand extends DeleteRecordCommand {
 final class _GetLikeCommand extends QueryCommand {
   _GetLikeCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption("rkey", help: r"The record key.", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -142,23 +163,28 @@ final class _GetLikeCommand extends QueryCommand {
   final String description = r"Gets a record for app.bsky.feed.like.";
 
   @override
-  final String invocation = "bsky app-bsky-feed like get [rkey] [cid]";
+  final String invocation =
+      "bsky app-bsky-feed like get --rkey=<value> [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'rkey': argResults!['rkey'],
-        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "app.bsky.feed.like",
+    'rkey': argResults!['rkey'],
+    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+  };
 }
 
 final class _ListLikeCommand extends QueryCommand {
   _ListLikeCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -172,17 +198,19 @@ final class _ListLikeCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-feed like list [limit] [cursor] [reverse]";
+      "bsky app-bsky-feed like list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
-        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-        'reverse': argResults!['reverse'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "app.bsky.feed.like",
+    'limit':
+        int.tryParse(argResults!['limit']) ??
+        usageException(r'Invalid integer value for option "limit".'),
+    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+    'reverse': argResults!['reverse'],
+  };
 }

@@ -58,28 +58,31 @@ final class UFeedViewPostReasonConverter
 
   @override
   UFeedViewPostReason fromJson(Map<String, dynamic> json) {
-    try {
-      if (ReasonRepost.validate(json)) {
-        return UFeedViewPostReason.reasonRepost(
-          data: const ReasonRepostConverter().fromJson(json),
-        );
-      }
-      if (ReasonPin.validate(json)) {
-        return UFeedViewPostReason.reasonPin(
-          data: const ReasonPinConverter().fromJson(json),
-        );
-      }
-
-      return UFeedViewPostReason.unknown(data: json);
-    } catch (_) {
-      return UFeedViewPostReason.unknown(data: json);
+    if (ReasonRepost.validate(json)) {
+      return UFeedViewPostReason.reasonRepost(
+        data: const ReasonRepostConverter().fromJson(json),
+      );
     }
+    if (ReasonPin.validate(json)) {
+      return UFeedViewPostReason.reasonPin(
+        data: const ReasonPinConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UFeedViewPostReason.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UFeedViewPostReason object) => object.when(
-        reasonRepost: (data) => const ReasonRepostConverter().toJson(data),
-        reasonPin: (data) => const ReasonPinConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UFeedViewPostReason object) => switch (object) {
+    UFeedViewPostReasonReasonRepost(:final data) =>
+      const ReasonRepostConverter().toJson(data),
+    UFeedViewPostReasonReasonPin(:final data) =>
+      const ReasonPinConverter().toJson(data),
+
+    UFeedViewPostReasonUnknown(:final data) => data,
+  };
 }

@@ -25,19 +25,21 @@ final class CreateInviteCodeCommand extends ProcedureCommand {
   final String name = "create-invite-code";
 
   @override
-  final String description = r"Create an invite code.";
+  final String description = "Create an invite code.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server create-invite-code [useCount] [forAccount]";
+      "bsky com-atproto-server create-invite-code --useCount=<value> [--forAccount=<value>]";
 
   @override
   String get methodId => "com.atproto.server.createInviteCode";
 
   @override
   Map<String, dynamic>? get body => {
-        "useCount": argResults!["useCount"],
-        if (argResults!["forAccount"] != null)
-          "forAccount": argResults!["forAccount"],
-      };
+    "useCount":
+        int.tryParse(argResults!["useCount"]) ??
+        usageException('Invalid integer value for option "useCount".'),
+    if (argResults!.wasParsed("forAccount"))
+      "forAccount": argResults!["forAccount"],
+  };
 }

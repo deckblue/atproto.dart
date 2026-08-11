@@ -21,7 +21,6 @@ part 'system_message_view.g.dart';
 // LexGenerator
 // **************************************************************************
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here].
 @freezed
 abstract class SystemMessageView with _$SystemMessageView {
   static const knownProps = <String>['id', 'rev', 'sentAt', 'data'];
@@ -31,7 +30,7 @@ abstract class SystemMessageView with _$SystemMessageView {
     @Default('chat.bsky.convo.defs#systemMessageView') String $type,
     required String id,
     required String rev,
-    required DateTime sentAt,
+    @JsonKey(toJson: iso8601) required DateTime sentAt,
     @USystemMessageViewDataConverter() required USystemMessageViewData data,
     Map<String, dynamic>? $unknown,
   }) = _SystemMessageView;

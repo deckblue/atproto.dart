@@ -20,31 +20,29 @@ final class _CompatibleOpOrTombstoneConverter
   @override
   CompatibleOpOrTombstone fromJson(Map<String, dynamic> json) {
     try {
-      final type = json['type'];
-
-      if (type == 'plc_operation') {
-        return CompatibleOpOrTombstone.op(data: Operation.fromJson(json));
-      } else if (type == 'plc_tombstone') {
-        return CompatibleOpOrTombstone.tombstone(
+      return switch (json['type']) {
+        'plc_operation' => CompatibleOpOrTombstone.op(
+          data: Operation.fromJson(json),
+        ),
+        'plc_tombstone' => CompatibleOpOrTombstone.tombstone(
           data: Tombstone.fromJson(json),
-        );
-      } else if (type == 'create') {
-        return CompatibleOpOrTombstone.createOpV1(
+        ),
+        'create' => CompatibleOpOrTombstone.createOpV1(
           data: CreateOperationV1.fromJson(json),
-        );
-      }
-
-      return CompatibleOpOrTombstone.unknown(data: json);
+        ),
+        _ => CompatibleOpOrTombstone.unknown(data: json),
+      };
     } catch (_) {
       return CompatibleOpOrTombstone.unknown(data: json);
     }
   }
 
   @override
-  Map<String, dynamic> toJson(CompatibleOpOrTombstone object) => object.when(
-        op: (data) => data.toJson(),
-        tombstone: (data) => data.toJson(),
-        createOpV1: (data) => data.toJson(),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(CompatibleOpOrTombstone object) =>
+      switch (object) {
+        UCompatibleOpOrTombstoneOp(:final data) => data.toJson(),
+        UCompatibleOpOrTombstoneTombstone(:final data) => data.toJson(),
+        UCompatibleOpOrTombstoneCreateOperationV1(:final data) => data.toJson(),
+        UCompatibleOpOrTombstoneUnknown(:final data) => data,
+      };
 }

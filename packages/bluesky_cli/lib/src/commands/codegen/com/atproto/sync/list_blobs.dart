@@ -31,20 +31,22 @@ final class ListBlobsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"List blob CIDs for an account, since some repo revision. Does not require auth; implemented by PDS.";
+      "List blob CIDs for an account, since some repo revision. Does not require auth; implemented by PDS.";
 
   @override
   final String invocation =
-      "bsky com-atproto-sync list-blobs [did] [since] [limit] [cursor]";
+      "bsky com-atproto-sync list-blobs --did=<value> [--since=<value>] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "com.atproto.sync.listBlobs";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "did": argResults!["did"],
-        if (argResults!["since"] != null) "since": argResults!["since"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "did": argResults!["did"],
+    if (argResults!.wasParsed("since")) "since": argResults!["since"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

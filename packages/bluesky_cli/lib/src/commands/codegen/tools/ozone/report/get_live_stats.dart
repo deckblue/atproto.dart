@@ -30,21 +30,24 @@ final class GetLiveStatsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get live report statistics from the past 24 hours. Filter by queue, moderator, or report type. Omit all parameters for aggregate stats.";
+      "Get live report statistics from the past 24 hours. Filter by queue, moderator, or report type. Omit all parameters for aggregate stats.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-report get-live-stats [queueId] [moderatorDid] [reportTypes]";
+      "bsky tools-ozone-report get-live-stats [--queueId=<value>] [--moderatorDid=<value>] [--reportTypes=<value>...]";
 
   @override
   String get methodId => "tools.ozone.report.getLiveStats";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
-        if (argResults!["moderatorDid"] != null)
-          "moderatorDid": argResults!["moderatorDid"],
-        if (argResults!["reportTypes"] != null)
-          "reportTypes": argResults!["reportTypes"],
-      };
+    if (argResults!.wasParsed("queueId"))
+      "queueId":
+          int.tryParse(argResults!["queueId"]) ??
+          usageException('Invalid integer value for option "queueId".'),
+    if (argResults!.wasParsed("moderatorDid"))
+      "moderatorDid": argResults!["moderatorDid"],
+    if (argResults!.wasParsed("reportTypes"))
+      "reportTypes": argResults!["reportTypes"],
+  };
 }

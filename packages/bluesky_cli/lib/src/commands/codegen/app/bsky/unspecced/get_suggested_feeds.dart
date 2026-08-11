@@ -23,15 +23,19 @@ final class GetSuggestedFeedsCommand extends QueryCommand {
   final String name = "get-suggested-feeds";
 
   @override
-  final String description = r"Get a list of suggested feeds";
+  final String description = "Get a list of suggested feeds";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced get-suggested-feeds [limit]";
+      "bsky app-bsky-unspecced get-suggested-feeds [--limit=<value>]";
 
   @override
   String get methodId => "app.bsky.unspecced.getSuggestedFeeds";
 
   @override
-  Map<String, dynamic>? get parameters => {"limit": argResults!["limit"]};
+  Map<String, dynamic>? get parameters => {
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+  };
 }

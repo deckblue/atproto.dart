@@ -1,5 +1,78 @@
 # Release Note
 
+## v2.4.1
+
+- chore: bump `atproto_oauth` to `^0.8.0`.
+
+## v2.4.0
+
+- fix: `decodeCar` validates the CAR header length instead of trusting it. A truncated archive whose header varint claimed more bytes than exist pushed the cursor past the end and decoded to an EMPTY map — a truncated repository export looked like an empty repository, silently losing every block. It now throws `CarException`, the same contract the block-length check already honored.
+- fix: a varint whose payload reaches the 64th bit no longer wraps to a negative length and escapes as a raw `RangeError` from deep inside the decoder; it is rejected as a `CarException` in the varint reader itself, so every caller of it is covered. Length checks are also written as subtractions so a near-maximum length cannot overflow the cursor past its own bounds check.
+- feat: added `ServiceContext.withAdditionalHeaders`, which derives a context from this one's headers plus the given ones instead of replacing them. `withHeaders` replaces, so every caller adding a single header spread the origin's headers back in by hand — and a spread is key-exact, which leaves a caller's `Atproto-Proxy` sitting next to the added `atproto-proxy`. Header names are case-insensitive, so this merges case-insensitively and the added header wins.
+- fix: `ServiceContext.headers` no longer hands out the context's live internal map. Any holder could write to it, and because a context derived via `withHeaders` and the clients built on it read the same field, one `headers['atproto-proxy'] = ...` retargeted every request every one of them made — while `headers.remove(...)` silently dropped a header a client needs for the rest of its life. The map is now copied at construction and exposed unmodifiable, consistently: previously the same write threw `UnsupportedError` when no headers had been supplied and succeeded when they had.
+- fix: a `5xx` now reaches a custom `RetryStrategy` with its true status code. `checkStatus` funnels `500`, `502`, `503` and `504` into a single `InternalServerErrorException`, and the retry layer hardcoded `statusCode: 500` when building the `RetryContext`, so a strategy branching on `context.statusCode == 503` could never match.
+- fix: a `Retry-After` / `ratelimit-reset` sent with a server error is now honored. It was read only on the `429` path, so the wait a `503` asked for was silently dropped.
+- fix: a `401` provoked by an access token the session has already rotated past no longer triggers a further refresh. Single-flighting only coalesces requests that overlap an *in-progress* refresh; a request already on the wire with the superseded token 401s after the rotation lands, and each such response used to chain another rotation — spending an unused refresh token and emitting an `onSessionUpdated` the owner has to persist. The token the failed request actually carried is now compared against the current session, and a stale one is simply retried.
+- fix: the exponential backoff in `RetryConfig` is now capped at 60 seconds, matching the "capped exponential backoff" it documents. Uncapped, `2 ^ (attempt - 1)` reaches roughly six days by attempt 20.
+- fix: a server-requested wait can no longer *shorten* a retry. The 60-second clamp was applied after the comparison, so a server asking for 1000s while the backoff stood at 512s collapsed the wait to 60s — a larger requested delay produced a shorter wait than plain backoff.
+- fix: a user-supplied `onRefreshSession` is now bounded by the context's `timeout`. It is awaited at the head of every request behind a single flight, so one that never completed stalled every request on the context forever; `timeout` previously covered only the xrpc call.
+- fix: `Challenge.execute` no longer exposes its recursion state (`attempt`, `dpopNonceRetryCount`, `sessionRefreshed`) on the public signature, where a caller passing e.g. `attempt: 5` corrupted the retry accounting. `Challenge` is publicly exported; the loop state moved to a private `_execute`.
+- docs: `RetryConfig` documented its jitter as `0 ~ 3` while the implementation drew `0 ~ 4` inclusive.
+
+## v2.3.0
+
+- feat: added `ServiceContext.actorDid`, the DID of the authenticated actor regardless of how the context was authenticated. `session` is set only for the legacy (app-password) path and `oAuthSessionManager` only for the OAuth one, so neither answers that on its own and callers were left composing the two by hand. `repo` is now defined in terms of it, so the two cannot drift.
+- feat: added `isAmbiguousFailure`, a pure predicate reporting whether a caught error leaves it uncertain that the request reached the server. The retry engine already drew this distinction but only exposed it to a `RetryStrategy`; once retries were exhausted the original error was rethrown unchanged — a `TimeoutException` or an `http.ClientException` cannot carry an extra field — so a caller writing records could not tell a safe retry from one risking a duplicate. The retry layer now consumes the same predicate, so the classification callers see cannot drift from the behavior they observe.
+- feat: `atproto_core.dart` now re-exports `TidGenerator` from `at_primitives`, alongside the existing `AtUri` and `NSID` re-exports, so a caller allocating record keys ahead of a write does not need a direct dependency on `at_primitives`.
+- feat: added `ServiceContext.withHeaders`, deriving a context that shares this one's session while carrying its own request headers. Mutable session state now lives in a holder the derived contexts share, so a refresh — including the deduplicated in-flight one — is seen by all of them. Headers belong to the client; the session belongs to the account.
+
+## v2.2.0
+
+- feat: added `computeRecordCid`, which returns the CID a PDS will assign to a record by canonically DAG-CBOR-encoding it and hashing to a CIDv1. This lets a caller reference a record before it is written — for example to chain reply references across records submitted in one `com.atproto.repo.applyWrites` batch.
+- chore: widen `at_primitives` to `^1.2.0`, `multiformats` to `^1.3.0`, and `xrpc` to `^1.1.3`.
+
+## v2.1.0
+
+- feat: added `ServiceContext.onSessionUpdated`, a broadcast stream that emits the refreshed `Session` each time an expired access token is renewed. `session` already reflected the new credentials, but nothing told the caller to read it back — and because refresh tokens are single-use, a caller that kept persisting the session it originally passed in stored a spent refresh token, so the next run restored a session that could no longer be refreshed. Mirrors `OAuthSessionManager.onSessionUpdated` for the legacy (app-password) path; it stays silent on OAuth-backed contexts. Concurrent requests that share one deduplicated refresh emit exactly one event.
+
+## v2.0.1
+
+- docs: rewrite the README to document the actual public API — `Session`/`OAuthSession`, JWT decoding (`decodeJwt`/`Jwt`), the pluggable retry engine (`RetryStrategy`, `RetryConfig`, `RetryContext`, `RetryReason`, `RetryEvent`, `Jitter`), `BaseHttpService`/`ServiceContext`, `Blob`/`BlobRef`, `decodeCar`, `isValidAppPassword`, and the `xrpc`/`multiformats`/`cbor` re-exports — and frame the package as the shared core layer `atproto`/`bluesky` build on.
+- docs: replace the placeholder `example/example.md` with a runnable `example/example.dart` covering `RetryConfig`/custom `RetryStrategy`, JWT decoding, `Blob` serialization, and app-password validation.
+- chore: bump `xrpc` to `^1.1.2`, `at_primitives` to `^1.1.1`, and `atproto_oauth` to `^0.5.1`.
+
+## v2.0.0
+
+- feat!: OAuth requests are now driven by `OAuthSessionManager`; `ServiceContext` takes `oAuthSessionManager` instead of `oAuthSession`, enabling transparent OAuth token auto-refresh. OAuth tokens are never JWT-decoded. `restoreOAuthSession`/`OauthSessionExtension` removed (opaque tokens). Legacy password-auth `Session` is unaffected.
+- fix: OAuth requests target the session's PDS even when the `OAuthSessionManager` restores its session lazily — previously every request defaulted to `bsky.social`, causing spurious 401s.
+- fix: a caller-supplied `Authorization` header (e.g. a service-auth Bearer token) is preserved instead of being overwritten by the session/DPoP token, fixing service-auth flows such as video upload.
+- fix: concurrent expired requests now share a single legacy-session refresh instead of issuing a refresh stampede.
+- feat: `stream()` accepts a `service` override and a `channelFactory`, and honors the configured protocol; the `use_dpop_nonce` retry awaits the nonce write before retrying.
+- fix: a failing user-supplied DPoP nonce-cache write on the request success path is now contained instead of escaping as an uncaught asynchronous error, so a storage failure in `DPoPNonceCache.set` can no longer crash the app.
+- fix: the rate-limit retry wait now parses the HTTP-date form of `Retry-After` (previously only delta-seconds was honored; a date silently degraded to plain backoff and could retry too early).
+- perf: `ServiceContext.service` caches the resolved PDS endpoint per access JWT instead of base64/JSON-decoding the access token on every request when the did document has no `#atproto_pds` service.
+- feat: retries are now driven by a pluggable `RetryStrategy` (`FutureOr<Duration?> nextDelay(RetryContext)`). `RetryContext` exposes the attempt count, failure `RetryReason`, request kind (query vs procedure), NSID, status code, and the server-provided `Retry-After`. Implement `RetryStrategy` for full control over backoff and which failures retry; the default `RetryConfig` now implements it.
+- fix: by default a procedure (`POST`) is no longer retried after an *ambiguous* failure the server may already have applied (a timeout after the request was sent, a `5xx`, or an inconclusive connection reset), preventing duplicate writes. Queries (`GET`) and subscriptions still retry as before, and `429`/pre-connection network failures still retry for procedures. Set `RetryConfig(retryProcedureOnAmbiguousFailure: true)` to restore the previous unconditional behavior.
+
+## v1.3.0
+
+- feat: automatic access-token refresh — `Challenge` now retries once after refreshing on a genuine `401`, with a pre-emptive refresh when the token is within 30s of expiry (the `use_dpop_nonce` path is unchanged).
+- fix: `Challenge` now retries `429` (respecting `ratelimit-reset`/`Retry-After`), `SocketException`, and `ClientException`, and preserves the `XRPCResponse<T>` type — previously only `TimeoutException` and `500` were retried and the type was erased.
+- fix: `car_decoder` handles variable-length multihash CIDs and raises a typed `CarException` on truncated input; tag-42 CID links are normalized to `{$link: <cid>}` so downstream keeps type info, and the triple `jsonEncode`/`jsonDecode` round-trip is gone.
+- fix: `decodeCar` now normalizes plain (non-tagged) CBOR byte strings to `{$bytes: <base64>}` (standard base64, RFC 4648 section 4, no padding) per the atproto data model, instead of returning raw `Uint8List`.
+- fix: `atprotoPdsEndpoint` keeps an explicit port, falls back to the JWT `aud` when the did document has no `#atproto_pds`, and guards malformed did documents.
+- fix: caller-supplied headers can no longer override `Authorization`/DPoP; `dpop-nonce` lookup is case-insensitive.
+- fix: empty `$unknown` maps are stripped from the wire JSON.
+- fix: unify on the validating `NsidConverter`; the non-validating `NSIDConverter` alias is deprecated.
+- chore: bump `xrpc` to `^1.1.0`, `at_primitives` to `^1.1.0`, `multiformats` to `^1.1.0`, and `atproto_oauth` to `^0.4.0`.
+
+## v1.2.2
+
+- fix: redact `accessJwt`/`refreshJwt` in `Session.toString()` so credentials are not leaked through logs or crash reporters.
+- fix: forward the `headers` argument in `BaseHttpService.post` (previously dropped).
+- fix: retry jitter is now inclusive `[min, max]` and no longer throws a `RangeError` when `maxInSeconds` is `0`.
+- chore: bump `atproto_oauth` and `multiformats`.
+
 ## v1.2.1
 
 - chore: bump atproto_oauth.

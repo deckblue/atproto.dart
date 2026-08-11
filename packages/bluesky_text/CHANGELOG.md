@@ -1,5 +1,209 @@
 # Release Note
 
+## v1.8.0
+
+- **feat**: `Entity.toFacet`, `Entities.toFacetsResult` and `Entities.toFacets` accept an optional `http.Client? client`, forwarded to the built-in handle-resolution call. It is used only when no `resolver` is supplied and exists so the default (network) mention path can be driven against a mock transport. Existing callers are unaffected — the parameter is optional and additive.
+- **test**: the mention-facet tests no longer reach the live network. Seven tests resolved real handles against `bsky.social` and asserted the returned DID, so they broke on any outage, rate limit, or handle change and could not run offline. They now inject a `MockClient` (via the new `client` hook) that answers `resolveHandle` locally, covering the success path, the 4xx "unresolvable handle → no facet" swallow, the 5xx "surface the error" rethrow, and that `service` reaches the request. One meaningless "does not throw" assertion was replaced with a real output check.
+
+- **security**: `isLinkFacade` no longer passes a display text it cannot parse. It used to return `false` — "not a facade" — both when the text named no host and when it named one that could not be read, so every shape the parser did not recognize went through unflagged.
+  - Display text is now folded the way IDNA (UTS-46) folds it before comparison: the three full-stop variants (`。` U+3002, `．` U+FF0E, `｡` U+FF61) become `.`, and the fullwidth ASCII block (U+FF01–U+FF5E) becomes plain ASCII. `bsky。app` and `ｂｓｋｙ．ａｐｐ` are hosts a browser really resolves to `bsky.app` — the reader sees a domain they trust and the link works — and they were not flagged when pointed at another host. The host of the target is folded the same way, so a link written with a fullwidth host still matches an ASCII display text. This is not homograph detection, which stays out of scope: only the characters IDNA *maps* onto ASCII are folded, and a Cyrillic look-alike is still a genuinely different host.
+  - The authority now ends at a backslash as well as at `/`, `?` and `#`. The WHATWG URL Standard makes `\` a synonym for `/` in a special scheme, so a browser reads the host of `https://bsky.app\@evil.example.com` as `bsky.app`; that went unflagged while its `https://bsky.app\evil.example.com` sibling was flagged.
+  - Wrappers and sentence punctuation are stripped from both ends, and a leading `//` is read as a protocol-relative reference. `"bsky.app"`, `<bsky.app>`, `(bsky.app)`, `//bsky.app` and `bsky.app,` were all unflagged while `bsky.app/` and `[bsky.app]` were flagged.
+- **feat**: added `checkLinkFacade` and `LinkFacadeVerdict`, which report `facade`, `honest`, `notAUrl` or `undetermined` instead of the single boolean. `undetermined` is the case a boolean cannot express — the display text reads as a URL but yields no host, it is host-shaped under an internationalized TLD this package carries no data for, or the link itself has no host to compare against. `isLinkFacade` is unchanged and is now `checkLinkFacade(...) == LinkFacadeVerdict.facade`.
+- **fix**: `PostFacet.fromJson` refuses malformed JSON instead of leaking a `_TypeError` out of the render path. A facet with no `index`, an `index` that is not an object, a `byteStart`/`byteEnd` that is not a whole number, or a `features` that is not a list now throws a `FormatException` naming the field; a feature entry that is not an object is skipped, exactly as an unknown `$type` already was, and a whole-numbered `double` offset such as `2.0` is accepted. Added `PostFacet.tryFromJson`, which returns `null` where `fromJson` throws, so one bad facet in a fetched post drops out instead of taking the whole render down.
+- **perf**: extracting entities is no longer quadratic in the length of a run of dotted labels or of a path of balanced parens. A run with no usable TLD was rescanned once per label, with the TLD alternation — thousands of literals wide — as the constant, and a path was matched against a star over an alternation that retried every prefix. `'a.' * 150`, a legal 300-character post, took 43 ms and now takes 0.13 ms; 3000 characters took 11 s and now take 1.3 ms; `https://a.com/` followed by 3000 `(a)` groups took 4.9 s and now takes 0.5 ms. Ordinary text is unaffected in either direction. Extraction is unchanged to the entity: the same facets come out of the existing suite and of a 10,344-entry corpus of real and generated posts, and the skip stands down entirely on any text where it could have changed an answer.
+
+## v1.6.0
+
+- feat: added `isLinkFacade`, which reports when a facet's display text reads as a URL or host that does not match the host its link points at — the link-facade phishing shape. Display text that is not URL-looking is never flagged: a bare host is flagged only when this package would itself have linkified that same text. Hosts match on equality or a subdomain relation, ignoring `www.`, trailing root dots, case, ports, paths and punycode encoding. It does not detect homographs, redirects or deceptive non-URL text, and says so.
+- feat: added `toDisplayHost`, which decodes a punycode (`xn--`) host into the Unicode it stands for, so a link warning can show what the host actually says.
+- fix: the facet maps returned by `Entity.toFacet`, `Entities.toFacets`, `Entities.toFacetsResult` and `BlueskyText.toPostData` are now wire-complete. The facet carries `"$type": "app.bsky.richtext.facet"` and its `index` carries `"$type": "app.bsky.richtext.facet#byteSlice"`, matching what the lexicon models serialize to — previously only the individual features were typed, and the returned map did not even pass `RichtextFacet.validate`. Callers going through `feed.post.create` never noticed, since the generated converter fills them in; callers assembling a record map themselves, for `com.atproto.repo.applyWrites` or to compute a record CID locally, silently produced a record that differed from the converter's output. The "no facet" results (an unresolvable handle, a raw markdown link) are still an empty map.
+
+## v1.5.4
+
+- chore: bump `xrpc` to `^1.1.3`.
+
+## v1.5.3
+
+- chore: bump dev dependency `bluesky` to `^2.1.0`.
+
+## v1.5.2
+
+- docs: added a runnable inline usage snippet to the README — instantiating `BlueskyText`, extracting entities (`.entities`/`.handles`/`.links`), and converting with `toPostData({service, resolver})` to `text`/`facets`/`unresolvedHandles`.
+- chore: bump `xrpc` to `^1.1.2`.
+
+## v1.5.1
+
+- fix: email addresses are no longer partially linkified (the domain of `mail@alice.bsky.social` is no longer turned into a link).
+- fix: URL paths containing non-ASCII characters are no longer truncated, so links such as `https://ja.wikipedia.org/wiki/日本語` resolve to the full URL.
+
+## v1.5.0
+
+- **FEAT**: Added `BlueskyText.overflow`, which returns a `TextLengthOverflow`
+  describing the range of the text that exceeds the post-length limit (more than
+  300 graphemes or 3000 UTF-8 bytes), or `null` when it is within both. The
+  boundary is reported in UTF-16, UTF-8 byte and grapheme coordinates so a UI
+  can, for example, split the value with `TextLengthOverflow.utf16Start` and
+  render the overflowing tail in red via a Flutter `TextSpan`.
+  - The boundary always lands on a grapheme cluster boundary, so emoji and other
+    multi-code-unit characters are never split.
+  - When the boundary would fall inside an entity (handle, link, tag, cashtag or
+    markdown link) it is snapped back to that entity's start, so the entity is
+    treated atomically — wholly within the limit or wholly in the overflow.
+  - Because the range is derived from the value, calling `.format().overflow`
+    reports the overflow of the formatted text (markdown expanded, links
+    shortened), which is what is displayed and posted.
+- **FEAT**: Added `BlueskyText.segments`, which partitions the value into
+  non-overlapping, gap-free `TextSegment`s in document order. Each segment
+  carries UTF-16 offsets, the entity it belongs to (if any) and whether it lies
+  in the overflow region, so a Flutter `TextEditingController` can color links,
+  handles and tags together with the over-limit tail (for example in red) in a
+  single pass — without merging the byte-based entity indices and the overflow
+  range by hand. Concatenating every `TextSegment.text` reproduces the value,
+  and no segment is ever split across an entity boundary.
+- **FEAT**: Added `renderFacets(text, facets)` and `PostFacet` for displaying a
+  **fetched** post: it partitions the text into `TextSegment`s using the
+  server-provided facets (authoritative mentions/links/tags, mentions already
+  carrying their DID) instead of re-detecting entities. Each segment exposes a
+  `FacetFeature` with the resolved DID / URI / tag, so a Flutter client can
+  style received posts with one `TextSpan` builder shared with the compose path.
+  `PostFacet.fromJson` parses the `app.bsky.richtext.facet` API shape, and the
+  byte→UTF-16 `Utf16IndexConverter` is now public.
+- **FEAT**: `Entities.toFacets` / the new `Entities.toFacetsResult` accept a
+  `HandleResolver`, so mention DID resolution can be served from a cache or
+  batched instead of the built-in per-handle network call. `toFacetsResult`
+  additionally returns the handles that failed to resolve, so a client can warn
+  the user rather than silently posting a mention-less message.
+- **FEAT**: Added `BlueskyText.formatted` (the memoized, posting-ready form) and
+  `BlueskyText.toPostData(...)`, which formats and resolves facets in one call —
+  the only correct order, since markdown links become link facets only after
+  formatting — returning `(text, facets, unresolvedHandles)`.
+- **FIX**: `split()` now budgets each chunk against **both** post limits (300
+  graphemes and 3000 UTF-8 bytes). Previously it budgeted graphemes only, so a
+  byte-heavy chunk — e.g. many multi-byte ZWJ emoji — could stay under 300
+  graphemes yet exceed 3000 bytes and still be rejected by the server.
+- **FIX**: `split()` on a `format()`ted instance now splits the original text
+  instead of the lossy formatted value, so `format().split()` behaves exactly
+  like `split()` on the original. Splitting formatted text and re-extracting
+  previously corrupted facets — a shortened link's `uri` became its truncated
+  display text and a markdown link's facet vanished — because the chunks dropped
+  the position-bound replacements. Each chunk is a raw, independently-formattable
+  piece; format each one *after* splitting (e.g. via `chunk.toPostData()`).
+- **FIX**: `split()` now breaks on **any** Unicode whitespace — newlines, tabs
+  and the ideographic (full-width) space `U+3000` — not just the ASCII space.
+  Previously a multi-line or CJK post with no ASCII spaces was treated as one
+  giant word and hard-split mid-word (e.g. `word44` became `wo` | `rd44`). The
+  author's newlines and spacing are now preserved within each chunk, and no
+  chunk starts or ends with whitespace. A markdown link is also kept atomic, so
+  one straddling a chunk boundary is no longer torn open (which would drop its
+  facet).
+- **PERF**: `BlueskyText` now lazily memoizes every derived value (`length`,
+  `handles`, `entities`, `overflow`, `segments`, `format()`…), so touching
+  several properties of one instance in a Flutter `build` costs one analysis
+  instead of one per property (~1.6x faster when touching seven). Note: as a
+  result `BlueskyText` is **no longer `const`** — `const BlueskyText(...)` must
+  become `BlueskyText(...)`.
+- **PERF**: The length-limit hot paths (polled on every keystroke in a Flutter
+  editor) avoid the regex-based entity extraction entirely unless it is needed.
+  `isLengthLimitExceeded` and `overflow` fall back to a cheap grapheme scan when
+  within the limit, `segments` resolves the entities only once (instead of
+  extracting them again via `overflow`), and the grapheme scan counts UTF-8
+  bytes without allocating an intermediate byte list. For over-limit text this
+  cuts `isLengthLimitExceeded` ~18x and `segments` ~2x; a 300-grapheme post
+  segments in well under 0.1 ms.
+
+## v1.4.1
+
+- **FIX**: Markdown links whose destination contains surrounding whitespace are
+  now detected and formatted correctly. Previously the link's end offset was
+  reconstructed from `label length + URL length + 4`, which ignored any
+  whitespace padding inside the parentheses. As a result inputs such as
+  `[ test ]( https://example.com  )` left the padding and the closing `)` behind
+  in the formatted output (`" test   )"`) and, because every following entity is
+  positioned relative to that offset, shifted and corrupted all subsequent
+  facets. The destination is now parsed structurally, so the following are all
+  handled:
+  - leading/trailing whitespace, tabs and newlines inside the parentheses
+    (`[t]( https://example.com )`, `[t](\n https://example.com \n)`);
+  - an optional angle-bracket wrapper (`[t](<https://example.com>)`);
+  - a gap between `]` and `(` (`[t] (https://example.com)`);
+  - balanced parentheses in the URL path remain intact
+    (`[film](https://en.wikipedia.org/wiki/Primer_(film))`).
+- **PERF**: Destination parsing anchors the URL match with `matchAsPrefix`
+  instead of a forward-scanning `firstMatch` over a freshly allocated substring
+  per link opener. Formatting bracket-heavy input on every keystroke (as a
+  Flutter editor does) is now `O(n)` instead of `O(n^2)` — a 4 KB string of
+  `[a](` fragments drops from ~240 ms to ~1 ms — and no per-match substring is
+  allocated.
+- **PERF**: Entity extraction now converts UTF-16 code-unit boundaries to UTF-8
+  byte offsets with a forward-only `Utf8IndexConverter` instead of rescanning
+  the prefix from the start on every boundary. Because each extractor pass emits
+  matches left-to-right, the conversion drops from `O(k * n)` to `O(n)` per pass
+  (~12x faster on the conversion step in isolation, ~8% faster end-to-end on
+  entity-dense text). Output byte ranges are byte-identical to before, including
+  the unpaired-surrogate contract.
+
+## v1.4.0
+
+- **FIX**: Fixed crashes on IDN (internationalized domain) URLs. Text containing
+  URLs such as `https://日本語.jp` or `https://日本.example.com` no longer throws
+  from `.links` / `.entities` / `.format()` or markdown-link extraction.
+- **BREAKING**: Aligned several detectors with Bluesky's official implementation:
+  - The mention regex is now case-insensitive, so `@Alice.Bsky.Social` and
+    `@SHINYAKATO.DEV` are detected.
+  - The hashtag "emoji" character class was rewritten to drop whitespace,
+    `U+3000`, line separators, CJK punctuation, and lone surrogate ranges, so
+    `#タグ　こんにちは` is one tag and `#tag3　#tag4` are both preserved.
+  - Tag facet values strip a single leading `#`, and the tag length limit is now
+    64 graphemes (excluding `#`), matching the spec.
+  - Mention preceding-character rules follow the official `(^|\s|\()` boundary
+    (the leftover twitter-text `RT:` alternative is removed).
+  - Full-width `＃` is now recognized as a hashtag sign (partial; `#tag1#tag2`
+    splitting is still deferred).
+- **FIX**: The chunk splitter now budgets by grapheme count instead of UTF-16
+  length, so emoji-heavy text is packed correctly. `split()` also propagates the
+  active `format()` replacements / link config to each chunk, so shortened
+  display strings are no longer re-extracted into truncated facet URLs.
+- **FIX**: `http(s)` scheme detection is case-insensitive and no longer
+  double-prefixes (`HTTPS://EXAMPLE.COM` is handled; `httpstatus.io` is not a
+  scheme).
+- **FIX**: Overlapping facets are resolved by priority (link > mention > tag >
+  cashtag), so an `@handle` or `#fragment` inside a URL no longer produces a
+  duplicate facet.
+- **FIX**: Enforce the lexicon's 3000 UTF-8 byte limit alongside the 300
+  grapheme limit; misc fixes to `isEmojiOnly`, the shorten threshold, and
+  `toFacet` error propagation.
+- **PERF**: `toUtf8Index` is now incremental (no per-call full re-encode).
+- **TEST**: Added a WS-6 regression suite (IDN input, upper-case TLD/scheme,
+  `format()` → `split()`, non-BMP splitting, facet overlap) and de-duplicated
+  test names. Where existing tests pinned non-official behavior, they were
+  updated to match the reference implementation.
+
+## v1.3.0
+
+- **BREAKING**: Aligned cashtag detection with Bluesky's official `CASHTAG_REGEX`
+  in `@atproto/api`. Detection is now stricter and consistent with the reference
+  implementation:
+  - The ticker symbol is limited to 1–5 ASCII characters
+    (`[A-Za-z][A-Za-z0-9]{0,4}`); longer candidates like `$GOOGLE` are rejected.
+  - A cashtag must be preceded by a leading boundary — the start of the string,
+    a whitespace character (including `U+3000` / `U+00A0`), or an ASCII `(` — and
+    followed by a trailing boundary — whitespace, the end of the string, or one
+    of the ASCII punctuation characters `. , ; : ! ? ) " '` or `’` (`U+2019`).
+    As a result, cashtags glued to Japanese (or other non-delimiting) text such
+    as `日本株$AAPL` or `$AAPLです` are intentionally not detected, matching the
+    official Bluesky behavior. Full-width delimiters like `（$AAPL）` and `$AAPL。`
+    are likewise not treated as boundaries.
+  - The ticker is normalized to upper case and the emitted `tag` facet keeps the
+    leading `$` (e.g. `$aapl` → `$AAPL`), mirroring the official cashtag facet.
+- **REGEX**: Removed the `cashtagBoundary` and `endCashtag` patterns; the
+  `validCashtag` pattern now embeds the official leading/trailing boundaries
+  directly. `cashSigns` and `validCashtag` remain exported from
+  `package:bluesky_text/regex.dart`.
+- **TEST**: Updated and expanded the cashtag test suite to pin the
+  official-compliant boundaries, ticker length limit, upper-case normalization,
+  and Japanese-adjacency behavior.
+
 ## v1.2.1
 
 - fix: do not use `.substring` when creating the cashtag entities.

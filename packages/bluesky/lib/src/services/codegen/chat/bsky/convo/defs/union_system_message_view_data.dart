@@ -92,22 +92,22 @@ extension USystemMessageViewDataExtension on USystemMessageViewData {
       !isSystemMessageDataRemoveMember;
   SystemMessageDataRemoveMember? get systemMessageDataRemoveMember =>
       isSystemMessageDataRemoveMember
-          ? data as SystemMessageDataRemoveMember
-          : null;
+      ? data as SystemMessageDataRemoveMember
+      : null;
   bool get isSystemMessageDataMemberJoin =>
       isA<USystemMessageViewDataSystemMessageDataMemberJoin>(this);
   bool get isNotSystemMessageDataMemberJoin => !isSystemMessageDataMemberJoin;
   SystemMessageDataMemberJoin? get systemMessageDataMemberJoin =>
       isSystemMessageDataMemberJoin
-          ? data as SystemMessageDataMemberJoin
-          : null;
+      ? data as SystemMessageDataMemberJoin
+      : null;
   bool get isSystemMessageDataMemberLeave =>
       isA<USystemMessageViewDataSystemMessageDataMemberLeave>(this);
   bool get isNotSystemMessageDataMemberLeave => !isSystemMessageDataMemberLeave;
   SystemMessageDataMemberLeave? get systemMessageDataMemberLeave =>
       isSystemMessageDataMemberLeave
-          ? data as SystemMessageDataMemberLeave
-          : null;
+      ? data as SystemMessageDataMemberLeave
+      : null;
   bool get isSystemMessageDataLockConvo =>
       isA<USystemMessageViewDataSystemMessageDataLockConvo>(this);
   bool get isNotSystemMessageDataLockConvo => !isSystemMessageDataLockConvo;
@@ -118,17 +118,17 @@ extension USystemMessageViewDataExtension on USystemMessageViewData {
   bool get isNotSystemMessageDataUnlockConvo => !isSystemMessageDataUnlockConvo;
   SystemMessageDataUnlockConvo? get systemMessageDataUnlockConvo =>
       isSystemMessageDataUnlockConvo
-          ? data as SystemMessageDataUnlockConvo
-          : null;
+      ? data as SystemMessageDataUnlockConvo
+      : null;
   bool get isSystemMessageDataLockConvoPermanently =>
       isA<USystemMessageViewDataSystemMessageDataLockConvoPermanently>(this);
   bool get isNotSystemMessageDataLockConvoPermanently =>
       !isSystemMessageDataLockConvoPermanently;
   SystemMessageDataLockConvoPermanently?
-      get systemMessageDataLockConvoPermanently =>
-          isSystemMessageDataLockConvoPermanently
-              ? data as SystemMessageDataLockConvoPermanently
-              : null;
+  get systemMessageDataLockConvoPermanently =>
+      isSystemMessageDataLockConvoPermanently
+      ? data as SystemMessageDataLockConvoPermanently
+      : null;
   bool get isSystemMessageDataEditGroup =>
       isA<USystemMessageViewDataSystemMessageDataEditGroup>(this);
   bool get isNotSystemMessageDataEditGroup => !isSystemMessageDataEditGroup;
@@ -140,32 +140,32 @@ extension USystemMessageViewDataExtension on USystemMessageViewData {
       !isSystemMessageDataCreateJoinLink;
   SystemMessageDataCreateJoinLink? get systemMessageDataCreateJoinLink =>
       isSystemMessageDataCreateJoinLink
-          ? data as SystemMessageDataCreateJoinLink
-          : null;
+      ? data as SystemMessageDataCreateJoinLink
+      : null;
   bool get isSystemMessageDataEditJoinLink =>
       isA<USystemMessageViewDataSystemMessageDataEditJoinLink>(this);
   bool get isNotSystemMessageDataEditJoinLink =>
       !isSystemMessageDataEditJoinLink;
   SystemMessageDataEditJoinLink? get systemMessageDataEditJoinLink =>
       isSystemMessageDataEditJoinLink
-          ? data as SystemMessageDataEditJoinLink
-          : null;
+      ? data as SystemMessageDataEditJoinLink
+      : null;
   bool get isSystemMessageDataEnableJoinLink =>
       isA<USystemMessageViewDataSystemMessageDataEnableJoinLink>(this);
   bool get isNotSystemMessageDataEnableJoinLink =>
       !isSystemMessageDataEnableJoinLink;
   SystemMessageDataEnableJoinLink? get systemMessageDataEnableJoinLink =>
       isSystemMessageDataEnableJoinLink
-          ? data as SystemMessageDataEnableJoinLink
-          : null;
+      ? data as SystemMessageDataEnableJoinLink
+      : null;
   bool get isSystemMessageDataDisableJoinLink =>
       isA<USystemMessageViewDataSystemMessageDataDisableJoinLink>(this);
   bool get isNotSystemMessageDataDisableJoinLink =>
       !isSystemMessageDataDisableJoinLink;
   SystemMessageDataDisableJoinLink? get systemMessageDataDisableJoinLink =>
       isSystemMessageDataDisableJoinLink
-          ? data as SystemMessageDataDisableJoinLink
-          : null;
+      ? data as SystemMessageDataDisableJoinLink
+      : null;
   bool get isUnknown => isA<USystemMessageViewDataUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
@@ -178,104 +178,106 @@ final class USystemMessageViewDataConverter
 
   @override
   USystemMessageViewData fromJson(Map<String, dynamic> json) {
-    try {
-      if (SystemMessageDataAddMember.validate(json)) {
-        return USystemMessageViewData.systemMessageDataAddMember(
-          data: const SystemMessageDataAddMemberConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataRemoveMember.validate(json)) {
-        return USystemMessageViewData.systemMessageDataRemoveMember(
-          data: const SystemMessageDataRemoveMemberConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataMemberJoin.validate(json)) {
-        return USystemMessageViewData.systemMessageDataMemberJoin(
-          data: const SystemMessageDataMemberJoinConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataMemberLeave.validate(json)) {
-        return USystemMessageViewData.systemMessageDataMemberLeave(
-          data: const SystemMessageDataMemberLeaveConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataLockConvo.validate(json)) {
-        return USystemMessageViewData.systemMessageDataLockConvo(
-          data: const SystemMessageDataLockConvoConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataUnlockConvo.validate(json)) {
-        return USystemMessageViewData.systemMessageDataUnlockConvo(
-          data: const SystemMessageDataUnlockConvoConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataLockConvoPermanently.validate(json)) {
-        return USystemMessageViewData.systemMessageDataLockConvoPermanently(
-          data: const SystemMessageDataLockConvoPermanentlyConverter().fromJson(
-            json,
-          ),
-        );
-      }
-      if (SystemMessageDataEditGroup.validate(json)) {
-        return USystemMessageViewData.systemMessageDataEditGroup(
-          data: const SystemMessageDataEditGroupConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataCreateJoinLink.validate(json)) {
-        return USystemMessageViewData.systemMessageDataCreateJoinLink(
-          data: const SystemMessageDataCreateJoinLinkConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataEditJoinLink.validate(json)) {
-        return USystemMessageViewData.systemMessageDataEditJoinLink(
-          data: const SystemMessageDataEditJoinLinkConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataEnableJoinLink.validate(json)) {
-        return USystemMessageViewData.systemMessageDataEnableJoinLink(
-          data: const SystemMessageDataEnableJoinLinkConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageDataDisableJoinLink.validate(json)) {
-        return USystemMessageViewData.systemMessageDataDisableJoinLink(
-          data: const SystemMessageDataDisableJoinLinkConverter().fromJson(
-            json,
-          ),
-        );
-      }
-
-      return USystemMessageViewData.unknown(data: json);
-    } catch (_) {
-      return USystemMessageViewData.unknown(data: json);
+    if (SystemMessageDataAddMember.validate(json)) {
+      return USystemMessageViewData.systemMessageDataAddMember(
+        data: const SystemMessageDataAddMemberConverter().fromJson(json),
+      );
     }
+    if (SystemMessageDataRemoveMember.validate(json)) {
+      return USystemMessageViewData.systemMessageDataRemoveMember(
+        data: const SystemMessageDataRemoveMemberConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataMemberJoin.validate(json)) {
+      return USystemMessageViewData.systemMessageDataMemberJoin(
+        data: const SystemMessageDataMemberJoinConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataMemberLeave.validate(json)) {
+      return USystemMessageViewData.systemMessageDataMemberLeave(
+        data: const SystemMessageDataMemberLeaveConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataLockConvo.validate(json)) {
+      return USystemMessageViewData.systemMessageDataLockConvo(
+        data: const SystemMessageDataLockConvoConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataUnlockConvo.validate(json)) {
+      return USystemMessageViewData.systemMessageDataUnlockConvo(
+        data: const SystemMessageDataUnlockConvoConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataLockConvoPermanently.validate(json)) {
+      return USystemMessageViewData.systemMessageDataLockConvoPermanently(
+        data: const SystemMessageDataLockConvoPermanentlyConverter().fromJson(
+          json,
+        ),
+      );
+    }
+    if (SystemMessageDataEditGroup.validate(json)) {
+      return USystemMessageViewData.systemMessageDataEditGroup(
+        data: const SystemMessageDataEditGroupConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataCreateJoinLink.validate(json)) {
+      return USystemMessageViewData.systemMessageDataCreateJoinLink(
+        data: const SystemMessageDataCreateJoinLinkConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataEditJoinLink.validate(json)) {
+      return USystemMessageViewData.systemMessageDataEditJoinLink(
+        data: const SystemMessageDataEditJoinLinkConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataEnableJoinLink.validate(json)) {
+      return USystemMessageViewData.systemMessageDataEnableJoinLink(
+        data: const SystemMessageDataEnableJoinLinkConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageDataDisableJoinLink.validate(json)) {
+      return USystemMessageViewData.systemMessageDataDisableJoinLink(
+        data: const SystemMessageDataDisableJoinLinkConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return USystemMessageViewData.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(USystemMessageViewData object) => object.when(
-        systemMessageDataAddMember: (data) =>
-            const SystemMessageDataAddMemberConverter().toJson(data),
-        systemMessageDataRemoveMember: (data) =>
-            const SystemMessageDataRemoveMemberConverter().toJson(data),
-        systemMessageDataMemberJoin: (data) =>
-            const SystemMessageDataMemberJoinConverter().toJson(data),
-        systemMessageDataMemberLeave: (data) =>
-            const SystemMessageDataMemberLeaveConverter().toJson(data),
-        systemMessageDataLockConvo: (data) =>
-            const SystemMessageDataLockConvoConverter().toJson(data),
-        systemMessageDataUnlockConvo: (data) =>
-            const SystemMessageDataUnlockConvoConverter().toJson(data),
-        systemMessageDataLockConvoPermanently: (data) =>
-            const SystemMessageDataLockConvoPermanentlyConverter().toJson(data),
-        systemMessageDataEditGroup: (data) =>
-            const SystemMessageDataEditGroupConverter().toJson(data),
-        systemMessageDataCreateJoinLink: (data) =>
-            const SystemMessageDataCreateJoinLinkConverter().toJson(data),
-        systemMessageDataEditJoinLink: (data) =>
-            const SystemMessageDataEditJoinLinkConverter().toJson(data),
-        systemMessageDataEnableJoinLink: (data) =>
-            const SystemMessageDataEnableJoinLinkConverter().toJson(data),
-        systemMessageDataDisableJoinLink: (data) =>
-            const SystemMessageDataDisableJoinLinkConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(USystemMessageViewData object) =>
+      switch (object) {
+        USystemMessageViewDataSystemMessageDataAddMember(:final data) =>
+          const SystemMessageDataAddMemberConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataRemoveMember(:final data) =>
+          const SystemMessageDataRemoveMemberConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataMemberJoin(:final data) =>
+          const SystemMessageDataMemberJoinConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataMemberLeave(:final data) =>
+          const SystemMessageDataMemberLeaveConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataLockConvo(:final data) =>
+          const SystemMessageDataLockConvoConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataUnlockConvo(:final data) =>
+          const SystemMessageDataUnlockConvoConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataLockConvoPermanently(
+          :final data,
+        ) =>
+          const SystemMessageDataLockConvoPermanentlyConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataEditGroup(:final data) =>
+          const SystemMessageDataEditGroupConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataCreateJoinLink(:final data) =>
+          const SystemMessageDataCreateJoinLinkConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataEditJoinLink(:final data) =>
+          const SystemMessageDataEditJoinLinkConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataEnableJoinLink(:final data) =>
+          const SystemMessageDataEnableJoinLinkConverter().toJson(data),
+        USystemMessageViewDataSystemMessageDataDisableJoinLink(:final data) =>
+          const SystemMessageDataDisableJoinLinkConverter().toJson(data),
+
+        USystemMessageViewDataUnknown(:final data) => data,
+      };
 }

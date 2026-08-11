@@ -26,18 +26,24 @@ final class GetServicesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get information about a list of labeler services.";
+      "Get information about a list of labeler services.";
 
   @override
   final String invocation =
-      "bsky app-bsky-labeler get-services [dids] [detailed]";
+      "bsky app-bsky-labeler get-services [--dids=<value>...] [--detailed]";
 
   @override
   String get methodId => "app.bsky.labeler.getServices";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "dids": argResults!["dids"],
-        "detailed": argResults!["detailed"],
-      };
+    "dids": _requireNonEmpty("dids", argResults!["dids"]),
+    "detailed": argResults!["detailed"],
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

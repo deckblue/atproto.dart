@@ -26,19 +26,18 @@ final class GetUnreadCountCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Count the number of unread notifications for the requesting account. Requires auth.";
+      "Count the number of unread notifications for the requesting account. Requires auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-notification get-unread-count [priority] [seenAt]";
+      "bsky app-bsky-notification get-unread-count [--priority] [--seenAt=<value>]";
 
   @override
   String get methodId => "app.bsky.notification.getUnreadCount";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["priority"] != null)
-          "priority": argResults!["priority"],
-        if (argResults!["seenAt"] != null) "seenAt": argResults!["seenAt"],
-      };
+    if (argResults!.wasParsed("priority")) "priority": argResults!["priority"],
+    if (argResults!.wasParsed("seenAt")) "seenAt": argResults!["seenAt"],
+  };
 }

@@ -69,36 +69,38 @@ final class ULogReadConvoMessageConverter
 
   @override
   ULogReadConvoMessage fromJson(Map<String, dynamic> json) {
-    try {
-      if (MessageView.validate(json)) {
-        return ULogReadConvoMessage.messageView(
-          data: const MessageViewConverter().fromJson(json),
-        );
-      }
-      if (DeletedMessageView.validate(json)) {
-        return ULogReadConvoMessage.deletedMessageView(
-          data: const DeletedMessageViewConverter().fromJson(json),
-        );
-      }
-      if (SystemMessageView.validate(json)) {
-        return ULogReadConvoMessage.systemMessageView(
-          data: const SystemMessageViewConverter().fromJson(json),
-        );
-      }
-
-      return ULogReadConvoMessage.unknown(data: json);
-    } catch (_) {
-      return ULogReadConvoMessage.unknown(data: json);
+    if (MessageView.validate(json)) {
+      return ULogReadConvoMessage.messageView(
+        data: const MessageViewConverter().fromJson(json),
+      );
     }
+    if (DeletedMessageView.validate(json)) {
+      return ULogReadConvoMessage.deletedMessageView(
+        data: const DeletedMessageViewConverter().fromJson(json),
+      );
+    }
+    if (SystemMessageView.validate(json)) {
+      return ULogReadConvoMessage.systemMessageView(
+        data: const SystemMessageViewConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return ULogReadConvoMessage.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(ULogReadConvoMessage object) => object.when(
-        messageView: (data) => const MessageViewConverter().toJson(data),
-        deletedMessageView: (data) =>
-            const DeletedMessageViewConverter().toJson(data),
-        systemMessageView: (data) =>
-            const SystemMessageViewConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(ULogReadConvoMessage object) => switch (object) {
+    ULogReadConvoMessageMessageView(:final data) =>
+      const MessageViewConverter().toJson(data),
+    ULogReadConvoMessageDeletedMessageView(:final data) =>
+      const DeletedMessageViewConverter().toJson(data),
+    ULogReadConvoMessageSystemMessageView(:final data) =>
+      const SystemMessageViewConverter().toJson(data),
+
+    ULogReadConvoMessageUnknown(:final data) => data,
+  };
 }

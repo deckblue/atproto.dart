@@ -31,15 +31,19 @@ final class LexPrimitiveConverter
         return LexPrimitive.unknown(data: LexUnknown.fromJson(json));
 
       default:
-        throw UnsupportedError('Unsupported type [$type]');
+        // Graceful degradation (G-12): fall back to `unknown` rather than
+        // aborting on an unsupported primitive type.
+        return LexPrimitive.unknown(
+          data: LexUnknown(description: json['description'] as String?),
+        );
     }
   }
 
   @override
-  Map<String, dynamic> toJson(LexPrimitive object) => object.when(
-        boolean: (data) => data.toJson(),
-        integer: (data) => data.toJson(),
-        string: (data) => data.toJson(),
-        unknown: (data) => data.toJson(),
-      );
+  Map<String, dynamic> toJson(LexPrimitive object) => switch (object) {
+    ULexPrimitiveBoolean(:final data) => data.toJson(),
+    ULexPrimitiveInteger(:final data) => data.toJson(),
+    ULexPrimitiveString(:final data) => data.toJson(),
+    ULexPrimitiveUnknown(:final data) => data.toJson(),
+  };
 }

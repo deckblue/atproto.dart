@@ -6,6 +6,9 @@
 import 'package:lexicon/lexicon.dart';
 
 // Project imports:
+import '../../ir/dart_emitter.dart';
+import '../../ir/dart_ir.dart';
+import '../../model/lex_def_kind.dart';
 import '../../utils.dart';
 import '../rule.dart';
 import 'lex_parameter.dart';
@@ -13,52 +16,66 @@ import 'lex_parameter.dart';
 final class LexCommand {
   final NSID lexiconId;
   final String? description;
-  final List<LexParameter> parameters;
+  final List<LexCliParameter> parameters;
 
   final String? rkey;
 
-  final bool isQuery;
-  final bool isProcedure;
-  final bool isSubscription;
-  final bool isRecord;
+  /// The input encoding for blob procedures, e.g. `*/*`, `video/mp4`.
+  final String? encoding;
+
+  final LexCommandKind kind;
+
+  /// Whether the procedure input schema is a ref or union, meaning
+  /// the entire request body is passed as a single JSON string.
+  final bool isRawJsonBody;
 
   const LexCommand(
     this.lexiconId,
     this.description,
     this.parameters, {
+    required this.kind,
     this.rkey,
-    this.isQuery = false,
-    this.isProcedure = false,
-    this.isSubscription = false,
-    this.isRecord = false,
+    this.encoding,
+    this.isRawJsonBody = false,
   });
 
   String format() {
-    if (isQuery) return _getQueryCommand();
-    if (isProcedure) return _getProcedureCommand();
-    if (isRecord) return _getRecordCommand();
+    return switch (kind) {
+      LexCommandKind.query => _getQueryCommand(),
+      LexCommandKind.blobProcedure => _getBlobProcedureCommand(),
+      LexCommandKind.procedure => _getProcedureCommand(),
+      LexCommandKind.record => _getRecordCommand(),
+    };
+  }
 
-    throw UnimplementedError();
+  /// The three derived names every emitter needs, computed once from
+  /// [lexiconId]: the service (e.g. `feed`), the generated class type name,
+  /// and the CLI command name.
+  ({String serviceName, String typeName, String commandName}) get _names {
+    final id = lexiconId.toString();
+    return (
+      serviceName: getServiceName(id),
+      typeName: getCommandTypeName(id),
+      commandName: getCommandName(id),
+    );
   }
 
   String _getQueryCommand() {
-    final serviceName = getServiceName(lexiconId.toString());
-    final typeName = getCommandTypeName(lexiconId.toString());
-    final commandName = getCommandName(lexiconId.toString());
+    final (:serviceName, :typeName, :commandName) = _names;
 
     final invocation = _getInvocation(serviceName, commandName);
     final opts = _getOpts();
     final parameters = _getParameters();
 
-    return '''$kHeaderHint
-
-import '../../../../query_command.dart';
-
-import 'dart:convert';
-
-$kHeader
-
-final class $typeName extends QueryCommand {
+    final file = DartFile(
+      header: kHeaderHint,
+      imports: const [
+        [DartImport('../../../../query_command.dart')],
+        [DartImport('dart:convert')],
+      ],
+      banner: kHeader,
+      decls: [
+        RawDecl('''final class $typeName extends QueryCommand {
   $typeName() {
     $opts
   }
@@ -67,7 +84,7 @@ final class $typeName extends QueryCommand {
   final String name = "$commandName";
 
   @override
-  final String description = r"${_getDescription()}";
+  final String description = "${escapeDartString(_getDescription())}";
 
   @override
   final String invocation = "$invocation";
@@ -79,37 +96,74 @@ final class $typeName extends QueryCommand {
   Map<String, dynamic>? get parameters => {
     $parameters
   };
-}
-''';
+${_getInputHelpers()}}'''),
+      ],
+    );
+
+    return emitDartFile(file);
   }
 
   String _getProcedureCommand() {
-    final serviceName = getServiceName(lexiconId.toString());
-    final typeName = getCommandTypeName(lexiconId.toString());
-    final commandName = getCommandName(lexiconId.toString());
+    final (:serviceName, :typeName, :commandName) = _names;
 
-    final invocation = _getInvocation(serviceName, commandName);
-    final opts = _getOpts();
-    final parameters = _getParameters();
+    // The three procedure variants share the same class shell and differ only
+    // in constructor body, invocation, `body` getter and trailing helpers.
+    final String constructorBody;
+    final String invocation;
+    final String bodyMember;
+    final String helpers;
 
-    return '''$kHeaderHint
+    if (isRawJsonBody) {
+      constructorBody = '''{
+    argParser.addOption(
+      "json",
+      help: r"JSON string representing the entire request body.",
+      mandatory: true,
+    );
+  }''';
+      invocation = 'bsky $serviceName $commandName --json=<value>';
+      bodyMember = '''Map<String, dynamic>? get body {
+    try {
+      return Map<String, dynamic>.from(jsonDecode(argResults!["json"]));
+    } on FormatException catch (e) {
+      usageException("Invalid JSON for option \\"json\\": \${e.message}");
+    }
+  }''';
+      helpers = '';
+    } else if (parameters.isEmpty) {
+      constructorBody = ';';
+      invocation = 'bsky $serviceName $commandName';
+      bodyMember = 'Map<String, dynamic>? get body => null;';
+      helpers = '';
+    } else {
+      constructorBody =
+          '''{
+    ${_getOpts()}
+  }''';
+      invocation = _getInvocation(serviceName, commandName);
+      bodyMember =
+          '''Map<String, dynamic>? get body => {
+    ${_getParameters()}
+  };''';
+      helpers = _getInputHelpers();
+    }
 
-import '../../../../procedure_command.dart';
-
-import 'dart:convert';
-
-$kHeader
-
-final class $typeName extends ProcedureCommand {
-  $typeName() {
-    $opts
-  }
+    final file = DartFile(
+      header: kHeaderHint,
+      imports: const [
+        [DartImport('../../../../procedure_command.dart')],
+        [DartImport('dart:convert')],
+      ],
+      banner: kHeader,
+      decls: [
+        RawDecl('''final class $typeName extends ProcedureCommand {
+  $typeName()$constructorBody
 
   @override
   final String name = "$commandName";
 
   @override
-  final String description = r"${_getDescription()}";
+  final String description = "${escapeDartString(_getDescription())}";
 
   @override
   final String invocation = "$invocation";
@@ -118,43 +172,103 @@ final class $typeName extends ProcedureCommand {
   String get methodId => "${lexiconId.toString()}";
 
   @override
-  Map<String, dynamic>? get body => {
-    $parameters
-  };
-}
+  $bodyMember
+$helpers}'''),
+      ],
+    );
+
+    return emitDartFile(file);
+  }
+
+  String _getBlobProcedureCommand() {
+    final (:serviceName, :typeName, :commandName) = _names;
+
+    final contentTypeOverride = encoding == null || encoding == '*/*'
+        ? ''
+        : '''
+  @override
+  String get contentType => "$encoding";
 ''';
+
+    final file = DartFile(
+      header: kHeaderHint,
+      imports: const [
+        [DartImport('../../../../blob_command.dart')],
+      ],
+      banner: kHeader,
+      decls: [
+        RawDecl('''final class $typeName extends BlobCommand {
+  $typeName();
+
+  @override
+  final String name = "$commandName";
+
+  @override
+  final String description = "${escapeDartString(_getDescription())}";
+
+  @override
+  final String invocation = "bsky $serviceName $commandName --file=<path>";
+
+  @override
+  String get methodId => "${lexiconId.toString()}";
+$contentTypeOverride}'''),
+      ],
+    );
+
+    return emitDartFile(file);
   }
 
   String _getRecordCommand() {
-    final serviceName = getServiceName(lexiconId.toString());
-    final typeName = getCommandTypeName(lexiconId.toString());
-    final commandName = getCommandName(lexiconId.toString());
+    final (:serviceName, :typeName, :commandName) = _names;
+
+    final literalRkey = _getReferenceKey();
 
     final invocationForCreation = _getInvocation(
       serviceName,
       '$commandName create',
+      trailingOptions: literalRkey == null ? const ['[--rkey=<value>]'] : null,
     );
-    final invocationForUpdate = _getInvocation(serviceName, '$commandName put');
+    final invocationForUpdate = _getInvocation(
+      serviceName,
+      '$commandName put',
+      trailingOptions: literalRkey == null ? const ['--rkey=<value>'] : null,
+    );
 
-    final opts = _getOpts();
     final parameters = _getParameters();
 
-    return '''$kHeaderHint
+    // The create and put subcommands share the same field options, so the
+    // shared configuration and the input-validation helpers are hoisted into a
+    // single mixin instead of being duplicated verbatim in both classes. Each
+    // subcommand only adds its own `rkey` option (optional for create,
+    // mandatory for put).
+    final sharedOpts = _getOpts();
+    final createRkeyStmt = literalRkey == null
+        ? 'argParser.addOption("rkey", help: r"Specific record key to use.",);'
+        : '';
+    final putRkeyStmt = literalRkey == null
+        ? 'argParser.addOption("rkey", help: r"The record key.", mandatory: true,);'
+        : '';
 
-import 'dart:async';
+    final recordArgsMixin = '_${typeName}RecordArgs';
 
-import 'package:args/command_runner.dart';
+    final rkeyOverride = _getReferenceKeyOverride();
 
-import '../../../../query_command.dart';
-import '../../../../create_record_command.dart';
-import '../../../../put_record_command.dart';
-import '../../../../delete_record_command.dart';
-
-import 'dart:convert';
-
-$kHeader
-
-final class $typeName extends Command<void> {
+    final file = DartFile(
+      header: kHeaderHint,
+      imports: const [
+        [DartImport('dart:async')],
+        [DartImport('package:args/command_runner.dart')],
+        [
+          DartImport('../../../../query_command.dart'),
+          DartImport('../../../../create_record_command.dart'),
+          DartImport('../../../../put_record_command.dart'),
+          DartImport('../../../../delete_record_command.dart'),
+        ],
+        [DartImport('dart:convert')],
+      ],
+      banner: kHeader,
+      decls: [
+        RawDecl('''final class $typeName extends Command<void> {
   $typeName() {
     addSubcommand(_Create$typeName());
     addSubcommand(_Put$typeName());
@@ -167,83 +281,162 @@ final class $typeName extends Command<void> {
   String get name => "$commandName";
 
   @override
-  String get description => "${_getDescription()}";
-}
+  String get description => "${escapeDartString(_getDescription())}";
+}'''),
+        RawDecl('''mixin $recordArgsMixin on Command<void> {
+  void _addRecordOptions() {
+    $sharedOpts
+  }
+${_getInputHelpers()}}'''),
+        RawDecl(
+          _recordMutationClass(
+            typeName: typeName,
+            classPrefix: 'Create',
+            baseClass: 'CreateRecordCommand',
+            recordArgsMixin: recordArgsMixin,
+            rkeyStmt: createRkeyStmt,
+            name: 'create',
+            descriptionVerb: 'Creates a new record',
+            invocation: invocationForCreation,
+            rkeyOverride: rkeyOverride,
+            parameters: parameters,
+          ),
+        ),
+        RawDecl(
+          _recordMutationClass(
+            typeName: typeName,
+            classPrefix: 'Put',
+            baseClass: 'PutRecordCommand',
+            recordArgsMixin: recordArgsMixin,
+            rkeyStmt: putRkeyStmt,
+            name: 'put',
+            descriptionVerb: 'Updates a record',
+            invocation: invocationForUpdate,
+            rkeyOverride: rkeyOverride,
+            parameters: parameters,
+          ),
+        ),
+        RawDecl(_deleteRecordClass()),
+        RawDecl(_getRecordClass()),
+        RawDecl(_listRecordClass()),
+      ],
+    );
 
-final class _Create$typeName extends CreateRecordCommand {
-  _Create$typeName() {
-    $opts
+    return emitDartFile(file);
+  }
+
+  /// Method id for the shared `com.atproto.repo` record read endpoints, emitted
+  /// into the generated `get`/`list` record subcommands.
+  static const _getRecordMethodId = 'com.atproto.repo.getRecord';
+  static const _listRecordsMethodId = 'com.atproto.repo.listRecords';
+
+  /// The `bsky <service> <command>` prefix every record subcommand invocation
+  /// string is built on.
+  String get _recordInvocationBase {
+    final names = _names;
+    return 'bsky ${names.serviceName} ${names.commandName}';
+  }
+
+  /// Renders a `create` or `put` record subcommand. The two differ only by the
+  /// [classPrefix]/[baseClass], their `rkey` option ([rkeyStmt]), [name],
+  /// [descriptionVerb] and [invocation]; everything else is shared.
+  String _recordMutationClass({
+    required final String typeName,
+    required final String classPrefix,
+    required final String baseClass,
+    required final String recordArgsMixin,
+    required final String rkeyStmt,
+    required final String name,
+    required final String descriptionVerb,
+    required final String invocation,
+    required final String rkeyOverride,
+    required final String parameters,
+  }) {
+    final id = lexiconId.toString();
+
+    return '''final class _$classPrefix$typeName extends $baseClass with $recordArgsMixin {
+  _$classPrefix$typeName() {
+    _addRecordOptions();
+    $rkeyStmt
   }
 
   @override
-  final String name = "create";
+  final String name = "$name";
 
   @override
-  final String description = r"Creates a new record for ${lexiconId.toString()}.";
+  final String description = r"$descriptionVerb for $id.";
 
   @override
-  final String invocation = "$invocationForCreation";
+  final String invocation = "$invocation";
 
-  ${_getReferenceKeyOverride()}
+  $rkeyOverride
 
   @override
-  String get collection => "${lexiconId.toString()}";
+  String get collection => "$id";
 
   @override
   Map<String, dynamic> get record => {
+    r"\$type": "$id",
     $parameters
   };
-}
-
-final class _Put$typeName extends PutRecordCommand {
-  _Put$typeName() {
-    $opts
+}''';
   }
 
-  @override
-  final String name = "put";
+  String _deleteRecordClass() {
+    final id = lexiconId.toString();
+    final typeName = _names.typeName;
+    final base = _recordInvocationBase;
+    final hasLiteralRkey = _getReferenceKey() != null;
 
-  @override
-  final String description = r"Updates a record for ${lexiconId.toString()}.";
+    final deleteOpts = hasLiteralRkey
+        ? ''
+        : 'argParser..addOption("rkey", help: r"The record key.", mandatory: true,);';
+    final deleteInvocation = hasLiteralRkey
+        ? '$base delete'
+        : '$base delete --rkey=<value>';
 
-  @override
-  final String invocation = "$invocationForUpdate";
-
-  ${_getReferenceKeyOverride()}
-
-  @override
-  String get collection => "${lexiconId.toString()}";
-
-  @override
-  Map<String, dynamic> get record => {
-    $parameters
-  };
-}
-
-final class _Delete$typeName extends DeleteRecordCommand {
+    return '''final class _Delete$typeName extends DeleteRecordCommand {
   _Delete$typeName() {
-    argParser..addOption("rkey",mandatory: true,);
+    $deleteOpts
   }
 
   @override
   final String name = "delete";
 
   @override
-  final String description = r"Deletes a record for ${lexiconId.toString()}.";
+  final String description = r"Deletes a record for $id.";
 
   @override
-  final String invocation = "bsky $serviceName $commandName delete [rkey]";
+  final String invocation = "$deleteInvocation";
 
-  ${_getReferenceKeyOverride()}
+  ${_getReferenceKeyOverride(nullable: false)}
 
   @override
-  String get collection => "${lexiconId.toString()}";
-}
+  String get collection => "$id";
+}''';
+  }
 
-final class _Get$typeName extends QueryCommand {
+  String _getRecordClass() {
+    final id = lexiconId.toString();
+    final typeName = _names.typeName;
+    final base = _recordInvocationBase;
+    final literalRkey = _getReferenceKey();
+
+    final getRkeyOpt = literalRkey == null
+        ? '..addOption("rkey", help: r"The record key.", mandatory: true,)'
+        : '';
+    final getRkeyValue = literalRkey == null
+        ? "argResults!['rkey']"
+        : "'$literalRkey'";
+    final getInvocation = literalRkey == null
+        ? '$base get --rkey=<value> [--repo=<value>] [--cid=<value>]'
+        : '$base get [--repo=<value>] [--cid=<value>]';
+
+    return '''final class _Get$typeName extends QueryCommand {
   _Get$typeName() {
     argParser
-      ..addOption("rkey",mandatory: true,)
+      $getRkeyOpt
+      ..addOption("repo", help: r"The repo (handle or DID). Defaults to the authenticated user.",)
       ..addOption("cid");
   }
 
@@ -251,25 +444,32 @@ final class _Get$typeName extends QueryCommand {
   final String name = "get";
 
   @override
-  final String description = r"Gets a record for ${lexiconId.toString()}.";
+  final String description = r"Gets a record for $id.";
 
   @override
-  final String invocation = "bsky $serviceName $commandName get [rkey] [cid]";
+  final String invocation = "$getInvocation";
 
   @override
-  String get methodId => "com.atproto.repo.getRecord";
+  String get methodId => "$_getRecordMethodId";
 
- @override
+  @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'rkey': argResults!['rkey'],
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "$id",
+    'rkey': $getRkeyValue,
     if (argResults!['cid'] != null) 'cid': argResults!['cid'],};
-}
+}''';
+  }
 
-final class _List$typeName extends QueryCommand {
+  String _listRecordClass() {
+    final id = lexiconId.toString();
+    final typeName = _names.typeName;
+    final base = _recordInvocationBase;
+
+    return '''final class _List$typeName extends QueryCommand {
   _List$typeName() {
     argParser
+      ..addOption("repo", help: r"The repo (handle or DID). Defaults to the authenticated user.",)
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -279,24 +479,23 @@ final class _List$typeName extends QueryCommand {
   final String name = "list";
 
   @override
-  final String description = r"Lists records for ${lexiconId.toString()}.";
+  final String description = r"Lists records for $id.";
 
   @override
-  final String invocation = "bsky $serviceName $commandName list [limit] [cursor] [reverse]";
+  final String invocation = "$base list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "$_listRecordsMethodId";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': await did,
-    'collection': methodId,
-    'limit': argResults!['limit'],
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "$id",
+    'limit': int.tryParse(argResults!['limit']) ?? usageException(r'Invalid integer value for option "limit".'),
     if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
     'reverse': argResults!['reverse'],
   };
-}
-''';
+}''';
   }
 
   String _getDescription() {
@@ -304,23 +503,41 @@ final class _List$typeName extends QueryCommand {
     return '$description';
   }
 
-  String _getInvocation(final String serviceName, final String commandName) {
-    if (parameters.isEmpty) return 'bsky $serviceName $commandName';
-
+  String _getInvocation(
+    final String serviceName,
+    final String commandName, {
+    final List<String>? trailingOptions,
+  }) {
     final result = <String>['bsky $serviceName $commandName'];
     for (final param in parameters) {
-      result.add('[${param.name}]');
+      result.add(_getInvocationOption(param));
     }
 
-    if (isRecord) {
-      result.add('[rkey]');
+    if (trailingOptions != null) {
+      result.addAll(trailingOptions);
     }
 
     return result.join(' ');
   }
 
-  String _getOpts() {
-    if (parameters.isEmpty) return '';
+  String _getInvocationOption(final LexCliParameter param) {
+    if (param.isBoolean) {
+      return '[--${param.name}]';
+    }
+
+    final option = param.isArray
+        ? '--${param.name}=<value>...'
+        : '--${param.name}=<value>';
+
+    if (param.isRequired && param.defaultValue == null && !param.isArray) {
+      return option;
+    }
+
+    return '[$option]';
+  }
+
+  String _getOpts({final String trailingOption = ''}) {
+    if (parameters.isEmpty && trailingOption.isEmpty) return '';
 
     final buffer = StringBuffer('argParser');
     for (final param in parameters) {
@@ -335,8 +552,8 @@ final class _List$typeName extends QueryCommand {
       }
     }
 
-    if (isRecord) {
-      buffer.writeln('..addOption("rkey")');
+    if (trailingOption.isNotEmpty) {
+      buffer.writeln(trailingOption);
     }
     buffer.write(';');
 
@@ -354,6 +571,58 @@ final class _List$typeName extends QueryCommand {
     return buffer.toString();
   }
 
+  bool get _needsJsonHelper => parameters.any((e) => e.isJsonVariant);
+
+  bool get _needsJsonItemHelper =>
+      parameters.any((e) => e.isArray && e.hasJsonItems);
+
+  bool get _needsRequireNonEmptyHelper =>
+      parameters.any((e) => e.needsRequireNonEmptyHelper);
+
+  /// Instance helpers injected into a generated command class so that invalid
+  /// option input raises a [UsageException] (with usage text) instead of a raw
+  /// `FormatException`/stack trace. `usageException` returns `Never`, so it can
+  /// terminate the helpers without a fallthrough return.
+  String _getInputHelpers() {
+    final buffer = StringBuffer();
+
+    if (_needsJsonHelper) {
+      buffer.writeln('''
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "\$name": \${e.message}');
+    }
+  }''');
+    }
+
+    if (_needsJsonItemHelper) {
+      buffer.writeln('''
+  Object? _decodeJsonItem(final String name, final String raw) {
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON in option "\$name": \${e.message}');
+    }
+  }''');
+    }
+
+    if (_needsRequireNonEmptyHelper) {
+      buffer.writeln('''
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "\$name" is required and must not be empty.');
+    }
+    return values;
+  }''');
+    }
+
+    return buffer.toString();
+  }
+
   String? _getReferenceKey() {
     if (rkey == null) return null;
     if (!rkey!.startsWith('literal:')) return null;
@@ -361,17 +630,25 @@ final class _List$typeName extends QueryCommand {
     return rkey!.split(':').last;
   }
 
-  String _getReferenceKeyOverride() {
+  String _getReferenceKeyOverride({final bool nullable = true}) {
     final key = _getReferenceKey();
 
     final buffer = StringBuffer();
 
     if (key == null) {
       buffer.writeln('@override');
-      buffer.writeln('String get rkey => "\${argResults![\'rkey\']}";');
+      if (nullable) {
+        buffer.writeln("String? get rkey => argResults!['rkey'];");
+      } else {
+        buffer.writeln("String get rkey => argResults!['rkey'];");
+      }
     } else {
       buffer.writeln('@override');
-      buffer.writeln('String get rkey => "$key";');
+      if (nullable) {
+        buffer.writeln('String? get rkey => "$key";');
+      } else {
+        buffer.writeln('String get rkey => "$key";');
+      }
     }
 
     return buffer.toString();

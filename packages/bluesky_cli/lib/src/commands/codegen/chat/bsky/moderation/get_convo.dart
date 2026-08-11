@@ -24,10 +24,11 @@ final class GetConvoCommand extends QueryCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Gets an existing conversation by its ID, for moderation purposes. Does not require the requester to be a member of the conversation.";
+      "Gets an existing conversation by its ID, for moderation purposes. Does not require the requester to be a member of the conversation.";
 
   @override
-  final String invocation = "bsky chat-bsky-moderation get-convo [convoId]";
+  final String invocation =
+      "bsky chat-bsky-moderation get-convo --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.moderation.getConvo";

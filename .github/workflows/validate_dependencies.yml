@@ -5,21 +5,34 @@ on:
   pull_request:
     paths:
       - "packages/*/pubspec.yaml"
+      # Not every workspace member lives under `packages/`:
+      # `templates/feed_generator` is one, and its constraints on workspace
+      # packages must stay in lockstep too -- a stale one breaks the root
+      # `dart pub get` for the whole repo.
+      - "templates/*/pubspec.yaml"
+      # The `workspace:` list decides which packages get validated at all.
+      - "pubspec.yaml"
+      - "scripts/validate_dependencies.dart"
+      - "scripts/utils.dart"
+
+# Cancel superseded runs for the same ref (e.g. rapid pushes to a PR branch).
+concurrency:
+  group: validate-dependencies-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   validate-dependencies:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1
-        with:
-          sdk: stable
-
-      - name: Install dependencies
-        run: dart pub get
+      # Installs Dart, restores the pub-cache, and runs a single workspace-wide
+      # `dart pub get` at the repo root.
+      - uses: ./.github/actions/setup-dart-cached
 
       - name: Validate Dependencies
         run: dart run ./scripts/validate_dependencies.dart

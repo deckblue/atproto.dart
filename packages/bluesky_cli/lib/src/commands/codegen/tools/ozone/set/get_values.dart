@@ -26,19 +26,21 @@ final class GetValuesCommand extends QueryCommand {
   final String name = "get-values";
 
   @override
-  final String description = r"Get a specific set and its values";
+  final String description = "Get a specific set and its values";
 
   @override
   final String invocation =
-      "bsky tools-ozone-set get-values [name] [limit] [cursor]";
+      "bsky tools-ozone-set get-values --name=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "tools.ozone.set.getValues";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "name": argResults!["name"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "name": argResults!["name"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

@@ -66,25 +66,32 @@ final class LexUserTypeConverter
       case 'unknown':
         return LexUserType.unknown(data: LexUnknown.fromJson(json));
       default:
-        throw UnsupportedError('Unsupported type [$type]');
+        // Graceful degradation (G-12): an unrecognized top-level def type
+        // (e.g. atproto's granular-OAuth `permission-set` / `permission`, or a
+        // yet-to-be-defined future kind) must not abort parsing the entire
+        // lexicon document. Fall back to an `unknown` user type — mirroring the
+        // nested converters — so the unattended codegen pipeline keeps working.
+        return LexUserType.unknown(
+          data: LexUnknown(description: json['description'] as String?),
+        );
     }
   }
 
   @override
-  Map<String, dynamic> toJson(LexUserType object) => object.when(
-        record: (data) => data.toJson(),
-        xrpcQuery: (data) => data.toJson(),
-        xrpcProcedure: (data) => data.toJson(),
-        xrpcSubscription: (data) => data.toJson(),
-        blob: (data) => data.toJson(),
-        array: (data) => data.toJson(),
-        token: (data) => data.toJson(),
-        object: (data) => data.toJson(),
-        boolean: (data) => data.toJson(),
-        integer: (data) => data.toJson(),
-        string: (data) => data.toJson(),
-        bytes: (data) => data.toJson(),
-        cidLink: (data) => data.toJson(),
-        unknown: (data) => data.toJson(),
-      );
+  Map<String, dynamic> toJson(LexUserType object) => switch (object) {
+    ULexUserTypeRecord(:final data) => data.toJson(),
+    ULexUserTypeXrpcQuery(:final data) => data.toJson(),
+    ULexUserTypeXrpcProcedure(:final data) => data.toJson(),
+    ULexUserTypeXrpcSubscription(:final data) => data.toJson(),
+    ULexUserTypeBlob(:final data) => data.toJson(),
+    ULexUserTypeArray(:final data) => data.toJson(),
+    ULexUserTypeToken(:final data) => data.toJson(),
+    ULexUserTypeObject(:final data) => data.toJson(),
+    ULexUserTypeBoolean(:final data) => data.toJson(),
+    ULexUserTypeInteger(:final data) => data.toJson(),
+    ULexUserTypeString(:final data) => data.toJson(),
+    ULexUserTypeBytes(:final data) => data.toJson(),
+    ULexUserTypeCidLink(:final data) => data.toJson(),
+    ULexUserTypeUnknown(:final data) => data.toJson(),
+  };
 }

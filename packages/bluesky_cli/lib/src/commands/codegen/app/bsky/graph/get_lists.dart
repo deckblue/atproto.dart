@@ -36,21 +36,22 @@ final class GetListsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerates the lists created by a specified account (actor).";
+      "Enumerates the lists created by a specified account (actor).";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph get-lists [actor] [limit] [cursor] [purposes]";
+      "bsky app-bsky-graph get-lists --actor=<value> [--limit=<value>] [--cursor=<value>] [--purposes=<value>...]";
 
   @override
   String get methodId => "app.bsky.graph.getLists";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "actor": argResults!["actor"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        if (argResults!["purposes"] != null)
-          "purposes": argResults!["purposes"],
-      };
+    "actor": argResults!["actor"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+    if (argResults!.wasParsed("purposes")) "purposes": argResults!["purposes"],
+  };
 }

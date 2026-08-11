@@ -29,13 +29,12 @@ abstract class EmbedGalleryImage with _$EmbedGalleryImage {
   @JsonSerializable(includeIfNull: false)
   const factory EmbedGalleryImage({
     @Default('app.bsky.embed.gallery#image') String $type,
-
-    /// The raw image file. May be up to 2 MB, formerly limited to 1 MB.
     @BlobConverter() required Blob image,
 
     /// Alt text description of the image, for accessibility.
     required String alt,
-    @AspectRatioConverter() AspectRatio? aspectRatio,
+    @AspectRatioConverter() required AspectRatio aspectRatio,
+
     Map<String, dynamic>? $unknown,
   }) = _EmbedGalleryImage;
 
@@ -46,11 +45,6 @@ abstract class EmbedGalleryImage with _$EmbedGalleryImage {
     if (!object.containsKey('\$type')) return false;
     return object['\$type'] == 'app.bsky.embed.gallery#image';
   }
-}
-
-extension EmbedGalleryImageExtension on EmbedGalleryImage {
-  bool get hasAspectRatio => aspectRatio != null;
-  bool get hasNotAspectRatio => !hasAspectRatio;
 }
 
 final class EmbedGalleryImageConverter

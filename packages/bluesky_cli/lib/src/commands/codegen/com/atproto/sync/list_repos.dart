@@ -26,17 +26,20 @@ final class ListReposCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerates all the DID, rev, and commit CID for all repos hosted by this service. Does not require auth; implemented by PDS and Relay.";
+      "Enumerates all the DID, rev, and commit CID for all repos hosted by this service. Does not require auth; implemented by PDS and Relay.";
 
   @override
-  final String invocation = "bsky com-atproto-sync list-repos [limit] [cursor]";
+  final String invocation =
+      "bsky com-atproto-sync list-repos [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "com.atproto.sync.listRepos";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

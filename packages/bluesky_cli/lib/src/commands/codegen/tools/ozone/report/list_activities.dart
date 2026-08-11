@@ -31,19 +31,23 @@ final class ListActivitiesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"List all activities for a report, sorted most-recent-first.";
+      "List all activities for a report, sorted most-recent-first.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-report list-activities [reportId] [limit] [cursor]";
+      "bsky tools-ozone-report list-activities --reportId=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "tools.ozone.report.listActivities";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "reportId": argResults!["reportId"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "reportId":
+        int.tryParse(argResults!["reportId"]) ??
+        usageException('Invalid integer value for option "reportId".'),
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

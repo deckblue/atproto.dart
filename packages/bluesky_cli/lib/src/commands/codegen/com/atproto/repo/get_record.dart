@@ -40,20 +40,20 @@ final class GetRecordCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a single record from a repository. Does not require auth.";
+      "Get a single record from a repository. Does not require auth.";
 
   @override
   final String invocation =
-      "bsky com-atproto-repo get-record [repo] [collection] [rkey] [cid]";
+      "bsky com-atproto-repo get-record --repo=<value> --collection=<value> --rkey=<value> [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "repo": argResults!["repo"],
-        "collection": argResults!["collection"],
-        "rkey": argResults!["rkey"],
-        if (argResults!["cid"] != null) "cid": argResults!["cid"],
-      };
+    "repo": argResults!["repo"],
+    "collection": argResults!["collection"],
+    "rkey": argResults!["rkey"],
+    if (argResults!.wasParsed("cid")) "cid": argResults!["cid"],
+  };
 }

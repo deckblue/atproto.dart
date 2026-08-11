@@ -24,15 +24,23 @@ final class GetConvoForMembersCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get or create a 1-1 conversation for the given members. Always returns the same direct (non-group) conversation. To create a group conversation, use createGroup.";
+      "Get or create a 1-1 conversation for the given members. Always returns the same direct (non-group) conversation. To create a group conversation, use createGroup.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-convo get-convo-for-members [members]";
+      "bsky chat-bsky-convo get-convo-for-members [--members=<value>...]";
 
   @override
   String get methodId => "chat.bsky.convo.getConvoForMembers";
 
   @override
-  Map<String, dynamic>? get parameters => {"members": argResults!["members"]};
+  Map<String, dynamic>? get parameters => {
+    "members": _requireNonEmpty("members", argResults!["members"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

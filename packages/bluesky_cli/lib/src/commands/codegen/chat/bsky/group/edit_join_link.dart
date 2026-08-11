@@ -30,21 +30,29 @@ final class EditJoinLinkCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Edits the existing join link settings for the group convo.";
+      "Edits the existing join link settings for the group convo.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group edit-join-link [convoId] [requireApproval] [joinRule]";
+      "bsky chat-bsky-group edit-join-link --convoId=<value> [--requireApproval] [--joinRule=<value>]";
 
   @override
   String get methodId => "chat.bsky.group.editJoinLink";
 
   @override
   Map<String, dynamic>? get body => {
-        "convoId": argResults!["convoId"],
-        if (argResults!["requireApproval"] != null)
-          "requireApproval": argResults!["requireApproval"],
-        if (argResults!["joinRule"] != null)
-          "joinRule": jsonDecode(argResults!["joinRule"]),
-      };
+    "convoId": argResults!["convoId"],
+    if (argResults!.wasParsed("requireApproval"))
+      "requireApproval": argResults!["requireApproval"],
+    if (argResults!.wasParsed("joinRule")) "joinRule": _decodeJson("joinRule"),
+  };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

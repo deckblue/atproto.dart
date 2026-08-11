@@ -13,9 +13,9 @@ description: Build AT Protocol and Bluesky apps with production-ready Dart packa
 - **⚡️ Developer Focused**: Intuitive APIs that feel natural to Dart and Flutter developers  
 - **🔧 Complete Toolkit**: Everything from high-level Bluesky APIs to low-level AT Protocol primitives
 - **📚 Well Documented**: Extensive documentation with real-world examples and best practices
-- **🎯 Type Safe**: Full TypeScript-style type safety with compile-time error checking
+- **🎯 Type Safe**: Sound null safety and compile-time checking throughout
 
-## Quick Start: Post to Bluesky in 5 Minutes ⏱️
+## Quick Start: Post to Bluesky in 5 Minutes ⏱️ {#quick-start}
 
 Let's build a simple Bluesky posting app to see how straightforward atproto.dart makes AT Protocol development.
 
@@ -27,27 +27,29 @@ dart pub add bluesky
 
 ### Create Your First Bluesky Post
 
+<!-- snippet: intro/quick_start.dart -->
 ```dart title="post_to_bluesky.dart"
+import 'package:bluesky/atproto.dart' as atp;
 import 'package:bluesky/bluesky.dart' as bsky;
 
 Future<void> main() async {
-  // Authenticate with your Bluesky account
-  final session = await bsky.createSession(
-    identifier: 'your-handle.bsky.social', // Your Bluesky handle
-    password: 'your-app-password',         // Generate in Settings > App Passwords
+  // Authenticate with your Bluesky account.
+  // Generate an app password in Settings > App Passwords.
+  final session = await atp.createSession(
+    identifier: 'your-handle.bsky.social',
+    password: 'your-app-password',
   );
 
-  // Create a Bluesky client
+  // Create a Bluesky client.
   final bluesky = bsky.Bluesky.fromSession(session.data);
 
-  // Post to your timeline
-  await bluesky.feed.post(
-    text: 'Hello from my Dart app! 🎯',
-  );
-  
+  // Post to your timeline.
+  await bluesky.feed.post.create(text: 'Hello from my Dart app! 🎯');
+
   print('Posted successfully!');
 }
 ```
+<!-- /snippet -->
 
 ### Run Your App
 
@@ -55,10 +57,10 @@ Future<void> main() async {
 dart run post_to_bluesky.dart
 ```
 
-That's it! You've just created a working Bluesky client in under 20 lines of code. The same simplicity extends to building feeds, managing follows, handling media uploads, and every other AT Protocol feature.
+That's it! You've just created a working Bluesky client in a handful of lines. The same simplicity extends to building feeds, managing follows, handling media uploads, and every other AT Protocol feature.
 
 :::tip
-You can see a list of available packages in **[atproto.dart](https://github.com/myConsciousness/atproto.dart)** in the **[Packages/Tools](./packages/overview.md)** section.
+You can see a list of available packages in **[atproto.dart](https://github.com/myConsciousness/atproto.dart)** in the **[Packages/Tools](./products/overview.md)** section.
 :::
 
 ## Key Features ✨
@@ -82,10 +84,16 @@ Designed to support any AT Protocol service, not just Bluesky.
 - **Service Agnostic**: Core AT Protocol support works with any compliant service
 - **Custom Lexicons**: Easy integration of new AT Protocol schemas and endpoints
 
-### 📦 **Essential Protocol Packages**
-- **[at_primitives](https://pub.dev/packages/at_primitives)**: AT Protocol primitive types (URIs, identifiers, NSIDs)
-- **[xrpc](https://pub.dev/packages/xrpc)**: HTTP-based RPC protocol implementation
-- **[multiformats](https://pub.dev/packages/multiformats)**: Content addressing and cryptographic hashing
+### 📦 **Packages You'll Actually Reach For**
+- **[bluesky](./products/packages/bluesky.md)**: The full Bluesky toolkit — posts, feeds, chat, moderation. Start here.
+- **[atproto](./products/packages/atproto.md)**: AT Protocol itself, for services beyond Bluesky.
+- **[atproto_oauth](./products/packages/atproto_oauth.md)**: OAuth 2.0 with DPoP — the recommended way to sign users in.
+- **[bluesky_text](./products/packages/bluesky_text.md)**: Facet detection and correct post-length counting.
+- **[bluesky_cli](./products/tools/bluesky_cli.md)**: Try the APIs from your terminal in under a minute — `dart pub global activate bluesky_cli`.
+
+Lower-level packages like `at_primitives`, `xrpc`, and `multiformats` come along
+automatically. See the **[package overview](./products/overview.md)** for the full
+list of 15 packages and how they fit together.
 
 ## Design Principles 🎨
 

@@ -55,28 +55,32 @@ final class UConvoViewKindConverter
 
   @override
   UConvoViewKind fromJson(Map<String, dynamic> json) {
-    try {
-      if (DirectConvo.validate(json)) {
-        return UConvoViewKind.directConvo(
-          data: const DirectConvoConverter().fromJson(json),
-        );
-      }
-      if (GroupConvo.validate(json)) {
-        return UConvoViewKind.groupConvo(
-          data: const GroupConvoConverter().fromJson(json),
-        );
-      }
-
-      return UConvoViewKind.unknown(data: json);
-    } catch (_) {
-      return UConvoViewKind.unknown(data: json);
+    if (DirectConvo.validate(json)) {
+      return UConvoViewKind.directConvo(
+        data: const DirectConvoConverter().fromJson(json),
+      );
     }
+    if (GroupConvo.validate(json)) {
+      return UConvoViewKind.groupConvo(
+        data: const GroupConvoConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UConvoViewKind.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UConvoViewKind object) => object.when(
-        directConvo: (data) => const DirectConvoConverter().toJson(data),
-        groupConvo: (data) => const GroupConvoConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UConvoViewKind object) => switch (object) {
+    UConvoViewKindDirectConvo(:final data) =>
+      const DirectConvoConverter().toJson(data),
+    UConvoViewKindGroupConvo(:final data) => const GroupConvoConverter().toJson(
+      data,
+    ),
+
+    UConvoViewKindUnknown(:final data) => data,
+  };
 }

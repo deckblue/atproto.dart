@@ -1,5 +1,206 @@
 # Release Note
 
+## v2.6.0
+
+- feat: added `feed.buildPostText` and `feed.postText`, which turn plain text into a faceted `app.bsky.feed.post` in one call. Getting this right by hand took three steps the docs had to spell out — format first (markdown links only become link facets after formatting), post the *formatted* text rather than the input (facet ranges are byte offsets into it, so the original string points every link at the wrong characters), and convert `bluesky_text`'s facet maps into `RichtextFacet` models. `buildPostText` returns a `PostText` holding the formatted text and its facets together so the two cannot be separated by accident, and `postText` builds and publishes in one call.
+- fix: mentions are now resolved with `com.atproto.identity.resolveHandle` over this client's transport. `bluesky_text` on its own opens its own HTTP connection to a default host, so an account on a self-hosted PDS resolved its mentions against the wrong server, and none of the client's configuration — service, timeout, retry policy, custom `getClient`, proxy headers — applied to that call.
+- feat: a mention whose handle does not resolve is reported in `PostText.unresolvedHandles` (or through `postText`'s `onUnresolvedHandles`) instead of being silently dropped. It is not an error — the mention just stays plain text — but throwing from the callback aborts before the record is created, for an author who would rather fix a typo than publish a mention that renders as plain text.
+- chore: `bluesky_text` moves from a dev dependency to a runtime dependency. It brings no new transitive packages (`xrpc`, `http` and `characters` are already dependencies) and there is no cycle: `bluesky_text` does not depend on `bluesky`.
+
+## v2.5.0
+
+- chore: bump `atproto` to `^2.5.0`, which adds `Firehose` and `CursorStore` to `package:bluesky/firehose.dart`.
+
+## v2.4.6
+
+- fix: `Bluesky.fromOAuthSession`, `BlueskyChat.fromOAuthSession` and `OzoneTool.fromOAuthSession` pass their `timeout` through to the `OAuthSessionManager` they build, so a hung restore or refresh is bounded by the timeout the caller asked for instead of running unbounded.
+
+## v2.4.5
+
+- feat: added `tools.ozone.queue.createQueue.errors.InvalidRecommendedPolicies`
+- feat: added `tools.ozone.queue.createQueue.input.recommendedPolicies`
+- feat: added `tools.ozone.queue.defs#queueView.recommendedPolicies`
+- chore: updated `tools.ozone.queue.updateQueue`
+- feat: added `tools.ozone.queue.updateQueue.errors.InvalidRecommendedPolicies`
+- feat: added `tools.ozone.queue.updateQueue.input.recommendedPolicies`
+- chore: regenerated from synced lexicons
+
+## v2.4.4
+
+- chore: updated `chat.bsky.group.createGroup.input.members`
+- chore: regenerated from synced lexicons
+
+## v2.4.3
+
+- chore: updated `app.bsky.actor.defs#viewerState.muted`
+- feat: added `app.bsky.actor.defs#viewerState.mutedOnlyQuoteposts`
+- feat: added `app.bsky.actor.defs#viewerState.mutedOnlyReposts`
+- chore: updated `app.bsky.graph.getMutes`
+- chore: updated `app.bsky.graph.muteActor`
+- feat: added `app.bsky.graph.muteActor.input.onlyQuoteposts`
+- feat: added `app.bsky.graph.muteActor.input.onlyReposts`
+- chore: updated `app.bsky.unspecced.defs#threadItemPost.opThread`
+- feat: added `app.bsky.unspecced.defs#threadItemPost.opThreadPostCount`
+- feat: added `app.bsky.unspecced.defs#threadItemPost.opThreadPostIndex`
+- feat: added `app.bsky.video.defs#jobStatus.failureCode`
+- chore: regenerated from synced lexicons
+
+## v2.4.2
+
+- feat: added `tools.ozone.report.closeReports`
+- chore: updated `tools.ozone.report.createActivity.errors.ReportNotFound`
+- feat: added `tools.ozone.report.createActivity.input.eventId`
+- chore: `tools.ozone.report.createActivity.input.reportId` is now optional
+- chore: regenerated from synced lexicons
+- chore: bump `atproto` to `^2.4.1`
+
+## v2.4.1
+
+- chore: updated `app.bsky.draft.createDraft.output.id`
+- chore: regenerated from synced lexicons
+
+## v2.4.0
+
+- feat: `ThreadVerificationException` now carries the thread's `rkeys` and `uris`, and reports a response without the optional `results` array as `inconclusive` rather than as a plain failure. `applyWrites` is atomic, so the exception is only ever raised after the thread is committed, and `createThreadAtomic` builds the batch internally — the record keys that make the posts findable used to die with it, leaving a published thread reported as a hard failure nothing could act on. A server that omits `results` has contradicted nothing, and `inconclusive` says so: the thread is there, and a `feed.post.get` on the first of `uris` confirms it.
+- fix: `bluesky.video.uploadVideo` now throws a `StateError` when the client has no authenticated account, instead of sending `did=` and surfacing whatever the video service makes of it — after the whole video has been uploaded. A caller supplying its own `did` in `$parameters` is unaffected.
+- fix: `bluesky.video.uploadVideoAndAwait` now rejects a zero or negative `pollInterval` or `timeout` with an `ArgumentError` before anything is sent. A non-positive interval polled `video.bsky.app` as fast as it answered, for as long as the job ran.
+- fix: `bluesky.video.uploadVideoAndAwait` no longer calls `onProgress` once its `timeout` has expired. A status that arrived while the budget ran out was still reported, so a caller that had already been handed `VideoUploadTimeoutException` saw one last progress event for an upload it had given up on.
+- feat: added `ozoneDid` to every `OzoneTool` factory, naming the Ozone instance `tools.ozone.*` should be routed to. `OzoneTool` was the only client that set no proxy header of its own and told the caller to supply one, but a caller-supplied `atproto-proxy` belongs to the shared context, so it rode on `app.bsky.*` and `com.atproto.*` as well — leaving `fromAtproto` a choice between misrouting the timeline and reintroducing the single-use refresh token race it exists to remove. `OzoneTool` now derives a context of its own, as `BlueskyChat` already did, and the header follows `tools.ozone.*` alone. `#atproto_labeler` is appended unless `ozoneDid` already names a service; omitting `ozoneDid` adopts the context unchanged, as before.
+- fix: a caller-supplied proxy header spelled in another casing no longer survives alongside `BlueskyChat`'s own. The two were merged key-exactly, so `Atproto-Proxy` and `atproto-proxy` both reached the request; `package:http` happened to collapse them in the chat client's favour, but a custom `GetClient`/`PostClient` forwarding the raw map emitted both and a server reading the first sent DM listing and sending to whatever service the caller had named.
+- fix: a label preference scoped to a labeler is now remapped from its legacy identifier before it is stored. `nsfw`, `gore` and `suggestive` were remapped only on unscoped preferences, so the same preference with a `labelerDid` was filed under a key nothing ever reads — a labeler-scoped "hide nsfw" was silently a no-op while the unscoped one worked.
+- fix: `ActorGetPreferencesOutput.getModerationPrefs` no longer lists an app labeler twice when the user also subscribes to it. The app labelers are seeded first so that prefs scoped to them attach, and a `labelersPref` entry for one of them now reuses that seeded entry instead of appending a duplicate to `ModerationPrefs.labelers`.
+- fix: `GroupBy.hour` and `GroupBy.minute` bucket on UTC components with a UTC key. The bucket key was built from a local `DateTime`, so on a DST spring-forward date a local wall-clock time that does not exist normalized upward and collapsed two distinct UTC hours into one bucket.
+- fix: groups sharing an `indexedAt` are returned in the order they were created. `List.sort` is not stable, so beyond a handful of groups the ties came back in an arbitrary order.
+- feat: added `NotificationsGrouperConfig.uniqueAuthors`, which controls whether a group keeps at most one entry per author. The check used to be nested inside the time-window branch, so a custom config with `window: null` silently collapsed repeated notifications from one author. It now stands on its own and `window` governs the time window and nothing else. Defaults to `true` for custom configs; both shipped presets keep their current behavior (`official` on, `lenient` off).
+- perf: merging a large group is now linear rather than quadratic. Each group deduplicates its uris, authors and labels through hashed collections instead of rescanning the accumulated lists per member; grouping 8000 notifications into one group drops from ~16.8s to ~4ms. Output is unchanged, except that a single notification carrying the same label twice now contributes it once.
+- docs: `NotificationsGrouper`, `NotificationsExtension.group` and `NotificationsGrouperConfig.window` no longer describe the time window as sliding. The anchor is the notification that opened the group and is fixed for the group's lifetime; since notifications arrive newest first it is normally the group's newest.
+
+## v2.3.0
+
+- feat: added `Bluesky.fromAtproto`, `BlueskyChat.fromAtproto` and `OzoneTool.fromAtproto`, which drive their services from an `ATProto` the caller already owns instead of building a new one. Every factory used to build its own, and each of those owned a context holding its own copy of the session — so an app needing more than one client for the same account held two copies of one session. Refresh tokens are single-use, so those copies raced the moment the access token expired: the context that noticed first spent the token, and the other's refresh was rejected, surfacing as an `UnauthorizedException` the caller did nothing to provoke. Passing one `ATProto` to each client gives them one session, one deduplicated refresh, and one `onSessionUpdated` stream.
+- feat: added `actorDid` to `Bluesky`, `BlueskyChat` and `OzoneTool`, so the authenticated actor can be read without branching on the auth kind.
+- feat: added `bluesky.feed.createThreadAtomic`, which publishes a whole thread in a single `com.atproto.repo.applyWrites` commit. Record keys and reply CIDs are computed locally, so every post references the previous one without waiting for it to be written, and the thread is committed atomically rather than post by post. Also added `ThreadPost`, `ThreadBatch`, `CreatedThread` and `ThreadVerificationException`; `ThreadBatch` builds and verifies a batch without a client, exposing the record keys before the write and allowing an extra write — an `app.bsky.feed.threadgate`, say — in the same commit. `Bluesky.feed` is now `FeedServiceImpl`, a subclass of `FeedService` matching `Bluesky.video`; existing calls are unaffected.
+- feat: added `VideoServiceImpl.uploadVideoAndAwait`, which uploads a video and resolves with the resulting blob once the processing job terminates, polling `getJobStatus` at a caller-chosen interval and bounding the whole operation with a timeout. Added `VideoUploadException` with `VideoJobFailedException`, `VideoJobMissingBlobException` and `VideoUploadTimeoutException`, so a caller can tell a video the server rejected from one it gave up waiting for, and can show the server's own reason. A job that completes without a blob is reported as a failure rather than a success.
+- fix: a `BlueskyChat`'s own `atproto` no longer sends the `atproto-proxy` chat header on the `com.atproto.*` calls made through it. The header identifies the chat service and belongs to `chat.bsky.*` alone; routing an identity or server call to it was unintended. `BlueskyChat.headers` is unchanged, and chat calls still carry the header.
+- docs: every OAuth factory now records that one shared `OAuthSessionManager` is what makes clients share a session, and that `fromOAuthSession` mints a fresh manager per call — two managers restored from one `OAuthSession` revoke each other rather than sharing.
+- chore: bump `atproto_core` to `^2.3.0` and `atproto` to `^2.3.0` (dev: `bluesky_text` `^1.6.0`).
+
+## v2.2.3
+
+- feat: added `app.bsky.ageassurance.defs#configRegion.platforms`
+- feat: added `app.bsky.notification.listNotifications#notification.starterPack`
+- chore: regenerated from synced lexicons
+
+## v2.2.2
+
+- chore: widen `atproto` to `^2.2.1` and `atproto_core` to `^2.2.0`.
+
+## v2.2.1
+
+- feat: added `app.bsky.unspecced.defs#skeletonTrend.description`
+- feat: added `app.bsky.unspecced.defs#trendView.description`
+- chore: regenerated from synced lexicons
+
+## v2.2.0
+
+- fix: `chat.bsky.*` and `tools.ozone.*` calls now refresh an expired access token instead of throwing `UnauthorizedException`. v2.1.2 described this as covering `chat.bsky.*`, but only `Bluesky` was changed: `BlueskyChat.fromSession` and `OzoneTool.fromSession` each still built a standalone `ServiceContext` with no refresh hook, so every call through `chat.convo` / `chat.actor` / the ozone services surfaced an expired token as an error. Both now drive their services from the context owned by their nested `ATProto`, as `Bluesky` already did — the proxy headers that route those calls are preserved, since the nested client is built with them.
+- feat: added `onSessionUpdated` to `Bluesky`, `BlueskyChat` and `OzoneTool`, surfacing the refreshed session so callers can re-persist it. Refresh tokens are single-use, so an app that keeps persisting the session it built the client with stores a spent token and is signed out on next launch.
+- chore: bump `atproto` to `^2.2.0` and `atproto_core` to `^2.1.0`.
+
+## v2.1.2
+
+- fix: `app.bsky.*` and `chat.bsky.*` calls now refresh an expired access token instead of throwing `UnauthorizedException`. `Bluesky.fromSession` built a second `ServiceContext` for those services and never gave it the refresh hook, so only calls made through `bsky.atproto` recovered from an expired token. Every factory now shares the context owned by the nested `ATProto`, which also makes `bsky.session` reflect a refresh — previously it kept returning the spent credentials, so persisting it signed the user out on next launch. The OAuth factories were unaffected, since both contexts already shared one `OAuthSessionManager`.
+- chore: bump `atproto` to `^2.1.0`.
+
+## v2.1.1
+
+- feat: added `app.bsky.graph.searchStarterPacksV2`
+- chore: regenerated from synced lexicons
+
+## v2.1.0
+
+- feat: notification grouping now matches the official Bluesky social-app by default. `NotificationsGrouper` / `NotificationListNotificationsOutput.group()` now group six reasons (`like`, `repost`, `follow`, `like-via-repost`, `repost-via-repost`, `subscribed-post`), apply a 48h sliding window anchored on each group's newest item, separate follow-backs into their own groups, and mark a group unread if any of its notifications is unread. This changes the default grouping output (a behavior change); to keep the previous behavior, pass `NotificationsGrouperConfig.lenient()` (e.g. `output.group(config: const NotificationsGrouperConfig.lenient())`).
+- feat: new `NotificationsGrouperConfig` (`.official()` / `.lenient()` / fully custom) controls groupable reasons, time window, follow-back separation, and the unread policy.
+- feat: `NotificationsExtension.group()` now accepts an optional `config`, and `GroupBy` / `NotificationsExtension` are now exported from `package:bluesky/bluesky.dart`.
+- feat: `groupByHour` / `groupByMinute` now use the official grouping default as well; for the legacy behavior with time bucketing, call `group(by: GroupBy.hour(n), config: const NotificationsGrouperConfig.lenient())`.
+- chore: bump dev dependency `bluesky_text` to `^1.5.3`.
+
+## v2.0.1
+
+- docs: added an OAuth authentication section to the README — `Bluesky.fromOAuth(OAuthSessionManager)` (also on `BlueskyChat`/`OzoneTool`), `OAuthSessionManager(oauth, sub:)` / `OAuthSessionManager.fromSession(restored)`, and the renamed `oAuthSessionManager` getter.
+- docs: added a short Firehose note pointing to `bsky.atproto.sync.subscribeReposAsMessages()` for typed messages.
+- chore: bump `atproto_core` to `^2.0.1` and `atproto` to `^2.0.1` (dev: `bluesky_text` `^1.5.2`, `atproto_oauth` `^0.5.1`).
+
+## v2.0.0
+
+- feat!: `Bluesky.fromOAuth(OAuthSessionManager)` (also on `BlueskyChat`/`OzoneTool`); `fromOAuthSession(session, {oauthClient})` wraps a shared manager; `oAuthSession` getter replaced by `oAuthSessionManager`.
+- chore: updated `tools.ozone.queue.defs#queueView.subjectTypes`
+- chore: regenerated from synced lexicons
+- feat: the `retryConfig` parameter (on `Bluesky`/`BlueskyChat`/`OzoneTool`) now accepts any `RetryStrategy`, not only `RetryConfig`, so callers can fully customize backoff and which failures retry. `RetryStrategy`/`RetryContext`/`RetryReason` are re-exported. By default a procedure (`POST`) is no longer retried after an ambiguous failure the server may already have applied (see `atproto_core`).
+- fix: mute-word matching still scans quoted-post embeds when the top-level record fails validation.
+- fix: labeler-scoped content-label preferences (those carrying a `labelerDid`) are now applied only to the matching labeler and never leak into the global label defaults, and preferences scoped to an app labeler are honored instead of dropped — matching `@atproto/api`. Previously an orphaned scoped preference (e.g. for an unsubscribed labeler) could override the global defaults and, for example, unblur adult content.
+- fix: `LinkPreview` exposes cardyb's `error`/`likelyType` fields.
+- fix: the video service percent-encodes the port when building a `did:web` audience.
+- chore: removed duplicate imports in the `tools` extensions/utils.
+
+## v1.7.2
+
+- chore: `tools.ozone.queue.defs#queueView.reportTypes` is now optional
+- chore: `tools.ozone.queue.defs#queueView.subjectTypes` is now optional
+- feat: added `tools.ozone.report.defs#reportView.isAutomated`
+- chore: regenerated from synced lexicons
+
+## v1.7.1
+
+- chore: bump `atproto` to `^1.7.0`, which exposes `bsky.atproto.sync.subscribeReposAsMessages()` — a Firehose subscription that yields already-decoded, typed messages instead of raw binary frames.
+
+## v1.7.0
+
+- fix!: rewrote the notification grouper as a typed O(n) implementation; notifications with a missing `labels` field (optional in the lexicon, common in practice) no longer crash `group()`/`_mergeLabels` (B-1/B-2/B-8).
+- fix: added current AppView reasons (`verified`, `like-via-repost`, `subscribed-post`, etc.); unknown reasons now fall back instead of throwing, so `group()` no longer crashes on live timelines (B-3).
+- fix: grouping keys use the remapped reason, so likes on feed generators (`customFeedLike`) actually merge (B-4).
+- fix: `uploadVideo` now uses `ctx.repo`, so it no longer crashes under an OAuth-authenticated client (`session!.did` was null) (B-13).
+- fix: the single-character mute-word check uses UTF-16 length (spec-conformant), and `decidePost` now guards with `validate()` so a malformed federated record no longer throws (B-9/B-11).
+- fix: out-of-range hour/minute now raise a runtime `RangeError` (was assert-only, so release builds silently misbehaved); labels are de-duped by value equality (B-5/B-6).
+- feat: added `OzoneTool.fromOAuthSession` and `oAuthSession` getters for parity with sibling clients (B-14).
+- fix!: regenerated from the fixed `lex_gen` — knownValues+default fields are now non-nullable with their spec default (e.g. `app.bsky.actor.defs#mutedWord.actorTarget` → `all`, `app.bsky.feed.getAuthorFeed.filter` → `posts_with_replies`, `tools.ozone.setting.listOptions.scope` → `instance`); the corresponding `hasX` getters were removed and the moderation engine adapted accordingly (G-18).
+- chore: bump `atproto` to `^1.6.0`, `atproto_core` to `^1.3.0`, and `bluesky_text` to `^1.4.0`.
+
+## v1.6.0
+
+Aligned the client-side moderation engine with the official `@atproto/api` implementation:
+
+- fix: `moderateUserList` now delegates to `decideUserList` instead of recursing into itself (previously caused a `StackOverflowError`).
+- fix: `decideUserList` no longer crashes on `ListView` subjects and now merges the creator's account/profile decisions, matching the official implementation.
+- fix: label causes from subscribed labelers are now attributed to the labeler (`ModerationCauseSource.labeler`) instead of always to the user.
+- fix: `getInterpretedLabelValueDefinitions` now defaults `adultOnly` to `false` (previously `true`), so labeler-defined labels are no longer adult-gated unless declared.
+- fix: `getLabelerHeaders` now appends `;redact` only to app labelers (Bluesky's official labeler), matching the official `atproto-accept-labelers` header behavior. Subscribed labelers are sent without parameters.
+- feat: added the deprecated `gore` alias for `graphic-media` to the known label definitions (`KnownLabelValue.gore`), matching the official label defs.
+- feat: muted words now support `expiresAt` (expired words are ignored) and `actorTarget: exclude-following` (pass the post author via the new `actor` parameter).
+- feat: added `matchMuteWords` and `MuteWordMatch`, mirroring the official API. `ModerationCauseMuteWord` now carries the `matches` that triggered it.
+- fix: muted words with internal slashes now follow the official exclusion rule (`and/or` no longer matches `andor`), and all tag facet features are considered (previously only the first per facet).
+- feat: mute-word matching in `moderatePost` now scans `app.bsky.embed.gallery` alt texts and applies `exclude-following` via the post/quote author.
+- feat: added `moderateStatus` / `decideStatus` for live status (`app.bsky.actor.defs#statusView`) moderation.
+- feat: added `ModerationBehaviors` — a configuration object on `ModerationOpts.behaviors` that lets users customize block/mute/mute-word/hide behaviors and global label definitions without forking the engine. Defaults replicate the official logic.
+- chore: deprecated the string-keyed `kBlockBehavior` / `kMuteBehavior` / `kMuteWordBehavior` / `kHideBehavior` constants in favor of the typed `kDefault*Behaviors` maps.
+- chore: bump `atproto` and `atproto_core`.
+
+## v1.5.0
+
+- feat: added `app.bsky.feed.searchPostsV2` endpoint.
+- feat: added `chat.bsky.notification.getPreferences` and `chat.bsky.notification.putPreferences` endpoints.
+- feat: added `chat.bsky.notification.defs#preferences` and `#chatPreference`.
+- feat: added `isBetaUser` to `app.bsky.actor.defs#bskyAppStatePref`.
+- feat: added `additionalVerificationMethods` to `app.bsky.ageassurance.defs`.
+- chore: deprecated chat preferences in `app.bsky.notification.defs` and `app.bsky.notification.putPreferencesV2` in favor of `chat.bsky.notification` preferences.
+- feat: added `app.bsky.embed.gallery` embed (`#image`, `#view`, `#viewImage`).
+- feat: added `chat.bsky.convo.getUnreadCounts` endpoint.
+- feat: added `chat.bsky.convo.defs#replyRef` for message reply references.
+- feat: added `chat.bsky.group.defs#disabledJoinLinkPreviewView` and `#invalidJoinLinkPreviewView`.
+- feat: added `tools.ozone.report.queryActivities` endpoint.
+- fix: generate `app.bsky.draft.defs#draftEmbedGallery` correctly. Its `items` is now `List<UDraftEmbedGalleryItems>`; previously it referenced a non-existent file and failed to compile.
+- feat: handle the `com.germnetwork.declaration` record in `RepoCommitHandler` and re-export it from `atproto`.
+
 ## v1.4.7
 
 - core: generated code. ([#2355](https://github.com/myConsciousness/atproto.dart/pull/2355))

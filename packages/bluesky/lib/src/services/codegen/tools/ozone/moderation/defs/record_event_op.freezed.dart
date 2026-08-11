@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,362 +9,298 @@ part of 'record_event_op.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$RecordEventOp {
-  Object get data => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(KnownRecordEventOp data) knownValue,
-    required TResult Function(String data) unknown,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(KnownRecordEventOp data)? knownValue,
-    TResult? Function(String data)? unknown,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(KnownRecordEventOp data)? knownValue,
-    TResult Function(String data)? unknown,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RecordEventOpKnownValue value) knownValue,
-    required TResult Function(RecordEventOpUnknown value) unknown,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(RecordEventOpKnownValue value)? knownValue,
-    TResult? Function(RecordEventOpUnknown value)? unknown,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RecordEventOpKnownValue value)? knownValue,
-    TResult Function(RecordEventOpUnknown value)? unknown,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+ Object get data;
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecordEventOp&&const DeepCollectionEquality().equals(other.data, data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
+
+@override
+String toString() {
+  return 'RecordEventOp(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $RecordEventOpCopyWith<$Res> {
-  factory $RecordEventOpCopyWith(
-          RecordEventOp value, $Res Function(RecordEventOp) then) =
-      _$RecordEventOpCopyWithImpl<$Res, RecordEventOp>;
+class $RecordEventOpCopyWith<$Res>  {
+$RecordEventOpCopyWith(RecordEventOp _, $Res Function(RecordEventOp) __);
 }
 
-/// @nodoc
-class _$RecordEventOpCopyWithImpl<$Res, $Val extends RecordEventOp>
-    implements $RecordEventOpCopyWith<$Res> {
-  _$RecordEventOpCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [RecordEventOp].
+extension RecordEventOpPatterns on RecordEventOp {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of RecordEventOp
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( RecordEventOpKnownValue value)?  knownValue,TResult Function( RecordEventOpUnknown value)?  unknown,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case RecordEventOpKnownValue() when knownValue != null:
+return knownValue(_that);case RecordEventOpUnknown() when unknown != null:
+return unknown(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( RecordEventOpKnownValue value)  knownValue,required TResult Function( RecordEventOpUnknown value)  unknown,}){
+final _that = this;
+switch (_that) {
+case RecordEventOpKnownValue():
+return knownValue(_that);case RecordEventOpUnknown():
+return unknown(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( RecordEventOpKnownValue value)?  knownValue,TResult? Function( RecordEventOpUnknown value)?  unknown,}){
+final _that = this;
+switch (_that) {
+case RecordEventOpKnownValue() when knownValue != null:
+return knownValue(_that);case RecordEventOpUnknown() when unknown != null:
+return unknown(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownRecordEventOp data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case RecordEventOpKnownValue() when knownValue != null:
+return knownValue(_that.data);case RecordEventOpUnknown() when unknown != null:
+return unknown(_that.data);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownRecordEventOp data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
+switch (_that) {
+case RecordEventOpKnownValue():
+return knownValue(_that.data);case RecordEventOpUnknown():
+return unknown(_that.data);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownRecordEventOp data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
+switch (_that) {
+case RecordEventOpKnownValue() when knownValue != null:
+return knownValue(_that.data);case RecordEventOpUnknown() when unknown != null:
+return unknown(_that.data);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$RecordEventOpKnownValueImplCopyWith<$Res> {
-  factory _$$RecordEventOpKnownValueImplCopyWith(
-          _$RecordEventOpKnownValueImpl value,
-          $Res Function(_$RecordEventOpKnownValueImpl) then) =
-      __$$RecordEventOpKnownValueImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({KnownRecordEventOp data});
-}
-
-/// @nodoc
-class __$$RecordEventOpKnownValueImplCopyWithImpl<$Res>
-    extends _$RecordEventOpCopyWithImpl<$Res, _$RecordEventOpKnownValueImpl>
-    implements _$$RecordEventOpKnownValueImplCopyWith<$Res> {
-  __$$RecordEventOpKnownValueImplCopyWithImpl(
-      _$RecordEventOpKnownValueImpl _value,
-      $Res Function(_$RecordEventOpKnownValueImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RecordEventOp
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$RecordEventOpKnownValueImpl(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as KnownRecordEventOp,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$RecordEventOpKnownValueImpl extends RecordEventOpKnownValue {
-  const _$RecordEventOpKnownValueImpl({required this.data}) : super._();
-
-  @override
-  final KnownRecordEventOp data;
-
-  @override
-  String toString() {
-    return 'RecordEventOp.knownValue(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RecordEventOpKnownValueImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
-
-  /// Create a copy of RecordEventOp
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RecordEventOpKnownValueImplCopyWith<_$RecordEventOpKnownValueImpl>
-      get copyWith => __$$RecordEventOpKnownValueImplCopyWithImpl<
-          _$RecordEventOpKnownValueImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(KnownRecordEventOp data) knownValue,
-    required TResult Function(String data) unknown,
-  }) {
-    return knownValue(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(KnownRecordEventOp data)? knownValue,
-    TResult? Function(String data)? unknown,
-  }) {
-    return knownValue?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(KnownRecordEventOp data)? knownValue,
-    TResult Function(String data)? unknown,
-    required TResult orElse(),
-  }) {
-    if (knownValue != null) {
-      return knownValue(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RecordEventOpKnownValue value) knownValue,
-    required TResult Function(RecordEventOpUnknown value) unknown,
-  }) {
-    return knownValue(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(RecordEventOpKnownValue value)? knownValue,
-    TResult? Function(RecordEventOpUnknown value)? unknown,
-  }) {
-    return knownValue?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RecordEventOpKnownValue value)? knownValue,
-    TResult Function(RecordEventOpUnknown value)? unknown,
-    required TResult orElse(),
-  }) {
-    if (knownValue != null) {
-      return knownValue(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RecordEventOpKnownValue extends RecordEventOp {
-  const factory RecordEventOpKnownValue(
-      {required final KnownRecordEventOp data}) = _$RecordEventOpKnownValueImpl;
-  const RecordEventOpKnownValue._() : super._();
-
-  @override
-  KnownRecordEventOp get data;
-
-  /// Create a copy of RecordEventOp
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RecordEventOpKnownValueImplCopyWith<_$RecordEventOpKnownValueImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$RecordEventOpUnknownImplCopyWith<$Res> {
-  factory _$$RecordEventOpUnknownImplCopyWith(_$RecordEventOpUnknownImpl value,
-          $Res Function(_$RecordEventOpUnknownImpl) then) =
-      __$$RecordEventOpUnknownImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String data});
-}
-
-/// @nodoc
-class __$$RecordEventOpUnknownImplCopyWithImpl<$Res>
-    extends _$RecordEventOpCopyWithImpl<$Res, _$RecordEventOpUnknownImpl>
-    implements _$$RecordEventOpUnknownImplCopyWith<$Res> {
-  __$$RecordEventOpUnknownImplCopyWithImpl(_$RecordEventOpUnknownImpl _value,
-      $Res Function(_$RecordEventOpUnknownImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RecordEventOp
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$RecordEventOpUnknownImpl(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$RecordEventOpUnknownImpl extends RecordEventOpUnknown {
-  const _$RecordEventOpUnknownImpl({required this.data}) : super._();
 
-  @override
-  final String data;
+class RecordEventOpKnownValue extends RecordEventOp {
+  const RecordEventOpKnownValue({required this.data}): super._();
+  
 
-  @override
-  String toString() {
-    return 'RecordEventOp.unknown(data: $data)';
-  }
+@override final  KnownRecordEventOp data;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RecordEventOpUnknownImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
+/// Create a copy of RecordEventOp
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RecordEventOpKnownValueCopyWith<RecordEventOpKnownValue> get copyWith => _$RecordEventOpKnownValueCopyWithImpl<RecordEventOpKnownValue>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
 
-  /// Create a copy of RecordEventOp
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RecordEventOpUnknownImplCopyWith<_$RecordEventOpUnknownImpl>
-      get copyWith =>
-          __$$RecordEventOpUnknownImplCopyWithImpl<_$RecordEventOpUnknownImpl>(
-              this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(KnownRecordEventOp data) knownValue,
-    required TResult Function(String data) unknown,
-  }) {
-    return unknown(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(KnownRecordEventOp data)? knownValue,
-    TResult? Function(String data)? unknown,
-  }) {
-    return unknown?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(KnownRecordEventOp data)? knownValue,
-    TResult Function(String data)? unknown,
-    required TResult orElse(),
-  }) {
-    if (unknown != null) {
-      return unknown(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(RecordEventOpKnownValue value) knownValue,
-    required TResult Function(RecordEventOpUnknown value) unknown,
-  }) {
-    return unknown(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(RecordEventOpKnownValue value)? knownValue,
-    TResult? Function(RecordEventOpUnknown value)? unknown,
-  }) {
-    return unknown?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(RecordEventOpKnownValue value)? knownValue,
-    TResult Function(RecordEventOpUnknown value)? unknown,
-    required TResult orElse(),
-  }) {
-    if (unknown != null) {
-      return unknown(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecordEventOpKnownValue&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class RecordEventOpUnknown extends RecordEventOp {
-  const factory RecordEventOpUnknown({required final String data}) =
-      _$RecordEventOpUnknownImpl;
-  const RecordEventOpUnknown._() : super._();
 
-  @override
-  String get data;
+@override
+int get hashCode => Object.hash(runtimeType,data);
 
-  /// Create a copy of RecordEventOp
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RecordEventOpUnknownImplCopyWith<_$RecordEventOpUnknownImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'RecordEventOp.knownValue(data: $data)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class $RecordEventOpKnownValueCopyWith<$Res> implements $RecordEventOpCopyWith<$Res> {
+  factory $RecordEventOpKnownValueCopyWith(RecordEventOpKnownValue value, $Res Function(RecordEventOpKnownValue) _then) = _$RecordEventOpKnownValueCopyWithImpl;
+@useResult
+$Res call({
+ KnownRecordEventOp data
+});
+
+
+
+
+}
+/// @nodoc
+class _$RecordEventOpKnownValueCopyWithImpl<$Res>
+    implements $RecordEventOpKnownValueCopyWith<$Res> {
+  _$RecordEventOpKnownValueCopyWithImpl(this._self, this._then);
+
+  final RecordEventOpKnownValue _self;
+  final $Res Function(RecordEventOpKnownValue) _then;
+
+/// Create a copy of RecordEventOp
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(RecordEventOpKnownValue(
+data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as KnownRecordEventOp,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class RecordEventOpUnknown extends RecordEventOp {
+  const RecordEventOpUnknown({required this.data}): super._();
+  
+
+@override final  String data;
+
+/// Create a copy of RecordEventOp
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RecordEventOpUnknownCopyWith<RecordEventOpUnknown> get copyWith => _$RecordEventOpUnknownCopyWithImpl<RecordEventOpUnknown>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecordEventOpUnknown&&(identical(other.data, data) || other.data == data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'RecordEventOp.unknown(data: $data)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $RecordEventOpUnknownCopyWith<$Res> implements $RecordEventOpCopyWith<$Res> {
+  factory $RecordEventOpUnknownCopyWith(RecordEventOpUnknown value, $Res Function(RecordEventOpUnknown) _then) = _$RecordEventOpUnknownCopyWithImpl;
+@useResult
+$Res call({
+ String data
+});
+
+
+
+
+}
+/// @nodoc
+class _$RecordEventOpUnknownCopyWithImpl<$Res>
+    implements $RecordEventOpUnknownCopyWith<$Res> {
+  _$RecordEventOpUnknownCopyWithImpl(this._self, this._then);
+
+  final RecordEventOpUnknown _self;
+  final $Res Function(RecordEventOpUnknown) _then;
+
+/// Create a copy of RecordEventOp
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(RecordEventOpUnknown(
+data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

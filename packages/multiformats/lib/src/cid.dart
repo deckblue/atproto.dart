@@ -23,7 +23,31 @@ import 'base32.dart' as base32;
 /// describes the data format or encoding associated with that `code`.
 ///
 enum Multicodec {
+  /// Raw binary (`0x55`). Used by atproto for blob CIDs.
+  raw(0x55),
+
+  /// DAG-PB (`0x70`).
+  dagPb2(0x70),
+
+  /// DAG-CBOR (`0x71`). Used by atproto for record/commit CIDs.
+  dagCbor(0x71),
+
+  /// Deprecated: historically this entry carried the code `0x55`, which is
+  /// actually the multicodec for [raw], not dag-pb. It is retained only to
+  /// avoid a breaking change for callers that reference `Multicodec.dagPb`.
+  /// Use [dagPb2] for real dag-pb (`0x70`) or [raw] for raw binary (`0x55`).
+  @Deprecated(
+    'The code 0x55 is `raw`, not dag-pb. Use Multicodec.raw for raw binary '
+    'or Multicodec.dagPb2 for real dag-pb (0x70). '
+    'This will be removed in a future release.',
+  )
   dagPb(0x55),
+
+  /// Deprecated typo alias for [dagCbor]. Use [dagCbor] instead.
+  @Deprecated(
+    'Typo alias. Use Multicodec.dagCbor instead. '
+    'This will be removed in a future release.',
+  )
   dabCbor(0x71);
 
   /// The code of this codec.
@@ -43,27 +67,39 @@ enum Multicodec {
   }
 
   /// Returns the specific codec based on [code].
+  ///
+  /// Deprecated aliases are never returned: `0x55` resolves to [raw] and
+  /// `0x71` resolves to [dagCbor].
   static Multicodec valueOf(final int code) {
-    for (final codec in values) {
-      if (codec.code == code) {
-        return codec;
-      }
+    switch (code) {
+      case 0x55:
+        return Multicodec.raw;
+      case 0x70:
+        return Multicodec.dagPb2;
+      case 0x71:
+        return Multicodec.dagCbor;
     }
 
     throw UnsupportedError('Unsupported code: [$code]');
   }
 
-  /// Returns true if this codec is dag-pb, otherwise false.
-  bool get isDagPb => this == Multicodec.dagPb;
+  /// Returns true if this codec is dag-pb (`0x70`), otherwise false.
+  bool get isDagPb => code == 0x70;
 
   /// Returns true if this codec is not dag-pb, otherwise false.
   bool get isNotDagPb => !isDagPb;
 
-  /// Returns true if this codec is dag-cbor, otherwise false.
-  bool get isDagCbor => this == Multicodec.dabCbor;
+  /// Returns true if this codec is dag-cbor (`0x71`), otherwise false.
+  bool get isDagCbor => code == 0x71;
 
   /// Returns true if this codec is not dag-cbor, otherwise false.
   bool get isNotDagCbor => !isDagCbor;
+
+  /// Returns true if this codec is raw binary (`0x55`), otherwise false.
+  bool get isRaw => code == 0x55;
+
+  /// Returns true if this codec is not raw binary, otherwise false.
+  bool get isNotRaw => !isRaw;
 }
 
 /// Indicates that the passed CID could not be parsed.
@@ -82,52 +118,143 @@ final class InvalidCidError extends Error {
 /// CID is a label used to point to material in IPFS.
 final class CID {
   /// Returns the new instance of [CID].
-  const CID(final Uint8List bytes) : _bytes = bytes;
+  ///
+  /// This is an unchecked constructor: [bytes] is stored as-is and is not
+  /// validated. Prefer [CID.fromList] or [CID.parse] for validated input.
+  CID(final Uint8List bytes) : _normalizedBytes = _normalize(bytes);
 
   /// Returns the CID representation of specific string [input].
+  ///
+  /// [input] is UTF-8 encoded before hashing. Use [CID.createFromBytes] to
+  /// hash arbitrary binary data instead.
   factory CID.create(
     final String input, [
-    final Multicodec codec = Multicodec.dagPb,
-  ]) =>
-      CID.fromList(_toV1(_toMultihash(input), codec));
+    final Multicodec codec = Multicodec.raw,
+  ]) => CID.createFromBytes(utf8.encode(input), codec);
+
+  /// Returns the CID representation of binary [input].
+  ///
+  /// [input] is hashed with SHA-256 and wrapped as a CID v1 with the given
+  /// [codec].
+  factory CID.createFromBytes(
+    final List<int> input, [
+    final Multicodec codec = Multicodec.raw,
+  ]) => CID.fromList(_toV1(_toMultihash(input), codec));
 
   /// Returns the new instance of [CID] based on string [cid].
-  factory CID.parse(final String cid) => CID(_decode(_ensureStringFormat(cid)));
+  factory CID.parse(final String cid) {
+    if (!cid.startsWith('b')) {
+      throw InvalidCidError('CID v1 should be encoded in base32 format');
+    }
+
+    // The multibase prefix `b` denotes *lowercase* base32; an uppercase body
+    // would use the prefix `B`. Reject a lowercase `b` followed by a
+    // non-lowercase base32 body rather than silently accepting it.
+    final body = cid.substring(1);
+    if (body != body.toLowerCase()) {
+      throw InvalidCidError(
+        'CID v1 base32 body must be lowercase for multibase prefix "b"',
+      );
+    }
+
+    // Decode exactly once, then validate the decoded bytes.
+    return CID(_ensureBytesFormat(_decode(cid)));
+  }
 
   /// Returns the new instance of [CID] based on list [bytes].
   factory CID.fromList(final List<int> bytes) =>
       CID(_ensureBytesFormat(Uint8List.fromList(bytes)));
 
   /// Returns the new instance of [CID] based on [json].
-  factory CID.fromJson(final Map<String, dynamic> json) =>
-      CID.parse(json[_defaultJsonKey]);
+  ///
+  /// Accepts both JSON link shapes:
+  ///
+  /// - `{"/": "<base32 cid>"}` — the IPLD DAG-JSON convention, which is also
+  ///   what [toJson] emits.
+  /// - `{"$link": "<base32 cid>"}` — the atproto data model convention
+  ///   (https://atproto.com/specs/data-model), so atproto JSON round-trips
+  ///   through this factory.
+  ///
+  /// Throws [InvalidCidError] when neither key holds a CID string.
+  factory CID.fromJson(final Map<String, dynamic> json) {
+    final value = json[_defaultJsonKey] ?? json[_atprotoJsonKey];
+    if (value is! String) {
+      throw InvalidCidError(
+        r'JSON must contain a "/" or "$link" key with a string CID',
+      );
+    }
 
-  /// The default JSON key.
+    return CID.parse(value);
+  }
+
+  /// The default JSON key (IPLD DAG-JSON convention).
   static const _defaultJsonKey = '/';
+
+  /// The atproto data model JSON key for CID links.
+  static const _atprotoJsonKey = r'$link';
 
   static const _cidV1Code = 0x01;
   static const _sha256Code = 0x12;
   static const _hashLength = 0x20;
 
-  /// The byte representation of this CID.
-  final Uint8List _bytes;
+  /// The normalized byte representation of this CID (always leading `0`),
+  /// computed once at construction time.
+  final Uint8List _normalizedBytes;
 
-  /// Returns the bytes representation of this CID.
-  Uint8List get bytes =>
-      _bytes.first == 0 ? _bytes : Uint8List.fromList([0, ..._bytes]);
+  /// Returns the normalized bytes for [bytes] (always prefixed with a `0`).
+  static Uint8List _normalize(final Uint8List bytes) =>
+      bytes.isNotEmpty && bytes.first == 0
+      ? bytes
+      : Uint8List.fromList([0, ...bytes]);
+
+  /// Returns an unmodifiable view of the byte representation of this CID.
+  ///
+  /// The bytes are the CBOR tag-42 *payload* form: they include the leading
+  /// `0x00` identity-multibase prefix. This is correct as a DAG-CBOR tag-42
+  /// CID payload, but is NOT a raw CID -- for CAR block indexing / raw CID
+  /// bytes you must drop the leading `0x00`.
+  ///
+  /// The returned view is unmodifiable so that external mutation cannot corrupt
+  /// the CID or desync the lazily-cached [hashCode].
+  Uint8List get bytes => _unmodifiableBytes;
+
+  /// A cached unmodifiable view over [_normalizedBytes].
+  late final Uint8List _unmodifiableBytes = _normalizedBytes
+      .asUnmodifiableView();
 
   /// Returns the multicodec of this CID.
-  Multicodec get codec => Multicodec.valueOf(bytes[2]);
+  Multicodec get codec => Multicodec.valueOf(_normalizedBytes[2]);
 
   /// Returns the JSON representation of this CID.
+  ///
+  /// Emits the IPLD DAG-JSON link shape `{"/": "<base32 cid>"}`. This is
+  /// intentionally asymmetric with [fromJson], which accepts both `{"/": ...}`
+  /// and the atproto `{"$link": ...}` shapes: [toJson] keeps emitting the
+  /// DAG-JSON `/` key for backward compatibility. For the atproto data model
+  /// link shape, use [toAtprotoJson].
   Map<String, dynamic> toJson() => {_defaultJsonKey: _format()};
 
+  /// Returns the atproto data model JSON representation of this CID.
+  ///
+  /// Emits `{"$link": "<base32 cid>"}` as required by the atproto data model
+  /// (https://atproto.com/specs/data-model).
+  ///
+  /// Note: atproto record bodies are normally serialized through the CBOR/CAR
+  /// path (which builds the `$link` map directly from the CID string), not via
+  /// this method. This method exists for callers that need the atproto link
+  /// shape from a [CID] in pure JSON.
+  Map<String, dynamic> toAtprotoJson() => {_atprotoJsonKey: _format()};
+
   /// Returns the base32 encoded string representation of this [bytes].
-  String _format() => 'b${_encode(bytes).replaceAll('=', '').toLowerCase()}';
+  String _format() => _formatted;
+
+  /// The base32 encoded string form of this CID, computed once on first use.
+  late final String _formatted =
+      'b${_encode(_normalizedBytes).replaceAll('=', '').toLowerCase()}';
 
   /// Returns the multihash representation of [input].
-  static Uint8List _toMultihash(final String input) {
-    final digest = Uint8List.fromList(sha256.convert(utf8.encode(input)).bytes);
+  static Uint8List _toMultihash(final List<int> input) {
+    final digest = Uint8List.fromList(sha256.convert(input).bytes);
 
     return Multihash.encode('sha2-256', digest).toBytes();
   }
@@ -147,18 +274,18 @@ final class CID {
       bytes.first == 0 ? base32.encode(bytes.sublist(1)) : base32.encode(bytes);
 
   /// Returns the base32 decoded bytes from [string].
-  static Uint8List _decode(final String string) => string.startsWith('b')
-      ? base32.decode(string.substring(1))
-      : base32.decode(string);
-
-  static String _ensureStringFormat(final String cid) {
-    if (!cid.startsWith('b')) {
-      throw InvalidCidError('CID v1 should be encoded in base32 format');
+  ///
+  /// Wraps decoding failures from `base_codecs` (which throw [FormatException]
+  /// on invalid base32 characters) as [InvalidCidError] so that callers see a
+  /// single, consistent exception type for structurally invalid CIDs.
+  static Uint8List _decode(final String string) {
+    try {
+      return string.startsWith('b')
+          ? base32.decode(string.substring(1))
+          : base32.decode(string);
+    } on FormatException catch (e) {
+      throw InvalidCidError('Invalid base32 CID: ${e.message}');
     }
-
-    _ensureBytesFormat(_decode(cid));
-
-    return cid;
   }
 
   static Uint8List _ensureBytesFormat(final Uint8List bytes) {
@@ -181,7 +308,10 @@ final class CID {
     }
 
     if (!Multicodec.hasCode(bytes[index++])) {
-      throw InvalidCidError('Should be DAG-PB/DAG-CBOR format');
+      throw InvalidCidError(
+        'Unsupported multicodec (expected raw 0x55, dag-pb 0x70, or '
+        'dag-cbor 0x71)',
+      );
     }
 
     if (bytes[index++] != _sha256Code) {
@@ -203,13 +333,16 @@ final class CID {
   String toString() => _format();
 
   @override
-  bool operator ==(covariant CID other) {
+  bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
+    if (other is! CID) return false;
 
-    final thisBytes = bytes;
-    final otherBytes = other.bytes;
+    final thisBytes = _normalizedBytes;
+    final otherBytes = other._normalizedBytes;
+
+    if (thisBytes.length != otherBytes.length) return false;
 
     for (int i = 0; i < thisBytes.length; i++) {
       if (thisBytes[i] != otherBytes[i]) {
@@ -221,9 +354,11 @@ final class CID {
   }
 
   @override
-  int get hashCode {
+  late final int hashCode = _computeHashCode();
+
+  int _computeHashCode() {
     int result = 1;
-    for (final byte in bytes) {
+    for (final byte in _normalizedBytes) {
       result = 31 * result + byte;
     }
 

@@ -64,29 +64,32 @@ final class UModerationCreateReportSubjectConverter
 
   @override
   UModerationCreateReportSubject fromJson(Map<String, dynamic> json) {
-    try {
-      if (RepoRef.validate(json)) {
-        return UModerationCreateReportSubject.repoRef(
-          data: const RepoRefConverter().fromJson(json),
-        );
-      }
-      if (RepoStrongRef.validate(json)) {
-        return UModerationCreateReportSubject.repoStrongRef(
-          data: const RepoStrongRefConverter().fromJson(json),
-        );
-      }
-
-      return UModerationCreateReportSubject.unknown(data: json);
-    } catch (_) {
-      return UModerationCreateReportSubject.unknown(data: json);
+    if (RepoRef.validate(json)) {
+      return UModerationCreateReportSubject.repoRef(
+        data: const RepoRefConverter().fromJson(json),
+      );
     }
+    if (RepoStrongRef.validate(json)) {
+      return UModerationCreateReportSubject.repoStrongRef(
+        data: const RepoStrongRefConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UModerationCreateReportSubject.unknown(data: json);
   }
 
   @override
   Map<String, dynamic> toJson(UModerationCreateReportSubject object) =>
-      object.when(
-        repoRef: (data) => const RepoRefConverter().toJson(data),
-        repoStrongRef: (data) => const RepoStrongRefConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UModerationCreateReportSubjectRepoRef(:final data) =>
+          const RepoRefConverter().toJson(data),
+        UModerationCreateReportSubjectRepoStrongRef(:final data) =>
+          const RepoStrongRefConverter().toJson(data),
+
+        UModerationCreateReportSubjectUnknown(:final data) => data,
+      };
 }

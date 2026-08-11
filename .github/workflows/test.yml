@@ -2,14 +2,231 @@ name: Test
 
 on:
   workflow_dispatch:
+  # Deliberately unfiltered by `paths`. `ci-ok` is the only required status
+  # check on `main`, so a PR whose files match no filter never produces it and
+  # stays blocked forever — enumerating paths made that a recurring trap
+  # (`website/**`, `scripts/**`, `LICENSE`, ... were all missing). Running
+  # always is cheap: the `changes` job diffs against the base ref and yields an
+  # empty matrix when no Dart package is affected, so such a PR only pays for
+  # `format-analyze` + `ci-ok`.
   pull_request:
-    paths:
-      - "packages/*/lib/**"
-      - "packages/*/test/**"
-      - "packages/*/pubspec.yaml"
+
+# Cancel superseded runs for the same ref (e.g. rapid pushes to a PR branch).
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  tacos:
+  # ---------------------------------------------------------------------------
+  # Change detection.
+  #
+  # Strategy: a plain `git diff` against the PR base ref. Chosen over
+  # dorny/paths-filter because the "affects everything" fallback (lex_gen /
+  # lexicons / root config) and the JSON-array matrix output are far simpler to
+  # express in one bash step than as a dozen per-package filter definitions.
+  # `fetch-depth: 0` + an explicit fetch of the base ref guarantee the merge
+  # base is present so the three-dot diff is accurate.
+  #
+  # The package list is DERIVED from the root `pubspec.yaml` `workspace:` list by
+  # `scripts/dart_workspace_dirs.sh` — never hardcoded here. Two hardcoded copies
+  # (this job and `format-analyze`) once drifted from the workspace and left
+  # `atproto_identity` and `templates/feed_generator` completely untested,
+  # unformatted and unanalyzed.
+  # ---------------------------------------------------------------------------
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      # JSON array of affected Dart package paths, e.g. ["packages/atproto"].
+      # "[]" means no Dart package is affected (test job is skipped).
+      packages: ${{ steps.detect.outputs.packages }}
+      # "true" when the Flutter package changed (or on workflow_dispatch).
+      flutter: ${{ steps.detect.outputs.flutter }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Detect affected packages
+        id: detect
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Full Dart package list, derived from the root pubspec.yaml
+          # `workspace:` list so it can never drift. Entries are repo-relative
+          # DIRECTORIES, not bare names, because not every member lives under
+          # `packages/` (templates/feed_generator does not). The Flutter package
+          # (bluesky_text_flutter) is not a workspace member — it has its own job
+          # below — so it is correctly absent. The script fails loudly if the
+          # workspace list and the packages on disk disagree.
+          #
+          # Capture into a variable FIRST: a failing command inside a process
+          # substitution (`done < <(...)`) does not trip `set -e`, so piping the
+          # script straight into the read loop would turn a hard failure into a
+          # silently empty matrix. Command substitution in an assignment does
+          # abort under `set -e`.
+          PACKAGE_LIST="$(./scripts/dart_workspace_dirs.sh)"
+          PACKAGES=()
+          while IFS= read -r dir; do
+            if [ -n "$dir" ]; then PACKAGES+=("$dir"); fi
+          done <<< "$PACKAGE_LIST"
+
+          if [ "${#PACKAGES[@]}" -eq 0 ]; then
+            echo "::error::No Dart workspace packages resolved."
+            exit 1
+          fi
+
+          echo "Dart workspace packages (${#PACKAGES[@]}):"
+          printf '  %s\n' "${PACKAGES[@]}"
+
+          json_from_dirs() {
+            local first=1 out="["
+            for d in "$@"; do
+              if [ "$first" -eq 0 ]; then out+=","; fi
+              out+="\"$d\""
+              first=0
+            done
+            out+="]"
+            printf '%s' "$out"
+          }
+
+          FULL_JSON="$(json_from_dirs "${PACKAGES[@]}")"
+
+          # ---- Flutter flag -------------------------------------------------
+          FLUTTER=false
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Event: workflow_dispatch -> full matrix, Flutter included."
+            {
+              echo "packages=$FULL_JSON"
+              echo "flutter=true"
+            } >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          BASE_REF="${{ github.base_ref }}"
+          # Ensure the base ref (and enough history for the merge base) is
+          # available locally, then diff the PR-side changes only (three-dot).
+          git fetch --no-tags origin \
+            "+refs/heads/${BASE_REF}:refs/remotes/origin/${BASE_REF}"
+          CHANGED="$(git diff --name-only "origin/${BASE_REF}...HEAD")"
+
+          echo "Changed files:"
+          echo "$CHANGED"
+
+          if echo "$CHANGED" | grep -q "^packages/bluesky_text_flutter/"; then
+            FLUTTER=true
+          fi
+
+          # ---- Global "affects everything" triggers -------------------------
+          # lex_gen drives code generation for atproto/bluesky/bluesky_cli, and
+          # lexicons/** is its input; root config affects every package. Any of
+          # these -> run the full matrix. Changes to this workflow or the setup
+          # action also force a full run so CI changes get fully exercised.
+          if echo "$CHANGED" | grep -Eq '^(packages/lex_gen/|lexicons/|pubspec\.yaml$|pubspec\.lock$|analysis_options\.yaml$|\.github/workflows/test\.yml$|\.github/actions/setup-dart-cached/|scripts/dart_workspace_dirs\.sh$)'; then
+            echo "Global trigger changed -> full matrix."
+            {
+              echo "packages=$FULL_JSON"
+              echo "flutter=$FLUTTER"
+            } >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # ---- Per-package detection ----------------------------------------
+          AFFECTED=()
+          for dir in "${PACKAGES[@]}"; do
+            if echo "$CHANGED" | grep -q -- "^$dir/"; then
+              AFFECTED+=("$dir")
+            fi
+          done
+
+          if [ "${#AFFECTED[@]}" -eq 0 ]; then
+            PKG_JSON="[]"
+          else
+            PKG_JSON="$(json_from_dirs "${AFFECTED[@]}")"
+          fi
+
+          echo "Affected Dart packages: $PKG_JSON"
+          {
+            echo "packages=$PKG_JSON"
+            echo "flutter=$FLUTTER"
+          } >> "$GITHUB_OUTPUT"
+
+  # ---------------------------------------------------------------------------
+  # Format + analyze the whole Dart workspace in a single job. Because this is a
+  # Dart pub workspace, one root resolve covers every package. Both commands take
+  # an EXPLICIT list of Dart package dirs — never a bare `.` — because a
+  # root-level `dart format`/`dart analyze` would recurse into the Flutter
+  # package (bluesky_text_flutter), whose `flutter_lints` include cannot be
+  # resolved without the Flutter SDK. The Flutter package is checked in its own
+  # job below. A single stable job name (`format-analyze`) also makes this easy
+  # to require in branch protection.
+  #
+  # That explicit list is DERIVED from the root pubspec.yaml `workspace:` list
+  # (see the `changes` job comment) rather than hardcoded, so adding a workspace
+  # member is enough to get it formatted and analyzed here.
+  # ---------------------------------------------------------------------------
+  format-analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ./.github/actions/setup-dart-cached
+
+      # Dart-only packages (the Flutter package is not a workspace member).
+      - name: Resolve Dart workspace dirs
+        run: |
+          set -euo pipefail
+          DIRS="$(./scripts/dart_workspace_dirs.sh | tr '\n' ' ')"
+          echo "DART_DIRS=$DIRS" >> "$GITHUB_ENV"
+          echo "Dart dirs: $DIRS"
+
+      - name: Check format
+        run: dart format --output=none --set-exit-if-changed $DART_DIRS
+
+      - name: Analyze
+        run: dart analyze $DART_DIRS
+
+      # Runs BEFORE the resolve below, because it is what makes that resolve's
+      # failure legible. `website` is not a workspace member, so any workspace
+      # package it reaches without a path override is fetched from pub.dev --
+      # fine until a release bumps that package to a version that does not exist
+      # there yet, at which point `dart pub get` fails with a version-solving
+      # error that names the symptom and not the cause (#2519). This asserts the
+      # override list still covers the full transitive closure.
+      - name: Validate website dependency overrides
+        run: dart run ./scripts/validate_website_overrides.dart
+
+      # `website` is not a workspace member -- it pins the packages by path and
+      # resolves on its own -- so it needs a separate resolve before analysis.
+      # Its snippets are the source of every code example in the docs, so this
+      # step is what stops the docs from describing APIs that no longer exist.
+      - name: Analyze documentation snippets
+        working-directory: website
+        run: |
+          dart pub get
+          dart format --output=none --set-exit-if-changed static/snippets
+          dart analyze
+
+      # Analysis above proves the snippets compile; this proves the docs still
+      # show them. Without it a snippet could be fixed while the markdown kept
+      # rendering the stale copy. Lives here rather than in verify_generated so
+      # a docs-only PR does not pay for the full codegen pipeline.
+      - name: Assert documentation snippets are injected
+        run: |
+          dart run ./scripts/gen_doc_snippets.dart
+          if ! git diff --exit-code -- website/docs; then
+            echo "::error::Documentation snippets are stale. Run 'dart run ./scripts/gen_doc_snippets.dart' and commit the result."
+            exit 1
+          fi
+
+  # ---------------------------------------------------------------------------
+  # Test only the affected packages (dynamic matrix from the `changes` job).
+  # Skipped entirely when no Dart package is affected.
+  # ---------------------------------------------------------------------------
+  test:
+    needs: changes
+    if: needs.changes.outputs.packages != '[]'
     runs-on: ubuntu-latest
 
     defaults:
@@ -17,36 +234,56 @@ jobs:
         working-directory: ${{ matrix.package_path }}
 
     strategy:
+      fail-fast: false
       matrix:
-        channel:
-          - stable
-        package_path:
-          - packages/at_primitives
-          - packages/lexicon
-          - packages/xrpc
-          - packages/multiformats
-          - packages/atproto_core
-          - packages/did_plc
-          - packages/atproto
-          - packages/bluesky
-          - packages/bluesky_text
+        package_path: ${{ fromJSON(needs.changes.outputs.packages) }}
 
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v7
+
+      # Resolve the whole workspace from the repo root (not the package dir).
+      - uses: ./.github/actions/setup-dart-cached
+
+      - name: Run tests
+        run: |
+          if test -d "test"; then
+            dart test
+          else
+            echo "No test/ directory in ${{ matrix.package_path }}; skipping."
+          fi
+
+  # ---------------------------------------------------------------------------
+  # Flutter packages cannot use `dart pub get` / the Dart-only workspace, so
+  # they run in a separate job with the Flutter SDK installed. Gated to run only
+  # when the Flutter package changed (or on workflow_dispatch).
+  # ---------------------------------------------------------------------------
+  flutter:
+    needs: changes
+    if: needs.changes.outputs.flutter == 'true'
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ${{ matrix.package_path }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        package_path:
+          - packages/bluesky_text_flutter
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: subosito/flutter-action@v2
         with:
-          fetch-depth: 2
-      - uses: subosito/flutter-action@v2.7.1
-        with:
-          channel: ${{ matrix.channel }}
-      - name: Add pub cache bin to PATH
-        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
-      - name: Add pub cache to PATH
-        run: echo "PUB_CACHE="$HOME/.pub-cache"" >> $GITHUB_ENV
+          channel: stable
+
       - name: Install dependencies
         run: flutter pub get
 
       - name: Check format
-        run: dart format --set-exit-if-changed .
+        run: dart format --output=none --set-exit-if-changed .
 
       - name: Analyze
         run: flutter analyze
@@ -54,9 +291,74 @@ jobs:
       - name: Run tests
         run: |
           if test -d "test"; then
-            if grep -q flutter "pubspec.yaml"; then
+            flutter test
+          fi
+
+      - name: Analyze & test example
+        run: |
+          if test -d "example"; then
+            cd example
+            flutter pub get
+            flutter analyze
+            if test -d "test"; then
               flutter test
-            else
-              dart test
             fi
           fi
+
+  # ---------------------------------------------------------------------------
+  # Guards the list every other Dart job is derived from.
+  #
+  # The release tooling under `scripts/` used to be checked here explicitly,
+  # because it was not a workspace member and so was skipped by construction:
+  # `format-analyze` takes the workspace dir list and the `test` matrix is built
+  # from that same list. That is what let a plain `Type 'Version' not found`
+  # reach main and break Sync and Generate for three nights (#2532).
+  #
+  # `scripts/` is now a workspace member, so `format-analyze` reaches it the
+  # same way it reaches every other package. Naming it there again would be the
+  # second hardcoded copy `dart_workspace_dirs.sh` exists to prevent, so the
+  # format and analyze steps are gone from here.
+  #
+  # The test step is NOT redundant and must stay. The matrix job runs
+  # `dart test` only `if test -d "test"`, and this package keeps its tests
+  # beside the sources (`gen_changelog/writer_test.dart`, not
+  # `test/writer_test.dart`), so `test (scripts)` skips and all 44 of them
+  # would go unrun again.
+  #
+  # Also keeps the drift assertion. `dart_workspace_dirs.sh` runs it as a side
+  # effect whenever a caller asks for the list; running `--check` on its own
+  # gives a drift its own check name instead of surfacing it inside an
+  # unrelated job.
+  # ---------------------------------------------------------------------------
+  tooling:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ./.github/actions/setup-dart-cached
+
+      - name: Check the workspace package list
+        run: ./scripts/dart_workspace_dirs.sh --check
+
+      - name: Run the release tooling tests
+        run: dart test scripts
+
+  # ---------------------------------------------------------------------------
+  # Single aggregation gate. `test` and `flutter` are conditional / matrix jobs
+  # whose individual check names vary, which makes them awkward to require in
+  # branch protection. Requiring this one job instead gives a stable required
+  # check that passes only when every upstream job succeeded or was
+  # legitimately skipped (a skipped job is not a failure).
+  # ---------------------------------------------------------------------------
+  ci-ok:
+    needs: [format-analyze, tooling, test, flutter]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assert no upstream job failed
+        run: |
+          if ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}; then
+            echo "A required job failed or was cancelled."
+            exit 1
+          fi
+          echo "All required jobs passed (or were skipped)."

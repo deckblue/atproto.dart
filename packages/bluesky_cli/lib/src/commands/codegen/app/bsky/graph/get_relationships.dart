@@ -33,18 +33,18 @@ final class GetRelationshipsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerates public relationships between one account, and a list of other accounts. Does not require auth.";
+      "Enumerates public relationships between one account, and a list of other accounts. Does not require auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph get-relationships [actor] [others]";
+      "bsky app-bsky-graph get-relationships --actor=<value> [--others=<value>...]";
 
   @override
   String get methodId => "app.bsky.graph.getRelationships";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "actor": argResults!["actor"],
-        if (argResults!["others"] != null) "others": argResults!["others"],
-      };
+    "actor": argResults!["actor"],
+    if (argResults!.wasParsed("others")) "others": argResults!["others"],
+  };
 }

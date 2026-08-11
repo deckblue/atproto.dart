@@ -12,6 +12,8 @@
 // **************************************************************************
 
 export 'package:bluesky/src/services/codegen/app/bsky/embed/gallery/main.dart';
+export 'package:bluesky/src/services/codegen/app/bsky/embed/gallery/union_main_items.dart';
 export 'package:bluesky/src/services/codegen/app/bsky/embed/gallery/image.dart';
 export 'package:bluesky/src/services/codegen/app/bsky/embed/gallery/view.dart';
+export 'package:bluesky/src/services/codegen/app/bsky/embed/gallery/union_view_items.dart';
 export 'package:bluesky/src/services/codegen/app/bsky/embed/gallery/view_image.dart';

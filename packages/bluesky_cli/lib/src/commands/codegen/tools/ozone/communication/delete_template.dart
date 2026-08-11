@@ -23,11 +23,11 @@ final class DeleteTemplateCommand extends ProcedureCommand {
   final String name = "delete-template";
 
   @override
-  final String description = r"Delete a communication template.";
+  final String description = "Delete a communication template.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-communication delete-template [id]";
+      "bsky tools-ozone-communication delete-template --id=<value>";
 
   @override
   String get methodId => "tools.ozone.communication.deleteTemplate";

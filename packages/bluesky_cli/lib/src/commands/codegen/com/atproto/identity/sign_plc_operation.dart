@@ -7,6 +7,9 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+// Dart imports:
+import 'dart:convert';
+
 // Project imports:
 import '../../../../procedure_command.dart';
 
@@ -33,25 +36,33 @@ final class SignPlcOperationCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Signs a PLC operation to update some value(s) in the requesting DID's document.";
+      "Signs a PLC operation to update some value(s) in the requesting DID's document.";
 
   @override
   final String invocation =
-      "bsky com-atproto-identity sign-plc-operation [token] [rotationKeys] [alsoKnownAs] [verificationMethods] [services]";
+      "bsky com-atproto-identity sign-plc-operation [--token=<value>] [--rotationKeys=<value>...] [--alsoKnownAs=<value>...] [--verificationMethods=<value>] [--services=<value>]";
 
   @override
   String get methodId => "com.atproto.identity.signPlcOperation";
 
   @override
   Map<String, dynamic>? get body => {
-        if (argResults!["token"] != null) "token": argResults!["token"],
-        if (argResults!["rotationKeys"] != null)
-          "rotationKeys": argResults!["rotationKeys"],
-        if (argResults!["alsoKnownAs"] != null)
-          "alsoKnownAs": argResults!["alsoKnownAs"],
-        if (argResults!["verificationMethods"] != null)
-          "verificationMethods": argResults!["verificationMethods"],
-        if (argResults!["services"] != null)
-          "services": argResults!["services"],
-      };
+    if (argResults!.wasParsed("token")) "token": argResults!["token"],
+    if (argResults!.wasParsed("rotationKeys"))
+      "rotationKeys": argResults!["rotationKeys"],
+    if (argResults!.wasParsed("alsoKnownAs"))
+      "alsoKnownAs": argResults!["alsoKnownAs"],
+    if (argResults!.wasParsed("verificationMethods"))
+      "verificationMethods": _decodeJson("verificationMethods"),
+    if (argResults!.wasParsed("services")) "services": _decodeJson("services"),
+  };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

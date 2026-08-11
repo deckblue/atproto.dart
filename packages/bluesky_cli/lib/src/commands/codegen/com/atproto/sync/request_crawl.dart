@@ -30,10 +30,11 @@ final class RequestCrawlCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Request a service to persistently crawl hosted repos. Expected use is new PDS instances declaring their existence to Relays. Does not require auth.";
+      "Request a service to persistently crawl hosted repos. Expected use is new PDS instances declaring their existence to Relays. Does not require auth.";
 
   @override
-  final String invocation = "bsky com-atproto-sync request-crawl [hostname]";
+  final String invocation =
+      "bsky com-atproto-sync request-crawl --hostname=<value>";
 
   @override
   String get methodId => "com.atproto.sync.requestCrawl";

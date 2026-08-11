@@ -72,37 +72,39 @@ final class URichtextFacetFeaturesConverter
 
   @override
   URichtextFacetFeatures fromJson(Map<String, dynamic> json) {
-    try {
-      if (RichtextFacetMention.validate(json)) {
-        return URichtextFacetFeatures.richtextFacetMention(
-          data: const RichtextFacetMentionConverter().fromJson(json),
-        );
-      }
-      if (RichtextFacetLink.validate(json)) {
-        return URichtextFacetFeatures.richtextFacetLink(
-          data: const RichtextFacetLinkConverter().fromJson(json),
-        );
-      }
-      if (RichtextFacetTag.validate(json)) {
-        return URichtextFacetFeatures.richtextFacetTag(
-          data: const RichtextFacetTagConverter().fromJson(json),
-        );
-      }
-
-      return URichtextFacetFeatures.unknown(data: json);
-    } catch (_) {
-      return URichtextFacetFeatures.unknown(data: json);
+    if (RichtextFacetMention.validate(json)) {
+      return URichtextFacetFeatures.richtextFacetMention(
+        data: const RichtextFacetMentionConverter().fromJson(json),
+      );
     }
+    if (RichtextFacetLink.validate(json)) {
+      return URichtextFacetFeatures.richtextFacetLink(
+        data: const RichtextFacetLinkConverter().fromJson(json),
+      );
+    }
+    if (RichtextFacetTag.validate(json)) {
+      return URichtextFacetFeatures.richtextFacetTag(
+        data: const RichtextFacetTagConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return URichtextFacetFeatures.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(URichtextFacetFeatures object) => object.when(
-        richtextFacetMention: (data) =>
-            const RichtextFacetMentionConverter().toJson(data),
-        richtextFacetLink: (data) =>
-            const RichtextFacetLinkConverter().toJson(data),
-        richtextFacetTag: (data) =>
-            const RichtextFacetTagConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(URichtextFacetFeatures object) =>
+      switch (object) {
+        URichtextFacetFeaturesRichtextFacetMention(:final data) =>
+          const RichtextFacetMentionConverter().toJson(data),
+        URichtextFacetFeaturesRichtextFacetLink(:final data) =>
+          const RichtextFacetLinkConverter().toJson(data),
+        URichtextFacetFeaturesRichtextFacetTag(:final data) =>
+          const RichtextFacetTagConverter().toJson(data),
+
+        URichtextFacetFeaturesUnknown(:final data) => data,
+      };
 }

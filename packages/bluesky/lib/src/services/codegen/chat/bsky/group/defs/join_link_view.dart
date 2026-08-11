@@ -22,6 +22,7 @@ part 'join_link_view.g.dart';
 // LexGenerator
 // **************************************************************************
 
+/// Join link view to be used within a group view, so the convo is surrounding, not specified inside this view.
 @freezed
 abstract class JoinLinkView with _$JoinLinkView {
   static const knownProps = <String>[
@@ -39,7 +40,8 @@ abstract class JoinLinkView with _$JoinLinkView {
     @LinkEnabledStatusConverter() required LinkEnabledStatus enabledStatus,
     required bool requireApproval,
     @JoinRuleConverter() required JoinRule joinRule,
-    required DateTime createdAt,
+    @JsonKey(toJson: iso8601) required DateTime createdAt,
+
     Map<String, dynamic>? $unknown,
   }) = _JoinLinkView;
 

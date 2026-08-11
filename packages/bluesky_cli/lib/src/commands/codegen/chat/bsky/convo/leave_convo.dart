@@ -24,10 +24,11 @@ final class LeaveConvoCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Leaves a conversation (direct or group). For group, this effectively removes membership. For direct, membership is never removed, only changed to remove from enumerations by the user who left.";
+      "Leaves a conversation (direct or group). For group, this effectively removes membership. For direct, membership is never removed, only changed to remove from enumerations by the user who left.";
 
   @override
-  final String invocation = "bsky chat-bsky-convo leave-convo [convoId]";
+  final String invocation =
+      "bsky chat-bsky-convo leave-convo --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.convo.leaveConvo";

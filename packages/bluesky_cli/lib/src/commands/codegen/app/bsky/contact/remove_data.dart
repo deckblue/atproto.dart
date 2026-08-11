@@ -15,14 +15,14 @@ import '../../../../procedure_command.dart';
 // **************************************************************************
 
 final class RemoveDataCommand extends ProcedureCommand {
-  RemoveDataCommand() {}
+  RemoveDataCommand();
 
   @override
   final String name = "remove-data";
 
   @override
   final String description =
-      r"Removes all stored hashes used for contact matching, existing matches, and sync status. Requires authentication.";
+      "Removes all stored hashes used for contact matching, existing matches, and sync status. Requires authentication.";
 
   @override
   final String invocation = "bsky app-bsky-contact remove-data";
@@ -31,5 +31,5 @@ final class RemoveDataCommand extends ProcedureCommand {
   String get methodId => "app.bsky.contact.removeData";
 
   @override
-  Map<String, dynamic>? get body => {};
+  Map<String, dynamic>? get body => null;
 }

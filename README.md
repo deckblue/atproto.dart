@@ -92,6 +92,7 @@ The atproto.dart ecosystem is organized into focused packages that work together
 | **[bluesky](https://github.com/myConsciousness/atproto.dart/tree/main/packages/bluesky)** | Full-featured Bluesky client (`app.bsky.*`, `chat.bsky.*` + AT Protocol) | [![pub package](https://img.shields.io/pub/v/bluesky.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/bluesky) | [README](https://github.com/myConsciousness/atproto.dart/tree/main/packages/bluesky/README.md) / [GUIDE](https://atprotodart.com/docs/packages/bluesky) |
 | **[atproto_oauth](https://github.com/myConsciousness/atproto.dart/tree/main/packages/atproto_oauth)** | OAuth DPoP authentication client for secure user sessions | [![pub package](https://img.shields.io/pub/v/atproto_oauth.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/atproto_oauth) | [README](https://github.com/myConsciousness/atproto.dart/tree/main/packages/atproto_oauth/README.md) |
 | **[did_plc](https://github.com/myConsciousness/atproto.dart/tree/main/packages/did_plc)** | PLC Directory client for DID resolution and management | [![pub package](https://img.shields.io/pub/v/did_plc.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/did_plc) | [README](https://github.com/myConsciousness/atproto.dart/tree/main/packages/did_plc/README.md) |
+| **[atproto_identity](https://github.com/myConsciousness/atproto.dart/tree/main/packages/atproto_identity)** | Identity resolution (handle/DID → PDS + signing key) and service-auth JWT verification | [![pub package](https://img.shields.io/pub/v/atproto_identity.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/atproto_identity) | [README](https://github.com/myConsciousness/atproto.dart/tree/main/packages/atproto_identity/README.md) |
 
 ### 2.3. Utilities & Tools
 *Specialized packages for text processing*
@@ -99,6 +100,7 @@ The atproto.dart ecosystem is organized into focused packages that work together
 | Package | Description | pub.dev | Docs |
 | ------- | ----------- | :-----: | :--: |
 | **[bluesky_text](https://github.com/myConsciousness/atproto.dart/tree/main/packages/bluesky_text)** | Rich text parsing for mentions, links, hashtags, and formatting | [![pub package](https://img.shields.io/pub/v/bluesky_text.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/bluesky_text) | [README](https://github.com/myConsciousness/atproto.dart/tree/main/packages/bluesky_text/README.md) / [GUIDE](https://atprotodart.com/docs/packages/bluesky_text) |
+| **[bluesky_text_flutter](https://github.com/myConsciousness/atproto.dart/tree/main/packages/bluesky_text_flutter)** | Flutter widgets for `bluesky_text`: a rich-text editing controller and a post viewer | [![pub package](https://img.shields.io/pub/v/bluesky_text_flutter.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/bluesky_text_flutter) | [README](https://github.com/myConsciousness/atproto.dart/tree/main/packages/bluesky_text_flutter/README.md) |
 
 ### 2.4. CLI Tool
 
@@ -204,6 +206,32 @@ void main() async {
 - [AT Protocol Guide](https://atprotodart.com/docs/packages/atproto) - Repository operations, Firehose, authentication
 - [Firehose Processing](https://atprotodart.com/docs/packages/atproto#firehose) - Real-time data stream handling
 
+### 3.3. Building a Custom Feed Generator
+
+Want to publish your own algorithmic feed to Bluesky? A [custom feed generator](https://docs.bsky.app/docs/starter-templates/custom-feeds) is a small HTTP service the AppView calls to get an ordered list of post URIs.
+
+The **[`templates/feed_generator`](https://github.com/myConsciousness/atproto.dart/tree/main/templates/feed_generator)** template is a complete, runnable starting point — clone the directory, edit the algorithm, and deploy:
+
+- **`bin/server.dart`** serves the three endpoints the AppView needs (`/.well-known/did.json`, `app.bsky.feed.describeFeedGenerator`, `app.bsky.feed.getFeedSkeleton`) and verifies each inbound service-auth JWT with [`atproto_identity`](https://github.com/myConsciousness/atproto.dart/tree/main/packages/atproto_identity).
+- **`bin/publish_feed.dart`** registers the feed on the network (`app.bsky.feed.generator` record).
+- A **Firehose indexer**, a **`FeedAlgorithm`** interface with a reverse-chronological sample, and a swappable **`FeedStore`** are included — replace the algorithm and store with your own.
+
+```bash
+# From a clone of this repository:
+cd templates/feed_generator
+
+export FEEDGEN_HOSTNAME=feed.example.com
+export FEEDGEN_PUBLISHER_HANDLE=you.bsky.social
+export FEEDGEN_PUBLISHER_PASSWORD=xxxx-xxxx-xxxx-xxxx
+
+dart run bin/server.dart        # index the firehose and serve the feed
+dart run bin/publish_feed.dart  # register the feed on the network
+```
+
+**Next Steps:**
+- [Feed Generator template README](https://github.com/myConsciousness/atproto.dart/tree/main/templates/feed_generator/README.md) - Configuration, deployment, and customization
+- [Bluesky custom feeds overview](https://docs.bsky.app/docs/starter-templates/custom-feeds) - How feed generators fit into the network
+
 ## 4. Project Development Setup 🛠️
 
 Contributing to atproto.dart or setting up the development environment? This project uses [Melos](https://github.com/invertase/melos) for efficient monorepo management across all packages.
@@ -241,6 +269,17 @@ The `melos setup` command handles everything: installing dependencies, running c
 | `melos fmt` | Format code and organize imports |
 | `melos build` | Run code generation for all packages |
 | `melos gen` | Generate API clients from Lexicon schemas |
+
+**Release commands (maintainers):**
+
+| Command | Description |
+| ------- | ----------- |
+| `melos publish_dry` | Dry-run publish for all Dart workspace packages (validate only) - run this first |
+| `melos publish_live` | Publish all Dart packages to pub.dev and create git version tags |
+| `melos publish_tags` | Push the git version tags created by `melos publish_live` to origin |
+| `melos flutter_publish_dry` | Dry-run publish for the Flutter package (bluesky_text_flutter) |
+| `melos flutter_publish_live` | Publish the Flutter package (bluesky_text_flutter) to pub.dev |
+| `melos flutter_publish_tags` | Tag and push the Flutter package release |
 
 ### 4.4. Troubleshooting
 

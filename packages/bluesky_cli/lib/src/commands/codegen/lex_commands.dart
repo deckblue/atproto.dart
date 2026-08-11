@@ -7,6 +7,9 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+// Package imports:
+import 'package:args/command_runner.dart';
+
 // Project imports:
 import 'app/bsky/actor.dart';
 import 'app/bsky/ageassurance.dart';
@@ -24,6 +27,7 @@ import 'chat/bsky/actor.dart';
 import 'chat/bsky/convo.dart';
 import 'chat/bsky/group.dart';
 import 'chat/bsky/moderation.dart';
+import 'chat/bsky/notification.dart';
 import 'com/atproto/admin.dart';
 import 'com/atproto/identity.dart';
 import 'com/atproto/label.dart';
@@ -33,6 +37,7 @@ import 'com/atproto/repo.dart';
 import 'com/atproto/server.dart';
 import 'com/atproto/sync.dart';
 import 'com/atproto/temp.dart';
+import 'com/germnetwork/declaration.dart';
 import 'tools/ozone/communication.dart';
 import 'tools/ozone/hosting.dart';
 import 'tools/ozone/moderation.dart';
@@ -50,7 +55,12 @@ import 'tools/ozone/verification.dart';
 // LexGenerator
 // **************************************************************************
 
-final lexCommands = [
+/// Returns fresh instances of all generated commands.
+///
+/// This must be a getter, not a top-level final, because command
+/// instances hold per-runner state and cannot be shared across
+/// multiple [CommandRunner] instances.
+List<Command<void>> get lexCommands => [
   AppBskyActorCommand(),
   AppBskyAgeassuranceCommand(),
   AppBskyBookmarkCommand(),
@@ -67,6 +77,7 @@ final lexCommands = [
   ChatBskyConvoCommand(),
   ChatBskyGroupCommand(),
   ChatBskyModerationCommand(),
+  ChatBskyNotificationCommand(),
   ComAtprotoAdminCommand(),
   ComAtprotoIdentityCommand(),
   ComAtprotoLabelCommand(),
@@ -76,6 +87,7 @@ final lexCommands = [
   ComAtprotoServerCommand(),
   ComAtprotoSyncCommand(),
   ComAtprotoTempCommand(),
+  ComGermnetworkDeclarationCommand(),
   ToolsOzoneCommunicationCommand(),
   ToolsOzoneHostingCommand(),
   ToolsOzoneModerationCommand(),

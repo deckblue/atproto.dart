@@ -26,11 +26,11 @@ final class ApproveJoinRequestCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Approves a request to join a group (via join link) the user owns. Action taken by the group owner.";
+      "Approves a request to join a group (via join link) the user owns. Action taken by the group owner.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group approve-join-request [convoId] [member]";
+      "bsky chat-bsky-group approve-join-request --convoId=<value> --member=<value>";
 
   @override
   String get methodId => "chat.bsky.group.approveJoinRequest";

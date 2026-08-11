@@ -52,28 +52,29 @@ final class ListVerificationsCommand extends QueryCommand {
   final String name = "list-verifications";
 
   @override
-  final String description = r"List verifications";
+  final String description = "List verifications";
 
   @override
   final String invocation =
-      "bsky tools-ozone-verification list-verifications [cursor] [limit] [createdAfter] [createdBefore] [issuers] [subjects] [sortDirection] [isRevoked]";
+      "bsky tools-ozone-verification list-verifications [--cursor=<value>] [--limit=<value>] [--createdAfter=<value>] [--createdBefore=<value>] [--issuers=<value>...] [--subjects=<value>...] [--sortDirection=<value>] [--isRevoked]";
 
   @override
   String get methodId => "tools.ozone.verification.listVerifications";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        "limit": argResults!["limit"],
-        if (argResults!["createdAfter"] != null)
-          "createdAfter": argResults!["createdAfter"],
-        if (argResults!["createdBefore"] != null)
-          "createdBefore": argResults!["createdBefore"],
-        if (argResults!["issuers"] != null) "issuers": argResults!["issuers"],
-        if (argResults!["subjects"] != null)
-          "subjects": argResults!["subjects"],
-        "sortDirection": argResults!["sortDirection"],
-        if (argResults!["isRevoked"] != null)
-          "isRevoked": argResults!["isRevoked"],
-      };
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("createdAfter"))
+      "createdAfter": argResults!["createdAfter"],
+    if (argResults!.wasParsed("createdBefore"))
+      "createdBefore": argResults!["createdBefore"],
+    if (argResults!.wasParsed("issuers")) "issuers": argResults!["issuers"],
+    if (argResults!.wasParsed("subjects")) "subjects": argResults!["subjects"],
+    "sortDirection": argResults!["sortDirection"],
+    if (argResults!.wasParsed("isRevoked"))
+      "isRevoked": argResults!["isRevoked"],
+  };
 }

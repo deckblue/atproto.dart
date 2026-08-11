@@ -24,10 +24,11 @@ final class UnmuteConvoCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Unmutes a conversation, allowing notifications related to it.";
+      "Unmutes a conversation, allowing notifications related to it.";
 
   @override
-  final String invocation = "bsky chat-bsky-convo unmute-convo [convoId]";
+  final String invocation =
+      "bsky chat-bsky-convo unmute-convo --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.convo.unmuteConvo";

@@ -8,31 +8,29 @@ part of 'personal_details_pref.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PersonalDetailsPrefImpl _$$PersonalDetailsPrefImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$PersonalDetailsPrefImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$PersonalDetailsPrefImpl(
-          $type: $checkedConvert(r'$type',
-              (v) => v as String? ?? 'app.bsky.actor.defs#personalDetailsPref'),
-          birthDate: $checkedConvert('birthDate',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_PersonalDetailsPref _$PersonalDetailsPrefFromJson(Map json) =>
+    $checkedCreate('_PersonalDetailsPref', json, ($checkedConvert) {
+      final val = _PersonalDetailsPref(
+        $type: $checkedConvert(
+          r'$type',
+          (v) => v as String? ?? 'app.bsky.actor.defs#personalDetailsPref',
+        ),
+        birthDate: $checkedConvert(
+          'birthDate',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$PersonalDetailsPrefImplToJson(
-        _$PersonalDetailsPrefImpl instance) =>
-    <String, dynamic>{
-      r'$type': instance.$type,
-      if (instance.birthDate?.toIso8601String() case final value?)
-        'birthDate': value,
-      if (instance.$unknown case final value?) r'$unknown': value,
-    };
+Map<String, dynamic> _$PersonalDetailsPrefToJson(
+  _PersonalDetailsPref instance,
+) => <String, dynamic>{
+  r'$type': instance.$type,
+  'birthDate': iso8601(instance.birthDate),
+  r'$unknown': ?instance.$unknown,
+};

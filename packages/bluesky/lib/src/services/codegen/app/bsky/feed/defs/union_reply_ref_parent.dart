@@ -63,34 +63,39 @@ final class UReplyRefParentConverter
 
   @override
   UReplyRefParent fromJson(Map<String, dynamic> json) {
-    try {
-      if (PostView.validate(json)) {
-        return UReplyRefParent.postView(
-          data: const PostViewConverter().fromJson(json),
-        );
-      }
-      if (NotFoundPost.validate(json)) {
-        return UReplyRefParent.notFoundPost(
-          data: const NotFoundPostConverter().fromJson(json),
-        );
-      }
-      if (BlockedPost.validate(json)) {
-        return UReplyRefParent.blockedPost(
-          data: const BlockedPostConverter().fromJson(json),
-        );
-      }
-
-      return UReplyRefParent.unknown(data: json);
-    } catch (_) {
-      return UReplyRefParent.unknown(data: json);
+    if (PostView.validate(json)) {
+      return UReplyRefParent.postView(
+        data: const PostViewConverter().fromJson(json),
+      );
     }
+    if (NotFoundPost.validate(json)) {
+      return UReplyRefParent.notFoundPost(
+        data: const NotFoundPostConverter().fromJson(json),
+      );
+    }
+    if (BlockedPost.validate(json)) {
+      return UReplyRefParent.blockedPost(
+        data: const BlockedPostConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UReplyRefParent.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UReplyRefParent object) => object.when(
-        postView: (data) => const PostViewConverter().toJson(data),
-        notFoundPost: (data) => const NotFoundPostConverter().toJson(data),
-        blockedPost: (data) => const BlockedPostConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UReplyRefParent object) => switch (object) {
+    UReplyRefParentPostView(:final data) => const PostViewConverter().toJson(
+      data,
+    ),
+    UReplyRefParentNotFoundPost(:final data) =>
+      const NotFoundPostConverter().toJson(data),
+    UReplyRefParentBlockedPost(:final data) =>
+      const BlockedPostConverter().toJson(data),
+
+    UReplyRefParentUnknown(:final data) => data,
+  };
 }

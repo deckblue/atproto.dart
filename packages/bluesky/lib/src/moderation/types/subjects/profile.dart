@@ -33,7 +33,11 @@ ModerationDecision decideProfile(
     _ => throw UnimplementedError(),
   };
 
-  final decision = ModerationDecision.init(did: did, me: did == opts.userDid);
+  final decision = ModerationDecision.init(
+    did: did,
+    me: did == opts.userDid,
+    behaviors: opts.behaviors,
+  );
 
   for (final label in _filterProfileLabels(labels)) {
     decision.addLabel(target: LabelTarget.profile, label: label, opts: opts);

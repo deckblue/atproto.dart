@@ -41,8 +41,8 @@ final class ListCommand extends Command<void> {
       "Record representing a list of accounts (actors). Scope includes both moderation-oriented lists and curration-oriented lists.";
 }
 
-final class _CreateListCommand extends CreateRecordCommand {
-  _CreateListCommand() {
+mixin _ListCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
     argParser
       ..addOption(
         "purpose",
@@ -56,11 +56,36 @@ final class _CreateListCommand extends CreateRecordCommand {
         mandatory: true,
       )
       ..addOption("description")
-      ..addMultiOption("descriptionFacets")
+      ..addMultiOption("descriptionFacets", splitCommas: false)
       ..addOption("avatar")
       ..addOption("labels")
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("rkey");
+      ..addOption("createdAt", mandatory: true);
+  }
+
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
+
+  Object? _decodeJsonItem(final String name, final String raw) {
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON in option "$name": ${e.message}');
+    }
+  }
+}
+
+final class _CreateListCommand extends CreateRecordCommand
+    with _ListCommandRecordArgs {
+  _CreateListCommand() {
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"Specific record key to use.");
   }
 
   @override
@@ -71,49 +96,36 @@ final class _CreateListCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph list create [purpose] [name] [description] [descriptionFacets] [avatar] [labels] [createdAt] [rkey]";
+      "bsky app-bsky-graph list create --purpose=<value> --name=<value> [--description=<value>] [--descriptionFacets=<value>...] [--avatar=<value>] [--labels=<value>] --createdAt=<value> [--rkey=<value>]";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.list";
 
   @override
   Map<String, dynamic> get record => {
-        "purpose": jsonDecode(argResults!["purpose"]),
-        "name": argResults!["name"],
-        if (argResults!["description"] != null)
-          "description": argResults!["description"],
-        if (argResults!["descriptionFacets"] != null)
-          "descriptionFacets": argResults!["descriptionFacets"],
-        if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
-        if (argResults!["labels"] != null)
-          "labels": jsonDecode(argResults!["labels"]),
-        "createdAt": argResults!["createdAt"],
-      };
+    r"$type": "app.bsky.graph.list",
+    "purpose": _decodeJson("purpose"),
+    "name": argResults!["name"],
+    if (argResults!.wasParsed("description"))
+      "description": argResults!["description"],
+    if (argResults!.wasParsed("descriptionFacets"))
+      "descriptionFacets": (argResults!["descriptionFacets"] as List<String>)
+          .map((e) => _decodeJsonItem("descriptionFacets", e))
+          .toList(),
+    if (argResults!.wasParsed("avatar")) "avatar": argResults!["avatar"],
+    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+    "createdAt": argResults!["createdAt"],
+  };
 }
 
-final class _PutListCommand extends PutRecordCommand {
+final class _PutListCommand extends PutRecordCommand
+    with _ListCommandRecordArgs {
   _PutListCommand() {
-    argParser
-      ..addOption(
-        "purpose",
-        help:
-            r"Defines the purpose of the list (aka, moderation-oriented or curration-oriented)",
-        mandatory: true,
-      )
-      ..addOption(
-        "name",
-        help: r"Display name for list; can not be empty.",
-        mandatory: true,
-      )
-      ..addOption("description")
-      ..addMultiOption("descriptionFacets")
-      ..addOption("avatar")
-      ..addOption("labels")
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -124,32 +136,34 @@ final class _PutListCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph list put [purpose] [name] [description] [descriptionFacets] [avatar] [labels] [createdAt] [rkey]";
+      "bsky app-bsky-graph list put --purpose=<value> --name=<value> [--description=<value>] [--descriptionFacets=<value>...] [--avatar=<value>] [--labels=<value>] --createdAt=<value> --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.list";
 
   @override
   Map<String, dynamic> get record => {
-        "purpose": jsonDecode(argResults!["purpose"]),
-        "name": argResults!["name"],
-        if (argResults!["description"] != null)
-          "description": argResults!["description"],
-        if (argResults!["descriptionFacets"] != null)
-          "descriptionFacets": argResults!["descriptionFacets"],
-        if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
-        if (argResults!["labels"] != null)
-          "labels": jsonDecode(argResults!["labels"]),
-        "createdAt": argResults!["createdAt"],
-      };
+    r"$type": "app.bsky.graph.list",
+    "purpose": _decodeJson("purpose"),
+    "name": argResults!["name"],
+    if (argResults!.wasParsed("description"))
+      "description": argResults!["description"],
+    if (argResults!.wasParsed("descriptionFacets"))
+      "descriptionFacets": (argResults!["descriptionFacets"] as List<String>)
+          .map((e) => _decodeJsonItem("descriptionFacets", e))
+          .toList(),
+    if (argResults!.wasParsed("avatar")) "avatar": argResults!["avatar"],
+    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+    "createdAt": argResults!["createdAt"],
+  };
 }
 
 final class _DeleteListCommand extends DeleteRecordCommand {
   _DeleteListCommand() {
-    argParser..addOption("rkey", mandatory: true);
+    argParser..addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -159,10 +173,10 @@ final class _DeleteListCommand extends DeleteRecordCommand {
   final String description = r"Deletes a record for app.bsky.graph.list.";
 
   @override
-  final String invocation = "bsky app-bsky-graph list delete [rkey]";
+  final String invocation = "bsky app-bsky-graph list delete --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.list";
@@ -171,7 +185,11 @@ final class _DeleteListCommand extends DeleteRecordCommand {
 final class _GetListCommand extends QueryCommand {
   _GetListCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption("rkey", help: r"The record key.", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -182,23 +200,28 @@ final class _GetListCommand extends QueryCommand {
   final String description = r"Gets a record for app.bsky.graph.list.";
 
   @override
-  final String invocation = "bsky app-bsky-graph list get [rkey] [cid]";
+  final String invocation =
+      "bsky app-bsky-graph list get --rkey=<value> [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'rkey': argResults!['rkey'],
-        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "app.bsky.graph.list",
+    'rkey': argResults!['rkey'],
+    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+  };
 }
 
 final class _ListListCommand extends QueryCommand {
   _ListListCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -212,17 +235,19 @@ final class _ListListCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph list list [limit] [cursor] [reverse]";
+      "bsky app-bsky-graph list list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
-        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-        'reverse': argResults!['reverse'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "app.bsky.graph.list",
+    'limit':
+        int.tryParse(argResults!['limit']) ??
+        usageException(r'Invalid integer value for option "limit".'),
+    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+    'reverse': argResults!['reverse'],
+  };
 }

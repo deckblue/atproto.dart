@@ -8,32 +8,32 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UnspeccedGetTrendsOutputImpl _$$UnspeccedGetTrendsOutputImplFromJson(
-        Map json) =>
-    $checkedCreate(
-      r'_$UnspeccedGetTrendsOutputImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$UnspeccedGetTrendsOutputImpl(
-          trends: $checkedConvert(
-              'trends',
-              (v) => (v as List<dynamic>)
-                  .map((e) => const TrendViewConverter()
-                      .fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_UnspeccedGetTrendsOutput _$UnspeccedGetTrendsOutputFromJson(Map json) =>
+    $checkedCreate('_UnspeccedGetTrendsOutput', json, ($checkedConvert) {
+      final val = _UnspeccedGetTrendsOutput(
+        trends: $checkedConvert(
+          'trends',
+          (v) => (v as List<dynamic>)
+              .map(
+                (e) => const TrendViewConverter().fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList(),
+        ),
+        recIdStr: $checkedConvert('recIdStr', (v) => v as String?),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$UnspeccedGetTrendsOutputImplToJson(
-        _$UnspeccedGetTrendsOutputImpl instance) =>
-    <String, dynamic>{
-      'trends': instance.trends.map(const TrendViewConverter().toJson).toList(),
-      if (instance.$unknown case final value?) r'$unknown': value,
-    };
+Map<String, dynamic> _$UnspeccedGetTrendsOutputToJson(
+  _UnspeccedGetTrendsOutput instance,
+) => <String, dynamic>{
+  'trends': instance.trends.map(const TrendViewConverter().toJson).toList(),
+  'recIdStr': ?instance.recIdStr,
+  r'$unknown': ?instance.$unknown,
+};

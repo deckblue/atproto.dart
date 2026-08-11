@@ -23,10 +23,11 @@ final class GetAccountInfoCommand extends QueryCommand {
   final String name = "get-account-info";
 
   @override
-  final String description = r"Get details about an account.";
+  final String description = "Get details about an account.";
 
   @override
-  final String invocation = "bsky com-atproto-admin get-account-info [did]";
+  final String invocation =
+      "bsky com-atproto-admin get-account-info --did=<value>";
 
   @override
   String get methodId => "com.atproto.admin.getAccountInfo";

@@ -1,5 +1,33 @@
 # Release Note
 
+## v1.4.0
+
+- fix: `dagCborEncode` keeps its documented `ArgumentError`/`InvalidCidError` contract for a sole-`$bytes` map whose value is not valid base64, which previously leaked a raw `FormatException` — reachable from user-supplied `$unknown` data.
+- fix: a sole-`$link` or sole-`$bytes` map whose value is not a `String` now throws `ArgumentError` instead of being silently encoded as an ordinary one-entry map, which turned a typo into a valid-looking but wrong CID.
+- fix: encoding a value nested deeper than 1024 containers throws `ArgumentError` instead of blowing the stack with a `StackOverflowError` that callers do not catch.
+
+## v1.3.0
+
+- feat: added `dagCborEncode`, a canonical DAG-CBOR encoder (length-first map-key ordering, minimal-length integers, tag-42 CID links, and the atproto `$link`/`$bytes` map forms). Its output is exact on both the Dart VM and the web, so a record's bytes — and therefore its CID — can be computed locally.
+
+## v1.2.0
+
+- feat: `CID.toAtprotoJson()` emits the atproto data-model `{$link: ...}` form (`toJson` continues to emit DAG-JSON `{/: ...}`; `fromJson` accepts both).
+- fix: the `bytes` getter returns an unmodifiable view, so external mutation can no longer corrupt a `CID` or desync its cached `hashCode`.
+- fix: `CID.parse` rejects uppercase base32 bodies, and invalid base32 characters raise `InvalidCidError` instead of a raw `FormatException`.
+
+## v1.1.0
+
+- fix: the `dag-pb` multicodec was wrong (`0x55`, which is actually `raw`). Added correct `raw(0x55)`, `dagPb2(0x70)` and `dagCbor(0x71)` entries and fixed `isDagPb`/format checks so atproto blob CIDs are classified correctly and real `dag-pb` is no longer rejected.
+- chore: deprecated the incorrect `dagPb`/`dabCbor` enum values (kept for a deprecation cycle).
+- feat: added `CID.createFromBytes` (binary overload) and a single-decode `parse`.
+- feat: `CID.fromJson` now accepts the atproto `{"$link": <cid>}` shape in addition to the DAG-JSON `{"/": <cid>}` shape, so atproto JSON round-trips (`toJson` still emits `/`). A missing/non-string value now throws a typed `InvalidCidError` instead of a `TypeError`.
+- perf: cache normalized `bytes` and `hashCode` instead of recomputing on every access.
+
+## v1.0.3
+
+- fix: `CID ==` now returns `false` for different-length or non-`CID` operands instead of throwing a `RangeError`/`TypeError`.
+
 ## v1.0.2
 
 - Fix SDK constraint to '">=3.6.0 <4.0.0"'.

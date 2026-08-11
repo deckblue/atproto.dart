@@ -65,31 +65,32 @@ final class UModerationGetRecordsRecordsConverter
 
   @override
   UModerationGetRecordsRecords fromJson(Map<String, dynamic> json) {
-    try {
-      if (RecordViewDetail.validate(json)) {
-        return UModerationGetRecordsRecords.recordViewDetail(
-          data: const RecordViewDetailConverter().fromJson(json),
-        );
-      }
-      if (RecordViewNotFound.validate(json)) {
-        return UModerationGetRecordsRecords.recordViewNotFound(
-          data: const RecordViewNotFoundConverter().fromJson(json),
-        );
-      }
-
-      return UModerationGetRecordsRecords.unknown(data: json);
-    } catch (_) {
-      return UModerationGetRecordsRecords.unknown(data: json);
+    if (RecordViewDetail.validate(json)) {
+      return UModerationGetRecordsRecords.recordViewDetail(
+        data: const RecordViewDetailConverter().fromJson(json),
+      );
     }
+    if (RecordViewNotFound.validate(json)) {
+      return UModerationGetRecordsRecords.recordViewNotFound(
+        data: const RecordViewNotFoundConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UModerationGetRecordsRecords.unknown(data: json);
   }
 
   @override
   Map<String, dynamic> toJson(UModerationGetRecordsRecords object) =>
-      object.when(
-        recordViewDetail: (data) =>
-            const RecordViewDetailConverter().toJson(data),
-        recordViewNotFound: (data) =>
-            const RecordViewNotFoundConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UModerationGetRecordsRecordsRecordViewDetail(:final data) =>
+          const RecordViewDetailConverter().toJson(data),
+        UModerationGetRecordsRecordsRecordViewNotFound(:final data) =>
+          const RecordViewNotFoundConverter().toJson(data),
+
+        UModerationGetRecordsRecordsUnknown(:final data) => data,
+      };
 }

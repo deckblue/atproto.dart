@@ -25,10 +25,11 @@ final class ResolveHandleCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Resolves an atproto handle (hostname) to a DID. Does not necessarily bi-directionally verify against the the DID document.";
+      "Resolves an atproto handle (hostname) to a DID. Does not necessarily bi-directionally verify against the the DID document.";
 
   @override
-  final String invocation = "bsky com-atproto-identity resolve-handle [handle]";
+  final String invocation =
+      "bsky com-atproto-identity resolve-handle --handle=<value>";
 
   @override
   String get methodId => "com.atproto.identity.resolveHandle";

@@ -29,6 +29,7 @@ abstract class QueueCreateQueueInput with _$QueueCreateQueueInput {
     'collection',
     'reportTypes',
     'description',
+    'recommendedPolicies',
   ];
 
   @JsonSerializable(includeIfNull: false)
@@ -36,14 +37,16 @@ abstract class QueueCreateQueueInput with _$QueueCreateQueueInput {
     /// Display name for the queue (must be unique)
     required String name,
     @QueueCreateQueueSubjectTypesConverter()
-    required List<QueueCreateQueueSubjectTypes> subjectTypes,
+    List<QueueCreateQueueSubjectTypes>? subjectTypes,
 
     /// Collection name for record subjects. Required if subjectTypes includes 'record'.
     String? collection,
-    required List<String> reportTypes,
+    List<String>? reportTypes,
 
     /// Optional description of the queue
     String? description,
+    List<String>? recommendedPolicies,
+
     Map<String, dynamic>? $unknown,
   }) = _QueueCreateQueueInput;
 

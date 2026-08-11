@@ -30,21 +30,29 @@ final class UpdateSubjectStatusCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Update the service-specific admin status of a subject (account, record, or blob).";
+      "Update the service-specific admin status of a subject (account, record, or blob).";
 
   @override
   final String invocation =
-      "bsky com-atproto-admin update-subject-status [subject] [takedown] [deactivated]";
+      "bsky com-atproto-admin update-subject-status --subject=<value> [--takedown=<value>] [--deactivated=<value>]";
 
   @override
   String get methodId => "com.atproto.admin.updateSubjectStatus";
 
   @override
   Map<String, dynamic>? get body => {
-        "subject": jsonDecode(argResults!["subject"]),
-        if (argResults!["takedown"] != null)
-          "takedown": jsonDecode(argResults!["takedown"]),
-        if (argResults!["deactivated"] != null)
-          "deactivated": jsonDecode(argResults!["deactivated"]),
-      };
+    "subject": _decodeJson("subject"),
+    if (argResults!.wasParsed("takedown")) "takedown": _decodeJson("takedown"),
+    if (argResults!.wasParsed("deactivated"))
+      "deactivated": _decodeJson("deactivated"),
+  };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

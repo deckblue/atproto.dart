@@ -26,18 +26,18 @@ final class DisableAccountInvitesCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Disable an account from receiving new invite codes, but does not invalidate existing codes.";
+      "Disable an account from receiving new invite codes, but does not invalidate existing codes.";
 
   @override
   final String invocation =
-      "bsky com-atproto-admin disable-account-invites [account] [note]";
+      "bsky com-atproto-admin disable-account-invites --account=<value> [--note=<value>]";
 
   @override
   String get methodId => "com.atproto.admin.disableAccountInvites";
 
   @override
   Map<String, dynamic>? get body => {
-        "account": argResults!["account"],
-        if (argResults!["note"] != null) "note": argResults!["note"],
-      };
+    "account": argResults!["account"],
+    if (argResults!.wasParsed("note")) "note": argResults!["note"],
+  };
 }

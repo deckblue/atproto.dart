@@ -32,19 +32,21 @@ final class SearchStarterPacksCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Find starter packs matching search criteria. Does not require auth.";
+      "Find starter packs matching search criteria. Does not require auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph search-starter-packs [q] [limit] [cursor]";
+      "bsky app-bsky-graph search-starter-packs --q=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.graph.searchStarterPacks";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "q": argResults!["q"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "q": argResults!["q"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

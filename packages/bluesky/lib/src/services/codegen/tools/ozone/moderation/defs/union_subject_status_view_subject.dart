@@ -71,40 +71,46 @@ final class USubjectStatusViewSubjectConverter
 
   @override
   USubjectStatusViewSubject fromJson(Map<String, dynamic> json) {
-    try {
-      if (RepoRef.validate(json)) {
-        return USubjectStatusViewSubject.repoRef(
-          data: const RepoRefConverter().fromJson(json),
-        );
-      }
-      if (RepoStrongRef.validate(json)) {
-        return USubjectStatusViewSubject.repoStrongRef(
-          data: const RepoStrongRefConverter().fromJson(json),
-        );
-      }
-      if (MessageRef.validate(json)) {
-        return USubjectStatusViewSubject.messageRef(
-          data: const MessageRefConverter().fromJson(json),
-        );
-      }
-      if (ConvoRef.validate(json)) {
-        return USubjectStatusViewSubject.convoRef(
-          data: const ConvoRefConverter().fromJson(json),
-        );
-      }
-
-      return USubjectStatusViewSubject.unknown(data: json);
-    } catch (_) {
-      return USubjectStatusViewSubject.unknown(data: json);
+    if (RepoRef.validate(json)) {
+      return USubjectStatusViewSubject.repoRef(
+        data: const RepoRefConverter().fromJson(json),
+      );
     }
+    if (RepoStrongRef.validate(json)) {
+      return USubjectStatusViewSubject.repoStrongRef(
+        data: const RepoStrongRefConverter().fromJson(json),
+      );
+    }
+    if (MessageRef.validate(json)) {
+      return USubjectStatusViewSubject.messageRef(
+        data: const MessageRefConverter().fromJson(json),
+      );
+    }
+    if (ConvoRef.validate(json)) {
+      return USubjectStatusViewSubject.convoRef(
+        data: const ConvoRefConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return USubjectStatusViewSubject.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(USubjectStatusViewSubject object) => object.when(
-        repoRef: (data) => const RepoRefConverter().toJson(data),
-        repoStrongRef: (data) => const RepoStrongRefConverter().toJson(data),
-        messageRef: (data) => const MessageRefConverter().toJson(data),
-        convoRef: (data) => const ConvoRefConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(USubjectStatusViewSubject object) =>
+      switch (object) {
+        USubjectStatusViewSubjectRepoRef(:final data) =>
+          const RepoRefConverter().toJson(data),
+        USubjectStatusViewSubjectRepoStrongRef(:final data) =>
+          const RepoStrongRefConverter().toJson(data),
+        USubjectStatusViewSubjectMessageRef(:final data) =>
+          const MessageRefConverter().toJson(data),
+        USubjectStatusViewSubjectConvoRef(:final data) =>
+          const ConvoRefConverter().toJson(data),
+
+        USubjectStatusViewSubjectUnknown(:final data) => data,
+      };
 }

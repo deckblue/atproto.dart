@@ -31,11 +31,11 @@ final class GetAccountInviteCodesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get all invite codes for the current account. Requires auth.";
+      "Get all invite codes for the current account. Requires auth.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server get-account-invite-codes [includeUsed] [createAvailable]";
+      "bsky com-atproto-server get-account-invite-codes [--includeUsed] [--createAvailable]";
 
   @override
   String get methodId => "com.atproto.server.getAccountInviteCodes";

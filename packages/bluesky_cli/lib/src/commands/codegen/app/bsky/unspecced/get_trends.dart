@@ -23,14 +23,19 @@ final class GetTrendsCommand extends QueryCommand {
   final String name = "get-trends";
 
   @override
-  final String description = r"Get the current trends on the network";
+  final String description = "Get the current trends on the network";
 
   @override
-  final String invocation = "bsky app-bsky-unspecced get-trends [limit]";
+  final String invocation =
+      "bsky app-bsky-unspecced get-trends [--limit=<value>]";
 
   @override
   String get methodId => "app.bsky.unspecced.getTrends";
 
   @override
-  Map<String, dynamic>? get parameters => {"limit": argResults!["limit"]};
+  Map<String, dynamic>? get parameters => {
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+  };
 }

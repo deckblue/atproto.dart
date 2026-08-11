@@ -45,18 +45,25 @@ final class LexXrpcParametersPropertyConverter
         );
 
       default:
-        throw UnimplementedError('Unsupported type [$type]');
+        // Graceful degradation (G-12): unsupported parameter types fall back
+        // to an `unknown` primitive instead of aborting the document load.
+        return LexXrpcParametersProperty.primitive(
+          data: LexPrimitive.unknown(
+            data: LexUnknown(description: json['description'] as String?),
+          ),
+        );
     }
   }
 
   @override
-  Map<String, dynamic> toJson(LexXrpcParametersProperty object) => object.when(
-        primitiveArray: (data) => data.toJson(),
-        primitive: (data) => data.when(
-          boolean: (data) => data.toJson(),
-          integer: (data) => data.toJson(),
-          string: (data) => data.toJson(),
-          unknown: (data) => data.toJson(),
-        ),
-      );
+  Map<String, dynamic> toJson(LexXrpcParametersProperty object) =>
+      switch (object) {
+        ULexXrpcParametersPropertyPrimitiveArray(:final data) => data.toJson(),
+        ULexXrpcParametersPropertyPrimitive(:final data) => switch (data) {
+          ULexPrimitiveBoolean(:final data) => data.toJson(),
+          ULexPrimitiveInteger(:final data) => data.toJson(),
+          ULexPrimitiveString(:final data) => data.toJson(),
+          ULexPrimitiveUnknown(:final data) => data.toJson(),
+        },
+      };
 }

@@ -34,11 +34,11 @@ final class GetSuggestedUsersForExploreSkeletonCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a skeleton of suggested users for the Explore page. Intended to be called and hydrated by app.bsky.unspecced.getSuggestedUsersForExplore";
+      "Get a skeleton of suggested users for the Explore page. Intended to be called and hydrated by app.bsky.unspecced.getSuggestedUsersForExplore";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced get-suggested-users-for-explore-skeleton [viewer] [category] [limit]";
+      "bsky app-bsky-unspecced get-suggested-users-for-explore-skeleton [--viewer=<value>] [--category=<value>] [--limit=<value>]";
 
   @override
   String get methodId =>
@@ -46,9 +46,10 @@ final class GetSuggestedUsersForExploreSkeletonCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
-        if (argResults!["category"] != null)
-          "category": argResults!["category"],
-        "limit": argResults!["limit"],
-      };
+    if (argResults!.wasParsed("viewer")) "viewer": argResults!["viewer"],
+    if (argResults!.wasParsed("category")) "category": argResults!["category"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+  };
 }

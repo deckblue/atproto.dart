@@ -1,5 +1,94 @@
 # Release Note
 
+## v1.2.0
+
+- security: `base58BtcDecode` now rejects inputs longer than `maxBase58InputLength` (512 characters) with a `CryptoException` before decoding. The decoder is inherently O(n^2), so an unbounded input was a denial-of-service vector for any caller decoding attacker-supplied text: a ~512,000-character `publicKeyMultibase` hidden in a DID document froze a single-threaded isolate for over two minutes. Every legitimate input this package handles (a Multikey is ~48 characters, a base58btc CID similar) is an order of magnitude below the new bound.
+
+## v1.1.3
+
+- refactor: `PlcVerifier.operationCid` builds its CID with `multiformats`' `CID.createFromBytes` instead of hand-assembling the `[0x01, 0x71, 0x12, 0x20, ...]` prefix, removing the last independent CID-construction site in this package. The emitted bytes are unchanged.
+- perf: hoisted the per-call `RegExp` literals in `OperationValidator` and `CryptoKey.fromHex` to `static final` fields, so streaming an audit log no longer recompiles the same patterns once per operation.
+- refactor: `encodeDagCbor` now delegates to `multiformats`' canonical `dagCborEncode` instead of a second hand-written encoder, removing the duplicate implementation. The `CryptoException` contract and the encoded bytes for every PLC operation are unchanged.
+- chore: bump `multiformats` to `^1.3.0`.
+
+## v1.1.2
+
+- docs: fixed the broken `Advanced Features` / `Caching` / `Performance Best Practices` examples in the README, which passed a non-existent `cachePolicy:` argument to the `PLC(...)` factory. They now inject a cache via the real `cacheManager: CacheManager(CachePolicy(...))` form, matching `example/cache_example.dart`.
+- docs: documented the v1.1.0 real-cryptography and operation-building surface in the README (`OperationBuilder`, `DidBuilder`, `CryptoKey`/`KeyManager`, `PlcSigner`, `PlcVerifier`), with a signing/verification example.
+- docs: bumped the README install snippet to `did_plc: ^1.1.2`.
+- chore: bump `multiformats` to `^1.2.0`.
+
+## v1.1.1
+
+- fix: signature verification now contains invalid public keys. A crafted rotation `did:key` with an off-curve or malformed compressed point made `pointycastle` throw an uncaught `ArgumentError` out of the verification API (`verifyRawOperation`/`toEcPublicKey`); the point decode is now wrapped so verification fails closed with a `CryptoException`/invalid result instead of crashing a bulk-verification pipeline.
+- fix: DID inputs are validated against the canonical `did:plc` grammar (`did:plc:` + 24 base32 `[a-z2-7]` characters) and rejected if they contain path/query/fragment characters (`/ ? # %`, whitespace, control), closing a path/query-injection hole where a DID like `did:plc:abc/../export?count=1` could redirect a request to a different endpoint and be cached under the crafted key.
+- fix: the typed `Operation` and the legacy `CreateOperationV1` now serialize an explicit `prev: null` for genesis operations, so typed signing/verification and `did:plc` derivation match the PLC directory's canonical bytes (previously only the raw-map API was correct, and legacy `create` genesis operations failed verification/derivation for every affected DID).
+- fix: replaced `dart:io` (`SocketException`/`HttpException`) with `package:universal_io`, restoring Flutter web/WASM compatibility.
+- fix: 400-error detail maps with non-string values no longer throw a lazy cast error.
+- chore: corrected the client User-Agent version.
+
+## v1.1.0
+
+**🔐 Real cryptography, working export & streaming**
+
+### ⚠️ Breaking Changes
+
+- **Real signing/verification**: the previous signing/verification stack was a
+  mock (`sha256(message‖keyMaterial‖alg)`) that could be forged by anyone holding
+  the public key and was incompatible with the real PLC directory. It is replaced
+  with real ECDSA (secp256k1 + p256), RFC 6979 deterministic `k`, low-S
+  normalization, DAG-CBOR canonicalization, CIDv1 `prev`, and correct `did:plc`
+  derivation. Signatures produced by earlier versions are **not** compatible; this
+  output is verified against live `plc.directory` audit logs (D-1/D-5).
+- **`did:key` encoding**: `did:key` generation/parsing now uses correct
+  base58btc + multicodec prefixes (previously a `'z' + base64url` pseudo-multibase
+  with no multicodec prefix), so output is now compatible with spec-conforming
+  consumers. `p256` is supported and the internally-inconsistent Ed25519 handling
+  was dropped (D-4/D-15).
+
+### 🔧 Fixes
+
+- **`exportOps` works again**: `/export` returns JSONL, but the whole body was
+  passed to `jsonDecode`, so any account with 2+ operations failed with a
+  spurious `NetworkException`. Lines are now parsed individually, and
+  `exportOpsStream` paginates instead of silently truncating at 1000 (D-3/D-18).
+- **Validator accepts real operations**: `did:key` rotation keys (with colons)
+  are accepted, and the non-spec "rotation key must be in verificationMethods"
+  rule was dropped (D-2/D-14).
+- **Retries actually fire**: the retry predicate is type-based, so connection
+  errors are retried (previously a lowercase substring match never matched the
+  real exception strings); retry logic is unified at the HTTP layer to avoid
+  amplification (D-7/D-13/D-16).
+- **Streaming**: fixed the `createBufferedStream` deadlock (consumer-driven
+  backpressure), real stream backpressure/concurrency, batch `maxWaitTime`, and
+  empty-input completion (D-6/D-11/D-12).
+- **Cache**: `CachedOperation` now writes to the cache (hit rate was permanently
+  0%), `_PLCImpl` takes a `cacheManager`, and purge is lazy instead of a
+  constructor `Timer.periodic` that kept the process alive (D-8/D-9).
+- **UTC timestamps** in export windows, and various low-severity fixes
+  (immediate-retry, chunk cast, `serviceEndpoint` cast, 2xx parse) (D-10/D-17).
+- **`exportOpsStream` no longer drops operations at a page boundary**: the
+  `/export` `after` cursor is strictly exclusive, so operations sharing one
+  `createdAt` could straddle a 1000-op page boundary and be silently skipped.
+  The cursor now rewinds to the last distinct timestamp and de-duplicates the
+  re-fetched trailing operations by CID (a full page sharing a single
+  `createdAt` throws instead of losing data).
+- **Validator allows empty `verificationMethods`**: a rotation-key-only
+  `plc_operation` is valid per the spec, so the "at least one verification
+  method is required" rule was dropped (presence/nullability is still checked).
+- **doc**: `exportOps` now documents that it returns a single page (max 1000)
+  and points to `exportOpsStream` for exporting the whole directory.
+
+### 🧪 Testing
+
+- Added crypto / validator (against real PLC fixtures) / retry / cache /
+  streaming / export tests (with live-gated fixtures) where there were
+  previously none (D-20).
+
+### 📦 Dependencies
+
+- Bump `multiformats` to `^1.1.0`.
+
 ## v1.0.3
 
 **🔧 PATCH RELEASE - README Method Name Corrections**

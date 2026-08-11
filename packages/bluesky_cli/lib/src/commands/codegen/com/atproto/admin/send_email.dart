@@ -32,21 +32,21 @@ final class SendEmailCommand extends ProcedureCommand {
   final String name = "send-email";
 
   @override
-  final String description = r"Send email to a user's account email address.";
+  final String description = "Send email to a user's account email address.";
 
   @override
   final String invocation =
-      "bsky com-atproto-admin send-email [recipientDid] [content] [subject] [senderDid] [comment]";
+      "bsky com-atproto-admin send-email --recipientDid=<value> --content=<value> [--subject=<value>] --senderDid=<value> [--comment=<value>]";
 
   @override
   String get methodId => "com.atproto.admin.sendEmail";
 
   @override
   Map<String, dynamic>? get body => {
-        "recipientDid": argResults!["recipientDid"],
-        "content": argResults!["content"],
-        if (argResults!["subject"] != null) "subject": argResults!["subject"],
-        "senderDid": argResults!["senderDid"],
-        if (argResults!["comment"] != null) "comment": argResults!["comment"],
-      };
+    "recipientDid": argResults!["recipientDid"],
+    "content": argResults!["content"],
+    if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
+    "senderDid": argResults!["senderDid"],
+    if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+  };
 }

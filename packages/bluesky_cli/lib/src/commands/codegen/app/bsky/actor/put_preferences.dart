@@ -27,16 +27,24 @@ final class PutPreferencesCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Set the private preferences attached to the account.";
+      "Set the private preferences attached to the account.";
 
   @override
-  final String invocation = "bsky app-bsky-actor put-preferences [preferences]";
+  final String invocation =
+      "bsky app-bsky-actor put-preferences --preferences=<value>";
 
   @override
   String get methodId => "app.bsky.actor.putPreferences";
 
   @override
-  Map<String, dynamic>? get body => {
-        "preferences": jsonDecode(argResults!["preferences"]),
-      };
+  Map<String, dynamic>? get body => {"preferences": _decodeJson("preferences")};
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

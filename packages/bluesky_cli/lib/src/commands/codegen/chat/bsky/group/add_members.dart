@@ -26,18 +26,24 @@ final class AddMembersCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Adds members to a group. The members are added in 'request' status, so they have to accept it. This creates convo memberships.";
+      "Adds members to a group. The members are added in 'request' status, so they have to accept it. This creates convo memberships.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group add-members [convoId] [members]";
+      "bsky chat-bsky-group add-members --convoId=<value> [--members=<value>...]";
 
   @override
   String get methodId => "chat.bsky.group.addMembers";
 
   @override
   Map<String, dynamic>? get body => {
-        "convoId": argResults!["convoId"],
-        "members": argResults!["members"],
-      };
+    "convoId": argResults!["convoId"],
+    "members": _requireNonEmpty("members", argResults!["members"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

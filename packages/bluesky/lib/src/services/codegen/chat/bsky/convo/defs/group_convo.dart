@@ -22,7 +22,6 @@ part 'group_convo.g.dart';
 // LexGenerator
 // **************************************************************************
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here].
 @freezed
 abstract class GroupConvo with _$GroupConvo {
   static const knownProps = <String>[
@@ -30,6 +29,7 @@ abstract class GroupConvo with _$GroupConvo {
     'joinLink',
     'joinRequestCount',
     'lockStatus',
+    'lockStatusModerationOverride',
     'memberCount',
     'memberLimit',
     'name',
@@ -39,7 +39,7 @@ abstract class GroupConvo with _$GroupConvo {
   @JsonSerializable(includeIfNull: false)
   const factory GroupConvo({
     @Default('chat.bsky.convo.defs#groupConvo') String $type,
-    required DateTime createdAt,
+    @JsonKey(toJson: iso8601) required DateTime createdAt,
     @JoinLinkViewConverter() JoinLinkView? joinLink,
 
     /// The total number of pending join requests for the group conversation. Only present for the owner. Capped at 21.
@@ -47,6 +47,9 @@ abstract class GroupConvo with _$GroupConvo {
 
     /// The lock status of the conversation.
     @ConvoLockStatusConverter() required ConvoLockStatus lockStatus,
+
+    /// Whether the lock status is being forced by a moderation override (account inactivation or convo takedown) rather than the owner's own setting.
+    required bool lockStatusModerationOverride,
 
     /// The total number of members in the group conversation.
     required int memberCount,
@@ -76,6 +79,8 @@ extension GroupConvoExtension on GroupConvo {
   bool get hasNotJoinLink => !hasJoinLink;
   bool get hasJoinRequestCount => joinRequestCount != null;
   bool get hasNotJoinRequestCount => !hasJoinRequestCount;
+  bool get isLockStatusModerationOverride => lockStatusModerationOverride;
+  bool get isNotLockStatusModerationOverride => !isLockStatusModerationOverride;
   bool get hasUnreadJoinRequestCount => unreadJoinRequestCount != null;
   bool get hasNotUnreadJoinRequestCount => !hasUnreadJoinRequestCount;
 }

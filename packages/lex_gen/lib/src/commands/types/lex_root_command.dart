@@ -1,4 +1,6 @@
 // Project imports:
+import '../../ir/dart_emitter.dart';
+import '../../ir/dart_ir.dart';
 import '../../utils.dart';
 import '../rule.dart';
 import 'lex_parent_command.dart';
@@ -9,32 +11,40 @@ final class LexRootCommand {
   const LexRootCommand(this.commands);
 
   String format() {
-    final importPaths = _getImportPaths();
-    final commandNames = _getParentCommandNames();
+    final file = DartFile(
+      header: kHeaderHint,
+      imports: [
+        const [DartImport('package:args/command_runner.dart')],
+        _commandImports(),
+      ],
+      banner: kHeader,
+      decls: [RawDecl(_lexCommandsGetter())],
+    );
 
-    return '''$kHeaderHint
-
-$importPaths
-
-$kHeader
-
-final lexCommands = [
-    $commandNames
-];
-''';
+    return emitDartFile(file);
   }
 
-  String _getImportPaths() {
-    final buffer = StringBuffer();
+  List<DartImport> _commandImports() {
+    return commands.map((command) {
+      final lexiconId = command.lexiconId.toString();
+      final relativePath = getRelativePathForRoot(lexiconId);
+      final fileName = getFileName(lexiconId);
 
-    for (final command in commands) {
-      final relativePath = getRelativePathForRoot(command.lexiconId.toString());
-      final fileName = getFileName(command.lexiconId.toString());
+      return DartImport('$relativePath/$fileName.dart');
+    }).toList();
+  }
 
-      buffer.writeln("import '$relativePath/$fileName.dart';");
-    }
+  String _lexCommandsGetter() {
+    final commandNames = _getParentCommandNames();
 
-    return buffer.toString();
+    return '''/// Returns fresh instances of all generated commands.
+///
+/// This must be a getter, not a top-level final, because command
+/// instances hold per-runner state and cannot be shared across
+/// multiple [CommandRunner] instances.
+List<Command<void>> get lexCommands => [
+    $commandNames
+];''';
   }
 
   String _getParentCommandNames() {

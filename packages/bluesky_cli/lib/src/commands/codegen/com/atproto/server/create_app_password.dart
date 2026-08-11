@@ -33,19 +33,19 @@ final class CreateAppPasswordCommand extends ProcedureCommand {
   final String name = "create-app-password";
 
   @override
-  final String description = r"Create an App Password.";
+  final String description = "Create an App Password.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server create-app-password [name] [privileged]";
+      "bsky com-atproto-server create-app-password --name=<value> [--privileged]";
 
   @override
   String get methodId => "com.atproto.server.createAppPassword";
 
   @override
   Map<String, dynamic>? get body => {
-        "name": argResults!["name"],
-        if (argResults!["privileged"] != null)
-          "privileged": argResults!["privileged"],
-      };
+    "name": argResults!["name"],
+    if (argResults!.wasParsed("privileged"))
+      "privileged": argResults!["privileged"],
+  };
 }

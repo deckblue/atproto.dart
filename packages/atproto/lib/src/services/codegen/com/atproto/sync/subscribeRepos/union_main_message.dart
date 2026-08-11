@@ -75,46 +75,53 @@ final class USyncSubscribeReposMessageConverter
 
   @override
   USyncSubscribeReposMessage fromJson(Map<String, dynamic> json) {
-    try {
-      if (Commit.validate(json)) {
-        return USyncSubscribeReposMessage.commit(
-          data: const CommitConverter().fromJson(json),
-        );
-      }
-      if (Sync.validate(json)) {
-        return USyncSubscribeReposMessage.sync(
-          data: const SyncConverter().fromJson(json),
-        );
-      }
-      if (Identity.validate(json)) {
-        return USyncSubscribeReposMessage.identity(
-          data: const IdentityConverter().fromJson(json),
-        );
-      }
-      if (Account.validate(json)) {
-        return USyncSubscribeReposMessage.account(
-          data: const AccountConverter().fromJson(json),
-        );
-      }
-      if (Info.validate(json)) {
-        return USyncSubscribeReposMessage.info(
-          data: const InfoConverter().fromJson(json),
-        );
-      }
-
-      return USyncSubscribeReposMessage.unknown(data: json);
-    } catch (_) {
-      return USyncSubscribeReposMessage.unknown(data: json);
+    if (Commit.validate(json)) {
+      return USyncSubscribeReposMessage.commit(
+        data: const CommitConverter().fromJson(json),
+      );
     }
+    if (Sync.validate(json)) {
+      return USyncSubscribeReposMessage.sync(
+        data: const SyncConverter().fromJson(json),
+      );
+    }
+    if (Identity.validate(json)) {
+      return USyncSubscribeReposMessage.identity(
+        data: const IdentityConverter().fromJson(json),
+      );
+    }
+    if (Account.validate(json)) {
+      return USyncSubscribeReposMessage.account(
+        data: const AccountConverter().fromJson(json),
+      );
+    }
+    if (Info.validate(json)) {
+      return USyncSubscribeReposMessage.info(
+        data: const InfoConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return USyncSubscribeReposMessage.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(USyncSubscribeReposMessage object) => object.when(
-        commit: (data) => const CommitConverter().toJson(data),
-        sync: (data) => const SyncConverter().toJson(data),
-        identity: (data) => const IdentityConverter().toJson(data),
-        account: (data) => const AccountConverter().toJson(data),
-        info: (data) => const InfoConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(USyncSubscribeReposMessage object) =>
+      switch (object) {
+        USyncSubscribeReposMessageCommit(:final data) =>
+          const CommitConverter().toJson(data),
+        USyncSubscribeReposMessageSync(:final data) =>
+          const SyncConverter().toJson(data),
+        USyncSubscribeReposMessageIdentity(:final data) =>
+          const IdentityConverter().toJson(data),
+        USyncSubscribeReposMessageAccount(:final data) =>
+          const AccountConverter().toJson(data),
+        USyncSubscribeReposMessageInfo(:final data) =>
+          const InfoConverter().toJson(data),
+
+        USyncSubscribeReposMessageUnknown(:final data) => data,
+      };
 }

@@ -6,6 +6,7 @@
 import 'package:lexicon/lexicon.dart' as lex;
 
 // Project imports:
+import '../gen_context.dart';
 import '../object/lex_input.dart';
 import '../object/lex_message.dart';
 import '../rule.dart' as rule;
@@ -13,12 +14,14 @@ import 'lex_property_generator.dart';
 import 'lex_union_generator.dart';
 
 (LexInput?, LexMessage?)? generateLexXrpcSubscription(
+  final GenContext ctx,
   final lex.NSID lexiconId,
   final String defName,
   final lex.LexXrpcSubscription subscription,
   final List<String> mainVariants,
 ) {
-  return _LexLexXrpcSubscriptionGenerator(
+  return _LexXrpcSubscriptionGenerator(
+    ctx,
     lexiconId,
     defName,
     subscription,
@@ -26,13 +29,15 @@ import 'lex_union_generator.dart';
   ).execute();
 }
 
-final class _LexLexXrpcSubscriptionGenerator {
+final class _LexXrpcSubscriptionGenerator {
+  final GenContext ctx;
   final lex.NSID lexiconId;
   final String defName;
   final lex.LexXrpcSubscription subscription;
   final List<String> mainVariants;
 
-  _LexLexXrpcSubscriptionGenerator(
+  _LexXrpcSubscriptionGenerator(
+    this.ctx,
     this.lexiconId,
     this.defName,
     this.subscription,
@@ -50,6 +55,7 @@ final class _LexLexXrpcSubscriptionGenerator {
     final parameters = subscription.parameters!;
 
     final properties = generateLexPropertiesFromLexXrpcParameters(
+      ctx,
       lexiconId,
       defName,
       parameters.properties,
@@ -68,12 +74,16 @@ final class _LexLexXrpcSubscriptionGenerator {
   }
 
   LexMessage? _getMessage() {
-    final refVariant = subscription.message?.schema?.whenOrNull(
-      refVariant: (data) => data,
-    );
+    final refVariant = switch (subscription.message?.schema) {
+      lex.ULexXrpcSchemaRefVariant(:final data) => data,
+      _ => null,
+    };
     if (refVariant == null) return null;
 
-    final refUnion = refVariant.whenOrNull(refUnion: (data) => data);
+    final refUnion = switch (refVariant) {
+      lex.ULexRefVariantRefUnion(:final data) => data,
+      _ => null,
+    };
     if (refUnion == null) return null;
 
     final union = generateLexUnion(

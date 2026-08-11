@@ -33,19 +33,25 @@ final class RevokeVerificationsCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Revoke previously granted verifications in batches of up to 100.";
+      "Revoke previously granted verifications in batches of up to 100.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-verification revoke-verifications [uris] [revokeReason]";
+      "bsky tools-ozone-verification revoke-verifications [--uris=<value>...] [--revokeReason=<value>]";
 
   @override
   String get methodId => "tools.ozone.verification.revokeVerifications";
 
   @override
   Map<String, dynamic>? get body => {
-        "uris": argResults!["uris"],
-        if (argResults!["revokeReason"] != null)
-          "revokeReason": argResults!["revokeReason"],
-      };
+    "uris": _requireNonEmpty("uris", argResults!["uris"]),
+    if (argResults!.wasParsed("revokeReason"))
+      "revokeReason": argResults!["revokeReason"],
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

@@ -38,22 +38,30 @@ final class GetAssignmentsCommand extends QueryCommand {
   final String name = "get-assignments";
 
   @override
-  final String description = r"Get assignments for reports.";
+  final String description = "Get assignments for reports.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-report get-assignments [onlyActive] [reportIds] [dids] [limit] [cursor]";
+      "bsky tools-ozone-report get-assignments [--onlyActive] [--reportIds=<value>...] [--dids=<value>...] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "tools.ozone.report.getAssignments";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "onlyActive": argResults!["onlyActive"],
-        if (argResults!["reportIds"] != null)
-          "reportIds": argResults!["reportIds"],
-        if (argResults!["dids"] != null) "dids": argResults!["dids"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "onlyActive": argResults!["onlyActive"],
+    if (argResults!.wasParsed("reportIds"))
+      "reportIds": (argResults!["reportIds"] as List<String>)
+          .map(
+            (e) =>
+                int.tryParse(e) ??
+                usageException('Invalid integer value in option "reportIds".'),
+          )
+          .toList(),
+    if (argResults!.wasParsed("dids")) "dids": argResults!["dids"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

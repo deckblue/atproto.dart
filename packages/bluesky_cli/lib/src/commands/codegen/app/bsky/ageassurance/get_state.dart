@@ -26,19 +26,19 @@ final class GetStateCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Returns server-computed Age Assurance state, if available, and any additional metadata needed to compute Age Assurance state client-side.";
+      "Returns server-computed Age Assurance state, if available, and any additional metadata needed to compute Age Assurance state client-side.";
 
   @override
   final String invocation =
-      "bsky app-bsky-ageassurance get-state [countryCode] [regionCode]";
+      "bsky app-bsky-ageassurance get-state --countryCode=<value> [--regionCode=<value>]";
 
   @override
   String get methodId => "app.bsky.ageassurance.getState";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "countryCode": argResults!["countryCode"],
-        if (argResults!["regionCode"] != null)
-          "regionCode": argResults!["regionCode"],
-      };
+    "countryCode": argResults!["countryCode"],
+    if (argResults!.wasParsed("regionCode"))
+      "regionCode": argResults!["regionCode"],
+  };
 }

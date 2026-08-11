@@ -27,11 +27,11 @@ final class AddReactionCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Adds an emoji reaction to a message. Requires authentication. It is idempotent, so multiple calls from the same user with the same emoji result in a single reaction.";
+      "Adds an emoji reaction to a message. Requires authentication. It is idempotent, so multiple calls from the same user with the same emoji result in a single reaction.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-convo add-reaction [convoId] [messageId] [value]";
+      "bsky chat-bsky-convo add-reaction --convoId=<value> --messageId=<value> --value=<value>";
 
   @override
   String get methodId => "chat.bsky.convo.addReaction";

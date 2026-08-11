@@ -26,18 +26,20 @@ final class ListActivitySubscriptionsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerate all accounts to which the requesting account is subscribed to receive notifications for. Requires auth.";
+      "Enumerate all accounts to which the requesting account is subscribed to receive notifications for. Requires auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-notification list-activity-subscriptions [limit] [cursor]";
+      "bsky app-bsky-notification list-activity-subscriptions [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.notification.listActivitySubscriptions";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

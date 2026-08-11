@@ -24,16 +24,20 @@ final class GetOnboardingSuggestedStarterPacksCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a list of suggested starterpacks for onboarding";
+      "Get a list of suggested starterpacks for onboarding";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced get-onboarding-suggested-starter-packs [limit]";
+      "bsky app-bsky-unspecced get-onboarding-suggested-starter-packs [--limit=<value>]";
 
   @override
   String get methodId =>
       "app.bsky.unspecced.getOnboardingSuggestedStarterPacks";
 
   @override
-  Map<String, dynamic>? get parameters => {"limit": argResults!["limit"]};
+  Map<String, dynamic>? get parameters => {
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+  };
 }

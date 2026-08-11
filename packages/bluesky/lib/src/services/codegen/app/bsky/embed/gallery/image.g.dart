@@ -8,52 +8,36 @@ part of 'image.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EmbedGalleryImageImpl _$$EmbedGalleryImageImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$EmbedGalleryImageImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$EmbedGalleryImageImpl(
-          $type: $checkedConvert(
-              r'$type', (v) => v as String? ?? 'app.bsky.embed.gallery#image'),
-          image: $checkedConvert('image',
-              (v) => const BlobConverter().fromJson(v as Map<String, dynamic>)),
-          alt: $checkedConvert('alt', (v) => v as String),
-          aspectRatio: $checkedConvert(
-              'aspectRatio',
-              (v) => _$JsonConverterFromJson<Map<String, dynamic>, AspectRatio>(
-                  v, const AspectRatioConverter().fromJson)),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_EmbedGalleryImage _$EmbedGalleryImageFromJson(Map json) =>
+    $checkedCreate('_EmbedGalleryImage', json, ($checkedConvert) {
+      final val = _EmbedGalleryImage(
+        $type: $checkedConvert(
+          r'$type',
+          (v) => v as String? ?? 'app.bsky.embed.gallery#image',
+        ),
+        image: $checkedConvert(
+          'image',
+          (v) => const BlobConverter().fromJson(v as Map<String, dynamic>),
+        ),
+        alt: $checkedConvert('alt', (v) => v as String),
+        aspectRatio: $checkedConvert(
+          'aspectRatio',
+          (v) =>
+              const AspectRatioConverter().fromJson(v as Map<String, dynamic>),
+        ),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$EmbedGalleryImageImplToJson(
-        _$EmbedGalleryImageImpl instance) =>
+Map<String, dynamic> _$EmbedGalleryImageToJson(_EmbedGalleryImage instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'image': const BlobConverter().toJson(instance.image),
       'alt': instance.alt,
-      if (_$JsonConverterToJson<Map<String, dynamic>, AspectRatio>(
-              instance.aspectRatio, const AspectRatioConverter().toJson)
-          case final value?)
-        'aspectRatio': value,
-      if (instance.$unknown case final value?) r'$unknown': value,
+      'aspectRatio': const AspectRatioConverter().toJson(instance.aspectRatio),
+      r'$unknown': ?instance.$unknown,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

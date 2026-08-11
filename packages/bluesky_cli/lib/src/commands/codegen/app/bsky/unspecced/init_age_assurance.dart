@@ -40,11 +40,11 @@ final class InitAgeAssuranceCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Initiate age assurance for an account. This is a one-time action that will start the process of verifying the user's age.";
+      "Initiate age assurance for an account. This is a one-time action that will start the process of verifying the user's age.";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced init-age-assurance [email] [language] [countryCode]";
+      "bsky app-bsky-unspecced init-age-assurance --email=<value> --language=<value> --countryCode=<value>";
 
   @override
   String get methodId => "app.bsky.unspecced.initAgeAssurance";

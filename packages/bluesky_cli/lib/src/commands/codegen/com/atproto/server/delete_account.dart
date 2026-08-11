@@ -27,11 +27,11 @@ final class DeleteAccountCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Delete an actor's account with a token and password. Can only be called after requesting a deletion token. Requires auth.";
+      "Delete an actor's account with a token and password. Can only be called after requesting a deletion token. Requires auth.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server delete-account [did] [password] [token]";
+      "bsky com-atproto-server delete-account --did=<value> --password=<value> --token=<value>";
 
   @override
   String get methodId => "com.atproto.server.deleteAccount";

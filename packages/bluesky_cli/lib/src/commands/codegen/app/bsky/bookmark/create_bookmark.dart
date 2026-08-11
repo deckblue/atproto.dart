@@ -26,11 +26,11 @@ final class CreateBookmarkCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Creates a private bookmark for the specified record. Currently, only `app.bsky.feed.post` records are supported. Requires authentication.";
+      "Creates a private bookmark for the specified record. Currently, only `app.bsky.feed.post` records are supported. Requires authentication.";
 
   @override
   final String invocation =
-      "bsky app-bsky-bookmark create-bookmark [uri] [cid]";
+      "bsky app-bsky-bookmark create-bookmark --uri=<value> --cid=<value>";
 
   @override
   String get methodId => "app.bsky.bookmark.createBookmark";

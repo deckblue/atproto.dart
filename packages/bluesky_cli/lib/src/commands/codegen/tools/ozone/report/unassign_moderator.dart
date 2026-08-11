@@ -28,15 +28,19 @@ final class UnassignModeratorCommand extends ProcedureCommand {
   final String name = "unassign-moderator";
 
   @override
-  final String description = r"Remove report assignment.";
+  final String description = "Remove report assignment.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-report unassign-moderator [reportId]";
+      "bsky tools-ozone-report unassign-moderator --reportId=<value>";
 
   @override
   String get methodId => "tools.ozone.report.unassignModerator";
 
   @override
-  Map<String, dynamic>? get body => {"reportId": argResults!["reportId"]};
+  Map<String, dynamic>? get body => {
+    "reportId":
+        int.tryParse(argResults!["reportId"]) ??
+        usageException('Invalid integer value for option "reportId".'),
+  };
 }

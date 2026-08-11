@@ -41,27 +41,35 @@ final class EmitEventCommand extends ProcedureCommand {
   final String name = "emit-event";
 
   @override
-  final String description = r"Take a moderation action on an actor.";
+  final String description = "Take a moderation action on an actor.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation emit-event [event] [subject] [subjectBlobCids] [createdBy] [modTool] [externalId] [reportAction]";
+      "bsky tools-ozone-moderation emit-event --event=<value> --subject=<value> [--subjectBlobCids=<value>...] --createdBy=<value> [--modTool=<value>] [--externalId=<value>] [--reportAction=<value>]";
 
   @override
   String get methodId => "tools.ozone.moderation.emitEvent";
 
   @override
   Map<String, dynamic>? get body => {
-        "event": jsonDecode(argResults!["event"]),
-        "subject": jsonDecode(argResults!["subject"]),
-        if (argResults!["subjectBlobCids"] != null)
-          "subjectBlobCids": argResults!["subjectBlobCids"],
-        "createdBy": argResults!["createdBy"],
-        if (argResults!["modTool"] != null)
-          "modTool": jsonDecode(argResults!["modTool"]),
-        if (argResults!["externalId"] != null)
-          "externalId": argResults!["externalId"],
-        if (argResults!["reportAction"] != null)
-          "reportAction": jsonDecode(argResults!["reportAction"]),
-      };
+    "event": _decodeJson("event"),
+    "subject": _decodeJson("subject"),
+    if (argResults!.wasParsed("subjectBlobCids"))
+      "subjectBlobCids": argResults!["subjectBlobCids"],
+    "createdBy": argResults!["createdBy"],
+    if (argResults!.wasParsed("modTool")) "modTool": _decodeJson("modTool"),
+    if (argResults!.wasParsed("externalId"))
+      "externalId": argResults!["externalId"],
+    if (argResults!.wasParsed("reportAction"))
+      "reportAction": _decodeJson("reportAction"),
+  };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

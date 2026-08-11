@@ -24,11 +24,11 @@ final class RevokeAccountCredentialsCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Revoke sessions, password, and app passwords associated with account. May be resolved by a password reset.";
+      "Revoke sessions, password, and app passwords associated with account. May be resolved by a password reset.";
 
   @override
   final String invocation =
-      "bsky com-atproto-temp revoke-account-credentials [account]";
+      "bsky com-atproto-temp revoke-account-credentials --account=<value>";
 
   @override
   String get methodId => "com.atproto.temp.revokeAccountCredentials";

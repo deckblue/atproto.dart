@@ -23,15 +23,23 @@ final class GetFeedGeneratorsCommand extends QueryCommand {
   final String name = "get-feed-generators";
 
   @override
-  final String description =
-      r"Get information about a list of feed generators.";
+  final String description = "Get information about a list of feed generators.";
 
   @override
-  final String invocation = "bsky app-bsky-feed get-feed-generators [feeds]";
+  final String invocation =
+      "bsky app-bsky-feed get-feed-generators [--feeds=<value>...]";
 
   @override
   String get methodId => "app.bsky.feed.getFeedGenerators";
 
   @override
-  Map<String, dynamic>? get parameters => {"feeds": argResults!["feeds"]};
+  Map<String, dynamic>? get parameters => {
+    "feeds": _requireNonEmpty("feeds", argResults!["feeds"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

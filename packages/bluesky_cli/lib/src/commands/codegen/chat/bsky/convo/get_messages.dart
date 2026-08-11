@@ -26,19 +26,21 @@ final class GetMessagesCommand extends QueryCommand {
   final String name = "get-messages";
 
   @override
-  final String description = r"Returns a page of messages from a conversation.";
+  final String description = "Returns a page of messages from a conversation.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-convo get-messages [convoId] [limit] [cursor]";
+      "bsky chat-bsky-convo get-messages --convoId=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "chat.bsky.convo.getMessages";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "convoId": argResults!["convoId"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "convoId": argResults!["convoId"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

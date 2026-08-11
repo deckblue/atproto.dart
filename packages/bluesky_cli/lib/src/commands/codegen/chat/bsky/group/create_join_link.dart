@@ -29,20 +29,28 @@ final class CreateJoinLinkCommand extends ProcedureCommand {
   final String name = "create-join-link";
 
   @override
-  final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Creates a join link for the group convo.";
+  final String description = "Creates a join link for the group convo.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group create-join-link [convoId] [requireApproval] [joinRule]";
+      "bsky chat-bsky-group create-join-link --convoId=<value> [--requireApproval] --joinRule=<value>";
 
   @override
   String get methodId => "chat.bsky.group.createJoinLink";
 
   @override
   Map<String, dynamic>? get body => {
-        "convoId": argResults!["convoId"],
-        "requireApproval": argResults!["requireApproval"],
-        "joinRule": jsonDecode(argResults!["joinRule"]),
-      };
+    "convoId": argResults!["convoId"],
+    "requireApproval": argResults!["requireApproval"],
+    "joinRule": _decodeJson("joinRule"),
+  };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

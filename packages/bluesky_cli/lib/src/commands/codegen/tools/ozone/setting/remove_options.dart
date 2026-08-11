@@ -25,18 +25,24 @@ final class RemoveOptionsCommand extends ProcedureCommand {
   final String name = "remove-options";
 
   @override
-  final String description = r"Delete settings by key";
+  final String description = "Delete settings by key";
 
   @override
   final String invocation =
-      "bsky tools-ozone-setting remove-options [keys] [scope]";
+      "bsky tools-ozone-setting remove-options [--keys=<value>...] --scope=<value>";
 
   @override
   String get methodId => "tools.ozone.setting.removeOptions";
 
   @override
   Map<String, dynamic>? get body => {
-        "keys": argResults!["keys"],
-        "scope": argResults!["scope"],
-      };
+    "keys": _requireNonEmpty("keys", argResults!["keys"]),
+    "scope": argResults!["scope"],
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

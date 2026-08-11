@@ -8,34 +8,36 @@ part of 'main.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EmbedGalleryImpl _$$EmbedGalleryImplFromJson(Map json) => $checkedCreate(
-      r'_$EmbedGalleryImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$EmbedGalleryImpl(
-          $type: $checkedConvert(
-              r'$type', (v) => v as String? ?? 'app.bsky.embed.gallery'),
-          items: $checkedConvert(
-              'items',
-              (v) => (v as List<dynamic>)
-                  .map((e) => const EmbedGalleryImageConverter()
-                      .fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_EmbedGallery _$EmbedGalleryFromJson(Map json) =>
+    $checkedCreate('_EmbedGallery', json, ($checkedConvert) {
+      final val = _EmbedGallery(
+        $type: $checkedConvert(
+          r'$type',
+          (v) => v as String? ?? 'app.bsky.embed.gallery',
+        ),
+        items: $checkedConvert(
+          'items',
+          (v) => (v as List<dynamic>)
+              .map(
+                (e) => const UEmbedGalleryItemsConverter().fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList(),
+        ),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$EmbedGalleryImplToJson(_$EmbedGalleryImpl instance) =>
+Map<String, dynamic> _$EmbedGalleryToJson(_EmbedGallery instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'items': instance.items
-          .map(const EmbedGalleryImageConverter().toJson)
+          .map(const UEmbedGalleryItemsConverter().toJson)
           .toList(),
-      if (instance.$unknown case final value?) r'$unknown': value,
+      r'$unknown': ?instance.$unknown,
     };

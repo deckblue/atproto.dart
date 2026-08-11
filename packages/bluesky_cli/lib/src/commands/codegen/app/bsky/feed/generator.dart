@@ -41,13 +41,13 @@ final class GeneratorCommand extends Command<void> {
       "Record declaring of the existence of a feed generator, and containing metadata about it. The record can exist in any repository.";
 }
 
-final class _CreateGeneratorCommand extends CreateRecordCommand {
-  _CreateGeneratorCommand() {
+mixin _GeneratorCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
     argParser
       ..addOption("did", mandatory: true)
       ..addOption("displayName", mandatory: true)
       ..addOption("description")
-      ..addMultiOption("descriptionFacets")
+      ..addMultiOption("descriptionFacets", splitCommas: false)
       ..addOption("avatar")
       ..addFlag(
         "acceptsInteractions",
@@ -56,8 +56,33 @@ final class _CreateGeneratorCommand extends CreateRecordCommand {
       )
       ..addOption("labels", help: r"Self-label values")
       ..addOption("contentMode")
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("rkey");
+      ..addOption("createdAt", mandatory: true);
+  }
+
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
+
+  Object? _decodeJsonItem(final String name, final String raw) {
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON in option "$name": ${e.message}');
+    }
+  }
+}
+
+final class _CreateGeneratorCommand extends CreateRecordCommand
+    with _GeneratorCommandRecordArgs {
+  _CreateGeneratorCommand() {
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"Specific record key to use.");
   }
 
   @override
@@ -69,50 +94,40 @@ final class _CreateGeneratorCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-feed generator create [did] [displayName] [description] [descriptionFacets] [avatar] [acceptsInteractions] [labels] [contentMode] [createdAt] [rkey]";
+      "bsky app-bsky-feed generator create --did=<value> --displayName=<value> [--description=<value>] [--descriptionFacets=<value>...] [--avatar=<value>] [--acceptsInteractions] [--labels=<value>] [--contentMode=<value>] --createdAt=<value> [--rkey=<value>]";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.feed.generator";
 
   @override
   Map<String, dynamic> get record => {
-        "did": argResults!["did"],
-        "displayName": argResults!["displayName"],
-        if (argResults!["description"] != null)
-          "description": argResults!["description"],
-        if (argResults!["descriptionFacets"] != null)
-          "descriptionFacets": argResults!["descriptionFacets"],
-        if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
-        if (argResults!["acceptsInteractions"] != null)
-          "acceptsInteractions": argResults!["acceptsInteractions"],
-        if (argResults!["labels"] != null)
-          "labels": jsonDecode(argResults!["labels"]),
-        if (argResults!["contentMode"] != null)
-          "contentMode": argResults!["contentMode"],
-        "createdAt": argResults!["createdAt"],
-      };
+    r"$type": "app.bsky.feed.generator",
+    "did": argResults!["did"],
+    "displayName": argResults!["displayName"],
+    if (argResults!.wasParsed("description"))
+      "description": argResults!["description"],
+    if (argResults!.wasParsed("descriptionFacets"))
+      "descriptionFacets": (argResults!["descriptionFacets"] as List<String>)
+          .map((e) => _decodeJsonItem("descriptionFacets", e))
+          .toList(),
+    if (argResults!.wasParsed("avatar")) "avatar": argResults!["avatar"],
+    if (argResults!.wasParsed("acceptsInteractions"))
+      "acceptsInteractions": argResults!["acceptsInteractions"],
+    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+    if (argResults!.wasParsed("contentMode"))
+      "contentMode": argResults!["contentMode"],
+    "createdAt": argResults!["createdAt"],
+  };
 }
 
-final class _PutGeneratorCommand extends PutRecordCommand {
+final class _PutGeneratorCommand extends PutRecordCommand
+    with _GeneratorCommandRecordArgs {
   _PutGeneratorCommand() {
-    argParser
-      ..addOption("did", mandatory: true)
-      ..addOption("displayName", mandatory: true)
-      ..addOption("description")
-      ..addMultiOption("descriptionFacets")
-      ..addOption("avatar")
-      ..addFlag(
-        "acceptsInteractions",
-        help:
-            r"Declaration that a feed accepts feedback interactions from a client through app.bsky.feed.sendInteractions",
-      )
-      ..addOption("labels", help: r"Self-label values")
-      ..addOption("contentMode")
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -123,36 +138,38 @@ final class _PutGeneratorCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-feed generator put [did] [displayName] [description] [descriptionFacets] [avatar] [acceptsInteractions] [labels] [contentMode] [createdAt] [rkey]";
+      "bsky app-bsky-feed generator put --did=<value> --displayName=<value> [--description=<value>] [--descriptionFacets=<value>...] [--avatar=<value>] [--acceptsInteractions] [--labels=<value>] [--contentMode=<value>] --createdAt=<value> --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.feed.generator";
 
   @override
   Map<String, dynamic> get record => {
-        "did": argResults!["did"],
-        "displayName": argResults!["displayName"],
-        if (argResults!["description"] != null)
-          "description": argResults!["description"],
-        if (argResults!["descriptionFacets"] != null)
-          "descriptionFacets": argResults!["descriptionFacets"],
-        if (argResults!["avatar"] != null) "avatar": argResults!["avatar"],
-        if (argResults!["acceptsInteractions"] != null)
-          "acceptsInteractions": argResults!["acceptsInteractions"],
-        if (argResults!["labels"] != null)
-          "labels": jsonDecode(argResults!["labels"]),
-        if (argResults!["contentMode"] != null)
-          "contentMode": argResults!["contentMode"],
-        "createdAt": argResults!["createdAt"],
-      };
+    r"$type": "app.bsky.feed.generator",
+    "did": argResults!["did"],
+    "displayName": argResults!["displayName"],
+    if (argResults!.wasParsed("description"))
+      "description": argResults!["description"],
+    if (argResults!.wasParsed("descriptionFacets"))
+      "descriptionFacets": (argResults!["descriptionFacets"] as List<String>)
+          .map((e) => _decodeJsonItem("descriptionFacets", e))
+          .toList(),
+    if (argResults!.wasParsed("avatar")) "avatar": argResults!["avatar"],
+    if (argResults!.wasParsed("acceptsInteractions"))
+      "acceptsInteractions": argResults!["acceptsInteractions"],
+    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+    if (argResults!.wasParsed("contentMode"))
+      "contentMode": argResults!["contentMode"],
+    "createdAt": argResults!["createdAt"],
+  };
 }
 
 final class _DeleteGeneratorCommand extends DeleteRecordCommand {
   _DeleteGeneratorCommand() {
-    argParser..addOption("rkey", mandatory: true);
+    argParser..addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -162,10 +179,11 @@ final class _DeleteGeneratorCommand extends DeleteRecordCommand {
   final String description = r"Deletes a record for app.bsky.feed.generator.";
 
   @override
-  final String invocation = "bsky app-bsky-feed generator delete [rkey]";
+  final String invocation =
+      "bsky app-bsky-feed generator delete --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.feed.generator";
@@ -174,7 +192,11 @@ final class _DeleteGeneratorCommand extends DeleteRecordCommand {
 final class _GetGeneratorCommand extends QueryCommand {
   _GetGeneratorCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption("rkey", help: r"The record key.", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -185,23 +207,28 @@ final class _GetGeneratorCommand extends QueryCommand {
   final String description = r"Gets a record for app.bsky.feed.generator.";
 
   @override
-  final String invocation = "bsky app-bsky-feed generator get [rkey] [cid]";
+  final String invocation =
+      "bsky app-bsky-feed generator get --rkey=<value> [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'rkey': argResults!['rkey'],
-        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "app.bsky.feed.generator",
+    'rkey': argResults!['rkey'],
+    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+  };
 }
 
 final class _ListGeneratorCommand extends QueryCommand {
   _ListGeneratorCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -215,17 +242,19 @@ final class _ListGeneratorCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-feed generator list [limit] [cursor] [reverse]";
+      "bsky app-bsky-feed generator list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
-        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-        'reverse': argResults!['reverse'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "app.bsky.feed.generator",
+    'limit':
+        int.tryParse(argResults!['limit']) ??
+        usageException(r'Invalid integer value for option "limit".'),
+    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+    'reverse': argResults!['reverse'],
+  };
 }

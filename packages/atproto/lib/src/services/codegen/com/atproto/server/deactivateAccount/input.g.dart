@@ -8,29 +8,25 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ServerDeactivateAccountInputImpl _$$ServerDeactivateAccountInputImplFromJson(
-        Map json) =>
-    $checkedCreate(
-      r'_$ServerDeactivateAccountInputImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$ServerDeactivateAccountInputImpl(
-          deleteAfter: $checkedConvert('deleteAfter',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_ServerDeactivateAccountInput _$ServerDeactivateAccountInputFromJson(
+  Map json,
+) => $checkedCreate('_ServerDeactivateAccountInput', json, ($checkedConvert) {
+  final val = _ServerDeactivateAccountInput(
+    deleteAfter: $checkedConvert(
+      'deleteAfter',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    $unknown: $checkedConvert(
+      r'$unknown',
+      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+    ),
+  );
+  return val;
+});
 
-Map<String, dynamic> _$$ServerDeactivateAccountInputImplToJson(
-        _$ServerDeactivateAccountInputImpl instance) =>
-    <String, dynamic>{
-      if (instance.deleteAfter?.toIso8601String() case final value?)
-        'deleteAfter': value,
-      if (instance.$unknown case final value?) r'$unknown': value,
-    };
+Map<String, dynamic> _$ServerDeactivateAccountInputToJson(
+  _ServerDeactivateAccountInput instance,
+) => <String, dynamic>{
+  'deleteAfter': iso8601(instance.deleteAfter),
+  r'$unknown': ?instance.$unknown,
+};

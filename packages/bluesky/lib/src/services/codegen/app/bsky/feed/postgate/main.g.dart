@@ -45,7 +45,7 @@ Map<String, dynamic> _$$FeedPostgateRecordImplToJson(
         _$FeedPostgateRecordImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       'post': const AtUriConverter().toJson(instance.post),
       if (instance.detachedEmbeddingUris
               ?.map(const AtUriConverter().toJson)

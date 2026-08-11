@@ -28,20 +28,22 @@ final class GetAccountHistoryCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get account history, e.g. log of updated email addresses or other identity information.";
+      "Get account history, e.g. log of updated email addresses or other identity information.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-hosting get-account-history [did] [events] [cursor] [limit]";
+      "bsky tools-ozone-hosting get-account-history --did=<value> [--events=<value>...] [--cursor=<value>] [--limit=<value>]";
 
   @override
   String get methodId => "tools.ozone.hosting.getAccountHistory";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "did": argResults!["did"],
-        if (argResults!["events"] != null) "events": argResults!["events"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        "limit": argResults!["limit"],
-      };
+    "did": argResults!["did"],
+    if (argResults!.wasParsed("events")) "events": argResults!["events"],
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+  };
 }

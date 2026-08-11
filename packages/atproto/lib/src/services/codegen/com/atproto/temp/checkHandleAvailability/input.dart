@@ -32,14 +32,14 @@ abstract class TempCheckHandleAvailabilityInput
     String? email,
 
     /// User-provided birth date. Might be used to build handle suggestions.
-    DateTime? birthDate,
+    @JsonKey(toJson: iso8601) DateTime? birthDate,
+
     Map<String, dynamic>? $unknown,
   }) = _TempCheckHandleAvailabilityInput;
 
   factory TempCheckHandleAvailabilityInput.fromJson(
     Map<String, Object?> json,
-  ) =>
-      _$TempCheckHandleAvailabilityInputFromJson(json);
+  ) => _$TempCheckHandleAvailabilityInputFromJson(json);
 }
 
 extension TempCheckHandleAvailabilityInputExtension
@@ -50,8 +50,9 @@ extension TempCheckHandleAvailabilityInputExtension
   bool get hasNotBirthDate => !hasBirthDate;
 }
 
-final class TempCheckHandleAvailabilityInputConverter extends JsonConverter<
-    TempCheckHandleAvailabilityInput, Map<String, dynamic>> {
+final class TempCheckHandleAvailabilityInputConverter
+    extends
+        JsonConverter<TempCheckHandleAvailabilityInput, Map<String, dynamic>> {
   const TempCheckHandleAvailabilityInputConverter();
 
   @override

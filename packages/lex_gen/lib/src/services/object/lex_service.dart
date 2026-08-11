@@ -3,7 +3,12 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // Project imports:
+import '../../ir/dart_emitter.dart';
+import '../../ir/dart_ir.dart';
+import '../../model/lex_def_kind.dart';
+import '../../model/nsid.dart';
 import '../../utils.dart';
+import '../gen_context.dart';
 import '../rule.dart' as rule;
 import 'lex_parameter.dart';
 import 'lex_type.dart';
@@ -24,8 +29,8 @@ final class LexService {
     return '${name.toLowerCase()}_service';
   }
 
-  String getFilePath() {
-    final homeDir = rule.getHomeDir(lexiconId);
+  String getFilePath(final GenContext ctx) {
+    final homeDir = rule.getHomeDir(ctx, lexiconId);
     final fileDir = rule.getFileDirForService(lexiconId);
 
     return '$homeDir/$fileDir/${getFileName()}.dart';
@@ -39,88 +44,89 @@ final class LexService {
     return false;
   }
 
-  String _getPackagePaths() {
-    final importPaths = <String>[];
+  /// Resolves the import a single input [parameter] contributes, or `null` when
+  /// it needs no dedicated import.
+  DartImport? _importForParameter(
+    final GenContext ctx,
+    final LexParameter parameter,
+  ) {
+    final type = parameter.type;
+    if (type.lexiconId == null) return null;
+    if (type.packagePath == null) return null;
+
+    if (type.isUnion) {
+      if (type.fieldName == null) return null;
+
+      // Prefer the ref's own lexicon id when present, otherwise fall back to
+      // the parameter's; both resolve the same union file afterwards.
+      final ref = type.ref;
+      final lexiconId = ref != null ? ref.split('#').first : type.lexiconId!;
+
+      final relativePath = Nsid(lexiconId).dirAfterAuthority;
+      final fileName = rule.getFileNameForUnion(
+        lexiconId,
+        type.defName,
+        type.fieldName!,
+      );
+
+      return DartImport('$relativePath/$fileName.dart');
+    } else if (type.isKnownValues) {
+      final relativePath = Nsid(type.knownValues!.lexiconId).dirAfterAuthority;
+      final fileName = type.knownValues!.getFileName();
+
+      return DartImport('$relativePath/$fileName.dart');
+    } else {
+      if (type.ref == null) return null;
+
+      final packagePath = rule.getLexObjectPackagePathFromRefForService(
+        ctx,
+        type.lexiconId!,
+        type.ref!,
+      );
+
+      return DartImport(packagePath);
+    }
+  }
+
+  /// The property-derived import group, deduplicated by uri (first occurrence
+  /// wins), matching the previous `.toSet()` behaviour.
+  List<DartImport> _getPackageImports(final GenContext ctx) {
+    final imports = <DartImport>[];
+    final seen = <String>{};
+    final hasRecordApi = _hasRecordApi();
+
+    void add(final DartImport import) {
+      if (seen.add(import.uri)) imports.add(import);
+    }
+
     for (final api in apis) {
-      final parameters = api.inputType == null
-          ? const <LexParameter>[]
-          : api.inputType!
-              .getProperties()
-              .map((e) => e.toLexParameter())
-              .toList();
-
-      for (final parameter in parameters) {
-        if (parameter.type.lexiconId == null) continue;
-        if (parameter.type.packagePath == null) continue;
-
-        if (parameter.type.isUnion) {
-          if (parameter.type.fieldName == null) continue;
-
-          final ref = parameter.type.ref;
-          if (ref != null) {
-            final lexiconId = ref.split('#').first;
-
-            final relativePath = lexiconId.split('.').sublist(2).join('/');
-            final fileName = rule.getFileNameForUnion(
-              lexiconId,
-              parameter.type.defName,
-              parameter.type.fieldName!,
-            );
-
-            importPaths.add("import '$relativePath/$fileName.dart';");
-          } else {
-            final relativePath =
-                parameter.type.lexiconId!.split('.').sublist(2).join('/');
-            final fileName = rule.getFileNameForUnion(
-              parameter.type.lexiconId!,
-              parameter.type.defName,
-              parameter.type.fieldName!,
-            );
-
-            importPaths.add("import '$relativePath/$fileName.dart';");
-          }
-        } else if (parameter.type.isKnownValues) {
-          final relativePath = parameter.type.knownValues!.lexiconId
-              .split('.')
-              .sublist(2)
-              .join('/');
-          final fileName = parameter.type.knownValues!.getFileName();
-
-          importPaths.add("import '$relativePath/$fileName.dart';");
-        } else {
-          if (parameter.type.ref == null) continue;
-
-          final packagePath = rule.getLexObjectPackagePathFromRefForService(
-            parameter.type.lexiconId!,
-            parameter.type.ref!,
-          );
-
-          importPaths.add("import '$packagePath';");
-        }
+      for (final parameter in api._parameters) {
+        final import = _importForParameter(ctx, parameter);
+        if (import != null) add(import);
       }
 
       if (api.returnType != null &&
           !(api.returnType?.isShouldNotBeGenerated() ?? true)) {
         final lexiconId = api.returnType!.lexiconId;
-        final fileDir = lexiconId.split('.').sublist(2).join('/');
+        final fileDir = Nsid(lexiconId).dirAfterAuthority;
         final fileName = api.returnType!.getFileName();
 
-        importPaths.add("import '$fileDir/$fileName.dart';");
+        add(DartImport('$fileDir/$fileName.dart'));
       }
 
-      if (_hasRecordApi()) {
-        importPaths.add(
-          "import 'package:atproto/com_atproto_repo_createrecord.dart';",
+      if (hasRecordApi) {
+        add(
+          const DartImport(
+            'package:atproto/com_atproto_repo_createrecord.dart',
+          ),
         );
       }
     }
 
-    return importPaths.toSet().join('\n');
+    return imports;
   }
 
-  String format() {
-    final packagePaths = _getPackagePaths();
-
+  String format(final GenContext ctx) {
     final functions = apis.map((e) => e.toFunction()).join();
     final methods = apis.map((e) => e.toMethod()).join();
 
@@ -131,39 +137,69 @@ final class LexService {
       recordApis,
     );
 
-    return '''$kHeaderHint
+    final file = DartFile(
+      header: kHeaderHint,
+      imports: [
+        const [
+          DartImport(
+            'package:atproto_core/internals.dart',
+            show: ['protected'],
+          ),
+        ],
+        const [
+          DartImport('package:atproto_core/atproto_core.dart'),
+          DartImport('package:atproto_core/internals.dart', show: ['iso8601']),
+        ],
+        const [
+          DartImport(
+            'package:atproto/com_atproto_services.dart',
+            show: [
+              'comAtprotoRepoGetRecord',
+              'comAtprotoRepoListRecords',
+              'comAtprotoRepoCreateRecord',
+              'comAtprotoRepoPutRecord',
+              'comAtprotoRepoDeleteRecord',
+            ],
+          ),
+        ],
+        const [
+          DartImport('package:atproto/com_atproto_repo_createrecord.dart'),
+          DartImport('package:atproto/com_atproto_repo_deleterecord.dart'),
+          DartImport('package:atproto/com_atproto_repo_getrecord.dart'),
+          DartImport('package:atproto/com_atproto_repo_listrecords.dart'),
+          DartImport('package:atproto/com_atproto_repo_putrecord.dart'),
+        ],
+        _getPackageImports(ctx),
+        const [DartImport('dart:typed_data')],
+        const [
+          DartImport('../../../../ids.g.dart', prefix: 'ids'),
+          DartImport('../../../../nsids.g.dart', prefix: 'ns'),
+        ],
+      ],
+      banner: kHeader,
+      decls: [
+        RawDecl(functions),
+        RawDecl(
+          _serviceClass(
+            recordAccessorsFields,
+            recordAccessorsConstructor,
+            methods,
+          ),
+        ),
+        RawDecl(recordAccessors),
+      ],
+    );
 
-import 'package:atproto_core/internals.dart' show protected;
+    return emitDartFile(file);
+  }
 
-import 'package:atproto_core/atproto_core.dart';
-import 'package:atproto_core/internals.dart' show iso8601;
-
-import 'package:atproto/com_atproto_services.dart'
-    show
-        comAtprotoRepoGetRecord,
-        comAtprotoRepoListRecords,
-        comAtprotoRepoCreateRecord,
-        comAtprotoRepoPutRecord,
-        comAtprotoRepoDeleteRecord;
-
-import 'package:atproto/com_atproto_repo_createrecord.dart';
-import 'package:atproto/com_atproto_repo_deleterecord.dart';
-import 'package:atproto/com_atproto_repo_getrecord.dart';
-import 'package:atproto/com_atproto_repo_listrecords.dart';
-import 'package:atproto/com_atproto_repo_putrecord.dart';
-
-$packagePaths
-
-import 'dart:typed_data';
-
-import '../../../../ids.g.dart' as ids;
-import '../../../../nsids.g.dart' as ns;
-
-$kHeader
-
-$functions
-
-/// `${lexiconId.toString()}.*`
+  /// The `<Name>Service` base class body.
+  String _serviceClass(
+    final String recordAccessorsFields,
+    final String recordAccessorsConstructor,
+    final String methods,
+  ) =>
+      '''/// `$lexiconId.*`
 base class ${name}Service {
   @protected
   final ServiceContext ctx;
@@ -175,163 +211,148 @@ base class ${name}Service {
   ;
 
   $methods
-}
+}''';
 
-$recordAccessors
-''';
+  /// Renders the `rkey` parameter line for a record accessor. A record that
+  /// pins a literal rkey (`literal:foo`) turns it into a defaulted parameter;
+  /// otherwise [fallback] (required or nullable) is used verbatim.
+  String _rkeyParam(final LexApi api, final String fallback) {
+    final rkey = api.rkey;
+    if (rkey?.startsWith('literal') ?? false) {
+      return "    String rkey = '${rkey!.split('literal:').last}',";
+    }
+
+    return fallback;
   }
 
   String _getRecordAccessors(final List<LexApi> recordApis) {
     if (recordApis.isEmpty) return '';
 
-    final buffer = StringBuffer();
-
-    for (final api in recordApis) {
-      final name = rule.getRecordTypeName(api.lexiconId);
-      final id = rule.getNamespaceIdForApi(api.lexiconId);
-
-      final parameters = api.inputType == null
-          ? const <LexParameter>[]
-          : api.inputType!
-              .getProperties()
-              .map((e) => e.toLexParameter())
-              .toList();
-
-      buffer.writeln('final class ${name}RecordAccessor {');
-      buffer.writeln('  final ServiceContext ctx;');
-      buffer.writeln();
-      buffer.writeln('  const ${name}RecordAccessor(this.ctx);');
-      buffer.writeln();
-      buffer.writeln('  Future<XRPCResponse<RepoGetRecordOutput>> get({');
-      buffer.writeln('    required String repo,');
-      if (api.rkey?.startsWith('literal') ?? false) {
-        final key = api.rkey!.split('literal:').last;
-        buffer.writeln("    String rkey = '$key',");
-      } else {
-        buffer.writeln('    required String rkey,');
-      }
-      buffer.writeln('    String? cid,');
-      buffer.writeln('    Map<String, String>? \$headers,');
-      buffer.writeln('    Map<String, String>? \$unknown,');
-      buffer.writeln('  }) async => await comAtprotoRepoGetRecord(');
-      buffer.writeln('    repo: repo,');
-      buffer.writeln('    collection: ids.$id,');
-      buffer.writeln('    rkey: rkey,');
-      buffer.writeln('    cid: cid,');
-      buffer.writeln('    \$ctx: ctx,');
-      buffer.writeln('    \$headers: \$headers,');
-      buffer.writeln('    \$unknown: \$unknown,');
-      buffer.writeln('  );');
-      buffer.writeln();
-      buffer.writeln('  Future<XRPCResponse<RepoListRecordsOutput>> list({');
-      buffer.writeln('    required String repo,');
-      buffer.writeln('    int? limit,');
-      buffer.writeln('    String? cursor,');
-      buffer.writeln('    bool? reverse,');
-      buffer.writeln('    Map<String, String>? \$headers,');
-      buffer.writeln('    Map<String, String>? \$unknown,');
-      buffer.writeln('  }) async => await comAtprotoRepoListRecords(');
-      buffer.writeln('    repo: repo,');
-      buffer.writeln('    collection: ids.$id,');
-      buffer.writeln('    limit: limit,');
-      buffer.writeln('    cursor: cursor,');
-      buffer.writeln('    reverse: reverse,');
-      buffer.writeln('    \$ctx: ctx,');
-      buffer.writeln('    \$headers: \$headers,');
-      buffer.writeln('    \$unknown: \$unknown,');
-      buffer.writeln('  );');
-      buffer.writeln();
-      buffer.writeln('  Future<XRPCResponse<RepoCreateRecordOutput>> create({');
-      for (final parameter in parameters) {
-        buffer.writeln(
-          parameter.getParams(ignoreRequired: parameter.name == 'createdAt'),
-        );
-      }
-      if (api.rkey?.startsWith('literal') ?? false) {
-        final key = api.rkey!.split('literal:').last;
-        buffer.writeln("    String rkey = '$key',");
-      } else {
-        buffer.writeln('    String? rkey,');
-      }
-      buffer.writeln('    bool? validate,');
-      buffer.writeln('    String? swapCommit,');
-      buffer.writeln('    Map<String, String>? \$headers,');
-      buffer.writeln('    Map<String, String>? \$unknown,');
-      buffer.writeln('  }) async => await comAtprotoRepoCreateRecord(');
-      buffer.writeln('    repo: ctx.repo,');
-      buffer.writeln('    collection: ids.$id,');
-      buffer.writeln('    rkey: rkey,');
-      buffer.writeln('    validate: validate,');
-      buffer.writeln('    record: {');
-      buffer.writeln('      ...?\$unknown,');
-      for (final parameter in parameters) {
-        buffer.writeln(parameter.getParamsRecord());
-      }
-      buffer.writeln('    },');
-      buffer.writeln('    swapCommit: swapCommit,');
-      buffer.writeln('    \$ctx: ctx,');
-      buffer.writeln('    \$headers: \$headers,');
-      buffer.writeln('  );');
-      buffer.writeln();
-      buffer.writeln('  Future<XRPCResponse<RepoPutRecordOutput>> put({');
-      for (final parameter in parameters) {
-        buffer.writeln(
-          parameter.getParams(ignoreRequired: parameter.name == 'createdAt'),
-        );
-      }
-      if (api.rkey?.startsWith('literal') ?? false) {
-        final key = api.rkey!.split('literal:').last;
-        buffer.writeln("    String rkey = '$key',");
-      } else {
-        buffer.writeln('    required String rkey,');
-      }
-      buffer.writeln('    bool? validate,');
-      buffer.writeln('    String? swapRecord,');
-      buffer.writeln('    String? swapCommit,');
-      buffer.writeln('    Map<String, String>? \$headers,');
-      buffer.writeln('    Map<String, String>? \$unknown,');
-      buffer.writeln('  }) async => await comAtprotoRepoPutRecord(');
-      buffer.writeln('    repo: ctx.repo,');
-      buffer.writeln('    collection: ids.$id,');
-      buffer.writeln('    rkey: rkey,');
-      buffer.writeln('    validate: validate,');
-      buffer.writeln('    record: {');
-      buffer.writeln('      ...?\$unknown,');
-      for (final parameter in parameters) {
-        buffer.writeln(parameter.getParamsRecord());
-      }
-      buffer.writeln('    },');
-      buffer.writeln('    swapRecord: swapRecord,');
-      buffer.writeln('    swapCommit: swapCommit,');
-      buffer.writeln('    \$ctx: ctx,');
-      buffer.writeln('    \$headers: \$headers,');
-      buffer.writeln('  );');
-      buffer.writeln('');
-      buffer.writeln('  Future<XRPCResponse<RepoDeleteRecordOutput>> delete({');
-      if (api.rkey?.startsWith('literal') ?? false) {
-        final key = api.rkey!.split('literal:').last;
-        buffer.writeln("    String rkey = '$key',");
-      } else {
-        buffer.writeln('    required String rkey,');
-      }
-      buffer.writeln('    String? swapRecord,');
-      buffer.writeln('    String? swapCommit,');
-      buffer.writeln('    Map<String, String>? \$headers,');
-      buffer.writeln('    Map<String, String>? \$unknown,');
-      buffer.writeln('  }) async => await comAtprotoRepoDeleteRecord(');
-      buffer.writeln('    repo: ctx.repo,');
-      buffer.writeln('    collection: ids.$id,');
-      buffer.writeln('    rkey: rkey,');
-      buffer.writeln('    swapRecord: swapRecord,');
-      buffer.writeln('    swapCommit: swapCommit,');
-      buffer.writeln('    \$ctx: ctx,');
-      buffer.writeln('    \$headers: \$headers,');
-      buffer.writeln('  );');
-      buffer.writeln('}');
-    }
-
-    return buffer.toString();
+    return recordApis.map(_recordAccessorClass).join();
   }
+
+  /// Emits the whole `XxxRecordAccessor` class (get/list/create/put/delete)
+  /// for a single record [api].
+  String _recordAccessorClass(final LexApi api) {
+    final name = rule.getRecordTypeName(api.lexiconId);
+    final id = rule.getNamespaceIdForApi(api.lexiconId);
+
+    return '''
+final class ${name}RecordAccessor {
+  final ServiceContext ctx;
+
+  const ${name}RecordAccessor(this.ctx);
+
+  ${_recordGet(api, id)}
+
+  ${_recordList(id)}
+
+  ${_recordMutation(api, id, output: 'RepoCreateRecordOutput', method: 'create', rkeyParam: _rkeyParam(api, '    String? rkey,'), xrpcFn: 'comAtprotoRepoCreateRecord', extraParams: '  String? swapCommit,', extraArgs: '  swapCommit: swapCommit,')}
+
+  ${_recordMutation(api, id, output: 'RepoPutRecordOutput', method: 'put', rkeyParam: _rkeyParam(api, '    required String rkey,'), xrpcFn: 'comAtprotoRepoPutRecord', extraParams: '  String? swapRecord,\n  String? swapCommit,', extraArgs: '  swapRecord: swapRecord,\n  swapCommit: swapCommit,')}
+
+  ${_recordDelete(api, id)}
+}
+''';
+  }
+
+  String _recordGet(final LexApi api, final String id) =>
+      '''
+Future<XRPCResponse<RepoGetRecordOutput>> get({
+  required String repo,
+${_rkeyParam(api, '    required String rkey,')}
+  String? cid,
+  Map<String, String>? \$headers,
+  Map<String, String>? \$unknown,
+}) async => await comAtprotoRepoGetRecord(
+  repo: repo,
+  collection: ids.$id,
+  rkey: rkey,
+  cid: cid,
+  \$ctx: ctx,
+  \$headers: \$headers,
+  \$unknown: \$unknown,
+);''';
+
+  String _recordList(final String id) =>
+      '''
+Future<XRPCResponse<RepoListRecordsOutput>> list({
+  required String repo,
+  int? limit,
+  String? cursor,
+  bool? reverse,
+  Map<String, String>? \$headers,
+  Map<String, String>? \$unknown,
+}) async => await comAtprotoRepoListRecords(
+  repo: repo,
+  collection: ids.$id,
+  limit: limit,
+  cursor: cursor,
+  reverse: reverse,
+  \$ctx: ctx,
+  \$headers: \$headers,
+  \$unknown: \$unknown,
+);''';
+
+  /// Emits `create` and `put`, which are identical except for the output type,
+  /// method name, rkey requiredness, XRPC entrypoint and their swap parameters.
+  String _recordMutation(
+    final LexApi api,
+    final String id, {
+    required final String output,
+    required final String method,
+    required final String rkeyParam,
+    required final String xrpcFn,
+    required final String extraParams,
+    required final String extraArgs,
+  }) {
+    final parameters = api._parameters;
+    final paramsDecl = parameters
+        .map((e) => e.getParams(ignoreRequired: e.name == 'createdAt'))
+        .join('\n');
+    final recordEntries = parameters.map((e) => e.getParamsRecord()).join('\n');
+
+    return '''
+Future<XRPCResponse<$output>> $method({
+$paramsDecl
+$rkeyParam
+  bool? validate,
+$extraParams
+  Map<String, String>? \$headers,
+  Map<String, String>? \$unknown,
+}) async => await $xrpcFn(
+  repo: ctx.repo,
+  collection: ids.$id,
+  rkey: rkey,
+  validate: validate,
+  record: {
+    r'\$type': '${api.lexiconId}',
+    ...?\$unknown,
+$recordEntries
+  },
+$extraArgs
+  \$ctx: ctx,
+  \$headers: \$headers,
+);''';
+  }
+
+  String _recordDelete(final LexApi api, final String id) =>
+      '''
+Future<XRPCResponse<RepoDeleteRecordOutput>> delete({
+${_rkeyParam(api, '    required String rkey,')}
+  String? swapRecord,
+  String? swapCommit,
+  Map<String, String>? \$headers,
+  Map<String, String>? \$unknown,
+}) async => await comAtprotoRepoDeleteRecord(
+  repo: ctx.repo,
+  collection: ids.$id,
+  rkey: rkey,
+  swapRecord: swapRecord,
+  swapCommit: swapCommit,
+  \$ctx: ctx,
+  \$headers: \$headers,
+);''';
 
   String _getRecordAccessorsFields(final List<LexApi> recordApis) {
     if (recordApis.isEmpty) return '';
@@ -365,299 +386,264 @@ final class LexApi {
 
   final String name;
   final String? description;
-  final LexType? inputType;
-  final LexType? returnType;
+  final GeneratableType? inputType;
+  final GeneratableType? returnType;
 
   final String? rkey;
 
-  final bool isQuery;
-  final bool isProcedure;
-  final bool isSubscription;
-  final bool isRecord;
+  final LexDefKind kind;
 
   const LexApi({
     required this.lexiconId,
     required this.name,
+    required this.kind,
     this.description,
     this.inputType,
     this.returnType,
     this.rkey,
-    this.isQuery = false,
-    this.isProcedure = false,
-    this.isSubscription = false,
-    this.isRecord = false,
   });
 
+  bool get isRecord => kind == LexDefKind.record;
+
+  /// The API's input parameters, derived from its input/record type.
+  List<LexParameter> get _parameters => inputType == null
+      ? const <LexParameter>[]
+      : inputType!.getProperties().map((e) => e.toLexParameter()).toList();
+
   String toFunction() {
-    final parameters = inputType == null
-        ? const <LexParameter>[]
-        : inputType!.getProperties().map((e) => e.toLexParameter()).toList();
+    final parameters = _parameters;
 
-    if (isQuery) {
-      return _getQueryFunction(parameters);
-    } else if (isProcedure) {
-      return _getProcedureFunction(parameters);
-    } else if (isSubscription) {
-      return _getSubscriptionFunction(parameters);
-    } else if (isRecord) {
-      return '';
-    }
-
-    throw UnsupportedError('Unsupported API format');
+    return switch (kind) {
+      LexDefKind.query => _getQueryFunction(parameters),
+      LexDefKind.procedure => _getProcedureFunction(parameters),
+      LexDefKind.subscription => _getSubscriptionFunction(parameters),
+      LexDefKind.record => '',
+    };
   }
 
   String toMethod() {
-    final parameters = inputType == null
-        ? const <LexParameter>[]
-        : inputType!.getProperties().map((e) => e.toLexParameter()).toList();
+    final parameters = _parameters;
 
-    if (isQuery) {
-      return _getQueryMethod(parameters);
-    } else if (isProcedure) {
-      return _getProcedureMethod(parameters);
-    } else if (isSubscription) {
-      return _getSubscriptionMethod(parameters);
-    } else if (isRecord) {
-      return _getRecordMethod(parameters);
-    }
-
-    throw UnsupportedError('Unsupported API format');
+    return switch (kind) {
+      LexDefKind.query => _getQueryMethod(parameters),
+      LexDefKind.procedure => _getProcedureMethod(parameters),
+      LexDefKind.subscription => _getSubscriptionMethod(parameters),
+      LexDefKind.record => _getRecordMethod(parameters),
+    };
   }
+
+  /// The leading `/// ...` doc comment line shared by every emitter, or an
+  /// empty string when the api has no description.
+  String get _doc =>
+      description != null ? '${toDocComment(description!)}\n' : '';
+
+  /// Renders the parameter declaration lines for a `({...})` signature.
+  String _paramDecls(final List<LexParameter> parameters) =>
+      parameters.map((e) => e.getParams()).join('\n');
+
+  /// Renders the `'name': value,` entries for a parameters/body map literal.
+  String _paramRecords(final List<LexParameter> parameters) =>
+      parameters.map((e) => e.getParamsRecord()).join('\n');
+
+  /// Renders the `name: name,` argument-forwarding lines used by wrapper
+  /// methods that delegate to their standalone function.
+  String _paramForwards(final List<LexParameter> parameters) =>
+      parameters.map((e) => '  ${e.name}: ${e.name},').join('\n');
 
   String _getQueryFunction(final List<LexParameter> parameters) {
     final ns = rule.getNamespaceIdForApi(lexiconId);
     final returnType = _getReturnType();
 
-    final buffer = StringBuffer();
-    if (description != null) {
-      buffer.writeln('/// $description');
-    }
-    buffer.writeln('Future<XRPCResponse<$returnType>> $ns({');
-    for (final parameter in parameters) {
-      buffer.writeln(parameter.getParams());
-    }
-    buffer.writeln('  required ServiceContext \$ctx,');
-    buffer.writeln('  String? \$service,');
-    buffer.writeln('  Map<String, String>? \$headers,');
-    buffer.writeln('  Map<String, String>? \$unknown,');
-    buffer.writeln('}) async =>');
-    buffer.writeln('  await \$ctx.get(');
-    buffer.writeln('    ns.$ns,');
-    buffer.writeln('    service: \$service,');
-    buffer.writeln('    headers: \$headers,');
-    buffer.writeln('    parameters: {');
-    buffer.writeln('      ...?\$unknown,');
-    for (final parameter in parameters) {
-      buffer.writeln(parameter.getParamsRecord());
-    }
-    buffer.writeln('    },');
-    if (this.returnType != null && !(this.returnType?.isBytes() ?? true)) {
-      buffer.writeln('    to: const ${returnType}Converter().fromJson,');
-    }
-    buffer.writeln('  );');
+    final to = this.returnType != null && !(this.returnType?.isBytes() ?? true)
+        ? '    to: const ${returnType}Converter().fromJson,\n'
+        : '';
 
-    return buffer.toString();
+    return '''
+${_doc}Future<XRPCResponse<$returnType>> $ns({
+${_paramDecls(parameters)}
+  required ServiceContext \$ctx,
+  String? \$service,
+  Map<String, String>? \$headers,
+  Map<String, String>? \$unknown,
+}) async =>
+  await \$ctx.get(
+    ns.$ns,
+    service: \$service,
+    headers: \$headers,
+    parameters: {
+      ...?\$unknown,
+${_paramRecords(parameters)}
+    },
+$to  );
+''';
   }
 
   String _getQueryMethod(final List<LexParameter> parameters) {
     final ns = rule.getNamespaceIdForApi(lexiconId);
     final returnType = _getReturnType();
 
-    final buffer = StringBuffer();
-    if (description != null) {
-      buffer.writeln('/// $description');
-    }
-    buffer.writeln('Future<XRPCResponse<$returnType>> $name({');
-    for (final parameter in parameters) {
-      buffer.writeln(parameter.getParams());
-    }
-    buffer.writeln('  String? \$service,');
-    buffer.writeln('  Map<String, String>? \$headers,');
-    buffer.writeln('  Map<String, String>? \$unknown,');
-    buffer.writeln('}) async =>');
-    buffer.writeln('  await $ns(');
-    for (final parameter in parameters) {
-      final paramName = parameter.name;
-      buffer.writeln('  $paramName: $paramName,');
-    }
-    buffer.writeln('    \$ctx: ctx,');
-    buffer.writeln('    \$service: \$service,');
-    buffer.writeln('    \$headers: \$headers,');
-    buffer.writeln('    \$unknown: \$unknown,');
-    buffer.writeln('  );');
-
-    return buffer.toString();
+    return '''
+${_doc}Future<XRPCResponse<$returnType>> $name({
+${_paramDecls(parameters)}
+  String? \$service,
+  Map<String, String>? \$headers,
+  Map<String, String>? \$unknown,
+}) async =>
+  await $ns(
+${_paramForwards(parameters)}
+    \$ctx: ctx,
+    \$service: \$service,
+    \$headers: \$headers,
+    \$unknown: \$unknown,
+  );
+''';
   }
 
   String _getProcedureFunction(List<LexParameter> parameters) {
     final ns = rule.getNamespaceIdForApi(lexiconId);
     final returnType = _getReturnType();
+    final isBytes = inputType?.isBytes() ?? false;
 
-    final buffer = StringBuffer();
-    if (description != null) {
-      buffer.writeln('/// $description');
-    }
-
-    if (inputType?.isBytes() ?? false) {
-      buffer.writeln('Future<XRPCResponse<$returnType>> $ns({');
-      buffer.writeln('  required Uint8List bytes,');
-      buffer.writeln('  required ServiceContext \$ctx,');
-      buffer.writeln('  String? \$service,');
-      buffer.writeln('  Map<String, String>? \$headers,');
-      buffer.writeln('  Map<String, String>? \$parameters,');
+    final String signatureParams;
+    final String body;
+    if (isBytes) {
+      signatureParams = '''
+  required Uint8List bytes,
+  required ServiceContext \$ctx,
+  String? \$service,
+  Map<String, String>? \$headers,
+  Map<String, String>? \$parameters,''';
+      body = '''
+    parameters: \$parameters,
+    body: bytes,''';
     } else {
-      buffer.writeln('Future<XRPCResponse<$returnType>> $ns({');
-      for (final parameter in parameters) {
-        buffer.writeln(parameter.getParams());
-      }
-      buffer.writeln('  required ServiceContext \$ctx,');
-      buffer.writeln('  String? \$service,');
-      buffer.writeln('  Map<String, String>? \$headers,');
-      if (parameters.isNotEmpty) {
-        buffer.writeln('  Map<String, String>? \$unknown,');
-      }
-    }
-    buffer.writeln('}) async =>');
-    buffer.writeln('  await \$ctx.post(');
-    buffer.writeln('    ns.$ns,');
-    buffer.writeln('    service: \$service,');
-    buffer.writeln('    headers: {');
-    if (inputType != null) {
-      buffer.writeln("      'Content-type': '${inputType?.getEncoding()}',");
-    }
-    buffer.writeln('      ...?\$headers,');
-    buffer.writeln('    },');
-    if (inputType?.isBytes() ?? false) {
-      buffer.writeln('    parameters: \$parameters,');
-      buffer.writeln('    body: bytes,');
-    } else {
-      if (parameters.isNotEmpty) {
-        buffer.writeln('    body: {');
-        buffer.writeln('      ...?\$unknown,');
-        for (final parameter in parameters) {
-          buffer.writeln(parameter.getParamsRecord());
-        }
-        buffer.writeln('    },');
-      }
+      final unknownParam = parameters.isNotEmpty
+          ? '\n  Map<String, String>? \$unknown,'
+          : '';
+      signatureParams =
+          '''
+${_paramDecls(parameters)}
+  required ServiceContext \$ctx,
+  String? \$service,
+  Map<String, String>? \$headers,$unknownParam''';
+      body = parameters.isNotEmpty
+          ? '''
+    body: {
+      ...?\$unknown,
+${_paramRecords(parameters)}
+    },'''
+          : '';
     }
 
-    if (this.returnType != null) {
-      buffer.writeln('    to: const ${returnType}Converter().fromJson,');
-    }
-    buffer.writeln('  );');
+    final contentType = inputType != null
+        ? "\n      'Content-type': '${inputType?.getEncoding()}',"
+        : '';
+    final to = this.returnType != null
+        ? '    to: const ${returnType}Converter().fromJson,'
+        : '';
 
-    return buffer.toString();
+    final callBody = [
+      '    ns.$ns,',
+      '    service: \$service,',
+      '    headers: {$contentType\n      ...?\$headers,\n    },',
+      if (body.isNotEmpty) body,
+      if (to.isNotEmpty) to,
+    ].join('\n');
+
+    return '''
+${_doc}Future<XRPCResponse<$returnType>> $ns({
+$signatureParams
+}) async =>
+  await \$ctx.post(
+$callBody
+  );
+''';
   }
 
   String _getProcedureMethod(List<LexParameter> parameters) {
     final ns = rule.getNamespaceIdForApi(lexiconId);
     final returnType = _getReturnType();
+    final isBytes = inputType?.isBytes() ?? false;
 
-    final buffer = StringBuffer();
-    if (description != null) {
-      buffer.writeln('/// $description');
-    }
-
-    if (inputType?.isBytes() ?? false) {
-      buffer.writeln('Future<XRPCResponse<$returnType>> $name({');
-      buffer.writeln('  required Uint8List bytes,');
-      buffer.writeln('  String? \$service,');
-      buffer.writeln('  Map<String, String>? \$headers,');
-      buffer.writeln('  Map<String, String>? \$parameters,');
+    final String signatureParams;
+    final String forwards;
+    if (isBytes) {
+      signatureParams = '''
+  required Uint8List bytes,
+  String? \$service,
+  Map<String, String>? \$headers,
+  Map<String, String>? \$parameters,''';
+      forwards = '''
+     bytes: bytes,
+     \$parameters: \$parameters,
+     \$ctx: ctx,
+     \$service: \$service,
+     \$headers: \$headers,''';
     } else {
-      buffer.writeln('Future<XRPCResponse<$returnType>> $name({');
-      for (final parameter in parameters) {
-        buffer.writeln(parameter.getParams());
-      }
-      buffer.writeln('  String? \$service,');
-      buffer.writeln('  Map<String, String>? \$headers,');
-      if (parameters.isNotEmpty) {
-        buffer.writeln('  Map<String, String>? \$unknown,');
-      }
+      final unknownParam = parameters.isNotEmpty
+          ? '\n  Map<String, String>? \$unknown,'
+          : '';
+      signatureParams =
+          '''
+${_paramDecls(parameters)}
+  String? \$service,
+  Map<String, String>? \$headers,$unknownParam''';
+      final unknownArg = parameters.isNotEmpty
+          ? '\n     \$unknown: \$unknown,'
+          : '';
+      forwards =
+          '''
+${_paramForwards(parameters)}
+     \$ctx: ctx,
+     \$service: \$service,
+     \$headers: \$headers,$unknownArg''';
     }
-    buffer.writeln('}) async =>');
-    buffer.writeln('  await $ns(');
-    if (inputType?.isBytes() ?? false) {
-      buffer.writeln('     bytes: bytes,');
-      buffer.writeln('     \$parameters: \$parameters,');
-      buffer.writeln('     \$ctx: ctx,');
-      buffer.writeln('     \$service: \$service,');
-      buffer.writeln('     \$headers: \$headers,');
-    } else {
-      for (final parameter in parameters) {
-        final paramName = parameter.name;
-        buffer.writeln('  $paramName: $paramName,');
-      }
-      buffer.writeln('     \$ctx: ctx,');
-      buffer.writeln('     \$service: \$service,');
-      buffer.writeln('     \$headers: \$headers,');
-      if (parameters.isNotEmpty) {
-        buffer.writeln('     \$unknown: \$unknown,');
-      }
-    }
-    buffer.writeln('  );');
 
-    return buffer.toString();
+    return '''
+${_doc}Future<XRPCResponse<$returnType>> $name({
+$signatureParams
+}) async =>
+  await $ns(
+$forwards
+  );
+''';
   }
 
   String _getSubscriptionFunction(List<LexParameter> parameters) {
     final ns = rule.getNamespaceIdForApi(lexiconId);
 
-    final buffer = StringBuffer();
-    if (description != null) {
-      buffer.writeln('/// $description');
-    }
-    buffer.writeln('Future<XRPCResponse<Subscription<Uint8List>>> $ns({');
-    for (final parameter in parameters) {
-      buffer.writeln(parameter.getParams());
-    }
-    buffer.writeln('  required ServiceContext \$ctx,');
-    buffer.writeln('}) async =>');
-    buffer.writeln('  await \$ctx.stream(');
-    buffer.writeln('    ns.$ns,');
-    buffer.writeln('    parameters: {');
-    for (final parameter in parameters) {
-      buffer.writeln(parameter.getParamsRecord());
-    }
-    buffer.writeln('    },');
-    buffer.writeln('  );');
-
-    return buffer.toString();
+    return '''
+${_doc}Future<XRPCResponse<Subscription<Uint8List>>> $ns({
+${_paramDecls(parameters)}
+  required ServiceContext \$ctx,
+}) async =>
+  await \$ctx.stream(
+    ns.$ns,
+    parameters: {
+${_paramRecords(parameters)}
+    },
+  );
+''';
   }
 
   String _getSubscriptionMethod(List<LexParameter> parameters) {
     final ns = rule.getNamespaceIdForApi(lexiconId);
 
-    final buffer = StringBuffer();
-    if (description != null) {
-      buffer.writeln('/// $description');
-    }
-    buffer.writeln('Future<XRPCResponse<Subscription<Uint8List>>> $name({');
-    for (final parameter in parameters) {
-      buffer.writeln(parameter.getParams());
-    }
-    buffer.writeln('}) async =>');
-    buffer.writeln('  await $ns(');
-    for (final parameter in parameters) {
-      final paramName = parameter.name;
-      buffer.writeln('   $paramName: $paramName,');
-    }
-    buffer.writeln('     \$ctx: ctx,');
-    buffer.writeln('  );');
-
-    return buffer.toString();
+    return '''
+${_doc}Future<XRPCResponse<Subscription<Uint8List>>> $name({
+${_paramDecls(parameters)}
+}) async =>
+  await $ns(
+${_paramForwards(parameters)}
+     \$ctx: ctx,
+  );
+''';
   }
 
   String _getRecordMethod(List<LexParameter> parameters) {
-    final buffer = StringBuffer();
-    if (description != null) {
-      buffer.writeln('/// $description');
-    }
-
     final name = rule.getRecordTypeName(lexiconId);
-    buffer.writeln('${name}RecordAccessor get ${this.name} => _${this.name};');
 
-    return buffer.toString();
+    return '$_doc${name}RecordAccessor get ${this.name} => _${this.name};\n';
   }
 
   String _getReturnType() {

@@ -26,11 +26,11 @@ final class ConfirmEmailCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Confirm an email using a token from com.atproto.server.requestEmailConfirmation.";
+      "Confirm an email using a token from com.atproto.server.requestEmailConfirmation.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server confirm-email [email] [token]";
+      "bsky com-atproto-server confirm-email --email=<value> --token=<value>";
 
   @override
   String get methodId => "com.atproto.server.confirmEmail";

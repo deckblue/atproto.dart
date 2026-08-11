@@ -38,24 +38,26 @@ final class ListConvosCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Returns a page of conversations (direct or group) for the user.";
+      "Returns a page of conversations (direct or group) for the user.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-convo list-convos [limit] [cursor] [readState] [status] [kind] [lockStatus]";
+      "bsky chat-bsky-convo list-convos [--limit=<value>] [--cursor=<value>] [--readState=<value>] [--status=<value>] [--kind=<value>] [--lockStatus=<value>]";
 
   @override
   String get methodId => "chat.bsky.convo.listConvos";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        if (argResults!["readState"] != null)
-          "readState": argResults!["readState"],
-        if (argResults!["status"] != null) "status": argResults!["status"],
-        if (argResults!["kind"] != null) "kind": argResults!["kind"],
-        if (argResults!["lockStatus"] != null)
-          "lockStatus": argResults!["lockStatus"],
-      };
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+    if (argResults!.wasParsed("readState"))
+      "readState": argResults!["readState"],
+    if (argResults!.wasParsed("status")) "status": argResults!["status"],
+    if (argResults!.wasParsed("kind")) "kind": argResults!["kind"],
+    if (argResults!.wasParsed("lockStatus"))
+      "lockStatus": argResults!["lockStatus"],
+  };
 }

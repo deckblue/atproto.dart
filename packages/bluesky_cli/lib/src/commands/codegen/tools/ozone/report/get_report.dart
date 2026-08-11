@@ -29,14 +29,18 @@ final class GetReportCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get details about a single moderation report by ID.";
+      "Get details about a single moderation report by ID.";
 
   @override
-  final String invocation = "bsky tools-ozone-report get-report [id]";
+  final String invocation = "bsky tools-ozone-report get-report --id=<value>";
 
   @override
   String get methodId => "tools.ozone.report.getReport";
 
   @override
-  Map<String, dynamic>? get parameters => {"id": argResults!["id"]};
+  Map<String, dynamic>? get parameters => {
+    "id":
+        int.tryParse(argResults!["id"]) ??
+        usageException('Invalid integer value for option "id".'),
+  };
 }

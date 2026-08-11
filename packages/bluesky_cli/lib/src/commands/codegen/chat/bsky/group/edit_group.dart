@@ -25,11 +25,11 @@ final class EditGroupCommand extends ProcedureCommand {
   final String name = "edit-group";
 
   @override
-  final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Edits group settings.";
+  final String description = "Edits group settings.";
 
   @override
-  final String invocation = "bsky chat-bsky-group edit-group [convoId] [name]";
+  final String invocation =
+      "bsky chat-bsky-group edit-group --convoId=<value> --name=<value>";
 
   @override
   String get methodId => "chat.bsky.group.editGroup";

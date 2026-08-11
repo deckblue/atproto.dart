@@ -31,19 +31,21 @@ final class GetStarterPacksWithMembershipCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerates the starter packs created by the session user, and includes membership information about `actor` in those starter packs. Requires auth.";
+      "Enumerates the starter packs created by the session user, and includes membership information about `actor` in those starter packs. Requires auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph get-starter-packs-with-membership [actor] [limit] [cursor]";
+      "bsky app-bsky-graph get-starter-packs-with-membership --actor=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.graph.getStarterPacksWithMembership";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "actor": argResults!["actor"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "actor": argResults!["actor"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

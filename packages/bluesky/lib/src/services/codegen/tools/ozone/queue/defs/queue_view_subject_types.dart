@@ -19,7 +19,7 @@ part 'queue_view_subject_types.freezed.dart';
 // **************************************************************************
 
 @freezed
-abstract class QueueViewSubjectTypes with _$QueueViewSubjectTypes {
+sealed class QueueViewSubjectTypes with _$QueueViewSubjectTypes {
   const QueueViewSubjectTypes._();
 
   const factory QueueViewSubjectTypes.knownValue({
@@ -70,8 +70,10 @@ final class QueueViewSubjectTypesConverter
   }
 
   @override
-  String toJson(QueueViewSubjectTypes object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(QueueViewSubjectTypes object) => switch (object) {
+    QueueViewSubjectTypesKnownValue(:final data) => data.value,
+    QueueViewSubjectTypesUnknown(:final data) => data,
+  };
 }
 
 enum KnownQueueViewSubjectTypes implements Serializable {
@@ -80,7 +82,9 @@ enum KnownQueueViewSubjectTypes implements Serializable {
   @JsonValue('record')
   record('record'),
   @JsonValue('message')
-  message('message');
+  message('message'),
+  @JsonValue('conversation')
+  conversation('conversation');
 
   @override
   final String value;

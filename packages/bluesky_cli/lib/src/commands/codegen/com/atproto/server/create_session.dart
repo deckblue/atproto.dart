@@ -36,22 +36,22 @@ final class CreateSessionCommand extends ProcedureCommand {
   final String name = "create-session";
 
   @override
-  final String description = r"Create an authentication session.";
+  final String description = "Create an authentication session.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server create-session [identifier] [password] [authFactorToken] [allowTakendown]";
+      "bsky com-atproto-server create-session --identifier=<value> --password=<value> [--authFactorToken=<value>] [--allowTakendown]";
 
   @override
   String get methodId => "com.atproto.server.createSession";
 
   @override
   Map<String, dynamic>? get body => {
-        "identifier": argResults!["identifier"],
-        "password": argResults!["password"],
-        if (argResults!["authFactorToken"] != null)
-          "authFactorToken": argResults!["authFactorToken"],
-        if (argResults!["allowTakendown"] != null)
-          "allowTakendown": argResults!["allowTakendown"],
-      };
+    "identifier": argResults!["identifier"],
+    "password": argResults!["password"],
+    if (argResults!.wasParsed("authFactorToken"))
+      "authFactorToken": argResults!["authFactorToken"],
+    if (argResults!.wasParsed("allowTakendown"))
+      "allowTakendown": argResults!["allowTakendown"],
+  };
 }

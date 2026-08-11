@@ -36,20 +36,22 @@ final class GetLikesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get like records which reference a subject (by AT-URI and CID).";
+      "Get like records which reference a subject (by AT-URI and CID).";
 
   @override
   final String invocation =
-      "bsky app-bsky-feed get-likes [uri] [cid] [limit] [cursor]";
+      "bsky app-bsky-feed get-likes --uri=<value> [--cid=<value>] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.getLikes";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "uri": argResults!["uri"],
-        if (argResults!["cid"] != null) "cid": argResults!["cid"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "uri": argResults!["uri"],
+    if (argResults!.wasParsed("cid")) "cid": argResults!["cid"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

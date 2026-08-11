@@ -12,6 +12,8 @@ import 'package:atproto_core/internals.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
+import './config_region_additional_verification_methods.dart';
+import './config_region_platforms.dart';
 import './union_config_region_rules.dart';
 
 part 'config_region.freezed.dart';
@@ -25,15 +27,18 @@ part 'config_region.g.dart';
 @freezed
 abstract class ConfigRegion with _$ConfigRegion {
   static const knownProps = <String>[
+    'platforms',
     'countryCode',
     'regionCode',
     'minAccessAge',
+    'additionalVerificationMethods',
     'rules',
   ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ConfigRegion({
     @Default('app.bsky.ageassurance.defs#configRegion') String $type,
+    @ConfigRegionPlatformsConverter() List<ConfigRegionPlatforms>? platforms,
 
     /// The ISO 3166-1 alpha-2 country code this configuration applies to.
     required String countryCode,
@@ -43,6 +48,9 @@ abstract class ConfigRegion with _$ConfigRegion {
 
     /// The minimum age (as a whole integer) required to use Bluesky in this region.
     required int minAccessAge,
+    @ConfigRegionAdditionalVerificationMethodsConverter()
+    List<ConfigRegionAdditionalVerificationMethods>?
+    additionalVerificationMethods,
     @UConfigRegionRulesConverter() required List<UConfigRegionRules> rules,
     Map<String, dynamic>? $unknown,
   }) = _ConfigRegion;

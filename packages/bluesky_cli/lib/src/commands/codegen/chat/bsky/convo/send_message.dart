@@ -28,18 +28,27 @@ final class SendMessageCommand extends ProcedureCommand {
   final String name = "send-message";
 
   @override
-  final String description = r"Sends a message to a conversation.";
+  final String description = "Sends a message to a conversation.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-convo send-message [convoId] [message]";
+      "bsky chat-bsky-convo send-message --convoId=<value> --message=<value>";
 
   @override
   String get methodId => "chat.bsky.convo.sendMessage";
 
   @override
   Map<String, dynamic>? get body => {
-        "convoId": argResults!["convoId"],
-        "message": jsonDecode(argResults!["message"]),
-      };
+    "convoId": argResults!["convoId"],
+    "message": _decodeJson("message"),
+  };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

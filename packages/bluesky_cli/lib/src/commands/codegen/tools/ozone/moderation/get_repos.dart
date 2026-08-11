@@ -23,14 +23,23 @@ final class GetReposCommand extends QueryCommand {
   final String name = "get-repos";
 
   @override
-  final String description = r"Get details about some repositories.";
+  final String description = "Get details about some repositories.";
 
   @override
-  final String invocation = "bsky tools-ozone-moderation get-repos [dids]";
+  final String invocation =
+      "bsky tools-ozone-moderation get-repos [--dids=<value>...]";
 
   @override
   String get methodId => "tools.ozone.moderation.getRepos";
 
   @override
-  Map<String, dynamic>? get parameters => {"dids": argResults!["dids"]};
+  Map<String, dynamic>? get parameters => {
+    "dids": _requireNonEmpty("dids", argResults!["dids"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

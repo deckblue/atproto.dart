@@ -24,14 +24,23 @@ final class GetConvosCommand extends QueryCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Gets existing conversations by their IDs, for moderation purposes. Does not require the requester to be a member of the conversations. Unknown IDs are silently omitted from the response.";
+      "Gets existing conversations by their IDs, for moderation purposes. Does not require the requester to be a member of the conversations. Unknown IDs are silently omitted from the response.";
 
   @override
-  final String invocation = "bsky chat-bsky-moderation get-convos [convoIds]";
+  final String invocation =
+      "bsky chat-bsky-moderation get-convos [--convoIds=<value>...]";
 
   @override
   String get methodId => "chat.bsky.moderation.getConvos";
 
   @override
-  Map<String, dynamic>? get parameters => {"convoIds": argResults!["convoIds"]};
+  Map<String, dynamic>? get parameters => {
+    "convoIds": _requireNonEmpty("convoIds", argResults!["convoIds"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

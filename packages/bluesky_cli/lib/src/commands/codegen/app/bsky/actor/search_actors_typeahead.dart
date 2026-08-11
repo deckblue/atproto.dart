@@ -27,19 +27,21 @@ final class SearchActorsTypeaheadCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Find actor suggestions for a prefix search term. Expected use is for auto-completion during text field entry. Does not require auth.";
+      "Find actor suggestions for a prefix search term. Expected use is for auto-completion during text field entry. Does not require auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-actor search-actors-typeahead [term] [q] [limit]";
+      "bsky app-bsky-actor search-actors-typeahead [--term=<value>] [--q=<value>] [--limit=<value>]";
 
   @override
   String get methodId => "app.bsky.actor.searchActorsTypeahead";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["term"] != null) "term": argResults!["term"],
-        if (argResults!["q"] != null) "q": argResults!["q"],
-        "limit": argResults!["limit"],
-      };
+    if (argResults!.wasParsed("term")) "term": argResults!["term"],
+    if (argResults!.wasParsed("q")) "q": argResults!["q"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+  };
 }

@@ -26,18 +26,20 @@ final class GetListMutesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerates mod lists that the requesting account (actor) currently has muted. Requires auth.";
+      "Enumerates mod lists that the requesting account (actor) currently has muted. Requires auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph get-list-mutes [limit] [cursor]";
+      "bsky app-bsky-graph get-list-mutes [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.graph.getListMutes";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

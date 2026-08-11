@@ -72,48 +72,48 @@ extension UConfigRegionRulesExtension on UConfigRegionRules {
       !isConfigRegionRuleIfDeclaredOverAge;
   ConfigRegionRuleIfDeclaredOverAge? get configRegionRuleIfDeclaredOverAge =>
       isConfigRegionRuleIfDeclaredOverAge
-          ? data as ConfigRegionRuleIfDeclaredOverAge
-          : null;
+      ? data as ConfigRegionRuleIfDeclaredOverAge
+      : null;
   bool get isConfigRegionRuleIfDeclaredUnderAge =>
       isA<UConfigRegionRulesConfigRegionRuleIfDeclaredUnderAge>(this);
   bool get isNotConfigRegionRuleIfDeclaredUnderAge =>
       !isConfigRegionRuleIfDeclaredUnderAge;
   ConfigRegionRuleIfDeclaredUnderAge? get configRegionRuleIfDeclaredUnderAge =>
       isConfigRegionRuleIfDeclaredUnderAge
-          ? data as ConfigRegionRuleIfDeclaredUnderAge
-          : null;
+      ? data as ConfigRegionRuleIfDeclaredUnderAge
+      : null;
   bool get isConfigRegionRuleIfAssuredOverAge =>
       isA<UConfigRegionRulesConfigRegionRuleIfAssuredOverAge>(this);
   bool get isNotConfigRegionRuleIfAssuredOverAge =>
       !isConfigRegionRuleIfAssuredOverAge;
   ConfigRegionRuleIfAssuredOverAge? get configRegionRuleIfAssuredOverAge =>
       isConfigRegionRuleIfAssuredOverAge
-          ? data as ConfigRegionRuleIfAssuredOverAge
-          : null;
+      ? data as ConfigRegionRuleIfAssuredOverAge
+      : null;
   bool get isConfigRegionRuleIfAssuredUnderAge =>
       isA<UConfigRegionRulesConfigRegionRuleIfAssuredUnderAge>(this);
   bool get isNotConfigRegionRuleIfAssuredUnderAge =>
       !isConfigRegionRuleIfAssuredUnderAge;
   ConfigRegionRuleIfAssuredUnderAge? get configRegionRuleIfAssuredUnderAge =>
       isConfigRegionRuleIfAssuredUnderAge
-          ? data as ConfigRegionRuleIfAssuredUnderAge
-          : null;
+      ? data as ConfigRegionRuleIfAssuredUnderAge
+      : null;
   bool get isConfigRegionRuleIfAccountNewerThan =>
       isA<UConfigRegionRulesConfigRegionRuleIfAccountNewerThan>(this);
   bool get isNotConfigRegionRuleIfAccountNewerThan =>
       !isConfigRegionRuleIfAccountNewerThan;
   ConfigRegionRuleIfAccountNewerThan? get configRegionRuleIfAccountNewerThan =>
       isConfigRegionRuleIfAccountNewerThan
-          ? data as ConfigRegionRuleIfAccountNewerThan
-          : null;
+      ? data as ConfigRegionRuleIfAccountNewerThan
+      : null;
   bool get isConfigRegionRuleIfAccountOlderThan =>
       isA<UConfigRegionRulesConfigRegionRuleIfAccountOlderThan>(this);
   bool get isNotConfigRegionRuleIfAccountOlderThan =>
       !isConfigRegionRuleIfAccountOlderThan;
   ConfigRegionRuleIfAccountOlderThan? get configRegionRuleIfAccountOlderThan =>
       isConfigRegionRuleIfAccountOlderThan
-          ? data as ConfigRegionRuleIfAccountOlderThan
-          : null;
+      ? data as ConfigRegionRuleIfAccountOlderThan
+      : null;
   bool get isUnknown => isA<UConfigRegionRulesUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
@@ -126,77 +126,72 @@ final class UConfigRegionRulesConverter
 
   @override
   UConfigRegionRules fromJson(Map<String, dynamic> json) {
-    try {
-      if (ConfigRegionRuleDefault.validate(json)) {
-        return UConfigRegionRules.configRegionRuleDefault(
-          data: const ConfigRegionRuleDefaultConverter().fromJson(json),
-        );
-      }
-      if (ConfigRegionRuleIfDeclaredOverAge.validate(json)) {
-        return UConfigRegionRules.configRegionRuleIfDeclaredOverAge(
-          data: const ConfigRegionRuleIfDeclaredOverAgeConverter().fromJson(
-            json,
-          ),
-        );
-      }
-      if (ConfigRegionRuleIfDeclaredUnderAge.validate(json)) {
-        return UConfigRegionRules.configRegionRuleIfDeclaredUnderAge(
-          data: const ConfigRegionRuleIfDeclaredUnderAgeConverter().fromJson(
-            json,
-          ),
-        );
-      }
-      if (ConfigRegionRuleIfAssuredOverAge.validate(json)) {
-        return UConfigRegionRules.configRegionRuleIfAssuredOverAge(
-          data: const ConfigRegionRuleIfAssuredOverAgeConverter().fromJson(
-            json,
-          ),
-        );
-      }
-      if (ConfigRegionRuleIfAssuredUnderAge.validate(json)) {
-        return UConfigRegionRules.configRegionRuleIfAssuredUnderAge(
-          data: const ConfigRegionRuleIfAssuredUnderAgeConverter().fromJson(
-            json,
-          ),
-        );
-      }
-      if (ConfigRegionRuleIfAccountNewerThan.validate(json)) {
-        return UConfigRegionRules.configRegionRuleIfAccountNewerThan(
-          data: const ConfigRegionRuleIfAccountNewerThanConverter().fromJson(
-            json,
-          ),
-        );
-      }
-      if (ConfigRegionRuleIfAccountOlderThan.validate(json)) {
-        return UConfigRegionRules.configRegionRuleIfAccountOlderThan(
-          data: const ConfigRegionRuleIfAccountOlderThanConverter().fromJson(
-            json,
-          ),
-        );
-      }
-
-      return UConfigRegionRules.unknown(data: json);
-    } catch (_) {
-      return UConfigRegionRules.unknown(data: json);
+    if (ConfigRegionRuleDefault.validate(json)) {
+      return UConfigRegionRules.configRegionRuleDefault(
+        data: const ConfigRegionRuleDefaultConverter().fromJson(json),
+      );
     }
+    if (ConfigRegionRuleIfDeclaredOverAge.validate(json)) {
+      return UConfigRegionRules.configRegionRuleIfDeclaredOverAge(
+        data: const ConfigRegionRuleIfDeclaredOverAgeConverter().fromJson(json),
+      );
+    }
+    if (ConfigRegionRuleIfDeclaredUnderAge.validate(json)) {
+      return UConfigRegionRules.configRegionRuleIfDeclaredUnderAge(
+        data: const ConfigRegionRuleIfDeclaredUnderAgeConverter().fromJson(
+          json,
+        ),
+      );
+    }
+    if (ConfigRegionRuleIfAssuredOverAge.validate(json)) {
+      return UConfigRegionRules.configRegionRuleIfAssuredOverAge(
+        data: const ConfigRegionRuleIfAssuredOverAgeConverter().fromJson(json),
+      );
+    }
+    if (ConfigRegionRuleIfAssuredUnderAge.validate(json)) {
+      return UConfigRegionRules.configRegionRuleIfAssuredUnderAge(
+        data: const ConfigRegionRuleIfAssuredUnderAgeConverter().fromJson(json),
+      );
+    }
+    if (ConfigRegionRuleIfAccountNewerThan.validate(json)) {
+      return UConfigRegionRules.configRegionRuleIfAccountNewerThan(
+        data: const ConfigRegionRuleIfAccountNewerThanConverter().fromJson(
+          json,
+        ),
+      );
+    }
+    if (ConfigRegionRuleIfAccountOlderThan.validate(json)) {
+      return UConfigRegionRules.configRegionRuleIfAccountOlderThan(
+        data: const ConfigRegionRuleIfAccountOlderThanConverter().fromJson(
+          json,
+        ),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UConfigRegionRules.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UConfigRegionRules object) => object.when(
-        configRegionRuleDefault: (data) =>
-            const ConfigRegionRuleDefaultConverter().toJson(data),
-        configRegionRuleIfDeclaredOverAge: (data) =>
-            const ConfigRegionRuleIfDeclaredOverAgeConverter().toJson(data),
-        configRegionRuleIfDeclaredUnderAge: (data) =>
-            const ConfigRegionRuleIfDeclaredUnderAgeConverter().toJson(data),
-        configRegionRuleIfAssuredOverAge: (data) =>
-            const ConfigRegionRuleIfAssuredOverAgeConverter().toJson(data),
-        configRegionRuleIfAssuredUnderAge: (data) =>
-            const ConfigRegionRuleIfAssuredUnderAgeConverter().toJson(data),
-        configRegionRuleIfAccountNewerThan: (data) =>
-            const ConfigRegionRuleIfAccountNewerThanConverter().toJson(data),
-        configRegionRuleIfAccountOlderThan: (data) =>
-            const ConfigRegionRuleIfAccountOlderThanConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UConfigRegionRules object) => switch (object) {
+    UConfigRegionRulesConfigRegionRuleDefault(:final data) =>
+      const ConfigRegionRuleDefaultConverter().toJson(data),
+    UConfigRegionRulesConfigRegionRuleIfDeclaredOverAge(:final data) =>
+      const ConfigRegionRuleIfDeclaredOverAgeConverter().toJson(data),
+    UConfigRegionRulesConfigRegionRuleIfDeclaredUnderAge(:final data) =>
+      const ConfigRegionRuleIfDeclaredUnderAgeConverter().toJson(data),
+    UConfigRegionRulesConfigRegionRuleIfAssuredOverAge(:final data) =>
+      const ConfigRegionRuleIfAssuredOverAgeConverter().toJson(data),
+    UConfigRegionRulesConfigRegionRuleIfAssuredUnderAge(:final data) =>
+      const ConfigRegionRuleIfAssuredUnderAgeConverter().toJson(data),
+    UConfigRegionRulesConfigRegionRuleIfAccountNewerThan(:final data) =>
+      const ConfigRegionRuleIfAccountNewerThanConverter().toJson(data),
+    UConfigRegionRulesConfigRegionRuleIfAccountOlderThan(:final data) =>
+      const ConfigRegionRuleIfAccountOlderThanConverter().toJson(data),
+
+    UConfigRegionRulesUnknown(:final data) => data,
+  };
 }

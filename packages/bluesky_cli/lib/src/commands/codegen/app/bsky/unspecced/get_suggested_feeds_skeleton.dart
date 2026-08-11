@@ -30,18 +30,20 @@ final class GetSuggestedFeedsSkeletonCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a skeleton of suggested feeds. Intended to be called and hydrated by app.bsky.unspecced.getSuggestedFeeds";
+      "Get a skeleton of suggested feeds. Intended to be called and hydrated by app.bsky.unspecced.getSuggestedFeeds";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced get-suggested-feeds-skeleton [viewer] [limit]";
+      "bsky app-bsky-unspecced get-suggested-feeds-skeleton [--viewer=<value>] [--limit=<value>]";
 
   @override
   String get methodId => "app.bsky.unspecced.getSuggestedFeedsSkeleton";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
-        "limit": argResults!["limit"],
-      };
+    if (argResults!.wasParsed("viewer")) "viewer": argResults!["viewer"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+  };
 }

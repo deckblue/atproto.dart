@@ -3,11 +3,15 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // Project imports:
+import '../../ir/dart_emitter.dart';
+import '../../ir/dart_ir.dart';
 import '../../utils.dart';
+import '../gen_context.dart';
 import '../rule.dart' as rule;
 import 'lex_type.dart';
+import 'utils.dart';
 
-final class LexKnownValues extends LexType {
+final class LexKnownValues extends GeneratableType {
   @override
   final String lexiconId;
   @override
@@ -29,8 +33,14 @@ final class LexKnownValues extends LexType {
   });
 
   @override
-  String getFilePath() {
-    return rule.getFilePath(lexiconId, defName, state, fieldName: fieldName);
+  String getFilePath(final GenContext ctx) {
+    return rule.getFilePath(
+      ctx,
+      lexiconId,
+      defName,
+      state,
+      fieldName: fieldName,
+    );
   }
 
   @override
@@ -51,38 +61,35 @@ final class LexKnownValues extends LexType {
   }
 
   @override
-  String format() {
-    final elements = values.map((e) {
-      final buffer = StringBuffer();
-      if (e.startsWith('#')) {
-        buffer.writeln("@JsonValue('$lexiconId$e')");
-        buffer.write(
-          "${rule.getLexKnownValuesElementName(e, lexiconId: lexiconId)}('$lexiconId$e'),",
-        );
-      } else {
-        buffer.writeln("@JsonValue('$e')");
-        buffer.write("${rule.getLexKnownValuesElementName(e)}('$e'),");
-      }
-      return buffer.toString();
-    }).join('\n');
+  String format(final GenContext ctx) {
+    final file = DartFile(
+      header: kHeaderHint,
+      imports: const [
+        [
+          DartImport(
+            'package:atproto_core/atproto_core.dart',
+            show: ['Serializable'],
+          ),
+          DartImport('package:atproto_core/internals.dart', show: ['isA']),
+        ],
+        [DartImport('package:freezed_annotation/freezed_annotation.dart')],
+      ],
+      parts: ['${getFileName()}.freezed.dart'],
+      banner: kHeader,
+      decls: [
+        RawDecl(_unionClass()),
+        RawDecl(_extensionBlock()),
+        RawDecl(_converterClass()),
+        RawDecl(_enumBlock()),
+      ],
+    );
 
-    final fileName = getFileName();
+    return emitDartFile(file);
+  }
 
-    final extensions = _getExtensions();
-
-    return '''$kHeaderHint
-
-import 'package:atproto_core/atproto_core.dart' show Serializable;
-import 'package:atproto_core/internals.dart' show isA;
-
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part '$fileName.freezed.dart';
-
-$kHeader
-
-@freezed
-abstract class $name with _\$$name {
+  String _unionClass() =>
+      '''@freezed
+sealed class $name with _\$$name {
   const $name._();
 
   const factory $name.knownValue({
@@ -101,13 +108,15 @@ abstract class $name with _\$$name {
   }
 
   String toJson() => const ${name}Converter().toJson(this);
-}
+}''';
 
-extension ${name}Extension on $name {
-  $extensions
-}
+  String _extensionBlock() =>
+      '''extension ${name}Extension on $name {
+  ${_getExtensions()}
+}''';
 
-final class ${name}Converter extends JsonConverter<$name, String> {
+  String _converterClass() =>
+      '''final class ${name}Converter extends JsonConverter<$name, String> {
   const ${name}Converter();
 
   @override
@@ -125,14 +134,15 @@ final class ${name}Converter extends JsonConverter<$name, String> {
   }
 
   @override
-  String toJson($name object) => object.when(
-        knownValue: (data) => data.value,
-        unknown: (data) => data,
-      );
-}
+  String toJson($name object) => switch (object) {
+        ${name}KnownValue(:final data) => data.value,
+        ${name}Unknown(:final data) => data,
+      };
+}''';
 
-enum Known$name implements Serializable{
-  $elements
+  String _enumBlock() =>
+      '''enum Known$name implements Serializable{
+  ${_getElements()}
   ;
 
   @override
@@ -155,27 +165,43 @@ enum Known$name implements Serializable{
 
     return null;
   }
-}
-''';
+}''';
+
+  String _getElements() {
+    return values
+        .map((e) {
+          final buffer = StringBuffer();
+          if (e.startsWith('#')) {
+            buffer.writeln("@JsonValue('$lexiconId$e')");
+            buffer.write(
+              "${rule.getLexKnownValuesElementName(e, lexiconId: lexiconId)}('$lexiconId$e'),",
+            );
+          } else {
+            buffer.writeln("@JsonValue('$e')");
+            buffer.write("${rule.getLexKnownValuesElementName(e)}('$e'),");
+          }
+          return buffer.toString();
+        })
+        .join('\n');
   }
 
   String _getExtensions() {
     final buffer = StringBuffer();
 
-    buffer.writeln('bool get isKnownValue => isA<${name}KnownValue>(this);');
-    buffer.writeln('bool get isNotKnownValue => !isKnownValue;');
-
-    buffer.writeln(
-      'Known$name? get knownValue => '
-      'isKnownValue ? data as Known$name : null;',
+    writeIsAExtensionGetters(
+      buffer,
+      isName: 'KnownValue',
+      typeName: '${name}KnownValue',
+      castGetter: 'knownValue',
+      castType: 'Known$name',
     );
 
-    buffer.writeln('bool get isUnknown => isA<${name}Unknown>(this);');
-    buffer.writeln('bool get isNotUnknown => !isUnknown;');
-
-    buffer.writeln(
-      'String? get unknown => '
-      'isUnknown ? data as String : null;',
+    writeIsAExtensionGetters(
+      buffer,
+      isName: 'Unknown',
+      typeName: '${name}Unknown',
+      castGetter: 'unknown',
+      castType: 'String',
     );
 
     return buffer.toString();

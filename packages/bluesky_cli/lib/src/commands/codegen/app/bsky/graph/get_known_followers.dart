@@ -27,19 +27,21 @@ final class GetKnownFollowersCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerates accounts which follow a specified account (actor) and are followed by the viewer.";
+      "Enumerates accounts which follow a specified account (actor) and are followed by the viewer.";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph get-known-followers [actor] [limit] [cursor]";
+      "bsky app-bsky-graph get-known-followers --actor=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.graph.getKnownFollowers";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "actor": argResults!["actor"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "actor": argResults!["actor"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

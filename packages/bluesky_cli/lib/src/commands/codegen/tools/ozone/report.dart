@@ -12,6 +12,7 @@ import 'package:args/command_runner.dart';
 
 // Project imports:
 import 'report/assign_moderator.dart';
+import 'report/close_reports.dart';
 import 'report/create_activity.dart';
 import 'report/get_assignments.dart';
 import 'report/get_historical_stats.dart';
@@ -19,6 +20,7 @@ import 'report/get_latest_report.dart';
 import 'report/get_live_stats.dart';
 import 'report/get_report.dart';
 import 'report/list_activities.dart';
+import 'report/query_activities.dart';
 import 'report/query_reports.dart';
 import 'report/reassign_queue.dart';
 import 'report/refresh_stats.dart';
@@ -31,6 +33,7 @@ import 'report/unassign_moderator.dart';
 final class ToolsOzoneReportCommand extends Command<void> {
   ToolsOzoneReportCommand() {
     addSubcommand(AssignModeratorCommand());
+    addSubcommand(CloseReportsCommand());
     addSubcommand(CreateActivityCommand());
     addSubcommand(GetAssignmentsCommand());
     addSubcommand(GetHistoricalStatsCommand());
@@ -38,6 +41,7 @@ final class ToolsOzoneReportCommand extends Command<void> {
     addSubcommand(GetLiveStatsCommand());
     addSubcommand(GetReportCommand());
     addSubcommand(ListActivitiesCommand());
+    addSubcommand(QueryActivitiesCommand());
     addSubcommand(QueryReportsCommand());
     addSubcommand(ReassignQueueCommand());
     addSubcommand(RefreshStatsCommand());

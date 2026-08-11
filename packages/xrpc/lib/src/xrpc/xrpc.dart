@@ -147,23 +147,25 @@ Future<XRPCResponse<T>> query<T>(
   final type.ResponseDataAdaptor? adaptor,
   final type.HeaderBuilder? headerBuilder,
   final type.GetClient? getClient,
+  final http.Client? client,
 }) async {
   final endpoint = util.getUriFactory(protocol).call(
         service ?? defaultService,
         '/xrpc/$methodId',
-        util.convertParameters(util.removeNullValues(parameters) ?? {}),
+        util.toQueryParameters(parameters),
       );
 
   return _buildResponse<T>(
     checkStatus(
-      await (getClient ?? http.get)
-          .call(
-            endpoint,
-            headers: headerBuilder != null
-                ? headerBuilder(headers ?? const {}, endpoint, 'GET')
-                : headers,
-          )
-          .timeout(timeout),
+      await util.executeGet(
+        endpoint,
+        headers: headerBuilder != null
+            ? headerBuilder(headers ?? const {}, endpoint, 'GET')
+            : headers,
+        timeout: timeout,
+        getClient: getClient,
+        client: client,
+      ),
     ),
     to,
     adaptor,
@@ -285,69 +287,169 @@ Future<XRPCResponse<T>> procedure<T>(
   final dynamic body,
   final Duration timeout = const Duration(seconds: 10),
   final type.ResponseDataBuilder<T>? to,
+  final type.ResponseDataAdaptor? adaptor,
   final type.HeaderBuilder? headerBuilder,
   final type.PostClient? postClient,
+  final http.Client? client,
 }) async {
   final endpoint = util.getUriFactory(protocol).call(
         service ?? defaultService,
         '/xrpc/$methodId',
-        util.convertParameters(util.removeNullValues(parameters) ?? {}),
+        util.toQueryParameters(parameters),
       );
 
   return _buildResponse<T>(
     checkStatus(
-      await (postClient ?? http.post)
-          .call(
-            endpoint,
-            headers: headerBuilder != null
-                ? headerBuilder(
-                    _appendContentType(headers, body),
-                    endpoint,
-                    'POST',
-                  )
-                : _appendContentType(headers, body),
-            body: _getProcedureBody(body),
-            encoding: body is Map<String, dynamic> ? utf8 : null,
-          )
-          .timeout(timeout),
+      await util.executePost(
+        endpoint,
+        headers: headerBuilder != null
+            ? headerBuilder(_appendContentType(headers, body), endpoint, 'POST')
+            : _appendContentType(headers, body),
+        body: _getProcedureBody(body),
+        encoding: body == null || body is Uint8List ? null : utf8,
+        timeout: timeout,
+        postClient: postClient,
+        client: client,
+      ),
     ),
     to,
+    adaptor,
   );
 }
 
 /// Subscribes endpoints associated with [methodId] in WebSocket.
+///
+/// ## Error Handling and Stream Lifecycle
+///
+/// - When the WebSocket connection fails or reports an error, the error is
+///   added to [Subscription.stream] and the stream is closed. Listeners
+///   always receive a done event afterwards.
+/// - When the server closes the connection, [Subscription.stream] is
+///   closed and listeners receive a done event.
+/// - When an individual event cannot be converted with [adaptor] or [to],
+///   the conversion error is added to [Subscription.stream] and the
+///   subscription continues with the next event.
+/// - [Subscription.close] cleans up the WebSocket connection, the internal
+///   subscription, and the stream, and always delivers a done event.
+///
+/// ## Protocol
+///
+/// The WebSocket scheme is derived from [protocol]: `wss` for
+/// [Protocol.https] (default) and `ws` for [Protocol.http].
+///
+/// ## Mocking Channel
+///
+/// When testing, pass [channelFactory] to inject a mocked
+/// [WebSocketChannel] instead of establishing a real connection.
+///
+/// Note that the returned [XRPCResponse] is constructed synchronously
+/// before the connection is established; connection failures are reported
+/// through [Subscription.stream] as described above.
 XRPCResponse<Subscription<T>> subscribe<T>(
   final nsid.NSID methodId, {
+  final Protocol protocol = Protocol.https,
   final String? service,
   final Map<String, dynamic>? parameters,
   final type.ResponseDataBuilder<T>? to,
   final type.ResponseDataAdaptor? adaptor,
+  final type.WebSocketChannelFactory? channelFactory,
 }) {
-  final uri = _buildWsUri(methodId, service, util.removeNullValues(parameters));
-  final channel = WebSocketChannel.connect(uri);
+  final uri = _buildWsUri(methodId, service, parameters, protocol);
+  final channel = (channelFactory ?? WebSocketChannel.connect).call(uri);
 
-  final controller = StreamController<T>();
+  //! Connection failures are also delivered through `channel.stream`,
+  //! so just prevent an unhandled async error here.
+  unawaited(channel.ready.then((_) {}, onError: (_) {}));
 
-  channel.stream.listen(
+  //! Assigned synchronously below, before any of the controller callbacks
+  //! (which only fire once a listener interacts with the stream) can run.
+  late final StreamSubscription<dynamic> subscription;
+
+  //! Tears down the underlying channel subscription and socket. Safe to
+  //! call multiple times: cancelling an already-cancelled subscription and
+  //! closing an already-closed sink are both no-ops.
+  Future<void> teardownChannel() async {
+    await subscription.cancel();
+    await Future.sync(channel.sink.close).then((_) {}, onError: (_) {});
+  }
+
+  final controller = StreamController<T>(
+    //! Nothing is pulled from the socket until a consumer actually listens:
+    //! the underlying channel subscription is created paused (see below) and
+    //! only resumed here on the first listen. Without this, `channel.stream`
+    //! would start draining the socket the moment `subscribe()` is called and
+    //! buffer every frame inside this controller while no listener drains it —
+    //! an unbounded firehose OOM / socket-leak path for a consumer that delays
+    //! or never listens. Backpressure (`onPause`) can only engage once a
+    //! listener exists, so deferring the pull to `onListen` is what actually
+    //! bounds the pre-listen buffer.
+    onListen: () => subscription.resume(),
+    //! Propagate backpressure: when the consumer pauses, stop pulling from
+    //! the socket so events are not buffered unboundedly (firehose OOM
+    //! path); resume pulling when the consumer resumes.
+    onPause: () => subscription.pause(),
+    onResume: () => subscription.resume(),
+    //! A consumer that cancels its subscription (without calling
+    //! [Subscription.close]) must not leak the socket: tear it down here.
+    onCancel: teardownChannel,
+  );
+
+  void closeController() {
+    if (!controller.isClosed) {
+      //! Don't await: the future returned by [StreamController.close]
+      //! completes only after a listener has received the done event,
+      //! and would therefore hang if the stream is never listened to.
+      unawaited(controller.close());
+    }
+  }
+
+  //! The subscription is owned by the returned [Subscription] and is
+  //! cancelled by [Subscription.close].
+  // ignore: cancel_subscriptions
+  subscription = channel.stream.listen(
     (event) {
-      final data = adaptor != null ? adaptor.call(event) : event;
+      if (controller.isClosed) return;
 
-      controller.sink.add(to != null ? to.call(data) : data as T);
+      try {
+        final data = adaptor != null ? adaptor.call(event) : event;
+
+        controller.add(to != null ? to.call(data) : data as T);
+      } catch (error, stackTrace) {
+        //! A single malformed event must not kill the subscription:
+        //! report the conversion failure and keep listening.
+        controller.addError(error, stackTrace);
+      }
     },
-    onError: (_) async {
-      await channel.sink.close();
+    onError: (Object error, StackTrace stackTrace) {
+      if (!controller.isClosed) {
+        controller.addError(error, stackTrace);
+      }
+
+      closeController();
+      unawaited(Future.sync(channel.sink.close).then((_) {}, onError: (_) {}));
     },
-    onDone: () async {
-      await channel.sink.close();
+    onDone: () {
+      closeController();
+      unawaited(Future.sync(channel.sink.close).then((_) {}, onError: (_) {}));
     },
   );
 
+  //! Start paused so the socket is not drained before a consumer listens on
+  //! [Subscription.stream]; [StreamController.onListen] resumes it on the
+  //! first listen. This pause is balanced by that single `onListen` resume,
+  //! leaving the normal immediate-listen path unaffected.
+  subscription.pause();
+
   return XRPCResponse<Subscription<T>>(
-    headers: {},
+    headers: const {},
     status: HttpStatus.ok,
     request: XRPCRequest(method: HttpMethod.get, url: uri),
     rateLimit: RateLimit.unlimited(),
-    data: Subscription(channel: channel, controller: controller),
+    data: Subscription(
+      channel: channel,
+      controller: controller,
+      subscription: subscription,
+    ),
   );
 }
 
@@ -355,11 +457,6 @@ http.Response checkStatus(final http.Response response) {
   final statusCode = response.statusCode;
 
   if (statusCode >= 200 && statusCode < 300) {
-    return response;
-  }
-
-  if (statusCode == 409) {
-    // Conflict
     return response;
   }
 
@@ -402,47 +499,71 @@ XRPCResponse<T> _buildResponse<T>(
 
 /// Returns the error response.
 XRPCResponse<XRPCError> _buildErrorResponse(final http.Response response) =>
-    _buildResponse(response, XRPCError.fromJson);
+    XRPCResponse(
+      headers: response.headers,
+      status: HttpStatus.valueOf(response.statusCode),
+      request: XRPCRequest(
+        method: HttpMethod.valueOf(response.request!.method),
+        url: response.request!.url,
+      ),
+      rateLimit: RateLimit.fromHeaders(response.headers),
+      data: _parseErrorBody(response),
+    );
+
+/// Parses the error body of [response].
+///
+/// Falls back to a typed [XRPCError] with the raw body as the message when
+/// the body is not a valid XRPC error object, e.g. an HTML page returned
+/// by a proxy or an empty body.
+XRPCError _parseErrorBody(final http.Response response) {
+  try {
+    final dynamic json = jsonDecode(response.body);
+    if (json is Map<String, dynamic>) {
+      return XRPCError.fromJson(json);
+    }
+  } catch (_) {
+    //! Fall through to the raw-body fallback below.
+  }
+
+  return XRPCError(error: 'UnknownError', message: response.body);
+}
 
 Uri _buildWsUri(
   final nsid.NSID methodId,
   final String? service,
   final Map<String, dynamic>? parameters,
-) {
-  final buffer = StringBuffer()
-    ..write('wss://')
-    ..write(service ?? defaultRelayService)
-    ..write('/xrpc/')
-    ..write(methodId.toString());
-
-  if (parameters != null && parameters.isNotEmpty) {
-    final kvs = <String>[];
-    for (final entry in parameters.entries) {
-      kvs.add('${entry.key}=${entry.value}');
-    }
-
-    buffer.write('?');
-    buffer.write(kvs.join('&'));
-  }
-
-  return Uri.parse(buffer.toString());
-}
+  final Protocol protocol,
+) => util
+    .getUriFactory(protocol)
+    .call(
+      service ?? defaultRelayService,
+      '/xrpc/$methodId',
+      util.toQueryParameters(parameters),
+    )
+    .replace(scheme: protocol == Protocol.https ? 'wss' : 'ws');
 
 Map<String, String> _appendContentType(
   final Map<String, String>? headers,
   final dynamic body,
 ) {
   if (body is Uint8List) {
-    return {'Content-Type': lookupMimeType('', headerBytes: body) ?? '*/*'}
-      ..addAll(headers ?? {});
+    return {
+      //! Fall back to the conventional binary media type when magic-byte
+      //! sniffing cannot determine the content type, rather than `*/*`.
+      'Content-Type':
+          lookupMimeType('', headerBytes: body) ?? 'application/octet-stream',
+    }..addAll(headers ?? {});
   }
 
-  return {'Content-type': 'application/json'}..addAll(headers ?? {});
+  return {'Content-Type': 'application/json; charset=UTF-8'}
+    ..addAll(headers ?? {});
 }
 
 dynamic _getProcedureBody(final dynamic body) {
   if (body == null) return null;
   if (body is Uint8List) return body;
 
-  return jsonEncode(util.removeNullValues(body) ?? {});
+  //! Use the body-specific cleaner so that explicitly empty collections
+  //! (e.g. threadgate `allow: []`) survive; only `null` values are removed.
+  return jsonEncode(util.removeNullValuesFromBody(body) ?? {});
 }

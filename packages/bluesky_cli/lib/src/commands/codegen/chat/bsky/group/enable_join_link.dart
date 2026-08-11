@@ -24,10 +24,11 @@ final class EnableJoinLinkCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Re-enables a previously disabled join link for the group convo.";
+      "Re-enables a previously disabled join link for the group convo.";
 
   @override
-  final String invocation = "bsky chat-bsky-group enable-join-link [convoId]";
+  final String invocation =
+      "bsky chat-bsky-group enable-join-link --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.group.enableJoinLink";

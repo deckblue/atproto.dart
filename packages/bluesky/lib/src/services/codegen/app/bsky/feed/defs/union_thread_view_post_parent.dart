@@ -67,34 +67,38 @@ final class UThreadViewPostParentConverter
 
   @override
   UThreadViewPostParent fromJson(Map<String, dynamic> json) {
-    try {
-      if (ThreadViewPost.validate(json)) {
-        return UThreadViewPostParent.threadViewPost(
-          data: const ThreadViewPostConverter().fromJson(json),
-        );
-      }
-      if (NotFoundPost.validate(json)) {
-        return UThreadViewPostParent.notFoundPost(
-          data: const NotFoundPostConverter().fromJson(json),
-        );
-      }
-      if (BlockedPost.validate(json)) {
-        return UThreadViewPostParent.blockedPost(
-          data: const BlockedPostConverter().fromJson(json),
-        );
-      }
-
-      return UThreadViewPostParent.unknown(data: json);
-    } catch (_) {
-      return UThreadViewPostParent.unknown(data: json);
+    if (ThreadViewPost.validate(json)) {
+      return UThreadViewPostParent.threadViewPost(
+        data: const ThreadViewPostConverter().fromJson(json),
+      );
     }
+    if (NotFoundPost.validate(json)) {
+      return UThreadViewPostParent.notFoundPost(
+        data: const NotFoundPostConverter().fromJson(json),
+      );
+    }
+    if (BlockedPost.validate(json)) {
+      return UThreadViewPostParent.blockedPost(
+        data: const BlockedPostConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UThreadViewPostParent.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UThreadViewPostParent object) => object.when(
-        threadViewPost: (data) => const ThreadViewPostConverter().toJson(data),
-        notFoundPost: (data) => const NotFoundPostConverter().toJson(data),
-        blockedPost: (data) => const BlockedPostConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UThreadViewPostParent object) => switch (object) {
+    UThreadViewPostParentThreadViewPost(:final data) =>
+      const ThreadViewPostConverter().toJson(data),
+    UThreadViewPostParentNotFoundPost(:final data) =>
+      const NotFoundPostConverter().toJson(data),
+    UThreadViewPostParentBlockedPost(:final data) =>
+      const BlockedPostConverter().toJson(data),
+
+    UThreadViewPostParentUnknown(:final data) => data,
+  };
 }

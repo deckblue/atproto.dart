@@ -26,18 +26,18 @@ final class EnableAccountInvitesCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Re-enable an account's ability to receive invite codes.";
+      "Re-enable an account's ability to receive invite codes.";
 
   @override
   final String invocation =
-      "bsky com-atproto-admin enable-account-invites [account] [note]";
+      "bsky com-atproto-admin enable-account-invites --account=<value> [--note=<value>]";
 
   @override
   String get methodId => "com.atproto.admin.enableAccountInvites";
 
   @override
   Map<String, dynamic>? get body => {
-        "account": argResults!["account"],
-        if (argResults!["note"] != null) "note": argResults!["note"],
-      };
+    "account": argResults!["account"],
+    if (argResults!.wasParsed("note")) "note": argResults!["note"],
+  };
 }

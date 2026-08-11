@@ -25,18 +25,18 @@ final class GetRecordCommand extends QueryCommand {
   final String name = "get-record";
 
   @override
-  final String description = r"Get details about a record.";
+  final String description = "Get details about a record.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation get-record [uri] [cid]";
+      "bsky tools-ozone-moderation get-record --uri=<value> [--cid=<value>]";
 
   @override
   String get methodId => "tools.ozone.moderation.getRecord";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "uri": argResults!["uri"],
-        if (argResults!["cid"] != null) "cid": argResults!["cid"],
-      };
+    "uri": argResults!["uri"],
+    if (argResults!.wasParsed("cid")) "cid": argResults!["cid"],
+  };
 }

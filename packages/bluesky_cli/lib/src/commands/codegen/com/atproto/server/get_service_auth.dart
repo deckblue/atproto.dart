@@ -39,19 +39,22 @@ final class GetServiceAuthCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a signed token on behalf of the requesting DID for the requested service.";
+      "Get a signed token on behalf of the requesting DID for the requested service.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server get-service-auth [aud] [exp] [lxm]";
+      "bsky com-atproto-server get-service-auth --aud=<value> [--exp=<value>] [--lxm=<value>]";
 
   @override
   String get methodId => "com.atproto.server.getServiceAuth";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "aud": argResults!["aud"],
-        if (argResults!["exp"] != null) "exp": argResults!["exp"],
-        if (argResults!["lxm"] != null) "lxm": argResults!["lxm"],
-      };
+    "aud": argResults!["aud"],
+    if (argResults!.wasParsed("exp"))
+      "exp":
+          int.tryParse(argResults!["exp"]) ??
+          usageException('Invalid integer value for option "exp".'),
+    if (argResults!.wasParsed("lxm")) "lxm": argResults!["lxm"],
+  };
 }

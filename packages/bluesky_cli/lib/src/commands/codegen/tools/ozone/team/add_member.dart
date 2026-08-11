@@ -26,10 +26,11 @@ final class AddMemberCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Add a member to the ozone team. Requires admin role.";
+      "Add a member to the ozone team. Requires admin role.";
 
   @override
-  final String invocation = "bsky tools-ozone-team add-member [did] [role]";
+  final String invocation =
+      "bsky tools-ozone-team add-member --did=<value> --role=<value>";
 
   @override
   String get methodId => "tools.ozone.team.addMember";

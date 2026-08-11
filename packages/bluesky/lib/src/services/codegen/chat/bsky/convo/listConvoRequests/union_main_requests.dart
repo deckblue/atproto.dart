@@ -64,30 +64,32 @@ final class UConvoListConvoRequestsRequestsConverter
 
   @override
   UConvoListConvoRequestsRequests fromJson(Map<String, dynamic> json) {
-    try {
-      if (ConvoView.validate(json)) {
-        return UConvoListConvoRequestsRequests.convoView(
-          data: const ConvoViewConverter().fromJson(json),
-        );
-      }
-      if (JoinRequestConvoView.validate(json)) {
-        return UConvoListConvoRequestsRequests.joinRequestConvoView(
-          data: const JoinRequestConvoViewConverter().fromJson(json),
-        );
-      }
-
-      return UConvoListConvoRequestsRequests.unknown(data: json);
-    } catch (_) {
-      return UConvoListConvoRequestsRequests.unknown(data: json);
+    if (ConvoView.validate(json)) {
+      return UConvoListConvoRequestsRequests.convoView(
+        data: const ConvoViewConverter().fromJson(json),
+      );
     }
+    if (JoinRequestConvoView.validate(json)) {
+      return UConvoListConvoRequestsRequests.joinRequestConvoView(
+        data: const JoinRequestConvoViewConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UConvoListConvoRequestsRequests.unknown(data: json);
   }
 
   @override
   Map<String, dynamic> toJson(UConvoListConvoRequestsRequests object) =>
-      object.when(
-        convoView: (data) => const ConvoViewConverter().toJson(data),
-        joinRequestConvoView: (data) =>
-            const JoinRequestConvoViewConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UConvoListConvoRequestsRequestsConvoView(:final data) =>
+          const ConvoViewConverter().toJson(data),
+        UConvoListConvoRequestsRequestsJoinRequestConvoView(:final data) =>
+          const JoinRequestConvoViewConverter().toJson(data),
+
+        UConvoListConvoRequestsRequestsUnknown(:final data) => data,
+      };
 }

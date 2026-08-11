@@ -153,81 +153,104 @@ final class QueryStatusesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"View moderation statuses of subjects (record or repo).";
+      "View moderation statuses of subjects (record or repo).";
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation query-statuses [queueCount] [queueIndex] [queueSeed] [includeAllUserRecords] [subject] [comment] [reportedAfter] [reportedBefore] [reviewedAfter] [hostingDeletedAfter] [hostingDeletedBefore] [hostingUpdatedAfter] [hostingUpdatedBefore] [hostingStatuses] [reviewedBefore] [includeMuted] [onlyMuted] [reviewState] [ignoreSubjects] [lastReviewedBy] [sortField] [sortDirection] [takendown] [appealed] [limit] [tags] [excludeTags] [cursor] [collections] [subjectType] [minAccountSuspendCount] [minReportedRecordsCount] [minTakendownRecordsCount] [minPriorityScore] [minStrikeCount] [ageAssuranceState]";
+      "bsky tools-ozone-moderation query-statuses [--queueCount=<value>] [--queueIndex=<value>] [--queueSeed=<value>] [--includeAllUserRecords] [--subject=<value>] [--comment=<value>] [--reportedAfter=<value>] [--reportedBefore=<value>] [--reviewedAfter=<value>] [--hostingDeletedAfter=<value>] [--hostingDeletedBefore=<value>] [--hostingUpdatedAfter=<value>] [--hostingUpdatedBefore=<value>] [--hostingStatuses=<value>...] [--reviewedBefore=<value>] [--includeMuted] [--onlyMuted] [--reviewState=<value>] [--ignoreSubjects=<value>...] [--lastReviewedBy=<value>] [--sortField=<value>] [--sortDirection=<value>] [--takendown] [--appealed] [--limit=<value>] [--tags=<value>...] [--excludeTags=<value>...] [--cursor=<value>] [--collections=<value>...] [--subjectType=<value>] [--minAccountSuspendCount=<value>] [--minReportedRecordsCount=<value>] [--minTakendownRecordsCount=<value>] [--minPriorityScore=<value>] [--minStrikeCount=<value>] [--ageAssuranceState=<value>]";
 
   @override
   String get methodId => "tools.ozone.moderation.queryStatuses";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["queueCount"] != null)
-          "queueCount": argResults!["queueCount"],
-        if (argResults!["queueIndex"] != null)
-          "queueIndex": argResults!["queueIndex"],
-        if (argResults!["queueSeed"] != null)
-          "queueSeed": argResults!["queueSeed"],
-        if (argResults!["includeAllUserRecords"] != null)
-          "includeAllUserRecords": argResults!["includeAllUserRecords"],
-        if (argResults!["subject"] != null) "subject": argResults!["subject"],
-        if (argResults!["comment"] != null) "comment": argResults!["comment"],
-        if (argResults!["reportedAfter"] != null)
-          "reportedAfter": argResults!["reportedAfter"],
-        if (argResults!["reportedBefore"] != null)
-          "reportedBefore": argResults!["reportedBefore"],
-        if (argResults!["reviewedAfter"] != null)
-          "reviewedAfter": argResults!["reviewedAfter"],
-        if (argResults!["hostingDeletedAfter"] != null)
-          "hostingDeletedAfter": argResults!["hostingDeletedAfter"],
-        if (argResults!["hostingDeletedBefore"] != null)
-          "hostingDeletedBefore": argResults!["hostingDeletedBefore"],
-        if (argResults!["hostingUpdatedAfter"] != null)
-          "hostingUpdatedAfter": argResults!["hostingUpdatedAfter"],
-        if (argResults!["hostingUpdatedBefore"] != null)
-          "hostingUpdatedBefore": argResults!["hostingUpdatedBefore"],
-        if (argResults!["hostingStatuses"] != null)
-          "hostingStatuses": argResults!["hostingStatuses"],
-        if (argResults!["reviewedBefore"] != null)
-          "reviewedBefore": argResults!["reviewedBefore"],
-        if (argResults!["includeMuted"] != null)
-          "includeMuted": argResults!["includeMuted"],
-        if (argResults!["onlyMuted"] != null)
-          "onlyMuted": argResults!["onlyMuted"],
-        if (argResults!["reviewState"] != null)
-          "reviewState": argResults!["reviewState"],
-        if (argResults!["ignoreSubjects"] != null)
-          "ignoreSubjects": argResults!["ignoreSubjects"],
-        if (argResults!["lastReviewedBy"] != null)
-          "lastReviewedBy": argResults!["lastReviewedBy"],
-        "sortField": argResults!["sortField"],
-        "sortDirection": argResults!["sortDirection"],
-        if (argResults!["takendown"] != null)
-          "takendown": argResults!["takendown"],
-        if (argResults!["appealed"] != null)
-          "appealed": argResults!["appealed"],
-        "limit": argResults!["limit"],
-        if (argResults!["tags"] != null) "tags": argResults!["tags"],
-        if (argResults!["excludeTags"] != null)
-          "excludeTags": argResults!["excludeTags"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        if (argResults!["collections"] != null)
-          "collections": argResults!["collections"],
-        if (argResults!["subjectType"] != null)
-          "subjectType": argResults!["subjectType"],
-        if (argResults!["minAccountSuspendCount"] != null)
-          "minAccountSuspendCount": argResults!["minAccountSuspendCount"],
-        if (argResults!["minReportedRecordsCount"] != null)
-          "minReportedRecordsCount": argResults!["minReportedRecordsCount"],
-        if (argResults!["minTakendownRecordsCount"] != null)
-          "minTakendownRecordsCount": argResults!["minTakendownRecordsCount"],
-        if (argResults!["minPriorityScore"] != null)
-          "minPriorityScore": argResults!["minPriorityScore"],
-        if (argResults!["minStrikeCount"] != null)
-          "minStrikeCount": argResults!["minStrikeCount"],
-        if (argResults!["ageAssuranceState"] != null)
-          "ageAssuranceState": argResults!["ageAssuranceState"],
-      };
+    if (argResults!.wasParsed("queueCount"))
+      "queueCount":
+          int.tryParse(argResults!["queueCount"]) ??
+          usageException('Invalid integer value for option "queueCount".'),
+    if (argResults!.wasParsed("queueIndex"))
+      "queueIndex":
+          int.tryParse(argResults!["queueIndex"]) ??
+          usageException('Invalid integer value for option "queueIndex".'),
+    if (argResults!.wasParsed("queueSeed"))
+      "queueSeed": argResults!["queueSeed"],
+    if (argResults!.wasParsed("includeAllUserRecords"))
+      "includeAllUserRecords": argResults!["includeAllUserRecords"],
+    if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
+    if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+    if (argResults!.wasParsed("reportedAfter"))
+      "reportedAfter": argResults!["reportedAfter"],
+    if (argResults!.wasParsed("reportedBefore"))
+      "reportedBefore": argResults!["reportedBefore"],
+    if (argResults!.wasParsed("reviewedAfter"))
+      "reviewedAfter": argResults!["reviewedAfter"],
+    if (argResults!.wasParsed("hostingDeletedAfter"))
+      "hostingDeletedAfter": argResults!["hostingDeletedAfter"],
+    if (argResults!.wasParsed("hostingDeletedBefore"))
+      "hostingDeletedBefore": argResults!["hostingDeletedBefore"],
+    if (argResults!.wasParsed("hostingUpdatedAfter"))
+      "hostingUpdatedAfter": argResults!["hostingUpdatedAfter"],
+    if (argResults!.wasParsed("hostingUpdatedBefore"))
+      "hostingUpdatedBefore": argResults!["hostingUpdatedBefore"],
+    if (argResults!.wasParsed("hostingStatuses"))
+      "hostingStatuses": argResults!["hostingStatuses"],
+    if (argResults!.wasParsed("reviewedBefore"))
+      "reviewedBefore": argResults!["reviewedBefore"],
+    if (argResults!.wasParsed("includeMuted"))
+      "includeMuted": argResults!["includeMuted"],
+    if (argResults!.wasParsed("onlyMuted"))
+      "onlyMuted": argResults!["onlyMuted"],
+    if (argResults!.wasParsed("reviewState"))
+      "reviewState": argResults!["reviewState"],
+    if (argResults!.wasParsed("ignoreSubjects"))
+      "ignoreSubjects": argResults!["ignoreSubjects"],
+    if (argResults!.wasParsed("lastReviewedBy"))
+      "lastReviewedBy": argResults!["lastReviewedBy"],
+    "sortField": argResults!["sortField"],
+    "sortDirection": argResults!["sortDirection"],
+    if (argResults!.wasParsed("takendown"))
+      "takendown": argResults!["takendown"],
+    if (argResults!.wasParsed("appealed")) "appealed": argResults!["appealed"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("tags")) "tags": argResults!["tags"],
+    if (argResults!.wasParsed("excludeTags"))
+      "excludeTags": argResults!["excludeTags"],
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+    if (argResults!.wasParsed("collections"))
+      "collections": argResults!["collections"],
+    if (argResults!.wasParsed("subjectType"))
+      "subjectType": argResults!["subjectType"],
+    if (argResults!.wasParsed("minAccountSuspendCount"))
+      "minAccountSuspendCount":
+          int.tryParse(argResults!["minAccountSuspendCount"]) ??
+          usageException(
+            'Invalid integer value for option "minAccountSuspendCount".',
+          ),
+    if (argResults!.wasParsed("minReportedRecordsCount"))
+      "minReportedRecordsCount":
+          int.tryParse(argResults!["minReportedRecordsCount"]) ??
+          usageException(
+            'Invalid integer value for option "minReportedRecordsCount".',
+          ),
+    if (argResults!.wasParsed("minTakendownRecordsCount"))
+      "minTakendownRecordsCount":
+          int.tryParse(argResults!["minTakendownRecordsCount"]) ??
+          usageException(
+            'Invalid integer value for option "minTakendownRecordsCount".',
+          ),
+    if (argResults!.wasParsed("minPriorityScore"))
+      "minPriorityScore":
+          int.tryParse(argResults!["minPriorityScore"]) ??
+          usageException(
+            'Invalid integer value for option "minPriorityScore".',
+          ),
+    if (argResults!.wasParsed("minStrikeCount"))
+      "minStrikeCount":
+          int.tryParse(argResults!["minStrikeCount"]) ??
+          usageException('Invalid integer value for option "minStrikeCount".'),
+    if (argResults!.wasParsed("ageAssuranceState"))
+      "ageAssuranceState": argResults!["ageAssuranceState"],
+  };
 }

@@ -40,20 +40,20 @@ final class CheckHandleAvailabilityCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Checks whether the provided handle is available. If the handle is not available, available suggestions will be returned. Optional inputs will be used to generate suggestions.";
+      "Checks whether the provided handle is available. If the handle is not available, available suggestions will be returned. Optional inputs will be used to generate suggestions.";
 
   @override
   final String invocation =
-      "bsky com-atproto-temp check-handle-availability [handle] [email] [birthDate]";
+      "bsky com-atproto-temp check-handle-availability --handle=<value> [--email=<value>] [--birthDate=<value>]";
 
   @override
   String get methodId => "com.atproto.temp.checkHandleAvailability";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "handle": argResults!["handle"],
-        if (argResults!["email"] != null) "email": argResults!["email"],
-        if (argResults!["birthDate"] != null)
-          "birthDate": argResults!["birthDate"],
-      };
+    "handle": argResults!["handle"],
+    if (argResults!.wasParsed("email")) "email": argResults!["email"],
+    if (argResults!.wasParsed("birthDate"))
+      "birthDate": argResults!["birthDate"],
+  };
 }

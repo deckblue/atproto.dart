@@ -8,6 +8,8 @@ import 'package:atproto_core/atproto_oauth.dart' as oauth;
 
 // Project imports:
 import '../com_atproto_services.dart';
+import 'services/com/atproto/sync_service.dart';
+import 'services/session.dart' show refreshSession;
 
 /// Provides `com.atproto.*` services.
 sealed class ATProto {
@@ -19,49 +21,126 @@ sealed class ATProto {
     final String? service,
     final String? relayService,
     final Duration? timeout,
-    final core.RetryConfig? retryConfig,
+    final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) =>
-      _ATProto(
-        core.ServiceContext(
-          headers: headers,
+  }) => _ATProto(
+    core.ServiceContext(
+      headers: headers,
+      protocol: protocol,
+      service: service,
+      relayService: relayService,
+      session: session,
+      timeout: timeout,
+      retryConfig: retryConfig,
+      getClient: getClient,
+      postClient: postClient,
+      // Automatically refresh an expired access token using the refresh token
+      // of the current session. The refreshed session is held by the
+      // `ServiceContext`, so `atproto.session` reflects the new credentials.
+      //
+      // The refreshSession response omits the email fields (`email`,
+      // `emailConfirmed`, `emailAuthFactor`), so the refreshed session is
+      // merged OVER the previous one: the rotated/server-owned fields
+      // (accessJwt/refreshJwt/didDoc/handle/active/status) are updated while
+      // the email fields are carried forward from `current`.
+      onRefreshSession: (current) async {
+        final refreshed = (await refreshSession(
+          refreshJwt: current.refreshJwt,
           protocol: protocol,
-          service: service,
-          relayService: relayService,
-          session: session,
-          timeout: timeout,
+          service: service ?? current.atprotoPdsEndpoint,
           retryConfig: retryConfig,
-          getClient: getClient,
-          postClient: postClient,
-        ),
-      );
+          client: postClient,
+        )).data;
 
-  /// Returns the new instance of [ATProto] based on OAuth [session].
-  factory ATProto.fromOAuthSession(
-    final oauth.OAuthSession session, {
+        return current.copyWith(
+          accessJwt: refreshed.accessJwt,
+          refreshJwt: refreshed.refreshJwt,
+          didDoc: refreshed.didDoc,
+          handle: refreshed.handle,
+          active: refreshed.active,
+          status: refreshed.status,
+        );
+      },
+    ),
+  );
+
+  /// Returns a new [ATProto] backed by an OAuth [manager], which owns DPoP
+  /// header building and transparent token refresh.
+  ///
+  /// The [oauth.OAuthSessionManager] is what gets shared on this path: it
+  /// holds the session, the single in-flight refresh, and its own
+  /// `onSessionUpdated`, none of which live on the context. So passing one
+  /// manager to several clients gives them one session and one refresh even
+  /// though each keeps a context of its own. Build the manager once and pass
+  /// it around; [ATProto.fromOAuthSession] builds a new one on every call and
+  /// does not share.
+  factory ATProto.fromOAuth(
+    final oauth.OAuthSessionManager manager, {
     final Map<String, String>? headers,
     final core.Protocol? protocol,
     final String? service,
     final String? relayService,
     final Duration? timeout,
-    final core.RetryConfig? retryConfig,
+    final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) =>
-      _ATProto(
-        core.ServiceContext(
-          headers: headers,
-          protocol: protocol,
-          service: service,
-          relayService: relayService,
-          oAuthSession: session,
-          timeout: timeout,
-          retryConfig: retryConfig,
-          getClient: getClient,
-          postClient: postClient,
-        ),
-      );
+  }) => _ATProto(
+    core.ServiceContext(
+      headers: headers,
+      protocol: protocol,
+      service: service,
+      relayService: relayService,
+      oAuthSessionManager: manager,
+      timeout: timeout,
+      retryConfig: retryConfig,
+      getClient: getClient,
+      postClient: postClient,
+    ),
+  );
+
+  /// Returns the new instance of [ATProto] based on OAuth [session].
+  ///
+  /// Pass [oauthClient] to enable transparent token refresh; without it the
+  /// session is used as-is and cannot be refreshed.
+  ///
+  /// This builds a fresh [oauth.OAuthSessionManager] on every call, so calling
+  /// it twice for one account does not give you two views of a shared session
+  /// — and what it gives you instead is worse than two independent clients.
+  /// Each manager holds its own copy of [session], and a rotating refresh
+  /// token is only honoured once: whichever manager refreshes first spends it,
+  /// and the other then spends a wasted token request discovering that. It
+  /// recovers — the rejected refresh falls back to whatever the shared
+  /// [oauth.OAuthClient]'s session store now holds — but only because both
+  /// managers happen to read the same store, and each still keeps its own
+  /// in-memory copy in the meantime. Build the manager yourself and pass it
+  /// to [ATProto.fromOAuth] when more than one client shares an account.
+  factory ATProto.fromOAuthSession(
+    final oauth.OAuthSession session, {
+    final oauth.OAuthClient? oauthClient,
+    final Map<String, String>? headers,
+    final core.Protocol? protocol,
+    final String? service,
+    final String? relayService,
+    final Duration? timeout,
+    final core.RetryStrategy? retryConfig,
+    final core.GetClient? getClient,
+    final core.PostClient? postClient,
+  }) => ATProto.fromOAuth(
+    oauth.OAuthSessionManager.fromSession(
+      session,
+      client: oauthClient,
+      timeout: timeout,
+    ),
+    headers: headers,
+    protocol: protocol,
+    service: service,
+    relayService: relayService,
+    timeout: timeout,
+    retryConfig: retryConfig,
+    getClient: getClient,
+    postClient: postClient,
+  );
 
   /// Returns the new instance of [ATProto] as anonymous.
   factory ATProto.anonymous({
@@ -70,22 +149,21 @@ sealed class ATProto {
     final String? service,
     final String? relayService,
     final Duration? timeout,
-    final core.RetryConfig? retryConfig,
+    final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) =>
-      _ATProto(
-        core.ServiceContext(
-          headers: headers,
-          protocol: protocol,
-          service: service,
-          relayService: relayService,
-          timeout: timeout,
-          retryConfig: retryConfig,
-          getClient: getClient,
-          postClient: postClient,
-        ),
-      );
+  }) => _ATProto(
+    core.ServiceContext(
+      headers: headers,
+      protocol: protocol,
+      service: service,
+      relayService: relayService,
+      timeout: timeout,
+      retryConfig: retryConfig,
+      getClient: getClient,
+      postClient: postClient,
+    ),
+  );
 
   /// Returns the global headers without auth header.
   Map<String, String> get headers;
@@ -96,11 +174,37 @@ sealed class ATProto {
   /// [ATProto.fromSession], otherwise null.
   core.Session? get session;
 
-  /// Returns the current OAuth session.
+  /// Emits the refreshed session every time an expired access token is
+  /// renewed, so the owner of the credentials can re-persist them.
   ///
-  /// Set only if an instance of this object was created in
+  /// [ATProto.fromSession] refreshes automatically, and [session] then holds
+  /// the new credentials — but nothing otherwise tells the caller to read it
+  /// back. Because refresh tokens are single-use, persisting the session
+  /// originally passed in would store a spent refresh token, and the next run
+  /// would restore a session that can no longer be refreshed.
+  ///
+  /// ```dart
+  /// atproto.onSessionUpdated.listen(store.save);
+  /// ```
+  ///
+  /// Silent on OAuth-backed instances; use
+  /// `oAuthSessionManager.onSessionUpdated` for those.
+  Stream<core.Session> get onSessionUpdated;
+
+  /// Returns the current OAuth session manager.
+  ///
+  /// Set only when this instance was created via [ATProto.fromOAuth] or
   /// [ATProto.fromOAuthSession], otherwise null.
-  oauth.OAuthSession? get oAuthSession;
+  oauth.OAuthSessionManager? get oAuthSessionManager;
+
+  /// Returns the DID of the authenticated actor, regardless of how this
+  /// instance was authenticated. Null when this instance is anonymous.
+  ///
+  /// [session] is set only for [ATProto.fromSession] and [oAuthSessionManager]
+  /// only for [ATProto.fromOAuth] / [ATProto.fromOAuthSession], so answering
+  /// "which actor is this client authenticated as?" through them means
+  /// branching on the auth kind. This getter answers it for both.
+  String? get actorDid;
 
   /// Returns the current service.
   /// Defaults to `bsky.social`.
@@ -109,6 +213,16 @@ sealed class ATProto {
   /// Returns the current replay service.
   /// Defaults to `bsky.network`.
   String get relayService;
+
+  /// Returns the context backing every service on this instance.
+  ///
+  /// Exposed so a wrapping client — `bluesky` in particular — can drive its
+  /// own services from this same context instead of building a second one.
+  /// That matters for [ATProto.fromSession]: the context owns the current
+  /// session and the `refreshSession` call that rotates it, and refresh
+  /// tokens are single-use. Two contexts would each hold their own copy of
+  /// the session, so whichever refreshed second would present a spent token.
+  core.ServiceContext get ctx;
 
   /// Returns the admin service.
   /// This service represents `com.atproto.admin.*`.
@@ -132,7 +246,7 @@ sealed class ATProto {
 
   /// Returns the sync service.
   /// This service represents `com.atproto.sync.*`.
-  SyncService get sync;
+  SyncServiceImpl get sync;
 
   /// Returns the labels service.
   /// This service represents `com.atproto.label.*`.
@@ -192,16 +306,16 @@ sealed class ATProto {
 
 final class _ATProto implements ATProto {
   _ATProto(final core.ServiceContext ctx)
-      : admin = AdminService(ctx),
-        server = ServerService(ctx),
-        identity = IdentityService(ctx),
-        repo = RepoService(ctx),
-        moderation = ModerationService(ctx),
-        sync = SyncService(ctx),
-        label = LabelService(ctx),
-        lexicon = LexiconService(ctx),
-        temp = TempService(ctx),
-        _ctx = ctx;
+    : admin = AdminService(ctx),
+      server = ServerService(ctx),
+      identity = IdentityService(ctx),
+      repo = RepoService(ctx),
+      moderation = ModerationService(ctx),
+      sync = SyncServiceImpl(ctx),
+      label = LabelService(ctx),
+      lexicon = LexiconService(ctx),
+      temp = TempService(ctx),
+      _ctx = ctx;
 
   @override
   Map<String, String> get headers => _ctx.headers;
@@ -210,7 +324,14 @@ final class _ATProto implements ATProto {
   core.Session? get session => _ctx.session;
 
   @override
-  oauth.OAuthSession? get oAuthSession => _ctx.oAuthSession;
+  Stream<core.Session> get onSessionUpdated => _ctx.onSessionUpdated;
+
+  @override
+  oauth.OAuthSessionManager? get oAuthSessionManager =>
+      _ctx.oAuthSessionManager;
+
+  @override
+  String? get actorDid => _ctx.actorDid;
 
   @override
   String get service => _ctx.service;
@@ -234,7 +355,7 @@ final class _ATProto implements ATProto {
   final ModerationService moderation;
 
   @override
-  final SyncService sync;
+  final SyncServiceImpl sync;
 
   @override
   final LabelService label;
@@ -248,6 +369,9 @@ final class _ATProto implements ATProto {
   final core.ServiceContext _ctx;
 
   @override
+  core.ServiceContext get ctx => _ctx;
+
+  @override
   Future<core.XRPCResponse<T>> get<T>(
     final core.NSID methodId, {
     final String? service,
@@ -255,15 +379,14 @@ final class _ATProto implements ATProto {
     final Map<String, dynamic>? parameters,
     final core.ResponseDataBuilder<T>? to,
     final core.ResponseDataAdaptor? adaptor,
-  }) async =>
-      await _ctx.get(
-        methodId,
-        service: service,
-        headers: headers,
-        parameters: parameters,
-        to: to,
-        adaptor: adaptor,
-      );
+  }) async => await _ctx.get(
+    methodId,
+    service: service,
+    headers: headers,
+    parameters: parameters,
+    to: to,
+    adaptor: adaptor,
+  );
 
   @override
   Future<core.XRPCResponse<T>> post<T>(
@@ -273,13 +396,12 @@ final class _ATProto implements ATProto {
     final Map<String, dynamic>? parameters,
     final dynamic body,
     final core.ResponseDataBuilder<T>? to,
-  }) async =>
-      await _ctx.post(
-        methodId,
-        service: service,
-        headers: headers,
-        parameters: parameters,
-        body: body,
-        to: to,
-      );
+  }) async => await _ctx.post(
+    methodId,
+    service: service,
+    headers: headers,
+    parameters: parameters,
+    body: body,
+    to: to,
+  );
 }

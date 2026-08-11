@@ -40,8 +40,8 @@ final class VerificationCommand extends Command<void> {
       "Record declaring a verification relationship between two accounts. Verifications are only considered valid by an app if issued by an account the app considers trusted.";
 }
 
-final class _CreateVerificationCommand extends CreateRecordCommand {
-  _CreateVerificationCommand() {
+mixin _VerificationCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
     argParser
       ..addOption(
         "subject",
@@ -64,8 +64,15 @@ final class _CreateVerificationCommand extends CreateRecordCommand {
         "createdAt",
         help: r"Date of when the verification was created.",
         mandatory: true,
-      )
-      ..addOption("rkey");
+      );
+  }
+}
+
+final class _CreateVerificationCommand extends CreateRecordCommand
+    with _VerificationCommandRecordArgs {
+  _CreateVerificationCommand() {
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"Specific record key to use.");
   }
 
   @override
@@ -77,49 +84,29 @@ final class _CreateVerificationCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph verification create [subject] [handle] [displayName] [createdAt] [rkey]";
+      "bsky app-bsky-graph verification create --subject=<value> --handle=<value> --displayName=<value> --createdAt=<value> [--rkey=<value>]";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.verification";
 
   @override
   Map<String, dynamic> get record => {
-        "subject": argResults!["subject"],
-        "handle": argResults!["handle"],
-        "displayName": argResults!["displayName"],
-        "createdAt": argResults!["createdAt"],
-      };
+    r"$type": "app.bsky.graph.verification",
+    "subject": argResults!["subject"],
+    "handle": argResults!["handle"],
+    "displayName": argResults!["displayName"],
+    "createdAt": argResults!["createdAt"],
+  };
 }
 
-final class _PutVerificationCommand extends PutRecordCommand {
+final class _PutVerificationCommand extends PutRecordCommand
+    with _VerificationCommandRecordArgs {
   _PutVerificationCommand() {
-    argParser
-      ..addOption(
-        "subject",
-        help: r"DID of the subject the verification applies to.",
-        mandatory: true,
-      )
-      ..addOption(
-        "handle",
-        help:
-            r"Handle of the subject the verification applies to at the moment of verifying, which might not be the same at the time of viewing. The verification is only valid if the current handle matches the one at the time of verifying.",
-        mandatory: true,
-      )
-      ..addOption(
-        "displayName",
-        help:
-            r"Display name of the subject the verification applies to at the moment of verifying, which might not be the same at the time of viewing. The verification is only valid if the current displayName matches the one at the time of verifying.",
-        mandatory: true,
-      )
-      ..addOption(
-        "createdAt",
-        help: r"Date of when the verification was created.",
-        mandatory: true,
-      )
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -131,26 +118,27 @@ final class _PutVerificationCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph verification put [subject] [handle] [displayName] [createdAt] [rkey]";
+      "bsky app-bsky-graph verification put --subject=<value> --handle=<value> --displayName=<value> --createdAt=<value> --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.verification";
 
   @override
   Map<String, dynamic> get record => {
-        "subject": argResults!["subject"],
-        "handle": argResults!["handle"],
-        "displayName": argResults!["displayName"],
-        "createdAt": argResults!["createdAt"],
-      };
+    r"$type": "app.bsky.graph.verification",
+    "subject": argResults!["subject"],
+    "handle": argResults!["handle"],
+    "displayName": argResults!["displayName"],
+    "createdAt": argResults!["createdAt"],
+  };
 }
 
 final class _DeleteVerificationCommand extends DeleteRecordCommand {
   _DeleteVerificationCommand() {
-    argParser..addOption("rkey", mandatory: true);
+    argParser..addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -161,10 +149,11 @@ final class _DeleteVerificationCommand extends DeleteRecordCommand {
       r"Deletes a record for app.bsky.graph.verification.";
 
   @override
-  final String invocation = "bsky app-bsky-graph verification delete [rkey]";
+  final String invocation =
+      "bsky app-bsky-graph verification delete --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.verification";
@@ -173,7 +162,11 @@ final class _DeleteVerificationCommand extends DeleteRecordCommand {
 final class _GetVerificationCommand extends QueryCommand {
   _GetVerificationCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption("rkey", help: r"The record key.", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -184,23 +177,28 @@ final class _GetVerificationCommand extends QueryCommand {
   final String description = r"Gets a record for app.bsky.graph.verification.";
 
   @override
-  final String invocation = "bsky app-bsky-graph verification get [rkey] [cid]";
+  final String invocation =
+      "bsky app-bsky-graph verification get --rkey=<value> [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'rkey': argResults!['rkey'],
-        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "app.bsky.graph.verification",
+    'rkey': argResults!['rkey'],
+    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+  };
 }
 
 final class _ListVerificationCommand extends QueryCommand {
   _ListVerificationCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -214,17 +212,19 @@ final class _ListVerificationCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph verification list [limit] [cursor] [reverse]";
+      "bsky app-bsky-graph verification list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
-        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-        'reverse': argResults!['reverse'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "app.bsky.graph.verification",
+    'limit':
+        int.tryParse(argResults!['limit']) ??
+        usageException(r'Invalid integer value for option "limit".'),
+    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+    'reverse': argResults!['reverse'],
+  };
 }

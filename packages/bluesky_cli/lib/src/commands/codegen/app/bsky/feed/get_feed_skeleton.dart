@@ -32,19 +32,21 @@ final class GetFeedSkeletonCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a skeleton of a feed provided by a feed generator. Auth is optional, depending on provider requirements, and provides the DID of the requester. Implemented by Feed Generator Service.";
+      "Get a skeleton of a feed provided by a feed generator. Auth is optional, depending on provider requirements, and provides the DID of the requester. Implemented by Feed Generator Service.";
 
   @override
   final String invocation =
-      "bsky app-bsky-feed get-feed-skeleton [feed] [limit] [cursor]";
+      "bsky app-bsky-feed get-feed-skeleton --feed=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.getFeedSkeleton";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "feed": argResults!["feed"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "feed": argResults!["feed"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

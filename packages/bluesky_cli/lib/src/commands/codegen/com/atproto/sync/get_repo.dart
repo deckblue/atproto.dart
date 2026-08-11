@@ -29,17 +29,18 @@ final class GetRepoCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Download a repository export as CAR file. Optionally only a 'diff' since a previous revision. Does not require auth; implemented by PDS.";
+      "Download a repository export as CAR file. Optionally only a 'diff' since a previous revision. Does not require auth; implemented by PDS.";
 
   @override
-  final String invocation = "bsky com-atproto-sync get-repo [did] [since]";
+  final String invocation =
+      "bsky com-atproto-sync get-repo --did=<value> [--since=<value>]";
 
   @override
   String get methodId => "com.atproto.sync.getRepo";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "did": argResults!["did"],
-        if (argResults!["since"] != null) "since": argResults!["since"],
-      };
+    "did": argResults!["did"],
+    if (argResults!.wasParsed("since")) "since": argResults!["since"],
+  };
 }

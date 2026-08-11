@@ -40,16 +40,22 @@ final class SchemaCommand extends Command<void> {
       "Representation of Lexicon schemas themselves, when published as atproto records. Note that the schema language is not defined in Lexicon; this meta schema currently only includes a single version field ('lexicon'). See the atproto specifications for description of the other expected top-level fields ('id', 'defs', etc).";
 }
 
-final class _CreateSchemaCommand extends CreateRecordCommand {
+mixin _SchemaCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
+    argParser..addOption(
+      "lexicon",
+      help:
+          r"Indicates the 'version' of the Lexicon language. Must be '1' for the current atproto/Lexicon schema system.",
+      mandatory: true,
+    );
+  }
+}
+
+final class _CreateSchemaCommand extends CreateRecordCommand
+    with _SchemaCommandRecordArgs {
   _CreateSchemaCommand() {
-    argParser
-      ..addOption(
-        "lexicon",
-        help:
-            r"Indicates the 'version' of the Lexicon language. Must be '1' for the current atproto/Lexicon schema system.",
-        mandatory: true,
-      )
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"Specific record key to use.");
   }
 
   @override
@@ -61,28 +67,28 @@ final class _CreateSchemaCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky com-atproto-lexicon schema create [lexicon] [rkey]";
+      "bsky com-atproto-lexicon schema create --lexicon=<value> [--rkey=<value>]";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "com.atproto.lexicon.schema";
 
   @override
-  Map<String, dynamic> get record => {"lexicon": argResults!["lexicon"]};
+  Map<String, dynamic> get record => {
+    r"$type": "com.atproto.lexicon.schema",
+    "lexicon":
+        int.tryParse(argResults!["lexicon"]) ??
+        usageException('Invalid integer value for option "lexicon".'),
+  };
 }
 
-final class _PutSchemaCommand extends PutRecordCommand {
+final class _PutSchemaCommand extends PutRecordCommand
+    with _SchemaCommandRecordArgs {
   _PutSchemaCommand() {
-    argParser
-      ..addOption(
-        "lexicon",
-        help:
-            r"Indicates the 'version' of the Lexicon language. Must be '1' for the current atproto/Lexicon schema system.",
-        mandatory: true,
-      )
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -94,21 +100,26 @@ final class _PutSchemaCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky com-atproto-lexicon schema put [lexicon] [rkey]";
+      "bsky com-atproto-lexicon schema put --lexicon=<value> --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "com.atproto.lexicon.schema";
 
   @override
-  Map<String, dynamic> get record => {"lexicon": argResults!["lexicon"]};
+  Map<String, dynamic> get record => {
+    r"$type": "com.atproto.lexicon.schema",
+    "lexicon":
+        int.tryParse(argResults!["lexicon"]) ??
+        usageException('Invalid integer value for option "lexicon".'),
+  };
 }
 
 final class _DeleteSchemaCommand extends DeleteRecordCommand {
   _DeleteSchemaCommand() {
-    argParser..addOption("rkey", mandatory: true);
+    argParser..addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -119,10 +130,11 @@ final class _DeleteSchemaCommand extends DeleteRecordCommand {
       r"Deletes a record for com.atproto.lexicon.schema.";
 
   @override
-  final String invocation = "bsky com-atproto-lexicon schema delete [rkey]";
+  final String invocation =
+      "bsky com-atproto-lexicon schema delete --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String get rkey => argResults!['rkey'];
 
   @override
   String get collection => "com.atproto.lexicon.schema";
@@ -131,7 +143,11 @@ final class _DeleteSchemaCommand extends DeleteRecordCommand {
 final class _GetSchemaCommand extends QueryCommand {
   _GetSchemaCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption("rkey", help: r"The record key.", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -142,23 +158,28 @@ final class _GetSchemaCommand extends QueryCommand {
   final String description = r"Gets a record for com.atproto.lexicon.schema.";
 
   @override
-  final String invocation = "bsky com-atproto-lexicon schema get [rkey] [cid]";
+  final String invocation =
+      "bsky com-atproto-lexicon schema get --rkey=<value> [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'rkey': argResults!['rkey'],
-        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "com.atproto.lexicon.schema",
+    'rkey': argResults!['rkey'],
+    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+  };
 }
 
 final class _ListSchemaCommand extends QueryCommand {
   _ListSchemaCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -172,17 +193,19 @@ final class _ListSchemaCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky com-atproto-lexicon schema list [limit] [cursor] [reverse]";
+      "bsky com-atproto-lexicon schema list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
-        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-        'reverse': argResults!['reverse'],
-      };
+    'repo': argResults!['repo'] ?? await did,
+    'collection': "com.atproto.lexicon.schema",
+    'limit':
+        int.tryParse(argResults!['limit']) ??
+        usageException(r'Invalid integer value for option "limit".'),
+    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+    'reverse': argResults!['reverse'],
+  };
 }

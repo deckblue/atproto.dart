@@ -73,40 +73,45 @@ final class UFeedThreadgateAllowConverter
 
   @override
   UFeedThreadgateAllow fromJson(Map<String, dynamic> json) {
-    try {
-      if (MentionRule.validate(json)) {
-        return UFeedThreadgateAllow.mentionRule(
-          data: const MentionRuleConverter().fromJson(json),
-        );
-      }
-      if (FollowerRule.validate(json)) {
-        return UFeedThreadgateAllow.followerRule(
-          data: const FollowerRuleConverter().fromJson(json),
-        );
-      }
-      if (FollowingRule.validate(json)) {
-        return UFeedThreadgateAllow.followingRule(
-          data: const FollowingRuleConverter().fromJson(json),
-        );
-      }
-      if (ListRule.validate(json)) {
-        return UFeedThreadgateAllow.listRule(
-          data: const ListRuleConverter().fromJson(json),
-        );
-      }
-
-      return UFeedThreadgateAllow.unknown(data: json);
-    } catch (_) {
-      return UFeedThreadgateAllow.unknown(data: json);
+    if (MentionRule.validate(json)) {
+      return UFeedThreadgateAllow.mentionRule(
+        data: const MentionRuleConverter().fromJson(json),
+      );
     }
+    if (FollowerRule.validate(json)) {
+      return UFeedThreadgateAllow.followerRule(
+        data: const FollowerRuleConverter().fromJson(json),
+      );
+    }
+    if (FollowingRule.validate(json)) {
+      return UFeedThreadgateAllow.followingRule(
+        data: const FollowingRuleConverter().fromJson(json),
+      );
+    }
+    if (ListRule.validate(json)) {
+      return UFeedThreadgateAllow.listRule(
+        data: const ListRuleConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UFeedThreadgateAllow.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UFeedThreadgateAllow object) => object.when(
-        mentionRule: (data) => const MentionRuleConverter().toJson(data),
-        followerRule: (data) => const FollowerRuleConverter().toJson(data),
-        followingRule: (data) => const FollowingRuleConverter().toJson(data),
-        listRule: (data) => const ListRuleConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UFeedThreadgateAllow object) => switch (object) {
+    UFeedThreadgateAllowMentionRule(:final data) =>
+      const MentionRuleConverter().toJson(data),
+    UFeedThreadgateAllowFollowerRule(:final data) =>
+      const FollowerRuleConverter().toJson(data),
+    UFeedThreadgateAllowFollowingRule(:final data) =>
+      const FollowingRuleConverter().toJson(data),
+    UFeedThreadgateAllowListRule(:final data) =>
+      const ListRuleConverter().toJson(data),
+
+    UFeedThreadgateAllowUnknown(:final data) => data,
+  };
 }

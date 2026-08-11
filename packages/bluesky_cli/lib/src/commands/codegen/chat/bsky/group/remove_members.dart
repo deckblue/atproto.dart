@@ -26,18 +26,24 @@ final class RemoveMembersCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Removes members from a group. This deletes convo memberships, doesn't just set a status.";
+      "Removes members from a group. This deletes convo memberships, doesn't just set a status.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group remove-members [convoId] [members]";
+      "bsky chat-bsky-group remove-members --convoId=<value> [--members=<value>...]";
 
   @override
   String get methodId => "chat.bsky.group.removeMembers";
 
   @override
   Map<String, dynamic>? get body => {
-        "convoId": argResults!["convoId"],
-        "members": argResults!["members"],
-      };
+    "convoId": argResults!["convoId"],
+    "members": _requireNonEmpty("members", argResults!["members"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

@@ -44,21 +44,26 @@ final class AssignModeratorCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Assign a report to a user. Defaults to the caller. Admins may assign to any moderator.";
+      "Assign a report to a user. Defaults to the caller. Admins may assign to any moderator.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-report assign-moderator [reportId] [queueId] [did] [isPermanent]";
+      "bsky tools-ozone-report assign-moderator --reportId=<value> [--queueId=<value>] [--did=<value>] [--isPermanent]";
 
   @override
   String get methodId => "tools.ozone.report.assignModerator";
 
   @override
   Map<String, dynamic>? get body => {
-        "reportId": argResults!["reportId"],
-        if (argResults!["queueId"] != null) "queueId": argResults!["queueId"],
-        if (argResults!["did"] != null) "did": argResults!["did"],
-        if (argResults!["isPermanent"] != null)
-          "isPermanent": argResults!["isPermanent"],
-      };
+    "reportId":
+        int.tryParse(argResults!["reportId"]) ??
+        usageException('Invalid integer value for option "reportId".'),
+    if (argResults!.wasParsed("queueId"))
+      "queueId":
+          int.tryParse(argResults!["queueId"]) ??
+          usageException('Invalid integer value for option "queueId".'),
+    if (argResults!.wasParsed("did")) "did": argResults!["did"],
+    if (argResults!.wasParsed("isPermanent"))
+      "isPermanent": argResults!["isPermanent"],
+  };
 }

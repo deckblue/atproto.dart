@@ -15,36 +15,38 @@ import 'moderation/types/subjects/moderation_subject_user_list.dart';
 import 'moderation/types/subjects/notification.dart';
 import 'moderation/types/subjects/post.dart';
 import 'moderation/types/subjects/profile.dart';
+import 'moderation/types/subjects/status.dart';
+import 'moderation/types/subjects/user_list.dart';
 
 ModerationDecision moderateProfile(
   final ModerationSubjectProfile subject,
   final ModerationOpts opts,
-) =>
-    ModerationDecision.merge([
-      decideAccount(subject, opts),
-      decideProfile(subject, opts),
-    ]);
+) => ModerationDecision.merge([
+  decideAccount(subject, opts),
+  decideProfile(subject, opts),
+]);
 
 ModerationDecision moderatePost(
   final ModerationSubjectPost subject,
   final ModerationOpts opts,
-) =>
-    decidePost(subject, opts);
+) => decidePost(subject, opts);
 
 ModerationDecision moderateNotification(
   final ModerationSubjectNotification subject,
   final ModerationOpts opts,
-) =>
-    decideNotification(subject, opts);
+) => decideNotification(subject, opts);
 
 ModerationDecision moderateFeedGenerator(
   final ModerationSubjectFeedGenerator subject,
   final ModerationOpts opts,
-) =>
-    decideFeedGenerator(subject, opts);
+) => decideFeedGenerator(subject, opts);
 
 ModerationDecision moderateUserList(
   final ModerationSubjectUserList subject,
   final ModerationOpts opts,
-) =>
-    moderateUserList(subject, opts);
+) => decideUserList(subject, opts);
+
+ModerationDecision moderateStatus(
+  final ModerationSubjectProfile subject,
+  final ModerationOpts opts,
+) => decideStatus(subject, opts);

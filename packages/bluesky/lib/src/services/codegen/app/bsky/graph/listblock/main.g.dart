@@ -8,33 +8,34 @@ part of 'main.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GraphListblockRecordImpl _$$GraphListblockRecordImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$GraphListblockRecordImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$GraphListblockRecordImpl(
-          $type: $checkedConvert(
-              r'$type', (v) => v as String? ?? 'app.bsky.graph.listblock'),
-          subject: $checkedConvert(
-              'subject', (v) => const AtUriConverter().fromJson(v as String)),
-          createdAt:
-              $checkedConvert('createdAt', (v) => DateTime.parse(v as String)),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_GraphListblockRecord _$GraphListblockRecordFromJson(Map json) =>
+    $checkedCreate('_GraphListblockRecord', json, ($checkedConvert) {
+      final val = _GraphListblockRecord(
+        $type: $checkedConvert(
+          r'$type',
+          (v) => v as String? ?? 'app.bsky.graph.listblock',
+        ),
+        subject: $checkedConvert(
+          'subject',
+          (v) => const AtUriConverter().fromJson(v as String),
+        ),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => DateTime.parse(v as String),
+        ),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$GraphListblockRecordImplToJson(
-        _$GraphListblockRecordImpl instance) =>
-    <String, dynamic>{
-      r'$type': instance.$type,
-      'subject': const AtUriConverter().toJson(instance.subject),
-      'createdAt': instance.createdAt.toIso8601String(),
-      if (instance.$unknown case final value?) r'$unknown': value,
-    };
+Map<String, dynamic> _$GraphListblockRecordToJson(
+  _GraphListblockRecord instance,
+) => <String, dynamic>{
+  r'$type': instance.$type,
+  'subject': const AtUriConverter().toJson(instance.subject),
+  'createdAt': iso8601(instance.createdAt),
+  r'$unknown': ?instance.$unknown,
+};

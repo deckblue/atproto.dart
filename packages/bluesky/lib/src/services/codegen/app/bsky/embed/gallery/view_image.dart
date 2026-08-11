@@ -27,7 +27,7 @@ abstract class EmbedGalleryViewImage with _$EmbedGalleryViewImage {
     'thumbnail',
     'fullsize',
     'alt',
-    'aspectRatio'
+    'aspectRatio',
   ];
 
   @JsonSerializable(includeIfNull: false)
@@ -42,7 +42,8 @@ abstract class EmbedGalleryViewImage with _$EmbedGalleryViewImage {
 
     /// Alt text description of the image, for accessibility.
     required String alt,
-    @AspectRatioConverter() AspectRatio? aspectRatio,
+    @AspectRatioConverter() required AspectRatio aspectRatio,
+
     Map<String, dynamic>? $unknown,
   }) = _EmbedGalleryViewImage;
 
@@ -53,11 +54,6 @@ abstract class EmbedGalleryViewImage with _$EmbedGalleryViewImage {
     if (!object.containsKey('\$type')) return false;
     return object['\$type'] == 'app.bsky.embed.gallery#viewImage';
   }
-}
-
-extension EmbedGalleryViewImageExtension on EmbedGalleryViewImage {
-  bool get hasAspectRatio => aspectRatio != null;
-  bool get hasNotAspectRatio => !hasAspectRatio;
 }
 
 final class EmbedGalleryViewImageConverter

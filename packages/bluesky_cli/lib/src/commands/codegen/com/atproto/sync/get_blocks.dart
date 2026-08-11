@@ -26,17 +26,24 @@ final class GetBlocksCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get data blocks from a given repo, by CID. For example, intermediate MST nodes, or records. Does not require auth; implemented by PDS.";
+      "Get data blocks from a given repo, by CID. For example, intermediate MST nodes, or records. Does not require auth; implemented by PDS.";
 
   @override
-  final String invocation = "bsky com-atproto-sync get-blocks [did] [cids]";
+  final String invocation =
+      "bsky com-atproto-sync get-blocks --did=<value> [--cids=<value>...]";
 
   @override
   String get methodId => "com.atproto.sync.getBlocks";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "did": argResults!["did"],
-        "cids": argResults!["cids"],
-      };
+    "did": argResults!["did"],
+    "cids": _requireNonEmpty("cids", argResults!["cids"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

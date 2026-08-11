@@ -19,7 +19,7 @@ part 'profile_associated_activity_subscription_allow_subscriptions.freezed.dart'
 // **************************************************************************
 
 @freezed
-abstract class ProfileAssociatedActivitySubscriptionAllowSubscriptions
+sealed class ProfileAssociatedActivitySubscriptionAllowSubscriptions
     with _$ProfileAssociatedActivitySubscriptionAllowSubscriptions {
   const ProfileAssociatedActivitySubscriptionAllowSubscriptions._();
 
@@ -37,8 +37,8 @@ abstract class ProfileAssociatedActivitySubscriptionAllowSubscriptions
     if (value == null) return null;
     final knownValue =
         KnownProfileAssociatedActivitySubscriptionAllowSubscriptions.valueOf(
-      value,
-    );
+          value,
+        );
 
     return knownValue != null
         ? ProfileAssociatedActivitySubscriptionAllowSubscriptions.knownValue(
@@ -62,9 +62,9 @@ extension ProfileAssociatedActivitySubscriptionAllowSubscriptionsExtension
       );
   bool get isNotKnownValue => !isKnownValue;
   KnownProfileAssociatedActivitySubscriptionAllowSubscriptions?
-      get knownValue => isKnownValue
-          ? data as KnownProfileAssociatedActivitySubscriptionAllowSubscriptions
-          : null;
+  get knownValue => isKnownValue
+      ? data as KnownProfileAssociatedActivitySubscriptionAllowSubscriptions
+      : null;
   bool get isUnknown =>
       isA<ProfileAssociatedActivitySubscriptionAllowSubscriptionsUnknown>(this);
   bool get isNotUnknown => !isUnknown;
@@ -72,8 +72,11 @@ extension ProfileAssociatedActivitySubscriptionAllowSubscriptionsExtension
 }
 
 final class ProfileAssociatedActivitySubscriptionAllowSubscriptionsConverter
-    extends JsonConverter<
-        ProfileAssociatedActivitySubscriptionAllowSubscriptions, String> {
+    extends
+        JsonConverter<
+          ProfileAssociatedActivitySubscriptionAllowSubscriptions,
+          String
+        > {
   const ProfileAssociatedActivitySubscriptionAllowSubscriptionsConverter();
 
   @override
@@ -83,11 +86,10 @@ final class ProfileAssociatedActivitySubscriptionAllowSubscriptionsConverter
     try {
       final knownValue =
           KnownProfileAssociatedActivitySubscriptionAllowSubscriptions.valueOf(
-        json,
-      );
+            json,
+          );
       if (knownValue != null) {
-        return ProfileAssociatedActivitySubscriptionAllowSubscriptions
-            .knownValue(
+        return ProfileAssociatedActivitySubscriptionAllowSubscriptions.knownValue(
           data: knownValue,
         );
       }
@@ -105,8 +107,16 @@ final class ProfileAssociatedActivitySubscriptionAllowSubscriptionsConverter
   @override
   String toJson(
     ProfileAssociatedActivitySubscriptionAllowSubscriptions object,
-  ) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  ) => switch (object) {
+    ProfileAssociatedActivitySubscriptionAllowSubscriptionsKnownValue(
+      :final data,
+    ) =>
+      data.value,
+    ProfileAssociatedActivitySubscriptionAllowSubscriptionsUnknown(
+      :final data,
+    ) =>
+      data,
+  };
 }
 
 enum KnownProfileAssociatedActivitySubscriptionAllowSubscriptions

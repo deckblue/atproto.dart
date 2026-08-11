@@ -27,19 +27,21 @@ final class ListJoinRequestsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Lists a page of request to join a group (via join link) the user owns. Shows the data from the owner's point of view.";
+      "Lists a page of request to join a group (via join link) the user owns. Shows the data from the owner's point of view.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group list-join-requests [convoId] [limit] [cursor]";
+      "bsky chat-bsky-group list-join-requests --convoId=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "chat.bsky.group.listJoinRequests";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "convoId": argResults!["convoId"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "convoId": argResults!["convoId"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

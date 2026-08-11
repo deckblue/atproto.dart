@@ -32,19 +32,21 @@ final class ListReposByCollectionCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerates all the DIDs which have records with the given collection NSID.";
+      "Enumerates all the DIDs which have records with the given collection NSID.";
 
   @override
   final String invocation =
-      "bsky com-atproto-sync list-repos-by-collection [collection] [limit] [cursor]";
+      "bsky com-atproto-sync list-repos-by-collection --collection=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "com.atproto.sync.listReposByCollection";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "collection": argResults!["collection"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-      };
+    "collection": argResults!["collection"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+  };
 }

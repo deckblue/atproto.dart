@@ -35,18 +35,24 @@ final class ImportContactsCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Import contacts for securely matching with other users. This follows the protocol explained in https://docs.bsky.app/blog/contact-import-rfc. Requires authentication.";
+      "Import contacts for securely matching with other users. This follows the protocol explained in https://docs.bsky.app/blog/contact-import-rfc. Requires authentication.";
 
   @override
   final String invocation =
-      "bsky app-bsky-contact import-contacts [token] [contacts]";
+      "bsky app-bsky-contact import-contacts --token=<value> [--contacts=<value>...]";
 
   @override
   String get methodId => "app.bsky.contact.importContacts";
 
   @override
   Map<String, dynamic>? get body => {
-        "token": argResults!["token"],
-        "contacts": argResults!["contacts"],
-      };
+    "token": argResults!["token"],
+    "contacts": _requireNonEmpty("contacts", argResults!["contacts"]),
+  };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }
