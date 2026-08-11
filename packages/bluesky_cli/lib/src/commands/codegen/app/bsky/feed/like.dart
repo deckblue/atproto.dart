@@ -85,11 +85,11 @@ final class _CreateLikeCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.feed.like",
-    "subject": _decodeJson("subject"),
-    "createdAt": argResults!["createdAt"],
-    if (argResults!.wasParsed("via")) "via": _decodeJson("via"),
-  };
+        r"$type": "app.bsky.feed.like",
+        "subject": _decodeJson("subject"),
+        "createdAt": argResults!["createdAt"],
+        if (argResults!.wasParsed("via")) "via": _decodeJson("via"),
+      };
 }
 
 final class _PutLikeCommand extends PutRecordCommand
@@ -117,11 +117,11 @@ final class _PutLikeCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.feed.like",
-    "subject": _decodeJson("subject"),
-    "createdAt": argResults!["createdAt"],
-    if (argResults!.wasParsed("via")) "via": _decodeJson("via"),
-  };
+        r"$type": "app.bsky.feed.like",
+        "subject": _decodeJson("subject"),
+        "createdAt": argResults!["createdAt"],
+        if (argResults!.wasParsed("via")) "via": _decodeJson("via"),
+      };
 }
 
 final class _DeleteLikeCommand extends DeleteRecordCommand {
@@ -171,11 +171,11 @@ final class _GetLikeCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.feed.like",
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.feed.like",
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListLikeCommand extends QueryCommand {
@@ -205,12 +205,11 @@ final class _ListLikeCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.feed.like",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.feed.like",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

@@ -72,9 +72,9 @@ final class ReopenActivityPreviousStatusConverter
 
   @override
   String toJson(ReopenActivityPreviousStatus object) => switch (object) {
-    ReopenActivityPreviousStatusKnownValue(:final data) => data.value,
-    ReopenActivityPreviousStatusUnknown(:final data) => data,
-  };
+        ReopenActivityPreviousStatusKnownValue(:final data) => data.value,
+        ReopenActivityPreviousStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownReopenActivityPreviousStatus implements Serializable {

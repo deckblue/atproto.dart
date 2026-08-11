@@ -94,13 +94,12 @@ final class UConvoViewLastMessageConverter
 
   @override
   Map<String, dynamic> toJson(UConvoViewLastMessage object) => switch (object) {
-    UConvoViewLastMessageMessageView(:final data) =>
-      const MessageViewConverter().toJson(data),
-    UConvoViewLastMessageDeletedMessageView(:final data) =>
-      const DeletedMessageViewConverter().toJson(data),
-    UConvoViewLastMessageSystemMessageView(:final data) =>
-      const SystemMessageViewConverter().toJson(data),
-
-    UConvoViewLastMessageUnknown(:final data) => data,
-  };
+        UConvoViewLastMessageMessageView(:final data) =>
+          const MessageViewConverter().toJson(data),
+        UConvoViewLastMessageDeletedMessageView(:final data) =>
+          const DeletedMessageViewConverter().toJson(data),
+        UConvoViewLastMessageSystemMessageView(:final data) =>
+          const SystemMessageViewConverter().toJson(data),
+        UConvoViewLastMessageUnknown(:final data) => data,
+      };
 }

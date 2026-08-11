@@ -72,9 +72,9 @@ final class CreateResultValidationStatusConverter
 
   @override
   String toJson(CreateResultValidationStatus object) => switch (object) {
-    CreateResultValidationStatusKnownValue(:final data) => data.value,
-    CreateResultValidationStatusUnknown(:final data) => data,
-  };
+        CreateResultValidationStatusKnownValue(:final data) => data.value,
+        CreateResultValidationStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownCreateResultValidationStatus implements Serializable {

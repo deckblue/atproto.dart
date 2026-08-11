@@ -76,9 +76,9 @@ final class LabelValueDefinitionDefaultSettingConverter
 
   @override
   String toJson(LabelValueDefinitionDefaultSetting object) => switch (object) {
-    LabelValueDefinitionDefaultSettingKnownValue(:final data) => data.value,
-    LabelValueDefinitionDefaultSettingUnknown(:final data) => data,
-  };
+        LabelValueDefinitionDefaultSettingKnownValue(:final data) => data.value,
+        LabelValueDefinitionDefaultSettingUnknown(:final data) => data,
+      };
 }
 
 enum KnownLabelValueDefinitionDefaultSetting implements Serializable {

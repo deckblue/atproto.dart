@@ -48,7 +48,6 @@ abstract class DeclarationRecord with _$DeclarationRecord {
     /// Opaque value, contains MLS KeyPackage(s), and other signature data, and is signed by the currentKey
     Map<String, dynamic>? keyPackage,
     List<Map<String, dynamic>>? continuityProofs,
-
     Map<String, dynamic>? $unknown,
   }) = _DeclarationRecord;
 

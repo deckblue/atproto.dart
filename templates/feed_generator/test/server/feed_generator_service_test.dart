@@ -51,18 +51,20 @@ final class _ThrowingAlgorithm implements FeedAlgorithm {
   @override
   Future<FeedGetFeedSkeletonOutput> getFeedSkeleton(
     final FeedRequest request,
-  ) async => _throw();
+  ) async =>
+      _throw();
 }
 
 Future<Response> _get(
   final Handler handler,
   final String path, {
   final Map<String, String>? headers,
-}) => Future.sync(
-  () => handler(
-    Request('GET', Uri.parse('http://localhost$path'), headers: headers),
-  ),
-);
+}) =>
+    Future.sync(
+      () => handler(
+        Request('GET', Uri.parse('http://localhost$path'), headers: headers),
+      ),
+    );
 
 void main() {
   group('did.json', () {
@@ -280,7 +282,8 @@ void main() {
       expect(body['error'], 'AuthRequired');
     });
 
-    test('returns a controlled 502 when auth verification fails with a '
+    test(
+        'returns a controlled 502 when auth verification fails with a '
         'network error instead of an uncaught 500', () async {
       final handler = createFeedGeneratorHandler(
         config: _config,

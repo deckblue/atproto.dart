@@ -50,14 +50,14 @@ final class AddRuleCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "url": argResults!["url"],
-    "pattern": _decodeJson("pattern"),
-    "action": _decodeJson("action"),
-    "reason": _decodeJson("reason"),
-    if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
-    if (argResults!.wasParsed("createdBy"))
-      "createdBy": argResults!["createdBy"],
-  };
+        "url": argResults!["url"],
+        "pattern": _decodeJson("pattern"),
+        "action": _decodeJson("action"),
+        "reason": _decodeJson("reason"),
+        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+        if (argResults!.wasParsed("createdBy"))
+          "createdBy": argResults!["createdBy"],
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

@@ -12,9 +12,10 @@ Future<xrpc.XRPCResponse<Map<String, dynamic>>> findDID({
   // Forwarded to `xrpc.query` so the default (no-resolver) mention path can be
   // driven against a `MockClient` in tests instead of the live network.
   http.Client? client,
-}) async => await xrpc.query(
-  xrpc.NSID.create('identity.atproto.com', 'resolveHandle'),
-  service: service,
-  parameters: {'handle': handle},
-  client: client,
-);
+}) async =>
+    await xrpc.query(
+      xrpc.NSID.create('identity.atproto.com', 'resolveHandle'),
+      service: service,
+      parameters: {'handle': handle},
+      client: client,
+    );

@@ -39,8 +39,8 @@ Future<void> main() async {
     final style = segment.isOverflow
         ? 'red'
         : segment.isEntity
-        ? 'blue (${segment.type})'
-        : 'default';
+            ? 'blue (${segment.type})'
+            : 'default';
     print('[$style] ${segment.text}');
   }
 

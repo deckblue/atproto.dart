@@ -31,7 +31,6 @@ abstract class UnspeccedGetTrendsOutput with _$UnspeccedGetTrendsOutput {
 
     /// Snowflake for this recommendation, use when submitting recommendation events.
     String? recIdStr,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTrendsOutput;
 

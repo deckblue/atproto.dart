@@ -77,7 +77,7 @@ updates:
       # week has cost more than the rule is worth.
       #
       # The cost of the blunt form is close to nil. Dependabot only proposes
-      # changes to the CONSTRAINT in pubspec.yaml; `freezed: ^3.2.0` already
+      # changes to the CONSTRAINT in pubspec.yaml; `freezed: ^2.4.7` already
       # floats to the newest 3.x at `dart pub get` time, so patch and minor
       # releases still reach the build. What is suppressed is the constraint
       # rewrite, which is exactly what was unwanted.

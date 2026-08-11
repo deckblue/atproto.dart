@@ -186,25 +186,25 @@ String getLexObjectNameFromRef(
 ) {
   return switch (LexRef.parse(ref)) {
     LocalRef(:final defName) => getLexObjectName(
-      lexiconId,
-      defName,
-      mainVariants,
-    ),
+        lexiconId,
+        defName,
+        mainVariants,
+      ),
     ForeignRef(:final lexicon, :final defName) => getLexObjectName(
-      lexicon.raw,
-      defName,
-      mainVariants,
-    ),
+        lexicon.raw,
+        defName,
+        mainVariants,
+      ),
     // A bare ref (`app.bsky.actor.profile`) points at a whole doc's `main`
     // def, which carries no fragment. Passing an empty def name here used to
     // collapse to an empty (`''`) class name. Resolve `main` via the def index:
     // a record doc names its generated class `<Prefix>Record` (the `record`
     // arm), everything else uses the plain `main` name.
     BareRef(:final lexicon) => getLexObjectName(
-      lexicon.raw,
-      _isRecordDoc(ctx, lexicon.raw) ? 'record' : 'main',
-      mainVariants,
-    ),
+        lexicon.raw,
+        _isRecordDoc(ctx, lexicon.raw) ? 'record' : 'main',
+        mainVariants,
+      ),
   };
 }
 
@@ -253,14 +253,12 @@ String getLexObjectPackagePathFromRefForService(
   return switch (LexRef.parse(ref)) {
     LocalRef(:final defName) =>
       '${Nsid(lexiconId).dirAfterAuthority}/${getLexObjectFileName(defName)}.dart',
-    ForeignRef(:final lexicon, :final defName) =>
-      samePackage
-          ? '${lexicon.dirAfterAuthority}/${getLexObjectFileName(defName)}.dart'
-          : foreignPath(lexicon),
-    BareRef(:final lexicon) =>
-      samePackage
-          ? '${lexicon.dirAfterAuthority}/${getLexObjectFileName('main')}.dart'
-          : foreignPath(lexicon),
+    ForeignRef(:final lexicon, :final defName) => samePackage
+        ? '${lexicon.dirAfterAuthority}/${getLexObjectFileName(defName)}.dart'
+        : foreignPath(lexicon),
+    BareRef(:final lexicon) => samePackage
+        ? '${lexicon.dirAfterAuthority}/${getLexObjectFileName('main')}.dart'
+        : foreignPath(lexicon),
   };
 }
 
@@ -281,7 +279,8 @@ String getPackageRelativePath(
 ) {
   return switch (LexRef.parse(ref)) {
     LocalRef() => '.',
-    ForeignRef(:final lexicon) || BareRef(:final lexicon) =>
+    ForeignRef(:final lexicon) ||
+    BareRef(:final lexicon) =>
       _isInTheSamePackage(lexiconId, ref)
           ? '../../../../${_getFileDir(lexicon.raw)}'
           : 'package:${getRootPackageName(ctx, lexicon.raw)}',

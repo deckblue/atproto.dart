@@ -42,24 +42,24 @@ sealed class HttpResponse<T> with _$HttpResponse<T> {
 extension HttpResponseExtension<T> on HttpResponse<T> {
   /// Returns true if the response is successful.
   bool get isSuccess => switch (this) {
-    HttpResponseSuccess() => true,
-    HttpResponseError() => false,
-  };
+        HttpResponseSuccess() => true,
+        HttpResponseError() => false,
+      };
 
   /// Returns true if the response is an error.
   bool get isError => !isSuccess;
 
   /// Gets the data from a successful response, or throws if error.
   T get data => switch (this) {
-    HttpResponseSuccess(:final data) => data,
-    HttpResponseError(:final statusCode, :final message) => throw Exception(
-      'HTTP $statusCode: $message',
-    ),
-  };
+        HttpResponseSuccess(:final data) => data,
+        HttpResponseError(:final statusCode, :final message) => throw Exception(
+            'HTTP $statusCode: $message',
+          ),
+      };
 
   /// Gets the data from a successful response, or returns null if error.
   T? get dataOrNull => switch (this) {
-    HttpResponseSuccess(:final data) => data,
-    HttpResponseError() => null,
-  };
+        HttpResponseSuccess(:final data) => data,
+        HttpResponseError() => null,
+      };
 }

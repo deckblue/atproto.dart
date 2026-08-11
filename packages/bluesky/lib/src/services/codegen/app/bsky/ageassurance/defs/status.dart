@@ -67,9 +67,9 @@ final class StatusConverter extends JsonConverter<Status, String> {
 
   @override
   String toJson(Status object) => switch (object) {
-    StatusKnownValue(:final data) => data.value,
-    StatusUnknown(:final data) => data,
-  };
+        StatusKnownValue(:final data) => data.value,
+        StatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownStatus implements Serializable {

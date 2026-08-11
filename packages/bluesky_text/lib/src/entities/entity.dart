@@ -73,13 +73,12 @@ final class Entity implements Facetable {
           did = await resolver(value);
         } else {
           try {
-            did =
-                (await api.findDID(
-                      handle: value,
-                      service: service,
-                      client: client,
-                    )).data['did']
-                    as String?;
+            did = (await api.findDID(
+              handle: value,
+              service: service,
+              client: client,
+            ))
+                .data['did'] as String?;
           } on xrpc.InvalidRequestException {
             //* The handle could not be resolved to a DID (e.g. it does not
             //* exist), so there is legitimately no mention facet to emit. Only

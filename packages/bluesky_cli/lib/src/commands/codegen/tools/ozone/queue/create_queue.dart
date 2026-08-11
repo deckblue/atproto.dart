@@ -58,16 +58,16 @@ final class CreateQueueCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "name": argResults!["name"],
-    if (argResults!.wasParsed("subjectTypes"))
-      "subjectTypes": argResults!["subjectTypes"],
-    if (argResults!.wasParsed("collection"))
-      "collection": argResults!["collection"],
-    if (argResults!.wasParsed("reportTypes"))
-      "reportTypes": argResults!["reportTypes"],
-    if (argResults!.wasParsed("description"))
-      "description": argResults!["description"],
-    if (argResults!.wasParsed("recommendedPolicies"))
-      "recommendedPolicies": argResults!["recommendedPolicies"],
-  };
+        "name": argResults!["name"],
+        if (argResults!.wasParsed("subjectTypes"))
+          "subjectTypes": argResults!["subjectTypes"],
+        if (argResults!.wasParsed("collection"))
+          "collection": argResults!["collection"],
+        if (argResults!.wasParsed("reportTypes"))
+          "reportTypes": argResults!["reportTypes"],
+        if (argResults!.wasParsed("description"))
+          "description": argResults!["description"],
+        if (argResults!.wasParsed("recommendedPolicies"))
+          "recommendedPolicies": argResults!["recommendedPolicies"],
+      };
 }

@@ -16,11 +16,12 @@ import '../../../../query_command.dart';
 
 final class GetUnreadCountsCommand extends QueryCommand {
   GetUnreadCountsCommand() {
-    argParser..addFlag(
-      "includeGroupChats",
-      help: r"When false, group convos are excluded from the counts.",
-      defaultsTo: true,
-    );
+    argParser
+      ..addFlag(
+        "includeGroupChats",
+        help: r"When false, group convos are excluded from the counts.",
+        defaultsTo: true,
+      );
   }
 
   @override
@@ -39,6 +40,6 @@ final class GetUnreadCountsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "includeGroupChats": argResults!["includeGroupChats"],
-  };
+        "includeGroupChats": argResults!["includeGroupChats"],
+      };
 }

@@ -47,11 +47,11 @@ final class _FakePds {
   /// The tokens are deliberately not JWTs, so the pre-flight expiry check is
   /// skipped and the reactive `401` path is what gets exercised.
   core.Session get initialSession => core.Session(
-    did: 'did:plc:testaccount',
-    handle: 'test.dev',
-    accessJwt: 'access-0',
-    refreshJwt: 'refresh-0',
-  );
+        did: 'did:plc:testaccount',
+        handle: 'test.dev',
+        accessJwt: 'access-0',
+        refreshJwt: 'refresh-0',
+      );
 
   Future<http.Response> get(
     final Uri url, {
@@ -113,12 +113,13 @@ final class _FakePds {
     final String method,
     final int status,
     final String body,
-  ) => http.Response(
-    body,
-    status,
-    headers: {'content-type': 'application/json'},
-    request: http.Request(method, url),
-  );
+  ) =>
+      http.Response(
+        body,
+        status,
+        headers: {'content-type': 'application/json'},
+        request: http.Request(method, url),
+      );
 }
 
 void main() {
@@ -236,11 +237,11 @@ void main() {
 
   group('BlueskyChat.fromAtproto', () {
     atp.ATProto atproto(final _FakePds pds) => atp.ATProto.fromSession(
-      pds.initialSession,
-      service: 'pds.test',
-      getClient: pds.get,
-      postClient: pds.post,
-    );
+          pds.initialSession,
+          service: 'pds.test',
+          getClient: pds.get,
+          postClient: pds.post,
+        );
 
     test('shares the session while keeping the headers apart', () async {
       final pds = _FakePds();
@@ -593,11 +594,11 @@ void main() {
 
   group('existing factories', () {
     core.Session session() => core.Session(
-      did: 'did:plc:testaccount',
-      handle: 'test.dev',
-      accessJwt: 'access',
-      refreshJwt: 'refresh',
-    );
+          did: 'did:plc:testaccount',
+          handle: 'test.dev',
+          accessJwt: 'access',
+          refreshJwt: 'refresh',
+        );
 
     test('Bluesky.fromSession still owns the session it was given', () {
       final bsky = Bluesky.fromSession(session());

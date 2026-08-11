@@ -31,7 +31,7 @@ final class LexIpldConverter
 
   @override
   Map<String, dynamic> toJson(LexIpld object) => switch (object) {
-    ULexIpldBytes(:final data) => data.toJson(),
-    ULexIpldCidLink(:final data) => data.toJson(),
-  };
+        ULexIpldBytes(:final data) => data.toJson(),
+        ULexIpldCidLink(:final data) => data.toJson(),
+      };
 }

@@ -71,9 +71,9 @@ final class FilterablePreferenceIncludeConverter
 
   @override
   String toJson(FilterablePreferenceInclude object) => switch (object) {
-    FilterablePreferenceIncludeKnownValue(:final data) => data.value,
-    FilterablePreferenceIncludeUnknown(:final data) => data,
-  };
+        FilterablePreferenceIncludeKnownValue(:final data) => data.value,
+        FilterablePreferenceIncludeUnknown(:final data) => data,
+      };
 }
 
 enum KnownFilterablePreferenceInclude implements Serializable {

@@ -40,10 +40,10 @@ final class CreateJoinLinkCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "convoId": argResults!["convoId"],
-    "requireApproval": argResults!["requireApproval"],
-    "joinRule": _decodeJson("joinRule"),
-  };
+        "convoId": argResults!["convoId"],
+        "requireApproval": argResults!["requireApproval"],
+        "joinRule": _decodeJson("joinRule"),
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

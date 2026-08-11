@@ -89,14 +89,14 @@ final class UBookmarkViewItemConverter
 
   @override
   Map<String, dynamic> toJson(UBookmarkViewItem object) => switch (object) {
-    UBookmarkViewItemBlockedPost(:final data) =>
-      const BlockedPostConverter().toJson(data),
-    UBookmarkViewItemNotFoundPost(:final data) =>
-      const NotFoundPostConverter().toJson(data),
-    UBookmarkViewItemPostView(:final data) => const PostViewConverter().toJson(
-      data,
-    ),
-
-    UBookmarkViewItemUnknown(:final data) => data,
-  };
+        UBookmarkViewItemBlockedPost(:final data) =>
+          const BlockedPostConverter().toJson(data),
+        UBookmarkViewItemNotFoundPost(:final data) =>
+          const NotFoundPostConverter().toJson(data),
+        UBookmarkViewItemPostView(:final data) =>
+          const PostViewConverter().toJson(
+            data,
+          ),
+        UBookmarkViewItemUnknown(:final data) => data,
+      };
 }

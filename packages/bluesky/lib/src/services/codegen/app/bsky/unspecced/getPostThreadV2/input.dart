@@ -55,7 +55,6 @@ abstract class UnspeccedGetPostThreadV2Input
       ),
     )
     UnspeccedGetPostThreadV2Sort sort,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetPostThreadV2Input;
 

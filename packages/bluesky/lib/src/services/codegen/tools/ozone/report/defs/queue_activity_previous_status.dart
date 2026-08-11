@@ -71,9 +71,9 @@ final class QueueActivityPreviousStatusConverter
 
   @override
   String toJson(QueueActivityPreviousStatus object) => switch (object) {
-    QueueActivityPreviousStatusKnownValue(:final data) => data.value,
-    QueueActivityPreviousStatusUnknown(:final data) => data,
-  };
+        QueueActivityPreviousStatusKnownValue(:final data) => data.value,
+        QueueActivityPreviousStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownQueueActivityPreviousStatus implements Serializable {

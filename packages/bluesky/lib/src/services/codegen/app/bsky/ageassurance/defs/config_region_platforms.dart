@@ -71,9 +71,9 @@ final class ConfigRegionPlatformsConverter
 
   @override
   String toJson(ConfigRegionPlatforms object) => switch (object) {
-    ConfigRegionPlatformsKnownValue(:final data) => data.value,
-    ConfigRegionPlatformsUnknown(:final data) => data,
-  };
+        ConfigRegionPlatformsKnownValue(:final data) => data.value,
+        ConfigRegionPlatformsUnknown(:final data) => data,
+      };
 }
 
 enum KnownConfigRegionPlatforms implements Serializable {

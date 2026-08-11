@@ -264,16 +264,16 @@ extension UConvoGetLogLogsExtension on UConvoGetLogLogs {
       !isLogWithdrawIncomingJoinRequest;
   LogWithdrawIncomingJoinRequest? get logWithdrawIncomingJoinRequest =>
       isLogWithdrawIncomingJoinRequest
-      ? data as LogWithdrawIncomingJoinRequest
-      : null;
+          ? data as LogWithdrawIncomingJoinRequest
+          : null;
   bool get isLogWithdrawOutgoingJoinRequest =>
       isA<UConvoGetLogLogsLogWithdrawOutgoingJoinRequest>(this);
   bool get isNotLogWithdrawOutgoingJoinRequest =>
       !isLogWithdrawOutgoingJoinRequest;
   LogWithdrawOutgoingJoinRequest? get logWithdrawOutgoingJoinRequest =>
       isLogWithdrawOutgoingJoinRequest
-      ? data as LogWithdrawOutgoingJoinRequest
-      : null;
+          ? data as LogWithdrawOutgoingJoinRequest
+          : null;
   bool get isLogReadJoinRequests =>
       isA<UConvoGetLogLogsLogReadJoinRequests>(this);
   bool get isNotLogReadJoinRequests => !isLogReadJoinRequests;
@@ -451,67 +451,66 @@ final class UConvoGetLogLogsConverter
 
   @override
   Map<String, dynamic> toJson(UConvoGetLogLogs object) => switch (object) {
-    UConvoGetLogLogsLogBeginConvo(:final data) =>
-      const LogBeginConvoConverter().toJson(data),
-    UConvoGetLogLogsLogAcceptConvo(:final data) =>
-      const LogAcceptConvoConverter().toJson(data),
-    UConvoGetLogLogsLogLeaveConvo(:final data) =>
-      const LogLeaveConvoConverter().toJson(data),
-    UConvoGetLogLogsLogMuteConvo(:final data) =>
-      const LogMuteConvoConverter().toJson(data),
-    UConvoGetLogLogsLogUnmuteConvo(:final data) =>
-      const LogUnmuteConvoConverter().toJson(data),
-    UConvoGetLogLogsLogCreateMessage(:final data) =>
-      const LogCreateMessageConverter().toJson(data),
-    UConvoGetLogLogsLogDeleteMessage(:final data) =>
-      const LogDeleteMessageConverter().toJson(data),
-    UConvoGetLogLogsLogReadMessage(:final data) =>
-      const LogReadMessageConverter().toJson(data),
-    UConvoGetLogLogsLogAddReaction(:final data) =>
-      const LogAddReactionConverter().toJson(data),
-    UConvoGetLogLogsLogRemoveReaction(:final data) =>
-      const LogRemoveReactionConverter().toJson(data),
-    UConvoGetLogLogsLogReadConvo(:final data) =>
-      const LogReadConvoConverter().toJson(data),
-    UConvoGetLogLogsLogAddMember(:final data) =>
-      const LogAddMemberConverter().toJson(data),
-    UConvoGetLogLogsLogRemoveMember(:final data) =>
-      const LogRemoveMemberConverter().toJson(data),
-    UConvoGetLogLogsLogMemberJoin(:final data) =>
-      const LogMemberJoinConverter().toJson(data),
-    UConvoGetLogLogsLogMemberLeave(:final data) =>
-      const LogMemberLeaveConverter().toJson(data),
-    UConvoGetLogLogsLogLockConvo(:final data) =>
-      const LogLockConvoConverter().toJson(data),
-    UConvoGetLogLogsLogUnlockConvo(:final data) =>
-      const LogUnlockConvoConverter().toJson(data),
-    UConvoGetLogLogsLogLockConvoPermanently(:final data) =>
-      const LogLockConvoPermanentlyConverter().toJson(data),
-    UConvoGetLogLogsLogEditGroup(:final data) =>
-      const LogEditGroupConverter().toJson(data),
-    UConvoGetLogLogsLogCreateJoinLink(:final data) =>
-      const LogCreateJoinLinkConverter().toJson(data),
-    UConvoGetLogLogsLogEditJoinLink(:final data) =>
-      const LogEditJoinLinkConverter().toJson(data),
-    UConvoGetLogLogsLogEnableJoinLink(:final data) =>
-      const LogEnableJoinLinkConverter().toJson(data),
-    UConvoGetLogLogsLogDisableJoinLink(:final data) =>
-      const LogDisableJoinLinkConverter().toJson(data),
-    UConvoGetLogLogsLogIncomingJoinRequest(:final data) =>
-      const LogIncomingJoinRequestConverter().toJson(data),
-    UConvoGetLogLogsLogApproveJoinRequest(:final data) =>
-      const LogApproveJoinRequestConverter().toJson(data),
-    UConvoGetLogLogsLogRejectJoinRequest(:final data) =>
-      const LogRejectJoinRequestConverter().toJson(data),
-    UConvoGetLogLogsLogOutgoingJoinRequest(:final data) =>
-      const LogOutgoingJoinRequestConverter().toJson(data),
-    UConvoGetLogLogsLogWithdrawIncomingJoinRequest(:final data) =>
-      const LogWithdrawIncomingJoinRequestConverter().toJson(data),
-    UConvoGetLogLogsLogWithdrawOutgoingJoinRequest(:final data) =>
-      const LogWithdrawOutgoingJoinRequestConverter().toJson(data),
-    UConvoGetLogLogsLogReadJoinRequests(:final data) =>
-      const LogReadJoinRequestsConverter().toJson(data),
-
-    UConvoGetLogLogsUnknown(:final data) => data,
-  };
+        UConvoGetLogLogsLogBeginConvo(:final data) =>
+          const LogBeginConvoConverter().toJson(data),
+        UConvoGetLogLogsLogAcceptConvo(:final data) =>
+          const LogAcceptConvoConverter().toJson(data),
+        UConvoGetLogLogsLogLeaveConvo(:final data) =>
+          const LogLeaveConvoConverter().toJson(data),
+        UConvoGetLogLogsLogMuteConvo(:final data) =>
+          const LogMuteConvoConverter().toJson(data),
+        UConvoGetLogLogsLogUnmuteConvo(:final data) =>
+          const LogUnmuteConvoConverter().toJson(data),
+        UConvoGetLogLogsLogCreateMessage(:final data) =>
+          const LogCreateMessageConverter().toJson(data),
+        UConvoGetLogLogsLogDeleteMessage(:final data) =>
+          const LogDeleteMessageConverter().toJson(data),
+        UConvoGetLogLogsLogReadMessage(:final data) =>
+          const LogReadMessageConverter().toJson(data),
+        UConvoGetLogLogsLogAddReaction(:final data) =>
+          const LogAddReactionConverter().toJson(data),
+        UConvoGetLogLogsLogRemoveReaction(:final data) =>
+          const LogRemoveReactionConverter().toJson(data),
+        UConvoGetLogLogsLogReadConvo(:final data) =>
+          const LogReadConvoConverter().toJson(data),
+        UConvoGetLogLogsLogAddMember(:final data) =>
+          const LogAddMemberConverter().toJson(data),
+        UConvoGetLogLogsLogRemoveMember(:final data) =>
+          const LogRemoveMemberConverter().toJson(data),
+        UConvoGetLogLogsLogMemberJoin(:final data) =>
+          const LogMemberJoinConverter().toJson(data),
+        UConvoGetLogLogsLogMemberLeave(:final data) =>
+          const LogMemberLeaveConverter().toJson(data),
+        UConvoGetLogLogsLogLockConvo(:final data) =>
+          const LogLockConvoConverter().toJson(data),
+        UConvoGetLogLogsLogUnlockConvo(:final data) =>
+          const LogUnlockConvoConverter().toJson(data),
+        UConvoGetLogLogsLogLockConvoPermanently(:final data) =>
+          const LogLockConvoPermanentlyConverter().toJson(data),
+        UConvoGetLogLogsLogEditGroup(:final data) =>
+          const LogEditGroupConverter().toJson(data),
+        UConvoGetLogLogsLogCreateJoinLink(:final data) =>
+          const LogCreateJoinLinkConverter().toJson(data),
+        UConvoGetLogLogsLogEditJoinLink(:final data) =>
+          const LogEditJoinLinkConverter().toJson(data),
+        UConvoGetLogLogsLogEnableJoinLink(:final data) =>
+          const LogEnableJoinLinkConverter().toJson(data),
+        UConvoGetLogLogsLogDisableJoinLink(:final data) =>
+          const LogDisableJoinLinkConverter().toJson(data),
+        UConvoGetLogLogsLogIncomingJoinRequest(:final data) =>
+          const LogIncomingJoinRequestConverter().toJson(data),
+        UConvoGetLogLogsLogApproveJoinRequest(:final data) =>
+          const LogApproveJoinRequestConverter().toJson(data),
+        UConvoGetLogLogsLogRejectJoinRequest(:final data) =>
+          const LogRejectJoinRequestConverter().toJson(data),
+        UConvoGetLogLogsLogOutgoingJoinRequest(:final data) =>
+          const LogOutgoingJoinRequestConverter().toJson(data),
+        UConvoGetLogLogsLogWithdrawIncomingJoinRequest(:final data) =>
+          const LogWithdrawIncomingJoinRequestConverter().toJson(data),
+        UConvoGetLogLogsLogWithdrawOutgoingJoinRequest(:final data) =>
+          const LogWithdrawOutgoingJoinRequestConverter().toJson(data),
+        UConvoGetLogLogsLogReadJoinRequests(:final data) =>
+          const LogReadJoinRequestsConverter().toJson(data),
+        UConvoGetLogLogsUnknown(:final data) => data,
+      };
 }

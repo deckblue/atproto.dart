@@ -94,12 +94,12 @@ final class _CreateVerificationCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.graph.verification",
-    "subject": argResults!["subject"],
-    "handle": argResults!["handle"],
-    "displayName": argResults!["displayName"],
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.graph.verification",
+        "subject": argResults!["subject"],
+        "handle": argResults!["handle"],
+        "displayName": argResults!["displayName"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutVerificationCommand extends PutRecordCommand
@@ -128,12 +128,12 @@ final class _PutVerificationCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.graph.verification",
-    "subject": argResults!["subject"],
-    "handle": argResults!["handle"],
-    "displayName": argResults!["displayName"],
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.graph.verification",
+        "subject": argResults!["subject"],
+        "handle": argResults!["handle"],
+        "displayName": argResults!["displayName"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteVerificationCommand extends DeleteRecordCommand {
@@ -185,11 +185,11 @@ final class _GetVerificationCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.graph.verification",
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.verification",
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListVerificationCommand extends QueryCommand {
@@ -219,12 +219,11 @@ final class _ListVerificationCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.graph.verification",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.verification",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

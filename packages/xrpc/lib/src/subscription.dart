@@ -14,9 +14,9 @@ final class Subscription<T> {
     required WebSocketChannel channel,
     required StreamController<T> controller,
     StreamSubscription<dynamic>? subscription,
-  }) : _channel = channel,
-       _controller = controller,
-       _subscription = subscription;
+  })  : _channel = channel,
+        _controller = controller,
+        _subscription = subscription;
 
   /// Returns the stream.
   ///

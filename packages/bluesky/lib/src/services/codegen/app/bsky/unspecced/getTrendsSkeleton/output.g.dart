@@ -8,35 +8,34 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetTrendsSkeletonOutput _$UnspeccedGetTrendsSkeletonOutputFromJson(
-  Map json,
-) => $checkedCreate('_UnspeccedGetTrendsSkeletonOutput', json, (
-  $checkedConvert,
-) {
-  final val = _UnspeccedGetTrendsSkeletonOutput(
-    trends: $checkedConvert(
-      'trends',
-      (v) => (v as List<dynamic>)
-          .map(
-            (e) => const SkeletonTrendConverter().fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList(),
-    ),
-    recIdStr: $checkedConvert('recIdStr', (v) => v as String?),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$UnspeccedGetTrendsSkeletonOutputImpl
+    _$$UnspeccedGetTrendsSkeletonOutputImplFromJson(Map json) => $checkedCreate(
+          r'_$UnspeccedGetTrendsSkeletonOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$UnspeccedGetTrendsSkeletonOutputImpl(
+              trends: $checkedConvert(
+                  'trends',
+                  (v) => (v as List<dynamic>)
+                      .map((e) => const SkeletonTrendConverter()
+                          .fromJson(e as Map<String, dynamic>))
+                      .toList()),
+              recIdStr: $checkedConvert('recIdStr', (v) => v as String?),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$UnspeccedGetTrendsSkeletonOutputToJson(
-  _UnspeccedGetTrendsSkeletonOutput instance,
-) => <String, dynamic>{
-  'trends': instance.trends.map(const SkeletonTrendConverter().toJson).toList(),
-  'recIdStr': ?instance.recIdStr,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$UnspeccedGetTrendsSkeletonOutputImplToJson(
+        _$UnspeccedGetTrendsSkeletonOutputImpl instance) =>
+    <String, dynamic>{
+      'trends':
+          instance.trends.map(const SkeletonTrendConverter().toJson).toList(),
+      if (instance.recIdStr case final value?) 'recIdStr': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

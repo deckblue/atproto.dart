@@ -17,13 +17,14 @@ LexObject generateLexObject(
   final String defName,
   final lex.LexObject object,
   final List<String> mainVariants,
-) => _LexObjectGenerator(
-  ctx,
-  lexiconId,
-  defName,
-  object,
-  mainVariants,
-).execute();
+) =>
+    _LexObjectGenerator(
+      ctx,
+      lexiconId,
+      defName,
+      object,
+      mainVariants,
+    ).execute();
 
 final class _LexObjectGenerator {
   final GenContext ctx;

@@ -30,7 +30,6 @@ abstract class EmbedGalleryView with _$EmbedGalleryView {
     @Default('app.bsky.embed.gallery#view') String $type,
     @UEmbedGalleryViewItemsConverter()
     required List<UEmbedGalleryViewItems> items,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedGalleryView;
 

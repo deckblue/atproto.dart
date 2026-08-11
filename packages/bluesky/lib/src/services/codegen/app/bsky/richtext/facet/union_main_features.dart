@@ -104,7 +104,6 @@ final class URichtextFacetFeaturesConverter
           const RichtextFacetLinkConverter().toJson(data),
         URichtextFacetFeaturesRichtextFacetTag(:final data) =>
           const RichtextFacetTagConverter().toJson(data),
-
         URichtextFacetFeaturesUnknown(:final data) => data,
       };
 }

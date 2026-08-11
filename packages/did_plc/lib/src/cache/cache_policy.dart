@@ -46,33 +46,33 @@ sealed class CachePolicy with _$CachePolicy {
 extension CachePolicyExtension on CachePolicy {
   /// Returns true if caching is effectively enabled.
   bool get isEnabled => switch (this) {
-    _CachePolicy(:final enabled) => enabled,
-    _CachePolicyDisabled() => false,
-    _CachePolicyAggressive() => true,
-    _CachePolicyMinimal() => true,
-  };
+        _CachePolicy(:final enabled) => enabled,
+        _CachePolicyDisabled() => false,
+        _CachePolicyAggressive() => true,
+        _CachePolicyMinimal() => true,
+      };
 
   /// Returns the effective TTL duration.
   Duration get effectiveTtl => switch (this) {
-    _CachePolicy(:final ttl) => ttl,
-    _CachePolicyDisabled() => Duration.zero,
-    _CachePolicyAggressive(:final ttl) => ttl,
-    _CachePolicyMinimal(:final ttl) => ttl,
-  };
+        _CachePolicy(:final ttl) => ttl,
+        _CachePolicyDisabled() => Duration.zero,
+        _CachePolicyAggressive(:final ttl) => ttl,
+        _CachePolicyMinimal(:final ttl) => ttl,
+      };
 
   /// Returns the effective maximum cache size.
   int get effectiveMaxSize => switch (this) {
-    _CachePolicy(:final maxSize) => maxSize,
-    _CachePolicyDisabled() => 0,
-    _CachePolicyAggressive(:final maxSize) => maxSize,
-    _CachePolicyMinimal(:final maxSize) => maxSize,
-  };
+        _CachePolicy(:final maxSize) => maxSize,
+        _CachePolicyDisabled() => 0,
+        _CachePolicyAggressive(:final maxSize) => maxSize,
+        _CachePolicyMinimal(:final maxSize) => maxSize,
+      };
 
   /// Returns true if LRU eviction should be used.
   bool get shouldUseLru => switch (this) {
-    _CachePolicy(:final enableLru) => enableLru,
-    _CachePolicyDisabled() => false,
-    _CachePolicyAggressive() => true,
-    _CachePolicyMinimal() => true,
-  };
+        _CachePolicy(:final enableLru) => enableLru,
+        _CachePolicyDisabled() => false,
+        _CachePolicyAggressive() => true,
+        _CachePolicyMinimal() => true,
+      };
 }

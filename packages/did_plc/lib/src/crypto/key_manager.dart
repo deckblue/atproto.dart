@@ -41,9 +41,9 @@ enum KeyType {
 
   /// The elliptic curve domain parameters for this key type.
   ECDomainParameters get domainParameters => switch (this) {
-    KeyType.secp256k1 => ECCurve_secp256k1(),
-    KeyType.p256 => ECCurve_secp256r1(),
-  };
+        KeyType.secp256k1 => ECCurve_secp256k1(),
+        KeyType.p256 => ECCurve_secp256r1(),
+      };
 }
 
 /// A decoded `did:key` identifier: the key type plus the compressed

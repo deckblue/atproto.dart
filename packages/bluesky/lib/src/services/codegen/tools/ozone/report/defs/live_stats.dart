@@ -55,7 +55,6 @@ abstract class LiveStats with _$LiveStats {
 
     /// When these statistics were last computed.
     @JsonKey(toJson: iso8601) DateTime? lastUpdated,
-
     Map<String, dynamic>? $unknown,
   }) = _LiveStats;
 

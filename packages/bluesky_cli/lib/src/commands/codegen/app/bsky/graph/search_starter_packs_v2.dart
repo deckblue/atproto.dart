@@ -43,10 +43,9 @@ final class SearchStarterPacksV2Command extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "q": argResults!["q"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        "q": argResults!["q"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

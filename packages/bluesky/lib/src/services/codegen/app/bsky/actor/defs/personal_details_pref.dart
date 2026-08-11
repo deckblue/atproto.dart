@@ -28,7 +28,6 @@ abstract class PersonalDetailsPref with _$PersonalDetailsPref {
 
     /// The birth date of account owner.
     @JsonKey(toJson: iso8601) DateTime? birthDate,
-
     Map<String, dynamic>? $unknown,
   }) = _PersonalDetailsPref;
 

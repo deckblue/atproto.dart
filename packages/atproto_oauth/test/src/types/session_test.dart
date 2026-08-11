@@ -6,17 +6,17 @@ import 'package:atproto_oauth/atproto_oauth.dart';
 import 'package:test/test.dart';
 
 OAuthSession _session() => OAuthSession(
-  accessToken: 'access',
-  refreshToken: 'refresh',
-  scope: 'atproto transition:generic',
-  expiresAt: DateTime.utc(2030, 1, 1, 0, 0, 0),
-  sub: 'did:plc:abc',
-  issuer: 'https://bsky.social',
-  pds: 'https://pds.example',
-  clientId: 'https://client.example/client-metadata.json',
-  dpopPublicKey: 'PUB',
-  dpopPrivateKey: 'PRIV',
-);
+      accessToken: 'access',
+      refreshToken: 'refresh',
+      scope: 'atproto transition:generic',
+      expiresAt: DateTime.utc(2030, 1, 1, 0, 0, 0),
+      sub: 'did:plc:abc',
+      issuer: 'https://bsky.social',
+      pds: 'https://pds.example',
+      clientId: 'https://client.example/client-metadata.json',
+      dpopPublicKey: 'PUB',
+      dpopPrivateKey: 'PRIV',
+    );
 
 void main() {
   test('toJson/fromJson round-trips including issuer and pds', () {

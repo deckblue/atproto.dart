@@ -38,10 +38,9 @@ final class ListMutualGroupsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "subject": argResults!["subject"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        "subject": argResults!["subject"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

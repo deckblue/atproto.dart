@@ -124,20 +124,20 @@ final class UFeedPostEmbedConverter
 
   @override
   Map<String, dynamic> toJson(UFeedPostEmbed object) => switch (object) {
-    UFeedPostEmbedEmbedImages(:final data) =>
-      const EmbedImagesConverter().toJson(data),
-    UFeedPostEmbedEmbedVideo(:final data) => const EmbedVideoConverter().toJson(
-      data,
-    ),
-    UFeedPostEmbedEmbedGallery(:final data) =>
-      const EmbedGalleryConverter().toJson(data),
-    UFeedPostEmbedEmbedExternal(:final data) =>
-      const EmbedExternalConverter().toJson(data),
-    UFeedPostEmbedEmbedRecord(:final data) =>
-      const EmbedRecordConverter().toJson(data),
-    UFeedPostEmbedEmbedRecordWithMedia(:final data) =>
-      const EmbedRecordWithMediaConverter().toJson(data),
-
-    UFeedPostEmbedUnknown(:final data) => data,
-  };
+        UFeedPostEmbedEmbedImages(:final data) =>
+          const EmbedImagesConverter().toJson(data),
+        UFeedPostEmbedEmbedVideo(:final data) =>
+          const EmbedVideoConverter().toJson(
+            data,
+          ),
+        UFeedPostEmbedEmbedGallery(:final data) =>
+          const EmbedGalleryConverter().toJson(data),
+        UFeedPostEmbedEmbedExternal(:final data) =>
+          const EmbedExternalConverter().toJson(data),
+        UFeedPostEmbedEmbedRecord(:final data) =>
+          const EmbedRecordConverter().toJson(data),
+        UFeedPostEmbedEmbedRecordWithMedia(:final data) =>
+          const EmbedRecordWithMediaConverter().toJson(data),
+        UFeedPostEmbedUnknown(:final data) => data,
+      };
 }

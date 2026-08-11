@@ -23,8 +23,7 @@
 ///   surrogates U+D83C-U+D83E together with any low surrogate
 ///   U+DC00-U+DFFF. Inside a UTF-16 character class these two ranges combine
 ///   to match emoji such as U+1F497 or U+1F98B.
-const hashtagEmoji =
-    r'\u00a9\u00ae'
+const hashtagEmoji = r'\u00a9\u00ae'
     r'\u203c\u2049\u2122\u2139\u2194-\u2199\u21a9\u21aa'
     r'\u231a\u231b\u2328\u23cf\u23e9-\u23f3\u23f8-\u23fa\u24c2'
     r'\u25aa\u25ab\u25b6\u25c0\u25fb-\u25fe'

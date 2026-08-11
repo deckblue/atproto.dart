@@ -71,9 +71,9 @@ final class JobStatusFailureCodeConverter
 
   @override
   String toJson(JobStatusFailureCode object) => switch (object) {
-    JobStatusFailureCodeKnownValue(:final data) => data.value,
-    JobStatusFailureCodeUnknown(:final data) => data,
-  };
+        JobStatusFailureCodeKnownValue(:final data) => data.value,
+        JobStatusFailureCodeUnknown(:final data) => data,
+      };
 }
 
 enum KnownJobStatusFailureCode implements Serializable {

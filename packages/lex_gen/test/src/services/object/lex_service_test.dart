@@ -49,9 +49,8 @@ void main() {
       // strict PDS does not reject the create/put.
       expect(output, contains("r'\$type': 'app.bsky.feed.post',"));
       // Exactly two occurrences: one in create, one in put.
-      final count = "r'\$type': 'app.bsky.feed.post',"
-          .allMatches(output)
-          .length;
+      final count =
+          "r'\$type': 'app.bsky.feed.post',".allMatches(output).length;
       expect(count, 2);
     });
 

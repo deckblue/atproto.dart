@@ -23,40 +23,44 @@ import 'notification/putPreferences/output.dart';
 
 /// Get the requesting account's chat notification preferences. Defaults are returned for accounts that have not set any preferences. Requires auth.
 Future<XRPCResponse<NotificationGetPreferencesOutput>>
-chatBskyNotificationGetPreferences({
+    chatBskyNotificationGetPreferences({
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyNotificationGetPreferences,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown},
-  to: const NotificationGetPreferencesOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.chatBskyNotificationGetPreferences,
+          service: $service,
+          headers: $headers,
+          parameters: {...?$unknown},
+          to: const NotificationGetPreferencesOutputConverter().fromJson,
+        );
 
 /// Set the requesting account's chat notification preferences. Only the provided preferences are updated; omitted preferences are left unchanged.
 Future<XRPCResponse<NotificationPutPreferencesOutput>>
-chatBskyNotificationPutPreferences({
+    chatBskyNotificationPutPreferences({
   ChatPreference? chat,
   ChatPreference? chatRequest,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyNotificationPutPreferences,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    if (chat != null) 'chat': const ChatPreferenceConverter().toJson(chat),
-    if (chatRequest != null)
-      'chatRequest': const ChatPreferenceConverter().toJson(chatRequest),
-  },
-  to: const NotificationPutPreferencesOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.post(
+          ns.chatBskyNotificationPutPreferences,
+          service: $service,
+          headers: {'Content-type': 'application/json', ...?$headers},
+          body: {
+            ...?$unknown,
+            if (chat != null)
+              'chat': const ChatPreferenceConverter().toJson(chat),
+            if (chatRequest != null)
+              'chatRequest':
+                  const ChatPreferenceConverter().toJson(chatRequest),
+          },
+          to: const NotificationPutPreferencesOutputConverter().fromJson,
+        );
 
 /// `chat.bsky.notification.*`
 base class NotificationService {
@@ -70,12 +74,13 @@ base class NotificationService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyNotificationGetPreferences(
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyNotificationGetPreferences(
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Set the requesting account's chat notification preferences. Only the provided preferences are updated; omitted preferences are left unchanged.
   Future<XRPCResponse<NotificationPutPreferencesOutput>> putPreferences({
@@ -84,12 +89,13 @@ base class NotificationService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyNotificationPutPreferences(
-    chat: chat,
-    chatRequest: chatRequest,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyNotificationPutPreferences(
+        chat: chat,
+        chatRequest: chatRequest,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

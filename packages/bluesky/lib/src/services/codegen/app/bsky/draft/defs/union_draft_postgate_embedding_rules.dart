@@ -72,7 +72,6 @@ final class UDraftPostgateEmbeddingRulesConverter
       switch (object) {
         UDraftPostgateEmbeddingRulesDisableRule(:final data) =>
           const DisableRuleConverter().toJson(data),
-
         UDraftPostgateEmbeddingRulesUnknown(:final data) => data,
       };
 }

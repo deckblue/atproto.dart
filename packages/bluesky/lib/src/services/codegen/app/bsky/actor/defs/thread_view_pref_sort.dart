@@ -71,9 +71,9 @@ final class ThreadViewPrefSortConverter
 
   @override
   String toJson(ThreadViewPrefSort object) => switch (object) {
-    ThreadViewPrefSortKnownValue(:final data) => data.value,
-    ThreadViewPrefSortUnknown(:final data) => data,
-  };
+        ThreadViewPrefSortKnownValue(:final data) => data.value,
+        ThreadViewPrefSortUnknown(:final data) => data,
+      };
 }
 
 enum KnownThreadViewPrefSort implements Serializable {

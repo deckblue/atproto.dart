@@ -76,9 +76,9 @@ final class ModerationQueryStatusesReviewStateConverter
 
   @override
   String toJson(ModerationQueryStatusesReviewState object) => switch (object) {
-    ModerationQueryStatusesReviewStateKnownValue(:final data) => data.value,
-    ModerationQueryStatusesReviewStateUnknown(:final data) => data,
-  };
+        ModerationQueryStatusesReviewStateKnownValue(:final data) => data.value,
+        ModerationQueryStatusesReviewStateUnknown(:final data) => data,
+      };
 }
 
 enum KnownModerationQueryStatusesReviewState implements Serializable {

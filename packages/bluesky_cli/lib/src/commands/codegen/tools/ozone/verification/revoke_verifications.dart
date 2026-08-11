@@ -44,10 +44,10 @@ final class RevokeVerificationsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "uris": _requireNonEmpty("uris", argResults!["uris"]),
-    if (argResults!.wasParsed("revokeReason"))
-      "revokeReason": argResults!["revokeReason"],
-  };
+        "uris": _requireNonEmpty("uris", argResults!["uris"]),
+        if (argResults!.wasParsed("revokeReason"))
+          "revokeReason": argResults!["revokeReason"],
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

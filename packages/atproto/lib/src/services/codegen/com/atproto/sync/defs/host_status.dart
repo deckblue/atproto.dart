@@ -68,9 +68,9 @@ final class HostStatusConverter extends JsonConverter<HostStatus, String> {
 
   @override
   String toJson(HostStatus object) => switch (object) {
-    HostStatusKnownValue(:final data) => data.value,
-    HostStatusUnknown(:final data) => data,
-  };
+        HostStatusKnownValue(:final data) => data.value,
+        HostStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownHostStatus implements Serializable {

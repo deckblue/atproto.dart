@@ -27,7 +27,6 @@ abstract class DisabledJoinLinkPreviewView with _$DisabledJoinLinkPreviewView {
   const factory DisabledJoinLinkPreviewView({
     @Default('chat.bsky.group.defs#disabledJoinLinkPreviewView') String $type,
     required String code,
-
     Map<String, dynamic>? $unknown,
   }) = _DisabledJoinLinkPreviewView;
 

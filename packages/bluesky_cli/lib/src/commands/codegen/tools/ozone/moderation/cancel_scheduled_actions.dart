@@ -43,9 +43,9 @@ final class CancelScheduledActionsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
-    if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
-  };
+        "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
+        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

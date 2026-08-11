@@ -76,9 +76,9 @@ final class ProfileAssociatedChatAllowIncomingConverter
 
   @override
   String toJson(ProfileAssociatedChatAllowIncoming object) => switch (object) {
-    ProfileAssociatedChatAllowIncomingKnownValue(:final data) => data.value,
-    ProfileAssociatedChatAllowIncomingUnknown(:final data) => data,
-  };
+        ProfileAssociatedChatAllowIncomingKnownValue(:final data) => data.value,
+        ProfileAssociatedChatAllowIncomingUnknown(:final data) => data,
+      };
 }
 
 enum KnownProfileAssociatedChatAllowIncoming implements Serializable {

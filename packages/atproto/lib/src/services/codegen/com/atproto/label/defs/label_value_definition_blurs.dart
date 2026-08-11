@@ -71,9 +71,9 @@ final class LabelValueDefinitionBlursConverter
 
   @override
   String toJson(LabelValueDefinitionBlurs object) => switch (object) {
-    LabelValueDefinitionBlursKnownValue(:final data) => data.value,
-    LabelValueDefinitionBlursUnknown(:final data) => data,
-  };
+        LabelValueDefinitionBlursKnownValue(:final data) => data.value,
+        LabelValueDefinitionBlursUnknown(:final data) => data,
+      };
 }
 
 enum KnownLabelValueDefinitionBlurs implements Serializable {

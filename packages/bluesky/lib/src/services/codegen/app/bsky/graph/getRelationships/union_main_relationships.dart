@@ -61,10 +61,8 @@ extension UGraphGetRelationshipsRelationshipsExtension
 
 final class UGraphGetRelationshipsRelationshipsConverter
     implements
-        JsonConverter<
-          UGraphGetRelationshipsRelationships,
-          Map<String, dynamic>
-        > {
+        JsonConverter<UGraphGetRelationshipsRelationships,
+            Map<String, dynamic>> {
   const UGraphGetRelationshipsRelationshipsConverter();
 
   @override
@@ -94,7 +92,6 @@ final class UGraphGetRelationshipsRelationshipsConverter
           const RelationshipConverter().toJson(data),
         UGraphGetRelationshipsRelationshipsNotFoundActor(:final data) =>
           const NotFoundActorConverter().toJson(data),
-
         UGraphGetRelationshipsRelationshipsUnknown(:final data) => data,
       };
 }

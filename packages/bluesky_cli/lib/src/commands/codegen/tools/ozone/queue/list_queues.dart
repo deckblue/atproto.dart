@@ -55,16 +55,15 @@ final class ListQueuesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("enabled")) "enabled": argResults!["enabled"],
-    if (argResults!.wasParsed("subjectType"))
-      "subjectType": argResults!["subjectType"],
-    if (argResults!.wasParsed("collection"))
-      "collection": argResults!["collection"],
-    if (argResults!.wasParsed("reportTypes"))
-      "reportTypes": argResults!["reportTypes"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        if (argResults!.wasParsed("enabled")) "enabled": argResults!["enabled"],
+        if (argResults!.wasParsed("subjectType"))
+          "subjectType": argResults!["subjectType"],
+        if (argResults!.wasParsed("collection"))
+          "collection": argResults!["collection"],
+        if (argResults!.wasParsed("reportTypes"))
+          "reportTypes": argResults!["reportTypes"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

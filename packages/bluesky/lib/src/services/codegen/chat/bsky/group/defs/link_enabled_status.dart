@@ -71,9 +71,9 @@ final class LinkEnabledStatusConverter
 
   @override
   String toJson(LinkEnabledStatus object) => switch (object) {
-    LinkEnabledStatusKnownValue(:final data) => data.value,
-    LinkEnabledStatusUnknown(:final data) => data,
-  };
+        LinkEnabledStatusKnownValue(:final data) => data.value,
+        LinkEnabledStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownLinkEnabledStatus implements Serializable {

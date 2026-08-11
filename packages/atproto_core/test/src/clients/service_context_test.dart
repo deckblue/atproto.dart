@@ -432,19 +432,20 @@ void main() {
     Session session({
       String accessJwt = 'old-token',
       String refreshJwt = 'refresh-token',
-    }) => Session(
-      did: 'did:plc:testaccount',
-      handle: 'test.dev',
-      accessJwt: accessJwt,
-      refreshJwt: refreshJwt,
-    );
+    }) =>
+        Session(
+          did: 'did:plc:testaccount',
+          handle: 'test.dev',
+          accessJwt: accessJwt,
+          refreshJwt: refreshJwt,
+        );
 
     http.Response json(Uri url, int status, String body) => http.Response(
-      body,
-      status,
-      headers: {'content-type': 'application/json'},
-      request: http.Request('GET', url),
-    );
+          body,
+          status,
+          headers: {'content-type': 'application/json'},
+          request: http.Request('GET', url),
+        );
 
     test(
       'refreshes an expired access token and retries once with the new token',
@@ -490,8 +491,8 @@ void main() {
             current.copyWith(accessJwt: 'new-token', refreshJwt: 'new-refresh'),
         getClient: (url, {headers}) async =>
             headers?['Authorization'] == 'Bearer new-token'
-            ? json(url, 200, '{}')
-            : json(url, 401, '{"error":"ExpiredToken"}'),
+                ? json(url, 200, '{}')
+                : json(url, 401, '{"error":"ExpiredToken"}'),
       );
 
       final updates = <Session>[];
@@ -521,8 +522,8 @@ void main() {
         },
         getClient: (url, {headers}) async =>
             headers?['Authorization'] == 'Bearer new-token'
-            ? json(url, 200, '{}')
-            : json(url, 401, '{"error":"ExpiredToken"}'),
+                ? json(url, 200, '{}')
+                : json(url, 401, '{"error":"ExpiredToken"}'),
       );
 
       final updates = <Session>[];
@@ -632,8 +633,8 @@ void main() {
       final authHeaders = <String?>[];
 
       final expiredAt = DateTime.now().toUtc().subtract(
-        const Duration(seconds: 5),
-      );
+            const Duration(seconds: 5),
+          );
       final expSeconds = expiredAt.millisecondsSinceEpoch ~/ 1000;
       final expiredAccessJwt = _jwt({
         'sub': 'did:plc:testaccount',
@@ -789,8 +790,8 @@ void main() {
         addTearDown(() => hang.complete(session()));
 
         final expiredAt = DateTime.now().toUtc().subtract(
-          const Duration(seconds: 5),
-        );
+              const Duration(seconds: 5),
+            );
         final expSeconds = expiredAt.millisecondsSinceEpoch ~/ 1000;
         final expiredAccessJwt = _jwt({
           'sub': 'did:plc:testaccount',
@@ -1093,19 +1094,20 @@ void main() {
     Session session({
       String accessJwt = 'old-token',
       String refreshJwt = 'refresh-token',
-    }) => Session(
-      did: 'did:plc:testaccount',
-      handle: 'test.dev',
-      accessJwt: accessJwt,
-      refreshJwt: refreshJwt,
-    );
+    }) =>
+        Session(
+          did: 'did:plc:testaccount',
+          handle: 'test.dev',
+          accessJwt: accessJwt,
+          refreshJwt: refreshJwt,
+        );
 
     http.Response json(Uri url, int status, String body) => http.Response(
-      body,
-      status,
-      headers: {'content-type': 'application/json'},
-      request: http.Request('GET', url),
-    );
+          body,
+          status,
+          headers: {'content-type': 'application/json'},
+          request: http.Request('GET', url),
+        );
 
     test('sends its own headers and leaves the origin context alone', () async {
       final sent = <Map<String, String>?>[];
@@ -1164,8 +1166,8 @@ void main() {
           },
           getClient: (url, {headers}) async =>
               headers?['Authorization'] == 'Bearer new-token'
-              ? json(url, 200, '{}')
-              : json(url, 401, '{"error":"ExpiredToken"}'),
+                  ? json(url, 200, '{}')
+                  : json(url, 401, '{"error":"ExpiredToken"}'),
         );
         final derived = origin.withHeaders(const {'x-derived': 'yes'});
 
@@ -1201,8 +1203,8 @@ void main() {
           ),
           getClient: (url, {headers}) async =>
               headers?['Authorization'] == 'Bearer new-token'
-              ? json(url, 200, '{}')
-              : json(url, 401, '{"error":"ExpiredToken"}'),
+                  ? json(url, 200, '{}')
+                  : json(url, 401, '{"error":"ExpiredToken"}'),
         );
         final derived = origin.withHeaders(const {'x-derived': 'yes'});
 
@@ -1265,8 +1267,8 @@ void main() {
           },
           getClient: (url, {headers}) async =>
               headers?['Authorization'] == 'Bearer new-token'
-              ? json(url, 200, '{}')
-              : json(url, 401, '{"error":"ExpiredToken"}'),
+                  ? json(url, 200, '{}')
+                  : json(url, 401, '{"error":"ExpiredToken"}'),
         );
         final derived = origin.withHeaders(const {'x-derived': 'yes'});
 
@@ -1291,8 +1293,8 @@ void main() {
       final authHeaders = <String?>[];
 
       final expiredAt = DateTime.now().toUtc().subtract(
-        const Duration(seconds: 5),
-      );
+            const Duration(seconds: 5),
+          );
       final expSeconds = expiredAt.millisecondsSinceEpoch ~/ 1000;
 
       final origin = ServiceContext(
@@ -1450,11 +1452,11 @@ void main() {
 
   group('.withAdditionalHeaders', () {
     http.Response json(Uri url, int status, String body) => http.Response(
-      body,
-      status,
-      headers: {'content-type': 'application/json'},
-      request: http.Request('GET', url),
-    );
+          body,
+          status,
+          headers: {'content-type': 'application/json'},
+          request: http.Request('GET', url),
+        );
 
     test('keeps this context headers and adds the given ones', () {
       final origin = ServiceContext(headers: const {'x-origin': 'yes'});
@@ -1532,8 +1534,8 @@ void main() {
         },
         getClient: (url, {headers}) async =>
             headers?['Authorization'] == 'Bearer new-token'
-            ? json(url, 200, '{}')
-            : json(url, 401, '{"error":"ExpiredToken"}'),
+                ? json(url, 200, '{}')
+                : json(url, 401, '{"error":"ExpiredToken"}'),
       );
       final derived = origin.withAdditionalHeaders(const {'x-derived': 'yes'});
 
@@ -1577,7 +1579,8 @@ class _StubSigner implements DPoPSigner {
     required DPoPKeyPair keyPair,
     String? nonce,
     String? accessToken,
-  }) async => 'proof';
+  }) async =>
+      'proof';
 }
 
 /// A [DPoPSigner] that records the nonce it was last asked to sign with.

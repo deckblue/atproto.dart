@@ -1,9 +1,8 @@
 // Package imports:
-import 'package:test/test.dart';
-
-// Project imports:
-import 'package:bluesky/app_bsky_notification_listnotifications.dart';
 import 'package:bluesky/bluesky.dart';
+import 'package:bluesky/src/tools/extensions/notifications_extension.dart';
+import 'package:bluesky/src/tools/utils/notifications_grouper_config.dart';
+import 'package:test/test.dart';
 
 // Project imports (public barrels only):
 

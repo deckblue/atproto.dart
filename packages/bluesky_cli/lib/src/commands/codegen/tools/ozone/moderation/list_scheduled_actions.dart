@@ -54,17 +54,17 @@ final class ListScheduledActionsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!.wasParsed("startsAfter"))
-      "startsAfter": argResults!["startsAfter"],
-    if (argResults!.wasParsed("endsBefore"))
-      "endsBefore": argResults!["endsBefore"],
-    if (argResults!.wasParsed("subjects")) "subjects": argResults!["subjects"],
-    "statuses": _requireNonEmpty("statuses", argResults!["statuses"]),
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        if (argResults!.wasParsed("startsAfter"))
+          "startsAfter": argResults!["startsAfter"],
+        if (argResults!.wasParsed("endsBefore"))
+          "endsBefore": argResults!["endsBefore"],
+        if (argResults!.wasParsed("subjects"))
+          "subjects": argResults!["subjects"],
+        "statuses": _requireNonEmpty("statuses", argResults!["statuses"]),
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

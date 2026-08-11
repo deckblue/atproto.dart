@@ -70,9 +70,9 @@ final class JobStatusStateConverter
 
   @override
   String toJson(JobStatusState object) => switch (object) {
-    JobStatusStateKnownValue(:final data) => data.value,
-    JobStatusStateUnknown(:final data) => data,
-  };
+        JobStatusStateKnownValue(:final data) => data.value,
+        JobStatusStateUnknown(:final data) => data,
+      };
 }
 
 enum KnownJobStatusState implements Serializable {

@@ -23,11 +23,11 @@ Map<String, dynamic> _$$OAuthContextImplToJson(_$OAuthContextImpl instance) =>
     <String, dynamic>{
       'codeVerifier': instance.codeVerifier,
       'state': instance.state,
-      'dpopNonce': ?instance.dpopNonce,
-      'issuer': ?instance.issuer,
-      'tokenEndpoint': ?instance.tokenEndpoint,
-      'dpopPublicKey': ?instance.dpopPublicKey,
-      'dpopPrivateKey': ?instance.dpopPrivateKey,
-      'pds': ?instance.pds,
-      'expectedSub': ?instance.expectedSub,
+      if (instance.dpopNonce case final value?) 'dpopNonce': value,
+      if (instance.issuer case final value?) 'issuer': value,
+      if (instance.tokenEndpoint case final value?) 'tokenEndpoint': value,
+      if (instance.dpopPublicKey case final value?) 'dpopPublicKey': value,
+      if (instance.dpopPrivateKey case final value?) 'dpopPrivateKey': value,
+      if (instance.pds case final value?) 'pds': value,
+      if (instance.expectedSub case final value?) 'expectedSub': value,
     };

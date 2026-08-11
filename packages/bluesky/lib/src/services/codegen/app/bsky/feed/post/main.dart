@@ -53,7 +53,6 @@ abstract class FeedPostRecord with _$FeedPostRecord {
 
     /// Client-declared timestamp when this post was originally created.
     @JsonKey(toJson: iso8601) required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedPostRecord;
 

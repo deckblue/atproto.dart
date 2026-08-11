@@ -37,8 +37,8 @@ final class GetStateCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "countryCode": argResults!["countryCode"],
-    if (argResults!.wasParsed("regionCode"))
-      "regionCode": argResults!["regionCode"],
-  };
+        "countryCode": argResults!["countryCode"],
+        if (argResults!.wasParsed("regionCode"))
+          "regionCode": argResults!["regionCode"],
+      };
 }

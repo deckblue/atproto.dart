@@ -71,9 +71,9 @@ final class OptionManagerRoleConverter
 
   @override
   String toJson(OptionManagerRole object) => switch (object) {
-    OptionManagerRoleKnownValue(:final data) => data.value,
-    OptionManagerRoleUnknown(:final data) => data,
-  };
+        OptionManagerRoleKnownValue(:final data) => data.value,
+        OptionManagerRoleUnknown(:final data) => data,
+      };
 }
 
 enum KnownOptionManagerRole implements Serializable {

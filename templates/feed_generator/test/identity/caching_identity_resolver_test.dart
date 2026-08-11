@@ -87,7 +87,8 @@ void main() {
     expect(inner.calls, 4);
   });
 
-  test('collapses concurrent resolutions of one identity into a single '
+  test(
+      'collapses concurrent resolutions of one identity into a single '
       'upstream fetch', () async {
     // The auth path is unauthenticated, so a burst of requests naming the
     // same viewer must not become a burst of outbound DID resolutions.

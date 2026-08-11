@@ -86,7 +86,6 @@ final class ULabelerGetServicesViewsConverter
           const LabelerViewConverter().toJson(data),
         ULabelerGetServicesViewsLabelerViewDetailed(:final data) =>
           const LabelerViewDetailedConverter().toJson(data),
-
         ULabelerGetServicesViewsUnknown(:final data) => data,
       };
 }

@@ -42,14 +42,14 @@ final class UpsertOptionCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "key": argResults!["key"],
-    "scope": argResults!["scope"],
-    "value": _decodeJson("value"),
-    if (argResults!.wasParsed("description"))
-      "description": argResults!["description"],
-    if (argResults!.wasParsed("managerRole"))
-      "managerRole": argResults!["managerRole"],
-  };
+        "key": argResults!["key"],
+        "scope": argResults!["scope"],
+        "value": _decodeJson("value"),
+        if (argResults!.wasParsed("description"))
+          "description": argResults!["description"],
+        if (argResults!.wasParsed("managerRole"))
+          "managerRole": argResults!["managerRole"],
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

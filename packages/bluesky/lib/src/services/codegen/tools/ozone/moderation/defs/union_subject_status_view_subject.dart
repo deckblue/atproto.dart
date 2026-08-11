@@ -110,7 +110,6 @@ final class USubjectStatusViewSubjectConverter
           const MessageRefConverter().toJson(data),
         USubjectStatusViewSubjectConvoRef(:final data) =>
           const ConvoRefConverter().toJson(data),
-
         USubjectStatusViewSubjectUnknown(:final data) => data,
       };
 }

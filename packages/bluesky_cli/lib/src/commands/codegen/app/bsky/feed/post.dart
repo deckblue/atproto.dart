@@ -126,23 +126,23 @@ final class _CreatePostCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.feed.post",
-    "text": argResults!["text"],
-    if (argResults!.wasParsed("entities"))
-      "entities": (argResults!["entities"] as List<String>)
-          .map((e) => _decodeJsonItem("entities", e))
-          .toList(),
-    if (argResults!.wasParsed("facets"))
-      "facets": (argResults!["facets"] as List<String>)
-          .map((e) => _decodeJsonItem("facets", e))
-          .toList(),
-    if (argResults!.wasParsed("reply")) "reply": _decodeJson("reply"),
-    if (argResults!.wasParsed("embed")) "embed": _decodeJson("embed"),
-    if (argResults!.wasParsed("langs")) "langs": argResults!["langs"],
-    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
-    if (argResults!.wasParsed("tags")) "tags": argResults!["tags"],
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.feed.post",
+        "text": argResults!["text"],
+        if (argResults!.wasParsed("entities"))
+          "entities": (argResults!["entities"] as List<String>)
+              .map((e) => _decodeJsonItem("entities", e))
+              .toList(),
+        if (argResults!.wasParsed("facets"))
+          "facets": (argResults!["facets"] as List<String>)
+              .map((e) => _decodeJsonItem("facets", e))
+              .toList(),
+        if (argResults!.wasParsed("reply")) "reply": _decodeJson("reply"),
+        if (argResults!.wasParsed("embed")) "embed": _decodeJson("embed"),
+        if (argResults!.wasParsed("langs")) "langs": argResults!["langs"],
+        if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+        if (argResults!.wasParsed("tags")) "tags": argResults!["tags"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutPostCommand extends PutRecordCommand
@@ -170,23 +170,23 @@ final class _PutPostCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.feed.post",
-    "text": argResults!["text"],
-    if (argResults!.wasParsed("entities"))
-      "entities": (argResults!["entities"] as List<String>)
-          .map((e) => _decodeJsonItem("entities", e))
-          .toList(),
-    if (argResults!.wasParsed("facets"))
-      "facets": (argResults!["facets"] as List<String>)
-          .map((e) => _decodeJsonItem("facets", e))
-          .toList(),
-    if (argResults!.wasParsed("reply")) "reply": _decodeJson("reply"),
-    if (argResults!.wasParsed("embed")) "embed": _decodeJson("embed"),
-    if (argResults!.wasParsed("langs")) "langs": argResults!["langs"],
-    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
-    if (argResults!.wasParsed("tags")) "tags": argResults!["tags"],
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.feed.post",
+        "text": argResults!["text"],
+        if (argResults!.wasParsed("entities"))
+          "entities": (argResults!["entities"] as List<String>)
+              .map((e) => _decodeJsonItem("entities", e))
+              .toList(),
+        if (argResults!.wasParsed("facets"))
+          "facets": (argResults!["facets"] as List<String>)
+              .map((e) => _decodeJsonItem("facets", e))
+              .toList(),
+        if (argResults!.wasParsed("reply")) "reply": _decodeJson("reply"),
+        if (argResults!.wasParsed("embed")) "embed": _decodeJson("embed"),
+        if (argResults!.wasParsed("langs")) "langs": argResults!["langs"],
+        if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+        if (argResults!.wasParsed("tags")) "tags": argResults!["tags"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeletePostCommand extends DeleteRecordCommand {
@@ -236,11 +236,11 @@ final class _GetPostCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.feed.post",
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.feed.post",
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListPostCommand extends QueryCommand {
@@ -270,12 +270,11 @@ final class _ListPostCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.feed.post",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.feed.post",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

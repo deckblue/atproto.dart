@@ -71,9 +71,9 @@ final class TeamAddMemberRoleConverter
 
   @override
   String toJson(TeamAddMemberRole object) => switch (object) {
-    TeamAddMemberRoleKnownValue(:final data) => data.value,
-    TeamAddMemberRoleUnknown(:final data) => data,
-  };
+        TeamAddMemberRoleKnownValue(:final data) => data.value,
+        TeamAddMemberRoleUnknown(:final data) => data,
+      };
 }
 
 enum KnownTeamAddMemberRole implements Serializable {

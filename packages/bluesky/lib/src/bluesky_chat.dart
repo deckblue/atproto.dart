@@ -74,19 +74,20 @@ sealed class BlueskyChat {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _BlueskyChat.fromAtproto(
-    atp.ATProto.fromSession(
-      headers: headers,
-      session,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _BlueskyChat.fromAtproto(
+        atp.ATProto.fromSession(
+          headers: headers,
+          session,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns a new [BlueskyChat] backed by an OAuth [manager], which owns
   /// DPoP header building and transparent token refresh.
@@ -116,19 +117,20 @@ sealed class BlueskyChat {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _BlueskyChat.fromAtproto(
-    atp.ATProto.fromOAuth(
-      manager,
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _BlueskyChat.fromAtproto(
+        atp.ATProto.fromOAuth(
+          manager,
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the new instance of [BlueskyChat].
   ///
@@ -158,21 +160,22 @@ sealed class BlueskyChat {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => BlueskyChat.fromOAuth(
-    oauth.OAuthSessionManager.fromSession(
-      session,
-      client: oauthClient,
-      timeout: timeout,
-    ),
-    headers: headers,
-    protocol: protocol,
-    service: service,
-    relayService: relayService,
-    timeout: timeout,
-    retryConfig: retryConfig,
-    getClient: getClient,
-    postClient: postClient,
-  );
+  }) =>
+      BlueskyChat.fromOAuth(
+        oauth.OAuthSessionManager.fromSession(
+          session,
+          client: oauthClient,
+          timeout: timeout,
+        ),
+        headers: headers,
+        protocol: protocol,
+        service: service,
+        relayService: relayService,
+        timeout: timeout,
+        retryConfig: retryConfig,
+        getClient: getClient,
+        postClient: postClient,
+      );
 
   /// Returns the global headers without auth header.
   Map<String, String> get headers;
@@ -252,15 +255,15 @@ final class _BlueskyChat implements BlueskyChat {
   /// as `Atproto-Proxy` would keep it alongside the chat one, and a custom
   /// [core.GetClient] forwarding the raw map emits both.
   factory _BlueskyChat.fromAtproto(final atp.ATProto atproto) => _BlueskyChat._(
-    atproto.ctx.withAdditionalHeaders(_kBskyChatProxyHeaders),
-    atproto,
-  );
+        atproto.ctx.withAdditionalHeaders(_kBskyChatProxyHeaders),
+        atproto,
+      );
 
   _BlueskyChat._(final core.ServiceContext ctx, this.atproto)
-    : actor = ActorService(ctx),
-      convo = ConvoService(ctx),
-      moderation = ModerationService(ctx),
-      _ctx = ctx;
+      : actor = ActorService(ctx),
+        convo = ConvoService(ctx),
+        moderation = ModerationService(ctx),
+        _ctx = ctx;
 
   final core.ServiceContext _ctx;
 

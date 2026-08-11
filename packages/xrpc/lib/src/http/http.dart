@@ -30,25 +30,24 @@ Future<Response<T>> get<T>(
   final type.ResponseDataAdaptor? adaptor,
   final type.GetClient? getClient,
   final http.Client? client,
-}) async => _buildResponse<T>(
-  checkStatus(
-    await util.executeGet(
-      util
-          .getUriFactory(protocol)
-          .call(
-            service ?? defaultService,
-            unencodedPath,
-            util.toQueryParameters(parameters),
-          ),
-      headers: headers,
-      timeout: timeout,
-      getClient: getClient,
-      client: client,
-    ),
-  ),
-  to,
-  adaptor,
-);
+}) async =>
+    _buildResponse<T>(
+      checkStatus(
+        await util.executeGet(
+          util.getUriFactory(protocol).call(
+                service ?? defaultService,
+                unencodedPath,
+                util.toQueryParameters(parameters),
+              ),
+          headers: headers,
+          timeout: timeout,
+          getClient: getClient,
+          client: client,
+        ),
+      ),
+      to,
+      adaptor,
+    );
 
 Future<Response<T>> post<T>(
   final String unencodedPath, {
@@ -62,34 +61,33 @@ Future<Response<T>> post<T>(
   final type.ResponseDataAdaptor? adaptor,
   final type.PostClient? postClient,
   final http.Client? client,
-}) async => _buildResponse<T>(
-  checkStatus(
-    await util.executePost(
-      util
-          .getUriFactory(protocol)
-          .call(
-            service ?? defaultService,
-            unencodedPath,
-            util.toQueryParameters(parameters),
-          ),
-      headers: {'Content-Type': 'application/json; charset=UTF-8'}
-        ..addAll(headers ?? {}),
-      //! Use the body-specific cleaner so that explicitly empty collections
-      //! (e.g. threadgate `allow: []`) survive; only `null` values are removed.
-      //! `removeNullValues` would prune empty `[]`/`{}`, silently changing the
-      //! meaning of a request body.
-      body: body != null
-          ? jsonEncode(util.removeNullValuesFromBody(body) ?? {})
-          : null,
-      encoding: utf8,
-      timeout: timeout,
-      postClient: postClient,
-      client: client,
-    ),
-  ),
-  to,
-  adaptor,
-);
+}) async =>
+    _buildResponse<T>(
+      checkStatus(
+        await util.executePost(
+          util.getUriFactory(protocol).call(
+                service ?? defaultService,
+                unencodedPath,
+                util.toQueryParameters(parameters),
+              ),
+          headers: {'Content-Type': 'application/json; charset=UTF-8'}
+            ..addAll(headers ?? {}),
+          //! Use the body-specific cleaner so that explicitly empty collections
+          //! (e.g. threadgate `allow: []`) survive; only `null` values are removed.
+          //! `removeNullValues` would prune empty `[]`/`{}`, silently changing the
+          //! meaning of a request body.
+          body: body != null
+              ? jsonEncode(util.removeNullValuesFromBody(body) ?? {})
+              : null,
+          encoding: utf8,
+          timeout: timeout,
+          postClient: postClient,
+          client: client,
+        ),
+      ),
+      to,
+      adaptor,
+    );
 
 http.Response checkStatus(final http.Response response) {
   final statusCode = response.statusCode;
@@ -106,28 +104,30 @@ Response<T> _buildResponse<T>(
   final http.Response response,
   final type.ResponseDataBuilder<T>? to, [
   final type.ResponseDataAdaptor? adaptor,
-]) => Response(
-  headers: response.headers,
-  status: HttpStatus.valueOf(response.statusCode),
-  request: Request(
-    method: HttpMethod.valueOf(response.request!.method),
-    url: response.request!.url,
-  ),
-  data: util.getData(response, to, adaptor),
-);
+]) =>
+    Response(
+      headers: response.headers,
+      status: HttpStatus.valueOf(response.statusCode),
+      request: Request(
+        method: HttpMethod.valueOf(response.request!.method),
+        url: response.request!.url,
+      ),
+      data: util.getData(response, to, adaptor),
+    );
 
 /// Returns the error response.
 Response<Map<String, dynamic>> _buildErrorResponse(
   final http.Response response,
-) => Response(
-  headers: response.headers,
-  status: HttpStatus.valueOf(response.statusCode),
-  request: Request(
-    method: HttpMethod.valueOf(response.request!.method),
-    url: response.request!.url,
-  ),
-  data: _parseErrorBody(response),
-);
+) =>
+    Response(
+      headers: response.headers,
+      status: HttpStatus.valueOf(response.statusCode),
+      request: Request(
+        method: HttpMethod.valueOf(response.request!.method),
+        url: response.request!.url,
+      ),
+      data: _parseErrorBody(response),
+    );
 
 /// Parses the error body of [response].
 ///

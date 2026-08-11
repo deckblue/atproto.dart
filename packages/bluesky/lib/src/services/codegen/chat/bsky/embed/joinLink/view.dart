@@ -30,7 +30,6 @@ abstract class EmbedJoinLinkView with _$EmbedJoinLinkView {
     @Default('chat.bsky.embed.joinLink#view') String $type,
     @UEmbedJoinLinkViewJoinLinkPreviewConverter()
     required UEmbedJoinLinkViewJoinLinkPreview joinLinkPreview,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedJoinLinkView;
 

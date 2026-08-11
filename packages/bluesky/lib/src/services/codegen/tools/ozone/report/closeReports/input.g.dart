@@ -8,30 +8,35 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ReportCloseReportsInput _$ReportCloseReportsInputFromJson(Map json) =>
-    $checkedCreate('_ReportCloseReportsInput', json, ($checkedConvert) {
-      final val = _ReportCloseReportsInput(
-        subject: $checkedConvert('subject', (v) => v as String),
-        reportTypes: $checkedConvert(
-          'reportTypes',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        internalNote: $checkedConvert('internalNote', (v) => v as String?),
-        isAutomated: $checkedConvert('isAutomated', (v) => v as bool? ?? false),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ReportCloseReportsInputImpl _$$ReportCloseReportsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ReportCloseReportsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ReportCloseReportsInputImpl(
+          subject: $checkedConvert('subject', (v) => v as String),
+          reportTypes: $checkedConvert('reportTypes',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          internalNote: $checkedConvert('internalNote', (v) => v as String?),
+          isAutomated:
+              $checkedConvert('isAutomated', (v) => v as bool? ?? false),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ReportCloseReportsInputToJson(
-  _ReportCloseReportsInput instance,
-) => <String, dynamic>{
-  'subject': instance.subject,
-  'reportTypes': ?instance.reportTypes,
-  'internalNote': ?instance.internalNote,
-  'isAutomated': instance.isAutomated,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ReportCloseReportsInputImplToJson(
+        _$ReportCloseReportsInputImpl instance) =>
+    <String, dynamic>{
+      'subject': instance.subject,
+      if (instance.reportTypes case final value?) 'reportTypes': value,
+      if (instance.internalNote case final value?) 'internalNote': value,
+      'isAutomated': instance.isAutomated,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

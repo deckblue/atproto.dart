@@ -131,12 +131,13 @@ TextSegment _plain(
   final int utf16Start,
   final int utf16End, {
   required final bool isOverflow,
-}) => TextSegment(
-  text: value.substring(utf16Start, utf16End),
-  utf16Start: utf16Start,
-  utf16End: utf16End,
-  isOverflow: isOverflow,
-);
+}) =>
+    TextSegment(
+      text: value.substring(utf16Start, utf16End),
+      utf16Start: utf16Start,
+      utf16End: utf16End,
+      isOverflow: isOverflow,
+    );
 
 sealed class Segmenter {
   const factory Segmenter() = _Segmenter;
@@ -159,12 +160,16 @@ final class _Segmenter implements Segmenter {
     final String value,
     final List<Entity> entities,
     final TextLengthOverflow? overflow,
-  ) => buildTextSegments(value, [
-    for (final entity in entities)
-      SegmentSpan(
-        startByte: entity.indices.start,
-        endByte: entity.indices.end,
-        entity: entity,
-      ),
-  ], overflow?.byteStart);
+  ) =>
+      buildTextSegments(
+          value,
+          [
+            for (final entity in entities)
+              SegmentSpan(
+                startByte: entity.indices.start,
+                endByte: entity.indices.end,
+                entity: entity,
+              ),
+          ],
+          overflow?.byteStart);
 }

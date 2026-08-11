@@ -68,9 +68,9 @@ final class LabelValueConverter extends JsonConverter<LabelValue, String> {
 
   @override
   String toJson(LabelValue object) => switch (object) {
-    LabelValueKnownValue(:final data) => data.value,
-    LabelValueUnknown(:final data) => data,
-  };
+        LabelValueKnownValue(:final data) => data.value,
+        LabelValueUnknown(:final data) => data,
+      };
 }
 
 enum KnownLabelValue implements Serializable {

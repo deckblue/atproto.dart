@@ -36,9 +36,9 @@ final class RemoveOptionsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "keys": _requireNonEmpty("keys", argResults!["keys"]),
-    "scope": argResults!["scope"],
-  };
+        "keys": _requireNonEmpty("keys", argResults!["keys"]),
+        "scope": argResults!["scope"],
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

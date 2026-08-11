@@ -33,7 +33,6 @@ abstract class GraphSearchStarterPacksV2Output
     /// Estimated total number of matching hits. May be rounded or truncated.
     int? hitsTotal,
     @StarterPackViewConverter() required List<StarterPackView> starterPacks,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphSearchStarterPacksV2Output;
 
@@ -49,9 +48,8 @@ extension GraphSearchStarterPacksV2OutputExtension
   bool get hasNotHitsTotal => !hasHitsTotal;
 }
 
-final class GraphSearchStarterPacksV2OutputConverter
-    extends
-        JsonConverter<GraphSearchStarterPacksV2Output, Map<String, dynamic>> {
+final class GraphSearchStarterPacksV2OutputConverter extends JsonConverter<
+    GraphSearchStarterPacksV2Output, Map<String, dynamic>> {
   const GraphSearchStarterPacksV2OutputConverter();
 
   @override

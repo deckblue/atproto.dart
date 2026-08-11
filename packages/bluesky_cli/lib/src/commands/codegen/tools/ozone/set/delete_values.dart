@@ -44,9 +44,9 @@ final class DeleteValuesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "name": argResults!["name"],
-    "values": _requireNonEmpty("values", argResults!["values"]),
-  };
+        "name": argResults!["name"],
+        "values": _requireNonEmpty("values", argResults!["values"]),
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

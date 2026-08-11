@@ -101,7 +101,6 @@ final class UFeedGetPostThreadThreadConverter
           const NotFoundPostConverter().toJson(data),
         UFeedGetPostThreadThreadBlockedPost(:final data) =>
           const BlockedPostConverter().toJson(data),
-
         UFeedGetPostThreadThreadUnknown(:final data) => data,
       };
 }

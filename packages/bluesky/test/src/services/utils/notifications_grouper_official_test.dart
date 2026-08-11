@@ -18,20 +18,21 @@ Map<String, dynamic> _n({
   String? reasonSubject,
   bool isRead = true,
   String? following,
-}) => {
-  'uri': 'at://$did/app.bsky.feed.like/${indexedAt.hashCode}',
-  'cid': 'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
-  'author': {
-    'did': did,
-    'handle': '$did.test',
-    if (following != null) 'viewer': {'following': following},
-  },
-  'reason': reason,
-  'reasonSubject': ?reasonSubject,
-  'record': <String, dynamic>{},
-  'isRead': isRead,
-  'indexedAt': indexedAt,
-};
+}) =>
+    {
+      'uri': 'at://$did/app.bsky.feed.like/${indexedAt.hashCode}',
+      'cid': 'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
+      'author': {
+        'did': did,
+        'handle': '$did.test',
+        if (following != null) 'viewer': {'following': following},
+      },
+      'reason': reason,
+      'reasonSubject': reasonSubject,
+      'record': <String, dynamic>{},
+      'isRead': isRead,
+      'indexedAt': indexedAt,
+    };
 
 GroupedNotifications _group(List<Map<String, dynamic>> notifications) =>
     _official.group(

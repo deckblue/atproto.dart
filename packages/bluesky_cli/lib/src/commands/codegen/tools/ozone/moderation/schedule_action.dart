@@ -50,12 +50,12 @@ final class ScheduleActionCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "action": _decodeJson("action"),
-    "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
-    "createdBy": argResults!["createdBy"],
-    "scheduling": _decodeJson("scheduling"),
-    if (argResults!.wasParsed("modTool")) "modTool": _decodeJson("modTool"),
-  };
+        "action": _decodeJson("action"),
+        "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
+        "createdBy": argResults!["createdBy"],
+        "scheduling": _decodeJson("scheduling"),
+        if (argResults!.wasParsed("modTool")) "modTool": _decodeJson("modTool"),
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

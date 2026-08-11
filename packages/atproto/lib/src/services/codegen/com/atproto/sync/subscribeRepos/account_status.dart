@@ -70,9 +70,9 @@ final class AccountStatusConverter
 
   @override
   String toJson(AccountStatus object) => switch (object) {
-    AccountStatusKnownValue(:final data) => data.value,
-    AccountStatusUnknown(:final data) => data,
-  };
+        AccountStatusKnownValue(:final data) => data.value,
+        AccountStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownAccountStatus implements Serializable {

@@ -77,15 +77,15 @@ class _MutableGroup {
   bool sealed;
 
   GroupedNotification toGroupedNotification() => GroupedNotification(
-    uris: uris.toList(),
-    authors: authors.values.toList(),
-    reason: reason,
-    reasonSubject: reasonSubject,
-    isRead: isRead,
-    labels: labels.toList(),
-    record: record,
-    indexedAt: indexedAt,
-  );
+        uris: uris.toList(),
+        authors: authors.values.toList(),
+        reason: reason,
+        reasonSubject: reasonSubject,
+        isRead: isRead,
+        labels: labels.toList(),
+        record: record,
+        indexedAt: indexedAt,
+      );
 }
 
 sealed class NotificationsGrouper {
@@ -249,8 +249,7 @@ final class _NotificationsGrouper implements NotificationsGrouper {
     // the same author are expected.
     if (config.uniqueAuthors) {
       final sameAuthor = notification.author.did == group.headAuthorDid;
-      final isSubscribedPost =
-          notification.reason.knownValue ==
+      final isSubscribedPost = notification.reason.knownValue ==
           KnownNotificationReason.subscribedPost;
       if (sameAuthor && !isSubscribedPost) return false;
     }
@@ -263,20 +262,22 @@ final class _NotificationsGrouper implements NotificationsGrouper {
     final GroupedNotificationReason reason, {
     required final int ordinal,
     final bool sealed = false,
-  }) => _MutableGroup(
-    uris: LinkedHashSet.of([notification.uri]),
-    authors: LinkedHashMap.of({notification.author.did: notification.author}),
-    reason: reason,
-    reasonSubject: notification.reasonSubject,
-    isRead: notification.isRead,
-    labels: LinkedHashSet.of([...?notification.labels]),
-    record: notification.record,
-    indexedAt: notification.indexedAt,
-    windowAnchor: notification.indexedAt,
-    headAuthorDid: notification.author.did,
-    ordinal: ordinal,
-    sealed: sealed,
-  );
+  }) =>
+      _MutableGroup(
+        uris: LinkedHashSet.of([notification.uri]),
+        authors:
+            LinkedHashMap.of({notification.author.did: notification.author}),
+        reason: reason,
+        reasonSubject: notification.reasonSubject,
+        isRead: notification.isRead,
+        labels: LinkedHashSet.of([...?notification.labels]),
+        record: notification.record,
+        indexedAt: notification.indexedAt,
+        windowAnchor: notification.indexedAt,
+        headAuthorDid: notification.author.did,
+        ordinal: ordinal,
+        sealed: sealed,
+      );
 
   void _mergeInto(final _MutableGroup group, final Notification notification) {
     //! Technically the same uri could not appear on the same

@@ -96,4 +96,5 @@ Map<T, List<S>> _groupBy<S, T>(Iterable<S> values, T Function(S) key) {
 
 List<List<Notification>> _buildChunks(
   final Map<DateTime, List<Notification>> grouped,
-) => grouped.values.toList();
+) =>
+    grouped.values.toList();

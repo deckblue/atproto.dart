@@ -50,7 +50,6 @@ abstract class ListViewBasic with _$ListViewBasic {
     @LabelConverter() List<Label>? labels,
     @ListViewerStateConverter() ListViewerState? viewer,
     @JsonKey(toJson: iso8601) DateTime? indexedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ListViewBasic;
 

@@ -47,15 +47,16 @@ final class SignPlcOperationCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!.wasParsed("token")) "token": argResults!["token"],
-    if (argResults!.wasParsed("rotationKeys"))
-      "rotationKeys": argResults!["rotationKeys"],
-    if (argResults!.wasParsed("alsoKnownAs"))
-      "alsoKnownAs": argResults!["alsoKnownAs"],
-    if (argResults!.wasParsed("verificationMethods"))
-      "verificationMethods": _decodeJson("verificationMethods"),
-    if (argResults!.wasParsed("services")) "services": _decodeJson("services"),
-  };
+        if (argResults!.wasParsed("token")) "token": argResults!["token"],
+        if (argResults!.wasParsed("rotationKeys"))
+          "rotationKeys": argResults!["rotationKeys"],
+        if (argResults!.wasParsed("alsoKnownAs"))
+          "alsoKnownAs": argResults!["alsoKnownAs"],
+        if (argResults!.wasParsed("verificationMethods"))
+          "verificationMethods": _decodeJson("verificationMethods"),
+        if (argResults!.wasParsed("services"))
+          "services": _decodeJson("services"),
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

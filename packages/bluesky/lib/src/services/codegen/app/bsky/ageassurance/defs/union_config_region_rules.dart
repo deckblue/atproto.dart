@@ -72,48 +72,48 @@ extension UConfigRegionRulesExtension on UConfigRegionRules {
       !isConfigRegionRuleIfDeclaredOverAge;
   ConfigRegionRuleIfDeclaredOverAge? get configRegionRuleIfDeclaredOverAge =>
       isConfigRegionRuleIfDeclaredOverAge
-      ? data as ConfigRegionRuleIfDeclaredOverAge
-      : null;
+          ? data as ConfigRegionRuleIfDeclaredOverAge
+          : null;
   bool get isConfigRegionRuleIfDeclaredUnderAge =>
       isA<UConfigRegionRulesConfigRegionRuleIfDeclaredUnderAge>(this);
   bool get isNotConfigRegionRuleIfDeclaredUnderAge =>
       !isConfigRegionRuleIfDeclaredUnderAge;
   ConfigRegionRuleIfDeclaredUnderAge? get configRegionRuleIfDeclaredUnderAge =>
       isConfigRegionRuleIfDeclaredUnderAge
-      ? data as ConfigRegionRuleIfDeclaredUnderAge
-      : null;
+          ? data as ConfigRegionRuleIfDeclaredUnderAge
+          : null;
   bool get isConfigRegionRuleIfAssuredOverAge =>
       isA<UConfigRegionRulesConfigRegionRuleIfAssuredOverAge>(this);
   bool get isNotConfigRegionRuleIfAssuredOverAge =>
       !isConfigRegionRuleIfAssuredOverAge;
   ConfigRegionRuleIfAssuredOverAge? get configRegionRuleIfAssuredOverAge =>
       isConfigRegionRuleIfAssuredOverAge
-      ? data as ConfigRegionRuleIfAssuredOverAge
-      : null;
+          ? data as ConfigRegionRuleIfAssuredOverAge
+          : null;
   bool get isConfigRegionRuleIfAssuredUnderAge =>
       isA<UConfigRegionRulesConfigRegionRuleIfAssuredUnderAge>(this);
   bool get isNotConfigRegionRuleIfAssuredUnderAge =>
       !isConfigRegionRuleIfAssuredUnderAge;
   ConfigRegionRuleIfAssuredUnderAge? get configRegionRuleIfAssuredUnderAge =>
       isConfigRegionRuleIfAssuredUnderAge
-      ? data as ConfigRegionRuleIfAssuredUnderAge
-      : null;
+          ? data as ConfigRegionRuleIfAssuredUnderAge
+          : null;
   bool get isConfigRegionRuleIfAccountNewerThan =>
       isA<UConfigRegionRulesConfigRegionRuleIfAccountNewerThan>(this);
   bool get isNotConfigRegionRuleIfAccountNewerThan =>
       !isConfigRegionRuleIfAccountNewerThan;
   ConfigRegionRuleIfAccountNewerThan? get configRegionRuleIfAccountNewerThan =>
       isConfigRegionRuleIfAccountNewerThan
-      ? data as ConfigRegionRuleIfAccountNewerThan
-      : null;
+          ? data as ConfigRegionRuleIfAccountNewerThan
+          : null;
   bool get isConfigRegionRuleIfAccountOlderThan =>
       isA<UConfigRegionRulesConfigRegionRuleIfAccountOlderThan>(this);
   bool get isNotConfigRegionRuleIfAccountOlderThan =>
       !isConfigRegionRuleIfAccountOlderThan;
   ConfigRegionRuleIfAccountOlderThan? get configRegionRuleIfAccountOlderThan =>
       isConfigRegionRuleIfAccountOlderThan
-      ? data as ConfigRegionRuleIfAccountOlderThan
-      : null;
+          ? data as ConfigRegionRuleIfAccountOlderThan
+          : null;
   bool get isUnknown => isA<UConfigRegionRulesUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
@@ -177,21 +177,20 @@ final class UConfigRegionRulesConverter
 
   @override
   Map<String, dynamic> toJson(UConfigRegionRules object) => switch (object) {
-    UConfigRegionRulesConfigRegionRuleDefault(:final data) =>
-      const ConfigRegionRuleDefaultConverter().toJson(data),
-    UConfigRegionRulesConfigRegionRuleIfDeclaredOverAge(:final data) =>
-      const ConfigRegionRuleIfDeclaredOverAgeConverter().toJson(data),
-    UConfigRegionRulesConfigRegionRuleIfDeclaredUnderAge(:final data) =>
-      const ConfigRegionRuleIfDeclaredUnderAgeConverter().toJson(data),
-    UConfigRegionRulesConfigRegionRuleIfAssuredOverAge(:final data) =>
-      const ConfigRegionRuleIfAssuredOverAgeConverter().toJson(data),
-    UConfigRegionRulesConfigRegionRuleIfAssuredUnderAge(:final data) =>
-      const ConfigRegionRuleIfAssuredUnderAgeConverter().toJson(data),
-    UConfigRegionRulesConfigRegionRuleIfAccountNewerThan(:final data) =>
-      const ConfigRegionRuleIfAccountNewerThanConverter().toJson(data),
-    UConfigRegionRulesConfigRegionRuleIfAccountOlderThan(:final data) =>
-      const ConfigRegionRuleIfAccountOlderThanConverter().toJson(data),
-
-    UConfigRegionRulesUnknown(:final data) => data,
-  };
+        UConfigRegionRulesConfigRegionRuleDefault(:final data) =>
+          const ConfigRegionRuleDefaultConverter().toJson(data),
+        UConfigRegionRulesConfigRegionRuleIfDeclaredOverAge(:final data) =>
+          const ConfigRegionRuleIfDeclaredOverAgeConverter().toJson(data),
+        UConfigRegionRulesConfigRegionRuleIfDeclaredUnderAge(:final data) =>
+          const ConfigRegionRuleIfDeclaredUnderAgeConverter().toJson(data),
+        UConfigRegionRulesConfigRegionRuleIfAssuredOverAge(:final data) =>
+          const ConfigRegionRuleIfAssuredOverAgeConverter().toJson(data),
+        UConfigRegionRulesConfigRegionRuleIfAssuredUnderAge(:final data) =>
+          const ConfigRegionRuleIfAssuredUnderAgeConverter().toJson(data),
+        UConfigRegionRulesConfigRegionRuleIfAccountNewerThan(:final data) =>
+          const ConfigRegionRuleIfAccountNewerThanConverter().toJson(data),
+        UConfigRegionRulesConfigRegionRuleIfAccountOlderThan(:final data) =>
+          const ConfigRegionRuleIfAccountOlderThanConverter().toJson(data),
+        UConfigRegionRulesUnknown(:final data) => data,
+      };
 }

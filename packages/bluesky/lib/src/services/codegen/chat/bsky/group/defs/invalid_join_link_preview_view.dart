@@ -27,7 +27,6 @@ abstract class InvalidJoinLinkPreviewView with _$InvalidJoinLinkPreviewView {
   const factory InvalidJoinLinkPreviewView({
     @Default('chat.bsky.group.defs#invalidJoinLinkPreviewView') String $type,
     required String code,
-
     Map<String, dynamic>? $unknown,
   }) = _InvalidJoinLinkPreviewView;
 

@@ -29,8 +29,8 @@ sealed class Splitter {
 /// though its label contains spaces).
 class _Token {
   _Token(this.text, {required this.isSpace, this.atomic = false})
-    : graphemes = text.characters.length,
-      bytes = utf8ByteLength(text);
+      : graphemes = text.characters.length,
+        bytes = utf8ByteLength(text);
 
   final String text;
   final bool isSpace;
@@ -75,10 +75,10 @@ final class _Splitter implements Splitter {
     //* only make sense relative to the original, unsplit text (and `split` is
     //* already fed the original text, not a formatted value).
     BlueskyText create(final String value) => BlueskyText(
-      value,
-      enableMarkdown: enableMarkdown,
-      linkConfig: linkConfig,
-    );
+          value,
+          enableMarkdown: enableMarkdown,
+          linkConfig: linkConfig,
+        );
 
     void clearPending() {
       pendingSpace = '';

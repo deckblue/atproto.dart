@@ -57,8 +57,8 @@ extension UThreadItemValueExtension on UThreadItemValue {
   bool get isNotThreadItemNoUnauthenticated => !isThreadItemNoUnauthenticated;
   ThreadItemNoUnauthenticated? get threadItemNoUnauthenticated =>
       isThreadItemNoUnauthenticated
-      ? data as ThreadItemNoUnauthenticated
-      : null;
+          ? data as ThreadItemNoUnauthenticated
+          : null;
   bool get isThreadItemNotFound =>
       isA<UThreadItemValueThreadItemNotFound>(this);
   bool get isNotThreadItemNotFound => !isThreadItemNotFound;
@@ -110,15 +110,14 @@ final class UThreadItemValueConverter
 
   @override
   Map<String, dynamic> toJson(UThreadItemValue object) => switch (object) {
-    UThreadItemValueThreadItemPost(:final data) =>
-      const ThreadItemPostConverter().toJson(data),
-    UThreadItemValueThreadItemNoUnauthenticated(:final data) =>
-      const ThreadItemNoUnauthenticatedConverter().toJson(data),
-    UThreadItemValueThreadItemNotFound(:final data) =>
-      const ThreadItemNotFoundConverter().toJson(data),
-    UThreadItemValueThreadItemBlocked(:final data) =>
-      const ThreadItemBlockedConverter().toJson(data),
-
-    UThreadItemValueUnknown(:final data) => data,
-  };
+        UThreadItemValueThreadItemPost(:final data) =>
+          const ThreadItemPostConverter().toJson(data),
+        UThreadItemValueThreadItemNoUnauthenticated(:final data) =>
+          const ThreadItemNoUnauthenticatedConverter().toJson(data),
+        UThreadItemValueThreadItemNotFound(:final data) =>
+          const ThreadItemNotFoundConverter().toJson(data),
+        UThreadItemValueThreadItemBlocked(:final data) =>
+          const ThreadItemBlockedConverter().toJson(data),
+        UThreadItemValueUnknown(:final data) => data,
+      };
 }

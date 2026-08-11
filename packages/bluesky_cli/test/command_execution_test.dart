@@ -45,7 +45,8 @@ final class MockXrpc {
     final String methodId,
     final String body, {
     final int status = 200,
-  }) => _stubs[methodId] = _Stub(body, status);
+  }) =>
+      _stubs[methodId] = _Stub(body, status);
 
   Future<http.Response> get(Uri url, {Map<String, String>? headers}) async {
     requests.add(RecordedRequest('GET', url, headers, null));
@@ -83,12 +84,12 @@ final class MockXrpc {
 /// Builds a runner whose session cache points at an isolated temp file
 /// so tests never read or write the real ~/.config/bsky/session.json.
 BskyCommandRunner _runner(final MockXrpc mock) => BskyCommandRunner(
-  getClient: mock.get,
-  postClient: mock.post,
-  sessionCachePath:
-      '${Directory.systemTemp.createTempSync('bsky_cli_session').path}'
-      '/session.json',
-);
+      getClient: mock.get,
+      postClient: mock.post,
+      sessionCachePath:
+          '${Directory.systemTemp.createTempSync('bsky_cli_session').path}'
+          '/session.json',
+    );
 
 const _auth = <String>['--identifier', 'test.dev', '--password', 'xxxx'];
 

@@ -76,9 +76,9 @@ final class ProfileAssociatedGermShowButtonToConverter
 
   @override
   String toJson(ProfileAssociatedGermShowButtonTo object) => switch (object) {
-    ProfileAssociatedGermShowButtonToKnownValue(:final data) => data.value,
-    ProfileAssociatedGermShowButtonToUnknown(:final data) => data,
-  };
+        ProfileAssociatedGermShowButtonToKnownValue(:final data) => data.value,
+        ProfileAssociatedGermShowButtonToUnknown(:final data) => data,
+      };
 }
 
 enum KnownProfileAssociatedGermShowButtonTo implements Serializable {

@@ -123,7 +123,6 @@ final class UEmbedRecordWithMediaViewMediaConverter
           const EmbedGalleryViewConverter().toJson(data),
         UEmbedRecordWithMediaViewMediaEmbedExternalView(:final data) =>
           const EmbedExternalViewConverter().toJson(data),
-
         UEmbedRecordWithMediaViewMediaUnknown(:final data) => data,
       };
 }

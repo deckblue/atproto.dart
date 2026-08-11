@@ -80,9 +80,8 @@ void main() {
 
     test('detects a tampered operation (mutated payload)', () {
       final log = loadFixture('audit_log_bsky.json');
-      final tampered = log
-          .map((e) => Map<String, dynamic>.from(e))
-          .toList(growable: false);
+      final tampered =
+          log.map((e) => Map<String, dynamic>.from(e)).toList(growable: false);
       final op = Map<String, dynamic>.from(
         tampered[1]['operation'] as Map<String, dynamic>,
       );

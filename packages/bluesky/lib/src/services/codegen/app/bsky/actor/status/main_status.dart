@@ -71,9 +71,9 @@ final class ActorStatusStatusConverter
 
   @override
   String toJson(ActorStatusStatus object) => switch (object) {
-    ActorStatusStatusKnownValue(:final data) => data.value,
-    ActorStatusStatusUnknown(:final data) => data,
-  };
+        ActorStatusStatusKnownValue(:final data) => data.value,
+        ActorStatusStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownActorStatusStatus implements Serializable {

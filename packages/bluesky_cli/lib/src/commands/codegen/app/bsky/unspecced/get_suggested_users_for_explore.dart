@@ -40,9 +40,9 @@ final class GetSuggestedUsersForExploreCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("category")) "category": argResults!["category"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-  };
+        if (argResults!.wasParsed("category"))
+          "category": argResults!["category"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+      };
 }

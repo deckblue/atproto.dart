@@ -38,7 +38,6 @@ abstract class ReportCloseReportsInput with _$ReportCloseReportsInput {
 
     /// Set true when this action is triggered by an automated process. Defaults to false.
     @Default(false) bool isAutomated,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportCloseReportsInput;
 

@@ -58,7 +58,6 @@ abstract class UrlRule with _$UrlRule {
 
     /// Timestamp when the rule was last updated
     @JsonKey(toJson: iso8601) required DateTime updatedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _UrlRule;
 

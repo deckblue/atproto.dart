@@ -8,70 +8,65 @@ part of 'config_region.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConfigRegion _$ConfigRegionFromJson(Map json) => $checkedCreate(
-  '_ConfigRegion',
-  json,
-  ($checkedConvert) {
-    final val = _ConfigRegion(
-      $type: $checkedConvert(
-        r'$type',
-        (v) => v as String? ?? 'app.bsky.ageassurance.defs#configRegion',
-      ),
-      platforms: $checkedConvert(
-        'platforms',
-        (v) => (v as List<dynamic>?)
-            ?.map(
-              (e) =>
-                  const ConfigRegionPlatformsConverter().fromJson(e as String),
-            )
-            .toList(),
-      ),
-      countryCode: $checkedConvert('countryCode', (v) => v as String),
-      regionCode: $checkedConvert('regionCode', (v) => v as String?),
-      minAccessAge: $checkedConvert('minAccessAge', (v) => (v as num).toInt()),
-      additionalVerificationMethods: $checkedConvert(
-        'additionalVerificationMethods',
-        (v) => (v as List<dynamic>?)
-            ?.map(
-              (e) => const ConfigRegionAdditionalVerificationMethodsConverter()
-                  .fromJson(e as String),
-            )
-            .toList(),
-      ),
-      rules: $checkedConvert(
-        'rules',
-        (v) => (v as List<dynamic>)
-            .map(
-              (e) => const UConfigRegionRulesConverter().fromJson(
-                e as Map<String, dynamic>,
-              ),
-            )
-            .toList(),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
+_$ConfigRegionImpl _$$ConfigRegionImplFromJson(Map json) => $checkedCreate(
+      r'_$ConfigRegionImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConfigRegionImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.ageassurance.defs#configRegion'),
+          platforms: $checkedConvert(
+              'platforms',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => const ConfigRegionPlatformsConverter()
+                      .fromJson(e as String))
+                  .toList()),
+          countryCode: $checkedConvert('countryCode', (v) => v as String),
+          regionCode: $checkedConvert('regionCode', (v) => v as String?),
+          minAccessAge:
+              $checkedConvert('minAccessAge', (v) => (v as num).toInt()),
+          additionalVerificationMethods: $checkedConvert(
+              'additionalVerificationMethods',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) =>
+                      const ConfigRegionAdditionalVerificationMethodsConverter()
+                          .fromJson(e as String))
+                  .toList()),
+          rules: $checkedConvert(
+              'rules',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const UConfigRegionRulesConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
     );
-    return val;
-  },
-);
 
-Map<String, dynamic> _$ConfigRegionToJson(
-  _ConfigRegion instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'platforms': ?instance.platforms
-      ?.map(const ConfigRegionPlatformsConverter().toJson)
-      .toList(),
-  'countryCode': instance.countryCode,
-  'regionCode': ?instance.regionCode,
-  'minAccessAge': instance.minAccessAge,
-  'additionalVerificationMethods': ?instance.additionalVerificationMethods
-      ?.map(const ConfigRegionAdditionalVerificationMethodsConverter().toJson)
-      .toList(),
-  'rules': instance.rules
-      .map(const UConfigRegionRulesConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConfigRegionImplToJson(_$ConfigRegionImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      if (instance.platforms
+              ?.map(const ConfigRegionPlatformsConverter().toJson)
+              .toList()
+          case final value?)
+        'platforms': value,
+      'countryCode': instance.countryCode,
+      if (instance.regionCode case final value?) 'regionCode': value,
+      'minAccessAge': instance.minAccessAge,
+      if (instance.additionalVerificationMethods
+              ?.map(const ConfigRegionAdditionalVerificationMethodsConverter()
+                  .toJson)
+              .toList()
+          case final value?)
+        'additionalVerificationMethods': value,
+      'rules': instance.rules
+          .map(const UConfigRegionRulesConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -43,9 +43,8 @@ final class OAuthServerMetadata {
       authorizationEndpoint: asString('authorization_endpoint'),
       tokenEndpoint: asString('token_endpoint'),
       revocationEndpoint: asString('revocation_endpoint'),
-      scopesSupported: scopes is List
-          ? scopes.whereType<String>().toList()
-          : null,
+      scopesSupported:
+          scopes is List ? scopes.whereType<String>().toList() : null,
     );
   }
 
@@ -68,12 +67,12 @@ final class OAuthServerMetadata {
   final List<String>? scopesSupported;
 
   Map<String, dynamic> toJson() => {
-    'issuer': ?issuer,
-    'pushed_authorization_request_endpoint':
-        ?pushedAuthorizationRequestEndpoint,
-    'authorization_endpoint': ?authorizationEndpoint,
-    'token_endpoint': ?tokenEndpoint,
-    'revocation_endpoint': ?revocationEndpoint,
-    'scopes_supported': ?scopesSupported,
-  };
+        'issuer': issuer,
+        'pushed_authorization_request_endpoint':
+            pushedAuthorizationRequestEndpoint,
+        'authorization_endpoint': authorizationEndpoint,
+        'token_endpoint': tokenEndpoint,
+        'revocation_endpoint': revocationEndpoint,
+        'scopes_supported': scopesSupported,
+      };
 }

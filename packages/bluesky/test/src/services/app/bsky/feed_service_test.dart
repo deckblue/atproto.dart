@@ -64,15 +64,13 @@ final class _Pds {
           'rev': '3lrev',
         },
         if (!omitResults)
-          'results':
-              results ??
+          'results': results ??
               [
                 for (var i = 0; i < writes.length; i++)
                   {
                     r'$type': 'com.atproto.repo.applyWrites#createResult',
                     'uri': 'at://$_did/app.bsky.feed.post/${writes[i]['rkey']}',
-                    'cid':
-                        cidOf?.call(i, valueAt(i)) ??
+                    'cid': cidOf?.call(i, valueAt(i)) ??
                         core.computeRecordCid(valueAt(i)),
                   },
               ],

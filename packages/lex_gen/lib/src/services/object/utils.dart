@@ -29,9 +29,8 @@ String renderFreezedDataClass({
 }) {
   final className = '$name$suffix';
 
-  final visibleProps = properties
-      .where((e) => !rule.isDeprecated(e.description))
-      .toList();
+  final visibleProps =
+      properties.where((e) => !rule.isDeprecated(e.description)).toList();
 
   // Deduplicated, order-preserving package imports derived from the properties.
   final packagePaths = <String>{

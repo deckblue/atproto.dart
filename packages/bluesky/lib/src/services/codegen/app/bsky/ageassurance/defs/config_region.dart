@@ -50,7 +50,7 @@ abstract class ConfigRegion with _$ConfigRegion {
     required int minAccessAge,
     @ConfigRegionAdditionalVerificationMethodsConverter()
     List<ConfigRegionAdditionalVerificationMethods>?
-    additionalVerificationMethods,
+        additionalVerificationMethods,
     @UConfigRegionRulesConverter() required List<UConfigRegionRules> rules,
     Map<String, dynamic>? $unknown,
   }) = _ConfigRegion;

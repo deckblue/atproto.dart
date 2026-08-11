@@ -40,14 +40,14 @@ final class SendInteractionsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!.wasParsed("feed")) "feed": argResults!["feed"],
-    "interactions": _requireNonEmpty(
-      "interactions",
-      (argResults!["interactions"] as List<String>)
-          .map((e) => _decodeJsonItem("interactions", e))
-          .toList(),
-    ),
-  };
+        if (argResults!.wasParsed("feed")) "feed": argResults!["feed"],
+        "interactions": _requireNonEmpty(
+          "interactions",
+          (argResults!["interactions"] as List<String>)
+              .map((e) => _decodeJsonItem("interactions", e))
+              .toList(),
+        ),
+      };
   Object? _decodeJsonItem(final String name, final String raw) {
     try {
       return jsonDecode(raw);

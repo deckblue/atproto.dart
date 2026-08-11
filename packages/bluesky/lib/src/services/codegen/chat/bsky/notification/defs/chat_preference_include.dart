@@ -71,9 +71,9 @@ final class ChatPreferenceIncludeConverter
 
   @override
   String toJson(ChatPreferenceInclude object) => switch (object) {
-    ChatPreferenceIncludeKnownValue(:final data) => data.value,
-    ChatPreferenceIncludeUnknown(:final data) => data,
-  };
+        ChatPreferenceIncludeKnownValue(:final data) => data.value,
+        ChatPreferenceIncludeUnknown(:final data) => data,
+      };
 }
 
 enum KnownChatPreferenceInclude implements Serializable {

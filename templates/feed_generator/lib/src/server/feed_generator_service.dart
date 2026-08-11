@@ -17,8 +17,8 @@ import '../config.dart';
 /// returns the requester (viewer) DID, or throws [IdentityException] when the
 /// token is invalid. `bin/server.dart` wires this to
 /// `atproto_identity.verifyServiceAuth`; tests inject a stub.
-typedef ServiceAuthVerifier =
-    Future<String> Function(String authorizationHeader);
+typedef ServiceAuthVerifier = Future<String> Function(
+    String authorizationHeader);
 
 /// The lexicon-mandated `lxm` value a getFeedSkeleton service-auth JWT must
 /// carry; `bin/server.dart` passes this to `verifyServiceAuth`.
@@ -183,7 +183,7 @@ int _parseLimit(final String? raw) {
 }
 
 Response _json(final Object body, {final int status = 200}) => Response(
-  status,
-  body: jsonEncode(body),
-  headers: const {'content-type': 'application/json; charset=utf-8'},
-);
+      status,
+      body: jsonEncode(body),
+      headers: const {'content-type': 'application/json; charset=utf-8'},
+    );

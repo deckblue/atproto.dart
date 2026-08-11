@@ -34,8 +34,8 @@ final class GetFeedGeneratorsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "feeds": _requireNonEmpty("feeds", argResults!["feeds"]),
-  };
+        "feeds": _requireNonEmpty("feeds", argResults!["feeds"]),
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

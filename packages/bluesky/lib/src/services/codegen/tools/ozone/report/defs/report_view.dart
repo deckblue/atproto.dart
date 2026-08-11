@@ -111,7 +111,6 @@ abstract class ReportView with _$ReportView {
 
     /// Whether this report was emitted by automated tooling.
     @Default(false) bool isAutomated,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportView;
 

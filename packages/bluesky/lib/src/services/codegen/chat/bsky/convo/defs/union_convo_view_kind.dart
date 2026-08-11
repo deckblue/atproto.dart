@@ -75,12 +75,12 @@ final class UConvoViewKindConverter
 
   @override
   Map<String, dynamic> toJson(UConvoViewKind object) => switch (object) {
-    UConvoViewKindDirectConvo(:final data) =>
-      const DirectConvoConverter().toJson(data),
-    UConvoViewKindGroupConvo(:final data) => const GroupConvoConverter().toJson(
-      data,
-    ),
-
-    UConvoViewKindUnknown(:final data) => data,
-  };
+        UConvoViewKindDirectConvo(:final data) =>
+          const DirectConvoConverter().toJson(data),
+        UConvoViewKindGroupConvo(:final data) =>
+          const GroupConvoConverter().toJson(
+            data,
+          ),
+        UConvoViewKindUnknown(:final data) => data,
+      };
 }

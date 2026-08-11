@@ -32,18 +32,18 @@ class NotificationsGrouperConfig {
   /// - Separates follow-backs (mutual follows) into their own groups.
   /// - Marks a group unread if *any* of its notifications is unread.
   const NotificationsGrouperConfig.official()
-    : groupableReasons = const {
-        KnownNotificationReason.like,
-        KnownNotificationReason.repost,
-        KnownNotificationReason.follow,
-        KnownNotificationReason.likeViaRepost,
-        KnownNotificationReason.repostViaRepost,
-        KnownNotificationReason.subscribedPost,
-      },
-      window = const Duration(hours: 48),
-      separateFollowBacks = true,
-      unreadIfAny = true,
-      uniqueAuthors = true;
+      : groupableReasons = const {
+          KnownNotificationReason.like,
+          KnownNotificationReason.repost,
+          KnownNotificationReason.follow,
+          KnownNotificationReason.likeViaRepost,
+          KnownNotificationReason.repostViaRepost,
+          KnownNotificationReason.subscribedPost,
+        },
+        window = const Duration(hours: 48),
+        separateFollowBacks = true,
+        unreadIfAny = true,
+        uniqueAuthors = true;
 
   /// Legacy behavior from `bluesky` <= 2.x.
   ///
@@ -53,15 +53,15 @@ class NotificationsGrouperConfig {
   /// - Does not separate follow-backs.
   /// - Uses the newest notification's `isRead` for the group.
   const NotificationsGrouperConfig.lenient()
-    : groupableReasons = const {
-        KnownNotificationReason.like,
-        KnownNotificationReason.repost,
-        KnownNotificationReason.follow,
-      },
-      window = null,
-      separateFollowBacks = false,
-      unreadIfAny = false,
-      uniqueAuthors = false;
+      : groupableReasons = const {
+          KnownNotificationReason.like,
+          KnownNotificationReason.repost,
+          KnownNotificationReason.follow,
+        },
+        window = null,
+        separateFollowBacks = false,
+        unreadIfAny = false,
+        uniqueAuthors = false;
 
   /// The set of reasons whose notifications are eligible to be grouped.
   ///

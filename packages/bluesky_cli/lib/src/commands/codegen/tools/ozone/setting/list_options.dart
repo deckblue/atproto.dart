@@ -43,12 +43,11 @@ final class ListOptionsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    "scope": argResults!["scope"],
-    if (argResults!.wasParsed("prefix")) "prefix": argResults!["prefix"],
-    if (argResults!.wasParsed("keys")) "keys": argResults!["keys"],
-  };
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        "scope": argResults!["scope"],
+        if (argResults!.wasParsed("prefix")) "prefix": argResults!["prefix"],
+        if (argResults!.wasParsed("keys")) "keys": argResults!["keys"],
+      };
 }

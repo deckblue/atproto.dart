@@ -34,8 +34,7 @@ final class GetTrendsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-  };
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+      };
 }

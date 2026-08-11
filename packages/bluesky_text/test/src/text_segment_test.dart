@@ -90,9 +90,8 @@ void main() {
       final text = BlueskyText('${'a' * 290} https://example.com/some/path');
       _expectPartitions(text);
 
-      final linkSegments = text.segments
-          .where((s) => s.type == EntityType.link)
-          .toList();
+      final linkSegments =
+          text.segments.where((s) => s.type == EntityType.link).toList();
       expect(linkSegments, hasLength(1));
       expect(linkSegments.single.isOverflow, isTrue);
 
@@ -195,9 +194,8 @@ void main() {
       final overflow = text.overflow!;
       expect(overflow.utf16Start, 300);
 
-      final overflowSegments = text.segments
-          .where((s) => s.isOverflow)
-          .toList();
+      final overflowSegments =
+          text.segments.where((s) => s.isOverflow).toList();
       expect(overflowSegments.first.text.startsWith('👨‍👩‍👧‍👦'), isTrue);
     });
   });
@@ -237,9 +235,8 @@ void main() {
       _expectPartitions(formatted);
 
       // The markdown collapsed to `example`, which is a link entity segment.
-      final linkSegments = formatted.segments
-          .where((s) => s.type == EntityType.link)
-          .toList();
+      final linkSegments =
+          formatted.segments.where((s) => s.type == EntityType.link).toList();
       expect(linkSegments, hasLength(1));
       expect(linkSegments.single.text, 'example');
     });

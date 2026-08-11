@@ -101,7 +101,6 @@ final class URepoApplyWritesResultsConverter
           const UpdateResultConverter().toJson(data),
         URepoApplyWritesResultsDeleteResult(:final data) =>
           const DeleteResultConverter().toJson(data),
-
         URepoApplyWritesResultsUnknown(:final data) => data,
       };
 }

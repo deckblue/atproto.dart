@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,475 +9,848 @@ part of 'union_message_view_reply_to.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$UMessageViewReplyTo {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UMessageViewReplyTo&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'UMessageViewReplyTo(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MessageView data) messageView,
+    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(MessageBeforeUserJoinedGroupView data)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MessageView data)? messageView,
+    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MessageView data)? messageView,
+    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UMessageViewReplyToMessageView value) messageView,
+    required TResult Function(UMessageViewReplyToDeletedMessageView value)
+        deletedMessageView,
+    required TResult Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(UMessageViewReplyToUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult? Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult? Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(UMessageViewReplyToUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult Function(UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(UMessageViewReplyToUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $UMessageViewReplyToCopyWith<$Res>  {
-$UMessageViewReplyToCopyWith(UMessageViewReplyTo _, $Res Function(UMessageViewReplyTo) __);
+abstract class $UMessageViewReplyToCopyWith<$Res> {
+  factory $UMessageViewReplyToCopyWith(
+          UMessageViewReplyTo value, $Res Function(UMessageViewReplyTo) then) =
+      _$UMessageViewReplyToCopyWithImpl<$Res, UMessageViewReplyTo>;
 }
 
+/// @nodoc
+class _$UMessageViewReplyToCopyWithImpl<$Res, $Val extends UMessageViewReplyTo>
+    implements $UMessageViewReplyToCopyWith<$Res> {
+  _$UMessageViewReplyToCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [UMessageViewReplyTo].
-extension UMessageViewReplyToPatterns on UMessageViewReplyTo {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UMessageViewReplyToMessageView value)?  messageView,TResult Function( UMessageViewReplyToDeletedMessageView value)?  deletedMessageView,TResult Function( UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?  messageBeforeUserJoinedGroupView,TResult Function( UMessageViewReplyToUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case UMessageViewReplyToMessageView() when messageView != null:
-return messageView(_that);case UMessageViewReplyToDeletedMessageView() when deletedMessageView != null:
-return deletedMessageView(_that);case UMessageViewReplyToMessageBeforeUserJoinedGroupView() when messageBeforeUserJoinedGroupView != null:
-return messageBeforeUserJoinedGroupView(_that);case UMessageViewReplyToUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UMessageViewReplyToMessageView value)  messageView,required TResult Function( UMessageViewReplyToDeletedMessageView value)  deletedMessageView,required TResult Function( UMessageViewReplyToMessageBeforeUserJoinedGroupView value)  messageBeforeUserJoinedGroupView,required TResult Function( UMessageViewReplyToUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case UMessageViewReplyToMessageView():
-return messageView(_that);case UMessageViewReplyToDeletedMessageView():
-return deletedMessageView(_that);case UMessageViewReplyToMessageBeforeUserJoinedGroupView():
-return messageBeforeUserJoinedGroupView(_that);case UMessageViewReplyToUnknown():
-return unknown(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UMessageViewReplyToMessageView value)?  messageView,TResult? Function( UMessageViewReplyToDeletedMessageView value)?  deletedMessageView,TResult? Function( UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?  messageBeforeUserJoinedGroupView,TResult? Function( UMessageViewReplyToUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case UMessageViewReplyToMessageView() when messageView != null:
-return messageView(_that);case UMessageViewReplyToDeletedMessageView() when deletedMessageView != null:
-return deletedMessageView(_that);case UMessageViewReplyToMessageBeforeUserJoinedGroupView() when messageBeforeUserJoinedGroupView != null:
-return messageBeforeUserJoinedGroupView(_that);case UMessageViewReplyToUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( MessageView data)?  messageView,TResult Function( DeletedMessageView data)?  deletedMessageView,TResult Function( MessageBeforeUserJoinedGroupView data)?  messageBeforeUserJoinedGroupView,TResult Function( Map<String, dynamic> data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case UMessageViewReplyToMessageView() when messageView != null:
-return messageView(_that.data);case UMessageViewReplyToDeletedMessageView() when deletedMessageView != null:
-return deletedMessageView(_that.data);case UMessageViewReplyToMessageBeforeUserJoinedGroupView() when messageBeforeUserJoinedGroupView != null:
-return messageBeforeUserJoinedGroupView(_that.data);case UMessageViewReplyToUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( MessageView data)  messageView,required TResult Function( DeletedMessageView data)  deletedMessageView,required TResult Function( MessageBeforeUserJoinedGroupView data)  messageBeforeUserJoinedGroupView,required TResult Function( Map<String, dynamic> data)  unknown,}) {final _that = this;
-switch (_that) {
-case UMessageViewReplyToMessageView():
-return messageView(_that.data);case UMessageViewReplyToDeletedMessageView():
-return deletedMessageView(_that.data);case UMessageViewReplyToMessageBeforeUserJoinedGroupView():
-return messageBeforeUserJoinedGroupView(_that.data);case UMessageViewReplyToUnknown():
-return unknown(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( MessageView data)?  messageView,TResult? Function( DeletedMessageView data)?  deletedMessageView,TResult? Function( MessageBeforeUserJoinedGroupView data)?  messageBeforeUserJoinedGroupView,TResult? Function( Map<String, dynamic> data)?  unknown,}) {final _that = this;
-switch (_that) {
-case UMessageViewReplyToMessageView() when messageView != null:
-return messageView(_that.data);case UMessageViewReplyToDeletedMessageView() when deletedMessageView != null:
-return deletedMessageView(_that.data);case UMessageViewReplyToMessageBeforeUserJoinedGroupView() when messageBeforeUserJoinedGroupView != null:
-return messageBeforeUserJoinedGroupView(_that.data);case UMessageViewReplyToUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$UMessageViewReplyToMessageViewImplCopyWith<$Res> {
+  factory _$$UMessageViewReplyToMessageViewImplCopyWith(
+          _$UMessageViewReplyToMessageViewImpl value,
+          $Res Function(_$UMessageViewReplyToMessageViewImpl) then) =
+      __$$UMessageViewReplyToMessageViewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MessageView data});
+
+  $MessageViewCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UMessageViewReplyToMessageViewImplCopyWithImpl<$Res>
+    extends _$UMessageViewReplyToCopyWithImpl<$Res,
+        _$UMessageViewReplyToMessageViewImpl>
+    implements _$$UMessageViewReplyToMessageViewImplCopyWith<$Res> {
+  __$$UMessageViewReplyToMessageViewImplCopyWithImpl(
+      _$UMessageViewReplyToMessageViewImpl _value,
+      $Res Function(_$UMessageViewReplyToMessageViewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UMessageViewReplyToMessageViewImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as MessageView,
+    ));
+  }
+
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MessageViewCopyWith<$Res> get data {
+    return $MessageViewCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UMessageViewReplyToMessageViewImpl
+    extends UMessageViewReplyToMessageView {
+  const _$UMessageViewReplyToMessageViewImpl({required this.data}) : super._();
 
-class UMessageViewReplyToMessageView extends UMessageViewReplyTo {
-  const UMessageViewReplyToMessageView({required this.data}): super._();
-  
+  @override
+  final MessageView data;
 
-@override final  MessageView data;
+  @override
+  String toString() {
+    return 'UMessageViewReplyTo.messageView(data: $data)';
+  }
 
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UMessageViewReplyToMessageViewCopyWith<UMessageViewReplyToMessageView> get copyWith => _$UMessageViewReplyToMessageViewCopyWithImpl<UMessageViewReplyToMessageView>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UMessageViewReplyToMessageViewImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UMessageViewReplyToMessageViewImplCopyWith<
+          _$UMessageViewReplyToMessageViewImpl>
+      get copyWith => __$$UMessageViewReplyToMessageViewImplCopyWithImpl<
+          _$UMessageViewReplyToMessageViewImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UMessageViewReplyToMessageView&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MessageView data) messageView,
+    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(MessageBeforeUserJoinedGroupView data)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return messageView(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MessageView data)? messageView,
+    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return messageView?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MessageView data)? messageView,
+    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (messageView != null) {
+      return messageView(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UMessageViewReplyToMessageView value) messageView,
+    required TResult Function(UMessageViewReplyToDeletedMessageView value)
+        deletedMessageView,
+    required TResult Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(UMessageViewReplyToUnknown value) unknown,
+  }) {
+    return messageView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult? Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult? Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(UMessageViewReplyToUnknown value)? unknown,
+  }) {
+    return messageView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult Function(UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(UMessageViewReplyToUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (messageView != null) {
+      return messageView(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UMessageViewReplyToMessageView extends UMessageViewReplyTo {
+  const factory UMessageViewReplyToMessageView(
+      {required final MessageView data}) = _$UMessageViewReplyToMessageViewImpl;
+  const UMessageViewReplyToMessageView._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  MessageView get data;
 
-@override
-String toString() {
-  return 'UMessageViewReplyTo.messageView(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UMessageViewReplyToMessageViewCopyWith<$Res> implements $UMessageViewReplyToCopyWith<$Res> {
-  factory $UMessageViewReplyToMessageViewCopyWith(UMessageViewReplyToMessageView value, $Res Function(UMessageViewReplyToMessageView) _then) = _$UMessageViewReplyToMessageViewCopyWithImpl;
-@useResult
-$Res call({
- MessageView data
-});
-
-
-$MessageViewCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UMessageViewReplyToMessageViewCopyWithImpl<$Res>
-    implements $UMessageViewReplyToMessageViewCopyWith<$Res> {
-  _$UMessageViewReplyToMessageViewCopyWithImpl(this._self, this._then);
-
-  final UMessageViewReplyToMessageView _self;
-  final $Res Function(UMessageViewReplyToMessageView) _then;
-
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UMessageViewReplyToMessageView(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as MessageView,
-  ));
-}
-
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$MessageViewCopyWith<$Res> get data {
-  
-  return $MessageViewCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UMessageViewReplyToDeletedMessageView extends UMessageViewReplyTo {
-  const UMessageViewReplyToDeletedMessageView({required this.data}): super._();
-  
-
-@override final  DeletedMessageView data;
-
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UMessageViewReplyToDeletedMessageViewCopyWith<UMessageViewReplyToDeletedMessageView> get copyWith => _$UMessageViewReplyToDeletedMessageViewCopyWithImpl<UMessageViewReplyToDeletedMessageView>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UMessageViewReplyToDeletedMessageView&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UMessageViewReplyTo.deletedMessageView(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UMessageViewReplyToDeletedMessageViewCopyWith<$Res> implements $UMessageViewReplyToCopyWith<$Res> {
-  factory $UMessageViewReplyToDeletedMessageViewCopyWith(UMessageViewReplyToDeletedMessageView value, $Res Function(UMessageViewReplyToDeletedMessageView) _then) = _$UMessageViewReplyToDeletedMessageViewCopyWithImpl;
-@useResult
-$Res call({
- DeletedMessageView data
-});
-
-
-$DeletedMessageViewCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UMessageViewReplyToDeletedMessageViewCopyWithImpl<$Res>
-    implements $UMessageViewReplyToDeletedMessageViewCopyWith<$Res> {
-  _$UMessageViewReplyToDeletedMessageViewCopyWithImpl(this._self, this._then);
-
-  final UMessageViewReplyToDeletedMessageView _self;
-  final $Res Function(UMessageViewReplyToDeletedMessageView) _then;
-
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UMessageViewReplyToDeletedMessageView(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as DeletedMessageView,
-  ));
-}
-
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$DeletedMessageViewCopyWith<$Res> get data {
-  
-  return $DeletedMessageViewCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UMessageViewReplyToMessageViewImplCopyWith<
+          _$UMessageViewReplyToMessageViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$UMessageViewReplyToDeletedMessageViewImplCopyWith<$Res> {
+  factory _$$UMessageViewReplyToDeletedMessageViewImplCopyWith(
+          _$UMessageViewReplyToDeletedMessageViewImpl value,
+          $Res Function(_$UMessageViewReplyToDeletedMessageViewImpl) then) =
+      __$$UMessageViewReplyToDeletedMessageViewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DeletedMessageView data});
 
-
-class UMessageViewReplyToMessageBeforeUserJoinedGroupView extends UMessageViewReplyTo {
-  const UMessageViewReplyToMessageBeforeUserJoinedGroupView({required this.data}): super._();
-  
-
-@override final  MessageBeforeUserJoinedGroupView data;
-
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UMessageViewReplyToMessageBeforeUserJoinedGroupViewCopyWith<UMessageViewReplyToMessageBeforeUserJoinedGroupView> get copyWith => _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewCopyWithImpl<UMessageViewReplyToMessageBeforeUserJoinedGroupView>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UMessageViewReplyToMessageBeforeUserJoinedGroupView&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UMessageViewReplyTo.messageBeforeUserJoinedGroupView(data: $data)';
-}
-
-
+  $DeletedMessageViewCopyWith<$Res> get data;
 }
 
 /// @nodoc
-abstract mixin class $UMessageViewReplyToMessageBeforeUserJoinedGroupViewCopyWith<$Res> implements $UMessageViewReplyToCopyWith<$Res> {
-  factory $UMessageViewReplyToMessageBeforeUserJoinedGroupViewCopyWith(UMessageViewReplyToMessageBeforeUserJoinedGroupView value, $Res Function(UMessageViewReplyToMessageBeforeUserJoinedGroupView) _then) = _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewCopyWithImpl;
-@useResult
-$Res call({
- MessageBeforeUserJoinedGroupView data
-});
+class __$$UMessageViewReplyToDeletedMessageViewImplCopyWithImpl<$Res>
+    extends _$UMessageViewReplyToCopyWithImpl<$Res,
+        _$UMessageViewReplyToDeletedMessageViewImpl>
+    implements _$$UMessageViewReplyToDeletedMessageViewImplCopyWith<$Res> {
+  __$$UMessageViewReplyToDeletedMessageViewImplCopyWithImpl(
+      _$UMessageViewReplyToDeletedMessageViewImpl _value,
+      $Res Function(_$UMessageViewReplyToDeletedMessageViewImpl) _then)
+      : super(_value, _then);
 
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UMessageViewReplyToDeletedMessageViewImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as DeletedMessageView,
+    ));
+  }
 
-$MessageBeforeUserJoinedGroupViewCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewCopyWithImpl<$Res>
-    implements $UMessageViewReplyToMessageBeforeUserJoinedGroupViewCopyWith<$Res> {
-  _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewCopyWithImpl(this._self, this._then);
-
-  final UMessageViewReplyToMessageBeforeUserJoinedGroupView _self;
-  final $Res Function(UMessageViewReplyToMessageBeforeUserJoinedGroupView) _then;
-
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UMessageViewReplyToMessageBeforeUserJoinedGroupView(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as MessageBeforeUserJoinedGroupView,
-  ));
-}
-
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$MessageBeforeUserJoinedGroupViewCopyWith<$Res> get data {
-  
-  return $MessageBeforeUserJoinedGroupViewCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DeletedMessageViewCopyWith<$Res> get data {
+    return $DeletedMessageViewCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UMessageViewReplyToDeletedMessageViewImpl
+    extends UMessageViewReplyToDeletedMessageView {
+  const _$UMessageViewReplyToDeletedMessageViewImpl({required this.data})
+      : super._();
 
-class UMessageViewReplyToUnknown extends UMessageViewReplyTo {
-  const UMessageViewReplyToUnknown({required final  Map<String, dynamic> data}): _data = data,super._();
-  
+  @override
+  final DeletedMessageView data;
 
- final  Map<String, dynamic> _data;
-@override Map<String, dynamic> get data {
-  if (_data is EqualUnmodifiableMapView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_data);
+  @override
+  String toString() {
+    return 'UMessageViewReplyTo.deletedMessageView(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UMessageViewReplyToDeletedMessageViewImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UMessageViewReplyToDeletedMessageViewImplCopyWith<
+          _$UMessageViewReplyToDeletedMessageViewImpl>
+      get copyWith => __$$UMessageViewReplyToDeletedMessageViewImplCopyWithImpl<
+          _$UMessageViewReplyToDeletedMessageViewImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MessageView data) messageView,
+    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(MessageBeforeUserJoinedGroupView data)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return deletedMessageView(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MessageView data)? messageView,
+    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return deletedMessageView?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MessageView data)? messageView,
+    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (deletedMessageView != null) {
+      return deletedMessageView(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UMessageViewReplyToMessageView value) messageView,
+    required TResult Function(UMessageViewReplyToDeletedMessageView value)
+        deletedMessageView,
+    required TResult Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(UMessageViewReplyToUnknown value) unknown,
+  }) {
+    return deletedMessageView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult? Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult? Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(UMessageViewReplyToUnknown value)? unknown,
+  }) {
+    return deletedMessageView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult Function(UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(UMessageViewReplyToUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (deletedMessageView != null) {
+      return deletedMessageView(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UMessageViewReplyToDeletedMessageView
+    extends UMessageViewReplyTo {
+  const factory UMessageViewReplyToDeletedMessageView(
+          {required final DeletedMessageView data}) =
+      _$UMessageViewReplyToDeletedMessageViewImpl;
+  const UMessageViewReplyToDeletedMessageView._() : super._();
 
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UMessageViewReplyToUnknownCopyWith<UMessageViewReplyToUnknown> get copyWith => _$UMessageViewReplyToUnknownCopyWithImpl<UMessageViewReplyToUnknown>(this, _$identity);
+  @override
+  DeletedMessageView get data;
 
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UMessageViewReplyToUnknown&&const DeepCollectionEquality().equals(other._data, _data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
-
-@override
-String toString() {
-  return 'UMessageViewReplyTo.unknown(data: $data)';
-}
-
-
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UMessageViewReplyToDeletedMessageViewImplCopyWith<
+          _$UMessageViewReplyToDeletedMessageViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UMessageViewReplyToUnknownCopyWith<$Res> implements $UMessageViewReplyToCopyWith<$Res> {
-  factory $UMessageViewReplyToUnknownCopyWith(UMessageViewReplyToUnknown value, $Res Function(UMessageViewReplyToUnknown) _then) = _$UMessageViewReplyToUnknownCopyWithImpl;
-@useResult
-$Res call({
- Map<String, dynamic> data
-});
+abstract class _$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWith<
+    $Res> {
+  factory _$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWith(
+          _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl value,
+          $Res Function(
+                  _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl)
+              then) =
+      __$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({MessageBeforeUserJoinedGroupView data});
 
-
-
-
+  $MessageBeforeUserJoinedGroupViewCopyWith<$Res> get data;
 }
+
 /// @nodoc
-class _$UMessageViewReplyToUnknownCopyWithImpl<$Res>
-    implements $UMessageViewReplyToUnknownCopyWith<$Res> {
-  _$UMessageViewReplyToUnknownCopyWithImpl(this._self, this._then);
+class __$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWithImpl<
+        $Res>
+    extends _$UMessageViewReplyToCopyWithImpl<$Res,
+        _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl>
+    implements
+        _$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWith<
+            $Res> {
+  __$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWithImpl(
+      _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl _value,
+      $Res Function(_$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl)
+          _then)
+      : super(_value, _then);
 
-  final UMessageViewReplyToUnknown _self;
-  final $Res Function(UMessageViewReplyToUnknown) _then;
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as MessageBeforeUserJoinedGroupView,
+    ));
+  }
 
-/// Create a copy of UMessageViewReplyTo
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UMessageViewReplyToUnknown(
-data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
-  ));
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MessageBeforeUserJoinedGroupViewCopyWith<$Res> get data {
+    return $MessageBeforeUserJoinedGroupViewCopyWith<$Res>(_value.data,
+        (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
+/// @nodoc
 
+class _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl
+    extends UMessageViewReplyToMessageBeforeUserJoinedGroupView {
+  const _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl(
+      {required this.data})
+      : super._();
+
+  @override
+  final MessageBeforeUserJoinedGroupView data;
+
+  @override
+  String toString() {
+    return 'UMessageViewReplyTo.messageBeforeUserJoinedGroupView(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other
+                is _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWith<
+          _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl>
+      get copyWith =>
+          __$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWithImpl<
+                  _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MessageView data) messageView,
+    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(MessageBeforeUserJoinedGroupView data)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return messageBeforeUserJoinedGroupView(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MessageView data)? messageView,
+    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return messageBeforeUserJoinedGroupView?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MessageView data)? messageView,
+    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (messageBeforeUserJoinedGroupView != null) {
+      return messageBeforeUserJoinedGroupView(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UMessageViewReplyToMessageView value) messageView,
+    required TResult Function(UMessageViewReplyToDeletedMessageView value)
+        deletedMessageView,
+    required TResult Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(UMessageViewReplyToUnknown value) unknown,
+  }) {
+    return messageBeforeUserJoinedGroupView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult? Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult? Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(UMessageViewReplyToUnknown value)? unknown,
+  }) {
+    return messageBeforeUserJoinedGroupView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult Function(UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(UMessageViewReplyToUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (messageBeforeUserJoinedGroupView != null) {
+      return messageBeforeUserJoinedGroupView(this);
+    }
+    return orElse();
+  }
 }
 
-// dart format on
+abstract class UMessageViewReplyToMessageBeforeUserJoinedGroupView
+    extends UMessageViewReplyTo {
+  const factory UMessageViewReplyToMessageBeforeUserJoinedGroupView(
+          {required final MessageBeforeUserJoinedGroupView data}) =
+      _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl;
+  const UMessageViewReplyToMessageBeforeUserJoinedGroupView._() : super._();
+
+  @override
+  MessageBeforeUserJoinedGroupView get data;
+
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImplCopyWith<
+          _$UMessageViewReplyToMessageBeforeUserJoinedGroupViewImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UMessageViewReplyToUnknownImplCopyWith<$Res> {
+  factory _$$UMessageViewReplyToUnknownImplCopyWith(
+          _$UMessageViewReplyToUnknownImpl value,
+          $Res Function(_$UMessageViewReplyToUnknownImpl) then) =
+      __$$UMessageViewReplyToUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Map<String, dynamic> data});
+}
+
+/// @nodoc
+class __$$UMessageViewReplyToUnknownImplCopyWithImpl<$Res>
+    extends _$UMessageViewReplyToCopyWithImpl<$Res,
+        _$UMessageViewReplyToUnknownImpl>
+    implements _$$UMessageViewReplyToUnknownImplCopyWith<$Res> {
+  __$$UMessageViewReplyToUnknownImplCopyWithImpl(
+      _$UMessageViewReplyToUnknownImpl _value,
+      $Res Function(_$UMessageViewReplyToUnknownImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UMessageViewReplyToUnknownImpl(
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UMessageViewReplyToUnknownImpl extends UMessageViewReplyToUnknown {
+  const _$UMessageViewReplyToUnknownImpl(
+      {required final Map<String, dynamic> data})
+      : _data = data,
+        super._();
+
+  final Map<String, dynamic> _data;
+  @override
+  Map<String, dynamic> get data {
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'UMessageViewReplyTo.unknown(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UMessageViewReplyToUnknownImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UMessageViewReplyToUnknownImplCopyWith<_$UMessageViewReplyToUnknownImpl>
+      get copyWith => __$$UMessageViewReplyToUnknownImplCopyWithImpl<
+          _$UMessageViewReplyToUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MessageView data) messageView,
+    required TResult Function(DeletedMessageView data) deletedMessageView,
+    required TResult Function(MessageBeforeUserJoinedGroupView data)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MessageView data)? messageView,
+    TResult? Function(DeletedMessageView data)? deletedMessageView,
+    TResult? Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MessageView data)? messageView,
+    TResult Function(DeletedMessageView data)? deletedMessageView,
+    TResult Function(MessageBeforeUserJoinedGroupView data)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UMessageViewReplyToMessageView value) messageView,
+    required TResult Function(UMessageViewReplyToDeletedMessageView value)
+        deletedMessageView,
+    required TResult Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)
+        messageBeforeUserJoinedGroupView,
+    required TResult Function(UMessageViewReplyToUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult? Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult? Function(
+            UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult? Function(UMessageViewReplyToUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UMessageViewReplyToMessageView value)? messageView,
+    TResult Function(UMessageViewReplyToDeletedMessageView value)?
+        deletedMessageView,
+    TResult Function(UMessageViewReplyToMessageBeforeUserJoinedGroupView value)?
+        messageBeforeUserJoinedGroupView,
+    TResult Function(UMessageViewReplyToUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UMessageViewReplyToUnknown extends UMessageViewReplyTo {
+  const factory UMessageViewReplyToUnknown(
+          {required final Map<String, dynamic> data}) =
+      _$UMessageViewReplyToUnknownImpl;
+  const UMessageViewReplyToUnknown._() : super._();
+
+  @override
+  Map<String, dynamic> get data;
+
+  /// Create a copy of UMessageViewReplyTo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UMessageViewReplyToUnknownImplCopyWith<_$UMessageViewReplyToUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

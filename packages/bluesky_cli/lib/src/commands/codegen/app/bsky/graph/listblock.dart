@@ -78,10 +78,10 @@ final class _CreateListblockCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.graph.listblock",
-    "subject": argResults!["subject"],
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.graph.listblock",
+        "subject": argResults!["subject"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutListblockCommand extends PutRecordCommand
@@ -109,10 +109,10 @@ final class _PutListblockCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.graph.listblock",
-    "subject": argResults!["subject"],
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.graph.listblock",
+        "subject": argResults!["subject"],
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteListblockCommand extends DeleteRecordCommand {
@@ -163,11 +163,11 @@ final class _GetListblockCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.graph.listblock",
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.listblock",
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListListblockCommand extends QueryCommand {
@@ -197,12 +197,11 @@ final class _ListListblockCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.graph.listblock",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.listblock",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

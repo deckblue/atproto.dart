@@ -36,25 +36,26 @@ Middleware handleErrors({final void Function(String message)? log}) {
   final write = log ?? stderr.writeln;
 
   return (final Handler inner) => (final Request request) async {
-    try {
-      return await inner(request);
-    } on Object catch (error, stackTrace) {
-      write('unhandled error serving ${request.url.path}: $error\n$stackTrace');
+        try {
+          return await inner(request);
+        } on Object catch (error, stackTrace) {
+          write(
+              'unhandled error serving ${request.url.path}: $error\n$stackTrace');
 
-      return _error(
-        500,
-        'InternalServerError',
-        'The server could not handle the request',
-      );
-    }
-  };
+          return _error(
+            500,
+            'InternalServerError',
+            'The server could not handle the request',
+          );
+        }
+      };
 }
 
 /// Fails a request that takes longer than [timeout] with `503`, so a stuck
 /// upstream (a DID resolution that never answers, say) cannot pin a
 /// connection open indefinitely.
-Middleware timeoutRequests(final Duration timeout) =>
-    (final Handler inner) => (final Request request) async {
+Middleware timeoutRequests(final Duration timeout) => (final Handler inner) =>
+    (final Request request) async {
       try {
         return await Future.sync(() => inner(request)).timeout(timeout);
       } on TimeoutException {
@@ -94,32 +95,32 @@ Middleware rateLimit({
   final windows = <String, _Window>{};
 
   return (final Handler inner) => (final Request request) async {
-    final at = clock();
-    final key = clientKey(request);
+        final at = clock();
+        final key = clientKey(request);
 
-    var current = windows[key];
-    if (current == null || !at.isBefore(current.resetAt)) {
-      _makeRoom(windows, maxClients, at);
-      current = windows[key] = _Window(at.add(window));
-    }
+        var current = windows[key];
+        if (current == null || !at.isBefore(current.resetAt)) {
+          _makeRoom(windows, maxClients, at);
+          current = windows[key] = _Window(at.add(window));
+        }
 
-    if (current.count >= maxRequests) {
-      final retryAfter = current.resetAt.difference(at);
+        if (current.count >= maxRequests) {
+          final retryAfter = current.resetAt.difference(at);
 
-      return _error(
-        429,
-        'RateLimitExceeded',
-        'Too many requests; retry later',
-        headers: {
-          'retry-after':
-              '${retryAfter.inSeconds < 1 ? 1 : retryAfter.inSeconds}',
-        },
-      );
-    }
-    current.count++;
+          return _error(
+            429,
+            'RateLimitExceeded',
+            'Too many requests; retry later',
+            headers: {
+              'retry-after':
+                  '${retryAfter.inSeconds < 1 ? 1 : retryAfter.inSeconds}',
+            },
+          );
+        }
+        current.count++;
 
-    return inner(request);
-  };
+        return inner(request);
+      };
 }
 
 /// Keeps the window table under [maxClients]: drops what has already expired
@@ -155,8 +156,9 @@ Response _error(
   final String error,
   final String message, {
   final Map<String, String> headers = const {},
-}) => Response(
-  status,
-  body: jsonEncode({'error': error, 'message': message}),
-  headers: {'content-type': 'application/json; charset=utf-8', ...headers},
-);
+}) =>
+    Response(
+      status,
+      body: jsonEncode({'error': error, 'message': message}),
+      headers: {'content-type': 'application/json; charset=utf-8', ...headers},
+    );

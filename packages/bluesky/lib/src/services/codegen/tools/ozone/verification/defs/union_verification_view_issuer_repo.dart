@@ -89,7 +89,6 @@ final class UVerificationViewIssuerRepoConverter
           const RepoViewDetailConverter().toJson(data),
         UVerificationViewIssuerRepoRepoViewNotFound(:final data) =>
           const RepoViewNotFoundConverter().toJson(data),
-
         UVerificationViewIssuerRepoUnknown(:final data) => data,
       };
 }

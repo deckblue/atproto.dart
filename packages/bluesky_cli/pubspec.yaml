@@ -9,7 +9,7 @@ funding:
   - https://github.com/sponsors/myConsciousness
 
 environment:
-  sdk: ">=3.8.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
 
 executables:
   bsky:
@@ -26,12 +26,12 @@ dependencies:
   ansi_styles: ^0.3.1
   args: ^2.7.0
   cli_launcher: ^0.3.1
-  cli_util: ^0.5.1
+  cli_util: ^0.4.2
   bluesky_text: ^1.8.0
 
 dev_dependencies:
   http: ^1.4.0
-  lints: ^6.0.0
+  lints: ^5.0.0
   test: ^1.26.2
   import_sorter:
     git:

@@ -51,9 +51,9 @@ final class CheckHandleAvailabilityCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "handle": argResults!["handle"],
-    if (argResults!.wasParsed("email")) "email": argResults!["email"],
-    if (argResults!.wasParsed("birthDate"))
-      "birthDate": argResults!["birthDate"],
-  };
+        "handle": argResults!["handle"],
+        if (argResults!.wasParsed("email")) "email": argResults!["email"],
+        if (argResults!.wasParsed("birthDate"))
+          "birthDate": argResults!["birthDate"],
+      };
 }

@@ -72,9 +72,9 @@ final class UnspeccedGetPostThreadV2SortConverter
 
   @override
   String toJson(UnspeccedGetPostThreadV2Sort object) => switch (object) {
-    UnspeccedGetPostThreadV2SortKnownValue(:final data) => data.value,
-    UnspeccedGetPostThreadV2SortUnknown(:final data) => data,
-  };
+        UnspeccedGetPostThreadV2SortKnownValue(:final data) => data.value,
+        UnspeccedGetPostThreadV2SortUnknown(:final data) => data,
+      };
 }
 
 enum KnownUnspeccedGetPostThreadV2Sort implements Serializable {

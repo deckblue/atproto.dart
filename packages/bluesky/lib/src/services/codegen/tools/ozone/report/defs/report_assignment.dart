@@ -38,7 +38,6 @@ abstract class ReportAssignment with _$ReportAssignment {
 
     /// When the report was assigned
     @JsonKey(toJson: iso8601) required DateTime assignedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportAssignment;
 

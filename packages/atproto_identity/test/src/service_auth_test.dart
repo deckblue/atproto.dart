@@ -54,14 +54,14 @@ String _makeJwt(
   final Object? typ = 'JWT',
   final String alg = 'ES256K',
 }) {
-  final header = _seg({'typ': ?typ, 'alg': alg});
+  final header = _seg({'typ': typ, 'alg': alg});
   final payload = _seg({
     'iss': iss,
     'aud': aud,
     'exp': expEpochSeconds,
-    'lxm': ?lxm,
-    'iat': ?iatEpochSeconds,
-    'nbf': ?nbfEpochSeconds,
+    'lxm': lxm,
+    'iat': iatEpochSeconds,
+    'nbf': nbfEpochSeconds,
   });
   final signingInput = Uint8List.fromList(ascii.encode('$header.$payload'));
   final sig = const PlcSigner().signBytes(signingInput, key);
@@ -260,7 +260,8 @@ void main() {
     },
   );
 
-  test('throws IdentityException (not ArgumentError) on a non-ASCII header '
+  test(
+      'throws IdentityException (not ArgumentError) on a non-ASCII header '
       'segment', () async {
     final key = CryptoKey.generate(KeyType.secp256k1);
     final jwt = _makeJwt(

@@ -154,7 +154,6 @@ final class UEmbedRecordViewRecordEmbedsConverter
           const EmbedRecordViewConverter().toJson(data),
         UEmbedRecordViewRecordEmbedsEmbedRecordWithMediaView(:final data) =>
           const EmbedRecordWithMediaViewConverter().toJson(data),
-
         UEmbedRecordViewRecordEmbedsUnknown(:final data) => data,
       };
 }

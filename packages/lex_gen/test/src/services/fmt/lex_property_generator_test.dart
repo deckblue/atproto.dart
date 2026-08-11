@@ -89,7 +89,8 @@ void main() {
   });
 
   group('knownValues + default (G-18)', () {
-    test('a knownValues string with a default emits a const wrapper '
+    test(
+        'a knownValues string with a default emits a const wrapper '
         'default', () {
       final property = _one({
         'type': 'string',
@@ -113,7 +114,8 @@ void main() {
       expect(formatted, isNot(contains('$wrapper? x')));
     });
 
-    test('a default outside knownValues falls back to the unknown '
+    test(
+        'a default outside knownValues falls back to the unknown '
         'variant', () {
       final property = _one({
         'type': 'string',

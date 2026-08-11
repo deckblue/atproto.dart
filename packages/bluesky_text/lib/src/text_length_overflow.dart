@@ -81,13 +81,13 @@ class TextLengthOverflow {
 
   @override
   int get hashCode => Object.hash(
-    limit,
-    graphemeStart,
-    utf16Start,
-    byteStart,
-    utf16End,
-    byteEnd,
-  );
+        limit,
+        graphemeStart,
+        utf16Start,
+        byteStart,
+        utf16End,
+        byteEnd,
+      );
 
   @override
   String toString() =>

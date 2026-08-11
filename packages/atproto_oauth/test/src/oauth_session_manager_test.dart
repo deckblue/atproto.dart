@@ -16,18 +16,19 @@ OAuthSession _session({
   DateTime? expiresAt,
   String dpopPublicKey = 'PUB',
   String dpopPrivateKey = 'PRIV',
-}) => OAuthSession(
-  accessToken: 'access-1',
-  refreshToken: 'refresh-1',
-  scope: 'atproto',
-  expiresAt: expiresAt,
-  sub: 'did:plc:abc',
-  issuer: 'https://bsky.social',
-  pds: 'https://pds.example',
-  clientId: 'cid',
-  dpopPublicKey: dpopPublicKey,
-  dpopPrivateKey: dpopPrivateKey,
-);
+}) =>
+    OAuthSession(
+      accessToken: 'access-1',
+      refreshToken: 'refresh-1',
+      scope: 'atproto',
+      expiresAt: expiresAt,
+      sub: 'did:plc:abc',
+      issuer: 'https://bsky.social',
+      pds: 'https://pds.example',
+      clientId: 'cid',
+      dpopPublicKey: dpopPublicKey,
+      dpopPrivateKey: dpopPrivateKey,
+    );
 
 void main() {
   test(
@@ -77,7 +78,8 @@ void main() {
     },
   );
 
-  test('concurrent getSession() calls share a single restore and never surface '
+  test(
+      'concurrent getSession() calls share a single restore and never surface '
       'a spurious revoked error', () async {
     // A stored session that has already expired, so the restore path must
     // refresh it — with a rotating refresh token, only ONE refresh may ever
@@ -133,7 +135,8 @@ void main() {
     expect(results[1].accessToken, 'access-2');
   });
 
-  test('a 401 from a superseded access token does not spend another '
+  test(
+      'a 401 from a superseded access token does not spend another '
       'refresh token', () async {
     var tokenPosts = 0;
     final client = OAuthClient(
@@ -209,8 +212,8 @@ void main() {
         // Already expired, so getSession() must go through _refresh.
         _session(
           expiresAt: DateTime.now().toUtc().subtract(
-            const Duration(minutes: 5),
-          ),
+                const Duration(minutes: 5),
+              ),
         ),
         client: client,
         timeout: const Duration(milliseconds: 50),
@@ -259,23 +262,24 @@ void main() {
 }
 
 OAuthClientMetadata _clientMetadata() => const OAuthClientMetadata(
-  clientId: 'cid',
-  applicationType: 'web',
-  clientName: 'Test',
-  clientUri: 'https://client.example',
-  redirectUris: ['https://client.example/callback'],
-  scope: 'atproto',
-  tokenEndpointAuthMethod: 'none',
-);
+      clientId: 'cid',
+      applicationType: 'web',
+      clientName: 'Test',
+      clientUri: 'https://client.example',
+      redirectUris: ['https://client.example/callback'],
+      scope: 'atproto',
+      tokenEndpointAuthMethod: 'none',
+    );
 
 http.Response _json(
   final Map<String, dynamic> body, {
   final int status = 200,
-}) => http.Response(
-  jsonEncode(body),
-  status,
-  headers: {'content-type': 'application/json'},
-);
+}) =>
+    http.Response(
+      jsonEncode(body),
+      status,
+      headers: {'content-type': 'application/json'},
+    );
 
 /// An [OAuthSessionStore] that reproduces a read racing with a refresh:
 /// the SECOND `find` snapshots the stale session at call time, but its

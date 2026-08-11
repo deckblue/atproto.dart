@@ -30,7 +30,6 @@ abstract class DraftEmbedGallery with _$DraftEmbedGallery {
     @Default('app.bsky.draft.defs#draftEmbedGallery') String $type,
     @UDraftEmbedGalleryItemsConverter()
     required List<UDraftEmbedGalleryItems> items,
-
     Map<String, dynamic>? $unknown,
   }) = _DraftEmbedGallery;
 

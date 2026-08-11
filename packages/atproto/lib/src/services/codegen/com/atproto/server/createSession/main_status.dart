@@ -71,9 +71,9 @@ final class ServerCreateSessionStatusConverter
 
   @override
   String toJson(ServerCreateSessionStatus object) => switch (object) {
-    ServerCreateSessionStatusKnownValue(:final data) => data.value,
-    ServerCreateSessionStatusUnknown(:final data) => data,
-  };
+        ServerCreateSessionStatusKnownValue(:final data) => data.value,
+        ServerCreateSessionStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownServerCreateSessionStatus implements Serializable {

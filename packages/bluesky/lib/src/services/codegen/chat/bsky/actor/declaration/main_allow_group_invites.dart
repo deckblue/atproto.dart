@@ -76,9 +76,9 @@ final class ActorDeclarationAllowGroupInvitesConverter
 
   @override
   String toJson(ActorDeclarationAllowGroupInvites object) => switch (object) {
-    ActorDeclarationAllowGroupInvitesKnownValue(:final data) => data.value,
-    ActorDeclarationAllowGroupInvitesUnknown(:final data) => data,
-  };
+        ActorDeclarationAllowGroupInvitesKnownValue(:final data) => data.value,
+        ActorDeclarationAllowGroupInvitesUnknown(:final data) => data,
+      };
 }
 
 enum KnownActorDeclarationAllowGroupInvites implements Serializable {

@@ -19,11 +19,12 @@ import '../../../../procedure_command.dart';
 
 final class GrantVerificationsCommand extends ProcedureCommand {
   GrantVerificationsCommand() {
-    argParser..addMultiOption(
-      "verifications",
-      help: r"Array of verification requests to process",
-      splitCommas: false,
-    );
+    argParser
+      ..addMultiOption(
+        "verifications",
+        help: r"Array of verification requests to process",
+        splitCommas: false,
+      );
   }
 
   @override
@@ -42,13 +43,13 @@ final class GrantVerificationsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "verifications": _requireNonEmpty(
-      "verifications",
-      (argResults!["verifications"] as List<String>)
-          .map((e) => _decodeJsonItem("verifications", e))
-          .toList(),
-    ),
-  };
+        "verifications": _requireNonEmpty(
+          "verifications",
+          (argResults!["verifications"] as List<String>)
+              .map((e) => _decodeJsonItem("verifications", e))
+              .toList(),
+        ),
+      };
   Object? _decodeJsonItem(final String name, final String raw) {
     try {
       return jsonDecode(raw);

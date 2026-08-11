@@ -61,7 +61,7 @@ String? decodePunycodeLabel(final String label) {
     final oldI = i;
     int weight = 1;
 
-    for (int k = _base; ; k += _base) {
+    for (int k = _base;; k += _base) {
       if (index >= input.length) return null;
 
       final digit = _decodeDigit(input.codeUnitAt(index++));

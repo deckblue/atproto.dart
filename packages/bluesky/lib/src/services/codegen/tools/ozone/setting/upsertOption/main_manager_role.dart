@@ -74,9 +74,9 @@ final class SettingUpsertOptionManagerRoleConverter
 
   @override
   String toJson(SettingUpsertOptionManagerRole object) => switch (object) {
-    SettingUpsertOptionManagerRoleKnownValue(:final data) => data.value,
-    SettingUpsertOptionManagerRoleUnknown(:final data) => data,
-  };
+        SettingUpsertOptionManagerRoleKnownValue(:final data) => data.value,
+        SettingUpsertOptionManagerRoleUnknown(:final data) => data,
+      };
 }
 
 enum KnownSettingUpsertOptionManagerRole implements Serializable {

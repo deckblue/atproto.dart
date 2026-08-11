@@ -60,10 +60,10 @@ final class LexXrpcParametersPropertyConverter
       switch (object) {
         ULexXrpcParametersPropertyPrimitiveArray(:final data) => data.toJson(),
         ULexXrpcParametersPropertyPrimitive(:final data) => switch (data) {
-          ULexPrimitiveBoolean(:final data) => data.toJson(),
-          ULexPrimitiveInteger(:final data) => data.toJson(),
-          ULexPrimitiveString(:final data) => data.toJson(),
-          ULexPrimitiveUnknown(:final data) => data.toJson(),
-        },
+            ULexPrimitiveBoolean(:final data) => data.toJson(),
+            ULexPrimitiveInteger(:final data) => data.toJson(),
+            ULexPrimitiveString(:final data) => data.toJson(),
+            ULexPrimitiveUnknown(:final data) => data.toJson(),
+          },
       };
 }

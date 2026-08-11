@@ -120,19 +120,16 @@ final class _SessionState {
     if (existing != null) return existing;
 
     final refresh = onRefreshSession!;
-    final future = refresh(current)
-        .timeout(timeout)
-        .then((refreshed) {
-          session = refreshed;
-          //! Broadcast after adopting it, so a listener that reads `session`
-          //! sees the credentials it was just handed. Never awaited: a slow or
-          //! throwing listener must not delay or fail the request that
-          //! triggered the refresh.
-          _updates.add(refreshed);
+    final future = refresh(current).timeout(timeout).then((refreshed) {
+      session = refreshed;
+      //! Broadcast after adopting it, so a listener that reads `session`
+      //! sees the credentials it was just handed. Never awaited: a slow or
+      //! throwing listener must not delay or fail the request that
+      //! triggered the refresh.
+      _updates.add(refreshed);
 
-          return refreshed;
-        })
-        .whenComplete(() => _inflightRefresh = null);
+      return refreshed;
+    }).whenComplete(() => _inflightRefresh = null);
 
     return _inflightRefresh = future;
   }
@@ -226,19 +223,19 @@ base class ServiceContext {
     final xrpc.GetClient? getClient,
     final xrpc.PostClient? postClient,
     final Future<Session> Function(Session current)? onRefreshSession,
-  }) : _headers = _freeze(headers),
-       _protocol = protocol ?? defaultProtocol,
-       _state = _SessionState(
-         session,
-         onRefreshSession,
-         timeout ?? defaultTimeout,
-       ),
-       _explicitService = service,
-       relayService = relayService ?? defaultRelayService,
-       _challenge = Challenge(retryConfig),
-       _timeout = timeout ?? defaultTimeout,
-       _getClient = getClient,
-       _postClient = postClient;
+  })  : _headers = _freeze(headers),
+        _protocol = protocol ?? defaultProtocol,
+        _state = _SessionState(
+          session,
+          onRefreshSession,
+          timeout ?? defaultTimeout,
+        ),
+        _explicitService = service,
+        relayService = relayService ?? defaultRelayService,
+        _challenge = Challenge(retryConfig),
+        _timeout = timeout ?? defaultTimeout,
+        _getClient = getClient,
+        _postClient = postClient;
 
   /// Builds a context around session state that already belongs to another
   /// context, carrying every immutable setting across unchanged and replacing
@@ -254,13 +251,13 @@ base class ServiceContext {
     required final Duration timeout,
     required final xrpc.GetClient? getClient,
     required final xrpc.PostClient? postClient,
-  }) : _headers = _freeze(headers),
-       _protocol = protocol,
-       _explicitService = explicitService,
-       _challenge = challenge,
-       _timeout = timeout,
-       _getClient = getClient,
-       _postClient = postClient;
+  })  : _headers = _freeze(headers),
+        _protocol = protocol,
+        _explicitService = explicitService,
+        _challenge = challenge,
+        _timeout = timeout,
+        _getClient = getClient,
+        _postClient = postClient;
 
   /// The global headers without auth header.
   ///
@@ -585,19 +582,20 @@ base class ServiceContext {
     final xrpc.ResponseDataBuilder<T>? to,
     final xrpc.ResponseDataAdaptor? adaptor,
     final xrpc.WebSocketChannelFactory? channelFactory,
-  }) async => await _challenge.execute(
-    () async => xrpc.subscribe(
-      methodId,
-      protocol: _protocol,
-      service: service ?? relayService,
-      parameters: parameters,
-      to: to,
-      adaptor: adaptor,
-      channelFactory: channelFactory,
-    ),
-    isProcedure: false,
-    nsid: methodId.toString(),
-  );
+  }) async =>
+      await _challenge.execute(
+        () async => xrpc.subscribe(
+          methodId,
+          protocol: _protocol,
+          service: service ?? relayService,
+          parameters: parameters,
+          to: to,
+          adaptor: adaptor,
+          channelFactory: channelFactory,
+        ),
+        isProcedure: false,
+        nsid: methodId.toString(),
+      );
 
   /// Builds the legacy Bearer `headerBuilder` for one request, or null when
   /// this context is OAuth-authenticated (its headers are merged upstream).
@@ -672,8 +670,8 @@ base class ServiceContext {
   /// used as the DPoP `htu` and for per-endpoint nonce reporting.
   Uri _endpointFor(final String service, final NSID methodId) =>
       _protocol == xrpc.Protocol.http
-      ? Uri.http(service, '/xrpc/$methodId')
-      : Uri.https(service, '/xrpc/$methodId');
+          ? Uri.http(service, '/xrpc/$methodId')
+          : Uri.https(service, '/xrpc/$methodId');
 
   /// Returns the OAuth DPoP auth headers for [endpoint]/[method], or an empty
   /// map when this context is not OAuth-authenticated.

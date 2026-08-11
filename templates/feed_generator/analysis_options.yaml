@@ -4,6 +4,8 @@
 include: package:lints/recommended.yaml
 
 analyzer:
+  enable-experiment:
+    - null-aware-elements
   exclude:
     - "**/*.freezed.dart"
     - "**/*.g.dart"

@@ -17,13 +17,14 @@ LexRecord generateLexRecord(
   final String defName,
   final lex.LexRecord record,
   final List<String> mainVariants,
-) => _LexRecordGenerator(
-  ctx,
-  lexiconId,
-  defName,
-  record,
-  mainVariants,
-).execute();
+) =>
+    _LexRecordGenerator(
+      ctx,
+      lexiconId,
+      defName,
+      record,
+      mainVariants,
+    ).execute();
 
 final class _LexRecordGenerator {
   final GenContext ctx;

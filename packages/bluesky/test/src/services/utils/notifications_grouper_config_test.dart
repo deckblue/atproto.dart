@@ -65,31 +65,33 @@ void main() {
         KnownNotificationReason.like,
       },
       Duration? window = const Duration(hours: 48),
-    }) => NotificationsGrouperConfig(
-      groupableReasons: groupableReasons,
-      window: window,
-      separateFollowBacks: false,
-      unreadIfAny: true,
-    );
+    }) =>
+        NotificationsGrouperConfig(
+          groupableReasons: groupableReasons,
+          window: window,
+          separateFollowBacks: false,
+          unreadIfAny: true,
+        );
 
     GroupedNotifications groupWith(
       final NotificationsGrouperConfig config,
-    ) => NotificationsGrouper(config: config).group(
-      NotificationListNotificationsOutput.fromJson({
-        'notifications': [
-          {
-            'uri': 'at://did:plc:a/app.bsky.feed.like/1',
-            'cid':
-                'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
-            'author': {'did': 'did:plc:a', 'handle': 'a.test'},
-            'reason': 'like',
-            'record': <String, dynamic>{},
-            'isRead': true,
-            'indexedAt': '2026-01-03T00:00:00.000Z',
-          },
-        ],
-      }),
-    );
+    ) =>
+        NotificationsGrouper(config: config).group(
+          NotificationListNotificationsOutput.fromJson({
+            'notifications': [
+              {
+                'uri': 'at://did:plc:a/app.bsky.feed.like/1',
+                'cid':
+                    'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
+                'author': {'did': 'did:plc:a', 'handle': 'a.test'},
+                'reason': 'like',
+                'record': <String, dynamic>{},
+                'isRead': true,
+                'indexedAt': '2026-01-03T00:00:00.000Z',
+              },
+            ],
+          }),
+        );
 
     test('rejects an empty set of groupable reasons', () {
       // An empty set silently disables grouping entirely, which is

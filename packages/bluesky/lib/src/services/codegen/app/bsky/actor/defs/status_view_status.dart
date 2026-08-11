@@ -71,9 +71,9 @@ final class StatusViewStatusConverter
 
   @override
   String toJson(StatusViewStatus object) => switch (object) {
-    StatusViewStatusKnownValue(:final data) => data.value,
-    StatusViewStatusUnknown(:final data) => data,
-  };
+        StatusViewStatusKnownValue(:final data) => data.value,
+        StatusViewStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownStatusViewStatus implements Serializable {

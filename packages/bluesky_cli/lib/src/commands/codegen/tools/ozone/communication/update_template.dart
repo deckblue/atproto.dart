@@ -53,14 +53,15 @@ final class UpdateTemplateCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "id": argResults!["id"],
-    if (argResults!.wasParsed("name")) "name": argResults!["name"],
-    if (argResults!.wasParsed("lang")) "lang": argResults!["lang"],
-    if (argResults!.wasParsed("contentMarkdown"))
-      "contentMarkdown": argResults!["contentMarkdown"],
-    if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
-    if (argResults!.wasParsed("updatedBy"))
-      "updatedBy": argResults!["updatedBy"],
-    if (argResults!.wasParsed("disabled")) "disabled": argResults!["disabled"],
-  };
+        "id": argResults!["id"],
+        if (argResults!.wasParsed("name")) "name": argResults!["name"],
+        if (argResults!.wasParsed("lang")) "lang": argResults!["lang"],
+        if (argResults!.wasParsed("contentMarkdown"))
+          "contentMarkdown": argResults!["contentMarkdown"],
+        if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
+        if (argResults!.wasParsed("updatedBy"))
+          "updatedBy": argResults!["updatedBy"],
+        if (argResults!.wasParsed("disabled"))
+          "disabled": argResults!["disabled"],
+      };
 }

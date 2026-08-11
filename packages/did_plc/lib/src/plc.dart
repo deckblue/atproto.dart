@@ -390,14 +390,13 @@ final class _PLCImpl implements PLC {
     HttpClient? httpClient,
     RetryPolicy? retryPolicy,
     CacheManager? cacheManager,
-  }) : _httpClient =
-           httpClient ??
-           HttpClient(
-             baseUrl: service ?? _defaultService,
-             retryPolicy: retryPolicy,
-           ),
-       _cacheManager = cacheManager,
-       _cached = cacheManager != null ? CachedOperation(cacheManager) : null;
+  })  : _httpClient = httpClient ??
+            HttpClient(
+              baseUrl: service ?? _defaultService,
+              retryPolicy: retryPolicy,
+            ),
+        _cacheManager = cacheManager,
+        _cached = cacheManager != null ? CachedOperation(cacheManager) : null;
 
   final HttpClient _httpClient;
   final CacheManager? _cacheManager;

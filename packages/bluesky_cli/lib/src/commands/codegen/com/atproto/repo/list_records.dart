@@ -55,12 +55,11 @@ final class ListRecordsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "repo": argResults!["repo"],
-    "collection": argResults!["collection"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    if (argResults!.wasParsed("reverse")) "reverse": argResults!["reverse"],
-  };
+        "repo": argResults!["repo"],
+        "collection": argResults!["collection"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("reverse")) "reverse": argResults!["reverse"],
+      };
 }

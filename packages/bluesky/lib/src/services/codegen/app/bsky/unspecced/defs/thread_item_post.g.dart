@@ -8,51 +8,51 @@ part of 'thread_item_post.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ThreadItemPost _$ThreadItemPostFromJson(Map json) =>
-    $checkedCreate('_ThreadItemPost', json, ($checkedConvert) {
-      final val = _ThreadItemPost(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.unspecced.defs#threadItemPost',
-        ),
-        post: $checkedConvert(
-          'post',
-          (v) => const PostViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        moreParents: $checkedConvert('moreParents', (v) => v as bool),
-        moreReplies: $checkedConvert('moreReplies', (v) => (v as num).toInt()),
-        opThread: $checkedConvert('opThread', (v) => v as bool),
-        opThreadPostIndex: $checkedConvert(
-          'opThreadPostIndex',
-          (v) => (v as num?)?.toInt(),
-        ),
-        opThreadPostCount: $checkedConvert(
-          'opThreadPostCount',
-          (v) => (v as num?)?.toInt(),
-        ),
-        hiddenByThreadgate: $checkedConvert(
-          'hiddenByThreadgate',
-          (v) => v as bool,
-        ),
-        mutedByViewer: $checkedConvert('mutedByViewer', (v) => v as bool),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ThreadItemPostImpl _$$ThreadItemPostImplFromJson(Map json) => $checkedCreate(
+      r'_$ThreadItemPostImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ThreadItemPostImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'app.bsky.unspecced.defs#threadItemPost'),
+          post: $checkedConvert(
+              'post',
+              (v) => const PostViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          moreParents: $checkedConvert('moreParents', (v) => v as bool),
+          moreReplies:
+              $checkedConvert('moreReplies', (v) => (v as num).toInt()),
+          opThread: $checkedConvert('opThread', (v) => v as bool),
+          opThreadPostIndex:
+              $checkedConvert('opThreadPostIndex', (v) => (v as num?)?.toInt()),
+          opThreadPostCount:
+              $checkedConvert('opThreadPostCount', (v) => (v as num?)?.toInt()),
+          hiddenByThreadgate:
+              $checkedConvert('hiddenByThreadgate', (v) => v as bool),
+          mutedByViewer: $checkedConvert('mutedByViewer', (v) => v as bool),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ThreadItemPostToJson(_ThreadItemPost instance) =>
+Map<String, dynamic> _$$ThreadItemPostImplToJson(
+        _$ThreadItemPostImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'post': const PostViewConverter().toJson(instance.post),
       'moreParents': instance.moreParents,
       'moreReplies': instance.moreReplies,
       'opThread': instance.opThread,
-      'opThreadPostIndex': ?instance.opThreadPostIndex,
-      'opThreadPostCount': ?instance.opThreadPostCount,
+      if (instance.opThreadPostIndex case final value?)
+        'opThreadPostIndex': value,
+      if (instance.opThreadPostCount case final value?)
+        'opThreadPostCount': value,
       'hiddenByThreadgate': instance.hiddenByThreadgate,
       'mutedByViewer': instance.mutedByViewer,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

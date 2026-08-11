@@ -37,13 +37,13 @@ final class SendMessageBatchCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "items": _requireNonEmpty(
-      "items",
-      (argResults!["items"] as List<String>)
-          .map((e) => _decodeJsonItem("items", e))
-          .toList(),
-    ),
-  };
+        "items": _requireNonEmpty(
+          "items",
+          (argResults!["items"] as List<String>)
+              .map((e) => _decodeJsonItem("items", e))
+              .toList(),
+        ),
+      };
   Object? _decodeJsonItem(final String name, final String raw) {
     try {
       return jsonDecode(raw);

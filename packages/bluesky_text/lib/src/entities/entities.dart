@@ -26,7 +26,7 @@ class Entities extends UnmodifiableListView<Entity> {
   /// `unresolvedHandles` lets the caller warn the user (or retry) rather than
   /// silently posting a mention-less message.
   Future<({List<Map<String, dynamic>> facets, List<String> unresolvedHandles})>
-  toFacetsResult({
+      toFacetsResult({
     String? service,
     HandleResolver? resolver,
     http.Client? client,
@@ -67,9 +67,11 @@ class Entities extends UnmodifiableListView<Entity> {
     String? service,
     HandleResolver? resolver,
     http.Client? client,
-  }) async => (await toFacetsResult(
-    service: service,
-    resolver: resolver,
-    client: client,
-  )).facets;
+  }) async =>
+      (await toFacetsResult(
+        service: service,
+        resolver: resolver,
+        client: client,
+      ))
+          .facets;
 }

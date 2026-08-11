@@ -72,9 +72,9 @@ final class LabelValueDefinitionSeverityConverter
 
   @override
   String toJson(LabelValueDefinitionSeverity object) => switch (object) {
-    LabelValueDefinitionSeverityKnownValue(:final data) => data.value,
-    LabelValueDefinitionSeverityUnknown(:final data) => data,
-  };
+        LabelValueDefinitionSeverityKnownValue(:final data) => data.value,
+        LabelValueDefinitionSeverityUnknown(:final data) => data,
+      };
 }
 
 enum KnownLabelValueDefinitionSeverity implements Serializable {

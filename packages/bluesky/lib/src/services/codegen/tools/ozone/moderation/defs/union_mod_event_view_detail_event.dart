@@ -240,8 +240,8 @@ extension UModEventViewDetailEventExtension on UModEventViewDetailEvent {
       !isRevokeAccountCredentialsEvent;
   RevokeAccountCredentialsEvent? get revokeAccountCredentialsEvent =>
       isRevokeAccountCredentialsEvent
-      ? data as RevokeAccountCredentialsEvent
-      : null;
+          ? data as RevokeAccountCredentialsEvent
+          : null;
   bool get isScheduleTakedownEvent =>
       isA<UModEventViewDetailEventScheduleTakedownEvent>(this);
   bool get isNotScheduleTakedownEvent => !isScheduleTakedownEvent;
@@ -252,8 +252,8 @@ extension UModEventViewDetailEventExtension on UModEventViewDetailEvent {
   bool get isNotCancelScheduledTakedownEvent => !isCancelScheduledTakedownEvent;
   CancelScheduledTakedownEvent? get cancelScheduledTakedownEvent =>
       isCancelScheduledTakedownEvent
-      ? data as CancelScheduledTakedownEvent
-      : null;
+          ? data as CancelScheduledTakedownEvent
+          : null;
   bool get isUnknown => isA<UModEventViewDetailEventUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
@@ -452,7 +452,6 @@ final class UModEventViewDetailEventConverter
           const ScheduleTakedownEventConverter().toJson(data),
         UModEventViewDetailEventCancelScheduledTakedownEvent(:final data) =>
           const CancelScheduledTakedownEventConverter().toJson(data),
-
         UModEventViewDetailEventUnknown(:final data) => data,
       };
 }

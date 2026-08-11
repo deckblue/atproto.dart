@@ -44,7 +44,8 @@ void main() {
 
     const keyManager = KeyManager();
 
-    test('toEcPublicKey rethrows an off-curve point error as CryptoException '
+    test(
+        'toEcPublicKey rethrows an off-curve point error as CryptoException '
         '(not ArgumentError)', () {
       final parsed = keyManager.parseDidKey(offCurveDidKey);
       expect(
@@ -53,7 +54,8 @@ void main() {
       );
     });
 
-    test('toEcPublicKey rethrows an invalid-prefix point error as '
+    test(
+        'toEcPublicKey rethrows an invalid-prefix point error as '
         'CryptoException (not ArgumentError)', () {
       final parsed = keyManager.parseDidKey(invalidPrefixDidKey);
       expect(
@@ -88,7 +90,8 @@ void main() {
       'off-curve': offCurveDidKey,
       'invalid-prefix': invalidPrefixDidKey,
     }.entries) {
-      test('verifyRawOperation fails closed for an ${entry.key} rotation key '
+      test(
+          'verifyRawOperation fails closed for an ${entry.key} rotation key '
           '(returns invalid, never throws)', () {
         const verifier = PlcVerifier();
         final op = operationWithBadKey(entry.value);

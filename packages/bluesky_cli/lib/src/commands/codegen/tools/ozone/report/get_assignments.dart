@@ -49,19 +49,19 @@ final class GetAssignmentsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "onlyActive": argResults!["onlyActive"],
-    if (argResults!.wasParsed("reportIds"))
-      "reportIds": (argResults!["reportIds"] as List<String>)
-          .map(
-            (e) =>
-                int.tryParse(e) ??
-                usageException('Invalid integer value in option "reportIds".'),
-          )
-          .toList(),
-    if (argResults!.wasParsed("dids")) "dids": argResults!["dids"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        "onlyActive": argResults!["onlyActive"],
+        if (argResults!.wasParsed("reportIds"))
+          "reportIds": (argResults!["reportIds"] as List<String>)
+              .map(
+                (e) =>
+                    int.tryParse(e) ??
+                    usageException(
+                        'Invalid integer value in option "reportIds".'),
+              )
+              .toList(),
+        if (argResults!.wasParsed("dids")) "dids": argResults!["dids"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

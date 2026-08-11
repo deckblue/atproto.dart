@@ -43,7 +43,6 @@ abstract class AccountStrike with _$AccountStrike {
 
     /// Timestamp of the most recent strike received
     @JsonKey(toJson: iso8601) DateTime? lastStrikeAt,
-
     Map<String, dynamic>? $unknown,
   }) = _AccountStrike;
 

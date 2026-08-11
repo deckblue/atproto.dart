@@ -67,9 +67,9 @@ final class AccessConverter extends JsonConverter<Access, String> {
 
   @override
   String toJson(Access object) => switch (object) {
-    AccessKnownValue(:final data) => data.value,
-    AccessUnknown(:final data) => data,
-  };
+        AccessKnownValue(:final data) => data.value,
+        AccessUnknown(:final data) => data,
+      };
 }
 
 enum KnownAccess implements Serializable {

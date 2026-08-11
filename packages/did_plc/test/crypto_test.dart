@@ -131,19 +131,19 @@ void main() {
 
   group('sign / verify', () {
     Operation buildOp(String didKey) => Operation(
-      sig: '',
-      type: 'plc_operation',
-      rotationKeys: [didKey],
-      verificationMethods: {'atproto': didKey},
-      alsoKnownAs: const ['at://foo.test'],
-      services: const {
-        'atproto_pds': {
-          'type': 'AtprotoPersonalDataServer',
-          'endpoint': 'https://pds.test',
-        },
-      },
-      prev: null,
-    );
+          sig: '',
+          type: 'plc_operation',
+          rotationKeys: [didKey],
+          verificationMethods: {'atproto': didKey},
+          alsoKnownAs: const ['at://foo.test'],
+          services: const {
+            'atproto_pds': {
+              'type': 'AtprotoPersonalDataServer',
+              'endpoint': 'https://pds.test',
+            },
+          },
+          prev: null,
+        );
 
     for (final type in KeyType.values) {
       test('round-trips for $type', () async {

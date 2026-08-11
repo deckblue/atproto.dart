@@ -65,20 +65,21 @@ final class CreateAccountCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!.wasParsed("email")) "email": argResults!["email"],
-    "handle": argResults!["handle"],
-    if (argResults!.wasParsed("did")) "did": argResults!["did"],
-    if (argResults!.wasParsed("inviteCode"))
-      "inviteCode": argResults!["inviteCode"],
-    if (argResults!.wasParsed("verificationCode"))
-      "verificationCode": argResults!["verificationCode"],
-    if (argResults!.wasParsed("verificationPhone"))
-      "verificationPhone": argResults!["verificationPhone"],
-    if (argResults!.wasParsed("password")) "password": argResults!["password"],
-    if (argResults!.wasParsed("recoveryKey"))
-      "recoveryKey": argResults!["recoveryKey"],
-    if (argResults!.wasParsed("plcOp")) "plcOp": _decodeJson("plcOp"),
-  };
+        if (argResults!.wasParsed("email")) "email": argResults!["email"],
+        "handle": argResults!["handle"],
+        if (argResults!.wasParsed("did")) "did": argResults!["did"],
+        if (argResults!.wasParsed("inviteCode"))
+          "inviteCode": argResults!["inviteCode"],
+        if (argResults!.wasParsed("verificationCode"))
+          "verificationCode": argResults!["verificationCode"],
+        if (argResults!.wasParsed("verificationPhone"))
+          "verificationPhone": argResults!["verificationPhone"],
+        if (argResults!.wasParsed("password"))
+          "password": argResults!["password"],
+        if (argResults!.wasParsed("recoveryKey"))
+          "recoveryKey": argResults!["recoveryKey"],
+        if (argResults!.wasParsed("plcOp")) "plcOp": _decodeJson("plcOp"),
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

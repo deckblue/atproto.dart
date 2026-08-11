@@ -87,8 +87,7 @@ final class LexKnownValues extends GeneratableType {
     return emitDartFile(file);
   }
 
-  String _unionClass() =>
-      '''@freezed
+  String _unionClass() => '''@freezed
 sealed class $name with _\$$name {
   const $name._();
 
@@ -110,8 +109,7 @@ sealed class $name with _\$$name {
   String toJson() => const ${name}Converter().toJson(this);
 }''';
 
-  String _extensionBlock() =>
-      '''extension ${name}Extension on $name {
+  String _extensionBlock() => '''extension ${name}Extension on $name {
   ${_getExtensions()}
 }''';
 
@@ -140,8 +138,7 @@ sealed class $name with _\$$name {
       };
 }''';
 
-  String _enumBlock() =>
-      '''enum Known$name implements Serializable{
+  String _enumBlock() => '''enum Known$name implements Serializable{
   ${_getElements()}
   ;
 
@@ -168,21 +165,19 @@ sealed class $name with _\$$name {
 }''';
 
   String _getElements() {
-    return values
-        .map((e) {
-          final buffer = StringBuffer();
-          if (e.startsWith('#')) {
-            buffer.writeln("@JsonValue('$lexiconId$e')");
-            buffer.write(
-              "${rule.getLexKnownValuesElementName(e, lexiconId: lexiconId)}('$lexiconId$e'),",
-            );
-          } else {
-            buffer.writeln("@JsonValue('$e')");
-            buffer.write("${rule.getLexKnownValuesElementName(e)}('$e'),");
-          }
-          return buffer.toString();
-        })
-        .join('\n');
+    return values.map((e) {
+      final buffer = StringBuffer();
+      if (e.startsWith('#')) {
+        buffer.writeln("@JsonValue('$lexiconId$e')");
+        buffer.write(
+          "${rule.getLexKnownValuesElementName(e, lexiconId: lexiconId)}('$lexiconId$e'),",
+        );
+      } else {
+        buffer.writeln("@JsonValue('$e')");
+        buffer.write("${rule.getLexKnownValuesElementName(e)}('$e'),");
+      }
+      return buffer.toString();
+    }).join('\n');
   }
 
   String _getExtensions() {

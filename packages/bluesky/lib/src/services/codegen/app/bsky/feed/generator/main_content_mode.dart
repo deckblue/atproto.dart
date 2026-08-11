@@ -71,9 +71,9 @@ final class FeedGeneratorContentModeConverter
 
   @override
   String toJson(FeedGeneratorContentMode object) => switch (object) {
-    FeedGeneratorContentModeKnownValue(:final data) => data.value,
-    FeedGeneratorContentModeUnknown(:final data) => data,
-  };
+        FeedGeneratorContentModeKnownValue(:final data) => data.value,
+        FeedGeneratorContentModeUnknown(:final data) => data,
+      };
 }
 
 enum KnownFeedGeneratorContentMode implements Serializable {

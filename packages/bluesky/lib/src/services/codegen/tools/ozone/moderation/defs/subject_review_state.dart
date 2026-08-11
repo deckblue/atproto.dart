@@ -71,9 +71,9 @@ final class SubjectReviewStateConverter
 
   @override
   String toJson(SubjectReviewState object) => switch (object) {
-    SubjectReviewStateKnownValue(:final data) => data.value,
-    SubjectReviewStateUnknown(:final data) => data,
-  };
+        SubjectReviewStateKnownValue(:final data) => data.value,
+        SubjectReviewStateUnknown(:final data) => data,
+      };
 }
 
 enum KnownSubjectReviewState implements Serializable {

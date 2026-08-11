@@ -41,7 +41,6 @@ abstract class AccountHosting with _$AccountHosting {
     @JsonKey(toJson: iso8601) DateTime? deletedAt,
     @JsonKey(toJson: iso8601) DateTime? deactivatedAt,
     @JsonKey(toJson: iso8601) DateTime? reactivatedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _AccountHosting;
 

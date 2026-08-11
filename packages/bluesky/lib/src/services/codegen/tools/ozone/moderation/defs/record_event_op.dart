@@ -70,9 +70,9 @@ final class RecordEventOpConverter
 
   @override
   String toJson(RecordEventOp object) => switch (object) {
-    RecordEventOpKnownValue(:final data) => data.value,
-    RecordEventOpUnknown(:final data) => data,
-  };
+        RecordEventOpKnownValue(:final data) => data.value,
+        RecordEventOpUnknown(:final data) => data,
+      };
 }
 
 enum KnownRecordEventOp implements Serializable {

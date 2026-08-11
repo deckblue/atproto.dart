@@ -71,9 +71,9 @@ final class GraphGetListsPurposesConverter
 
   @override
   String toJson(GraphGetListsPurposes object) => switch (object) {
-    GraphGetListsPurposesKnownValue(:final data) => data.value,
-    GraphGetListsPurposesUnknown(:final data) => data,
-  };
+        GraphGetListsPurposesKnownValue(:final data) => data.value,
+        GraphGetListsPurposesUnknown(:final data) => data,
+      };
 }
 
 enum KnownGraphGetListsPurposes implements Serializable {

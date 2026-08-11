@@ -41,14 +41,16 @@ final class FeedGeneratorConfig {
   /// Throws [StateError] when a required variable is missing or malformed.
   factory FeedGeneratorConfig.fromEnvironment([
     final Map<String, String>? environment,
-  ]) => FeedGeneratorConfig._fromEnvironment(environment, withPassword: false);
+  ]) =>
+      FeedGeneratorConfig._fromEnvironment(environment, withPassword: false);
 
   /// The publish path's config: [FeedGeneratorConfig.fromEnvironment] plus
   /// `FEEDGEN_PUBLISHER_PASSWORD` (an app password). Use it only from
   /// `bin/publish_feed.dart`.
   factory FeedGeneratorConfig.fromPublisherEnvironment([
     final Map<String, String>? environment,
-  ]) => FeedGeneratorConfig._fromEnvironment(environment, withPassword: true);
+  ]) =>
+      FeedGeneratorConfig._fromEnvironment(environment, withPassword: true);
 
   factory FeedGeneratorConfig._fromEnvironment(
     final Map<String, String>? environment, {
@@ -96,9 +98,8 @@ final class FeedGeneratorConfig {
       storeCapacity: capacity,
       cursorPath: cursorPath,
       publisherHandle: require('FEEDGEN_PUBLISHER_HANDLE'),
-      publisherPassword: (password == null || password.isEmpty)
-          ? null
-          : password,
+      publisherPassword:
+          (password == null || password.isEmpty) ? null : password,
     );
   }
 

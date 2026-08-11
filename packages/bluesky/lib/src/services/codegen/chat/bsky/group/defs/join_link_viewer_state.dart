@@ -26,7 +26,6 @@ abstract class JoinLinkViewerState with _$JoinLinkViewerState {
   const factory JoinLinkViewerState({
     @Default('chat.bsky.group.defs#joinLinkViewerState') String $type,
     @JsonKey(toJson: iso8601) DateTime? requestedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _JoinLinkViewerState;
 

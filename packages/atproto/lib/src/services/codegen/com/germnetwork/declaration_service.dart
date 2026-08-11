@@ -56,15 +56,16 @@ final class DeclarationRecordAccessor {
     String? cid,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoGetRecord(
-    repo: repo,
-    collection: ids.comGermnetworkDeclaration,
-    rkey: rkey,
-    cid: cid,
-    $ctx: ctx,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoRepoGetRecord(
+        repo: repo,
+        collection: ids.comGermnetworkDeclaration,
+        rkey: rkey,
+        cid: cid,
+        $ctx: ctx,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   Future<XRPCResponse<RepoListRecordsOutput>> list({
     required String repo,
@@ -73,16 +74,17 @@ final class DeclarationRecordAccessor {
     bool? reverse,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoListRecords(
-    repo: repo,
-    collection: ids.comGermnetworkDeclaration,
-    limit: limit,
-    cursor: cursor,
-    reverse: reverse,
-    $ctx: ctx,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoRepoListRecords(
+        repo: repo,
+        collection: ids.comGermnetworkDeclaration,
+        limit: limit,
+        cursor: cursor,
+        reverse: reverse,
+        $ctx: ctx,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   Future<XRPCResponse<RepoCreateRecordOutput>> create({
     required String version,
@@ -95,25 +97,26 @@ final class DeclarationRecordAccessor {
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoCreateRecord(
-    repo: ctx.repo,
-    collection: ids.comGermnetworkDeclaration,
-    rkey: rkey,
-    validate: validate,
-    record: {
-      r'$type': 'com.germnetwork.declaration',
-      ...?$unknown,
-      'version': version,
-      'currentKey': currentKey,
-      if (messageMe != null)
-        'messageMe': const MessageMeConverter().toJson(messageMe),
-      if (keyPackage != null) 'keyPackage': keyPackage,
-      if (continuityProofs != null) 'continuityProofs': continuityProofs,
-    },
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoCreateRecord(
+        repo: ctx.repo,
+        collection: ids.comGermnetworkDeclaration,
+        rkey: rkey,
+        validate: validate,
+        record: {
+          r'$type': 'com.germnetwork.declaration',
+          ...?$unknown,
+          'version': version,
+          'currentKey': currentKey,
+          if (messageMe != null)
+            'messageMe': const MessageMeConverter().toJson(messageMe),
+          if (keyPackage != null) 'keyPackage': keyPackage,
+          if (continuityProofs != null) 'continuityProofs': continuityProofs,
+        },
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 
   Future<XRPCResponse<RepoPutRecordOutput>> put({
     required String version,
@@ -127,26 +130,27 @@ final class DeclarationRecordAccessor {
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoPutRecord(
-    repo: ctx.repo,
-    collection: ids.comGermnetworkDeclaration,
-    rkey: rkey,
-    validate: validate,
-    record: {
-      r'$type': 'com.germnetwork.declaration',
-      ...?$unknown,
-      'version': version,
-      'currentKey': currentKey,
-      if (messageMe != null)
-        'messageMe': const MessageMeConverter().toJson(messageMe),
-      if (keyPackage != null) 'keyPackage': keyPackage,
-      if (continuityProofs != null) 'continuityProofs': continuityProofs,
-    },
-    swapRecord: swapRecord,
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoPutRecord(
+        repo: ctx.repo,
+        collection: ids.comGermnetworkDeclaration,
+        rkey: rkey,
+        validate: validate,
+        record: {
+          r'$type': 'com.germnetwork.declaration',
+          ...?$unknown,
+          'version': version,
+          'currentKey': currentKey,
+          if (messageMe != null)
+            'messageMe': const MessageMeConverter().toJson(messageMe),
+          if (keyPackage != null) 'keyPackage': keyPackage,
+          if (continuityProofs != null) 'continuityProofs': continuityProofs,
+        },
+        swapRecord: swapRecord,
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 
   Future<XRPCResponse<RepoDeleteRecordOutput>> delete({
     String rkey = 'self',
@@ -154,13 +158,14 @@ final class DeclarationRecordAccessor {
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoDeleteRecord(
-    repo: ctx.repo,
-    collection: ids.comGermnetworkDeclaration,
-    rkey: rkey,
-    swapRecord: swapRecord,
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoDeleteRecord(
+        repo: ctx.repo,
+        collection: ids.comGermnetworkDeclaration,
+        rkey: rkey,
+        swapRecord: swapRecord,
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 }

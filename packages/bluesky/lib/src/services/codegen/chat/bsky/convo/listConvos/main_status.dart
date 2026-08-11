@@ -71,9 +71,9 @@ final class ConvoListConvosStatusConverter
 
   @override
   String toJson(ConvoListConvosStatus object) => switch (object) {
-    ConvoListConvosStatusKnownValue(:final data) => data.value,
-    ConvoListConvosStatusUnknown(:final data) => data,
-  };
+        ConvoListConvosStatusKnownValue(:final data) => data.value,
+        ConvoListConvosStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownConvoListConvosStatus implements Serializable {

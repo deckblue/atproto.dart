@@ -23,14 +23,14 @@ const _pdsOrigin = 'https://pds.example';
 const _handle = 'shinyakato.dev';
 
 OAuthClientMetadata _metadata() => const OAuthClientMetadata(
-  clientId: _clientId,
-  applicationType: 'web',
-  clientName: 'Test',
-  clientUri: 'https://client.example',
-  redirectUris: [_redirectUri],
-  scope: 'atproto transition:generic',
-  tokenEndpointAuthMethod: 'none',
-);
+      clientId: _clientId,
+      applicationType: 'web',
+      clientName: 'Test',
+      clientUri: 'https://client.example',
+      redirectUris: [_redirectUri],
+      scope: 'atproto transition:generic',
+      tokenEndpointAuthMethod: 'none',
+    );
 
 /// A [DPoPSigner] returning fixed keys and a fixed proof so tests do not
 /// depend on real crypto.
@@ -46,7 +46,8 @@ class _StubSigner implements DPoPSigner {
     required DPoPKeyPair keyPair,
     String? nonce,
     String? accessToken,
-  }) async => 'stub.dpop.proof';
+  }) async =>
+      'stub.dpop.proof';
 }
 
 /// An [IdentityResolver] that always fails with [IdentityException], used to
@@ -66,42 +67,44 @@ class _Recorder {
 
   MockClient build(
     final Future<http.Response> Function(http.Request request) handler,
-  ) => MockClient((request) async {
-    requests.add(request);
+  ) =>
+      MockClient((request) async {
+        requests.add(request);
 
-    return handler(request);
-  });
+        return handler(request);
+      });
 }
 
 http.Response _json(
   final Map<String, dynamic> body, {
   final int status = 200,
   final Map<String, String> headers = const {},
-}) => http.Response(
-  jsonEncode(body),
-  status,
-  headers: {'content-type': 'application/json', ...headers},
-);
+}) =>
+    http.Response(
+      jsonEncode(body),
+      status,
+      headers: {'content-type': 'application/json', ...headers},
+    );
 
 /// Well-known metadata document served by the authorization server.
 Map<String, dynamic> _serverMetadataDoc() => {
-  'issuer': _origin,
-  'pushed_authorization_request_endpoint': '$_origin/oauth/par',
-  'authorization_endpoint': '$_origin/oauth/authorize',
-  'token_endpoint': '$_origin/oauth/token',
-};
+      'issuer': _origin,
+      'pushed_authorization_request_endpoint': '$_origin/oauth/par',
+      'authorization_endpoint': '$_origin/oauth/authorize',
+      'token_endpoint': '$_origin/oauth/token',
+    };
 
 Map<String, dynamic> _didDoc() => {
-  'id': _sub,
-  'alsoKnownAs': ['at://$_handle'],
-  'service': [
-    {
-      'id': '#atproto_pds',
-      'type': 'AtprotoPersonalDataServer',
-      'serviceEndpoint': _pdsOrigin,
-    },
-  ],
-};
+      'id': _sub,
+      'alsoKnownAs': ['at://$_handle'],
+      'service': [
+        {
+          'id': '#atproto_pds',
+          'type': 'AtprotoPersonalDataServer',
+          'serviceEndpoint': _pdsOrigin,
+        },
+      ],
+    };
 
 /// Routes the atproto identity-resolution requests (handle→DID, DID doc, and
 /// PDS protected-resource metadata). Returns `null` for anything else.
@@ -134,14 +137,15 @@ Map<String, dynamic> _tokenBody({
   final String? sub = _sub,
   final String? scope = 'atproto',
   final String accessToken = 'access-token-1',
-}) => {
-  'access_token': accessToken,
-  'token_type': 'DPoP',
-  if (refreshToken != null) 'refresh_token': refreshToken,
-  if (expiresIn != null) 'expires_in': expiresIn,
-  if (sub != null) 'sub': sub,
-  if (scope != null) 'scope': scope,
-};
+}) =>
+    {
+      'access_token': accessToken,
+      'token_type': 'DPoP',
+      if (refreshToken != null) 'refresh_token': refreshToken,
+      if (expiresIn != null) 'expires_in': expiresIn,
+      if (sub != null) 'sub': sub,
+      if (scope != null) 'scope': scope,
+    };
 
 /// Seeds an [OAuthContext] into [store] exactly as [OAuthClient.authorize]
 /// would, so [OAuthClient.callback] can recover it.
@@ -150,37 +154,39 @@ Future<void> _seedState(
   final String state = 'the-state',
   final String? issuer = _origin,
   final String? expectedSub,
-}) => store.set(
-  state,
-  OAuthContext(
-    codeVerifier: 'the-code-verifier',
-    state: state,
-    issuer: issuer,
-    tokenEndpoint: '$_origin/oauth/token',
-    dpopPublicKey: 'PUB',
-    dpopPrivateKey: 'PRIV',
-    pds: _pdsOrigin,
-    expectedSub: expectedSub,
-  ),
-);
+}) =>
+    store.set(
+      state,
+      OAuthContext(
+        codeVerifier: 'the-code-verifier',
+        state: state,
+        issuer: issuer,
+        tokenEndpoint: '$_origin/oauth/token',
+        dpopPublicKey: 'PUB',
+        dpopPrivateKey: 'PRIV',
+        pds: _pdsOrigin,
+        expectedSub: expectedSub,
+      ),
+    );
 
 OAuthSession _sessionWith({
   final String? refreshToken = 'refresh-token-1',
   final DateTime? expiresAt,
   final String sub = _sub,
   final String scope = 'atproto',
-}) => OAuthSession(
-  accessToken: 'old-access',
-  refreshToken: refreshToken,
-  scope: scope,
-  expiresAt: expiresAt,
-  sub: sub,
-  issuer: _origin,
-  pds: _pdsOrigin,
-  clientId: _clientId,
-  dpopPublicKey: 'PUB',
-  dpopPrivateKey: 'PRIV',
-);
+}) =>
+    OAuthSession(
+      accessToken: 'old-access',
+      refreshToken: refreshToken,
+      scope: scope,
+      expiresAt: expiresAt,
+      sub: sub,
+      issuer: _origin,
+      pds: _pdsOrigin,
+      clientId: _clientId,
+      dpopPublicKey: 'PUB',
+      dpopPrivateKey: 'PRIV',
+    );
 
 // ignore_for_file: use_null_aware_elements
 
@@ -644,13 +650,13 @@ void main() {
       );
     });
 
-    test('a 200 token response with an unparsable body never leaks the '
+    test(
+        'a 200 token response with an unparsable body never leaks the '
         'body', () async {
       // A SUCCESS-status token response whose body is truncated/mangled (e.g.
       // by a proxy) but still carries live token material. The parse failure
       // must not echo the raw body into the exception message.
-      const secret =
-          '{"access_token":"LIVE-SECRET-TOKEN-abc123",'
+      const secret = '{"access_token":"LIVE-SECRET-TOKEN-abc123",'
           '"refresh_token":"LIVE-SECRET-REFRESH-xyz789",';
       final stateStore = InMemoryOAuthStateStore();
       await _seedState(stateStore);
@@ -772,7 +778,8 @@ void main() {
       expect(await stateStore.find('the-state'), isNull);
     });
 
-    test('rejects a malformed context (empty issuer) before token '
+    test(
+        'rejects a malformed context (empty issuer) before token '
         'exchange', () async {
       final stateStore = InMemoryOAuthStateStore();
       await _seedState(stateStore, issuer: '');
@@ -998,10 +1005,10 @@ void main() {
       expect(refreshed.refreshToken, 'refresh-token-1');
     });
 
-    test('a 200 refresh response with an unparsable body never leaks the '
+    test(
+        'a 200 refresh response with an unparsable body never leaks the '
         'body', () async {
-      const secret =
-          '{"access_token":"LIVE-SECRET-TOKEN-abc123",'
+      const secret = '{"access_token":"LIVE-SECRET-TOKEN-abc123",'
           '"refresh_token":"LIVE-SECRET-REFRESH-xyz789",';
       final client = OAuthClient(
         _metadata(),
@@ -1421,7 +1428,8 @@ void main() {
   });
 
   group('authorization-server redirects are not followed', () {
-    test('a 3xx from the AS metadata endpoint is not chased off-host', () async {
+    test('a 3xx from the AS metadata endpoint is not chased off-host',
+        () async {
       // The metadata endpoint 302s toward an internal host. Following it would
       // pivot the DPoP-signed follow-ups there; instead the non-200 must make
       // discovery fall back to the default endpoint layout on the SAME origin,
@@ -1438,8 +1446,7 @@ void main() {
               '',
               302,
               headers: {
-                'location':
-                    'https://169.254.169.254/.well-known/'
+                'location': 'https://169.254.169.254/.well-known/'
                     'oauth-authorization-server',
               },
             );

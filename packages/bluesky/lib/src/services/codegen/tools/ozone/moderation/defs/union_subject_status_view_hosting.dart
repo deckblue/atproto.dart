@@ -87,7 +87,6 @@ final class USubjectStatusViewHostingConverter
           const AccountHostingConverter().toJson(data),
         USubjectStatusViewHostingRecordHosting(:final data) =>
           const RecordHostingConverter().toJson(data),
-
         USubjectStatusViewHostingUnknown(:final data) => data,
       };
 }

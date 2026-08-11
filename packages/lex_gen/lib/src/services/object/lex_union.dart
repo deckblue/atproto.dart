@@ -77,8 +77,7 @@ final class LexUnion extends GeneratableType {
     return emitDartFile(file);
   }
 
-  String _unionClass(final List<String> objectNames) =>
-      '''@freezed
+  String _unionClass(final List<String> objectNames) => '''@freezed
 sealed class $name with _\$$name {
   const $name._();
 
@@ -119,9 +118,9 @@ sealed class $name with _\$$name {
 }''';
 
   List<DartImport> _getPackageImports(final GenContext ctx) => [
-    for (final ref in refs)
-      DartImport(rule.getLexObjectPackagePathFromRef(ctx, lexiconId, ref)),
-  ];
+        for (final ref in refs)
+          DartImport(rule.getLexObjectPackagePathFromRef(ctx, lexiconId, ref)),
+      ];
 
   String _getUnionFactories(final List<String> objectNames) {
     final buffer = StringBuffer();

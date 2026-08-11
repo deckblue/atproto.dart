@@ -43,13 +43,12 @@ final class QuerySetsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    if (argResults!.wasParsed("namePrefix"))
-      "namePrefix": argResults!["namePrefix"],
-    "sortBy": argResults!["sortBy"],
-    "sortDirection": argResults!["sortDirection"],
-  };
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("namePrefix"))
+          "namePrefix": argResults!["namePrefix"],
+        "sortBy": argResults!["sortBy"],
+        "sortDirection": argResults!["sortDirection"],
+      };
 }

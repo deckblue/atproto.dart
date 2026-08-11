@@ -18,8 +18,7 @@
 /// - U+3400-U+4DBF: CJK Unified Ideographs Extension A.
 /// - U+4E00-U+9FFF: CJK Unified Ideographs.
 /// - U+AC00-U+D7AF: Hangul Syllables.
-const cjkLettersAndMarks =
-    r'\u3040-\u30FF'
+const cjkLettersAndMarks = r'\u3040-\u30FF'
     r'\u3400-\u4DBF'
     r'\u4E00-\u9FFF'
     r'\uAC00-\uD7AF';

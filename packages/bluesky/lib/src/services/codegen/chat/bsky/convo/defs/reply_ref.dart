@@ -27,7 +27,6 @@ abstract class ReplyRef with _$ReplyRef {
   const factory ReplyRef({
     @Default('chat.bsky.convo.defs#replyRef') String $type,
     required String messageId,
-
     Map<String, dynamic>? $unknown,
   }) = _ReplyRef;
 

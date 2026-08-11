@@ -31,7 +31,6 @@ abstract class Event with _$Event {
     @UEventDetailsConverter() required UEventDetails details,
     required String createdBy,
     @JsonKey(toJson: iso8601) required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _Event;
 

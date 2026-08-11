@@ -24,15 +24,15 @@ abstract class QueryCommand extends BskyCommand {
 
   @override
   Future<void> run() async => await execute(() async {
-    final jwt = await accessJwt;
+        final jwt = await accessJwt;
 
-    return await xrpc.query<String>(
-      xrpc.NSID(methodId),
-      service: service,
-      headers: jwt != null ? {'Authorization': 'Bearer $jwt'} : null,
-      parameters: await parameters,
-      timeout: timeout,
-      getClient: getClient,
-    );
-  });
+        return await xrpc.query<String>(
+          xrpc.NSID(methodId),
+          service: service,
+          headers: jwt != null ? {'Authorization': 'Bearer $jwt'} : null,
+          parameters: await parameters,
+          timeout: timeout,
+          getClient: getClient,
+        );
+      });
 }

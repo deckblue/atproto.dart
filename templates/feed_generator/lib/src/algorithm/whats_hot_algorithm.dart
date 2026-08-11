@@ -38,9 +38,8 @@ final class WhatsHotAlgorithm implements FeedAlgorithm {
   Future<FeedGetFeedSkeletonOutput> getFeedSkeleton(
     final FeedRequest request,
   ) async {
-    final before = request.cursor == null
-        ? null
-        : _parseCursor(request.cursor!);
+    final before =
+        request.cursor == null ? null : _parseCursor(request.cursor!);
     final posts = await _store.recent(limit: request.limit, before: before);
 
     return FeedGetFeedSkeletonOutput(

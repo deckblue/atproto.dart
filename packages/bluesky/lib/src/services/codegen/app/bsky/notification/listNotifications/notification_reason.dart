@@ -71,9 +71,9 @@ final class NotificationReasonConverter
 
   @override
   String toJson(NotificationReason object) => switch (object) {
-    NotificationReasonKnownValue(:final data) => data.value,
-    NotificationReasonUnknown(:final data) => data,
-  };
+        NotificationReasonKnownValue(:final data) => data.value,
+        NotificationReasonUnknown(:final data) => data,
+      };
 }
 
 enum KnownNotificationReason implements Serializable {

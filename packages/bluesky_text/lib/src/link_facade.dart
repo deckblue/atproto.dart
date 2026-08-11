@@ -486,8 +486,8 @@ String _stripPort(final String authority) {
 /// site.
 String _stripWww(final String host) =>
     host.startsWith(_wwwPrefix) && host.length > _wwwPrefix.length
-    ? host.substring(_wwwPrefix.length)
-    : host;
+        ? host.substring(_wwwPrefix.length)
+        : host;
 
 /// Returns true when [a] and [b] are the same host, or one is a subdomain of
 /// the other.

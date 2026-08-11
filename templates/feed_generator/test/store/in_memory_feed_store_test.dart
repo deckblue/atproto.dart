@@ -3,9 +3,9 @@ import 'package:feed_generator/src/store/in_memory_feed_store.dart';
 import 'package:test/test.dart';
 
 IndexedPost _post(final int i, {final DateTime? at}) => IndexedPost(
-  uri: 'at://did:plc:x/app.bsky.feed.post/$i',
-  indexedAt: at ?? DateTime.utc(2026, 1, 1, 0, 0, i),
-);
+      uri: 'at://did:plc:x/app.bsky.feed.post/$i',
+      indexedAt: at ?? DateTime.utc(2026, 1, 1, 0, 0, i),
+    );
 
 void main() {
   test('recent returns newest-first, honoring limit', () async {

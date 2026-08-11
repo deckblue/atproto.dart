@@ -41,7 +41,6 @@ abstract class FeedSearchPostsV2Output with _$FeedSearchPostsV2Output {
     @PostViewConverter() required List<PostView> posts,
     @FeedSearchPostsV2DetectedQueryLanguagesConverter()
     List<FeedSearchPostsV2DetectedQueryLanguages>? detectedQueryLanguages,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedSearchPostsV2Output;
 

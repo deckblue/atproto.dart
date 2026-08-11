@@ -39,8 +39,7 @@ final class GetReportCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "id":
-        int.tryParse(argResults!["id"]) ??
-        usageException('Invalid integer value for option "id".'),
-  };
+        "id": int.tryParse(argResults!["id"]) ??
+            usageException('Invalid integer value for option "id".'),
+      };
 }

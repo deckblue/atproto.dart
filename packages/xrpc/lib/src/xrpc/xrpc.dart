@@ -533,14 +533,15 @@ Uri _buildWsUri(
   final String? service,
   final Map<String, dynamic>? parameters,
   final Protocol protocol,
-) => util
-    .getUriFactory(protocol)
-    .call(
-      service ?? defaultRelayService,
-      '/xrpc/$methodId',
-      util.toQueryParameters(parameters),
-    )
-    .replace(scheme: protocol == Protocol.https ? 'wss' : 'ws');
+) =>
+    util
+        .getUriFactory(protocol)
+        .call(
+          service ?? defaultRelayService,
+          '/xrpc/$methodId',
+          util.toQueryParameters(parameters),
+        )
+        .replace(scheme: protocol == Protocol.https ? 'wss' : 'ws');
 
 Map<String, String> _appendContentType(
   final Map<String, String>? headers,

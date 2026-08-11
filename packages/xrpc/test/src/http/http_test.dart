@@ -122,9 +122,9 @@ void main() {
           isA<HttpException>()
               .having((e) => e.response.status, 'status', HttpStatus.badGateway)
               .having((e) => e.response.data, 'data', {
-                'error': 'UnknownError',
-                'message': '<html>502 Bad Gateway</html>',
-              }),
+            'error': 'UnknownError',
+            'message': '<html>502 Bad Gateway</html>',
+          }),
         ),
       );
     });

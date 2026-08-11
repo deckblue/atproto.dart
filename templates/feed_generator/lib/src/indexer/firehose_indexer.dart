@@ -4,7 +4,6 @@
 
 import 'dart:io';
 
-import 'package:atproto_core/atproto_core.dart' show AtUri;
 import 'package:bluesky/bluesky.dart';
 import 'package:bluesky/firehose.dart' as firehose;
 
@@ -51,7 +50,9 @@ final class FirehoseIndexer {
     Bluesky? bsky;
 
     return (final cursor) async {
-      final subscription = await (bsky ??= Bluesky.anonymous()).atproto.sync
+      final subscription = await (bsky ??= Bluesky.anonymous())
+          .atproto
+          .sync
           .subscribeReposAsMessages(cursor: cursor);
 
       return firehose.FirehoseConnection(

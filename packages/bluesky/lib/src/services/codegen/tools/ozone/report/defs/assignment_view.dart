@@ -46,7 +46,6 @@ abstract class AssignmentView with _$AssignmentView {
     required int reportId,
     @JsonKey(toJson: iso8601) required DateTime startAt,
     @JsonKey(toJson: iso8601) DateTime? endAt,
-
     Map<String, dynamic>? $unknown,
   }) = _AssignmentView;
 

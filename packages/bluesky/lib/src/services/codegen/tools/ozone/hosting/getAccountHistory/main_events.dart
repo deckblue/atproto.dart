@@ -74,9 +74,9 @@ final class HostingGetAccountHistoryEventsConverter
 
   @override
   String toJson(HostingGetAccountHistoryEvents object) => switch (object) {
-    HostingGetAccountHistoryEventsKnownValue(:final data) => data.value,
-    HostingGetAccountHistoryEventsUnknown(:final data) => data,
-  };
+        HostingGetAccountHistoryEventsKnownValue(:final data) => data.value,
+        HostingGetAccountHistoryEventsUnknown(:final data) => data,
+      };
 }
 
 enum KnownHostingGetAccountHistoryEvents implements Serializable {

@@ -73,7 +73,6 @@ final class UModerationScheduleActionActionConverter
       switch (object) {
         UModerationScheduleActionActionTakedown(:final data) =>
           const TakedownConverter().toJson(data),
-
         UModerationScheduleActionActionUnknown(:final data) => data,
       };
 }

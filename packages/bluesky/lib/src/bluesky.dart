@@ -65,19 +65,20 @@ sealed class Bluesky {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _Bluesky.fromAtproto(
-    atp.ATProto.fromSession(
-      headers: headers,
-      session,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _Bluesky.fromAtproto(
+        atp.ATProto.fromSession(
+          headers: headers,
+          session,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns a new [Bluesky] backed by an OAuth [manager], which owns DPoP
   /// header building and transparent token refresh.
@@ -100,19 +101,20 @@ sealed class Bluesky {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _Bluesky.fromAtproto(
-    atp.ATProto.fromOAuth(
-      manager,
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _Bluesky.fromAtproto(
+        atp.ATProto.fromOAuth(
+          manager,
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the new instance of [Bluesky].
   ///
@@ -141,21 +143,22 @@ sealed class Bluesky {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => Bluesky.fromOAuth(
-    oauth.OAuthSessionManager.fromSession(
-      session,
-      client: oauthClient,
-      timeout: timeout,
-    ),
-    headers: headers,
-    protocol: protocol,
-    service: service,
-    relayService: relayService,
-    timeout: timeout,
-    retryConfig: retryConfig,
-    getClient: getClient,
-    postClient: postClient,
-  );
+  }) =>
+      Bluesky.fromOAuth(
+        oauth.OAuthSessionManager.fromSession(
+          session,
+          client: oauthClient,
+          timeout: timeout,
+        ),
+        headers: headers,
+        protocol: protocol,
+        service: service,
+        relayService: relayService,
+        timeout: timeout,
+        retryConfig: retryConfig,
+        getClient: getClient,
+        postClient: postClient,
+      );
 
   /// Returns the new instance of [Bluesky] as anonymous.
   factory Bluesky.anonymous({
@@ -167,18 +170,19 @@ sealed class Bluesky {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _Bluesky.fromAtproto(
-    atp.ATProto.anonymous(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _Bluesky.fromAtproto(
+        atp.ATProto.anonymous(
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the global headers without auth header.
   Map<String, String> get headers;
@@ -283,18 +287,18 @@ final class _Bluesky implements Bluesky {
       _Bluesky._(atproto.ctx, atproto);
 
   _Bluesky._(final core.ServiceContext ctx, this.atproto)
-    : actor = ActorService(ctx),
-      ageassurance = AgeassuranceService(ctx),
-      feed = FeedServiceImpl(ctx),
-      notification = NotificationService(ctx),
-      graph = GraphService(ctx),
-      unspecced = UnspeccedService(ctx),
-      labeler = LabelerService(ctx),
-      video = VideoServiceImpl(ctx),
-      bookmark = BookmarkService(ctx),
-      contact = ContactService(ctx),
-      draft = DraftService(ctx),
-      _ctx = ctx;
+      : actor = ActorService(ctx),
+        ageassurance = AgeassuranceService(ctx),
+        feed = FeedServiceImpl(ctx),
+        notification = NotificationService(ctx),
+        graph = GraphService(ctx),
+        unspecced = UnspeccedService(ctx),
+        labeler = LabelerService(ctx),
+        video = VideoServiceImpl(ctx),
+        bookmark = BookmarkService(ctx),
+        contact = ContactService(ctx),
+        draft = DraftService(ctx),
+        _ctx = ctx;
 
   final core.ServiceContext _ctx;
 

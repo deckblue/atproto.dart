@@ -59,8 +59,8 @@ extension UGroupGetJoinLinkPreviewsJoinLinkPreviewsExtension
   bool get isNotDisabledJoinLinkPreviewView => !isDisabledJoinLinkPreviewView;
   DisabledJoinLinkPreviewView? get disabledJoinLinkPreviewView =>
       isDisabledJoinLinkPreviewView
-      ? data as DisabledJoinLinkPreviewView
-      : null;
+          ? data as DisabledJoinLinkPreviewView
+          : null;
   bool get isInvalidJoinLinkPreviewView =>
       isA<UGroupGetJoinLinkPreviewsJoinLinkPreviewsInvalidJoinLinkPreviewView>(
         this,
@@ -77,10 +77,8 @@ extension UGroupGetJoinLinkPreviewsJoinLinkPreviewsExtension
 
 final class UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter
     implements
-        JsonConverter<
-          UGroupGetJoinLinkPreviewsJoinLinkPreviews,
-          Map<String, dynamic>
-        > {
+        JsonConverter<UGroupGetJoinLinkPreviewsJoinLinkPreviews,
+            Map<String, dynamic>> {
   const UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter();
 
   @override
@@ -93,12 +91,14 @@ final class UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter
       );
     }
     if (DisabledJoinLinkPreviewView.validate(json)) {
-      return UGroupGetJoinLinkPreviewsJoinLinkPreviews.disabledJoinLinkPreviewView(
+      return UGroupGetJoinLinkPreviewsJoinLinkPreviews
+          .disabledJoinLinkPreviewView(
         data: const DisabledJoinLinkPreviewViewConverter().fromJson(json),
       );
     }
     if (InvalidJoinLinkPreviewView.validate(json)) {
-      return UGroupGetJoinLinkPreviewsJoinLinkPreviews.invalidJoinLinkPreviewView(
+      return UGroupGetJoinLinkPreviewsJoinLinkPreviews
+          .invalidJoinLinkPreviewView(
         data: const InvalidJoinLinkPreviewViewConverter().fromJson(json),
       );
     }
@@ -113,18 +113,20 @@ final class UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter
   @override
   Map<String, dynamic> toJson(
     UGroupGetJoinLinkPreviewsJoinLinkPreviews object,
-  ) => switch (object) {
-    UGroupGetJoinLinkPreviewsJoinLinkPreviewsJoinLinkPreviewView(:final data) =>
-      const JoinLinkPreviewViewConverter().toJson(data),
-    UGroupGetJoinLinkPreviewsJoinLinkPreviewsDisabledJoinLinkPreviewView(
-      :final data,
-    ) =>
-      const DisabledJoinLinkPreviewViewConverter().toJson(data),
-    UGroupGetJoinLinkPreviewsJoinLinkPreviewsInvalidJoinLinkPreviewView(
-      :final data,
-    ) =>
-      const InvalidJoinLinkPreviewViewConverter().toJson(data),
-
-    UGroupGetJoinLinkPreviewsJoinLinkPreviewsUnknown(:final data) => data,
-  };
+  ) =>
+      switch (object) {
+        UGroupGetJoinLinkPreviewsJoinLinkPreviewsJoinLinkPreviewView(
+          :final data
+        ) =>
+          const JoinLinkPreviewViewConverter().toJson(data),
+        UGroupGetJoinLinkPreviewsJoinLinkPreviewsDisabledJoinLinkPreviewView(
+          :final data,
+        ) =>
+          const DisabledJoinLinkPreviewViewConverter().toJson(data),
+        UGroupGetJoinLinkPreviewsJoinLinkPreviewsInvalidJoinLinkPreviewView(
+          :final data,
+        ) =>
+          const InvalidJoinLinkPreviewViewConverter().toJson(data),
+        UGroupGetJoinLinkPreviewsJoinLinkPreviewsUnknown(:final data) => data,
+      };
 }

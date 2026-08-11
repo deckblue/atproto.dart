@@ -43,7 +43,6 @@ abstract class ReportQueryActivitiesInput with _$ReportQueryActivitiesInput {
 
     /// Cursor of the form `<createdAtMs>::<activityId>`.
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportQueryActivitiesInput;
 

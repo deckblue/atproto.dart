@@ -67,13 +67,12 @@ void main() {
     });
 
     test('resolves mentions and surfaces unresolved handles', () async {
-      final post =
-          await BlueskyText(
-            '@alice.bsky.social and @ghost.bsky.social',
-          ).toPostData(
-            resolver: (h) async =>
-                h == 'alice.bsky.social' ? 'did:plc:alice' : null,
-          );
+      final post = await BlueskyText(
+        '@alice.bsky.social and @ghost.bsky.social',
+      ).toPostData(
+        resolver: (h) async =>
+            h == 'alice.bsky.social' ? 'did:plc:alice' : null,
+      );
 
       expect(post.text, '@alice.bsky.social and @ghost.bsky.social');
       expect(post.unresolvedHandles, ['ghost.bsky.social']);

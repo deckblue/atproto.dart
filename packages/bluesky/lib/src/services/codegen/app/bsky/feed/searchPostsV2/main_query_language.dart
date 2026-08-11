@@ -74,9 +74,9 @@ final class FeedSearchPostsV2QueryLanguageConverter
 
   @override
   String toJson(FeedSearchPostsV2QueryLanguage object) => switch (object) {
-    FeedSearchPostsV2QueryLanguageKnownValue(:final data) => data.value,
-    FeedSearchPostsV2QueryLanguageUnknown(:final data) => data,
-  };
+        FeedSearchPostsV2QueryLanguageKnownValue(:final data) => data.value,
+        FeedSearchPostsV2QueryLanguageUnknown(:final data) => data,
+      };
 }
 
 enum KnownFeedSearchPostsV2QueryLanguage implements Serializable {

@@ -58,8 +58,8 @@ extension UMessageViewReplyToExtension on UMessageViewReplyTo {
       !isMessageBeforeUserJoinedGroupView;
   MessageBeforeUserJoinedGroupView? get messageBeforeUserJoinedGroupView =>
       isMessageBeforeUserJoinedGroupView
-      ? data as MessageBeforeUserJoinedGroupView
-      : null;
+          ? data as MessageBeforeUserJoinedGroupView
+          : null;
   bool get isUnknown => isA<UMessageViewReplyToUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
@@ -97,13 +97,12 @@ final class UMessageViewReplyToConverter
 
   @override
   Map<String, dynamic> toJson(UMessageViewReplyTo object) => switch (object) {
-    UMessageViewReplyToMessageView(:final data) =>
-      const MessageViewConverter().toJson(data),
-    UMessageViewReplyToDeletedMessageView(:final data) =>
-      const DeletedMessageViewConverter().toJson(data),
-    UMessageViewReplyToMessageBeforeUserJoinedGroupView(:final data) =>
-      const MessageBeforeUserJoinedGroupViewConverter().toJson(data),
-
-    UMessageViewReplyToUnknown(:final data) => data,
-  };
+        UMessageViewReplyToMessageView(:final data) =>
+          const MessageViewConverter().toJson(data),
+        UMessageViewReplyToDeletedMessageView(:final data) =>
+          const DeletedMessageViewConverter().toJson(data),
+        UMessageViewReplyToMessageBeforeUserJoinedGroupView(:final data) =>
+          const MessageBeforeUserJoinedGroupViewConverter().toJson(data),
+        UMessageViewReplyToUnknown(:final data) => data,
+      };
 }

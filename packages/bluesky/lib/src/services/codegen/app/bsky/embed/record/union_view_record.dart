@@ -178,7 +178,6 @@ final class UEmbedRecordViewRecordConverter
           const LabelerViewConverter().toJson(data),
         UEmbedRecordViewRecordStarterPackViewBasic(:final data) =>
           const StarterPackViewBasicConverter().toJson(data),
-
         UEmbedRecordViewRecordUnknown(:final data) => data,
       };
 }

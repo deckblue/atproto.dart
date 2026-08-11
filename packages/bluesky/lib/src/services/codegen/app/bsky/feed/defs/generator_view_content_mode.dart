@@ -71,9 +71,9 @@ final class GeneratorViewContentModeConverter
 
   @override
   String toJson(GeneratorViewContentMode object) => switch (object) {
-    GeneratorViewContentModeKnownValue(:final data) => data.value,
-    GeneratorViewContentModeUnknown(:final data) => data,
-  };
+        GeneratorViewContentModeKnownValue(:final data) => data.value,
+        GeneratorViewContentModeUnknown(:final data) => data,
+      };
 }
 
 enum KnownGeneratorViewContentMode implements Serializable {

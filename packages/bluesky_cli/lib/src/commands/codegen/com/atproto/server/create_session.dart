@@ -47,11 +47,11 @@ final class CreateSessionCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "identifier": argResults!["identifier"],
-    "password": argResults!["password"],
-    if (argResults!.wasParsed("authFactorToken"))
-      "authFactorToken": argResults!["authFactorToken"],
-    if (argResults!.wasParsed("allowTakendown"))
-      "allowTakendown": argResults!["allowTakendown"],
-  };
+        "identifier": argResults!["identifier"],
+        "password": argResults!["password"],
+        if (argResults!.wasParsed("authFactorToken"))
+          "authFactorToken": argResults!["authFactorToken"],
+        if (argResults!.wasParsed("allowTakendown"))
+          "allowTakendown": argResults!["allowTakendown"],
+      };
 }

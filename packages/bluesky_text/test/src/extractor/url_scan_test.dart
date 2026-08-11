@@ -10,7 +10,8 @@ import 'package:bluesky_text/bluesky_text.dart';
 
 /// The `type|value|start|end` of every entity of [text], which is everything a
 /// facet is built out of.
-List<String> _entities(final String text) => BlueskyText(text).entities
+List<String> _entities(final String text) => BlueskyText(text)
+    .entities
     .map((e) => '${e.type.name}|${e.value}|${e.indices.start}|${e.indices.end}')
     .toList();
 

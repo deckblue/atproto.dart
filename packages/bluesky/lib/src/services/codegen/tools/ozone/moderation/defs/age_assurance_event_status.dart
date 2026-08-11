@@ -71,9 +71,9 @@ final class AgeAssuranceEventStatusConverter
 
   @override
   String toJson(AgeAssuranceEventStatus object) => switch (object) {
-    AgeAssuranceEventStatusKnownValue(:final data) => data.value,
-    AgeAssuranceEventStatusUnknown(:final data) => data,
-  };
+        AgeAssuranceEventStatusKnownValue(:final data) => data.value,
+        AgeAssuranceEventStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownAgeAssuranceEventStatus implements Serializable {

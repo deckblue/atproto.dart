@@ -38,10 +38,9 @@ final class SearchAccountsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("email")) "email": argResults!["email"],
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-  };
+        if (argResults!.wasParsed("email")) "email": argResults!["email"],
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+      };
 }

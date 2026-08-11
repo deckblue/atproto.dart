@@ -92,13 +92,12 @@ final class UThreadViewPostParentConverter
 
   @override
   Map<String, dynamic> toJson(UThreadViewPostParent object) => switch (object) {
-    UThreadViewPostParentThreadViewPost(:final data) =>
-      const ThreadViewPostConverter().toJson(data),
-    UThreadViewPostParentNotFoundPost(:final data) =>
-      const NotFoundPostConverter().toJson(data),
-    UThreadViewPostParentBlockedPost(:final data) =>
-      const BlockedPostConverter().toJson(data),
-
-    UThreadViewPostParentUnknown(:final data) => data,
-  };
+        UThreadViewPostParentThreadViewPost(:final data) =>
+          const ThreadViewPostConverter().toJson(data),
+        UThreadViewPostParentNotFoundPost(:final data) =>
+          const NotFoundPostConverter().toJson(data),
+        UThreadViewPostParentBlockedPost(:final data) =>
+          const BlockedPostConverter().toJson(data),
+        UThreadViewPostParentUnknown(:final data) => data,
+      };
 }

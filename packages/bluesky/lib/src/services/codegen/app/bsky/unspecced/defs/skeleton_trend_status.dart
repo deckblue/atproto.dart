@@ -71,9 +71,9 @@ final class SkeletonTrendStatusConverter
 
   @override
   String toJson(SkeletonTrendStatus object) => switch (object) {
-    SkeletonTrendStatusKnownValue(:final data) => data.value,
-    SkeletonTrendStatusUnknown(:final data) => data,
-  };
+        SkeletonTrendStatusKnownValue(:final data) => data.value,
+        SkeletonTrendStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownSkeletonTrendStatus implements Serializable {

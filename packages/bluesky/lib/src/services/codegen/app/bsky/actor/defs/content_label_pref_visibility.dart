@@ -71,9 +71,9 @@ final class ContentLabelPrefVisibilityConverter
 
   @override
   String toJson(ContentLabelPrefVisibility object) => switch (object) {
-    ContentLabelPrefVisibilityKnownValue(:final data) => data.value,
-    ContentLabelPrefVisibilityUnknown(:final data) => data,
-  };
+        ContentLabelPrefVisibilityKnownValue(:final data) => data.value,
+        ContentLabelPrefVisibilityUnknown(:final data) => data,
+      };
 }
 
 enum KnownContentLabelPrefVisibility implements Serializable {

@@ -52,17 +52,17 @@ final class EmitEventCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "event": _decodeJson("event"),
-    "subject": _decodeJson("subject"),
-    if (argResults!.wasParsed("subjectBlobCids"))
-      "subjectBlobCids": argResults!["subjectBlobCids"],
-    "createdBy": argResults!["createdBy"],
-    if (argResults!.wasParsed("modTool")) "modTool": _decodeJson("modTool"),
-    if (argResults!.wasParsed("externalId"))
-      "externalId": argResults!["externalId"],
-    if (argResults!.wasParsed("reportAction"))
-      "reportAction": _decodeJson("reportAction"),
-  };
+        "event": _decodeJson("event"),
+        "subject": _decodeJson("subject"),
+        if (argResults!.wasParsed("subjectBlobCids"))
+          "subjectBlobCids": argResults!["subjectBlobCids"],
+        "createdBy": argResults!["createdBy"],
+        if (argResults!.wasParsed("modTool")) "modTool": _decodeJson("modTool"),
+        if (argResults!.wasParsed("externalId"))
+          "externalId": argResults!["externalId"],
+        if (argResults!.wasParsed("reportAction"))
+          "reportAction": _decodeJson("reportAction"),
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

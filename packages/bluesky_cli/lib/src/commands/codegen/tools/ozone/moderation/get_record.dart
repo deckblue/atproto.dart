@@ -36,7 +36,7 @@ final class GetRecordCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "uri": argResults!["uri"],
-    if (argResults!.wasParsed("cid")) "cid": argResults!["cid"],
-  };
+        "uri": argResults!["uri"],
+        if (argResults!.wasParsed("cid")) "cid": argResults!["cid"],
+      };
 }

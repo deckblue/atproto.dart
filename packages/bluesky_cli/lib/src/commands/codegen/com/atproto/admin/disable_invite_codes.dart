@@ -37,7 +37,8 @@ final class DisableInviteCodesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!.wasParsed("codes")) "codes": argResults!["codes"],
-    if (argResults!.wasParsed("accounts")) "accounts": argResults!["accounts"],
-  };
+        if (argResults!.wasParsed("codes")) "codes": argResults!["codes"],
+        if (argResults!.wasParsed("accounts"))
+          "accounts": argResults!["accounts"],
+      };
 }

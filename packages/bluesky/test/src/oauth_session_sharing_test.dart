@@ -38,37 +38,37 @@ final class _FakeAuthServer {
   final Map<String, String?> proxyHeaderByNsid = {};
 
   http.Client get client => MockClient((request) async {
-    if (request.url.path == '/.well-known/oauth-authorization-server') {
-      return _json({
-        'issuer': 'https://bsky.social',
-        'token_endpoint': 'https://bsky.social/oauth/token',
+        if (request.url.path == '/.well-known/oauth-authorization-server') {
+          return _json({
+            'issuer': 'https://bsky.social',
+            'token_endpoint': 'https://bsky.social/oauth/token',
+          });
+        }
+
+        if (request.url.path == '/oauth/token') {
+          tokenPosts++;
+
+          if (Uri.splitQueryString(request.body)['refresh_token'] != _refresh) {
+            //! The refresh token was already spent by someone else.
+            return _json({'error': 'invalid_grant'}, status: 400);
+          }
+
+          _rotations++;
+          _access = 'access-$_rotations';
+          _refresh = 'refresh-$_rotations';
+
+          return _json({
+            'access_token': _access,
+            'token_type': 'DPoP',
+            'refresh_token': _refresh,
+            'expires_in': 3600,
+            'sub': 'did:plc:testaccount',
+            'scope': 'atproto',
+          });
+        }
+
+        return http.Response('unexpected', 500);
       });
-    }
-
-    if (request.url.path == '/oauth/token') {
-      tokenPosts++;
-
-      if (Uri.splitQueryString(request.body)['refresh_token'] != _refresh) {
-        //! The refresh token was already spent by someone else.
-        return _json({'error': 'invalid_grant'}, status: 400);
-      }
-
-      _rotations++;
-      _access = 'access-$_rotations';
-      _refresh = 'refresh-$_rotations';
-
-      return _json({
-        'access_token': _access,
-        'token_type': 'DPoP',
-        'refresh_token': _refresh,
-        'expires_in': 3600,
-        'sub': 'did:plc:testaccount',
-        'scope': 'atproto',
-      });
-    }
-
-    return http.Response('unexpected', 500);
-  });
 
   /// A PDS `GET` client that rejects anything but the access token the
   /// authorization server most recently issued.
@@ -107,22 +107,23 @@ final class _FakeAuthServer {
   static http.Response _json(
     final Map<String, dynamic> body, {
     final int status = 200,
-  }) => http.Response(
-    jsonEncode(body),
-    status,
-    headers: {'content-type': 'application/json'},
-  );
+  }) =>
+      http.Response(
+        jsonEncode(body),
+        status,
+        headers: {'content-type': 'application/json'},
+      );
 }
 
 OAuthClientMetadata _clientMetadata() => const OAuthClientMetadata(
-  clientId: 'cid',
-  applicationType: 'web',
-  clientName: 'Test',
-  clientUri: 'https://client.example',
-  redirectUris: ['https://client.example/callback'],
-  scope: 'atproto',
-  tokenEndpointAuthMethod: 'none',
-);
+      clientId: 'cid',
+      applicationType: 'web',
+      clientName: 'Test',
+      clientUri: 'https://client.example',
+      redirectUris: ['https://client.example/callback'],
+      scope: 'atproto',
+      tokenEndpointAuthMethod: 'none',
+    );
 
 DateTime _expired() =>
     DateTime.now().toUtc().subtract(const Duration(minutes: 5));
@@ -137,17 +138,17 @@ void main() {
   });
 
   OAuthSession session({final DateTime? expiresAt}) => OAuthSession(
-    accessToken: 'access-1',
-    refreshToken: 'refresh-1',
-    scope: 'atproto',
-    expiresAt: expiresAt,
-    sub: 'did:plc:testaccount',
-    issuer: 'https://bsky.social',
-    pds: 'https://pds.test',
-    clientId: 'cid',
-    dpopPublicKey: keyPair.publicKey,
-    dpopPrivateKey: keyPair.privateKey,
-  );
+        accessToken: 'access-1',
+        refreshToken: 'refresh-1',
+        scope: 'atproto',
+        expiresAt: expiresAt,
+        sub: 'did:plc:testaccount',
+        issuer: 'https://bsky.social',
+        pds: 'https://pds.test',
+        clientId: 'cid',
+        dpopPublicKey: keyPair.publicKey,
+        dpopPrivateKey: keyPair.privateKey,
+      );
 
   group('one OAuthSessionManager shared between clients', () {
     //! The OAuth path never puts the session on the context: `ATProto.fromOAuth`
@@ -322,7 +323,8 @@ void main() {
   });
 
   group('fromOAuthSession does not share', () {
-    test('the second manager replays the spent refresh token but recovers '
+    test(
+        'the second manager replays the spent refresh token but recovers '
         'from the shared session store', () async {
       final server = _FakeAuthServer();
       final client = OAuthClient(_clientMetadata(), httpClient: server.client);

@@ -84,31 +84,29 @@ final class QueryReportsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("queueId"))
-      "queueId":
-          int.tryParse(argResults!["queueId"]) ??
-          usageException('Invalid integer value for option "queueId".'),
-    if (argResults!.wasParsed("reportTypes"))
-      "reportTypes": argResults!["reportTypes"],
-    "status": argResults!["status"],
-    if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
-    if (argResults!.wasParsed("did")) "did": argResults!["did"],
-    if (argResults!.wasParsed("subjectType"))
-      "subjectType": argResults!["subjectType"],
-    if (argResults!.wasParsed("collections"))
-      "collections": argResults!["collections"],
-    if (argResults!.wasParsed("reportedAfter"))
-      "reportedAfter": argResults!["reportedAfter"],
-    if (argResults!.wasParsed("reportedBefore"))
-      "reportedBefore": argResults!["reportedBefore"],
-    "isMuted": argResults!["isMuted"],
-    if (argResults!.wasParsed("assignedTo"))
-      "assignedTo": argResults!["assignedTo"],
-    "sortField": argResults!["sortField"],
-    "sortDirection": argResults!["sortDirection"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        if (argResults!.wasParsed("queueId"))
+          "queueId": int.tryParse(argResults!["queueId"]) ??
+              usageException('Invalid integer value for option "queueId".'),
+        if (argResults!.wasParsed("reportTypes"))
+          "reportTypes": argResults!["reportTypes"],
+        "status": argResults!["status"],
+        if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
+        if (argResults!.wasParsed("did")) "did": argResults!["did"],
+        if (argResults!.wasParsed("subjectType"))
+          "subjectType": argResults!["subjectType"],
+        if (argResults!.wasParsed("collections"))
+          "collections": argResults!["collections"],
+        if (argResults!.wasParsed("reportedAfter"))
+          "reportedAfter": argResults!["reportedAfter"],
+        if (argResults!.wasParsed("reportedBefore"))
+          "reportedBefore": argResults!["reportedBefore"],
+        "isMuted": argResults!["isMuted"],
+        if (argResults!.wasParsed("assignedTo"))
+          "assignedTo": argResults!["assignedTo"],
+        "sortField": argResults!["sortField"],
+        "sortDirection": argResults!["sortDirection"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

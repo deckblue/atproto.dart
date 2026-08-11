@@ -34,8 +34,8 @@ final class GetSubjectsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
-  };
+        "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

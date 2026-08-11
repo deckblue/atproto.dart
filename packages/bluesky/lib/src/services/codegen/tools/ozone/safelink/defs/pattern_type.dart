@@ -69,9 +69,9 @@ final class PatternTypeConverter extends JsonConverter<PatternType, String> {
 
   @override
   String toJson(PatternType object) => switch (object) {
-    PatternTypeKnownValue(:final data) => data.value,
-    PatternTypeUnknown(:final data) => data,
-  };
+        PatternTypeKnownValue(:final data) => data.value,
+        PatternTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownPatternType implements Serializable {

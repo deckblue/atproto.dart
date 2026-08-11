@@ -71,9 +71,9 @@ final class QueueViewSubjectTypesConverter
 
   @override
   String toJson(QueueViewSubjectTypes object) => switch (object) {
-    QueueViewSubjectTypesKnownValue(:final data) => data.value,
-    QueueViewSubjectTypesUnknown(:final data) => data,
-  };
+        QueueViewSubjectTypesKnownValue(:final data) => data.value,
+        QueueViewSubjectTypesUnknown(:final data) => data,
+      };
 }
 
 enum KnownQueueViewSubjectTypes implements Serializable {

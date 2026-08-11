@@ -24,34 +24,35 @@ http.Client mockResolveHandle(
   // Called with the request URI before responding, so a test can assert that
   // `service` / parameters reached the wire.
   void Function(Uri uri)? onRequest,
-}) => MockClient((request) async {
-  onRequest?.call(request.url);
+}) =>
+    MockClient((request) async {
+      onRequest?.call(request.url);
 
-  //* `request:` must be set on every response: xrpc's `_buildResponse` reads
-  //* `response.request!.method`, and a hand-built `http.Response` carries no
-  //* request unless one is attached, so omitting it throws a null-check error
-  //* instead of exercising the code under test.
-  if (status != null) {
-    return http.Response('{"error":"forced"}', status, request: request);
-  }
+      //* `request:` must be set on every response: xrpc's `_buildResponse` reads
+      //* `response.request!.method`, and a hand-built `http.Response` carries no
+      //* request unless one is attached, so omitting it throws a null-check error
+      //* instead of exercising the code under test.
+      if (status != null) {
+        return http.Response('{"error":"forced"}', status, request: request);
+      }
 
-  final handle = request.url.queryParameters['handle'];
-  final did = dids[handle];
-  if (did == null) {
-    return http.Response(
-      jsonEncode({
-        'error': 'InvalidRequest',
-        'message': 'Unable to resolve handle',
-      }),
-      400,
-      request: request,
-    );
-  }
+      final handle = request.url.queryParameters['handle'];
+      final did = dids[handle];
+      if (did == null) {
+        return http.Response(
+          jsonEncode({
+            'error': 'InvalidRequest',
+            'message': 'Unable to resolve handle',
+          }),
+          400,
+          request: request,
+        );
+      }
 
-  return http.Response(
-    jsonEncode({'did': did}),
-    200,
-    request: request,
-    headers: {'content-type': 'application/json; charset=utf-8'},
-  );
-});
+      return http.Response(
+        jsonEncode({'did': did}),
+        200,
+        request: request,
+        headers: {'content-type': 'application/json; charset=utf-8'},
+      );
+    });

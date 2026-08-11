@@ -373,9 +373,8 @@ class OperationValidator {
 
     // PLC operations use `endpoint`; DID documents use `serviceEndpoint`.
     // Accept either so both shapes validate.
-    final endpointKey = service.containsKey('endpoint')
-        ? 'endpoint'
-        : 'serviceEndpoint';
+    final endpointKey =
+        service.containsKey('endpoint') ? 'endpoint' : 'serviceEndpoint';
 
     if (service[endpointKey] == null) {
       errors['services'] = 'Service $serviceKey is missing endpoint';

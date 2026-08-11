@@ -28,13 +28,13 @@ abstract class MessageBeforeUserJoinedGroupView
   const factory MessageBeforeUserJoinedGroupView({
     @Default('chat.bsky.convo.defs#messageBeforeUserJoinedGroupView')
     String $type,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageBeforeUserJoinedGroupView;
 
   factory MessageBeforeUserJoinedGroupView.fromJson(
     Map<String, Object?> json,
-  ) => _$MessageBeforeUserJoinedGroupViewFromJson(json);
+  ) =>
+      _$MessageBeforeUserJoinedGroupViewFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
     if (!object.containsKey('\$type')) return false;
@@ -43,9 +43,8 @@ abstract class MessageBeforeUserJoinedGroupView
   }
 }
 
-final class MessageBeforeUserJoinedGroupViewConverter
-    extends
-        JsonConverter<MessageBeforeUserJoinedGroupView, Map<String, dynamic>> {
+final class MessageBeforeUserJoinedGroupViewConverter extends JsonConverter<
+    MessageBeforeUserJoinedGroupView, Map<String, dynamic>> {
   const MessageBeforeUserJoinedGroupViewConverter();
 
   @override

@@ -137,7 +137,6 @@ class TextSegment {
   int get hashCode => Object.hash(text, utf16Start, utf16End, type, isOverflow);
 
   @override
-  String toString() =>
-      'TextSegment(text: $text, utf16Start: $utf16Start, '
+  String toString() => 'TextSegment(text: $text, utf16Start: $utf16Start, '
       'utf16End: $utf16End, type: $type, isOverflow: $isOverflow)';
 }

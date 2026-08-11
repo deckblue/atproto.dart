@@ -72,9 +72,9 @@ final class TimelineItemSummaryEventTypeConverter
 
   @override
   String toJson(TimelineItemSummaryEventType object) => switch (object) {
-    TimelineItemSummaryEventTypeKnownValue(:final data) => data.value,
-    TimelineItemSummaryEventTypeUnknown(:final data) => data,
-  };
+        TimelineItemSummaryEventTypeKnownValue(:final data) => data.value,
+        TimelineItemSummaryEventTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownTimelineItemSummaryEventType implements Serializable {

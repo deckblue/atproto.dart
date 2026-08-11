@@ -67,8 +67,9 @@ Future<void> main() async {
   );
   unawaited(
     indexer.start().catchError(
-      (Object e) => stderr.writeln('firehose indexer stopped unexpectedly: $e'),
-    ),
+          (Object e) =>
+              stderr.writeln('firehose indexer stopped unexpectedly: $e'),
+        ),
   );
 
   final handler = createFeedGeneratorHandler(

@@ -63,18 +63,18 @@ final class ListVerificationsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("createdAfter"))
-      "createdAfter": argResults!["createdAfter"],
-    if (argResults!.wasParsed("createdBefore"))
-      "createdBefore": argResults!["createdBefore"],
-    if (argResults!.wasParsed("issuers")) "issuers": argResults!["issuers"],
-    if (argResults!.wasParsed("subjects")) "subjects": argResults!["subjects"],
-    "sortDirection": argResults!["sortDirection"],
-    if (argResults!.wasParsed("isRevoked"))
-      "isRevoked": argResults!["isRevoked"],
-  };
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("createdAfter"))
+          "createdAfter": argResults!["createdAfter"],
+        if (argResults!.wasParsed("createdBefore"))
+          "createdBefore": argResults!["createdBefore"],
+        if (argResults!.wasParsed("issuers")) "issuers": argResults!["issuers"],
+        if (argResults!.wasParsed("subjects"))
+          "subjects": argResults!["subjects"],
+        "sortDirection": argResults!["sortDirection"],
+        if (argResults!.wasParsed("isRevoked"))
+          "isRevoked": argResults!["isRevoked"],
+      };
 }

@@ -71,9 +71,9 @@ final class GraphGetFollowsSortConverter
 
   @override
   String toJson(GraphGetFollowsSort object) => switch (object) {
-    GraphGetFollowsSortKnownValue(:final data) => data.value,
-    GraphGetFollowsSortUnknown(:final data) => data,
-  };
+        GraphGetFollowsSortKnownValue(:final data) => data.value,
+        GraphGetFollowsSortUnknown(:final data) => data,
+      };
 }
 
 enum KnownGraphGetFollowsSort implements Serializable {

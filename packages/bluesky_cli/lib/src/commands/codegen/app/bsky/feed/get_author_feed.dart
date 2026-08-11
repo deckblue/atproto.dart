@@ -44,12 +44,11 @@ final class GetAuthorFeedCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "actor": argResults!["actor"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    "filter": argResults!["filter"],
-    "includePins": argResults!["includePins"],
-  };
+        "actor": argResults!["actor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        "filter": argResults!["filter"],
+        "includePins": argResults!["includePins"],
+      };
 }

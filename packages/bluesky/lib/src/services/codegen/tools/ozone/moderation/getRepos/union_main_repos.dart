@@ -88,7 +88,6 @@ final class UModerationGetReposReposConverter
           const RepoViewDetailConverter().toJson(data),
         UModerationGetReposReposRepoViewNotFound(:final data) =>
           const RepoViewNotFoundConverter().toJson(data),
-
         UModerationGetReposReposUnknown(:final data) => data,
       };
 }

@@ -136,13 +136,11 @@ ${_getInputHelpers()}}'''),
       bodyMember = 'Map<String, dynamic>? get body => null;';
       helpers = '';
     } else {
-      constructorBody =
-          '''{
+      constructorBody = '''{
     ${_getOpts()}
   }''';
       invocation = _getInvocation(serviceName, commandName);
-      bodyMember =
-          '''Map<String, dynamic>? get body => {
+      bodyMember = '''Map<String, dynamic>? get body => {
     ${_getParameters()}
   };''';
       helpers = _getInputHelpers();
@@ -391,9 +389,8 @@ ${_getInputHelpers()}}'''),
     final deleteOpts = hasLiteralRkey
         ? ''
         : 'argParser..addOption("rkey", help: r"The record key.", mandatory: true,);';
-    final deleteInvocation = hasLiteralRkey
-        ? '$base delete'
-        : '$base delete --rkey=<value>';
+    final deleteInvocation =
+        hasLiteralRkey ? '$base delete' : '$base delete --rkey=<value>';
 
     return '''final class _Delete$typeName extends DeleteRecordCommand {
   _Delete$typeName() {
@@ -425,9 +422,8 @@ ${_getInputHelpers()}}'''),
     final getRkeyOpt = literalRkey == null
         ? '..addOption("rkey", help: r"The record key.", mandatory: true,)'
         : '';
-    final getRkeyValue = literalRkey == null
-        ? "argResults!['rkey']"
-        : "'$literalRkey'";
+    final getRkeyValue =
+        literalRkey == null ? "argResults!['rkey']" : "'$literalRkey'";
     final getInvocation = literalRkey == null
         ? '$base get --rkey=<value> [--repo=<value>] [--cid=<value>]'
         : '$base get [--repo=<value>] [--cid=<value>]';

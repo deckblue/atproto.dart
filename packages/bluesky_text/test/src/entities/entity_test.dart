@@ -319,16 +319,15 @@ void main() {
       //* wire-complete, the defaults were *added* here, which is exactly the
       //* silent divergence a hand-assembled record suffered from.
       Map<String, dynamic> defaultTypes(Map<String, dynamic> facet) => {
-        r'$type': facet[r'$type'] ?? 'app.bsky.richtext.facet',
-        'index': {
-          r'$type':
-              (facet['index'] as Map)[r'$type'] ??
-              'app.bsky.richtext.facet#byteSlice',
-          'byteStart': (facet['index'] as Map)['byteStart'],
-          'byteEnd': (facet['index'] as Map)['byteEnd'],
-        },
-        'features': facet['features'],
-      };
+            r'$type': facet[r'$type'] ?? 'app.bsky.richtext.facet',
+            'index': {
+              r'$type': (facet['index'] as Map)[r'$type'] ??
+                  'app.bsky.richtext.facet#byteSlice',
+              'byteStart': (facet['index'] as Map)['byteStart'],
+              'byteEnd': (facet['index'] as Map)['byteEnd'],
+            },
+            'features': facet['features'],
+          };
 
       for (final entity in [
         Entity(

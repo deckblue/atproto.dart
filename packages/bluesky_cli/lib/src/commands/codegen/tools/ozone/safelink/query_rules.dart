@@ -46,17 +46,16 @@ final class QueryRulesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("urls")) "urls": argResults!["urls"],
-    if (argResults!.wasParsed("patternType"))
-      "patternType": argResults!["patternType"],
-    if (argResults!.wasParsed("actions")) "actions": argResults!["actions"],
-    if (argResults!.wasParsed("reason")) "reason": argResults!["reason"],
-    if (argResults!.wasParsed("createdBy"))
-      "createdBy": argResults!["createdBy"],
-    "sortDirection": argResults!["sortDirection"],
-  };
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("urls")) "urls": argResults!["urls"],
+        if (argResults!.wasParsed("patternType"))
+          "patternType": argResults!["patternType"],
+        if (argResults!.wasParsed("actions")) "actions": argResults!["actions"],
+        if (argResults!.wasParsed("reason")) "reason": argResults!["reason"],
+        if (argResults!.wasParsed("createdBy"))
+          "createdBy": argResults!["createdBy"],
+        "sortDirection": argResults!["sortDirection"],
+      };
 }

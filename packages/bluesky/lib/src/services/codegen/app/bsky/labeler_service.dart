@@ -45,17 +45,18 @@ Future<XRPCResponse<LabelerGetServicesOutput>> appBskyLabelerGetServices({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyLabelerGetServices,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    'dids': dids,
-    if (detailed != null) 'detailed': detailed,
-  },
-  to: const LabelerGetServicesOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.get(
+      ns.appBskyLabelerGetServices,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        'dids': dids,
+        if (detailed != null) 'detailed': detailed,
+      },
+      to: const LabelerGetServicesOutputConverter().fromJson,
+    );
 
 /// `app.bsky.labeler.*`
 base class LabelerService {
@@ -73,14 +74,15 @@ base class LabelerService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyLabelerGetServices(
-    dids: dids,
-    detailed: detailed,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await appBskyLabelerGetServices(
+        dids: dids,
+        detailed: detailed,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// A declaration of the existence of labeler service.
   LabelerServiceRecordAccessor get service => _service;
@@ -97,15 +99,16 @@ final class LabelerServiceRecordAccessor {
     String? cid,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoGetRecord(
-    repo: repo,
-    collection: ids.appBskyLabelerService,
-    rkey: rkey,
-    cid: cid,
-    $ctx: ctx,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoRepoGetRecord(
+        repo: repo,
+        collection: ids.appBskyLabelerService,
+        rkey: rkey,
+        cid: cid,
+        $ctx: ctx,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   Future<XRPCResponse<RepoListRecordsOutput>> list({
     required String repo,
@@ -114,16 +117,17 @@ final class LabelerServiceRecordAccessor {
     bool? reverse,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoListRecords(
-    repo: repo,
-    collection: ids.appBskyLabelerService,
-    limit: limit,
-    cursor: cursor,
-    reverse: reverse,
-    $ctx: ctx,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await comAtprotoRepoListRecords(
+        repo: repo,
+        collection: ids.appBskyLabelerService,
+        limit: limit,
+        cursor: cursor,
+        reverse: reverse,
+        $ctx: ctx,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   Future<XRPCResponse<RepoCreateRecordOutput>> create({
     required LabelerPolicies policies,
@@ -137,31 +141,33 @@ final class LabelerServiceRecordAccessor {
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoCreateRecord(
-    repo: ctx.repo,
-    collection: ids.appBskyLabelerService,
-    rkey: rkey,
-    validate: validate,
-    record: {
-      r'$type': 'app.bsky.labeler.service',
-      ...?$unknown,
-      'policies': const LabelerPoliciesConverter().toJson(policies),
-      if (labels != null) 'labels': labels.toJson(),
-      'createdAt': iso8601(createdAt),
-      if (reasonTypes != null)
-        'reasonTypes': reasonTypes
-            .map((e) => const ReasonTypeConverter().toJson(e))
-            .toList(),
-      if (subjectTypes != null)
-        'subjectTypes': subjectTypes
-            .map((e) => const SubjectTypeConverter().toJson(e))
-            .toList(),
-      if (subjectCollections != null) 'subjectCollections': subjectCollections,
-    },
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoCreateRecord(
+        repo: ctx.repo,
+        collection: ids.appBskyLabelerService,
+        rkey: rkey,
+        validate: validate,
+        record: {
+          r'$type': 'app.bsky.labeler.service',
+          ...?$unknown,
+          'policies': const LabelerPoliciesConverter().toJson(policies),
+          if (labels != null) 'labels': labels.toJson(),
+          'createdAt': iso8601(createdAt),
+          if (reasonTypes != null)
+            'reasonTypes': reasonTypes
+                .map((e) => const ReasonTypeConverter().toJson(e))
+                .toList(),
+          if (subjectTypes != null)
+            'subjectTypes': subjectTypes
+                .map((e) => const SubjectTypeConverter().toJson(e))
+                .toList(),
+          if (subjectCollections != null)
+            'subjectCollections': subjectCollections,
+        },
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 
   Future<XRPCResponse<RepoPutRecordOutput>> put({
     required LabelerPolicies policies,
@@ -176,32 +182,34 @@ final class LabelerServiceRecordAccessor {
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoPutRecord(
-    repo: ctx.repo,
-    collection: ids.appBskyLabelerService,
-    rkey: rkey,
-    validate: validate,
-    record: {
-      r'$type': 'app.bsky.labeler.service',
-      ...?$unknown,
-      'policies': const LabelerPoliciesConverter().toJson(policies),
-      if (labels != null) 'labels': labels.toJson(),
-      'createdAt': iso8601(createdAt),
-      if (reasonTypes != null)
-        'reasonTypes': reasonTypes
-            .map((e) => const ReasonTypeConverter().toJson(e))
-            .toList(),
-      if (subjectTypes != null)
-        'subjectTypes': subjectTypes
-            .map((e) => const SubjectTypeConverter().toJson(e))
-            .toList(),
-      if (subjectCollections != null) 'subjectCollections': subjectCollections,
-    },
-    swapRecord: swapRecord,
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoPutRecord(
+        repo: ctx.repo,
+        collection: ids.appBskyLabelerService,
+        rkey: rkey,
+        validate: validate,
+        record: {
+          r'$type': 'app.bsky.labeler.service',
+          ...?$unknown,
+          'policies': const LabelerPoliciesConverter().toJson(policies),
+          if (labels != null) 'labels': labels.toJson(),
+          'createdAt': iso8601(createdAt),
+          if (reasonTypes != null)
+            'reasonTypes': reasonTypes
+                .map((e) => const ReasonTypeConverter().toJson(e))
+                .toList(),
+          if (subjectTypes != null)
+            'subjectTypes': subjectTypes
+                .map((e) => const SubjectTypeConverter().toJson(e))
+                .toList(),
+          if (subjectCollections != null)
+            'subjectCollections': subjectCollections,
+        },
+        swapRecord: swapRecord,
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 
   Future<XRPCResponse<RepoDeleteRecordOutput>> delete({
     String rkey = 'self',
@@ -209,13 +217,14 @@ final class LabelerServiceRecordAccessor {
     String? swapCommit,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await comAtprotoRepoDeleteRecord(
-    repo: ctx.repo,
-    collection: ids.appBskyLabelerService,
-    rkey: rkey,
-    swapRecord: swapRecord,
-    swapCommit: swapCommit,
-    $ctx: ctx,
-    $headers: $headers,
-  );
+  }) async =>
+      await comAtprotoRepoDeleteRecord(
+        repo: ctx.repo,
+        collection: ids.appBskyLabelerService,
+        rkey: rkey,
+        swapRecord: swapRecord,
+        swapCommit: swapCommit,
+        $ctx: ctx,
+        $headers: $headers,
+      );
 }

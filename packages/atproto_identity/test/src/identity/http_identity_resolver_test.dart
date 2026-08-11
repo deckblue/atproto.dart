@@ -10,21 +10,21 @@ const _handle = 'alice.example';
 const _pds = 'https://pds.example';
 
 http.Response _json(final Object body) => http.Response(
-  jsonEncode(body),
-  200,
-  headers: {'content-type': 'application/json'},
-);
+      jsonEncode(body),
+      200,
+      headers: {'content-type': 'application/json'},
+    );
 
 Map<String, Object> _didDocumentWithPds([final String? id]) => {
-  'id': ?id,
-  'service': [
-    {
-      'id': '#atproto_pds',
-      'type': 'AtprotoPersonalDataServer',
-      'serviceEndpoint': _pds,
-    },
-  ],
-};
+      if (id != null) 'id': id,
+      'service': [
+        {
+          'id': '#atproto_pds',
+          'type': 'AtprotoPersonalDataServer',
+          'serviceEndpoint': _pds,
+        },
+      ],
+    };
 
 void main() {
   test(
@@ -542,7 +542,8 @@ void main() {
         (await resolveWithPds(
           'http://localhost:2583',
           allowPrivateNetwork: true,
-        )).pds,
+        ))
+            .pds,
         'http://localhost:2583',
       );
     });

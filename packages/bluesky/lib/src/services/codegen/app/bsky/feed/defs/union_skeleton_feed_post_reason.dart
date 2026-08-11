@@ -88,7 +88,6 @@ final class USkeletonFeedPostReasonConverter
           const SkeletonReasonRepostConverter().toJson(data),
         USkeletonFeedPostReasonSkeletonReasonPin(:final data) =>
           const SkeletonReasonPinConverter().toJson(data),
-
         USkeletonFeedPostReasonUnknown(:final data) => data,
       };
 }

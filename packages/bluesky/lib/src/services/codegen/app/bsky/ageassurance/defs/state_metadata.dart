@@ -29,7 +29,6 @@ abstract class StateMetadata with _$StateMetadata {
 
     /// The account creation timestamp.
     @JsonKey(toJson: iso8601) DateTime? accountCreatedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _StateMetadata;
 

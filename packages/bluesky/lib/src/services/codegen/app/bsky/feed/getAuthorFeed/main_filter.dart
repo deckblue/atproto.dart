@@ -71,9 +71,9 @@ final class FeedGetAuthorFeedFilterConverter
 
   @override
   String toJson(FeedGetAuthorFeedFilter object) => switch (object) {
-    FeedGetAuthorFeedFilterKnownValue(:final data) => data.value,
-    FeedGetAuthorFeedFilterUnknown(:final data) => data,
-  };
+        FeedGetAuthorFeedFilterKnownValue(:final data) => data.value,
+        FeedGetAuthorFeedFilterUnknown(:final data) => data,
+      };
 }
 
 enum KnownFeedGetAuthorFeedFilter implements Serializable {

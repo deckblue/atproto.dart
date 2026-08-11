@@ -71,9 +71,9 @@ final class ConvoListConvosReadStateConverter
 
   @override
   String toJson(ConvoListConvosReadState object) => switch (object) {
-    ConvoListConvosReadStateKnownValue(:final data) => data.value,
-    ConvoListConvosReadStateUnknown(:final data) => data,
-  };
+        ConvoListConvosReadStateKnownValue(:final data) => data.value,
+        ConvoListConvosReadStateUnknown(:final data) => data,
+      };
 }
 
 enum KnownConvoListConvosReadState implements Serializable {

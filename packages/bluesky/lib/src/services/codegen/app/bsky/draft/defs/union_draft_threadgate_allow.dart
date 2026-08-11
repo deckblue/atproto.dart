@@ -103,15 +103,14 @@ final class UDraftThreadgateAllowConverter
 
   @override
   Map<String, dynamic> toJson(UDraftThreadgateAllow object) => switch (object) {
-    UDraftThreadgateAllowMentionRule(:final data) =>
-      const MentionRuleConverter().toJson(data),
-    UDraftThreadgateAllowFollowerRule(:final data) =>
-      const FollowerRuleConverter().toJson(data),
-    UDraftThreadgateAllowFollowingRule(:final data) =>
-      const FollowingRuleConverter().toJson(data),
-    UDraftThreadgateAllowListRule(:final data) =>
-      const ListRuleConverter().toJson(data),
-
-    UDraftThreadgateAllowUnknown(:final data) => data,
-  };
+        UDraftThreadgateAllowMentionRule(:final data) =>
+          const MentionRuleConverter().toJson(data),
+        UDraftThreadgateAllowFollowerRule(:final data) =>
+          const FollowerRuleConverter().toJson(data),
+        UDraftThreadgateAllowFollowingRule(:final data) =>
+          const FollowingRuleConverter().toJson(data),
+        UDraftThreadgateAllowListRule(:final data) =>
+          const ListRuleConverter().toJson(data),
+        UDraftThreadgateAllowUnknown(:final data) => data,
+      };
 }

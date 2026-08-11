@@ -69,9 +69,9 @@ final class ListPurposeConverter extends JsonConverter<ListPurpose, String> {
 
   @override
   String toJson(ListPurpose object) => switch (object) {
-    ListPurposeKnownValue(:final data) => data.value,
-    ListPurposeUnknown(:final data) => data,
-  };
+        ListPurposeKnownValue(:final data) => data.value,
+        ListPurposeUnknown(:final data) => data,
+      };
 }
 
 enum KnownListPurpose implements Serializable {

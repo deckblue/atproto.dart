@@ -46,12 +46,12 @@ const _objectDoc = {
 };
 
 GenContext _ctxWithDocs() => GenContext(
-  serviceRuleConfig: const LexServiceRuleConfig(namespaceRules: []),
-  docs: [
-    lex.LexiconDoc.fromJson(_recordDoc),
-    lex.LexiconDoc.fromJson(_objectDoc),
-  ],
-);
+      serviceRuleConfig: const LexServiceRuleConfig(namespaceRules: []),
+      docs: [
+        lex.LexiconDoc.fromJson(_recordDoc),
+        lex.LexiconDoc.fromJson(_objectDoc),
+      ],
+    );
 
 void main() {
   group('isDeprecated (G-3) — anchored prefix match', () {

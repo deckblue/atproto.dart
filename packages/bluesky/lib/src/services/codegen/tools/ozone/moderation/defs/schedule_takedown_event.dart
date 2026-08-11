@@ -35,7 +35,6 @@ abstract class ScheduleTakedownEvent with _$ScheduleTakedownEvent {
     @JsonKey(toJson: iso8601) DateTime? executeAt,
     @JsonKey(toJson: iso8601) DateTime? executeAfter,
     @JsonKey(toJson: iso8601) DateTime? executeUntil,
-
     Map<String, dynamic>? $unknown,
   }) = _ScheduleTakedownEvent;
 

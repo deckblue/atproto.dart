@@ -74,9 +74,9 @@ final class ActorDeclarationAllowIncomingConverter
 
   @override
   String toJson(ActorDeclarationAllowIncoming object) => switch (object) {
-    ActorDeclarationAllowIncomingKnownValue(:final data) => data.value,
-    ActorDeclarationAllowIncomingUnknown(:final data) => data,
-  };
+        ActorDeclarationAllowIncomingKnownValue(:final data) => data.value,
+        ActorDeclarationAllowIncomingUnknown(:final data) => data,
+      };
 }
 
 enum KnownActorDeclarationAllowIncoming implements Serializable {

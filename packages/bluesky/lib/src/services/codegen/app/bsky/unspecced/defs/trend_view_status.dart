@@ -71,9 +71,9 @@ final class TrendViewStatusConverter
 
   @override
   String toJson(TrendViewStatus object) => switch (object) {
-    TrendViewStatusKnownValue(:final data) => data.value,
-    TrendViewStatusUnknown(:final data) => data,
-  };
+        TrendViewStatusKnownValue(:final data) => data.value,
+        TrendViewStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownTrendViewStatus implements Serializable {

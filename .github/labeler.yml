@@ -93,7 +93,6 @@ ci:
 build:
 - changed-files:
   - any-glob-to-any-file:
-    - scripts/**
     - packages/*/pubspec.yaml
     - packages/*/analysis_options.yaml
     - templates/*/pubspec.yaml

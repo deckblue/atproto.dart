@@ -97,21 +97,22 @@ final class OAuthSession {
     final Map<String, dynamic> json, {
     required final String issuer,
     required final String pds,
-  }) => OAuthSession(
-    accessToken: json['access_token'] as String,
-    refreshToken: json['refresh_token'] as String?,
-    tokenType: (json['token_type'] as String?) ?? 'DPoP',
-    scope: (json['scope'] as String?) ?? '',
-    expiresAt: json['expires_at'] == null
-        ? null
-        : DateTime.parse(json['expires_at'] as String).toUtc(),
-    sub: json['sub'] as String,
-    issuer: issuer,
-    pds: pds,
-    clientId: json['client_id'] as String,
-    dpopPublicKey: json['public_key'] as String,
-    dpopPrivateKey: json['private_key'] as String,
-  );
+  }) =>
+      OAuthSession(
+        accessToken: json['access_token'] as String,
+        refreshToken: json['refresh_token'] as String?,
+        tokenType: (json['token_type'] as String?) ?? 'DPoP',
+        scope: (json['scope'] as String?) ?? '',
+        expiresAt: json['expires_at'] == null
+            ? null
+            : DateTime.parse(json['expires_at'] as String).toUtc(),
+        sub: json['sub'] as String,
+        issuer: issuer,
+        pds: pds,
+        clientId: json['client_id'] as String,
+        dpopPublicKey: json['public_key'] as String,
+        dpopPrivateKey: json['private_key'] as String,
+      );
 
   final String accessToken;
   final String? refreshToken;
@@ -131,16 +132,16 @@ final class OAuthSession {
   final String dpopPrivateKey;
 
   Map<String, dynamic> toJson() => {
-    'access_token': accessToken,
-    'refresh_token': ?refreshToken,
-    'token_type': tokenType,
-    'scope': scope,
-    'expires_at': ?expiresAt?.toUtc().toIso8601String(),
-    'sub': sub,
-    'issuer': issuer,
-    'pds': pds,
-    'client_id': clientId,
-    'dpop_public_key': dpopPublicKey,
-    'dpop_private_key': dpopPrivateKey,
-  };
+        'access_token': accessToken,
+        'refresh_token': refreshToken,
+        'token_type': tokenType,
+        'scope': scope,
+        'expires_at': expiresAt?.toUtc().toIso8601String(),
+        'sub': sub,
+        'issuer': issuer,
+        'pds': pds,
+        'client_id': clientId,
+        'dpop_public_key': dpopPublicKey,
+        'dpop_private_key': dpopPrivateKey,
+      };
 }

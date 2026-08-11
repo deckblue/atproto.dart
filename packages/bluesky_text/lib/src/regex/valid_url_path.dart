@@ -25,8 +25,7 @@ const validUrlPath = '(?:'
 /// is either "path characters ending on a plain character" or "a single paren
 /// group" — which is what [validUrlPath] means, and why it needs a star over
 /// it to read `/path_(with_parens)` at all.
-const _validUrlPathRun =
-    '(?:'
+const _validUrlPathRun = '(?:'
     '$validGeneralUrlPathChars*'
     '(?:$validUrlBalancedParens$validGeneralUrlPathChars*)*'
     '(?:$validUrlPathEndingChars)'

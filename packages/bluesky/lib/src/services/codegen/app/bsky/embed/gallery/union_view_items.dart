@@ -72,7 +72,6 @@ final class UEmbedGalleryViewItemsConverter
       switch (object) {
         UEmbedGalleryViewItemsEmbedGalleryViewImage(:final data) =>
           const EmbedGalleryViewImageConverter().toJson(data),
-
         UEmbedGalleryViewItemsUnknown(:final data) => data,
       };
 }

@@ -59,20 +59,19 @@ extension RetryPolicyExtension on RetryPolicy {
 
     switch (this) {
       case _RetryPolicy(
-        :final initialDelay,
-        :final backoffMultiplier,
-        :final maxDelay,
-      ):
+          :final initialDelay,
+          :final backoffMultiplier,
+          :final maxDelay,
+        ):
       case _RetryPolicyAggressive(
-        :final initialDelay,
-        :final backoffMultiplier,
-        :final maxDelay,
-      ):
+          :final initialDelay,
+          :final backoffMultiplier,
+          :final maxDelay,
+        ):
         final delay = Duration(
-          milliseconds:
-              (initialDelay.inMilliseconds *
-                      math.pow(backoffMultiplier, attempt))
-                  .round(),
+          milliseconds: (initialDelay.inMilliseconds *
+                  math.pow(backoffMultiplier, attempt))
+              .round(),
         );
         return delay > maxDelay ? maxDelay : delay;
       case _RetryPolicyNone():
@@ -89,13 +88,13 @@ extension RetryPolicyExtension on RetryPolicy {
         retryableStatusCodes.contains(statusCode),
       _RetryPolicyNone() => false,
       _RetryPolicyAggressive() => [
-        408,
-        429,
-        500,
-        502,
-        503,
-        504,
-      ].contains(statusCode),
+          408,
+          429,
+          500,
+          502,
+          503,
+          504,
+        ].contains(statusCode),
     };
   }
 

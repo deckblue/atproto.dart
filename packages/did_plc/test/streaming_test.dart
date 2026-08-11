@@ -56,12 +56,10 @@ void main() {
       final errors = <Object>[];
 
       final completer = Completer<void>();
-      processor
-          .processStream(Stream.fromIterable([1, 2, 3]), (item) async {
-            if (item == 2) throw StateError('boom');
-            return item;
-          })
-          .listen(results.add, onError: errors.add, onDone: completer.complete);
+      processor.processStream(Stream.fromIterable([1, 2, 3]), (item) async {
+        if (item == 2) throw StateError('boom');
+        return item;
+      }).listen(results.add, onError: errors.add, onDone: completer.complete);
 
       await completer.future;
       expect(results, containsAll(<int>[1, 3]));
@@ -118,9 +116,8 @@ void main() {
 
     test('completes on empty input', () async {
       final processor = StreamProcessor<int>();
-      final batches = await processor
-          .batchStream(const Stream<int>.empty())
-          .toList();
+      final batches =
+          await processor.batchStream(const Stream<int>.empty()).toList();
       expect(batches, isEmpty);
     });
   });
@@ -181,8 +178,7 @@ void main() {
     test('processStreamIndividual completes on empty input', () async {
       final processor = BatchProcessor<int, int>();
       final results = await processor
-          .processStreamIndividual(const <int>[], (i) async => i)
-          .toList();
+          .processStreamIndividual(const <int>[], (i) async => i).toList();
       expect(results, isEmpty);
     });
 

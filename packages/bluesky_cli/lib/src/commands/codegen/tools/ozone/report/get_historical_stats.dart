@@ -49,20 +49,18 @@ final class GetHistoricalStatsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("queueId"))
-      "queueId":
-          int.tryParse(argResults!["queueId"]) ??
-          usageException('Invalid integer value for option "queueId".'),
-    if (argResults!.wasParsed("moderatorDid"))
-      "moderatorDid": argResults!["moderatorDid"],
-    if (argResults!.wasParsed("reportTypes"))
-      "reportTypes": argResults!["reportTypes"],
-    if (argResults!.wasParsed("startDate"))
-      "startDate": argResults!["startDate"],
-    if (argResults!.wasParsed("endDate")) "endDate": argResults!["endDate"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        if (argResults!.wasParsed("queueId"))
+          "queueId": int.tryParse(argResults!["queueId"]) ??
+              usageException('Invalid integer value for option "queueId".'),
+        if (argResults!.wasParsed("moderatorDid"))
+          "moderatorDid": argResults!["moderatorDid"],
+        if (argResults!.wasParsed("reportTypes"))
+          "reportTypes": argResults!["reportTypes"],
+        if (argResults!.wasParsed("startDate"))
+          "startDate": argResults!["startDate"],
+        if (argResults!.wasParsed("endDate")) "endDate": argResults!["endDate"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

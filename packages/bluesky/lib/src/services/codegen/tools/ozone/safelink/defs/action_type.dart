@@ -68,9 +68,9 @@ final class ActionTypeConverter extends JsonConverter<ActionType, String> {
 
   @override
   String toJson(ActionType object) => switch (object) {
-    ActionTypeKnownValue(:final data) => data.value,
-    ActionTypeUnknown(:final data) => data,
-  };
+        ActionTypeKnownValue(:final data) => data.value,
+        ActionTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownActionType implements Serializable {

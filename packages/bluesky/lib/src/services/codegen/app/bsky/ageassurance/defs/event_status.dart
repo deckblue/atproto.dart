@@ -69,9 +69,9 @@ final class EventStatusConverter extends JsonConverter<EventStatus, String> {
 
   @override
   String toJson(EventStatus object) => switch (object) {
-    EventStatusKnownValue(:final data) => data.value,
-    EventStatusUnknown(:final data) => data,
-  };
+        EventStatusKnownValue(:final data) => data.value,
+        EventStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownEventStatus implements Serializable {

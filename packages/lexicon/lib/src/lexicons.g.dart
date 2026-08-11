@@ -7312,7 +7312,8 @@ const appBskyUnspeccedGetOnboardingSuggestedStarterPacks = <String, dynamic>{
 };
 
 /// `app.bsky.unspecced.getOnboardingSuggestedStarterPacksSkeleton`
-const appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton = <String, dynamic>{
+const appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton =
+    <String, dynamic>{
   "lexicon": 1,
   "id": "app.bsky.unspecced.getOnboardingSuggestedStarterPacksSkeleton",
   "defs": {

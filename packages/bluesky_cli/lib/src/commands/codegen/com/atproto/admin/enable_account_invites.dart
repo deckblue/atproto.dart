@@ -37,7 +37,7 @@ final class EnableAccountInvitesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "account": argResults!["account"],
-    if (argResults!.wasParsed("note")) "note": argResults!["note"],
-  };
+        "account": argResults!["account"],
+        if (argResults!.wasParsed("note")) "note": argResults!["note"],
+      };
 }

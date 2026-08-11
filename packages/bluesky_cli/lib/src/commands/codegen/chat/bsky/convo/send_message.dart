@@ -39,9 +39,9 @@ final class SendMessageCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "convoId": argResults!["convoId"],
-    "message": _decodeJson("message"),
-  };
+        "convoId": argResults!["convoId"],
+        "message": _decodeJson("message"),
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

@@ -155,7 +155,6 @@ final class UReportCreateActivityActivityConverter
           const ReopenActivityConverter().toJson(data),
         UReportCreateActivityActivityNoteActivity(:final data) =>
           const NoteActivityConverter().toJson(data),
-
         UReportCreateActivityActivityUnknown(:final data) => data,
       };
 }

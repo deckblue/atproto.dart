@@ -74,9 +74,9 @@ final class RepoPutRecordValidationStatusConverter
 
   @override
   String toJson(RepoPutRecordValidationStatus object) => switch (object) {
-    RepoPutRecordValidationStatusKnownValue(:final data) => data.value,
-    RepoPutRecordValidationStatusUnknown(:final data) => data,
-  };
+        RepoPutRecordValidationStatusKnownValue(:final data) => data.value,
+        RepoPutRecordValidationStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownRepoPutRecordValidationStatus implements Serializable {

@@ -37,7 +37,6 @@ abstract class RecordHosting with _$RecordHosting {
     @JsonKey(toJson: iso8601) DateTime? updatedAt,
     @JsonKey(toJson: iso8601) DateTime? createdAt,
     @JsonKey(toJson: iso8601) DateTime? deletedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _RecordHosting;
 

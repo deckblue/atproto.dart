@@ -29,7 +29,7 @@ class MemoryCache<T> {
   /// to [DateTime.now]; pass a controllable clock to make expiry deterministic
   /// instead of dependent on wall-clock delays.
   MemoryCache(this._policy, {final DateTime Function()? now})
-    : _now = now ?? DateTime.now;
+      : _now = now ?? DateTime.now;
 
   final CachePolicy _policy;
   final DateTime Function() _now;

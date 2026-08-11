@@ -71,9 +71,9 @@ final class ConvoListConvosKindConverter
 
   @override
   String toJson(ConvoListConvosKind object) => switch (object) {
-    ConvoListConvosKindKnownValue(:final data) => data.value,
-    ConvoListConvosKindUnknown(:final data) => data,
-  };
+        ConvoListConvosKindKnownValue(:final data) => data.value,
+        ConvoListConvosKindUnknown(:final data) => data,
+      };
 }
 
 enum KnownConvoListConvosKind implements Serializable {

@@ -71,9 +71,9 @@ final class SettingUpsertOptionScopeConverter
 
   @override
   String toJson(SettingUpsertOptionScope object) => switch (object) {
-    SettingUpsertOptionScopeKnownValue(:final data) => data.value,
-    SettingUpsertOptionScopeUnknown(:final data) => data,
-  };
+        SettingUpsertOptionScopeKnownValue(:final data) => data.value,
+        SettingUpsertOptionScopeUnknown(:final data) => data,
+      };
 }
 
 enum KnownSettingUpsertOptionScope implements Serializable {

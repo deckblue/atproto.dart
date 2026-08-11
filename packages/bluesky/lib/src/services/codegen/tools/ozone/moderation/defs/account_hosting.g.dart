@@ -8,46 +8,41 @@ part of 'account_hosting.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AccountHosting _$AccountHostingFromJson(Map json) =>
-    $checkedCreate('_AccountHosting', json, ($checkedConvert) {
-      final val = _AccountHosting(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.moderation.defs#accountHosting',
-        ),
-        status: $checkedConvert(
-          'status',
-          (v) => const AccountHostingStatusConverter().fromJson(v as String),
-        ),
-        updatedAt: $checkedConvert(
-          'updatedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        createdAt: $checkedConvert(
-          'createdAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        deletedAt: $checkedConvert(
-          'deletedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        deactivatedAt: $checkedConvert(
-          'deactivatedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        reactivatedAt: $checkedConvert(
-          'reactivatedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AccountHostingImpl _$$AccountHostingImplFromJson(Map json) => $checkedCreate(
+      r'_$AccountHostingImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AccountHostingImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'tools.ozone.moderation.defs#accountHosting'),
+          status: $checkedConvert(
+              'status',
+              (v) =>
+                  const AccountHostingStatusConverter().fromJson(v as String)),
+          updatedAt: $checkedConvert('updatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          createdAt: $checkedConvert('createdAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          deletedAt: $checkedConvert('deletedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          deactivatedAt: $checkedConvert('deactivatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          reactivatedAt: $checkedConvert('reactivatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AccountHostingToJson(_AccountHosting instance) =>
+Map<String, dynamic> _$$AccountHostingImplToJson(
+        _$AccountHostingImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'status': const AccountHostingStatusConverter().toJson(instance.status),
@@ -56,5 +51,5 @@ Map<String, dynamic> _$AccountHostingToJson(_AccountHosting instance) =>
       'deletedAt': iso8601(instance.deletedAt),
       'deactivatedAt': iso8601(instance.deactivatedAt),
       'reactivatedAt': iso8601(instance.reactivatedAt),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

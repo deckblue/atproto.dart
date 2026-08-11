@@ -75,9 +75,9 @@ final class EventGroupChatUpdatedLockReasonConverter
 
   @override
   String toJson(EventGroupChatUpdatedLockReason object) => switch (object) {
-    EventGroupChatUpdatedLockReasonKnownValue(:final data) => data.value,
-    EventGroupChatUpdatedLockReasonUnknown(:final data) => data,
-  };
+        EventGroupChatUpdatedLockReasonKnownValue(:final data) => data.value,
+        EventGroupChatUpdatedLockReasonUnknown(:final data) => data,
+      };
 }
 
 enum KnownEventGroupChatUpdatedLockReason implements Serializable {

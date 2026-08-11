@@ -33,16 +33,17 @@ Map<String, dynamic> _jobStatus(
   final Map<String, dynamic>? blob,
   final String? error,
   final String? message,
-}) => {
-  r'$type': 'app.bsky.video.defs#jobStatus',
-  'jobId': jobId,
-  'did': 'did:plc:testaccount',
-  'state': state,
-  'progress': ?progress,
-  'blob': ?blob,
-  'error': ?error,
-  'message': ?message,
-};
+}) =>
+    {
+      r'$type': 'app.bsky.video.defs#jobStatus',
+      'jobId': jobId,
+      'did': 'did:plc:testaccount',
+      'state': state,
+      'progress': progress,
+      'blob': blob,
+      'error': error,
+      'message': message,
+    };
 
 http.Response _ok(final Uri url, final String method, final Object body) =>
     http.Response(
@@ -122,18 +123,18 @@ void main() {
         Object? error;
         service
             .uploadVideoAndAwait(
-              bytes: _bytes,
-              pollInterval: const Duration(seconds: 3),
-              onProgress: seen.add,
-            )
+          bytes: _bytes,
+          pollInterval: const Duration(seconds: 3),
+          onProgress: seen.add,
+        )
             .then<void>(
-              (value) {
-                blob = value;
-              },
-              onError: (Object e) {
-                error = e;
-              },
-            );
+          (value) {
+            blob = value;
+          },
+          onError: (Object e) {
+            error = e;
+          },
+        );
 
         async.elapse(const Duration(seconds: 30));
 
@@ -197,12 +198,12 @@ void main() {
         core.Blob? blob;
         service
             .uploadVideoAndAwait(
-              bytes: _bytes,
-              pollInterval: const Duration(seconds: 3),
-            )
+          bytes: _bytes,
+          pollInterval: const Duration(seconds: 3),
+        )
             .then<void>((value) {
-              blob = value;
-            });
+          blob = value;
+        });
 
         // Nothing may be polled before the first interval has fully elapsed.
         async.elapse(const Duration(milliseconds: 2999));
@@ -250,16 +251,16 @@ void main() {
         final seen = <JobStatus>[];
         service
             .uploadVideoAndAwait(
-              bytes: _bytes,
-              pollInterval: const Duration(seconds: 3),
-              onProgress: seen.add,
-            )
+          bytes: _bytes,
+          pollInterval: const Duration(seconds: 3),
+          onProgress: seen.add,
+        )
             .then<void>(
-              (_) {},
-              onError: (Object e) {
-                error = e;
-              },
-            );
+          (_) {},
+          onError: (Object e) {
+            error = e;
+          },
+        );
 
         async.elapse(const Duration(seconds: 30));
 
@@ -293,17 +294,17 @@ void main() {
         var completed = false;
         service
             .uploadVideoAndAwait(
-              bytes: _bytes,
-              pollInterval: const Duration(seconds: 3),
-            )
+          bytes: _bytes,
+          pollInterval: const Duration(seconds: 3),
+        )
             .then<void>(
-              (_) {
-                completed = true;
-              },
-              onError: (Object e) {
-                error = e;
-              },
-            );
+          (_) {
+            completed = true;
+          },
+          onError: (Object e) {
+            error = e;
+          },
+        );
 
         async.elapse(const Duration(seconds: 30));
 
@@ -329,16 +330,16 @@ void main() {
         Object? error;
         service
             .uploadVideoAndAwait(
-              bytes: _bytes,
-              pollInterval: const Duration(seconds: 3),
-              timeout: const Duration(seconds: 10),
-            )
+          bytes: _bytes,
+          pollInterval: const Duration(seconds: 3),
+          timeout: const Duration(seconds: 10),
+        )
             .then<void>(
-              (_) {},
-              onError: (Object e) {
-                error = e;
-              },
-            );
+          (_) {},
+          onError: (Object e) {
+            error = e;
+          },
+        );
 
         async.elapse(const Duration(seconds: 10));
 
@@ -374,22 +375,22 @@ void main() {
         Object? error;
         service
             .uploadVideoAndAwait(
-              bytes: _bytes,
-              pollInterval: const Duration(seconds: 3),
-              onProgress: (_) {
-                calls++;
+          bytes: _bytes,
+          pollInterval: const Duration(seconds: 3),
+          onProgress: (_) {
+            calls++;
 
-                throw StateError('the UI blew up');
-              },
-            )
+            throw StateError('the UI blew up');
+          },
+        )
             .then<void>(
-              (value) {
-                blob = value;
-              },
-              onError: (Object e) {
-                error = e;
-              },
-            );
+          (value) {
+            blob = value;
+          },
+          onError: (Object e) {
+            error = e;
+          },
+        );
 
         async.elapse(const Duration(seconds: 30));
 
@@ -416,18 +417,18 @@ void main() {
 
         service
             .uploadVideoAndAwait(
-              bytes: _bytes,
-              pollInterval: const Duration(seconds: 3),
-              timeout: const Duration(seconds: 5),
-              onProgress: seen.add,
-            )
+          bytes: _bytes,
+          pollInterval: const Duration(seconds: 3),
+          timeout: const Duration(seconds: 5),
+          onProgress: seen.add,
+        )
             .then<void>(
-              (_) {},
-              onError: (Object e) {
-                error = e;
-                erroredAt = async.elapsed;
-              },
-            );
+          (_) {},
+          onError: (Object e) {
+            error = e;
+            erroredAt = async.elapsed;
+          },
+        );
 
         async.elapse(const Duration(minutes: 1));
 

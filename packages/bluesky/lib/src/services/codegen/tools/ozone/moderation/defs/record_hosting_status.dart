@@ -71,9 +71,9 @@ final class RecordHostingStatusConverter
 
   @override
   String toJson(RecordHostingStatus object) => switch (object) {
-    RecordHostingStatusKnownValue(:final data) => data.value,
-    RecordHostingStatusUnknown(:final data) => data,
-  };
+        RecordHostingStatusKnownValue(:final data) => data.value,
+        RecordHostingStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownRecordHostingStatus implements Serializable {

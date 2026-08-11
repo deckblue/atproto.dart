@@ -8,28 +8,30 @@ part of 'state_metadata.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_StateMetadata _$StateMetadataFromJson(Map json) =>
-    $checkedCreate('_StateMetadata', json, ($checkedConvert) {
-      final val = _StateMetadata(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'app.bsky.ageassurance.defs#stateMetadata',
-        ),
-        accountCreatedAt: $checkedConvert(
-          'accountCreatedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$StateMetadataImpl _$$StateMetadataImplFromJson(Map json) => $checkedCreate(
+      r'_$StateMetadataImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$StateMetadataImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ?? 'app.bsky.ageassurance.defs#stateMetadata'),
+          accountCreatedAt: $checkedConvert('accountCreatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$StateMetadataToJson(_StateMetadata instance) =>
+Map<String, dynamic> _$$StateMetadataImplToJson(_$StateMetadataImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'accountCreatedAt': iso8601(instance.accountCreatedAt),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

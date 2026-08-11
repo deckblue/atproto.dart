@@ -84,7 +84,6 @@ final class UModerationEmitEventSubjectConverter
           const RepoRefConverter().toJson(data),
         UModerationEmitEventSubjectRepoStrongRef(:final data) =>
           const RepoStrongRefConverter().toJson(data),
-
         UModerationEmitEventSubjectUnknown(:final data) => data,
       };
 }

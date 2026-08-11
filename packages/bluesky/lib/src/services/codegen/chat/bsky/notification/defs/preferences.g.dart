@@ -8,39 +8,36 @@ part of 'preferences.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Preferences _$PreferencesFromJson(Map json) => $checkedCreate(
-  '_Preferences',
-  json,
-  ($checkedConvert) {
-    final val = _Preferences(
-      $type: $checkedConvert(
-        r'$type',
-        (v) => v as String? ?? 'chat.bsky.notification.defs#preferences',
-      ),
-      chat: $checkedConvert(
-        'chat',
-        (v) =>
-            const ChatPreferenceConverter().fromJson(v as Map<String, dynamic>),
-      ),
-      chatRequest: $checkedConvert(
-        'chatRequest',
-        (v) =>
-            const ChatPreferenceConverter().fromJson(v as Map<String, dynamic>),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
+_$PreferencesImpl _$$PreferencesImplFromJson(Map json) => $checkedCreate(
+      r'_$PreferencesImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$PreferencesImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'chat.bsky.notification.defs#preferences'),
+          chat: $checkedConvert(
+              'chat',
+              (v) => const ChatPreferenceConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          chatRequest: $checkedConvert(
+              'chatRequest',
+              (v) => const ChatPreferenceConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
     );
-    return val;
-  },
-);
 
-Map<String, dynamic> _$PreferencesToJson(
-  _Preferences instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'chat': const ChatPreferenceConverter().toJson(instance.chat),
-  'chatRequest': const ChatPreferenceConverter().toJson(instance.chatRequest),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$PreferencesImplToJson(_$PreferencesImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'chat': const ChatPreferenceConverter().toJson(instance.chat),
+      'chatRequest':
+          const ChatPreferenceConverter().toJson(instance.chatRequest),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

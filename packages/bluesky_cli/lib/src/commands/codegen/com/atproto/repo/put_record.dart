@@ -64,16 +64,17 @@ final class PutRecordCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "repo": argResults!["repo"],
-    "collection": argResults!["collection"],
-    "rkey": argResults!["rkey"],
-    if (argResults!.wasParsed("validate")) "validate": argResults!["validate"],
-    "record": _decodeJson("record"),
-    if (argResults!.wasParsed("swapRecord"))
-      "swapRecord": argResults!["swapRecord"],
-    if (argResults!.wasParsed("swapCommit"))
-      "swapCommit": argResults!["swapCommit"],
-  };
+        "repo": argResults!["repo"],
+        "collection": argResults!["collection"],
+        "rkey": argResults!["rkey"],
+        if (argResults!.wasParsed("validate"))
+          "validate": argResults!["validate"],
+        "record": _decodeJson("record"),
+        if (argResults!.wasParsed("swapRecord"))
+          "swapRecord": argResults!["swapRecord"],
+        if (argResults!.wasParsed("swapCommit"))
+          "swapCommit": argResults!["swapCommit"],
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

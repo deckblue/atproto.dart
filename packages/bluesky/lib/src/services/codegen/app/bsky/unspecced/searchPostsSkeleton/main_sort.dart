@@ -76,9 +76,9 @@ final class UnspeccedSearchPostsSkeletonSortConverter
 
   @override
   String toJson(UnspeccedSearchPostsSkeletonSort object) => switch (object) {
-    UnspeccedSearchPostsSkeletonSortKnownValue(:final data) => data.value,
-    UnspeccedSearchPostsSkeletonSortUnknown(:final data) => data,
-  };
+        UnspeccedSearchPostsSkeletonSortKnownValue(:final data) => data.value,
+        UnspeccedSearchPostsSkeletonSortUnknown(:final data) => data,
+      };
 }
 
 enum KnownUnspeccedSearchPostsSkeletonSort implements Serializable {

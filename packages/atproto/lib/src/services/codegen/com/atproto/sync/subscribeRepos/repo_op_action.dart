@@ -69,9 +69,9 @@ final class RepoOpActionConverter extends JsonConverter<RepoOpAction, String> {
 
   @override
   String toJson(RepoOpAction object) => switch (object) {
-    RepoOpActionKnownValue(:final data) => data.value,
-    RepoOpActionUnknown(:final data) => data,
-  };
+        RepoOpActionKnownValue(:final data) => data.value,
+        RepoOpActionUnknown(:final data) => data,
+      };
 }
 
 enum KnownRepoOpAction implements Serializable {

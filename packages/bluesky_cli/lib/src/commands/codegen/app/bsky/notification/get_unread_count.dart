@@ -37,7 +37,8 @@ final class GetUnreadCountCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("priority")) "priority": argResults!["priority"],
-    if (argResults!.wasParsed("seenAt")) "seenAt": argResults!["seenAt"],
-  };
+        if (argResults!.wasParsed("priority"))
+          "priority": argResults!["priority"],
+        if (argResults!.wasParsed("seenAt")) "seenAt": argResults!["seenAt"],
+      };
 }

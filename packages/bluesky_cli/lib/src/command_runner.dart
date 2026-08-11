@@ -46,11 +46,11 @@ const int exitCodeUsageError = 64;
 class BskyCommandRunner extends CommandRunner<void>
     implements XrpcClientProvider, SessionCachePathProvider {
   BskyCommandRunner({this.getClient, this.postClient, this.sessionCachePath})
-    : super(
-        'bsky',
-        "A powerful and extensible CLI tool for "
-            "interacting with Bluesky Social's APIs",
-      ) {
+      : super(
+          'bsky',
+          "A powerful and extensible CLI tool for "
+              "interacting with Bluesky Social's APIs",
+        ) {
     // Credentials must not be resolved here via `defaultsTo`,
     // otherwise they would be rendered in plain text whenever the
     // usage is printed (--help, typos, missing arguments). They are
@@ -58,14 +58,12 @@ class BskyCommandRunner extends CommandRunner<void>
     argParser
       ..addOption(
         'identifier',
-        help:
-            'Handle or email address for authentication. Defaults to '
+        help: 'Handle or email address for authentication. Defaults to '
             'the BLUESKY_IDENTIFIER environment variable.',
       )
       ..addOption(
         'password',
-        help:
-            'Password on Bluesky for authentication. Defaults to '
+        help: 'Password on Bluesky for authentication. Defaults to '
             'the BLUESKY_PASSWORD environment variable.',
       )
       ..addFlag(
@@ -75,36 +73,31 @@ class BskyCommandRunner extends CommandRunner<void>
       )
       ..addOption(
         'service',
-        help:
-            'Name of the service to send the request to. '
+        help: 'Name of the service to send the request to. '
             'Defaults to bsky.social.',
       )
       ..addOption(
         'auth-service',
-        help:
-            'Name of the service to authenticate against '
+        help: 'Name of the service to authenticate against '
             '(createSession). Defaults to bsky.social.',
       )
       ..addFlag(
         'auth',
         defaultsTo: true,
-        help:
-            'Whether to authenticate when credentials are available. '
+        help: 'Whether to authenticate when credentials are available. '
             'Use --no-auth to send unauthenticated requests to public '
             'endpoints.',
       )
       ..addFlag(
         'session-cache',
         defaultsTo: true,
-        help:
-            'Whether to cache the session at ~/.config/bsky/session.json '
+        help: 'Whether to cache the session at ~/.config/bsky/session.json '
             'and reuse it across invocations. Use --no-session-cache '
             'to always create a fresh session.',
       )
       ..addOption(
         'timeout',
-        help:
-            'Request timeout in seconds. Defaults to 10 seconds '
+        help: 'Request timeout in seconds. Defaults to 10 seconds '
             '(5 minutes for blob and video uploads).',
       )
       ..addFlag(

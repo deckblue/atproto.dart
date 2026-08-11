@@ -34,8 +34,8 @@ InterpretedLabelValueDefinition getInterpretedLabelValueDefinition({
   final alertOrInform = severity == ModerationBehavior.alert.name
       ? ModerationBehavior.alert
       : severity == ModerationBehavior.inform.name
-      ? ModerationBehavior.inform
-      : ModerationBehavior.none;
+          ? ModerationBehavior.inform
+          : ModerationBehavior.none;
 
   switch (blurs) {
     case 'content':
@@ -44,9 +44,8 @@ InterpretedLabelValueDefinition getInterpretedLabelValueDefinition({
       accountBehavior[ModerationBehaviorContext.profileView] = alertOrInform;
       accountBehavior[ModerationBehaviorContext.contentList] =
           ModerationBehavior.blur;
-      accountBehavior[ModerationBehaviorContext.contentView] = adultOnly
-          ? ModerationBehavior.blur
-          : alertOrInform;
+      accountBehavior[ModerationBehaviorContext.contentView] =
+          adultOnly ? ModerationBehavior.blur : alertOrInform;
 
       // target=profile, blurs=content
       profileBehavior[ModerationBehaviorContext.profileList] = alertOrInform;
@@ -55,9 +54,8 @@ InterpretedLabelValueDefinition getInterpretedLabelValueDefinition({
       // target=content, blurs=content
       contentBehavior[ModerationBehaviorContext.contentList] =
           ModerationBehavior.blur;
-      contentBehavior[ModerationBehaviorContext.contentView] = adultOnly
-          ? ModerationBehavior.blur
-          : alertOrInform;
+      contentBehavior[ModerationBehaviorContext.contentView] =
+          adultOnly ? ModerationBehavior.blur : alertOrInform;
     case 'media':
       // target=account, blurs=media
       accountBehavior[ModerationBehaviorContext.profileList] = alertOrInform;
@@ -122,7 +120,7 @@ List<InterpretedLabelValueDefinition> getInterpretedLabelValueDefinitions(
               identifier: e.identifier,
               defaultSetting:
                   LabelPreference.valueOf(e.defaultSetting.toJson()) ??
-                  LabelPreference.warn,
+                      LabelPreference.warn,
               severity: e.severity.toJson(),
               blurs: e.blurs.toJson(),
               adultOnly: e.adultOnly ?? false,
@@ -135,7 +133,7 @@ List<InterpretedLabelValueDefinition> getInterpretedLabelValueDefinitions(
 
 extension LabelerServiceExtension on LabelerService {
   Future<Map<String, List<InterpretedLabelValueDefinition>>>
-  getLabelDefinitions(final ModerationPrefs prefs) async {
+      getLabelDefinitions(final ModerationPrefs prefs) async {
     final dids = <String>{
       _kBskyLabelerDid, // need when they don't have LabelersPref in their pref
       ...prefs.labelers.map((e) => e.did),
@@ -263,8 +261,7 @@ Map<String, String> getLabelerHeaders(
   final ModerationPrefs? prefs, {
   final List<String> appLabelers = const [_kBskyLabelerDid],
 }) {
-  final subscribedLabelers =
-      prefs?.labelers
+  final subscribedLabelers = prefs?.labelers
           .map((e) => e.did)
           .where((e) => e.startsWith('did:'))
           .where((e) => !appLabelers.contains(e)) ??

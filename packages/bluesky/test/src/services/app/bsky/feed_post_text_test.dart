@@ -7,12 +7,9 @@ import 'dart:convert';
 
 // Package imports:
 import 'package:atproto_core/atproto_core.dart' as core;
+import 'package:bluesky/bluesky.dart';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
-
-// Project imports:
-import 'package:bluesky/app_bsky_richtext_facet.dart';
-import 'package:bluesky/bluesky.dart';
 
 const _did = 'did:plc:abcdefghijklmnopqrstuvwx';
 const _aliceDid = 'did:plc:alicealicealicealicealic';
@@ -73,12 +70,13 @@ http.Response _json(
   final Map<String, dynamic> body, {
   final int status = 200,
   required final http.BaseRequest request,
-}) => http.Response(
-  jsonEncode(body),
-  status,
-  headers: {'content-type': 'application/json; charset=utf-8'},
-  request: request,
-);
+}) =>
+    http.Response(
+      jsonEncode(body),
+      status,
+      headers: {'content-type': 'application/json; charset=utf-8'},
+      request: request,
+    );
 
 Bluesky _bluesky(final _Recorder recorder, {final String? service}) =>
     Bluesky.fromSession(
@@ -117,7 +115,8 @@ void main() {
       expect(built.facets.single.index.byteEnd, 24);
     });
 
-    test('resolves mentions over this client\'s transport, not a connection '
+    test(
+        'resolves mentions over this client\'s transport, not a connection '
         'of its own', () async {
       final recorder = _Recorder();
       await _bluesky(
@@ -213,9 +212,9 @@ void main() {
       final reported = <List<String>>[];
 
       await _bluesky(recorder).feed.postText(
-        'hi @ghost.bsky.social',
-        onUnresolvedHandles: reported.add,
-      );
+            'hi @ghost.bsky.social',
+            onUnresolvedHandles: reported.add,
+          );
 
       expect(reported.single, ['ghost.bsky.social']);
       // Unresolved is not an error: the post still went out.
@@ -232,10 +231,10 @@ void main() {
 
         await expectLater(
           () => _bluesky(recorder).feed.postText(
-            'hi @ghost.bsky.social',
-            onUnresolvedHandles: (final handles) =>
-                throw StateError('fix the handle first'),
-          ),
+                'hi @ghost.bsky.social',
+                onUnresolvedHandles: (final handles) =>
+                    throw StateError('fix the handle first'),
+              ),
           throwsA(isA<StateError>()),
         );
 
@@ -254,9 +253,9 @@ void main() {
       var called = false;
 
       await _bluesky(recorder).feed.postText(
-        'hello @alice.bsky.social',
-        onUnresolvedHandles: (final _) => called = true,
-      );
+            'hello @alice.bsky.social',
+            onUnresolvedHandles: (final _) => called = true,
+          );
 
       expect(called, isFalse);
     });

@@ -182,9 +182,8 @@ dynamic _normalize(final CborValue value) {
     if (value.tags.contains(_cidTag)) {
       final raw = value.bytes;
       // DAG-CBOR CID byte strings carry a leading 0x00 multibase prefix.
-      final cidBytes = (raw.isNotEmpty && raw.first == 0x00)
-          ? raw.sublist(1)
-          : raw;
+      final cidBytes =
+          (raw.isNotEmpty && raw.first == 0x00) ? raw.sublist(1) : raw;
 
       return <String, dynamic>{_cidLinkKey: CID.fromList(cidBytes).toString()};
     }

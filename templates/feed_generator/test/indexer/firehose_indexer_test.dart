@@ -18,30 +18,31 @@ firehose.USyncSubscribeReposMessage _createPostCommit({
   final String did = 'did:plc:testaccount',
   final String rkey = 'abc',
   final String cid = 'bafyreiabc',
-}) => firehose.USyncSubscribeReposMessage.commit(
-  data: firehose.Commit(
-    seq: 1,
-    repo: did,
-    commit: 'bafyreicommit',
-    rev: '3kaa',
-    since: null,
-    blocks: {
-      cid: {
-        r'$type': 'app.bsky.feed.post',
-        'text': 'hello',
-        'createdAt': '2026-01-01T00:00:00.000Z',
-      },
-    },
-    ops: [
-      firehose.RepoOp(
-        action: firehose.RepoOpAction.valueOf('create')!,
-        path: 'app.bsky.feed.post/$rkey',
-        cid: cid,
+}) =>
+    firehose.USyncSubscribeReposMessage.commit(
+      data: firehose.Commit(
+        seq: 1,
+        repo: did,
+        commit: 'bafyreicommit',
+        rev: '3kaa',
+        since: null,
+        blocks: {
+          cid: {
+            r'$type': 'app.bsky.feed.post',
+            'text': 'hello',
+            'createdAt': '2026-01-01T00:00:00.000Z',
+          },
+        },
+        ops: [
+          firehose.RepoOp(
+            action: firehose.RepoOpAction.valueOf('create')!,
+            path: 'app.bsky.feed.post/$rkey',
+            cid: cid,
+          ),
+        ],
+        time: DateTime.utc(2026),
       ),
-    ],
-    time: DateTime.utc(2026),
-  ),
-);
+    );
 
 void main() {
   test('maps a created feed post URI to an IndexedPost', () {

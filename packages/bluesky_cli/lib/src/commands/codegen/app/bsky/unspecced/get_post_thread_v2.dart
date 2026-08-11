@@ -62,14 +62,13 @@ final class GetPostThreadV2Command extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "anchor": argResults!["anchor"],
-    "above": argResults!["above"],
-    "below":
-        int.tryParse(argResults!["below"]) ??
-        usageException('Invalid integer value for option "below".'),
-    "branchingFactor":
-        int.tryParse(argResults!["branchingFactor"]) ??
-        usageException('Invalid integer value for option "branchingFactor".'),
-    "sort": argResults!["sort"],
-  };
+        "anchor": argResults!["anchor"],
+        "above": argResults!["above"],
+        "below": int.tryParse(argResults!["below"]) ??
+            usageException('Invalid integer value for option "below".'),
+        "branchingFactor": int.tryParse(argResults!["branchingFactor"]) ??
+            usageException(
+                'Invalid integer value for option "branchingFactor".'),
+        "sort": argResults!["sort"],
+      };
 }

@@ -50,6 +50,6 @@ final class USubjectViewProfileConverter
 
   @override
   Map<String, dynamic> toJson(USubjectViewProfile object) => switch (object) {
-    USubjectViewProfileUnknown(:final data) => data,
-  };
+        USubjectViewProfileUnknown(:final data) => data,
+      };
 }

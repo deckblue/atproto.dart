@@ -47,12 +47,12 @@ sealed class ModerationCause with _$ModerationCause {
       UModerationCauseHidden;
 
   bool get downgraded => switch (this) {
-    UModerationCauseBlocking(:final data) => data.downgraded,
-    UModerationCauseBlockedBy(:final data) => data.downgraded,
-    UModerationCauseBlockOther(:final data) => data.downgraded,
-    UModerationCauseLabel(:final data) => data.downgraded,
-    UModerationCauseMuted(:final data) => data.downgraded,
-    UModerationCauseMuteWord(:final data) => data.downgraded,
-    UModerationCauseHidden(:final data) => data.downgraded,
-  };
+        UModerationCauseBlocking(:final data) => data.downgraded,
+        UModerationCauseBlockedBy(:final data) => data.downgraded,
+        UModerationCauseBlockOther(:final data) => data.downgraded,
+        UModerationCauseLabel(:final data) => data.downgraded,
+        UModerationCauseMuted(:final data) => data.downgraded,
+        UModerationCauseMuteWord(:final data) => data.downgraded,
+        UModerationCauseHidden(:final data) => data.downgraded,
+      };
 }

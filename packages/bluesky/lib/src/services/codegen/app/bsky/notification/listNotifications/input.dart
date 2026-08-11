@@ -37,13 +37,13 @@ abstract class NotificationListNotificationsInput
     bool? priority,
     String? cursor,
     @JsonKey(toJson: iso8601) DateTime? seenAt,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationListNotificationsInput;
 
   factory NotificationListNotificationsInput.fromJson(
     Map<String, Object?> json,
-  ) => _$NotificationListNotificationsInputFromJson(json);
+  ) =>
+      _$NotificationListNotificationsInputFromJson(json);
 }
 
 extension NotificationListNotificationsInputExtension
@@ -56,12 +56,8 @@ extension NotificationListNotificationsInputExtension
   bool get hasNotSeenAt => !hasSeenAt;
 }
 
-final class NotificationListNotificationsInputConverter
-    extends
-        JsonConverter<
-          NotificationListNotificationsInput,
-          Map<String, dynamic>
-        > {
+final class NotificationListNotificationsInputConverter extends JsonConverter<
+    NotificationListNotificationsInput, Map<String, dynamic>> {
   const NotificationListNotificationsInputConverter();
 
   @override

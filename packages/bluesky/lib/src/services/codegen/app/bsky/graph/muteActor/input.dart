@@ -31,7 +31,6 @@ abstract class GraphMuteActorInput with _$GraphMuteActorInput {
 
     /// Restrict the mute to the account's quote posts. See onlyReposts.
     bool? onlyQuoteposts,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphMuteActorInput;
 

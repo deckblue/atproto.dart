@@ -13,13 +13,14 @@ RetryContext _ctx({
   bool isProcedure = false,
   bool isAmbiguous = true,
   Duration? retryAfter,
-}) => RetryContext(
-  attempt: attempt,
-  reason: reason,
-  isProcedure: isProcedure,
-  isAmbiguous: isAmbiguous,
-  retryAfter: retryAfter,
-);
+}) =>
+    RetryContext(
+      attempt: attempt,
+      reason: reason,
+      isProcedure: isProcedure,
+      isAmbiguous: isAmbiguous,
+      retryAfter: retryAfter,
+    );
 
 void main() {
   group('ExponentialBackOffAndJitter', () {

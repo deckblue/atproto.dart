@@ -71,9 +71,9 @@ final class MessageMeShowButtonToConverter
 
   @override
   String toJson(MessageMeShowButtonTo object) => switch (object) {
-    MessageMeShowButtonToKnownValue(:final data) => data.value,
-    MessageMeShowButtonToUnknown(:final data) => data,
-  };
+        MessageMeShowButtonToKnownValue(:final data) => data.value,
+        MessageMeShowButtonToUnknown(:final data) => data,
+      };
 }
 
 enum KnownMessageMeShowButtonTo implements Serializable {

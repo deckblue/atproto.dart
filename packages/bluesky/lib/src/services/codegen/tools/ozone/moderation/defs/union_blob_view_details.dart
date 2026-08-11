@@ -78,11 +78,10 @@ final class UBlobViewDetailsConverter
 
   @override
   Map<String, dynamic> toJson(UBlobViewDetails object) => switch (object) {
-    UBlobViewDetailsImageDetails(:final data) =>
-      const ImageDetailsConverter().toJson(data),
-    UBlobViewDetailsVideoDetails(:final data) =>
-      const VideoDetailsConverter().toJson(data),
-
-    UBlobViewDetailsUnknown(:final data) => data,
-  };
+        UBlobViewDetailsImageDetails(:final data) =>
+          const ImageDetailsConverter().toJson(data),
+        UBlobViewDetailsVideoDetails(:final data) =>
+          const VideoDetailsConverter().toJson(data),
+        UBlobViewDetailsUnknown(:final data) => data,
+      };
 }

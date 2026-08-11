@@ -76,9 +76,9 @@ final class AssignmentActivityPreviousStatusConverter
 
   @override
   String toJson(AssignmentActivityPreviousStatus object) => switch (object) {
-    AssignmentActivityPreviousStatusKnownValue(:final data) => data.value,
-    AssignmentActivityPreviousStatusUnknown(:final data) => data,
-  };
+        AssignmentActivityPreviousStatusKnownValue(:final data) => data.value,
+        AssignmentActivityPreviousStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownAssignmentActivityPreviousStatus implements Serializable {

@@ -17,9 +17,8 @@ void main() {
       expect(chunks.length, greaterThan(1));
       for (final chunk in chunks) {
         // Every whitespace-separated token is a complete `wordN`.
-        final words = chunk.value
-            .split(RegExp(r'\s+'))
-            .where((w) => w.isNotEmpty);
+        final words =
+            chunk.value.split(RegExp(r'\s+')).where((w) => w.isNotEmpty);
         for (final word in words) {
           expect(
             RegExp(r'^word\d+$').hasMatch(word),

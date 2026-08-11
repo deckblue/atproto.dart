@@ -4,7 +4,6 @@
 
 import 'dart:io';
 
-import 'package:bluesky/atproto.dart';
 import 'package:bluesky/bluesky.dart';
 import 'package:feed_generator/src/config.dart';
 

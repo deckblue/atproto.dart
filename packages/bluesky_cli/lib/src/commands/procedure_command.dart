@@ -31,23 +31,23 @@ abstract class ProcedureCommand extends BskyCommand {
 
   @override
   Future<void> run() async => await execute(() async {
-    final jwt = _refreshJwtMethodIds.contains(methodId)
-        ? await refreshJwt
-        : await accessJwt;
+        final jwt = _refreshJwtMethodIds.contains(methodId)
+            ? await refreshJwt
+            : await accessJwt;
 
-    final response = await xrpc.procedure<String>(
-      xrpc.NSID(methodId),
-      service: service,
-      headers: jwt != null ? {'Authorization': 'Bearer $jwt'} : null,
-      body: await body,
-      timeout: timeout,
-      postClient: postClient,
-    );
+        final response = await xrpc.procedure<String>(
+          xrpc.NSID(methodId),
+          service: service,
+          headers: jwt != null ? {'Authorization': 'Bearer $jwt'} : null,
+          body: await body,
+          timeout: timeout,
+          postClient: postClient,
+        );
 
-    if (methodId == 'com.atproto.server.deleteSession') {
-      clearSessionCache();
-    }
+        if (methodId == 'com.atproto.server.deleteSession') {
+          clearSessionCache();
+        }
 
-    return response;
-  });
+        return response;
+      });
 }

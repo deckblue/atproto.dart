@@ -86,7 +86,6 @@ final class ULogCreateMessageMessageConverter
           const MessageViewConverter().toJson(data),
         ULogCreateMessageMessageDeletedMessageView(:final data) =>
           const DeletedMessageViewConverter().toJson(data),
-
         ULogCreateMessageMessageUnknown(:final data) => data,
       };
 }

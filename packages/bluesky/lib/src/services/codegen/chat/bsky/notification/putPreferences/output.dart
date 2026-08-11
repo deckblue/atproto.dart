@@ -29,18 +29,17 @@ abstract class NotificationPutPreferencesOutput
   @JsonSerializable(includeIfNull: false)
   const factory NotificationPutPreferencesOutput({
     @PreferencesConverter() required Preferences preferences,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationPutPreferencesOutput;
 
   factory NotificationPutPreferencesOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$NotificationPutPreferencesOutputFromJson(json);
+  ) =>
+      _$NotificationPutPreferencesOutputFromJson(json);
 }
 
-final class NotificationPutPreferencesOutputConverter
-    extends
-        JsonConverter<NotificationPutPreferencesOutput, Map<String, dynamic>> {
+final class NotificationPutPreferencesOutputConverter extends JsonConverter<
+    NotificationPutPreferencesOutput, Map<String, dynamic>> {
   const NotificationPutPreferencesOutputConverter();
 
   @override

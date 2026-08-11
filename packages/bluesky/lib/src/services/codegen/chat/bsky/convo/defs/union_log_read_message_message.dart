@@ -102,7 +102,6 @@ final class ULogReadMessageMessageConverter
           const DeletedMessageViewConverter().toJson(data),
         ULogReadMessageMessageSystemMessageView(:final data) =>
           const SystemMessageViewConverter().toJson(data),
-
         ULogReadMessageMessageUnknown(:final data) => data,
       };
 }

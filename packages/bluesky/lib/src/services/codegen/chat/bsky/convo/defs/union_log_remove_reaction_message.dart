@@ -86,7 +86,6 @@ final class ULogRemoveReactionMessageConverter
           const MessageViewConverter().toJson(data),
         ULogRemoveReactionMessageDeletedMessageView(:final data) =>
           const DeletedMessageViewConverter().toJson(data),
-
         ULogRemoveReactionMessageUnknown(:final data) => data,
       };
 }

@@ -33,7 +33,6 @@ abstract class ReasonRepost with _$ReasonRepost {
     @AtUriConverter() AtUri? uri,
     String? cid,
     @JsonKey(toJson: iso8601) required DateTime indexedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ReasonRepost;
 

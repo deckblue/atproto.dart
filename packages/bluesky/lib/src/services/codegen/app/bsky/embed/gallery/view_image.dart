@@ -43,7 +43,6 @@ abstract class EmbedGalleryViewImage with _$EmbedGalleryViewImage {
     /// Alt text description of the image, for accessibility.
     required String alt,
     @AspectRatioConverter() required AspectRatio aspectRatio,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedGalleryViewImage;
 

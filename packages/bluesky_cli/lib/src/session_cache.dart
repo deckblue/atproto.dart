@@ -73,8 +73,7 @@ final class SessionCache {
   /// Returns the default cache file path
   /// (`~/.config/bsky/session.json`).
   static String defaultPath() {
-    final home =
-        Platform.environment['HOME'] ??
+    final home = Platform.environment['HOME'] ??
         Platform.environment['USERPROFILE'] ??
         '';
 

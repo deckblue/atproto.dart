@@ -43,12 +43,12 @@ final class ListNotificationsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("reasons")) "reasons": argResults!["reasons"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("priority")) "priority": argResults!["priority"],
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    if (argResults!.wasParsed("seenAt")) "seenAt": argResults!["seenAt"],
-  };
+        if (argResults!.wasParsed("reasons")) "reasons": argResults!["reasons"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("priority"))
+          "priority": argResults!["priority"],
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("seenAt")) "seenAt": argResults!["seenAt"],
+      };
 }

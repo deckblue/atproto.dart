@@ -84,7 +84,6 @@ final class ULabelSubscribeLabelsMessageConverter
           const LabelsConverter().toJson(data),
         ULabelSubscribeLabelsMessageInfo(:final data) =>
           const InfoConverter().toJson(data),
-
         ULabelSubscribeLabelsMessageUnknown(:final data) => data,
       };
 }

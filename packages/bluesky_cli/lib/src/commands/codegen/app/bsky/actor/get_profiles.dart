@@ -34,8 +34,8 @@ final class GetProfilesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "actors": _requireNonEmpty("actors", argResults!["actors"]),
-  };
+        "actors": _requireNonEmpty("actors", argResults!["actors"]),
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

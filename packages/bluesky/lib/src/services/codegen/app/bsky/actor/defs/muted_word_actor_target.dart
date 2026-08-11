@@ -71,9 +71,9 @@ final class MutedWordActorTargetConverter
 
   @override
   String toJson(MutedWordActorTarget object) => switch (object) {
-    MutedWordActorTargetKnownValue(:final data) => data.value,
-    MutedWordActorTargetUnknown(:final data) => data,
-  };
+        MutedWordActorTargetKnownValue(:final data) => data.value,
+        MutedWordActorTargetUnknown(:final data) => data,
+      };
 }
 
 enum KnownMutedWordActorTarget implements Serializable {

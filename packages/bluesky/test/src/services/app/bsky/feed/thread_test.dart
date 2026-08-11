@@ -29,13 +29,15 @@ ThreadBatch _batch(
   final int count, {
   final ReplyRef? reply,
   final List<ThreadPost>? posts,
-}) => ThreadBatch.build(
-  did: _did,
-  posts: posts ?? [for (var i = 0; i < count; i++) ThreadPost(text: 'post $i')],
-  reply: reply,
-  tidGenerator: _tid(),
-  createdAt: _createdAt,
-);
+}) =>
+    ThreadBatch.build(
+      did: _did,
+      posts: posts ??
+          [for (var i = 0; i < count; i++) ThreadPost(text: 'post $i')],
+      reply: reply,
+      tidGenerator: _tid(),
+      createdAt: _createdAt,
+    );
 
 Map<String, dynamic> _replyOf(final Create write) =>
     write.value['reply'] as Map<String, dynamic>;
@@ -47,22 +49,22 @@ Map<String, dynamic> _parent(final Create write) =>
     _replyOf(write)['parent'] as Map<String, dynamic>;
 
 RepoStrongRef _ref(final String rkey, final String cid) => RepoStrongRef(
-  uri: AtUri.parse('at://did:plc:other/app.bsky.feed.post/$rkey'),
-  cid: cid,
-);
+      uri: AtUri.parse('at://did:plc:other/app.bsky.feed.post/$rkey'),
+      cid: cid,
+    );
 
 /// The results a repository would return for [batch] when it stores exactly
 /// what was sent: every locally computed CID echoed back, and a CID of its own
 /// for the last post, which was never hashed locally.
 List<URepoApplyWritesResults> _results(final ThreadBatch batch) => [
-  for (var i = 0; i < batch.writes.length; i++)
-    URepoApplyWritesResults.createResult(
-      data: CreateResult(
-        uri: batch.uris[i],
-        cid: batch.cids[i] ?? 'bafyserveronly',
-      ),
-    ),
-];
+      for (var i = 0; i < batch.writes.length; i++)
+        URepoApplyWritesResults.createResult(
+          data: CreateResult(
+            uri: batch.uris[i],
+            cid: batch.cids[i] ?? 'bafyserveronly',
+          ),
+        ),
+    ];
 
 void main() {
   group('ThreadBatch.build', () {

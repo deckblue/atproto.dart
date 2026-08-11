@@ -64,9 +64,8 @@ final class UFeedGeneratorLabelsConverter
 
   @override
   Map<String, dynamic> toJson(UFeedGeneratorLabels object) => switch (object) {
-    UFeedGeneratorLabelsSelfLabels(:final data) =>
-      const SelfLabelsConverter().toJson(data),
-
-    UFeedGeneratorLabelsUnknown(:final data) => data,
-  };
+        UFeedGeneratorLabelsSelfLabels(:final data) =>
+          const SelfLabelsConverter().toJson(data),
+        UFeedGeneratorLabelsUnknown(:final data) => data,
+      };
 }

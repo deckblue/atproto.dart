@@ -69,9 +69,9 @@ final class EventAccessConverter extends JsonConverter<EventAccess, String> {
 
   @override
   String toJson(EventAccess object) => switch (object) {
-    EventAccessKnownValue(:final data) => data.value,
-    EventAccessUnknown(:final data) => data,
-  };
+        EventAccessKnownValue(:final data) => data.value,
+        EventAccessUnknown(:final data) => data,
+      };
 }
 
 enum KnownEventAccess implements Serializable {

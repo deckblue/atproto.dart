@@ -70,9 +70,9 @@ final class SavedFeedTypeConverter
 
   @override
   String toJson(SavedFeedType object) => switch (object) {
-    SavedFeedTypeKnownValue(:final data) => data.value,
-    SavedFeedTypeUnknown(:final data) => data,
-  };
+        SavedFeedTypeKnownValue(:final data) => data.value,
+        SavedFeedTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownSavedFeedType implements Serializable {

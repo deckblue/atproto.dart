@@ -71,9 +71,9 @@ final class EventChatAcceptedMethodConverter
 
   @override
   String toJson(EventChatAcceptedMethod object) => switch (object) {
-    EventChatAcceptedMethodKnownValue(:final data) => data.value,
-    EventChatAcceptedMethodUnknown(:final data) => data,
-  };
+        EventChatAcceptedMethodKnownValue(:final data) => data.value,
+        EventChatAcceptedMethodUnknown(:final data) => data,
+      };
 }
 
 enum KnownEventChatAcceptedMethod implements Serializable {

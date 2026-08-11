@@ -71,9 +71,9 @@ final class SyncGetRepoStatusStatusConverter
 
   @override
   String toJson(SyncGetRepoStatusStatus object) => switch (object) {
-    SyncGetRepoStatusStatusKnownValue(:final data) => data.value,
-    SyncGetRepoStatusStatusUnknown(:final data) => data,
-  };
+        SyncGetRepoStatusStatusKnownValue(:final data) => data.value,
+        SyncGetRepoStatusStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownSyncGetRepoStatusStatus implements Serializable {

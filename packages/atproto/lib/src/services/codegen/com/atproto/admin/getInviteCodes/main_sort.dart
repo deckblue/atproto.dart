@@ -71,9 +71,9 @@ final class AdminGetInviteCodesSortConverter
 
   @override
   String toJson(AdminGetInviteCodesSort object) => switch (object) {
-    AdminGetInviteCodesSortKnownValue(:final data) => data.value,
-    AdminGetInviteCodesSortUnknown(:final data) => data,
-  };
+        AdminGetInviteCodesSortKnownValue(:final data) => data.value,
+        AdminGetInviteCodesSortUnknown(:final data) => data,
+      };
 }
 
 enum KnownAdminGetInviteCodesSort implements Serializable {

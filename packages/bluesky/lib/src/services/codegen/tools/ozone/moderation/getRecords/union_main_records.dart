@@ -90,7 +90,6 @@ final class UModerationGetRecordsRecordsConverter
           const RecordViewDetailConverter().toJson(data),
         UModerationGetRecordsRecordsRecordViewNotFound(:final data) =>
           const RecordViewNotFoundConverter().toJson(data),
-
         UModerationGetRecordsRecordsUnknown(:final data) => data,
       };
 }

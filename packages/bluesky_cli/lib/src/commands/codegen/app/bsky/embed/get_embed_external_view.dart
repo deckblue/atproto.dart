@@ -46,9 +46,9 @@ final class GetEmbedExternalViewCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "url": argResults!["url"],
-    "uris": _requireNonEmpty("uris", argResults!["uris"]),
-  };
+        "url": argResults!["url"],
+        "uris": _requireNonEmpty("uris", argResults!["uris"]),
+      };
   List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
     if (values.isEmpty) {
       usageException('Option "$name" is required and must not be empty.');

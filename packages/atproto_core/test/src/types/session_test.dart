@@ -8,25 +8,24 @@ import 'package:test/test.dart';
 import 'package:atproto_core/src/types/session.dart';
 
 String _jwt(Map<String, Object?> payload) {
-  final encodedPayload = base64Url
-      .encode(utf8.encode(jsonEncode(payload)))
-      .replaceAll('=', '');
+  final encodedPayload =
+      base64Url.encode(utf8.encode(jsonEncode(payload))).replaceAll('=', '');
 
   return 'header.$encodedPayload.signature';
 }
 
 Session _sessionWithDidDoc(List<Map<String, dynamic>> services) => Session(
-  did: 'did:plc:iijrtk7ocored6zuziwmqq3c',
-  handle: 'shinyakato.dev',
-  accessJwt: _jwt({
-    'sub': 'did:plc:iijrtk7ocored6zuziwmqq3c',
-    'aud': 'did:web:jwt-fallback.example.com',
-    'exp': 1893456000,
-    'iat': 1893452400,
-  }),
-  refreshJwt: '1234',
-  didDoc: {'id': 'did:plc:iijrtk7ocored6zuziwmqq3c', 'service': services},
-);
+      did: 'did:plc:iijrtk7ocored6zuziwmqq3c',
+      handle: 'shinyakato.dev',
+      accessJwt: _jwt({
+        'sub': 'did:plc:iijrtk7ocored6zuziwmqq3c',
+        'aud': 'did:web:jwt-fallback.example.com',
+        'exp': 1893456000,
+        'iat': 1893452400,
+      }),
+      refreshJwt: '1234',
+      didDoc: {'id': 'did:plc:iijrtk7ocored6zuziwmqq3c', 'service': services},
+    );
 
 void main() {
   group('Session.atprotoPdsEndpoint', () {

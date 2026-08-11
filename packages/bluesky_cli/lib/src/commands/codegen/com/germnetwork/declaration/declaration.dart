@@ -102,16 +102,16 @@ final class _CreateDeclarationCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "com.germnetwork.declaration",
-    "version": argResults!["version"],
-    "currentKey": argResults!["currentKey"],
-    if (argResults!.wasParsed("messageMe"))
-      "messageMe": _decodeJson("messageMe"),
-    if (argResults!.wasParsed("keyPackage"))
-      "keyPackage": argResults!["keyPackage"],
-    if (argResults!.wasParsed("continuityProofs"))
-      "continuityProofs": argResults!["continuityProofs"],
-  };
+        r"$type": "com.germnetwork.declaration",
+        "version": argResults!["version"],
+        "currentKey": argResults!["currentKey"],
+        if (argResults!.wasParsed("messageMe"))
+          "messageMe": _decodeJson("messageMe"),
+        if (argResults!.wasParsed("keyPackage"))
+          "keyPackage": argResults!["keyPackage"],
+        if (argResults!.wasParsed("continuityProofs"))
+          "continuityProofs": argResults!["continuityProofs"],
+      };
 }
 
 final class _PutDeclarationCommand extends PutRecordCommand
@@ -139,16 +139,16 @@ final class _PutDeclarationCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "com.germnetwork.declaration",
-    "version": argResults!["version"],
-    "currentKey": argResults!["currentKey"],
-    if (argResults!.wasParsed("messageMe"))
-      "messageMe": _decodeJson("messageMe"),
-    if (argResults!.wasParsed("keyPackage"))
-      "keyPackage": argResults!["keyPackage"],
-    if (argResults!.wasParsed("continuityProofs"))
-      "continuityProofs": argResults!["continuityProofs"],
-  };
+        r"$type": "com.germnetwork.declaration",
+        "version": argResults!["version"],
+        "currentKey": argResults!["currentKey"],
+        if (argResults!.wasParsed("messageMe"))
+          "messageMe": _decodeJson("messageMe"),
+        if (argResults!.wasParsed("keyPackage"))
+          "keyPackage": argResults!["keyPackage"],
+        if (argResults!.wasParsed("continuityProofs"))
+          "continuityProofs": argResults!["continuityProofs"],
+      };
 }
 
 final class _DeleteDeclarationCommand extends DeleteRecordCommand {
@@ -197,11 +197,11 @@ final class _GetDeclarationCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "com.germnetwork.declaration",
-    'rkey': 'self',
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "com.germnetwork.declaration",
+        'rkey': 'self',
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListDeclarationCommand extends QueryCommand {
@@ -231,12 +231,11 @@ final class _ListDeclarationCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "com.germnetwork.declaration",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "com.germnetwork.declaration",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

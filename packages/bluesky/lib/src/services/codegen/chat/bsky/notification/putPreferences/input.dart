@@ -30,7 +30,6 @@ abstract class NotificationPutPreferencesInput
   const factory NotificationPutPreferencesInput({
     @ChatPreferenceConverter() ChatPreference? chat,
     @ChatPreferenceConverter() ChatPreference? chatRequest,
-
     Map<String, dynamic>? $unknown,
   }) = _NotificationPutPreferencesInput;
 
@@ -46,9 +45,8 @@ extension NotificationPutPreferencesInputExtension
   bool get hasNotChatRequest => !hasChatRequest;
 }
 
-final class NotificationPutPreferencesInputConverter
-    extends
-        JsonConverter<NotificationPutPreferencesInput, Map<String, dynamic>> {
+final class NotificationPutPreferencesInputConverter extends JsonConverter<
+    NotificationPutPreferencesInput, Map<String, dynamic>> {
   const NotificationPutPreferencesInputConverter();
 
   @override

@@ -29,7 +29,6 @@ abstract class GraphSearchStarterPacksV2Input
     required String q,
     @Default(25) int limit,
     String? cursor,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphSearchStarterPacksV2Input;
 
@@ -43,9 +42,8 @@ extension GraphSearchStarterPacksV2InputExtension
   bool get hasNotCursor => !hasCursor;
 }
 
-final class GraphSearchStarterPacksV2InputConverter
-    extends
-        JsonConverter<GraphSearchStarterPacksV2Input, Map<String, dynamic>> {
+final class GraphSearchStarterPacksV2InputConverter extends JsonConverter<
+    GraphSearchStarterPacksV2Input, Map<String, dynamic>> {
   const GraphSearchStarterPacksV2InputConverter();
 
   @override

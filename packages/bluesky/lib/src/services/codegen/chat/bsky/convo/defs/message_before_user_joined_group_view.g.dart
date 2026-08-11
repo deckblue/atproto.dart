@@ -8,29 +8,30 @@ part of 'message_before_user_joined_group_view.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_MessageBeforeUserJoinedGroupView _$MessageBeforeUserJoinedGroupViewFromJson(
-  Map json,
-) => $checkedCreate('_MessageBeforeUserJoinedGroupView', json, (
-  $checkedConvert,
-) {
-  final val = _MessageBeforeUserJoinedGroupView(
-    $type: $checkedConvert(
-      r'$type',
-      (v) =>
-          v as String? ??
-          'chat.bsky.convo.defs#messageBeforeUserJoinedGroupView',
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$MessageBeforeUserJoinedGroupViewImpl
+    _$$MessageBeforeUserJoinedGroupViewImplFromJson(Map json) => $checkedCreate(
+          r'_$MessageBeforeUserJoinedGroupViewImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$MessageBeforeUserJoinedGroupViewImpl(
+              $type: $checkedConvert(
+                  r'$type',
+                  (v) =>
+                      v as String? ??
+                      'chat.bsky.convo.defs#messageBeforeUserJoinedGroupView'),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$MessageBeforeUserJoinedGroupViewToJson(
-  _MessageBeforeUserJoinedGroupView instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$MessageBeforeUserJoinedGroupViewImplToJson(
+        _$MessageBeforeUserJoinedGroupViewImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

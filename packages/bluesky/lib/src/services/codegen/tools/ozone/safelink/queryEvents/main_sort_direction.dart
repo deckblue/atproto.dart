@@ -76,9 +76,9 @@ final class SafelinkQueryEventsSortDirectionConverter
 
   @override
   String toJson(SafelinkQueryEventsSortDirection object) => switch (object) {
-    SafelinkQueryEventsSortDirectionKnownValue(:final data) => data.value,
-    SafelinkQueryEventsSortDirectionUnknown(:final data) => data,
-  };
+        SafelinkQueryEventsSortDirectionKnownValue(:final data) => data.value,
+        SafelinkQueryEventsSortDirectionUnknown(:final data) => data,
+      };
 }
 
 enum KnownSafelinkQueryEventsSortDirection implements Serializable {

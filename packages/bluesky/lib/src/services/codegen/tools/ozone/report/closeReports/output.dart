@@ -27,7 +27,6 @@ abstract class ReportCloseReportsOutput with _$ReportCloseReportsOutput {
     /// Number of reports that were transitioned to closed.
     required int closedCount,
     required List<int> reportIds,
-
     Map<String, dynamic>? $unknown,
   }) = _ReportCloseReportsOutput;
 

@@ -42,8 +42,8 @@ typedef FirehoseConnector = Future<FirehoseConnection> Function(int? cursor);
 /// The returned future's completion is what advances the cursor, so a handler
 /// that persists must not complete before that write does. Throwing is
 /// tolerated (see [Firehose.start]).
-typedef FirehoseMessageHandler =
-    FutureOr<void> Function(USyncSubscribeReposMessage message);
+typedef FirehoseMessageHandler = FutureOr<void> Function(
+    USyncSubscribeReposMessage message);
 
 /// The exponential reconnect delay before connection attempt `failures + 1`,
 /// given `failures` consecutive failures so far (>= 1):
@@ -123,10 +123,10 @@ final class Firehose {
     this.flushEveryInterval = defaultFlushEveryInterval,
     final void Function(Object error, StackTrace stackTrace)? onError,
     final Random? random,
-  }) : _connect = connect,
-       _cursorStore = cursorStore ?? InMemoryCursorStore(),
-       _onError = onError,
-       _random = random ?? Random() {
+  })  : _connect = connect,
+        _cursorStore = cursorStore ?? InMemoryCursorStore(),
+        _onError = onError,
+        _random = random ?? Random() {
     if (jitter < 0 || jitter > 1) {
       throw ArgumentError.value(jitter, 'jitter', 'must be within 0.0..1.0');
     }
@@ -361,8 +361,7 @@ final class Firehose {
 
     if (!force) {
       final lastFlushAt = _lastFlushAt;
-      final due =
-          _handledSinceFlush >= flushEveryEvents ||
+      final due = _handledSinceFlush >= flushEveryEvents ||
           lastFlushAt == null ||
           DateTime.now().difference(lastFlushAt) >= flushEveryInterval;
       if (!due) return;

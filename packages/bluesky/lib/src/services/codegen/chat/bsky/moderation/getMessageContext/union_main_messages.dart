@@ -60,10 +60,8 @@ extension UModerationGetMessageContextMessagesExtension
 
 final class UModerationGetMessageContextMessagesConverter
     implements
-        JsonConverter<
-          UModerationGetMessageContextMessages,
-          Map<String, dynamic>
-        > {
+        JsonConverter<UModerationGetMessageContextMessages,
+            Map<String, dynamic>> {
   const UModerationGetMessageContextMessagesConverter();
 
   @override
@@ -93,7 +91,6 @@ final class UModerationGetMessageContextMessagesConverter
           const MessageViewConverter().toJson(data),
         UModerationGetMessageContextMessagesSystemMessageView(:final data) =>
           const SystemMessageViewConverter().toJson(data),
-
         UModerationGetMessageContextMessagesUnknown(:final data) => data,
       };
 }

@@ -37,10 +37,9 @@ final class GetMessagesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "convoId": argResults!["convoId"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        "convoId": argResults!["convoId"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

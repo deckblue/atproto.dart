@@ -111,20 +111,21 @@ sealed class OzoneTool {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _OzoneTool.fromAtproto(
-    atp.ATProto.fromSession(
-      session,
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-    ozoneDid: ozoneDid,
-  );
+  }) =>
+      _OzoneTool.fromAtproto(
+        atp.ATProto.fromSession(
+          session,
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+        ozoneDid: ozoneDid,
+      );
 
   /// Returns a new [OzoneTool] backed by an OAuth [manager], which owns DPoP
   /// header building and transparent token refresh.
@@ -152,20 +153,21 @@ sealed class OzoneTool {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _OzoneTool.fromAtproto(
-    atp.ATProto.fromOAuth(
-      manager,
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-    ozoneDid: ozoneDid,
-  );
+  }) =>
+      _OzoneTool.fromAtproto(
+        atp.ATProto.fromOAuth(
+          manager,
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+        ozoneDid: ozoneDid,
+      );
 
   /// Returns the new instance of [OzoneTool].
   ///
@@ -198,22 +200,23 @@ sealed class OzoneTool {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => OzoneTool.fromOAuth(
-    oauth.OAuthSessionManager.fromSession(
-      session,
-      client: oauthClient,
-      timeout: timeout,
-    ),
-    ozoneDid: ozoneDid,
-    headers: headers,
-    protocol: protocol,
-    service: service,
-    relayService: relayService,
-    timeout: timeout,
-    retryConfig: retryConfig,
-    getClient: getClient,
-    postClient: postClient,
-  );
+  }) =>
+      OzoneTool.fromOAuth(
+        oauth.OAuthSessionManager.fromSession(
+          session,
+          client: oauthClient,
+          timeout: timeout,
+        ),
+        ozoneDid: ozoneDid,
+        headers: headers,
+        protocol: protocol,
+        service: service,
+        relayService: relayService,
+        timeout: timeout,
+        retryConfig: retryConfig,
+        getClient: getClient,
+        postClient: postClient,
+      );
 
   /// Returns the global headers without auth header.
   Map<String, String> get headers;
@@ -332,17 +335,17 @@ final class _OzoneTool implements OzoneTool {
   }
 
   _OzoneTool._(final core.ServiceContext ctx, this.atproto)
-    : communication = CommunicationService(ctx),
-      hosting = HostingService(ctx),
-      moderation = ModerationService(ctx),
-      safelink = SafelinkService(ctx),
-      server = ServerService(ctx),
-      set = SetService(ctx),
-      setting = SettingService(ctx),
-      signature = SignatureService(ctx),
-      team = TeamService(ctx),
-      verification = VerificationService(ctx),
-      _ctx = ctx;
+      : communication = CommunicationService(ctx),
+        hosting = HostingService(ctx),
+        moderation = ModerationService(ctx),
+        safelink = SafelinkService(ctx),
+        server = ServerService(ctx),
+        set = SetService(ctx),
+        setting = SettingService(ctx),
+        signature = SignatureService(ctx),
+        team = TeamService(ctx),
+        verification = VerificationService(ctx),
+        _ctx = ctx;
 
   final core.ServiceContext _ctx;
 

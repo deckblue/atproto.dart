@@ -129,7 +129,6 @@ final class UModEventViewDetailSubjectConverter
           const RecordViewNotFoundConverter().toJson(data),
         UModEventViewDetailSubjectConvoView(:final data) =>
           const ConvoViewConverter().toJson(data),
-
         UModEventViewDetailSubjectUnknown(:final data) => data,
       };
 }

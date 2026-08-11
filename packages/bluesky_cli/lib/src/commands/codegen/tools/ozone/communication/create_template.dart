@@ -52,11 +52,11 @@ final class CreateTemplateCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "name": argResults!["name"],
-    "contentMarkdown": argResults!["contentMarkdown"],
-    "subject": argResults!["subject"],
-    if (argResults!.wasParsed("lang")) "lang": argResults!["lang"],
-    if (argResults!.wasParsed("createdBy"))
-      "createdBy": argResults!["createdBy"],
-  };
+        "name": argResults!["name"],
+        "contentMarkdown": argResults!["contentMarkdown"],
+        "subject": argResults!["subject"],
+        if (argResults!.wasParsed("lang")) "lang": argResults!["lang"],
+        if (argResults!.wasParsed("createdBy"))
+          "createdBy": argResults!["createdBy"],
+      };
 }

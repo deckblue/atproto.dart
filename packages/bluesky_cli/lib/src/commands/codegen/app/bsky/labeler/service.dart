@@ -110,21 +110,21 @@ final class _CreateServiceCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.labeler.service",
-    "policies": _decodeJson("policies"),
-    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
-    "createdAt": argResults!["createdAt"],
-    if (argResults!.wasParsed("reasonTypes"))
-      "reasonTypes": (argResults!["reasonTypes"] as List<String>)
-          .map((e) => _decodeJsonItem("reasonTypes", e))
-          .toList(),
-    if (argResults!.wasParsed("subjectTypes"))
-      "subjectTypes": (argResults!["subjectTypes"] as List<String>)
-          .map((e) => _decodeJsonItem("subjectTypes", e))
-          .toList(),
-    if (argResults!.wasParsed("subjectCollections"))
-      "subjectCollections": argResults!["subjectCollections"],
-  };
+        r"$type": "app.bsky.labeler.service",
+        "policies": _decodeJson("policies"),
+        if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+        "createdAt": argResults!["createdAt"],
+        if (argResults!.wasParsed("reasonTypes"))
+          "reasonTypes": (argResults!["reasonTypes"] as List<String>)
+              .map((e) => _decodeJsonItem("reasonTypes", e))
+              .toList(),
+        if (argResults!.wasParsed("subjectTypes"))
+          "subjectTypes": (argResults!["subjectTypes"] as List<String>)
+              .map((e) => _decodeJsonItem("subjectTypes", e))
+              .toList(),
+        if (argResults!.wasParsed("subjectCollections"))
+          "subjectCollections": argResults!["subjectCollections"],
+      };
 }
 
 final class _PutServiceCommand extends PutRecordCommand
@@ -151,21 +151,21 @@ final class _PutServiceCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.labeler.service",
-    "policies": _decodeJson("policies"),
-    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
-    "createdAt": argResults!["createdAt"],
-    if (argResults!.wasParsed("reasonTypes"))
-      "reasonTypes": (argResults!["reasonTypes"] as List<String>)
-          .map((e) => _decodeJsonItem("reasonTypes", e))
-          .toList(),
-    if (argResults!.wasParsed("subjectTypes"))
-      "subjectTypes": (argResults!["subjectTypes"] as List<String>)
-          .map((e) => _decodeJsonItem("subjectTypes", e))
-          .toList(),
-    if (argResults!.wasParsed("subjectCollections"))
-      "subjectCollections": argResults!["subjectCollections"],
-  };
+        r"$type": "app.bsky.labeler.service",
+        "policies": _decodeJson("policies"),
+        if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+        "createdAt": argResults!["createdAt"],
+        if (argResults!.wasParsed("reasonTypes"))
+          "reasonTypes": (argResults!["reasonTypes"] as List<String>)
+              .map((e) => _decodeJsonItem("reasonTypes", e))
+              .toList(),
+        if (argResults!.wasParsed("subjectTypes"))
+          "subjectTypes": (argResults!["subjectTypes"] as List<String>)
+              .map((e) => _decodeJsonItem("subjectTypes", e))
+              .toList(),
+        if (argResults!.wasParsed("subjectCollections"))
+          "subjectCollections": argResults!["subjectCollections"],
+      };
 }
 
 final class _DeleteServiceCommand extends DeleteRecordCommand {
@@ -212,11 +212,11 @@ final class _GetServiceCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.labeler.service",
-    'rkey': 'self',
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.labeler.service",
+        'rkey': 'self',
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListServiceCommand extends QueryCommand {
@@ -246,12 +246,11 @@ final class _ListServiceCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.labeler.service",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.labeler.service",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

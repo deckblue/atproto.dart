@@ -31,7 +31,6 @@ abstract class GraphGetFollowsInput with _$GraphGetFollowsInput {
     @Default(50) int limit,
     String? cursor,
     @GraphGetFollowsSortConverter() GraphGetFollowsSort? sort,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphGetFollowsInput;
 

@@ -144,8 +144,8 @@ extension UPreferencesExtension on UPreferences {
   bool get isNotPostInteractionSettingsPref => !isPostInteractionSettingsPref;
   PostInteractionSettingsPref? get postInteractionSettingsPref =>
       isPostInteractionSettingsPref
-      ? data as PostInteractionSettingsPref
-      : null;
+          ? data as PostInteractionSettingsPref
+          : null;
   bool get isVerificationPrefs => isA<UPreferencesVerificationPrefs>(this);
   bool get isNotVerificationPrefs => !isVerificationPrefs;
   VerificationPrefs? get verificationPrefs =>
@@ -257,39 +257,38 @@ final class UPreferencesConverter
 
   @override
   Map<String, dynamic> toJson(UPreferences object) => switch (object) {
-    UPreferencesAdultContentPref(:final data) =>
-      const AdultContentPrefConverter().toJson(data),
-    UPreferencesContentLabelPref(:final data) =>
-      const ContentLabelPrefConverter().toJson(data),
-    UPreferencesSavedFeedsPref(:final data) =>
-      const SavedFeedsPrefConverter().toJson(data),
-    UPreferencesSavedFeedsPrefV2(:final data) =>
-      const SavedFeedsPrefV2Converter().toJson(data),
-    UPreferencesPersonalDetailsPref(:final data) =>
-      const PersonalDetailsPrefConverter().toJson(data),
-    UPreferencesDeclaredAgePref(:final data) =>
-      const DeclaredAgePrefConverter().toJson(data),
-    UPreferencesFeedViewPref(:final data) =>
-      const FeedViewPrefConverter().toJson(data),
-    UPreferencesThreadViewPref(:final data) =>
-      const ThreadViewPrefConverter().toJson(data),
-    UPreferencesInterestsPref(:final data) =>
-      const InterestsPrefConverter().toJson(data),
-    UPreferencesMutedWordsPref(:final data) =>
-      const MutedWordsPrefConverter().toJson(data),
-    UPreferencesHiddenPostsPref(:final data) =>
-      const HiddenPostsPrefConverter().toJson(data),
-    UPreferencesBskyAppStatePref(:final data) =>
-      const BskyAppStatePrefConverter().toJson(data),
-    UPreferencesLabelersPref(:final data) =>
-      const LabelersPrefConverter().toJson(data),
-    UPreferencesPostInteractionSettingsPref(:final data) =>
-      const PostInteractionSettingsPrefConverter().toJson(data),
-    UPreferencesVerificationPrefs(:final data) =>
-      const VerificationPrefsConverter().toJson(data),
-    UPreferencesLiveEventPreferences(:final data) =>
-      const LiveEventPreferencesConverter().toJson(data),
-
-    UPreferencesUnknown(:final data) => data,
-  };
+        UPreferencesAdultContentPref(:final data) =>
+          const AdultContentPrefConverter().toJson(data),
+        UPreferencesContentLabelPref(:final data) =>
+          const ContentLabelPrefConverter().toJson(data),
+        UPreferencesSavedFeedsPref(:final data) =>
+          const SavedFeedsPrefConverter().toJson(data),
+        UPreferencesSavedFeedsPrefV2(:final data) =>
+          const SavedFeedsPrefV2Converter().toJson(data),
+        UPreferencesPersonalDetailsPref(:final data) =>
+          const PersonalDetailsPrefConverter().toJson(data),
+        UPreferencesDeclaredAgePref(:final data) =>
+          const DeclaredAgePrefConverter().toJson(data),
+        UPreferencesFeedViewPref(:final data) =>
+          const FeedViewPrefConverter().toJson(data),
+        UPreferencesThreadViewPref(:final data) =>
+          const ThreadViewPrefConverter().toJson(data),
+        UPreferencesInterestsPref(:final data) =>
+          const InterestsPrefConverter().toJson(data),
+        UPreferencesMutedWordsPref(:final data) =>
+          const MutedWordsPrefConverter().toJson(data),
+        UPreferencesHiddenPostsPref(:final data) =>
+          const HiddenPostsPrefConverter().toJson(data),
+        UPreferencesBskyAppStatePref(:final data) =>
+          const BskyAppStatePrefConverter().toJson(data),
+        UPreferencesLabelersPref(:final data) =>
+          const LabelersPrefConverter().toJson(data),
+        UPreferencesPostInteractionSettingsPref(:final data) =>
+          const PostInteractionSettingsPrefConverter().toJson(data),
+        UPreferencesVerificationPrefs(:final data) =>
+          const VerificationPrefsConverter().toJson(data),
+        UPreferencesLiveEventPreferences(:final data) =>
+          const LiveEventPreferencesConverter().toJson(data),
+        UPreferencesUnknown(:final data) => data,
+      };
 }

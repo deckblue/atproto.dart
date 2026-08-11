@@ -229,8 +229,7 @@ void main() {
     //* tolerate every intermediate/incomplete state a user types through and
     //* every malformed bracket combination without throwing.
     test('typing the string one character at a time never throws', () {
-      const full =
-          '[ test ]( https://xxx.com  ) hello 世界 @a.bsky.app #tag '
+      const full = '[ test ]( https://xxx.com  ) hello 世界 @a.bsky.app #tag '
           '[film](https://en.wikipedia.org/wiki/Primer_(film))';
 
       for (var i = 0; i <= full.length; i++) {

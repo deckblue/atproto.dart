@@ -34,8 +34,7 @@ import 'cash_signs.dart';
 /// characters), `日本株$AAPL` (no leading boundary) and `$AAPLです` (no trailing
 /// boundary) — matching the official Bluesky behavior, which requires cashtags
 /// to be delimited by whitespace, the string edge, `(`, or ASCII punctuation.
-const validCashtag =
-    r'(^|\s|\()'
+const validCashtag = r'(^|\s|\()'
     '$cashSigns'
     r'([A-Za-z][A-Za-z0-9]{0,4})'
     '(?=\\s|\$|[.,;:!?)"\'’])';

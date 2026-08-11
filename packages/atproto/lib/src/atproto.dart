@@ -24,46 +24,48 @@ sealed class ATProto {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _ATProto(
-    core.ServiceContext(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      session: session,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-      // Automatically refresh an expired access token using the refresh token
-      // of the current session. The refreshed session is held by the
-      // `ServiceContext`, so `atproto.session` reflects the new credentials.
-      //
-      // The refreshSession response omits the email fields (`email`,
-      // `emailConfirmed`, `emailAuthFactor`), so the refreshed session is
-      // merged OVER the previous one: the rotated/server-owned fields
-      // (accessJwt/refreshJwt/didDoc/handle/active/status) are updated while
-      // the email fields are carried forward from `current`.
-      onRefreshSession: (current) async {
-        final refreshed = (await refreshSession(
-          refreshJwt: current.refreshJwt,
+  }) =>
+      _ATProto(
+        core.ServiceContext(
+          headers: headers,
           protocol: protocol,
-          service: service ?? current.atprotoPdsEndpoint,
+          service: service,
+          relayService: relayService,
+          session: session,
+          timeout: timeout,
           retryConfig: retryConfig,
-          client: postClient,
-        )).data;
+          getClient: getClient,
+          postClient: postClient,
+          // Automatically refresh an expired access token using the refresh token
+          // of the current session. The refreshed session is held by the
+          // `ServiceContext`, so `atproto.session` reflects the new credentials.
+          //
+          // The refreshSession response omits the email fields (`email`,
+          // `emailConfirmed`, `emailAuthFactor`), so the refreshed session is
+          // merged OVER the previous one: the rotated/server-owned fields
+          // (accessJwt/refreshJwt/didDoc/handle/active/status) are updated while
+          // the email fields are carried forward from `current`.
+          onRefreshSession: (current) async {
+            final refreshed = (await refreshSession(
+              refreshJwt: current.refreshJwt,
+              protocol: protocol,
+              service: service ?? current.atprotoPdsEndpoint,
+              retryConfig: retryConfig,
+              client: postClient,
+            ))
+                .data;
 
-        return current.copyWith(
-          accessJwt: refreshed.accessJwt,
-          refreshJwt: refreshed.refreshJwt,
-          didDoc: refreshed.didDoc,
-          handle: refreshed.handle,
-          active: refreshed.active,
-          status: refreshed.status,
-        );
-      },
-    ),
-  );
+            return current.copyWith(
+              accessJwt: refreshed.accessJwt,
+              refreshJwt: refreshed.refreshJwt,
+              didDoc: refreshed.didDoc,
+              handle: refreshed.handle,
+              active: refreshed.active,
+              status: refreshed.status,
+            );
+          },
+        ),
+      );
 
   /// Returns a new [ATProto] backed by an OAuth [manager], which owns DPoP
   /// header building and transparent token refresh.
@@ -85,19 +87,20 @@ sealed class ATProto {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _ATProto(
-    core.ServiceContext(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      oAuthSessionManager: manager,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _ATProto(
+        core.ServiceContext(
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          oAuthSessionManager: manager,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the new instance of [ATProto] based on OAuth [session].
   ///
@@ -126,21 +129,22 @@ sealed class ATProto {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => ATProto.fromOAuth(
-    oauth.OAuthSessionManager.fromSession(
-      session,
-      client: oauthClient,
-      timeout: timeout,
-    ),
-    headers: headers,
-    protocol: protocol,
-    service: service,
-    relayService: relayService,
-    timeout: timeout,
-    retryConfig: retryConfig,
-    getClient: getClient,
-    postClient: postClient,
-  );
+  }) =>
+      ATProto.fromOAuth(
+        oauth.OAuthSessionManager.fromSession(
+          session,
+          client: oauthClient,
+          timeout: timeout,
+        ),
+        headers: headers,
+        protocol: protocol,
+        service: service,
+        relayService: relayService,
+        timeout: timeout,
+        retryConfig: retryConfig,
+        getClient: getClient,
+        postClient: postClient,
+      );
 
   /// Returns the new instance of [ATProto] as anonymous.
   factory ATProto.anonymous({
@@ -152,18 +156,19 @@ sealed class ATProto {
     final core.RetryStrategy? retryConfig,
     final core.GetClient? getClient,
     final core.PostClient? postClient,
-  }) => _ATProto(
-    core.ServiceContext(
-      headers: headers,
-      protocol: protocol,
-      service: service,
-      relayService: relayService,
-      timeout: timeout,
-      retryConfig: retryConfig,
-      getClient: getClient,
-      postClient: postClient,
-    ),
-  );
+  }) =>
+      _ATProto(
+        core.ServiceContext(
+          headers: headers,
+          protocol: protocol,
+          service: service,
+          relayService: relayService,
+          timeout: timeout,
+          retryConfig: retryConfig,
+          getClient: getClient,
+          postClient: postClient,
+        ),
+      );
 
   /// Returns the global headers without auth header.
   Map<String, String> get headers;
@@ -306,16 +311,16 @@ sealed class ATProto {
 
 final class _ATProto implements ATProto {
   _ATProto(final core.ServiceContext ctx)
-    : admin = AdminService(ctx),
-      server = ServerService(ctx),
-      identity = IdentityService(ctx),
-      repo = RepoService(ctx),
-      moderation = ModerationService(ctx),
-      sync = SyncServiceImpl(ctx),
-      label = LabelService(ctx),
-      lexicon = LexiconService(ctx),
-      temp = TempService(ctx),
-      _ctx = ctx;
+      : admin = AdminService(ctx),
+        server = ServerService(ctx),
+        identity = IdentityService(ctx),
+        repo = RepoService(ctx),
+        moderation = ModerationService(ctx),
+        sync = SyncServiceImpl(ctx),
+        label = LabelService(ctx),
+        lexicon = LexiconService(ctx),
+        temp = TempService(ctx),
+        _ctx = ctx;
 
   @override
   Map<String, String> get headers => _ctx.headers;
@@ -379,14 +384,15 @@ final class _ATProto implements ATProto {
     final Map<String, dynamic>? parameters,
     final core.ResponseDataBuilder<T>? to,
     final core.ResponseDataAdaptor? adaptor,
-  }) async => await _ctx.get(
-    methodId,
-    service: service,
-    headers: headers,
-    parameters: parameters,
-    to: to,
-    adaptor: adaptor,
-  );
+  }) async =>
+      await _ctx.get(
+        methodId,
+        service: service,
+        headers: headers,
+        parameters: parameters,
+        to: to,
+        adaptor: adaptor,
+      );
 
   @override
   Future<core.XRPCResponse<T>> post<T>(
@@ -396,12 +402,13 @@ final class _ATProto implements ATProto {
     final Map<String, dynamic>? parameters,
     final dynamic body,
     final core.ResponseDataBuilder<T>? to,
-  }) async => await _ctx.post(
-    methodId,
-    service: service,
-    headers: headers,
-    parameters: parameters,
-    body: body,
-    to: to,
-  );
+  }) async =>
+      await _ctx.post(
+        methodId,
+        service: service,
+        headers: headers,
+        parameters: parameters,
+        body: body,
+        to: to,
+      );
 }

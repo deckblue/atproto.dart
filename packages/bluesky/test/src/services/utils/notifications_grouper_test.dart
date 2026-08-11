@@ -23,24 +23,25 @@ Map<String, dynamic> _notification({
   required String indexedAt,
   String? reasonSubject,
   List<Map<String, dynamic>>? labels,
-}) => {
-  'uri': 'at://$did/app.bsky.feed.like/fake',
-  'cid': 'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
-  'author': {'did': did, 'handle': '$did.test'},
-  'reason': reason,
-  'reasonSubject': ?reasonSubject,
-  'record': <String, dynamic>{},
-  'isRead': true,
-  'indexedAt': indexedAt,
-  'labels': ?labels,
-};
+}) =>
+    {
+      'uri': 'at://$did/app.bsky.feed.like/fake',
+      'cid': 'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
+      'author': {'did': did, 'handle': '$did.test'},
+      'reason': reason,
+      'reasonSubject': reasonSubject,
+      'record': <String, dynamic>{},
+      'isRead': true,
+      'indexedAt': indexedAt,
+      'labels': labels,
+    };
 
 Map<String, dynamic> _label({required String val}) => {
-  'src': 'did:plc:fake-labeler',
-  'uri': 'at://did:plc:xxxx/app.bsky.feed.post/aaaa',
-  'val': val,
-  'cts': '2023-04-30T04:00:00.000Z',
-};
+      'src': 'did:plc:fake-labeler',
+      'uri': 'at://did:plc:xxxx/app.bsky.feed.post/aaaa',
+      'val': val,
+      'cts': '2023-04-30T04:00:00.000Z',
+    };
 
 void main() {
   group('.group', () {

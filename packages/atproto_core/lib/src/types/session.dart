@@ -55,8 +55,7 @@ abstract class Session with _$Session {
   /// Redacts [accessJwt] and [refreshJwt] so credentials are not leaked
   /// through logs, `print`, or crash reporters that stringify a [Session].
   @override
-  String toString() =>
-      'Session(did: $did, handle: $handle, email: $email, '
+  String toString() => 'Session(did: $did, handle: $handle, email: $email, '
       'emailConfirmed: $emailConfirmed, emailAuthFactor: $emailAuthFactor, '
       'accessJwt: [REDACTED], refreshJwt: [REDACTED], didDoc: $didDoc, '
       'active: $active, status: $status)';

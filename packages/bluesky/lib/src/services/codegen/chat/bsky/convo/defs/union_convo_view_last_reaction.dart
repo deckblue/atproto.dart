@@ -72,7 +72,6 @@ final class UConvoViewLastReactionConverter
       switch (object) {
         UConvoViewLastReactionMessageAndReactionView(:final data) =>
           const MessageAndReactionViewConverter().toJson(data),
-
         UConvoViewLastReactionUnknown(:final data) => data,
       };
 }

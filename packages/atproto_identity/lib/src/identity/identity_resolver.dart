@@ -87,7 +87,7 @@ final class HttpIdentityResolver implements IdentityResolver {
     final client = _httpClient ?? http.Client();
     try {
       var current = url;
-      for (var redirects = 0; ; redirects++) {
+      for (var redirects = 0;; redirects++) {
         final request = http.Request('GET', current)..followRedirects = false;
         final http.StreamedResponse streamed;
         try {
@@ -144,17 +144,15 @@ final class HttpIdentityResolver implements IdentityResolver {
   ) async {
     final builder = BytesBuilder(copy: false);
     try {
-      await stream
-          .forEach((final chunk) {
-            builder.add(chunk);
-            if (builder.length > maxResponseBytes) {
-              throw IdentityException(
-                'Response body from "$url" exceeds the maximum allowed size of '
-                '$maxResponseBytes bytes',
-              );
-            }
-          })
-          .timeout(timeout);
+      await stream.forEach((final chunk) {
+        builder.add(chunk);
+        if (builder.length > maxResponseBytes) {
+          throw IdentityException(
+            'Response body from "$url" exceeds the maximum allowed size of '
+            '$maxResponseBytes bytes',
+          );
+        }
+      }).timeout(timeout);
     } on TimeoutException {
       throw IdentityException(
         'Reading the response body from "$url" timed out after '
@@ -405,11 +403,10 @@ final class HttpIdentityResolver implements IdentityResolver {
 
     if (handle != null) {
       final alsoKnownAs = didDocument['alsoKnownAs'];
-      final claimsHandle =
-          alsoKnownAs is List &&
+      final claimsHandle = alsoKnownAs is List &&
           alsoKnownAs.whereType<String>().any(
-            (final aka) => aka.toLowerCase() == 'at://$handle',
-          );
+                (final aka) => aka.toLowerCase() == 'at://$handle',
+              );
       if (!claimsHandle) {
         throw IdentityException(
           'Bidirectional handle verification failed: the DID document for '

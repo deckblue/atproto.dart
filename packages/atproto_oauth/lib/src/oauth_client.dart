@@ -146,18 +146,17 @@ final class OAuthClient {
     final DPoPSigner? signer,
     final http.Client? httpClient,
     final bool allowPrivateNetwork = false,
-  }) : _identityResolver =
-           identityResolver ??
-           HttpIdentityResolver(
-             httpClient: httpClient,
-             allowPrivateNetwork: allowPrivateNetwork,
-           ),
-       _stateStore = stateStore ?? InMemoryOAuthStateStore(),
-       _sessionStore = sessionStore ?? InMemoryOAuthSessionStore(),
-       _nonceCache = nonceCache ?? InMemoryDPoPNonceCache(),
-       _signer = signer ?? const PointyCastleDPoPSigner(),
-       _httpClient = httpClient,
-       _allowPrivateNetwork = allowPrivateNetwork;
+  })  : _identityResolver = identityResolver ??
+            HttpIdentityResolver(
+              httpClient: httpClient,
+              allowPrivateNetwork: allowPrivateNetwork,
+            ),
+        _stateStore = stateStore ?? InMemoryOAuthStateStore(),
+        _sessionStore = sessionStore ?? InMemoryOAuthSessionStore(),
+        _nonceCache = nonceCache ?? InMemoryDPoPNonceCache(),
+        _signer = signer ?? const PointyCastleDPoPSigner(),
+        _httpClient = httpClient,
+        _allowPrivateNetwork = allowPrivateNetwork;
 
   /// Client metadata to be used during authentication.
   final OAuthClientMetadata metadata;
@@ -638,9 +637,8 @@ final class OAuthClient {
       bodyParams: {
         'client_id': session.clientId,
         'token': refreshToken ?? session.accessToken,
-        'token_type_hint': refreshToken == null
-            ? 'access_token'
-            : 'refresh_token',
+        'token_type_hint':
+            refreshToken == null ? 'access_token' : 'refresh_token',
       },
     );
   }
@@ -821,7 +819,7 @@ final class OAuthClient {
 
     http.Response response;
     Map<String, dynamic>? body;
-    for (var attempt = 0; ; attempt++) {
+    for (var attempt = 0;; attempt++) {
       final proof = await _signer.createProof(
         htm: 'POST',
         htu: htu,
@@ -842,9 +840,9 @@ final class OAuthClient {
       final nextNonce = response.headers['dpop-nonce'];
       final isNonceError =
           (response.statusCode == 400 || response.statusCode == 401) &&
-          body?['error'] == 'use_dpop_nonce' &&
-          nextNonce != null &&
-          nextNonce != nonce;
+              body?['error'] == 'use_dpop_nonce' &&
+              nextNonce != null &&
+              nextNonce != nonce;
 
       if (!isNonceError || attempt >= _maxDPoPNonceRetries) break;
 
@@ -1006,12 +1004,12 @@ final class OAuthClient {
   /// Returns [endpoint] as a string with the query and fragment stripped,
   /// for use as the DPoP `htu` claim (RFC 9449 §4.2).
   static String _htuFor(final Uri endpoint) => Uri(
-    scheme: endpoint.scheme,
-    userInfo: endpoint.userInfo.isEmpty ? null : endpoint.userInfo,
-    host: endpoint.host,
-    port: endpoint.hasPort ? endpoint.port : null,
-    path: endpoint.path,
-  ).toString();
+        scheme: endpoint.scheme,
+        userInfo: endpoint.userInfo.isEmpty ? null : endpoint.userInfo,
+        host: endpoint.host,
+        port: endpoint.hasPort ? endpoint.port : null,
+        path: endpoint.path,
+      ).toString();
 
   /// Builds an [OAuthSession] from a successful token response, validating
   /// the members required by the atproto OAuth profile.
@@ -1078,9 +1076,8 @@ final class OAuthClient {
     final refreshToken = body['refresh_token'] is String
         ? body['refresh_token'] as String
         : null;
-    final tokenType = body['token_type'] is String
-        ? body['token_type'] as String
-        : null;
+    final tokenType =
+        body['token_type'] is String ? body['token_type'] as String : null;
 
     return OAuthSession(
       accessToken: accessToken,
@@ -1108,8 +1105,8 @@ final class OAuthClient {
     };
 
     return DateTime.now().toUtc().add(
-      Duration(seconds: seconds) - _clockSkewMargin,
-    );
+          Duration(seconds: seconds) - _clockSkewMargin,
+        );
   }
 }
 

@@ -124,43 +124,43 @@ final class QueryEventsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("types")) "types": argResults!["types"],
-    if (argResults!.wasParsed("createdBy"))
-      "createdBy": argResults!["createdBy"],
-    "sortDirection": argResults!["sortDirection"],
-    if (argResults!.wasParsed("createdAfter"))
-      "createdAfter": argResults!["createdAfter"],
-    if (argResults!.wasParsed("createdBefore"))
-      "createdBefore": argResults!["createdBefore"],
-    if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
-    if (argResults!.wasParsed("collections"))
-      "collections": argResults!["collections"],
-    if (argResults!.wasParsed("subjectType"))
-      "subjectType": argResults!["subjectType"],
-    "includeAllUserRecords": argResults!["includeAllUserRecords"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("hasComment"))
-      "hasComment": argResults!["hasComment"],
-    if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
-    if (argResults!.wasParsed("addedLabels"))
-      "addedLabels": argResults!["addedLabels"],
-    if (argResults!.wasParsed("removedLabels"))
-      "removedLabels": argResults!["removedLabels"],
-    if (argResults!.wasParsed("addedTags"))
-      "addedTags": argResults!["addedTags"],
-    if (argResults!.wasParsed("removedTags"))
-      "removedTags": argResults!["removedTags"],
-    if (argResults!.wasParsed("reportTypes"))
-      "reportTypes": argResults!["reportTypes"],
-    if (argResults!.wasParsed("policies")) "policies": argResults!["policies"],
-    if (argResults!.wasParsed("modTool")) "modTool": argResults!["modTool"],
-    if (argResults!.wasParsed("batchId")) "batchId": argResults!["batchId"],
-    if (argResults!.wasParsed("ageAssuranceState"))
-      "ageAssuranceState": argResults!["ageAssuranceState"],
-    if (argResults!.wasParsed("withStrike"))
-      "withStrike": argResults!["withStrike"],
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        if (argResults!.wasParsed("types")) "types": argResults!["types"],
+        if (argResults!.wasParsed("createdBy"))
+          "createdBy": argResults!["createdBy"],
+        "sortDirection": argResults!["sortDirection"],
+        if (argResults!.wasParsed("createdAfter"))
+          "createdAfter": argResults!["createdAfter"],
+        if (argResults!.wasParsed("createdBefore"))
+          "createdBefore": argResults!["createdBefore"],
+        if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
+        if (argResults!.wasParsed("collections"))
+          "collections": argResults!["collections"],
+        if (argResults!.wasParsed("subjectType"))
+          "subjectType": argResults!["subjectType"],
+        "includeAllUserRecords": argResults!["includeAllUserRecords"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("hasComment"))
+          "hasComment": argResults!["hasComment"],
+        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+        if (argResults!.wasParsed("addedLabels"))
+          "addedLabels": argResults!["addedLabels"],
+        if (argResults!.wasParsed("removedLabels"))
+          "removedLabels": argResults!["removedLabels"],
+        if (argResults!.wasParsed("addedTags"))
+          "addedTags": argResults!["addedTags"],
+        if (argResults!.wasParsed("removedTags"))
+          "removedTags": argResults!["removedTags"],
+        if (argResults!.wasParsed("reportTypes"))
+          "reportTypes": argResults!["reportTypes"],
+        if (argResults!.wasParsed("policies"))
+          "policies": argResults!["policies"],
+        if (argResults!.wasParsed("modTool")) "modTool": argResults!["modTool"],
+        if (argResults!.wasParsed("batchId")) "batchId": argResults!["batchId"],
+        if (argResults!.wasParsed("ageAssuranceState"))
+          "ageAssuranceState": argResults!["ageAssuranceState"],
+        if (argResults!.wasParsed("withStrike"))
+          "withStrike": argResults!["withStrike"],
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

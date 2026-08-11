@@ -72,7 +72,6 @@ final class UDraftEmbedGalleryItemsConverter
       switch (object) {
         UDraftEmbedGalleryItemsDraftEmbedImage(:final data) =>
           const DraftEmbedImageConverter().toJson(data),
-
         UDraftEmbedGalleryItemsUnknown(:final data) => data,
       };
 }

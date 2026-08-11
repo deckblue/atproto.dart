@@ -22,14 +22,14 @@ final class _CompatibleOpOrTombstoneConverter
     try {
       return switch (json['type']) {
         'plc_operation' => CompatibleOpOrTombstone.op(
-          data: Operation.fromJson(json),
-        ),
+            data: Operation.fromJson(json),
+          ),
         'plc_tombstone' => CompatibleOpOrTombstone.tombstone(
-          data: Tombstone.fromJson(json),
-        ),
+            data: Tombstone.fromJson(json),
+          ),
         'create' => CompatibleOpOrTombstone.createOpV1(
-          data: CreateOperationV1.fromJson(json),
-        ),
+            data: CreateOperationV1.fromJson(json),
+          ),
         _ => CompatibleOpOrTombstone.unknown(data: json),
       };
     } catch (_) {

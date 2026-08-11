@@ -31,7 +31,6 @@ abstract class ReactionView with _$ReactionView {
     required String value,
     @ReactionViewSenderConverter() required ReactionViewSender sender,
     @JsonKey(toJson: iso8601) required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ReactionView;
 

@@ -44,10 +44,10 @@ final class LexXrpcSchemaConverter
 
   @override
   Map<String, dynamic> toJson(LexXrpcSchema object) => switch (object) {
-    ULexXrpcSchemaRefVariant(:final data) => switch (data) {
-      ULexRefVariantRef(:final data) => data.toJson(),
-      ULexRefVariantRefUnion(:final data) => data.toJson(),
-    },
-    ULexXrpcSchemaObject(:final data) => data.toJson(),
-  };
+        ULexXrpcSchemaRefVariant(:final data) => switch (data) {
+            ULexRefVariantRef(:final data) => data.toJson(),
+            ULexRefVariantRefUnion(:final data) => data.toJson(),
+          },
+        ULexXrpcSchemaObject(:final data) => data.toJson(),
+      };
 }

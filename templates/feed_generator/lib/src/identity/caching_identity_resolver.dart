@@ -10,17 +10,17 @@ import 'package:atproto_identity/atproto_identity.dart';
 /// valid until [expiresAt].
 final class _CacheEntry {
   const _CacheEntry.success(final ResolvedIdentity identity, this.expiresAt)
-    : _identity = identity,
-      _error = null,
-      _stackTrace = null;
+      : _identity = identity,
+        _error = null,
+        _stackTrace = null;
 
   const _CacheEntry.failure(
     final Object error,
     final StackTrace stackTrace,
     this.expiresAt,
-  ) : _identity = null,
-      _error = error,
-      _stackTrace = stackTrace;
+  )   : _identity = null,
+        _error = error,
+        _stackTrace = stackTrace;
 
   final ResolvedIdentity? _identity;
   final Object? _error;

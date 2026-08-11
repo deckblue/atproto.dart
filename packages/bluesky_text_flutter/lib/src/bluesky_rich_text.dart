@@ -151,8 +151,7 @@ class _BlueskyRichTextState extends State<BlueskyRichText> {
     final theme = Theme.of(context);
     final featureStyle =
         widget.featureStyle ?? TextStyle(color: theme.colorScheme.primary);
-    final hasTapHandler =
-        widget.onFeatureTap != null ||
+    final hasTapHandler = widget.onFeatureTap != null ||
         widget.onMentionTap != null ||
         widget.onLinkTap != null ||
         widget.onTagTap != null;

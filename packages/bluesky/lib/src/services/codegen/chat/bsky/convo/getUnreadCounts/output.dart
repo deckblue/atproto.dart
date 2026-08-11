@@ -32,7 +32,6 @@ abstract class ConvoGetUnreadCountsOutput with _$ConvoGetUnreadCountsOutput {
 
     /// Number of unread, unlocked request convos. Includes convos with unread messages, but not with unread join request, since only the owner of a group has join requests to read, and the group would necessarily be accepted. Capped at 100, where 100 means more than 99.
     required int unreadRequestConvos,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetUnreadCountsOutput;
 

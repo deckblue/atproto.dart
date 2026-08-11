@@ -68,21 +68,19 @@ final class CreateActivityCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!.wasParsed("reportId"))
-      "reportId":
-          int.tryParse(argResults!["reportId"]) ??
-          usageException('Invalid integer value for option "reportId".'),
-    if (argResults!.wasParsed("eventId"))
-      "eventId":
-          int.tryParse(argResults!["eventId"]) ??
-          usageException('Invalid integer value for option "eventId".'),
-    "activity": _decodeJson("activity"),
-    if (argResults!.wasParsed("internalNote"))
-      "internalNote": argResults!["internalNote"],
-    if (argResults!.wasParsed("publicNote"))
-      "publicNote": argResults!["publicNote"],
-    "isAutomated": argResults!["isAutomated"],
-  };
+        if (argResults!.wasParsed("reportId"))
+          "reportId": int.tryParse(argResults!["reportId"]) ??
+              usageException('Invalid integer value for option "reportId".'),
+        if (argResults!.wasParsed("eventId"))
+          "eventId": int.tryParse(argResults!["eventId"]) ??
+              usageException('Invalid integer value for option "eventId".'),
+        "activity": _decodeJson("activity"),
+        if (argResults!.wasParsed("internalNote"))
+          "internalNote": argResults!["internalNote"],
+        if (argResults!.wasParsed("publicNote"))
+          "publicNote": argResults!["publicNote"],
+        "isAutomated": argResults!["isAutomated"],
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

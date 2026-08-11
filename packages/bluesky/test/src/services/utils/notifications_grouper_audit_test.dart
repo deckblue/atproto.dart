@@ -23,22 +23,24 @@ Map<String, dynamic> _n({
   String? uri,
   String? displayName,
   bool isRead = true,
-}) => {
-  'uri': uri ?? 'at://$did/app.bsky.feed.like/${indexedAt.hashCode}',
-  'cid': 'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
-  'author': {'did': did, 'handle': '$did.test', 'displayName': ?displayName},
-  'reason': reason,
-  'reasonSubject': ?reasonSubject,
-  'record': <String, dynamic>{},
-  'isRead': isRead,
-  'indexedAt': indexedAt,
-};
+}) =>
+    {
+      'uri': uri ?? 'at://$did/app.bsky.feed.like/${indexedAt.hashCode}',
+      'cid': 'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
+      'author': {'did': did, 'handle': '$did.test', 'displayName': displayName},
+      'reason': reason,
+      'reasonSubject': reasonSubject,
+      'record': <String, dynamic>{},
+      'isRead': isRead,
+      'indexedAt': indexedAt,
+    };
 
 NotificationListNotificationsOutput _output(
   List<Map<String, dynamic>> notifications,
-) => NotificationListNotificationsOutput.fromJson({
-  'notifications': notifications,
-});
+) =>
+    NotificationListNotificationsOutput.fromJson({
+      'notifications': notifications,
+    });
 
 void main() {
   const subject = 'at://did:plc:target/app.bsky.feed.post/aaaa';

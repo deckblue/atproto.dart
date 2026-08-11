@@ -31,12 +31,12 @@ final class RateLimit {
 
   /// Returns a rate limit instance which represents an unlimited rate limit.
   factory RateLimit.unlimited() => RateLimit._(
-    limitCount: -1,
-    remainingCount: -1,
-    policy: RateLimitPolicy.unlimited(),
-    resetAt: DateTime(0),
-    enabled: false,
-  );
+        limitCount: -1,
+        remainingCount: -1,
+        policy: RateLimitPolicy.unlimited(),
+        resetAt: DateTime(0),
+        enabled: false,
+      );
 
   /// Maximum number of allowed requests.
   final int limitCount;

@@ -260,18 +260,19 @@ DartType _arrayOf(
   final String? fieldName,
   final LexUnion? union,
   final LexKnownValues? knownValues,
-}) => DartType.array(
-  type: item.name,
-  packagePath: item.packagePath,
-  description: item.description,
-  annotation: annotation,
-  lexiconId: lexiconId,
-  ref: ref,
-  defName: defName,
-  fieldName: fieldName,
-  union: union,
-  knownValues: knownValues,
-);
+}) =>
+    DartType.array(
+      type: item.name,
+      packagePath: item.packagePath,
+      description: item.description,
+      annotation: annotation,
+      lexiconId: lexiconId,
+      ref: ref,
+      defName: defName,
+      fieldName: fieldName,
+      union: union,
+      knownValues: knownValues,
+    );
 
 DartType _getLexPrimitiveType(
   final lex.NSID lexiconId,
@@ -403,8 +404,8 @@ DartType _getLexRefVariantType(
       final (typeName, annotation) = isUnion
           ? ('U$name', '@U${name}Converter()')
           : isRecord
-          ? ('${name}Record', '@${name}RecordConverter()')
-          : (name, '@${name}Converter()');
+              ? ('${name}Record', '@${name}RecordConverter()')
+              : (name, '@${name}Converter()');
 
       return DartType(
         name: typeName,

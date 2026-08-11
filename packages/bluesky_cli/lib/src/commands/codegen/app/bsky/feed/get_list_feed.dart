@@ -42,10 +42,9 @@ final class GetListFeedCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "list": argResults!["list"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        "list": argResults!["list"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

@@ -43,7 +43,6 @@ abstract class JoinRequestConvoView with _$JoinRequestConvoView {
     required int memberCount,
     required int memberLimit,
     @JoinLinkViewerStateConverter() required JoinLinkViewerState viewer,
-
     Map<String, dynamic>? $unknown,
   }) = _JoinRequestConvoView;
 

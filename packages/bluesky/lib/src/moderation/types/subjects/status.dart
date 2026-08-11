@@ -19,17 +19,17 @@ ModerationDecision decideStatus(
 ) {
   final (did, status) = switch (subject) {
     UModerationSubjectProfileProfileViewBasic(data: final data) => (
-      data.did,
-      data.status,
-    ),
+        data.did,
+        data.status,
+      ),
     UModerationSubjectProfileProfileView(data: final data) => (
-      data.did,
-      data.status,
-    ),
+        data.did,
+        data.status,
+      ),
     UModerationSubjectProfileProfileViewDetailed(data: final data) => (
-      data.did,
-      data.status,
-    ),
+        data.did,
+        data.status,
+      ),
     _ => throw UnimplementedError(),
   };
 

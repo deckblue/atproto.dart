@@ -57,11 +57,11 @@ final class CloseReportsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "subject": argResults!["subject"],
-    if (argResults!.wasParsed("reportTypes"))
-      "reportTypes": argResults!["reportTypes"],
-    if (argResults!.wasParsed("internalNote"))
-      "internalNote": argResults!["internalNote"],
-    "isAutomated": argResults!["isAutomated"],
-  };
+        "subject": argResults!["subject"],
+        if (argResults!.wasParsed("reportTypes"))
+          "reportTypes": argResults!["reportTypes"],
+        if (argResults!.wasParsed("internalNote"))
+          "internalNote": argResults!["internalNote"],
+        "isAutomated": argResults!["isAutomated"],
+      };
 }

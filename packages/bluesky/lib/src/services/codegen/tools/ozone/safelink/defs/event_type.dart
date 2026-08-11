@@ -68,9 +68,9 @@ final class EventTypeConverter extends JsonConverter<EventType, String> {
 
   @override
   String toJson(EventType object) => switch (object) {
-    EventTypeKnownValue(:final data) => data.value,
-    EventTypeUnknown(:final data) => data,
-  };
+        EventTypeKnownValue(:final data) => data.value,
+        EventTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownEventType implements Serializable {

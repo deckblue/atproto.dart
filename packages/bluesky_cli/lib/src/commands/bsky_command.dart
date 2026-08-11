@@ -62,8 +62,7 @@ abstract class BskyCommand extends Command<void> {
   /// The identifier used for authentication. Credentials are
   /// resolved lazily at use time so that they never appear in
   /// usage output.
-  late final String? _identifier =
-      (globalResults!['identifier'] as String?) ??
+  late final String? _identifier = (globalResults!['identifier'] as String?) ??
       Platform.environment['BLUESKY_IDENTIFIER'];
 
   /// The password used for authentication. See [_identifier] for
@@ -139,9 +138,8 @@ abstract class BskyCommand extends Command<void> {
     }
 
     final Object? runner = this.runner;
-    final path = runner is SessionCachePathProvider
-        ? runner.sessionCachePath
-        : null;
+    final path =
+        runner is SessionCachePathProvider ? runner.sessionCachePath : null;
 
     return SessionCache(path ?? SessionCache.defaultPath());
   }
@@ -183,13 +181,14 @@ abstract class BskyCommand extends Command<void> {
   /// stack traces.
   Future<void> execute(
     final Future<xrpc.XRPCResponse<String>> Function() action,
-  ) async => await Bsky(
-    logger,
-    action: action,
-    pretty: globalResults!['pretty'],
-    showStatus: globalResults!['status'],
-    showRequest: globalResults!['request'],
-  ).run();
+  ) async =>
+      await Bsky(
+        logger,
+        action: action,
+        pretty: globalResults!['pretty'],
+        showStatus: globalResults!['status'],
+        showRequest: globalResults!['request'],
+      ).run();
 
   Future<Map<String, dynamic>?> _resolveSession() async {
     if (_session.isNotEmpty) {

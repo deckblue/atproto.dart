@@ -20,16 +20,17 @@ import 'package:atproto_core/src/clients/retry_strategy.dart';
 xrpc.XRPCResponse<xrpc.XRPCError> _errorResponse({
   required int statusCode,
   String error = 'Error',
-}) => xrpc.XRPCResponse(
-  headers: const {},
-  status: xrpc.HttpStatus.valueOf(statusCode),
-  request: xrpc.XRPCRequest(
-    method: xrpc.HttpMethod.get,
-    url: Uri.https('bsky.social', '/xrpc/com.example.test'),
-  ),
-  rateLimit: xrpc.RateLimit.unlimited(),
-  data: xrpc.XRPCError(error: error),
-);
+}) =>
+    xrpc.XRPCResponse(
+      headers: const {},
+      status: xrpc.HttpStatus.valueOf(statusCode),
+      request: xrpc.XRPCRequest(
+        method: xrpc.HttpMethod.get,
+        url: Uri.https('bsky.social', '/xrpc/com.example.test'),
+      ),
+      rateLimit: xrpc.RateLimit.unlimited(),
+      data: xrpc.XRPCError(error: error),
+    );
 
 /// A [RetryStrategy] that never retries and records every context it is
 /// handed, so a test can observe what the retry layer actually classified.

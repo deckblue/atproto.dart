@@ -88,14 +88,14 @@ final class UReplyRefParentConverter
 
   @override
   Map<String, dynamic> toJson(UReplyRefParent object) => switch (object) {
-    UReplyRefParentPostView(:final data) => const PostViewConverter().toJson(
-      data,
-    ),
-    UReplyRefParentNotFoundPost(:final data) =>
-      const NotFoundPostConverter().toJson(data),
-    UReplyRefParentBlockedPost(:final data) =>
-      const BlockedPostConverter().toJson(data),
-
-    UReplyRefParentUnknown(:final data) => data,
-  };
+        UReplyRefParentPostView(:final data) =>
+          const PostViewConverter().toJson(
+            data,
+          ),
+        UReplyRefParentNotFoundPost(:final data) =>
+          const NotFoundPostConverter().toJson(data),
+        UReplyRefParentBlockedPost(:final data) =>
+          const BlockedPostConverter().toJson(data),
+        UReplyRefParentUnknown(:final data) => data,
+      };
 }

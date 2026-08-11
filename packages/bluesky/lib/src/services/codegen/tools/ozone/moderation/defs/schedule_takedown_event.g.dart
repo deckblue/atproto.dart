@@ -8,43 +8,41 @@ part of 'schedule_takedown_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ScheduleTakedownEvent _$ScheduleTakedownEventFromJson(Map json) =>
-    $checkedCreate('_ScheduleTakedownEvent', json, ($checkedConvert) {
-      final val = _ScheduleTakedownEvent(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'tools.ozone.moderation.defs#scheduleTakedownEvent',
-        ),
-        comment: $checkedConvert('comment', (v) => v as String?),
-        executeAt: $checkedConvert(
-          'executeAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        executeAfter: $checkedConvert(
-          'executeAfter',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        executeUntil: $checkedConvert(
-          'executeUntil',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ScheduleTakedownEventImpl _$$ScheduleTakedownEventImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$ScheduleTakedownEventImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ScheduleTakedownEventImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.moderation.defs#scheduleTakedownEvent'),
+          comment: $checkedConvert('comment', (v) => v as String?),
+          executeAt: $checkedConvert('executeAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          executeAfter: $checkedConvert('executeAfter',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          executeUntil: $checkedConvert('executeUntil',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ScheduleTakedownEventToJson(
-  _ScheduleTakedownEvent instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'comment': ?instance.comment,
-  'executeAt': iso8601(instance.executeAt),
-  'executeAfter': iso8601(instance.executeAfter),
-  'executeUntil': iso8601(instance.executeUntil),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ScheduleTakedownEventImplToJson(
+        _$ScheduleTakedownEventImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      if (instance.comment case final value?) 'comment': value,
+      'executeAt': iso8601(instance.executeAt),
+      'executeAfter': iso8601(instance.executeAfter),
+      'executeUntil': iso8601(instance.executeUntil),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

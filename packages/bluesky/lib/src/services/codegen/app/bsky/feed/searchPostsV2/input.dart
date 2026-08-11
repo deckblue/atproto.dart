@@ -118,7 +118,6 @@ abstract class FeedSearchPostsV2Input with _$FeedSearchPostsV2Input {
     /// Language analyzer hint for the query text. If unset, the server auto-detects when possible.
     @FeedSearchPostsV2QueryLanguageConverter()
     FeedSearchPostsV2QueryLanguage? queryLanguage,
-
     Map<String, dynamic>? $unknown,
   }) = _FeedSearchPostsV2Input;
 

@@ -8,36 +8,42 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FeedGetAuthorFeedInput _$FeedGetAuthorFeedInputFromJson(Map json) =>
-    $checkedCreate('_FeedGetAuthorFeedInput', json, ($checkedConvert) {
-      final val = _FeedGetAuthorFeedInput(
-        actor: $checkedConvert('actor', (v) => v as String),
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        filter: $checkedConvert(
-          'filter',
-          (v) => v == null
-              ? const FeedGetAuthorFeedFilter.knownValue(
-                  data: KnownFeedGetAuthorFeedFilter.posts_with_replies,
-                )
-              : const FeedGetAuthorFeedFilterConverter().fromJson(v as String),
-        ),
-        includePins: $checkedConvert('includePins', (v) => v as bool? ?? false),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$FeedGetAuthorFeedInputImpl _$$FeedGetAuthorFeedInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$FeedGetAuthorFeedInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FeedGetAuthorFeedInputImpl(
+          actor: $checkedConvert('actor', (v) => v as String),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          filter: $checkedConvert(
+              'filter',
+              (v) => v == null
+                  ? const FeedGetAuthorFeedFilter.knownValue(
+                      data: KnownFeedGetAuthorFeedFilter.posts_with_replies)
+                  : const FeedGetAuthorFeedFilterConverter()
+                      .fromJson(v as String)),
+          includePins:
+              $checkedConvert('includePins', (v) => v as bool? ?? false),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$FeedGetAuthorFeedInputToJson(
-  _FeedGetAuthorFeedInput instance,
-) => <String, dynamic>{
-  'actor': instance.actor,
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  'filter': const FeedGetAuthorFeedFilterConverter().toJson(instance.filter),
-  'includePins': instance.includePins,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$FeedGetAuthorFeedInputImplToJson(
+        _$FeedGetAuthorFeedInputImpl instance) =>
+    <String, dynamic>{
+      'actor': instance.actor,
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      'filter':
+          const FeedGetAuthorFeedFilterConverter().toJson(instance.filter),
+      'includePins': instance.includePins,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

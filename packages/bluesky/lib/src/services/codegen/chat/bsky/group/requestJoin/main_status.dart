@@ -71,9 +71,9 @@ final class GroupRequestJoinStatusConverter
 
   @override
   String toJson(GroupRequestJoinStatus object) => switch (object) {
-    GroupRequestJoinStatusKnownValue(:final data) => data.value,
-    GroupRequestJoinStatusUnknown(:final data) => data,
-  };
+        GroupRequestJoinStatusKnownValue(:final data) => data.value,
+        GroupRequestJoinStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownGroupRequestJoinStatus implements Serializable {

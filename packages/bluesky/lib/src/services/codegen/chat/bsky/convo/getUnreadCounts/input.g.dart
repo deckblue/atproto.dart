@@ -8,24 +8,28 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ConvoGetUnreadCountsInput _$ConvoGetUnreadCountsInputFromJson(Map json) =>
-    $checkedCreate('_ConvoGetUnreadCountsInput', json, ($checkedConvert) {
-      final val = _ConvoGetUnreadCountsInput(
-        includeGroupChats: $checkedConvert(
-          'includeGroupChats',
-          (v) => v as bool? ?? true,
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$ConvoGetUnreadCountsInputImpl _$$ConvoGetUnreadCountsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$ConvoGetUnreadCountsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ConvoGetUnreadCountsInputImpl(
+          includeGroupChats:
+              $checkedConvert('includeGroupChats', (v) => v as bool? ?? true),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ConvoGetUnreadCountsInputToJson(
-  _ConvoGetUnreadCountsInput instance,
-) => <String, dynamic>{
-  'includeGroupChats': instance.includeGroupChats,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$ConvoGetUnreadCountsInputImplToJson(
+        _$ConvoGetUnreadCountsInputImpl instance) =>
+    <String, dynamic>{
+      'includeGroupChats': instance.includeGroupChats,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

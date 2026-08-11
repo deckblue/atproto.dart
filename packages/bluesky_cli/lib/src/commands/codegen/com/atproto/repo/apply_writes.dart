@@ -54,17 +54,18 @@ final class ApplyWritesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "repo": argResults!["repo"],
-    if (argResults!.wasParsed("validate")) "validate": argResults!["validate"],
-    "writes": _requireNonEmpty(
-      "writes",
-      (argResults!["writes"] as List<String>)
-          .map((e) => _decodeJsonItem("writes", e))
-          .toList(),
-    ),
-    if (argResults!.wasParsed("swapCommit"))
-      "swapCommit": argResults!["swapCommit"],
-  };
+        "repo": argResults!["repo"],
+        if (argResults!.wasParsed("validate"))
+          "validate": argResults!["validate"],
+        "writes": _requireNonEmpty(
+          "writes",
+          (argResults!["writes"] as List<String>)
+              .map((e) => _decodeJsonItem("writes", e))
+              .toList(),
+        ),
+        if (argResults!.wasParsed("swapCommit"))
+          "swapCommit": argResults!["swapCommit"],
+      };
   Object? _decodeJsonItem(final String name, final String raw) {
     try {
       return jsonDecode(raw);

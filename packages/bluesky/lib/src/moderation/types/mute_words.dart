@@ -188,11 +188,12 @@ bool hasMutedWord({
   List<String>? outlineTags,
   List<String>? languages,
   ProfileViewBasic? actor,
-}) => matchMuteWords(
-  mutedWords: mutedWords,
-  text: text,
-  facets: facets,
-  outlineTags: outlineTags,
-  languages: languages,
-  actor: actor,
-).isNotEmpty;
+}) =>
+    matchMuteWords(
+      mutedWords: mutedWords,
+      text: text,
+      facets: facets,
+      outlineTags: outlineTags,
+      languages: languages,
+      actor: actor,
+    ).isNotEmpty;

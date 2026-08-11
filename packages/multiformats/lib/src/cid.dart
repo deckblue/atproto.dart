@@ -130,7 +130,8 @@ final class CID {
   factory CID.create(
     final String input, [
     final Multicodec codec = Multicodec.raw,
-  ]) => CID.createFromBytes(utf8.encode(input), codec);
+  ]) =>
+      CID.createFromBytes(utf8.encode(input), codec);
 
   /// Returns the CID representation of binary [input].
   ///
@@ -139,7 +140,8 @@ final class CID {
   factory CID.createFromBytes(
     final List<int> input, [
     final Multicodec codec = Multicodec.raw,
-  ]) => CID.fromList(_toV1(_toMultihash(input), codec));
+  ]) =>
+      CID.fromList(_toV1(_toMultihash(input), codec));
 
   /// Returns the new instance of [CID] based on string [cid].
   factory CID.parse(final String cid) {
@@ -204,8 +206,8 @@ final class CID {
   /// Returns the normalized bytes for [bytes] (always prefixed with a `0`).
   static Uint8List _normalize(final Uint8List bytes) =>
       bytes.isNotEmpty && bytes.first == 0
-      ? bytes
-      : Uint8List.fromList([0, ...bytes]);
+          ? bytes
+          : Uint8List.fromList([0, ...bytes]);
 
   /// Returns an unmodifiable view of the byte representation of this CID.
   ///
@@ -219,8 +221,8 @@ final class CID {
   Uint8List get bytes => _unmodifiableBytes;
 
   /// A cached unmodifiable view over [_normalizedBytes].
-  late final Uint8List _unmodifiableBytes = _normalizedBytes
-      .asUnmodifiableView();
+  late final Uint8List _unmodifiableBytes =
+      _normalizedBytes.asUnmodifiableView();
 
   /// Returns the multicodec of this CID.
   Multicodec get codec => Multicodec.valueOf(_normalizedBytes[2]);

@@ -29,12 +29,12 @@ Uint8List _varint(int value) {
 
 /// Builds a valid CIDv1 (sha-256) byte sequence with the given [codec].
 Uint8List _cidBytes(int codec, {int fill = 7}) => Uint8List.fromList([
-  0x01, // CIDv1
-  codec,
-  0x12, // sha2-256
-  0x20, // 32 byte digest
-  ...List.filled(32, fill),
-]);
+      0x01, // CIDv1
+      codec,
+      0x12, // sha2-256
+      0x20, // 32 byte digest
+      ...List.filled(32, fill),
+    ]);
 
 /// Frames a CAR file: header block followed by `(cid + block data)` entries.
 Uint8List _buildCar(List<Uint8List> blocks, {required Uint8List headerCbor}) {
@@ -63,7 +63,8 @@ void main() {
   );
 
   group('decodeCar', () {
-    test('normalizes tag-42 CID links to {"\$link": <cid>} and keeps '
+    test(
+        'normalizes tag-42 CID links to {"\$link": <cid>} and keeps '
         'plain int arrays untouched', () {
       final linkCid = _cidBytes(0x55, fill: 9);
       final record = CborMap({
@@ -94,7 +95,8 @@ void main() {
       expect(value['nums'], [1, 2, 3]);
     });
 
-    test(r'normalizes plain (non-tagged) byte strings to {"$bytes": '
+    test(
+        r'normalizes plain (non-tagged) byte strings to {"$bytes": '
         '<base64, no padding>}', () {
       final record = CborMap({
         CborString(r'$type'): CborString('com.example.bytes'),
@@ -150,7 +152,8 @@ void main() {
       expect(() => decodeCar(truncated), throwsA(isA<CarException>()));
     });
 
-    test('throws CarException when a block claims a length beyond the '
+    test(
+        'throws CarException when a block claims a length beyond the '
         'input', () {
       // header + a single varint that promises more bytes than exist.
       final builder = BytesBuilder();
@@ -161,7 +164,8 @@ void main() {
       expect(() => decodeCar(builder.toBytes()), throwsA(isA<CarException>()));
     });
 
-    test('throws CarException when the header claims a length beyond the '
+    test(
+        'throws CarException when the header claims a length beyond the '
         'input instead of decoding to zero blocks', () {
       // A header varint promising 16383 bytes, followed by 8 bytes only.
       final truncated = Uint8List.fromList([
@@ -180,7 +184,8 @@ void main() {
       expect(() => decodeCar(truncated), throwsA(isA<CarException>()));
     });
 
-    test('throws CarException on a header varint that overflows into the '
+    test(
+        'throws CarException on a header varint that overflows into the '
         'sign bit instead of RangeError', () {
       // Ten continuation-free bytes: the tenth payload bit lands on the
       // sign bit of a 64-bit int, making the length negative.
@@ -192,7 +197,8 @@ void main() {
       expect(() => decodeCar(overflowing), throwsA(isA<CarException>()));
     });
 
-    test('throws CarException on a block varint that overflows into the '
+    test(
+        'throws CarException on a block varint that overflows into the '
         'sign bit instead of RangeError', () {
       final builder = BytesBuilder();
       builder.add(_varint(headerCbor.length));
@@ -207,7 +213,8 @@ void main() {
       expect(() => decodeCar(builder.toBytes()), throwsA(isA<CarException>()));
     });
 
-    test('throws CarException when a block length is near the 63-bit maximum '
+    test(
+        'throws CarException when a block length is near the 63-bit maximum '
         'and would overflow the cursor', () {
       final builder = BytesBuilder();
       builder.add(_varint(headerCbor.length));
@@ -219,7 +226,8 @@ void main() {
       expect(() => decodeCar(builder.toBytes()), throwsA(isA<CarException>()));
     });
 
-    test('throws CarException when the header length is near the 63-bit '
+    test(
+        'throws CarException when the header length is near the 63-bit '
         'maximum', () {
       final builder = BytesBuilder();
       builder.add(_varint(1 << 62));

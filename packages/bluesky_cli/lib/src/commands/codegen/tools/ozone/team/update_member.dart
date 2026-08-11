@@ -38,8 +38,9 @@ final class UpdateMemberCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "did": argResults!["did"],
-    if (argResults!.wasParsed("disabled")) "disabled": argResults!["disabled"],
-    if (argResults!.wasParsed("role")) "role": argResults!["role"],
-  };
+        "did": argResults!["did"],
+        if (argResults!.wasParsed("disabled"))
+          "disabled": argResults!["disabled"],
+        if (argResults!.wasParsed("role")) "role": argResults!["role"],
+      };
 }

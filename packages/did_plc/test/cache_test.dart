@@ -14,12 +14,12 @@ import 'package:did_plc/src/types/did_document.dart';
 
 void main() {
   DidDocument doc(String id) => DidDocument(
-    context: const ['https://www.w3.org/ns/did/v1'],
-    id: id,
-    alsoKnownAs: const [],
-    verificationMethod: const [],
-    service: const [],
-  );
+        context: const ['https://www.w3.org/ns/did/v1'],
+        id: id,
+        alsoKnownAs: const [],
+        verificationMethod: const [],
+        service: const [],
+      );
 
   group('MemoryCache TTL', () {
     test('expires entries after the TTL elapses', () {

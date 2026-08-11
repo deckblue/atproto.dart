@@ -71,9 +71,9 @@ final class ScheduledActionViewStatusConverter
 
   @override
   String toJson(ScheduledActionViewStatus object) => switch (object) {
-    ScheduledActionViewStatusKnownValue(:final data) => data.value,
-    ScheduledActionViewStatusUnknown(:final data) => data,
-  };
+        ScheduledActionViewStatusKnownValue(:final data) => data.value,
+        ScheduledActionViewStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownScheduledActionViewStatus implements Serializable {

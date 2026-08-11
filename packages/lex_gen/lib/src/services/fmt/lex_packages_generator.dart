@@ -18,9 +18,7 @@ List<LexPackage> generateLexPackagesForService(
 
   for (final service in services) {
     final key = '${Nsid(service.lexiconId).authority}.';
-    packages
-        .putIfAbsent(key, () => <String>{})
-        .add(
+    packages.putIfAbsent(key, () => <String>{}).add(
           rule.getLexObjectAbsolutePathForService(
             ctx,
             service.lexiconId,
@@ -58,9 +56,7 @@ List<LexPackage> generateLexPackages(
   for (final type in types) {
     if (type.isShouldNotBeGenerated()) continue;
 
-    packages
-        .putIfAbsent(type.lexiconId, () => <String>{})
-        .add(
+    packages.putIfAbsent(type.lexiconId, () => <String>{}).add(
           rule.getLexObjectAbsolutePath(
             ctx,
             type.lexiconId,

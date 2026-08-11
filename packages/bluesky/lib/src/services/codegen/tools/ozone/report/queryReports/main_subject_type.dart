@@ -74,9 +74,9 @@ final class ReportQueryReportsSubjectTypeConverter
 
   @override
   String toJson(ReportQueryReportsSubjectType object) => switch (object) {
-    ReportQueryReportsSubjectTypeKnownValue(:final data) => data.value,
-    ReportQueryReportsSubjectTypeUnknown(:final data) => data,
-  };
+        ReportQueryReportsSubjectTypeKnownValue(:final data) => data.value,
+        ReportQueryReportsSubjectTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownReportQueryReportsSubjectType implements Serializable {

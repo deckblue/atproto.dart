@@ -76,9 +76,9 @@ final class NotificationRegisterPushPlatformConverter
 
   @override
   String toJson(NotificationRegisterPushPlatform object) => switch (object) {
-    NotificationRegisterPushPlatformKnownValue(:final data) => data.value,
-    NotificationRegisterPushPlatformUnknown(:final data) => data,
-  };
+        NotificationRegisterPushPlatformKnownValue(:final data) => data.value,
+        NotificationRegisterPushPlatformUnknown(:final data) => data,
+      };
 }
 
 enum KnownNotificationRegisterPushPlatform implements Serializable {

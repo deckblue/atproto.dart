@@ -35,12 +35,12 @@ ModerationDecision decidePost(
 ) {
   final (author, labels, uri, record, embed) = switch (subject) {
     UModerationSubjectPostPostView(:final data) => (
-      data.author,
-      data.labels,
-      data.uri.toString(),
-      data.record,
-      data.embed,
-    ),
+        data.author,
+        data.labels,
+        data.uri.toString(),
+        data.record,
+        data.embed,
+      ),
   };
 
   final decision = ModerationDecision.init(

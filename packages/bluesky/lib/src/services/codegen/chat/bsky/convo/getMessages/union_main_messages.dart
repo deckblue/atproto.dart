@@ -102,7 +102,6 @@ final class UConvoGetMessagesMessagesConverter
           const DeletedMessageViewConverter().toJson(data),
         UConvoGetMessagesMessagesSystemMessageView(:final data) =>
           const SystemMessageViewConverter().toJson(data),
-
         UConvoGetMessagesMessagesUnknown(:final data) => data,
       };
 }

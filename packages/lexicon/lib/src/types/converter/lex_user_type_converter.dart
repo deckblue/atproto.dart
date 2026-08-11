@@ -79,19 +79,19 @@ final class LexUserTypeConverter
 
   @override
   Map<String, dynamic> toJson(LexUserType object) => switch (object) {
-    ULexUserTypeRecord(:final data) => data.toJson(),
-    ULexUserTypeXrpcQuery(:final data) => data.toJson(),
-    ULexUserTypeXrpcProcedure(:final data) => data.toJson(),
-    ULexUserTypeXrpcSubscription(:final data) => data.toJson(),
-    ULexUserTypeBlob(:final data) => data.toJson(),
-    ULexUserTypeArray(:final data) => data.toJson(),
-    ULexUserTypeToken(:final data) => data.toJson(),
-    ULexUserTypeObject(:final data) => data.toJson(),
-    ULexUserTypeBoolean(:final data) => data.toJson(),
-    ULexUserTypeInteger(:final data) => data.toJson(),
-    ULexUserTypeString(:final data) => data.toJson(),
-    ULexUserTypeBytes(:final data) => data.toJson(),
-    ULexUserTypeCidLink(:final data) => data.toJson(),
-    ULexUserTypeUnknown(:final data) => data.toJson(),
-  };
+        ULexUserTypeRecord(:final data) => data.toJson(),
+        ULexUserTypeXrpcQuery(:final data) => data.toJson(),
+        ULexUserTypeXrpcProcedure(:final data) => data.toJson(),
+        ULexUserTypeXrpcSubscription(:final data) => data.toJson(),
+        ULexUserTypeBlob(:final data) => data.toJson(),
+        ULexUserTypeArray(:final data) => data.toJson(),
+        ULexUserTypeToken(:final data) => data.toJson(),
+        ULexUserTypeObject(:final data) => data.toJson(),
+        ULexUserTypeBoolean(:final data) => data.toJson(),
+        ULexUserTypeInteger(:final data) => data.toJson(),
+        ULexUserTypeString(:final data) => data.toJson(),
+        ULexUserTypeBytes(:final data) => data.toJson(),
+        ULexUserTypeCidLink(:final data) => data.toJson(),
+        ULexUserTypeUnknown(:final data) => data.toJson(),
+      };
 }

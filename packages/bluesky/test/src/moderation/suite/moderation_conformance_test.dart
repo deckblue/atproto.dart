@@ -58,7 +58,8 @@ const _kLabeler = ModerationPrefsLabeler(
 
 void main() {
   group('decideUserList', () {
-    test('handles ListView with creator without crashing and merges account '
+    test(
+        'handles ListView with creator without crashing and merges account '
         'causes', () {
       final decision = moderateUserList(
         ModerationSubjectUserList.listView(
@@ -110,9 +111,8 @@ void main() {
         _opts(labels: {'porn': LabelPreference.hide}, labelers: [_kLabeler]),
       );
 
-      final labelCauses = decision.causes
-          .whereType<UModerationCauseLabel>()
-          .toList();
+      final labelCauses =
+          decision.causes.whereType<UModerationCauseLabel>().toList();
 
       expect(labelCauses.length, 1);
       expect(
@@ -144,9 +144,8 @@ void main() {
         _opts(labels: {'porn': LabelPreference.hide}),
       );
 
-      final labelCauses = decision.causes
-          .whereType<UModerationCauseLabel>()
-          .toList();
+      final labelCauses =
+          decision.causes.whereType<UModerationCauseLabel>().toList();
 
       expect(labelCauses.length, 1);
       expect(labelCauses.first.data.source, isA<UModerationCauseSourceUser>());
@@ -154,7 +153,8 @@ void main() {
   });
 
   group('gore alias', () {
-    test('labels with the deprecated `gore` value are interpreted as '
+    test(
+        'labels with the deprecated `gore` value are interpreted as '
         'graphic-media', () {
       final decision = moderateProfile(
         ModerationSubjectProfile.profileViewBasic(
@@ -191,8 +191,8 @@ void main() {
               value: 'poop',
               targets: const [contentTarget],
               expiresAt: DateTime.now().toUtc().subtract(
-                const Duration(days: 1),
-              ),
+                    const Duration(days: 1),
+                  ),
             ),
           ],
           text: 'This is a poop post',
@@ -272,23 +272,23 @@ void main() {
     test('applies content labels on the live status', () {
       final decision = moderateStatus(
         ModerationSubjectProfile.profileViewBasic(
-          data: profileViewBasic(handle: 'bob.test', displayName: 'Bob')
-              .copyWith(
-                status: StatusView(
-                  status: const StatusViewStatus.knownValue(
-                    data: KnownStatusViewStatus.appBskyActorStatusLive,
-                  ),
-                  record: const {r'$type': 'app.bsky.actor.status'},
-                  labels: [
-                    Label(
-                      src: 'did:web:labeler.test',
-                      uri: 'at://did:web:bob.test/app.bsky.actor.status/self',
-                      val: 'porn',
-                      cts: DateTime.now().toUtc(),
-                    ),
-                  ],
-                ),
+          data:
+              profileViewBasic(handle: 'bob.test', displayName: 'Bob').copyWith(
+            status: StatusView(
+              status: const StatusViewStatus.knownValue(
+                data: KnownStatusViewStatus.appBskyActorStatusLive,
               ),
+              record: const {r'$type': 'app.bsky.actor.status'},
+              labels: [
+                Label(
+                  src: 'did:web:labeler.test',
+                  uri: 'at://did:web:bob.test/app.bsky.actor.status/self',
+                  val: 'porn',
+                  cts: DateTime.now().toUtc(),
+                ),
+              ],
+            ),
+          ),
         ),
         _opts(labels: {'porn': LabelPreference.hide}, labelers: [_kLabeler]),
       );

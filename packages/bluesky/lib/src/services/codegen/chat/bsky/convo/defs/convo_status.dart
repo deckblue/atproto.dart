@@ -69,9 +69,9 @@ final class ConvoStatusConverter extends JsonConverter<ConvoStatus, String> {
 
   @override
   String toJson(ConvoStatus object) => switch (object) {
-    ConvoStatusKnownValue(:final data) => data.value,
-    ConvoStatusUnknown(:final data) => data,
-  };
+        ConvoStatusKnownValue(:final data) => data.value,
+        ConvoStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownConvoStatus implements Serializable {

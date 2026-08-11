@@ -39,13 +39,14 @@ final class Challenge {
     String? nsid,
     Future<void> Function(Map<String, String> headers)? onUpdateDpopNonce,
     Future<bool> Function(xrpc.UnauthorizedException e)? onUnauthorized,
-  }) async => await _execute(
-    action,
-    isProcedure: isProcedure,
-    nsid: nsid,
-    onUpdateDpopNonce: onUpdateDpopNonce,
-    onUnauthorized: onUnauthorized,
-  );
+  }) async =>
+      await _execute(
+        action,
+        isProcedure: isProcedure,
+        nsid: nsid,
+        onUpdateDpopNonce: onUpdateDpopNonce,
+        onUnauthorized: onUnauthorized,
+      );
 
   /// The recursive body of [execute].
   ///

@@ -1,4 +1,5 @@
 name: bluesky_text_flutter
+resolution: workspace
 description: Flutter widgets for bluesky_text — a rich-text editing controller that highlights entities and the over-limit tail as you type, and a viewer for fetched posts.
 version: 0.1.3
 homepage: https://atprotodart.com
@@ -8,8 +9,7 @@ funding:
   - https://github.com/sponsors/myConsciousness
 
 environment:
-  sdk: ">=3.8.0 <4.0.0"
-  flutter: ">=3.32.0"
+  sdk: ">=3.6.0 <4.0.0"
 
 topics:
   - atproto
@@ -20,10 +20,8 @@ topics:
 dependencies:
   flutter:
     sdk: flutter
-  bluesky_text: ^1.7.0
+  bluesky_text: ^1.8.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   flutter_lints: ">=5.0.0 <7.0.0"
 

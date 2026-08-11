@@ -67,9 +67,9 @@ final class JoinRuleConverter extends JsonConverter<JoinRule, String> {
 
   @override
   String toJson(JoinRule object) => switch (object) {
-    JoinRuleKnownValue(:final data) => data.value,
-    JoinRuleUnknown(:final data) => data,
-  };
+        JoinRuleKnownValue(:final data) => data.value,
+        JoinRuleUnknown(:final data) => data,
+      };
 }
 
 enum KnownJoinRule implements Serializable {

@@ -50,15 +50,16 @@ final class RefreshStatsCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "startDate": argResults!["startDate"],
-    "endDate": argResults!["endDate"],
-    if (argResults!.wasParsed("queueIds"))
-      "queueIds": (argResults!["queueIds"] as List<String>)
-          .map(
-            (e) =>
-                int.tryParse(e) ??
-                usageException('Invalid integer value in option "queueIds".'),
-          )
-          .toList(),
-  };
+        "startDate": argResults!["startDate"],
+        "endDate": argResults!["endDate"],
+        if (argResults!.wasParsed("queueIds"))
+          "queueIds": (argResults!["queueIds"] as List<String>)
+              .map(
+                (e) =>
+                    int.tryParse(e) ??
+                    usageException(
+                        'Invalid integer value in option "queueIds".'),
+              )
+              .toList(),
+      };
 }

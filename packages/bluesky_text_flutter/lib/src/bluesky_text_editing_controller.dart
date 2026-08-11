@@ -78,9 +78,8 @@ class BlueskyTextEditingController extends TextEditingController {
     final segments = BlueskyText(text, enableMarkdown: enableMarkdown).segments;
 
     //* The composing (IME) region to underline, if any is active and valid.
-    final composing = withComposing && !value.composing.isCollapsed
-        ? value.composing
-        : null;
+    final composing =
+        withComposing && !value.composing.isCollapsed ? value.composing : null;
 
     final theme = Theme.of(context);
     final defaultEntity = TextStyle(color: theme.colorScheme.primary);
@@ -88,13 +87,12 @@ class BlueskyTextEditingController extends TextEditingController {
 
     final children = <InlineSpan>[];
     for (final segment in segments) {
-      final resolved =
-          styleBuilder?.call(segment) ??
+      final resolved = styleBuilder?.call(segment) ??
           (segment.isOverflow
               ? (overflowStyle ?? defaultOverflow)
               : segment.type != null
-              ? (entityStyle ?? defaultEntity)
-              : null);
+                  ? (entityStyle ?? defaultEntity)
+                  : null);
       final segmentStyle = resolved == null ? base : base.merge(resolved);
 
       _appendSegment(children, segment, segmentStyle, composing);
@@ -114,12 +112,10 @@ class BlueskyTextEditingController extends TextEditingController {
     final start = segment.utf16Start;
     final end = segment.utf16End;
 
-    final overlapStart = composing == null
-        ? end
-        : composing.start.clamp(start, end);
-    final overlapEnd = composing == null
-        ? end
-        : composing.end.clamp(start, end);
+    final overlapStart =
+        composing == null ? end : composing.start.clamp(start, end);
+    final overlapEnd =
+        composing == null ? end : composing.end.clamp(start, end);
 
     if (composing == null || overlapStart >= overlapEnd) {
       children.add(TextSpan(text: segment.text, style: segmentStyle));

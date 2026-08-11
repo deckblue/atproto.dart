@@ -46,10 +46,10 @@ final class MuteActorCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "actor": argResults!["actor"],
-    if (argResults!.wasParsed("onlyReposts"))
-      "onlyReposts": argResults!["onlyReposts"],
-    if (argResults!.wasParsed("onlyQuoteposts"))
-      "onlyQuoteposts": argResults!["onlyQuoteposts"],
-  };
+        "actor": argResults!["actor"],
+        if (argResults!.wasParsed("onlyReposts"))
+          "onlyReposts": argResults!["onlyReposts"],
+        if (argResults!.wasParsed("onlyQuoteposts"))
+          "onlyQuoteposts": argResults!["onlyQuoteposts"],
+      };
 }

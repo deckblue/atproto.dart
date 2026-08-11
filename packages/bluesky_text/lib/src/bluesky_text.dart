@@ -207,13 +207,11 @@ sealed class BlueskyText {
   /// be dropped straight into a record map you assemble yourself — no
   /// round-trip through a lexicon model needed to fill in the `$type`s.
   Future<
-    ({
-      String text,
-      List<Map<String, dynamic>> facets,
-      List<String> unresolvedHandles,
-    })
-  >
-  toPostData({String? service, HandleResolver? resolver});
+      ({
+        String text,
+        List<Map<String, dynamic>> facets,
+        List<String> unresolvedHandles,
+      })> toPostData({String? service, HandleResolver? resolver});
 
   /// Returns true if this text exceeds either post limit — more than 300
   /// graphemes ([length]) or more than 3000 UTF-8 bytes — otherwise false.
@@ -306,9 +304,9 @@ final class _BlueskyText implements BlueskyText {
     bool enableMarkdown = true,
     LinkConfig? linkConfig,
     Replacements? replacements,
-  }) : _enableMarkdown = enableMarkdown,
-       _linkConfig = linkConfig,
-       _replacements = replacements;
+  })  : _enableMarkdown = enableMarkdown,
+        _linkConfig = linkConfig,
+        _replacements = replacements;
 
   final bool _enableMarkdown;
   final LinkConfig? _linkConfig;
@@ -368,13 +366,11 @@ final class _BlueskyText implements BlueskyText {
 
   @override
   Future<
-    ({
-      String text,
-      List<Map<String, dynamic>> facets,
-      List<String> unresolvedHandles,
-    })
-  >
-  toPostData({String? service, HandleResolver? resolver}) async {
+      ({
+        String text,
+        List<Map<String, dynamic>> facets,
+        List<String> unresolvedHandles,
+      })> toPostData({String? service, HandleResolver? resolver}) async {
     final post = _formatted;
     final result = await post.entities.toFacetsResult(
       service: service,

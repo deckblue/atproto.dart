@@ -92,19 +92,19 @@ final class SearchPostsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "q": argResults!["q"],
-    "sort": argResults!["sort"],
-    if (argResults!.wasParsed("since")) "since": argResults!["since"],
-    if (argResults!.wasParsed("until")) "until": argResults!["until"],
-    if (argResults!.wasParsed("mentions")) "mentions": argResults!["mentions"],
-    if (argResults!.wasParsed("author")) "author": argResults!["author"],
-    if (argResults!.wasParsed("lang")) "lang": argResults!["lang"],
-    if (argResults!.wasParsed("domain")) "domain": argResults!["domain"],
-    if (argResults!.wasParsed("url")) "url": argResults!["url"],
-    if (argResults!.wasParsed("tag")) "tag": argResults!["tag"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        "q": argResults!["q"],
+        "sort": argResults!["sort"],
+        if (argResults!.wasParsed("since")) "since": argResults!["since"],
+        if (argResults!.wasParsed("until")) "until": argResults!["until"],
+        if (argResults!.wasParsed("mentions"))
+          "mentions": argResults!["mentions"],
+        if (argResults!.wasParsed("author")) "author": argResults!["author"],
+        if (argResults!.wasParsed("lang")) "lang": argResults!["lang"],
+        if (argResults!.wasParsed("domain")) "domain": argResults!["domain"],
+        if (argResults!.wasParsed("url")) "url": argResults!["url"],
+        if (argResults!.wasParsed("tag")) "tag": argResults!["tag"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

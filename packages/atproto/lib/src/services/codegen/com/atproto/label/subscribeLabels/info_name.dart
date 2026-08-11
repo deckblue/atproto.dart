@@ -67,9 +67,9 @@ final class InfoNameConverter extends JsonConverter<InfoName, String> {
 
   @override
   String toJson(InfoName object) => switch (object) {
-    InfoNameKnownValue(:final data) => data.value,
-    InfoNameUnknown(:final data) => data,
-  };
+        InfoNameKnownValue(:final data) => data.value,
+        InfoNameUnknown(:final data) => data,
+      };
 }
 
 enum KnownInfoName implements Serializable {

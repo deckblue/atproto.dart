@@ -36,9 +36,10 @@ USyncSubscribeReposMessage _identity(final int seq) =>
 USyncSubscribeReposMessage _info({
   final String name = 'OutdatedCursor',
   final String? message,
-}) => USyncSubscribeReposMessage.info(
-  data: Info(name: InfoName.valueOf(name)!, message: message),
-);
+}) =>
+    USyncSubscribeReposMessage.info(
+      data: Info(name: InfoName.valueOf(name)!, message: message),
+    );
 
 /// A [CursorStore] that records every write, so batching can be asserted on
 /// call count rather than on the final value alone.
@@ -82,24 +83,24 @@ class _ScriptedRelay {
   int _attempt = 0;
 
   FirehoseConnector get connect => (final cursor) async {
-    requestedCursors.add(cursor);
-    final batch = _attempt < batches.length
-        ? batches[_attempt]
-        : const <USyncSubscribeReposMessage>[];
-    _attempt++;
+        requestedCursors.add(cursor);
+        final batch = _attempt < batches.length
+            ? batches[_attempt]
+            : const <USyncSubscribeReposMessage>[];
+        _attempt++;
 
-    if (batch is! List) {
-      return FirehoseConnection(
-        Stream<USyncSubscribeReposMessage>.error(batch),
-      );
-    }
+        if (batch is! List) {
+          return FirehoseConnection(
+            Stream<USyncSubscribeReposMessage>.error(batch),
+          );
+        }
 
-    return FirehoseConnection(
-      Stream<USyncSubscribeReposMessage>.fromIterable(
-        batch.cast<USyncSubscribeReposMessage>(),
-      ),
-    );
-  };
+        return FirehoseConnection(
+          Stream<USyncSubscribeReposMessage>.fromIterable(
+            batch.cast<USyncSubscribeReposMessage>(),
+          ),
+        );
+      };
 }
 
 /// Runs [firehose] until [until] returns true, then stops it. Keeps the tests
@@ -126,18 +127,19 @@ Firehose _firehose({
   final int flushEveryEvents = defaultFlushEveryEvents,
   final Duration flushEveryInterval = const Duration(hours: 1),
   final void Function(Object error, StackTrace stackTrace)? onError,
-}) => Firehose(
-  connect: connect,
-  cursorStore: cursorStore,
-  flushEveryEvents: flushEveryEvents,
-  flushEveryInterval: flushEveryInterval,
-  onError: onError,
-  // Keep the reconnect loop from actually sleeping between attempts.
-  initialBackoff: Duration.zero,
-  maxBackoff: Duration.zero,
-  jitter: 0,
-  random: Random(0),
-);
+}) =>
+    Firehose(
+      connect: connect,
+      cursorStore: cursorStore,
+      flushEveryEvents: flushEveryEvents,
+      flushEveryInterval: flushEveryInterval,
+      onError: onError,
+      // Keep the reconnect loop from actually sleeping between attempts.
+      initialBackoff: Duration.zero,
+      maxBackoff: Duration.zero,
+      jitter: 0,
+      random: Random(0),
+    );
 
 void main() {
   group('cursor advancement', () {
@@ -214,7 +216,7 @@ void main() {
       ]);
       final seen = <int>[];
 
-      await _runUntil(_firehose(connect: relay.connect, onError: (_, _) {}), (
+      await _runUntil(_firehose(connect: relay.connect, onError: (_, __) {}), (
         message,
       ) async {
         seen.add(message.commit!.seq);
@@ -288,7 +290,7 @@ void main() {
           connect: relay.connect,
           cursorStore: store,
           flushEveryEvents: 1,
-          onError: (_, _) {},
+          onError: (_, __) {},
         ),
         (_) async => seen++,
         () => seen >= 1,
@@ -313,7 +315,7 @@ void main() {
           connect: relay.connect,
           cursorStore: store,
           flushEveryEvents: 1,
-          onError: (_, _) {},
+          onError: (_, __) {},
         ),
         (_) async => seen++,
         () => seen >= 1,

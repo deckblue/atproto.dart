@@ -148,9 +148,8 @@ void main() {
       // (0x18) = 0xb8, followed by the length byte 24 (0x18).
       final keys = List.generate(24, (i) => String.fromCharCode(0x61 + i));
       final value = {for (final k in keys) k: 0};
-      final expectedPairs = keys
-          .map((k) => '61${k.codeUnitAt(0).toRadixString(16)}00')
-          .join();
+      final expectedPairs =
+          keys.map((k) => '61${k.codeUnitAt(0).toRadixString(16)}00').join();
       expect(_hex(dagCborEncode(value)), 'b818$expectedPairs');
     });
 
@@ -301,7 +300,8 @@ void main() {
       );
     });
 
-    test(r'a sole-$bytes map whose value is not valid base64 throws '
+    test(
+        r'a sole-$bytes map whose value is not valid base64 throws '
         'ArgumentError, not FormatException', () {
       // '!' is outside the base64 alphabet. The documented contract of this
       // encoder is ArgumentError / InvalidCidError, and this data can come
@@ -333,7 +333,8 @@ void main() {
       );
     });
 
-    test('nesting deeper than the depth limit throws ArgumentError, not '
+    test(
+        'nesting deeper than the depth limit throws ArgumentError, not '
         'StackOverflowError', () {
       Object? value = 1;
       for (var i = 0; i < 2000; i++) {

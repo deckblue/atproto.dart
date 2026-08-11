@@ -208,17 +208,15 @@ typedef RepoCommitOnDelete = FutureOr<void> Function(RepoCommitDelete data);''';
     final String verb, {
     required final bool withCreatedAt,
   }) {
-    final createdAtParam = withCreatedAt
-        ? '\n    required this.createdAt,'
-        : '';
+    final createdAtParam =
+        withCreatedAt ? '\n    required this.createdAt,' : '';
     final createdAtField = withCreatedAt
         ? '\n\n  /// The date and time this event was created.'
-              '\n  final DateTime createdAt;'
+            '\n  final DateTime createdAt;'
         : '';
     final createdAtToString = withCreatedAt ? ', createdAt: \$createdAt' : '';
-    final createdAtEquals = withCreatedAt
-        ? ' &&\n        other.createdAt == createdAt'
-        : '';
+    final createdAtEquals =
+        withCreatedAt ? ' &&\n        other.createdAt == createdAt' : '';
     final createdAtHash = withCreatedAt ? ' ^\n      createdAt.hashCode' : '';
 
     return '''final class RepoCommit$verb<T> {

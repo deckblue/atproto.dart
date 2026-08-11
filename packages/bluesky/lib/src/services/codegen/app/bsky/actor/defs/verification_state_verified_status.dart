@@ -75,9 +75,9 @@ final class VerificationStateVerifiedStatusConverter
 
   @override
   String toJson(VerificationStateVerifiedStatus object) => switch (object) {
-    VerificationStateVerifiedStatusKnownValue(:final data) => data.value,
-    VerificationStateVerifiedStatusUnknown(:final data) => data,
-  };
+        VerificationStateVerifiedStatusKnownValue(:final data) => data.value,
+        VerificationStateVerifiedStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownVerificationStateVerifiedStatus implements Serializable {

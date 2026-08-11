@@ -29,7 +29,6 @@ abstract class EmbedGallery with _$EmbedGallery {
   const factory EmbedGallery({
     @Default('app.bsky.embed.gallery') String $type,
     @UEmbedGalleryItemsConverter() required List<UEmbedGalleryItems> items,
-
     Map<String, dynamic>? $unknown,
   }) = _EmbedGallery;
 

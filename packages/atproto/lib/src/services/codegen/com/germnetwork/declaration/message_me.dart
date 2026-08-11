@@ -35,7 +35,6 @@ abstract class MessageMe with _$MessageMe {
     /// The policy of who can message the account, this value is included in the keyPackage, but is duplicated here to allow applications to decide if they should show a 'Message on Germ' button to the viewer.
     @MessageMeShowButtonToConverter()
     required MessageMeShowButtonTo showButtonTo,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageMe;
 

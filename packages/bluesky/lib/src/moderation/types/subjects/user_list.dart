@@ -21,15 +21,15 @@ ModerationDecision decideUserList(
 ) {
   final (creator, labels, uri) = switch (subject) {
     UModerationSubjectUserListListViewBasic(:final data) => (
-      null,
-      data.labels,
-      data.uri.toString(),
-    ),
+        null,
+        data.labels,
+        data.uri.toString(),
+      ),
     UModerationSubjectUserListListView(:final data) => (
-      data.creator,
-      data.labels,
-      data.uri.toString(),
-    ),
+        data.creator,
+        data.labels,
+        data.uri.toString(),
+      ),
   };
 
   if (creator != null) {

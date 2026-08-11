@@ -95,21 +95,22 @@ final class _CreateStarterpackCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.graph.starterpack",
-    "name": argResults!["name"],
-    if (argResults!.wasParsed("description"))
-      "description": argResults!["description"],
-    if (argResults!.wasParsed("descriptionFacets"))
-      "descriptionFacets": (argResults!["descriptionFacets"] as List<String>)
-          .map((e) => _decodeJsonItem("descriptionFacets", e))
-          .toList(),
-    "list": argResults!["list"],
-    if (argResults!.wasParsed("feeds"))
-      "feeds": (argResults!["feeds"] as List<String>)
-          .map((e) => _decodeJsonItem("feeds", e))
-          .toList(),
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.graph.starterpack",
+        "name": argResults!["name"],
+        if (argResults!.wasParsed("description"))
+          "description": argResults!["description"],
+        if (argResults!.wasParsed("descriptionFacets"))
+          "descriptionFacets":
+              (argResults!["descriptionFacets"] as List<String>)
+                  .map((e) => _decodeJsonItem("descriptionFacets", e))
+                  .toList(),
+        "list": argResults!["list"],
+        if (argResults!.wasParsed("feeds"))
+          "feeds": (argResults!["feeds"] as List<String>)
+              .map((e) => _decodeJsonItem("feeds", e))
+              .toList(),
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutStarterpackCommand extends PutRecordCommand
@@ -138,21 +139,22 @@ final class _PutStarterpackCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.graph.starterpack",
-    "name": argResults!["name"],
-    if (argResults!.wasParsed("description"))
-      "description": argResults!["description"],
-    if (argResults!.wasParsed("descriptionFacets"))
-      "descriptionFacets": (argResults!["descriptionFacets"] as List<String>)
-          .map((e) => _decodeJsonItem("descriptionFacets", e))
-          .toList(),
-    "list": argResults!["list"],
-    if (argResults!.wasParsed("feeds"))
-      "feeds": (argResults!["feeds"] as List<String>)
-          .map((e) => _decodeJsonItem("feeds", e))
-          .toList(),
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.graph.starterpack",
+        "name": argResults!["name"],
+        if (argResults!.wasParsed("description"))
+          "description": argResults!["description"],
+        if (argResults!.wasParsed("descriptionFacets"))
+          "descriptionFacets":
+              (argResults!["descriptionFacets"] as List<String>)
+                  .map((e) => _decodeJsonItem("descriptionFacets", e))
+                  .toList(),
+        "list": argResults!["list"],
+        if (argResults!.wasParsed("feeds"))
+          "feeds": (argResults!["feeds"] as List<String>)
+              .map((e) => _decodeJsonItem("feeds", e))
+              .toList(),
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteStarterpackCommand extends DeleteRecordCommand {
@@ -204,11 +206,11 @@ final class _GetStarterpackCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.graph.starterpack",
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.starterpack",
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListStarterpackCommand extends QueryCommand {
@@ -238,12 +240,11 @@ final class _ListStarterpackCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.graph.starterpack",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.starterpack",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

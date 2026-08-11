@@ -69,9 +69,9 @@ final class SubjectTypeConverter extends JsonConverter<SubjectType, String> {
 
   @override
   String toJson(SubjectType object) => switch (object) {
-    SubjectTypeKnownValue(:final data) => data.value,
-    SubjectTypeUnknown(:final data) => data,
-  };
+        SubjectTypeKnownValue(:final data) => data.value,
+        SubjectTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownSubjectType implements Serializable {

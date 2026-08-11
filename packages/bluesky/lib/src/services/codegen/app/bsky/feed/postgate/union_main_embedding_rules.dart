@@ -71,7 +71,6 @@ final class UFeedPostgateEmbeddingRulesConverter
       switch (object) {
         UFeedPostgateEmbeddingRulesDisableRule(:final data) =>
           const DisableRuleConverter().toJson(data),
-
         UFeedPostgateEmbeddingRulesUnknown(:final data) => data,
       };
 }

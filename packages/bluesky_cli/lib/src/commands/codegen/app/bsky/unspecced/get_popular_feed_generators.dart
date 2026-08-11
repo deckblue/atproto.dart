@@ -38,10 +38,9 @@ final class GetPopularFeedGeneratorsCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    if (argResults!.wasParsed("query")) "query": argResults!["query"],
-  };
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("query")) "query": argResults!["query"],
+      };
 }

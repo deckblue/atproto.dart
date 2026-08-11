@@ -4,31 +4,28 @@
 
 // Package imports:
 import 'package:atproto_core/atproto_core.dart' as core;
-import 'package:test/test.dart';
-
-// Project imports:
-import 'package:bluesky/atproto_oauth.dart';
 import 'package:bluesky/bluesky.dart';
 import 'package:bluesky/bluesky_chat.dart';
 import 'package:bluesky/ozone.dart';
+import 'package:test/test.dart';
 
 OAuthSession _oAuthSession({final String sub = 'did:plc:abc'}) => OAuthSession(
-  accessToken: 'a',
-  scope: 'atproto',
-  sub: sub,
-  issuer: 'https://bsky.social',
-  pds: 'https://pds.example',
-  clientId: 'cid',
-  dpopPublicKey: 'PUB',
-  dpopPrivateKey: 'PRIV',
-);
+      accessToken: 'a',
+      scope: 'atproto',
+      sub: sub,
+      issuer: 'https://bsky.social',
+      pds: 'https://pds.example',
+      clientId: 'cid',
+      dpopPublicKey: 'PUB',
+      dpopPrivateKey: 'PRIV',
+    );
 
 core.Session _session() => core.Session(
-  did: 'did:plc:legacy',
-  handle: 'test.dev',
-  accessJwt: 'access',
-  refreshJwt: 'refresh',
-);
+      did: 'did:plc:legacy',
+      handle: 'test.dev',
+      accessJwt: 'access',
+      refreshJwt: 'refresh',
+    );
 
 void main() {
   test('Bluesky.fromOAuth exposes the manager', () {

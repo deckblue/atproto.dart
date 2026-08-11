@@ -102,7 +102,6 @@ final class UAdminGetSubjectStatusSubjectConverter
           const RepoStrongRefConverter().toJson(data),
         UAdminGetSubjectStatusSubjectRepoBlobRef(:final data) =>
           const RepoBlobRefConverter().toJson(data),
-
         UAdminGetSubjectStatusSubjectUnknown(:final data) => data,
       };
 }

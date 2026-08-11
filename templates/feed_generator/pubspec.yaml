@@ -4,7 +4,7 @@ resolution: workspace
 description: A clone-and-edit template for building a Bluesky custom feed generator with atproto.dart.
 
 environment:
-  sdk: ">=3.8.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
 
 dependencies:
   bluesky: ^2.6.0
@@ -14,5 +14,5 @@ dependencies:
   shelf_router: ^1.1.0
 
 dev_dependencies:
-  lints: ^6.0.0
+  lints: ^5.0.0
   test: ^1.26.2

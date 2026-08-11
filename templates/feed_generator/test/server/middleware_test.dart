@@ -10,10 +10,10 @@ import 'package:shelf/shelf.dart';
 import 'package:test/test.dart';
 
 Request _request({final String client = '10.0.0.1'}) => Request(
-  'GET',
-  Uri.parse('http://localhost/xrpc/app.bsky.feed.getFeedSkeleton'),
-  context: {'test.client': client},
-);
+      'GET',
+      Uri.parse('http://localhost/xrpc/app.bsky.feed.getFeedSkeleton'),
+      context: {'test.client': client},
+    );
 
 String _testClientKey(final Request request) =>
     request.context['test.client']! as String;

@@ -40,7 +40,6 @@ abstract class SchedulingConfig with _$SchedulingConfig {
 
     /// Latest time to execute the action (for randomized scheduling)
     @JsonKey(toJson: iso8601) DateTime? executeUntil,
-
     Map<String, dynamic>? $unknown,
   }) = _SchedulingConfig;
 

@@ -32,13 +32,13 @@ abstract class UnspeccedGetTrendsSkeletonOutput
 
     /// Snowflake for this recommendation, use when submitting recommendation events.
     String? recIdStr,
-
     Map<String, dynamic>? $unknown,
   }) = _UnspeccedGetTrendsSkeletonOutput;
 
   factory UnspeccedGetTrendsSkeletonOutput.fromJson(
     Map<String, Object?> json,
-  ) => _$UnspeccedGetTrendsSkeletonOutputFromJson(json);
+  ) =>
+      _$UnspeccedGetTrendsSkeletonOutputFromJson(json);
 }
 
 extension UnspeccedGetTrendsSkeletonOutputExtension
@@ -47,9 +47,8 @@ extension UnspeccedGetTrendsSkeletonOutputExtension
   bool get hasNotRecIdStr => !hasRecIdStr;
 }
 
-final class UnspeccedGetTrendsSkeletonOutputConverter
-    extends
-        JsonConverter<UnspeccedGetTrendsSkeletonOutput, Map<String, dynamic>> {
+final class UnspeccedGetTrendsSkeletonOutputConverter extends JsonConverter<
+    UnspeccedGetTrendsSkeletonOutput, Map<String, dynamic>> {
   const UnspeccedGetTrendsSkeletonOutputConverter();
 
   @override

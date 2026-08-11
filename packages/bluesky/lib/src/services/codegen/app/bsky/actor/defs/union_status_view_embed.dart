@@ -67,9 +67,8 @@ final class UStatusViewEmbedConverter
 
   @override
   Map<String, dynamic> toJson(UStatusViewEmbed object) => switch (object) {
-    UStatusViewEmbedEmbedExternalView(:final data) =>
-      const EmbedExternalViewConverter().toJson(data),
-
-    UStatusViewEmbedUnknown(:final data) => data,
-  };
+        UStatusViewEmbedEmbedExternalView(:final data) =>
+          const EmbedExternalViewConverter().toJson(data),
+        UStatusViewEmbedUnknown(:final data) => data,
+      };
 }

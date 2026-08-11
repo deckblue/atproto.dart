@@ -76,9 +76,10 @@ final class EventGroupChatMemberLeftLeaveMethodConverter
 
   @override
   String toJson(EventGroupChatMemberLeftLeaveMethod object) => switch (object) {
-    EventGroupChatMemberLeftLeaveMethodKnownValue(:final data) => data.value,
-    EventGroupChatMemberLeftLeaveMethodUnknown(:final data) => data,
-  };
+        EventGroupChatMemberLeftLeaveMethodKnownValue(:final data) =>
+          data.value,
+        EventGroupChatMemberLeftLeaveMethodUnknown(:final data) => data,
+      };
 }
 
 enum KnownEventGroupChatMemberLeftLeaveMethod implements Serializable {

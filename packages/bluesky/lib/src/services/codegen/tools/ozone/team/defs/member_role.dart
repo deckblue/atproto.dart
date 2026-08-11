@@ -68,9 +68,9 @@ final class MemberRoleConverter extends JsonConverter<MemberRole, String> {
 
   @override
   String toJson(MemberRole object) => switch (object) {
-    MemberRoleKnownValue(:final data) => data.value,
-    MemberRoleUnknown(:final data) => data,
-  };
+        MemberRoleKnownValue(:final data) => data.value,
+        MemberRoleUnknown(:final data) => data,
+      };
 }
 
 enum KnownMemberRole implements Serializable {

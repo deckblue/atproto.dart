@@ -256,8 +256,7 @@ final class ${name}RecordAccessor {
 ''';
   }
 
-  String _recordGet(final LexApi api, final String id) =>
-      '''
+  String _recordGet(final LexApi api, final String id) => '''
 Future<XRPCResponse<RepoGetRecordOutput>> get({
   required String repo,
 ${_rkeyParam(api, '    required String rkey,')}
@@ -274,8 +273,7 @@ ${_rkeyParam(api, '    required String rkey,')}
   \$unknown: \$unknown,
 );''';
 
-  String _recordList(final String id) =>
-      '''
+  String _recordList(final String id) => '''
 Future<XRPCResponse<RepoListRecordsOutput>> list({
   required String repo,
   int? limit,
@@ -336,8 +334,7 @@ $extraArgs
 );''';
   }
 
-  String _recordDelete(final LexApi api, final String id) =>
-      '''
+  String _recordDelete(final LexApi api, final String id) => '''
 Future<XRPCResponse<RepoDeleteRecordOutput>> delete({
 ${_rkeyParam(api, '    required String rkey,')}
   String? swapRecord,
@@ -517,11 +514,9 @@ ${_paramForwards(parameters)}
     parameters: \$parameters,
     body: bytes,''';
     } else {
-      final unknownParam = parameters.isNotEmpty
-          ? '\n  Map<String, String>? \$unknown,'
-          : '';
-      signatureParams =
-          '''
+      final unknownParam =
+          parameters.isNotEmpty ? '\n  Map<String, String>? \$unknown,' : '';
+      signatureParams = '''
 ${_paramDecls(parameters)}
   required ServiceContext \$ctx,
   String? \$service,
@@ -580,19 +575,15 @@ $callBody
      \$service: \$service,
      \$headers: \$headers,''';
     } else {
-      final unknownParam = parameters.isNotEmpty
-          ? '\n  Map<String, String>? \$unknown,'
-          : '';
-      signatureParams =
-          '''
+      final unknownParam =
+          parameters.isNotEmpty ? '\n  Map<String, String>? \$unknown,' : '';
+      signatureParams = '''
 ${_paramDecls(parameters)}
   String? \$service,
   Map<String, String>? \$headers,$unknownParam''';
-      final unknownArg = parameters.isNotEmpty
-          ? '\n     \$unknown: \$unknown,'
-          : '';
-      forwards =
-          '''
+      final unknownArg =
+          parameters.isNotEmpty ? '\n     \$unknown: \$unknown,' : '';
+      forwards = '''
 ${_paramForwards(parameters)}
      \$ctx: ctx,
      \$service: \$service,

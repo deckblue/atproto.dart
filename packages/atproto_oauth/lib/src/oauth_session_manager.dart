@@ -26,10 +26,10 @@ final class OAuthSessionManager {
     final DPoPSigner? signer,
     final DPoPNonceCache? nonceCache,
     final Duration? timeout,
-  }) : _sub = sub,
-       _signer = signer ?? const PointyCastleDPoPSigner(),
-       _nonceCache = nonceCache ?? InMemoryDPoPNonceCache(),
-       _timeout = timeout ?? defaultOAuthSessionTimeout;
+  })  : _sub = sub,
+        _signer = signer ?? const PointyCastleDPoPSigner(),
+        _nonceCache = nonceCache ?? InMemoryDPoPNonceCache(),
+        _timeout = timeout ?? defaultOAuthSessionTimeout;
 
   factory OAuthSessionManager.fromSession(
     final OAuthSession session, {
@@ -138,15 +138,12 @@ final class OAuthSessionManager {
   Future<OAuthSession> _refresh(final OAuthSession current) {
     if (_inflightRefresh != null) return _inflightRefresh!;
     final client = _client!;
-    _inflightRefresh = client
-        .refresh(current)
-        .timeout(_timeout)
-        .then((refreshed) {
-          _session = refreshed;
-          _updates.add(refreshed);
-          return refreshed;
-        })
-        .whenComplete(() => _inflightRefresh = null);
+    _inflightRefresh =
+        client.refresh(current).timeout(_timeout).then((refreshed) {
+      _session = refreshed;
+      _updates.add(refreshed);
+      return refreshed;
+    }).whenComplete(() => _inflightRefresh = null);
     return _inflightRefresh!;
   }
 

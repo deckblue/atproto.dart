@@ -60,29 +60,25 @@ const _notMidLabelRun = '(?<!$validDomainChars[\\-.]?)';
 
 //* Split so the guarded and unguarded patterns cannot drift apart. The guard
 //* is a look-behind, so both patterns carry the same capture groups.
-const _urlHead =
-    '(' // $1 total match
+const _urlHead = '(' // $1 total match
     '($validUrlPrecedingChars)' // $2 Preceding character
     '(' // $3 URL
     '(https?:\\/\\/)?'; // $4 Protocol (optional)
 
-const _urlBody =
-    '($validDomain)' // $5 Domain(s)
+const _urlBody = '($validDomain)' // $5 Domain(s)
     '(?::($validPortNumber))?' // $6 Port number (optional)
     '(\\/$validUrlPathAll)?' // $7 URL Path
     '(\\?$validUrlQueryChars*$validUrlQueryEndingChars)?' // $8 Query String
     ')'
     ')';
 
-const validUrl =
-    '$_urlHead'
+const validUrl = '$_urlHead'
     '$_notInsideEmail' // reject the domain half of an email address
     '$_urlBody';
 
 //* The guard goes *before* the email look-behind, which is an unbounded
 //* backward scan of its own: a skipped position must not pay for it.
-const _validUrlWithoutMidLabelRestarts =
-    '$_urlHead'
+const _validUrlWithoutMidLabelRestarts = '$_urlHead'
     '$_notMidLabelRun'
     '$_notInsideEmail'
     '$_urlBody';

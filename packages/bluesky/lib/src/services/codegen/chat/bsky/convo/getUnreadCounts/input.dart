@@ -26,7 +26,6 @@ abstract class ConvoGetUnreadCountsInput with _$ConvoGetUnreadCountsInput {
   const factory ConvoGetUnreadCountsInput({
     /// When false, group convos are excluded from the counts.
     @Default(true) bool includeGroupChats,
-
     Map<String, dynamic>? $unknown,
   }) = _ConvoGetUnreadCountsInput;
 

@@ -49,15 +49,14 @@ final class ListConvosCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    if (argResults!.wasParsed("readState"))
-      "readState": argResults!["readState"],
-    if (argResults!.wasParsed("status")) "status": argResults!["status"],
-    if (argResults!.wasParsed("kind")) "kind": argResults!["kind"],
-    if (argResults!.wasParsed("lockStatus"))
-      "lockStatus": argResults!["lockStatus"],
-  };
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("readState"))
+          "readState": argResults!["readState"],
+        if (argResults!.wasParsed("status")) "status": argResults!["status"],
+        if (argResults!.wasParsed("kind")) "kind": argResults!["kind"],
+        if (argResults!.wasParsed("lockStatus"))
+          "lockStatus": argResults!["lockStatus"],
+      };
 }

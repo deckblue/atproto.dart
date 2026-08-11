@@ -60,7 +60,6 @@ abstract class ActorProfileRecord with _$ActorProfileRecord {
     @RepoStrongRefConverter() RepoStrongRef? joinedViaStarterPack,
     @RepoStrongRefConverter() RepoStrongRef? pinnedPost,
     @JsonKey(toJson: iso8601) DateTime? createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _ActorProfileRecord;
 

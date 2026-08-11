@@ -89,7 +89,6 @@ final class UModerationCreateReportSubjectConverter
           const RepoRefConverter().toJson(data),
         UModerationCreateReportSubjectRepoStrongRef(:final data) =>
           const RepoStrongRefConverter().toJson(data),
-
         UModerationCreateReportSubjectUnknown(:final data) => data,
       };
 }

@@ -10,14 +10,14 @@ import 'package:bluesky/src/services/codegen/app/bsky/notification/listNotificat
 import 'package:bluesky/src/tools/utils/group_by.dart';
 
 Map<String, dynamic> _n(String indexedAt) => {
-  'uri': 'at://did:plc:a/app.bsky.feed.like/${indexedAt.hashCode}',
-  'cid': 'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
-  'author': {'did': 'did:plc:a', 'handle': 'a.test'},
-  'reason': 'reply',
-  'record': <String, dynamic>{},
-  'isRead': true,
-  'indexedAt': indexedAt,
-};
+      'uri': 'at://did:plc:a/app.bsky.feed.like/${indexedAt.hashCode}',
+      'cid': 'bafyreidpmsxdbmw7gn55ek5xk4qwb6nyx6f6rppyjir4fizrdhyb44o2va',
+      'author': {'did': 'did:plc:a', 'handle': 'a.test'},
+      'reason': 'reply',
+      'record': <String, dynamic>{},
+      'isRead': true,
+      'indexedAt': indexedAt,
+    };
 
 NotificationListNotificationsOutput _output(List<String> indexedAt) =>
     NotificationListNotificationsOutput.fromJson({

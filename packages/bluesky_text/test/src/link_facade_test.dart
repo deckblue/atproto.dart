@@ -13,28 +13,29 @@ import 'package:bluesky_text/bluesky_text.dart';
 /// These are the expectations that matter most: a check that fires on ordinary
 /// link text teaches people to dismiss it.
 void expectHonest(final String displayText, final String uri) => expect(
-  isLinkFacade(displayText: displayText, uri: Uri.parse(uri)),
-  isFalse,
-  reason: '"$displayText" -> $uri must not be flagged',
-);
+      isLinkFacade(displayText: displayText, uri: Uri.parse(uri)),
+      isFalse,
+      reason: '"$displayText" -> $uri must not be flagged',
+    );
 
 /// Asserts that [displayText] over [uri] is reported as a facade.
 void expectFacade(final String displayText, final String uri) => expect(
-  isLinkFacade(displayText: displayText, uri: Uri.parse(uri)),
-  isTrue,
-  reason: '"$displayText" -> $uri must be flagged',
-);
+      isLinkFacade(displayText: displayText, uri: Uri.parse(uri)),
+      isTrue,
+      reason: '"$displayText" -> $uri must be flagged',
+    );
 
 /// Asserts the exact [LinkFacadeVerdict] of [displayText] over [uri].
 void expectVerdict(
   final String displayText,
   final String uri,
   final LinkFacadeVerdict expected,
-) => expect(
-  checkLinkFacade(displayText: displayText, uri: Uri.parse(uri)),
-  expected,
-  reason: '"$displayText" -> $uri must be $expected',
-);
+) =>
+    expect(
+      checkLinkFacade(displayText: displayText, uri: Uri.parse(uri)),
+      expected,
+      reason: '"$displayText" -> $uri must be $expected',
+    );
 
 void main() {
   group('isLinkFacade flags', () {

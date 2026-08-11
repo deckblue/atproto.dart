@@ -71,9 +71,9 @@ final class SuggestionSubjectTypeConverter
 
   @override
   String toJson(SuggestionSubjectType object) => switch (object) {
-    SuggestionSubjectTypeKnownValue(:final data) => data.value,
-    SuggestionSubjectTypeUnknown(:final data) => data,
-  };
+        SuggestionSubjectTypeKnownValue(:final data) => data.value,
+        SuggestionSubjectTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownSuggestionSubjectType implements Serializable {

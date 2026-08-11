@@ -71,9 +71,9 @@ final class ViewerConfigRoleConverter
 
   @override
   String toJson(ViewerConfigRole object) => switch (object) {
-    ViewerConfigRoleKnownValue(:final data) => data.value,
-    ViewerConfigRoleUnknown(:final data) => data,
-  };
+        ViewerConfigRoleKnownValue(:final data) => data.value,
+        ViewerConfigRoleUnknown(:final data) => data,
+      };
 }
 
 enum KnownViewerConfigRole implements Serializable {

@@ -74,9 +74,9 @@ final class ModEventTakedownTargetServicesConverter
 
   @override
   String toJson(ModEventTakedownTargetServices object) => switch (object) {
-    ModEventTakedownTargetServicesKnownValue(:final data) => data.value,
-    ModEventTakedownTargetServicesUnknown(:final data) => data,
-  };
+        ModEventTakedownTargetServicesKnownValue(:final data) => data.value,
+        ModEventTakedownTargetServicesUnknown(:final data) => data,
+      };
 }
 
 enum KnownModEventTakedownTargetServices implements Serializable {

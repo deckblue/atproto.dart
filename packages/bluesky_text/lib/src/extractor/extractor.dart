@@ -41,12 +41,12 @@ List<Entity> orderByIndicesStart(final List<Entity> entities) {
 /// over tags and cashtags. This drops, for example, a `#fragment` tag or an
 /// `@handle` mention that lives inside a URL.
 int _facetPriority(final EntityType type) => switch (type) {
-  EntityType.link => 0,
-  EntityType.markdownLink => 0,
-  EntityType.handle => 1,
-  EntityType.tag => 2,
-  EntityType.cashtag => 3,
-};
+      EntityType.link => 0,
+      EntityType.markdownLink => 0,
+      EntityType.handle => 1,
+      EntityType.tag => 2,
+      EntityType.cashtag => 3,
+    };
 
 /// Returns true if the two byte ranges overlap (share at least one byte).
 bool _overlaps(final Entity a, final Entity b) =>
@@ -57,8 +57,7 @@ bool _overlaps(final Entity a, final Entity b) =>
 List<Entity> resolveFacetOverlaps(final List<Entity> entities) {
   if (entities.length < 2) return orderByIndicesStart(entities);
 
-  final byPriority = [...entities]
-    ..sort((a, b) {
+  final byPriority = [...entities]..sort((a, b) {
       final priority = _facetPriority(a.type).compareTo(_facetPriority(b.type));
       if (priority != 0) return priority;
 

@@ -102,23 +102,24 @@ final class _CreateProfileCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.actor.profile",
-    if (argResults!.wasParsed("displayName"))
-      "displayName": argResults!["displayName"],
-    if (argResults!.wasParsed("description"))
-      "description": argResults!["description"],
-    if (argResults!.wasParsed("pronouns")) "pronouns": argResults!["pronouns"],
-    if (argResults!.wasParsed("website")) "website": argResults!["website"],
-    if (argResults!.wasParsed("avatar")) "avatar": argResults!["avatar"],
-    if (argResults!.wasParsed("banner")) "banner": argResults!["banner"],
-    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
-    if (argResults!.wasParsed("joinedViaStarterPack"))
-      "joinedViaStarterPack": _decodeJson("joinedViaStarterPack"),
-    if (argResults!.wasParsed("pinnedPost"))
-      "pinnedPost": _decodeJson("pinnedPost"),
-    if (argResults!.wasParsed("createdAt"))
-      "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.actor.profile",
+        if (argResults!.wasParsed("displayName"))
+          "displayName": argResults!["displayName"],
+        if (argResults!.wasParsed("description"))
+          "description": argResults!["description"],
+        if (argResults!.wasParsed("pronouns"))
+          "pronouns": argResults!["pronouns"],
+        if (argResults!.wasParsed("website")) "website": argResults!["website"],
+        if (argResults!.wasParsed("avatar")) "avatar": argResults!["avatar"],
+        if (argResults!.wasParsed("banner")) "banner": argResults!["banner"],
+        if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+        if (argResults!.wasParsed("joinedViaStarterPack"))
+          "joinedViaStarterPack": _decodeJson("joinedViaStarterPack"),
+        if (argResults!.wasParsed("pinnedPost"))
+          "pinnedPost": _decodeJson("pinnedPost"),
+        if (argResults!.wasParsed("createdAt"))
+          "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutProfileCommand extends PutRecordCommand
@@ -145,23 +146,24 @@ final class _PutProfileCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.actor.profile",
-    if (argResults!.wasParsed("displayName"))
-      "displayName": argResults!["displayName"],
-    if (argResults!.wasParsed("description"))
-      "description": argResults!["description"],
-    if (argResults!.wasParsed("pronouns")) "pronouns": argResults!["pronouns"],
-    if (argResults!.wasParsed("website")) "website": argResults!["website"],
-    if (argResults!.wasParsed("avatar")) "avatar": argResults!["avatar"],
-    if (argResults!.wasParsed("banner")) "banner": argResults!["banner"],
-    if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
-    if (argResults!.wasParsed("joinedViaStarterPack"))
-      "joinedViaStarterPack": _decodeJson("joinedViaStarterPack"),
-    if (argResults!.wasParsed("pinnedPost"))
-      "pinnedPost": _decodeJson("pinnedPost"),
-    if (argResults!.wasParsed("createdAt"))
-      "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.actor.profile",
+        if (argResults!.wasParsed("displayName"))
+          "displayName": argResults!["displayName"],
+        if (argResults!.wasParsed("description"))
+          "description": argResults!["description"],
+        if (argResults!.wasParsed("pronouns"))
+          "pronouns": argResults!["pronouns"],
+        if (argResults!.wasParsed("website")) "website": argResults!["website"],
+        if (argResults!.wasParsed("avatar")) "avatar": argResults!["avatar"],
+        if (argResults!.wasParsed("banner")) "banner": argResults!["banner"],
+        if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
+        if (argResults!.wasParsed("joinedViaStarterPack"))
+          "joinedViaStarterPack": _decodeJson("joinedViaStarterPack"),
+        if (argResults!.wasParsed("pinnedPost"))
+          "pinnedPost": _decodeJson("pinnedPost"),
+        if (argResults!.wasParsed("createdAt"))
+          "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteProfileCommand extends DeleteRecordCommand {
@@ -208,11 +210,11 @@ final class _GetProfileCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.actor.profile",
-    'rkey': 'self',
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.actor.profile",
+        'rkey': 'self',
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListProfileCommand extends QueryCommand {
@@ -242,12 +244,11 @@ final class _ListProfileCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.actor.profile",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.actor.profile",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

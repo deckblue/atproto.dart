@@ -49,10 +49,11 @@ final class SyncServiceImpl extends SyncService {
   /// }
   /// ```
   Future<XRPCResponse<Subscription<USyncSubscribeReposMessage>>>
-  subscribeReposAsMessages({int? cursor}) async => await ctx.stream(
-    ns.comAtprotoSyncSubscribeRepos,
-    parameters: {'cursor': ?cursor},
-    adaptor: const SyncSubscribeReposAdaptor().toJson,
-    to: (json) => const USyncSubscribeReposMessageConverter().fromJson(json),
-  );
+      subscribeReposAsMessages({int? cursor}) async => await ctx.stream(
+            ns.comAtprotoSyncSubscribeRepos,
+            parameters: {'cursor': cursor},
+            adaptor: const SyncSubscribeReposAdaptor().toJson,
+            to: (json) =>
+                const USyncSubscribeReposMessageConverter().fromJson(json),
+          );
 }

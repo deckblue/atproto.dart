@@ -45,14 +45,12 @@ final class DeleteQueueCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    "queueId":
-        int.tryParse(argResults!["queueId"]) ??
-        usageException('Invalid integer value for option "queueId".'),
-    if (argResults!.wasParsed("migrateToQueueId"))
-      "migrateToQueueId":
-          int.tryParse(argResults!["migrateToQueueId"]) ??
-          usageException(
-            'Invalid integer value for option "migrateToQueueId".',
-          ),
-  };
+        "queueId": int.tryParse(argResults!["queueId"]) ??
+            usageException('Invalid integer value for option "queueId".'),
+        if (argResults!.wasParsed("migrateToQueueId"))
+          "migrateToQueueId": int.tryParse(argResults!["migrateToQueueId"]) ??
+              usageException(
+                'Invalid integer value for option "migrateToQueueId".',
+              ),
+      };
 }

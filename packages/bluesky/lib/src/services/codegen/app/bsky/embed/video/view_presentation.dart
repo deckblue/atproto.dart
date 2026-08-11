@@ -71,9 +71,9 @@ final class EmbedVideoViewPresentationConverter
 
   @override
   String toJson(EmbedVideoViewPresentation object) => switch (object) {
-    EmbedVideoViewPresentationKnownValue(:final data) => data.value,
-    EmbedVideoViewPresentationUnknown(:final data) => data,
-  };
+        EmbedVideoViewPresentationKnownValue(:final data) => data.value,
+        EmbedVideoViewPresentationUnknown(:final data) => data,
+      };
 }
 
 enum KnownEmbedVideoViewPresentation implements Serializable {

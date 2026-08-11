@@ -42,12 +42,13 @@ final class SchemaCommand extends Command<void> {
 
 mixin _SchemaCommandRecordArgs on Command<void> {
   void _addRecordOptions() {
-    argParser..addOption(
-      "lexicon",
-      help:
-          r"Indicates the 'version' of the Lexicon language. Must be '1' for the current atproto/Lexicon schema system.",
-      mandatory: true,
-    );
+    argParser
+      ..addOption(
+        "lexicon",
+        help:
+            r"Indicates the 'version' of the Lexicon language. Must be '1' for the current atproto/Lexicon schema system.",
+        mandatory: true,
+      );
   }
 }
 
@@ -77,11 +78,10 @@ final class _CreateSchemaCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "com.atproto.lexicon.schema",
-    "lexicon":
-        int.tryParse(argResults!["lexicon"]) ??
-        usageException('Invalid integer value for option "lexicon".'),
-  };
+        r"$type": "com.atproto.lexicon.schema",
+        "lexicon": int.tryParse(argResults!["lexicon"]) ??
+            usageException('Invalid integer value for option "lexicon".'),
+      };
 }
 
 final class _PutSchemaCommand extends PutRecordCommand
@@ -110,11 +110,10 @@ final class _PutSchemaCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "com.atproto.lexicon.schema",
-    "lexicon":
-        int.tryParse(argResults!["lexicon"]) ??
-        usageException('Invalid integer value for option "lexicon".'),
-  };
+        r"$type": "com.atproto.lexicon.schema",
+        "lexicon": int.tryParse(argResults!["lexicon"]) ??
+            usageException('Invalid integer value for option "lexicon".'),
+      };
 }
 
 final class _DeleteSchemaCommand extends DeleteRecordCommand {
@@ -166,11 +165,11 @@ final class _GetSchemaCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "com.atproto.lexicon.schema",
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "com.atproto.lexicon.schema",
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListSchemaCommand extends QueryCommand {
@@ -200,12 +199,11 @@ final class _ListSchemaCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "com.atproto.lexicon.schema",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "com.atproto.lexicon.schema",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

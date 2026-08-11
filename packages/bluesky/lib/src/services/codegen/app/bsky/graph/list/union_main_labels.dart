@@ -63,9 +63,8 @@ final class UGraphListLabelsConverter
 
   @override
   Map<String, dynamic> toJson(UGraphListLabels object) => switch (object) {
-    UGraphListLabelsSelfLabels(:final data) =>
-      const SelfLabelsConverter().toJson(data),
-
-    UGraphListLabelsUnknown(:final data) => data,
-  };
+        UGraphListLabelsSelfLabels(:final data) =>
+          const SelfLabelsConverter().toJson(data),
+        UGraphListLabelsUnknown(:final data) => data,
+      };
 }

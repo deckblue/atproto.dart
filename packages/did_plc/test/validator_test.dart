@@ -13,24 +13,25 @@ void main() {
   const validator = OperationValidator();
 
   Map<String, dynamic> validPlcOperation() => {
-    'sig':
-        '9NuYV7AqwHVTc0YuWzNV3CJafsSZWH7qCxHRUIP2xWlB-YexXC1OaYAnUayiCXLVzRQ8WBXIqF-SvZdNalwcjA',
-    'prev': null,
-    'type': 'plc_operation',
-    'services': {
-      'atproto_pds': {
-        'type': 'AtprotoPersonalDataServer',
-        'endpoint': 'https://bsky.social',
-      },
-    },
-    'alsoKnownAs': ['at://bluesky-team.bsky.social'],
-    'rotationKeys': [
-      'did:key:zQ3shhCGUqDKjStzuDxPkTxN6ujddP4RkEKJJouJGRRkaLGbg',
-    ],
-    'verificationMethods': {
-      'atproto': 'did:key:zQ3shXjHeiBuRCKmM36cuYnm7YEMzhGnCmCyW92sRJ9pribSF',
-    },
-  };
+        'sig':
+            '9NuYV7AqwHVTc0YuWzNV3CJafsSZWH7qCxHRUIP2xWlB-YexXC1OaYAnUayiCXLVzRQ8WBXIqF-SvZdNalwcjA',
+        'prev': null,
+        'type': 'plc_operation',
+        'services': {
+          'atproto_pds': {
+            'type': 'AtprotoPersonalDataServer',
+            'endpoint': 'https://bsky.social',
+          },
+        },
+        'alsoKnownAs': ['at://bluesky-team.bsky.social'],
+        'rotationKeys': [
+          'did:key:zQ3shhCGUqDKjStzuDxPkTxN6ujddP4RkEKJJouJGRRkaLGbg',
+        ],
+        'verificationMethods': {
+          'atproto':
+              'did:key:zQ3shXjHeiBuRCKmM36cuYnm7YEMzhGnCmCyW92sRJ9pribSF',
+        },
+      };
 
   group('OperationValidator', () {
     test('accepts a real plc_operation with did:key rotation keys', () {

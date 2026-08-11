@@ -67,9 +67,8 @@ final class UThreadItemValueConverter
 
   @override
   Map<String, dynamic> toJson(UThreadItemValue object) => switch (object) {
-    UThreadItemValueThreadItemPost(:final data) =>
-      const ThreadItemPostConverter().toJson(data),
-
-    UThreadItemValueUnknown(:final data) => data,
-  };
+        UThreadItemValueThreadItemPost(:final data) =>
+          const ThreadItemPostConverter().toJson(data),
+        UThreadItemValueUnknown(:final data) => data,
+      };
 }

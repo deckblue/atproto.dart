@@ -32,7 +32,6 @@ abstract class JoinRequestView with _$JoinRequestView {
     required String convoId,
     @ProfileViewBasicConverter() required ProfileViewBasic requestedBy,
     @JsonKey(toJson: iso8601) required DateTime requestedAt,
-
     Map<String, dynamic>? $unknown,
   }) = _JoinRequestView;
 

@@ -51,7 +51,6 @@ abstract class SafelinkQueryEventsInput with _$SafelinkQueryEventsInput {
       ),
     )
     SafelinkQueryEventsSortDirection sortDirection,
-
     Map<String, dynamic>? $unknown,
   }) = _SafelinkQueryEventsInput;
 

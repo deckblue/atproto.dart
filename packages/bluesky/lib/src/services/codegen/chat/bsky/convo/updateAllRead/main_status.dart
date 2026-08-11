@@ -71,9 +71,9 @@ final class ConvoUpdateAllReadStatusConverter
 
   @override
   String toJson(ConvoUpdateAllReadStatus object) => switch (object) {
-    ConvoUpdateAllReadStatusKnownValue(:final data) => data.value,
-    ConvoUpdateAllReadStatusUnknown(:final data) => data,
-  };
+        ConvoUpdateAllReadStatusKnownValue(:final data) => data.value,
+        ConvoUpdateAllReadStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownConvoUpdateAllReadStatus implements Serializable {

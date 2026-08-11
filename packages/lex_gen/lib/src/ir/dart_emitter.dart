@@ -105,9 +105,8 @@ void _writeConstructor(final StringBuffer b, final DartConstructor ctor) {
 
   final constKeyword = ctor.isConst ? 'const ' : '';
   final factoryKeyword = ctor.isFactory ? 'factory ' : '';
-  final qualifiedName = ctor.name == null
-      ? ctor.className
-      : '${ctor.className}.${ctor.name}';
+  final qualifiedName =
+      ctor.name == null ? ctor.className : '${ctor.className}.${ctor.name}';
   final signature = '$constKeyword$factoryKeyword$qualifiedName';
 
   if (ctor.params.isEmpty && ctor.lambdaBody != null) {

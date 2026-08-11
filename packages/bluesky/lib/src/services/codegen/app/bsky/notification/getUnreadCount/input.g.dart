@@ -8,28 +8,29 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotificationGetUnreadCountInput _$NotificationGetUnreadCountInputFromJson(
-  Map json,
-) =>
-    $checkedCreate('_NotificationGetUnreadCountInput', json, ($checkedConvert) {
-      final val = _NotificationGetUnreadCountInput(
-        priority: $checkedConvert('priority', (v) => v as bool?),
-        seenAt: $checkedConvert(
-          'seenAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$NotificationGetUnreadCountInputImpl
+    _$$NotificationGetUnreadCountInputImplFromJson(Map json) => $checkedCreate(
+          r'_$NotificationGetUnreadCountInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$NotificationGetUnreadCountInputImpl(
+              priority: $checkedConvert('priority', (v) => v as bool?),
+              seenAt: $checkedConvert('seenAt',
+                  (v) => v == null ? null : DateTime.parse(v as String)),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$NotificationGetUnreadCountInputToJson(
-  _NotificationGetUnreadCountInput instance,
-) => <String, dynamic>{
-  'priority': ?instance.priority,
-  'seenAt': iso8601(instance.seenAt),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$NotificationGetUnreadCountInputImplToJson(
+        _$NotificationGetUnreadCountInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.priority case final value?) 'priority': value,
+      'seenAt': iso8601(instance.seenAt),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

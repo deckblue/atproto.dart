@@ -40,15 +40,15 @@ const _defaultTimeout = Duration(minutes: 5);
 /// exhaustive switch below turns any newly generated known value into a
 /// compile error rather than a silently mishandled state.
 Blob? _terminalBlobOf(final JobStatus status) => switch (status.state) {
-  JobStatusStateKnownValue(data: KnownJobStatusState.jOB_STATE_COMPLETED) =>
-    //! A completed job with no blob is a failure. The blob is the whole
-    //! point of the upload, so returning null here would hand the caller a
-    //! "success" it cannot post.
-    status.blob ?? (throw VideoJobMissingBlobException(status)),
-  JobStatusStateKnownValue(data: KnownJobStatusState.jOB_STATE_FAILED) =>
-    throw VideoJobFailedException(status),
-  JobStatusStateUnknown() => null,
-};
+      JobStatusStateKnownValue(data: KnownJobStatusState.jOB_STATE_COMPLETED) =>
+        //! A completed job with no blob is a failure. The blob is the whole
+        //! point of the upload, so returning null here would hand the caller a
+        //! "success" it cannot post.
+        status.blob ?? (throw VideoJobMissingBlobException(status)),
+      JobStatusStateKnownValue(data: KnownJobStatusState.jOB_STATE_FAILED) =>
+        throw VideoJobFailedException(status),
+      JobStatusStateUnknown() => null,
+    };
 
 final class VideoServiceImpl extends VideoService {
   VideoServiceImpl(super.ctx);
@@ -98,23 +98,25 @@ final class VideoServiceImpl extends VideoService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await super.getJobStatus(
-    jobId: jobId,
-    $service: $service ?? _videoService,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await super.getJobStatus(
+        jobId: jobId,
+        $service: $service ?? _videoService,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   @override
   Future<XRPCResponse<VideoGetUploadLimitsOutput>> getUploadLimits({
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await super.getUploadLimits(
-    $service: $service ?? _videoService,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await super.getUploadLimits(
+        $service: $service ?? _videoService,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Uploads [bytes] and waits for the video service to finish processing it,
   /// returning the blob to embed in a post.
@@ -268,7 +270,9 @@ final class VideoServiceImpl extends VideoService {
         status = (await getJobStatus(
           jobId: status.jobId,
           $service: $service,
-        )).data.jobStatus;
+        ))
+            .data
+            .jobStatus;
       }
     }
 
@@ -311,12 +315,13 @@ final class VideoServiceImpl extends VideoService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $parameters,
-  }) async => await uploadVideo(
-    bytes: bytes,
-    $parameters: $parameters,
-    $service: $service,
-    $headers: {'Authorization': 'Bearer $authToken', ...?$headers},
-  );
+  }) async =>
+      await uploadVideo(
+        bytes: bytes,
+        $parameters: $parameters,
+        $service: $service,
+        $headers: {'Authorization': 'Bearer $authToken', ...?$headers},
+      );
 
   /// Gets upload limits using a service authentication token.
   ///
@@ -345,11 +350,12 @@ final class VideoServiceImpl extends VideoService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await getUploadLimits(
-    $service: $service,
-    $headers: {'Authorization': 'Bearer $authToken', ...?$headers},
-    $unknown: $unknown,
-  );
+  }) async =>
+      await getUploadLimits(
+        $service: $service,
+        $headers: {'Authorization': 'Bearer $authToken', ...?$headers},
+        $unknown: $unknown,
+      );
 
   /// Obtains a service authentication token for checking upload limits.
   ///
@@ -370,11 +376,11 @@ final class VideoServiceImpl extends VideoService {
   /// );
   /// ```
   Future<XRPCResponse<ServerGetServiceAuthOutput>>
-  getUploadLimitsAuth() async => await comAtprotoServerGetServiceAuth(
-    aud: 'did:web:$_videoService',
-    lxm: bsky_id.appBskyVideoGetUploadLimits,
-    $ctx: ctx,
-  );
+      getUploadLimitsAuth() async => await comAtprotoServerGetServiceAuth(
+            aud: 'did:web:$_videoService',
+            lxm: bsky_id.appBskyVideoGetUploadLimits,
+            $ctx: ctx,
+          );
 
   /// Obtains a service authentication token for uploading videos.
   ///
@@ -404,8 +410,7 @@ final class VideoServiceImpl extends VideoService {
         // method/method-specific-id separator.
         aud: 'did:web:${ctx.service.replaceAll(':', '%3A')}',
         lxm: atproto_id.comAtprotoRepoUploadBlob,
-        exp:
-            DateTime.now().add(Duration(minutes: 30)).millisecondsSinceEpoch ~/
+        exp: DateTime.now().add(Duration(minutes: 30)).millisecondsSinceEpoch ~/
             1000,
         $ctx: ctx,
       );

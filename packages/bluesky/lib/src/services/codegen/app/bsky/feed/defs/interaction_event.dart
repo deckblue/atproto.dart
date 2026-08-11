@@ -71,9 +71,9 @@ final class InteractionEventConverter
 
   @override
   String toJson(InteractionEvent object) => switch (object) {
-    InteractionEventKnownValue(:final data) => data.value,
-    InteractionEventUnknown(:final data) => data,
-  };
+        InteractionEventKnownValue(:final data) => data.value,
+        InteractionEventUnknown(:final data) => data,
+      };
 }
 
 enum KnownInteractionEvent implements Serializable {

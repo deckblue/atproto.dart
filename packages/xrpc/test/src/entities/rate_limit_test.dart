@@ -131,8 +131,8 @@ void main() {
       final rateLimit = RateLimit.fromHeaders({
         'ratelimit-limit': '1000',
         'ratelimit-remaining': '0',
-        'ratelimit-reset': (fiveMinutesLater.millisecondsSinceEpoch ~/ 1000)
-            .toString(),
+        'ratelimit-reset':
+            (fiveMinutesLater.millisecondsSinceEpoch ~/ 1000).toString(),
       });
 
       expect(rateLimit.limitCount, 1000);
@@ -194,9 +194,8 @@ void main() {
     });
 
     test('retry-after in http-date form (past) is not exceeded', () {
-      final fiveMinutesAgo = DateTime.now()
-          .subtract(Duration(minutes: 5))
-          .toUtc();
+      final fiveMinutesAgo =
+          DateTime.now().subtract(Duration(minutes: 5)).toUtc();
       final rateLimit = RateLimit.fromHeaders({
         'retry-after': formatHttpDate(fiveMinutesAgo),
       });
@@ -238,8 +237,8 @@ void main() {
       final rateLimit = RateLimit.fromHeaders({
         'ratelimit-limit': '1000',
         'ratelimit-remaining': '1',
-        'ratelimit-reset': (fiveMinutesLater.millisecondsSinceEpoch ~/ 1000)
-            .toString(),
+        'ratelimit-reset':
+            (fiveMinutesLater.millisecondsSinceEpoch ~/ 1000).toString(),
         'ratelimit-policy': '100;w=300',
         'retry-after': '9999',
       });

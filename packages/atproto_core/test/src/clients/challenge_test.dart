@@ -23,46 +23,50 @@ import 'package:atproto_core/src/clients/retry_strategy.dart';
 
 xrpc.XRPCResponse<String> _okResponse({
   Map<String, String> headers = const {},
-}) => xrpc.XRPCResponse(
-  headers: headers,
-  status: xrpc.HttpStatus.ok,
-  request: xrpc.XRPCRequest(
-    method: xrpc.HttpMethod.get,
-    url: Uri.https('bsky.social', '/xrpc/com.example.test'),
-  ),
-  rateLimit: xrpc.RateLimit.unlimited(),
-  data: 'ok',
-);
+}) =>
+    xrpc.XRPCResponse(
+      headers: headers,
+      status: xrpc.HttpStatus.ok,
+      request: xrpc.XRPCRequest(
+        method: xrpc.HttpMethod.get,
+        url: Uri.https('bsky.social', '/xrpc/com.example.test'),
+      ),
+      rateLimit: xrpc.RateLimit.unlimited(),
+      data: 'ok',
+    );
 
 xrpc.XRPCResponse<xrpc.XRPCError> _errorResponse({
   required int statusCode,
   Map<String, String> headers = const {},
   String error = 'Error',
-}) => xrpc.XRPCResponse(
-  headers: headers,
-  status: xrpc.HttpStatus.valueOf(statusCode),
-  request: xrpc.XRPCRequest(
-    method: xrpc.HttpMethod.get,
-    url: Uri.https('bsky.social', '/xrpc/com.example.test'),
-  ),
-  rateLimit: xrpc.RateLimit.fromHeaders(headers),
-  data: xrpc.XRPCError(error: error),
-);
+}) =>
+    xrpc.XRPCResponse(
+      headers: headers,
+      status: xrpc.HttpStatus.valueOf(statusCode),
+      request: xrpc.XRPCRequest(
+        method: xrpc.HttpMethod.get,
+        url: Uri.https('bsky.social', '/xrpc/com.example.test'),
+      ),
+      rateLimit: xrpc.RateLimit.fromHeaders(headers),
+      data: xrpc.XRPCError(error: error),
+    );
 
 Challenge _challenge({
   int? maxAttempts,
   FutureOr<void> Function(RetryEvent event)? onExecute,
   bool retryProcedureOnAmbiguousFailure = false,
-}) => Challenge(
-  maxAttempts == null
-      ? null
-      : RetryConfig(
-          maxAttempts: maxAttempts,
-          jitter: Jitter(maxInSeconds: 0),
-          onExecute: onExecute,
-          retryProcedureOnAmbiguousFailure: retryProcedureOnAmbiguousFailure,
-        ),
-);
+}) =>
+    Challenge(
+      maxAttempts == null
+          ? null
+          : RetryConfig(
+              maxAttempts: maxAttempts,
+              jitter: Jitter(maxInSeconds: 0),
+              onExecute: onExecute,
+              retryProcedureOnAmbiguousFailure:
+                  retryProcedureOnAmbiguousFailure,
+            ),
+    );
 
 /// A [RetryStrategy] that returns each queued delay in turn (null stops), and
 /// records the contexts it was handed.
@@ -109,7 +113,8 @@ void main() {
       expect(notified, {'dpop-nonce': 'abcd'});
     });
 
-    test('a throwing async onUpdateDpopNonce neither fails the request nor '
+    test(
+        'a throwing async onUpdateDpopNonce neither fails the request nor '
         'escapes as an unhandled zone error', () async {
       final zoneErrors = <Object>[];
 
@@ -133,7 +138,8 @@ void main() {
       expect(zoneErrors, isEmpty);
     });
 
-    test('a synchronously throwing onUpdateDpopNonce neither fails the request '
+    test(
+        'a synchronously throwing onUpdateDpopNonce neither fails the request '
         'nor escapes as an unhandled zone error', () async {
       final zoneErrors = <Object>[];
 
@@ -510,7 +516,8 @@ void main() {
       },
     );
 
-    test('retries a procedure when the request provably never reached the '
+    test(
+        'retries a procedure when the request provably never reached the '
         'server', () async {
       final challenge = _challenge(maxAttempts: 1);
 

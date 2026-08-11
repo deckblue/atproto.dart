@@ -54,16 +54,15 @@ final class QueryActivitiesCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("activityTypes"))
-      "activityTypes": argResults!["activityTypes"],
-    if (argResults!.wasParsed("createdAfter"))
-      "createdAfter": argResults!["createdAfter"],
-    if (argResults!.wasParsed("createdBefore"))
-      "createdBefore": argResults!["createdBefore"],
-    "sortDirection": argResults!["sortDirection"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        if (argResults!.wasParsed("activityTypes"))
+          "activityTypes": argResults!["activityTypes"],
+        if (argResults!.wasParsed("createdAfter"))
+          "createdAfter": argResults!["createdAfter"],
+        if (argResults!.wasParsed("createdBefore"))
+          "createdBefore": argResults!["createdBefore"],
+        "sortDirection": argResults!["sortDirection"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

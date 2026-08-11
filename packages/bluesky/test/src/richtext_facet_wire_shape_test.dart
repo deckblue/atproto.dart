@@ -18,8 +18,8 @@ void main() {
   group('bluesky_text facets are wire-complete for the lexicon models', () {
     Future<List<Map<String, dynamic>>> facetsOf(final String value) async =>
         BlueskyText(value).formatted.entities.toFacets(
-          resolver: (handle) async => 'did:plc:$handle',
-        );
+              resolver: (handle) async => 'did:plc:$handle',
+            );
 
     test('a facet round-trips through RichtextFacet unchanged', () async {
       final facets = await facetsOf(

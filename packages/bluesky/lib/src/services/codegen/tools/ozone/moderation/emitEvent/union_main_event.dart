@@ -240,8 +240,8 @@ extension UModerationEmitEventEventExtension on UModerationEmitEventEvent {
       !isRevokeAccountCredentialsEvent;
   RevokeAccountCredentialsEvent? get revokeAccountCredentialsEvent =>
       isRevokeAccountCredentialsEvent
-      ? data as RevokeAccountCredentialsEvent
-      : null;
+          ? data as RevokeAccountCredentialsEvent
+          : null;
   bool get isScheduleTakedownEvent =>
       isA<UModerationEmitEventEventScheduleTakedownEvent>(this);
   bool get isNotScheduleTakedownEvent => !isScheduleTakedownEvent;
@@ -252,8 +252,8 @@ extension UModerationEmitEventEventExtension on UModerationEmitEventEvent {
   bool get isNotCancelScheduledTakedownEvent => !isCancelScheduledTakedownEvent;
   CancelScheduledTakedownEvent? get cancelScheduledTakedownEvent =>
       isCancelScheduledTakedownEvent
-      ? data as CancelScheduledTakedownEvent
-      : null;
+          ? data as CancelScheduledTakedownEvent
+          : null;
   bool get isUnknown => isA<UModerationEmitEventEventUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
@@ -452,7 +452,6 @@ final class UModerationEmitEventEventConverter
           const ScheduleTakedownEventConverter().toJson(data),
         UModerationEmitEventEventCancelScheduledTakedownEvent(:final data) =>
           const CancelScheduledTakedownEventConverter().toJson(data),
-
         UModerationEmitEventEventUnknown(:final data) => data,
       };
 }

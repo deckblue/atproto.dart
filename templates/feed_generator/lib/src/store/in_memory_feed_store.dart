@@ -94,8 +94,7 @@ final class InMemoryFeedStore implements FeedStore {
 
     // Fast path: the firehose is ~chronological, so almost every post lands
     // at the end and the shift loop below does nothing.
-    final index =
-        _length == 0 ||
+    final index = _length == 0 ||
             _compareTo(_at(_length - 1), post.indexedAt, post.uri) <= 0
         ? _length
         : _lowerBound(post.indexedAt, post.uri);
@@ -114,9 +113,8 @@ final class InMemoryFeedStore implements FeedStore {
   }) async {
     if (limit < 1) return const [];
 
-    final end = before == null
-        ? _length
-        : _lowerBound(before.indexedAt, before.uri);
+    final end =
+        before == null ? _length : _lowerBound(before.indexedAt, before.uri);
     final start = end > limit ? end - limit : 0;
 
     return [for (var i = end - 1; i >= start; i--) _at(i)];

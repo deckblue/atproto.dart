@@ -69,9 +69,9 @@ final class OptionScopeConverter extends JsonConverter<OptionScope, String> {
 
   @override
   String toJson(OptionScope object) => switch (object) {
-    OptionScopeKnownValue(:final data) => data.value,
-    OptionScopeUnknown(:final data) => data,
-  };
+        OptionScopeKnownValue(:final data) => data.value,
+        OptionScopeUnknown(:final data) => data,
+      };
 }
 
 enum KnownOptionScope implements Serializable {

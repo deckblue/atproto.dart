@@ -81,21 +81,18 @@ void _assertInvariants(final BlueskyText text) {
   // 2. Each entity is represented by exactly one, unsplit segment. `Entity`
   //    has identity equality and every `entities` call builds fresh instances,
   //    so compare by value (type + byte range).
-  final segmentKeys =
-      segments
-          .where((s) => s.isEntity)
-          .map(
-            (s) =>
-                '${s.type}:${s.entity!.indices.start}:${s.entity!.indices.end}',
-          )
-          .toList()
-        ..sort();
-  final entityKeys =
-      text.entities
-          .where((e) => e.indices.start < e.indices.end)
-          .map((e) => '${e.type}:${e.indices.start}:${e.indices.end}')
-          .toList()
-        ..sort();
+  final segmentKeys = segments
+      .where((s) => s.isEntity)
+      .map(
+        (s) => '${s.type}:${s.entity!.indices.start}:${s.entity!.indices.end}',
+      )
+      .toList()
+    ..sort();
+  final entityKeys = text.entities
+      .where((e) => e.indices.start < e.indices.end)
+      .map((e) => '${e.type}:${e.indices.start}:${e.indices.end}')
+      .toList()
+    ..sort();
   expect(
     segmentKeys,
     entityKeys,
@@ -121,10 +118,8 @@ void _assertInvariants(final BlueskyText text) {
       );
     }
 
-    final overflowText = segments
-        .where((s) => s.isOverflow)
-        .map((s) => s.text)
-        .join();
+    final overflowText =
+        segments.where((s) => s.isOverflow).map((s) => s.text).join();
     expect(overflowText, value.substring(overflow.utf16Start));
   }
 

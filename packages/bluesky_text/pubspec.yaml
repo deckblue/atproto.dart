@@ -19,7 +19,7 @@ topics:
 dependencies:
   xrpc: ^1.1.3
   http: ^1.4.0
-  characters: ^1.4.0
+  characters: ^1.3.0
   freezed_annotation: ^2.4.1
   json_annotation: ^4.9.0
 

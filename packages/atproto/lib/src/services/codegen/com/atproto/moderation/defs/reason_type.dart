@@ -68,9 +68,9 @@ final class ReasonTypeConverter extends JsonConverter<ReasonType, String> {
 
   @override
   String toJson(ReasonType object) => switch (object) {
-    ReasonTypeKnownValue(:final data) => data.value,
-    ReasonTypeUnknown(:final data) => data,
-  };
+        ReasonTypeKnownValue(:final data) => data.value,
+        ReasonTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownReasonType implements Serializable {

@@ -43,7 +43,6 @@ abstract class GraphVerificationRecord with _$GraphVerificationRecord {
 
     /// Date of when the verification was created.
     @JsonKey(toJson: iso8601) required DateTime createdAt,
-
     Map<String, dynamic>? $unknown,
   }) = _GraphVerificationRecord;
 

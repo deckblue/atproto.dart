@@ -51,7 +51,6 @@ abstract class MessageView with _$MessageView {
     @UMessageViewReplyToConverter() UMessageViewReplyTo? replyTo,
     @MessageViewSenderConverter() required MessageViewSender sender,
     @JsonKey(toJson: iso8601) required DateTime sentAt,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageView;
 

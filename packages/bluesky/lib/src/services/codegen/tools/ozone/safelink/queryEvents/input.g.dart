@@ -8,43 +8,43 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SafelinkQueryEventsInput _$SafelinkQueryEventsInputFromJson(Map json) =>
-    $checkedCreate('_SafelinkQueryEventsInput', json, ($checkedConvert) {
-      final val = _SafelinkQueryEventsInput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-        urls: $checkedConvert(
-          'urls',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        patternType: $checkedConvert('patternType', (v) => v as String?),
-        sortDirection: $checkedConvert(
-          'sortDirection',
-          (v) => v == null
-              ? const SafelinkQueryEventsSortDirection.knownValue(
-                  data: KnownSafelinkQueryEventsSortDirection.desc,
-                )
-              : const SafelinkQueryEventsSortDirectionConverter().fromJson(
-                  v as String,
-                ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$SafelinkQueryEventsInputImpl _$$SafelinkQueryEventsInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$SafelinkQueryEventsInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SafelinkQueryEventsInputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          urls: $checkedConvert('urls',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          patternType: $checkedConvert('patternType', (v) => v as String?),
+          sortDirection: $checkedConvert(
+              'sortDirection',
+              (v) => v == null
+                  ? const SafelinkQueryEventsSortDirection.knownValue(
+                      data: KnownSafelinkQueryEventsSortDirection.desc)
+                  : const SafelinkQueryEventsSortDirectionConverter()
+                      .fromJson(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$SafelinkQueryEventsInputToJson(
-  _SafelinkQueryEventsInput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'limit': instance.limit,
-  'urls': ?instance.urls,
-  'patternType': ?instance.patternType,
-  'sortDirection': const SafelinkQueryEventsSortDirectionConverter().toJson(
-    instance.sortDirection,
-  ),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$SafelinkQueryEventsInputImplToJson(
+        _$SafelinkQueryEventsInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'limit': instance.limit,
+      if (instance.urls case final value?) 'urls': value,
+      if (instance.patternType case final value?) 'patternType': value,
+      'sortDirection': const SafelinkQueryEventsSortDirectionConverter()
+          .toJson(instance.sortDirection),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

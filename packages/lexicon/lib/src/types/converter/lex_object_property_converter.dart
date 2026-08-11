@@ -86,21 +86,21 @@ final class LexObjectPropertyConverter
 
   @override
   Map<String, dynamic> toJson(LexObjectProperty object) => switch (object) {
-    ULexObjectPropertyRefVariant(:final data) => switch (data) {
-      ULexRefVariantRef(:final data) => data.toJson(),
-      ULexRefVariantRefUnion(:final data) => data.toJson(),
-    },
-    ULexObjectPropertyIpld(:final data) => switch (data) {
-      ULexIpldBytes(:final data) => data.toJson(),
-      ULexIpldCidLink(:final data) => data.toJson(),
-    },
-    ULexObjectPropertyArray(:final data) => data.toJson(),
-    ULexObjectPropertyBlob(:final data) => data.toJson(),
-    ULexObjectPropertyPrimitive(:final data) => switch (data) {
-      ULexPrimitiveBoolean(:final data) => data.toJson(),
-      ULexPrimitiveInteger(:final data) => data.toJson(),
-      ULexPrimitiveString(:final data) => data.toJson(),
-      ULexPrimitiveUnknown(:final data) => data.toJson(),
-    },
-  };
+        ULexObjectPropertyRefVariant(:final data) => switch (data) {
+            ULexRefVariantRef(:final data) => data.toJson(),
+            ULexRefVariantRefUnion(:final data) => data.toJson(),
+          },
+        ULexObjectPropertyIpld(:final data) => switch (data) {
+            ULexIpldBytes(:final data) => data.toJson(),
+            ULexIpldCidLink(:final data) => data.toJson(),
+          },
+        ULexObjectPropertyArray(:final data) => data.toJson(),
+        ULexObjectPropertyBlob(:final data) => data.toJson(),
+        ULexObjectPropertyPrimitive(:final data) => switch (data) {
+            ULexPrimitiveBoolean(:final data) => data.toJson(),
+            ULexPrimitiveInteger(:final data) => data.toJson(),
+            ULexPrimitiveString(:final data) => data.toJson(),
+            ULexPrimitiveUnknown(:final data) => data.toJson(),
+          },
+      };
 }

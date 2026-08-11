@@ -75,9 +75,9 @@ final class EventGroupChatUpdatedUpdateTypeConverter
 
   @override
   String toJson(EventGroupChatUpdatedUpdateType object) => switch (object) {
-    EventGroupChatUpdatedUpdateTypeKnownValue(:final data) => data.value,
-    EventGroupChatUpdatedUpdateTypeUnknown(:final data) => data,
-  };
+        EventGroupChatUpdatedUpdateTypeKnownValue(:final data) => data.value,
+        EventGroupChatUpdatedUpdateTypeUnknown(:final data) => data,
+      };
 }
 
 enum KnownEventGroupChatUpdatedUpdateType implements Serializable {

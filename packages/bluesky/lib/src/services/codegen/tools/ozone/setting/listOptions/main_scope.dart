@@ -71,9 +71,9 @@ final class SettingListOptionsScopeConverter
 
   @override
   String toJson(SettingListOptionsScope object) => switch (object) {
-    SettingListOptionsScopeKnownValue(:final data) => data.value,
-    SettingListOptionsScopeUnknown(:final data) => data,
-  };
+        SettingListOptionsScopeKnownValue(:final data) => data.value,
+        SettingListOptionsScopeUnknown(:final data) => data,
+      };
 }
 
 enum KnownSettingListOptionsScope implements Serializable {

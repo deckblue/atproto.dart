@@ -28,9 +28,9 @@ const kDefaultMuteBehaviors = <ModerationBehaviorContext, ModerationBehavior>{
 /// The default behaviors applied when the subject matches a muted word.
 const kDefaultMuteWordBehaviors =
     <ModerationBehaviorContext, ModerationBehavior>{
-      ModerationBehaviorContext.contentList: ModerationBehavior.blur,
-      ModerationBehaviorContext.contentView: ModerationBehavior.blur,
-    };
+  ModerationBehaviorContext.contentList: ModerationBehavior.blur,
+  ModerationBehaviorContext.contentView: ModerationBehavior.blur,
+};
 
 /// The default behaviors applied when the subject is hidden by the user.
 const kDefaultHideBehaviors = <ModerationBehaviorContext, ModerationBehavior>{
@@ -104,12 +104,12 @@ final class ModerationBehaviors {
 
   @override
   int get hashCode => Object.hash(
-    block.length,
-    mute.length,
-    muteWord.length,
-    hide.length,
-    labels.length,
-  );
+        block.length,
+        mute.length,
+        muteWord.length,
+        hide.length,
+        labels.length,
+      );
 }
 
 bool _mapEquals<K, V>(final Map<K, V> a, final Map<K, V> b) {

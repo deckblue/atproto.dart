@@ -121,7 +121,6 @@ final class USyncSubscribeReposMessageConverter
           const AccountConverter().toJson(data),
         USyncSubscribeReposMessageInfo(:final data) =>
           const InfoConverter().toJson(data),
-
         USyncSubscribeReposMessageUnknown(:final data) => data,
       };
 }

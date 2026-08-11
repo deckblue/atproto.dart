@@ -58,18 +58,16 @@ final class GetMessageContextCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("convoId")) "convoId": argResults!["convoId"],
-    "messageId": argResults!["messageId"],
-    "before":
-        int.tryParse(argResults!["before"]) ??
-        usageException('Invalid integer value for option "before".'),
-    "after":
-        int.tryParse(argResults!["after"]) ??
-        usageException('Invalid integer value for option "after".'),
-    "maxInterleavedSystemMessages":
-        int.tryParse(argResults!["maxInterleavedSystemMessages"]) ??
-        usageException(
-          'Invalid integer value for option "maxInterleavedSystemMessages".',
-        ),
-  };
+        if (argResults!.wasParsed("convoId")) "convoId": argResults!["convoId"],
+        "messageId": argResults!["messageId"],
+        "before": int.tryParse(argResults!["before"]) ??
+            usageException('Invalid integer value for option "before".'),
+        "after": int.tryParse(argResults!["after"]) ??
+            usageException('Invalid integer value for option "after".'),
+        "maxInterleavedSystemMessages":
+            int.tryParse(argResults!["maxInterleavedSystemMessages"]) ??
+                usageException(
+                  'Invalid integer value for option "maxInterleavedSystemMessages".',
+                ),
+      };
 }

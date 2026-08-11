@@ -76,9 +76,9 @@ final class EscalationActivityPreviousStatusConverter
 
   @override
   String toJson(EscalationActivityPreviousStatus object) => switch (object) {
-    EscalationActivityPreviousStatusKnownValue(:final data) => data.value,
-    EscalationActivityPreviousStatusUnknown(:final data) => data,
-  };
+        EscalationActivityPreviousStatusKnownValue(:final data) => data.value,
+        EscalationActivityPreviousStatusUnknown(:final data) => data,
+      };
 }
 
 enum KnownEscalationActivityPreviousStatus implements Serializable {

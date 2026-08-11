@@ -25,23 +25,23 @@ final class CardybCommand extends BskyCommand {
 
   @override
   Future<void> run() async => await execute(() async {
-    final response = await http.get<String>(
-      '/v1/extract',
-      service: 'cardyb.bsky.app',
-      parameters: {'url': argResults!['url']},
-      timeout: timeout,
-      getClient: getClient,
-    );
+        final response = await http.get<String>(
+          '/v1/extract',
+          service: 'cardyb.bsky.app',
+          parameters: {'url': argResults!['url']},
+          timeout: timeout,
+          getClient: getClient,
+        );
 
-    return xrpc.XRPCResponse<String>(
-      headers: response.headers,
-      status: response.status,
-      request: xrpc.XRPCRequest(
-        method: response.request.method,
-        url: response.request.url,
-      ),
-      rateLimit: xrpc.RateLimit.unlimited(),
-      data: response.data,
-    );
-  });
+        return xrpc.XRPCResponse<String>(
+          headers: response.headers,
+          status: response.status,
+          request: xrpc.XRPCRequest(
+            method: response.request.method,
+            url: response.request.url,
+          ),
+          rateLimit: xrpc.RateLimit.unlimited(),
+          data: response.data,
+        );
+      });
 }

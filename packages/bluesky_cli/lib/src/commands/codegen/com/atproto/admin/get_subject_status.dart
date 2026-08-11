@@ -38,8 +38,8 @@ final class GetSubjectStatusCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("did")) "did": argResults!["did"],
-    if (argResults!.wasParsed("uri")) "uri": argResults!["uri"],
-    if (argResults!.wasParsed("blob")) "blob": argResults!["blob"],
-  };
+        if (argResults!.wasParsed("did")) "did": argResults!["did"],
+        if (argResults!.wasParsed("uri")) "uri": argResults!["uri"],
+        if (argResults!.wasParsed("blob")) "blob": argResults!["blob"],
+      };
 }

@@ -40,12 +40,12 @@ final class ListMembersCommand extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("q")) "q": argResults!["q"],
-    if (argResults!.wasParsed("disabled")) "disabled": argResults!["disabled"],
-    if (argResults!.wasParsed("roles")) "roles": argResults!["roles"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-  };
+        if (argResults!.wasParsed("q")) "q": argResults!["q"],
+        if (argResults!.wasParsed("disabled"))
+          "disabled": argResults!["disabled"],
+        if (argResults!.wasParsed("roles")) "roles": argResults!["roles"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+      };
 }

@@ -36,7 +36,6 @@ abstract class MessageInput with _$MessageInput {
 
     /// If set, the message this message is replying to. The referenced message must be in the same convo.
     @ReplyRefConverter() ReplyRef? replyTo,
-
     Map<String, dynamic>? $unknown,
   }) = _MessageInput;
 

@@ -40,10 +40,10 @@ final class PutPreferencesCommand extends ProcedureCommand {
 
   @override
   Map<String, dynamic>? get body => {
-    if (argResults!.wasParsed("chat")) "chat": _decodeJson("chat"),
-    if (argResults!.wasParsed("chatRequest"))
-      "chatRequest": _decodeJson("chatRequest"),
-  };
+        if (argResults!.wasParsed("chat")) "chat": _decodeJson("chat"),
+        if (argResults!.wasParsed("chatRequest"))
+          "chatRequest": _decodeJson("chatRequest"),
+      };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

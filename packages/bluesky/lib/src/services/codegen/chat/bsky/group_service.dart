@@ -40,30 +40,32 @@ Future<XRPCResponse<GroupAddMembersOutput>> chatBskyGroupAddMembers({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupAddMembers,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId, 'members': members},
-  to: const GroupAddMembersOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupAddMembers,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'convoId': convoId, 'members': members},
+      to: const GroupAddMembersOutputConverter().fromJson,
+    );
 
 /// Approves a request to join a group (via join link) the user owns. Action taken by the group owner.
 Future<XRPCResponse<GroupApproveJoinRequestOutput>>
-chatBskyGroupApproveJoinRequest({
+    chatBskyGroupApproveJoinRequest({
   required String convoId,
   required String member,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupApproveJoinRequest,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId, 'member': member},
-  to: const GroupApproveJoinRequestOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.post(
+          ns.chatBskyGroupApproveJoinRequest,
+          service: $service,
+          headers: {'Content-type': 'application/json', ...?$headers},
+          body: {...?$unknown, 'convoId': convoId, 'member': member},
+          to: const GroupApproveJoinRequestOutputConverter().fromJson,
+        );
 
 /// Creates a group convo, specifying the members to be added to it. Unlike getConvoForMembers, this isn't idempotent. It will create new groups even if the membership is identical to pre-existing groups. Will create 'request' membership for all members, except the owner who is 'accepted'.
 Future<XRPCResponse<GroupCreateGroupOutput>> chatBskyGroupCreateGroup({
@@ -73,13 +75,14 @@ Future<XRPCResponse<GroupCreateGroupOutput>> chatBskyGroupCreateGroup({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupCreateGroup,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'members': members, 'name': name},
-  to: const GroupCreateGroupOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupCreateGroup,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'members': members, 'name': name},
+      to: const GroupCreateGroupOutputConverter().fromJson,
+    );
 
 /// Creates a join link for the group convo.
 Future<XRPCResponse<GroupCreateJoinLinkOutput>> chatBskyGroupCreateJoinLink({
@@ -90,18 +93,19 @@ Future<XRPCResponse<GroupCreateJoinLinkOutput>> chatBskyGroupCreateJoinLink({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupCreateJoinLink,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    'convoId': convoId,
-    if (requireApproval != null) 'requireApproval': requireApproval,
-    'joinRule': const JoinRuleConverter().toJson(joinRule),
-  },
-  to: const GroupCreateJoinLinkOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupCreateJoinLink,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {
+        ...?$unknown,
+        'convoId': convoId,
+        if (requireApproval != null) 'requireApproval': requireApproval,
+        'joinRule': const JoinRuleConverter().toJson(joinRule),
+      },
+      to: const GroupCreateJoinLinkOutputConverter().fromJson,
+    );
 
 /// Disables the active join link for the group convo.
 Future<XRPCResponse<GroupDisableJoinLinkOutput>> chatBskyGroupDisableJoinLink({
@@ -110,13 +114,14 @@ Future<XRPCResponse<GroupDisableJoinLinkOutput>> chatBskyGroupDisableJoinLink({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupDisableJoinLink,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId},
-  to: const GroupDisableJoinLinkOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupDisableJoinLink,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'convoId': convoId},
+      to: const GroupDisableJoinLinkOutputConverter().fromJson,
+    );
 
 /// Edits group settings.
 Future<XRPCResponse<GroupEditGroupOutput>> chatBskyGroupEditGroup({
@@ -126,13 +131,14 @@ Future<XRPCResponse<GroupEditGroupOutput>> chatBskyGroupEditGroup({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupEditGroup,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId, 'name': name},
-  to: const GroupEditGroupOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupEditGroup,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'convoId': convoId, 'name': name},
+      to: const GroupEditGroupOutputConverter().fromJson,
+    );
 
 /// Edits the existing join link settings for the group convo.
 Future<XRPCResponse<GroupEditJoinLinkOutput>> chatBskyGroupEditJoinLink({
@@ -143,19 +149,20 @@ Future<XRPCResponse<GroupEditJoinLinkOutput>> chatBskyGroupEditJoinLink({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupEditJoinLink,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {
-    ...?$unknown,
-    'convoId': convoId,
-    if (requireApproval != null) 'requireApproval': requireApproval,
-    if (joinRule != null)
-      'joinRule': const JoinRuleConverter().toJson(joinRule),
-  },
-  to: const GroupEditJoinLinkOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupEditJoinLink,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {
+        ...?$unknown,
+        'convoId': convoId,
+        if (requireApproval != null) 'requireApproval': requireApproval,
+        if (joinRule != null)
+          'joinRule': const JoinRuleConverter().toJson(joinRule),
+      },
+      to: const GroupEditJoinLinkOutputConverter().fromJson,
+    );
 
 /// Re-enables a previously disabled join link for the group convo.
 Future<XRPCResponse<GroupEnableJoinLinkOutput>> chatBskyGroupEnableJoinLink({
@@ -164,33 +171,35 @@ Future<XRPCResponse<GroupEnableJoinLinkOutput>> chatBskyGroupEnableJoinLink({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupEnableJoinLink,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId},
-  to: const GroupEnableJoinLinkOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupEnableJoinLink,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'convoId': convoId},
+      to: const GroupEnableJoinLinkOutputConverter().fromJson,
+    );
 
 /// Get public information about groups from join links. The output array matches the input codes one-to-one by position (and each view also carries its 'code'). Disabled codes return a disabledJoinLinkPreviewView, and codes that do not map to a previewable link return an invalidJoinLinkPreviewView.
 Future<XRPCResponse<GroupGetJoinLinkPreviewsOutput>>
-chatBskyGroupGetJoinLinkPreviews({
+    chatBskyGroupGetJoinLinkPreviews({
   required List<String> codes,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyGroupGetJoinLinkPreviews,
-  service: $service,
-  headers: $headers,
-  parameters: {...?$unknown, 'codes': codes},
-  to: const GroupGetJoinLinkPreviewsOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.chatBskyGroupGetJoinLinkPreviews,
+          service: $service,
+          headers: $headers,
+          parameters: {...?$unknown, 'codes': codes},
+          to: const GroupGetJoinLinkPreviewsOutputConverter().fromJson,
+        );
 
 /// Lists a page of request to join a group (via join link) the user owns. Shows the data from the owner's point of view.
 Future<XRPCResponse<GroupListJoinRequestsOutput>>
-chatBskyGroupListJoinRequests({
+    chatBskyGroupListJoinRequests({
   required String convoId,
   int? limit,
   String? cursor,
@@ -198,22 +207,23 @@ chatBskyGroupListJoinRequests({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyGroupListJoinRequests,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    'convoId': convoId,
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const GroupListJoinRequestsOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.chatBskyGroupListJoinRequests,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            'convoId': convoId,
+            if (limit != null) 'limit': limit,
+            if (cursor != null) 'cursor': cursor,
+          },
+          to: const GroupListJoinRequestsOutputConverter().fromJson,
+        );
 
 /// Returns a page of group conversations that both the requester and the specified actor are members of.
 Future<XRPCResponse<GroupListMutualGroupsOutput>>
-chatBskyGroupListMutualGroups({
+    chatBskyGroupListMutualGroups({
   required String subject,
   int? limit,
   String? cursor,
@@ -221,18 +231,19 @@ chatBskyGroupListMutualGroups({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.chatBskyGroupListMutualGroups,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    'subject': subject,
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const GroupListMutualGroupsOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.chatBskyGroupListMutualGroups,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            'subject': subject,
+            if (limit != null) 'limit': limit,
+            if (cursor != null) 'cursor': cursor,
+          },
+          to: const GroupListMutualGroupsOutputConverter().fromJson,
+        );
 
 /// Rejects a request to join a group (via join link) the user owns. Action taken by the group owner.
 Future<XRPCResponse<EmptyData>> chatBskyGroupRejectJoinRequest({
@@ -242,12 +253,13 @@ Future<XRPCResponse<EmptyData>> chatBskyGroupRejectJoinRequest({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupRejectJoinRequest,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId, 'member': member},
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupRejectJoinRequest,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'convoId': convoId, 'member': member},
+    );
 
 /// Removes members from a group. This deletes convo memberships, doesn't just set a status.
 Future<XRPCResponse<GroupRemoveMembersOutput>> chatBskyGroupRemoveMembers({
@@ -257,13 +269,14 @@ Future<XRPCResponse<GroupRemoveMembersOutput>> chatBskyGroupRemoveMembers({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupRemoveMembers,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId, 'members': members},
-  to: const GroupRemoveMembersOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupRemoveMembers,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'convoId': convoId, 'members': members},
+      to: const GroupRemoveMembersOutputConverter().fromJson,
+    );
 
 /// Sends a request to join a group (via join link) to the group owner. Action taken by the prospective group member.
 Future<XRPCResponse<GroupRequestJoinOutput>> chatBskyGroupRequestJoin({
@@ -272,13 +285,14 @@ Future<XRPCResponse<GroupRequestJoinOutput>> chatBskyGroupRequestJoin({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupRequestJoin,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'code': code},
-  to: const GroupRequestJoinOutputConverter().fromJson,
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupRequestJoin,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'code': code},
+      to: const GroupRequestJoinOutputConverter().fromJson,
+    );
 
 /// Marks all join requests as read for the group owner.
 Future<XRPCResponse<EmptyData>> chatBskyGroupUpdateJoinRequestsRead({
@@ -287,12 +301,13 @@ Future<XRPCResponse<EmptyData>> chatBskyGroupUpdateJoinRequestsRead({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupUpdateJoinRequestsRead,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId},
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupUpdateJoinRequestsRead,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'convoId': convoId},
+    );
 
 /// Withdraws a pending request to join a group. Action taken by the prospective member who originally requested to join.
 Future<XRPCResponse<EmptyData>> chatBskyGroupWithdrawJoinRequest({
@@ -301,12 +316,13 @@ Future<XRPCResponse<EmptyData>> chatBskyGroupWithdrawJoinRequest({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.post(
-  ns.chatBskyGroupWithdrawJoinRequest,
-  service: $service,
-  headers: {'Content-type': 'application/json', ...?$headers},
-  body: {...?$unknown, 'convoId': convoId},
-);
+}) async =>
+    await $ctx.post(
+      ns.chatBskyGroupWithdrawJoinRequest,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {...?$unknown, 'convoId': convoId},
+    );
 
 /// `chat.bsky.group.*`
 base class GroupService {
@@ -322,14 +338,15 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupAddMembers(
-    convoId: convoId,
-    members: members,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupAddMembers(
+        convoId: convoId,
+        members: members,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Approves a request to join a group (via join link) the user owns. Action taken by the group owner.
   Future<XRPCResponse<GroupApproveJoinRequestOutput>> approveJoinRequest({
@@ -338,14 +355,15 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupApproveJoinRequest(
-    convoId: convoId,
-    member: member,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupApproveJoinRequest(
+        convoId: convoId,
+        member: member,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Creates a group convo, specifying the members to be added to it. Unlike getConvoForMembers, this isn't idempotent. It will create new groups even if the membership is identical to pre-existing groups. Will create 'request' membership for all members, except the owner who is 'accepted'.
   Future<XRPCResponse<GroupCreateGroupOutput>> createGroup({
@@ -354,14 +372,15 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupCreateGroup(
-    members: members,
-    name: name,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupCreateGroup(
+        members: members,
+        name: name,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Creates a join link for the group convo.
   Future<XRPCResponse<GroupCreateJoinLinkOutput>> createJoinLink({
@@ -371,15 +390,16 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupCreateJoinLink(
-    convoId: convoId,
-    requireApproval: requireApproval,
-    joinRule: joinRule,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupCreateJoinLink(
+        convoId: convoId,
+        requireApproval: requireApproval,
+        joinRule: joinRule,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Disables the active join link for the group convo.
   Future<XRPCResponse<GroupDisableJoinLinkOutput>> disableJoinLink({
@@ -387,13 +407,14 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupDisableJoinLink(
-    convoId: convoId,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupDisableJoinLink(
+        convoId: convoId,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Edits group settings.
   Future<XRPCResponse<GroupEditGroupOutput>> editGroup({
@@ -402,14 +423,15 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupEditGroup(
-    convoId: convoId,
-    name: name,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupEditGroup(
+        convoId: convoId,
+        name: name,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Edits the existing join link settings for the group convo.
   Future<XRPCResponse<GroupEditJoinLinkOutput>> editJoinLink({
@@ -419,15 +441,16 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupEditJoinLink(
-    convoId: convoId,
-    requireApproval: requireApproval,
-    joinRule: joinRule,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupEditJoinLink(
+        convoId: convoId,
+        requireApproval: requireApproval,
+        joinRule: joinRule,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Re-enables a previously disabled join link for the group convo.
   Future<XRPCResponse<GroupEnableJoinLinkOutput>> enableJoinLink({
@@ -435,13 +458,14 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupEnableJoinLink(
-    convoId: convoId,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupEnableJoinLink(
+        convoId: convoId,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Get public information about groups from join links. The output array matches the input codes one-to-one by position (and each view also carries its 'code'). Disabled codes return a disabledJoinLinkPreviewView, and codes that do not map to a previewable link return an invalidJoinLinkPreviewView.
   Future<XRPCResponse<GroupGetJoinLinkPreviewsOutput>> getJoinLinkPreviews({
@@ -449,13 +473,14 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupGetJoinLinkPreviews(
-    codes: codes,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupGetJoinLinkPreviews(
+        codes: codes,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Lists a page of request to join a group (via join link) the user owns. Shows the data from the owner's point of view.
   Future<XRPCResponse<GroupListJoinRequestsOutput>> listJoinRequests({
@@ -465,15 +490,16 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupListJoinRequests(
-    convoId: convoId,
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupListJoinRequests(
+        convoId: convoId,
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Returns a page of group conversations that both the requester and the specified actor are members of.
   Future<XRPCResponse<GroupListMutualGroupsOutput>> listMutualGroups({
@@ -483,15 +509,16 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupListMutualGroups(
-    subject: subject,
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupListMutualGroups(
+        subject: subject,
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Rejects a request to join a group (via join link) the user owns. Action taken by the group owner.
   Future<XRPCResponse<EmptyData>> rejectJoinRequest({
@@ -500,14 +527,15 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupRejectJoinRequest(
-    convoId: convoId,
-    member: member,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupRejectJoinRequest(
+        convoId: convoId,
+        member: member,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Removes members from a group. This deletes convo memberships, doesn't just set a status.
   Future<XRPCResponse<GroupRemoveMembersOutput>> removeMembers({
@@ -516,14 +544,15 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupRemoveMembers(
-    convoId: convoId,
-    members: members,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupRemoveMembers(
+        convoId: convoId,
+        members: members,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Sends a request to join a group (via join link) to the group owner. Action taken by the prospective group member.
   Future<XRPCResponse<GroupRequestJoinOutput>> requestJoin({
@@ -531,13 +560,14 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupRequestJoin(
-    code: code,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupRequestJoin(
+        code: code,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Marks all join requests as read for the group owner.
   Future<XRPCResponse<EmptyData>> updateJoinRequestsRead({
@@ -545,13 +575,14 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupUpdateJoinRequestsRead(
-    convoId: convoId,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupUpdateJoinRequestsRead(
+        convoId: convoId,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 
   /// Withdraws a pending request to join a group. Action taken by the prospective member who originally requested to join.
   Future<XRPCResponse<EmptyData>> withdrawJoinRequest({
@@ -559,11 +590,12 @@ base class GroupService {
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await chatBskyGroupWithdrawJoinRequest(
-    convoId: convoId,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+      await chatBskyGroupWithdrawJoinRequest(
+        convoId: convoId,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
 }

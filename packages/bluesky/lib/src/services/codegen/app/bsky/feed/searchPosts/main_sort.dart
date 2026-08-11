@@ -71,9 +71,9 @@ final class FeedSearchPostsSortConverter
 
   @override
   String toJson(FeedSearchPostsSort object) => switch (object) {
-    FeedSearchPostsSortKnownValue(:final data) => data.value,
-    FeedSearchPostsSortUnknown(:final data) => data,
-  };
+        FeedSearchPostsSortKnownValue(:final data) => data.value,
+        FeedSearchPostsSortUnknown(:final data) => data,
+      };
 }
 
 enum KnownFeedSearchPostsSort implements Serializable {

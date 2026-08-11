@@ -95,15 +95,15 @@ final class _CreateStatusCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.actor.status",
-    "status": argResults!["status"],
-    if (argResults!.wasParsed("embed")) "embed": _decodeJson("embed"),
-    if (argResults!.wasParsed("durationMinutes"))
-      "durationMinutes":
-          int.tryParse(argResults!["durationMinutes"]) ??
-          usageException('Invalid integer value for option "durationMinutes".'),
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.actor.status",
+        "status": argResults!["status"],
+        if (argResults!.wasParsed("embed")) "embed": _decodeJson("embed"),
+        if (argResults!.wasParsed("durationMinutes"))
+          "durationMinutes": int.tryParse(argResults!["durationMinutes"]) ??
+              usageException(
+                  'Invalid integer value for option "durationMinutes".'),
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _PutStatusCommand extends PutRecordCommand
@@ -130,15 +130,15 @@ final class _PutStatusCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.actor.status",
-    "status": argResults!["status"],
-    if (argResults!.wasParsed("embed")) "embed": _decodeJson("embed"),
-    if (argResults!.wasParsed("durationMinutes"))
-      "durationMinutes":
-          int.tryParse(argResults!["durationMinutes"]) ??
-          usageException('Invalid integer value for option "durationMinutes".'),
-    "createdAt": argResults!["createdAt"],
-  };
+        r"$type": "app.bsky.actor.status",
+        "status": argResults!["status"],
+        if (argResults!.wasParsed("embed")) "embed": _decodeJson("embed"),
+        if (argResults!.wasParsed("durationMinutes"))
+          "durationMinutes": int.tryParse(argResults!["durationMinutes"]) ??
+              usageException(
+                  'Invalid integer value for option "durationMinutes".'),
+        "createdAt": argResults!["createdAt"],
+      };
 }
 
 final class _DeleteStatusCommand extends DeleteRecordCommand {
@@ -185,11 +185,11 @@ final class _GetStatusCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.actor.status",
-    'rkey': 'self',
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.actor.status",
+        'rkey': 'self',
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListStatusCommand extends QueryCommand {
@@ -219,12 +219,11 @@ final class _ListStatusCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.actor.status",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.actor.status",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }

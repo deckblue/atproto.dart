@@ -53,8 +53,8 @@ final class TidGenerator {
   /// cannot corrupt the timestamp. [now] returns microseconds since the UNIX
   /// epoch and defaults to the system clock.
   TidGenerator.withClockId(final int clockId, {final int Function()? now})
-    : _clockId = clockId & ((1 << _clockIdBits) - 1),
-      _now = now ?? _systemNow;
+      : _clockId = clockId & ((1 << _clockIdBits) - 1),
+        _now = now ?? _systemNow;
 
   final int _clockId;
   final int Function() _now;

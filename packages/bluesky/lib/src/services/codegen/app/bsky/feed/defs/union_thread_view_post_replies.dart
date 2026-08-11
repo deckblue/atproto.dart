@@ -100,7 +100,6 @@ final class UThreadViewPostRepliesConverter
           const NotFoundPostConverter().toJson(data),
         UThreadViewPostRepliesBlockedPost(:final data) =>
           const BlockedPostConverter().toJson(data),
-
         UThreadViewPostRepliesUnknown(:final data) => data,
       };
 }

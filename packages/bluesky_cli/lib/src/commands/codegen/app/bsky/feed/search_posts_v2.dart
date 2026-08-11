@@ -157,51 +157,54 @@ final class SearchPostsV2Command extends QueryCommand {
 
   @override
   Map<String, dynamic>? get parameters => {
-    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-    "limit":
-        int.tryParse(argResults!["limit"]) ??
-        usageException('Invalid integer value for option "limit".'),
-    if (argResults!.wasParsed("query")) "query": argResults!["query"],
-    if (argResults!.wasParsed("sort")) "sort": argResults!["sort"],
-    if (argResults!.wasParsed("authors")) "authors": argResults!["authors"],
-    if (argResults!.wasParsed("mentions")) "mentions": argResults!["mentions"],
-    if (argResults!.wasParsed("domains")) "domains": argResults!["domains"],
-    if (argResults!.wasParsed("urls")) "urls": argResults!["urls"],
-    if (argResults!.wasParsed("embeddedAtUris"))
-      "embeddedAtUris": argResults!["embeddedAtUris"],
-    if (argResults!.wasParsed("hashtags")) "hashtags": argResults!["hashtags"],
-    if (argResults!.wasParsed("excludeAuthors"))
-      "excludeAuthors": argResults!["excludeAuthors"],
-    if (argResults!.wasParsed("excludeMentions"))
-      "excludeMentions": argResults!["excludeMentions"],
-    if (argResults!.wasParsed("excludeDomains"))
-      "excludeDomains": argResults!["excludeDomains"],
-    if (argResults!.wasParsed("excludeUrls"))
-      "excludeUrls": argResults!["excludeUrls"],
-    if (argResults!.wasParsed("excludeEmbeddedAtUris"))
-      "excludeEmbeddedAtUris": argResults!["excludeEmbeddedAtUris"],
-    if (argResults!.wasParsed("excludeHashtags"))
-      "excludeHashtags": argResults!["excludeHashtags"],
-    if (argResults!.wasParsed("since")) "since": argResults!["since"],
-    if (argResults!.wasParsed("until")) "until": argResults!["until"],
-    if (argResults!.wasParsed("allTime")) "allTime": argResults!["allTime"],
-    if (argResults!.wasParsed("languages"))
-      "languages": argResults!["languages"],
-    if (argResults!.wasParsed("excludeLanguages"))
-      "excludeLanguages": argResults!["excludeLanguages"],
-    if (argResults!.wasParsed("hasMedia")) "hasMedia": argResults!["hasMedia"],
-    if (argResults!.wasParsed("hasVideo")) "hasVideo": argResults!["hasVideo"],
-    if (argResults!.wasParsed("replyParentUri"))
-      "replyParentUri": argResults!["replyParentUri"],
-    if (argResults!.wasParsed("threadRootUri"))
-      "threadRootUri": argResults!["threadRootUri"],
-    if (argResults!.wasParsed("excludeReplies"))
-      "excludeReplies": argResults!["excludeReplies"],
-    if (argResults!.wasParsed("repliesOnly"))
-      "repliesOnly": argResults!["repliesOnly"],
-    if (argResults!.wasParsed("following"))
-      "following": argResults!["following"],
-    if (argResults!.wasParsed("queryLanguage"))
-      "queryLanguage": argResults!["queryLanguage"],
-  };
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("query")) "query": argResults!["query"],
+        if (argResults!.wasParsed("sort")) "sort": argResults!["sort"],
+        if (argResults!.wasParsed("authors")) "authors": argResults!["authors"],
+        if (argResults!.wasParsed("mentions"))
+          "mentions": argResults!["mentions"],
+        if (argResults!.wasParsed("domains")) "domains": argResults!["domains"],
+        if (argResults!.wasParsed("urls")) "urls": argResults!["urls"],
+        if (argResults!.wasParsed("embeddedAtUris"))
+          "embeddedAtUris": argResults!["embeddedAtUris"],
+        if (argResults!.wasParsed("hashtags"))
+          "hashtags": argResults!["hashtags"],
+        if (argResults!.wasParsed("excludeAuthors"))
+          "excludeAuthors": argResults!["excludeAuthors"],
+        if (argResults!.wasParsed("excludeMentions"))
+          "excludeMentions": argResults!["excludeMentions"],
+        if (argResults!.wasParsed("excludeDomains"))
+          "excludeDomains": argResults!["excludeDomains"],
+        if (argResults!.wasParsed("excludeUrls"))
+          "excludeUrls": argResults!["excludeUrls"],
+        if (argResults!.wasParsed("excludeEmbeddedAtUris"))
+          "excludeEmbeddedAtUris": argResults!["excludeEmbeddedAtUris"],
+        if (argResults!.wasParsed("excludeHashtags"))
+          "excludeHashtags": argResults!["excludeHashtags"],
+        if (argResults!.wasParsed("since")) "since": argResults!["since"],
+        if (argResults!.wasParsed("until")) "until": argResults!["until"],
+        if (argResults!.wasParsed("allTime")) "allTime": argResults!["allTime"],
+        if (argResults!.wasParsed("languages"))
+          "languages": argResults!["languages"],
+        if (argResults!.wasParsed("excludeLanguages"))
+          "excludeLanguages": argResults!["excludeLanguages"],
+        if (argResults!.wasParsed("hasMedia"))
+          "hasMedia": argResults!["hasMedia"],
+        if (argResults!.wasParsed("hasVideo"))
+          "hasVideo": argResults!["hasVideo"],
+        if (argResults!.wasParsed("replyParentUri"))
+          "replyParentUri": argResults!["replyParentUri"],
+        if (argResults!.wasParsed("threadRootUri"))
+          "threadRootUri": argResults!["threadRootUri"],
+        if (argResults!.wasParsed("excludeReplies"))
+          "excludeReplies": argResults!["excludeReplies"],
+        if (argResults!.wasParsed("repliesOnly"))
+          "repliesOnly": argResults!["repliesOnly"],
+        if (argResults!.wasParsed("following"))
+          "following": argResults!["following"],
+        if (argResults!.wasParsed("queryLanguage"))
+          "queryLanguage": argResults!["queryLanguage"],
+      };
 }

@@ -8,53 +8,50 @@ part of 'muted_word.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_MutedWord _$MutedWordFromJson(Map json) => $checkedCreate('_MutedWord', json, (
-  $checkedConvert,
-) {
-  final val = _MutedWord(
-    $type: $checkedConvert(
-      r'$type',
-      (v) => v as String? ?? 'app.bsky.actor.defs#mutedWord',
-    ),
-    id: $checkedConvert('id', (v) => v as String?),
-    value: $checkedConvert('value', (v) => v as String),
-    targets: $checkedConvert(
-      'targets',
-      (v) => (v as List<dynamic>)
-          .map((e) => const MutedWordTargetConverter().fromJson(e as String))
-          .toList(),
-    ),
-    actorTarget: $checkedConvert(
-      'actorTarget',
-      (v) => v == null
-          ? const MutedWordActorTarget.knownValue(
-              data: KnownMutedWordActorTarget.all,
-            )
-          : const MutedWordActorTargetConverter().fromJson(v as String),
-    ),
-    expiresAt: $checkedConvert(
-      'expiresAt',
-      (v) => v == null ? null : DateTime.parse(v as String),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$MutedWordImpl _$$MutedWordImplFromJson(Map json) => $checkedCreate(
+      r'_$MutedWordImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$MutedWordImpl(
+          $type: $checkedConvert(
+              r'$type', (v) => v as String? ?? 'app.bsky.actor.defs#mutedWord'),
+          id: $checkedConvert('id', (v) => v as String?),
+          value: $checkedConvert('value', (v) => v as String),
+          targets: $checkedConvert(
+              'targets',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      const MutedWordTargetConverter().fromJson(e as String))
+                  .toList()),
+          actorTarget: $checkedConvert(
+              'actorTarget',
+              (v) => v == null
+                  ? const MutedWordActorTarget.knownValue(
+                      data: KnownMutedWordActorTarget.all)
+                  : const MutedWordActorTargetConverter()
+                      .fromJson(v as String)),
+          expiresAt: $checkedConvert('expiresAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$MutedWordToJson(_MutedWord instance) =>
+Map<String, dynamic> _$$MutedWordImplToJson(_$MutedWordImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'id': ?instance.id,
+      if (instance.id case final value?) 'id': value,
       'value': instance.value,
       'targets': instance.targets
           .map(const MutedWordTargetConverter().toJson)
           .toList(),
-      'actorTarget': const MutedWordActorTargetConverter().toJson(
-        instance.actorTarget,
-      ),
+      'actorTarget':
+          const MutedWordActorTargetConverter().toJson(instance.actorTarget),
       'expiresAt': iso8601(instance.expiresAt),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

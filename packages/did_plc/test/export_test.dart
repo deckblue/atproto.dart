@@ -101,12 +101,12 @@ void main() {
     }
 
     List<ExportedOperation> straddlingOps() => List.generate(
-      1003,
-      (i) => operationAt(
-        i,
-        base.add(Duration(seconds: (i >= 998 && i <= 1001) ? 998 : i)),
-      ),
-    );
+          1003,
+          (i) => operationAt(
+            i,
+            base.add(Duration(seconds: (i >= 998 && i <= 1001) ? 998 : i)),
+          ),
+        );
 
     test('does not drop or duplicate operations across the boundary', () async {
       final ops = straddlingOps();
@@ -141,7 +141,8 @@ void main() {
       expect(streamed.map((op) => op.cid).toSet(), hasLength(1002));
     });
 
-    test('throws when a full page shares a single createdAt '
+    test(
+        'throws when a full page shares a single createdAt '
         '(cannot paginate safely)', () async {
       // 1001 operations sharing one timestamp: the exclusive cursor cannot
       // advance past the first (full) page without risking data loss.

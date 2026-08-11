@@ -9,13 +9,13 @@ import 'package:bluesky/src/bluesky_chat.dart';
 void main() {
   group('.session (auto refresh)', () {
     core.Session session() => core.Session(
-      did: 'did:plc:testaccount',
-      handle: 'test.dev',
-      //! Non-JWT token so the pre-flight refresh is skipped and the reactive
-      //! 401 path is exercised.
-      accessJwt: 'old-access',
-      refreshJwt: 'refresh-token',
-    );
+          did: 'did:plc:testaccount',
+          handle: 'test.dev',
+          //! Non-JWT token so the pre-flight refresh is skipped and the reactive
+          //! 401 path is exercised.
+          accessJwt: 'old-access',
+          refreshJwt: 'refresh-token',
+        );
 
     test('refreshes an expired access token on a chat.bsky.* call', () async {
       final refreshAuthHeaders = <String?>[];

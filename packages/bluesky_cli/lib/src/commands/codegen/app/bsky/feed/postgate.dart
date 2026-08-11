@@ -98,16 +98,16 @@ final class _CreatePostgateCommand extends CreateRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.feed.postgate",
-    "createdAt": argResults!["createdAt"],
-    "post": argResults!["post"],
-    if (argResults!.wasParsed("detachedEmbeddingUris"))
-      "detachedEmbeddingUris": argResults!["detachedEmbeddingUris"],
-    if (argResults!.wasParsed("embeddingRules"))
-      "embeddingRules": (argResults!["embeddingRules"] as List<String>)
-          .map((e) => _decodeJsonItem("embeddingRules", e))
-          .toList(),
-  };
+        r"$type": "app.bsky.feed.postgate",
+        "createdAt": argResults!["createdAt"],
+        "post": argResults!["post"],
+        if (argResults!.wasParsed("detachedEmbeddingUris"))
+          "detachedEmbeddingUris": argResults!["detachedEmbeddingUris"],
+        if (argResults!.wasParsed("embeddingRules"))
+          "embeddingRules": (argResults!["embeddingRules"] as List<String>)
+              .map((e) => _decodeJsonItem("embeddingRules", e))
+              .toList(),
+      };
 }
 
 final class _PutPostgateCommand extends PutRecordCommand
@@ -135,16 +135,16 @@ final class _PutPostgateCommand extends PutRecordCommand
 
   @override
   Map<String, dynamic> get record => {
-    r"$type": "app.bsky.feed.postgate",
-    "createdAt": argResults!["createdAt"],
-    "post": argResults!["post"],
-    if (argResults!.wasParsed("detachedEmbeddingUris"))
-      "detachedEmbeddingUris": argResults!["detachedEmbeddingUris"],
-    if (argResults!.wasParsed("embeddingRules"))
-      "embeddingRules": (argResults!["embeddingRules"] as List<String>)
-          .map((e) => _decodeJsonItem("embeddingRules", e))
-          .toList(),
-  };
+        r"$type": "app.bsky.feed.postgate",
+        "createdAt": argResults!["createdAt"],
+        "post": argResults!["post"],
+        if (argResults!.wasParsed("detachedEmbeddingUris"))
+          "detachedEmbeddingUris": argResults!["detachedEmbeddingUris"],
+        if (argResults!.wasParsed("embeddingRules"))
+          "embeddingRules": (argResults!["embeddingRules"] as List<String>)
+              .map((e) => _decodeJsonItem("embeddingRules", e))
+              .toList(),
+      };
 }
 
 final class _DeletePostgateCommand extends DeleteRecordCommand {
@@ -194,11 +194,11 @@ final class _GetPostgateCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.feed.postgate",
-    'rkey': argResults!['rkey'],
-    if (argResults!['cid'] != null) 'cid': argResults!['cid'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.feed.postgate",
+        'rkey': argResults!['rkey'],
+        if (argResults!['cid'] != null) 'cid': argResults!['cid'],
+      };
 }
 
 final class _ListPostgateCommand extends QueryCommand {
@@ -228,12 +228,11 @@ final class _ListPostgateCommand extends QueryCommand {
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-    'repo': argResults!['repo'] ?? await did,
-    'collection': "app.bsky.feed.postgate",
-    'limit':
-        int.tryParse(argResults!['limit']) ??
-        usageException(r'Invalid integer value for option "limit".'),
-    if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
-    'reverse': argResults!['reverse'],
-  };
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.feed.postgate",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
+        if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
+        'reverse': argResults!['reverse'],
+      };
 }
