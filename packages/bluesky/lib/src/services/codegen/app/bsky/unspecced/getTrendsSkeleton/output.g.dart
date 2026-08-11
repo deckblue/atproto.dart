@@ -20,6 +20,7 @@ _$UnspeccedGetTrendsSkeletonOutputImpl
                       .map((e) => const SkeletonTrendConverter()
                           .fromJson(e as Map<String, dynamic>))
                       .toList()),
+              recIdStr: $checkedConvert('recIdStr', (v) => v as String?),
               $unknown: $checkedConvert(
                   r'$unknown',
                   (v) => (v as Map?)?.map(
@@ -35,5 +36,6 @@ Map<String, dynamic> _$$UnspeccedGetTrendsSkeletonOutputImplToJson(
     <String, dynamic>{
       'trends':
           instance.trends.map(const SkeletonTrendConverter().toJson).toList(),
+      if (instance.recIdStr case final value?) 'recIdStr': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

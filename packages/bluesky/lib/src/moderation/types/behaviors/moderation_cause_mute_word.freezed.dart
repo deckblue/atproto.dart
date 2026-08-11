@@ -20,6 +20,9 @@ mixin _$ModerationCauseMuteWord {
   int get priority => throw _privateConstructorUsedError;
   bool get downgraded => throw _privateConstructorUsedError;
 
+  /// The muted word matches that caused this moderation.
+  List<MuteWordMatch> get matches => throw _privateConstructorUsedError;
+
   /// Create a copy of ModerationCauseMuteWord
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -33,7 +36,11 @@ abstract class $ModerationCauseMuteWordCopyWith<$Res> {
           $Res Function(ModerationCauseMuteWord) then) =
       _$ModerationCauseMuteWordCopyWithImpl<$Res, ModerationCauseMuteWord>;
   @useResult
-  $Res call({ModerationCauseSource source, int priority, bool downgraded});
+  $Res call(
+      {ModerationCauseSource source,
+      int priority,
+      bool downgraded,
+      List<MuteWordMatch> matches});
 
   $ModerationCauseSourceCopyWith<$Res> get source;
 }
@@ -57,6 +64,7 @@ class _$ModerationCauseMuteWordCopyWithImpl<$Res,
     Object? source = null,
     Object? priority = null,
     Object? downgraded = null,
+    Object? matches = null,
   }) {
     return _then(_value.copyWith(
       source: null == source
@@ -71,6 +79,10 @@ class _$ModerationCauseMuteWordCopyWithImpl<$Res,
           ? _value.downgraded
           : downgraded // ignore: cast_nullable_to_non_nullable
               as bool,
+      matches: null == matches
+          ? _value.matches
+          : matches // ignore: cast_nullable_to_non_nullable
+              as List<MuteWordMatch>,
     ) as $Val);
   }
 
@@ -94,7 +106,11 @@ abstract class _$$ModerationCauseMuteWordImplCopyWith<$Res>
       __$$ModerationCauseMuteWordImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ModerationCauseSource source, int priority, bool downgraded});
+  $Res call(
+      {ModerationCauseSource source,
+      int priority,
+      bool downgraded,
+      List<MuteWordMatch> matches});
 
   @override
   $ModerationCauseSourceCopyWith<$Res> get source;
@@ -118,6 +134,7 @@ class __$$ModerationCauseMuteWordImplCopyWithImpl<$Res>
     Object? source = null,
     Object? priority = null,
     Object? downgraded = null,
+    Object? matches = null,
   }) {
     return _then(_$ModerationCauseMuteWordImpl(
       source: null == source
@@ -132,6 +149,10 @@ class __$$ModerationCauseMuteWordImplCopyWithImpl<$Res>
           ? _value.downgraded
           : downgraded // ignore: cast_nullable_to_non_nullable
               as bool,
+      matches: null == matches
+          ? _value._matches
+          : matches // ignore: cast_nullable_to_non_nullable
+              as List<MuteWordMatch>,
     ));
   }
 }
@@ -140,7 +161,11 @@ class __$$ModerationCauseMuteWordImplCopyWithImpl<$Res>
 
 class _$ModerationCauseMuteWordImpl implements _ModerationCauseMuteWord {
   const _$ModerationCauseMuteWordImpl(
-      {required this.source, this.priority = 6, this.downgraded = false});
+      {required this.source,
+      this.priority = 6,
+      this.downgraded = false,
+      final List<MuteWordMatch> matches = const []})
+      : _matches = matches;
 
   @override
   final ModerationCauseSource source;
@@ -151,9 +176,21 @@ class _$ModerationCauseMuteWordImpl implements _ModerationCauseMuteWord {
   @JsonKey()
   final bool downgraded;
 
+  /// The muted word matches that caused this moderation.
+  final List<MuteWordMatch> _matches;
+
+  /// The muted word matches that caused this moderation.
+  @override
+  @JsonKey()
+  List<MuteWordMatch> get matches {
+    if (_matches is EqualUnmodifiableListView) return _matches;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_matches);
+  }
+
   @override
   String toString() {
-    return 'ModerationCauseMuteWord(source: $source, priority: $priority, downgraded: $downgraded)';
+    return 'ModerationCauseMuteWord(source: $source, priority: $priority, downgraded: $downgraded, matches: $matches)';
   }
 
   @override
@@ -165,11 +202,13 @@ class _$ModerationCauseMuteWordImpl implements _ModerationCauseMuteWord {
             (identical(other.priority, priority) ||
                 other.priority == priority) &&
             (identical(other.downgraded, downgraded) ||
-                other.downgraded == downgraded));
+                other.downgraded == downgraded) &&
+            const DeepCollectionEquality().equals(other._matches, _matches));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, source, priority, downgraded);
+  int get hashCode => Object.hash(runtimeType, source, priority, downgraded,
+      const DeepCollectionEquality().hash(_matches));
 
   /// Create a copy of ModerationCauseMuteWord
   /// with the given fields replaced by the non-null parameter values.
@@ -185,7 +224,8 @@ abstract class _ModerationCauseMuteWord implements ModerationCauseMuteWord {
   const factory _ModerationCauseMuteWord(
       {required final ModerationCauseSource source,
       final int priority,
-      final bool downgraded}) = _$ModerationCauseMuteWordImpl;
+      final bool downgraded,
+      final List<MuteWordMatch> matches}) = _$ModerationCauseMuteWordImpl;
 
   @override
   ModerationCauseSource get source;
@@ -193,6 +233,10 @@ abstract class _ModerationCauseMuteWord implements ModerationCauseMuteWord {
   int get priority;
   @override
   bool get downgraded;
+
+  /// The muted word matches that caused this moderation.
+  @override
+  List<MuteWordMatch> get matches;
 
   /// Create a copy of ModerationCauseMuteWord
   /// with the given fields replaced by the non-null parameter values.

@@ -13,8 +13,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
 import '../../../../app/bsky/embed/external/view.dart';
-import '../../../../app/bsky/embed/images/view.dart';
 import '../../../../app/bsky/embed/gallery/view.dart';
+import '../../../../app/bsky/embed/images/view.dart';
 import '../../../../app/bsky/embed/video/view.dart';
 
 part 'union_view_media.freezed.dart';
@@ -31,12 +31,12 @@ sealed class UEmbedRecordWithMediaViewMedia
   const factory UEmbedRecordWithMediaViewMedia.embedImagesView({
     required EmbedImagesView data,
   }) = UEmbedRecordWithMediaViewMediaEmbedImagesView;
-  const factory UEmbedRecordWithMediaViewMedia.embedGalleryView({
-    required EmbedGalleryView data,
-  }) = UEmbedRecordWithMediaViewMediaEmbedGalleryView;
   const factory UEmbedRecordWithMediaViewMedia.embedVideoView({
     required EmbedVideoView data,
   }) = UEmbedRecordWithMediaViewMediaEmbedVideoView;
+  const factory UEmbedRecordWithMediaViewMedia.embedGalleryView({
+    required EmbedGalleryView data,
+  }) = UEmbedRecordWithMediaViewMediaEmbedGalleryView;
   const factory UEmbedRecordWithMediaViewMedia.embedExternalView({
     required EmbedExternalView data,
   }) = UEmbedRecordWithMediaViewMediaEmbedExternalView;
@@ -56,16 +56,16 @@ extension UEmbedRecordWithMediaViewMediaExtension
   bool get isNotEmbedImagesView => !isEmbedImagesView;
   EmbedImagesView? get embedImagesView =>
       isEmbedImagesView ? data as EmbedImagesView : null;
-  bool get isEmbedGalleryView =>
-      isA<UEmbedRecordWithMediaViewMediaEmbedGalleryView>(this);
-  bool get isNotEmbedGalleryView => !isEmbedGalleryView;
-  EmbedGalleryView? get embedGalleryView =>
-      isEmbedGalleryView ? data as EmbedGalleryView : null;
   bool get isEmbedVideoView =>
       isA<UEmbedRecordWithMediaViewMediaEmbedVideoView>(this);
   bool get isNotEmbedVideoView => !isEmbedVideoView;
   EmbedVideoView? get embedVideoView =>
       isEmbedVideoView ? data as EmbedVideoView : null;
+  bool get isEmbedGalleryView =>
+      isA<UEmbedRecordWithMediaViewMediaEmbedGalleryView>(this);
+  bool get isNotEmbedGalleryView => !isEmbedGalleryView;
+  EmbedGalleryView? get embedGalleryView =>
+      isEmbedGalleryView ? data as EmbedGalleryView : null;
   bool get isEmbedExternalView =>
       isA<UEmbedRecordWithMediaViewMediaEmbedExternalView>(this);
   bool get isNotEmbedExternalView => !isEmbedExternalView;
@@ -84,44 +84,45 @@ final class UEmbedRecordWithMediaViewMediaConverter
 
   @override
   UEmbedRecordWithMediaViewMedia fromJson(Map<String, dynamic> json) {
-    try {
-      if (EmbedImagesView.validate(json)) {
-        return UEmbedRecordWithMediaViewMedia.embedImagesView(
-          data: const EmbedImagesViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedGalleryView.validate(json)) {
-        return UEmbedRecordWithMediaViewMedia.embedGalleryView(
-          data: const EmbedGalleryViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedVideoView.validate(json)) {
-        return UEmbedRecordWithMediaViewMedia.embedVideoView(
-          data: const EmbedVideoViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedExternalView.validate(json)) {
-        return UEmbedRecordWithMediaViewMedia.embedExternalView(
-          data: const EmbedExternalViewConverter().fromJson(json),
-        );
-      }
-
-      return UEmbedRecordWithMediaViewMedia.unknown(data: json);
-    } catch (_) {
-      return UEmbedRecordWithMediaViewMedia.unknown(data: json);
+    if (EmbedImagesView.validate(json)) {
+      return UEmbedRecordWithMediaViewMedia.embedImagesView(
+        data: const EmbedImagesViewConverter().fromJson(json),
+      );
     }
+    if (EmbedVideoView.validate(json)) {
+      return UEmbedRecordWithMediaViewMedia.embedVideoView(
+        data: const EmbedVideoViewConverter().fromJson(json),
+      );
+    }
+    if (EmbedGalleryView.validate(json)) {
+      return UEmbedRecordWithMediaViewMedia.embedGalleryView(
+        data: const EmbedGalleryViewConverter().fromJson(json),
+      );
+    }
+    if (EmbedExternalView.validate(json)) {
+      return UEmbedRecordWithMediaViewMedia.embedExternalView(
+        data: const EmbedExternalViewConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UEmbedRecordWithMediaViewMedia.unknown(data: json);
   }
 
   @override
   Map<String, dynamic> toJson(UEmbedRecordWithMediaViewMedia object) =>
-      object.when(
-        embedImagesView: (data) =>
-            const EmbedImagesViewConverter().toJson(data),
-        embedGalleryView: (data) =>
-            const EmbedGalleryViewConverter().toJson(data),
-        embedVideoView: (data) => const EmbedVideoViewConverter().toJson(data),
-        embedExternalView: (data) =>
-            const EmbedExternalViewConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UEmbedRecordWithMediaViewMediaEmbedImagesView(:final data) =>
+          const EmbedImagesViewConverter().toJson(data),
+        UEmbedRecordWithMediaViewMediaEmbedVideoView(:final data) =>
+          const EmbedVideoViewConverter().toJson(data),
+        UEmbedRecordWithMediaViewMediaEmbedGalleryView(:final data) =>
+          const EmbedGalleryViewConverter().toJson(data),
+        UEmbedRecordWithMediaViewMediaEmbedExternalView(:final data) =>
+          const EmbedExternalViewConverter().toJson(data),
+        UEmbedRecordWithMediaViewMediaUnknown(:final data) => data,
+      };
 }

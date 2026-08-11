@@ -28,6 +28,7 @@ mixin _$TempCheckHandleAvailabilityInput {
   String? get email => throw _privateConstructorUsedError;
 
   /// User-provided birth date. Might be used to build handle suggestions.
+  @JsonKey(toJson: iso8601)
   DateTime? get birthDate => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -52,7 +53,7 @@ abstract class $TempCheckHandleAvailabilityInputCopyWith<$Res> {
   $Res call(
       {String handle,
       String? email,
-      DateTime? birthDate,
+      @JsonKey(toJson: iso8601) DateTime? birthDate,
       Map<String, dynamic>? $unknown});
 }
 
@@ -110,7 +111,7 @@ abstract class _$$TempCheckHandleAvailabilityInputImplCopyWith<$Res>
   $Res call(
       {String handle,
       String? email,
-      DateTime? birthDate,
+      @JsonKey(toJson: iso8601) DateTime? birthDate,
       Map<String, dynamic>? $unknown});
 }
 
@@ -163,7 +164,7 @@ class _$TempCheckHandleAvailabilityInputImpl
   const _$TempCheckHandleAvailabilityInputImpl(
       {required this.handle,
       this.email,
-      this.birthDate,
+      @JsonKey(toJson: iso8601) this.birthDate,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -181,6 +182,7 @@ class _$TempCheckHandleAvailabilityInputImpl
 
   /// User-provided birth date. Might be used to build handle suggestions.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? birthDate;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -237,7 +239,7 @@ abstract class _TempCheckHandleAvailabilityInput
   const factory _TempCheckHandleAvailabilityInput(
           {required final String handle,
           final String? email,
-          final DateTime? birthDate,
+          @JsonKey(toJson: iso8601) final DateTime? birthDate,
           final Map<String, dynamic>? $unknown}) =
       _$TempCheckHandleAvailabilityInputImpl;
 
@@ -255,6 +257,7 @@ abstract class _TempCheckHandleAvailabilityInput
 
   /// User-provided birth date. Might be used to build handle suggestions.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get birthDate;
   @override
   Map<String, dynamic>? get $unknown;

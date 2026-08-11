@@ -18,6 +18,8 @@ _$QueueUpdateQueueInputImpl _$$QueueUpdateQueueInputImplFromJson(Map json) =>
           name: $checkedConvert('name', (v) => v as String?),
           enabled: $checkedConvert('enabled', (v) => v as bool?),
           description: $checkedConvert('description', (v) => v as String?),
+          recommendedPolicies: $checkedConvert('recommendedPolicies',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -35,5 +37,7 @@ Map<String, dynamic> _$$QueueUpdateQueueInputImplToJson(
       if (instance.name case final value?) 'name': value,
       if (instance.enabled case final value?) 'enabled': value,
       if (instance.description case final value?) 'description': value,
+      if (instance.recommendedPolicies case final value?)
+        'recommendedPolicies': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

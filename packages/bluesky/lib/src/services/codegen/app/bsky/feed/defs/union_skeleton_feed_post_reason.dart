@@ -63,30 +63,31 @@ final class USkeletonFeedPostReasonConverter
 
   @override
   USkeletonFeedPostReason fromJson(Map<String, dynamic> json) {
-    try {
-      if (SkeletonReasonRepost.validate(json)) {
-        return USkeletonFeedPostReason.skeletonReasonRepost(
-          data: const SkeletonReasonRepostConverter().fromJson(json),
-        );
-      }
-      if (SkeletonReasonPin.validate(json)) {
-        return USkeletonFeedPostReason.skeletonReasonPin(
-          data: const SkeletonReasonPinConverter().fromJson(json),
-        );
-      }
-
-      return USkeletonFeedPostReason.unknown(data: json);
-    } catch (_) {
-      return USkeletonFeedPostReason.unknown(data: json);
+    if (SkeletonReasonRepost.validate(json)) {
+      return USkeletonFeedPostReason.skeletonReasonRepost(
+        data: const SkeletonReasonRepostConverter().fromJson(json),
+      );
     }
+    if (SkeletonReasonPin.validate(json)) {
+      return USkeletonFeedPostReason.skeletonReasonPin(
+        data: const SkeletonReasonPinConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return USkeletonFeedPostReason.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(USkeletonFeedPostReason object) => object.when(
-        skeletonReasonRepost: (data) =>
-            const SkeletonReasonRepostConverter().toJson(data),
-        skeletonReasonPin: (data) =>
-            const SkeletonReasonPinConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(USkeletonFeedPostReason object) =>
+      switch (object) {
+        USkeletonFeedPostReasonSkeletonReasonRepost(:final data) =>
+          const SkeletonReasonRepostConverter().toJson(data),
+        USkeletonFeedPostReasonSkeletonReasonPin(:final data) =>
+          const SkeletonReasonPinConverter().toJson(data),
+        USkeletonFeedPostReasonUnknown(:final data) => data,
+      };
 }

@@ -26,18 +26,19 @@ final class GetMatchesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Returns the matched contacts (contacts that were mutually imported). Excludes dismissed matches. Requires authentication.";
+      "Returns the matched contacts (contacts that were mutually imported). Excludes dismissed matches. Requires authentication.";
 
   @override
   final String invocation =
-      "bsky app-bsky-contact get-matches [limit] [cursor]";
+      "bsky app-bsky-contact get-matches [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.contact.getMatches";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

@@ -81,11 +81,11 @@ final class SearchPostsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Find posts matching search criteria, returning views of those posts. Note that this API endpoint may require authentication (eg, not public) for some service providers and implementations.";
+      "Find posts matching search criteria, returning views of those posts. Note that this API endpoint may require authentication (eg, not public) for some service providers and implementations.";
 
   @override
   final String invocation =
-      "bsky app-bsky-feed search-posts [q] [sort] [since] [until] [mentions] [author] [lang] [domain] [url] [tag] [limit] [cursor]";
+      "bsky app-bsky-feed search-posts --q=<value> [--sort=<value>] [--since=<value>] [--until=<value>] [--mentions=<value>] [--author=<value>] [--lang=<value>] [--domain=<value>] [--url=<value>] [--tag=<value>...] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.searchPosts";
@@ -94,16 +94,17 @@ final class SearchPostsCommand extends QueryCommand {
   Map<String, dynamic>? get parameters => {
         "q": argResults!["q"],
         "sort": argResults!["sort"],
-        if (argResults!["since"] != null) "since": argResults!["since"],
-        if (argResults!["until"] != null) "until": argResults!["until"],
-        if (argResults!["mentions"] != null)
+        if (argResults!.wasParsed("since")) "since": argResults!["since"],
+        if (argResults!.wasParsed("until")) "until": argResults!["until"],
+        if (argResults!.wasParsed("mentions"))
           "mentions": argResults!["mentions"],
-        if (argResults!["author"] != null) "author": argResults!["author"],
-        if (argResults!["lang"] != null) "lang": argResults!["lang"],
-        if (argResults!["domain"] != null) "domain": argResults!["domain"],
-        if (argResults!["url"] != null) "url": argResults!["url"],
-        if (argResults!["tag"] != null) "tag": argResults!["tag"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("author")) "author": argResults!["author"],
+        if (argResults!.wasParsed("lang")) "lang": argResults!["lang"],
+        if (argResults!.wasParsed("domain")) "domain": argResults!["domain"],
+        if (argResults!.wasParsed("url")) "url": argResults!["url"],
+        if (argResults!.wasParsed("tag")) "tag": argResults!["tag"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

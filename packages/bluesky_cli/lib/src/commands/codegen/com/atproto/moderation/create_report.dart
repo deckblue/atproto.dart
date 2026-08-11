@@ -38,21 +38,29 @@ final class CreateReportCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Submit a moderation report regarding an atproto account or record. Implemented by moderation services (with PDS proxying), and requires auth.";
+      "Submit a moderation report regarding an atproto account or record. Implemented by moderation services (with PDS proxying), and requires auth.";
 
   @override
   final String invocation =
-      "bsky com-atproto-moderation create-report [reasonType] [reason] [subject] [modTool]";
+      "bsky com-atproto-moderation create-report --reasonType=<value> [--reason=<value>] --subject=<value> [--modTool=<value>]";
 
   @override
   String get methodId => "com.atproto.moderation.createReport";
 
   @override
   Map<String, dynamic>? get body => {
-        "reasonType": jsonDecode(argResults!["reasonType"]),
-        if (argResults!["reason"] != null) "reason": argResults!["reason"],
-        "subject": jsonDecode(argResults!["subject"]),
-        if (argResults!["modTool"] != null)
-          "modTool": jsonDecode(argResults!["modTool"]),
+        "reasonType": _decodeJson("reasonType"),
+        if (argResults!.wasParsed("reason")) "reason": argResults!["reason"],
+        "subject": _decodeJson("subject"),
+        if (argResults!.wasParsed("modTool")) "modTool": _decodeJson("modTool"),
       };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

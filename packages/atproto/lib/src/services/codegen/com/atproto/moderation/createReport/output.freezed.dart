@@ -29,6 +29,7 @@ mixin _$ModerationCreateReportOutput {
   UModerationCreateReportSubject get subject =>
       throw _privateConstructorUsedError;
   String get reportedBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -57,7 +58,7 @@ abstract class $ModerationCreateReportOutputCopyWith<$Res> {
       @UModerationCreateReportSubjectConverter()
       UModerationCreateReportSubject subject,
       String reportedBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $ReasonTypeCopyWith<$Res> get reasonType;
@@ -158,7 +159,7 @@ abstract class _$$ModerationCreateReportOutputImplCopyWith<$Res>
       @UModerationCreateReportSubjectConverter()
       UModerationCreateReportSubject subject,
       String reportedBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -234,7 +235,7 @@ class _$ModerationCreateReportOutputImpl
       this.reason,
       @UModerationCreateReportSubjectConverter() required this.subject,
       required this.reportedBy,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -255,6 +256,7 @@ class _$ModerationCreateReportOutputImpl
   @override
   final String reportedBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -320,7 +322,7 @@ abstract class _ModerationCreateReportOutput
           @UModerationCreateReportSubjectConverter()
           required final UModerationCreateReportSubject subject,
           required final String reportedBy,
-          required final DateTime createdAt,
+          @JsonKey(toJson: iso8601) required final DateTime createdAt,
           final Map<String, dynamic>? $unknown}) =
       _$ModerationCreateReportOutputImpl;
 
@@ -340,6 +342,7 @@ abstract class _ModerationCreateReportOutput
   @override
   String get reportedBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

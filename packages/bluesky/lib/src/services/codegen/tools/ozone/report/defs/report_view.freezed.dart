@@ -51,12 +51,15 @@ mixin _$ReportView {
   String? get comment => throw _privateConstructorUsedError;
 
   /// When the report was created
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// When the report was last updated
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   /// When the report was assigned to its current queue
+  @JsonKey(toJson: iso8601)
   DateTime? get queuedAt => throw _privateConstructorUsedError;
   List<int>? get actionEventIds => throw _privateConstructorUsedError;
   @ModEventViewConverter()
@@ -82,6 +85,9 @@ mixin _$ReportView {
 
   /// Whether this report is muted. A report is muted if the reporter was muted or the subject was muted at the time the report was created.
   bool? get isMuted => throw _privateConstructorUsedError;
+
+  /// Whether this report was emitted by automated tooling.
+  bool get isAutomated => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ReportView to a JSON map.
@@ -110,9 +116,9 @@ abstract class $ReportViewCopyWith<$Res> {
       String reportedBy,
       @SubjectViewConverter() SubjectView reporter,
       String? comment,
-      DateTime createdAt,
-      DateTime? updatedAt,
-      DateTime? queuedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? queuedAt,
       List<int>? actionEventIds,
       @ModEventViewConverter() List<ModEventView>? actions,
       String? actionNote,
@@ -121,6 +127,7 @@ abstract class $ReportViewCopyWith<$Res> {
       @ReportAssignmentConverter() ReportAssignment? assignment,
       @QueueViewConverter() QueueView? queue,
       bool? isMuted,
+      bool isAutomated,
       Map<String, dynamic>? $unknown});
 
   $ReportViewStatusCopyWith<$Res> get status;
@@ -167,6 +174,7 @@ class _$ReportViewCopyWithImpl<$Res, $Val extends ReportView>
     Object? assignment = freezed,
     Object? queue = freezed,
     Object? isMuted = freezed,
+    Object? isAutomated = null,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -250,6 +258,10 @@ class _$ReportViewCopyWithImpl<$Res, $Val extends ReportView>
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isAutomated: null == isAutomated
+          ? _value.isAutomated
+          : isAutomated // ignore: cast_nullable_to_non_nullable
+              as bool,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -358,9 +370,9 @@ abstract class _$$ReportViewImplCopyWith<$Res>
       String reportedBy,
       @SubjectViewConverter() SubjectView reporter,
       String? comment,
-      DateTime createdAt,
-      DateTime? updatedAt,
-      DateTime? queuedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? queuedAt,
       List<int>? actionEventIds,
       @ModEventViewConverter() List<ModEventView>? actions,
       String? actionNote,
@@ -369,6 +381,7 @@ abstract class _$$ReportViewImplCopyWith<$Res>
       @ReportAssignmentConverter() ReportAssignment? assignment,
       @QueueViewConverter() QueueView? queue,
       bool? isMuted,
+      bool isAutomated,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -420,6 +433,7 @@ class __$$ReportViewImplCopyWithImpl<$Res>
     Object? assignment = freezed,
     Object? queue = freezed,
     Object? isMuted = freezed,
+    Object? isAutomated = null,
     Object? $unknown = freezed,
   }) {
     return _then(_$ReportViewImpl(
@@ -503,6 +517,10 @@ class __$$ReportViewImplCopyWithImpl<$Res>
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isAutomated: null == isAutomated
+          ? _value.isAutomated
+          : isAutomated // ignore: cast_nullable_to_non_nullable
+              as bool,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -525,9 +543,9 @@ class _$ReportViewImpl implements _ReportView {
       required this.reportedBy,
       @SubjectViewConverter() required this.reporter,
       this.comment,
-      required this.createdAt,
-      this.updatedAt,
-      this.queuedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
+      @JsonKey(toJson: iso8601) this.updatedAt,
+      @JsonKey(toJson: iso8601) this.queuedAt,
       final List<int>? actionEventIds,
       @ModEventViewConverter() final List<ModEventView>? actions,
       this.actionNote,
@@ -536,6 +554,7 @@ class _$ReportViewImpl implements _ReportView {
       @ReportAssignmentConverter() this.assignment,
       @QueueViewConverter() this.queue,
       this.isMuted,
+      this.isAutomated = false,
       final Map<String, dynamic>? $unknown})
       : _actionEventIds = actionEventIds,
         _actions = actions,
@@ -586,14 +605,17 @@ class _$ReportViewImpl implements _ReportView {
 
   /// When the report was created
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// When the report was last updated
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? updatedAt;
 
   /// When the report was assigned to its current queue
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? queuedAt;
   final List<int>? _actionEventIds;
   @override
@@ -642,6 +664,11 @@ class _$ReportViewImpl implements _ReportView {
   /// Whether this report is muted. A report is muted if the reporter was muted or the subject was muted at the time the report was created.
   @override
   final bool? isMuted;
+
+  /// Whether this report was emitted by automated tooling.
+  @override
+  @JsonKey()
+  final bool isAutomated;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -654,7 +681,7 @@ class _$ReportViewImpl implements _ReportView {
 
   @override
   String toString() {
-    return 'ReportView(\$type: ${$type}, id: $id, eventId: $eventId, status: $status, subject: $subject, reportType: $reportType, reportedBy: $reportedBy, reporter: $reporter, comment: $comment, createdAt: $createdAt, updatedAt: $updatedAt, queuedAt: $queuedAt, actionEventIds: $actionEventIds, actions: $actions, actionNote: $actionNote, subjectStatus: $subjectStatus, relatedReportCount: $relatedReportCount, assignment: $assignment, queue: $queue, isMuted: $isMuted, \$unknown: ${$unknown})';
+    return 'ReportView(\$type: ${$type}, id: $id, eventId: $eventId, status: $status, subject: $subject, reportType: $reportType, reportedBy: $reportedBy, reporter: $reporter, comment: $comment, createdAt: $createdAt, updatedAt: $updatedAt, queuedAt: $queuedAt, actionEventIds: $actionEventIds, actions: $actions, actionNote: $actionNote, subjectStatus: $subjectStatus, relatedReportCount: $relatedReportCount, assignment: $assignment, queue: $queue, isMuted: $isMuted, isAutomated: $isAutomated, \$unknown: ${$unknown})';
   }
 
   @override
@@ -693,6 +720,8 @@ class _$ReportViewImpl implements _ReportView {
                 other.assignment == assignment) &&
             (identical(other.queue, queue) || other.queue == queue) &&
             (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
+            (identical(other.isAutomated, isAutomated) ||
+                other.isAutomated == isAutomated) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -720,6 +749,7 @@ class _$ReportViewImpl implements _ReportView {
         assignment,
         queue,
         isMuted,
+        isAutomated,
         const DeepCollectionEquality().hash(_$unknown)
       ]);
 
@@ -750,9 +780,9 @@ abstract class _ReportView implements ReportView {
       required final String reportedBy,
       @SubjectViewConverter() required final SubjectView reporter,
       final String? comment,
-      required final DateTime createdAt,
-      final DateTime? updatedAt,
-      final DateTime? queuedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? queuedAt,
       final List<int>? actionEventIds,
       @ModEventViewConverter() final List<ModEventView>? actions,
       final String? actionNote,
@@ -761,6 +791,7 @@ abstract class _ReportView implements ReportView {
       @ReportAssignmentConverter() final ReportAssignment? assignment,
       @QueueViewConverter() final QueueView? queue,
       final bool? isMuted,
+      final bool isAutomated,
       final Map<String, dynamic>? $unknown}) = _$ReportViewImpl;
 
   factory _ReportView.fromJson(Map<String, dynamic> json) =
@@ -807,14 +838,17 @@ abstract class _ReportView implements ReportView {
 
   /// When the report was created
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// When the report was last updated
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt;
 
   /// When the report was assigned to its current queue
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get queuedAt;
   @override
   List<int>? get actionEventIds;
@@ -848,6 +882,10 @@ abstract class _ReportView implements ReportView {
   /// Whether this report is muted. A report is muted if the reporter was muted or the subject was muted at the time the report was created.
   @override
   bool? get isMuted;
+
+  /// Whether this report was emitted by automated tooling.
+  @override
+  bool get isAutomated;
   @override
   Map<String, dynamic>? get $unknown;
 

@@ -23,10 +23,15 @@ mixin _$AccountHosting {
   String get $type => throw _privateConstructorUsedError;
   @AccountHostingStatusConverter()
   AccountHostingStatus get status => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get deletedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get deactivatedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get reactivatedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -49,11 +54,11 @@ abstract class $AccountHostingCopyWith<$Res> {
   $Res call(
       {String $type,
       @AccountHostingStatusConverter() AccountHostingStatus status,
-      DateTime? updatedAt,
-      DateTime? createdAt,
-      DateTime? deletedAt,
-      DateTime? deactivatedAt,
-      DateTime? reactivatedAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) DateTime? reactivatedAt,
       Map<String, dynamic>? $unknown});
 
   $AccountHostingStatusCopyWith<$Res> get status;
@@ -141,11 +146,11 @@ abstract class _$$AccountHostingImplCopyWith<$Res>
   $Res call(
       {String $type,
       @AccountHostingStatusConverter() AccountHostingStatus status,
-      DateTime? updatedAt,
-      DateTime? createdAt,
-      DateTime? deletedAt,
-      DateTime? deactivatedAt,
-      DateTime? reactivatedAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) DateTime? reactivatedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -218,11 +223,11 @@ class _$AccountHostingImpl implements _AccountHosting {
   const _$AccountHostingImpl(
       {this.$type = 'tools.ozone.moderation.defs#accountHosting',
       @AccountHostingStatusConverter() required this.status,
-      this.updatedAt,
-      this.createdAt,
-      this.deletedAt,
-      this.deactivatedAt,
-      this.reactivatedAt,
+      @JsonKey(toJson: iso8601) this.updatedAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
+      @JsonKey(toJson: iso8601) this.deletedAt,
+      @JsonKey(toJson: iso8601) this.deactivatedAt,
+      @JsonKey(toJson: iso8601) this.reactivatedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -236,14 +241,19 @@ class _$AccountHostingImpl implements _AccountHosting {
   @AccountHostingStatusConverter()
   final AccountHostingStatus status;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? updatedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? deletedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? deactivatedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? reactivatedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -315,11 +325,11 @@ abstract class _AccountHosting implements AccountHosting {
       {final String $type,
       @AccountHostingStatusConverter()
       required final AccountHostingStatus status,
-      final DateTime? updatedAt,
-      final DateTime? createdAt,
-      final DateTime? deletedAt,
-      final DateTime? deactivatedAt,
-      final DateTime? reactivatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) final DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? reactivatedAt,
       final Map<String, dynamic>? $unknown}) = _$AccountHostingImpl;
 
   factory _AccountHosting.fromJson(Map<String, dynamic> json) =
@@ -331,14 +341,19 @@ abstract class _AccountHosting implements AccountHosting {
   @AccountHostingStatusConverter()
   AccountHostingStatus get status;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get deletedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get deactivatedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get reactivatedAt;
   @override
   Map<String, dynamic>? get $unknown;

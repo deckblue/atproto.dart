@@ -1,5 +1,37 @@
 # Release Note
 
+## v1.1.3
+
+- chore: bump `at_primitives` to `^1.2.0`.
+
+## v1.1.2
+
+- docs: rewrote the README example, which imported non-existent `atproto.Session`/`atproto.CurrentSession` and used fictional NSIDs; it now matches the working `example/example.dart` (`server.atproto.com`/`createSession`/`getSession`, no `atproto` import).
+- docs: documented the streaming API (`subscribe<T>` returning an `XRPCResponse<Subscription<T>>`) with a minimal usage snippet.
+- chore: bump `at_primitives` to `^1.1.1`.
+
+## v1.1.1
+
+- fix: procedure/record request bodies no longer drop legitimately empty collections (e.g. `threadgate.allow: []`); only `null` values are stripped. Query parameters are unchanged. This now also covers the `http.post` body path (previously it still pruned empty `[]`/`{}`).
+- fix: `subscribe` propagates backpressure and cancellation to the underlying WebSocket, preventing unbounded buffering on slow consumers (firehose) and socket leaks.
+- fix: `subscribe` no longer drains the WebSocket before a consumer listens — the underlying subscription starts paused and resumes on the first listen, so a consumer that delays or never listens cannot buffer firehose frames unboundedly.
+- fix: `RateLimit.waitUntilReset()` caps its delay at 60s, so a hostile or misconfigured far-future `Retry-After` HTTP-date can no longer hang the caller indefinitely.
+- fix: an empty `200` response body with a `to` converter now yields `EmptyData` instead of throwing a raw `FormatException`.
+- fix: blob uploads fall back to `application/octet-stream` (was `*/*`) when the content type cannot be sniffed.
+
+## v1.1.0
+
+- fix: `subscribe()` now closes its `StreamController`, propagates WebSocket errors via `addError`, and always delivers `done`, so a server disconnect no longer hangs `await for` forever or leaks the controller.
+- fix: non-JSON error bodies (e.g. an HTML `502` from a proxy or an empty `429`) fall back to a typed exception instead of throwing a `FormatException`, so typed errors and retries keep working.
+- fix!: `409 Conflict` is no longer treated as a success and its body is no longer parsed as a data model.
+- fix: unknown HTTP status codes (e.g. Cloudflare `520`) map to `HttpStatus.unknown` instead of throwing `UnsupportedError` while building the error response.
+- fix: `_buildWsUri` now uses the `Uri` builder (percent-encoding, repeated list params, ISO8601 UTC), so multi-valued subscription params produce a valid URL.
+- fix: rate-limit header parsing is now defensive (`tryParse`, unlimited fallback), so a malformed header no longer turns a successful response into a crash.
+- fix: `RateLimit.fromHeaders` now honors the `Retry-After` header (delta-seconds and HTTP-date forms) when usable `ratelimit-*` headers are absent, so `isExceeded` and `waitUntilReset()` respect the backoff of a `429` relayed by a proxy that strips the `ratelimit-*` headers.
+- fix: the optional `ratelimit-policy` header is no longer required to parse rate limit info; responses carrying only `ratelimit-limit`/`ratelimit-remaining`/`ratelimit-reset` are now parsed instead of being treated as unlimited.
+- feat: injectable `http.Client` for connection reuse (non-breaking), plus a `procedure` adaptor param and `subscribe` protocol param.
+- chore: bump `at_primitives` to `^1.1.0`.
+
 ## v1.0.3
 
 - **MIGRATION**: Updated to use the consolidated `at_primitives` package for AT Protocol primitive types.

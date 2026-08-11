@@ -18,7 +18,7 @@ _$EmbedJoinLinkViewImpl _$$EmbedJoinLinkViewImplFromJson(Map json) =>
               r'$type', (v) => v as String? ?? 'chat.bsky.embed.joinLink#view'),
           joinLinkPreview: $checkedConvert(
               'joinLinkPreview',
-              (v) => const JoinLinkPreviewViewConverter()
+              (v) => const UEmbedJoinLinkViewJoinLinkPreviewConverter()
                   .fromJson(v as Map<String, dynamic>)),
           $unknown: $checkedConvert(
               r'$unknown',
@@ -34,7 +34,7 @@ Map<String, dynamic> _$$EmbedJoinLinkViewImplToJson(
         _$EmbedJoinLinkViewImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'joinLinkPreview':
-          const JoinLinkPreviewViewConverter().toJson(instance.joinLinkPreview),
+      'joinLinkPreview': const UEmbedJoinLinkViewJoinLinkPreviewConverter()
+          .toJson(instance.joinLinkPreview),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

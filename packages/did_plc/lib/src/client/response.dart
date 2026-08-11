@@ -41,22 +41,25 @@ sealed class HttpResponse<T> with _$HttpResponse<T> {
 /// Extension methods for HttpResponse to provide convenient access patterns.
 extension HttpResponseExtension<T> on HttpResponse<T> {
   /// Returns true if the response is successful.
-  bool get isSuccess =>
-      when(success: (_, __, ___) => true, error: (_, __, ___, ____) => false);
+  bool get isSuccess => switch (this) {
+        HttpResponseSuccess() => true,
+        HttpResponseError() => false,
+      };
 
   /// Returns true if the response is an error.
   bool get isError => !isSuccess;
 
   /// Gets the data from a successful response, or throws if error.
-  T get data => when(
-        success: (_, __, data) => data,
-        error: (statusCode, _, message, __) =>
-            throw Exception('HTTP $statusCode: $message'),
-      );
+  T get data => switch (this) {
+        HttpResponseSuccess(:final data) => data,
+        HttpResponseError(:final statusCode, :final message) => throw Exception(
+            'HTTP $statusCode: $message',
+          ),
+      };
 
   /// Gets the data from a successful response, or returns null if error.
-  T? get dataOrNull => when(
-        success: (_, __, data) => data,
-        error: (_, __, ___, ____) => null,
-      );
+  T? get dataOrNull => switch (this) {
+        HttpResponseSuccess(:final data) => data,
+        HttpResponseError() => null,
+      };
 }

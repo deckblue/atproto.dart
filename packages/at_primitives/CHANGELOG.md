@@ -1,5 +1,30 @@
 # Release Note
 
+## v1.2.0
+
+- feat: added `TidGenerator`, a stateful, strictly-monotonic TID generator for record keys. `next()` never repeats or regresses, even when the system clock is coarse or steps backwards, and the encoding is exact on both the VM and the web.
+
+## v1.1.1
+
+- docs: fixed the README, which imported the non-existent `package:at_primitives/at_primitives.dart` barrel throughout; every snippet now imports the correct sub-barrel (`at_identifier.dart`/`at_uri.dart`/`nsid.dart`/`tid.dart`/`record_key.dart`).
+- docs: corrected the `AtUri.collection` type note (`collection` returns an `NSID`, only `'com.example.post'` via `.toString()`) and documented the non-throwing `collectionOrNull`/`rkeyOrNull` getters.
+- docs: documented the previously undocumented TID (`isValidTid`/`ensureValidTid`/`InvalidTidError`) and Record Key (`isValidRecordKey`/`ensureValidRecordKey`/`InvalidRecordKeyError`) modules with runnable snippets.
+
+## v1.1.0
+
+- fix!: `collection`/`rkey` on a path-less `AtUri` now throw `InvalidAtUriError` instead of a raw `StateError`/`RangeError`; added `collectionOrNull`/`rkeyOrNull` for the non-throwing path.
+- feat: added `AtUri.parseStrict` for full validation (`ensureValidAtUri` + handle/NSID checks). `AtUri.parse` stays lenient for backwards compatibility.
+- fix: `AtUri` now preserves the query string (`search`/`searchParams`) through `parse`/`toString` instead of silently dropping it.
+- fix: NSID length limits corrected to the current spec (317 overall / 63 per segment).
+- fix: `Invalid*Error` types now override `toString()` so their message is shown.
+- perf: hoisted per-call `RegExp`s to `static final`.
+- fix: NSID validation now matches the official spec: middle domain-authority segments may start with a digit (`com.4chan.example` is valid), the name segment must be letters and digits only (`com.example.foo-bar` is now rejected), and segments can not start with a hyphen.
+- feat: added TID validation (`ensureValidTid`/`isValidTid`, `InvalidTidError`), exported from `package:at_primitives/tid.dart`.
+- feat: added Record Key validation (`ensureValidRecordKey`/`isValidRecordKey`, `InvalidRecordKeyError`), exported from `package:at_primitives/record_key.dart`.
+- fix: `AtUri.parseStrict` now validates the record key path segment (rejects `.`/`..`, over 512 chars, disallowed chars), mirroring the official strict AT URI parsing. `ensureValidAtUri` stays rkey-lenient to match the official `ensureValidAtUri`.
+- fix: DID length limit corrected from 8192 to the spec's hard limit of 2048 characters.
+- fix: `AtUri.parse` now accepts DIDs containing `.` and `_` (e.g. `at://did:web:example.com%3A3000/...` no longer throws).
+
 ## v1.0.0
 
 - **NEW**: Initial release of the consolidated `at_primitives` package.

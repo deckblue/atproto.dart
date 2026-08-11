@@ -27,6 +27,7 @@ mixin _$AccountEvent {
   bool get active => throw _privateConstructorUsedError;
   @AccountEventStatusConverter()
   AccountEventStatus? get status => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get timestamp => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -51,7 +52,7 @@ abstract class $AccountEventCopyWith<$Res> {
       String? comment,
       bool active,
       @AccountEventStatusConverter() AccountEventStatus? status,
-      DateTime timestamp,
+      @JsonKey(toJson: iso8601) DateTime timestamp,
       Map<String, dynamic>? $unknown});
 
   $AccountEventStatusCopyWith<$Res>? get status;
@@ -135,7 +136,7 @@ abstract class _$$AccountEventImplCopyWith<$Res>
       String? comment,
       bool active,
       @AccountEventStatusConverter() AccountEventStatus? status,
-      DateTime timestamp,
+      @JsonKey(toJson: iso8601) DateTime timestamp,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -200,7 +201,7 @@ class _$AccountEventImpl implements _AccountEvent {
       this.comment,
       required this.active,
       @AccountEventStatusConverter() this.status,
-      required this.timestamp,
+      @JsonKey(toJson: iso8601) required this.timestamp,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -220,6 +221,7 @@ class _$AccountEventImpl implements _AccountEvent {
   @AccountEventStatusConverter()
   final AccountEventStatus? status;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime timestamp;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -277,7 +279,7 @@ abstract class _AccountEvent implements AccountEvent {
       final String? comment,
       required final bool active,
       @AccountEventStatusConverter() final AccountEventStatus? status,
-      required final DateTime timestamp,
+      @JsonKey(toJson: iso8601) required final DateTime timestamp,
       final Map<String, dynamic>? $unknown}) = _$AccountEventImpl;
 
   factory _AccountEvent.fromJson(Map<String, dynamic> json) =
@@ -295,6 +297,7 @@ abstract class _AccountEvent implements AccountEvent {
   @AccountEventStatusConverter()
   AccountEventStatus? get status;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get timestamp;
   @override
   Map<String, dynamic>? get $unknown;

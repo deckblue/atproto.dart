@@ -29,19 +29,20 @@ final class GetSuggestedUsersForExploreCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a list of suggested users for the Explore page";
+      "Get a list of suggested users for the Explore page";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced get-suggested-users-for-explore [category] [limit]";
+      "bsky app-bsky-unspecced get-suggested-users-for-explore [--category=<value>] [--limit=<value>]";
 
   @override
   String get methodId => "app.bsky.unspecced.getSuggestedUsersForExplore";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["category"] != null)
+        if (argResults!.wasParsed("category"))
           "category": argResults!["category"],
-        "limit": argResults!["limit"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
       };
 }

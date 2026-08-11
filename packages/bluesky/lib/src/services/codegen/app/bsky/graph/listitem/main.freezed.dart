@@ -28,6 +28,7 @@ mixin _$GraphListitemRecord {
   /// Reference (AT-URI) to the list record (app.bsky.graph.list).
   @AtUriConverter()
   AtUri get list => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -51,7 +52,7 @@ abstract class $GraphListitemRecordCopyWith<$Res> {
       {String $type,
       String subject,
       @AtUriConverter() AtUri list,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -113,7 +114,7 @@ abstract class _$$GraphListitemRecordImplCopyWith<$Res>
       {String $type,
       String subject,
       @AtUriConverter() AtUri list,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -169,7 +170,7 @@ class _$GraphListitemRecordImpl implements _GraphListitemRecord {
       {this.$type = 'app.bsky.graph.listitem',
       required this.subject,
       @AtUriConverter() required this.list,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -189,6 +190,7 @@ class _$GraphListitemRecordImpl implements _GraphListitemRecord {
   @AtUriConverter()
   final AtUri list;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -245,7 +247,7 @@ abstract class _GraphListitemRecord implements GraphListitemRecord {
       {final String $type,
       required final String subject,
       @AtUriConverter() required final AtUri list,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$GraphListitemRecordImpl;
 
   factory _GraphListitemRecord.fromJson(Map<String, dynamic> json) =
@@ -263,6 +265,7 @@ abstract class _GraphListitemRecord implements GraphListitemRecord {
   @AtUriConverter()
   AtUri get list;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

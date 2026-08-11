@@ -33,6 +33,10 @@ mixin _$JobStatus {
   @BlobConverter()
   Blob? get blob => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
+
+  /// A machine-readable code for why the video processing job failed.
+  @JobStatusFailureCodeConverter()
+  JobStatusFailureCode? get failureCode => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -59,11 +63,13 @@ abstract class $JobStatusCopyWith<$Res> {
       int? progress,
       @BlobConverter() Blob? blob,
       String? error,
+      @JobStatusFailureCodeConverter() JobStatusFailureCode? failureCode,
       String? message,
       Map<String, dynamic>? $unknown});
 
   $JobStatusStateCopyWith<$Res> get state;
   $BlobCopyWith<$Res>? get blob;
+  $JobStatusFailureCodeCopyWith<$Res>? get failureCode;
 }
 
 /// @nodoc
@@ -88,6 +94,7 @@ class _$JobStatusCopyWithImpl<$Res, $Val extends JobStatus>
     Object? progress = freezed,
     Object? blob = freezed,
     Object? error = freezed,
+    Object? failureCode = freezed,
     Object? message = freezed,
     Object? $unknown = freezed,
   }) {
@@ -120,6 +127,10 @@ class _$JobStatusCopyWithImpl<$Res, $Val extends JobStatus>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
+      failureCode: freezed == failureCode
+          ? _value.failureCode
+          : failureCode // ignore: cast_nullable_to_non_nullable
+              as JobStatusFailureCode?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -154,6 +165,20 @@ class _$JobStatusCopyWithImpl<$Res, $Val extends JobStatus>
       return _then(_value.copyWith(blob: value) as $Val);
     });
   }
+
+  /// Create a copy of JobStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $JobStatusFailureCodeCopyWith<$Res>? get failureCode {
+    if (_value.failureCode == null) {
+      return null;
+    }
+
+    return $JobStatusFailureCodeCopyWith<$Res>(_value.failureCode!, (value) {
+      return _then(_value.copyWith(failureCode: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -172,6 +197,7 @@ abstract class _$$JobStatusImplCopyWith<$Res>
       int? progress,
       @BlobConverter() Blob? blob,
       String? error,
+      @JobStatusFailureCodeConverter() JobStatusFailureCode? failureCode,
       String? message,
       Map<String, dynamic>? $unknown});
 
@@ -179,6 +205,8 @@ abstract class _$$JobStatusImplCopyWith<$Res>
   $JobStatusStateCopyWith<$Res> get state;
   @override
   $BlobCopyWith<$Res>? get blob;
+  @override
+  $JobStatusFailureCodeCopyWith<$Res>? get failureCode;
 }
 
 /// @nodoc
@@ -201,6 +229,7 @@ class __$$JobStatusImplCopyWithImpl<$Res>
     Object? progress = freezed,
     Object? blob = freezed,
     Object? error = freezed,
+    Object? failureCode = freezed,
     Object? message = freezed,
     Object? $unknown = freezed,
   }) {
@@ -233,6 +262,10 @@ class __$$JobStatusImplCopyWithImpl<$Res>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
+      failureCode: freezed == failureCode
+          ? _value.failureCode
+          : failureCode // ignore: cast_nullable_to_non_nullable
+              as JobStatusFailureCode?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -257,6 +290,7 @@ class _$JobStatusImpl implements _JobStatus {
       this.progress,
       @BlobConverter() this.blob,
       this.error,
+      @JobStatusFailureCodeConverter() this.failureCode,
       this.message,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -285,6 +319,11 @@ class _$JobStatusImpl implements _JobStatus {
   final Blob? blob;
   @override
   final String? error;
+
+  /// A machine-readable code for why the video processing job failed.
+  @override
+  @JobStatusFailureCodeConverter()
+  final JobStatusFailureCode? failureCode;
   @override
   final String? message;
   final Map<String, dynamic>? _$unknown;
@@ -299,7 +338,7 @@ class _$JobStatusImpl implements _JobStatus {
 
   @override
   String toString() {
-    return 'JobStatus(\$type: ${$type}, jobId: $jobId, did: $did, state: $state, progress: $progress, blob: $blob, error: $error, message: $message, \$unknown: ${$unknown})';
+    return 'JobStatus(\$type: ${$type}, jobId: $jobId, did: $did, state: $state, progress: $progress, blob: $blob, error: $error, failureCode: $failureCode, message: $message, \$unknown: ${$unknown})';
   }
 
   @override
@@ -315,6 +354,8 @@ class _$JobStatusImpl implements _JobStatus {
                 other.progress == progress) &&
             (identical(other.blob, blob) || other.blob == blob) &&
             (identical(other.error, error) || other.error == error) &&
+            (identical(other.failureCode, failureCode) ||
+                other.failureCode == failureCode) &&
             (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
@@ -330,6 +371,7 @@ class _$JobStatusImpl implements _JobStatus {
       progress,
       blob,
       error,
+      failureCode,
       message,
       const DeepCollectionEquality().hash(_$unknown));
 
@@ -358,6 +400,7 @@ abstract class _JobStatus implements JobStatus {
       final int? progress,
       @BlobConverter() final Blob? blob,
       final String? error,
+      @JobStatusFailureCodeConverter() final JobStatusFailureCode? failureCode,
       final String? message,
       final Map<String, dynamic>? $unknown}) = _$JobStatusImpl;
 
@@ -384,6 +427,11 @@ abstract class _JobStatus implements JobStatus {
   Blob? get blob;
   @override
   String? get error;
+
+  /// A machine-readable code for why the video processing job failed.
+  @override
+  @JobStatusFailureCodeConverter()
+  JobStatusFailureCode? get failureCode;
   @override
   String? get message;
   @override

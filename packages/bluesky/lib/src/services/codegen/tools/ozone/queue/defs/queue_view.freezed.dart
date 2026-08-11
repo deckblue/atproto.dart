@@ -28,25 +28,29 @@ mixin _$QueueView {
   /// Display name of the queue
   String get name => throw _privateConstructorUsedError;
   @QueueViewSubjectTypesConverter()
-  List<QueueViewSubjectTypes> get subjectTypes =>
+  List<QueueViewSubjectTypes>? get subjectTypes =>
       throw _privateConstructorUsedError;
 
   /// Collection name for record subjects (e.g., 'app.bsky.feed.post')
   String? get collection => throw _privateConstructorUsedError;
-  List<String> get reportTypes => throw _privateConstructorUsedError;
+  List<String>? get reportTypes => throw _privateConstructorUsedError;
 
   /// Optional description of the queue
   String? get description => throw _privateConstructorUsedError;
+  List<String>? get recommendedPolicies => throw _privateConstructorUsedError;
 
   /// DID of moderator who created this queue
   String get createdBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
   /// Whether this queue is currently active
   bool get enabled => throw _privateConstructorUsedError;
 
   /// When the queue was deleted, if applicable
+  @JsonKey(toJson: iso8601)
   DateTime? get deletedAt => throw _privateConstructorUsedError;
 
   /// Statistics about this queue
@@ -74,15 +78,16 @@ abstract class $QueueViewCopyWith<$Res> {
       int id,
       String name,
       @QueueViewSubjectTypesConverter()
-      List<QueueViewSubjectTypes> subjectTypes,
+      List<QueueViewSubjectTypes>? subjectTypes,
       String? collection,
-      List<String> reportTypes,
+      List<String>? reportTypes,
       String? description,
+      List<String>? recommendedPolicies,
       String createdBy,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       bool enabled,
-      DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) DateTime? deletedAt,
       @QueueStatsConverter() QueueStats stats,
       Map<String, dynamic>? $unknown});
 
@@ -107,10 +112,11 @@ class _$QueueViewCopyWithImpl<$Res, $Val extends QueueView>
     Object? $type = null,
     Object? id = null,
     Object? name = null,
-    Object? subjectTypes = null,
+    Object? subjectTypes = freezed,
     Object? collection = freezed,
-    Object? reportTypes = null,
+    Object? reportTypes = freezed,
     Object? description = freezed,
+    Object? recommendedPolicies = freezed,
     Object? createdBy = null,
     Object? createdAt = null,
     Object? updatedAt = null,
@@ -132,22 +138,26 @@ class _$QueueViewCopyWithImpl<$Res, $Val extends QueueView>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      subjectTypes: null == subjectTypes
+      subjectTypes: freezed == subjectTypes
           ? _value.subjectTypes
           : subjectTypes // ignore: cast_nullable_to_non_nullable
-              as List<QueueViewSubjectTypes>,
+              as List<QueueViewSubjectTypes>?,
       collection: freezed == collection
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
               as String?,
-      reportTypes: null == reportTypes
+      reportTypes: freezed == reportTypes
           ? _value.reportTypes
           : reportTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      recommendedPolicies: freezed == recommendedPolicies
+          ? _value.recommendedPolicies
+          : recommendedPolicies // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       createdBy: null == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
@@ -203,15 +213,16 @@ abstract class _$$QueueViewImplCopyWith<$Res>
       int id,
       String name,
       @QueueViewSubjectTypesConverter()
-      List<QueueViewSubjectTypes> subjectTypes,
+      List<QueueViewSubjectTypes>? subjectTypes,
       String? collection,
-      List<String> reportTypes,
+      List<String>? reportTypes,
       String? description,
+      List<String>? recommendedPolicies,
       String createdBy,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       bool enabled,
-      DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) DateTime? deletedAt,
       @QueueStatsConverter() QueueStats stats,
       Map<String, dynamic>? $unknown});
 
@@ -235,10 +246,11 @@ class __$$QueueViewImplCopyWithImpl<$Res>
     Object? $type = null,
     Object? id = null,
     Object? name = null,
-    Object? subjectTypes = null,
+    Object? subjectTypes = freezed,
     Object? collection = freezed,
-    Object? reportTypes = null,
+    Object? reportTypes = freezed,
     Object? description = freezed,
+    Object? recommendedPolicies = freezed,
     Object? createdBy = null,
     Object? createdAt = null,
     Object? updatedAt = null,
@@ -260,22 +272,26 @@ class __$$QueueViewImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      subjectTypes: null == subjectTypes
+      subjectTypes: freezed == subjectTypes
           ? _value._subjectTypes
           : subjectTypes // ignore: cast_nullable_to_non_nullable
-              as List<QueueViewSubjectTypes>,
+              as List<QueueViewSubjectTypes>?,
       collection: freezed == collection
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
               as String?,
-      reportTypes: null == reportTypes
+      reportTypes: freezed == reportTypes
           ? _value._reportTypes
           : reportTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      recommendedPolicies: freezed == recommendedPolicies
+          ? _value._recommendedPolicies
+          : recommendedPolicies // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       createdBy: null == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
@@ -317,19 +333,21 @@ class _$QueueViewImpl implements _QueueView {
       required this.id,
       required this.name,
       @QueueViewSubjectTypesConverter()
-      required final List<QueueViewSubjectTypes> subjectTypes,
+      final List<QueueViewSubjectTypes>? subjectTypes,
       this.collection,
-      required final List<String> reportTypes,
+      final List<String>? reportTypes,
       this.description,
+      final List<String>? recommendedPolicies,
       required this.createdBy,
-      required this.createdAt,
-      required this.updatedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.updatedAt,
       required this.enabled,
-      this.deletedAt,
+      @JsonKey(toJson: iso8601) this.deletedAt,
       @QueueStatsConverter() required this.stats,
       final Map<String, dynamic>? $unknown})
       : _subjectTypes = subjectTypes,
         _reportTypes = reportTypes,
+        _recommendedPolicies = recommendedPolicies,
         _$unknown = $unknown;
 
   factory _$QueueViewImpl.fromJson(Map<String, dynamic> json) =>
@@ -346,36 +364,52 @@ class _$QueueViewImpl implements _QueueView {
   /// Display name of the queue
   @override
   final String name;
-  final List<QueueViewSubjectTypes> _subjectTypes;
+  final List<QueueViewSubjectTypes>? _subjectTypes;
   @override
   @QueueViewSubjectTypesConverter()
-  List<QueueViewSubjectTypes> get subjectTypes {
+  List<QueueViewSubjectTypes>? get subjectTypes {
+    final value = _subjectTypes;
+    if (value == null) return null;
     if (_subjectTypes is EqualUnmodifiableListView) return _subjectTypes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_subjectTypes);
+    return EqualUnmodifiableListView(value);
   }
 
   /// Collection name for record subjects (e.g., 'app.bsky.feed.post')
   @override
   final String? collection;
-  final List<String> _reportTypes;
+  final List<String>? _reportTypes;
   @override
-  List<String> get reportTypes {
+  List<String>? get reportTypes {
+    final value = _reportTypes;
+    if (value == null) return null;
     if (_reportTypes is EqualUnmodifiableListView) return _reportTypes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_reportTypes);
+    return EqualUnmodifiableListView(value);
   }
 
   /// Optional description of the queue
   @override
   final String? description;
+  final List<String>? _recommendedPolicies;
+  @override
+  List<String>? get recommendedPolicies {
+    final value = _recommendedPolicies;
+    if (value == null) return null;
+    if (_recommendedPolicies is EqualUnmodifiableListView)
+      return _recommendedPolicies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// DID of moderator who created this queue
   @override
   final String createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime updatedAt;
 
   /// Whether this queue is currently active
@@ -384,6 +418,7 @@ class _$QueueViewImpl implements _QueueView {
 
   /// When the queue was deleted, if applicable
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? deletedAt;
 
   /// Statistics about this queue
@@ -402,7 +437,7 @@ class _$QueueViewImpl implements _QueueView {
 
   @override
   String toString() {
-    return 'QueueView(\$type: ${$type}, id: $id, name: $name, subjectTypes: $subjectTypes, collection: $collection, reportTypes: $reportTypes, description: $description, createdBy: $createdBy, createdAt: $createdAt, updatedAt: $updatedAt, enabled: $enabled, deletedAt: $deletedAt, stats: $stats, \$unknown: ${$unknown})';
+    return 'QueueView(\$type: ${$type}, id: $id, name: $name, subjectTypes: $subjectTypes, collection: $collection, reportTypes: $reportTypes, description: $description, recommendedPolicies: $recommendedPolicies, createdBy: $createdBy, createdAt: $createdAt, updatedAt: $updatedAt, enabled: $enabled, deletedAt: $deletedAt, stats: $stats, \$unknown: ${$unknown})';
   }
 
   @override
@@ -421,6 +456,8 @@ class _$QueueViewImpl implements _QueueView {
                 .equals(other._reportTypes, _reportTypes) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            const DeepCollectionEquality()
+                .equals(other._recommendedPolicies, _recommendedPolicies) &&
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy) &&
             (identical(other.createdAt, createdAt) ||
@@ -445,6 +482,7 @@ class _$QueueViewImpl implements _QueueView {
       collection,
       const DeepCollectionEquality().hash(_reportTypes),
       description,
+      const DeepCollectionEquality().hash(_recommendedPolicies),
       createdBy,
       createdAt,
       updatedAt,
@@ -475,15 +513,16 @@ abstract class _QueueView implements QueueView {
       required final int id,
       required final String name,
       @QueueViewSubjectTypesConverter()
-      required final List<QueueViewSubjectTypes> subjectTypes,
+      final List<QueueViewSubjectTypes>? subjectTypes,
       final String? collection,
-      required final List<String> reportTypes,
+      final List<String>? reportTypes,
       final String? description,
+      final List<String>? recommendedPolicies,
       required final String createdBy,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime updatedAt,
       required final bool enabled,
-      final DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) final DateTime? deletedAt,
       @QueueStatsConverter() required final QueueStats stats,
       final Map<String, dynamic>? $unknown}) = _$QueueViewImpl;
 
@@ -502,24 +541,28 @@ abstract class _QueueView implements QueueView {
   String get name;
   @override
   @QueueViewSubjectTypesConverter()
-  List<QueueViewSubjectTypes> get subjectTypes;
+  List<QueueViewSubjectTypes>? get subjectTypes;
 
   /// Collection name for record subjects (e.g., 'app.bsky.feed.post')
   @override
   String? get collection;
   @override
-  List<String> get reportTypes;
+  List<String>? get reportTypes;
 
   /// Optional description of the queue
   @override
   String? get description;
+  @override
+  List<String>? get recommendedPolicies;
 
   /// DID of moderator who created this queue
   @override
   String get createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt;
 
   /// Whether this queue is currently active
@@ -528,6 +571,7 @@ abstract class _QueueView implements QueueView {
 
   /// When the queue was deleted, if applicable
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get deletedAt;
 
   /// Statistics about this queue

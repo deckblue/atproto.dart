@@ -24,6 +24,7 @@ mixin _$ConfigRegionRuleIfAccountOlderThan {
   String get $type => throw _privateConstructorUsedError;
 
   /// The date threshold as a datetime string.
+  @JsonKey(toJson: iso8601)
   DateTime get date => throw _privateConstructorUsedError;
   @AccessConverter()
   Access get access => throw _privateConstructorUsedError;
@@ -50,7 +51,7 @@ abstract class $ConfigRegionRuleIfAccountOlderThanCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime date,
+      @JsonKey(toJson: iso8601) DateTime date,
       @AccessConverter() Access access,
       Map<String, dynamic>? $unknown});
 
@@ -120,7 +121,7 @@ abstract class _$$ConfigRegionRuleIfAccountOlderThanImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime date,
+      @JsonKey(toJson: iso8601) DateTime date,
       @AccessConverter() Access access,
       Map<String, dynamic>? $unknown});
 
@@ -177,7 +178,7 @@ class _$ConfigRegionRuleIfAccountOlderThanImpl
   const _$ConfigRegionRuleIfAccountOlderThanImpl(
       {this.$type =
           'app.bsky.ageassurance.defs#configRegionRuleIfAccountOlderThan',
-      required this.date,
+      @JsonKey(toJson: iso8601) required this.date,
       @AccessConverter() required this.access,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -192,6 +193,7 @@ class _$ConfigRegionRuleIfAccountOlderThanImpl
 
   /// The date threshold as a datetime string.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime date;
   @override
   @AccessConverter()
@@ -249,7 +251,7 @@ abstract class _ConfigRegionRuleIfAccountOlderThan
     implements ConfigRegionRuleIfAccountOlderThan {
   const factory _ConfigRegionRuleIfAccountOlderThan(
           {final String $type,
-          required final DateTime date,
+          @JsonKey(toJson: iso8601) required final DateTime date,
           @AccessConverter() required final Access access,
           final Map<String, dynamic>? $unknown}) =
       _$ConfigRegionRuleIfAccountOlderThanImpl;
@@ -263,6 +265,7 @@ abstract class _ConfigRegionRuleIfAccountOlderThan
 
   /// The date threshold as a datetime string.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get date;
   @override
   @AccessConverter()

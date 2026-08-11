@@ -41,11 +41,11 @@ final class CreateTemplateCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Administrative action to create a new, re-usable communication (email for now) template.";
+      "Administrative action to create a new, re-usable communication (email for now) template.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-communication create-template [name] [contentMarkdown] [subject] [lang] [createdBy]";
+      "bsky tools-ozone-communication create-template --name=<value> --contentMarkdown=<value> --subject=<value> [--lang=<value>] [--createdBy=<value>]";
 
   @override
   String get methodId => "tools.ozone.communication.createTemplate";
@@ -55,8 +55,8 @@ final class CreateTemplateCommand extends ProcedureCommand {
         "name": argResults!["name"],
         "contentMarkdown": argResults!["contentMarkdown"],
         "subject": argResults!["subject"],
-        if (argResults!["lang"] != null) "lang": argResults!["lang"],
-        if (argResults!["createdBy"] != null)
+        if (argResults!.wasParsed("lang")) "lang": argResults!["lang"],
+        if (argResults!.wasParsed("createdBy"))
           "createdBy": argResults!["createdBy"],
       };
 }

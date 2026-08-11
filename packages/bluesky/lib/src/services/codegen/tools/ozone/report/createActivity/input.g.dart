@@ -15,7 +15,8 @@ _$ReportCreateActivityInputImpl _$$ReportCreateActivityInputImplFromJson(
       json,
       ($checkedConvert) {
         final val = _$ReportCreateActivityInputImpl(
-          reportId: $checkedConvert('reportId', (v) => (v as num).toInt()),
+          reportId: $checkedConvert('reportId', (v) => (v as num?)?.toInt()),
+          eventId: $checkedConvert('eventId', (v) => (v as num?)?.toInt()),
           activity: $checkedConvert(
               'activity',
               (v) => const UReportCreateActivityActivityConverter()
@@ -37,7 +38,8 @@ _$ReportCreateActivityInputImpl _$$ReportCreateActivityInputImplFromJson(
 Map<String, dynamic> _$$ReportCreateActivityInputImplToJson(
         _$ReportCreateActivityInputImpl instance) =>
     <String, dynamic>{
-      'reportId': instance.reportId,
+      if (instance.reportId case final value?) 'reportId': value,
+      if (instance.eventId case final value?) 'eventId': value,
       'activity': const UReportCreateActivityActivityConverter()
           .toJson(instance.activity),
       if (instance.internalNote case final value?) 'internalNote': value,

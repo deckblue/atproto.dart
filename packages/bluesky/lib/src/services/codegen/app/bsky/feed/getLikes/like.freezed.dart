@@ -21,7 +21,9 @@ Like _$LikeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Like {
   String get $type => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @ProfileViewConverter()
   ProfileView get actor => throw _privateConstructorUsedError;
@@ -43,8 +45,8 @@ abstract class $LikeCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime indexedAt,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @ProfileViewConverter() ProfileView actor,
       Map<String, dynamic>? $unknown});
 
@@ -116,8 +118,8 @@ abstract class _$$LikeImplCopyWith<$Res> implements $LikeCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime indexedAt,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @ProfileViewConverter() ProfileView actor,
       Map<String, dynamic>? $unknown});
 
@@ -174,8 +176,8 @@ class __$$LikeImplCopyWithImpl<$Res>
 class _$LikeImpl implements _Like {
   const _$LikeImpl(
       {this.$type = 'app.bsky.feed.getLikes#like',
-      required this.indexedAt,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @ProfileViewConverter() required this.actor,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -187,8 +189,10 @@ class _$LikeImpl implements _Like {
   @JsonKey()
   final String $type;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @ProfileViewConverter()
@@ -246,8 +250,8 @@ class _$LikeImpl implements _Like {
 abstract class _Like implements Like {
   const factory _Like(
       {final String $type,
-      required final DateTime indexedAt,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @ProfileViewConverter() required final ProfileView actor,
       final Map<String, dynamic>? $unknown}) = _$LikeImpl;
 
@@ -256,8 +260,10 @@ abstract class _Like implements Like {
   @override
   String get $type;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @ProfileViewConverter()

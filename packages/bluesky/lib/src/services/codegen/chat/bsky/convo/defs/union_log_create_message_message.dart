@@ -61,29 +61,31 @@ final class ULogCreateMessageMessageConverter
 
   @override
   ULogCreateMessageMessage fromJson(Map<String, dynamic> json) {
-    try {
-      if (MessageView.validate(json)) {
-        return ULogCreateMessageMessage.messageView(
-          data: const MessageViewConverter().fromJson(json),
-        );
-      }
-      if (DeletedMessageView.validate(json)) {
-        return ULogCreateMessageMessage.deletedMessageView(
-          data: const DeletedMessageViewConverter().fromJson(json),
-        );
-      }
-
-      return ULogCreateMessageMessage.unknown(data: json);
-    } catch (_) {
-      return ULogCreateMessageMessage.unknown(data: json);
+    if (MessageView.validate(json)) {
+      return ULogCreateMessageMessage.messageView(
+        data: const MessageViewConverter().fromJson(json),
+      );
     }
+    if (DeletedMessageView.validate(json)) {
+      return ULogCreateMessageMessage.deletedMessageView(
+        data: const DeletedMessageViewConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return ULogCreateMessageMessage.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(ULogCreateMessageMessage object) => object.when(
-        messageView: (data) => const MessageViewConverter().toJson(data),
-        deletedMessageView: (data) =>
-            const DeletedMessageViewConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(ULogCreateMessageMessage object) =>
+      switch (object) {
+        ULogCreateMessageMessageMessageView(:final data) =>
+          const MessageViewConverter().toJson(data),
+        ULogCreateMessageMessageDeletedMessageView(:final data) =>
+          const DeletedMessageViewConverter().toJson(data),
+        ULogCreateMessageMessageUnknown(:final data) => data,
+      };
 }

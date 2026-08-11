@@ -33,10 +33,11 @@ final class AddValuesCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Add values to a specific set. Attempting to add values to a set that does not exist will result in an error.";
+      "Add values to a specific set. Attempting to add values to a set that does not exist will result in an error.";
 
   @override
-  final String invocation = "bsky tools-ozone-set add-values [name] [values]";
+  final String invocation =
+      "bsky tools-ozone-set add-values --name=<value> [--values=<value>...]";
 
   @override
   String get methodId => "tools.ozone.set.addValues";
@@ -44,6 +45,12 @@ final class AddValuesCommand extends ProcedureCommand {
   @override
   Map<String, dynamic>? get body => {
         "name": argResults!["name"],
-        "values": argResults!["values"],
+        "values": _requireNonEmpty("values", argResults!["values"]),
       };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

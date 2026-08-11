@@ -61,30 +61,30 @@ final class UMessageViewEmbedConverter
 
   @override
   UMessageViewEmbed fromJson(Map<String, dynamic> json) {
-    try {
-      if (EmbedRecordView.validate(json)) {
-        return UMessageViewEmbed.embedRecordView(
-          data: const EmbedRecordViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedJoinLinkView.validate(json)) {
-        return UMessageViewEmbed.embedJoinLinkView(
-          data: const EmbedJoinLinkViewConverter().fromJson(json),
-        );
-      }
-
-      return UMessageViewEmbed.unknown(data: json);
-    } catch (_) {
-      return UMessageViewEmbed.unknown(data: json);
+    if (EmbedRecordView.validate(json)) {
+      return UMessageViewEmbed.embedRecordView(
+        data: const EmbedRecordViewConverter().fromJson(json),
+      );
     }
+    if (EmbedJoinLinkView.validate(json)) {
+      return UMessageViewEmbed.embedJoinLinkView(
+        data: const EmbedJoinLinkViewConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UMessageViewEmbed.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UMessageViewEmbed object) => object.when(
-        embedRecordView: (data) =>
-            const EmbedRecordViewConverter().toJson(data),
-        embedJoinLinkView: (data) =>
-            const EmbedJoinLinkViewConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UMessageViewEmbed object) => switch (object) {
+        UMessageViewEmbedEmbedRecordView(:final data) =>
+          const EmbedRecordViewConverter().toJson(data),
+        UMessageViewEmbedEmbedJoinLinkView(:final data) =>
+          const EmbedJoinLinkViewConverter().toJson(data),
+        UMessageViewEmbedUnknown(:final data) => data,
+      };
 }

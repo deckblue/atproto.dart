@@ -39,19 +39,21 @@ final class ReassignQueueCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Manually reassign a report to a different queue (or unassign it). Records a queueActivity entry on the report.";
+      "Manually reassign a report to a different queue (or unassign it). Records a queueActivity entry on the report.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-report reassign-queue [reportId] [queueId] [comment]";
+      "bsky tools-ozone-report reassign-queue --reportId=<value> --queueId=<value> [--comment=<value>]";
 
   @override
   String get methodId => "tools.ozone.report.reassignQueue";
 
   @override
   Map<String, dynamic>? get body => {
-        "reportId": argResults!["reportId"],
-        "queueId": argResults!["queueId"],
-        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+        "reportId": int.tryParse(argResults!["reportId"]) ??
+            usageException('Invalid integer value for option "reportId".'),
+        "queueId": int.tryParse(argResults!["queueId"]) ??
+            usageException('Invalid integer value for option "queueId".'),
+        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
       };
 }

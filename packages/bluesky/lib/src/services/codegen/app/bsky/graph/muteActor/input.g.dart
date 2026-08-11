@@ -15,6 +15,8 @@ _$GraphMuteActorInputImpl _$$GraphMuteActorInputImplFromJson(Map json) =>
       ($checkedConvert) {
         final val = _$GraphMuteActorInputImpl(
           actor: $checkedConvert('actor', (v) => v as String),
+          onlyReposts: $checkedConvert('onlyReposts', (v) => v as bool?),
+          onlyQuoteposts: $checkedConvert('onlyQuoteposts', (v) => v as bool?),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -29,5 +31,7 @@ Map<String, dynamic> _$$GraphMuteActorInputImplToJson(
         _$GraphMuteActorInputImpl instance) =>
     <String, dynamic>{
       'actor': instance.actor,
+      if (instance.onlyReposts case final value?) 'onlyReposts': value,
+      if (instance.onlyQuoteposts case final value?) 'onlyQuoteposts': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

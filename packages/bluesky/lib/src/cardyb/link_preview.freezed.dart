@@ -32,6 +32,18 @@ mixin _$LinkPreview {
   /// The preview image of the link.
   String? get image => throw _privateConstructorUsedError;
 
+  /// The error message returned by cardyb, if any.
+  ///
+  /// cardyb's `/v1/extract` endpoint responds with HTTP 200 even when
+  /// extraction fails, carrying a non-empty `error` field. Inspect this
+  /// to distinguish a genuine failure from an empty preview.
+  String? get error => throw _privateConstructorUsedError;
+
+  /// The likely type of the resource cardyb attempted to extract
+  /// (e.g. `html`), mapped from the `likely_type` field.
+  @JsonKey(name: 'likely_type')
+  String? get likelyType => throw _privateConstructorUsedError;
+
   /// Serializes this LinkPreview to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -48,7 +60,13 @@ abstract class $LinkPreviewCopyWith<$Res> {
           LinkPreview value, $Res Function(LinkPreview) then) =
       _$LinkPreviewCopyWithImpl<$Res, LinkPreview>;
   @useResult
-  $Res call({String? url, String? title, String? description, String? image});
+  $Res call(
+      {String? url,
+      String? title,
+      String? description,
+      String? image,
+      String? error,
+      @JsonKey(name: 'likely_type') String? likelyType});
 }
 
 /// @nodoc
@@ -70,6 +88,8 @@ class _$LinkPreviewCopyWithImpl<$Res, $Val extends LinkPreview>
     Object? title = freezed,
     Object? description = freezed,
     Object? image = freezed,
+    Object? error = freezed,
+    Object? likelyType = freezed,
   }) {
     return _then(_value.copyWith(
       url: freezed == url
@@ -88,6 +108,14 @@ class _$LinkPreviewCopyWithImpl<$Res, $Val extends LinkPreview>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      likelyType: freezed == likelyType
+          ? _value.likelyType
+          : likelyType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -100,7 +128,13 @@ abstract class _$$LinkPreviewImplCopyWith<$Res>
       __$$LinkPreviewImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? url, String? title, String? description, String? image});
+  $Res call(
+      {String? url,
+      String? title,
+      String? description,
+      String? image,
+      String? error,
+      @JsonKey(name: 'likely_type') String? likelyType});
 }
 
 /// @nodoc
@@ -120,6 +154,8 @@ class __$$LinkPreviewImplCopyWithImpl<$Res>
     Object? title = freezed,
     Object? description = freezed,
     Object? image = freezed,
+    Object? error = freezed,
+    Object? likelyType = freezed,
   }) {
     return _then(_$LinkPreviewImpl(
       url: freezed == url
@@ -138,6 +174,14 @@ class __$$LinkPreviewImplCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      likelyType: freezed == likelyType
+          ? _value.likelyType
+          : likelyType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -145,7 +189,13 @@ class __$$LinkPreviewImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LinkPreviewImpl implements _LinkPreview {
-  const _$LinkPreviewImpl({this.url, this.title, this.description, this.image});
+  const _$LinkPreviewImpl(
+      {this.url,
+      this.title,
+      this.description,
+      this.image,
+      this.error,
+      @JsonKey(name: 'likely_type') this.likelyType});
 
   factory _$LinkPreviewImpl.fromJson(Map<String, dynamic> json) =>
       _$$LinkPreviewImplFromJson(json);
@@ -166,9 +216,23 @@ class _$LinkPreviewImpl implements _LinkPreview {
   @override
   final String? image;
 
+  /// The error message returned by cardyb, if any.
+  ///
+  /// cardyb's `/v1/extract` endpoint responds with HTTP 200 even when
+  /// extraction fails, carrying a non-empty `error` field. Inspect this
+  /// to distinguish a genuine failure from an empty preview.
+  @override
+  final String? error;
+
+  /// The likely type of the resource cardyb attempted to extract
+  /// (e.g. `html`), mapped from the `likely_type` field.
+  @override
+  @JsonKey(name: 'likely_type')
+  final String? likelyType;
+
   @override
   String toString() {
-    return 'LinkPreview(url: $url, title: $title, description: $description, image: $image)';
+    return 'LinkPreview(url: $url, title: $title, description: $description, image: $image, error: $error, likelyType: $likelyType)';
   }
 
   @override
@@ -180,12 +244,16 @@ class _$LinkPreviewImpl implements _LinkPreview {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.image, image) || other.image == image));
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.likelyType, likelyType) ||
+                other.likelyType == likelyType));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, url, title, description, image);
+  int get hashCode => Object.hash(
+      runtimeType, url, title, description, image, error, likelyType);
 
   /// Create a copy of LinkPreview
   /// with the given fields replaced by the non-null parameter values.
@@ -205,10 +273,13 @@ class _$LinkPreviewImpl implements _LinkPreview {
 
 abstract class _LinkPreview implements LinkPreview {
   const factory _LinkPreview(
-      {final String? url,
-      final String? title,
-      final String? description,
-      final String? image}) = _$LinkPreviewImpl;
+          {final String? url,
+          final String? title,
+          final String? description,
+          final String? image,
+          final String? error,
+          @JsonKey(name: 'likely_type') final String? likelyType}) =
+      _$LinkPreviewImpl;
 
   factory _LinkPreview.fromJson(Map<String, dynamic> json) =
       _$LinkPreviewImpl.fromJson;
@@ -228,6 +299,20 @@ abstract class _LinkPreview implements LinkPreview {
   /// The preview image of the link.
   @override
   String? get image;
+
+  /// The error message returned by cardyb, if any.
+  ///
+  /// cardyb's `/v1/extract` endpoint responds with HTTP 200 even when
+  /// extraction fails, carrying a non-empty `error` field. Inspect this
+  /// to distinguish a genuine failure from an empty preview.
+  @override
+  String? get error;
+
+  /// The likely type of the resource cardyb attempted to extract
+  /// (e.g. `html`), mapped from the `likely_type` field.
+  @override
+  @JsonKey(name: 'likely_type')
+  String? get likelyType;
 
   /// Create a copy of LinkPreview
   /// with the given fields replaced by the non-null parameter values.

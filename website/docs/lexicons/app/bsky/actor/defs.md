@@ -105,7 +105,9 @@ Metadata about the requesting account's relationship with the subject account. O
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
-| **muted** | boolean | - | ❌ | - |
+| **muted** | boolean | - | ❌ | Whether the account is fully muted, directly or via a mutelist. False when the mute is scoped to specific kinds; see mutedOnlyReposts and mutedOnlyQuoteposts. |
+| **mutedOnlyReposts** | boolean | - | ❌ | Whether the account's reposts are muted. Scoped mutes are exclusive with muted: this can be true while muted is false. If muted is true, this will be false. |
+| **mutedOnlyQuoteposts** | boolean | - | ❌ | Whether the account's quote posts are muted. Scoped mutes are exclusive with muted: this can be true while muted is false. If muted is true, this will be false. |
 | **mutedByList** | [app.bsky.graph.defs#listViewBasic](../../../../lexicons/app/bsky/graph/defs.md#listviewbasic) | - | ❌ | - |
 | **blockedBy** | boolean | - | ❌ | - |
 | **blocking** | string ([at-uri](https://atproto.com/specs/at-uri-scheme)) | - | ❌ | - |
@@ -278,6 +280,7 @@ A grab bag of state that's specific to the bsky.app program. Third-party apps sh
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
 | **activeProgressGuide** | [#bskyAppProgressGuide](#bskyappprogressguide) | - | ❌ | - |
+| **isBetaUser** | boolean | - | ❌ | Indicates if the user is participating in the beta features program. |
 | **queuedNudges** | array of string | - | ❌ | An array of tokens which identify nudges (modals, popups, tours, highlight dots) that should be shown to the user. |
 | **nuxs** | array of [app.bsky.actor.defs#nux](../../../../lexicons/app/bsky/actor/defs.md#nux) | - | ❌ | Storage for NUXs the user has encountered. |
 

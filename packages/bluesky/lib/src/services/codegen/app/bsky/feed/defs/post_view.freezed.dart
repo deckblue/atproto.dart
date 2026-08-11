@@ -34,6 +34,7 @@ mixin _$PostView {
   int? get repostCount => throw _privateConstructorUsedError;
   int? get likeCount => throw _privateConstructorUsedError;
   int? get quoteCount => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   @ViewerStateConverter()
   ViewerState? get viewer => throw _privateConstructorUsedError;
@@ -71,7 +72,7 @@ abstract class $PostViewCopyWith<$Res> {
       int? repostCount,
       int? likeCount,
       int? quoteCount,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
       @ThreadgateViewConverter() ThreadgateView? threadgate,
@@ -262,7 +263,7 @@ abstract class _$$PostViewImplCopyWith<$Res>
       int? repostCount,
       int? likeCount,
       int? quoteCount,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
       @ThreadgateViewConverter() ThreadgateView? threadgate,
@@ -399,7 +400,7 @@ class _$PostViewImpl implements _PostView {
       this.repostCount,
       this.likeCount,
       this.quoteCount,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       @ViewerStateConverter() this.viewer,
       @LabelConverter() final List<Label>? labels,
       @ThreadgateViewConverter() this.threadgate,
@@ -446,6 +447,7 @@ class _$PostViewImpl implements _PostView {
   @override
   final int? quoteCount;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   @override
   @ViewerStateConverter()
@@ -571,7 +573,7 @@ abstract class _PostView implements PostView {
       final int? repostCount,
       final int? likeCount,
       final int? quoteCount,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       @ViewerStateConverter() final ViewerState? viewer,
       @LabelConverter() final List<Label>? labels,
       @ThreadgateViewConverter() final ThreadgateView? threadgate,
@@ -607,6 +609,7 @@ abstract class _PostView implements PostView {
   @override
   int? get quoteCount;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   @ViewerStateConverter()

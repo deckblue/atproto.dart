@@ -22,6 +22,7 @@ AppPassword _$AppPasswordFromJson(Map<String, dynamic> json) {
 mixin _$AppPassword {
   String get $type => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   bool? get privileged => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
@@ -45,7 +46,7 @@ abstract class $AppPasswordCopyWith<$Res> {
   $Res call(
       {String $type,
       String name,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       bool? privileged,
       Map<String, dynamic>? $unknown});
 }
@@ -107,7 +108,7 @@ abstract class _$$AppPasswordImplCopyWith<$Res>
   $Res call(
       {String $type,
       String name,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       bool? privileged,
       Map<String, dynamic>? $unknown});
 }
@@ -163,7 +164,7 @@ class _$AppPasswordImpl implements _AppPassword {
   const _$AppPasswordImpl(
       {this.$type = 'com.atproto.server.listAppPasswords#appPassword',
       required this.name,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       this.privileged,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -177,6 +178,7 @@ class _$AppPasswordImpl implements _AppPassword {
   @override
   final String name;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   final bool? privileged;
@@ -234,7 +236,7 @@ abstract class _AppPassword implements AppPassword {
   const factory _AppPassword(
       {final String $type,
       required final String name,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final bool? privileged,
       final Map<String, dynamic>? $unknown}) = _$AppPasswordImpl;
 
@@ -246,6 +248,7 @@ abstract class _AppPassword implements AppPassword {
   @override
   String get name;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   bool? get privileged;

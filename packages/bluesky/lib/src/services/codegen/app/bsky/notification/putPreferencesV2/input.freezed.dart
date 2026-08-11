@@ -21,8 +21,6 @@ NotificationPutPreferencesV2Input _$NotificationPutPreferencesV2InputFromJson(
 
 /// @nodoc
 mixin _$NotificationPutPreferencesV2Input {
-  @ChatPreferenceConverter()
-  ChatPreference? get chat => throw _privateConstructorUsedError;
   @FilterablePreferenceConverter()
   FilterablePreference? get follow => throw _privateConstructorUsedError;
   @FilterablePreferenceConverter()
@@ -69,8 +67,7 @@ abstract class $NotificationPutPreferencesV2InputCopyWith<$Res> {
           NotificationPutPreferencesV2Input>;
   @useResult
   $Res call(
-      {@ChatPreferenceConverter() ChatPreference? chat,
-      @FilterablePreferenceConverter() FilterablePreference? follow,
+      {@FilterablePreferenceConverter() FilterablePreference? follow,
       @FilterablePreferenceConverter() FilterablePreference? like,
       @FilterablePreferenceConverter() FilterablePreference? likeViaRepost,
       @FilterablePreferenceConverter() FilterablePreference? mention,
@@ -84,7 +81,6 @@ abstract class $NotificationPutPreferencesV2InputCopyWith<$Res> {
       @PreferenceConverter() Preference? verified,
       Map<String, dynamic>? $unknown});
 
-  $ChatPreferenceCopyWith<$Res>? get chat;
   $FilterablePreferenceCopyWith<$Res>? get follow;
   $FilterablePreferenceCopyWith<$Res>? get like;
   $FilterablePreferenceCopyWith<$Res>? get likeViaRepost;
@@ -115,7 +111,6 @@ class _$NotificationPutPreferencesV2InputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chat = freezed,
     Object? follow = freezed,
     Object? like = freezed,
     Object? likeViaRepost = freezed,
@@ -131,10 +126,6 @@ class _$NotificationPutPreferencesV2InputCopyWithImpl<$Res,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
-      chat: freezed == chat
-          ? _value.chat
-          : chat // ignore: cast_nullable_to_non_nullable
-              as ChatPreference?,
       follow: freezed == follow
           ? _value.follow
           : follow // ignore: cast_nullable_to_non_nullable
@@ -188,20 +179,6 @@ class _$NotificationPutPreferencesV2InputCopyWithImpl<$Res,
           : $unknown // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ) as $Val);
-  }
-
-  /// Create a copy of NotificationPutPreferencesV2Input
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChatPreferenceCopyWith<$Res>? get chat {
-    if (_value.chat == null) {
-      return null;
-    }
-
-    return $ChatPreferenceCopyWith<$Res>(_value.chat!, (value) {
-      return _then(_value.copyWith(chat: value) as $Val);
-    });
   }
 
   /// Create a copy of NotificationPutPreferencesV2Input
@@ -384,8 +361,7 @@ abstract class _$$NotificationPutPreferencesV2InputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@ChatPreferenceConverter() ChatPreference? chat,
-      @FilterablePreferenceConverter() FilterablePreference? follow,
+      {@FilterablePreferenceConverter() FilterablePreference? follow,
       @FilterablePreferenceConverter() FilterablePreference? like,
       @FilterablePreferenceConverter() FilterablePreference? likeViaRepost,
       @FilterablePreferenceConverter() FilterablePreference? mention,
@@ -399,8 +375,6 @@ abstract class _$$NotificationPutPreferencesV2InputImplCopyWith<$Res>
       @PreferenceConverter() Preference? verified,
       Map<String, dynamic>? $unknown});
 
-  @override
-  $ChatPreferenceCopyWith<$Res>? get chat;
   @override
   $FilterablePreferenceCopyWith<$Res>? get follow;
   @override
@@ -442,7 +416,6 @@ class __$$NotificationPutPreferencesV2InputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chat = freezed,
     Object? follow = freezed,
     Object? like = freezed,
     Object? likeViaRepost = freezed,
@@ -458,10 +431,6 @@ class __$$NotificationPutPreferencesV2InputImplCopyWithImpl<$Res>
     Object? $unknown = freezed,
   }) {
     return _then(_$NotificationPutPreferencesV2InputImpl(
-      chat: freezed == chat
-          ? _value.chat
-          : chat // ignore: cast_nullable_to_non_nullable
-              as ChatPreference?,
       follow: freezed == follow
           ? _value.follow
           : follow // ignore: cast_nullable_to_non_nullable
@@ -524,8 +493,7 @@ class __$$NotificationPutPreferencesV2InputImplCopyWithImpl<$Res>
 class _$NotificationPutPreferencesV2InputImpl
     implements _NotificationPutPreferencesV2Input {
   const _$NotificationPutPreferencesV2InputImpl(
-      {@ChatPreferenceConverter() this.chat,
-      @FilterablePreferenceConverter() this.follow,
+      {@FilterablePreferenceConverter() this.follow,
       @FilterablePreferenceConverter() this.like,
       @FilterablePreferenceConverter() this.likeViaRepost,
       @FilterablePreferenceConverter() this.mention,
@@ -544,9 +512,6 @@ class _$NotificationPutPreferencesV2InputImpl
           Map<String, dynamic> json) =>
       _$$NotificationPutPreferencesV2InputImplFromJson(json);
 
-  @override
-  @ChatPreferenceConverter()
-  final ChatPreference? chat;
   @override
   @FilterablePreferenceConverter()
   final FilterablePreference? follow;
@@ -595,7 +560,7 @@ class _$NotificationPutPreferencesV2InputImpl
 
   @override
   String toString() {
-    return 'NotificationPutPreferencesV2Input(chat: $chat, follow: $follow, like: $like, likeViaRepost: $likeViaRepost, mention: $mention, quote: $quote, reply: $reply, repost: $repost, repostViaRepost: $repostViaRepost, starterpackJoined: $starterpackJoined, subscribedPost: $subscribedPost, unverified: $unverified, verified: $verified, \$unknown: ${$unknown})';
+    return 'NotificationPutPreferencesV2Input(follow: $follow, like: $like, likeViaRepost: $likeViaRepost, mention: $mention, quote: $quote, reply: $reply, repost: $repost, repostViaRepost: $repostViaRepost, starterpackJoined: $starterpackJoined, subscribedPost: $subscribedPost, unverified: $unverified, verified: $verified, \$unknown: ${$unknown})';
   }
 
   @override
@@ -603,7 +568,6 @@ class _$NotificationPutPreferencesV2InputImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotificationPutPreferencesV2InputImpl &&
-            (identical(other.chat, chat) || other.chat == chat) &&
             (identical(other.follow, follow) || other.follow == follow) &&
             (identical(other.like, like) || other.like == like) &&
             (identical(other.likeViaRepost, likeViaRepost) ||
@@ -629,7 +593,6 @@ class _$NotificationPutPreferencesV2InputImpl
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      chat,
       follow,
       like,
       likeViaRepost,
@@ -665,8 +628,7 @@ class _$NotificationPutPreferencesV2InputImpl
 abstract class _NotificationPutPreferencesV2Input
     implements NotificationPutPreferencesV2Input {
   const factory _NotificationPutPreferencesV2Input(
-          {@ChatPreferenceConverter() final ChatPreference? chat,
-          @FilterablePreferenceConverter() final FilterablePreference? follow,
+          {@FilterablePreferenceConverter() final FilterablePreference? follow,
           @FilterablePreferenceConverter() final FilterablePreference? like,
           @FilterablePreferenceConverter()
           final FilterablePreference? likeViaRepost,
@@ -687,9 +649,6 @@ abstract class _NotificationPutPreferencesV2Input
           Map<String, dynamic> json) =
       _$NotificationPutPreferencesV2InputImpl.fromJson;
 
-  @override
-  @ChatPreferenceConverter()
-  ChatPreference? get chat;
   @override
   @FilterablePreferenceConverter()
   FilterablePreference? get follow;

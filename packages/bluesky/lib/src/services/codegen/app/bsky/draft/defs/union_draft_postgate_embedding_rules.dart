@@ -54,23 +54,24 @@ final class UDraftPostgateEmbeddingRulesConverter
 
   @override
   UDraftPostgateEmbeddingRules fromJson(Map<String, dynamic> json) {
-    try {
-      if (DisableRule.validate(json)) {
-        return UDraftPostgateEmbeddingRules.disableRule(
-          data: const DisableRuleConverter().fromJson(json),
-        );
-      }
-
-      return UDraftPostgateEmbeddingRules.unknown(data: json);
-    } catch (_) {
-      return UDraftPostgateEmbeddingRules.unknown(data: json);
+    if (DisableRule.validate(json)) {
+      return UDraftPostgateEmbeddingRules.disableRule(
+        data: const DisableRuleConverter().fromJson(json),
+      );
     }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UDraftPostgateEmbeddingRules.unknown(data: json);
   }
 
   @override
   Map<String, dynamic> toJson(UDraftPostgateEmbeddingRules object) =>
-      object.when(
-        disableRule: (data) => const DisableRuleConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UDraftPostgateEmbeddingRulesDisableRule(:final data) =>
+          const DisableRuleConverter().toJson(data),
+        UDraftPostgateEmbeddingRulesUnknown(:final data) => data,
+      };
 }

@@ -39,11 +39,11 @@ final class RefreshStatsCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Recompute report statistics for a date range. Useful for backfilling after failures or data corrections.";
+      "Recompute report statistics for a date range. Useful for backfilling after failures or data corrections.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-report refresh-stats [startDate] [endDate] [queueIds]";
+      "bsky tools-ozone-report refresh-stats --startDate=<value> --endDate=<value> [--queueIds=<value>...]";
 
   @override
   String get methodId => "tools.ozone.report.refreshStats";
@@ -52,7 +52,14 @@ final class RefreshStatsCommand extends ProcedureCommand {
   Map<String, dynamic>? get body => {
         "startDate": argResults!["startDate"],
         "endDate": argResults!["endDate"],
-        if (argResults!["queueIds"] != null)
-          "queueIds": argResults!["queueIds"],
+        if (argResults!.wasParsed("queueIds"))
+          "queueIds": (argResults!["queueIds"] as List<String>)
+              .map(
+                (e) =>
+                    int.tryParse(e) ??
+                    usageException(
+                        'Invalid integer value in option "queueIds".'),
+              )
+              .toList(),
       };
 }

@@ -34,12 +34,15 @@ mixin _$ScheduledActionView {
   String get did => throw _privateConstructorUsedError;
 
   /// Exact time to execute the action
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAt => throw _privateConstructorUsedError;
 
   /// Earliest time to execute the action (for randomized scheduling)
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAfter => throw _privateConstructorUsedError;
 
   /// Latest time to execute the action (for randomized scheduling)
+  @JsonKey(toJson: iso8601)
   DateTime? get executeUntil => throw _privateConstructorUsedError;
 
   /// Whether execution time should be randomized within the specified range
@@ -49,9 +52,11 @@ mixin _$ScheduledActionView {
   String get createdBy => throw _privateConstructorUsedError;
 
   /// When the scheduled action was created
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// When the scheduled action was last updated
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   /// Current status of the scheduled action
@@ -59,6 +64,7 @@ mixin _$ScheduledActionView {
   ScheduledActionViewStatus get status => throw _privateConstructorUsedError;
 
   /// When the action was last attempted to be executed
+  @JsonKey(toJson: iso8601)
   DateTime? get lastExecutedAt => throw _privateConstructorUsedError;
 
   /// Reason for the last execution failure
@@ -90,15 +96,15 @@ abstract class $ScheduledActionViewCopyWith<$Res> {
       @ScheduledActionViewActionConverter() ScheduledActionViewAction action,
       Map<String, dynamic>? eventData,
       String did,
-      DateTime? executeAt,
-      DateTime? executeAfter,
-      DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) DateTime? executeAt,
+      @JsonKey(toJson: iso8601) DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) DateTime? executeUntil,
       bool? randomizeExecution,
       String createdBy,
-      DateTime createdAt,
-      DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
       @ScheduledActionViewStatusConverter() ScheduledActionViewStatus status,
-      DateTime? lastExecutedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastExecutedAt,
       String? lastFailureReason,
       int? executionEventId,
       Map<String, dynamic>? $unknown});
@@ -247,15 +253,15 @@ abstract class _$$ScheduledActionViewImplCopyWith<$Res>
       @ScheduledActionViewActionConverter() ScheduledActionViewAction action,
       Map<String, dynamic>? eventData,
       String did,
-      DateTime? executeAt,
-      DateTime? executeAfter,
-      DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) DateTime? executeAt,
+      @JsonKey(toJson: iso8601) DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) DateTime? executeUntil,
       bool? randomizeExecution,
       String createdBy,
-      DateTime createdAt,
-      DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
       @ScheduledActionViewStatusConverter() ScheduledActionViewStatus status,
-      DateTime? lastExecutedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastExecutedAt,
       String? lastFailureReason,
       int? executionEventId,
       Map<String, dynamic>? $unknown});
@@ -380,15 +386,15 @@ class _$ScheduledActionViewImpl implements _ScheduledActionView {
       @ScheduledActionViewActionConverter() required this.action,
       final Map<String, dynamic>? eventData,
       required this.did,
-      this.executeAt,
-      this.executeAfter,
-      this.executeUntil,
+      @JsonKey(toJson: iso8601) this.executeAt,
+      @JsonKey(toJson: iso8601) this.executeAfter,
+      @JsonKey(toJson: iso8601) this.executeUntil,
       this.randomizeExecution,
       required this.createdBy,
-      required this.createdAt,
-      this.updatedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
+      @JsonKey(toJson: iso8601) this.updatedAt,
       @ScheduledActionViewStatusConverter() required this.status,
-      this.lastExecutedAt,
+      @JsonKey(toJson: iso8601) this.lastExecutedAt,
       this.lastFailureReason,
       this.executionEventId,
       final Map<String, dynamic>? $unknown})
@@ -426,14 +432,17 @@ class _$ScheduledActionViewImpl implements _ScheduledActionView {
 
   /// Exact time to execute the action
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeAt;
 
   /// Earliest time to execute the action (for randomized scheduling)
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeAfter;
 
   /// Latest time to execute the action (for randomized scheduling)
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeUntil;
 
   /// Whether execution time should be randomized within the specified range
@@ -446,10 +455,12 @@ class _$ScheduledActionViewImpl implements _ScheduledActionView {
 
   /// When the scheduled action was created
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// When the scheduled action was last updated
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? updatedAt;
 
   /// Current status of the scheduled action
@@ -459,6 +470,7 @@ class _$ScheduledActionViewImpl implements _ScheduledActionView {
 
   /// When the action was last attempted to be executed
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastExecutedAt;
 
   /// Reason for the last execution failure
@@ -565,16 +577,16 @@ abstract class _ScheduledActionView implements ScheduledActionView {
       required final ScheduledActionViewAction action,
       final Map<String, dynamic>? eventData,
       required final String did,
-      final DateTime? executeAt,
-      final DateTime? executeAfter,
-      final DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) final DateTime? executeAt,
+      @JsonKey(toJson: iso8601) final DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) final DateTime? executeUntil,
       final bool? randomizeExecution,
       required final String createdBy,
-      required final DateTime createdAt,
-      final DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? updatedAt,
       @ScheduledActionViewStatusConverter()
       required final ScheduledActionViewStatus status,
-      final DateTime? lastExecutedAt,
+      @JsonKey(toJson: iso8601) final DateTime? lastExecutedAt,
       final String? lastFailureReason,
       final int? executionEventId,
       final Map<String, dynamic>? $unknown}) = _$ScheduledActionViewImpl;
@@ -602,14 +614,17 @@ abstract class _ScheduledActionView implements ScheduledActionView {
 
   /// Exact time to execute the action
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAt;
 
   /// Earliest time to execute the action (for randomized scheduling)
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAfter;
 
   /// Latest time to execute the action (for randomized scheduling)
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeUntil;
 
   /// Whether execution time should be randomized within the specified range
@@ -622,10 +637,12 @@ abstract class _ScheduledActionView implements ScheduledActionView {
 
   /// When the scheduled action was created
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// When the scheduled action was last updated
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt;
 
   /// Current status of the scheduled action
@@ -635,6 +652,7 @@ abstract class _ScheduledActionView implements ScheduledActionView {
 
   /// When the action was last attempted to be executed
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastExecutedAt;
 
   /// Reason for the last execution failure

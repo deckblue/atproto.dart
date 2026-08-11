@@ -24,7 +24,9 @@ mixin _$SetView {
   String get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   int get setSize => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -47,8 +49,8 @@ abstract class $SetViewCopyWith<$Res> {
       String name,
       String? description,
       int setSize,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -120,8 +122,8 @@ abstract class _$$SetViewImplCopyWith<$Res> implements $SetViewCopyWith<$Res> {
       String name,
       String? description,
       int setSize,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -188,8 +190,8 @@ class _$SetViewImpl implements _SetView {
       required this.name,
       this.description,
       required this.setSize,
-      required this.createdAt,
-      required this.updatedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.updatedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -206,8 +208,10 @@ class _$SetViewImpl implements _SetView {
   @override
   final int setSize;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime updatedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -275,8 +279,8 @@ abstract class _SetView implements SetView {
       required final String name,
       final String? description,
       required final int setSize,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime updatedAt,
       final Map<String, dynamic>? $unknown}) = _$SetViewImpl;
 
   factory _SetView.fromJson(Map<String, dynamic> json) = _$SetViewImpl.fromJson;
@@ -290,8 +294,10 @@ abstract class _SetView implements SetView {
   @override
   int get setSize;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt;
   @override
   Map<String, dynamic>? get $unknown;

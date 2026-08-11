@@ -24,10 +24,11 @@ final class UnlockConvoCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Unlocks a group convo so it is able to receive new content.";
+      "Unlocks a group convo so it is able to receive new content.";
 
   @override
-  final String invocation = "bsky chat-bsky-convo unlock-convo [convoId]";
+  final String invocation =
+      "bsky chat-bsky-convo unlock-convo --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.convo.unlockConvo";

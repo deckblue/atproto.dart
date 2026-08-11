@@ -27,11 +27,11 @@ final class GetActorLikesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a list of posts liked by an actor. Requires auth, actor must be the requesting account.";
+      "Get a list of posts liked by an actor. Requires auth, actor must be the requesting account.";
 
   @override
   final String invocation =
-      "bsky app-bsky-feed get-actor-likes [actor] [limit] [cursor]";
+      "bsky app-bsky-feed get-actor-likes --actor=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.getActorLikes";
@@ -39,7 +39,8 @@ final class GetActorLikesCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "actor": argResults!["actor"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

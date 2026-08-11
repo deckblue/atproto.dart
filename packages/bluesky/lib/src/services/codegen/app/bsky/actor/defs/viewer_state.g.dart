@@ -16,6 +16,10 @@ _$ViewerStateImpl _$$ViewerStateImplFromJson(Map json) => $checkedCreate(
           $type: $checkedConvert(r'$type',
               (v) => v as String? ?? 'app.bsky.actor.defs#viewerState'),
           muted: $checkedConvert('muted', (v) => v as bool?),
+          mutedOnlyReposts:
+              $checkedConvert('mutedOnlyReposts', (v) => v as bool?),
+          mutedOnlyQuoteposts:
+              $checkedConvert('mutedOnlyQuoteposts', (v) => v as bool?),
           mutedByList: $checkedConvert(
               'mutedByList',
               (v) =>
@@ -63,6 +67,10 @@ Map<String, dynamic> _$$ViewerStateImplToJson(_$ViewerStateImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       if (instance.muted case final value?) 'muted': value,
+      if (instance.mutedOnlyReposts case final value?)
+        'mutedOnlyReposts': value,
+      if (instance.mutedOnlyQuoteposts case final value?)
+        'mutedOnlyQuoteposts': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, ListViewBasic>(
               instance.mutedByList, const ListViewBasicConverter().toJson)
           case final value?)

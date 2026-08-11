@@ -24,15 +24,23 @@ final class GetJoinLinkPreviewsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Get public information about groups from join links. Invalid or disabled codes are silently omitted from results. Use the 'code' property on the views to correlate with the input codes, not array positions.";
+      "Get public information about groups from join links. The output array matches the input codes one-to-one by position (and each view also carries its 'code'). Disabled codes return a disabledJoinLinkPreviewView, and codes that do not map to a previewable link return an invalidJoinLinkPreviewView.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group get-join-link-previews [codes]";
+      "bsky chat-bsky-group get-join-link-previews [--codes=<value>...]";
 
   @override
   String get methodId => "chat.bsky.group.getJoinLinkPreviews";
 
   @override
-  Map<String, dynamic>? get parameters => {"codes": argResults!["codes"]};
+  Map<String, dynamic>? get parameters => {
+        "codes": _requireNonEmpty("codes", argResults!["codes"]),
+      };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

@@ -37,6 +37,7 @@ mixin _$Takedown {
   int? get strikeCount => throw _privateConstructorUsedError;
 
   /// When the strike should expire. If not provided, the strike never expires.
+  @JsonKey(toJson: iso8601)
   DateTime? get strikeExpiresAt => throw _privateConstructorUsedError;
 
   /// Email content to be sent to the user upon takedown.
@@ -69,7 +70,7 @@ abstract class $TakedownCopyWith<$Res> {
       List<String>? policies,
       String? severityLevel,
       int? strikeCount,
-      DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) DateTime? strikeExpiresAt,
       String? emailContent,
       String? emailSubject,
       Map<String, dynamic>? $unknown});
@@ -167,7 +168,7 @@ abstract class _$$TakedownImplCopyWith<$Res>
       List<String>? policies,
       String? severityLevel,
       int? strikeCount,
-      DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) DateTime? strikeExpiresAt,
       String? emailContent,
       String? emailSubject,
       Map<String, dynamic>? $unknown});
@@ -259,7 +260,7 @@ class _$TakedownImpl implements _Takedown {
       final List<String>? policies,
       this.severityLevel,
       this.strikeCount,
-      this.strikeExpiresAt,
+      @JsonKey(toJson: iso8601) this.strikeExpiresAt,
       this.emailContent,
       this.emailSubject,
       final Map<String, dynamic>? $unknown})
@@ -302,6 +303,7 @@ class _$TakedownImpl implements _Takedown {
 
   /// When the strike should expire. If not provided, the strike never expires.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? strikeExpiresAt;
 
   /// Email content to be sent to the user upon takedown.
@@ -394,7 +396,7 @@ abstract class _Takedown implements Takedown {
       final List<String>? policies,
       final String? severityLevel,
       final int? strikeCount,
-      final DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) final DateTime? strikeExpiresAt,
       final String? emailContent,
       final String? emailSubject,
       final Map<String, dynamic>? $unknown}) = _$TakedownImpl;
@@ -427,6 +429,7 @@ abstract class _Takedown implements Takedown {
 
   /// When the strike should expire. If not provided, the strike never expires.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get strikeExpiresAt;
 
   /// Email content to be sent to the user upon takedown.

@@ -24,7 +24,9 @@ import '../../../../nsids.g.dart' as ns;
 import 'graph/defs/list_purpose.dart';
 import 'graph/getActorStarterPacks/output.dart';
 import 'graph/getBlocks/output.dart';
+import 'graph/getFollowers/main_sort.dart';
 import 'graph/getFollowers/output.dart';
+import 'graph/getFollows/main_sort.dart';
 import 'graph/getFollows/output.dart';
 import 'graph/getKnownFollowers/output.dart';
 import 'graph/getList/output.dart';
@@ -42,6 +44,7 @@ import 'graph/getStarterPacksWithMembership/output.dart';
 import 'graph/getSuggestedFollowsByActor/output.dart';
 import 'graph/list/union_main_labels.dart';
 import 'graph/searchStarterPacks/output.dart';
+import 'graph/searchStarterPacksV2/output.dart';
 import 'graph/starterpack/feed_item.dart';
 import 'richtext/facet/main.dart';
 
@@ -107,6 +110,7 @@ Future<XRPCResponse<GraphGetFollowersOutput>> appBskyGraphGetFollowers({
   required String actor,
   int? limit,
   String? cursor,
+  GraphGetFollowersSort? sort,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
@@ -121,6 +125,7 @@ Future<XRPCResponse<GraphGetFollowersOutput>> appBskyGraphGetFollowers({
         'actor': actor,
         if (limit != null) 'limit': limit,
         if (cursor != null) 'cursor': cursor,
+        if (sort != null) 'sort': sort.toJson(),
       },
       to: const GraphGetFollowersOutputConverter().fromJson,
     );
@@ -130,6 +135,7 @@ Future<XRPCResponse<GraphGetFollowsOutput>> appBskyGraphGetFollows({
   required String actor,
   int? limit,
   String? cursor,
+  GraphGetFollowsSort? sort,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
@@ -144,6 +150,7 @@ Future<XRPCResponse<GraphGetFollowsOutput>> appBskyGraphGetFollows({
         'actor': actor,
         if (limit != null) 'limit': limit,
         if (cursor != null) 'cursor': cursor,
+        if (sort != null) 'sort': sort.toJson(),
       },
       to: const GraphGetFollowsOutputConverter().fromJson,
     );
@@ -290,7 +297,7 @@ Future<XRPCResponse<GraphGetListsWithMembershipOutput>>
           to: const GraphGetListsWithMembershipOutputConverter().fromJson,
         );
 
-/// Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.
+/// Enumerates accounts that the requesting account (actor) currently has fully muted. Mutes scoped to specific kinds of content (only reposts, only quote posts) are not included. Responses may contain more items than the requested limit. Requires auth.
 Future<XRPCResponse<GraphGetMutesOutput>> appBskyGraphGetMutes({
   int? limit,
   String? cursor,
@@ -409,9 +416,11 @@ Future<XRPCResponse<GraphGetSuggestedFollowsByActorOutput>>
           to: const GraphGetSuggestedFollowsByActorOutputConverter().fromJson,
         );
 
-/// Creates a mute relationship for the specified account. Mutes are private in Bluesky. Requires auth.
+/// Creates a mute relationship for the specified account. If a mute already exists for the account, it is updated in place: the stored scope is replaced with the scope in this request. Mutes are private in Bluesky. Requires auth.
 Future<XRPCResponse<EmptyData>> appBskyGraphMuteActor({
   required String actor,
+  bool? onlyReposts,
+  bool? onlyQuoteposts,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
@@ -421,7 +430,12 @@ Future<XRPCResponse<EmptyData>> appBskyGraphMuteActor({
       ns.appBskyGraphMuteActor,
       service: $service,
       headers: {'Content-type': 'application/json', ...?$headers},
-      body: {...?$unknown, 'actor': actor},
+      body: {
+        ...?$unknown,
+        'actor': actor,
+        if (onlyReposts != null) 'onlyReposts': onlyReposts,
+        if (onlyQuoteposts != null) 'onlyQuoteposts': onlyQuoteposts,
+      },
     );
 
 /// Creates a mute relationship for the specified list of accounts. Mutes are private in Bluesky. Requires auth.
@@ -476,6 +490,30 @@ Future<XRPCResponse<GraphSearchStarterPacksOutput>>
             if (cursor != null) 'cursor': cursor,
           },
           to: const GraphSearchStarterPacksOutputConverter().fromJson,
+        );
+
+/// Find starter packs matching search criteria. Does not require auth.
+Future<XRPCResponse<GraphSearchStarterPacksV2Output>>
+    appBskyGraphSearchStarterPacksV2({
+  required String q,
+  int? limit,
+  String? cursor,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async =>
+        await $ctx.get(
+          ns.appBskyGraphSearchStarterPacksV2,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            'q': q,
+            if (limit != null) 'limit': limit,
+            if (cursor != null) 'cursor': cursor,
+          },
+          to: const GraphSearchStarterPacksV2OutputConverter().fromJson,
         );
 
 /// Unmutes the specified account. Requires auth.
@@ -592,6 +630,7 @@ base class GraphService {
     required String actor,
     int? limit,
     String? cursor,
+    GraphGetFollowersSort? sort,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
@@ -600,6 +639,7 @@ base class GraphService {
         actor: actor,
         limit: limit,
         cursor: cursor,
+        sort: sort,
         $ctx: ctx,
         $service: $service,
         $headers: $headers,
@@ -611,6 +651,7 @@ base class GraphService {
     required String actor,
     int? limit,
     String? cursor,
+    GraphGetFollowsSort? sort,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
@@ -619,6 +660,7 @@ base class GraphService {
         actor: actor,
         limit: limit,
         cursor: cursor,
+        sort: sort,
         $ctx: ctx,
         $service: $service,
         $headers: $headers,
@@ -740,7 +782,7 @@ base class GraphService {
             $unknown: $unknown,
           );
 
-  /// Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.
+  /// Enumerates accounts that the requesting account (actor) currently has fully muted. Mutes scoped to specific kinds of content (only reposts, only quote posts) are not included. Responses may contain more items than the requested limit. Requires auth.
   Future<XRPCResponse<GraphGetMutesOutput>> getMutes({
     int? limit,
     String? cursor,
@@ -849,15 +891,19 @@ base class GraphService {
   /// Record representing an account's inclusion on a specific list. The AppView will ignore duplicate listitem records.
   GraphListitemRecordAccessor get listitem => _listitem;
 
-  /// Creates a mute relationship for the specified account. Mutes are private in Bluesky. Requires auth.
+  /// Creates a mute relationship for the specified account. If a mute already exists for the account, it is updated in place: the stored scope is replaced with the scope in this request. Mutes are private in Bluesky. Requires auth.
   Future<XRPCResponse<EmptyData>> muteActor({
     required String actor,
+    bool? onlyReposts,
+    bool? onlyQuoteposts,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
   }) async =>
       await appBskyGraphMuteActor(
         actor: actor,
+        onlyReposts: onlyReposts,
+        onlyQuoteposts: onlyQuoteposts,
         $ctx: ctx,
         $service: $service,
         $headers: $headers,
@@ -904,6 +950,25 @@ base class GraphService {
     Map<String, String>? $unknown,
   }) async =>
       await appBskyGraphSearchStarterPacks(
+        q: q,
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
+
+  /// Find starter packs matching search criteria. Does not require auth.
+  Future<XRPCResponse<GraphSearchStarterPacksV2Output>> searchStarterPacksV2({
+    required String q,
+    int? limit,
+    String? cursor,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async =>
+      await appBskyGraphSearchStarterPacksV2(
         q: q,
         limit: limit,
         cursor: cursor,
@@ -1021,9 +1086,10 @@ final class GraphBlockRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.block',
           ...?$unknown,
           'subject': subject,
-          'createdAt': iso8601(createdAt)
+          'createdAt': iso8601(createdAt),
         },
         swapCommit: swapCommit,
         $ctx: ctx,
@@ -1046,9 +1112,10 @@ final class GraphBlockRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.block',
           ...?$unknown,
           'subject': subject,
-          'createdAt': iso8601(createdAt)
+          'createdAt': iso8601(createdAt),
         },
         swapRecord: swapRecord,
         swapCommit: swapCommit,
@@ -1131,10 +1198,11 @@ final class GraphFollowRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.follow',
           ...?$unknown,
           'subject': subject,
           'createdAt': iso8601(createdAt),
-          if (via != null) 'via': via.toJson(),
+          if (via != null) 'via': const RepoStrongRefConverter().toJson(via),
         },
         swapCommit: swapCommit,
         $ctx: ctx,
@@ -1158,10 +1226,11 @@ final class GraphFollowRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.follow',
           ...?$unknown,
           'subject': subject,
           'createdAt': iso8601(createdAt),
-          if (via != null) 'via': via.toJson(),
+          if (via != null) 'via': const RepoStrongRefConverter().toJson(via),
         },
         swapRecord: swapRecord,
         swapCommit: swapCommit,
@@ -1248,13 +1317,15 @@ final class GraphListRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.list',
           ...?$unknown,
-          'purpose': purpose.toJson(),
+          'purpose': const ListPurposeConverter().toJson(purpose),
           'name': name,
           if (description != null) 'description': description,
           if (descriptionFacets != null)
-            'descriptionFacets':
-                descriptionFacets.map((e) => e.toJson()).toList(),
+            'descriptionFacets': descriptionFacets
+                .map((e) => const RichtextFacetConverter().toJson(e))
+                .toList(),
           if (avatar != null) 'avatar': avatar,
           if (labels != null) 'labels': labels.toJson(),
           'createdAt': iso8601(createdAt),
@@ -1285,13 +1356,15 @@ final class GraphListRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.list',
           ...?$unknown,
-          'purpose': purpose.toJson(),
+          'purpose': const ListPurposeConverter().toJson(purpose),
           'name': name,
           if (description != null) 'description': description,
           if (descriptionFacets != null)
-            'descriptionFacets':
-                descriptionFacets.map((e) => e.toJson()).toList(),
+            'descriptionFacets': descriptionFacets
+                .map((e) => const RichtextFacetConverter().toJson(e))
+                .toList(),
           if (avatar != null) 'avatar': avatar,
           if (labels != null) 'labels': labels.toJson(),
           'createdAt': iso8601(createdAt),
@@ -1376,6 +1449,7 @@ final class GraphListblockRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.listblock',
           ...?$unknown,
           'subject': subject.toString(),
           'createdAt': iso8601(createdAt),
@@ -1401,6 +1475,7 @@ final class GraphListblockRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.listblock',
           ...?$unknown,
           'subject': subject.toString(),
           'createdAt': iso8601(createdAt),
@@ -1486,6 +1561,7 @@ final class GraphListitemRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.listitem',
           ...?$unknown,
           'subject': subject,
           'list': list.toString(),
@@ -1513,6 +1589,7 @@ final class GraphListitemRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.listitem',
           ...?$unknown,
           'subject': subject,
           'list': list.toString(),
@@ -1602,14 +1679,18 @@ final class GraphStarterpackRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.starterpack',
           ...?$unknown,
           'name': name,
           if (description != null) 'description': description,
           if (descriptionFacets != null)
-            'descriptionFacets':
-                descriptionFacets.map((e) => e.toJson()).toList(),
+            'descriptionFacets': descriptionFacets
+                .map((e) => const RichtextFacetConverter().toJson(e))
+                .toList(),
           'list': list.toString(),
-          if (feeds != null) 'feeds': feeds.map((e) => e.toJson()).toList(),
+          if (feeds != null)
+            'feeds':
+                feeds.map((e) => const FeedItemConverter().toJson(e)).toList(),
           'createdAt': iso8601(createdAt),
         },
         swapCommit: swapCommit,
@@ -1637,14 +1718,18 @@ final class GraphStarterpackRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.starterpack',
           ...?$unknown,
           'name': name,
           if (description != null) 'description': description,
           if (descriptionFacets != null)
-            'descriptionFacets':
-                descriptionFacets.map((e) => e.toJson()).toList(),
+            'descriptionFacets': descriptionFacets
+                .map((e) => const RichtextFacetConverter().toJson(e))
+                .toList(),
           'list': list.toString(),
-          if (feeds != null) 'feeds': feeds.map((e) => e.toJson()).toList(),
+          if (feeds != null)
+            'feeds':
+                feeds.map((e) => const FeedItemConverter().toJson(e)).toList(),
           'createdAt': iso8601(createdAt),
         },
         swapRecord: swapRecord,
@@ -1729,6 +1814,7 @@ final class GraphVerificationRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.verification',
           ...?$unknown,
           'subject': subject,
           'handle': handle,
@@ -1758,6 +1844,7 @@ final class GraphVerificationRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.graph.verification',
           ...?$unknown,
           'subject': subject,
           'handle': handle,

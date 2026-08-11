@@ -167,122 +167,128 @@ final class UPreferencesConverter
 
   @override
   UPreferences fromJson(Map<String, dynamic> json) {
-    try {
-      if (AdultContentPref.validate(json)) {
-        return UPreferences.adultContentPref(
-          data: const AdultContentPrefConverter().fromJson(json),
-        );
-      }
-      if (ContentLabelPref.validate(json)) {
-        return UPreferences.contentLabelPref(
-          data: const ContentLabelPrefConverter().fromJson(json),
-        );
-      }
-      if (SavedFeedsPref.validate(json)) {
-        return UPreferences.savedFeedsPref(
-          data: const SavedFeedsPrefConverter().fromJson(json),
-        );
-      }
-      if (SavedFeedsPrefV2.validate(json)) {
-        return UPreferences.savedFeedsPrefV2(
-          data: const SavedFeedsPrefV2Converter().fromJson(json),
-        );
-      }
-      if (PersonalDetailsPref.validate(json)) {
-        return UPreferences.personalDetailsPref(
-          data: const PersonalDetailsPrefConverter().fromJson(json),
-        );
-      }
-      if (DeclaredAgePref.validate(json)) {
-        return UPreferences.declaredAgePref(
-          data: const DeclaredAgePrefConverter().fromJson(json),
-        );
-      }
-      if (FeedViewPref.validate(json)) {
-        return UPreferences.feedViewPref(
-          data: const FeedViewPrefConverter().fromJson(json),
-        );
-      }
-      if (ThreadViewPref.validate(json)) {
-        return UPreferences.threadViewPref(
-          data: const ThreadViewPrefConverter().fromJson(json),
-        );
-      }
-      if (InterestsPref.validate(json)) {
-        return UPreferences.interestsPref(
-          data: const InterestsPrefConverter().fromJson(json),
-        );
-      }
-      if (MutedWordsPref.validate(json)) {
-        return UPreferences.mutedWordsPref(
-          data: const MutedWordsPrefConverter().fromJson(json),
-        );
-      }
-      if (HiddenPostsPref.validate(json)) {
-        return UPreferences.hiddenPostsPref(
-          data: const HiddenPostsPrefConverter().fromJson(json),
-        );
-      }
-      if (BskyAppStatePref.validate(json)) {
-        return UPreferences.bskyAppStatePref(
-          data: const BskyAppStatePrefConverter().fromJson(json),
-        );
-      }
-      if (LabelersPref.validate(json)) {
-        return UPreferences.labelersPref(
-          data: const LabelersPrefConverter().fromJson(json),
-        );
-      }
-      if (PostInteractionSettingsPref.validate(json)) {
-        return UPreferences.postInteractionSettingsPref(
-          data: const PostInteractionSettingsPrefConverter().fromJson(json),
-        );
-      }
-      if (VerificationPrefs.validate(json)) {
-        return UPreferences.verificationPrefs(
-          data: const VerificationPrefsConverter().fromJson(json),
-        );
-      }
-      if (LiveEventPreferences.validate(json)) {
-        return UPreferences.liveEventPreferences(
-          data: const LiveEventPreferencesConverter().fromJson(json),
-        );
-      }
-
-      return UPreferences.unknown(data: json);
-    } catch (_) {
-      return UPreferences.unknown(data: json);
+    if (AdultContentPref.validate(json)) {
+      return UPreferences.adultContentPref(
+        data: const AdultContentPrefConverter().fromJson(json),
+      );
     }
+    if (ContentLabelPref.validate(json)) {
+      return UPreferences.contentLabelPref(
+        data: const ContentLabelPrefConverter().fromJson(json),
+      );
+    }
+    if (SavedFeedsPref.validate(json)) {
+      return UPreferences.savedFeedsPref(
+        data: const SavedFeedsPrefConverter().fromJson(json),
+      );
+    }
+    if (SavedFeedsPrefV2.validate(json)) {
+      return UPreferences.savedFeedsPrefV2(
+        data: const SavedFeedsPrefV2Converter().fromJson(json),
+      );
+    }
+    if (PersonalDetailsPref.validate(json)) {
+      return UPreferences.personalDetailsPref(
+        data: const PersonalDetailsPrefConverter().fromJson(json),
+      );
+    }
+    if (DeclaredAgePref.validate(json)) {
+      return UPreferences.declaredAgePref(
+        data: const DeclaredAgePrefConverter().fromJson(json),
+      );
+    }
+    if (FeedViewPref.validate(json)) {
+      return UPreferences.feedViewPref(
+        data: const FeedViewPrefConverter().fromJson(json),
+      );
+    }
+    if (ThreadViewPref.validate(json)) {
+      return UPreferences.threadViewPref(
+        data: const ThreadViewPrefConverter().fromJson(json),
+      );
+    }
+    if (InterestsPref.validate(json)) {
+      return UPreferences.interestsPref(
+        data: const InterestsPrefConverter().fromJson(json),
+      );
+    }
+    if (MutedWordsPref.validate(json)) {
+      return UPreferences.mutedWordsPref(
+        data: const MutedWordsPrefConverter().fromJson(json),
+      );
+    }
+    if (HiddenPostsPref.validate(json)) {
+      return UPreferences.hiddenPostsPref(
+        data: const HiddenPostsPrefConverter().fromJson(json),
+      );
+    }
+    if (BskyAppStatePref.validate(json)) {
+      return UPreferences.bskyAppStatePref(
+        data: const BskyAppStatePrefConverter().fromJson(json),
+      );
+    }
+    if (LabelersPref.validate(json)) {
+      return UPreferences.labelersPref(
+        data: const LabelersPrefConverter().fromJson(json),
+      );
+    }
+    if (PostInteractionSettingsPref.validate(json)) {
+      return UPreferences.postInteractionSettingsPref(
+        data: const PostInteractionSettingsPrefConverter().fromJson(json),
+      );
+    }
+    if (VerificationPrefs.validate(json)) {
+      return UPreferences.verificationPrefs(
+        data: const VerificationPrefsConverter().fromJson(json),
+      );
+    }
+    if (LiveEventPreferences.validate(json)) {
+      return UPreferences.liveEventPreferences(
+        data: const LiveEventPreferencesConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UPreferences.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UPreferences object) => object.when(
-        adultContentPref: (data) =>
-            const AdultContentPrefConverter().toJson(data),
-        contentLabelPref: (data) =>
-            const ContentLabelPrefConverter().toJson(data),
-        savedFeedsPref: (data) => const SavedFeedsPrefConverter().toJson(data),
-        savedFeedsPrefV2: (data) =>
-            const SavedFeedsPrefV2Converter().toJson(data),
-        personalDetailsPref: (data) =>
-            const PersonalDetailsPrefConverter().toJson(data),
-        declaredAgePref: (data) =>
-            const DeclaredAgePrefConverter().toJson(data),
-        feedViewPref: (data) => const FeedViewPrefConverter().toJson(data),
-        threadViewPref: (data) => const ThreadViewPrefConverter().toJson(data),
-        interestsPref: (data) => const InterestsPrefConverter().toJson(data),
-        mutedWordsPref: (data) => const MutedWordsPrefConverter().toJson(data),
-        hiddenPostsPref: (data) =>
-            const HiddenPostsPrefConverter().toJson(data),
-        bskyAppStatePref: (data) =>
-            const BskyAppStatePrefConverter().toJson(data),
-        labelersPref: (data) => const LabelersPrefConverter().toJson(data),
-        postInteractionSettingsPref: (data) =>
-            const PostInteractionSettingsPrefConverter().toJson(data),
-        verificationPrefs: (data) =>
-            const VerificationPrefsConverter().toJson(data),
-        liveEventPreferences: (data) =>
-            const LiveEventPreferencesConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UPreferences object) => switch (object) {
+        UPreferencesAdultContentPref(:final data) =>
+          const AdultContentPrefConverter().toJson(data),
+        UPreferencesContentLabelPref(:final data) =>
+          const ContentLabelPrefConverter().toJson(data),
+        UPreferencesSavedFeedsPref(:final data) =>
+          const SavedFeedsPrefConverter().toJson(data),
+        UPreferencesSavedFeedsPrefV2(:final data) =>
+          const SavedFeedsPrefV2Converter().toJson(data),
+        UPreferencesPersonalDetailsPref(:final data) =>
+          const PersonalDetailsPrefConverter().toJson(data),
+        UPreferencesDeclaredAgePref(:final data) =>
+          const DeclaredAgePrefConverter().toJson(data),
+        UPreferencesFeedViewPref(:final data) =>
+          const FeedViewPrefConverter().toJson(data),
+        UPreferencesThreadViewPref(:final data) =>
+          const ThreadViewPrefConverter().toJson(data),
+        UPreferencesInterestsPref(:final data) =>
+          const InterestsPrefConverter().toJson(data),
+        UPreferencesMutedWordsPref(:final data) =>
+          const MutedWordsPrefConverter().toJson(data),
+        UPreferencesHiddenPostsPref(:final data) =>
+          const HiddenPostsPrefConverter().toJson(data),
+        UPreferencesBskyAppStatePref(:final data) =>
+          const BskyAppStatePrefConverter().toJson(data),
+        UPreferencesLabelersPref(:final data) =>
+          const LabelersPrefConverter().toJson(data),
+        UPreferencesPostInteractionSettingsPref(:final data) =>
+          const PostInteractionSettingsPrefConverter().toJson(data),
+        UPreferencesVerificationPrefs(:final data) =>
+          const VerificationPrefsConverter().toJson(data),
+        UPreferencesLiveEventPreferences(:final data) =>
+          const LiveEventPreferencesConverter().toJson(data),
+        UPreferencesUnknown(:final data) => data,
+      };
 }

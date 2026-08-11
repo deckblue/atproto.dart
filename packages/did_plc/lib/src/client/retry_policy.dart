@@ -7,6 +7,10 @@ import 'dart:math' as math;
 
 // Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:universal_io/io.dart';
+
+// Project imports:
+import '../exceptions.dart';
 
 part 'retry_policy.freezed.dart';
 
@@ -15,7 +19,7 @@ part 'retry_policy.freezed.dart';
 /// This class defines how failed HTTP requests should be retried,
 /// including backoff strategies and retry conditions.
 @freezed
-class RetryPolicy with _$RetryPolicy {
+sealed class RetryPolicy with _$RetryPolicy {
   /// Creates a retry policy configuration.
   ///
   /// [maxAttempts] - Maximum number of retry attempts (default: 3)
@@ -47,53 +51,63 @@ class RetryPolicy with _$RetryPolicy {
 extension RetryPolicyExtension on RetryPolicy {
   /// Calculates the delay for a specific retry attempt.
   ///
-  /// [attempt] - The retry attempt number (0-based)
+  /// [attempt] is the 0-based retry index: attempt 0 is the first retry and
+  /// waits [initialDelay]; each subsequent attempt multiplies by
+  /// `backoffMultiplier`.
   Duration delayForAttempt(int attempt) {
-    if (attempt <= 0) return Duration.zero;
+    if (attempt < 0) return Duration.zero;
 
-    return when(
-      (maxAttempts, initialDelay, backoffMultiplier, maxDelay, _) {
+    switch (this) {
+      case _RetryPolicy(
+          :final initialDelay,
+          :final backoffMultiplier,
+          :final maxDelay,
+        ):
+      case _RetryPolicyAggressive(
+          :final initialDelay,
+          :final backoffMultiplier,
+          :final maxDelay,
+        ):
         final delay = Duration(
           milliseconds: (initialDelay.inMilliseconds *
                   math.pow(backoffMultiplier, attempt))
               .round(),
         );
         return delay > maxDelay ? maxDelay : delay;
-      },
-      none: () => Duration.zero,
-      aggressive: (_, initialDelay, backoffMultiplier, maxDelay) {
-        final delay = Duration(
-          milliseconds: (initialDelay.inMilliseconds *
-                  math.pow(backoffMultiplier, attempt))
-              .round(),
-        );
-        return delay > maxDelay ? maxDelay : delay;
-      },
-    );
+      case _RetryPolicyNone():
+        return Duration.zero;
+    }
   }
 
   /// Returns true if the given status code should trigger a retry.
   ///
   /// [statusCode] - HTTP status code to check
   bool shouldRetry(int statusCode) {
-    return when(
-      (_, __, ___, ____, retryableStatusCodes) =>
-          retryableStatusCodes.contains(statusCode),
-      none: () => false,
-      aggressive: (_, __, ___, ____) =>
-          [408, 429, 500, 502, 503, 504].contains(statusCode),
-    );
+    return switch (this) {
+      _RetryPolicy(:final retryableStatusCodes) =>
+        retryableStatusCodes.contains(statusCode),
+      _RetryPolicyNone() => false,
+      _RetryPolicyAggressive() => [
+          408,
+          429,
+          500,
+          502,
+          503,
+          504,
+        ].contains(statusCode),
+    };
   }
 
   /// Returns true if more retry attempts are available.
   ///
   /// [currentAttempt] - Current attempt number (0-based)
   bool hasMoreAttempts(int currentAttempt) {
-    return when(
-      (maxAttempts, _, __, ___, ____) => currentAttempt < maxAttempts,
-      none: () => false,
-      aggressive: (maxAttempts, _, __, ___) => currentAttempt < maxAttempts,
-    );
+    return switch (this) {
+      _RetryPolicy(:final maxAttempts) => currentAttempt < maxAttempts,
+      _RetryPolicyNone() => false,
+      _RetryPolicyAggressive(:final maxAttempts) =>
+        currentAttempt < maxAttempts,
+    };
   }
 
   /// Calculates delay for rate limiting based on Retry-After header.
@@ -129,12 +143,12 @@ extension RetryPolicyExtension on RetryPolicy {
         final delay = rateLimitDelay > exponentialDelay
             ? rateLimitDelay
             : exponentialDelay;
-        return when(
-          (_, __, ___, maxDelay, ____) => delay > maxDelay ? maxDelay : delay,
-          none: () => Duration.zero,
-          aggressive: (_, __, ___, maxDelay) =>
-              delay > maxDelay ? maxDelay : delay,
-        );
+        return switch (this) {
+          _RetryPolicy(:final maxDelay) => delay > maxDelay ? maxDelay : delay,
+          _RetryPolicyNone() => Duration.zero,
+          _RetryPolicyAggressive(:final maxDelay) =>
+            delay > maxDelay ? maxDelay : delay,
+        };
       }
     } catch (_) {
       // If parsing fails, fall back to exponential backoff
@@ -145,30 +159,36 @@ extension RetryPolicyExtension on RetryPolicy {
 
   /// Returns true if the exception should trigger a retry.
   ///
+  /// Matching is done by exception type rather than by string content, so
+  /// it is robust against message casing and wording.
+  ///
   /// [exception] - The exception to check
   bool shouldRetryException(Exception exception) {
-    return when(
-      (_, __, ___, ____, _____) {
-        // Network-related exceptions that should be retried
-        if (exception.toString().contains('timeout') ||
-            exception.toString().contains('connection') ||
-            exception.toString().contains('socket')) {
-          return true;
-        }
-        return false;
-      },
-      none: () => false,
-      aggressive: (_, __, ___, ____) {
-        // More aggressive retry for network issues
-        if (exception.toString().contains('timeout') ||
-            exception.toString().contains('connection') ||
-            exception.toString().contains('socket') ||
-            exception.toString().contains('dns') ||
-            exception.toString().contains('network')) {
-          return true;
-        }
-        return false;
-      },
-    );
+    final retryable = _isRetryableException(exception);
+    return switch (this) {
+      _RetryPolicy() => retryable,
+      _RetryPolicyNone() => false,
+      _RetryPolicyAggressive() => retryable,
+    };
+  }
+
+  bool _isRetryableException(Exception exception) {
+    // Transient transport failures are always retryable.
+    if (exception is TimeoutException ||
+        exception is ConnectionException ||
+        exception is ServiceUnavailableException ||
+        exception is RateLimitException ||
+        exception is SocketException ||
+        exception is HttpException) {
+      return true;
+    }
+
+    // A generic network failure is retryable only for a retryable status.
+    if (exception is NetworkException) {
+      final statusCode = exception.statusCode;
+      return statusCode != null && shouldRetry(statusCode);
+    }
+
+    return false;
   }
 }

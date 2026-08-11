@@ -23,6 +23,7 @@ mixin _$Account {
   String get $type => throw _privateConstructorUsedError;
   int get seq => throw _privateConstructorUsedError;
   String get did => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get time => throw _privateConstructorUsedError;
 
   /// Indicates that the account has a repository which can be fetched from the host that emitted this event.
@@ -51,7 +52,7 @@ abstract class $AccountCopyWith<$Res> {
       {String $type,
       int seq,
       String did,
-      DateTime time,
+      @JsonKey(toJson: iso8601) DateTime time,
       bool active,
       @AccountStatusConverter() AccountStatus? status,
       Map<String, dynamic>? $unknown});
@@ -140,7 +141,7 @@ abstract class _$$AccountImplCopyWith<$Res> implements $AccountCopyWith<$Res> {
       {String $type,
       int seq,
       String did,
-      DateTime time,
+      @JsonKey(toJson: iso8601) DateTime time,
       bool active,
       @AccountStatusConverter() AccountStatus? status,
       Map<String, dynamic>? $unknown});
@@ -211,7 +212,7 @@ class _$AccountImpl implements _Account {
       {this.$type = 'com.atproto.sync.subscribeRepos#account',
       required this.seq,
       required this.did,
-      required this.time,
+      @JsonKey(toJson: iso8601) required this.time,
       required this.active,
       @AccountStatusConverter() this.status,
       final Map<String, dynamic>? $unknown})
@@ -228,6 +229,7 @@ class _$AccountImpl implements _Account {
   @override
   final String did;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime time;
 
   /// Indicates that the account has a repository which can be fetched from the host that emitted this event.
@@ -293,7 +295,7 @@ abstract class _Account implements Account {
       {final String $type,
       required final int seq,
       required final String did,
-      required final DateTime time,
+      @JsonKey(toJson: iso8601) required final DateTime time,
       required final bool active,
       @AccountStatusConverter() final AccountStatus? status,
       final Map<String, dynamic>? $unknown}) = _$AccountImpl;
@@ -307,6 +309,7 @@ abstract class _Account implements Account {
   @override
   String get did;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get time;
 
   /// Indicates that the account has a repository which can be fetched from the host that emitted this event.

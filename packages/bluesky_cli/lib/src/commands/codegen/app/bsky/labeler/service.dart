@@ -41,8 +41,8 @@ final class ServiceCommand extends Command<void> {
       "A declaration of the existence of labeler service.";
 }
 
-final class _CreateServiceCommand extends CreateRecordCommand {
-  _CreateServiceCommand() {
+mixin _ServiceCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
     argParser
       ..addOption("policies", mandatory: true)
       ..addOption("labels")
@@ -51,18 +51,44 @@ final class _CreateServiceCommand extends CreateRecordCommand {
         "reasonTypes",
         help:
             r"The set of report reason 'codes' which are in-scope for this service to review and action. These usually align to policy categories. If not defined (distinct from empty array), all reason types are allowed.",
+        splitCommas: false,
       )
       ..addMultiOption(
         "subjectTypes",
         help:
             r"The set of subject types (account, record, etc) this service accepts reports on.",
+        splitCommas: false,
       )
       ..addMultiOption(
         "subjectCollections",
         help:
             r"Set of record types (collection NSIDs) which can be reported to this service. If not defined (distinct from empty array), default is any record type.",
-      )
-      ..addOption("rkey");
+      );
+  }
+
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
+
+  Object? _decodeJsonItem(final String name, final String raw) {
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON in option "$name": ${e.message}');
+    }
+  }
+}
+
+final class _CreateServiceCommand extends CreateRecordCommand
+    with _ServiceCommandRecordArgs {
+  _CreateServiceCommand() {
+    _addRecordOptions();
   }
 
   @override
@@ -74,51 +100,37 @@ final class _CreateServiceCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-labeler service create [policies] [labels] [createdAt] [reasonTypes] [subjectTypes] [subjectCollections] [rkey]";
+      "bsky app-bsky-labeler service create --policies=<value> [--labels=<value>] --createdAt=<value> [--reasonTypes=<value>...] [--subjectTypes=<value>...] [--subjectCollections=<value>...]";
 
   @override
-  String get rkey => "self";
+  String? get rkey => "self";
 
   @override
   String get collection => "app.bsky.labeler.service";
 
   @override
   Map<String, dynamic> get record => {
-        "policies": jsonDecode(argResults!["policies"]),
-        if (argResults!["labels"] != null)
-          "labels": jsonDecode(argResults!["labels"]),
+        r"$type": "app.bsky.labeler.service",
+        "policies": _decodeJson("policies"),
+        if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
         "createdAt": argResults!["createdAt"],
-        if (argResults!["reasonTypes"] != null)
-          "reasonTypes": argResults!["reasonTypes"],
-        if (argResults!["subjectTypes"] != null)
-          "subjectTypes": argResults!["subjectTypes"],
-        if (argResults!["subjectCollections"] != null)
+        if (argResults!.wasParsed("reasonTypes"))
+          "reasonTypes": (argResults!["reasonTypes"] as List<String>)
+              .map((e) => _decodeJsonItem("reasonTypes", e))
+              .toList(),
+        if (argResults!.wasParsed("subjectTypes"))
+          "subjectTypes": (argResults!["subjectTypes"] as List<String>)
+              .map((e) => _decodeJsonItem("subjectTypes", e))
+              .toList(),
+        if (argResults!.wasParsed("subjectCollections"))
           "subjectCollections": argResults!["subjectCollections"],
       };
 }
 
-final class _PutServiceCommand extends PutRecordCommand {
+final class _PutServiceCommand extends PutRecordCommand
+    with _ServiceCommandRecordArgs {
   _PutServiceCommand() {
-    argParser
-      ..addOption("policies", mandatory: true)
-      ..addOption("labels")
-      ..addOption("createdAt", mandatory: true)
-      ..addMultiOption(
-        "reasonTypes",
-        help:
-            r"The set of report reason 'codes' which are in-scope for this service to review and action. These usually align to policy categories. If not defined (distinct from empty array), all reason types are allowed.",
-      )
-      ..addMultiOption(
-        "subjectTypes",
-        help:
-            r"The set of subject types (account, record, etc) this service accepts reports on.",
-      )
-      ..addMultiOption(
-        "subjectCollections",
-        help:
-            r"Set of record types (collection NSIDs) which can be reported to this service. If not defined (distinct from empty array), default is any record type.",
-      )
-      ..addOption("rkey");
+    _addRecordOptions();
   }
 
   @override
@@ -129,33 +141,35 @@ final class _PutServiceCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-labeler service put [policies] [labels] [createdAt] [reasonTypes] [subjectTypes] [subjectCollections] [rkey]";
+      "bsky app-bsky-labeler service put --policies=<value> [--labels=<value>] --createdAt=<value> [--reasonTypes=<value>...] [--subjectTypes=<value>...] [--subjectCollections=<value>...]";
 
   @override
-  String get rkey => "self";
+  String? get rkey => "self";
 
   @override
   String get collection => "app.bsky.labeler.service";
 
   @override
   Map<String, dynamic> get record => {
-        "policies": jsonDecode(argResults!["policies"]),
-        if (argResults!["labels"] != null)
-          "labels": jsonDecode(argResults!["labels"]),
+        r"$type": "app.bsky.labeler.service",
+        "policies": _decodeJson("policies"),
+        if (argResults!.wasParsed("labels")) "labels": _decodeJson("labels"),
         "createdAt": argResults!["createdAt"],
-        if (argResults!["reasonTypes"] != null)
-          "reasonTypes": argResults!["reasonTypes"],
-        if (argResults!["subjectTypes"] != null)
-          "subjectTypes": argResults!["subjectTypes"],
-        if (argResults!["subjectCollections"] != null)
+        if (argResults!.wasParsed("reasonTypes"))
+          "reasonTypes": (argResults!["reasonTypes"] as List<String>)
+              .map((e) => _decodeJsonItem("reasonTypes", e))
+              .toList(),
+        if (argResults!.wasParsed("subjectTypes"))
+          "subjectTypes": (argResults!["subjectTypes"] as List<String>)
+              .map((e) => _decodeJsonItem("subjectTypes", e))
+              .toList(),
+        if (argResults!.wasParsed("subjectCollections"))
           "subjectCollections": argResults!["subjectCollections"],
       };
 }
 
 final class _DeleteServiceCommand extends DeleteRecordCommand {
-  _DeleteServiceCommand() {
-    argParser..addOption("rkey", mandatory: true);
-  }
+  _DeleteServiceCommand() {}
 
   @override
   final String name = "delete";
@@ -164,7 +178,7 @@ final class _DeleteServiceCommand extends DeleteRecordCommand {
   final String description = r"Deletes a record for app.bsky.labeler.service.";
 
   @override
-  final String invocation = "bsky app-bsky-labeler service delete [rkey]";
+  final String invocation = "bsky app-bsky-labeler service delete";
 
   @override
   String get rkey => "self";
@@ -176,7 +190,10 @@ final class _DeleteServiceCommand extends DeleteRecordCommand {
 final class _GetServiceCommand extends QueryCommand {
   _GetServiceCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -187,16 +204,17 @@ final class _GetServiceCommand extends QueryCommand {
   final String description = r"Gets a record for app.bsky.labeler.service.";
 
   @override
-  final String invocation = "bsky app-bsky-labeler service get [rkey] [cid]";
+  final String invocation =
+      "bsky app-bsky-labeler service get [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'rkey': argResults!['rkey'],
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.labeler.service",
+        'rkey': 'self',
         if (argResults!['cid'] != null) 'cid': argResults!['cid'],
       };
 }
@@ -204,6 +222,10 @@ final class _GetServiceCommand extends QueryCommand {
 final class _ListServiceCommand extends QueryCommand {
   _ListServiceCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -217,16 +239,17 @@ final class _ListServiceCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-labeler service list [limit] [cursor] [reverse]";
+      "bsky app-bsky-labeler service list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.labeler.service",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
         if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
         'reverse': argResults!['reverse'],
       };

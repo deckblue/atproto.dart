@@ -24,6 +24,7 @@ mixin _$BlobView {
   String get cid => throw _privateConstructorUsedError;
   String get mimeType => throw _privateConstructorUsedError;
   int get size => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @UBlobViewDetailsConverter()
   UBlobViewDetails? get details => throw _privateConstructorUsedError;
@@ -51,7 +52,7 @@ abstract class $BlobViewCopyWith<$Res> {
       String cid,
       String mimeType,
       int size,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @UBlobViewDetailsConverter() UBlobViewDetails? details,
       @ModerationConverter() Moderation? moderation,
       Map<String, dynamic>? $unknown});
@@ -162,7 +163,7 @@ abstract class _$$BlobViewImplCopyWith<$Res>
       String cid,
       String mimeType,
       int size,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @UBlobViewDetailsConverter() UBlobViewDetails? details,
       @ModerationConverter() Moderation? moderation,
       Map<String, dynamic>? $unknown});
@@ -241,7 +242,7 @@ class _$BlobViewImpl implements _BlobView {
       required this.cid,
       required this.mimeType,
       required this.size,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @UBlobViewDetailsConverter() this.details,
       @ModerationConverter() this.moderation,
       final Map<String, dynamic>? $unknown})
@@ -260,6 +261,7 @@ class _$BlobViewImpl implements _BlobView {
   @override
   final int size;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @UBlobViewDetailsConverter()
@@ -335,7 +337,7 @@ abstract class _BlobView implements BlobView {
       required final String cid,
       required final String mimeType,
       required final int size,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @UBlobViewDetailsConverter() final UBlobViewDetails? details,
       @ModerationConverter() final Moderation? moderation,
       final Map<String, dynamic>? $unknown}) = _$BlobViewImpl;
@@ -352,6 +354,7 @@ abstract class _BlobView implements BlobView {
   @override
   int get size;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @UBlobViewDetailsConverter()

@@ -28,6 +28,7 @@ mixin _$ModEventView {
   UModEventViewSubject get subject => throw _privateConstructorUsedError;
   List<String> get subjectBlobCids => throw _privateConstructorUsedError;
   String get createdBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   String? get creatorHandle => throw _privateConstructorUsedError;
   String? get subjectHandle => throw _privateConstructorUsedError;
@@ -58,7 +59,7 @@ abstract class $ModEventViewCopyWith<$Res> {
       @UModEventViewSubjectConverter() UModEventViewSubject subject,
       List<String> subjectBlobCids,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String? creatorHandle,
       String? subjectHandle,
       @ModToolConverter() ModTool? modTool,
@@ -194,7 +195,7 @@ abstract class _$$ModEventViewImplCopyWith<$Res>
       @UModEventViewSubjectConverter() UModEventViewSubject subject,
       List<String> subjectBlobCids,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String? creatorHandle,
       String? subjectHandle,
       @ModToolConverter() ModTool? modTool,
@@ -293,7 +294,7 @@ class _$ModEventViewImpl implements _ModEventView {
       @UModEventViewSubjectConverter() required this.subject,
       required final List<String> subjectBlobCids,
       required this.createdBy,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       this.creatorHandle,
       this.subjectHandle,
       @ModToolConverter() this.modTool,
@@ -326,6 +327,7 @@ class _$ModEventViewImpl implements _ModEventView {
   @override
   final String createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   final String? creatorHandle;
@@ -413,7 +415,7 @@ abstract class _ModEventView implements ModEventView {
       required final UModEventViewSubject subject,
       required final List<String> subjectBlobCids,
       required final String createdBy,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final String? creatorHandle,
       final String? subjectHandle,
       @ModToolConverter() final ModTool? modTool,
@@ -437,6 +439,7 @@ abstract class _ModEventView implements ModEventView {
   @override
   String get createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   String? get creatorHandle;

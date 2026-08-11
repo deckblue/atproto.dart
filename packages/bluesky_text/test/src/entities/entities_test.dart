@@ -5,6 +5,7 @@ import 'package:test/test.dart';
 import 'package:bluesky_text/src/entities/byte_indices.dart';
 import 'package:bluesky_text/src/entities/entities.dart';
 import 'package:bluesky_text/src/entities/entity.dart';
+import '_mock_resolve_handle.dart';
 
 void main() {
   group('.toFacets', () {
@@ -17,11 +18,20 @@ void main() {
         ),
       ]);
 
-      final facets = await entities.toFacets();
+      final facets = await entities.toFacets(
+        client: mockResolveHandle(const {
+          'shinyakato.dev': 'did:plc:iijrtk7ocored6zuziwmqq3c',
+        }),
+      );
 
       expect(facets, [
         {
-          'index': {'byteStart': 0, 'byteEnd': 0},
+          '\$type': 'app.bsky.richtext.facet',
+          'index': {
+            '\$type': 'app.bsky.richtext.facet#byteSlice',
+            'byteStart': 0,
+            'byteEnd': 0,
+          },
           'features': [
             {
               '\$type': 'app.bsky.richtext.facet#mention',
@@ -41,7 +51,11 @@ void main() {
         ),
       ]);
 
-      final facets = await entities.toFacets();
+      //* `a.bsky.social` is absent from the mock, so it answers 400 — the
+      //* unresolvable-handle case that toFacets drops.
+      final facets = await entities.toFacets(
+        client: mockResolveHandle(const {}),
+      );
 
       expect(facets, []);
     });

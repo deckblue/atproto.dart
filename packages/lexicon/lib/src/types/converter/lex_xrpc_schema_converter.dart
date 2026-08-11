@@ -32,16 +32,22 @@ final class LexXrpcSchemaConverter
           data: LexRefVariant.refUnion(data: LexRefUnion.fromJson(json)),
         );
       default:
-        throw UnsupportedError('Unsupported type [$type]');
+        // Graceful degradation (G-12): an unrecognized XRPC body schema type
+        // (e.g. a future `type` in a query/procedure output schema) must not
+        // abort parsing the whole lexicon document. `LexXrpcSchema` has no
+        // dedicated `unknown` member, so fall back to an opaque `object`
+        // schema — the benign container that retains the raw `type` and
+        // `description` — instead of throwing.
+        return LexXrpcSchema.object(data: LexObject.fromJson(json));
     }
   }
 
   @override
-  Map<String, dynamic> toJson(LexXrpcSchema object) => object.when(
-        refVariant: (data) => data.when(
-          ref: (data) => data.toJson(),
-          refUnion: (data) => data.toJson(),
-        ),
-        object: (data) => data.toJson(),
-      );
+  Map<String, dynamic> toJson(LexXrpcSchema object) => switch (object) {
+        ULexXrpcSchemaRefVariant(:final data) => switch (data) {
+            ULexRefVariantRef(:final data) => data.toJson(),
+            ULexRefVariantRefUnion(:final data) => data.toJson(),
+          },
+        ULexXrpcSchemaObject(:final data) => data.toJson(),
+      };
 }

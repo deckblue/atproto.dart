@@ -30,8 +30,14 @@ mixin _$ThreadItemPost {
   /// This post has more replies that were not present in the response. This is a numeric value, which is best-effort and might not be accurate.
   int get moreReplies => throw _privateConstructorUsedError;
 
-  /// This post is part of a contiguous thread by the OP from the thread root. Many different OP threads can happen in the same thread.
+  /// This post is part of a contiguous thread by the OP from the thread root. Sub-threads by OP deeper in the tree are not considered an OP thread.
   bool get opThread => throw _privateConstructorUsedError;
+
+  /// The 1-indexed position of this post within the contiguous OP thread. Only present when this post is part of the OP thread (see `opThread`).
+  int? get opThreadPostIndex => throw _privateConstructorUsedError;
+
+  /// The total number of posts in the contiguous OP thread that this post belongs to. Only present when this post is part of the OP thread (see `opThread`).
+  int? get opThreadPostCount => throw _privateConstructorUsedError;
 
   /// The threadgate created by the author indicates this post as a reply to be hidden for everyone consuming the thread.
   bool get hiddenByThreadgate => throw _privateConstructorUsedError;
@@ -62,6 +68,8 @@ abstract class $ThreadItemPostCopyWith<$Res> {
       bool moreParents,
       int moreReplies,
       bool opThread,
+      int? opThreadPostIndex,
+      int? opThreadPostCount,
       bool hiddenByThreadgate,
       bool mutedByViewer,
       Map<String, dynamic>? $unknown});
@@ -89,6 +97,8 @@ class _$ThreadItemPostCopyWithImpl<$Res, $Val extends ThreadItemPost>
     Object? moreParents = null,
     Object? moreReplies = null,
     Object? opThread = null,
+    Object? opThreadPostIndex = freezed,
+    Object? opThreadPostCount = freezed,
     Object? hiddenByThreadgate = null,
     Object? mutedByViewer = null,
     Object? $unknown = freezed,
@@ -114,6 +124,14 @@ class _$ThreadItemPostCopyWithImpl<$Res, $Val extends ThreadItemPost>
           ? _value.opThread
           : opThread // ignore: cast_nullable_to_non_nullable
               as bool,
+      opThreadPostIndex: freezed == opThreadPostIndex
+          ? _value.opThreadPostIndex
+          : opThreadPostIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      opThreadPostCount: freezed == opThreadPostCount
+          ? _value.opThreadPostCount
+          : opThreadPostCount // ignore: cast_nullable_to_non_nullable
+              as int?,
       hiddenByThreadgate: null == hiddenByThreadgate
           ? _value.hiddenByThreadgate
           : hiddenByThreadgate // ignore: cast_nullable_to_non_nullable
@@ -154,6 +172,8 @@ abstract class _$$ThreadItemPostImplCopyWith<$Res>
       bool moreParents,
       int moreReplies,
       bool opThread,
+      int? opThreadPostIndex,
+      int? opThreadPostCount,
       bool hiddenByThreadgate,
       bool mutedByViewer,
       Map<String, dynamic>? $unknown});
@@ -180,6 +200,8 @@ class __$$ThreadItemPostImplCopyWithImpl<$Res>
     Object? moreParents = null,
     Object? moreReplies = null,
     Object? opThread = null,
+    Object? opThreadPostIndex = freezed,
+    Object? opThreadPostCount = freezed,
     Object? hiddenByThreadgate = null,
     Object? mutedByViewer = null,
     Object? $unknown = freezed,
@@ -205,6 +227,14 @@ class __$$ThreadItemPostImplCopyWithImpl<$Res>
           ? _value.opThread
           : opThread // ignore: cast_nullable_to_non_nullable
               as bool,
+      opThreadPostIndex: freezed == opThreadPostIndex
+          ? _value.opThreadPostIndex
+          : opThreadPostIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      opThreadPostCount: freezed == opThreadPostCount
+          ? _value.opThreadPostCount
+          : opThreadPostCount // ignore: cast_nullable_to_non_nullable
+              as int?,
       hiddenByThreadgate: null == hiddenByThreadgate
           ? _value.hiddenByThreadgate
           : hiddenByThreadgate // ignore: cast_nullable_to_non_nullable
@@ -231,6 +261,8 @@ class _$ThreadItemPostImpl implements _ThreadItemPost {
       required this.moreParents,
       required this.moreReplies,
       required this.opThread,
+      this.opThreadPostIndex,
+      this.opThreadPostCount,
       required this.hiddenByThreadgate,
       required this.mutedByViewer,
       final Map<String, dynamic>? $unknown})
@@ -254,9 +286,17 @@ class _$ThreadItemPostImpl implements _ThreadItemPost {
   @override
   final int moreReplies;
 
-  /// This post is part of a contiguous thread by the OP from the thread root. Many different OP threads can happen in the same thread.
+  /// This post is part of a contiguous thread by the OP from the thread root. Sub-threads by OP deeper in the tree are not considered an OP thread.
   @override
   final bool opThread;
+
+  /// The 1-indexed position of this post within the contiguous OP thread. Only present when this post is part of the OP thread (see `opThread`).
+  @override
+  final int? opThreadPostIndex;
+
+  /// The total number of posts in the contiguous OP thread that this post belongs to. Only present when this post is part of the OP thread (see `opThread`).
+  @override
+  final int? opThreadPostCount;
 
   /// The threadgate created by the author indicates this post as a reply to be hidden for everyone consuming the thread.
   @override
@@ -277,7 +317,7 @@ class _$ThreadItemPostImpl implements _ThreadItemPost {
 
   @override
   String toString() {
-    return 'ThreadItemPost(\$type: ${$type}, post: $post, moreParents: $moreParents, moreReplies: $moreReplies, opThread: $opThread, hiddenByThreadgate: $hiddenByThreadgate, mutedByViewer: $mutedByViewer, \$unknown: ${$unknown})';
+    return 'ThreadItemPost(\$type: ${$type}, post: $post, moreParents: $moreParents, moreReplies: $moreReplies, opThread: $opThread, opThreadPostIndex: $opThreadPostIndex, opThreadPostCount: $opThreadPostCount, hiddenByThreadgate: $hiddenByThreadgate, mutedByViewer: $mutedByViewer, \$unknown: ${$unknown})';
   }
 
   @override
@@ -293,6 +333,10 @@ class _$ThreadItemPostImpl implements _ThreadItemPost {
                 other.moreReplies == moreReplies) &&
             (identical(other.opThread, opThread) ||
                 other.opThread == opThread) &&
+            (identical(other.opThreadPostIndex, opThreadPostIndex) ||
+                other.opThreadPostIndex == opThreadPostIndex) &&
+            (identical(other.opThreadPostCount, opThreadPostCount) ||
+                other.opThreadPostCount == opThreadPostCount) &&
             (identical(other.hiddenByThreadgate, hiddenByThreadgate) ||
                 other.hiddenByThreadgate == hiddenByThreadgate) &&
             (identical(other.mutedByViewer, mutedByViewer) ||
@@ -309,6 +353,8 @@ class _$ThreadItemPostImpl implements _ThreadItemPost {
       moreParents,
       moreReplies,
       opThread,
+      opThreadPostIndex,
+      opThreadPostCount,
       hiddenByThreadgate,
       mutedByViewer,
       const DeepCollectionEquality().hash(_$unknown));
@@ -337,6 +383,8 @@ abstract class _ThreadItemPost implements ThreadItemPost {
       required final bool moreParents,
       required final int moreReplies,
       required final bool opThread,
+      final int? opThreadPostIndex,
+      final int? opThreadPostCount,
       required final bool hiddenByThreadgate,
       required final bool mutedByViewer,
       final Map<String, dynamic>? $unknown}) = _$ThreadItemPostImpl;
@@ -358,9 +406,17 @@ abstract class _ThreadItemPost implements ThreadItemPost {
   @override
   int get moreReplies;
 
-  /// This post is part of a contiguous thread by the OP from the thread root. Many different OP threads can happen in the same thread.
+  /// This post is part of a contiguous thread by the OP from the thread root. Sub-threads by OP deeper in the tree are not considered an OP thread.
   @override
   bool get opThread;
+
+  /// The 1-indexed position of this post within the contiguous OP thread. Only present when this post is part of the OP thread (see `opThread`).
+  @override
+  int? get opThreadPostIndex;
+
+  /// The total number of posts in the contiguous OP thread that this post belongs to. Only present when this post is part of the OP thread (see `opThread`).
+  @override
+  int? get opThreadPostCount;
 
   /// The threadgate created by the author indicates this post as a reply to be hidden for everyone consuming the thread.
   @override

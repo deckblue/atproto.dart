@@ -26,18 +26,19 @@ final class GetSuggestionsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a list of suggested actors. Expected use is discovery of accounts to follow during new account onboarding.";
+      "Get a list of suggested actors. Expected use is discovery of accounts to follow during new account onboarding.";
 
   @override
   final String invocation =
-      "bsky app-bsky-actor get-suggestions [limit] [cursor]";
+      "bsky app-bsky-actor get-suggestions [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.actor.getSuggestions";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

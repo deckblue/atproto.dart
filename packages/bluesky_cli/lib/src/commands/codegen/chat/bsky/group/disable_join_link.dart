@@ -24,10 +24,11 @@ final class DisableJoinLinkCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Disables the active join link for the group convo.";
+      "Disables the active join link for the group convo.";
 
   @override
-  final String invocation = "bsky chat-bsky-group disable-join-link [convoId]";
+  final String invocation =
+      "bsky chat-bsky-group disable-join-link --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.group.disableJoinLink";

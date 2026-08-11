@@ -40,7 +40,7 @@ mixin _$SafelinkQueryRulesInput {
 
   /// Sort direction
   @SafelinkQueryRulesSortDirectionConverter()
-  SafelinkQueryRulesSortDirection? get sortDirection =>
+  SafelinkQueryRulesSortDirection get sortDirection =>
       throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -69,10 +69,10 @@ abstract class $SafelinkQueryRulesInputCopyWith<$Res> {
       String? reason,
       String? createdBy,
       @SafelinkQueryRulesSortDirectionConverter()
-      SafelinkQueryRulesSortDirection? sortDirection,
+      SafelinkQueryRulesSortDirection sortDirection,
       Map<String, dynamic>? $unknown});
 
-  $SafelinkQueryRulesSortDirectionCopyWith<$Res>? get sortDirection;
+  $SafelinkQueryRulesSortDirectionCopyWith<$Res> get sortDirection;
 }
 
 /// @nodoc
@@ -98,7 +98,7 @@ class _$SafelinkQueryRulesInputCopyWithImpl<$Res,
     Object? actions = freezed,
     Object? reason = freezed,
     Object? createdBy = freezed,
-    Object? sortDirection = freezed,
+    Object? sortDirection = null,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -130,10 +130,10 @@ class _$SafelinkQueryRulesInputCopyWithImpl<$Res,
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
-      sortDirection: freezed == sortDirection
+      sortDirection: null == sortDirection
           ? _value.sortDirection
           : sortDirection // ignore: cast_nullable_to_non_nullable
-              as SafelinkQueryRulesSortDirection?,
+              as SafelinkQueryRulesSortDirection,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -145,12 +145,8 @@ class _$SafelinkQueryRulesInputCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $SafelinkQueryRulesSortDirectionCopyWith<$Res>? get sortDirection {
-    if (_value.sortDirection == null) {
-      return null;
-    }
-
-    return $SafelinkQueryRulesSortDirectionCopyWith<$Res>(_value.sortDirection!,
+  $SafelinkQueryRulesSortDirectionCopyWith<$Res> get sortDirection {
+    return $SafelinkQueryRulesSortDirectionCopyWith<$Res>(_value.sortDirection,
         (value) {
       return _then(_value.copyWith(sortDirection: value) as $Val);
     });
@@ -175,11 +171,11 @@ abstract class _$$SafelinkQueryRulesInputImplCopyWith<$Res>
       String? reason,
       String? createdBy,
       @SafelinkQueryRulesSortDirectionConverter()
-      SafelinkQueryRulesSortDirection? sortDirection,
+      SafelinkQueryRulesSortDirection sortDirection,
       Map<String, dynamic>? $unknown});
 
   @override
-  $SafelinkQueryRulesSortDirectionCopyWith<$Res>? get sortDirection;
+  $SafelinkQueryRulesSortDirectionCopyWith<$Res> get sortDirection;
 }
 
 /// @nodoc
@@ -204,7 +200,7 @@ class __$$SafelinkQueryRulesInputImplCopyWithImpl<$Res>
     Object? actions = freezed,
     Object? reason = freezed,
     Object? createdBy = freezed,
-    Object? sortDirection = freezed,
+    Object? sortDirection = null,
     Object? $unknown = freezed,
   }) {
     return _then(_$SafelinkQueryRulesInputImpl(
@@ -236,10 +232,10 @@ class __$$SafelinkQueryRulesInputImplCopyWithImpl<$Res>
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
-      sortDirection: freezed == sortDirection
+      sortDirection: null == sortDirection
           ? _value.sortDirection
           : sortDirection // ignore: cast_nullable_to_non_nullable
-              as SafelinkQueryRulesSortDirection?,
+              as SafelinkQueryRulesSortDirection,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -260,7 +256,9 @@ class _$SafelinkQueryRulesInputImpl implements _SafelinkQueryRulesInput {
       final List<String>? actions,
       this.reason,
       this.createdBy,
-      @SafelinkQueryRulesSortDirectionConverter() this.sortDirection,
+      @SafelinkQueryRulesSortDirectionConverter() this.sortDirection =
+          const SafelinkQueryRulesSortDirection.knownValue(
+              data: KnownSafelinkQueryRulesSortDirection.desc),
       final Map<String, dynamic>? $unknown})
       : _urls = urls,
         _actions = actions,
@@ -310,8 +308,9 @@ class _$SafelinkQueryRulesInputImpl implements _SafelinkQueryRulesInput {
 
   /// Sort direction
   @override
+  @JsonKey()
   @SafelinkQueryRulesSortDirectionConverter()
-  final SafelinkQueryRulesSortDirection? sortDirection;
+  final SafelinkQueryRulesSortDirection sortDirection;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -387,7 +386,7 @@ abstract class _SafelinkQueryRulesInput implements SafelinkQueryRulesInput {
       final String? reason,
       final String? createdBy,
       @SafelinkQueryRulesSortDirectionConverter()
-      final SafelinkQueryRulesSortDirection? sortDirection,
+      final SafelinkQueryRulesSortDirection sortDirection,
       final Map<String, dynamic>? $unknown}) = _$SafelinkQueryRulesInputImpl;
 
   factory _SafelinkQueryRulesInput.fromJson(Map<String, dynamic> json) =
@@ -420,7 +419,7 @@ abstract class _SafelinkQueryRulesInput implements SafelinkQueryRulesInput {
   /// Sort direction
   @override
   @SafelinkQueryRulesSortDirectionConverter()
-  SafelinkQueryRulesSortDirection? get sortDirection;
+  SafelinkQueryRulesSortDirection get sortDirection;
   @override
   Map<String, dynamic>? get $unknown;
 

@@ -36,6 +36,7 @@ mixin _$GraphListRecord {
   Blob? get avatar => throw _privateConstructorUsedError;
   @UGraphListLabelsConverter()
   UGraphListLabels? get labels => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -63,7 +64,7 @@ abstract class $GraphListRecordCopyWith<$Res> {
       @RichtextFacetConverter() List<RichtextFacet>? descriptionFacets,
       @BlobConverter() Blob? avatar,
       @UGraphListLabelsConverter() UGraphListLabels? labels,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $ListPurposeCopyWith<$Res> get purpose;
@@ -191,7 +192,7 @@ abstract class _$$GraphListRecordImplCopyWith<$Res>
       @RichtextFacetConverter() List<RichtextFacet>? descriptionFacets,
       @BlobConverter() Blob? avatar,
       @UGraphListLabelsConverter() UGraphListLabels? labels,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -278,7 +279,7 @@ class _$GraphListRecordImpl implements _GraphListRecord {
       @RichtextFacetConverter() final List<RichtextFacet>? descriptionFacets,
       @BlobConverter() this.avatar,
       @UGraphListLabelsConverter() this.labels,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _descriptionFacets = descriptionFacets,
         _$unknown = $unknown;
@@ -319,6 +320,7 @@ class _$GraphListRecordImpl implements _GraphListRecord {
   @UGraphListLabelsConverter()
   final UGraphListLabels? labels;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -394,7 +396,7 @@ abstract class _GraphListRecord implements GraphListRecord {
       @RichtextFacetConverter() final List<RichtextFacet>? descriptionFacets,
       @BlobConverter() final Blob? avatar,
       @UGraphListLabelsConverter() final UGraphListLabels? labels,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$GraphListRecordImpl;
 
   factory _GraphListRecord.fromJson(Map<String, dynamic> json) =
@@ -423,6 +425,7 @@ abstract class _GraphListRecord implements GraphListRecord {
   @UGraphListLabelsConverter()
   UGraphListLabels? get labels;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

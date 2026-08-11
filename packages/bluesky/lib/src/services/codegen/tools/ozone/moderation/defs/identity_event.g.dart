@@ -40,6 +40,6 @@ Map<String, dynamic> _$$IdentityEventImplToJson(_$IdentityEventImpl instance) =>
       if (instance.handle case final value?) 'handle': value,
       if (instance.pdsHost case final value?) 'pdsHost': value,
       if (instance.tombstone case final value?) 'tombstone': value,
-      'timestamp': instance.timestamp.toIso8601String(),
+      'timestamp': iso8601(instance.timestamp),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

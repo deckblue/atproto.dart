@@ -24,6 +24,9 @@ mixin _$BskyAppStatePref {
   @BskyAppProgressGuideConverter()
   BskyAppProgressGuide? get activeProgressGuide =>
       throw _privateConstructorUsedError;
+
+  /// Indicates if the user is participating in the beta features program.
+  bool? get isBetaUser => throw _privateConstructorUsedError;
   List<String>? get queuedNudges => throw _privateConstructorUsedError;
   @NuxConverter()
   List<Nux>? get nuxs => throw _privateConstructorUsedError;
@@ -49,6 +52,7 @@ abstract class $BskyAppStatePrefCopyWith<$Res> {
       {String $type,
       @BskyAppProgressGuideConverter()
       BskyAppProgressGuide? activeProgressGuide,
+      bool? isBetaUser,
       List<String>? queuedNudges,
       @NuxConverter() List<Nux>? nuxs,
       Map<String, dynamic>? $unknown});
@@ -73,6 +77,7 @@ class _$BskyAppStatePrefCopyWithImpl<$Res, $Val extends BskyAppStatePref>
   $Res call({
     Object? $type = null,
     Object? activeProgressGuide = freezed,
+    Object? isBetaUser = freezed,
     Object? queuedNudges = freezed,
     Object? nuxs = freezed,
     Object? $unknown = freezed,
@@ -86,6 +91,10 @@ class _$BskyAppStatePrefCopyWithImpl<$Res, $Val extends BskyAppStatePref>
           ? _value.activeProgressGuide
           : activeProgressGuide // ignore: cast_nullable_to_non_nullable
               as BskyAppProgressGuide?,
+      isBetaUser: freezed == isBetaUser
+          ? _value.isBetaUser
+          : isBetaUser // ignore: cast_nullable_to_non_nullable
+              as bool?,
       queuedNudges: freezed == queuedNudges
           ? _value.queuedNudges
           : queuedNudges // ignore: cast_nullable_to_non_nullable
@@ -129,6 +138,7 @@ abstract class _$$BskyAppStatePrefImplCopyWith<$Res>
       {String $type,
       @BskyAppProgressGuideConverter()
       BskyAppProgressGuide? activeProgressGuide,
+      bool? isBetaUser,
       List<String>? queuedNudges,
       @NuxConverter() List<Nux>? nuxs,
       Map<String, dynamic>? $unknown});
@@ -152,6 +162,7 @@ class __$$BskyAppStatePrefImplCopyWithImpl<$Res>
   $Res call({
     Object? $type = null,
     Object? activeProgressGuide = freezed,
+    Object? isBetaUser = freezed,
     Object? queuedNudges = freezed,
     Object? nuxs = freezed,
     Object? $unknown = freezed,
@@ -165,6 +176,10 @@ class __$$BskyAppStatePrefImplCopyWithImpl<$Res>
           ? _value.activeProgressGuide
           : activeProgressGuide // ignore: cast_nullable_to_non_nullable
               as BskyAppProgressGuide?,
+      isBetaUser: freezed == isBetaUser
+          ? _value.isBetaUser
+          : isBetaUser // ignore: cast_nullable_to_non_nullable
+              as bool?,
       queuedNudges: freezed == queuedNudges
           ? _value._queuedNudges
           : queuedNudges // ignore: cast_nullable_to_non_nullable
@@ -188,6 +203,7 @@ class _$BskyAppStatePrefImpl implements _BskyAppStatePref {
   const _$BskyAppStatePrefImpl(
       {this.$type = 'app.bsky.actor.defs#bskyAppStatePref',
       @BskyAppProgressGuideConverter() this.activeProgressGuide,
+      this.isBetaUser,
       final List<String>? queuedNudges,
       @NuxConverter() final List<Nux>? nuxs,
       final Map<String, dynamic>? $unknown})
@@ -204,6 +220,10 @@ class _$BskyAppStatePrefImpl implements _BskyAppStatePref {
   @override
   @BskyAppProgressGuideConverter()
   final BskyAppProgressGuide? activeProgressGuide;
+
+  /// Indicates if the user is participating in the beta features program.
+  @override
+  final bool? isBetaUser;
   final List<String>? _queuedNudges;
   @override
   List<String>? get queuedNudges {
@@ -237,7 +257,7 @@ class _$BskyAppStatePrefImpl implements _BskyAppStatePref {
 
   @override
   String toString() {
-    return 'BskyAppStatePref(\$type: ${$type}, activeProgressGuide: $activeProgressGuide, queuedNudges: $queuedNudges, nuxs: $nuxs, \$unknown: ${$unknown})';
+    return 'BskyAppStatePref(\$type: ${$type}, activeProgressGuide: $activeProgressGuide, isBetaUser: $isBetaUser, queuedNudges: $queuedNudges, nuxs: $nuxs, \$unknown: ${$unknown})';
   }
 
   @override
@@ -248,6 +268,8 @@ class _$BskyAppStatePrefImpl implements _BskyAppStatePref {
             (identical(other.$type, $type) || other.$type == $type) &&
             (identical(other.activeProgressGuide, activeProgressGuide) ||
                 other.activeProgressGuide == activeProgressGuide) &&
+            (identical(other.isBetaUser, isBetaUser) ||
+                other.isBetaUser == isBetaUser) &&
             const DeepCollectionEquality()
                 .equals(other._queuedNudges, _queuedNudges) &&
             const DeepCollectionEquality().equals(other._nuxs, _nuxs) &&
@@ -260,6 +282,7 @@ class _$BskyAppStatePrefImpl implements _BskyAppStatePref {
       runtimeType,
       $type,
       activeProgressGuide,
+      isBetaUser,
       const DeepCollectionEquality().hash(_queuedNudges),
       const DeepCollectionEquality().hash(_nuxs),
       const DeepCollectionEquality().hash(_$unknown));
@@ -286,6 +309,7 @@ abstract class _BskyAppStatePref implements BskyAppStatePref {
       {final String $type,
       @BskyAppProgressGuideConverter()
       final BskyAppProgressGuide? activeProgressGuide,
+      final bool? isBetaUser,
       final List<String>? queuedNudges,
       @NuxConverter() final List<Nux>? nuxs,
       final Map<String, dynamic>? $unknown}) = _$BskyAppStatePrefImpl;
@@ -298,6 +322,10 @@ abstract class _BskyAppStatePref implements BskyAppStatePref {
   @override
   @BskyAppProgressGuideConverter()
   BskyAppProgressGuide? get activeProgressGuide;
+
+  /// Indicates if the user is participating in the beta features program.
+  @override
+  bool? get isBetaUser;
   @override
   List<String>? get queuedNudges;
   @override

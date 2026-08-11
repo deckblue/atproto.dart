@@ -51,7 +51,7 @@ Map<String, dynamic> _$$FeedThreadgateRecordImplToJson(
               .toList()
           case final value?)
         'allow': value,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.hiddenReplies?.map(const AtUriConverter().toJson).toList()
           case final value?)
         'hiddenReplies': value,

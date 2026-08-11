@@ -13,11 +13,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
 import '../../../../app/bsky/embed/external/main.dart';
+import '../../../../app/bsky/embed/gallery/main.dart';
 import '../../../../app/bsky/embed/images/main.dart';
 import '../../../../app/bsky/embed/record/main.dart';
 import '../../../../app/bsky/embed/recordWithMedia/main.dart';
 import '../../../../app/bsky/embed/video/main.dart';
-import '../../../../app/bsky/embed/gallery/main.dart';
 
 part 'union_main_embed.freezed.dart';
 
@@ -31,10 +31,10 @@ sealed class UFeedPostEmbed with _$UFeedPostEmbed {
 
   const factory UFeedPostEmbed.embedImages({required EmbedImages data}) =
       UFeedPostEmbedEmbedImages;
-  const factory UFeedPostEmbed.embedGallery({required EmbedGallery data}) =
-      UFeedPostEmbedEmbedGallery;
   const factory UFeedPostEmbed.embedVideo({required EmbedVideo data}) =
       UFeedPostEmbedEmbedVideo;
+  const factory UFeedPostEmbed.embedGallery({required EmbedGallery data}) =
+      UFeedPostEmbedEmbedGallery;
   const factory UFeedPostEmbed.embedExternal({required EmbedExternal data}) =
       UFeedPostEmbedEmbedExternal;
   const factory UFeedPostEmbed.embedRecord({required EmbedRecord data}) =
@@ -53,13 +53,13 @@ extension UFeedPostEmbedExtension on UFeedPostEmbed {
   bool get isEmbedImages => isA<UFeedPostEmbedEmbedImages>(this);
   bool get isNotEmbedImages => !isEmbedImages;
   EmbedImages? get embedImages => isEmbedImages ? data as EmbedImages : null;
+  bool get isEmbedVideo => isA<UFeedPostEmbedEmbedVideo>(this);
+  bool get isNotEmbedVideo => !isEmbedVideo;
+  EmbedVideo? get embedVideo => isEmbedVideo ? data as EmbedVideo : null;
   bool get isEmbedGallery => isA<UFeedPostEmbedEmbedGallery>(this);
   bool get isNotEmbedGallery => !isEmbedGallery;
   EmbedGallery? get embedGallery =>
       isEmbedGallery ? data as EmbedGallery : null;
-  bool get isEmbedVideo => isA<UFeedPostEmbedEmbedVideo>(this);
-  bool get isNotEmbedVideo => !isEmbedVideo;
-  EmbedVideo? get embedVideo => isEmbedVideo ? data as EmbedVideo : null;
   bool get isEmbedExternal => isA<UFeedPostEmbedEmbedExternal>(this);
   bool get isNotEmbedExternal => !isEmbedExternal;
   EmbedExternal? get embedExternal =>
@@ -84,53 +84,60 @@ final class UFeedPostEmbedConverter
 
   @override
   UFeedPostEmbed fromJson(Map<String, dynamic> json) {
-    try {
-      if (EmbedImages.validate(json)) {
-        return UFeedPostEmbed.embedImages(
-          data: const EmbedImagesConverter().fromJson(json),
-        );
-      }
-      if (EmbedGallery.validate(json)) {
-        return UFeedPostEmbed.embedGallery(
-          data: const EmbedGalleryConverter().fromJson(json),
-        );
-      }
-      if (EmbedVideo.validate(json)) {
-        return UFeedPostEmbed.embedVideo(
-          data: const EmbedVideoConverter().fromJson(json),
-        );
-      }
-      if (EmbedExternal.validate(json)) {
-        return UFeedPostEmbed.embedExternal(
-          data: const EmbedExternalConverter().fromJson(json),
-        );
-      }
-      if (EmbedRecord.validate(json)) {
-        return UFeedPostEmbed.embedRecord(
-          data: const EmbedRecordConverter().fromJson(json),
-        );
-      }
-      if (EmbedRecordWithMedia.validate(json)) {
-        return UFeedPostEmbed.embedRecordWithMedia(
-          data: const EmbedRecordWithMediaConverter().fromJson(json),
-        );
-      }
-
-      return UFeedPostEmbed.unknown(data: json);
-    } catch (_) {
-      return UFeedPostEmbed.unknown(data: json);
+    if (EmbedImages.validate(json)) {
+      return UFeedPostEmbed.embedImages(
+        data: const EmbedImagesConverter().fromJson(json),
+      );
     }
+    if (EmbedVideo.validate(json)) {
+      return UFeedPostEmbed.embedVideo(
+        data: const EmbedVideoConverter().fromJson(json),
+      );
+    }
+    if (EmbedGallery.validate(json)) {
+      return UFeedPostEmbed.embedGallery(
+        data: const EmbedGalleryConverter().fromJson(json),
+      );
+    }
+    if (EmbedExternal.validate(json)) {
+      return UFeedPostEmbed.embedExternal(
+        data: const EmbedExternalConverter().fromJson(json),
+      );
+    }
+    if (EmbedRecord.validate(json)) {
+      return UFeedPostEmbed.embedRecord(
+        data: const EmbedRecordConverter().fromJson(json),
+      );
+    }
+    if (EmbedRecordWithMedia.validate(json)) {
+      return UFeedPostEmbed.embedRecordWithMedia(
+        data: const EmbedRecordWithMediaConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UFeedPostEmbed.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UFeedPostEmbed object) => object.when(
-        embedImages: (data) => const EmbedImagesConverter().toJson(data),
-        embedGallery: (data) => const EmbedGalleryConverter().toJson(data),
-        embedVideo: (data) => const EmbedVideoConverter().toJson(data),
-        embedExternal: (data) => const EmbedExternalConverter().toJson(data),
-        embedRecord: (data) => const EmbedRecordConverter().toJson(data),
-        embedRecordWithMedia: (data) =>
-            const EmbedRecordWithMediaConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UFeedPostEmbed object) => switch (object) {
+        UFeedPostEmbedEmbedImages(:final data) =>
+          const EmbedImagesConverter().toJson(data),
+        UFeedPostEmbedEmbedVideo(:final data) =>
+          const EmbedVideoConverter().toJson(
+            data,
+          ),
+        UFeedPostEmbedEmbedGallery(:final data) =>
+          const EmbedGalleryConverter().toJson(data),
+        UFeedPostEmbedEmbedExternal(:final data) =>
+          const EmbedExternalConverter().toJson(data),
+        UFeedPostEmbedEmbedRecord(:final data) =>
+          const EmbedRecordConverter().toJson(data),
+        UFeedPostEmbedEmbedRecordWithMedia(:final data) =>
+          const EmbedRecordWithMediaConverter().toJson(data),
+        UFeedPostEmbedUnknown(:final data) => data,
+      };
 }

@@ -27,11 +27,11 @@ final class GetActorStarterPacksCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a list of starter packs created by the actor.";
+      "Get a list of starter packs created by the actor.";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph get-actor-starter-packs [actor] [limit] [cursor]";
+      "bsky app-bsky-graph get-actor-starter-packs --actor=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.graph.getActorStarterPacks";
@@ -39,7 +39,8 @@ final class GetActorStarterPacksCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "actor": argResults!["actor"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

@@ -21,6 +21,7 @@ FeedPostgateRecord _$FeedPostgateRecordFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FeedPostgateRecord {
   String get $type => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// Reference (AT-URI) to the post record.
@@ -51,7 +52,7 @@ abstract class $FeedPostgateRecordCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @AtUriConverter() AtUri post,
       @AtUriConverter() List<AtUri>? detachedEmbeddingUris,
       @UFeedPostgateEmbeddingRulesConverter()
@@ -120,7 +121,7 @@ abstract class _$$FeedPostgateRecordImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @AtUriConverter() AtUri post,
       @AtUriConverter() List<AtUri>? detachedEmbeddingUris,
       @UFeedPostgateEmbeddingRulesConverter()
@@ -183,7 +184,7 @@ class __$$FeedPostgateRecordImplCopyWithImpl<$Res>
 class _$FeedPostgateRecordImpl implements _FeedPostgateRecord {
   const _$FeedPostgateRecordImpl(
       {this.$type = 'app.bsky.feed.postgate',
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @AtUriConverter() required this.post,
       @AtUriConverter() final List<AtUri>? detachedEmbeddingUris,
       @UFeedPostgateEmbeddingRulesConverter()
@@ -200,6 +201,7 @@ class _$FeedPostgateRecordImpl implements _FeedPostgateRecord {
   @JsonKey()
   final String $type;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// Reference (AT-URI) to the post record.
@@ -291,7 +293,7 @@ class _$FeedPostgateRecordImpl implements _FeedPostgateRecord {
 abstract class _FeedPostgateRecord implements FeedPostgateRecord {
   const factory _FeedPostgateRecord(
       {final String $type,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @AtUriConverter() required final AtUri post,
       @AtUriConverter() final List<AtUri>? detachedEmbeddingUris,
       @UFeedPostgateEmbeddingRulesConverter()
@@ -304,6 +306,7 @@ abstract class _FeedPostgateRecord implements FeedPostgateRecord {
   @override
   String get $type;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// Reference (AT-URI) to the post record.

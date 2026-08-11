@@ -26,6 +26,7 @@ mixin _$ReasonRepost {
   @AtUriConverter()
   AtUri? get uri => throw _privateConstructorUsedError;
   String? get cid => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -50,7 +51,7 @@ abstract class $ReasonRepostCopyWith<$Res> {
       @ProfileViewBasicConverter() ProfileViewBasic by,
       @AtUriConverter() AtUri? uri,
       String? cid,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewBasicCopyWith<$Res> get by;
@@ -130,7 +131,7 @@ abstract class _$$ReasonRepostImplCopyWith<$Res>
       @ProfileViewBasicConverter() ProfileViewBasic by,
       @AtUriConverter() AtUri? uri,
       String? cid,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -195,7 +196,7 @@ class _$ReasonRepostImpl implements _ReasonRepost {
       @ProfileViewBasicConverter() required this.by,
       @AtUriConverter() this.uri,
       this.cid,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -214,6 +215,7 @@ class _$ReasonRepostImpl implements _ReasonRepost {
   @override
   final String? cid;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -271,7 +273,7 @@ abstract class _ReasonRepost implements ReasonRepost {
       @ProfileViewBasicConverter() required final ProfileViewBasic by,
       @AtUriConverter() final AtUri? uri,
       final String? cid,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       final Map<String, dynamic>? $unknown}) = _$ReasonRepostImpl;
 
   factory _ReasonRepost.fromJson(Map<String, dynamic> json) =
@@ -288,6 +290,7 @@ abstract class _ReasonRepost implements ReasonRepost {
   @override
   String? get cid;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   Map<String, dynamic>? get $unknown;

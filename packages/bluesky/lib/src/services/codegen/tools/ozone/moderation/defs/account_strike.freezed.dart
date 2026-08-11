@@ -29,9 +29,11 @@ mixin _$AccountStrike {
   int? get totalStrikeCount => throw _privateConstructorUsedError;
 
   /// Timestamp of the first strike received
+  @JsonKey(toJson: iso8601)
   DateTime? get firstStrikeAt => throw _privateConstructorUsedError;
 
   /// Timestamp of the most recent strike received
+  @JsonKey(toJson: iso8601)
   DateTime? get lastStrikeAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -55,8 +57,8 @@ abstract class $AccountStrikeCopyWith<$Res> {
       {String $type,
       int? activeStrikeCount,
       int? totalStrikeCount,
-      DateTime? firstStrikeAt,
-      DateTime? lastStrikeAt,
+      @JsonKey(toJson: iso8601) DateTime? firstStrikeAt,
+      @JsonKey(toJson: iso8601) DateTime? lastStrikeAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -123,8 +125,8 @@ abstract class _$$AccountStrikeImplCopyWith<$Res>
       {String $type,
       int? activeStrikeCount,
       int? totalStrikeCount,
-      DateTime? firstStrikeAt,
-      DateTime? lastStrikeAt,
+      @JsonKey(toJson: iso8601) DateTime? firstStrikeAt,
+      @JsonKey(toJson: iso8601) DateTime? lastStrikeAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -185,8 +187,8 @@ class _$AccountStrikeImpl implements _AccountStrike {
       {this.$type = 'tools.ozone.moderation.defs#accountStrike',
       this.activeStrikeCount,
       this.totalStrikeCount,
-      this.firstStrikeAt,
-      this.lastStrikeAt,
+      @JsonKey(toJson: iso8601) this.firstStrikeAt,
+      @JsonKey(toJson: iso8601) this.lastStrikeAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -207,10 +209,12 @@ class _$AccountStrikeImpl implements _AccountStrike {
 
   /// Timestamp of the first strike received
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? firstStrikeAt;
 
   /// Timestamp of the most recent strike received
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastStrikeAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -276,8 +280,8 @@ abstract class _AccountStrike implements AccountStrike {
       {final String $type,
       final int? activeStrikeCount,
       final int? totalStrikeCount,
-      final DateTime? firstStrikeAt,
-      final DateTime? lastStrikeAt,
+      @JsonKey(toJson: iso8601) final DateTime? firstStrikeAt,
+      @JsonKey(toJson: iso8601) final DateTime? lastStrikeAt,
       final Map<String, dynamic>? $unknown}) = _$AccountStrikeImpl;
 
   factory _AccountStrike.fromJson(Map<String, dynamic> json) =
@@ -296,10 +300,12 @@ abstract class _AccountStrike implements AccountStrike {
 
   /// Timestamp of the first strike received
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get firstStrikeAt;
 
   /// Timestamp of the most recent strike received
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastStrikeAt;
   @override
   Map<String, dynamic>? get $unknown;

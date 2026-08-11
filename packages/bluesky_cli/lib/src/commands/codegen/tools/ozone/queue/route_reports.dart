@@ -35,18 +35,20 @@ final class RouteReportsCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Route reports within an ID range to matching queues based.";
+      "Route reports within an ID range to matching queues based.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-queue route-reports [startReportId] [endReportId]";
+      "bsky tools-ozone-queue route-reports --startReportId=<value> --endReportId=<value>";
 
   @override
   String get methodId => "tools.ozone.queue.routeReports";
 
   @override
   Map<String, dynamic>? get body => {
-        "startReportId": argResults!["startReportId"],
-        "endReportId": argResults!["endReportId"],
+        "startReportId": int.tryParse(argResults!["startReportId"]) ??
+            usageException('Invalid integer value for option "startReportId".'),
+        "endReportId": int.tryParse(argResults!["endReportId"]) ??
+            usageException('Invalid integer value for option "endReportId".'),
       };
 }

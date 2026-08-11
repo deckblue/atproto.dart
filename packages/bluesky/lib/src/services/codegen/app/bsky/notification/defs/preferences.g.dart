@@ -15,10 +15,6 @@ _$PreferencesImpl _$$PreferencesImplFromJson(Map json) => $checkedCreate(
         final val = _$PreferencesImpl(
           $type: $checkedConvert(r'$type',
               (v) => v as String? ?? 'app.bsky.notification.defs#preferences'),
-          chat: $checkedConvert(
-              'chat',
-              (v) => const ChatPreferenceConverter()
-                  .fromJson(v as Map<String, dynamic>)),
           follow: $checkedConvert(
               'follow',
               (v) => const FilterablePreferenceConverter()
@@ -80,7 +76,6 @@ _$PreferencesImpl _$$PreferencesImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$PreferencesImplToJson(_$PreferencesImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'chat': const ChatPreferenceConverter().toJson(instance.chat),
       'follow': const FilterablePreferenceConverter().toJson(instance.follow),
       'like': const FilterablePreferenceConverter().toJson(instance.like),
       'likeViaRepost':

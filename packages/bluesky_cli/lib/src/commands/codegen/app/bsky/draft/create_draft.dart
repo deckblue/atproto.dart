@@ -27,14 +27,23 @@ final class CreateDraftCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Inserts a draft using private storage (stash). An upper limit of drafts might be enforced. Requires authentication.";
+      "Inserts a draft using private storage (stash). An upper limit of drafts might be enforced. Requires authentication.";
 
   @override
-  final String invocation = "bsky app-bsky-draft create-draft [draft]";
+  final String invocation = "bsky app-bsky-draft create-draft --draft=<value>";
 
   @override
   String get methodId => "app.bsky.draft.createDraft";
 
   @override
-  Map<String, dynamic>? get body => {"draft": jsonDecode(argResults!["draft"])};
+  Map<String, dynamic>? get body => {"draft": _decodeJson("draft")};
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

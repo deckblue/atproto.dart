@@ -43,11 +43,11 @@ final class DeleteRecordCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Delete a repository record, or ensure it doesn't exist. Requires auth, implemented by PDS.";
+      "Delete a repository record, or ensure it doesn't exist. Requires auth, implemented by PDS.";
 
   @override
   final String invocation =
-      "bsky com-atproto-repo delete-record [repo] [collection] [rkey] [swapRecord] [swapCommit]";
+      "bsky com-atproto-repo delete-record --repo=<value> --collection=<value> --rkey=<value> [--swapRecord=<value>] [--swapCommit=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.deleteRecord";
@@ -57,9 +57,9 @@ final class DeleteRecordCommand extends ProcedureCommand {
         "repo": argResults!["repo"],
         "collection": argResults!["collection"],
         "rkey": argResults!["rkey"],
-        if (argResults!["swapRecord"] != null)
+        if (argResults!.wasParsed("swapRecord"))
           "swapRecord": argResults!["swapRecord"],
-        if (argResults!["swapCommit"] != null)
+        if (argResults!.wasParsed("swapCommit"))
           "swapCommit": argResults!["swapCommit"],
       };
 }

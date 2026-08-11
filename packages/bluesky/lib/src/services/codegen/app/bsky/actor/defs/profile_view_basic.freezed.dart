@@ -32,6 +32,7 @@ mixin _$ProfileViewBasic {
   ViewerState? get viewer => throw _privateConstructorUsedError;
   @LabelConverter()
   List<Label>? get labels => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @VerificationStateConverter()
   VerificationState? get verification => throw _privateConstructorUsedError;
@@ -66,7 +67,7 @@ abstract class $ProfileViewBasicCopyWith<$Res> {
       @ProfileAssociatedConverter() ProfileAssociated? associated,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       @VerificationStateConverter() VerificationState? verification,
       @StatusViewConverter() StatusView? status,
       Map<String, dynamic>? debug,
@@ -243,7 +244,7 @@ abstract class _$$ProfileViewBasicImplCopyWith<$Res>
       @ProfileAssociatedConverter() ProfileAssociated? associated,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       @VerificationStateConverter() VerificationState? verification,
       @StatusViewConverter() StatusView? status,
       Map<String, dynamic>? debug,
@@ -362,7 +363,7 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
       @ProfileAssociatedConverter() this.associated,
       @ViewerStateConverter() this.viewer,
       @LabelConverter() final List<Label>? labels,
-      this.createdAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
       @VerificationStateConverter() this.verification,
       @StatusViewConverter() this.status,
       final Map<String, dynamic>? debug,
@@ -405,6 +406,7 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   @override
   @VerificationStateConverter()
@@ -510,7 +512,7 @@ abstract class _ProfileViewBasic implements ProfileViewBasic {
       @ProfileAssociatedConverter() final ProfileAssociated? associated,
       @ViewerStateConverter() final ViewerState? viewer,
       @LabelConverter() final List<Label>? labels,
-      final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
       @VerificationStateConverter() final VerificationState? verification,
       @StatusViewConverter() final StatusView? status,
       final Map<String, dynamic>? debug,
@@ -541,6 +543,7 @@ abstract class _ProfileViewBasic implements ProfileViewBasic {
   @LabelConverter()
   List<Label>? get labels;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
   @VerificationStateConverter()

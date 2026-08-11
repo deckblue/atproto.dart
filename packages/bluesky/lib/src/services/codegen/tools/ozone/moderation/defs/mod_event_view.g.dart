@@ -55,7 +55,7 @@ Map<String, dynamic> _$$ModEventViewImplToJson(_$ModEventViewImpl instance) =>
       'subject': const UModEventViewSubjectConverter().toJson(instance.subject),
       'subjectBlobCids': instance.subjectBlobCids,
       'createdBy': instance.createdBy,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.creatorHandle case final value?) 'creatorHandle': value,
       if (instance.subjectHandle case final value?) 'subjectHandle': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, ModTool>(

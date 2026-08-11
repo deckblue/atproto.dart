@@ -26,11 +26,11 @@ final class GetInviteCodesCommand extends QueryCommand {
   final String name = "get-invite-codes";
 
   @override
-  final String description = r"Get an admin view of invite codes.";
+  final String description = "Get an admin view of invite codes.";
 
   @override
   final String invocation =
-      "bsky com-atproto-admin get-invite-codes [sort] [limit] [cursor]";
+      "bsky com-atproto-admin get-invite-codes [--sort=<value>] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "com.atproto.admin.getInviteCodes";
@@ -38,7 +38,8 @@ final class GetInviteCodesCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "sort": argResults!["sort"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

@@ -45,6 +45,15 @@ description: chat.bsky.convo.defs
 | **text** | string | - | ✅ | - |
 | **facets** | array of [app.bsky.richtext.facet](../../../../lexicons/app/bsky/richtext/facet.md#main) | - | ❌ | Annotations of text (mentions, URLs, hashtags, etc) |
 | **embed** | union of <br/>[app.bsky.embed.record](../../../../lexicons/app/bsky/embed/record.md#main)<br/>[chat.bsky.embed.joinLink](../../../../lexicons/chat/bsky/embed/joinLink.md#main) | - | ❌ | - |
+| **replyTo** | [#replyRef](#replyref) | - | ❌ | - |
+
+## #replyRef
+
+A reference to another message within the same convo, used to indicate that a message is a reply to it.
+
+| Property | Type | Known Values | Required | Description |
+| --- | --- | --- | :---: | --- |
+| **messageId** | string | - | ✅ | - |
 
 ## #messageView
 
@@ -56,6 +65,7 @@ description: chat.bsky.convo.defs
 | **facets** | array of [app.bsky.richtext.facet](../../../../lexicons/app/bsky/richtext/facet.md#main) | - | ❌ | Annotations of text (mentions, URLs, hashtags, etc) |
 | **embed** | union of <br/>[app.bsky.embed.record#view](../../../../lexicons/app/bsky/embed/record.md#view)<br/>[chat.bsky.embed.joinLink#view](../../../../lexicons/chat/bsky/embed/joinLink.md#view) | - | ❌ | - |
 | **reactions** | array of [#reactionView](#reactionview) | - | ❌ | Reactions to this message, in ascending order of creation time. |
+| **replyTo** | union of <br/>[#messageView](#messageview)<br/>[#deletedMessageView](#deletedmessageview)<br/>[#messageBeforeUserJoinedGroupView](#messagebeforeuserjoinedgroupview) | - | ❌ | - |
 | **sender** | [#messageViewSender](#messageviewsender) | - | ✅ | - |
 | **sentAt** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ✅ | - |
 
@@ -67,8 +77,6 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageView
 
-[NOTE: This is under active development and should be considered unstable while this note is here].
-
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
 | **id** | string | - | ✅ | - |
@@ -78,7 +86,7 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataAddMember
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating a user was added to the group convo.
+System message indicating a user was added to the group convo.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -88,7 +96,7 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataRemoveMember
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating a user was removed from the group convo.
+System message indicating a user was removed from the group convo.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -97,7 +105,7 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataMemberJoin
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating a user joined the group convo via join link.
+System message indicating a user joined the group convo via join link.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -107,7 +115,7 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataMemberLeave
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating a user voluntarily left the group convo.
+System message indicating a user voluntarily left the group convo.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -115,7 +123,7 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataLockConvo
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating the group convo was locked.
+System message indicating the group convo was locked.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -123,7 +131,7 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataUnlockConvo
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating the group convo was unlocked.
+System message indicating the group convo was unlocked.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -131,7 +139,7 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataLockConvoPermanently
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating the group convo was locked permanently.
+System message indicating the group convo was locked permanently.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -139,7 +147,7 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataEditGroup
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating the group info was edited.
+System message indicating the group info was edited.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -148,19 +156,19 @@ description: chat.bsky.convo.defs
 
 ## #systemMessageDataCreateJoinLink
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating the group join link was created.
+System message indicating the group join link was created.
 
 ## #systemMessageDataEditJoinLink
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating the group join link was edited.
+System message indicating the group join link was edited.
 
 ## #systemMessageDataEnableJoinLink
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating the group join link was enabled.
+System message indicating the group join link was enabled.
 
 ## #systemMessageDataDisableJoinLink
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. System message indicating the group join link was disabled.
+System message indicating the group join link was disabled.
 
 ## #deletedMessageView
 
@@ -170,6 +178,10 @@ description: chat.bsky.convo.defs
 | **rev** | string | - | ✅ | - |
 | **sender** | [#messageViewSender](#messageviewsender) | - | ✅ | - |
 | **sentAt** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ✅ | - |
+
+## #messageBeforeUserJoinedGroupView
+
+Placeholder embedded in place of a reply's parent message when that parent was sent before the viewer joined the group convo. The viewer has no access to that history, so no message data is carried.
 
 ## #messageViewSender
 
@@ -214,11 +226,7 @@ description: chat.bsky.convo.defs
 
 ## #directConvo
 
-[NOTE: This is under active development and should be considered unstable while this note is here].
-
 ## #groupConvo
-
-[NOTE: This is under active development and should be considered unstable while this note is here].
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -226,6 +234,7 @@ description: chat.bsky.convo.defs
 | **joinLink** | [chat.bsky.group.defs#joinLinkView](../../../../lexicons/chat/bsky/group/defs.md#joinlinkview) | - | ❌ | - |
 | **joinRequestCount** | integer | - | ❌ | The total number of pending join requests for the group conversation. Only present for the owner. Capped at 21. |
 | **lockStatus** | [#convoLockStatus](#convolockstatus) | - | ✅ | - |
+| **lockStatusModerationOverride** | boolean | - | ✅ | Whether the lock status is being forced by a moderation override (account inactivation or convo takedown) rather than the owner's own setting. |
 | **memberCount** | integer | - | ✅ | The total number of members in the group conversation. |
 | **memberLimit** | integer | - | ✅ | The maximum number of members allowed in the group conversation. |
 | **name** | string | - | ✅ | The display name of the group conversation. |
@@ -333,7 +342,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logReadConvo
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a convo was read up to a certain message.
+Event indicating a convo was read up to a certain message.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -343,7 +352,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logAddMember
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a member was added to a group convo. The member who was added gets a logBeginConvo (to create the convo) but also a logAddMember (to show the system message as the first message the user sees).
+Event indicating a member was added to a group convo. The member who was added gets a logBeginConvo (to create the convo) but also a logAddMember (to show the system message as the first message the user sees).
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -354,7 +363,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logRemoveMember
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a member was removed from a group convo. The member who was removed gets a logLeaveConvo (to leave the convo) but not a logRemoveMember (because they already left, so can't see the system message).
+Event indicating a member was removed from a group convo. The member who was removed gets a logLeaveConvo (to leave the convo) but not a logRemoveMember (because they already left, so can't see the system message).
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -365,7 +374,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logMemberJoin
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a member joined a group convo via join link. The member who was added gets a logBeginConvo (to create the convo) but also a logMemberJoin (to show the system message as the first message the user sees).
+Event indicating a member joined a group convo via join link. The member who was added gets a logBeginConvo (to create the convo) but also a logMemberJoin (to show the system message as the first message the user sees).
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -376,7 +385,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logMemberLeave
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a member voluntarily left a group convo. The member who was removed gets a logLeaveConvo (to leave the convo) but not a logMemberLeave (because they already left, so can't see the system message).
+Event indicating a member voluntarily left a group convo. The member who was removed gets a logLeaveConvo (to leave the convo) but not a logMemberLeave (because they already left, so can't see the system message).
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -387,7 +396,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logLockConvo
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a group convo was locked.
+Event indicating a group convo was locked.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -398,7 +407,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logUnlockConvo
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a group convo was unlocked.
+Event indicating a group convo was unlocked.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -409,7 +418,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logLockConvoPermanently
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a group convo was locked permanently.
+Event indicating a group convo was locked permanently.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -420,7 +429,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logEditGroup
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating info about group convo was edited.
+Event indicating info about group convo was edited.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -430,7 +439,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logCreateJoinLink
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a join link was created for a group convo.
+Event indicating a join link was created for a group convo.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -440,7 +449,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logEditJoinLink
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a settings about a join link for a group convo were edited.
+Event indicating a settings about a join link for a group convo were edited.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -450,7 +459,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logEnableJoinLink
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a join link was enabled for a group convo.
+Event indicating a join link was enabled for a group convo.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -460,7 +469,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logDisableJoinLink
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a join link was disabled for a group convo.
+Event indicating a join link was disabled for a group convo.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -470,7 +479,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logIncomingJoinRequest
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a join request was made to a group the viewer owns. Only the owner gets this.
+Event indicating a join request was made to a group the viewer owns. Only the owner gets this.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -480,7 +489,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logApproveJoinRequest
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a join request was approved by the viewer. Only the owner gets this. The approved member gets a logBeginConvo.
+Event indicating a join request was approved by the viewer. Only the owner gets this. The approved member gets a logBeginConvo.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -490,7 +499,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logRejectJoinRequest
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a join request was rejected by the viewer. Only the owner gets this.
+Event indicating a join request was rejected by the viewer. Only the owner gets this.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -500,7 +509,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logOutgoingJoinRequest
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a join request was made by the requester. Only requester actor gets this.
+Event indicating a join request was made by the requester. Only requester actor gets this.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -509,7 +518,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logWithdrawIncomingJoinRequest
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating a prospective member withdrew their join request. Only the owner gets this.
+Event indicating a prospective member withdrew their join request. Only the owner gets this.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -519,7 +528,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logWithdrawOutgoingJoinRequest
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating the viewer withdrew their own join request. Only requester actor gets this.
+Event indicating the viewer withdrew their own join request. Only requester actor gets this.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
@@ -528,7 +537,7 @@ Event indicating a reaction was removed from a message.
 
 ## #logReadJoinRequests
 
-[NOTE: This is under active development and should be considered unstable while this note is here]. Event indicating the group owner marked join requests as read. Only the owner gets this.
+Event indicating the group owner marked join requests as read. Only the owner gets this.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |

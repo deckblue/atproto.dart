@@ -32,11 +32,11 @@ sealed class UPostViewEmbed with _$UPostViewEmbed {
   const factory UPostViewEmbed.embedImagesView({
     required EmbedImagesView data,
   }) = UPostViewEmbedEmbedImagesView;
+  const factory UPostViewEmbed.embedVideoView({required EmbedVideoView data}) =
+      UPostViewEmbedEmbedVideoView;
   const factory UPostViewEmbed.embedGalleryView({
     required EmbedGalleryView data,
   }) = UPostViewEmbedEmbedGalleryView;
-  const factory UPostViewEmbed.embedVideoView({required EmbedVideoView data}) =
-      UPostViewEmbedEmbedVideoView;
   const factory UPostViewEmbed.embedExternalView({
     required EmbedExternalView data,
   }) = UPostViewEmbedEmbedExternalView;
@@ -58,14 +58,14 @@ extension UPostViewEmbedExtension on UPostViewEmbed {
   bool get isNotEmbedImagesView => !isEmbedImagesView;
   EmbedImagesView? get embedImagesView =>
       isEmbedImagesView ? data as EmbedImagesView : null;
-  bool get isEmbedGalleryView => isA<UPostViewEmbedEmbedGalleryView>(this);
-  bool get isNotEmbedGalleryView => !isEmbedGalleryView;
-  EmbedGalleryView? get embedGalleryView =>
-      isEmbedGalleryView ? data as EmbedGalleryView : null;
   bool get isEmbedVideoView => isA<UPostViewEmbedEmbedVideoView>(this);
   bool get isNotEmbedVideoView => !isEmbedVideoView;
   EmbedVideoView? get embedVideoView =>
       isEmbedVideoView ? data as EmbedVideoView : null;
+  bool get isEmbedGalleryView => isA<UPostViewEmbedEmbedGalleryView>(this);
+  bool get isNotEmbedGalleryView => !isEmbedGalleryView;
+  EmbedGalleryView? get embedGalleryView =>
+      isEmbedGalleryView ? data as EmbedGalleryView : null;
   bool get isEmbedExternalView => isA<UPostViewEmbedEmbedExternalView>(this);
   bool get isNotEmbedExternalView => !isEmbedExternalView;
   EmbedExternalView? get embedExternalView =>
@@ -91,57 +91,58 @@ final class UPostViewEmbedConverter
 
   @override
   UPostViewEmbed fromJson(Map<String, dynamic> json) {
-    try {
-      if (EmbedImagesView.validate(json)) {
-        return UPostViewEmbed.embedImagesView(
-          data: const EmbedImagesViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedGalleryView.validate(json)) {
-        return UPostViewEmbed.embedGalleryView(
-          data: const EmbedGalleryViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedVideoView.validate(json)) {
-        return UPostViewEmbed.embedVideoView(
-          data: const EmbedVideoViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedExternalView.validate(json)) {
-        return UPostViewEmbed.embedExternalView(
-          data: const EmbedExternalViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedRecordView.validate(json)) {
-        return UPostViewEmbed.embedRecordView(
-          data: const EmbedRecordViewConverter().fromJson(json),
-        );
-      }
-      if (EmbedRecordWithMediaView.validate(json)) {
-        return UPostViewEmbed.embedRecordWithMediaView(
-          data: const EmbedRecordWithMediaViewConverter().fromJson(json),
-        );
-      }
-
-      return UPostViewEmbed.unknown(data: json);
-    } catch (_) {
-      return UPostViewEmbed.unknown(data: json);
+    if (EmbedImagesView.validate(json)) {
+      return UPostViewEmbed.embedImagesView(
+        data: const EmbedImagesViewConverter().fromJson(json),
+      );
     }
+    if (EmbedVideoView.validate(json)) {
+      return UPostViewEmbed.embedVideoView(
+        data: const EmbedVideoViewConverter().fromJson(json),
+      );
+    }
+    if (EmbedGalleryView.validate(json)) {
+      return UPostViewEmbed.embedGalleryView(
+        data: const EmbedGalleryViewConverter().fromJson(json),
+      );
+    }
+    if (EmbedExternalView.validate(json)) {
+      return UPostViewEmbed.embedExternalView(
+        data: const EmbedExternalViewConverter().fromJson(json),
+      );
+    }
+    if (EmbedRecordView.validate(json)) {
+      return UPostViewEmbed.embedRecordView(
+        data: const EmbedRecordViewConverter().fromJson(json),
+      );
+    }
+    if (EmbedRecordWithMediaView.validate(json)) {
+      return UPostViewEmbed.embedRecordWithMediaView(
+        data: const EmbedRecordWithMediaViewConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UPostViewEmbed.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UPostViewEmbed object) => object.when(
-        embedGalleryView: (data) =>
-            const EmbedGalleryViewConverter().toJson(data),
-        embedImagesView: (data) =>
-            const EmbedImagesViewConverter().toJson(data),
-        embedVideoView: (data) => const EmbedVideoViewConverter().toJson(data),
-        embedExternalView: (data) =>
-            const EmbedExternalViewConverter().toJson(data),
-        embedRecordView: (data) =>
-            const EmbedRecordViewConverter().toJson(data),
-        embedRecordWithMediaView: (data) =>
-            const EmbedRecordWithMediaViewConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UPostViewEmbed object) => switch (object) {
+        UPostViewEmbedEmbedImagesView(:final data) =>
+          const EmbedImagesViewConverter().toJson(data),
+        UPostViewEmbedEmbedVideoView(:final data) =>
+          const EmbedVideoViewConverter().toJson(data),
+        UPostViewEmbedEmbedGalleryView(:final data) =>
+          const EmbedGalleryViewConverter().toJson(data),
+        UPostViewEmbedEmbedExternalView(:final data) =>
+          const EmbedExternalViewConverter().toJson(data),
+        UPostViewEmbedEmbedRecordView(:final data) =>
+          const EmbedRecordViewConverter().toJson(data),
+        UPostViewEmbedEmbedRecordWithMediaView(:final data) =>
+          const EmbedRecordWithMediaViewConverter().toJson(data),
+        UPostViewEmbedUnknown(:final data) => data,
+      };
 }

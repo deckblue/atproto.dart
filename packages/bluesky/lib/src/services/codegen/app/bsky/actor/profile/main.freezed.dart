@@ -43,6 +43,7 @@ mixin _$ActorProfileRecord {
   RepoStrongRef? get joinedViaStarterPack => throw _privateConstructorUsedError;
   @RepoStrongRefConverter()
   RepoStrongRef? get pinnedPost => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -73,7 +74,7 @@ abstract class $ActorProfileRecordCopyWith<$Res> {
       @UActorProfileLabelsConverter() UActorProfileLabels? labels,
       @RepoStrongRefConverter() RepoStrongRef? joinedViaStarterPack,
       @RepoStrongRefConverter() RepoStrongRef? pinnedPost,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       Map<String, dynamic>? $unknown});
 
   $BlobCopyWith<$Res>? get avatar;
@@ -253,7 +254,7 @@ abstract class _$$ActorProfileRecordImplCopyWith<$Res>
       @UActorProfileLabelsConverter() UActorProfileLabels? labels,
       @RepoStrongRefConverter() RepoStrongRef? joinedViaStarterPack,
       @RepoStrongRefConverter() RepoStrongRef? pinnedPost,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -362,7 +363,7 @@ class _$ActorProfileRecordImpl implements _ActorProfileRecord {
       @UActorProfileLabelsConverter() this.labels,
       @RepoStrongRefConverter() this.joinedViaStarterPack,
       @RepoStrongRefConverter() this.pinnedPost,
-      this.createdAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -404,6 +405,7 @@ class _$ActorProfileRecordImpl implements _ActorProfileRecord {
   @RepoStrongRefConverter()
   final RepoStrongRef? pinnedPost;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -491,7 +493,7 @@ abstract class _ActorProfileRecord implements ActorProfileRecord {
       @UActorProfileLabelsConverter() final UActorProfileLabels? labels,
       @RepoStrongRefConverter() final RepoStrongRef? joinedViaStarterPack,
       @RepoStrongRefConverter() final RepoStrongRef? pinnedPost,
-      final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
       final Map<String, dynamic>? $unknown}) = _$ActorProfileRecordImpl;
 
   factory _ActorProfileRecord.fromJson(Map<String, dynamic> json) =
@@ -531,6 +533,7 @@ abstract class _ActorProfileRecord implements ActorProfileRecord {
   @RepoStrongRefConverter()
   RepoStrongRef? get pinnedPost;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

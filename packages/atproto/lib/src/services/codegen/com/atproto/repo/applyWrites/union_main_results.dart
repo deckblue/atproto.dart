@@ -69,34 +69,38 @@ final class URepoApplyWritesResultsConverter
 
   @override
   URepoApplyWritesResults fromJson(Map<String, dynamic> json) {
-    try {
-      if (CreateResult.validate(json)) {
-        return URepoApplyWritesResults.createResult(
-          data: const CreateResultConverter().fromJson(json),
-        );
-      }
-      if (UpdateResult.validate(json)) {
-        return URepoApplyWritesResults.updateResult(
-          data: const UpdateResultConverter().fromJson(json),
-        );
-      }
-      if (DeleteResult.validate(json)) {
-        return URepoApplyWritesResults.deleteResult(
-          data: const DeleteResultConverter().fromJson(json),
-        );
-      }
-
-      return URepoApplyWritesResults.unknown(data: json);
-    } catch (_) {
-      return URepoApplyWritesResults.unknown(data: json);
+    if (CreateResult.validate(json)) {
+      return URepoApplyWritesResults.createResult(
+        data: const CreateResultConverter().fromJson(json),
+      );
     }
+    if (UpdateResult.validate(json)) {
+      return URepoApplyWritesResults.updateResult(
+        data: const UpdateResultConverter().fromJson(json),
+      );
+    }
+    if (DeleteResult.validate(json)) {
+      return URepoApplyWritesResults.deleteResult(
+        data: const DeleteResultConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return URepoApplyWritesResults.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(URepoApplyWritesResults object) => object.when(
-        createResult: (data) => const CreateResultConverter().toJson(data),
-        updateResult: (data) => const UpdateResultConverter().toJson(data),
-        deleteResult: (data) => const DeleteResultConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(URepoApplyWritesResults object) =>
+      switch (object) {
+        URepoApplyWritesResultsCreateResult(:final data) =>
+          const CreateResultConverter().toJson(data),
+        URepoApplyWritesResultsUpdateResult(:final data) =>
+          const UpdateResultConverter().toJson(data),
+        URepoApplyWritesResultsDeleteResult(:final data) =>
+          const DeleteResultConverter().toJson(data),
+        URepoApplyWritesResultsUnknown(:final data) => data,
+      };
 }

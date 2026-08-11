@@ -26,11 +26,11 @@ final class DeleteMessageForSelfCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Marks a message as deleted for the viewer, so they won't see that message in future enumerations.";
+      "Marks a message as deleted for the viewer, so they won't see that message in future enumerations.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-convo delete-message-for-self [convoId] [messageId]";
+      "bsky chat-bsky-convo delete-message-for-self --convoId=<value> --messageId=<value>";
 
   @override
   String get methodId => "chat.bsky.convo.deleteMessageForSelf";

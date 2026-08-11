@@ -27,14 +27,23 @@ final class UpdateDraftCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Updates a draft using private storage (stash). If the draft ID points to a non-existing ID, the update will be silently ignored. This is done because updates don't enforce draft limit, so it accepts all writes, but will ignore invalid ones. Requires authentication.";
+      "Updates a draft using private storage (stash). If the draft ID points to a non-existing ID, the update will be silently ignored. This is done because updates don't enforce draft limit, so it accepts all writes, but will ignore invalid ones. Requires authentication.";
 
   @override
-  final String invocation = "bsky app-bsky-draft update-draft [draft]";
+  final String invocation = "bsky app-bsky-draft update-draft --draft=<value>";
 
   @override
   String get methodId => "app.bsky.draft.updateDraft";
 
   @override
-  Map<String, dynamic>? get body => {"draft": jsonDecode(argResults!["draft"])};
+  Map<String, dynamic>? get body => {"draft": _decodeJson("draft")};
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

@@ -18,10 +18,6 @@ _$OAuthClientMetadataImpl _$$OAuthClientMetadataImplFromJson(
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      redirectUrisOLD: (json['redirect_uris_OLD'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
       redirectUris: (json['redirect_uris'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -43,7 +39,6 @@ Map<String, dynamic> _$$OAuthClientMetadataImplToJson(
       'client_uri': instance.clientUri,
       'dpop_bound_access_tokens': instance.dpopBoundAccessTokens,
       'grant_types': instance.grantTypes,
-      'redirect_uris_OLD': instance.redirectUrisOLD,
       'redirect_uris': instance.redirectUris,
       'response_types': instance.responseTypes,
       'scope': instance.scope,

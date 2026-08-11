@@ -2,8 +2,6 @@
 // All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-// ignore_for_file: invalid_annotation_target
-
 /// A class that manages OAuth 2.0 session information with
 /// DPoP (Demonstrating Proof of Possession) support.
 ///
@@ -20,113 +18,130 @@
 ///
 /// ## DPoP Components
 /// - Cryptographic key pair (Base64URL encoded)
-/// - DPoP nonce for proof freshness
+///
+/// The DPoP nonce is intentionally **not** stored on the session: it is a
+/// short-lived, per-origin value cached separately (see `DPoPNonceCache`),
+/// so a session can be shared across the authorization server and PDS
+/// origins without nonce ping-pong.
+///
+/// This session is self-contained: it also carries the authorization server
+/// [issuer] that minted it and the account's [pds] origin, so an
+/// `OAuthClient` can refresh or revoke it without re-resolving the identity.
 ///
 /// The implementation follows the OAuth 2.0 DPoP security considerations:
 /// - Key material isolation
-/// - Nonce tracking for replay prevention
 /// - Separate storage of sensitive credentials
+///
+/// ## Security Warning
+///
+/// **This object contains highly sensitive secrets**: the DPoP private key
+/// ([dpopPrivateKey]) as well as the access and refresh tokens. Anyone in
+/// possession of these values can impersonate the authenticated user.
+/// Never log this object, and only persist it (e.g. via [toJson]) into
+/// encrypted or otherwise access-controlled storage such as the platform
+/// keychain/keystore.
 ///
 /// Example:
 /// ```dart
 /// final session = OAuthSession(
-///   accessToken: 'eyJhbGciOiJSUzI1NiIsInR5cCI6ImF0K2pwdCJ9...',
-///   refreshToken: 'eyJhbGciOiJSUzI1NiIsInR5cCI6InJ0K2pwdCJ9...',
+///   accessToken: 'opaque-access-token...',
+///   refreshToken: 'opaque-refresh-token...',
 ///   tokenType: 'DPoP',
-///   scope: 'profile email',
+///   scope: 'atproto transition:generic',
 ///   expiresAt: DateTime.now().add(Duration(hours: 1)),
-///   sub: '123456789',
-///   $dPoPNonce: 'nonce-7654321',
-///   $publicKey: 'eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2Iiwia2lkIjoiMTI...',
-///   $privateKey: 'eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2Iiwia2lkIjoi...',
+///   sub: 'did:plc:abc',
+///   issuer: 'https://bsky.social',
+///   pds: 'https://pds.example',
+///   clientId: 'https://client.example/client-metadata.json',
+///   dpopPublicKey: 'eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2...',
+///   dpopPrivateKey: 'eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2...',
 /// );
 /// ```
 final class OAuthSession {
-  /// Creates an OAuth session with DPoP support.
-  ///
-  /// All parameters are required as per OAuth 2.0 DPoP specifications.
-  ///
-  /// Parameters:
-  /// - [accessToken]: JWT access token bound to the DPoP proof
-  /// - [refreshToken]: JWT refresh token for access token renewal
-  /// - [tokenType]: Must be 'DPoP' as per RFC 9449
-  /// - [scope]: Space-delimited OAuth 2.0 scopes
-  /// - [expiresAt]: Token expiration timestamp
-  /// - [sub]: Subject identifier for token binding
-  /// - [$clientId]: OAuth client identifier used to mint the session
-  /// - [$dPoPNonce]: Server-provided nonce for DPoP proof freshness
-  /// - [$publicKey]: Base64URL encoded public key for DPoP proof verification
-  /// - [$privateKey]: Base64URL encoded private key for DPoP proof generation
   OAuthSession({
     required this.accessToken,
-    required this.refreshToken,
-    required this.tokenType,
+    this.refreshToken,
+    this.tokenType = 'DPoP',
     required this.scope,
-    required this.expiresAt,
+    this.expiresAt,
     required this.sub,
-    this.$clientId,
-    required this.$dPoPNonce,
-    required this.$publicKey,
-    required this.$privateKey,
+    required this.issuer,
+    required this.pds,
+    required this.clientId,
+    required this.dpopPublicKey,
+    required this.dpopPrivateKey,
   });
 
-  /// The DPoP-bound JWT access token.
-  ///
-  /// This token is cryptographically bound to the DPoP proof
-  /// and must be presented with a valid proof for API requests.
+  factory OAuthSession.fromJson(final Map<String, dynamic> json) =>
+      OAuthSession(
+        accessToken: json['access_token'] as String,
+        refreshToken: json['refresh_token'] as String?,
+        tokenType: (json['token_type'] as String?) ?? 'DPoP',
+        scope: (json['scope'] as String?) ?? '',
+        expiresAt: json['expires_at'] == null
+            ? null
+            : DateTime.parse(json['expires_at'] as String).toUtc(),
+        sub: json['sub'] as String,
+        issuer: json['issuer'] as String,
+        pds: json['pds'] as String,
+        clientId: json['client_id'] as String,
+        dpopPublicKey: json['dpop_public_key'] as String,
+        dpopPrivateKey: json['dpop_private_key'] as String,
+      );
+
+  /// Restores a session serialized by atproto_oauth <= 0.4.x. Those payloads
+  /// used `public_key`/`private_key`, carried a now-obsolete `dpop_nonce`
+  /// (discarded — nonces are cached per origin), and lacked `issuer`/`pds`,
+  /// which the caller must supply.
+  factory OAuthSession.fromLegacyJson(
+    final Map<String, dynamic> json, {
+    required final String issuer,
+    required final String pds,
+  }) =>
+      OAuthSession(
+        accessToken: json['access_token'] as String,
+        refreshToken: json['refresh_token'] as String?,
+        tokenType: (json['token_type'] as String?) ?? 'DPoP',
+        scope: (json['scope'] as String?) ?? '',
+        expiresAt: json['expires_at'] == null
+            ? null
+            : DateTime.parse(json['expires_at'] as String).toUtc(),
+        sub: json['sub'] as String,
+        issuer: issuer,
+        pds: pds,
+        clientId: json['client_id'] as String,
+        dpopPublicKey: json['public_key'] as String,
+        dpopPrivateKey: json['private_key'] as String,
+      );
+
   final String accessToken;
-
-  /// The refresh token for obtaining new access tokens.
-  ///
-  /// Used in conjunction with DPoP proof for secure token refresh
-  /// as specified in Section 5 of RFC 9449.
-  final String refreshToken;
-
-  /// The token type identifier.
-  ///
-  /// Must be 'DPoP' to indicate DPoP-bound tokens
-  /// as per Section 3 of RFC 9449.
+  final String? refreshToken;
   final String tokenType;
-
-  /// OAuth 2.0 scope string.
-  ///
-  /// Space-delimited list of authorized permissions
-  /// following OAuth 2.0 scope syntax.
   final String scope;
-
-  /// Access token expiration timestamp.
-  ///
-  /// After this time, a new access token must be obtained
-  /// using the refresh token and DPoP proof.
-  final DateTime expiresAt;
-
-  /// Subject identifier for token binding.
-  ///
-  /// Unique identifier that binds the token
-  /// to a specific user or entity.
+  final DateTime? expiresAt;
   final String sub;
 
-  /// OAuth client identifier used to obtain this session.
-  ///
-  /// Some providers do not mirror `client_id` into issued tokens, so we keep
-  /// the original client identifier to continue building DPoP proofs later.
-  final String? $clientId;
+  /// The authorization server issuer that minted this session.
+  final String issuer;
 
-  /// Server-provided DPoP nonce.
-  ///
-  /// Used to ensure DPoP proof freshness and prevent
-  /// replay attacks as specified in Section 4.3 of RFC 9449.
-  String $dPoPNonce;
+  /// The account's PDS origin (`https://host[:port]`).
+  final String pds;
 
-  /// Base64URL encoded public key for DPoP.
-  ///
-  /// Used by the server to verify the DPoP proof
-  /// JWT signature. Typically an EC P-256 key.
-  final String $publicKey;
+  final String clientId;
+  final String dpopPublicKey;
+  final String dpopPrivateKey;
 
-  /// Base64URL encoded private key for DPoP.
-  ///
-  /// Used to sign DPoP proof JWTs. Must be kept secure
-  /// and never exposed. Typically an EC P-256 key.
-  final String $privateKey;
+  Map<String, dynamic> toJson() => {
+        'access_token': accessToken,
+        'refresh_token': refreshToken,
+        'token_type': tokenType,
+        'scope': scope,
+        'expires_at': expiresAt?.toUtc().toIso8601String(),
+        'sub': sub,
+        'issuer': issuer,
+        'pds': pds,
+        'client_id': clientId,
+        'dpop_public_key': dpopPublicKey,
+        'dpop_private_key': dpopPrivateKey,
+      };
 }

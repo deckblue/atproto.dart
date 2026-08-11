@@ -21,6 +21,9 @@ ConfigRegion _$ConfigRegionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ConfigRegion {
   String get $type => throw _privateConstructorUsedError;
+  @ConfigRegionPlatformsConverter()
+  List<ConfigRegionPlatforms>? get platforms =>
+      throw _privateConstructorUsedError;
 
   /// The ISO 3166-1 alpha-2 country code this configuration applies to.
   String get countryCode => throw _privateConstructorUsedError;
@@ -30,6 +33,9 @@ mixin _$ConfigRegion {
 
   /// The minimum age (as a whole integer) required to use Bluesky in this region.
   int get minAccessAge => throw _privateConstructorUsedError;
+  @ConfigRegionAdditionalVerificationMethodsConverter()
+  List<ConfigRegionAdditionalVerificationMethods>?
+      get additionalVerificationMethods => throw _privateConstructorUsedError;
   @UConfigRegionRulesConverter()
   List<UConfigRegionRules> get rules => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
@@ -52,9 +58,13 @@ abstract class $ConfigRegionCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
+      @ConfigRegionPlatformsConverter() List<ConfigRegionPlatforms>? platforms,
       String countryCode,
       String? regionCode,
       int minAccessAge,
+      @ConfigRegionAdditionalVerificationMethodsConverter()
+      List<ConfigRegionAdditionalVerificationMethods>?
+          additionalVerificationMethods,
       @UConfigRegionRulesConverter() List<UConfigRegionRules> rules,
       Map<String, dynamic>? $unknown});
 }
@@ -75,9 +85,11 @@ class _$ConfigRegionCopyWithImpl<$Res, $Val extends ConfigRegion>
   @override
   $Res call({
     Object? $type = null,
+    Object? platforms = freezed,
     Object? countryCode = null,
     Object? regionCode = freezed,
     Object? minAccessAge = null,
+    Object? additionalVerificationMethods = freezed,
     Object? rules = null,
     Object? $unknown = freezed,
   }) {
@@ -86,6 +98,10 @@ class _$ConfigRegionCopyWithImpl<$Res, $Val extends ConfigRegion>
           ? _value.$type
           : $type // ignore: cast_nullable_to_non_nullable
               as String,
+      platforms: freezed == platforms
+          ? _value.platforms
+          : platforms // ignore: cast_nullable_to_non_nullable
+              as List<ConfigRegionPlatforms>?,
       countryCode: null == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -98,6 +114,10 @@ class _$ConfigRegionCopyWithImpl<$Res, $Val extends ConfigRegion>
           ? _value.minAccessAge
           : minAccessAge // ignore: cast_nullable_to_non_nullable
               as int,
+      additionalVerificationMethods: freezed == additionalVerificationMethods
+          ? _value.additionalVerificationMethods
+          : additionalVerificationMethods // ignore: cast_nullable_to_non_nullable
+              as List<ConfigRegionAdditionalVerificationMethods>?,
       rules: null == rules
           ? _value.rules
           : rules // ignore: cast_nullable_to_non_nullable
@@ -120,9 +140,13 @@ abstract class _$$ConfigRegionImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
+      @ConfigRegionPlatformsConverter() List<ConfigRegionPlatforms>? platforms,
       String countryCode,
       String? regionCode,
       int minAccessAge,
+      @ConfigRegionAdditionalVerificationMethodsConverter()
+      List<ConfigRegionAdditionalVerificationMethods>?
+          additionalVerificationMethods,
       @UConfigRegionRulesConverter() List<UConfigRegionRules> rules,
       Map<String, dynamic>? $unknown});
 }
@@ -141,9 +165,11 @@ class __$$ConfigRegionImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? $type = null,
+    Object? platforms = freezed,
     Object? countryCode = null,
     Object? regionCode = freezed,
     Object? minAccessAge = null,
+    Object? additionalVerificationMethods = freezed,
     Object? rules = null,
     Object? $unknown = freezed,
   }) {
@@ -152,6 +178,10 @@ class __$$ConfigRegionImplCopyWithImpl<$Res>
           ? _value.$type
           : $type // ignore: cast_nullable_to_non_nullable
               as String,
+      platforms: freezed == platforms
+          ? _value._platforms
+          : platforms // ignore: cast_nullable_to_non_nullable
+              as List<ConfigRegionPlatforms>?,
       countryCode: null == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -164,6 +194,10 @@ class __$$ConfigRegionImplCopyWithImpl<$Res>
           ? _value.minAccessAge
           : minAccessAge // ignore: cast_nullable_to_non_nullable
               as int,
+      additionalVerificationMethods: freezed == additionalVerificationMethods
+          ? _value._additionalVerificationMethods
+          : additionalVerificationMethods // ignore: cast_nullable_to_non_nullable
+              as List<ConfigRegionAdditionalVerificationMethods>?,
       rules: null == rules
           ? _value._rules
           : rules // ignore: cast_nullable_to_non_nullable
@@ -182,13 +216,20 @@ class __$$ConfigRegionImplCopyWithImpl<$Res>
 class _$ConfigRegionImpl implements _ConfigRegion {
   const _$ConfigRegionImpl(
       {this.$type = 'app.bsky.ageassurance.defs#configRegion',
+      @ConfigRegionPlatformsConverter()
+      final List<ConfigRegionPlatforms>? platforms,
       required this.countryCode,
       this.regionCode,
       required this.minAccessAge,
+      @ConfigRegionAdditionalVerificationMethodsConverter()
+      final List<ConfigRegionAdditionalVerificationMethods>?
+          additionalVerificationMethods,
       @UConfigRegionRulesConverter()
       required final List<UConfigRegionRules> rules,
       final Map<String, dynamic>? $unknown})
-      : _rules = rules,
+      : _platforms = platforms,
+        _additionalVerificationMethods = additionalVerificationMethods,
+        _rules = rules,
         _$unknown = $unknown;
 
   factory _$ConfigRegionImpl.fromJson(Map<String, dynamic> json) =>
@@ -197,6 +238,16 @@ class _$ConfigRegionImpl implements _ConfigRegion {
   @override
   @JsonKey()
   final String $type;
+  final List<ConfigRegionPlatforms>? _platforms;
+  @override
+  @ConfigRegionPlatformsConverter()
+  List<ConfigRegionPlatforms>? get platforms {
+    final value = _platforms;
+    if (value == null) return null;
+    if (_platforms is EqualUnmodifiableListView) return _platforms;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// The ISO 3166-1 alpha-2 country code this configuration applies to.
   @override
@@ -209,6 +260,20 @@ class _$ConfigRegionImpl implements _ConfigRegion {
   /// The minimum age (as a whole integer) required to use Bluesky in this region.
   @override
   final int minAccessAge;
+  final List<ConfigRegionAdditionalVerificationMethods>?
+      _additionalVerificationMethods;
+  @override
+  @ConfigRegionAdditionalVerificationMethodsConverter()
+  List<ConfigRegionAdditionalVerificationMethods>?
+      get additionalVerificationMethods {
+    final value = _additionalVerificationMethods;
+    if (value == null) return null;
+    if (_additionalVerificationMethods is EqualUnmodifiableListView)
+      return _additionalVerificationMethods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<UConfigRegionRules> _rules;
   @override
   @UConfigRegionRulesConverter()
@@ -230,7 +295,7 @@ class _$ConfigRegionImpl implements _ConfigRegion {
 
   @override
   String toString() {
-    return 'ConfigRegion(\$type: ${$type}, countryCode: $countryCode, regionCode: $regionCode, minAccessAge: $minAccessAge, rules: $rules, \$unknown: ${$unknown})';
+    return 'ConfigRegion(\$type: ${$type}, platforms: $platforms, countryCode: $countryCode, regionCode: $regionCode, minAccessAge: $minAccessAge, additionalVerificationMethods: $additionalVerificationMethods, rules: $rules, \$unknown: ${$unknown})';
   }
 
   @override
@@ -239,12 +304,17 @@ class _$ConfigRegionImpl implements _ConfigRegion {
         (other.runtimeType == runtimeType &&
             other is _$ConfigRegionImpl &&
             (identical(other.$type, $type) || other.$type == $type) &&
+            const DeepCollectionEquality()
+                .equals(other._platforms, _platforms) &&
             (identical(other.countryCode, countryCode) ||
                 other.countryCode == countryCode) &&
             (identical(other.regionCode, regionCode) ||
                 other.regionCode == regionCode) &&
             (identical(other.minAccessAge, minAccessAge) ||
                 other.minAccessAge == minAccessAge) &&
+            const DeepCollectionEquality().equals(
+                other._additionalVerificationMethods,
+                _additionalVerificationMethods) &&
             const DeepCollectionEquality().equals(other._rules, _rules) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
@@ -254,9 +324,11 @@ class _$ConfigRegionImpl implements _ConfigRegion {
   int get hashCode => Object.hash(
       runtimeType,
       $type,
+      const DeepCollectionEquality().hash(_platforms),
       countryCode,
       regionCode,
       minAccessAge,
+      const DeepCollectionEquality().hash(_additionalVerificationMethods),
       const DeepCollectionEquality().hash(_rules),
       const DeepCollectionEquality().hash(_$unknown));
 
@@ -279,9 +351,14 @@ class _$ConfigRegionImpl implements _ConfigRegion {
 abstract class _ConfigRegion implements ConfigRegion {
   const factory _ConfigRegion(
       {final String $type,
+      @ConfigRegionPlatformsConverter()
+      final List<ConfigRegionPlatforms>? platforms,
       required final String countryCode,
       final String? regionCode,
       required final int minAccessAge,
+      @ConfigRegionAdditionalVerificationMethodsConverter()
+      final List<ConfigRegionAdditionalVerificationMethods>?
+          additionalVerificationMethods,
       @UConfigRegionRulesConverter()
       required final List<UConfigRegionRules> rules,
       final Map<String, dynamic>? $unknown}) = _$ConfigRegionImpl;
@@ -291,6 +368,9 @@ abstract class _ConfigRegion implements ConfigRegion {
 
   @override
   String get $type;
+  @override
+  @ConfigRegionPlatformsConverter()
+  List<ConfigRegionPlatforms>? get platforms;
 
   /// The ISO 3166-1 alpha-2 country code this configuration applies to.
   @override
@@ -303,6 +383,10 @@ abstract class _ConfigRegion implements ConfigRegion {
   /// The minimum age (as a whole integer) required to use Bluesky in this region.
   @override
   int get minAccessAge;
+  @override
+  @ConfigRegionAdditionalVerificationMethodsConverter()
+  List<ConfigRegionAdditionalVerificationMethods>?
+      get additionalVerificationMethods;
   @override
   @UConfigRegionRulesConverter()
   List<UConfigRegionRules> get rules;

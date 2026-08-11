@@ -48,10 +48,8 @@ Map<String, dynamic> _$$VerificationListVerificationsInputImplToJson(
     <String, dynamic>{
       if (instance.cursor case final value?) 'cursor': value,
       'limit': instance.limit,
-      if (instance.createdAfter?.toIso8601String() case final value?)
-        'createdAfter': value,
-      if (instance.createdBefore?.toIso8601String() case final value?)
-        'createdBefore': value,
+      'createdAfter': iso8601(instance.createdAfter),
+      'createdBefore': iso8601(instance.createdBefore),
       if (instance.issuers case final value?) 'issuers': value,
       if (instance.subjects case final value?) 'subjects': value,
       'sortDirection': instance.sortDirection,

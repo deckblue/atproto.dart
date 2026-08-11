@@ -1,5 +1,8 @@
+// ignore_for_file: depend_on_referenced_packages
+
 // Package imports:
 import 'package:atproto_core/atproto_core.dart' as core;
+import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 
 // Project imports:
@@ -7,6 +10,143 @@ import 'package:atproto/com_atproto_services.dart';
 import 'package:atproto/src/atproto.dart';
 
 void main() {
+  group('.session (auto refresh)', () {
+    test(
+      'refreshes an expired access token and reflects it on atproto.session',
+      () async {
+        final refreshAuthHeaders = <String?>[];
+        final getAuthHeaders = <String?>[];
+
+        final atproto = ATProto.fromSession(
+          core.Session(
+            did: 'did:plc:testaccount',
+            handle: 'test.dev',
+            //! Non-JWT token so the pre-flight refresh is skipped and the
+            //! reactive 401 path is exercised.
+            accessJwt: 'old-access',
+            refreshJwt: 'refresh-token',
+          ),
+          service: 'pds.test',
+          getClient: (url, {headers}) async {
+            getAuthHeaders.add(headers?['Authorization']);
+
+            if (headers?['Authorization'] == 'Bearer new-access') {
+              return http.Response(
+                '{}',
+                200,
+                headers: {'content-type': 'application/json'},
+                request: http.Request('GET', url),
+              );
+            }
+
+            return http.Response(
+              '{"error":"ExpiredToken"}',
+              401,
+              headers: {'content-type': 'application/json'},
+              request: http.Request('GET', url),
+            );
+          },
+          postClient: (url, {headers, body, encoding}) async {
+            //! The only POST expected here is the refreshSession call.
+            expect(url.path, contains('com.atproto.server.refreshSession'));
+            refreshAuthHeaders.add(headers?['Authorization']);
+
+            return http.Response(
+              '{"accessJwt":"new-access","refreshJwt":"new-refresh",'
+              '"handle":"test.dev","did":"did:plc:testaccount"}',
+              200,
+              headers: {'content-type': 'application/json'},
+              request: http.Request('POST', url),
+            );
+          },
+        );
+
+        final response = await atproto.get<Map<String, Object?>>(
+          core.NSID.create('server.atproto.com', 'getSession'),
+          to: (json) => json,
+        );
+
+        expect(response.status.code, 200);
+        //! The refresh used the refresh token from the current session.
+        expect(refreshAuthHeaders, ['Bearer refresh-token']);
+        //! The original request failed with the old token, then succeeded
+        //! after the refresh with the new token.
+        expect(getAuthHeaders, ['Bearer old-access', 'Bearer new-access']);
+        //! `atproto.session` now exposes the refreshed credentials.
+        expect(atproto.session?.accessJwt, 'new-access');
+        expect(atproto.session?.refreshJwt, 'new-refresh');
+      },
+    );
+
+    test(
+      'carries email/emailConfirmed/emailAuthFactor forward across a refresh',
+      () async {
+        final atproto = ATProto.fromSession(
+          core.Session(
+            did: 'did:plc:testaccount',
+            handle: 'test.dev',
+            email: 'someone@example.com',
+            emailConfirmed: true,
+            emailAuthFactor: true,
+            //! Non-JWT token so the pre-flight refresh is skipped and the
+            //! reactive 401 path is exercised.
+            accessJwt: 'old-access',
+            refreshJwt: 'refresh-token',
+          ),
+          service: 'pds.test',
+          getClient: (url, {headers}) async {
+            if (headers?['Authorization'] == 'Bearer new-access') {
+              return http.Response(
+                '{}',
+                200,
+                headers: {'content-type': 'application/json'},
+                request: http.Request('GET', url),
+              );
+            }
+
+            return http.Response(
+              '{"error":"ExpiredToken"}',
+              401,
+              headers: {'content-type': 'application/json'},
+              request: http.Request('GET', url),
+            );
+          },
+          postClient: (url, {headers, body, encoding}) async {
+            //! The refreshSession response omits the email fields and flips
+            //! `active`/`status`, mirroring the real PDS behavior.
+            return http.Response(
+              '{"accessJwt":"new-access","refreshJwt":"new-refresh",'
+              '"handle":"renamed.dev","did":"did:plc:testaccount",'
+              '"active":false,"status":"takendown"}',
+              200,
+              headers: {'content-type': 'application/json'},
+              request: http.Request('POST', url),
+            );
+          },
+        );
+
+        final response = await atproto.get<Map<String, Object?>>(
+          core.NSID.create('server.atproto.com', 'getSession'),
+          to: (json) => json,
+        );
+
+        expect(response.status.code, 200);
+        //! Rotated credentials come from the refresh response.
+        expect(atproto.session?.accessJwt, 'new-access');
+        expect(atproto.session?.refreshJwt, 'new-refresh');
+        //! Mutable server-owned fields are updated from the refresh response.
+        expect(atproto.session?.handle, 'renamed.dev');
+        expect(atproto.session?.active, isFalse);
+        expect(atproto.session?.status, 'takendown');
+        //! Email fields (absent from the refresh response) are carried forward
+        //! from the previous session instead of being reset to null/false.
+        expect(atproto.session?.email, 'someone@example.com');
+        expect(atproto.session?.emailConfirmed, isTrue);
+        expect(atproto.session?.emailAuthFactor, isTrue);
+      },
+    );
+  });
+
   group('.session', () {
     test('fromSession', () {
       final session = core.Session(

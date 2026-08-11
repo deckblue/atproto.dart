@@ -84,8 +84,7 @@ Map<String, dynamic> _$$ActorProfileRecordImplToJson(
               instance.pinnedPost, const RepoStrongRefConverter().toJson)
           case final value?)
         'pinnedPost': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
+      'createdAt': iso8601(instance.createdAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

@@ -32,22 +32,23 @@ final class ListNotificationsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerate notifications for the requesting account. Requires auth.";
+      "Enumerate notifications for the requesting account. Requires auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-notification list-notifications [reasons] [limit] [priority] [cursor] [seenAt]";
+      "bsky app-bsky-notification list-notifications [--reasons=<value>...] [--limit=<value>] [--priority] [--cursor=<value>] [--seenAt=<value>]";
 
   @override
   String get methodId => "app.bsky.notification.listNotifications";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["reasons"] != null) "reasons": argResults!["reasons"],
-        "limit": argResults!["limit"],
-        if (argResults!["priority"] != null)
+        if (argResults!.wasParsed("reasons")) "reasons": argResults!["reasons"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("priority"))
           "priority": argResults!["priority"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        if (argResults!["seenAt"] != null) "seenAt": argResults!["seenAt"],
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("seenAt")) "seenAt": argResults!["seenAt"],
       };
 }

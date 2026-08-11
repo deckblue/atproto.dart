@@ -47,6 +47,9 @@ import 'feed/post/union_main_labels.dart';
 import 'feed/postgate/union_main_embedding_rules.dart';
 import 'feed/searchPosts/main_sort.dart';
 import 'feed/searchPosts/output.dart';
+import 'feed/searchPostsV2/main_query_language.dart';
+import 'feed/searchPostsV2/main_sort.dart';
+import 'feed/searchPostsV2/output.dart';
 import 'feed/threadgate/union_main_allow.dart';
 import 'richtext/facet/main.dart';
 
@@ -457,6 +460,84 @@ Future<XRPCResponse<FeedSearchPostsOutput>> appBskyFeedSearchPosts({
       to: const FeedSearchPostsOutputConverter().fromJson,
     );
 
+/// Find posts matching a search query or filters, returning search hits for matching post records.
+Future<XRPCResponse<FeedSearchPostsV2Output>> appBskyFeedSearchPostsV2({
+  String? cursor,
+  int? limit,
+  String? query,
+  FeedSearchPostsV2Sort? sort,
+  List<String>? authors,
+  List<String>? mentions,
+  List<String>? domains,
+  List<String>? urls,
+  List<AtUri>? embeddedAtUris,
+  List<String>? hashtags,
+  List<String>? excludeAuthors,
+  List<String>? excludeMentions,
+  List<String>? excludeDomains,
+  List<String>? excludeUrls,
+  List<AtUri>? excludeEmbeddedAtUris,
+  List<String>? excludeHashtags,
+  String? since,
+  String? until,
+  bool? allTime,
+  List<String>? languages,
+  List<String>? excludeLanguages,
+  bool? hasMedia,
+  bool? hasVideo,
+  AtUri? replyParentUri,
+  AtUri? threadRootUri,
+  bool? excludeReplies,
+  bool? repliesOnly,
+  bool? following,
+  FeedSearchPostsV2QueryLanguage? queryLanguage,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async =>
+    await $ctx.get(
+      ns.appBskyFeedSearchPostsV2,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        if (cursor != null) 'cursor': cursor,
+        if (limit != null) 'limit': limit,
+        if (query != null) 'query': query,
+        if (sort != null) 'sort': sort.toJson(),
+        if (authors != null) 'authors': authors,
+        if (mentions != null) 'mentions': mentions,
+        if (domains != null) 'domains': domains,
+        if (urls != null) 'urls': urls,
+        if (embeddedAtUris != null)
+          'embeddedAtUris': embeddedAtUris.map((e) => e.toString()).toList(),
+        if (hashtags != null) 'hashtags': hashtags,
+        if (excludeAuthors != null) 'excludeAuthors': excludeAuthors,
+        if (excludeMentions != null) 'excludeMentions': excludeMentions,
+        if (excludeDomains != null) 'excludeDomains': excludeDomains,
+        if (excludeUrls != null) 'excludeUrls': excludeUrls,
+        if (excludeEmbeddedAtUris != null)
+          'excludeEmbeddedAtUris':
+              excludeEmbeddedAtUris.map((e) => e.toString()).toList(),
+        if (excludeHashtags != null) 'excludeHashtags': excludeHashtags,
+        if (since != null) 'since': since,
+        if (until != null) 'until': until,
+        if (allTime != null) 'allTime': allTime,
+        if (languages != null) 'languages': languages,
+        if (excludeLanguages != null) 'excludeLanguages': excludeLanguages,
+        if (hasMedia != null) 'hasMedia': hasMedia,
+        if (hasVideo != null) 'hasVideo': hasVideo,
+        if (replyParentUri != null) 'replyParentUri': replyParentUri.toString(),
+        if (threadRootUri != null) 'threadRootUri': threadRootUri.toString(),
+        if (excludeReplies != null) 'excludeReplies': excludeReplies,
+        if (repliesOnly != null) 'repliesOnly': repliesOnly,
+        if (following != null) 'following': following,
+        if (queryLanguage != null) 'queryLanguage': queryLanguage.toJson(),
+      },
+      to: const FeedSearchPostsV2OutputConverter().fromJson,
+    );
+
 /// Send information about interactions with feed items back to the feed generator that served them.
 Future<XRPCResponse<EmptyData>> appBskyFeedSendInteractions({
   AtUri? feed,
@@ -473,7 +554,9 @@ Future<XRPCResponse<EmptyData>> appBskyFeedSendInteractions({
       body: {
         ...?$unknown,
         if (feed != null) 'feed': feed.toString(),
-        'interactions': interactions.map((e) => e.toJson()).toList(),
+        'interactions': interactions
+            .map((e) => const InteractionConverter().toJson(e))
+            .toList(),
       },
     );
 
@@ -843,6 +926,77 @@ base class FeedService {
         $unknown: $unknown,
       );
 
+  /// Find posts matching a search query or filters, returning search hits for matching post records.
+  Future<XRPCResponse<FeedSearchPostsV2Output>> searchPostsV2({
+    String? cursor,
+    int? limit,
+    String? query,
+    FeedSearchPostsV2Sort? sort,
+    List<String>? authors,
+    List<String>? mentions,
+    List<String>? domains,
+    List<String>? urls,
+    List<AtUri>? embeddedAtUris,
+    List<String>? hashtags,
+    List<String>? excludeAuthors,
+    List<String>? excludeMentions,
+    List<String>? excludeDomains,
+    List<String>? excludeUrls,
+    List<AtUri>? excludeEmbeddedAtUris,
+    List<String>? excludeHashtags,
+    String? since,
+    String? until,
+    bool? allTime,
+    List<String>? languages,
+    List<String>? excludeLanguages,
+    bool? hasMedia,
+    bool? hasVideo,
+    AtUri? replyParentUri,
+    AtUri? threadRootUri,
+    bool? excludeReplies,
+    bool? repliesOnly,
+    bool? following,
+    FeedSearchPostsV2QueryLanguage? queryLanguage,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async =>
+      await appBskyFeedSearchPostsV2(
+        cursor: cursor,
+        limit: limit,
+        query: query,
+        sort: sort,
+        authors: authors,
+        mentions: mentions,
+        domains: domains,
+        urls: urls,
+        embeddedAtUris: embeddedAtUris,
+        hashtags: hashtags,
+        excludeAuthors: excludeAuthors,
+        excludeMentions: excludeMentions,
+        excludeDomains: excludeDomains,
+        excludeUrls: excludeUrls,
+        excludeEmbeddedAtUris: excludeEmbeddedAtUris,
+        excludeHashtags: excludeHashtags,
+        since: since,
+        until: until,
+        allTime: allTime,
+        languages: languages,
+        excludeLanguages: excludeLanguages,
+        hasMedia: hasMedia,
+        hasVideo: hasVideo,
+        replyParentUri: replyParentUri,
+        threadRootUri: threadRootUri,
+        excludeReplies: excludeReplies,
+        repliesOnly: repliesOnly,
+        following: following,
+        queryLanguage: queryLanguage,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
+
   /// Send information about interactions with feed items back to the feed generator that served them.
   Future<XRPCResponse<EmptyData>> sendInteractions({
     AtUri? feed,
@@ -927,13 +1081,15 @@ final class FeedGeneratorRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.generator',
           ...?$unknown,
           'did': did,
           'displayName': displayName,
           if (description != null) 'description': description,
           if (descriptionFacets != null)
-            'descriptionFacets':
-                descriptionFacets.map((e) => e.toJson()).toList(),
+            'descriptionFacets': descriptionFacets
+                .map((e) => const RichtextFacetConverter().toJson(e))
+                .toList(),
           if (avatar != null) 'avatar': avatar,
           if (acceptsInteractions != null)
             'acceptsInteractions': acceptsInteractions,
@@ -969,13 +1125,15 @@ final class FeedGeneratorRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.generator',
           ...?$unknown,
           'did': did,
           'displayName': displayName,
           if (description != null) 'description': description,
           if (descriptionFacets != null)
-            'descriptionFacets':
-                descriptionFacets.map((e) => e.toJson()).toList(),
+            'descriptionFacets': descriptionFacets
+                .map((e) => const RichtextFacetConverter().toJson(e))
+                .toList(),
           if (avatar != null) 'avatar': avatar,
           if (acceptsInteractions != null)
             'acceptsInteractions': acceptsInteractions,
@@ -1064,10 +1222,11 @@ final class FeedLikeRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.like',
           ...?$unknown,
-          'subject': subject.toJson(),
+          'subject': const RepoStrongRefConverter().toJson(subject),
           'createdAt': iso8601(createdAt),
-          if (via != null) 'via': via.toJson(),
+          if (via != null) 'via': const RepoStrongRefConverter().toJson(via),
         },
         swapCommit: swapCommit,
         $ctx: ctx,
@@ -1091,10 +1250,11 @@ final class FeedLikeRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.like',
           ...?$unknown,
-          'subject': subject.toJson(),
+          'subject': const RepoStrongRefConverter().toJson(subject),
           'createdAt': iso8601(createdAt),
-          if (via != null) 'via': via.toJson(),
+          if (via != null) 'via': const RepoStrongRefConverter().toJson(via),
         },
         swapRecord: swapRecord,
         swapCommit: swapCommit,
@@ -1182,10 +1342,14 @@ final class FeedPostRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.post',
           ...?$unknown,
           'text': text,
-          if (facets != null) 'facets': facets.map((e) => e.toJson()).toList(),
-          if (reply != null) 'reply': reply.toJson(),
+          if (facets != null)
+            'facets': facets
+                .map((e) => const RichtextFacetConverter().toJson(e))
+                .toList(),
+          if (reply != null) 'reply': const ReplyRefConverter().toJson(reply),
           if (embed != null) 'embed': embed.toJson(),
           if (langs != null) 'langs': langs,
           if (labels != null) 'labels': labels.toJson(),
@@ -1219,10 +1383,14 @@ final class FeedPostRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.post',
           ...?$unknown,
           'text': text,
-          if (facets != null) 'facets': facets.map((e) => e.toJson()).toList(),
-          if (reply != null) 'reply': reply.toJson(),
+          if (facets != null)
+            'facets': facets
+                .map((e) => const RichtextFacetConverter().toJson(e))
+                .toList(),
+          if (reply != null) 'reply': const ReplyRefConverter().toJson(reply),
           if (embed != null) 'embed': embed.toJson(),
           if (langs != null) 'langs': langs,
           if (labels != null) 'labels': labels.toJson(),
@@ -1311,6 +1479,7 @@ final class FeedPostgateRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.postgate',
           ...?$unknown,
           'createdAt': iso8601(createdAt),
           'post': post.toString(),
@@ -1343,6 +1512,7 @@ final class FeedPostgateRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.postgate',
           ...?$unknown,
           'createdAt': iso8601(createdAt),
           'post': post.toString(),
@@ -1433,10 +1603,11 @@ final class FeedRepostRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.repost',
           ...?$unknown,
-          'subject': subject.toJson(),
+          'subject': const RepoStrongRefConverter().toJson(subject),
           'createdAt': iso8601(createdAt),
-          if (via != null) 'via': via.toJson(),
+          if (via != null) 'via': const RepoStrongRefConverter().toJson(via),
         },
         swapCommit: swapCommit,
         $ctx: ctx,
@@ -1460,10 +1631,11 @@ final class FeedRepostRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.repost',
           ...?$unknown,
-          'subject': subject.toJson(),
+          'subject': const RepoStrongRefConverter().toJson(subject),
           'createdAt': iso8601(createdAt),
-          if (via != null) 'via': via.toJson(),
+          if (via != null) 'via': const RepoStrongRefConverter().toJson(via),
         },
         swapRecord: swapRecord,
         swapCommit: swapCommit,
@@ -1547,6 +1719,7 @@ final class FeedThreadgateRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.threadgate',
           ...?$unknown,
           'post': post.toString(),
           if (allow != null) 'allow': allow.map((e) => e.toJson()).toList(),
@@ -1577,6 +1750,7 @@ final class FeedThreadgateRecordAccessor {
         rkey: rkey,
         validate: validate,
         record: {
+          r'$type': 'app.bsky.feed.threadgate',
           ...?$unknown,
           'post': post.toString(),
           if (allow != null) 'allow': allow.map((e) => e.toJson()).toList(),

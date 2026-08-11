@@ -23,11 +23,11 @@ final class GetActorMetadataCommand extends QueryCommand {
   final String name = "get-actor-metadata";
 
   @override
-  final String description = r"";
+  final String description = "";
 
   @override
   final String invocation =
-      "bsky chat-bsky-moderation get-actor-metadata [actor]";
+      "bsky chat-bsky-moderation get-actor-metadata --actor=<value>";
 
   @override
   String get methodId => "chat.bsky.moderation.getActorMetadata";

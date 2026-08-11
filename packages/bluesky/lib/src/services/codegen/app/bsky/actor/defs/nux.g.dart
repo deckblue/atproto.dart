@@ -35,7 +35,6 @@ Map<String, dynamic> _$$NuxImplToJson(_$NuxImpl instance) => <String, dynamic>{
       'id': instance.id,
       'completed': instance.completed,
       if (instance.data case final value?) 'data': value,
-      if (instance.expiresAt?.toIso8601String() case final value?)
-        'expiresAt': value,
+      'expiresAt': iso8601(instance.expiresAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

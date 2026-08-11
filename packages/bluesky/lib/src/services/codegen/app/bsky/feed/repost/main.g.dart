@@ -42,7 +42,7 @@ Map<String, dynamic> _$$FeedRepostRecordImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       'subject': const RepoStrongRefConverter().toJson(instance.subject),
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (_$JsonConverterToJson<Map<String, dynamic>, RepoStrongRef>(
               instance.via, const RepoStrongRefConverter().toJson)
           case final value?)

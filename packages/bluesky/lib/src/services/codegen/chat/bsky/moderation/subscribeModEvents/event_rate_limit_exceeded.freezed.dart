@@ -25,6 +25,7 @@ mixin _$EventRateLimitExceeded {
 
   /// The DID of the user who hit the rate limit.
   String get actorDid => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// The NSID of the endpoint that was rate limited.
@@ -51,7 +52,7 @@ abstract class $EventRateLimitExceededCopyWith<$Res> {
   $Res call(
       {String $type,
       String actorDid,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String endpoint,
       String rev,
       Map<String, dynamic>? $unknown});
@@ -121,7 +122,7 @@ abstract class _$$EventRateLimitExceededImplCopyWith<$Res>
   $Res call(
       {String $type,
       String actorDid,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String endpoint,
       String rev,
       Map<String, dynamic>? $unknown});
@@ -186,7 +187,7 @@ class _$EventRateLimitExceededImpl implements _EventRateLimitExceeded {
       {this.$type =
           'chat.bsky.moderation.subscribeModEvents#eventRateLimitExceeded',
       required this.actorDid,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       required this.endpoint,
       required this.rev,
       final Map<String, dynamic>? $unknown})
@@ -203,6 +204,7 @@ class _$EventRateLimitExceededImpl implements _EventRateLimitExceeded {
   @override
   final String actorDid;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// The NSID of the endpoint that was rate limited.
@@ -267,7 +269,7 @@ abstract class _EventRateLimitExceeded implements EventRateLimitExceeded {
   const factory _EventRateLimitExceeded(
       {final String $type,
       required final String actorDid,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       required final String endpoint,
       required final String rev,
       final Map<String, dynamic>? $unknown}) = _$EventRateLimitExceededImpl;
@@ -282,6 +284,7 @@ abstract class _EventRateLimitExceeded implements EventRateLimitExceeded {
   @override
   String get actorDid;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// The NSID of the endpoint that was rate limited.

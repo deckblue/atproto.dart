@@ -28,9 +28,11 @@ mixin _$DraftView {
   Draft get draft => throw _privateConstructorUsedError;
 
   /// The time the draft was created.
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// The time the draft was last updated.
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -53,8 +55,8 @@ abstract class $DraftViewCopyWith<$Res> {
       {String $type,
       String id,
       @DraftConverter() Draft draft,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       Map<String, dynamic>? $unknown});
 
   $DraftCopyWith<$Res> get draft;
@@ -133,8 +135,8 @@ abstract class _$$DraftViewImplCopyWith<$Res>
       {String $type,
       String id,
       @DraftConverter() Draft draft,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -198,8 +200,8 @@ class _$DraftViewImpl implements _DraftView {
       {this.$type = 'app.bsky.draft.defs#draftView',
       required this.id,
       @DraftConverter() required this.draft,
-      required this.createdAt,
-      required this.updatedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.updatedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -219,10 +221,12 @@ class _$DraftViewImpl implements _DraftView {
 
   /// The time the draft was created.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// The time the draft was last updated.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime updatedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -280,8 +284,8 @@ abstract class _DraftView implements DraftView {
       {final String $type,
       required final String id,
       @DraftConverter() required final Draft draft,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime updatedAt,
       final Map<String, dynamic>? $unknown}) = _$DraftViewImpl;
 
   factory _DraftView.fromJson(Map<String, dynamic> json) =
@@ -299,10 +303,12 @@ abstract class _DraftView implements DraftView {
 
   /// The time the draft was created.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// The time the draft was last updated.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt;
   @override
   Map<String, dynamic>? get $unknown;

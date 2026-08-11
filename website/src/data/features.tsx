@@ -29,7 +29,7 @@ export const features: IFeatureProps[] = [
           safely: <strong>confidently</strong>,
           do_not_need: <strong>don't need</strong>,
           type_secured: <strong>fully type-safe</strong>,
-          moderation_api: <a href={"https://atprotodart.com/docs/packages/bluesky/#moderation-api"}><strong>comprehensive moderation API</strong></a>
+          moderation_api: <a href={"https://atprotodart.com/docs/products/packages/bluesky/#moderation-api"}><strong>comprehensive moderation API</strong></a>
         }}
       >
         {`Build AT Protocol and Bluesky applications with our comprehensive SDK featuring {atproto} and {bluesky} packages.
@@ -81,7 +81,7 @@ export const features: IFeatureProps[] = [
 
     description: (
       <Translate
-        id="home.retry"
+        id="home.retry_body"
         description="The homepage input placeholder"
         values={{
           atproto: <a href={"https://pub.dev/packages/atproto"}><strong>atproto</strong></a>,
@@ -112,7 +112,7 @@ export const features: IFeatureProps[] = [
 
     description: (
       <Translate
-        id="home.bluesky_text"
+        id="home.bluesky_text_body"
         description="The homepage input placeholder"
         values={{
           RichText: <strong>RichText</strong>,
@@ -142,7 +142,7 @@ export const features: IFeatureProps[] = [
 
     description: (
       <Translate
-        id="home.did_plc"
+        id="home.did_plc_body"
         description="The homepage input placeholder"
         values={{
           did_plc: <a href={"https://pub.dev/packages/did_plc"}><strong>did_plc</strong></a>,

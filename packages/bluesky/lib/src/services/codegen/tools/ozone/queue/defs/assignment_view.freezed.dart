@@ -29,7 +29,9 @@ mixin _$AssignmentView {
   Member? get moderator => throw _privateConstructorUsedError;
   @QueueViewConverter()
   QueueView get queue => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get startAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get endAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -55,8 +57,8 @@ abstract class $AssignmentViewCopyWith<$Res> {
       String did,
       @MemberConverter() Member? moderator,
       @QueueViewConverter() QueueView queue,
-      DateTime startAt,
-      DateTime? endAt,
+      @JsonKey(toJson: iso8601) DateTime startAt,
+      @JsonKey(toJson: iso8601) DateTime? endAt,
       Map<String, dynamic>? $unknown});
 
   $MemberCopyWith<$Res>? get moderator;
@@ -162,8 +164,8 @@ abstract class _$$AssignmentViewImplCopyWith<$Res>
       String did,
       @MemberConverter() Member? moderator,
       @QueueViewConverter() QueueView queue,
-      DateTime startAt,
-      DateTime? endAt,
+      @JsonKey(toJson: iso8601) DateTime startAt,
+      @JsonKey(toJson: iso8601) DateTime? endAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -241,8 +243,8 @@ class _$AssignmentViewImpl implements _AssignmentView {
       required this.did,
       @MemberConverter() this.moderator,
       @QueueViewConverter() required this.queue,
-      required this.startAt,
-      this.endAt,
+      @JsonKey(toJson: iso8601) required this.startAt,
+      @JsonKey(toJson: iso8601) this.endAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -265,8 +267,10 @@ class _$AssignmentViewImpl implements _AssignmentView {
   @QueueViewConverter()
   final QueueView queue;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime startAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? endAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -328,8 +332,8 @@ abstract class _AssignmentView implements AssignmentView {
       required final String did,
       @MemberConverter() final Member? moderator,
       @QueueViewConverter() required final QueueView queue,
-      required final DateTime startAt,
-      final DateTime? endAt,
+      @JsonKey(toJson: iso8601) required final DateTime startAt,
+      @JsonKey(toJson: iso8601) final DateTime? endAt,
       final Map<String, dynamic>? $unknown}) = _$AssignmentViewImpl;
 
   factory _AssignmentView.fromJson(Map<String, dynamic> json) =
@@ -350,8 +354,10 @@ abstract class _AssignmentView implements AssignmentView {
   @QueueViewConverter()
   QueueView get queue;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get startAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get endAt;
   @override
   Map<String, dynamic>? get $unknown;

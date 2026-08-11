@@ -35,11 +35,11 @@ final class GetQuotesCommand extends QueryCommand {
   final String name = "get-quotes";
 
   @override
-  final String description = r"Get a list of quotes for a given post.";
+  final String description = "Get a list of quotes for a given post.";
 
   @override
   final String invocation =
-      "bsky app-bsky-feed get-quotes [uri] [cid] [limit] [cursor]";
+      "bsky app-bsky-feed get-quotes --uri=<value> [--cid=<value>] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.getQuotes";
@@ -47,8 +47,9 @@ final class GetQuotesCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "uri": argResults!["uri"],
-        if (argResults!["cid"] != null) "cid": argResults!["cid"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("cid")) "cid": argResults!["cid"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

@@ -24,15 +24,16 @@ mixin _$QueueCreateQueueInput {
   /// Display name for the queue (must be unique)
   String get name => throw _privateConstructorUsedError;
   @QueueCreateQueueSubjectTypesConverter()
-  List<QueueCreateQueueSubjectTypes> get subjectTypes =>
+  List<QueueCreateQueueSubjectTypes>? get subjectTypes =>
       throw _privateConstructorUsedError;
 
   /// Collection name for record subjects. Required if subjectTypes includes 'record'.
   String? get collection => throw _privateConstructorUsedError;
-  List<String> get reportTypes => throw _privateConstructorUsedError;
+  List<String>? get reportTypes => throw _privateConstructorUsedError;
 
   /// Optional description of the queue
   String? get description => throw _privateConstructorUsedError;
+  List<String>? get recommendedPolicies => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this QueueCreateQueueInput to a JSON map.
@@ -54,10 +55,11 @@ abstract class $QueueCreateQueueInputCopyWith<$Res> {
   $Res call(
       {String name,
       @QueueCreateQueueSubjectTypesConverter()
-      List<QueueCreateQueueSubjectTypes> subjectTypes,
+      List<QueueCreateQueueSubjectTypes>? subjectTypes,
       String? collection,
-      List<String> reportTypes,
+      List<String>? reportTypes,
       String? description,
+      List<String>? recommendedPolicies,
       Map<String, dynamic>? $unknown});
 }
 
@@ -78,10 +80,11 @@ class _$QueueCreateQueueInputCopyWithImpl<$Res,
   @override
   $Res call({
     Object? name = null,
-    Object? subjectTypes = null,
+    Object? subjectTypes = freezed,
     Object? collection = freezed,
-    Object? reportTypes = null,
+    Object? reportTypes = freezed,
     Object? description = freezed,
+    Object? recommendedPolicies = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -89,22 +92,26 @@ class _$QueueCreateQueueInputCopyWithImpl<$Res,
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      subjectTypes: null == subjectTypes
+      subjectTypes: freezed == subjectTypes
           ? _value.subjectTypes
           : subjectTypes // ignore: cast_nullable_to_non_nullable
-              as List<QueueCreateQueueSubjectTypes>,
+              as List<QueueCreateQueueSubjectTypes>?,
       collection: freezed == collection
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
               as String?,
-      reportTypes: null == reportTypes
+      reportTypes: freezed == reportTypes
           ? _value.reportTypes
           : reportTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      recommendedPolicies: freezed == recommendedPolicies
+          ? _value.recommendedPolicies
+          : recommendedPolicies // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -125,10 +132,11 @@ abstract class _$$QueueCreateQueueInputImplCopyWith<$Res>
   $Res call(
       {String name,
       @QueueCreateQueueSubjectTypesConverter()
-      List<QueueCreateQueueSubjectTypes> subjectTypes,
+      List<QueueCreateQueueSubjectTypes>? subjectTypes,
       String? collection,
-      List<String> reportTypes,
+      List<String>? reportTypes,
       String? description,
+      List<String>? recommendedPolicies,
       Map<String, dynamic>? $unknown});
 }
 
@@ -147,10 +155,11 @@ class __$$QueueCreateQueueInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? subjectTypes = null,
+    Object? subjectTypes = freezed,
     Object? collection = freezed,
-    Object? reportTypes = null,
+    Object? reportTypes = freezed,
     Object? description = freezed,
+    Object? recommendedPolicies = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$QueueCreateQueueInputImpl(
@@ -158,22 +167,26 @@ class __$$QueueCreateQueueInputImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      subjectTypes: null == subjectTypes
+      subjectTypes: freezed == subjectTypes
           ? _value._subjectTypes
           : subjectTypes // ignore: cast_nullable_to_non_nullable
-              as List<QueueCreateQueueSubjectTypes>,
+              as List<QueueCreateQueueSubjectTypes>?,
       collection: freezed == collection
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
               as String?,
-      reportTypes: null == reportTypes
+      reportTypes: freezed == reportTypes
           ? _value._reportTypes
           : reportTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      recommendedPolicies: freezed == recommendedPolicies
+          ? _value._recommendedPolicies
+          : recommendedPolicies // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -189,13 +202,15 @@ class _$QueueCreateQueueInputImpl implements _QueueCreateQueueInput {
   const _$QueueCreateQueueInputImpl(
       {required this.name,
       @QueueCreateQueueSubjectTypesConverter()
-      required final List<QueueCreateQueueSubjectTypes> subjectTypes,
+      final List<QueueCreateQueueSubjectTypes>? subjectTypes,
       this.collection,
-      required final List<String> reportTypes,
+      final List<String>? reportTypes,
       this.description,
+      final List<String>? recommendedPolicies,
       final Map<String, dynamic>? $unknown})
       : _subjectTypes = subjectTypes,
         _reportTypes = reportTypes,
+        _recommendedPolicies = recommendedPolicies,
         _$unknown = $unknown;
 
   factory _$QueueCreateQueueInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -204,29 +219,44 @@ class _$QueueCreateQueueInputImpl implements _QueueCreateQueueInput {
   /// Display name for the queue (must be unique)
   @override
   final String name;
-  final List<QueueCreateQueueSubjectTypes> _subjectTypes;
+  final List<QueueCreateQueueSubjectTypes>? _subjectTypes;
   @override
   @QueueCreateQueueSubjectTypesConverter()
-  List<QueueCreateQueueSubjectTypes> get subjectTypes {
+  List<QueueCreateQueueSubjectTypes>? get subjectTypes {
+    final value = _subjectTypes;
+    if (value == null) return null;
     if (_subjectTypes is EqualUnmodifiableListView) return _subjectTypes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_subjectTypes);
+    return EqualUnmodifiableListView(value);
   }
 
   /// Collection name for record subjects. Required if subjectTypes includes 'record'.
   @override
   final String? collection;
-  final List<String> _reportTypes;
+  final List<String>? _reportTypes;
   @override
-  List<String> get reportTypes {
+  List<String>? get reportTypes {
+    final value = _reportTypes;
+    if (value == null) return null;
     if (_reportTypes is EqualUnmodifiableListView) return _reportTypes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_reportTypes);
+    return EqualUnmodifiableListView(value);
   }
 
   /// Optional description of the queue
   @override
   final String? description;
+  final List<String>? _recommendedPolicies;
+  @override
+  List<String>? get recommendedPolicies {
+    final value = _recommendedPolicies;
+    if (value == null) return null;
+    if (_recommendedPolicies is EqualUnmodifiableListView)
+      return _recommendedPolicies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -239,7 +269,7 @@ class _$QueueCreateQueueInputImpl implements _QueueCreateQueueInput {
 
   @override
   String toString() {
-    return 'QueueCreateQueueInput(name: $name, subjectTypes: $subjectTypes, collection: $collection, reportTypes: $reportTypes, description: $description, \$unknown: ${$unknown})';
+    return 'QueueCreateQueueInput(name: $name, subjectTypes: $subjectTypes, collection: $collection, reportTypes: $reportTypes, description: $description, recommendedPolicies: $recommendedPolicies, \$unknown: ${$unknown})';
   }
 
   @override
@@ -256,6 +286,8 @@ class _$QueueCreateQueueInputImpl implements _QueueCreateQueueInput {
                 .equals(other._reportTypes, _reportTypes) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            const DeepCollectionEquality()
+                .equals(other._recommendedPolicies, _recommendedPolicies) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -268,6 +300,7 @@ class _$QueueCreateQueueInputImpl implements _QueueCreateQueueInput {
       collection,
       const DeepCollectionEquality().hash(_reportTypes),
       description,
+      const DeepCollectionEquality().hash(_recommendedPolicies),
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of QueueCreateQueueInput
@@ -291,10 +324,11 @@ abstract class _QueueCreateQueueInput implements QueueCreateQueueInput {
   const factory _QueueCreateQueueInput(
       {required final String name,
       @QueueCreateQueueSubjectTypesConverter()
-      required final List<QueueCreateQueueSubjectTypes> subjectTypes,
+      final List<QueueCreateQueueSubjectTypes>? subjectTypes,
       final String? collection,
-      required final List<String> reportTypes,
+      final List<String>? reportTypes,
       final String? description,
+      final List<String>? recommendedPolicies,
       final Map<String, dynamic>? $unknown}) = _$QueueCreateQueueInputImpl;
 
   factory _QueueCreateQueueInput.fromJson(Map<String, dynamic> json) =
@@ -305,17 +339,19 @@ abstract class _QueueCreateQueueInput implements QueueCreateQueueInput {
   String get name;
   @override
   @QueueCreateQueueSubjectTypesConverter()
-  List<QueueCreateQueueSubjectTypes> get subjectTypes;
+  List<QueueCreateQueueSubjectTypes>? get subjectTypes;
 
   /// Collection name for record subjects. Required if subjectTypes includes 'record'.
   @override
   String? get collection;
   @override
-  List<String> get reportTypes;
+  List<String>? get reportTypes;
 
   /// Optional description of the queue
   @override
   String? get description;
+  @override
+  List<String>? get recommendedPolicies;
   @override
   Map<String, dynamic>? get $unknown;
 

@@ -39,6 +39,7 @@ mixin _$VerificationView {
   bool get isValid => throw _privateConstructorUsedError;
 
   /// Timestamp when the verification was created.
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -65,7 +66,7 @@ abstract class $VerificationViewCopyWith<$Res> {
       String? issuerHandle,
       @AtUriConverter() AtUri uri,
       bool isValid,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -145,7 +146,7 @@ abstract class _$$VerificationViewImplCopyWith<$Res>
       String? issuerHandle,
       @AtUriConverter() AtUri uri,
       bool isValid,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -219,7 +220,7 @@ class _$VerificationViewImpl implements _VerificationView {
       this.issuerHandle,
       @AtUriConverter() required this.uri,
       required this.isValid,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -253,6 +254,7 @@ class _$VerificationViewImpl implements _VerificationView {
 
   /// Timestamp when the verification was created.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -325,7 +327,7 @@ abstract class _VerificationView implements VerificationView {
       final String? issuerHandle,
       @AtUriConverter() required final AtUri uri,
       required final bool isValid,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$VerificationViewImpl;
 
   factory _VerificationView.fromJson(Map<String, dynamic> json) =
@@ -357,6 +359,7 @@ abstract class _VerificationView implements VerificationView {
 
   /// Timestamp when the verification was created.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

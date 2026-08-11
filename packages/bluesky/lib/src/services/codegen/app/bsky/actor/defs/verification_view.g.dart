@@ -45,6 +45,6 @@ Map<String, dynamic> _$$VerificationViewImplToJson(
       if (instance.issuerHandle case final value?) 'issuerHandle': value,
       'uri': const AtUriConverter().toJson(instance.uri),
       'isValid': instance.isValid,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -26,6 +26,7 @@ mixin _$RecordView {
   String get cid => throw _privateConstructorUsedError;
   Map<String, dynamic> get value => throw _privateConstructorUsedError;
   List<String> get blobCids => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   @ModerationConverter()
   Moderation get moderation => throw _privateConstructorUsedError;
@@ -55,7 +56,7 @@ abstract class $RecordViewCopyWith<$Res> {
       String cid,
       Map<String, dynamic> value,
       List<String> blobCids,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @ModerationConverter() Moderation moderation,
       @RepoViewConverter() RepoView repo,
       Map<String, dynamic>? $unknown});
@@ -164,7 +165,7 @@ abstract class _$$RecordViewImplCopyWith<$Res>
       String cid,
       Map<String, dynamic> value,
       List<String> blobCids,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @ModerationConverter() Moderation moderation,
       @RepoViewConverter() RepoView repo,
       Map<String, dynamic>? $unknown});
@@ -249,7 +250,7 @@ class _$RecordViewImpl implements _RecordView {
       required this.cid,
       required final Map<String, dynamic> value,
       required final List<String> blobCids,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       @ModerationConverter() required this.moderation,
       @RepoViewConverter() required this.repo,
       final Map<String, dynamic>? $unknown})
@@ -285,6 +286,7 @@ class _$RecordViewImpl implements _RecordView {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   @override
   @ModerationConverter()
@@ -362,7 +364,7 @@ abstract class _RecordView implements RecordView {
       required final String cid,
       required final Map<String, dynamic> value,
       required final List<String> blobCids,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       @ModerationConverter() required final Moderation moderation,
       @RepoViewConverter() required final RepoView repo,
       final Map<String, dynamic>? $unknown}) = _$RecordViewImpl;
@@ -382,6 +384,7 @@ abstract class _RecordView implements RecordView {
   @override
   List<String> get blobCids;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   @ModerationConverter()

@@ -25,6 +25,7 @@ mixin _$LabelerServiceRecord {
   LabelerPolicies get policies => throw _privateConstructorUsedError;
   @ULabelerServiceLabelsConverter()
   ULabelerServiceLabels? get labels => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @ReasonTypeConverter()
   List<ReasonType>? get reasonTypes => throw _privateConstructorUsedError;
@@ -53,7 +54,7 @@ abstract class $LabelerServiceRecordCopyWith<$Res> {
       {String $type,
       @LabelerPoliciesConverter() LabelerPolicies policies,
       @ULabelerServiceLabelsConverter() ULabelerServiceLabels? labels,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @ReasonTypeConverter() List<ReasonType>? reasonTypes,
       @SubjectTypeConverter() List<SubjectType>? subjectTypes,
       List<String>? subjectCollections,
@@ -161,7 +162,7 @@ abstract class _$$LabelerServiceRecordImplCopyWith<$Res>
       {String $type,
       @LabelerPoliciesConverter() LabelerPolicies policies,
       @ULabelerServiceLabelsConverter() ULabelerServiceLabels? labels,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @ReasonTypeConverter() List<ReasonType>? reasonTypes,
       @SubjectTypeConverter() List<SubjectType>? subjectTypes,
       List<String>? subjectCollections,
@@ -240,7 +241,7 @@ class _$LabelerServiceRecordImpl implements _LabelerServiceRecord {
       {this.$type = 'app.bsky.labeler.service',
       @LabelerPoliciesConverter() required this.policies,
       @ULabelerServiceLabelsConverter() this.labels,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @ReasonTypeConverter() final List<ReasonType>? reasonTypes,
       @SubjectTypeConverter() final List<SubjectType>? subjectTypes,
       final List<String>? subjectCollections,
@@ -263,6 +264,7 @@ class _$LabelerServiceRecordImpl implements _LabelerServiceRecord {
   @ULabelerServiceLabelsConverter()
   final ULabelerServiceLabels? labels;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final List<ReasonType>? _reasonTypes;
   @override
@@ -368,7 +370,7 @@ abstract class _LabelerServiceRecord implements LabelerServiceRecord {
       {final String $type,
       @LabelerPoliciesConverter() required final LabelerPolicies policies,
       @ULabelerServiceLabelsConverter() final ULabelerServiceLabels? labels,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @ReasonTypeConverter() final List<ReasonType>? reasonTypes,
       @SubjectTypeConverter() final List<SubjectType>? subjectTypes,
       final List<String>? subjectCollections,
@@ -386,6 +388,7 @@ abstract class _LabelerServiceRecord implements LabelerServiceRecord {
   @ULabelerServiceLabelsConverter()
   ULabelerServiceLabels? get labels;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @ReasonTypeConverter()

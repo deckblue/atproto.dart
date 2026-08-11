@@ -41,13 +41,30 @@ final class FollowCommand extends Command<void> {
       "Record declaring a social 'follow' relationship of another account. Duplicate follows will be ignored by the AppView.";
 }
 
-final class _CreateFollowCommand extends CreateRecordCommand {
-  _CreateFollowCommand() {
+mixin _FollowCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
     argParser
       ..addOption("subject", mandatory: true)
       ..addOption("createdAt", mandatory: true)
-      ..addOption("via")
-      ..addOption("rkey");
+      ..addOption("via");
+  }
+
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
+}
+
+final class _CreateFollowCommand extends CreateRecordCommand
+    with _FollowCommandRecordArgs {
+  _CreateFollowCommand() {
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"Specific record key to use.");
   }
 
   @override
@@ -58,29 +75,28 @@ final class _CreateFollowCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph follow create [subject] [createdAt] [via] [rkey]";
+      "bsky app-bsky-graph follow create --subject=<value> --createdAt=<value> [--via=<value>] [--rkey=<value>]";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.follow";
 
   @override
   Map<String, dynamic> get record => {
+        r"$type": "app.bsky.graph.follow",
         "subject": argResults!["subject"],
         "createdAt": argResults!["createdAt"],
-        if (argResults!["via"] != null) "via": jsonDecode(argResults!["via"]),
+        if (argResults!.wasParsed("via")) "via": _decodeJson("via"),
       };
 }
 
-final class _PutFollowCommand extends PutRecordCommand {
+final class _PutFollowCommand extends PutRecordCommand
+    with _FollowCommandRecordArgs {
   _PutFollowCommand() {
-    argParser
-      ..addOption("subject", mandatory: true)
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("via")
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -91,25 +107,26 @@ final class _PutFollowCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph follow put [subject] [createdAt] [via] [rkey]";
+      "bsky app-bsky-graph follow put --subject=<value> --createdAt=<value> [--via=<value>] --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.follow";
 
   @override
   Map<String, dynamic> get record => {
+        r"$type": "app.bsky.graph.follow",
         "subject": argResults!["subject"],
         "createdAt": argResults!["createdAt"],
-        if (argResults!["via"] != null) "via": jsonDecode(argResults!["via"]),
+        if (argResults!.wasParsed("via")) "via": _decodeJson("via"),
       };
 }
 
 final class _DeleteFollowCommand extends DeleteRecordCommand {
   _DeleteFollowCommand() {
-    argParser..addOption("rkey", mandatory: true);
+    argParser..addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -119,10 +136,10 @@ final class _DeleteFollowCommand extends DeleteRecordCommand {
   final String description = r"Deletes a record for app.bsky.graph.follow.";
 
   @override
-  final String invocation = "bsky app-bsky-graph follow delete [rkey]";
+  final String invocation = "bsky app-bsky-graph follow delete --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.follow";
@@ -131,7 +148,11 @@ final class _DeleteFollowCommand extends DeleteRecordCommand {
 final class _GetFollowCommand extends QueryCommand {
   _GetFollowCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption("rkey", help: r"The record key.", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -142,15 +163,16 @@ final class _GetFollowCommand extends QueryCommand {
   final String description = r"Gets a record for app.bsky.graph.follow.";
 
   @override
-  final String invocation = "bsky app-bsky-graph follow get [rkey] [cid]";
+  final String invocation =
+      "bsky app-bsky-graph follow get --rkey=<value> [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.follow",
         'rkey': argResults!['rkey'],
         if (argResults!['cid'] != null) 'cid': argResults!['cid'],
       };
@@ -159,6 +181,10 @@ final class _GetFollowCommand extends QueryCommand {
 final class _ListFollowCommand extends QueryCommand {
   _ListFollowCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -172,16 +198,17 @@ final class _ListFollowCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph follow list [limit] [cursor] [reverse]";
+      "bsky app-bsky-graph follow list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.follow",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
         if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
         'reverse': argResults!['reverse'],
       };

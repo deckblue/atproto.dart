@@ -39,6 +39,7 @@ mixin _$ModEventEmail {
   int? get strikeCount => throw _privateConstructorUsedError;
 
   /// When the strike should expire. If not provided, the strike never expires.
+  @JsonKey(toJson: iso8601)
   DateTime? get strikeExpiresAt => throw _privateConstructorUsedError;
 
   /// Indicates whether the email was successfully delivered to the user's inbox.
@@ -69,7 +70,7 @@ abstract class $ModEventEmailCopyWith<$Res> {
       List<String>? policies,
       String? severityLevel,
       int? strikeCount,
-      DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) DateTime? strikeExpiresAt,
       bool? isDelivered,
       Map<String, dynamic>? $unknown});
 }
@@ -161,7 +162,7 @@ abstract class _$$ModEventEmailImplCopyWith<$Res>
       List<String>? policies,
       String? severityLevel,
       int? strikeCount,
-      DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) DateTime? strikeExpiresAt,
       bool? isDelivered,
       Map<String, dynamic>? $unknown});
 }
@@ -247,7 +248,7 @@ class _$ModEventEmailImpl implements _ModEventEmail {
       final List<String>? policies,
       this.severityLevel,
       this.strikeCount,
-      this.strikeExpiresAt,
+      @JsonKey(toJson: iso8601) this.strikeExpiresAt,
       this.isDelivered,
       final Map<String, dynamic>? $unknown})
       : _policies = policies,
@@ -291,6 +292,7 @@ class _$ModEventEmailImpl implements _ModEventEmail {
 
   /// When the strike should expire. If not provided, the strike never expires.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? strikeExpiresAt;
 
   /// Indicates whether the email was successfully delivered to the user's inbox.
@@ -373,7 +375,7 @@ abstract class _ModEventEmail implements ModEventEmail {
       final List<String>? policies,
       final String? severityLevel,
       final int? strikeCount,
-      final DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) final DateTime? strikeExpiresAt,
       final bool? isDelivered,
       final Map<String, dynamic>? $unknown}) = _$ModEventEmailImpl;
 
@@ -407,6 +409,7 @@ abstract class _ModEventEmail implements ModEventEmail {
 
   /// When the strike should expire. If not provided, the strike never expires.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get strikeExpiresAt;
 
   /// Indicates whether the email was successfully delivered to the user's inbox.

@@ -21,6 +21,7 @@ _$BskyAppStatePrefImpl _$$BskyAppStatePrefImplFromJson(Map json) =>
               (v) => _$JsonConverterFromJson<Map<String, dynamic>,
                       BskyAppProgressGuide>(
                   v, const BskyAppProgressGuideConverter().fromJson)),
+          isBetaUser: $checkedConvert('isBetaUser', (v) => v as bool?),
           queuedNudges: $checkedConvert('queuedNudges',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           nuxs: $checkedConvert(
@@ -48,6 +49,7 @@ Map<String, dynamic> _$$BskyAppStatePrefImplToJson(
               const BskyAppProgressGuideConverter().toJson)
           case final value?)
         'activeProgressGuide': value,
+      if (instance.isBetaUser case final value?) 'isBetaUser': value,
       if (instance.queuedNudges case final value?) 'queuedNudges': value,
       if (instance.nuxs?.map(const NuxConverter().toJson).toList()
           case final value?)

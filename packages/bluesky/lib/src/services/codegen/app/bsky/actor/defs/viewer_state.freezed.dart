@@ -21,7 +21,15 @@ ViewerState _$ViewerStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ViewerState {
   String get $type => throw _privateConstructorUsedError;
+
+  /// Whether the account is fully muted, directly or via a mutelist. False when the mute is scoped to specific kinds; see mutedOnlyReposts and mutedOnlyQuoteposts.
   bool? get muted => throw _privateConstructorUsedError;
+
+  /// Whether the account's reposts are muted. Scoped mutes are exclusive with muted: this can be true while muted is false. If muted is true, this will be false.
+  bool? get mutedOnlyReposts => throw _privateConstructorUsedError;
+
+  /// Whether the account's quote posts are muted. Scoped mutes are exclusive with muted: this can be true while muted is false. If muted is true, this will be false.
+  bool? get mutedOnlyQuoteposts => throw _privateConstructorUsedError;
   @ListViewBasicConverter()
   ListViewBasic? get mutedByList => throw _privateConstructorUsedError;
   bool? get blockedBy => throw _privateConstructorUsedError;
@@ -63,6 +71,8 @@ abstract class $ViewerStateCopyWith<$Res> {
   $Res call(
       {String $type,
       bool? muted,
+      bool? mutedOnlyReposts,
+      bool? mutedOnlyQuoteposts,
       @ListViewBasicConverter() ListViewBasic? mutedByList,
       bool? blockedBy,
       @AtUriConverter() AtUri? blocking,
@@ -97,6 +107,8 @@ class _$ViewerStateCopyWithImpl<$Res, $Val extends ViewerState>
   $Res call({
     Object? $type = null,
     Object? muted = freezed,
+    Object? mutedOnlyReposts = freezed,
+    Object? mutedOnlyQuoteposts = freezed,
     Object? mutedByList = freezed,
     Object? blockedBy = freezed,
     Object? blocking = freezed,
@@ -115,6 +127,14 @@ class _$ViewerStateCopyWithImpl<$Res, $Val extends ViewerState>
       muted: freezed == muted
           ? _value.muted
           : muted // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mutedOnlyReposts: freezed == mutedOnlyReposts
+          ? _value.mutedOnlyReposts
+          : mutedOnlyReposts // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mutedOnlyQuoteposts: freezed == mutedOnlyQuoteposts
+          ? _value.mutedOnlyQuoteposts
+          : mutedOnlyQuoteposts // ignore: cast_nullable_to_non_nullable
               as bool?,
       mutedByList: freezed == mutedByList
           ? _value.mutedByList
@@ -224,6 +244,8 @@ abstract class _$$ViewerStateImplCopyWith<$Res>
   $Res call(
       {String $type,
       bool? muted,
+      bool? mutedOnlyReposts,
+      bool? mutedOnlyQuoteposts,
       @ListViewBasicConverter() ListViewBasic? mutedByList,
       bool? blockedBy,
       @AtUriConverter() AtUri? blocking,
@@ -260,6 +282,8 @@ class __$$ViewerStateImplCopyWithImpl<$Res>
   $Res call({
     Object? $type = null,
     Object? muted = freezed,
+    Object? mutedOnlyReposts = freezed,
+    Object? mutedOnlyQuoteposts = freezed,
     Object? mutedByList = freezed,
     Object? blockedBy = freezed,
     Object? blocking = freezed,
@@ -278,6 +302,14 @@ class __$$ViewerStateImplCopyWithImpl<$Res>
       muted: freezed == muted
           ? _value.muted
           : muted // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mutedOnlyReposts: freezed == mutedOnlyReposts
+          ? _value.mutedOnlyReposts
+          : mutedOnlyReposts // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mutedOnlyQuoteposts: freezed == mutedOnlyQuoteposts
+          ? _value.mutedOnlyQuoteposts
+          : mutedOnlyQuoteposts // ignore: cast_nullable_to_non_nullable
               as bool?,
       mutedByList: freezed == mutedByList
           ? _value.mutedByList
@@ -326,6 +358,8 @@ class _$ViewerStateImpl implements _ViewerState {
   const _$ViewerStateImpl(
       {this.$type = 'app.bsky.actor.defs#viewerState',
       this.muted,
+      this.mutedOnlyReposts,
+      this.mutedOnlyQuoteposts,
       @ListViewBasicConverter() this.mutedByList,
       this.blockedBy,
       @AtUriConverter() this.blocking,
@@ -343,8 +377,18 @@ class _$ViewerStateImpl implements _ViewerState {
   @override
   @JsonKey()
   final String $type;
+
+  /// Whether the account is fully muted, directly or via a mutelist. False when the mute is scoped to specific kinds; see mutedOnlyReposts and mutedOnlyQuoteposts.
   @override
   final bool? muted;
+
+  /// Whether the account's reposts are muted. Scoped mutes are exclusive with muted: this can be true while muted is false. If muted is true, this will be false.
+  @override
+  final bool? mutedOnlyReposts;
+
+  /// Whether the account's quote posts are muted. Scoped mutes are exclusive with muted: this can be true while muted is false. If muted is true, this will be false.
+  @override
+  final bool? mutedOnlyQuoteposts;
   @override
   @ListViewBasicConverter()
   final ListViewBasic? mutedByList;
@@ -384,7 +428,7 @@ class _$ViewerStateImpl implements _ViewerState {
 
   @override
   String toString() {
-    return 'ViewerState(\$type: ${$type}, muted: $muted, mutedByList: $mutedByList, blockedBy: $blockedBy, blocking: $blocking, blockingByList: $blockingByList, following: $following, followedBy: $followedBy, knownFollowers: $knownFollowers, activitySubscription: $activitySubscription, \$unknown: ${$unknown})';
+    return 'ViewerState(\$type: ${$type}, muted: $muted, mutedOnlyReposts: $mutedOnlyReposts, mutedOnlyQuoteposts: $mutedOnlyQuoteposts, mutedByList: $mutedByList, blockedBy: $blockedBy, blocking: $blocking, blockingByList: $blockingByList, following: $following, followedBy: $followedBy, knownFollowers: $knownFollowers, activitySubscription: $activitySubscription, \$unknown: ${$unknown})';
   }
 
   @override
@@ -394,6 +438,10 @@ class _$ViewerStateImpl implements _ViewerState {
             other is _$ViewerStateImpl &&
             (identical(other.$type, $type) || other.$type == $type) &&
             (identical(other.muted, muted) || other.muted == muted) &&
+            (identical(other.mutedOnlyReposts, mutedOnlyReposts) ||
+                other.mutedOnlyReposts == mutedOnlyReposts) &&
+            (identical(other.mutedOnlyQuoteposts, mutedOnlyQuoteposts) ||
+                other.mutedOnlyQuoteposts == mutedOnlyQuoteposts) &&
             (identical(other.mutedByList, mutedByList) ||
                 other.mutedByList == mutedByList) &&
             (identical(other.blockedBy, blockedBy) ||
@@ -419,6 +467,8 @@ class _$ViewerStateImpl implements _ViewerState {
       runtimeType,
       $type,
       muted,
+      mutedOnlyReposts,
+      mutedOnlyQuoteposts,
       mutedByList,
       blockedBy,
       blocking,
@@ -449,6 +499,8 @@ abstract class _ViewerState implements ViewerState {
   const factory _ViewerState(
       {final String $type,
       final bool? muted,
+      final bool? mutedOnlyReposts,
+      final bool? mutedOnlyQuoteposts,
       @ListViewBasicConverter() final ListViewBasic? mutedByList,
       final bool? blockedBy,
       @AtUriConverter() final AtUri? blocking,
@@ -465,8 +517,18 @@ abstract class _ViewerState implements ViewerState {
 
   @override
   String get $type;
+
+  /// Whether the account is fully muted, directly or via a mutelist. False when the mute is scoped to specific kinds; see mutedOnlyReposts and mutedOnlyQuoteposts.
   @override
   bool? get muted;
+
+  /// Whether the account's reposts are muted. Scoped mutes are exclusive with muted: this can be true while muted is false. If muted is true, this will be false.
+  @override
+  bool? get mutedOnlyReposts;
+
+  /// Whether the account's quote posts are muted. Scoped mutes are exclusive with muted: this can be true while muted is false. If muted is true, this will be false.
+  @override
+  bool? get mutedOnlyQuoteposts;
   @override
   @ListViewBasicConverter()
   ListViewBasic? get mutedByList;

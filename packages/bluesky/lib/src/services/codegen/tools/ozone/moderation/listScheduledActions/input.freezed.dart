@@ -22,9 +22,11 @@ ModerationListScheduledActionsInput
 /// @nodoc
 mixin _$ModerationListScheduledActionsInput {
   /// Filter actions scheduled to execute after this time
+  @JsonKey(toJson: iso8601)
   DateTime? get startsAfter => throw _privateConstructorUsedError;
 
   /// Filter actions scheduled to execute before this time
+  @JsonKey(toJson: iso8601)
   DateTime? get endsBefore => throw _privateConstructorUsedError;
   List<String>? get subjects => throw _privateConstructorUsedError;
   @ModerationListScheduledActionsStatusesConverter()
@@ -58,8 +60,8 @@ abstract class $ModerationListScheduledActionsInputCopyWith<$Res> {
           ModerationListScheduledActionsInput>;
   @useResult
   $Res call(
-      {DateTime? startsAfter,
-      DateTime? endsBefore,
+      {@JsonKey(toJson: iso8601) DateTime? startsAfter,
+      @JsonKey(toJson: iso8601) DateTime? endsBefore,
       List<String>? subjects,
       @ModerationListScheduledActionsStatusesConverter()
       List<ModerationListScheduledActionsStatuses> statuses,
@@ -135,8 +137,8 @@ abstract class _$$ModerationListScheduledActionsInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? startsAfter,
-      DateTime? endsBefore,
+      {@JsonKey(toJson: iso8601) DateTime? startsAfter,
+      @JsonKey(toJson: iso8601) DateTime? endsBefore,
       List<String>? subjects,
       @ModerationListScheduledActionsStatusesConverter()
       List<ModerationListScheduledActionsStatuses> statuses,
@@ -207,8 +209,8 @@ class __$$ModerationListScheduledActionsInputImplCopyWithImpl<$Res>
 class _$ModerationListScheduledActionsInputImpl
     implements _ModerationListScheduledActionsInput {
   const _$ModerationListScheduledActionsInputImpl(
-      {this.startsAfter,
-      this.endsBefore,
+      {@JsonKey(toJson: iso8601) this.startsAfter,
+      @JsonKey(toJson: iso8601) this.endsBefore,
       final List<String>? subjects,
       @ModerationListScheduledActionsStatusesConverter()
       required final List<ModerationListScheduledActionsStatuses> statuses,
@@ -225,10 +227,12 @@ class _$ModerationListScheduledActionsInputImpl
 
   /// Filter actions scheduled to execute after this time
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? startsAfter;
 
   /// Filter actions scheduled to execute before this time
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? endsBefore;
   final List<String>? _subjects;
   @override
@@ -321,8 +325,8 @@ class _$ModerationListScheduledActionsInputImpl
 abstract class _ModerationListScheduledActionsInput
     implements ModerationListScheduledActionsInput {
   const factory _ModerationListScheduledActionsInput(
-          {final DateTime? startsAfter,
-          final DateTime? endsBefore,
+          {@JsonKey(toJson: iso8601) final DateTime? startsAfter,
+          @JsonKey(toJson: iso8601) final DateTime? endsBefore,
           final List<String>? subjects,
           @ModerationListScheduledActionsStatusesConverter()
           required final List<ModerationListScheduledActionsStatuses> statuses,
@@ -337,10 +341,12 @@ abstract class _ModerationListScheduledActionsInput
 
   /// Filter actions scheduled to execute after this time
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get startsAfter;
 
   /// Filter actions scheduled to execute before this time
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get endsBefore;
   @override
   List<String>? get subjects;

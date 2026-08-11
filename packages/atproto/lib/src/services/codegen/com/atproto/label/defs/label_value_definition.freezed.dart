@@ -36,7 +36,7 @@ mixin _$LabelValueDefinition {
 
   /// The default setting for this label.
   @LabelValueDefinitionDefaultSettingConverter()
-  LabelValueDefinitionDefaultSetting? get defaultSetting =>
+  LabelValueDefinitionDefaultSetting get defaultSetting =>
       throw _privateConstructorUsedError;
 
   /// Does the user need to have adult content enabled in order to configure this label?
@@ -69,7 +69,7 @@ abstract class $LabelValueDefinitionCopyWith<$Res> {
       LabelValueDefinitionSeverity severity,
       @LabelValueDefinitionBlursConverter() LabelValueDefinitionBlurs blurs,
       @LabelValueDefinitionDefaultSettingConverter()
-      LabelValueDefinitionDefaultSetting? defaultSetting,
+      LabelValueDefinitionDefaultSetting defaultSetting,
       bool? adultOnly,
       @LabelValueDefinitionStringsConverter()
       List<LabelValueDefinitionStrings> locales,
@@ -77,7 +77,7 @@ abstract class $LabelValueDefinitionCopyWith<$Res> {
 
   $LabelValueDefinitionSeverityCopyWith<$Res> get severity;
   $LabelValueDefinitionBlursCopyWith<$Res> get blurs;
-  $LabelValueDefinitionDefaultSettingCopyWith<$Res>? get defaultSetting;
+  $LabelValueDefinitionDefaultSettingCopyWith<$Res> get defaultSetting;
 }
 
 /// @nodoc
@@ -100,7 +100,7 @@ class _$LabelValueDefinitionCopyWithImpl<$Res,
     Object? identifier = null,
     Object? severity = null,
     Object? blurs = null,
-    Object? defaultSetting = freezed,
+    Object? defaultSetting = null,
     Object? adultOnly = freezed,
     Object? locales = null,
     Object? $unknown = freezed,
@@ -122,10 +122,10 @@ class _$LabelValueDefinitionCopyWithImpl<$Res,
           ? _value.blurs
           : blurs // ignore: cast_nullable_to_non_nullable
               as LabelValueDefinitionBlurs,
-      defaultSetting: freezed == defaultSetting
+      defaultSetting: null == defaultSetting
           ? _value.defaultSetting
           : defaultSetting // ignore: cast_nullable_to_non_nullable
-              as LabelValueDefinitionDefaultSetting?,
+              as LabelValueDefinitionDefaultSetting,
       adultOnly: freezed == adultOnly
           ? _value.adultOnly
           : adultOnly // ignore: cast_nullable_to_non_nullable
@@ -166,13 +166,9 @@ class _$LabelValueDefinitionCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $LabelValueDefinitionDefaultSettingCopyWith<$Res>? get defaultSetting {
-    if (_value.defaultSetting == null) {
-      return null;
-    }
-
+  $LabelValueDefinitionDefaultSettingCopyWith<$Res> get defaultSetting {
     return $LabelValueDefinitionDefaultSettingCopyWith<$Res>(
-        _value.defaultSetting!, (value) {
+        _value.defaultSetting, (value) {
       return _then(_value.copyWith(defaultSetting: value) as $Val);
     });
   }
@@ -193,7 +189,7 @@ abstract class _$$LabelValueDefinitionImplCopyWith<$Res>
       LabelValueDefinitionSeverity severity,
       @LabelValueDefinitionBlursConverter() LabelValueDefinitionBlurs blurs,
       @LabelValueDefinitionDefaultSettingConverter()
-      LabelValueDefinitionDefaultSetting? defaultSetting,
+      LabelValueDefinitionDefaultSetting defaultSetting,
       bool? adultOnly,
       @LabelValueDefinitionStringsConverter()
       List<LabelValueDefinitionStrings> locales,
@@ -204,7 +200,7 @@ abstract class _$$LabelValueDefinitionImplCopyWith<$Res>
   @override
   $LabelValueDefinitionBlursCopyWith<$Res> get blurs;
   @override
-  $LabelValueDefinitionDefaultSettingCopyWith<$Res>? get defaultSetting;
+  $LabelValueDefinitionDefaultSettingCopyWith<$Res> get defaultSetting;
 }
 
 /// @nodoc
@@ -224,7 +220,7 @@ class __$$LabelValueDefinitionImplCopyWithImpl<$Res>
     Object? identifier = null,
     Object? severity = null,
     Object? blurs = null,
-    Object? defaultSetting = freezed,
+    Object? defaultSetting = null,
     Object? adultOnly = freezed,
     Object? locales = null,
     Object? $unknown = freezed,
@@ -246,10 +242,10 @@ class __$$LabelValueDefinitionImplCopyWithImpl<$Res>
           ? _value.blurs
           : blurs // ignore: cast_nullable_to_non_nullable
               as LabelValueDefinitionBlurs,
-      defaultSetting: freezed == defaultSetting
+      defaultSetting: null == defaultSetting
           ? _value.defaultSetting
           : defaultSetting // ignore: cast_nullable_to_non_nullable
-              as LabelValueDefinitionDefaultSetting?,
+              as LabelValueDefinitionDefaultSetting,
       adultOnly: freezed == adultOnly
           ? _value.adultOnly
           : adultOnly // ignore: cast_nullable_to_non_nullable
@@ -275,7 +271,9 @@ class _$LabelValueDefinitionImpl implements _LabelValueDefinition {
       required this.identifier,
       @LabelValueDefinitionSeverityConverter() required this.severity,
       @LabelValueDefinitionBlursConverter() required this.blurs,
-      @LabelValueDefinitionDefaultSettingConverter() this.defaultSetting,
+      @LabelValueDefinitionDefaultSettingConverter() this.defaultSetting =
+          const LabelValueDefinitionDefaultSetting.knownValue(
+              data: KnownLabelValueDefinitionDefaultSetting.warn),
       this.adultOnly,
       @LabelValueDefinitionStringsConverter()
       required final List<LabelValueDefinitionStrings> locales,
@@ -306,8 +304,9 @@ class _$LabelValueDefinitionImpl implements _LabelValueDefinition {
 
   /// The default setting for this label.
   @override
+  @JsonKey()
   @LabelValueDefinitionDefaultSettingConverter()
-  final LabelValueDefinitionDefaultSetting? defaultSetting;
+  final LabelValueDefinitionDefaultSetting defaultSetting;
 
   /// Does the user need to have adult content enabled in order to configure this label?
   @override
@@ -395,7 +394,7 @@ abstract class _LabelValueDefinition implements LabelValueDefinition {
       @LabelValueDefinitionBlursConverter()
       required final LabelValueDefinitionBlurs blurs,
       @LabelValueDefinitionDefaultSettingConverter()
-      final LabelValueDefinitionDefaultSetting? defaultSetting,
+      final LabelValueDefinitionDefaultSetting defaultSetting,
       final bool? adultOnly,
       @LabelValueDefinitionStringsConverter()
       required final List<LabelValueDefinitionStrings> locales,
@@ -424,7 +423,7 @@ abstract class _LabelValueDefinition implements LabelValueDefinition {
   /// The default setting for this label.
   @override
   @LabelValueDefinitionDefaultSettingConverter()
-  LabelValueDefinitionDefaultSetting? get defaultSetting;
+  LabelValueDefinitionDefaultSetting get defaultSetting;
 
   /// Does the user need to have adult content enabled in order to configure this label?
   @override

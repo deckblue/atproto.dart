@@ -22,6 +22,7 @@ NotificationGetUnreadCountInput _$NotificationGetUnreadCountInputFromJson(
 /// @nodoc
 mixin _$NotificationGetUnreadCountInput {
   bool? get priority => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get seenAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -43,7 +44,10 @@ abstract class $NotificationGetUnreadCountInputCopyWith<$Res> {
       _$NotificationGetUnreadCountInputCopyWithImpl<$Res,
           NotificationGetUnreadCountInput>;
   @useResult
-  $Res call({bool? priority, DateTime? seenAt, Map<String, dynamic>? $unknown});
+  $Res call(
+      {bool? priority,
+      @JsonKey(toJson: iso8601) DateTime? seenAt,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -92,7 +96,10 @@ abstract class _$$NotificationGetUnreadCountInputImplCopyWith<$Res>
       __$$NotificationGetUnreadCountInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool? priority, DateTime? seenAt, Map<String, dynamic>? $unknown});
+  $Res call(
+      {bool? priority,
+      @JsonKey(toJson: iso8601) DateTime? seenAt,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -137,7 +144,9 @@ class __$$NotificationGetUnreadCountInputImplCopyWithImpl<$Res>
 class _$NotificationGetUnreadCountInputImpl
     implements _NotificationGetUnreadCountInput {
   const _$NotificationGetUnreadCountInputImpl(
-      {this.priority, this.seenAt, final Map<String, dynamic>? $unknown})
+      {this.priority,
+      @JsonKey(toJson: iso8601) this.seenAt,
+      final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
   factory _$NotificationGetUnreadCountInputImpl.fromJson(
@@ -147,6 +156,7 @@ class _$NotificationGetUnreadCountInputImpl
   @override
   final bool? priority;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? seenAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -201,7 +211,7 @@ abstract class _NotificationGetUnreadCountInput
     implements NotificationGetUnreadCountInput {
   const factory _NotificationGetUnreadCountInput(
           {final bool? priority,
-          final DateTime? seenAt,
+          @JsonKey(toJson: iso8601) final DateTime? seenAt,
           final Map<String, dynamic>? $unknown}) =
       _$NotificationGetUnreadCountInputImpl;
 
@@ -211,6 +221,7 @@ abstract class _NotificationGetUnreadCountInput
   @override
   bool? get priority;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get seenAt;
   @override
   Map<String, dynamic>? get $unknown;

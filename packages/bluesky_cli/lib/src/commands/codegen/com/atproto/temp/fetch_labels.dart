@@ -26,18 +26,21 @@ final class FetchLabelsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"DEPRECATED: use queryLabels or subscribeLabels instead -- Fetch all labels from a labeler created after a certain date.";
+      "DEPRECATED: use queryLabels or subscribeLabels instead -- Fetch all labels from a labeler created after a certain date.";
 
   @override
   final String invocation =
-      "bsky com-atproto-temp fetch-labels [since] [limit]";
+      "bsky com-atproto-temp fetch-labels [--since=<value>] [--limit=<value>]";
 
   @override
   String get methodId => "com.atproto.temp.fetchLabels";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["since"] != null) "since": argResults!["since"],
-        "limit": argResults!["limit"],
+        if (argResults!.wasParsed("since"))
+          "since": int.tryParse(argResults!["since"]) ??
+              usageException('Invalid integer value for option "since".'),
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
       };
 }

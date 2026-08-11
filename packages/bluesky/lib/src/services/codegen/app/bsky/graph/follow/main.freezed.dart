@@ -22,6 +22,7 @@ GraphFollowRecord _$GraphFollowRecordFromJson(Map<String, dynamic> json) {
 mixin _$GraphFollowRecord {
   String get $type => throw _privateConstructorUsedError;
   String get subject => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @RepoStrongRefConverter()
   RepoStrongRef? get via => throw _privateConstructorUsedError;
@@ -46,7 +47,7 @@ abstract class $GraphFollowRecordCopyWith<$Res> {
   $Res call(
       {String $type,
       String subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @RepoStrongRefConverter() RepoStrongRef? via,
       Map<String, dynamic>? $unknown});
 
@@ -124,7 +125,7 @@ abstract class _$$GraphFollowRecordImplCopyWith<$Res>
   $Res call(
       {String $type,
       String subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @RepoStrongRefConverter() RepoStrongRef? via,
       Map<String, dynamic>? $unknown});
 
@@ -183,7 +184,7 @@ class _$GraphFollowRecordImpl implements _GraphFollowRecord {
   const _$GraphFollowRecordImpl(
       {this.$type = 'app.bsky.graph.follow',
       required this.subject,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @RepoStrongRefConverter() this.via,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -197,6 +198,7 @@ class _$GraphFollowRecordImpl implements _GraphFollowRecord {
   @override
   final String subject;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @RepoStrongRefConverter()
@@ -255,7 +257,7 @@ abstract class _GraphFollowRecord implements GraphFollowRecord {
   const factory _GraphFollowRecord(
       {final String $type,
       required final String subject,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @RepoStrongRefConverter() final RepoStrongRef? via,
       final Map<String, dynamic>? $unknown}) = _$GraphFollowRecordImpl;
 
@@ -267,6 +269,7 @@ abstract class _GraphFollowRecord implements GraphFollowRecord {
   @override
   String get subject;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @RepoStrongRefConverter()

@@ -26,6 +26,7 @@ mixin _$HistoricalStats {
   String get date => throw _privateConstructorUsedError;
 
   /// When this snapshot was last computed.
+  @JsonKey(toJson: iso8601)
   DateTime? get computedAt => throw _privateConstructorUsedError;
 
   /// Number of reports not closed at time of computation.
@@ -66,7 +67,7 @@ abstract class $HistoricalStatsCopyWith<$Res> {
   $Res call(
       {String $type,
       String date,
-      DateTime? computedAt,
+      @JsonKey(toJson: iso8601) DateTime? computedAt,
       int? pendingCount,
       int? actionedCount,
       int? escalatedCount,
@@ -158,7 +159,7 @@ abstract class _$$HistoricalStatsImplCopyWith<$Res>
   $Res call(
       {String $type,
       String date,
-      DateTime? computedAt,
+      @JsonKey(toJson: iso8601) DateTime? computedAt,
       int? pendingCount,
       int? actionedCount,
       int? escalatedCount,
@@ -244,7 +245,7 @@ class _$HistoricalStatsImpl implements _HistoricalStats {
   const _$HistoricalStatsImpl(
       {this.$type = 'tools.ozone.report.defs#historicalStats',
       required this.date,
-      this.computedAt,
+      @JsonKey(toJson: iso8601) this.computedAt,
       this.pendingCount,
       this.actionedCount,
       this.escalatedCount,
@@ -267,6 +268,7 @@ class _$HistoricalStatsImpl implements _HistoricalStats {
 
   /// When this snapshot was last computed.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? computedAt;
 
   /// Number of reports not closed at time of computation.
@@ -367,7 +369,7 @@ abstract class _HistoricalStats implements HistoricalStats {
   const factory _HistoricalStats(
       {final String $type,
       required final String date,
-      final DateTime? computedAt,
+      @JsonKey(toJson: iso8601) final DateTime? computedAt,
       final int? pendingCount,
       final int? actionedCount,
       final int? escalatedCount,
@@ -388,6 +390,7 @@ abstract class _HistoricalStats implements HistoricalStats {
 
   /// When this snapshot was last computed.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get computedAt;
 
   /// Number of reports not closed at time of computation.

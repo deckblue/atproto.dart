@@ -35,6 +35,7 @@ mixin _$Commit {
   String get rev => throw _privateConstructorUsedError;
 
   /// The rev of the last emitted commit from this repo (if any).
+  @JsonKey(includeIfNull: true)
   String? get since => throw _privateConstructorUsedError;
 
   /// CAR file containing relevant blocks, as a diff since the previous repo state. The commit must be included as a block, and the commit block CID must be the first entry in the CAR header 'roots' list.
@@ -48,6 +49,7 @@ mixin _$Commit {
   String? get prevData => throw _privateConstructorUsedError;
 
   /// Timestamp of when this message was originally broadcast.
+  @JsonKey(toJson: iso8601)
   DateTime get time => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -71,11 +73,11 @@ abstract class $CommitCopyWith<$Res> {
       String repo,
       String commit,
       String rev,
-      String? since,
+      @JsonKey(includeIfNull: true) String? since,
       Map<String, dynamic> blocks,
       @RepoOpConverter() List<RepoOp> ops,
       String? prevData,
-      DateTime time,
+      @JsonKey(toJson: iso8601) DateTime time,
       Map<String, dynamic>? $unknown});
 }
 
@@ -168,11 +170,11 @@ abstract class _$$CommitImplCopyWith<$Res> implements $CommitCopyWith<$Res> {
       String repo,
       String commit,
       String rev,
-      String? since,
+      @JsonKey(includeIfNull: true) String? since,
       Map<String, dynamic> blocks,
       @RepoOpConverter() List<RepoOp> ops,
       String? prevData,
-      DateTime time,
+      @JsonKey(toJson: iso8601) DateTime time,
       Map<String, dynamic>? $unknown});
 }
 
@@ -260,11 +262,11 @@ class _$CommitImpl implements _Commit {
       required this.repo,
       required this.commit,
       required this.rev,
-      required this.since,
+      @JsonKey(includeIfNull: true) required this.since,
       required final Map<String, dynamic> blocks,
       @RepoOpConverter() required final List<RepoOp> ops,
       this.prevData,
-      required this.time,
+      @JsonKey(toJson: iso8601) required this.time,
       final Map<String, dynamic>? $unknown})
       : _blocks = blocks,
         _ops = ops,
@@ -295,6 +297,7 @@ class _$CommitImpl implements _Commit {
 
   /// The rev of the last emitted commit from this repo (if any).
   @override
+  @JsonKey(includeIfNull: true)
   final String? since;
 
   /// CAR file containing relevant blocks, as a diff since the previous repo state. The commit must be included as a block, and the commit block CID must be the first entry in the CAR header 'roots' list.
@@ -326,6 +329,7 @@ class _$CommitImpl implements _Commit {
 
   /// Timestamp of when this message was originally broadcast.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime time;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -400,11 +404,11 @@ abstract class _Commit implements Commit {
       required final String repo,
       required final String commit,
       required final String rev,
-      required final String? since,
+      @JsonKey(includeIfNull: true) required final String? since,
       required final Map<String, dynamic> blocks,
       @RepoOpConverter() required final List<RepoOp> ops,
       final String? prevData,
-      required final DateTime time,
+      @JsonKey(toJson: iso8601) required final DateTime time,
       final Map<String, dynamic>? $unknown}) = _$CommitImpl;
 
   factory _Commit.fromJson(Map<String, dynamic> json) = _$CommitImpl.fromJson;
@@ -430,6 +434,7 @@ abstract class _Commit implements Commit {
 
   /// The rev of the last emitted commit from this repo (if any).
   @override
+  @JsonKey(includeIfNull: true)
   String? get since;
 
   /// CAR file containing relevant blocks, as a diff since the previous repo state. The commit must be included as a block, and the commit block CID must be the first entry in the CAR header 'roots' list.
@@ -447,6 +452,7 @@ abstract class _Commit implements Commit {
 
   /// Timestamp of when this message was originally broadcast.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get time;
   @override
   Map<String, dynamic>? get $unknown;

@@ -22,6 +22,7 @@ InviteCodeUse _$InviteCodeUseFromJson(Map<String, dynamic> json) {
 mixin _$InviteCodeUse {
   String get $type => throw _privateConstructorUsedError;
   String get usedBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get usedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -44,7 +45,7 @@ abstract class $InviteCodeUseCopyWith<$Res> {
   $Res call(
       {String $type,
       String usedBy,
-      DateTime usedAt,
+      @JsonKey(toJson: iso8601) DateTime usedAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -100,7 +101,7 @@ abstract class _$$InviteCodeUseImplCopyWith<$Res>
   $Res call(
       {String $type,
       String usedBy,
-      DateTime usedAt,
+      @JsonKey(toJson: iso8601) DateTime usedAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -150,7 +151,7 @@ class _$InviteCodeUseImpl implements _InviteCodeUse {
   const _$InviteCodeUseImpl(
       {this.$type = 'com.atproto.server.defs#inviteCodeUse',
       required this.usedBy,
-      required this.usedAt,
+      @JsonKey(toJson: iso8601) required this.usedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -163,6 +164,7 @@ class _$InviteCodeUseImpl implements _InviteCodeUse {
   @override
   final String usedBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime usedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -215,7 +217,7 @@ abstract class _InviteCodeUse implements InviteCodeUse {
   const factory _InviteCodeUse(
       {final String $type,
       required final String usedBy,
-      required final DateTime usedAt,
+      @JsonKey(toJson: iso8601) required final DateTime usedAt,
       final Map<String, dynamic>? $unknown}) = _$InviteCodeUseImpl;
 
   factory _InviteCodeUse.fromJson(Map<String, dynamic> json) =
@@ -226,6 +228,7 @@ abstract class _InviteCodeUse implements InviteCodeUse {
   @override
   String get usedBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get usedAt;
   @override
   Map<String, dynamic>? get $unknown;

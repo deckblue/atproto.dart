@@ -26,6 +26,7 @@ mixin _$RepoOp {
   String get path => throw _privateConstructorUsedError;
 
   /// For creates and updates, the new record CID. For deletions, null.
+  @JsonKey(includeIfNull: true)
   String? get cid => throw _privateConstructorUsedError;
 
   /// For updates and deletes, the previous record CID (required for inductive firehose). For creations, field should not be defined.
@@ -50,7 +51,7 @@ abstract class $RepoOpCopyWith<$Res> {
       {String $type,
       @RepoOpActionConverter() RepoOpAction action,
       String path,
-      String? cid,
+      @JsonKey(includeIfNull: true) String? cid,
       String? prev,
       Map<String, dynamic>? $unknown});
 
@@ -129,7 +130,7 @@ abstract class _$$RepoOpImplCopyWith<$Res> implements $RepoOpCopyWith<$Res> {
       {String $type,
       @RepoOpActionConverter() RepoOpAction action,
       String path,
-      String? cid,
+      @JsonKey(includeIfNull: true) String? cid,
       String? prev,
       Map<String, dynamic>? $unknown});
 
@@ -194,7 +195,7 @@ class _$RepoOpImpl implements _RepoOp {
       {this.$type = 'com.atproto.sync.subscribeRepos#repoOp',
       @RepoOpActionConverter() required this.action,
       required this.path,
-      required this.cid,
+      @JsonKey(includeIfNull: true) required this.cid,
       this.prev,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -213,6 +214,7 @@ class _$RepoOpImpl implements _RepoOp {
 
   /// For creates and updates, the new record CID. For deletions, null.
   @override
+  @JsonKey(includeIfNull: true)
   final String? cid;
 
   /// For updates and deletes, the previous record CID (required for inductive firehose). For creations, field should not be defined.
@@ -272,7 +274,7 @@ abstract class _RepoOp implements RepoOp {
       {final String $type,
       @RepoOpActionConverter() required final RepoOpAction action,
       required final String path,
-      required final String? cid,
+      @JsonKey(includeIfNull: true) required final String? cid,
       final String? prev,
       final Map<String, dynamic>? $unknown}) = _$RepoOpImpl;
 
@@ -288,6 +290,7 @@ abstract class _RepoOp implements RepoOp {
 
   /// For creates and updates, the new record CID. For deletions, null.
   @override
+  @JsonKey(includeIfNull: true)
   String? get cid;
 
   /// For updates and deletes, the previous record CID (required for inductive firehose). For creations, field should not be defined.

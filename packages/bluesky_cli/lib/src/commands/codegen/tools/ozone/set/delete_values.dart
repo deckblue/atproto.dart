@@ -33,11 +33,11 @@ final class DeleteValuesCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Delete values from a specific set. Attempting to delete values that are not in the set will not result in an error";
+      "Delete values from a specific set. Attempting to delete values that are not in the set will not result in an error";
 
   @override
   final String invocation =
-      "bsky tools-ozone-set delete-values [name] [values]";
+      "bsky tools-ozone-set delete-values --name=<value> [--values=<value>...]";
 
   @override
   String get methodId => "tools.ozone.set.deleteValues";
@@ -45,6 +45,12 @@ final class DeleteValuesCommand extends ProcedureCommand {
   @override
   Map<String, dynamic>? get body => {
         "name": argResults!["name"],
-        "values": argResults!["values"],
+        "values": _requireNonEmpty("values", argResults!["values"]),
       };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

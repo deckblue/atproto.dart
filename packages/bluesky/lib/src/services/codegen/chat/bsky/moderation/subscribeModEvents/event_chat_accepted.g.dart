@@ -49,9 +49,9 @@ Map<String, dynamic> _$$EventChatAcceptedImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       'actorDid': instance.actorDid,
-      'convoCreatedAt': instance.convoCreatedAt.toIso8601String(),
+      'convoCreatedAt': iso8601(instance.convoCreatedAt),
       'convoId': instance.convoId,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.groupMemberCount case final value?)
         'groupMemberCount': value,
       if (instance.groupName case final value?) 'groupName': value,

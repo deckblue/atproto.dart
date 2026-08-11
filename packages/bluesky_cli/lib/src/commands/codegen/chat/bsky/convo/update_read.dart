@@ -26,11 +26,11 @@ final class UpdateReadCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Updates the read state of a conversation from, optionally specifying the last read message.";
+      "Updates the read state of a conversation from, optionally specifying the last read message.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-convo update-read [convoId] [messageId]";
+      "bsky chat-bsky-convo update-read --convoId=<value> [--messageId=<value>]";
 
   @override
   String get methodId => "chat.bsky.convo.updateRead";
@@ -38,7 +38,7 @@ final class UpdateReadCommand extends ProcedureCommand {
   @override
   Map<String, dynamic>? get body => {
         "convoId": argResults!["convoId"],
-        if (argResults!["messageId"] != null)
+        if (argResults!.wasParsed("messageId"))
           "messageId": argResults!["messageId"],
       };
 }

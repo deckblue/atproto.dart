@@ -37,6 +37,7 @@ mixin _$EmbedRecordViewRecord {
   @UEmbedRecordViewRecordEmbedsConverter()
   List<UEmbedRecordViewRecordEmbeds>? get embeds =>
       throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -69,7 +70,7 @@ abstract class $EmbedRecordViewRecordCopyWith<$Res> {
       int? quoteCount,
       @UEmbedRecordViewRecordEmbedsConverter()
       List<UEmbedRecordViewRecordEmbeds>? embeds,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewBasicCopyWith<$Res> get author;
@@ -194,7 +195,7 @@ abstract class _$$EmbedRecordViewRecordImplCopyWith<$Res>
       int? quoteCount,
       @UEmbedRecordViewRecordEmbedsConverter()
       List<UEmbedRecordViewRecordEmbeds>? embeds,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -303,7 +304,7 @@ class _$EmbedRecordViewRecordImpl implements _EmbedRecordViewRecord {
       this.quoteCount,
       @UEmbedRecordViewRecordEmbedsConverter()
       final List<UEmbedRecordViewRecordEmbeds>? embeds,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       final Map<String, dynamic>? $unknown})
       : _value = value,
         _labels = labels,
@@ -363,6 +364,7 @@ class _$EmbedRecordViewRecordImpl implements _EmbedRecordViewRecord {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -453,7 +455,7 @@ abstract class _EmbedRecordViewRecord implements EmbedRecordViewRecord {
       final int? quoteCount,
       @UEmbedRecordViewRecordEmbedsConverter()
       final List<UEmbedRecordViewRecordEmbeds>? embeds,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       final Map<String, dynamic>? $unknown}) = _$EmbedRecordViewRecordImpl;
 
   factory _EmbedRecordViewRecord.fromJson(Map<String, dynamic> json) =
@@ -486,6 +488,7 @@ abstract class _EmbedRecordViewRecord implements EmbedRecordViewRecord {
   @UEmbedRecordViewRecordEmbedsConverter()
   List<UEmbedRecordViewRecordEmbeds>? get embeds;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   Map<String, dynamic>? get $unknown;

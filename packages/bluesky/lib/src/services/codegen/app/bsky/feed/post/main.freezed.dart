@@ -36,6 +36,7 @@ mixin _$FeedPostRecord {
   List<String>? get tags => throw _privateConstructorUsedError;
 
   /// Client-declared timestamp when this post was originally created.
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -64,7 +65,7 @@ abstract class $FeedPostRecordCopyWith<$Res> {
       List<String>? langs,
       @UFeedPostLabelsConverter() UFeedPostLabels? labels,
       List<String>? tags,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $ReplyRefCopyWith<$Res>? get reply;
@@ -202,7 +203,7 @@ abstract class _$$FeedPostRecordImplCopyWith<$Res>
       List<String>? langs,
       @UFeedPostLabelsConverter() UFeedPostLabels? labels,
       List<String>? tags,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -295,7 +296,7 @@ class _$FeedPostRecordImpl implements _FeedPostRecord {
       final List<String>? langs,
       @UFeedPostLabelsConverter() this.labels,
       final List<String>? tags,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _facets = facets,
         _langs = langs,
@@ -354,6 +355,7 @@ class _$FeedPostRecordImpl implements _FeedPostRecord {
 
   /// Client-declared timestamp when this post was originally created.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -430,7 +432,7 @@ abstract class _FeedPostRecord implements FeedPostRecord {
       final List<String>? langs,
       @UFeedPostLabelsConverter() final UFeedPostLabels? labels,
       final List<String>? tags,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$FeedPostRecordImpl;
 
   factory _FeedPostRecord.fromJson(Map<String, dynamic> json) =
@@ -461,6 +463,7 @@ abstract class _FeedPostRecord implements FeedPostRecord {
 
   /// Client-declared timestamp when this post was originally created.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

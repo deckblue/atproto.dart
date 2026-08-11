@@ -60,7 +60,7 @@ Map<String, dynamic> _$$LabelerServiceRecordImplToJson(
               instance.labels, const ULabelerServiceLabelsConverter().toJson)
           case final value?)
         'labels': value,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.reasonTypes?.map(const ReasonTypeConverter().toJson).toList()
           case final value?)
         'reasonTypes': value,

@@ -35,11 +35,11 @@ final class GetEmbedExternalViewCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Resolve one or more AT-URIs into the data needed to render an enhanced external embed. Returns `associatedRefs` (strongRefs to embed into a post's external.associatedRefs), the raw `associatedRecords`, and a hydrated `view`. The response is empty (`{}`) when no records were resolvable, or when validation determined the resolved records don't actually back the requested URL; clients should fall back to their own link-card rendering in that case and skip writing strongRefs to the post.";
+      "Resolve one or more AT-URIs into the data needed to render an enhanced external embed. Returns `associatedRefs` (strongRefs to embed into a post's external.associatedRefs), the raw `associatedRecords`, and a hydrated `view`. The response is empty (`{}`) when no records were resolvable, or when validation determined the resolved records don't actually back the requested URL; clients should fall back to their own link-card rendering in that case and skip writing strongRefs to the post.";
 
   @override
   final String invocation =
-      "bsky app-bsky-embed get-embed-external-view [url] [uris]";
+      "bsky app-bsky-embed get-embed-external-view --url=<value> [--uris=<value>...]";
 
   @override
   String get methodId => "app.bsky.embed.getEmbedExternalView";
@@ -47,6 +47,12 @@ final class GetEmbedExternalViewCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "url": argResults!["url"],
-        "uris": argResults!["uris"],
+        "uris": _requireNonEmpty("uris", argResults!["uris"]),
       };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

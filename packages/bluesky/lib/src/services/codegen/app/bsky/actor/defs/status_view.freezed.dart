@@ -35,6 +35,7 @@ mixin _$StatusView {
   List<Label>? get labels => throw _privateConstructorUsedError;
 
   /// The date when this status will expire. The application might choose to no longer return the status after expiration.
+  @JsonKey(toJson: iso8601)
   DateTime? get expiresAt => throw _privateConstructorUsedError;
 
   /// True if the status is not expired, false if it is expired. Only present if expiration was set.
@@ -68,7 +69,7 @@ abstract class $StatusViewCopyWith<$Res> {
       Map<String, dynamic> record,
       @UStatusViewEmbedConverter() UStatusViewEmbed? embed,
       @LabelConverter() List<Label>? labels,
-      DateTime? expiresAt,
+      @JsonKey(toJson: iso8601) DateTime? expiresAt,
       bool? isActive,
       bool? isDisabled,
       Map<String, dynamic>? $unknown});
@@ -193,7 +194,7 @@ abstract class _$$StatusViewImplCopyWith<$Res>
       Map<String, dynamic> record,
       @UStatusViewEmbedConverter() UStatusViewEmbed? embed,
       @LabelConverter() List<Label>? labels,
-      DateTime? expiresAt,
+      @JsonKey(toJson: iso8601) DateTime? expiresAt,
       bool? isActive,
       bool? isDisabled,
       Map<String, dynamic>? $unknown});
@@ -290,7 +291,7 @@ class _$StatusViewImpl implements _StatusView {
       required final Map<String, dynamic> record,
       @UStatusViewEmbedConverter() this.embed,
       @LabelConverter() final List<Label>? labels,
-      this.expiresAt,
+      @JsonKey(toJson: iso8601) this.expiresAt,
       this.isActive,
       this.isDisabled,
       final Map<String, dynamic>? $unknown})
@@ -338,6 +339,7 @@ class _$StatusViewImpl implements _StatusView {
 
   /// The date when this status will expire. The application might choose to no longer return the status after expiration.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? expiresAt;
 
   /// True if the status is not expired, false if it is expired. Only present if expiration was set.
@@ -424,7 +426,7 @@ abstract class _StatusView implements StatusView {
       required final Map<String, dynamic> record,
       @UStatusViewEmbedConverter() final UStatusViewEmbed? embed,
       @LabelConverter() final List<Label>? labels,
-      final DateTime? expiresAt,
+      @JsonKey(toJson: iso8601) final DateTime? expiresAt,
       final bool? isActive,
       final bool? isDisabled,
       final Map<String, dynamic>? $unknown}) = _$StatusViewImpl;
@@ -455,6 +457,7 @@ abstract class _StatusView implements StatusView {
 
   /// The date when this status will expire. The application might choose to no longer return the status after expiration.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get expiresAt;
 
   /// True if the status is not expired, false if it is expired. Only present if expiration was set.

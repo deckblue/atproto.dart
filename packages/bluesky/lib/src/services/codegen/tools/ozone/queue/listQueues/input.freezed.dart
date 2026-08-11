@@ -23,7 +23,7 @@ mixin _$QueueListQueuesInput {
   /// Filter by enabled status. If not specified, returns all queues.
   bool? get enabled => throw _privateConstructorUsedError;
 
-  /// Filter queues that handle this subject type ('account' or 'record').
+  /// Filter queues that handle this subject type ('account', 'record', 'message', or 'conversation').
   String? get subjectType => throw _privateConstructorUsedError;
 
   /// Filter queues by collection name (e.g. 'app.bsky.feed.post').
@@ -210,7 +210,7 @@ class _$QueueListQueuesInputImpl implements _QueueListQueuesInput {
   @override
   final bool? enabled;
 
-  /// Filter queues that handle this subject type ('account' or 'record').
+  /// Filter queues that handle this subject type ('account', 'record', 'message', or 'conversation').
   @override
   final String? subjectType;
 
@@ -311,7 +311,7 @@ abstract class _QueueListQueuesInput implements QueueListQueuesInput {
   @override
   bool? get enabled;
 
-  /// Filter queues that handle this subject type ('account' or 'record').
+  /// Filter queues that handle this subject type ('account', 'record', 'message', or 'conversation').
   @override
   String? get subjectType;
 

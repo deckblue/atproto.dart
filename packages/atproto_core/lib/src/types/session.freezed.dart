@@ -234,7 +234,7 @@ class __$$SessionImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$SessionImpl implements _Session {
+class _$SessionImpl extends _Session {
   const _$SessionImpl(
       {required this.did,
       required this.handle,
@@ -246,7 +246,8 @@ class _$SessionImpl implements _Session {
       final Map<String, dynamic>? didDoc,
       this.active = true,
       this.status})
-      : _didDoc = didDoc;
+      : _didDoc = didDoc,
+        super._();
 
   factory _$SessionImpl.fromJson(Map<String, dynamic> json) =>
       _$$SessionImplFromJson(json);
@@ -297,11 +298,6 @@ class _$SessionImpl implements _Session {
   final bool active;
   @override
   final String? status;
-
-  @override
-  String toString() {
-    return 'Session(did: $did, handle: $handle, email: $email, emailConfirmed: $emailConfirmed, emailAuthFactor: $emailAuthFactor, accessJwt: $accessJwt, refreshJwt: $refreshJwt, didDoc: $didDoc, active: $active, status: $status)';
-  }
 
   @override
   bool operator ==(Object other) {
@@ -355,7 +351,7 @@ class _$SessionImpl implements _Session {
   }
 }
 
-abstract class _Session implements Session {
+abstract class _Session extends Session {
   const factory _Session(
       {required final String did,
       required final String handle,
@@ -367,6 +363,7 @@ abstract class _Session implements Session {
       final Map<String, dynamic>? didDoc,
       final bool active,
       final String? status}) = _$SessionImpl;
+  const _Session._() : super._();
 
   factory _Session.fromJson(Map<String, dynamic> json) = _$SessionImpl.fromJson;
 

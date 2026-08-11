@@ -24,6 +24,7 @@ mixin _$JoinRequestView {
   String get convoId => throw _privateConstructorUsedError;
   @ProfileViewBasicConverter()
   ProfileViewBasic get requestedBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get requestedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -47,7 +48,7 @@ abstract class $JoinRequestViewCopyWith<$Res> {
       {String $type,
       String convoId,
       @ProfileViewBasicConverter() ProfileViewBasic requestedBy,
-      DateTime requestedAt,
+      @JsonKey(toJson: iso8601) DateTime requestedAt,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewBasicCopyWith<$Res> get requestedBy;
@@ -121,7 +122,7 @@ abstract class _$$JoinRequestViewImplCopyWith<$Res>
       {String $type,
       String convoId,
       @ProfileViewBasicConverter() ProfileViewBasic requestedBy,
-      DateTime requestedAt,
+      @JsonKey(toJson: iso8601) DateTime requestedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -180,7 +181,7 @@ class _$JoinRequestViewImpl implements _JoinRequestView {
       {this.$type = 'chat.bsky.group.defs#joinRequestView',
       required this.convoId,
       @ProfileViewBasicConverter() required this.requestedBy,
-      required this.requestedAt,
+      @JsonKey(toJson: iso8601) required this.requestedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -196,6 +197,7 @@ class _$JoinRequestViewImpl implements _JoinRequestView {
   @ProfileViewBasicConverter()
   final ProfileViewBasic requestedBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime requestedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -253,7 +255,7 @@ abstract class _JoinRequestView implements JoinRequestView {
       {final String $type,
       required final String convoId,
       @ProfileViewBasicConverter() required final ProfileViewBasic requestedBy,
-      required final DateTime requestedAt,
+      @JsonKey(toJson: iso8601) required final DateTime requestedAt,
       final Map<String, dynamic>? $unknown}) = _$JoinRequestViewImpl;
 
   factory _JoinRequestView.fromJson(Map<String, dynamic> json) =
@@ -267,6 +269,7 @@ abstract class _JoinRequestView implements JoinRequestView {
   @ProfileViewBasicConverter()
   ProfileViewBasic get requestedBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get requestedAt;
   @override
   Map<String, dynamic>? get $unknown;

@@ -40,28 +40,36 @@ mixin _$ModerationQueryStatusesInput {
   String? get comment => throw _privateConstructorUsedError;
 
   /// Search subjects reported after a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get reportedAfter => throw _privateConstructorUsedError;
 
   /// Search subjects reported before a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get reportedBefore => throw _privateConstructorUsedError;
 
   /// Search subjects reviewed after a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get reviewedAfter => throw _privateConstructorUsedError;
 
   /// Search subjects where the associated record/account was deleted after a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get hostingDeletedAfter => throw _privateConstructorUsedError;
 
   /// Search subjects where the associated record/account was deleted before a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get hostingDeletedBefore => throw _privateConstructorUsedError;
 
   /// Search subjects where the associated record/account was updated after a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get hostingUpdatedAfter => throw _privateConstructorUsedError;
 
   /// Search subjects where the associated record/account was updated before a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get hostingUpdatedBefore => throw _privateConstructorUsedError;
   List<String>? get hostingStatuses => throw _privateConstructorUsedError;
 
   /// Search subjects reviewed before a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get reviewedBefore => throw _privateConstructorUsedError;
 
   /// By default, we don't include muted subjects in the results. Set this to true to include them.
@@ -145,15 +153,15 @@ abstract class $ModerationQueryStatusesInputCopyWith<$Res> {
       bool? includeAllUserRecords,
       String? subject,
       String? comment,
-      DateTime? reportedAfter,
-      DateTime? reportedBefore,
-      DateTime? reviewedAfter,
-      DateTime? hostingDeletedAfter,
-      DateTime? hostingDeletedBefore,
-      DateTime? hostingUpdatedAfter,
-      DateTime? hostingUpdatedBefore,
+      @JsonKey(toJson: iso8601) DateTime? reportedAfter,
+      @JsonKey(toJson: iso8601) DateTime? reportedBefore,
+      @JsonKey(toJson: iso8601) DateTime? reviewedAfter,
+      @JsonKey(toJson: iso8601) DateTime? hostingDeletedAfter,
+      @JsonKey(toJson: iso8601) DateTime? hostingDeletedBefore,
+      @JsonKey(toJson: iso8601) DateTime? hostingUpdatedAfter,
+      @JsonKey(toJson: iso8601) DateTime? hostingUpdatedBefore,
       List<String>? hostingStatuses,
-      DateTime? reviewedBefore,
+      @JsonKey(toJson: iso8601) DateTime? reviewedBefore,
       bool? includeMuted,
       bool? onlyMuted,
       @ModerationQueryStatusesReviewStateConverter()
@@ -455,15 +463,15 @@ abstract class _$$ModerationQueryStatusesInputImplCopyWith<$Res>
       bool? includeAllUserRecords,
       String? subject,
       String? comment,
-      DateTime? reportedAfter,
-      DateTime? reportedBefore,
-      DateTime? reviewedAfter,
-      DateTime? hostingDeletedAfter,
-      DateTime? hostingDeletedBefore,
-      DateTime? hostingUpdatedAfter,
-      DateTime? hostingUpdatedBefore,
+      @JsonKey(toJson: iso8601) DateTime? reportedAfter,
+      @JsonKey(toJson: iso8601) DateTime? reportedBefore,
+      @JsonKey(toJson: iso8601) DateTime? reviewedAfter,
+      @JsonKey(toJson: iso8601) DateTime? hostingDeletedAfter,
+      @JsonKey(toJson: iso8601) DateTime? hostingDeletedBefore,
+      @JsonKey(toJson: iso8601) DateTime? hostingUpdatedAfter,
+      @JsonKey(toJson: iso8601) DateTime? hostingUpdatedBefore,
       List<String>? hostingStatuses,
-      DateTime? reviewedBefore,
+      @JsonKey(toJson: iso8601) DateTime? reviewedBefore,
       bool? includeMuted,
       bool? onlyMuted,
       @ModerationQueryStatusesReviewStateConverter()
@@ -717,15 +725,15 @@ class _$ModerationQueryStatusesInputImpl
       this.includeAllUserRecords,
       this.subject,
       this.comment,
-      this.reportedAfter,
-      this.reportedBefore,
-      this.reviewedAfter,
-      this.hostingDeletedAfter,
-      this.hostingDeletedBefore,
-      this.hostingUpdatedAfter,
-      this.hostingUpdatedBefore,
+      @JsonKey(toJson: iso8601) this.reportedAfter,
+      @JsonKey(toJson: iso8601) this.reportedBefore,
+      @JsonKey(toJson: iso8601) this.reviewedAfter,
+      @JsonKey(toJson: iso8601) this.hostingDeletedAfter,
+      @JsonKey(toJson: iso8601) this.hostingDeletedBefore,
+      @JsonKey(toJson: iso8601) this.hostingUpdatedAfter,
+      @JsonKey(toJson: iso8601) this.hostingUpdatedBefore,
       final List<String>? hostingStatuses,
-      this.reviewedBefore,
+      @JsonKey(toJson: iso8601) this.reviewedBefore,
       this.includeMuted,
       this.onlyMuted,
       @ModerationQueryStatusesReviewStateConverter() this.reviewState,
@@ -786,30 +794,37 @@ class _$ModerationQueryStatusesInputImpl
 
   /// Search subjects reported after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? reportedAfter;
 
   /// Search subjects reported before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? reportedBefore;
 
   /// Search subjects reviewed after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? reviewedAfter;
 
   /// Search subjects where the associated record/account was deleted after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? hostingDeletedAfter;
 
   /// Search subjects where the associated record/account was deleted before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? hostingDeletedBefore;
 
   /// Search subjects where the associated record/account was updated after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? hostingUpdatedAfter;
 
   /// Search subjects where the associated record/account was updated before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? hostingUpdatedBefore;
   final List<String>? _hostingStatuses;
   @override
@@ -823,6 +838,7 @@ class _$ModerationQueryStatusesInputImpl
 
   /// Search subjects reviewed before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? reviewedBefore;
 
   /// By default, we don't include muted subjects in the results. Set this to true to include them.
@@ -1094,15 +1110,15 @@ abstract class _ModerationQueryStatusesInput
           final bool? includeAllUserRecords,
           final String? subject,
           final String? comment,
-          final DateTime? reportedAfter,
-          final DateTime? reportedBefore,
-          final DateTime? reviewedAfter,
-          final DateTime? hostingDeletedAfter,
-          final DateTime? hostingDeletedBefore,
-          final DateTime? hostingUpdatedAfter,
-          final DateTime? hostingUpdatedBefore,
+          @JsonKey(toJson: iso8601) final DateTime? reportedAfter,
+          @JsonKey(toJson: iso8601) final DateTime? reportedBefore,
+          @JsonKey(toJson: iso8601) final DateTime? reviewedAfter,
+          @JsonKey(toJson: iso8601) final DateTime? hostingDeletedAfter,
+          @JsonKey(toJson: iso8601) final DateTime? hostingDeletedBefore,
+          @JsonKey(toJson: iso8601) final DateTime? hostingUpdatedAfter,
+          @JsonKey(toJson: iso8601) final DateTime? hostingUpdatedBefore,
           final List<String>? hostingStatuses,
-          final DateTime? reviewedBefore,
+          @JsonKey(toJson: iso8601) final DateTime? reviewedBefore,
           final bool? includeMuted,
           final bool? onlyMuted,
           @ModerationQueryStatusesReviewStateConverter()
@@ -1159,36 +1175,44 @@ abstract class _ModerationQueryStatusesInput
 
   /// Search subjects reported after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get reportedAfter;
 
   /// Search subjects reported before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get reportedBefore;
 
   /// Search subjects reviewed after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get reviewedAfter;
 
   /// Search subjects where the associated record/account was deleted after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get hostingDeletedAfter;
 
   /// Search subjects where the associated record/account was deleted before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get hostingDeletedBefore;
 
   /// Search subjects where the associated record/account was updated after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get hostingUpdatedAfter;
 
   /// Search subjects where the associated record/account was updated before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get hostingUpdatedBefore;
   @override
   List<String>? get hostingStatuses;
 
   /// Search subjects reviewed before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get reviewedBefore;
 
   /// By default, we don't include muted subjects in the results. Set this to true to include them.

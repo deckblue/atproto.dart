@@ -86,7 +86,7 @@ Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
       if (instance.repostCount case final value?) 'repostCount': value,
       if (instance.likeCount case final value?) 'likeCount': value,
       if (instance.quoteCount case final value?) 'quoteCount': value,
-      'indexedAt': instance.indexedAt.toIso8601String(),
+      'indexedAt': iso8601(instance.indexedAt),
       if (_$JsonConverterToJson<Map<String, dynamic>, ViewerState>(
               instance.viewer, const ViewerStateConverter().toJson)
           case final value?)

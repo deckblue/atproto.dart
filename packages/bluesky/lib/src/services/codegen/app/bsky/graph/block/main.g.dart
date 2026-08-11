@@ -34,6 +34,6 @@ Map<String, dynamic> _$$GraphBlockRecordImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       'subject': instance.subject,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

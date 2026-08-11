@@ -32,18 +32,24 @@ final class CancelScheduledActionsCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Cancel all pending scheduled moderation actions for specified subjects";
+      "Cancel all pending scheduled moderation actions for specified subjects";
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation cancel-scheduled-actions [subjects] [comment]";
+      "bsky tools-ozone-moderation cancel-scheduled-actions [--subjects=<value>...] [--comment=<value>]";
 
   @override
   String get methodId => "tools.ozone.moderation.cancelScheduledActions";
 
   @override
   Map<String, dynamic>? get body => {
-        "subjects": argResults!["subjects"],
-        if (argResults!["comment"] != null) "comment": argResults!["comment"],
+        "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
+        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
       };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

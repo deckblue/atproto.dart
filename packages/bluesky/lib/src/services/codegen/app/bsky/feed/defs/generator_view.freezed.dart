@@ -42,6 +42,7 @@ mixin _$GeneratorView {
   @GeneratorViewContentModeConverter()
   GeneratorViewContentMode? get contentMode =>
       throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -77,7 +78,7 @@ abstract class $GeneratorViewCopyWith<$Res> {
       @GeneratorViewerStateConverter() GeneratorViewerState? viewer,
       @GeneratorViewContentModeConverter()
       GeneratorViewContentMode? contentMode,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewCopyWith<$Res> get creator;
@@ -249,7 +250,7 @@ abstract class _$$GeneratorViewImplCopyWith<$Res>
       @GeneratorViewerStateConverter() GeneratorViewerState? viewer,
       @GeneratorViewContentModeConverter()
       GeneratorViewContentMode? contentMode,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -378,7 +379,7 @@ class _$GeneratorViewImpl implements _GeneratorView {
       @LabelConverter() final List<Label>? labels,
       @GeneratorViewerStateConverter() this.viewer,
       @GeneratorViewContentModeConverter() this.contentMode,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       final Map<String, dynamic>? $unknown})
       : _descriptionFacets = descriptionFacets,
         _labels = labels,
@@ -440,6 +441,7 @@ class _$GeneratorViewImpl implements _GeneratorView {
   @GeneratorViewContentModeConverter()
   final GeneratorViewContentMode? contentMode;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -540,7 +542,7 @@ abstract class _GeneratorView implements GeneratorView {
       @GeneratorViewerStateConverter() final GeneratorViewerState? viewer,
       @GeneratorViewContentModeConverter()
       final GeneratorViewContentMode? contentMode,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       final Map<String, dynamic>? $unknown}) = _$GeneratorViewImpl;
 
   factory _GeneratorView.fromJson(Map<String, dynamic> json) =
@@ -581,6 +583,7 @@ abstract class _GeneratorView implements GeneratorView {
   @GeneratorViewContentModeConverter()
   GeneratorViewContentMode? get contentMode;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   Map<String, dynamic>? get $unknown;

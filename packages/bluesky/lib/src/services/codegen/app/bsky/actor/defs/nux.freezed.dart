@@ -28,6 +28,7 @@ mixin _$Nux {
   String? get data => throw _privateConstructorUsedError;
 
   /// The date and time at which the NUX will expire and should be considered completed.
+  @JsonKey(toJson: iso8601)
   DateTime? get expiresAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -50,7 +51,7 @@ abstract class $NuxCopyWith<$Res> {
       String id,
       bool completed,
       String? data,
-      DateTime? expiresAt,
+      @JsonKey(toJson: iso8601) DateTime? expiresAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -115,7 +116,7 @@ abstract class _$$NuxImplCopyWith<$Res> implements $NuxCopyWith<$Res> {
       String id,
       bool completed,
       String? data,
-      DateTime? expiresAt,
+      @JsonKey(toJson: iso8601) DateTime? expiresAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -175,7 +176,7 @@ class _$NuxImpl implements _Nux {
       required this.id,
       this.completed = false,
       this.data,
-      this.expiresAt,
+      @JsonKey(toJson: iso8601) this.expiresAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -197,6 +198,7 @@ class _$NuxImpl implements _Nux {
 
   /// The date and time at which the NUX will expire and should be considered completed.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? expiresAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -255,7 +257,7 @@ abstract class _Nux implements Nux {
       required final String id,
       final bool completed,
       final String? data,
-      final DateTime? expiresAt,
+      @JsonKey(toJson: iso8601) final DateTime? expiresAt,
       final Map<String, dynamic>? $unknown}) = _$NuxImpl;
 
   factory _Nux.fromJson(Map<String, dynamic> json) = _$NuxImpl.fromJson;
@@ -273,6 +275,7 @@ abstract class _Nux implements Nux {
 
   /// The date and time at which the NUX will expire and should be considered completed.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get expiresAt;
   @override
   Map<String, dynamic>? get $unknown;

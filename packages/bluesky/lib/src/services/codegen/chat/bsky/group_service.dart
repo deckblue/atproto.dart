@@ -32,7 +32,7 @@ import 'group/requestJoin/output.dart';
 // LexGenerator
 // **************************************************************************
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Adds members to a group. The members are added in 'request' status, so they have to accept it. This creates convo memberships.
+/// Adds members to a group. The members are added in 'request' status, so they have to accept it. This creates convo memberships.
 Future<XRPCResponse<GroupAddMembersOutput>> chatBskyGroupAddMembers({
   required String convoId,
   required List<String> members,
@@ -49,7 +49,7 @@ Future<XRPCResponse<GroupAddMembersOutput>> chatBskyGroupAddMembers({
       to: const GroupAddMembersOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Approves a request to join a group (via join link) the user owns. Action taken by the group owner.
+/// Approves a request to join a group (via join link) the user owns. Action taken by the group owner.
 Future<XRPCResponse<GroupApproveJoinRequestOutput>>
     chatBskyGroupApproveJoinRequest({
   required String convoId,
@@ -67,7 +67,7 @@ Future<XRPCResponse<GroupApproveJoinRequestOutput>>
           to: const GroupApproveJoinRequestOutputConverter().fromJson,
         );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Creates a group convo, specifying the members to be added to it. Unlike getConvoForMembers, this isn't idempotent. It will create new groups even if the membership is identical to pre-existing groups. Will create 'pending' membership for all members, except the owner who is 'accepted'.
+/// Creates a group convo, specifying the members to be added to it. Unlike getConvoForMembers, this isn't idempotent. It will create new groups even if the membership is identical to pre-existing groups. Will create 'request' membership for all members, except the owner who is 'accepted'.
 Future<XRPCResponse<GroupCreateGroupOutput>> chatBskyGroupCreateGroup({
   required List<String> members,
   required String name,
@@ -84,7 +84,7 @@ Future<XRPCResponse<GroupCreateGroupOutput>> chatBskyGroupCreateGroup({
       to: const GroupCreateGroupOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Creates a join link for the group convo.
+/// Creates a join link for the group convo.
 Future<XRPCResponse<GroupCreateJoinLinkOutput>> chatBskyGroupCreateJoinLink({
   required String convoId,
   bool? requireApproval,
@@ -102,12 +102,12 @@ Future<XRPCResponse<GroupCreateJoinLinkOutput>> chatBskyGroupCreateJoinLink({
         ...?$unknown,
         'convoId': convoId,
         if (requireApproval != null) 'requireApproval': requireApproval,
-        'joinRule': joinRule.toJson(),
+        'joinRule': const JoinRuleConverter().toJson(joinRule),
       },
       to: const GroupCreateJoinLinkOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Disables the active join link for the group convo.
+/// Disables the active join link for the group convo.
 Future<XRPCResponse<GroupDisableJoinLinkOutput>> chatBskyGroupDisableJoinLink({
   required String convoId,
   required ServiceContext $ctx,
@@ -123,7 +123,7 @@ Future<XRPCResponse<GroupDisableJoinLinkOutput>> chatBskyGroupDisableJoinLink({
       to: const GroupDisableJoinLinkOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Edits group settings.
+/// Edits group settings.
 Future<XRPCResponse<GroupEditGroupOutput>> chatBskyGroupEditGroup({
   required String convoId,
   required String name,
@@ -140,7 +140,7 @@ Future<XRPCResponse<GroupEditGroupOutput>> chatBskyGroupEditGroup({
       to: const GroupEditGroupOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Edits the existing join link settings for the group convo.
+/// Edits the existing join link settings for the group convo.
 Future<XRPCResponse<GroupEditJoinLinkOutput>> chatBskyGroupEditJoinLink({
   required String convoId,
   bool? requireApproval,
@@ -158,12 +158,13 @@ Future<XRPCResponse<GroupEditJoinLinkOutput>> chatBskyGroupEditJoinLink({
         ...?$unknown,
         'convoId': convoId,
         if (requireApproval != null) 'requireApproval': requireApproval,
-        if (joinRule != null) 'joinRule': joinRule.toJson(),
+        if (joinRule != null)
+          'joinRule': const JoinRuleConverter().toJson(joinRule),
       },
       to: const GroupEditJoinLinkOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Re-enables a previously disabled join link for the group convo.
+/// Re-enables a previously disabled join link for the group convo.
 Future<XRPCResponse<GroupEnableJoinLinkOutput>> chatBskyGroupEnableJoinLink({
   required String convoId,
   required ServiceContext $ctx,
@@ -179,7 +180,7 @@ Future<XRPCResponse<GroupEnableJoinLinkOutput>> chatBskyGroupEnableJoinLink({
       to: const GroupEnableJoinLinkOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Get public information about groups from join links. Invalid or disabled codes are silently omitted from results. Use the 'code' property on the views to correlate with the input codes, not array positions.
+/// Get public information about groups from join links. The output array matches the input codes one-to-one by position (and each view also carries its 'code'). Disabled codes return a disabledJoinLinkPreviewView, and codes that do not map to a previewable link return an invalidJoinLinkPreviewView.
 Future<XRPCResponse<GroupGetJoinLinkPreviewsOutput>>
     chatBskyGroupGetJoinLinkPreviews({
   required List<String> codes,
@@ -196,7 +197,7 @@ Future<XRPCResponse<GroupGetJoinLinkPreviewsOutput>>
           to: const GroupGetJoinLinkPreviewsOutputConverter().fromJson,
         );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Lists a page of request to join a group (via join link) the user owns. Shows the data from the owner's point of view.
+/// Lists a page of request to join a group (via join link) the user owns. Shows the data from the owner's point of view.
 Future<XRPCResponse<GroupListJoinRequestsOutput>>
     chatBskyGroupListJoinRequests({
   required String convoId,
@@ -220,7 +221,7 @@ Future<XRPCResponse<GroupListJoinRequestsOutput>>
           to: const GroupListJoinRequestsOutputConverter().fromJson,
         );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Returns a page of group conversations that both the requester and the specified actor are members of.
+/// Returns a page of group conversations that both the requester and the specified actor are members of.
 Future<XRPCResponse<GroupListMutualGroupsOutput>>
     chatBskyGroupListMutualGroups({
   required String subject,
@@ -244,7 +245,7 @@ Future<XRPCResponse<GroupListMutualGroupsOutput>>
           to: const GroupListMutualGroupsOutputConverter().fromJson,
         );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Rejects a request to join a group (via join link) the user owns. Action taken by the group owner.
+/// Rejects a request to join a group (via join link) the user owns. Action taken by the group owner.
 Future<XRPCResponse<EmptyData>> chatBskyGroupRejectJoinRequest({
   required String convoId,
   required String member,
@@ -260,7 +261,7 @@ Future<XRPCResponse<EmptyData>> chatBskyGroupRejectJoinRequest({
       body: {...?$unknown, 'convoId': convoId, 'member': member},
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Removes members from a group. This deletes convo memberships, doesn't just set a status.
+/// Removes members from a group. This deletes convo memberships, doesn't just set a status.
 Future<XRPCResponse<GroupRemoveMembersOutput>> chatBskyGroupRemoveMembers({
   required String convoId,
   required List<String> members,
@@ -277,7 +278,7 @@ Future<XRPCResponse<GroupRemoveMembersOutput>> chatBskyGroupRemoveMembers({
       to: const GroupRemoveMembersOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Sends a request to join a group (via join link) to the group owner. Action taken by the prospective group member.
+/// Sends a request to join a group (via join link) to the group owner. Action taken by the prospective group member.
 Future<XRPCResponse<GroupRequestJoinOutput>> chatBskyGroupRequestJoin({
   required String code,
   required ServiceContext $ctx,
@@ -293,7 +294,7 @@ Future<XRPCResponse<GroupRequestJoinOutput>> chatBskyGroupRequestJoin({
       to: const GroupRequestJoinOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Marks all join requests as read for the group owner.
+/// Marks all join requests as read for the group owner.
 Future<XRPCResponse<EmptyData>> chatBskyGroupUpdateJoinRequestsRead({
   required String convoId,
   required ServiceContext $ctx,
@@ -308,7 +309,7 @@ Future<XRPCResponse<EmptyData>> chatBskyGroupUpdateJoinRequestsRead({
       body: {...?$unknown, 'convoId': convoId},
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Withdraws a pending request to join a group. Action taken by the prospective member who originally requested to join.
+/// Withdraws a pending request to join a group. Action taken by the prospective member who originally requested to join.
 Future<XRPCResponse<EmptyData>> chatBskyGroupWithdrawJoinRequest({
   required String convoId,
   required ServiceContext $ctx,
@@ -330,7 +331,7 @@ base class GroupService {
 
   GroupService(this.ctx);
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Adds members to a group. The members are added in 'request' status, so they have to accept it. This creates convo memberships.
+  /// Adds members to a group. The members are added in 'request' status, so they have to accept it. This creates convo memberships.
   Future<XRPCResponse<GroupAddMembersOutput>> addMembers({
     required String convoId,
     required List<String> members,
@@ -347,7 +348,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Approves a request to join a group (via join link) the user owns. Action taken by the group owner.
+  /// Approves a request to join a group (via join link) the user owns. Action taken by the group owner.
   Future<XRPCResponse<GroupApproveJoinRequestOutput>> approveJoinRequest({
     required String convoId,
     required String member,
@@ -364,7 +365,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Creates a group convo, specifying the members to be added to it. Unlike getConvoForMembers, this isn't idempotent. It will create new groups even if the membership is identical to pre-existing groups. Will create 'pending' membership for all members, except the owner who is 'accepted'.
+  /// Creates a group convo, specifying the members to be added to it. Unlike getConvoForMembers, this isn't idempotent. It will create new groups even if the membership is identical to pre-existing groups. Will create 'request' membership for all members, except the owner who is 'accepted'.
   Future<XRPCResponse<GroupCreateGroupOutput>> createGroup({
     required List<String> members,
     required String name,
@@ -381,7 +382,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Creates a join link for the group convo.
+  /// Creates a join link for the group convo.
   Future<XRPCResponse<GroupCreateJoinLinkOutput>> createJoinLink({
     required String convoId,
     bool? requireApproval,
@@ -400,7 +401,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Disables the active join link for the group convo.
+  /// Disables the active join link for the group convo.
   Future<XRPCResponse<GroupDisableJoinLinkOutput>> disableJoinLink({
     required String convoId,
     String? $service,
@@ -415,7 +416,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Edits group settings.
+  /// Edits group settings.
   Future<XRPCResponse<GroupEditGroupOutput>> editGroup({
     required String convoId,
     required String name,
@@ -432,7 +433,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Edits the existing join link settings for the group convo.
+  /// Edits the existing join link settings for the group convo.
   Future<XRPCResponse<GroupEditJoinLinkOutput>> editJoinLink({
     required String convoId,
     bool? requireApproval,
@@ -451,7 +452,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Re-enables a previously disabled join link for the group convo.
+  /// Re-enables a previously disabled join link for the group convo.
   Future<XRPCResponse<GroupEnableJoinLinkOutput>> enableJoinLink({
     required String convoId,
     String? $service,
@@ -466,7 +467,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Get public information about groups from join links. Invalid or disabled codes are silently omitted from results. Use the 'code' property on the views to correlate with the input codes, not array positions.
+  /// Get public information about groups from join links. The output array matches the input codes one-to-one by position (and each view also carries its 'code'). Disabled codes return a disabledJoinLinkPreviewView, and codes that do not map to a previewable link return an invalidJoinLinkPreviewView.
   Future<XRPCResponse<GroupGetJoinLinkPreviewsOutput>> getJoinLinkPreviews({
     required List<String> codes,
     String? $service,
@@ -481,7 +482,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Lists a page of request to join a group (via join link) the user owns. Shows the data from the owner's point of view.
+  /// Lists a page of request to join a group (via join link) the user owns. Shows the data from the owner's point of view.
   Future<XRPCResponse<GroupListJoinRequestsOutput>> listJoinRequests({
     required String convoId,
     int? limit,
@@ -500,7 +501,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Returns a page of group conversations that both the requester and the specified actor are members of.
+  /// Returns a page of group conversations that both the requester and the specified actor are members of.
   Future<XRPCResponse<GroupListMutualGroupsOutput>> listMutualGroups({
     required String subject,
     int? limit,
@@ -519,7 +520,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Rejects a request to join a group (via join link) the user owns. Action taken by the group owner.
+  /// Rejects a request to join a group (via join link) the user owns. Action taken by the group owner.
   Future<XRPCResponse<EmptyData>> rejectJoinRequest({
     required String convoId,
     required String member,
@@ -536,7 +537,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Removes members from a group. This deletes convo memberships, doesn't just set a status.
+  /// Removes members from a group. This deletes convo memberships, doesn't just set a status.
   Future<XRPCResponse<GroupRemoveMembersOutput>> removeMembers({
     required String convoId,
     required List<String> members,
@@ -553,7 +554,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Sends a request to join a group (via join link) to the group owner. Action taken by the prospective group member.
+  /// Sends a request to join a group (via join link) to the group owner. Action taken by the prospective group member.
   Future<XRPCResponse<GroupRequestJoinOutput>> requestJoin({
     required String code,
     String? $service,
@@ -568,7 +569,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Marks all join requests as read for the group owner.
+  /// Marks all join requests as read for the group owner.
   Future<XRPCResponse<EmptyData>> updateJoinRequestsRead({
     required String convoId,
     String? $service,
@@ -583,7 +584,7 @@ base class GroupService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Withdraws a pending request to join a group. Action taken by the prospective member who originally requested to join.
+  /// Withdraws a pending request to join a group. Action taken by the prospective member who originally requested to join.
   Future<XRPCResponse<EmptyData>> withdrawJoinRequest({
     required String convoId,
     String? $service,

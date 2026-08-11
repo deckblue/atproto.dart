@@ -25,11 +25,11 @@ final class ResetPasswordCommand extends ProcedureCommand {
   final String name = "reset-password";
 
   @override
-  final String description = r"Reset a user account password using a token.";
+  final String description = "Reset a user account password using a token.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server reset-password [token] [password]";
+      "bsky com-atproto-server reset-password --token=<value> --password=<value>";
 
   @override
   String get methodId => "com.atproto.server.resetPassword";

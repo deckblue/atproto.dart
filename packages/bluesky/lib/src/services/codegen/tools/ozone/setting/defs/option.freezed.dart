@@ -25,7 +25,9 @@ mixin _$Option {
   String get did => throw _privateConstructorUsedError;
   Map<String, dynamic> get value => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   @OptionManagerRoleConverter()
   OptionManagerRole? get managerRole => throw _privateConstructorUsedError;
@@ -55,8 +57,8 @@ abstract class $OptionCopyWith<$Res> {
       String did,
       Map<String, dynamic> value,
       String? description,
-      DateTime? createdAt,
-      DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
       @OptionManagerRoleConverter() OptionManagerRole? managerRole,
       @OptionScopeConverter() OptionScope scope,
       String createdBy,
@@ -185,8 +187,8 @@ abstract class _$$OptionImplCopyWith<$Res> implements $OptionCopyWith<$Res> {
       String did,
       Map<String, dynamic> value,
       String? description,
-      DateTime? createdAt,
-      DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
       @OptionManagerRoleConverter() OptionManagerRole? managerRole,
       @OptionScopeConverter() OptionScope scope,
       String createdBy,
@@ -288,8 +290,8 @@ class _$OptionImpl implements _Option {
       required this.did,
       required final Map<String, dynamic> value,
       this.description,
-      this.createdAt,
-      this.updatedAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
+      @JsonKey(toJson: iso8601) this.updatedAt,
       @OptionManagerRoleConverter() this.managerRole,
       @OptionScopeConverter() required this.scope,
       required this.createdBy,
@@ -319,8 +321,10 @@ class _$OptionImpl implements _Option {
   @override
   final String? description;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? updatedAt;
   @override
   @OptionManagerRoleConverter()
@@ -412,8 +416,8 @@ abstract class _Option implements Option {
       required final String did,
       required final Map<String, dynamic> value,
       final String? description,
-      final DateTime? createdAt,
-      final DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? updatedAt,
       @OptionManagerRoleConverter() final OptionManagerRole? managerRole,
       @OptionScopeConverter() required final OptionScope scope,
       required final String createdBy,
@@ -433,8 +437,10 @@ abstract class _Option implements Option {
   @override
   String? get description;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt;
   @override
   @OptionManagerRoleConverter()

@@ -35,5 +35,5 @@ Map<String, dynamic> _$$CreateOperationV1ImplToJson(
       'recoveryKey': instance.recoveryKey,
       'handle': instance.handle,
       'service': instance.service,
-      if (instance.prev case final value?) 'prev': value,
+      'prev': instance.prev,
     };

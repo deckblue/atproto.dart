@@ -26,6 +26,7 @@ mixin _$InviteCode {
   bool get disabled => throw _privateConstructorUsedError;
   String get forAccount => throw _privateConstructorUsedError;
   String get createdBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @InviteCodeUseConverter()
   List<InviteCodeUse> get uses => throw _privateConstructorUsedError;
@@ -54,7 +55,7 @@ abstract class $InviteCodeCopyWith<$Res> {
       bool disabled,
       String forAccount,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @InviteCodeUseConverter() List<InviteCodeUse> uses,
       Map<String, dynamic>? $unknown});
 }
@@ -140,7 +141,7 @@ abstract class _$$InviteCodeImplCopyWith<$Res>
       bool disabled,
       String forAccount,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @InviteCodeUseConverter() List<InviteCodeUse> uses,
       Map<String, dynamic>? $unknown});
 }
@@ -220,7 +221,7 @@ class _$InviteCodeImpl implements _InviteCode {
       required this.disabled,
       required this.forAccount,
       required this.createdBy,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @InviteCodeUseConverter() required final List<InviteCodeUse> uses,
       final Map<String, dynamic>? $unknown})
       : _uses = uses,
@@ -243,6 +244,7 @@ class _$InviteCodeImpl implements _InviteCode {
   @override
   final String createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final List<InviteCodeUse> _uses;
   @override
@@ -327,7 +329,7 @@ abstract class _InviteCode implements InviteCode {
       required final bool disabled,
       required final String forAccount,
       required final String createdBy,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @InviteCodeUseConverter() required final List<InviteCodeUse> uses,
       final Map<String, dynamic>? $unknown}) = _$InviteCodeImpl;
 
@@ -347,6 +349,7 @@ abstract class _InviteCode implements InviteCode {
   @override
   String get createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @InviteCodeUseConverter()

@@ -26,18 +26,19 @@ final class ListMissingBlobsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Returns a list of missing blobs for the requesting account. Intended to be used in the account migration flow.";
+      "Returns a list of missing blobs for the requesting account. Intended to be used in the account migration flow.";
 
   @override
   final String invocation =
-      "bsky com-atproto-repo list-missing-blobs [limit] [cursor]";
+      "bsky com-atproto-repo list-missing-blobs [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.listMissingBlobs";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

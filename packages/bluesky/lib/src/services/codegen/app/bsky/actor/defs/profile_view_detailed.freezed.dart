@@ -37,7 +37,9 @@ mixin _$ProfileViewDetailed {
   @StarterPackViewBasicConverter()
   StarterPackViewBasic? get joinedViaStarterPack =>
       throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get indexedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @ViewerStateConverter()
   ViewerState? get viewer => throw _privateConstructorUsedError;
@@ -84,8 +86,8 @@ abstract class $ProfileViewDetailedCopyWith<$Res> {
       @ProfileAssociatedConverter() ProfileAssociated? associated,
       @StarterPackViewBasicConverter()
       StarterPackViewBasic? joinedViaStarterPack,
-      DateTime? indexedAt,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? indexedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
       @RepoStrongRefConverter() RepoStrongRef? pinnedPost,
@@ -347,8 +349,8 @@ abstract class _$$ProfileViewDetailedImplCopyWith<$Res>
       @ProfileAssociatedConverter() ProfileAssociated? associated,
       @StarterPackViewBasicConverter()
       StarterPackViewBasic? joinedViaStarterPack,
-      DateTime? indexedAt,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? indexedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
       @RepoStrongRefConverter() RepoStrongRef? pinnedPost,
@@ -524,8 +526,8 @@ class _$ProfileViewDetailedImpl implements _ProfileViewDetailed {
       this.postsCount,
       @ProfileAssociatedConverter() this.associated,
       @StarterPackViewBasicConverter() this.joinedViaStarterPack,
-      this.indexedAt,
-      this.createdAt,
+      @JsonKey(toJson: iso8601) this.indexedAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
       @ViewerStateConverter() this.viewer,
       @LabelConverter() final List<Label>? labels,
       @RepoStrongRefConverter() this.pinnedPost,
@@ -572,8 +574,10 @@ class _$ProfileViewDetailedImpl implements _ProfileViewDetailed {
   @StarterPackViewBasicConverter()
   final StarterPackViewBasic? joinedViaStarterPack;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? indexedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   @override
   @ViewerStateConverter()
@@ -728,8 +732,8 @@ abstract class _ProfileViewDetailed implements ProfileViewDetailed {
       @ProfileAssociatedConverter() final ProfileAssociated? associated,
       @StarterPackViewBasicConverter()
       final StarterPackViewBasic? joinedViaStarterPack,
-      final DateTime? indexedAt,
-      final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? indexedAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
       @ViewerStateConverter() final ViewerState? viewer,
       @LabelConverter() final List<Label>? labels,
       @RepoStrongRefConverter() final RepoStrongRef? pinnedPost,
@@ -772,8 +776,10 @@ abstract class _ProfileViewDetailed implements ProfileViewDetailed {
   @StarterPackViewBasicConverter()
   StarterPackViewBasic? get joinedViaStarterPack;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get indexedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
   @ViewerStateConverter()

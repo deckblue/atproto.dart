@@ -25,6 +25,7 @@ mixin _$GraphListblockRecord {
   /// Reference (AT-URI) to the mod list record.
   @AtUriConverter()
   AtUri get subject => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -47,7 +48,7 @@ abstract class $GraphListblockRecordCopyWith<$Res> {
   $Res call(
       {String $type,
       @AtUriConverter() AtUri subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -104,7 +105,7 @@ abstract class _$$GraphListblockRecordImplCopyWith<$Res>
   $Res call(
       {String $type,
       @AtUriConverter() AtUri subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -154,7 +155,7 @@ class _$GraphListblockRecordImpl implements _GraphListblockRecord {
   const _$GraphListblockRecordImpl(
       {this.$type = 'app.bsky.graph.listblock',
       @AtUriConverter() required this.subject,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -170,6 +171,7 @@ class _$GraphListblockRecordImpl implements _GraphListblockRecord {
   @AtUriConverter()
   final AtUri subject;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -225,7 +227,7 @@ abstract class _GraphListblockRecord implements GraphListblockRecord {
   const factory _GraphListblockRecord(
       {final String $type,
       @AtUriConverter() required final AtUri subject,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$GraphListblockRecordImpl;
 
   factory _GraphListblockRecord.fromJson(Map<String, dynamic> json) =
@@ -239,6 +241,7 @@ abstract class _GraphListblockRecord implements GraphListblockRecord {
   @AtUriConverter()
   AtUri get subject;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

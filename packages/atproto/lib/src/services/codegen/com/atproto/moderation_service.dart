@@ -40,10 +40,11 @@ Future<XRPCResponse<ModerationCreateReportOutput>>
           headers: {'Content-type': 'application/json', ...?$headers},
           body: {
             ...?$unknown,
-            'reasonType': reasonType.toJson(),
+            'reasonType': const ReasonTypeConverter().toJson(reasonType),
             if (reason != null) 'reason': reason,
             'subject': subject.toJson(),
-            if (modTool != null) 'modTool': modTool.toJson(),
+            if (modTool != null)
+              'modTool': const ModToolConverter().toJson(modTool),
           },
           to: const ModerationCreateReportOutputConverter().fromJson,
         );

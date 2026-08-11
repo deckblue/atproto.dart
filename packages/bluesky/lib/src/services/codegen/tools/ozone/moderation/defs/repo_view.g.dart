@@ -61,7 +61,7 @@ Map<String, dynamic> _$$RepoViewImplToJson(_$RepoViewImpl instance) =>
       'handle': instance.handle,
       if (instance.email case final value?) 'email': value,
       'relatedRecords': instance.relatedRecords,
-      'indexedAt': instance.indexedAt.toIso8601String(),
+      'indexedAt': iso8601(instance.indexedAt),
       'moderation': const ModerationConverter().toJson(instance.moderation),
       if (_$JsonConverterToJson<Map<String, dynamic>, InviteCode>(
               instance.invitedBy, const InviteCodeConverter().toJson)
@@ -69,8 +69,7 @@ Map<String, dynamic> _$$RepoViewImplToJson(_$RepoViewImpl instance) =>
         'invitedBy': value,
       if (instance.invitesDisabled case final value?) 'invitesDisabled': value,
       if (instance.inviteNote case final value?) 'inviteNote': value,
-      if (instance.deactivatedAt?.toIso8601String() case final value?)
-        'deactivatedAt': value,
+      'deactivatedAt': iso8601(instance.deactivatedAt),
       if (instance.threatSignatures
               ?.map(const ThreatSignatureConverter().toJson)
               .toList()

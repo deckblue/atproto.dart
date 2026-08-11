@@ -40,16 +40,23 @@ final class ListblockCommand extends Command<void> {
       "Record representing a block relationship against an entire an entire list of accounts (actors).";
 }
 
-final class _CreateListblockCommand extends CreateRecordCommand {
-  _CreateListblockCommand() {
+mixin _ListblockCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
     argParser
       ..addOption(
         "subject",
         help: r"Reference (AT-URI) to the mod list record.",
         mandatory: true,
       )
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("rkey");
+      ..addOption("createdAt", mandatory: true);
+  }
+}
+
+final class _CreateListblockCommand extends CreateRecordCommand
+    with _ListblockCommandRecordArgs {
+  _CreateListblockCommand() {
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"Specific record key to use.");
   }
 
   @override
@@ -61,31 +68,27 @@ final class _CreateListblockCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph listblock create [subject] [createdAt] [rkey]";
+      "bsky app-bsky-graph listblock create --subject=<value> --createdAt=<value> [--rkey=<value>]";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.listblock";
 
   @override
   Map<String, dynamic> get record => {
+        r"$type": "app.bsky.graph.listblock",
         "subject": argResults!["subject"],
         "createdAt": argResults!["createdAt"],
       };
 }
 
-final class _PutListblockCommand extends PutRecordCommand {
+final class _PutListblockCommand extends PutRecordCommand
+    with _ListblockCommandRecordArgs {
   _PutListblockCommand() {
-    argParser
-      ..addOption(
-        "subject",
-        help: r"Reference (AT-URI) to the mod list record.",
-        mandatory: true,
-      )
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -96,16 +99,17 @@ final class _PutListblockCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph listblock put [subject] [createdAt] [rkey]";
+      "bsky app-bsky-graph listblock put --subject=<value> --createdAt=<value> --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.listblock";
 
   @override
   Map<String, dynamic> get record => {
+        r"$type": "app.bsky.graph.listblock",
         "subject": argResults!["subject"],
         "createdAt": argResults!["createdAt"],
       };
@@ -113,7 +117,7 @@ final class _PutListblockCommand extends PutRecordCommand {
 
 final class _DeleteListblockCommand extends DeleteRecordCommand {
   _DeleteListblockCommand() {
-    argParser..addOption("rkey", mandatory: true);
+    argParser..addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -123,10 +127,11 @@ final class _DeleteListblockCommand extends DeleteRecordCommand {
   final String description = r"Deletes a record for app.bsky.graph.listblock.";
 
   @override
-  final String invocation = "bsky app-bsky-graph listblock delete [rkey]";
+  final String invocation =
+      "bsky app-bsky-graph listblock delete --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.listblock";
@@ -135,7 +140,11 @@ final class _DeleteListblockCommand extends DeleteRecordCommand {
 final class _GetListblockCommand extends QueryCommand {
   _GetListblockCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption("rkey", help: r"The record key.", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -146,15 +155,16 @@ final class _GetListblockCommand extends QueryCommand {
   final String description = r"Gets a record for app.bsky.graph.listblock.";
 
   @override
-  final String invocation = "bsky app-bsky-graph listblock get [rkey] [cid]";
+  final String invocation =
+      "bsky app-bsky-graph listblock get --rkey=<value> [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.listblock",
         'rkey': argResults!['rkey'],
         if (argResults!['cid'] != null) 'cid': argResults!['cid'],
       };
@@ -163,6 +173,10 @@ final class _GetListblockCommand extends QueryCommand {
 final class _ListListblockCommand extends QueryCommand {
   _ListListblockCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -176,16 +190,17 @@ final class _ListListblockCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph listblock list [limit] [cursor] [reverse]";
+      "bsky app-bsky-graph listblock list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.listblock",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
         if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
         'reverse': argResults!['reverse'],
       };

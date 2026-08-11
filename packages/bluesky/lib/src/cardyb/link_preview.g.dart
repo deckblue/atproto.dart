@@ -17,9 +17,12 @@ _$LinkPreviewImpl _$$LinkPreviewImplFromJson(Map json) => $checkedCreate(
           title: $checkedConvert('title', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           image: $checkedConvert('image', (v) => v as String?),
+          error: $checkedConvert('error', (v) => v as String?),
+          likelyType: $checkedConvert('likely_type', (v) => v as String?),
         );
         return val;
       },
+      fieldKeyMap: const {'likelyType': 'likely_type'},
     );
 
 Map<String, dynamic> _$$LinkPreviewImplToJson(_$LinkPreviewImpl instance) =>
@@ -28,4 +31,6 @@ Map<String, dynamic> _$$LinkPreviewImplToJson(_$LinkPreviewImpl instance) =>
       'title': instance.title,
       'description': instance.description,
       'image': instance.image,
+      'error': instance.error,
+      'likely_type': instance.likelyType,
     };

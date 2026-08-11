@@ -30,6 +30,7 @@ mixin _$ActorStatusRecord {
 
   /// The duration of the status in minutes. Applications can choose to impose minimum and maximum limits.
   int? get durationMinutes => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -54,7 +55,7 @@ abstract class $ActorStatusRecordCopyWith<$Res> {
       @ActorStatusStatusConverter() ActorStatusStatus status,
       @UActorStatusEmbedConverter() UActorStatusEmbed? embed,
       int? durationMinutes,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $ActorStatusStatusCopyWith<$Res> get status;
@@ -149,7 +150,7 @@ abstract class _$$ActorStatusRecordImplCopyWith<$Res>
       @ActorStatusStatusConverter() ActorStatusStatus status,
       @UActorStatusEmbedConverter() UActorStatusEmbed? embed,
       int? durationMinutes,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -216,7 +217,7 @@ class _$ActorStatusRecordImpl implements _ActorStatusRecord {
       @ActorStatusStatusConverter() required this.status,
       @UActorStatusEmbedConverter() this.embed,
       this.durationMinutes,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -239,6 +240,7 @@ class _$ActorStatusRecordImpl implements _ActorStatusRecord {
   @override
   final int? durationMinutes;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -304,7 +306,7 @@ abstract class _ActorStatusRecord implements ActorStatusRecord {
       @ActorStatusStatusConverter() required final ActorStatusStatus status,
       @UActorStatusEmbedConverter() final UActorStatusEmbed? embed,
       final int? durationMinutes,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$ActorStatusRecordImpl;
 
   factory _ActorStatusRecord.fromJson(Map<String, dynamic> json) =
@@ -325,6 +327,7 @@ abstract class _ActorStatusRecord implements ActorStatusRecord {
   @override
   int? get durationMinutes;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

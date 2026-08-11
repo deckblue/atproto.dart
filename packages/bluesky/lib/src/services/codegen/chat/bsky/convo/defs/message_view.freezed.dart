@@ -30,8 +30,11 @@ mixin _$MessageView {
   UMessageViewEmbed? get embed => throw _privateConstructorUsedError;
   @ReactionViewConverter()
   List<ReactionView>? get reactions => throw _privateConstructorUsedError;
+  @UMessageViewReplyToConverter()
+  UMessageViewReplyTo? get replyTo => throw _privateConstructorUsedError;
   @MessageViewSenderConverter()
   MessageViewSender get sender => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get sentAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -59,11 +62,13 @@ abstract class $MessageViewCopyWith<$Res> {
       @RichtextFacetConverter() List<RichtextFacet>? facets,
       @UMessageViewEmbedConverter() UMessageViewEmbed? embed,
       @ReactionViewConverter() List<ReactionView>? reactions,
+      @UMessageViewReplyToConverter() UMessageViewReplyTo? replyTo,
       @MessageViewSenderConverter() MessageViewSender sender,
-      DateTime sentAt,
+      @JsonKey(toJson: iso8601) DateTime sentAt,
       Map<String, dynamic>? $unknown});
 
   $UMessageViewEmbedCopyWith<$Res>? get embed;
+  $UMessageViewReplyToCopyWith<$Res>? get replyTo;
   $MessageViewSenderCopyWith<$Res> get sender;
 }
 
@@ -89,6 +94,7 @@ class _$MessageViewCopyWithImpl<$Res, $Val extends MessageView>
     Object? facets = freezed,
     Object? embed = freezed,
     Object? reactions = freezed,
+    Object? replyTo = freezed,
     Object? sender = null,
     Object? sentAt = null,
     Object? $unknown = freezed,
@@ -122,6 +128,10 @@ class _$MessageViewCopyWithImpl<$Res, $Val extends MessageView>
           ? _value.reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as List<ReactionView>?,
+      replyTo: freezed == replyTo
+          ? _value.replyTo
+          : replyTo // ignore: cast_nullable_to_non_nullable
+              as UMessageViewReplyTo?,
       sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
@@ -155,6 +165,20 @@ class _$MessageViewCopyWithImpl<$Res, $Val extends MessageView>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
+  $UMessageViewReplyToCopyWith<$Res>? get replyTo {
+    if (_value.replyTo == null) {
+      return null;
+    }
+
+    return $UMessageViewReplyToCopyWith<$Res>(_value.replyTo!, (value) {
+      return _then(_value.copyWith(replyTo: value) as $Val);
+    });
+  }
+
+  /// Create a copy of MessageView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
   $MessageViewSenderCopyWith<$Res> get sender {
     return $MessageViewSenderCopyWith<$Res>(_value.sender, (value) {
       return _then(_value.copyWith(sender: value) as $Val);
@@ -178,12 +202,15 @@ abstract class _$$MessageViewImplCopyWith<$Res>
       @RichtextFacetConverter() List<RichtextFacet>? facets,
       @UMessageViewEmbedConverter() UMessageViewEmbed? embed,
       @ReactionViewConverter() List<ReactionView>? reactions,
+      @UMessageViewReplyToConverter() UMessageViewReplyTo? replyTo,
       @MessageViewSenderConverter() MessageViewSender sender,
-      DateTime sentAt,
+      @JsonKey(toJson: iso8601) DateTime sentAt,
       Map<String, dynamic>? $unknown});
 
   @override
   $UMessageViewEmbedCopyWith<$Res>? get embed;
+  @override
+  $UMessageViewReplyToCopyWith<$Res>? get replyTo;
   @override
   $MessageViewSenderCopyWith<$Res> get sender;
 }
@@ -208,6 +235,7 @@ class __$$MessageViewImplCopyWithImpl<$Res>
     Object? facets = freezed,
     Object? embed = freezed,
     Object? reactions = freezed,
+    Object? replyTo = freezed,
     Object? sender = null,
     Object? sentAt = null,
     Object? $unknown = freezed,
@@ -241,6 +269,10 @@ class __$$MessageViewImplCopyWithImpl<$Res>
           ? _value._reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as List<ReactionView>?,
+      replyTo: freezed == replyTo
+          ? _value.replyTo
+          : replyTo // ignore: cast_nullable_to_non_nullable
+              as UMessageViewReplyTo?,
       sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
@@ -269,8 +301,9 @@ class _$MessageViewImpl implements _MessageView {
       @RichtextFacetConverter() final List<RichtextFacet>? facets,
       @UMessageViewEmbedConverter() this.embed,
       @ReactionViewConverter() final List<ReactionView>? reactions,
+      @UMessageViewReplyToConverter() this.replyTo,
       @MessageViewSenderConverter() required this.sender,
-      required this.sentAt,
+      @JsonKey(toJson: iso8601) required this.sentAt,
       final Map<String, dynamic>? $unknown})
       : _facets = facets,
         _reactions = reactions,
@@ -314,9 +347,13 @@ class _$MessageViewImpl implements _MessageView {
   }
 
   @override
+  @UMessageViewReplyToConverter()
+  final UMessageViewReplyTo? replyTo;
+  @override
   @MessageViewSenderConverter()
   final MessageViewSender sender;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime sentAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -330,7 +367,7 @@ class _$MessageViewImpl implements _MessageView {
 
   @override
   String toString() {
-    return 'MessageView(\$type: ${$type}, id: $id, rev: $rev, text: $text, facets: $facets, embed: $embed, reactions: $reactions, sender: $sender, sentAt: $sentAt, \$unknown: ${$unknown})';
+    return 'MessageView(\$type: ${$type}, id: $id, rev: $rev, text: $text, facets: $facets, embed: $embed, reactions: $reactions, replyTo: $replyTo, sender: $sender, sentAt: $sentAt, \$unknown: ${$unknown})';
   }
 
   @override
@@ -346,6 +383,7 @@ class _$MessageViewImpl implements _MessageView {
             (identical(other.embed, embed) || other.embed == embed) &&
             const DeepCollectionEquality()
                 .equals(other._reactions, _reactions) &&
+            (identical(other.replyTo, replyTo) || other.replyTo == replyTo) &&
             (identical(other.sender, sender) || other.sender == sender) &&
             (identical(other.sentAt, sentAt) || other.sentAt == sentAt) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
@@ -362,6 +400,7 @@ class _$MessageViewImpl implements _MessageView {
       const DeepCollectionEquality().hash(_facets),
       embed,
       const DeepCollectionEquality().hash(_reactions),
+      replyTo,
       sender,
       sentAt,
       const DeepCollectionEquality().hash(_$unknown));
@@ -391,8 +430,9 @@ abstract class _MessageView implements MessageView {
       @RichtextFacetConverter() final List<RichtextFacet>? facets,
       @UMessageViewEmbedConverter() final UMessageViewEmbed? embed,
       @ReactionViewConverter() final List<ReactionView>? reactions,
+      @UMessageViewReplyToConverter() final UMessageViewReplyTo? replyTo,
       @MessageViewSenderConverter() required final MessageViewSender sender,
-      required final DateTime sentAt,
+      @JsonKey(toJson: iso8601) required final DateTime sentAt,
       final Map<String, dynamic>? $unknown}) = _$MessageViewImpl;
 
   factory _MessageView.fromJson(Map<String, dynamic> json) =
@@ -416,9 +456,13 @@ abstract class _MessageView implements MessageView {
   @ReactionViewConverter()
   List<ReactionView>? get reactions;
   @override
+  @UMessageViewReplyToConverter()
+  UMessageViewReplyTo? get replyTo;
+  @override
   @MessageViewSenderConverter()
   MessageViewSender get sender;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get sentAt;
   @override
   Map<String, dynamic>? get $unknown;

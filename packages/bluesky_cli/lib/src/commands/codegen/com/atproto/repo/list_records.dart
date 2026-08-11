@@ -44,11 +44,11 @@ final class ListRecordsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"List a range of records in a repository, matching a specific collection. Does not require auth.";
+      "List a range of records in a repository, matching a specific collection. Does not require auth.";
 
   @override
   final String invocation =
-      "bsky com-atproto-repo list-records [repo] [collection] [limit] [cursor] [reverse]";
+      "bsky com-atproto-repo list-records --repo=<value> --collection=<value> [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
   String get methodId => "com.atproto.repo.listRecords";
@@ -57,8 +57,9 @@ final class ListRecordsCommand extends QueryCommand {
   Map<String, dynamic>? get parameters => {
         "repo": argResults!["repo"],
         "collection": argResults!["collection"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        if (argResults!["reverse"] != null) "reverse": argResults!["reverse"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("reverse")) "reverse": argResults!["reverse"],
       };
 }

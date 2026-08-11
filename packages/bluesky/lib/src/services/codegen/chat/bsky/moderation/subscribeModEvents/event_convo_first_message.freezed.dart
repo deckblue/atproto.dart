@@ -23,6 +23,7 @@ EventConvoFirstMessage _$EventConvoFirstMessageFromJson(
 mixin _$EventConvoFirstMessage {
   String get $type => throw _privateConstructorUsedError;
   String get convoId => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   String? get messageId => throw _privateConstructorUsedError;
   List<String> get recipients => throw _privateConstructorUsedError;
@@ -51,7 +52,7 @@ abstract class $EventConvoFirstMessageCopyWith<$Res> {
   $Res call(
       {String $type,
       String convoId,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String? messageId,
       List<String> recipients,
       String rev,
@@ -133,7 +134,7 @@ abstract class _$$EventConvoFirstMessageImplCopyWith<$Res>
   $Res call(
       {String $type,
       String convoId,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String? messageId,
       List<String> recipients,
       String rev,
@@ -210,7 +211,7 @@ class _$EventConvoFirstMessageImpl implements _EventConvoFirstMessage {
       {this.$type =
           'chat.bsky.moderation.subscribeModEvents#eventConvoFirstMessage',
       required this.convoId,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       this.messageId,
       required final List<String> recipients,
       required this.rev,
@@ -228,6 +229,7 @@ class _$EventConvoFirstMessageImpl implements _EventConvoFirstMessage {
   @override
   final String convoId;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   final String? messageId;
@@ -312,7 +314,7 @@ abstract class _EventConvoFirstMessage implements EventConvoFirstMessage {
   const factory _EventConvoFirstMessage(
       {final String $type,
       required final String convoId,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final String? messageId,
       required final List<String> recipients,
       required final String rev,
@@ -327,6 +329,7 @@ abstract class _EventConvoFirstMessage implements EventConvoFirstMessage {
   @override
   String get convoId;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   String? get messageId;

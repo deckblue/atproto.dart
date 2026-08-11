@@ -24,11 +24,11 @@ final class WithdrawJoinRequestCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Withdraws a pending request to join a group. Action taken by the prospective member who originally requested to join.";
+      "Withdraws a pending request to join a group. Action taken by the prospective member who originally requested to join.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group withdraw-join-request [convoId]";
+      "bsky chat-bsky-group withdraw-join-request --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.group.withdrawJoinRequest";

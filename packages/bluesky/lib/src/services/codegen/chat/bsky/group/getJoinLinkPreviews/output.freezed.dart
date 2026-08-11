@@ -21,8 +21,8 @@ GroupGetJoinLinkPreviewsOutput _$GroupGetJoinLinkPreviewsOutputFromJson(
 
 /// @nodoc
 mixin _$GroupGetJoinLinkPreviewsOutput {
-  @JoinLinkPreviewViewConverter()
-  List<JoinLinkPreviewView> get joinLinkPreviews =>
+  @UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter()
+  List<UGroupGetJoinLinkPreviewsJoinLinkPreviews> get joinLinkPreviews =>
       throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -45,8 +45,8 @@ abstract class $GroupGetJoinLinkPreviewsOutputCopyWith<$Res> {
           GroupGetJoinLinkPreviewsOutput>;
   @useResult
   $Res call(
-      {@JoinLinkPreviewViewConverter()
-      List<JoinLinkPreviewView> joinLinkPreviews,
+      {@UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter()
+      List<UGroupGetJoinLinkPreviewsJoinLinkPreviews> joinLinkPreviews,
       Map<String, dynamic>? $unknown});
 }
 
@@ -73,7 +73,7 @@ class _$GroupGetJoinLinkPreviewsOutputCopyWithImpl<$Res,
       joinLinkPreviews: null == joinLinkPreviews
           ? _value.joinLinkPreviews
           : joinLinkPreviews // ignore: cast_nullable_to_non_nullable
-              as List<JoinLinkPreviewView>,
+              as List<UGroupGetJoinLinkPreviewsJoinLinkPreviews>,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -92,8 +92,8 @@ abstract class _$$GroupGetJoinLinkPreviewsOutputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JoinLinkPreviewViewConverter()
-      List<JoinLinkPreviewView> joinLinkPreviews,
+      {@UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter()
+      List<UGroupGetJoinLinkPreviewsJoinLinkPreviews> joinLinkPreviews,
       Map<String, dynamic>? $unknown});
 }
 
@@ -119,7 +119,7 @@ class __$$GroupGetJoinLinkPreviewsOutputImplCopyWithImpl<$Res>
       joinLinkPreviews: null == joinLinkPreviews
           ? _value._joinLinkPreviews
           : joinLinkPreviews // ignore: cast_nullable_to_non_nullable
-              as List<JoinLinkPreviewView>,
+              as List<UGroupGetJoinLinkPreviewsJoinLinkPreviews>,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -134,8 +134,9 @@ class __$$GroupGetJoinLinkPreviewsOutputImplCopyWithImpl<$Res>
 class _$GroupGetJoinLinkPreviewsOutputImpl
     implements _GroupGetJoinLinkPreviewsOutput {
   const _$GroupGetJoinLinkPreviewsOutputImpl(
-      {@JoinLinkPreviewViewConverter()
-      required final List<JoinLinkPreviewView> joinLinkPreviews,
+      {@UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter()
+      required final List<UGroupGetJoinLinkPreviewsJoinLinkPreviews>
+          joinLinkPreviews,
       final Map<String, dynamic>? $unknown})
       : _joinLinkPreviews = joinLinkPreviews,
         _$unknown = $unknown;
@@ -144,10 +145,10 @@ class _$GroupGetJoinLinkPreviewsOutputImpl
           Map<String, dynamic> json) =>
       _$$GroupGetJoinLinkPreviewsOutputImplFromJson(json);
 
-  final List<JoinLinkPreviewView> _joinLinkPreviews;
+  final List<UGroupGetJoinLinkPreviewsJoinLinkPreviews> _joinLinkPreviews;
   @override
-  @JoinLinkPreviewViewConverter()
-  List<JoinLinkPreviewView> get joinLinkPreviews {
+  @UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter()
+  List<UGroupGetJoinLinkPreviewsJoinLinkPreviews> get joinLinkPreviews {
     if (_joinLinkPreviews is EqualUnmodifiableListView)
       return _joinLinkPreviews;
     // ignore: implicit_dynamic_type
@@ -207,8 +208,9 @@ class _$GroupGetJoinLinkPreviewsOutputImpl
 abstract class _GroupGetJoinLinkPreviewsOutput
     implements GroupGetJoinLinkPreviewsOutput {
   const factory _GroupGetJoinLinkPreviewsOutput(
-          {@JoinLinkPreviewViewConverter()
-          required final List<JoinLinkPreviewView> joinLinkPreviews,
+          {@UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter()
+          required final List<UGroupGetJoinLinkPreviewsJoinLinkPreviews>
+              joinLinkPreviews,
           final Map<String, dynamic>? $unknown}) =
       _$GroupGetJoinLinkPreviewsOutputImpl;
 
@@ -216,8 +218,8 @@ abstract class _GroupGetJoinLinkPreviewsOutput
       _$GroupGetJoinLinkPreviewsOutputImpl.fromJson;
 
   @override
-  @JoinLinkPreviewViewConverter()
-  List<JoinLinkPreviewView> get joinLinkPreviews;
+  @UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter()
+  List<UGroupGetJoinLinkPreviewsJoinLinkPreviews> get joinLinkPreviews;
   @override
   Map<String, dynamic>? get $unknown;
 

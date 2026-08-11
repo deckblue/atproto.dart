@@ -32,6 +32,7 @@ mixin _$QueueUpdateQueueInput {
 
   /// Optional description of the queue
   String? get description => throw _privateConstructorUsedError;
+  List<String>? get recommendedPolicies => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this QueueUpdateQueueInput to a JSON map.
@@ -55,6 +56,7 @@ abstract class $QueueUpdateQueueInputCopyWith<$Res> {
       String? name,
       bool? enabled,
       String? description,
+      List<String>? recommendedPolicies,
       Map<String, dynamic>? $unknown});
 }
 
@@ -78,6 +80,7 @@ class _$QueueUpdateQueueInputCopyWithImpl<$Res,
     Object? name = freezed,
     Object? enabled = freezed,
     Object? description = freezed,
+    Object? recommendedPolicies = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -97,6 +100,10 @@ class _$QueueUpdateQueueInputCopyWithImpl<$Res,
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      recommendedPolicies: freezed == recommendedPolicies
+          ? _value.recommendedPolicies
+          : recommendedPolicies // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -119,6 +126,7 @@ abstract class _$$QueueUpdateQueueInputImplCopyWith<$Res>
       String? name,
       bool? enabled,
       String? description,
+      List<String>? recommendedPolicies,
       Map<String, dynamic>? $unknown});
 }
 
@@ -140,6 +148,7 @@ class __$$QueueUpdateQueueInputImplCopyWithImpl<$Res>
     Object? name = freezed,
     Object? enabled = freezed,
     Object? description = freezed,
+    Object? recommendedPolicies = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$QueueUpdateQueueInputImpl(
@@ -159,6 +168,10 @@ class __$$QueueUpdateQueueInputImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      recommendedPolicies: freezed == recommendedPolicies
+          ? _value._recommendedPolicies
+          : recommendedPolicies // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -176,8 +189,10 @@ class _$QueueUpdateQueueInputImpl implements _QueueUpdateQueueInput {
       this.name,
       this.enabled,
       this.description,
+      final List<String>? recommendedPolicies,
       final Map<String, dynamic>? $unknown})
-      : _$unknown = $unknown;
+      : _recommendedPolicies = recommendedPolicies,
+        _$unknown = $unknown;
 
   factory _$QueueUpdateQueueInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$QueueUpdateQueueInputImplFromJson(json);
@@ -197,6 +212,17 @@ class _$QueueUpdateQueueInputImpl implements _QueueUpdateQueueInput {
   /// Optional description of the queue
   @override
   final String? description;
+  final List<String>? _recommendedPolicies;
+  @override
+  List<String>? get recommendedPolicies {
+    final value = _recommendedPolicies;
+    if (value == null) return null;
+    if (_recommendedPolicies is EqualUnmodifiableListView)
+      return _recommendedPolicies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -209,7 +235,7 @@ class _$QueueUpdateQueueInputImpl implements _QueueUpdateQueueInput {
 
   @override
   String toString() {
-    return 'QueueUpdateQueueInput(queueId: $queueId, name: $name, enabled: $enabled, description: $description, \$unknown: ${$unknown})';
+    return 'QueueUpdateQueueInput(queueId: $queueId, name: $name, enabled: $enabled, description: $description, recommendedPolicies: $recommendedPolicies, \$unknown: ${$unknown})';
   }
 
   @override
@@ -222,13 +248,21 @@ class _$QueueUpdateQueueInputImpl implements _QueueUpdateQueueInput {
             (identical(other.enabled, enabled) || other.enabled == enabled) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            const DeepCollectionEquality()
+                .equals(other._recommendedPolicies, _recommendedPolicies) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, queueId, name, enabled,
-      description, const DeepCollectionEquality().hash(_$unknown));
+  int get hashCode => Object.hash(
+      runtimeType,
+      queueId,
+      name,
+      enabled,
+      description,
+      const DeepCollectionEquality().hash(_recommendedPolicies),
+      const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of QueueUpdateQueueInput
   /// with the given fields replaced by the non-null parameter values.
@@ -253,6 +287,7 @@ abstract class _QueueUpdateQueueInput implements QueueUpdateQueueInput {
       final String? name,
       final bool? enabled,
       final String? description,
+      final List<String>? recommendedPolicies,
       final Map<String, dynamic>? $unknown}) = _$QueueUpdateQueueInputImpl;
 
   factory _QueueUpdateQueueInput.fromJson(Map<String, dynamic> json) =
@@ -273,6 +308,8 @@ abstract class _QueueUpdateQueueInput implements QueueUpdateQueueInput {
   /// Optional description of the queue
   @override
   String? get description;
+  @override
+  List<String>? get recommendedPolicies;
   @override
   Map<String, dynamic>? get $unknown;
 

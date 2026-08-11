@@ -18,7 +18,7 @@ _$EmbedGalleryImpl _$$EmbedGalleryImplFromJson(Map json) => $checkedCreate(
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>)
-                  .map((e) => const EmbedGalleryImageConverter()
+                  .map((e) => const UEmbedGalleryItemsConverter()
                       .fromJson(e as Map<String, dynamic>))
                   .toList()),
           $unknown: $checkedConvert(
@@ -35,7 +35,7 @@ Map<String, dynamic> _$$EmbedGalleryImplToJson(_$EmbedGalleryImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'items': instance.items
-          .map(const EmbedGalleryImageConverter().toJson)
+          .map(const UEmbedGalleryItemsConverter().toJson)
           .toList(),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

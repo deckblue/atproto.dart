@@ -27,6 +27,10 @@ _$MessageInputImpl _$$MessageInputImplFromJson(Map json) => $checkedCreate(
               (v) => _$JsonConverterFromJson<Map<String, dynamic>,
                       UMessageInputEmbed>(
                   v, const UMessageInputEmbedConverter().fromJson)),
+          replyTo: $checkedConvert(
+              'replyTo',
+              (v) => _$JsonConverterFromJson<Map<String, dynamic>, ReplyRef>(
+                  v, const ReplyRefConverter().fromJson)),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -48,6 +52,10 @@ Map<String, dynamic> _$$MessageInputImplToJson(_$MessageInputImpl instance) =>
               instance.embed, const UMessageInputEmbedConverter().toJson)
           case final value?)
         'embed': value,
+      if (_$JsonConverterToJson<Map<String, dynamic>, ReplyRef>(
+              instance.replyTo, const ReplyRefConverter().toJson)
+          case final value?)
+        'replyTo': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

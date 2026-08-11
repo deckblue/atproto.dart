@@ -43,13 +43,14 @@ Future<XRPCResponse<AssignmentView>> toolsOzoneQueueAssignModerator({
       to: const AssignmentViewConverter().fromJson,
     );
 
-/// Create a new moderation queue. Will fail if the queue configuration conflicts with an existing queue.
+/// Create a new moderation queue. A queue can have optional matching criteria that ozone's queue router will use to match reports. A queue with no criteria must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.
 Future<XRPCResponse<QueueCreateQueueOutput>> toolsOzoneQueueCreateQueue({
   required String name,
-  required List<QueueCreateQueueSubjectTypes> subjectTypes,
+  List<QueueCreateQueueSubjectTypes>? subjectTypes,
   String? collection,
-  required List<String> reportTypes,
+  List<String>? reportTypes,
   String? description,
+  List<String>? recommendedPolicies,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
@@ -62,10 +63,13 @@ Future<XRPCResponse<QueueCreateQueueOutput>> toolsOzoneQueueCreateQueue({
       body: {
         ...?$unknown,
         'name': name,
-        'subjectTypes': subjectTypes.map((e) => e.toJson()).toList(),
+        if (subjectTypes != null)
+          'subjectTypes': subjectTypes.map((e) => e.toJson()).toList(),
         if (collection != null) 'collection': collection,
-        'reportTypes': reportTypes,
+        if (reportTypes != null) 'reportTypes': reportTypes,
         if (description != null) 'description': description,
+        if (recommendedPolicies != null)
+          'recommendedPolicies': recommendedPolicies,
       },
       to: const QueueCreateQueueOutputConverter().fromJson,
     );
@@ -184,12 +188,13 @@ Future<XRPCResponse<EmptyData>> toolsOzoneQueueUnassignModerator({
       body: {...?$unknown, 'queueId': queueId, 'did': did},
     );
 
-/// Update queue properties. Currently only supports updating the name and enabled status to prevent configuration conflicts.
+/// Update queue properties.
 Future<XRPCResponse<QueueUpdateQueueOutput>> toolsOzoneQueueUpdateQueue({
   required int queueId,
   String? name,
   bool? enabled,
   String? description,
+  List<String>? recommendedPolicies,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
@@ -205,6 +210,8 @@ Future<XRPCResponse<QueueUpdateQueueOutput>> toolsOzoneQueueUpdateQueue({
         if (name != null) 'name': name,
         if (enabled != null) 'enabled': enabled,
         if (description != null) 'description': description,
+        if (recommendedPolicies != null)
+          'recommendedPolicies': recommendedPolicies,
       },
       to: const QueueUpdateQueueOutputConverter().fromJson,
     );
@@ -233,13 +240,14 @@ base class QueueService {
         $unknown: $unknown,
       );
 
-  /// Create a new moderation queue. Will fail if the queue configuration conflicts with an existing queue.
+  /// Create a new moderation queue. A queue can have optional matching criteria that ozone's queue router will use to match reports. A queue with no criteria must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.
   Future<XRPCResponse<QueueCreateQueueOutput>> createQueue({
     required String name,
-    required List<QueueCreateQueueSubjectTypes> subjectTypes,
+    List<QueueCreateQueueSubjectTypes>? subjectTypes,
     String? collection,
-    required List<String> reportTypes,
+    List<String>? reportTypes,
     String? description,
+    List<String>? recommendedPolicies,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
@@ -250,6 +258,7 @@ base class QueueService {
         collection: collection,
         reportTypes: reportTypes,
         description: description,
+        recommendedPolicies: recommendedPolicies,
         $ctx: ctx,
         $service: $service,
         $headers: $headers,
@@ -355,12 +364,13 @@ base class QueueService {
         $unknown: $unknown,
       );
 
-  /// Update queue properties. Currently only supports updating the name and enabled status to prevent configuration conflicts.
+  /// Update queue properties.
   Future<XRPCResponse<QueueUpdateQueueOutput>> updateQueue({
     required int queueId,
     String? name,
     bool? enabled,
     String? description,
+    List<String>? recommendedPolicies,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
@@ -370,6 +380,7 @@ base class QueueService {
         name: name,
         enabled: enabled,
         description: description,
+        recommendedPolicies: recommendedPolicies,
         $ctx: ctx,
         $service: $service,
         $headers: $headers,

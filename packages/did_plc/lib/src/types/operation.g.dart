@@ -37,5 +37,5 @@ Map<String, dynamic> _$$OperationImplToJson(_$OperationImpl instance) =>
       'alsoKnownAs': instance.alsoKnownAs,
       'rotationKeys': instance.rotationKeys,
       'verificationMethods': instance.verificationMethods,
-      if (instance.prev case final value?) 'prev': value,
+      'prev': instance.prev,
     };

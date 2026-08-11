@@ -7,6 +7,9 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+// Dart imports:
+import 'dart:convert';
+
 // Project imports:
 import '../../../../procedure_command.dart';
 
@@ -28,11 +31,11 @@ final class UpsertOptionCommand extends ProcedureCommand {
   final String name = "upsert-option";
 
   @override
-  final String description = r"Create or update setting option";
+  final String description = "Create or update setting option";
 
   @override
   final String invocation =
-      "bsky tools-ozone-setting upsert-option [key] [scope] [value] [description] [managerRole]";
+      "bsky tools-ozone-setting upsert-option --key=<value> --scope=<value> --value=<value> [--description=<value>] [--managerRole=<value>]";
 
   @override
   String get methodId => "tools.ozone.setting.upsertOption";
@@ -41,10 +44,19 @@ final class UpsertOptionCommand extends ProcedureCommand {
   Map<String, dynamic>? get body => {
         "key": argResults!["key"],
         "scope": argResults!["scope"],
-        "value": argResults!["value"],
-        if (argResults!["description"] != null)
+        "value": _decodeJson("value"),
+        if (argResults!.wasParsed("description"))
           "description": argResults!["description"],
-        if (argResults!["managerRole"] != null)
+        if (argResults!.wasParsed("managerRole"))
           "managerRole": argResults!["managerRole"],
       };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

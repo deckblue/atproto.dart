@@ -27,7 +27,7 @@ mixin _$FeedGetAuthorFeedInput {
 
   /// Combinations of post/repost types to include in response.
   @FeedGetAuthorFeedFilterConverter()
-  FeedGetAuthorFeedFilter? get filter => throw _privateConstructorUsedError;
+  FeedGetAuthorFeedFilter get filter => throw _privateConstructorUsedError;
   bool get includePins => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -51,11 +51,11 @@ abstract class $FeedGetAuthorFeedInputCopyWith<$Res> {
       {String actor,
       int limit,
       String? cursor,
-      @FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? filter,
+      @FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter filter,
       bool includePins,
       Map<String, dynamic>? $unknown});
 
-  $FeedGetAuthorFeedFilterCopyWith<$Res>? get filter;
+  $FeedGetAuthorFeedFilterCopyWith<$Res> get filter;
 }
 
 /// @nodoc
@@ -77,7 +77,7 @@ class _$FeedGetAuthorFeedInputCopyWithImpl<$Res,
     Object? actor = null,
     Object? limit = null,
     Object? cursor = freezed,
-    Object? filter = freezed,
+    Object? filter = null,
     Object? includePins = null,
     Object? $unknown = freezed,
   }) {
@@ -94,10 +94,10 @@ class _$FeedGetAuthorFeedInputCopyWithImpl<$Res,
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      filter: freezed == filter
+      filter: null == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
-              as FeedGetAuthorFeedFilter?,
+              as FeedGetAuthorFeedFilter,
       includePins: null == includePins
           ? _value.includePins
           : includePins // ignore: cast_nullable_to_non_nullable
@@ -113,12 +113,8 @@ class _$FeedGetAuthorFeedInputCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $FeedGetAuthorFeedFilterCopyWith<$Res>? get filter {
-    if (_value.filter == null) {
-      return null;
-    }
-
-    return $FeedGetAuthorFeedFilterCopyWith<$Res>(_value.filter!, (value) {
+  $FeedGetAuthorFeedFilterCopyWith<$Res> get filter {
+    return $FeedGetAuthorFeedFilterCopyWith<$Res>(_value.filter, (value) {
       return _then(_value.copyWith(filter: value) as $Val);
     });
   }
@@ -137,12 +133,12 @@ abstract class _$$FeedGetAuthorFeedInputImplCopyWith<$Res>
       {String actor,
       int limit,
       String? cursor,
-      @FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? filter,
+      @FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter filter,
       bool includePins,
       Map<String, dynamic>? $unknown});
 
   @override
-  $FeedGetAuthorFeedFilterCopyWith<$Res>? get filter;
+  $FeedGetAuthorFeedFilterCopyWith<$Res> get filter;
 }
 
 /// @nodoc
@@ -163,7 +159,7 @@ class __$$FeedGetAuthorFeedInputImplCopyWithImpl<$Res>
     Object? actor = null,
     Object? limit = null,
     Object? cursor = freezed,
-    Object? filter = freezed,
+    Object? filter = null,
     Object? includePins = null,
     Object? $unknown = freezed,
   }) {
@@ -180,10 +176,10 @@ class __$$FeedGetAuthorFeedInputImplCopyWithImpl<$Res>
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      filter: freezed == filter
+      filter: null == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
-              as FeedGetAuthorFeedFilter?,
+              as FeedGetAuthorFeedFilter,
       includePins: null == includePins
           ? _value.includePins
           : includePins // ignore: cast_nullable_to_non_nullable
@@ -204,7 +200,9 @@ class _$FeedGetAuthorFeedInputImpl implements _FeedGetAuthorFeedInput {
       {required this.actor,
       this.limit = 50,
       this.cursor,
-      @FeedGetAuthorFeedFilterConverter() this.filter,
+      @FeedGetAuthorFeedFilterConverter() this.filter =
+          const FeedGetAuthorFeedFilter.knownValue(
+              data: KnownFeedGetAuthorFeedFilter.posts_with_replies),
       this.includePins = false,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -222,8 +220,9 @@ class _$FeedGetAuthorFeedInputImpl implements _FeedGetAuthorFeedInput {
 
   /// Combinations of post/repost types to include in response.
   @override
+  @JsonKey()
   @FeedGetAuthorFeedFilterConverter()
-  final FeedGetAuthorFeedFilter? filter;
+  final FeedGetAuthorFeedFilter filter;
   @override
   @JsonKey()
   final bool includePins;
@@ -283,7 +282,7 @@ abstract class _FeedGetAuthorFeedInput implements FeedGetAuthorFeedInput {
       {required final String actor,
       final int limit,
       final String? cursor,
-      @FeedGetAuthorFeedFilterConverter() final FeedGetAuthorFeedFilter? filter,
+      @FeedGetAuthorFeedFilterConverter() final FeedGetAuthorFeedFilter filter,
       final bool includePins,
       final Map<String, dynamic>? $unknown}) = _$FeedGetAuthorFeedInputImpl;
 
@@ -300,7 +299,7 @@ abstract class _FeedGetAuthorFeedInput implements FeedGetAuthorFeedInput {
   /// Combinations of post/repost types to include in response.
   @override
   @FeedGetAuthorFeedFilterConverter()
-  FeedGetAuthorFeedFilter? get filter;
+  FeedGetAuthorFeedFilter get filter;
   @override
   bool get includePins;
   @override

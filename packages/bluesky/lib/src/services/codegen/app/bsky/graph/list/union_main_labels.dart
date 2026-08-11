@@ -48,22 +48,23 @@ final class UGraphListLabelsConverter
 
   @override
   UGraphListLabels fromJson(Map<String, dynamic> json) {
-    try {
-      if (SelfLabels.validate(json)) {
-        return UGraphListLabels.selfLabels(
-          data: const SelfLabelsConverter().fromJson(json),
-        );
-      }
-
-      return UGraphListLabels.unknown(data: json);
-    } catch (_) {
-      return UGraphListLabels.unknown(data: json);
+    if (SelfLabels.validate(json)) {
+      return UGraphListLabels.selfLabels(
+        data: const SelfLabelsConverter().fromJson(json),
+      );
     }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UGraphListLabels.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UGraphListLabels object) => object.when(
-        selfLabels: (data) => const SelfLabelsConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UGraphListLabels object) => switch (object) {
+        UGraphListLabelsSelfLabels(:final data) =>
+          const SelfLabelsConverter().toJson(data),
+        UGraphListLabelsUnknown(:final data) => data,
+      };
 }

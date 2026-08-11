@@ -49,10 +49,8 @@ Map<String, dynamic> _$$OptionImplToJson(_$OptionImpl instance) =>
       'did': instance.did,
       'value': instance.value,
       if (instance.description case final value?) 'description': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'createdAt': iso8601(instance.createdAt),
+      'updatedAt': iso8601(instance.updatedAt),
       if (_$JsonConverterToJson<String, OptionManagerRole>(
               instance.managerRole, const OptionManagerRoleConverter().toJson)
           case final value?)

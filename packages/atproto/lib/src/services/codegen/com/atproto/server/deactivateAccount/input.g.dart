@@ -30,7 +30,6 @@ _$ServerDeactivateAccountInputImpl _$$ServerDeactivateAccountInputImplFromJson(
 Map<String, dynamic> _$$ServerDeactivateAccountInputImplToJson(
         _$ServerDeactivateAccountInputImpl instance) =>
     <String, dynamic>{
-      if (instance.deleteAfter?.toIso8601String() case final value?)
-        'deleteAfter': value,
+      'deleteAfter': iso8601(instance.deleteAfter),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -29,9 +29,11 @@ mixin _$ReportGetHistoricalStatsInput {
   List<String>? get reportTypes => throw _privateConstructorUsedError;
 
   /// Earliest date to include (inclusive).
+  @JsonKey(toJson: iso8601)
   DateTime? get startDate => throw _privateConstructorUsedError;
 
   /// Latest date to include (inclusive).
+  @JsonKey(toJson: iso8601)
   DateTime? get endDate => throw _privateConstructorUsedError;
 
   /// Maximum number of entries to return.
@@ -63,8 +65,8 @@ abstract class $ReportGetHistoricalStatsInputCopyWith<$Res> {
       {int? queueId,
       String? moderatorDid,
       List<String>? reportTypes,
-      DateTime? startDate,
-      DateTime? endDate,
+      @JsonKey(toJson: iso8601) DateTime? startDate,
+      @JsonKey(toJson: iso8601) DateTime? endDate,
       int limit,
       String? cursor,
       Map<String, dynamic>? $unknown});
@@ -145,8 +147,8 @@ abstract class _$$ReportGetHistoricalStatsInputImplCopyWith<$Res>
       {int? queueId,
       String? moderatorDid,
       List<String>? reportTypes,
-      DateTime? startDate,
-      DateTime? endDate,
+      @JsonKey(toJson: iso8601) DateTime? startDate,
+      @JsonKey(toJson: iso8601) DateTime? endDate,
       int limit,
       String? cursor,
       Map<String, dynamic>? $unknown});
@@ -222,8 +224,8 @@ class _$ReportGetHistoricalStatsInputImpl
       {this.queueId,
       this.moderatorDid,
       final List<String>? reportTypes,
-      this.startDate,
-      this.endDate,
+      @JsonKey(toJson: iso8601) this.startDate,
+      @JsonKey(toJson: iso8601) this.endDate,
       this.limit = 30,
       this.cursor,
       final Map<String, dynamic>? $unknown})
@@ -253,10 +255,12 @@ class _$ReportGetHistoricalStatsInputImpl
 
   /// Earliest date to include (inclusive).
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? startDate;
 
   /// Latest date to include (inclusive).
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? endDate;
 
   /// Maximum number of entries to return.
@@ -337,8 +341,8 @@ abstract class _ReportGetHistoricalStatsInput
           {final int? queueId,
           final String? moderatorDid,
           final List<String>? reportTypes,
-          final DateTime? startDate,
-          final DateTime? endDate,
+          @JsonKey(toJson: iso8601) final DateTime? startDate,
+          @JsonKey(toJson: iso8601) final DateTime? endDate,
           final int limit,
           final String? cursor,
           final Map<String, dynamic>? $unknown}) =
@@ -359,10 +363,12 @@ abstract class _ReportGetHistoricalStatsInput
 
   /// Earliest date to include (inclusive).
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get startDate;
 
   /// Latest date to include (inclusive).
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get endDate;
 
   /// Maximum number of entries to return.

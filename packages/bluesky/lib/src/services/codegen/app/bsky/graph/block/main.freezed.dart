@@ -24,6 +24,7 @@ mixin _$GraphBlockRecord {
 
   /// DID of the account to be blocked.
   String get subject => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -46,7 +47,7 @@ abstract class $GraphBlockRecordCopyWith<$Res> {
   $Res call(
       {String $type,
       String subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -102,7 +103,7 @@ abstract class _$$GraphBlockRecordImplCopyWith<$Res>
   $Res call(
       {String $type,
       String subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -152,7 +153,7 @@ class _$GraphBlockRecordImpl implements _GraphBlockRecord {
   const _$GraphBlockRecordImpl(
       {this.$type = 'app.bsky.graph.block',
       required this.subject,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -167,6 +168,7 @@ class _$GraphBlockRecordImpl implements _GraphBlockRecord {
   @override
   final String subject;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -221,7 +223,7 @@ abstract class _GraphBlockRecord implements GraphBlockRecord {
   const factory _GraphBlockRecord(
       {final String $type,
       required final String subject,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$GraphBlockRecordImpl;
 
   factory _GraphBlockRecord.fromJson(Map<String, dynamic> json) =
@@ -234,6 +236,7 @@ abstract class _GraphBlockRecord implements GraphBlockRecord {
   @override
   String get subject;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

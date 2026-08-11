@@ -29,10 +29,11 @@ final class DescribeRepoCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get information about an account and repository, including the list of collections. Does not require auth.";
+      "Get information about an account and repository, including the list of collections. Does not require auth.";
 
   @override
-  final String invocation = "bsky com-atproto-repo describe-repo [repo]";
+  final String invocation =
+      "bsky com-atproto-repo describe-repo --repo=<value>";
 
   @override
   String get methodId => "com.atproto.repo.describeRepo";

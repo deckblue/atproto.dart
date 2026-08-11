@@ -28,14 +28,22 @@ final class GetPostsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Gets post views for a specified list of posts (by AT-URI). This is sometimes referred to as 'hydrating' a 'feed skeleton'.";
+      "Gets post views for a specified list of posts (by AT-URI). This is sometimes referred to as 'hydrating' a 'feed skeleton'.";
 
   @override
-  final String invocation = "bsky app-bsky-feed get-posts [uris]";
+  final String invocation = "bsky app-bsky-feed get-posts [--uris=<value>...]";
 
   @override
   String get methodId => "app.bsky.feed.getPosts";
 
   @override
-  Map<String, dynamic>? get parameters => {"uris": argResults!["uris"]};
+  Map<String, dynamic>? get parameters => {
+        "uris": _requireNonEmpty("uris", argResults!["uris"]),
+      };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

@@ -72,35 +72,38 @@ final class UAdminUpdateSubjectStatusSubjectConverter
 
   @override
   UAdminUpdateSubjectStatusSubject fromJson(Map<String, dynamic> json) {
-    try {
-      if (RepoRef.validate(json)) {
-        return UAdminUpdateSubjectStatusSubject.repoRef(
-          data: const RepoRefConverter().fromJson(json),
-        );
-      }
-      if (RepoStrongRef.validate(json)) {
-        return UAdminUpdateSubjectStatusSubject.repoStrongRef(
-          data: const RepoStrongRefConverter().fromJson(json),
-        );
-      }
-      if (RepoBlobRef.validate(json)) {
-        return UAdminUpdateSubjectStatusSubject.repoBlobRef(
-          data: const RepoBlobRefConverter().fromJson(json),
-        );
-      }
-
-      return UAdminUpdateSubjectStatusSubject.unknown(data: json);
-    } catch (_) {
-      return UAdminUpdateSubjectStatusSubject.unknown(data: json);
+    if (RepoRef.validate(json)) {
+      return UAdminUpdateSubjectStatusSubject.repoRef(
+        data: const RepoRefConverter().fromJson(json),
+      );
     }
+    if (RepoStrongRef.validate(json)) {
+      return UAdminUpdateSubjectStatusSubject.repoStrongRef(
+        data: const RepoStrongRefConverter().fromJson(json),
+      );
+    }
+    if (RepoBlobRef.validate(json)) {
+      return UAdminUpdateSubjectStatusSubject.repoBlobRef(
+        data: const RepoBlobRefConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UAdminUpdateSubjectStatusSubject.unknown(data: json);
   }
 
   @override
   Map<String, dynamic> toJson(UAdminUpdateSubjectStatusSubject object) =>
-      object.when(
-        repoRef: (data) => const RepoRefConverter().toJson(data),
-        repoStrongRef: (data) => const RepoStrongRefConverter().toJson(data),
-        repoBlobRef: (data) => const RepoBlobRefConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UAdminUpdateSubjectStatusSubjectRepoRef(:final data) =>
+          const RepoRefConverter().toJson(data),
+        UAdminUpdateSubjectStatusSubjectRepoStrongRef(:final data) =>
+          const RepoStrongRefConverter().toJson(data),
+        UAdminUpdateSubjectStatusSubjectRepoBlobRef(:final data) =>
+          const RepoBlobRefConverter().toJson(data),
+        UAdminUpdateSubjectStatusSubjectUnknown(:final data) => data,
+      };
 }

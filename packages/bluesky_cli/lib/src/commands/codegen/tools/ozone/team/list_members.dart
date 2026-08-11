@@ -29,22 +29,23 @@ final class ListMembersCommand extends QueryCommand {
 
   @override
   final String description =
-      r"List all members with access to the ozone service.";
+      "List all members with access to the ozone service.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-team list-members [q] [disabled] [roles] [limit] [cursor]";
+      "bsky tools-ozone-team list-members [--q=<value>] [--disabled] [--roles=<value>...] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "tools.ozone.team.listMembers";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["q"] != null) "q": argResults!["q"],
-        if (argResults!["disabled"] != null)
+        if (argResults!.wasParsed("q")) "q": argResults!["q"],
+        if (argResults!.wasParsed("disabled"))
           "disabled": argResults!["disabled"],
-        if (argResults!["roles"] != null) "roles": argResults!["roles"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("roles")) "roles": argResults!["roles"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

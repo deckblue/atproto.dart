@@ -43,25 +43,32 @@ final class ListScheduledActionsCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"List scheduled moderation actions with optional filtering";
+      "List scheduled moderation actions with optional filtering";
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation list-scheduled-actions [startsAfter] [endsBefore] [subjects] [statuses] [limit] [cursor]";
+      "bsky tools-ozone-moderation list-scheduled-actions [--startsAfter=<value>] [--endsBefore=<value>] [--subjects=<value>...] [--statuses=<value>...] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "tools.ozone.moderation.listScheduledActions";
 
   @override
   Map<String, dynamic>? get body => {
-        if (argResults!["startsAfter"] != null)
+        if (argResults!.wasParsed("startsAfter"))
           "startsAfter": argResults!["startsAfter"],
-        if (argResults!["endsBefore"] != null)
+        if (argResults!.wasParsed("endsBefore"))
           "endsBefore": argResults!["endsBefore"],
-        if (argResults!["subjects"] != null)
+        if (argResults!.wasParsed("subjects"))
           "subjects": argResults!["subjects"],
-        "statuses": argResults!["statuses"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "statuses": _requireNonEmpty("statuses", argResults!["statuses"]),
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

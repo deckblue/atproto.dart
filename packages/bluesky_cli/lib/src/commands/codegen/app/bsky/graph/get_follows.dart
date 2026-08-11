@@ -19,7 +19,8 @@ final class GetFollowsCommand extends QueryCommand {
     argParser
       ..addOption("actor", mandatory: true)
       ..addOption("limit", defaultsTo: "50")
-      ..addOption("cursor");
+      ..addOption("cursor")
+      ..addOption("sort");
   }
 
   @override
@@ -27,11 +28,11 @@ final class GetFollowsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Enumerates accounts which a specified account (actor) follows.";
+      "Enumerates accounts which a specified account (actor) follows.";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph get-follows [actor] [limit] [cursor]";
+      "bsky app-bsky-graph get-follows --actor=<value> [--limit=<value>] [--cursor=<value>] [--sort=<value>]";
 
   @override
   String get methodId => "app.bsky.graph.getFollows";
@@ -39,7 +40,9 @@ final class GetFollowsCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "actor": argResults!["actor"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("sort")) "sort": argResults!["sort"],
       };
 }

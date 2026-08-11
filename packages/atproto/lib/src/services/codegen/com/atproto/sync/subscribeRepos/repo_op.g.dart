@@ -35,7 +35,7 @@ Map<String, dynamic> _$$RepoOpImplToJson(_$RepoOpImpl instance) =>
       r'$type': instance.$type,
       'action': const RepoOpActionConverter().toJson(instance.action),
       'path': instance.path,
-      if (instance.cid case final value?) 'cid': value,
+      'cid': instance.cid,
       if (instance.prev case final value?) 'prev': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

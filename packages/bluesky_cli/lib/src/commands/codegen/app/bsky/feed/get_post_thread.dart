@@ -40,11 +40,11 @@ final class GetPostThreadCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get posts in a thread. Does not require auth, but additional metadata and filtering will be applied for authed requests.";
+      "Get posts in a thread. Does not require auth, but additional metadata and filtering will be applied for authed requests.";
 
   @override
   final String invocation =
-      "bsky app-bsky-feed get-post-thread [uri] [depth] [parentHeight]";
+      "bsky app-bsky-feed get-post-thread --uri=<value> [--depth=<value>] [--parentHeight=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.getPostThread";
@@ -52,7 +52,9 @@ final class GetPostThreadCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "uri": argResults!["uri"],
-        "depth": argResults!["depth"],
-        "parentHeight": argResults!["parentHeight"],
+        "depth": int.tryParse(argResults!["depth"]) ??
+            usageException('Invalid integer value for option "depth".'),
+        "parentHeight": int.tryParse(argResults!["parentHeight"]) ??
+            usageException('Invalid integer value for option "parentHeight".'),
       };
 }

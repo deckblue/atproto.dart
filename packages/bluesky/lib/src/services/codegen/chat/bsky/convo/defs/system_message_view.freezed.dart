@@ -23,6 +23,7 @@ mixin _$SystemMessageView {
   String get $type => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   String get rev => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get sentAt => throw _privateConstructorUsedError;
   @USystemMessageViewDataConverter()
   USystemMessageViewData get data => throw _privateConstructorUsedError;
@@ -48,7 +49,7 @@ abstract class $SystemMessageViewCopyWith<$Res> {
       {String $type,
       String id,
       String rev,
-      DateTime sentAt,
+      @JsonKey(toJson: iso8601) DateTime sentAt,
       @USystemMessageViewDataConverter() USystemMessageViewData data,
       Map<String, dynamic>? $unknown});
 
@@ -128,7 +129,7 @@ abstract class _$$SystemMessageViewImplCopyWith<$Res>
       {String $type,
       String id,
       String rev,
-      DateTime sentAt,
+      @JsonKey(toJson: iso8601) DateTime sentAt,
       @USystemMessageViewDataConverter() USystemMessageViewData data,
       Map<String, dynamic>? $unknown});
 
@@ -193,7 +194,7 @@ class _$SystemMessageViewImpl implements _SystemMessageView {
       {this.$type = 'chat.bsky.convo.defs#systemMessageView',
       required this.id,
       required this.rev,
-      required this.sentAt,
+      @JsonKey(toJson: iso8601) required this.sentAt,
       @USystemMessageViewDataConverter() required this.data,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -209,6 +210,7 @@ class _$SystemMessageViewImpl implements _SystemMessageView {
   @override
   final String rev;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime sentAt;
   @override
   @USystemMessageViewDataConverter()
@@ -268,7 +270,7 @@ abstract class _SystemMessageView implements SystemMessageView {
       {final String $type,
       required final String id,
       required final String rev,
-      required final DateTime sentAt,
+      @JsonKey(toJson: iso8601) required final DateTime sentAt,
       @USystemMessageViewDataConverter()
       required final USystemMessageViewData data,
       final Map<String, dynamic>? $unknown}) = _$SystemMessageViewImpl;
@@ -283,6 +285,7 @@ abstract class _SystemMessageView implements SystemMessageView {
   @override
   String get rev;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get sentAt;
   @override
   @USystemMessageViewDataConverter()

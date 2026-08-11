@@ -21,6 +21,7 @@ GroupConvo _$GroupConvoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GroupConvo {
   String get $type => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @JoinLinkViewConverter()
   JoinLinkView? get joinLink => throw _privateConstructorUsedError;
@@ -60,7 +61,7 @@ abstract class $GroupConvoCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @JoinLinkViewConverter() JoinLinkView? joinLink,
       int joinRequestCount,
       @ConvoLockStatusConverter() ConvoLockStatus lockStatus,
@@ -173,7 +174,7 @@ abstract class _$$GroupConvoImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @JoinLinkViewConverter() JoinLinkView? joinLink,
       int joinRequestCount,
       @ConvoLockStatusConverter() ConvoLockStatus lockStatus,
@@ -258,7 +259,7 @@ class __$$GroupConvoImplCopyWithImpl<$Res>
 class _$GroupConvoImpl implements _GroupConvo {
   const _$GroupConvoImpl(
       {this.$type = 'chat.bsky.moderation.defs#groupConvo',
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @JoinLinkViewConverter() this.joinLink,
       required this.joinRequestCount,
       @ConvoLockStatusConverter() required this.lockStatus,
@@ -275,6 +276,7 @@ class _$GroupConvoImpl implements _GroupConvo {
   @JsonKey()
   final String $type;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @JoinLinkViewConverter()
@@ -370,7 +372,7 @@ class _$GroupConvoImpl implements _GroupConvo {
 abstract class _GroupConvo implements GroupConvo {
   const factory _GroupConvo(
       {final String $type,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @JoinLinkViewConverter() final JoinLinkView? joinLink,
       required final int joinRequestCount,
       @ConvoLockStatusConverter() required final ConvoLockStatus lockStatus,
@@ -385,6 +387,7 @@ abstract class _GroupConvo implements GroupConvo {
   @override
   String get $type;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @JoinLinkViewConverter()

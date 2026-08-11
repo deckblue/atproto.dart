@@ -47,10 +47,10 @@ Map<String, dynamic> _$$CommitImplToJson(_$CommitImpl instance) =>
       'repo': instance.repo,
       'commit': instance.commit,
       'rev': instance.rev,
-      if (instance.since case final value?) 'since': value,
+      'since': instance.since,
       'blocks': instance.blocks,
       'ops': instance.ops.map(const RepoOpConverter().toJson).toList(),
       if (instance.prevData case final value?) 'prevData': value,
-      'time': instance.time.toIso8601String(),
+      'time': iso8601(instance.time),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

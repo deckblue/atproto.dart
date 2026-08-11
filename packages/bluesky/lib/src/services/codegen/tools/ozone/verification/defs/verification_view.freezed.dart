@@ -39,12 +39,14 @@ mixin _$VerificationView {
   String get displayName => throw _privateConstructorUsedError;
 
   /// Timestamp when the verification was created.
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// Describes the reason for revocation, also indicating that the verification is no longer valid.
   String? get revokeReason => throw _privateConstructorUsedError;
 
   /// Timestamp when the verification was revoked.
+  @JsonKey(toJson: iso8601)
   DateTime? get revokedAt => throw _privateConstructorUsedError;
 
   /// The user who revoked this verification.
@@ -86,9 +88,9 @@ abstract class $VerificationViewCopyWith<$Res> {
       String subject,
       String handle,
       String displayName,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String? revokeReason,
-      DateTime? revokedAt,
+      @JsonKey(toJson: iso8601) DateTime? revokedAt,
       String? revokedBy,
       @UVerificationViewSubjectProfileConverter()
       UVerificationViewSubjectProfile? subjectProfile,
@@ -277,9 +279,9 @@ abstract class _$$VerificationViewImplCopyWith<$Res>
       String subject,
       String handle,
       String displayName,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String? revokeReason,
-      DateTime? revokedAt,
+      @JsonKey(toJson: iso8601) DateTime? revokedAt,
       String? revokedBy,
       @UVerificationViewSubjectProfileConverter()
       UVerificationViewSubjectProfile? subjectProfile,
@@ -406,9 +408,9 @@ class _$VerificationViewImpl implements _VerificationView {
       required this.subject,
       required this.handle,
       required this.displayName,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       this.revokeReason,
-      this.revokedAt,
+      @JsonKey(toJson: iso8601) this.revokedAt,
       this.revokedBy,
       @UVerificationViewSubjectProfileConverter() this.subjectProfile,
       @UVerificationViewIssuerProfileConverter() this.issuerProfile,
@@ -447,6 +449,7 @@ class _$VerificationViewImpl implements _VerificationView {
 
   /// Timestamp when the verification was created.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// Describes the reason for revocation, also indicating that the verification is no longer valid.
@@ -455,6 +458,7 @@ class _$VerificationViewImpl implements _VerificationView {
 
   /// Timestamp when the verification was revoked.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? revokedAt;
 
   /// The user who revoked this verification.
@@ -563,9 +567,9 @@ abstract class _VerificationView implements VerificationView {
       required final String subject,
       required final String handle,
       required final String displayName,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final String? revokeReason,
-      final DateTime? revokedAt,
+      @JsonKey(toJson: iso8601) final DateTime? revokedAt,
       final String? revokedBy,
       @UVerificationViewSubjectProfileConverter()
       final UVerificationViewSubjectProfile? subjectProfile,
@@ -606,6 +610,7 @@ abstract class _VerificationView implements VerificationView {
 
   /// Timestamp when the verification was created.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// Describes the reason for revocation, also indicating that the verification is no longer valid.
@@ -614,6 +619,7 @@ abstract class _VerificationView implements VerificationView {
 
   /// Timestamp when the verification was revoked.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get revokedAt;
 
   /// The user who revoked this verification.

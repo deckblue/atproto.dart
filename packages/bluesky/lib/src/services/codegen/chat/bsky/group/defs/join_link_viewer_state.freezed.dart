@@ -21,6 +21,7 @@ JoinLinkViewerState _$JoinLinkViewerStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$JoinLinkViewerState {
   String get $type => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get requestedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -41,7 +42,9 @@ abstract class $JoinLinkViewerStateCopyWith<$Res> {
       _$JoinLinkViewerStateCopyWithImpl<$Res, JoinLinkViewerState>;
   @useResult
   $Res call(
-      {String $type, DateTime? requestedAt, Map<String, dynamic>? $unknown});
+      {String $type,
+      @JsonKey(toJson: iso8601) DateTime? requestedAt,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -89,7 +92,9 @@ abstract class _$$JoinLinkViewerStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String $type, DateTime? requestedAt, Map<String, dynamic>? $unknown});
+      {String $type,
+      @JsonKey(toJson: iso8601) DateTime? requestedAt,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -132,7 +137,7 @@ class __$$JoinLinkViewerStateImplCopyWithImpl<$Res>
 class _$JoinLinkViewerStateImpl implements _JoinLinkViewerState {
   const _$JoinLinkViewerStateImpl(
       {this.$type = 'chat.bsky.group.defs#joinLinkViewerState',
-      this.requestedAt,
+      @JsonKey(toJson: iso8601) this.requestedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -143,6 +148,7 @@ class _$JoinLinkViewerStateImpl implements _JoinLinkViewerState {
   @JsonKey()
   final String $type;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? requestedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -195,7 +201,7 @@ class _$JoinLinkViewerStateImpl implements _JoinLinkViewerState {
 abstract class _JoinLinkViewerState implements JoinLinkViewerState {
   const factory _JoinLinkViewerState(
       {final String $type,
-      final DateTime? requestedAt,
+      @JsonKey(toJson: iso8601) final DateTime? requestedAt,
       final Map<String, dynamic>? $unknown}) = _$JoinLinkViewerStateImpl;
 
   factory _JoinLinkViewerState.fromJson(Map<String, dynamic> json) =
@@ -204,6 +210,7 @@ abstract class _JoinLinkViewerState implements JoinLinkViewerState {
   @override
   String get $type;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get requestedAt;
   @override
   Map<String, dynamic>? get $unknown;

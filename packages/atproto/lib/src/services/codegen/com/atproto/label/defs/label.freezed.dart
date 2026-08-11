@@ -41,9 +41,11 @@ mixin _$Label {
   bool? get neg => throw _privateConstructorUsedError;
 
   /// Timestamp when this label was created.
+  @JsonKey(toJson: iso8601)
   DateTime get cts => throw _privateConstructorUsedError;
 
   /// Timestamp at which this label expires (no longer applies).
+  @JsonKey(toJson: iso8601)
   DateTime? get exp => throw _privateConstructorUsedError;
 
   /// Signature of dag-cbor encoded label.
@@ -72,8 +74,8 @@ abstract class $LabelCopyWith<$Res> {
       String? cid,
       String val,
       bool? neg,
-      DateTime cts,
-      DateTime? exp,
+      @JsonKey(toJson: iso8601) DateTime cts,
+      @JsonKey(toJson: iso8601) DateTime? exp,
       Map<String, dynamic>? sig,
       Map<String, dynamic>? $unknown});
 }
@@ -169,8 +171,8 @@ abstract class _$$LabelImplCopyWith<$Res> implements $LabelCopyWith<$Res> {
       String? cid,
       String val,
       bool? neg,
-      DateTime cts,
-      DateTime? exp,
+      @JsonKey(toJson: iso8601) DateTime cts,
+      @JsonKey(toJson: iso8601) DateTime? exp,
       Map<String, dynamic>? sig,
       Map<String, dynamic>? $unknown});
 }
@@ -261,8 +263,8 @@ class _$LabelImpl implements _Label {
       this.cid,
       required this.val,
       this.neg,
-      required this.cts,
-      this.exp,
+      @JsonKey(toJson: iso8601) required this.cts,
+      @JsonKey(toJson: iso8601) this.exp,
       final Map<String, dynamic>? sig,
       final Map<String, dynamic>? $unknown})
       : _sig = sig,
@@ -301,10 +303,12 @@ class _$LabelImpl implements _Label {
 
   /// Timestamp when this label was created.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime cts;
 
   /// Timestamp at which this label expires (no longer applies).
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? exp;
 
   /// Signature of dag-cbor encoded label.
@@ -394,8 +398,8 @@ abstract class _Label implements Label {
       final String? cid,
       required final String val,
       final bool? neg,
-      required final DateTime cts,
-      final DateTime? exp,
+      @JsonKey(toJson: iso8601) required final DateTime cts,
+      @JsonKey(toJson: iso8601) final DateTime? exp,
       final Map<String, dynamic>? sig,
       final Map<String, dynamic>? $unknown}) = _$LabelImpl;
 
@@ -430,10 +434,12 @@ abstract class _Label implements Label {
 
   /// Timestamp when this label was created.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get cts;
 
   /// Timestamp at which this label expires (no longer applies).
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get exp;
 
   /// Signature of dag-cbor encoded label.

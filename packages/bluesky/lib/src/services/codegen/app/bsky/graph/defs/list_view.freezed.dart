@@ -39,6 +39,7 @@ mixin _$ListView {
   List<Label>? get labels => throw _privateConstructorUsedError;
   @ListViewerStateConverter()
   ListViewerState? get viewer => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -70,7 +71,7 @@ abstract class $ListViewCopyWith<$Res> {
       int? listItemCount,
       @LabelConverter() List<Label>? labels,
       @ListViewerStateConverter() ListViewerState? viewer,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewCopyWith<$Res> get creator;
@@ -224,7 +225,7 @@ abstract class _$$ListViewImplCopyWith<$Res>
       int? listItemCount,
       @LabelConverter() List<Label>? labels,
       @ListViewerStateConverter() ListViewerState? viewer,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -341,7 +342,7 @@ class _$ListViewImpl implements _ListView {
       this.listItemCount,
       @LabelConverter() final List<Label>? labels,
       @ListViewerStateConverter() this.viewer,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       final Map<String, dynamic>? $unknown})
       : _descriptionFacets = descriptionFacets,
         _labels = labels,
@@ -399,6 +400,7 @@ class _$ListViewImpl implements _ListView {
   @ListViewerStateConverter()
   final ListViewerState? viewer;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -489,7 +491,7 @@ abstract class _ListView implements ListView {
       final int? listItemCount,
       @LabelConverter() final List<Label>? labels,
       @ListViewerStateConverter() final ListViewerState? viewer,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       final Map<String, dynamic>? $unknown}) = _$ListViewImpl;
 
   factory _ListView.fromJson(Map<String, dynamic> json) =
@@ -526,6 +528,7 @@ abstract class _ListView implements ListView {
   @ListViewerStateConverter()
   ListViewerState? get viewer;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   Map<String, dynamic>? get $unknown;

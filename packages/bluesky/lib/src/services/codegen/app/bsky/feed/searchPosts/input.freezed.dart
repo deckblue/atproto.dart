@@ -25,7 +25,7 @@ mixin _$FeedSearchPostsInput {
 
   /// Specifies the ranking order of results.
   @FeedSearchPostsSortConverter()
-  FeedSearchPostsSort? get sort => throw _privateConstructorUsedError;
+  FeedSearchPostsSort get sort => throw _privateConstructorUsedError;
 
   /// Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).
   String? get since => throw _privateConstructorUsedError;
@@ -72,7 +72,7 @@ abstract class $FeedSearchPostsInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String q,
-      @FeedSearchPostsSortConverter() FeedSearchPostsSort? sort,
+      @FeedSearchPostsSortConverter() FeedSearchPostsSort sort,
       String? since,
       String? until,
       String? mentions,
@@ -85,7 +85,7 @@ abstract class $FeedSearchPostsInputCopyWith<$Res> {
       String? cursor,
       Map<String, dynamic>? $unknown});
 
-  $FeedSearchPostsSortCopyWith<$Res>? get sort;
+  $FeedSearchPostsSortCopyWith<$Res> get sort;
 }
 
 /// @nodoc
@@ -105,7 +105,7 @@ class _$FeedSearchPostsInputCopyWithImpl<$Res,
   @override
   $Res call({
     Object? q = null,
-    Object? sort = freezed,
+    Object? sort = null,
     Object? since = freezed,
     Object? until = freezed,
     Object? mentions = freezed,
@@ -123,10 +123,10 @@ class _$FeedSearchPostsInputCopyWithImpl<$Res,
           ? _value.q
           : q // ignore: cast_nullable_to_non_nullable
               as String,
-      sort: freezed == sort
+      sort: null == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as FeedSearchPostsSort?,
+              as FeedSearchPostsSort,
       since: freezed == since
           ? _value.since
           : since // ignore: cast_nullable_to_non_nullable
@@ -178,12 +178,8 @@ class _$FeedSearchPostsInputCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $FeedSearchPostsSortCopyWith<$Res>? get sort {
-    if (_value.sort == null) {
-      return null;
-    }
-
-    return $FeedSearchPostsSortCopyWith<$Res>(_value.sort!, (value) {
+  $FeedSearchPostsSortCopyWith<$Res> get sort {
+    return $FeedSearchPostsSortCopyWith<$Res>(_value.sort, (value) {
       return _then(_value.copyWith(sort: value) as $Val);
     });
   }
@@ -199,7 +195,7 @@ abstract class _$$FeedSearchPostsInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String q,
-      @FeedSearchPostsSortConverter() FeedSearchPostsSort? sort,
+      @FeedSearchPostsSortConverter() FeedSearchPostsSort sort,
       String? since,
       String? until,
       String? mentions,
@@ -213,7 +209,7 @@ abstract class _$$FeedSearchPostsInputImplCopyWith<$Res>
       Map<String, dynamic>? $unknown});
 
   @override
-  $FeedSearchPostsSortCopyWith<$Res>? get sort;
+  $FeedSearchPostsSortCopyWith<$Res> get sort;
 }
 
 /// @nodoc
@@ -230,7 +226,7 @@ class __$$FeedSearchPostsInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? q = null,
-    Object? sort = freezed,
+    Object? sort = null,
     Object? since = freezed,
     Object? until = freezed,
     Object? mentions = freezed,
@@ -248,10 +244,10 @@ class __$$FeedSearchPostsInputImplCopyWithImpl<$Res>
           ? _value.q
           : q // ignore: cast_nullable_to_non_nullable
               as String,
-      sort: freezed == sort
+      sort: null == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as FeedSearchPostsSort?,
+              as FeedSearchPostsSort,
       since: freezed == since
           ? _value.since
           : since // ignore: cast_nullable_to_non_nullable
@@ -306,7 +302,9 @@ class __$$FeedSearchPostsInputImplCopyWithImpl<$Res>
 class _$FeedSearchPostsInputImpl implements _FeedSearchPostsInput {
   const _$FeedSearchPostsInputImpl(
       {required this.q,
-      @FeedSearchPostsSortConverter() this.sort,
+      @FeedSearchPostsSortConverter() this.sort =
+          const FeedSearchPostsSort.knownValue(
+              data: KnownFeedSearchPostsSort.latest),
       this.since,
       this.until,
       this.mentions,
@@ -330,8 +328,9 @@ class _$FeedSearchPostsInputImpl implements _FeedSearchPostsInput {
 
   /// Specifies the ranking order of results.
   @override
+  @JsonKey()
   @FeedSearchPostsSortConverter()
-  final FeedSearchPostsSort? sort;
+  final FeedSearchPostsSort sort;
 
   /// Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).
   @override
@@ -452,7 +451,7 @@ class _$FeedSearchPostsInputImpl implements _FeedSearchPostsInput {
 abstract class _FeedSearchPostsInput implements FeedSearchPostsInput {
   const factory _FeedSearchPostsInput(
       {required final String q,
-      @FeedSearchPostsSortConverter() final FeedSearchPostsSort? sort,
+      @FeedSearchPostsSortConverter() final FeedSearchPostsSort sort,
       final String? since,
       final String? until,
       final String? mentions,
@@ -475,7 +474,7 @@ abstract class _FeedSearchPostsInput implements FeedSearchPostsInput {
   /// Specifies the ranking order of results.
   @override
   @FeedSearchPostsSortConverter()
-  FeedSearchPostsSort? get sort;
+  FeedSearchPostsSort get sort;
 
   /// Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).
   @override

@@ -7,6 +7,9 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+// Dart imports:
+import 'dart:convert';
+
 // Project imports:
 import '../../../../procedure_command.dart';
 
@@ -51,30 +54,39 @@ final class CreateAccountCommand extends ProcedureCommand {
   final String name = "create-account";
 
   @override
-  final String description = r"Create an account. Implemented by PDS.";
+  final String description = "Create an account. Implemented by PDS.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server create-account [email] [handle] [did] [inviteCode] [verificationCode] [verificationPhone] [password] [recoveryKey] [plcOp]";
+      "bsky com-atproto-server create-account [--email=<value>] --handle=<value> [--did=<value>] [--inviteCode=<value>] [--verificationCode=<value>] [--verificationPhone=<value>] [--password=<value>] [--recoveryKey=<value>] [--plcOp=<value>]";
 
   @override
   String get methodId => "com.atproto.server.createAccount";
 
   @override
   Map<String, dynamic>? get body => {
-        if (argResults!["email"] != null) "email": argResults!["email"],
+        if (argResults!.wasParsed("email")) "email": argResults!["email"],
         "handle": argResults!["handle"],
-        if (argResults!["did"] != null) "did": argResults!["did"],
-        if (argResults!["inviteCode"] != null)
+        if (argResults!.wasParsed("did")) "did": argResults!["did"],
+        if (argResults!.wasParsed("inviteCode"))
           "inviteCode": argResults!["inviteCode"],
-        if (argResults!["verificationCode"] != null)
+        if (argResults!.wasParsed("verificationCode"))
           "verificationCode": argResults!["verificationCode"],
-        if (argResults!["verificationPhone"] != null)
+        if (argResults!.wasParsed("verificationPhone"))
           "verificationPhone": argResults!["verificationPhone"],
-        if (argResults!["password"] != null)
+        if (argResults!.wasParsed("password"))
           "password": argResults!["password"],
-        if (argResults!["recoveryKey"] != null)
+        if (argResults!.wasParsed("recoveryKey"))
           "recoveryKey": argResults!["recoveryKey"],
-        if (argResults!["plcOp"] != null) "plcOp": argResults!["plcOp"],
+        if (argResults!.wasParsed("plcOp")) "plcOp": _decodeJson("plcOp"),
       };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

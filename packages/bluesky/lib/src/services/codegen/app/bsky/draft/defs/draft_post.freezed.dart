@@ -28,6 +28,8 @@ mixin _$DraftPost {
   UDraftPostLabels? get labels => throw _privateConstructorUsedError;
   @DraftEmbedImageConverter()
   List<DraftEmbedImage>? get embedImages => throw _privateConstructorUsedError;
+  @DraftEmbedGalleryConverter()
+  DraftEmbedGallery? get embedGallery => throw _privateConstructorUsedError;
   @DraftEmbedVideoConverter()
   List<DraftEmbedVideo>? get embedVideos => throw _privateConstructorUsedError;
   @DraftEmbedExternalConverter()
@@ -58,12 +60,14 @@ abstract class $DraftPostCopyWith<$Res> {
       String text,
       @UDraftPostLabelsConverter() UDraftPostLabels? labels,
       @DraftEmbedImageConverter() List<DraftEmbedImage>? embedImages,
+      @DraftEmbedGalleryConverter() DraftEmbedGallery? embedGallery,
       @DraftEmbedVideoConverter() List<DraftEmbedVideo>? embedVideos,
       @DraftEmbedExternalConverter() List<DraftEmbedExternal>? embedExternals,
       @DraftEmbedRecordConverter() List<DraftEmbedRecord>? embedRecords,
       Map<String, dynamic>? $unknown});
 
   $UDraftPostLabelsCopyWith<$Res>? get labels;
+  $DraftEmbedGalleryCopyWith<$Res>? get embedGallery;
 }
 
 /// @nodoc
@@ -85,6 +89,7 @@ class _$DraftPostCopyWithImpl<$Res, $Val extends DraftPost>
     Object? text = null,
     Object? labels = freezed,
     Object? embedImages = freezed,
+    Object? embedGallery = freezed,
     Object? embedVideos = freezed,
     Object? embedExternals = freezed,
     Object? embedRecords = freezed,
@@ -107,6 +112,10 @@ class _$DraftPostCopyWithImpl<$Res, $Val extends DraftPost>
           ? _value.embedImages
           : embedImages // ignore: cast_nullable_to_non_nullable
               as List<DraftEmbedImage>?,
+      embedGallery: freezed == embedGallery
+          ? _value.embedGallery
+          : embedGallery // ignore: cast_nullable_to_non_nullable
+              as DraftEmbedGallery?,
       embedVideos: freezed == embedVideos
           ? _value.embedVideos
           : embedVideos // ignore: cast_nullable_to_non_nullable
@@ -139,6 +148,20 @@ class _$DraftPostCopyWithImpl<$Res, $Val extends DraftPost>
       return _then(_value.copyWith(labels: value) as $Val);
     });
   }
+
+  /// Create a copy of DraftPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DraftEmbedGalleryCopyWith<$Res>? get embedGallery {
+    if (_value.embedGallery == null) {
+      return null;
+    }
+
+    return $DraftEmbedGalleryCopyWith<$Res>(_value.embedGallery!, (value) {
+      return _then(_value.copyWith(embedGallery: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -154,6 +177,7 @@ abstract class _$$DraftPostImplCopyWith<$Res>
       String text,
       @UDraftPostLabelsConverter() UDraftPostLabels? labels,
       @DraftEmbedImageConverter() List<DraftEmbedImage>? embedImages,
+      @DraftEmbedGalleryConverter() DraftEmbedGallery? embedGallery,
       @DraftEmbedVideoConverter() List<DraftEmbedVideo>? embedVideos,
       @DraftEmbedExternalConverter() List<DraftEmbedExternal>? embedExternals,
       @DraftEmbedRecordConverter() List<DraftEmbedRecord>? embedRecords,
@@ -161,6 +185,8 @@ abstract class _$$DraftPostImplCopyWith<$Res>
 
   @override
   $UDraftPostLabelsCopyWith<$Res>? get labels;
+  @override
+  $DraftEmbedGalleryCopyWith<$Res>? get embedGallery;
 }
 
 /// @nodoc
@@ -180,6 +206,7 @@ class __$$DraftPostImplCopyWithImpl<$Res>
     Object? text = null,
     Object? labels = freezed,
     Object? embedImages = freezed,
+    Object? embedGallery = freezed,
     Object? embedVideos = freezed,
     Object? embedExternals = freezed,
     Object? embedRecords = freezed,
@@ -202,6 +229,10 @@ class __$$DraftPostImplCopyWithImpl<$Res>
           ? _value._embedImages
           : embedImages // ignore: cast_nullable_to_non_nullable
               as List<DraftEmbedImage>?,
+      embedGallery: freezed == embedGallery
+          ? _value.embedGallery
+          : embedGallery // ignore: cast_nullable_to_non_nullable
+              as DraftEmbedGallery?,
       embedVideos: freezed == embedVideos
           ? _value._embedVideos
           : embedVideos // ignore: cast_nullable_to_non_nullable
@@ -231,6 +262,7 @@ class _$DraftPostImpl implements _DraftPost {
       required this.text,
       @UDraftPostLabelsConverter() this.labels,
       @DraftEmbedImageConverter() final List<DraftEmbedImage>? embedImages,
+      @DraftEmbedGalleryConverter() this.embedGallery,
       @DraftEmbedVideoConverter() final List<DraftEmbedVideo>? embedVideos,
       @DraftEmbedExternalConverter()
       final List<DraftEmbedExternal>? embedExternals,
@@ -266,6 +298,9 @@ class _$DraftPostImpl implements _DraftPost {
     return EqualUnmodifiableListView(value);
   }
 
+  @override
+  @DraftEmbedGalleryConverter()
+  final DraftEmbedGallery? embedGallery;
   final List<DraftEmbedVideo>? _embedVideos;
   @override
   @DraftEmbedVideoConverter()
@@ -311,7 +346,7 @@ class _$DraftPostImpl implements _DraftPost {
 
   @override
   String toString() {
-    return 'DraftPost(\$type: ${$type}, text: $text, labels: $labels, embedImages: $embedImages, embedVideos: $embedVideos, embedExternals: $embedExternals, embedRecords: $embedRecords, \$unknown: ${$unknown})';
+    return 'DraftPost(\$type: ${$type}, text: $text, labels: $labels, embedImages: $embedImages, embedGallery: $embedGallery, embedVideos: $embedVideos, embedExternals: $embedExternals, embedRecords: $embedRecords, \$unknown: ${$unknown})';
   }
 
   @override
@@ -324,6 +359,8 @@ class _$DraftPostImpl implements _DraftPost {
             (identical(other.labels, labels) || other.labels == labels) &&
             const DeepCollectionEquality()
                 .equals(other._embedImages, _embedImages) &&
+            (identical(other.embedGallery, embedGallery) ||
+                other.embedGallery == embedGallery) &&
             const DeepCollectionEquality()
                 .equals(other._embedVideos, _embedVideos) &&
             const DeepCollectionEquality()
@@ -341,6 +378,7 @@ class _$DraftPostImpl implements _DraftPost {
       text,
       labels,
       const DeepCollectionEquality().hash(_embedImages),
+      embedGallery,
       const DeepCollectionEquality().hash(_embedVideos),
       const DeepCollectionEquality().hash(_embedExternals),
       const DeepCollectionEquality().hash(_embedRecords),
@@ -368,6 +406,7 @@ abstract class _DraftPost implements DraftPost {
       required final String text,
       @UDraftPostLabelsConverter() final UDraftPostLabels? labels,
       @DraftEmbedImageConverter() final List<DraftEmbedImage>? embedImages,
+      @DraftEmbedGalleryConverter() final DraftEmbedGallery? embedGallery,
       @DraftEmbedVideoConverter() final List<DraftEmbedVideo>? embedVideos,
       @DraftEmbedExternalConverter()
       final List<DraftEmbedExternal>? embedExternals,
@@ -389,6 +428,9 @@ abstract class _DraftPost implements DraftPost {
   @override
   @DraftEmbedImageConverter()
   List<DraftEmbedImage>? get embedImages;
+  @override
+  @DraftEmbedGalleryConverter()
+  DraftEmbedGallery? get embedGallery;
   @override
   @DraftEmbedVideoConverter()
   List<DraftEmbedVideo>? get embedVideos;

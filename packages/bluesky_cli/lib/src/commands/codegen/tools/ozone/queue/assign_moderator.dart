@@ -29,18 +29,19 @@ final class AssignModeratorCommand extends ProcedureCommand {
   final String name = "assign-moderator";
 
   @override
-  final String description = r"Assign a user to a queue.";
+  final String description = "Assign a user to a queue.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-queue assign-moderator [queueId] [did]";
+      "bsky tools-ozone-queue assign-moderator --queueId=<value> --did=<value>";
 
   @override
   String get methodId => "tools.ozone.queue.assignModerator";
 
   @override
   Map<String, dynamic>? get body => {
-        "queueId": argResults!["queueId"],
+        "queueId": int.tryParse(argResults!["queueId"]) ??
+            usageException('Invalid integer value for option "queueId".'),
         "did": argResults!["did"],
       };
 }

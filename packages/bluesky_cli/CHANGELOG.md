@@ -1,8 +1,98 @@
 # Release Note
 
+## v0.6.12
+
+- chore: regenerated from synced lexicons
+
+## v0.6.11
+
+- chore: regenerated from synced lexicons
+
+## v0.6.10
+
+- chore: regenerated from synced lexicons
+
+## v0.6.9
+
+- chore: regenerated from synced lexicons
+
+## v0.6.8
+
+- chore: regenerated from synced lexicons
+
+## v0.6.7
+
+- chore: bump `bluesky_text` to `^1.7.0`, picking up the `isLinkFacade` hardening against display text that IDNA maps onto a trusted host, and the linear-time entity extraction.
+
+## v0.6.6
+
+- chore: widen `bluesky_text` to `^1.6.0`.
+
+## v0.6.5
+
+- chore: regenerated from synced lexicons
+
+## v0.6.4
+
+- chore: widen `at_primitives` to `^1.2.0`, `xrpc` to `^1.1.3`, and `bluesky_text` to `^1.5.4`.
+
+## v0.6.3
+
+- chore: bump `bluesky_text` to `^1.5.3`.
+
+## v0.6.2
+
+- docs: documented the previously undocumented global options in the README — `--password-stdin`, `--auth-service`, `--[no-]auth`, `--[no-]session-cache`, `--timeout`, and `--version`/`-v`.
+- docs: expanded the Authentication section to describe the v0.6.0 security model — `--auth-service` vs `--service` separation (raw credentials only reach your own PDS), `--no-auth` for public endpoints, `--password-stdin` for secure entry, and the `~/.config/bsky/session.json` session cache and refresh.
+- chore: bump `xrpc` to `^1.1.2`, `at_primitives` to `^1.1.1`, and `bluesky_text` to `^1.5.2`.
+
+## v0.6.1
+
+- fix: the session cache file is locked to `0600` before any token bytes are written, and caching is skipped (with a warning) if the permission change fails.
+- fix: `--password-stdin` disables terminal echo while reading an interactively-typed password, so it no longer appears on screen (piped/non-terminal input is unaffected).
+
+## v0.6.0
+
+- fix!: stop leaking `BLUESKY_PASSWORD` in `--help`/usage output — the env var is now resolved at use-time instead of being printed as an option `defaultsTo` (could end up in CI logs/recordings) (L-1).
+- fix: authentication moved inside the guarded region, so a wrong password or network error no longer produces a raw stack trace and `exit 255`; usage errors now exit `64` and failures exit `1` (L-4/L-5/L-6).
+- feat: separated `--auth-service` from `--service` and added `--no-auth`, so raw credentials are only sent to your own PDS (L-2).
+- fix: `refresh-session`/`delete-session` now send `refreshJwt` instead of `accessJwt` (previously they could never succeed) (L-8).
+- feat: session cache at `~/.config/bsky/session.json` (mode `0600`) with refresh, so every invocation no longer performs a fresh password login and trips createSession rate limits (L-12).
+- fix: `--pretty` no longer turns an empty `200` body into a `FormatException`; added a `--timeout` flag and async file reads for large uploads (L-7/L-9).
+- fix: `--version`/`-v` are registered as real flags (they were matched against the whole arg list) (L-10).
+- chore: regenerated commands from the fixed `lex_gen`, removed dead code (L-14).
+- chore: bump `xrpc` to `^1.1.0`, `at_primitives` to `^1.1.0`, and `bluesky_text` to `^1.4.0`.
+
+## v0.5.0
+
+- **feat**: All commands, arguments and invocations are now fully aligned with the official lexicon definitions.
+  - Added commands for procedures without input body: `refresh-session`, `delete-session`, `activate-account`, `request-account-delete`, `request-email-confirmation`, `request-email-update`, `request-plc-operation-signature`, `chat-bsky-actor delete-account`.
+  - Added commands for procedures with binary input: `com-atproto-repo upload-blob`, `com-atproto-repo import-repo`, `app-bsky-video upload-video` (use `--file=<path>`).
+  - Added `tools-ozone-set upsert-set` command (pass the request body with `--json`).
+  - Record `get`/`list` subcommands now accept `--repo` (handle or DID) and work without authentication. Defaults to the authenticated user.
+- **fix**: Record `get`/`list` sent the wrong `collection` parameter (`com.atproto.repo.getRecord`/`listRecord`) instead of the record's collection NSID.
+- **fix**: Record `list` used the invalid method `com.atproto.repo.listRecord` instead of `com.atproto.repo.listRecords`.
+- **fix**: Record `create` sent the literal string `"null"` as `rkey` when `--rkey` was omitted. `put` and `delete` now require `--rkey` as the API does.
+- **fix**: Created and updated records now include the `$type` field.
+- **fix**: Integer parameters (e.g. `useCount`, `limit`) are now sent as JSON numbers instead of strings in procedure bodies.
+- **fix**: Array parameters containing objects (e.g. `facets`, `interactions`) are now JSON-decoded instead of being sent as raw strings.
+- **fix**: Omitted optional parameters are no longer sent as empty arrays or `false` flags.
+- **fix**: Unauthenticated procedure calls no longer send an `Authorization: Bearer null` header.
+- **fix**: Commands that require authentication now fail with a clear message when credentials are missing.
+- **fix**: Session is no longer created twice per authenticated command.
+- **style**: Method names with digits are kebab-cased without splitting (e.g. `search-posts-v2` instead of `search-posts-v-2`).
+- **style**: Usage lines now show real option syntax (e.g. `--actor=<value>`) instead of `[actor]`.
+- **fix**: JSON array options (e.g. `--facets`) are no longer split on commas, which corrupted JSON values.
+- **fix**: Command instances are no longer shared across `BskyCommandRunner` instances (`lexCommands` is now a getter), which leaked per-runner state such as credentials and sessions.
+- **feat**: `BskyCommandRunner` accepts `getClient`/`postClient` for injecting mock HTTP clients at test time, and the whole command surface is now covered by offline request-construction tests.
+
 ## v0.4.7
 
 - Bump dependencies.
+- feat: added `chat.bsky.convo.getUnreadCounts` command.
+- feat: added `tools.ozone.report.queryActivities` command.
+- feat: added `com.germnetwork.declaration` command.
+- core: regenerated commands from updated lexicons.
 
 ## v0.4.6
 

@@ -23,6 +23,7 @@ mixin _$AppPassword {
   String get $type => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   bool? get privileged => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
@@ -47,7 +48,7 @@ abstract class $AppPasswordCopyWith<$Res> {
       {String $type,
       String name,
       String password,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       bool? privileged,
       Map<String, dynamic>? $unknown});
 }
@@ -115,7 +116,7 @@ abstract class _$$AppPasswordImplCopyWith<$Res>
       {String $type,
       String name,
       String password,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       bool? privileged,
       Map<String, dynamic>? $unknown});
 }
@@ -177,7 +178,7 @@ class _$AppPasswordImpl implements _AppPassword {
       {this.$type = 'com.atproto.server.createAppPassword#appPassword',
       required this.name,
       required this.password,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       this.privileged,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -193,6 +194,7 @@ class _$AppPasswordImpl implements _AppPassword {
   @override
   final String password;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   final bool? privileged;
@@ -253,7 +255,7 @@ abstract class _AppPassword implements AppPassword {
       {final String $type,
       required final String name,
       required final String password,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final bool? privileged,
       final Map<String, dynamic>? $unknown}) = _$AppPasswordImpl;
 
@@ -267,6 +269,7 @@ abstract class _AppPassword implements AppPassword {
   @override
   String get password;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   bool? get privileged;

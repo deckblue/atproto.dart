@@ -21,6 +21,7 @@ GroupConvo _$GroupConvoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GroupConvo {
   String get $type => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @JoinLinkViewConverter()
   JoinLinkView? get joinLink => throw _privateConstructorUsedError;
@@ -31,6 +32,9 @@ mixin _$GroupConvo {
   /// The lock status of the conversation.
   @ConvoLockStatusConverter()
   ConvoLockStatus get lockStatus => throw _privateConstructorUsedError;
+
+  /// Whether the lock status is being forced by a moderation override (account inactivation or convo takedown) rather than the owner's own setting.
+  bool get lockStatusModerationOverride => throw _privateConstructorUsedError;
 
   /// The total number of members in the group conversation.
   int get memberCount => throw _privateConstructorUsedError;
@@ -63,10 +67,11 @@ abstract class $GroupConvoCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @JoinLinkViewConverter() JoinLinkView? joinLink,
       int? joinRequestCount,
       @ConvoLockStatusConverter() ConvoLockStatus lockStatus,
+      bool lockStatusModerationOverride,
       int memberCount,
       int memberLimit,
       String name,
@@ -97,6 +102,7 @@ class _$GroupConvoCopyWithImpl<$Res, $Val extends GroupConvo>
     Object? joinLink = freezed,
     Object? joinRequestCount = freezed,
     Object? lockStatus = null,
+    Object? lockStatusModerationOverride = null,
     Object? memberCount = null,
     Object? memberLimit = null,
     Object? name = null,
@@ -124,6 +130,10 @@ class _$GroupConvoCopyWithImpl<$Res, $Val extends GroupConvo>
           ? _value.lockStatus
           : lockStatus // ignore: cast_nullable_to_non_nullable
               as ConvoLockStatus,
+      lockStatusModerationOverride: null == lockStatusModerationOverride
+          ? _value.lockStatusModerationOverride
+          : lockStatusModerationOverride // ignore: cast_nullable_to_non_nullable
+              as bool,
       memberCount: null == memberCount
           ? _value.memberCount
           : memberCount // ignore: cast_nullable_to_non_nullable
@@ -182,10 +192,11 @@ abstract class _$$GroupConvoImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @JoinLinkViewConverter() JoinLinkView? joinLink,
       int? joinRequestCount,
       @ConvoLockStatusConverter() ConvoLockStatus lockStatus,
+      bool lockStatusModerationOverride,
       int memberCount,
       int memberLimit,
       String name,
@@ -216,6 +227,7 @@ class __$$GroupConvoImplCopyWithImpl<$Res>
     Object? joinLink = freezed,
     Object? joinRequestCount = freezed,
     Object? lockStatus = null,
+    Object? lockStatusModerationOverride = null,
     Object? memberCount = null,
     Object? memberLimit = null,
     Object? name = null,
@@ -243,6 +255,10 @@ class __$$GroupConvoImplCopyWithImpl<$Res>
           ? _value.lockStatus
           : lockStatus // ignore: cast_nullable_to_non_nullable
               as ConvoLockStatus,
+      lockStatusModerationOverride: null == lockStatusModerationOverride
+          ? _value.lockStatusModerationOverride
+          : lockStatusModerationOverride // ignore: cast_nullable_to_non_nullable
+              as bool,
       memberCount: null == memberCount
           ? _value.memberCount
           : memberCount // ignore: cast_nullable_to_non_nullable
@@ -273,10 +289,11 @@ class __$$GroupConvoImplCopyWithImpl<$Res>
 class _$GroupConvoImpl implements _GroupConvo {
   const _$GroupConvoImpl(
       {this.$type = 'chat.bsky.convo.defs#groupConvo',
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @JoinLinkViewConverter() this.joinLink,
       this.joinRequestCount,
       @ConvoLockStatusConverter() required this.lockStatus,
+      required this.lockStatusModerationOverride,
       required this.memberCount,
       required this.memberLimit,
       required this.name,
@@ -291,6 +308,7 @@ class _$GroupConvoImpl implements _GroupConvo {
   @JsonKey()
   final String $type;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @JoinLinkViewConverter()
@@ -304,6 +322,10 @@ class _$GroupConvoImpl implements _GroupConvo {
   @override
   @ConvoLockStatusConverter()
   final ConvoLockStatus lockStatus;
+
+  /// Whether the lock status is being forced by a moderation override (account inactivation or convo takedown) rather than the owner's own setting.
+  @override
+  final bool lockStatusModerationOverride;
 
   /// The total number of members in the group conversation.
   @override
@@ -332,7 +354,7 @@ class _$GroupConvoImpl implements _GroupConvo {
 
   @override
   String toString() {
-    return 'GroupConvo(\$type: ${$type}, createdAt: $createdAt, joinLink: $joinLink, joinRequestCount: $joinRequestCount, lockStatus: $lockStatus, memberCount: $memberCount, memberLimit: $memberLimit, name: $name, unreadJoinRequestCount: $unreadJoinRequestCount, \$unknown: ${$unknown})';
+    return 'GroupConvo(\$type: ${$type}, createdAt: $createdAt, joinLink: $joinLink, joinRequestCount: $joinRequestCount, lockStatus: $lockStatus, lockStatusModerationOverride: $lockStatusModerationOverride, memberCount: $memberCount, memberLimit: $memberLimit, name: $name, unreadJoinRequestCount: $unreadJoinRequestCount, \$unknown: ${$unknown})';
   }
 
   @override
@@ -349,6 +371,10 @@ class _$GroupConvoImpl implements _GroupConvo {
                 other.joinRequestCount == joinRequestCount) &&
             (identical(other.lockStatus, lockStatus) ||
                 other.lockStatus == lockStatus) &&
+            (identical(other.lockStatusModerationOverride,
+                    lockStatusModerationOverride) ||
+                other.lockStatusModerationOverride ==
+                    lockStatusModerationOverride) &&
             (identical(other.memberCount, memberCount) ||
                 other.memberCount == memberCount) &&
             (identical(other.memberLimit, memberLimit) ||
@@ -368,6 +394,7 @@ class _$GroupConvoImpl implements _GroupConvo {
       joinLink,
       joinRequestCount,
       lockStatus,
+      lockStatusModerationOverride,
       memberCount,
       memberLimit,
       name,
@@ -393,10 +420,11 @@ class _$GroupConvoImpl implements _GroupConvo {
 abstract class _GroupConvo implements GroupConvo {
   const factory _GroupConvo(
       {final String $type,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @JoinLinkViewConverter() final JoinLinkView? joinLink,
       final int? joinRequestCount,
       @ConvoLockStatusConverter() required final ConvoLockStatus lockStatus,
+      required final bool lockStatusModerationOverride,
       required final int memberCount,
       required final int memberLimit,
       required final String name,
@@ -409,6 +437,7 @@ abstract class _GroupConvo implements GroupConvo {
   @override
   String get $type;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @JoinLinkViewConverter()
@@ -422,6 +451,10 @@ abstract class _GroupConvo implements GroupConvo {
   @override
   @ConvoLockStatusConverter()
   ConvoLockStatus get lockStatus;
+
+  /// Whether the lock status is being forced by a moderation override (account inactivation or convo takedown) rather than the owner's own setting.
+  @override
+  bool get lockStatusModerationOverride;
 
   /// The total number of members in the group conversation.
   @override

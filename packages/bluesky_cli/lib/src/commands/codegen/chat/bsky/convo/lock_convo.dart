@@ -24,10 +24,10 @@ final class LockConvoCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Locks a group convo so no more content (messages, reactions) can be added to it.";
+      "Locks a group convo so no more content (messages, reactions) can be added to it.";
 
   @override
-  final String invocation = "bsky chat-bsky-convo lock-convo [convoId]";
+  final String invocation = "bsky chat-bsky-convo lock-convo --convoId=<value>";
 
   @override
   String get methodId => "chat.bsky.convo.lockConvo";

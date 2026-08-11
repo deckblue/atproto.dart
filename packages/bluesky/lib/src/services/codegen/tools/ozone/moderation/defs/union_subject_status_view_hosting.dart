@@ -62,28 +62,31 @@ final class USubjectStatusViewHostingConverter
 
   @override
   USubjectStatusViewHosting fromJson(Map<String, dynamic> json) {
-    try {
-      if (AccountHosting.validate(json)) {
-        return USubjectStatusViewHosting.accountHosting(
-          data: const AccountHostingConverter().fromJson(json),
-        );
-      }
-      if (RecordHosting.validate(json)) {
-        return USubjectStatusViewHosting.recordHosting(
-          data: const RecordHostingConverter().fromJson(json),
-        );
-      }
-
-      return USubjectStatusViewHosting.unknown(data: json);
-    } catch (_) {
-      return USubjectStatusViewHosting.unknown(data: json);
+    if (AccountHosting.validate(json)) {
+      return USubjectStatusViewHosting.accountHosting(
+        data: const AccountHostingConverter().fromJson(json),
+      );
     }
+    if (RecordHosting.validate(json)) {
+      return USubjectStatusViewHosting.recordHosting(
+        data: const RecordHostingConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return USubjectStatusViewHosting.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(USubjectStatusViewHosting object) => object.when(
-        accountHosting: (data) => const AccountHostingConverter().toJson(data),
-        recordHosting: (data) => const RecordHostingConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(USubjectStatusViewHosting object) =>
+      switch (object) {
+        USubjectStatusViewHostingAccountHosting(:final data) =>
+          const AccountHostingConverter().toJson(data),
+        USubjectStatusViewHostingRecordHosting(:final data) =>
+          const RecordHostingConverter().toJson(data),
+        USubjectStatusViewHostingUnknown(:final data) => data,
+      };
 }

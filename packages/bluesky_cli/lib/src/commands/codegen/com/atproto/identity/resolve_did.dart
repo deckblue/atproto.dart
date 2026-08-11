@@ -24,10 +24,11 @@ final class ResolveDidCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Resolves DID to DID document. Does not bi-directionally verify handle.";
+      "Resolves DID to DID document. Does not bi-directionally verify handle.";
 
   @override
-  final String invocation = "bsky com-atproto-identity resolve-did [did]";
+  final String invocation =
+      "bsky com-atproto-identity resolve-did --did=<value>";
 
   @override
   String get methodId => "com.atproto.identity.resolveDid";

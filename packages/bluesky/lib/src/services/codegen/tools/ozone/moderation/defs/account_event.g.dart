@@ -44,7 +44,7 @@ Map<String, dynamic> _$$AccountEventImplToJson(_$AccountEventImpl instance) =>
               instance.status, const AccountEventStatusConverter().toJson)
           case final value?)
         'status': value,
-      'timestamp': instance.timestamp.toIso8601String(),
+      'timestamp': iso8601(instance.timestamp),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

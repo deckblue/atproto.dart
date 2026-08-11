@@ -26,7 +26,7 @@ mixin _$ActorDeclarationRecord {
   ActorDeclarationAllowIncoming get allowIncoming =>
       throw _privateConstructorUsedError;
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  /// Declaration about group chat invitation preferences for the record owner.
   @ActorDeclarationAllowGroupInvitesConverter()
   ActorDeclarationAllowGroupInvites? get allowGroupInvites =>
       throw _privateConstructorUsedError;
@@ -213,7 +213,7 @@ class _$ActorDeclarationRecordImpl implements _ActorDeclarationRecord {
   @ActorDeclarationAllowIncomingConverter()
   final ActorDeclarationAllowIncoming allowIncoming;
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  /// Declaration about group chat invitation preferences for the record owner.
   @override
   @ActorDeclarationAllowGroupInvitesConverter()
   final ActorDeclarationAllowGroupInvites? allowGroupInvites;
@@ -285,7 +285,7 @@ abstract class _ActorDeclarationRecord implements ActorDeclarationRecord {
   @ActorDeclarationAllowIncomingConverter()
   ActorDeclarationAllowIncoming get allowIncoming;
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Declaration about group chat invitation preferences for the record owner.
+  /// Declaration about group chat invitation preferences for the record owner.
   @override
   @ActorDeclarationAllowGroupInvitesConverter()
   ActorDeclarationAllowGroupInvites? get allowGroupInvites;

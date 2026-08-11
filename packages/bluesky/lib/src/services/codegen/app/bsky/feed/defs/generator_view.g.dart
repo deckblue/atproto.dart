@@ -92,7 +92,7 @@ Map<String, dynamic> _$$GeneratorViewImplToJson(_$GeneratorViewImpl instance) =>
               const GeneratorViewContentModeConverter().toJson)
           case final value?)
         'contentMode': value,
-      'indexedAt': instance.indexedAt.toIso8601String(),
+      'indexedAt': iso8601(instance.indexedAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

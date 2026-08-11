@@ -25,6 +25,7 @@ mixin _$NotificationListNotificationsOutput {
   @NotificationConverter()
   List<Notification> get notifications => throw _privateConstructorUsedError;
   bool? get priority => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get seenAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -51,7 +52,7 @@ abstract class $NotificationListNotificationsOutputCopyWith<$Res> {
       {String? cursor,
       @NotificationConverter() List<Notification> notifications,
       bool? priority,
-      DateTime? seenAt,
+      @JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -115,7 +116,7 @@ abstract class _$$NotificationListNotificationsOutputImplCopyWith<$Res>
       {String? cursor,
       @NotificationConverter() List<Notification> notifications,
       bool? priority,
-      DateTime? seenAt,
+      @JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -174,7 +175,7 @@ class _$NotificationListNotificationsOutputImpl
       {this.cursor,
       @NotificationConverter() required final List<Notification> notifications,
       this.priority,
-      this.seenAt,
+      @JsonKey(toJson: iso8601) this.seenAt,
       final Map<String, dynamic>? $unknown})
       : _notifications = notifications,
         _$unknown = $unknown;
@@ -197,6 +198,7 @@ class _$NotificationListNotificationsOutputImpl
   @override
   final bool? priority;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? seenAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -261,7 +263,7 @@ abstract class _NotificationListNotificationsOutput
       {final String? cursor,
       @NotificationConverter() required final List<Notification> notifications,
       final bool? priority,
-      final DateTime? seenAt,
+      @JsonKey(toJson: iso8601) final DateTime? seenAt,
       final Map<String, dynamic>?
           $unknown}) = _$NotificationListNotificationsOutputImpl;
 
@@ -277,6 +279,7 @@ abstract class _NotificationListNotificationsOutput
   @override
   bool? get priority;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get seenAt;
   @override
   Map<String, dynamic>? get $unknown;

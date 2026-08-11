@@ -29,11 +29,11 @@ final class PutActivitySubscriptionCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Puts an activity subscription entry. The key should be omitted for creation and provided for updates. Requires auth.";
+      "Puts an activity subscription entry. The key should be omitted for creation and provided for updates. Requires auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-notification put-activity-subscription [subject] [activitySubscription]";
+      "bsky app-bsky-notification put-activity-subscription --subject=<value> --activitySubscription=<value>";
 
   @override
   String get methodId => "app.bsky.notification.putActivitySubscription";
@@ -41,6 +41,15 @@ final class PutActivitySubscriptionCommand extends ProcedureCommand {
   @override
   Map<String, dynamic>? get body => {
         "subject": argResults!["subject"],
-        "activitySubscription": jsonDecode(argResults!["activitySubscription"]),
+        "activitySubscription": _decodeJson("activitySubscription"),
       };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

@@ -21,6 +21,12 @@ GraphMuteActorInput _$GraphMuteActorInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GraphMuteActorInput {
   String get actor => throw _privateConstructorUsedError;
+
+  /// Restrict the mute to the account's reposts. When any 'only' scope is set, just the scoped content is muted; when none are set, the account is fully muted. Repeat calls replace the stored scope rather than adding to it.
+  bool? get onlyReposts => throw _privateConstructorUsedError;
+
+  /// Restrict the mute to the account's quote posts. See onlyReposts.
+  bool? get onlyQuoteposts => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GraphMuteActorInput to a JSON map.
@@ -39,7 +45,11 @@ abstract class $GraphMuteActorInputCopyWith<$Res> {
           GraphMuteActorInput value, $Res Function(GraphMuteActorInput) then) =
       _$GraphMuteActorInputCopyWithImpl<$Res, GraphMuteActorInput>;
   @useResult
-  $Res call({String actor, Map<String, dynamic>? $unknown});
+  $Res call(
+      {String actor,
+      bool? onlyReposts,
+      bool? onlyQuoteposts,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -58,6 +68,8 @@ class _$GraphMuteActorInputCopyWithImpl<$Res, $Val extends GraphMuteActorInput>
   @override
   $Res call({
     Object? actor = null,
+    Object? onlyReposts = freezed,
+    Object? onlyQuoteposts = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -65,6 +77,14 @@ class _$GraphMuteActorInputCopyWithImpl<$Res, $Val extends GraphMuteActorInput>
           ? _value.actor
           : actor // ignore: cast_nullable_to_non_nullable
               as String,
+      onlyReposts: freezed == onlyReposts
+          ? _value.onlyReposts
+          : onlyReposts // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      onlyQuoteposts: freezed == onlyQuoteposts
+          ? _value.onlyQuoteposts
+          : onlyQuoteposts // ignore: cast_nullable_to_non_nullable
+              as bool?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -81,7 +101,11 @@ abstract class _$$GraphMuteActorInputImplCopyWith<$Res>
       __$$GraphMuteActorInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String actor, Map<String, dynamic>? $unknown});
+  $Res call(
+      {String actor,
+      bool? onlyReposts,
+      bool? onlyQuoteposts,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -98,6 +122,8 @@ class __$$GraphMuteActorInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? actor = null,
+    Object? onlyReposts = freezed,
+    Object? onlyQuoteposts = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$GraphMuteActorInputImpl(
@@ -105,6 +131,14 @@ class __$$GraphMuteActorInputImplCopyWithImpl<$Res>
           ? _value.actor
           : actor // ignore: cast_nullable_to_non_nullable
               as String,
+      onlyReposts: freezed == onlyReposts
+          ? _value.onlyReposts
+          : onlyReposts // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      onlyQuoteposts: freezed == onlyQuoteposts
+          ? _value.onlyQuoteposts
+          : onlyQuoteposts // ignore: cast_nullable_to_non_nullable
+              as bool?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -118,7 +152,10 @@ class __$$GraphMuteActorInputImplCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$GraphMuteActorInputImpl implements _GraphMuteActorInput {
   const _$GraphMuteActorInputImpl(
-      {required this.actor, final Map<String, dynamic>? $unknown})
+      {required this.actor,
+      this.onlyReposts,
+      this.onlyQuoteposts,
+      final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
   factory _$GraphMuteActorInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -126,6 +163,14 @@ class _$GraphMuteActorInputImpl implements _GraphMuteActorInput {
 
   @override
   final String actor;
+
+  /// Restrict the mute to the account's reposts. When any 'only' scope is set, just the scoped content is muted; when none are set, the account is fully muted. Repeat calls replace the stored scope rather than adding to it.
+  @override
+  final bool? onlyReposts;
+
+  /// Restrict the mute to the account's quote posts. See onlyReposts.
+  @override
+  final bool? onlyQuoteposts;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -138,7 +183,7 @@ class _$GraphMuteActorInputImpl implements _GraphMuteActorInput {
 
   @override
   String toString() {
-    return 'GraphMuteActorInput(actor: $actor, \$unknown: ${$unknown})';
+    return 'GraphMuteActorInput(actor: $actor, onlyReposts: $onlyReposts, onlyQuoteposts: $onlyQuoteposts, \$unknown: ${$unknown})';
   }
 
   @override
@@ -147,13 +192,17 @@ class _$GraphMuteActorInputImpl implements _GraphMuteActorInput {
         (other.runtimeType == runtimeType &&
             other is _$GraphMuteActorInputImpl &&
             (identical(other.actor, actor) || other.actor == actor) &&
+            (identical(other.onlyReposts, onlyReposts) ||
+                other.onlyReposts == onlyReposts) &&
+            (identical(other.onlyQuoteposts, onlyQuoteposts) ||
+                other.onlyQuoteposts == onlyQuoteposts) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, actor, const DeepCollectionEquality().hash(_$unknown));
+  int get hashCode => Object.hash(runtimeType, actor, onlyReposts,
+      onlyQuoteposts, const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of GraphMuteActorInput
   /// with the given fields replaced by the non-null parameter values.
@@ -175,6 +224,8 @@ class _$GraphMuteActorInputImpl implements _GraphMuteActorInput {
 abstract class _GraphMuteActorInput implements GraphMuteActorInput {
   const factory _GraphMuteActorInput(
       {required final String actor,
+      final bool? onlyReposts,
+      final bool? onlyQuoteposts,
       final Map<String, dynamic>? $unknown}) = _$GraphMuteActorInputImpl;
 
   factory _GraphMuteActorInput.fromJson(Map<String, dynamic> json) =
@@ -182,6 +233,14 @@ abstract class _GraphMuteActorInput implements GraphMuteActorInput {
 
   @override
   String get actor;
+
+  /// Restrict the mute to the account's reposts. When any 'only' scope is set, just the scoped content is muted; when none are set, the account is fully muted. Repeat calls replace the stored scope rather than adding to it.
+  @override
+  bool? get onlyReposts;
+
+  /// Restrict the mute to the account's quote posts. See onlyReposts.
+  @override
+  bool? get onlyQuoteposts;
   @override
   Map<String, dynamic>? get $unknown;
 

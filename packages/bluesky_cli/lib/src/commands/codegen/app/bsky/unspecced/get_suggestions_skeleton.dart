@@ -36,21 +36,22 @@ final class GetSuggestionsSkeletonCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a skeleton of suggested actors. Intended to be called and then hydrated through app.bsky.actor.getSuggestions";
+      "Get a skeleton of suggested actors. Intended to be called and then hydrated through app.bsky.actor.getSuggestions";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced get-suggestions-skeleton [viewer] [limit] [cursor] [relativeToDid]";
+      "bsky app-bsky-unspecced get-suggestions-skeleton [--viewer=<value>] [--limit=<value>] [--cursor=<value>] [--relativeToDid=<value>]";
 
   @override
   String get methodId => "app.bsky.unspecced.getSuggestionsSkeleton";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        if (argResults!["relativeToDid"] != null)
+        if (argResults!.wasParsed("viewer")) "viewer": argResults!["viewer"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("relativeToDid"))
           "relativeToDid": argResults!["relativeToDid"],
       };
 }

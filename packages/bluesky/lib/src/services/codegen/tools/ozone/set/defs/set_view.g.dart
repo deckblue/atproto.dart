@@ -38,7 +38,7 @@ Map<String, dynamic> _$$SetViewImplToJson(_$SetViewImpl instance) =>
       'name': instance.name,
       if (instance.description case final value?) 'description': value,
       'setSize': instance.setSize,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
+      'updatedAt': iso8601(instance.updatedAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

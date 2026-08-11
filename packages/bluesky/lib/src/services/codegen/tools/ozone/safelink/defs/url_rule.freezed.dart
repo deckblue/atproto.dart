@@ -38,9 +38,11 @@ mixin _$UrlRule {
   String get createdBy => throw _privateConstructorUsedError;
 
   /// Timestamp when the rule was created
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// Timestamp when the rule was last updated
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -66,8 +68,8 @@ abstract class $UrlRuleCopyWith<$Res> {
       @ReasonTypeConverter() ReasonType reason,
       String? comment,
       String createdBy,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       Map<String, dynamic>? $unknown});
 
   $PatternTypeCopyWith<$Res> get pattern;
@@ -191,8 +193,8 @@ abstract class _$$UrlRuleImplCopyWith<$Res> implements $UrlRuleCopyWith<$Res> {
       @ReasonTypeConverter() ReasonType reason,
       String? comment,
       String createdBy,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -284,8 +286,8 @@ class _$UrlRuleImpl implements _UrlRule {
       @ReasonTypeConverter() required this.reason,
       this.comment,
       required this.createdBy,
-      required this.createdAt,
-      required this.updatedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.updatedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -319,10 +321,12 @@ class _$UrlRuleImpl implements _UrlRule {
 
   /// Timestamp when the rule was created
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// Timestamp when the rule was last updated
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime updatedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -399,8 +403,8 @@ abstract class _UrlRule implements UrlRule {
       @ReasonTypeConverter() required final ReasonType reason,
       final String? comment,
       required final String createdBy,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime updatedAt,
       final Map<String, dynamic>? $unknown}) = _$UrlRuleImpl;
 
   factory _UrlRule.fromJson(Map<String, dynamic> json) = _$UrlRuleImpl.fromJson;
@@ -431,10 +435,12 @@ abstract class _UrlRule implements UrlRule {
 
   /// Timestamp when the rule was created
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// Timestamp when the rule was last updated
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt;
   @override
   Map<String, dynamic>? get $unknown;

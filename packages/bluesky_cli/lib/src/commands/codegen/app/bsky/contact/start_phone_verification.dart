@@ -29,11 +29,11 @@ final class StartPhoneVerificationCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Starts a phone verification flow. The phone passed will receive a code via SMS that should be passed to `app.bsky.contact.verifyPhone`. Requires authentication.";
+      "Starts a phone verification flow. The phone passed will receive a code via SMS that should be passed to `app.bsky.contact.verifyPhone`. Requires authentication.";
 
   @override
   final String invocation =
-      "bsky app-bsky-contact start-phone-verification [phone]";
+      "bsky app-bsky-contact start-phone-verification --phone=<value>";
 
   @override
   String get methodId => "app.bsky.contact.startPhoneVerification";

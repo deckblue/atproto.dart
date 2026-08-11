@@ -24,6 +24,7 @@ mixin _$ReactionView {
   String get value => throw _privateConstructorUsedError;
   @ReactionViewSenderConverter()
   ReactionViewSender get sender => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -47,7 +48,7 @@ abstract class $ReactionViewCopyWith<$Res> {
       {String $type,
       String value,
       @ReactionViewSenderConverter() ReactionViewSender sender,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $ReactionViewSenderCopyWith<$Res> get sender;
@@ -121,7 +122,7 @@ abstract class _$$ReactionViewImplCopyWith<$Res>
       {String $type,
       String value,
       @ReactionViewSenderConverter() ReactionViewSender sender,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -180,7 +181,7 @@ class _$ReactionViewImpl implements _ReactionView {
       {this.$type = 'chat.bsky.convo.defs#reactionView',
       required this.value,
       @ReactionViewSenderConverter() required this.sender,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -196,6 +197,7 @@ class _$ReactionViewImpl implements _ReactionView {
   @ReactionViewSenderConverter()
   final ReactionViewSender sender;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -251,7 +253,7 @@ abstract class _ReactionView implements ReactionView {
       {final String $type,
       required final String value,
       @ReactionViewSenderConverter() required final ReactionViewSender sender,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$ReactionViewImpl;
 
   factory _ReactionView.fromJson(Map<String, dynamic> json) =
@@ -265,6 +267,7 @@ abstract class _ReactionView implements ReactionView {
   @ReactionViewSenderConverter()
   ReactionViewSender get sender;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

@@ -19,8 +19,11 @@ _$SettingListOptionsInputImpl _$$SettingListOptionsInputImplFromJson(
           cursor: $checkedConvert('cursor', (v) => v as String?),
           scope: $checkedConvert(
               'scope',
-              (v) => _$JsonConverterFromJson<String, SettingListOptionsScope>(
-                  v, const SettingListOptionsScopeConverter().fromJson)),
+              (v) => v == null
+                  ? const SettingListOptionsScope.knownValue(
+                      data: KnownSettingListOptionsScope.instance)
+                  : const SettingListOptionsScopeConverter()
+                      .fromJson(v as String)),
           prefix: $checkedConvert('prefix', (v) => v as String?),
           keys: $checkedConvert('keys',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
@@ -39,23 +42,8 @@ Map<String, dynamic> _$$SettingListOptionsInputImplToJson(
     <String, dynamic>{
       'limit': instance.limit,
       if (instance.cursor case final value?) 'cursor': value,
-      if (_$JsonConverterToJson<String, SettingListOptionsScope>(
-              instance.scope, const SettingListOptionsScopeConverter().toJson)
-          case final value?)
-        'scope': value,
+      'scope': const SettingListOptionsScopeConverter().toJson(instance.scope),
       if (instance.prefix case final value?) 'prefix': value,
       if (instance.keys case final value?) 'keys': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

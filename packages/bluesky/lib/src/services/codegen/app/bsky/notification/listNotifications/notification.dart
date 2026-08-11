@@ -15,6 +15,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
 import '../../../../app/bsky/actor/defs/profile_view.dart';
+import '../../../../app/bsky/graph/defs/starter_pack_view_basic.dart';
 import './notification_reason.dart';
 
 part 'notification.freezed.dart';
@@ -33,6 +34,7 @@ abstract class Notification with _$Notification {
     'reason',
     'reasonSubject',
     'record',
+    'starterPack',
     'isRead',
     'indexedAt',
     'labels',
@@ -50,8 +52,11 @@ abstract class Notification with _$Notification {
     @NotificationReasonConverter() required NotificationReason reason,
     @AtUriConverter() AtUri? reasonSubject,
     required Map<String, dynamic> record,
+
+    /// The starter pack associated with this notification. Present when the notification is for a follow originating from a starter pack.
+    @StarterPackViewBasicConverter() StarterPackViewBasic? starterPack,
     required bool isRead,
-    required DateTime indexedAt,
+    @JsonKey(toJson: iso8601) required DateTime indexedAt,
     @LabelConverter() List<Label>? labels,
     Map<String, dynamic>? $unknown,
   }) = _Notification;
@@ -69,6 +74,8 @@ abstract class Notification with _$Notification {
 extension NotificationExtension on Notification {
   bool get hasReasonSubject => reasonSubject != null;
   bool get hasNotReasonSubject => !hasReasonSubject;
+  bool get hasStarterPack => starterPack != null;
+  bool get hasNotStarterPack => !hasStarterPack;
   bool get isIsRead => isRead;
   bool get isNotIsRead => !isIsRead;
 }

@@ -26,18 +26,19 @@ final class GetBookmarksCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Gets views of records bookmarked by the authenticated user. Requires authentication.";
+      "Gets views of records bookmarked by the authenticated user. Requires authentication.";
 
   @override
   final String invocation =
-      "bsky app-bsky-bookmark get-bookmarks [limit] [cursor]";
+      "bsky app-bsky-bookmark get-bookmarks [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.bookmark.getBookmarks";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

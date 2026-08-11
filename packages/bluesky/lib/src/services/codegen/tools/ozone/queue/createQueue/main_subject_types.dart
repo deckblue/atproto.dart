@@ -19,8 +19,7 @@ part 'main_subject_types.freezed.dart';
 // **************************************************************************
 
 @freezed
-abstract class QueueCreateQueueSubjectTypes
-    with _$QueueCreateQueueSubjectTypes {
+sealed class QueueCreateQueueSubjectTypes with _$QueueCreateQueueSubjectTypes {
   const QueueCreateQueueSubjectTypes._();
 
   const factory QueueCreateQueueSubjectTypes.knownValue({
@@ -72,8 +71,10 @@ final class QueueCreateQueueSubjectTypesConverter
   }
 
   @override
-  String toJson(QueueCreateQueueSubjectTypes object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(QueueCreateQueueSubjectTypes object) => switch (object) {
+        QueueCreateQueueSubjectTypesKnownValue(:final data) => data.value,
+        QueueCreateQueueSubjectTypesUnknown(:final data) => data,
+      };
 }
 
 enum KnownQueueCreateQueueSubjectTypes implements Serializable {
@@ -82,7 +83,9 @@ enum KnownQueueCreateQueueSubjectTypes implements Serializable {
   @JsonValue('record')
   record('record'),
   @JsonValue('message')
-  message('message');
+  message('message'),
+  @JsonValue('conversation')
+  conversation('conversation');
 
   @override
   final String value;

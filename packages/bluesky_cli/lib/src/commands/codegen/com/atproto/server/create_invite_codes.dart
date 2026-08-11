@@ -17,7 +17,7 @@ import '../../../../procedure_command.dart';
 final class CreateInviteCodesCommand extends ProcedureCommand {
   CreateInviteCodesCommand() {
     argParser
-      ..addOption("codeCount")
+      ..addOption("codeCount", defaultsTo: "1")
       ..addOption("useCount", mandatory: true)
       ..addMultiOption("forAccounts");
   }
@@ -26,20 +26,22 @@ final class CreateInviteCodesCommand extends ProcedureCommand {
   final String name = "create-invite-codes";
 
   @override
-  final String description = r"Create invite codes.";
+  final String description = "Create invite codes.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server create-invite-codes [codeCount] [useCount] [forAccounts]";
+      "bsky com-atproto-server create-invite-codes [--codeCount=<value>] --useCount=<value> [--forAccounts=<value>...]";
 
   @override
   String get methodId => "com.atproto.server.createInviteCodes";
 
   @override
   Map<String, dynamic>? get body => {
-        "codeCount": argResults!["codeCount"],
-        "useCount": argResults!["useCount"],
-        if (argResults!["forAccounts"] != null)
+        "codeCount": int.tryParse(argResults!["codeCount"]) ??
+            usageException('Invalid integer value for option "codeCount".'),
+        "useCount": int.tryParse(argResults!["useCount"]) ??
+            usageException('Invalid integer value for option "useCount".'),
+        if (argResults!.wasParsed("forAccounts"))
           "forAccounts": argResults!["forAccounts"],
       };
 }

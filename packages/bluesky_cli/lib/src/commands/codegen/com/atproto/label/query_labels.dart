@@ -35,20 +35,28 @@ final class QueryLabelsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Find labels relevant to the provided AT-URI patterns. Public endpoint for moderation services, though may return different or additional results with auth.";
+      "Find labels relevant to the provided AT-URI patterns. Public endpoint for moderation services, though may return different or additional results with auth.";
 
   @override
   final String invocation =
-      "bsky com-atproto-label query-labels [uriPatterns] [sources] [limit] [cursor]";
+      "bsky com-atproto-label query-labels [--uriPatterns=<value>...] [--sources=<value>...] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "com.atproto.label.queryLabels";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "uriPatterns": argResults!["uriPatterns"],
-        if (argResults!["sources"] != null) "sources": argResults!["sources"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "uriPatterns":
+            _requireNonEmpty("uriPatterns", argResults!["uriPatterns"]),
+        if (argResults!.wasParsed("sources")) "sources": argResults!["sources"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

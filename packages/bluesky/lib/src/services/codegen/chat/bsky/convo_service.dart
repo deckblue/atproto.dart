@@ -24,6 +24,7 @@ import 'convo/getConvoForMembers/output.dart';
 import 'convo/getConvoMembers/output.dart';
 import 'convo/getLog/output.dart';
 import 'convo/getMessages/output.dart';
+import 'convo/getUnreadCounts/output.dart';
 import 'convo/leaveConvo/output.dart';
 import 'convo/listConvoRequests/output.dart';
 import 'convo/listConvos/main_kind.dart';
@@ -212,6 +213,25 @@ Future<XRPCResponse<ConvoGetMessagesOutput>> chatBskyConvoGetMessages({
       to: const ConvoGetMessagesOutputConverter().fromJson,
     );
 
+/// Returns unread conversation counts for conversations that are unlocked, not muted, split by convo status. Direct convos are excluded when a block relationship exists between the actor and the other member, or when the other member's account is deleted or deactivated. Group convos are considered unread if they have unread join request counts.
+Future<XRPCResponse<ConvoGetUnreadCountsOutput>> chatBskyConvoGetUnreadCounts({
+  bool? includeGroupChats,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async =>
+    await $ctx.get(
+      ns.chatBskyConvoGetUnreadCounts,
+      service: $service,
+      headers: $headers,
+      parameters: {
+        ...?$unknown,
+        if (includeGroupChats != null) 'includeGroupChats': includeGroupChats,
+      },
+      to: const ConvoGetUnreadCountsOutputConverter().fromJson,
+    );
+
 /// Leaves a conversation (direct or group). For group, this effectively removes membership. For direct, membership is never removed, only changed to remove from enumerations by the user who left.
 Future<XRPCResponse<ConvoLeaveConvoOutput>> chatBskyConvoLeaveConvo({
   required String convoId,
@@ -228,7 +248,7 @@ Future<XRPCResponse<ConvoLeaveConvoOutput>> chatBskyConvoLeaveConvo({
       to: const ConvoLeaveConvoOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Returns a page of incoming conversation requests for the user. Direct convo requests are returned as convoView; group join requests made by the user are returned as joinRequestConvoView.
+/// Returns a page of incoming conversation requests for the user. Direct convo requests are returned as convoView; group join requests made by the user are returned as joinRequestConvoView.
 Future<XRPCResponse<ConvoListConvoRequestsOutput>>
     chatBskyConvoListConvoRequests({
   int? limit,
@@ -279,7 +299,7 @@ Future<XRPCResponse<ConvoListConvosOutput>> chatBskyConvoListConvos({
       to: const ConvoListConvosOutputConverter().fromJson,
     );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Locks a group convo so no more content (messages, reactions) can be added to it.
+/// Locks a group convo so no more content (messages, reactions) can be added to it.
 Future<XRPCResponse<ConvoLockConvoOutput>> chatBskyConvoLockConvo({
   required String convoId,
   required ServiceContext $ctx,
@@ -347,7 +367,11 @@ Future<XRPCResponse<MessageView>> chatBskyConvoSendMessage({
       ns.chatBskyConvoSendMessage,
       service: $service,
       headers: {'Content-type': 'application/json', ...?$headers},
-      body: {...?$unknown, 'convoId': convoId, 'message': message.toJson()},
+      body: {
+        ...?$unknown,
+        'convoId': convoId,
+        'message': const MessageInputConverter().toJson(message),
+      },
       to: const MessageViewConverter().fromJson,
     );
 
@@ -364,11 +388,15 @@ Future<XRPCResponse<ConvoSendMessageBatchOutput>>
           ns.chatBskyConvoSendMessageBatch,
           service: $service,
           headers: {'Content-type': 'application/json', ...?$headers},
-          body: {...?$unknown, 'items': items.map((e) => e.toJson()).toList()},
+          body: {
+            ...?$unknown,
+            'items':
+                items.map((e) => const BatchItemConverter().toJson(e)).toList(),
+          },
           to: const ConvoSendMessageBatchOutputConverter().fromJson,
         );
 
-/// [NOTE: This is under active development and should be considered unstable while this note is here]. Unlocks a group convo so it is able to receive new content.
+/// Unlocks a group convo so it is able to receive new content.
 Future<XRPCResponse<ConvoUnlockConvoOutput>> chatBskyConvoUnlockConvo({
   required String convoId,
   required ServiceContext $ctx,
@@ -591,6 +619,21 @@ base class ConvoService {
         $unknown: $unknown,
       );
 
+  /// Returns unread conversation counts for conversations that are unlocked, not muted, split by convo status. Direct convos are excluded when a block relationship exists between the actor and the other member, or when the other member's account is deleted or deactivated. Group convos are considered unread if they have unread join request counts.
+  Future<XRPCResponse<ConvoGetUnreadCountsOutput>> getUnreadCounts({
+    bool? includeGroupChats,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async =>
+      await chatBskyConvoGetUnreadCounts(
+        includeGroupChats: includeGroupChats,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
+
   /// Leaves a conversation (direct or group). For group, this effectively removes membership. For direct, membership is never removed, only changed to remove from enumerations by the user who left.
   Future<XRPCResponse<ConvoLeaveConvoOutput>> leaveConvo({
     required String convoId,
@@ -606,7 +649,7 @@ base class ConvoService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Returns a page of incoming conversation requests for the user. Direct convo requests are returned as convoView; group join requests made by the user are returned as joinRequestConvoView.
+  /// Returns a page of incoming conversation requests for the user. Direct convo requests are returned as convoView; group join requests made by the user are returned as joinRequestConvoView.
   Future<XRPCResponse<ConvoListConvoRequestsOutput>> listConvoRequests({
     int? limit,
     String? cursor,
@@ -648,7 +691,7 @@ base class ConvoService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Locks a group convo so no more content (messages, reactions) can be added to it.
+  /// Locks a group convo so no more content (messages, reactions) can be added to it.
   Future<XRPCResponse<ConvoLockConvoOutput>> lockConvo({
     required String convoId,
     String? $service,
@@ -729,7 +772,7 @@ base class ConvoService {
         $unknown: $unknown,
       );
 
-  /// [NOTE: This is under active development and should be considered unstable while this note is here]. Unlocks a group convo so it is able to receive new content.
+  /// Unlocks a group convo so it is able to receive new content.
   Future<XRPCResponse<ConvoUnlockConvoOutput>> unlockConvo({
     required String convoId,
     String? $service,

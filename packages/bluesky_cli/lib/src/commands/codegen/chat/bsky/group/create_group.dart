@@ -17,7 +17,11 @@ import '../../../../procedure_command.dart';
 final class CreateGroupCommand extends ProcedureCommand {
   CreateGroupCommand() {
     argParser
-      ..addMultiOption("members")
+      ..addMultiOption(
+        "members",
+        help:
+            r"The members to add to the group. The owner is automatically added. Implementations may enforce a lower maximum than the 10,000-item schema limit; Bluesky currently supports up to 100 total members. If the owner is included in this list, the list may contain up to the implementation's total member limit. Otherwise, it may contain one fewer.",
+      )
       ..addOption("name", mandatory: true);
   }
 
@@ -26,18 +30,24 @@ final class CreateGroupCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Creates a group convo, specifying the members to be added to it. Unlike getConvoForMembers, this isn't idempotent. It will create new groups even if the membership is identical to pre-existing groups. Will create 'pending' membership for all members, except the owner who is 'accepted'.";
+      "Creates a group convo, specifying the members to be added to it. Unlike getConvoForMembers, this isn't idempotent. It will create new groups even if the membership is identical to pre-existing groups. Will create 'request' membership for all members, except the owner who is 'accepted'.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group create-group [members] [name]";
+      "bsky chat-bsky-group create-group [--members=<value>...] --name=<value>";
 
   @override
   String get methodId => "chat.bsky.group.createGroup";
 
   @override
   Map<String, dynamic>? get body => {
-        "members": argResults!["members"],
+        "members": _requireNonEmpty("members", argResults!["members"]),
         "name": argResults!["name"],
       };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

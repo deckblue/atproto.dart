@@ -44,7 +44,7 @@ Map<String, dynamic> _$$ReportAssignmentImplToJson(
               instance.moderator, const MemberConverter().toJson)
           case final value?)
         'moderator': value,
-      'assignedAt': instance.assignedAt.toIso8601String(),
+      'assignedAt': iso8601(instance.assignedAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

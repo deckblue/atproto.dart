@@ -27,8 +27,10 @@ mixin _$EventGroupChatUpdated {
   String get actorDid => throw _privateConstructorUsedError;
 
   /// When the group was originally created.
+  @JsonKey(toJson: iso8601)
   DateTime get convoCreatedAt => throw _privateConstructorUsedError;
   String get convoId => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// Current member count at the time of the event.
@@ -86,9 +88,9 @@ abstract class $EventGroupChatUpdatedCopyWith<$Res> {
   $Res call(
       {String $type,
       String actorDid,
-      DateTime convoCreatedAt,
+      @JsonKey(toJson: iso8601) DateTime convoCreatedAt,
       String convoId,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       int groupMemberCount,
       String groupName,
       String? joinLinkCode,
@@ -253,9 +255,9 @@ abstract class _$$EventGroupChatUpdatedImplCopyWith<$Res>
   $Res call(
       {String $type,
       String actorDid,
-      DateTime convoCreatedAt,
+      @JsonKey(toJson: iso8601) DateTime convoCreatedAt,
       String convoId,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       int groupMemberCount,
       String groupName,
       String? joinLinkCode,
@@ -390,9 +392,9 @@ class _$EventGroupChatUpdatedImpl implements _EventGroupChatUpdated {
       {this.$type =
           'chat.bsky.moderation.subscribeModEvents#eventGroupChatUpdated',
       required this.actorDid,
-      required this.convoCreatedAt,
+      @JsonKey(toJson: iso8601) required this.convoCreatedAt,
       required this.convoId,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       required this.groupMemberCount,
       required this.groupName,
       this.joinLinkCode,
@@ -420,10 +422,12 @@ class _$EventGroupChatUpdatedImpl implements _EventGroupChatUpdated {
 
   /// When the group was originally created.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime convoCreatedAt;
   @override
   final String convoId;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// Current member count at the time of the event.
@@ -563,9 +567,9 @@ abstract class _EventGroupChatUpdated implements EventGroupChatUpdated {
   const factory _EventGroupChatUpdated(
       {final String $type,
       required final String actorDid,
-      required final DateTime convoCreatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime convoCreatedAt,
       required final String convoId,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       required final int groupMemberCount,
       required final String groupName,
       final String? joinLinkCode,
@@ -593,10 +597,12 @@ abstract class _EventGroupChatUpdated implements EventGroupChatUpdated {
 
   /// When the group was originally created.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get convoCreatedAt;
   @override
   String get convoId;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// Current member count at the time of the event.

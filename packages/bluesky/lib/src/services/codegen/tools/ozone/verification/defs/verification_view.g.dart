@@ -70,10 +70,9 @@ Map<String, dynamic> _$$VerificationViewImplToJson(
       'subject': instance.subject,
       'handle': instance.handle,
       'displayName': instance.displayName,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.revokeReason case final value?) 'revokeReason': value,
-      if (instance.revokedAt?.toIso8601String() case final value?)
-        'revokedAt': value,
+      'revokedAt': iso8601(instance.revokedAt),
       if (instance.revokedBy case final value?) 'revokedBy': value,
       if (_$JsonConverterToJson<Map<String, dynamic>,
                   UVerificationViewSubjectProfile>(instance.subjectProfile,

@@ -27,11 +27,11 @@ final class ListMutualGroupsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"[NOTE: This is under active development and should be considered unstable while this note is here]. Returns a page of group conversations that both the requester and the specified actor are members of.";
+      "Returns a page of group conversations that both the requester and the specified actor are members of.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-group list-mutual-groups [subject] [limit] [cursor]";
+      "bsky chat-bsky-group list-mutual-groups --subject=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "chat.bsky.group.listMutualGroups";
@@ -39,7 +39,8 @@ final class ListMutualGroupsCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "subject": argResults!["subject"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

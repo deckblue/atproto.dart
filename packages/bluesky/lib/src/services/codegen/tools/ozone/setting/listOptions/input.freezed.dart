@@ -24,7 +24,7 @@ mixin _$SettingListOptionsInput {
   int get limit => throw _privateConstructorUsedError;
   String? get cursor => throw _privateConstructorUsedError;
   @SettingListOptionsScopeConverter()
-  SettingListOptionsScope? get scope => throw _privateConstructorUsedError;
+  SettingListOptionsScope get scope => throw _privateConstructorUsedError;
 
   /// Filter keys by prefix
   String? get prefix => throw _privateConstructorUsedError;
@@ -50,12 +50,12 @@ abstract class $SettingListOptionsInputCopyWith<$Res> {
   $Res call(
       {int limit,
       String? cursor,
-      @SettingListOptionsScopeConverter() SettingListOptionsScope? scope,
+      @SettingListOptionsScopeConverter() SettingListOptionsScope scope,
       String? prefix,
       List<String>? keys,
       Map<String, dynamic>? $unknown});
 
-  $SettingListOptionsScopeCopyWith<$Res>? get scope;
+  $SettingListOptionsScopeCopyWith<$Res> get scope;
 }
 
 /// @nodoc
@@ -76,7 +76,7 @@ class _$SettingListOptionsInputCopyWithImpl<$Res,
   $Res call({
     Object? limit = null,
     Object? cursor = freezed,
-    Object? scope = freezed,
+    Object? scope = null,
     Object? prefix = freezed,
     Object? keys = freezed,
     Object? $unknown = freezed,
@@ -90,10 +90,10 @@ class _$SettingListOptionsInputCopyWithImpl<$Res,
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      scope: freezed == scope
+      scope: null == scope
           ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
-              as SettingListOptionsScope?,
+              as SettingListOptionsScope,
       prefix: freezed == prefix
           ? _value.prefix
           : prefix // ignore: cast_nullable_to_non_nullable
@@ -113,12 +113,8 @@ class _$SettingListOptionsInputCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $SettingListOptionsScopeCopyWith<$Res>? get scope {
-    if (_value.scope == null) {
-      return null;
-    }
-
-    return $SettingListOptionsScopeCopyWith<$Res>(_value.scope!, (value) {
+  $SettingListOptionsScopeCopyWith<$Res> get scope {
+    return $SettingListOptionsScopeCopyWith<$Res>(_value.scope, (value) {
       return _then(_value.copyWith(scope: value) as $Val);
     });
   }
@@ -136,13 +132,13 @@ abstract class _$$SettingListOptionsInputImplCopyWith<$Res>
   $Res call(
       {int limit,
       String? cursor,
-      @SettingListOptionsScopeConverter() SettingListOptionsScope? scope,
+      @SettingListOptionsScopeConverter() SettingListOptionsScope scope,
       String? prefix,
       List<String>? keys,
       Map<String, dynamic>? $unknown});
 
   @override
-  $SettingListOptionsScopeCopyWith<$Res>? get scope;
+  $SettingListOptionsScopeCopyWith<$Res> get scope;
 }
 
 /// @nodoc
@@ -162,7 +158,7 @@ class __$$SettingListOptionsInputImplCopyWithImpl<$Res>
   $Res call({
     Object? limit = null,
     Object? cursor = freezed,
-    Object? scope = freezed,
+    Object? scope = null,
     Object? prefix = freezed,
     Object? keys = freezed,
     Object? $unknown = freezed,
@@ -176,10 +172,10 @@ class __$$SettingListOptionsInputImplCopyWithImpl<$Res>
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      scope: freezed == scope
+      scope: null == scope
           ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
-              as SettingListOptionsScope?,
+              as SettingListOptionsScope,
       prefix: freezed == prefix
           ? _value.prefix
           : prefix // ignore: cast_nullable_to_non_nullable
@@ -203,7 +199,9 @@ class _$SettingListOptionsInputImpl implements _SettingListOptionsInput {
   const _$SettingListOptionsInputImpl(
       {this.limit = 50,
       this.cursor,
-      @SettingListOptionsScopeConverter() this.scope,
+      @SettingListOptionsScopeConverter() this.scope =
+          const SettingListOptionsScope.knownValue(
+              data: KnownSettingListOptionsScope.instance),
       this.prefix,
       final List<String>? keys,
       final Map<String, dynamic>? $unknown})
@@ -219,8 +217,9 @@ class _$SettingListOptionsInputImpl implements _SettingListOptionsInput {
   @override
   final String? cursor;
   @override
+  @JsonKey()
   @SettingListOptionsScopeConverter()
-  final SettingListOptionsScope? scope;
+  final SettingListOptionsScope scope;
 
   /// Filter keys by prefix
   @override
@@ -295,7 +294,7 @@ abstract class _SettingListOptionsInput implements SettingListOptionsInput {
   const factory _SettingListOptionsInput(
       {final int limit,
       final String? cursor,
-      @SettingListOptionsScopeConverter() final SettingListOptionsScope? scope,
+      @SettingListOptionsScopeConverter() final SettingListOptionsScope scope,
       final String? prefix,
       final List<String>? keys,
       final Map<String, dynamic>? $unknown}) = _$SettingListOptionsInputImpl;
@@ -309,7 +308,7 @@ abstract class _SettingListOptionsInput implements SettingListOptionsInput {
   String? get cursor;
   @override
   @SettingListOptionsScopeConverter()
-  SettingListOptionsScope? get scope;
+  SettingListOptionsScope get scope;
 
   /// Filter keys by prefix
   @override

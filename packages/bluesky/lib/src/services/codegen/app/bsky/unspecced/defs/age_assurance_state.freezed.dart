@@ -23,6 +23,7 @@ mixin _$AgeAssuranceState {
   String get $type => throw _privateConstructorUsedError;
 
   /// The timestamp when this state was last updated.
+  @JsonKey(toJson: iso8601)
   DateTime? get lastInitiatedAt => throw _privateConstructorUsedError;
 
   /// The status of the age assurance process.
@@ -48,7 +49,7 @@ abstract class $AgeAssuranceStateCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime? lastInitiatedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastInitiatedAt,
       @AgeAssuranceStateStatusConverter() AgeAssuranceStateStatus status,
       Map<String, dynamic>? $unknown});
 
@@ -116,7 +117,7 @@ abstract class _$$AgeAssuranceStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime? lastInitiatedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastInitiatedAt,
       @AgeAssuranceStateStatusConverter() AgeAssuranceStateStatus status,
       Map<String, dynamic>? $unknown});
 
@@ -169,7 +170,7 @@ class __$$AgeAssuranceStateImplCopyWithImpl<$Res>
 class _$AgeAssuranceStateImpl implements _AgeAssuranceState {
   const _$AgeAssuranceStateImpl(
       {this.$type = 'app.bsky.unspecced.defs#ageAssuranceState',
-      this.lastInitiatedAt,
+      @JsonKey(toJson: iso8601) this.lastInitiatedAt,
       @AgeAssuranceStateStatusConverter() required this.status,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -183,6 +184,7 @@ class _$AgeAssuranceStateImpl implements _AgeAssuranceState {
 
   /// The timestamp when this state was last updated.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastInitiatedAt;
 
   /// The status of the age assurance process.
@@ -241,7 +243,7 @@ class _$AgeAssuranceStateImpl implements _AgeAssuranceState {
 abstract class _AgeAssuranceState implements AgeAssuranceState {
   const factory _AgeAssuranceState(
       {final String $type,
-      final DateTime? lastInitiatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? lastInitiatedAt,
       @AgeAssuranceStateStatusConverter()
       required final AgeAssuranceStateStatus status,
       final Map<String, dynamic>? $unknown}) = _$AgeAssuranceStateImpl;
@@ -254,6 +256,7 @@ abstract class _AgeAssuranceState implements AgeAssuranceState {
 
   /// The timestamp when this state was last updated.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastInitiatedAt;
 
   /// The status of the age assurance process.

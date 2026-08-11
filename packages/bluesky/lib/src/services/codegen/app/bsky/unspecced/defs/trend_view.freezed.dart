@@ -23,7 +23,9 @@ mixin _$TrendView {
   String get $type => throw _privateConstructorUsedError;
   String get topic => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get startedAt => throw _privateConstructorUsedError;
   int get postCount => throw _privateConstructorUsedError;
   @TrendViewStatusConverter()
@@ -52,8 +54,9 @@ abstract class $TrendViewCopyWith<$Res> {
       {String $type,
       String topic,
       String displayName,
+      String? description,
       String link,
-      DateTime startedAt,
+      @JsonKey(toJson: iso8601) DateTime startedAt,
       int postCount,
       @TrendViewStatusConverter() TrendViewStatus? status,
       String? category,
@@ -81,6 +84,7 @@ class _$TrendViewCopyWithImpl<$Res, $Val extends TrendView>
     Object? $type = null,
     Object? topic = null,
     Object? displayName = null,
+    Object? description = freezed,
     Object? link = null,
     Object? startedAt = null,
     Object? postCount = null,
@@ -102,6 +106,10 @@ class _$TrendViewCopyWithImpl<$Res, $Val extends TrendView>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
       link: null == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
@@ -160,8 +168,9 @@ abstract class _$$TrendViewImplCopyWith<$Res>
       {String $type,
       String topic,
       String displayName,
+      String? description,
       String link,
-      DateTime startedAt,
+      @JsonKey(toJson: iso8601) DateTime startedAt,
       int postCount,
       @TrendViewStatusConverter() TrendViewStatus? status,
       String? category,
@@ -188,6 +197,7 @@ class __$$TrendViewImplCopyWithImpl<$Res>
     Object? $type = null,
     Object? topic = null,
     Object? displayName = null,
+    Object? description = freezed,
     Object? link = null,
     Object? startedAt = null,
     Object? postCount = null,
@@ -209,6 +219,10 @@ class __$$TrendViewImplCopyWithImpl<$Res>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
       link: null == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
@@ -249,8 +263,9 @@ class _$TrendViewImpl implements _TrendView {
       {this.$type = 'app.bsky.unspecced.defs#trendView',
       required this.topic,
       required this.displayName,
+      this.description,
       required this.link,
-      required this.startedAt,
+      @JsonKey(toJson: iso8601) required this.startedAt,
       required this.postCount,
       @TrendViewStatusConverter() this.status,
       this.category,
@@ -270,8 +285,11 @@ class _$TrendViewImpl implements _TrendView {
   @override
   final String displayName;
   @override
+  final String? description;
+  @override
   final String link;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime startedAt;
   @override
   final int postCount;
@@ -301,7 +319,7 @@ class _$TrendViewImpl implements _TrendView {
 
   @override
   String toString() {
-    return 'TrendView(\$type: ${$type}, topic: $topic, displayName: $displayName, link: $link, startedAt: $startedAt, postCount: $postCount, status: $status, category: $category, actors: $actors, \$unknown: ${$unknown})';
+    return 'TrendView(\$type: ${$type}, topic: $topic, displayName: $displayName, description: $description, link: $link, startedAt: $startedAt, postCount: $postCount, status: $status, category: $category, actors: $actors, \$unknown: ${$unknown})';
   }
 
   @override
@@ -313,6 +331,8 @@ class _$TrendViewImpl implements _TrendView {
             (identical(other.topic, topic) || other.topic == topic) &&
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.link, link) || other.link == link) &&
             (identical(other.startedAt, startedAt) ||
                 other.startedAt == startedAt) &&
@@ -332,6 +352,7 @@ class _$TrendViewImpl implements _TrendView {
       $type,
       topic,
       displayName,
+      description,
       link,
       startedAt,
       postCount,
@@ -361,8 +382,9 @@ abstract class _TrendView implements TrendView {
       {final String $type,
       required final String topic,
       required final String displayName,
+      final String? description,
       required final String link,
-      required final DateTime startedAt,
+      @JsonKey(toJson: iso8601) required final DateTime startedAt,
       required final int postCount,
       @TrendViewStatusConverter() final TrendViewStatus? status,
       final String? category,
@@ -379,8 +401,11 @@ abstract class _TrendView implements TrendView {
   @override
   String get displayName;
   @override
+  String? get description;
+  @override
   String get link;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get startedAt;
   @override
   int get postCount;

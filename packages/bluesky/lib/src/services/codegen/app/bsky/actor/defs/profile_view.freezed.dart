@@ -29,7 +29,9 @@ mixin _$ProfileView {
   String? get avatar => throw _privateConstructorUsedError;
   @ProfileAssociatedConverter()
   ProfileAssociated? get associated => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get indexedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @ViewerStateConverter()
   ViewerState? get viewer => throw _privateConstructorUsedError;
@@ -67,8 +69,8 @@ abstract class $ProfileViewCopyWith<$Res> {
       String? description,
       String? avatar,
       @ProfileAssociatedConverter() ProfileAssociated? associated,
-      DateTime? indexedAt,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? indexedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
       @VerificationStateConverter() VerificationState? verification,
@@ -256,8 +258,8 @@ abstract class _$$ProfileViewImplCopyWith<$Res>
       String? description,
       String? avatar,
       @ProfileAssociatedConverter() ProfileAssociated? associated,
-      DateTime? indexedAt,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? indexedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
       @VerificationStateConverter() VerificationState? verification,
@@ -387,8 +389,8 @@ class _$ProfileViewImpl implements _ProfileView {
       this.description,
       this.avatar,
       @ProfileAssociatedConverter() this.associated,
-      this.indexedAt,
-      this.createdAt,
+      @JsonKey(toJson: iso8601) this.indexedAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
       @ViewerStateConverter() this.viewer,
       @LabelConverter() final List<Label>? labels,
       @VerificationStateConverter() this.verification,
@@ -421,8 +423,10 @@ class _$ProfileViewImpl implements _ProfileView {
   @ProfileAssociatedConverter()
   final ProfileAssociated? associated;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? indexedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   @override
   @ViewerStateConverter()
@@ -546,8 +550,8 @@ abstract class _ProfileView implements ProfileView {
       final String? description,
       final String? avatar,
       @ProfileAssociatedConverter() final ProfileAssociated? associated,
-      final DateTime? indexedAt,
-      final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? indexedAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
       @ViewerStateConverter() final ViewerState? viewer,
       @LabelConverter() final List<Label>? labels,
       @VerificationStateConverter() final VerificationState? verification,
@@ -576,8 +580,10 @@ abstract class _ProfileView implements ProfileView {
   @ProfileAssociatedConverter()
   ProfileAssociated? get associated;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get indexedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
   @ViewerStateConverter()

@@ -41,6 +41,7 @@ mixin _$QueueStats {
   int? get avgHandlingTimeSec => throw _privateConstructorUsedError;
 
   /// When these statistics were last computed
+  @JsonKey(toJson: iso8601)
   DateTime? get lastUpdated => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -68,7 +69,7 @@ abstract class $QueueStatsCopyWith<$Res> {
       int? inboundCount,
       int? actionRate,
       int? avgHandlingTimeSec,
-      DateTime? lastUpdated,
+      @JsonKey(toJson: iso8601) DateTime? lastUpdated,
       Map<String, dynamic>? $unknown});
 }
 
@@ -154,7 +155,7 @@ abstract class _$$QueueStatsImplCopyWith<$Res>
       int? inboundCount,
       int? actionRate,
       int? avgHandlingTimeSec,
-      DateTime? lastUpdated,
+      @JsonKey(toJson: iso8601) DateTime? lastUpdated,
       Map<String, dynamic>? $unknown});
 }
 
@@ -234,7 +235,7 @@ class _$QueueStatsImpl implements _QueueStats {
       this.inboundCount,
       this.actionRate,
       this.avgHandlingTimeSec,
-      this.lastUpdated,
+      @JsonKey(toJson: iso8601) this.lastUpdated,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -271,6 +272,7 @@ class _$QueueStatsImpl implements _QueueStats {
 
   /// When these statistics were last computed
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastUpdated;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -349,7 +351,7 @@ abstract class _QueueStats implements QueueStats {
       final int? inboundCount,
       final int? actionRate,
       final int? avgHandlingTimeSec,
-      final DateTime? lastUpdated,
+      @JsonKey(toJson: iso8601) final DateTime? lastUpdated,
       final Map<String, dynamic>? $unknown}) = _$QueueStatsImpl;
 
   factory _QueueStats.fromJson(Map<String, dynamic> json) =
@@ -384,6 +386,7 @@ abstract class _QueueStats implements QueueStats {
 
   /// When these statistics were last computed
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastUpdated;
   @override
   Map<String, dynamic>? get $unknown;

@@ -28,9 +28,11 @@ mixin _$VerificationListVerificationsInput {
   int get limit => throw _privateConstructorUsedError;
 
   /// Filter to verifications created after this timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAfter => throw _privateConstructorUsedError;
 
   /// Filter to verifications created before this timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get createdBefore => throw _privateConstructorUsedError;
   List<String>? get issuers => throw _privateConstructorUsedError;
   List<String>? get subjects => throw _privateConstructorUsedError;
@@ -64,8 +66,8 @@ abstract class $VerificationListVerificationsInputCopyWith<$Res> {
   $Res call(
       {String? cursor,
       int limit,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
+      @JsonKey(toJson: iso8601) DateTime? createdAfter,
+      @JsonKey(toJson: iso8601) DateTime? createdBefore,
       List<String>? issuers,
       List<String>? subjects,
       String sortDirection,
@@ -152,8 +154,8 @@ abstract class _$$VerificationListVerificationsInputImplCopyWith<$Res>
   $Res call(
       {String? cursor,
       int limit,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
+      @JsonKey(toJson: iso8601) DateTime? createdAfter,
+      @JsonKey(toJson: iso8601) DateTime? createdBefore,
       List<String>? issuers,
       List<String>? subjects,
       String sortDirection,
@@ -235,8 +237,8 @@ class _$VerificationListVerificationsInputImpl
   const _$VerificationListVerificationsInputImpl(
       {this.cursor,
       this.limit = 50,
-      this.createdAfter,
-      this.createdBefore,
+      @JsonKey(toJson: iso8601) this.createdAfter,
+      @JsonKey(toJson: iso8601) this.createdBefore,
       final List<String>? issuers,
       final List<String>? subjects,
       this.sortDirection = 'desc',
@@ -261,10 +263,12 @@ class _$VerificationListVerificationsInputImpl
 
   /// Filter to verifications created after this timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAfter;
 
   /// Filter to verifications created before this timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdBefore;
   final List<String>? _issuers;
   @override
@@ -366,8 +370,8 @@ abstract class _VerificationListVerificationsInput
   const factory _VerificationListVerificationsInput(
           {final String? cursor,
           final int limit,
-          final DateTime? createdAfter,
-          final DateTime? createdBefore,
+          @JsonKey(toJson: iso8601) final DateTime? createdAfter,
+          @JsonKey(toJson: iso8601) final DateTime? createdBefore,
           final List<String>? issuers,
           final List<String>? subjects,
           final String sortDirection,
@@ -389,10 +393,12 @@ abstract class _VerificationListVerificationsInput
 
   /// Filter to verifications created after this timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAfter;
 
   /// Filter to verifications created before this timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdBefore;
   @override
   List<String>? get issuers;

@@ -27,7 +27,8 @@ mixin _$JoinRequestConvoView {
   ProfileViewBasic get owner => throw _privateConstructorUsedError;
   int get memberCount => throw _privateConstructorUsedError;
   int get memberLimit => throw _privateConstructorUsedError;
-  DateTime get requestedAt => throw _privateConstructorUsedError;
+  @JoinLinkViewerStateConverter()
+  JoinLinkViewerState get viewer => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this JoinRequestConvoView to a JSON map.
@@ -53,10 +54,11 @@ abstract class $JoinRequestConvoViewCopyWith<$Res> {
       @ProfileViewBasicConverter() ProfileViewBasic owner,
       int memberCount,
       int memberLimit,
-      DateTime requestedAt,
+      @JoinLinkViewerStateConverter() JoinLinkViewerState viewer,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewBasicCopyWith<$Res> get owner;
+  $JoinLinkViewerStateCopyWith<$Res> get viewer;
 }
 
 /// @nodoc
@@ -81,7 +83,7 @@ class _$JoinRequestConvoViewCopyWithImpl<$Res,
     Object? owner = null,
     Object? memberCount = null,
     Object? memberLimit = null,
-    Object? requestedAt = null,
+    Object? viewer = null,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -109,10 +111,10 @@ class _$JoinRequestConvoViewCopyWithImpl<$Res,
           ? _value.memberLimit
           : memberLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      requestedAt: null == requestedAt
-          ? _value.requestedAt
-          : requestedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      viewer: null == viewer
+          ? _value.viewer
+          : viewer // ignore: cast_nullable_to_non_nullable
+              as JoinLinkViewerState,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -127,6 +129,16 @@ class _$JoinRequestConvoViewCopyWithImpl<$Res,
   $ProfileViewBasicCopyWith<$Res> get owner {
     return $ProfileViewBasicCopyWith<$Res>(_value.owner, (value) {
       return _then(_value.copyWith(owner: value) as $Val);
+    });
+  }
+
+  /// Create a copy of JoinRequestConvoView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $JoinLinkViewerStateCopyWith<$Res> get viewer {
+    return $JoinLinkViewerStateCopyWith<$Res>(_value.viewer, (value) {
+      return _then(_value.copyWith(viewer: value) as $Val);
     });
   }
 }
@@ -146,11 +158,13 @@ abstract class _$$JoinRequestConvoViewImplCopyWith<$Res>
       @ProfileViewBasicConverter() ProfileViewBasic owner,
       int memberCount,
       int memberLimit,
-      DateTime requestedAt,
+      @JoinLinkViewerStateConverter() JoinLinkViewerState viewer,
       Map<String, dynamic>? $unknown});
 
   @override
   $ProfileViewBasicCopyWith<$Res> get owner;
+  @override
+  $JoinLinkViewerStateCopyWith<$Res> get viewer;
 }
 
 /// @nodoc
@@ -172,7 +186,7 @@ class __$$JoinRequestConvoViewImplCopyWithImpl<$Res>
     Object? owner = null,
     Object? memberCount = null,
     Object? memberLimit = null,
-    Object? requestedAt = null,
+    Object? viewer = null,
     Object? $unknown = freezed,
   }) {
     return _then(_$JoinRequestConvoViewImpl(
@@ -200,10 +214,10 @@ class __$$JoinRequestConvoViewImplCopyWithImpl<$Res>
           ? _value.memberLimit
           : memberLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      requestedAt: null == requestedAt
-          ? _value.requestedAt
-          : requestedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      viewer: null == viewer
+          ? _value.viewer
+          : viewer // ignore: cast_nullable_to_non_nullable
+              as JoinLinkViewerState,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -223,7 +237,7 @@ class _$JoinRequestConvoViewImpl implements _JoinRequestConvoView {
       @ProfileViewBasicConverter() required this.owner,
       required this.memberCount,
       required this.memberLimit,
-      required this.requestedAt,
+      @JoinLinkViewerStateConverter() required this.viewer,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -245,7 +259,8 @@ class _$JoinRequestConvoViewImpl implements _JoinRequestConvoView {
   @override
   final int memberLimit;
   @override
-  final DateTime requestedAt;
+  @JoinLinkViewerStateConverter()
+  final JoinLinkViewerState viewer;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -258,7 +273,7 @@ class _$JoinRequestConvoViewImpl implements _JoinRequestConvoView {
 
   @override
   String toString() {
-    return 'JoinRequestConvoView(\$type: ${$type}, convoId: $convoId, name: $name, owner: $owner, memberCount: $memberCount, memberLimit: $memberLimit, requestedAt: $requestedAt, \$unknown: ${$unknown})';
+    return 'JoinRequestConvoView(\$type: ${$type}, convoId: $convoId, name: $name, owner: $owner, memberCount: $memberCount, memberLimit: $memberLimit, viewer: $viewer, \$unknown: ${$unknown})';
   }
 
   @override
@@ -274,8 +289,7 @@ class _$JoinRequestConvoViewImpl implements _JoinRequestConvoView {
                 other.memberCount == memberCount) &&
             (identical(other.memberLimit, memberLimit) ||
                 other.memberLimit == memberLimit) &&
-            (identical(other.requestedAt, requestedAt) ||
-                other.requestedAt == requestedAt) &&
+            (identical(other.viewer, viewer) || other.viewer == viewer) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -289,7 +303,7 @@ class _$JoinRequestConvoViewImpl implements _JoinRequestConvoView {
       owner,
       memberCount,
       memberLimit,
-      requestedAt,
+      viewer,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of JoinRequestConvoView
@@ -318,7 +332,7 @@ abstract class _JoinRequestConvoView implements JoinRequestConvoView {
       @ProfileViewBasicConverter() required final ProfileViewBasic owner,
       required final int memberCount,
       required final int memberLimit,
-      required final DateTime requestedAt,
+      @JoinLinkViewerStateConverter() required final JoinLinkViewerState viewer,
       final Map<String, dynamic>? $unknown}) = _$JoinRequestConvoViewImpl;
 
   factory _JoinRequestConvoView.fromJson(Map<String, dynamic> json) =
@@ -338,7 +352,8 @@ abstract class _JoinRequestConvoView implements JoinRequestConvoView {
   @override
   int get memberLimit;
   @override
-  DateTime get requestedAt;
+  @JoinLinkViewerStateConverter()
+  JoinLinkViewerState get viewer;
   @override
   Map<String, dynamic>? get $unknown;
 

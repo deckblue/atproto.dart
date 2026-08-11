@@ -26,6 +26,7 @@ mixin _$NotificationListNotificationsInput {
   int get limit => throw _privateConstructorUsedError;
   bool? get priority => throw _privateConstructorUsedError;
   String? get cursor => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get seenAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -53,7 +54,7 @@ abstract class $NotificationListNotificationsInputCopyWith<$Res> {
       int limit,
       bool? priority,
       String? cursor,
-      DateTime? seenAt,
+      @JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -123,7 +124,7 @@ abstract class _$$NotificationListNotificationsInputImplCopyWith<$Res>
       int limit,
       bool? priority,
       String? cursor,
-      DateTime? seenAt,
+      @JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -188,7 +189,7 @@ class _$NotificationListNotificationsInputImpl
       this.limit = 50,
       this.priority,
       this.cursor,
-      this.seenAt,
+      @JsonKey(toJson: iso8601) this.seenAt,
       final Map<String, dynamic>? $unknown})
       : _reasons = reasons,
         _$unknown = $unknown;
@@ -218,6 +219,7 @@ class _$NotificationListNotificationsInputImpl
   @override
   final String? cursor;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? seenAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -284,7 +286,7 @@ abstract class _NotificationListNotificationsInput
           final int limit,
           final bool? priority,
           final String? cursor,
-          final DateTime? seenAt,
+          @JsonKey(toJson: iso8601) final DateTime? seenAt,
           final Map<String, dynamic>? $unknown}) =
       _$NotificationListNotificationsInputImpl;
 
@@ -302,6 +304,7 @@ abstract class _NotificationListNotificationsInput
   @override
   String? get cursor;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get seenAt;
   @override
   Map<String, dynamic>? get $unknown;

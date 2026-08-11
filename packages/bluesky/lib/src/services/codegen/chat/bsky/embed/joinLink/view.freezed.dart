@@ -21,8 +21,9 @@ EmbedJoinLinkView _$EmbedJoinLinkViewFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EmbedJoinLinkView {
   String get $type => throw _privateConstructorUsedError;
-  @JoinLinkPreviewViewConverter()
-  JoinLinkPreviewView get joinLinkPreview => throw _privateConstructorUsedError;
+  @UEmbedJoinLinkViewJoinLinkPreviewConverter()
+  UEmbedJoinLinkViewJoinLinkPreview get joinLinkPreview =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this EmbedJoinLinkView to a JSON map.
@@ -43,10 +44,11 @@ abstract class $EmbedJoinLinkViewCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      @JoinLinkPreviewViewConverter() JoinLinkPreviewView joinLinkPreview,
+      @UEmbedJoinLinkViewJoinLinkPreviewConverter()
+      UEmbedJoinLinkViewJoinLinkPreview joinLinkPreview,
       Map<String, dynamic>? $unknown});
 
-  $JoinLinkPreviewViewCopyWith<$Res> get joinLinkPreview;
+  $UEmbedJoinLinkViewJoinLinkPreviewCopyWith<$Res> get joinLinkPreview;
 }
 
 /// @nodoc
@@ -76,7 +78,7 @@ class _$EmbedJoinLinkViewCopyWithImpl<$Res, $Val extends EmbedJoinLinkView>
       joinLinkPreview: null == joinLinkPreview
           ? _value.joinLinkPreview
           : joinLinkPreview // ignore: cast_nullable_to_non_nullable
-              as JoinLinkPreviewView,
+              as UEmbedJoinLinkViewJoinLinkPreview,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -88,8 +90,9 @@ class _$EmbedJoinLinkViewCopyWithImpl<$Res, $Val extends EmbedJoinLinkView>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $JoinLinkPreviewViewCopyWith<$Res> get joinLinkPreview {
-    return $JoinLinkPreviewViewCopyWith<$Res>(_value.joinLinkPreview, (value) {
+  $UEmbedJoinLinkViewJoinLinkPreviewCopyWith<$Res> get joinLinkPreview {
+    return $UEmbedJoinLinkViewJoinLinkPreviewCopyWith<$Res>(
+        _value.joinLinkPreview, (value) {
       return _then(_value.copyWith(joinLinkPreview: value) as $Val);
     });
   }
@@ -105,11 +108,12 @@ abstract class _$$EmbedJoinLinkViewImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      @JoinLinkPreviewViewConverter() JoinLinkPreviewView joinLinkPreview,
+      @UEmbedJoinLinkViewJoinLinkPreviewConverter()
+      UEmbedJoinLinkViewJoinLinkPreview joinLinkPreview,
       Map<String, dynamic>? $unknown});
 
   @override
-  $JoinLinkPreviewViewCopyWith<$Res> get joinLinkPreview;
+  $UEmbedJoinLinkViewJoinLinkPreviewCopyWith<$Res> get joinLinkPreview;
 }
 
 /// @nodoc
@@ -137,7 +141,7 @@ class __$$EmbedJoinLinkViewImplCopyWithImpl<$Res>
       joinLinkPreview: null == joinLinkPreview
           ? _value.joinLinkPreview
           : joinLinkPreview // ignore: cast_nullable_to_non_nullable
-              as JoinLinkPreviewView,
+              as UEmbedJoinLinkViewJoinLinkPreview,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -152,7 +156,8 @@ class __$$EmbedJoinLinkViewImplCopyWithImpl<$Res>
 class _$EmbedJoinLinkViewImpl implements _EmbedJoinLinkView {
   const _$EmbedJoinLinkViewImpl(
       {this.$type = 'chat.bsky.embed.joinLink#view',
-      @JoinLinkPreviewViewConverter() required this.joinLinkPreview,
+      @UEmbedJoinLinkViewJoinLinkPreviewConverter()
+      required this.joinLinkPreview,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -163,8 +168,8 @@ class _$EmbedJoinLinkViewImpl implements _EmbedJoinLinkView {
   @JsonKey()
   final String $type;
   @override
-  @JoinLinkPreviewViewConverter()
-  final JoinLinkPreviewView joinLinkPreview;
+  @UEmbedJoinLinkViewJoinLinkPreviewConverter()
+  final UEmbedJoinLinkViewJoinLinkPreview joinLinkPreview;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -216,8 +221,8 @@ class _$EmbedJoinLinkViewImpl implements _EmbedJoinLinkView {
 abstract class _EmbedJoinLinkView implements EmbedJoinLinkView {
   const factory _EmbedJoinLinkView(
       {final String $type,
-      @JoinLinkPreviewViewConverter()
-      required final JoinLinkPreviewView joinLinkPreview,
+      @UEmbedJoinLinkViewJoinLinkPreviewConverter()
+      required final UEmbedJoinLinkViewJoinLinkPreview joinLinkPreview,
       final Map<String, dynamic>? $unknown}) = _$EmbedJoinLinkViewImpl;
 
   factory _EmbedJoinLinkView.fromJson(Map<String, dynamic> json) =
@@ -226,8 +231,8 @@ abstract class _EmbedJoinLinkView implements EmbedJoinLinkView {
   @override
   String get $type;
   @override
-  @JoinLinkPreviewViewConverter()
-  JoinLinkPreviewView get joinLinkPreview;
+  @UEmbedJoinLinkViewJoinLinkPreviewConverter()
+  UEmbedJoinLinkViewJoinLinkPreview get joinLinkPreview;
   @override
   Map<String, dynamic>? get $unknown;
 

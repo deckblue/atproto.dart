@@ -9,13 +9,19 @@ import 'dart:async';
 import 'package:xrpc/xrpc.dart' as xrpc;
 
 // Project imports:
-import '../runner/bsky_runner.dart';
 import 'bsky_command.dart';
 
 /// The command for procedure communication.
 abstract class ProcedureCommand extends BskyCommand {
   /// Returns the new instance of [ProcedureCommand].
   ProcedureCommand();
+
+  /// Method ids that must authenticate with the refresh token
+  /// instead of the access token.
+  static const _refreshJwtMethodIds = {
+    'com.atproto.server.refreshSession',
+    'com.atproto.server.deleteSession',
+  };
 
   /// Returns the method id.
   String get methodId;
@@ -24,16 +30,24 @@ abstract class ProcedureCommand extends BskyCommand {
   FutureOr<Map<String, dynamic>>? get body;
 
   @override
-  Future<void> run() async => await Bsky(
-        logger,
-        action: () async => await xrpc.procedure<String>(
+  Future<void> run() async => await execute(() async {
+        final jwt = _refreshJwtMethodIds.contains(methodId)
+            ? await refreshJwt
+            : await accessJwt;
+
+        final response = await xrpc.procedure<String>(
           xrpc.NSID(methodId),
           service: service,
-          headers: {'Authorization': 'Bearer ${await accessJwt}'},
+          headers: jwt != null ? {'Authorization': 'Bearer $jwt'} : null,
           body: await body,
-        ),
-        pretty: globalResults!['pretty'],
-        showStatus: globalResults!['status'],
-        showRequest: globalResults!['request'],
-      ).run();
+          timeout: timeout,
+          postClient: postClient,
+        );
+
+        if (methodId == 'com.atproto.server.deleteSession') {
+          clearSessionCache();
+        }
+
+        return response;
+      });
 }

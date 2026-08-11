@@ -36,7 +36,7 @@ Map<String, dynamic> _$$IdentityImplToJson(_$IdentityImpl instance) =>
       r'$type': instance.$type,
       'seq': instance.seq,
       'did': instance.did,
-      'time': instance.time.toIso8601String(),
+      'time': iso8601(instance.time),
       if (instance.handle case final value?) 'handle': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

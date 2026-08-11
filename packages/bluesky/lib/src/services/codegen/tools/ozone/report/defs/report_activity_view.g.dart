@@ -37,6 +37,10 @@ _$ReportActivityViewImpl _$$ReportActivityViewImplFromJson(Map json) =>
               'moderator',
               (v) => _$JsonConverterFromJson<Map<String, dynamic>, Member>(
                   v, const MemberConverter().fromJson)),
+          report: $checkedConvert(
+              'report',
+              (v) => _$JsonConverterFromJson<Map<String, dynamic>, ReportView>(
+                  v, const ReportViewConverter().fromJson)),
           createdAt:
               $checkedConvert('createdAt', (v) => DateTime.parse(v as String)),
           $unknown: $checkedConvert(
@@ -66,7 +70,11 @@ Map<String, dynamic> _$$ReportActivityViewImplToJson(
               instance.moderator, const MemberConverter().toJson)
           case final value?)
         'moderator': value,
-      'createdAt': instance.createdAt.toIso8601String(),
+      if (_$JsonConverterToJson<Map<String, dynamic>, ReportView>(
+              instance.report, const ReportViewConverter().toJson)
+          case final value?)
+        'report': value,
+      'createdAt': iso8601(instance.createdAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

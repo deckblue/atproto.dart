@@ -26,6 +26,9 @@ mixin _$ServerDescribeServerOutput {
 
   /// If true, a phone verification token must be supplied to create an account on this instance.
   bool? get phoneVerificationRequired => throw _privateConstructorUsedError;
+
+  /// Maximum size of a blob that can be uploaded via com.atproto.repo.uploadBlob, in bytes.
+  int? get blobUploadLimit => throw _privateConstructorUsedError;
   List<String> get availableUserDomains => throw _privateConstructorUsedError;
 
   /// URLs of service policy documents.
@@ -58,6 +61,7 @@ abstract class $ServerDescribeServerOutputCopyWith<$Res> {
   $Res call(
       {bool? inviteCodeRequired,
       bool? phoneVerificationRequired,
+      int? blobUploadLimit,
       List<String> availableUserDomains,
       @LinksConverter() Links? links,
       @ContactConverter() Contact? contact,
@@ -86,6 +90,7 @@ class _$ServerDescribeServerOutputCopyWithImpl<$Res,
   $Res call({
     Object? inviteCodeRequired = freezed,
     Object? phoneVerificationRequired = freezed,
+    Object? blobUploadLimit = freezed,
     Object? availableUserDomains = null,
     Object? links = freezed,
     Object? contact = freezed,
@@ -101,6 +106,10 @@ class _$ServerDescribeServerOutputCopyWithImpl<$Res,
           ? _value.phoneVerificationRequired
           : phoneVerificationRequired // ignore: cast_nullable_to_non_nullable
               as bool?,
+      blobUploadLimit: freezed == blobUploadLimit
+          ? _value.blobUploadLimit
+          : blobUploadLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
       availableUserDomains: null == availableUserDomains
           ? _value.availableUserDomains
           : availableUserDomains // ignore: cast_nullable_to_non_nullable
@@ -165,6 +174,7 @@ abstract class _$$ServerDescribeServerOutputImplCopyWith<$Res>
   $Res call(
       {bool? inviteCodeRequired,
       bool? phoneVerificationRequired,
+      int? blobUploadLimit,
       List<String> availableUserDomains,
       @LinksConverter() Links? links,
       @ContactConverter() Contact? contact,
@@ -194,6 +204,7 @@ class __$$ServerDescribeServerOutputImplCopyWithImpl<$Res>
   $Res call({
     Object? inviteCodeRequired = freezed,
     Object? phoneVerificationRequired = freezed,
+    Object? blobUploadLimit = freezed,
     Object? availableUserDomains = null,
     Object? links = freezed,
     Object? contact = freezed,
@@ -209,6 +220,10 @@ class __$$ServerDescribeServerOutputImplCopyWithImpl<$Res>
           ? _value.phoneVerificationRequired
           : phoneVerificationRequired // ignore: cast_nullable_to_non_nullable
               as bool?,
+      blobUploadLimit: freezed == blobUploadLimit
+          ? _value.blobUploadLimit
+          : blobUploadLimit // ignore: cast_nullable_to_non_nullable
+              as int?,
       availableUserDomains: null == availableUserDomains
           ? _value._availableUserDomains
           : availableUserDomains // ignore: cast_nullable_to_non_nullable
@@ -240,6 +255,7 @@ class _$ServerDescribeServerOutputImpl implements _ServerDescribeServerOutput {
   const _$ServerDescribeServerOutputImpl(
       {this.inviteCodeRequired,
       this.phoneVerificationRequired,
+      this.blobUploadLimit,
       required final List<String> availableUserDomains,
       @LinksConverter() this.links,
       @ContactConverter() this.contact,
@@ -259,6 +275,10 @@ class _$ServerDescribeServerOutputImpl implements _ServerDescribeServerOutput {
   /// If true, a phone verification token must be supplied to create an account on this instance.
   @override
   final bool? phoneVerificationRequired;
+
+  /// Maximum size of a blob that can be uploaded via com.atproto.repo.uploadBlob, in bytes.
+  @override
+  final int? blobUploadLimit;
   final List<String> _availableUserDomains;
   @override
   List<String> get availableUserDomains {
@@ -291,7 +311,7 @@ class _$ServerDescribeServerOutputImpl implements _ServerDescribeServerOutput {
 
   @override
   String toString() {
-    return 'ServerDescribeServerOutput(inviteCodeRequired: $inviteCodeRequired, phoneVerificationRequired: $phoneVerificationRequired, availableUserDomains: $availableUserDomains, links: $links, contact: $contact, did: $did, \$unknown: ${$unknown})';
+    return 'ServerDescribeServerOutput(inviteCodeRequired: $inviteCodeRequired, phoneVerificationRequired: $phoneVerificationRequired, blobUploadLimit: $blobUploadLimit, availableUserDomains: $availableUserDomains, links: $links, contact: $contact, did: $did, \$unknown: ${$unknown})';
   }
 
   @override
@@ -304,6 +324,8 @@ class _$ServerDescribeServerOutputImpl implements _ServerDescribeServerOutput {
             (identical(other.phoneVerificationRequired,
                     phoneVerificationRequired) ||
                 other.phoneVerificationRequired == phoneVerificationRequired) &&
+            (identical(other.blobUploadLimit, blobUploadLimit) ||
+                other.blobUploadLimit == blobUploadLimit) &&
             const DeepCollectionEquality()
                 .equals(other._availableUserDomains, _availableUserDomains) &&
             (identical(other.links, links) || other.links == links) &&
@@ -318,6 +340,7 @@ class _$ServerDescribeServerOutputImpl implements _ServerDescribeServerOutput {
       runtimeType,
       inviteCodeRequired,
       phoneVerificationRequired,
+      blobUploadLimit,
       const DeepCollectionEquality().hash(_availableUserDomains),
       links,
       contact,
@@ -346,6 +369,7 @@ abstract class _ServerDescribeServerOutput
   const factory _ServerDescribeServerOutput(
       {final bool? inviteCodeRequired,
       final bool? phoneVerificationRequired,
+      final int? blobUploadLimit,
       required final List<String> availableUserDomains,
       @LinksConverter() final Links? links,
       @ContactConverter() final Contact? contact,
@@ -362,6 +386,10 @@ abstract class _ServerDescribeServerOutput
   /// If true, a phone verification token must be supplied to create an account on this instance.
   @override
   bool? get phoneVerificationRequired;
+
+  /// Maximum size of a blob that can be uploaded via com.atproto.repo.uploadBlob, in bytes.
+  @override
+  int? get blobUploadLimit;
   @override
   List<String> get availableUserDomains;
 

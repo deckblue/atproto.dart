@@ -23,6 +23,7 @@ mixin _$FeedLikeRecord {
   String get $type => throw _privateConstructorUsedError;
   @RepoStrongRefConverter()
   RepoStrongRef get subject => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @RepoStrongRefConverter()
   RepoStrongRef? get via => throw _privateConstructorUsedError;
@@ -47,7 +48,7 @@ abstract class $FeedLikeRecordCopyWith<$Res> {
   $Res call(
       {String $type,
       @RepoStrongRefConverter() RepoStrongRef subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @RepoStrongRefConverter() RepoStrongRef? via,
       Map<String, dynamic>? $unknown});
 
@@ -136,7 +137,7 @@ abstract class _$$FeedLikeRecordImplCopyWith<$Res>
   $Res call(
       {String $type,
       @RepoStrongRefConverter() RepoStrongRef subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @RepoStrongRefConverter() RepoStrongRef? via,
       Map<String, dynamic>? $unknown});
 
@@ -197,7 +198,7 @@ class _$FeedLikeRecordImpl implements _FeedLikeRecord {
   const _$FeedLikeRecordImpl(
       {this.$type = 'app.bsky.feed.like',
       @RepoStrongRefConverter() required this.subject,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @RepoStrongRefConverter() this.via,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -212,6 +213,7 @@ class _$FeedLikeRecordImpl implements _FeedLikeRecord {
   @RepoStrongRefConverter()
   final RepoStrongRef subject;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @RepoStrongRefConverter()
@@ -270,7 +272,7 @@ abstract class _FeedLikeRecord implements FeedLikeRecord {
   const factory _FeedLikeRecord(
       {final String $type,
       @RepoStrongRefConverter() required final RepoStrongRef subject,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @RepoStrongRefConverter() final RepoStrongRef? via,
       final Map<String, dynamic>? $unknown}) = _$FeedLikeRecordImpl;
 
@@ -283,6 +285,7 @@ abstract class _FeedLikeRecord implements FeedLikeRecord {
   @RepoStrongRefConverter()
   RepoStrongRef get subject;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @RepoStrongRefConverter()

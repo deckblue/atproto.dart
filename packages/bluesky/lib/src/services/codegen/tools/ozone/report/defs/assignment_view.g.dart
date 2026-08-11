@@ -55,8 +55,8 @@ Map<String, dynamic> _$$AssignmentViewImplToJson(
           case final value?)
         'queue': value,
       'reportId': instance.reportId,
-      'startAt': instance.startAt.toIso8601String(),
-      if (instance.endAt?.toIso8601String() case final value?) 'endAt': value,
+      'startAt': iso8601(instance.startAt),
+      'endAt': iso8601(instance.endAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

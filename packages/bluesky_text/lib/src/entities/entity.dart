@@ -2,10 +2,22 @@
 // All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+// Package imports:
+import 'package:http/http.dart' as http;
+import 'package:xrpc/xrpc.dart' as xrpc;
+
 // Project imports:
 import '../api/find_did.dart' as api;
 import 'byte_indices.dart';
 import 'facetable.dart';
+
+/// Resolves a Bluesky `handle` (e.g. `shinyakato.dev`) to its DID, or returns
+/// `null` when the handle does not resolve.
+///
+/// Supply one to [Entity.toFacet] / `Entities.toFacets` to control mention
+/// resolution — for example to serve already-known DIDs from a cache or to
+/// batch lookups — instead of the built-in per-handle network call.
+typedef HandleResolver = Future<String?> Function(String handle);
 
 final class Entity implements Facetable {
   final EntityType type;
@@ -21,24 +33,71 @@ final class Entity implements Facetable {
   });
 
   /// Returns the facet representation of this entity as JSON.
-  Future<Map<String, dynamic>> toFacet({String? service}) async {
+  ///
+  /// The map is wire-complete: the facet carries `$type`
+  /// `app.bsky.richtext.facet`, its `index` carries `$type`
+  /// `app.bsky.richtext.facet#byteSlice`, and every feature carries its own
+  /// `$type`. It is therefore byte-for-byte what a lexicon-generated facet
+  /// serializes to, so it can be embedded in a hand-assembled record (for
+  /// `com.atproto.repo.applyWrites`, or to compute a record CID locally)
+  /// without a round-trip through a lexicon model first.
+  ///
+  /// For a handle, [resolver] (when given) is used to look up the DID instead of
+  /// the built-in network call, so callers can inject a cache of known DIDs.
+  /// When the handle does not resolve, an empty map is returned; use
+  /// `Entities.toFacetsResult` to learn which handles were dropped rather than
+  /// silently posting without their mentions.
+  ///
+  /// [client] is forwarded to the built-in resolution call and only used when
+  /// no [resolver] is given; it exists so the default network path can be
+  /// exercised against a mock transport in tests.
+  Future<Map<String, dynamic>> toFacet({
+    String? service,
+    HandleResolver? resolver,
+    http.Client? client,
+  }) async {
     final facet = <String, dynamic>{
-      'index': {'byteStart': indices.start, 'byteEnd': indices.end},
+      '\$type': 'app.bsky.richtext.facet',
+      'index': {
+        '\$type': 'app.bsky.richtext.facet#byteSlice',
+        'byteStart': indices.start,
+        'byteEnd': indices.end,
+      },
       'features': [],
     };
 
     switch (type) {
       case EntityType.handle:
-        try {
-          final did = await api.findDID(handle: value, service: service);
-
-          facet['features'].add({
-            '\$type': 'app.bsky.richtext.facet#mention',
-            'did': did.data['did'],
-          });
-        } catch (_) {
-          return {};
+        final String? did;
+        if (resolver != null) {
+          did = await resolver(value);
+        } else {
+          try {
+            did = (await api.findDID(
+              handle: value,
+              service: service,
+              client: client,
+            ))
+                .data['did'] as String?;
+          } on xrpc.InvalidRequestException {
+            //* The handle could not be resolved to a DID (e.g. it does not
+            //* exist), so there is legitimately no mention facet to emit. Only
+            //* this specific case is swallowed; network failures and other
+            //* unexpected errors are intentionally rethrown so a transient
+            //* outage does not silently drop mentions without the caller
+            //* noticing.
+            return {};
+          }
         }
+
+        //* A resolver that returns null (unknown handle) is treated the same as
+        //* the `InvalidRequestException` above: no mention facet.
+        if (did == null) return {};
+
+        facet['features'].add({
+          '\$type': 'app.bsky.richtext.facet#mention',
+          'did': did,
+        });
 
         break;
       case EntityType.link:
@@ -57,10 +116,11 @@ final class Entity implements Facetable {
         break;
       case EntityType.cashtag:
         //* The Bluesky `app.bsky.richtext.facet` lexicon does not currently
-        //* define a dedicated cashtag feature, so cashtags are treated as
-        //* regular `tag` facets. The underlying `tag` value is the symbol
-        //* without the leading `$`, mirroring how hashtags drop the leading
-        //* `#` character.
+        //* define a dedicated cashtag feature, so cashtags are emitted as
+        //* regular `tag` facets. Following the official `@atproto/api`
+        //* implementation, the `tag` value keeps the leading `$` and the
+        //* ticker is upper-cased (e.g. `$AAPL`), unlike hashtags which drop
+        //* the leading `#` character.
         facet['features'].add({
           '\$type': 'app.bsky.richtext.facet#tag',
           'tag': value,

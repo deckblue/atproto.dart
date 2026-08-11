@@ -49,7 +49,7 @@ Map<String, dynamic> _$$EventImplToJson(_$EventImpl instance) =>
       'action': const ActionTypeConverter().toJson(instance.action),
       'reason': const ReasonTypeConverter().toJson(instance.reason),
       'createdBy': instance.createdBy,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.comment case final value?) 'comment': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

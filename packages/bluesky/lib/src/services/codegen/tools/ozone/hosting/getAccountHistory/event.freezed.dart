@@ -24,6 +24,7 @@ mixin _$Event {
   @UEventDetailsConverter()
   UEventDetails get details => throw _privateConstructorUsedError;
   String get createdBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -45,7 +46,7 @@ abstract class $EventCopyWith<$Res> {
       {String $type,
       @UEventDetailsConverter() UEventDetails details,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $UEventDetailsCopyWith<$Res> get details;
@@ -118,7 +119,7 @@ abstract class _$$EventImplCopyWith<$Res> implements $EventCopyWith<$Res> {
       {String $type,
       @UEventDetailsConverter() UEventDetails details,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -177,7 +178,7 @@ class _$EventImpl implements _Event {
       {this.$type = 'tools.ozone.hosting.getAccountHistory#event',
       @UEventDetailsConverter() required this.details,
       required this.createdBy,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -193,6 +194,7 @@ class _$EventImpl implements _Event {
   @override
   final String createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -249,7 +251,7 @@ abstract class _Event implements Event {
       {final String $type,
       @UEventDetailsConverter() required final UEventDetails details,
       required final String createdBy,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$EventImpl;
 
   factory _Event.fromJson(Map<String, dynamic> json) = _$EventImpl.fromJson;
@@ -262,6 +264,7 @@ abstract class _Event implements Event {
   @override
   String get createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

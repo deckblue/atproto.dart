@@ -34,19 +34,23 @@ final class DeleteQueueCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Delete a moderation queue. Optionally migrate reports to another queue.";
+      "Delete a moderation queue. Optionally migrate reports to another queue.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-queue delete-queue [queueId] [migrateToQueueId]";
+      "bsky tools-ozone-queue delete-queue --queueId=<value> [--migrateToQueueId=<value>]";
 
   @override
   String get methodId => "tools.ozone.queue.deleteQueue";
 
   @override
   Map<String, dynamic>? get body => {
-        "queueId": argResults!["queueId"],
-        if (argResults!["migrateToQueueId"] != null)
-          "migrateToQueueId": argResults!["migrateToQueueId"],
+        "queueId": int.tryParse(argResults!["queueId"]) ??
+            usageException('Invalid integer value for option "queueId".'),
+        if (argResults!.wasParsed("migrateToQueueId"))
+          "migrateToQueueId": int.tryParse(argResults!["migrateToQueueId"]) ??
+              usageException(
+                'Invalid integer value for option "migrateToQueueId".',
+              ),
       };
 }

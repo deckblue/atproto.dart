@@ -25,6 +25,7 @@ mixin _$IdentityEvent {
   String? get handle => throw _privateConstructorUsedError;
   String? get pdsHost => throw _privateConstructorUsedError;
   bool? get tombstone => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get timestamp => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -50,7 +51,7 @@ abstract class $IdentityEventCopyWith<$Res> {
       String? handle,
       String? pdsHost,
       bool? tombstone,
-      DateTime timestamp,
+      @JsonKey(toJson: iso8601) DateTime timestamp,
       Map<String, dynamic>? $unknown});
 }
 
@@ -124,7 +125,7 @@ abstract class _$$IdentityEventImplCopyWith<$Res>
       String? handle,
       String? pdsHost,
       bool? tombstone,
-      DateTime timestamp,
+      @JsonKey(toJson: iso8601) DateTime timestamp,
       Map<String, dynamic>? $unknown});
 }
 
@@ -192,7 +193,7 @@ class _$IdentityEventImpl implements _IdentityEvent {
       this.handle,
       this.pdsHost,
       this.tombstone,
-      required this.timestamp,
+      @JsonKey(toJson: iso8601) required this.timestamp,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -211,6 +212,7 @@ class _$IdentityEventImpl implements _IdentityEvent {
   @override
   final bool? tombstone;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime timestamp;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -271,7 +273,7 @@ abstract class _IdentityEvent implements IdentityEvent {
       final String? handle,
       final String? pdsHost,
       final bool? tombstone,
-      required final DateTime timestamp,
+      @JsonKey(toJson: iso8601) required final DateTime timestamp,
       final Map<String, dynamic>? $unknown}) = _$IdentityEventImpl;
 
   factory _IdentityEvent.fromJson(Map<String, dynamic> json) =
@@ -288,6 +290,7 @@ abstract class _IdentityEvent implements IdentityEvent {
   @override
   bool? get tombstone;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get timestamp;
   @override
   Map<String, dynamic>? get $unknown;

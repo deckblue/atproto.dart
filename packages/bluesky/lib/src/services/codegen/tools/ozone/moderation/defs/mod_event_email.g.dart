@@ -47,8 +47,7 @@ Map<String, dynamic> _$$ModEventEmailImplToJson(_$ModEventEmailImpl instance) =>
       if (instance.policies case final value?) 'policies': value,
       if (instance.severityLevel case final value?) 'severityLevel': value,
       if (instance.strikeCount case final value?) 'strikeCount': value,
-      if (instance.strikeExpiresAt?.toIso8601String() case final value?)
-        'strikeExpiresAt': value,
+      'strikeExpiresAt': iso8601(instance.strikeExpiresAt),
       if (instance.isDelivered case final value?) 'isDelivered': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

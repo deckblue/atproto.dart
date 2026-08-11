@@ -33,7 +33,12 @@ mixin _$Notification {
   @AtUriConverter()
   AtUri? get reasonSubject => throw _privateConstructorUsedError;
   Map<String, dynamic> get record => throw _privateConstructorUsedError;
+
+  /// The starter pack associated with this notification. Present when the notification is for a follow originating from a starter pack.
+  @StarterPackViewBasicConverter()
+  StarterPackViewBasic? get starterPack => throw _privateConstructorUsedError;
   bool get isRead => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   @LabelConverter()
   List<Label>? get labels => throw _privateConstructorUsedError;
@@ -63,13 +68,15 @@ abstract class $NotificationCopyWith<$Res> {
       @NotificationReasonConverter() NotificationReason reason,
       @AtUriConverter() AtUri? reasonSubject,
       Map<String, dynamic> record,
+      @StarterPackViewBasicConverter() StarterPackViewBasic? starterPack,
       bool isRead,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @LabelConverter() List<Label>? labels,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewCopyWith<$Res> get author;
   $NotificationReasonCopyWith<$Res> get reason;
+  $StarterPackViewBasicCopyWith<$Res>? get starterPack;
 }
 
 /// @nodoc
@@ -94,6 +101,7 @@ class _$NotificationCopyWithImpl<$Res, $Val extends Notification>
     Object? reason = null,
     Object? reasonSubject = freezed,
     Object? record = null,
+    Object? starterPack = freezed,
     Object? isRead = null,
     Object? indexedAt = null,
     Object? labels = freezed,
@@ -128,6 +136,10 @@ class _$NotificationCopyWithImpl<$Res, $Val extends Notification>
           ? _value.record
           : record // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      starterPack: freezed == starterPack
+          ? _value.starterPack
+          : starterPack // ignore: cast_nullable_to_non_nullable
+              as StarterPackViewBasic?,
       isRead: null == isRead
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
@@ -166,6 +178,20 @@ class _$NotificationCopyWithImpl<$Res, $Val extends Notification>
       return _then(_value.copyWith(reason: value) as $Val);
     });
   }
+
+  /// Create a copy of Notification
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StarterPackViewBasicCopyWith<$Res>? get starterPack {
+    if (_value.starterPack == null) {
+      return null;
+    }
+
+    return $StarterPackViewBasicCopyWith<$Res>(_value.starterPack!, (value) {
+      return _then(_value.copyWith(starterPack: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -184,8 +210,9 @@ abstract class _$$NotificationImplCopyWith<$Res>
       @NotificationReasonConverter() NotificationReason reason,
       @AtUriConverter() AtUri? reasonSubject,
       Map<String, dynamic> record,
+      @StarterPackViewBasicConverter() StarterPackViewBasic? starterPack,
       bool isRead,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @LabelConverter() List<Label>? labels,
       Map<String, dynamic>? $unknown});
 
@@ -193,6 +220,8 @@ abstract class _$$NotificationImplCopyWith<$Res>
   $ProfileViewCopyWith<$Res> get author;
   @override
   $NotificationReasonCopyWith<$Res> get reason;
+  @override
+  $StarterPackViewBasicCopyWith<$Res>? get starterPack;
 }
 
 /// @nodoc
@@ -215,6 +244,7 @@ class __$$NotificationImplCopyWithImpl<$Res>
     Object? reason = null,
     Object? reasonSubject = freezed,
     Object? record = null,
+    Object? starterPack = freezed,
     Object? isRead = null,
     Object? indexedAt = null,
     Object? labels = freezed,
@@ -249,6 +279,10 @@ class __$$NotificationImplCopyWithImpl<$Res>
           ? _value._record
           : record // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      starterPack: freezed == starterPack
+          ? _value.starterPack
+          : starterPack // ignore: cast_nullable_to_non_nullable
+              as StarterPackViewBasic?,
       isRead: null == isRead
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
@@ -281,8 +315,9 @@ class _$NotificationImpl implements _Notification {
       @NotificationReasonConverter() required this.reason,
       @AtUriConverter() this.reasonSubject,
       required final Map<String, dynamic> record,
+      @StarterPackViewBasicConverter() this.starterPack,
       required this.isRead,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       @LabelConverter() final List<Label>? labels,
       final Map<String, dynamic>? $unknown})
       : _record = record,
@@ -319,9 +354,14 @@ class _$NotificationImpl implements _Notification {
     return EqualUnmodifiableMapView(_record);
   }
 
+  /// The starter pack associated with this notification. Present when the notification is for a follow originating from a starter pack.
+  @override
+  @StarterPackViewBasicConverter()
+  final StarterPackViewBasic? starterPack;
   @override
   final bool isRead;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final List<Label>? _labels;
   @override
@@ -346,7 +386,7 @@ class _$NotificationImpl implements _Notification {
 
   @override
   String toString() {
-    return 'Notification(\$type: ${$type}, uri: $uri, cid: $cid, author: $author, reason: $reason, reasonSubject: $reasonSubject, record: $record, isRead: $isRead, indexedAt: $indexedAt, labels: $labels, \$unknown: ${$unknown})';
+    return 'Notification(\$type: ${$type}, uri: $uri, cid: $cid, author: $author, reason: $reason, reasonSubject: $reasonSubject, record: $record, starterPack: $starterPack, isRead: $isRead, indexedAt: $indexedAt, labels: $labels, \$unknown: ${$unknown})';
   }
 
   @override
@@ -362,6 +402,8 @@ class _$NotificationImpl implements _Notification {
             (identical(other.reasonSubject, reasonSubject) ||
                 other.reasonSubject == reasonSubject) &&
             const DeepCollectionEquality().equals(other._record, _record) &&
+            (identical(other.starterPack, starterPack) ||
+                other.starterPack == starterPack) &&
             (identical(other.isRead, isRead) || other.isRead == isRead) &&
             (identical(other.indexedAt, indexedAt) ||
                 other.indexedAt == indexedAt) &&
@@ -380,6 +422,7 @@ class _$NotificationImpl implements _Notification {
       reason,
       reasonSubject,
       const DeepCollectionEquality().hash(_record),
+      starterPack,
       isRead,
       indexedAt,
       const DeepCollectionEquality().hash(_labels),
@@ -410,8 +453,9 @@ abstract class _Notification implements Notification {
       @NotificationReasonConverter() required final NotificationReason reason,
       @AtUriConverter() final AtUri? reasonSubject,
       required final Map<String, dynamic> record,
+      @StarterPackViewBasicConverter() final StarterPackViewBasic? starterPack,
       required final bool isRead,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       @LabelConverter() final List<Label>? labels,
       final Map<String, dynamic>? $unknown}) = _$NotificationImpl;
 
@@ -438,9 +482,15 @@ abstract class _Notification implements Notification {
   AtUri? get reasonSubject;
   @override
   Map<String, dynamic> get record;
+
+  /// The starter pack associated with this notification. Present when the notification is for a follow originating from a starter pack.
+  @override
+  @StarterPackViewBasicConverter()
+  StarterPackViewBasic? get starterPack;
   @override
   bool get isRead;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   @LabelConverter()

@@ -26,11 +26,11 @@ final class UpdateAccountHandleCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Administrative action to update an account's handle.";
+      "Administrative action to update an account's handle.";
 
   @override
   final String invocation =
-      "bsky com-atproto-admin update-account-handle [did] [handle]";
+      "bsky com-atproto-admin update-account-handle --did=<value> --handle=<value>";
 
   @override
   String get methodId => "com.atproto.admin.updateAccountHandle";

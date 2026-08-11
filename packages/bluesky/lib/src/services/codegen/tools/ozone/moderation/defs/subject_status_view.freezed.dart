@@ -30,9 +30,11 @@ mixin _$SubjectStatusView {
   String? get subjectRepoHandle => throw _privateConstructorUsedError;
 
   /// Timestamp referencing when the last update was made to the moderation status of the subject
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
   /// Timestamp referencing the first moderation status impacting event was emitted on the subject
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @SubjectReviewStateConverter()
   SubjectReviewState get reviewState => throw _privateConstructorUsedError;
@@ -42,18 +44,24 @@ mixin _$SubjectStatusView {
 
   /// Numeric value representing the level of priority. Higher score means higher priority.
   int? get priorityScore => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get muteUntil => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get muteReportingUntil => throw _privateConstructorUsedError;
   String? get lastReviewedBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get lastReviewedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get lastReportedAt => throw _privateConstructorUsedError;
 
   /// Timestamp referencing when the author of the subject appealed a moderation action
+  @JsonKey(toJson: iso8601)
   DateTime? get lastAppealedAt => throw _privateConstructorUsedError;
   bool? get takendown => throw _privateConstructorUsedError;
 
   /// True indicates that the a previously taken moderator action was appealed against, by the author of the content. False indicates last appeal was resolved by moderators.
   bool? get appealed => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get suspendUntil => throw _privateConstructorUsedError;
   List<String>? get tags => throw _privateConstructorUsedError;
 
@@ -103,20 +111,20 @@ abstract class $SubjectStatusViewCopyWith<$Res> {
       @USubjectStatusViewHostingConverter() USubjectStatusViewHosting? hosting,
       List<String>? subjectBlobCids,
       String? subjectRepoHandle,
-      DateTime updatedAt,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @SubjectReviewStateConverter() SubjectReviewState reviewState,
       String? comment,
       int? priorityScore,
-      DateTime? muteUntil,
-      DateTime? muteReportingUntil,
+      @JsonKey(toJson: iso8601) DateTime? muteUntil,
+      @JsonKey(toJson: iso8601) DateTime? muteReportingUntil,
       String? lastReviewedBy,
-      DateTime? lastReviewedAt,
-      DateTime? lastReportedAt,
-      DateTime? lastAppealedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastReviewedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastReportedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastAppealedAt,
       bool? takendown,
       bool? appealed,
-      DateTime? suspendUntil,
+      @JsonKey(toJson: iso8601) DateTime? suspendUntil,
       List<String>? tags,
       @AccountStatsConverter() AccountStats? accountStats,
       @RecordsStatsConverter() RecordsStats? recordsStats,
@@ -416,20 +424,20 @@ abstract class _$$SubjectStatusViewImplCopyWith<$Res>
       @USubjectStatusViewHostingConverter() USubjectStatusViewHosting? hosting,
       List<String>? subjectBlobCids,
       String? subjectRepoHandle,
-      DateTime updatedAt,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @SubjectReviewStateConverter() SubjectReviewState reviewState,
       String? comment,
       int? priorityScore,
-      DateTime? muteUntil,
-      DateTime? muteReportingUntil,
+      @JsonKey(toJson: iso8601) DateTime? muteUntil,
+      @JsonKey(toJson: iso8601) DateTime? muteReportingUntil,
       String? lastReviewedBy,
-      DateTime? lastReviewedAt,
-      DateTime? lastReportedAt,
-      DateTime? lastAppealedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastReviewedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastReportedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastAppealedAt,
       bool? takendown,
       bool? appealed,
-      DateTime? suspendUntil,
+      @JsonKey(toJson: iso8601) DateTime? suspendUntil,
       List<String>? tags,
       @AccountStatsConverter() AccountStats? accountStats,
       @RecordsStatsConverter() RecordsStats? recordsStats,
@@ -624,20 +632,20 @@ class _$SubjectStatusViewImpl implements _SubjectStatusView {
       @USubjectStatusViewHostingConverter() this.hosting,
       final List<String>? subjectBlobCids,
       this.subjectRepoHandle,
-      required this.updatedAt,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.updatedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @SubjectReviewStateConverter() required this.reviewState,
       this.comment,
       this.priorityScore,
-      this.muteUntil,
-      this.muteReportingUntil,
+      @JsonKey(toJson: iso8601) this.muteUntil,
+      @JsonKey(toJson: iso8601) this.muteReportingUntil,
       this.lastReviewedBy,
-      this.lastReviewedAt,
-      this.lastReportedAt,
-      this.lastAppealedAt,
+      @JsonKey(toJson: iso8601) this.lastReviewedAt,
+      @JsonKey(toJson: iso8601) this.lastReportedAt,
+      @JsonKey(toJson: iso8601) this.lastAppealedAt,
       this.takendown,
       this.appealed,
-      this.suspendUntil,
+      @JsonKey(toJson: iso8601) this.suspendUntil,
       final List<String>? tags,
       @AccountStatsConverter() this.accountStats,
       @RecordsStatsConverter() this.recordsStats,
@@ -679,10 +687,12 @@ class _$SubjectStatusViewImpl implements _SubjectStatusView {
 
   /// Timestamp referencing when the last update was made to the moderation status of the subject
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime updatedAt;
 
   /// Timestamp referencing the first moderation status impacting event was emitted on the subject
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @SubjectReviewStateConverter()
@@ -696,18 +706,23 @@ class _$SubjectStatusViewImpl implements _SubjectStatusView {
   @override
   final int? priorityScore;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? muteUntil;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? muteReportingUntil;
   @override
   final String? lastReviewedBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastReviewedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastReportedAt;
 
   /// Timestamp referencing when the author of the subject appealed a moderation action
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastAppealedAt;
   @override
   final bool? takendown;
@@ -716,6 +731,7 @@ class _$SubjectStatusViewImpl implements _SubjectStatusView {
   @override
   final bool? appealed;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? suspendUntil;
   final List<String>? _tags;
   @override
@@ -880,21 +896,21 @@ abstract class _SubjectStatusView implements SubjectStatusView {
       final USubjectStatusViewHosting? hosting,
       final List<String>? subjectBlobCids,
       final String? subjectRepoHandle,
-      required final DateTime updatedAt,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime updatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @SubjectReviewStateConverter()
       required final SubjectReviewState reviewState,
       final String? comment,
       final int? priorityScore,
-      final DateTime? muteUntil,
-      final DateTime? muteReportingUntil,
+      @JsonKey(toJson: iso8601) final DateTime? muteUntil,
+      @JsonKey(toJson: iso8601) final DateTime? muteReportingUntil,
       final String? lastReviewedBy,
-      final DateTime? lastReviewedAt,
-      final DateTime? lastReportedAt,
-      final DateTime? lastAppealedAt,
+      @JsonKey(toJson: iso8601) final DateTime? lastReviewedAt,
+      @JsonKey(toJson: iso8601) final DateTime? lastReportedAt,
+      @JsonKey(toJson: iso8601) final DateTime? lastAppealedAt,
       final bool? takendown,
       final bool? appealed,
-      final DateTime? suspendUntil,
+      @JsonKey(toJson: iso8601) final DateTime? suspendUntil,
       final List<String>? tags,
       @AccountStatsConverter() final AccountStats? accountStats,
       @RecordsStatsConverter() final RecordsStats? recordsStats,
@@ -925,10 +941,12 @@ abstract class _SubjectStatusView implements SubjectStatusView {
 
   /// Timestamp referencing when the last update was made to the moderation status of the subject
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt;
 
   /// Timestamp referencing the first moderation status impacting event was emitted on the subject
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @SubjectReviewStateConverter()
@@ -942,18 +960,23 @@ abstract class _SubjectStatusView implements SubjectStatusView {
   @override
   int? get priorityScore;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get muteUntil;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get muteReportingUntil;
   @override
   String? get lastReviewedBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastReviewedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastReportedAt;
 
   /// Timestamp referencing when the author of the subject appealed a moderation action
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastAppealedAt;
   @override
   bool? get takendown;
@@ -962,6 +985,7 @@ abstract class _SubjectStatusView implements SubjectStatusView {
   @override
   bool? get appealed;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get suspendUntil;
   @override
   List<String>? get tags;

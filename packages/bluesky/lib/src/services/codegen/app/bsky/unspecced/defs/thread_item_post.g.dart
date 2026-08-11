@@ -23,6 +23,10 @@ _$ThreadItemPostImpl _$$ThreadItemPostImplFromJson(Map json) => $checkedCreate(
           moreReplies:
               $checkedConvert('moreReplies', (v) => (v as num).toInt()),
           opThread: $checkedConvert('opThread', (v) => v as bool),
+          opThreadPostIndex:
+              $checkedConvert('opThreadPostIndex', (v) => (v as num?)?.toInt()),
+          opThreadPostCount:
+              $checkedConvert('opThreadPostCount', (v) => (v as num?)?.toInt()),
           hiddenByThreadgate:
               $checkedConvert('hiddenByThreadgate', (v) => v as bool),
           mutedByViewer: $checkedConvert('mutedByViewer', (v) => v as bool),
@@ -44,6 +48,10 @@ Map<String, dynamic> _$$ThreadItemPostImplToJson(
       'moreParents': instance.moreParents,
       'moreReplies': instance.moreReplies,
       'opThread': instance.opThread,
+      if (instance.opThreadPostIndex case final value?)
+        'opThreadPostIndex': value,
+      if (instance.opThreadPostCount case final value?)
+        'opThreadPostCount': value,
       'hiddenByThreadgate': instance.hiddenByThreadgate,
       'mutedByViewer': instance.mutedByViewer,
       if (instance.$unknown case final value?) r'$unknown': value,

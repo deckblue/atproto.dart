@@ -292,6 +292,14 @@ const appBskyDraftDefsDraftEmbedCaption =
 const appBskyDraftDefsDraftEmbedExternal =
     'app.bsky.draft.defs#draftEmbedExternal';
 
+/// `app.bsky.draft.defs#draftEmbedGallery`
+const appBskyDraftDefsDraftEmbedGallery =
+    'app.bsky.draft.defs#draftEmbedGallery';
+
+/// `app.bsky.draft.defs#draftEmbedGalleryItems`
+const appBskyDraftDefsDraftEmbedGalleryItems =
+    'app.bsky.draft.defs#draftEmbedGalleryItems';
+
 /// `app.bsky.draft.defs#draftEmbedImage`
 const appBskyDraftDefsDraftEmbedImage = 'app.bsky.draft.defs#draftEmbedImage';
 
@@ -351,6 +359,18 @@ const appBskyEmbedExternalViewExternalSource =
 /// `app.bsky.embed.external#viewExternalSourceTheme`
 const appBskyEmbedExternalViewExternalSourceTheme =
     'app.bsky.embed.external#viewExternalSourceTheme';
+
+/// `app.bsky.embed.gallery`
+const appBskyEmbedGallery = 'app.bsky.embed.gallery';
+
+/// `app.bsky.embed.gallery#image`
+const appBskyEmbedGalleryImage = 'app.bsky.embed.gallery#image';
+
+/// `app.bsky.embed.gallery#view`
+const appBskyEmbedGalleryView = 'app.bsky.embed.gallery#view';
+
+/// `app.bsky.embed.gallery#viewImage`
+const appBskyEmbedGalleryViewImage = 'app.bsky.embed.gallery#viewImage';
 
 /// `app.bsky.embed.getEmbedExternalView`
 const appBskyEmbedGetEmbedExternalView = 'app.bsky.embed.getEmbedExternalView';
@@ -593,6 +613,9 @@ const appBskyFeedRepost = 'app.bsky.feed.repost';
 /// `app.bsky.feed.searchPosts`
 const appBskyFeedSearchPosts = 'app.bsky.feed.searchPosts';
 
+/// `app.bsky.feed.searchPostsV2`
+const appBskyFeedSearchPostsV2 = 'app.bsky.feed.searchPostsV2';
+
 /// `app.bsky.feed.sendInteractions`
 const appBskyFeedSendInteractions = 'app.bsky.feed.sendInteractions';
 
@@ -738,6 +761,9 @@ const appBskyGraphMuteThread = 'app.bsky.graph.muteThread';
 
 /// `app.bsky.graph.searchStarterPacks`
 const appBskyGraphSearchStarterPacks = 'app.bsky.graph.searchStarterPacks';
+
+/// `app.bsky.graph.searchStarterPacksV2`
+const appBskyGraphSearchStarterPacksV2 = 'app.bsky.graph.searchStarterPacksV2';
 
 /// `app.bsky.graph.starterpack`
 const appBskyGraphStarterpack = 'app.bsky.graph.starterpack';
@@ -1245,6 +1271,10 @@ const chatBskyConvoDefsLogWithdrawOutgoingJoinRequest =
 const chatBskyConvoDefsMessageAndReactionView =
     'chat.bsky.convo.defs#messageAndReactionView';
 
+/// `chat.bsky.convo.defs#messageBeforeUserJoinedGroupView`
+const chatBskyConvoDefsMessageBeforeUserJoinedGroupView =
+    'chat.bsky.convo.defs#messageBeforeUserJoinedGroupView';
+
 /// `chat.bsky.convo.defs#messageInput`
 const chatBskyConvoDefsMessageInput = 'chat.bsky.convo.defs#messageInput';
 
@@ -1264,6 +1294,9 @@ const chatBskyConvoDefsReactionView = 'chat.bsky.convo.defs#reactionView';
 /// `chat.bsky.convo.defs#reactionViewSender`
 const chatBskyConvoDefsReactionViewSender =
     'chat.bsky.convo.defs#reactionViewSender';
+
+/// `chat.bsky.convo.defs#replyRef`
+const chatBskyConvoDefsReplyRef = 'chat.bsky.convo.defs#replyRef';
 
 /// `chat.bsky.convo.defs#systemMessageDataAddMember`
 const chatBskyConvoDefsSystemMessageDataAddMember =
@@ -1344,6 +1377,9 @@ const chatBskyConvoGetLog = 'chat.bsky.convo.getLog';
 /// `chat.bsky.convo.getMessages`
 const chatBskyConvoGetMessages = 'chat.bsky.convo.getMessages';
 
+/// `chat.bsky.convo.getUnreadCounts`
+const chatBskyConvoGetUnreadCounts = 'chat.bsky.convo.getUnreadCounts';
+
 /// `chat.bsky.convo.leaveConvo`
 const chatBskyConvoLeaveConvo = 'chat.bsky.convo.leaveConvo';
 
@@ -1404,6 +1440,14 @@ const chatBskyGroupCreateJoinLink = 'chat.bsky.group.createJoinLink';
 
 /// `chat.bsky.group.defs`
 const chatBskyGroupDefs = 'chat.bsky.group.defs';
+
+/// `chat.bsky.group.defs#disabledJoinLinkPreviewView`
+const chatBskyGroupDefsDisabledJoinLinkPreviewView =
+    'chat.bsky.group.defs#disabledJoinLinkPreviewView';
+
+/// `chat.bsky.group.defs#invalidJoinLinkPreviewView`
+const chatBskyGroupDefsInvalidJoinLinkPreviewView =
+    'chat.bsky.group.defs#invalidJoinLinkPreviewView';
 
 /// `chat.bsky.group.defs#joinLinkPreviewView`
 const chatBskyGroupDefsJoinLinkPreviewView =
@@ -1553,6 +1597,25 @@ const chatBskyModerationSubscribeModEventsEventRateLimitExceeded =
 /// `chat.bsky.moderation.updateActorAccess`
 const chatBskyModerationUpdateActorAccess =
     'chat.bsky.moderation.updateActorAccess';
+
+/// `chat.bsky.notification.defs`
+const chatBskyNotificationDefs = 'chat.bsky.notification.defs';
+
+/// `chat.bsky.notification.defs#chatPreference`
+const chatBskyNotificationDefsChatPreference =
+    'chat.bsky.notification.defs#chatPreference';
+
+/// `chat.bsky.notification.defs#preferences`
+const chatBskyNotificationDefsPreferences =
+    'chat.bsky.notification.defs#preferences';
+
+/// `chat.bsky.notification.getPreferences`
+const chatBskyNotificationGetPreferences =
+    'chat.bsky.notification.getPreferences';
+
+/// `chat.bsky.notification.putPreferences`
+const chatBskyNotificationPutPreferences =
+    'chat.bsky.notification.putPreferences';
 
 /// `tools.ozone.communication.createTemplate`
 const toolsOzoneCommunicationCreateTemplate =
@@ -1960,6 +2023,9 @@ const toolsOzoneQueueUpdateQueue = 'tools.ozone.queue.updateQueue';
 /// `tools.ozone.report.assignModerator`
 const toolsOzoneReportAssignModerator = 'tools.ozone.report.assignModerator';
 
+/// `tools.ozone.report.closeReports`
+const toolsOzoneReportCloseReports = 'tools.ozone.report.closeReports';
+
 /// `tools.ozone.report.createActivity`
 const toolsOzoneReportCreateActivity = 'tools.ozone.report.createActivity';
 
@@ -2190,6 +2256,9 @@ const toolsOzoneReportGetReport = 'tools.ozone.report.getReport';
 
 /// `tools.ozone.report.listActivities`
 const toolsOzoneReportListActivities = 'tools.ozone.report.listActivities';
+
+/// `tools.ozone.report.queryActivities`
+const toolsOzoneReportQueryActivities = 'tools.ozone.report.queryActivities';
 
 /// `tools.ozone.report.queryReports`
 const toolsOzoneReportQueryReports = 'tools.ozone.report.queryReports';

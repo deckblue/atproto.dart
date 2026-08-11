@@ -26,14 +26,17 @@ mixin _$AccountView {
   String? get email => throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get relatedRecords =>
       throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   @InviteCodeConverter()
   InviteCode? get invitedBy => throw _privateConstructorUsedError;
   @InviteCodeConverter()
   List<InviteCode>? get invites => throw _privateConstructorUsedError;
   bool? get invitesDisabled => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get emailConfirmedAt => throw _privateConstructorUsedError;
   String? get inviteNote => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get deactivatedAt => throw _privateConstructorUsedError;
   @ThreatSignatureConverter()
   List<ThreatSignature>? get threatSignatures =>
@@ -62,13 +65,13 @@ abstract class $AccountViewCopyWith<$Res> {
       String handle,
       String? email,
       List<Map<String, dynamic>>? relatedRecords,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @InviteCodeConverter() InviteCode? invitedBy,
       @InviteCodeConverter() List<InviteCode>? invites,
       bool? invitesDisabled,
-      DateTime? emailConfirmedAt,
+      @JsonKey(toJson: iso8601) DateTime? emailConfirmedAt,
       String? inviteNote,
-      DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) DateTime? deactivatedAt,
       @ThreatSignatureConverter() List<ThreatSignature>? threatSignatures,
       Map<String, dynamic>? $unknown});
 
@@ -194,13 +197,13 @@ abstract class _$$AccountViewImplCopyWith<$Res>
       String handle,
       String? email,
       List<Map<String, dynamic>>? relatedRecords,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @InviteCodeConverter() InviteCode? invitedBy,
       @InviteCodeConverter() List<InviteCode>? invites,
       bool? invitesDisabled,
-      DateTime? emailConfirmedAt,
+      @JsonKey(toJson: iso8601) DateTime? emailConfirmedAt,
       String? inviteNote,
-      DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) DateTime? deactivatedAt,
       @ThreatSignatureConverter() List<ThreatSignature>? threatSignatures,
       Map<String, dynamic>? $unknown});
 
@@ -307,13 +310,13 @@ class _$AccountViewImpl implements _AccountView {
       required this.handle,
       this.email,
       final List<Map<String, dynamic>>? relatedRecords,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       @InviteCodeConverter() this.invitedBy,
       @InviteCodeConverter() final List<InviteCode>? invites,
       this.invitesDisabled,
-      this.emailConfirmedAt,
+      @JsonKey(toJson: iso8601) this.emailConfirmedAt,
       this.inviteNote,
-      this.deactivatedAt,
+      @JsonKey(toJson: iso8601) this.deactivatedAt,
       @ThreatSignatureConverter() final List<ThreatSignature>? threatSignatures,
       final Map<String, dynamic>? $unknown})
       : _relatedRecords = relatedRecords,
@@ -344,6 +347,7 @@ class _$AccountViewImpl implements _AccountView {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   @override
   @InviteCodeConverter()
@@ -362,10 +366,12 @@ class _$AccountViewImpl implements _AccountView {
   @override
   final bool? invitesDisabled;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? emailConfirmedAt;
   @override
   final String? inviteNote;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? deactivatedAt;
   final List<ThreatSignature>? _threatSignatures;
   @override
@@ -465,13 +471,13 @@ abstract class _AccountView implements AccountView {
       required final String handle,
       final String? email,
       final List<Map<String, dynamic>>? relatedRecords,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       @InviteCodeConverter() final InviteCode? invitedBy,
       @InviteCodeConverter() final List<InviteCode>? invites,
       final bool? invitesDisabled,
-      final DateTime? emailConfirmedAt,
+      @JsonKey(toJson: iso8601) final DateTime? emailConfirmedAt,
       final String? inviteNote,
-      final DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? deactivatedAt,
       @ThreatSignatureConverter() final List<ThreatSignature>? threatSignatures,
       final Map<String, dynamic>? $unknown}) = _$AccountViewImpl;
 
@@ -489,6 +495,7 @@ abstract class _AccountView implements AccountView {
   @override
   List<Map<String, dynamic>>? get relatedRecords;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   @InviteCodeConverter()
@@ -499,10 +506,12 @@ abstract class _AccountView implements AccountView {
   @override
   bool? get invitesDisabled;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get emailConfirmedAt;
   @override
   String? get inviteNote;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get deactivatedAt;
   @override
   @ThreatSignatureConverter()

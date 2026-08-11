@@ -12,7 +12,7 @@ import 'package:atproto_core/internals.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
-import './image.dart';
+import './union_main_items.dart';
 
 part 'main.freezed.dart';
 part 'main.g.dart';
@@ -28,7 +28,7 @@ abstract class EmbedGallery with _$EmbedGallery {
   @JsonSerializable(includeIfNull: false)
   const factory EmbedGallery({
     @Default('app.bsky.embed.gallery') String $type,
-    @EmbedGalleryImageConverter() required List<EmbedGalleryImage> items,
+    @UEmbedGalleryItemsConverter() required List<UEmbedGalleryItems> items,
     Map<String, dynamic>? $unknown,
   }) = _EmbedGallery;
 

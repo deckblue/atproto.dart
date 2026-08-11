@@ -33,6 +33,7 @@ mixin _$GraphVerificationRecord {
   String get displayName => throw _privateConstructorUsedError;
 
   /// Date of when the verification was created.
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -57,7 +58,7 @@ abstract class $GraphVerificationRecordCopyWith<$Res> {
       String subject,
       String handle,
       String displayName,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -127,7 +128,7 @@ abstract class _$$GraphVerificationRecordImplCopyWith<$Res>
       String subject,
       String handle,
       String displayName,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -191,7 +192,7 @@ class _$GraphVerificationRecordImpl implements _GraphVerificationRecord {
       required this.subject,
       required this.handle,
       required this.displayName,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -216,6 +217,7 @@ class _$GraphVerificationRecordImpl implements _GraphVerificationRecord {
 
   /// Date of when the verification was created.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -275,7 +277,7 @@ abstract class _GraphVerificationRecord implements GraphVerificationRecord {
       required final String subject,
       required final String handle,
       required final String displayName,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$GraphVerificationRecordImpl;
 
   factory _GraphVerificationRecord.fromJson(Map<String, dynamic> json) =
@@ -298,6 +300,7 @@ abstract class _GraphVerificationRecord implements GraphVerificationRecord {
 
   /// Date of when the verification was created.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

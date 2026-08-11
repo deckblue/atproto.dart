@@ -28,9 +28,11 @@ mixin _$EmbedExternalViewExternal {
   String? get thumb => throw _privateConstructorUsedError;
 
   /// When the external content was created, if available. Example: a publication date, for an article.
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// When the external content was updated, if available.
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   /// Estimated reading time in minutes, if applicable and available.
@@ -69,8 +71,8 @@ abstract class $EmbedExternalViewExternalCopyWith<$Res> {
       String title,
       String description,
       String? thumb,
-      DateTime? createdAt,
-      DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
       int? readingTime,
       @LabelConverter() List<Label>? labels,
       @EmbedExternalViewExternalSourceConverter()
@@ -199,8 +201,8 @@ abstract class _$$EmbedExternalViewExternalImplCopyWith<$Res>
       String title,
       String description,
       String? thumb,
-      DateTime? createdAt,
-      DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
       int? readingTime,
       @LabelConverter() List<Label>? labels,
       @EmbedExternalViewExternalSourceConverter()
@@ -309,8 +311,8 @@ class _$EmbedExternalViewExternalImpl implements _EmbedExternalViewExternal {
       required this.title,
       required this.description,
       this.thumb,
-      this.createdAt,
-      this.updatedAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
+      @JsonKey(toJson: iso8601) this.updatedAt,
       this.readingTime,
       @LabelConverter() final List<Label>? labels,
       @EmbedExternalViewExternalSourceConverter() this.source,
@@ -340,10 +342,12 @@ class _$EmbedExternalViewExternalImpl implements _EmbedExternalViewExternal {
 
   /// When the external content was created, if available. Example: a publication date, for an article.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
 
   /// When the external content was updated, if available.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? updatedAt;
 
   /// Estimated reading time in minutes, if applicable and available.
@@ -469,8 +473,8 @@ abstract class _EmbedExternalViewExternal implements EmbedExternalViewExternal {
       required final String title,
       required final String description,
       final String? thumb,
-      final DateTime? createdAt,
-      final DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? updatedAt,
       final int? readingTime,
       @LabelConverter() final List<Label>? labels,
       @EmbedExternalViewExternalSourceConverter()
@@ -496,10 +500,12 @@ abstract class _EmbedExternalViewExternal implements EmbedExternalViewExternal {
 
   /// When the external content was created, if available. Example: a publication date, for an article.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
 
   /// When the external content was updated, if available.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt;
 
   /// Estimated reading time in minutes, if applicable and available.

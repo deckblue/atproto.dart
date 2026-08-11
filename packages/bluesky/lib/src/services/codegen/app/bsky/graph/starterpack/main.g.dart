@@ -59,6 +59,6 @@ Map<String, dynamic> _$$GraphStarterpackRecordImplToJson(
       if (instance.feeds?.map(const FeedItemConverter().toJson).toList()
           case final value?)
         'feeds': value,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

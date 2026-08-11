@@ -32,6 +32,7 @@ mixin _$VerificationInput {
   String get displayName => throw _privateConstructorUsedError;
 
   /// Timestamp for verification record. Defaults to current time when not specified.
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -56,7 +57,7 @@ abstract class $VerificationInputCopyWith<$Res> {
       String subject,
       String handle,
       String displayName,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -124,7 +125,7 @@ abstract class _$$VerificationInputImplCopyWith<$Res>
       String subject,
       String handle,
       String displayName,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -187,7 +188,7 @@ class _$VerificationInputImpl implements _VerificationInput {
       required this.subject,
       required this.handle,
       required this.displayName,
-      this.createdAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -212,6 +213,7 @@ class _$VerificationInputImpl implements _VerificationInput {
 
   /// Timestamp for verification record. Defaults to current time when not specified.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -271,7 +273,7 @@ abstract class _VerificationInput implements VerificationInput {
       required final String subject,
       required final String handle,
       required final String displayName,
-      final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
       final Map<String, dynamic>? $unknown}) = _$VerificationInputImpl;
 
   factory _VerificationInput.fromJson(Map<String, dynamic> json) =
@@ -294,6 +296,7 @@ abstract class _VerificationInput implements VerificationInput {
 
   /// Timestamp for verification record. Defaults to current time when not specified.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

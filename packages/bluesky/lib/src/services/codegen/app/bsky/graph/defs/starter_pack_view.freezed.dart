@@ -37,6 +37,7 @@ mixin _$StarterPackView {
   int? get joinedAllTimeCount => throw _privateConstructorUsedError;
   @LabelConverter()
   List<Label>? get labels => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -68,7 +69,7 @@ abstract class $StarterPackViewCopyWith<$Res> {
       int? joinedWeekCount,
       int? joinedAllTimeCount,
       @LabelConverter() List<Label>? labels,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewBasicCopyWith<$Res> get creator;
@@ -205,7 +206,7 @@ abstract class _$$StarterPackViewImplCopyWith<$Res>
       int? joinedWeekCount,
       int? joinedAllTimeCount,
       @LabelConverter() List<Label>? labels,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -314,7 +315,7 @@ class _$StarterPackViewImpl implements _StarterPackView {
       this.joinedWeekCount,
       this.joinedAllTimeCount,
       @LabelConverter() final List<Label>? labels,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       final Map<String, dynamic>? $unknown})
       : _record = record,
         _listItemsSample = listItemsSample,
@@ -385,6 +386,7 @@ class _$StarterPackViewImpl implements _StarterPackView {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -473,7 +475,7 @@ abstract class _StarterPackView implements StarterPackView {
       final int? joinedWeekCount,
       final int? joinedAllTimeCount,
       @LabelConverter() final List<Label>? labels,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       final Map<String, dynamic>? $unknown}) = _$StarterPackViewImpl;
 
   factory _StarterPackView.fromJson(Map<String, dynamic> json) =
@@ -508,6 +510,7 @@ abstract class _StarterPackView implements StarterPackView {
   @LabelConverter()
   List<Label>? get labels;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   Map<String, dynamic>? get $unknown;

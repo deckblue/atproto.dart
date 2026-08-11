@@ -307,8 +307,10 @@ Future<XRPCResponse<AdminUpdateSubjectStatusOutput>>
           body: {
             ...?$unknown,
             'subject': subject.toJson(),
-            if (takedown != null) 'takedown': takedown.toJson(),
-            if (deactivated != null) 'deactivated': deactivated.toJson(),
+            if (takedown != null)
+              'takedown': const StatusAttrConverter().toJson(takedown),
+            if (deactivated != null)
+              'deactivated': const StatusAttrConverter().toJson(deactivated),
           },
           to: const AdminUpdateSubjectStatusOutputConverter().fromJson,
         );

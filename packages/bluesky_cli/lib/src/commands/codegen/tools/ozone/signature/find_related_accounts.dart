@@ -27,11 +27,11 @@ final class FindRelatedAccountsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get accounts that share some matching threat signatures with the root account.";
+      "Get accounts that share some matching threat signatures with the root account.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-signature find-related-accounts [did] [cursor] [limit]";
+      "bsky tools-ozone-signature find-related-accounts --did=<value> [--cursor=<value>] [--limit=<value>]";
 
   @override
   String get methodId => "tools.ozone.signature.findRelatedAccounts";
@@ -39,7 +39,8 @@ final class FindRelatedAccountsCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "did": argResults!["did"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        "limit": argResults!["limit"],
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
       };
 }

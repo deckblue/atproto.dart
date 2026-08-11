@@ -28,19 +28,20 @@ final class GetSuggestedOnboardingUsersCommand extends QueryCommand {
   final String name = "get-suggested-onboarding-users";
 
   @override
-  final String description = r"Get a list of suggested users for onboarding";
+  final String description = "Get a list of suggested users for onboarding";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced get-suggested-onboarding-users [category] [limit]";
+      "bsky app-bsky-unspecced get-suggested-onboarding-users [--category=<value>] [--limit=<value>]";
 
   @override
   String get methodId => "app.bsky.unspecced.getSuggestedOnboardingUsers";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["category"] != null)
+        if (argResults!.wasParsed("category"))
           "category": argResults!["category"],
-        "limit": argResults!["limit"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
       };
 }

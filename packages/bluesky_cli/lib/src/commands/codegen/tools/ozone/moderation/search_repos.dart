@@ -27,20 +27,21 @@ final class SearchReposCommand extends QueryCommand {
   final String name = "search-repos";
 
   @override
-  final String description = r"Find repositories based on a search term.";
+  final String description = "Find repositories based on a search term.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation search-repos [term] [q] [limit] [cursor]";
+      "bsky tools-ozone-moderation search-repos [--term=<value>] [--q=<value>] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "tools.ozone.moderation.searchRepos";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["term"] != null) "term": argResults!["term"],
-        if (argResults!["q"] != null) "q": argResults!["q"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("term")) "term": argResults!["term"],
+        if (argResults!.wasParsed("q")) "q": argResults!["q"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

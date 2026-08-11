@@ -21,6 +21,7 @@ LexString _$LexStringFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$LexString {
   String get type => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: LexStringFormat.unknown)
   LexStringFormat? get format => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'default')
@@ -52,6 +53,7 @@ abstract class $LexStringCopyWith<$Res> {
   @useResult
   $Res call(
       {String type,
+      @JsonKey(unknownEnumValue: LexStringFormat.unknown)
       LexStringFormat? format,
       String? description,
       @JsonKey(name: 'default') String? defaultValue,
@@ -150,6 +152,7 @@ abstract class _$$LexStringImplCopyWith<$Res>
   @useResult
   $Res call(
       {String type,
+      @JsonKey(unknownEnumValue: LexStringFormat.unknown)
       LexStringFormat? format,
       String? description,
       @JsonKey(name: 'default') String? defaultValue,
@@ -242,7 +245,7 @@ class __$$LexStringImplCopyWithImpl<$Res>
 class _$LexStringImpl implements _LexString {
   const _$LexStringImpl(
       {this.type = 'string',
-      this.format,
+      @JsonKey(unknownEnumValue: LexStringFormat.unknown) this.format,
       this.description,
       @JsonKey(name: 'default') this.defaultValue,
       this.minLength,
@@ -262,6 +265,7 @@ class _$LexStringImpl implements _LexString {
   @JsonKey()
   final String type;
   @override
+  @JsonKey(unknownEnumValue: LexStringFormat.unknown)
   final LexStringFormat? format;
   @override
   final String? description;
@@ -367,6 +371,7 @@ class _$LexStringImpl implements _LexString {
 abstract class _LexString implements LexString {
   const factory _LexString(
       {final String type,
+      @JsonKey(unknownEnumValue: LexStringFormat.unknown)
       final LexStringFormat? format,
       final String? description,
       @JsonKey(name: 'default') final String? defaultValue,
@@ -384,6 +389,7 @@ abstract class _LexString implements LexString {
   @override
   String get type;
   @override
+  @JsonKey(unknownEnumValue: LexStringFormat.unknown)
   LexStringFormat? get format;
   @override
   String? get description;

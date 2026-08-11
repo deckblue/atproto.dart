@@ -23,12 +23,15 @@ mixin _$SchedulingConfig {
   String get $type => throw _privateConstructorUsedError;
 
   /// Exact time to execute the action
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAt => throw _privateConstructorUsedError;
 
   /// Earliest time to execute the action (for randomized scheduling)
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAfter => throw _privateConstructorUsedError;
 
   /// Latest time to execute the action (for randomized scheduling)
+  @JsonKey(toJson: iso8601)
   DateTime? get executeUntil => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -50,9 +53,9 @@ abstract class $SchedulingConfigCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime? executeAt,
-      DateTime? executeAfter,
-      DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) DateTime? executeAt,
+      @JsonKey(toJson: iso8601) DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) DateTime? executeUntil,
       Map<String, dynamic>? $unknown});
 }
 
@@ -112,9 +115,9 @@ abstract class _$$SchedulingConfigImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime? executeAt,
-      DateTime? executeAfter,
-      DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) DateTime? executeAt,
+      @JsonKey(toJson: iso8601) DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) DateTime? executeUntil,
       Map<String, dynamic>? $unknown});
 }
 
@@ -168,9 +171,9 @@ class __$$SchedulingConfigImplCopyWithImpl<$Res>
 class _$SchedulingConfigImpl implements _SchedulingConfig {
   const _$SchedulingConfigImpl(
       {this.$type = 'tools.ozone.moderation.scheduleAction#schedulingConfig',
-      this.executeAt,
-      this.executeAfter,
-      this.executeUntil,
+      @JsonKey(toJson: iso8601) this.executeAt,
+      @JsonKey(toJson: iso8601) this.executeAfter,
+      @JsonKey(toJson: iso8601) this.executeUntil,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -183,14 +186,17 @@ class _$SchedulingConfigImpl implements _SchedulingConfig {
 
   /// Exact time to execute the action
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeAt;
 
   /// Earliest time to execute the action (for randomized scheduling)
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeAfter;
 
   /// Latest time to execute the action (for randomized scheduling)
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeUntil;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -247,9 +253,9 @@ class _$SchedulingConfigImpl implements _SchedulingConfig {
 abstract class _SchedulingConfig implements SchedulingConfig {
   const factory _SchedulingConfig(
       {final String $type,
-      final DateTime? executeAt,
-      final DateTime? executeAfter,
-      final DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) final DateTime? executeAt,
+      @JsonKey(toJson: iso8601) final DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) final DateTime? executeUntil,
       final Map<String, dynamic>? $unknown}) = _$SchedulingConfigImpl;
 
   factory _SchedulingConfig.fromJson(Map<String, dynamic> json) =
@@ -260,14 +266,17 @@ abstract class _SchedulingConfig implements SchedulingConfig {
 
   /// Exact time to execute the action
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAt;
 
   /// Earliest time to execute the action (for randomized scheduling)
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAfter;
 
   /// Latest time to execute the action (for randomized scheduling)
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeUntil;
   @override
   Map<String, dynamic>? get $unknown;

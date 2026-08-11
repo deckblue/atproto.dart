@@ -38,7 +38,9 @@ Future<XRPCResponse<VerificationGrantVerificationsOutput>>
           headers: {'Content-type': 'application/json', ...?$headers},
           body: {
             ...?$unknown,
-            'verifications': verifications.map((e) => e.toJson()).toList(),
+            'verifications': verifications
+                .map((e) => const VerificationInputConverter().toJson(e))
+                .toList(),
           },
           to: const VerificationGrantVerificationsOutputConverter().fromJson,
         );

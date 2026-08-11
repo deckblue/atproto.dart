@@ -40,6 +40,7 @@ mixin _$ModEventTakedown {
   int? get strikeCount => throw _privateConstructorUsedError;
 
   /// When the strike should expire. If not provided, the strike never expires.
+  @JsonKey(toJson: iso8601)
   DateTime? get strikeExpiresAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -69,7 +70,7 @@ abstract class $ModEventTakedownCopyWith<$Res> {
       @ModEventTakedownTargetServicesConverter()
       List<ModEventTakedownTargetServices>? targetServices,
       int? strikeCount,
-      DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) DateTime? strikeExpiresAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -162,7 +163,7 @@ abstract class _$$ModEventTakedownImplCopyWith<$Res>
       @ModEventTakedownTargetServicesConverter()
       List<ModEventTakedownTargetServices>? targetServices,
       int? strikeCount,
-      DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) DateTime? strikeExpiresAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -249,7 +250,7 @@ class _$ModEventTakedownImpl implements _ModEventTakedown {
       @ModEventTakedownTargetServicesConverter()
       final List<ModEventTakedownTargetServices>? targetServices,
       this.strikeCount,
-      this.strikeExpiresAt,
+      @JsonKey(toJson: iso8601) this.strikeExpiresAt,
       final Map<String, dynamic>? $unknown})
       : _policies = policies,
         _targetServices = targetServices,
@@ -301,6 +302,7 @@ class _$ModEventTakedownImpl implements _ModEventTakedown {
 
   /// When the strike should expire. If not provided, the strike never expires.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? strikeExpiresAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -385,7 +387,7 @@ abstract class _ModEventTakedown implements ModEventTakedown {
       @ModEventTakedownTargetServicesConverter()
       final List<ModEventTakedownTargetServices>? targetServices,
       final int? strikeCount,
-      final DateTime? strikeExpiresAt,
+      @JsonKey(toJson: iso8601) final DateTime? strikeExpiresAt,
       final Map<String, dynamic>? $unknown}) = _$ModEventTakedownImpl;
 
   factory _ModEventTakedown.fromJson(Map<String, dynamic> json) =
@@ -419,6 +421,7 @@ abstract class _ModEventTakedown implements ModEventTakedown {
 
   /// When the strike should expire. If not provided, the strike never expires.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get strikeExpiresAt;
   @override
   Map<String, dynamic>? get $unknown;

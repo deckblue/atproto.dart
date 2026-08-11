@@ -21,15 +21,13 @@ EmbedGalleryImage _$EmbedGalleryImageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EmbedGalleryImage {
   String get $type => throw _privateConstructorUsedError;
-
-  /// The raw image file. May be up to 2 MB, formerly limited to 1 MB.
   @BlobConverter()
   Blob get image => throw _privateConstructorUsedError;
 
   /// Alt text description of the image, for accessibility.
   String get alt => throw _privateConstructorUsedError;
   @AspectRatioConverter()
-  AspectRatio? get aspectRatio => throw _privateConstructorUsedError;
+  AspectRatio get aspectRatio => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this EmbedGalleryImage to a JSON map.
@@ -52,11 +50,11 @@ abstract class $EmbedGalleryImageCopyWith<$Res> {
       {String $type,
       @BlobConverter() Blob image,
       String alt,
-      @AspectRatioConverter() AspectRatio? aspectRatio,
+      @AspectRatioConverter() AspectRatio aspectRatio,
       Map<String, dynamic>? $unknown});
 
   $BlobCopyWith<$Res> get image;
-  $AspectRatioCopyWith<$Res>? get aspectRatio;
+  $AspectRatioCopyWith<$Res> get aspectRatio;
 }
 
 /// @nodoc
@@ -77,7 +75,7 @@ class _$EmbedGalleryImageCopyWithImpl<$Res, $Val extends EmbedGalleryImage>
     Object? $type = null,
     Object? image = null,
     Object? alt = null,
-    Object? aspectRatio = freezed,
+    Object? aspectRatio = null,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -93,10 +91,10 @@ class _$EmbedGalleryImageCopyWithImpl<$Res, $Val extends EmbedGalleryImage>
           ? _value.alt
           : alt // ignore: cast_nullable_to_non_nullable
               as String,
-      aspectRatio: freezed == aspectRatio
+      aspectRatio: null == aspectRatio
           ? _value.aspectRatio
           : aspectRatio // ignore: cast_nullable_to_non_nullable
-              as AspectRatio?,
+              as AspectRatio,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -118,12 +116,8 @@ class _$EmbedGalleryImageCopyWithImpl<$Res, $Val extends EmbedGalleryImage>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AspectRatioCopyWith<$Res>? get aspectRatio {
-    if (_value.aspectRatio == null) {
-      return null;
-    }
-
-    return $AspectRatioCopyWith<$Res>(_value.aspectRatio!, (value) {
+  $AspectRatioCopyWith<$Res> get aspectRatio {
+    return $AspectRatioCopyWith<$Res>(_value.aspectRatio, (value) {
       return _then(_value.copyWith(aspectRatio: value) as $Val);
     });
   }
@@ -141,13 +135,13 @@ abstract class _$$EmbedGalleryImageImplCopyWith<$Res>
       {String $type,
       @BlobConverter() Blob image,
       String alt,
-      @AspectRatioConverter() AspectRatio? aspectRatio,
+      @AspectRatioConverter() AspectRatio aspectRatio,
       Map<String, dynamic>? $unknown});
 
   @override
   $BlobCopyWith<$Res> get image;
   @override
-  $AspectRatioCopyWith<$Res>? get aspectRatio;
+  $AspectRatioCopyWith<$Res> get aspectRatio;
 }
 
 /// @nodoc
@@ -166,7 +160,7 @@ class __$$EmbedGalleryImageImplCopyWithImpl<$Res>
     Object? $type = null,
     Object? image = null,
     Object? alt = null,
-    Object? aspectRatio = freezed,
+    Object? aspectRatio = null,
     Object? $unknown = freezed,
   }) {
     return _then(_$EmbedGalleryImageImpl(
@@ -182,10 +176,10 @@ class __$$EmbedGalleryImageImplCopyWithImpl<$Res>
           ? _value.alt
           : alt // ignore: cast_nullable_to_non_nullable
               as String,
-      aspectRatio: freezed == aspectRatio
+      aspectRatio: null == aspectRatio
           ? _value.aspectRatio
           : aspectRatio // ignore: cast_nullable_to_non_nullable
-              as AspectRatio?,
+              as AspectRatio,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -202,7 +196,7 @@ class _$EmbedGalleryImageImpl implements _EmbedGalleryImage {
       {this.$type = 'app.bsky.embed.gallery#image',
       @BlobConverter() required this.image,
       required this.alt,
-      @AspectRatioConverter() this.aspectRatio,
+      @AspectRatioConverter() required this.aspectRatio,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -212,8 +206,6 @@ class _$EmbedGalleryImageImpl implements _EmbedGalleryImage {
   @override
   @JsonKey()
   final String $type;
-
-  /// The raw image file. May be up to 2 MB, formerly limited to 1 MB.
   @override
   @BlobConverter()
   final Blob image;
@@ -223,7 +215,7 @@ class _$EmbedGalleryImageImpl implements _EmbedGalleryImage {
   final String alt;
   @override
   @AspectRatioConverter()
-  final AspectRatio? aspectRatio;
+  final AspectRatio aspectRatio;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -279,7 +271,7 @@ abstract class _EmbedGalleryImage implements EmbedGalleryImage {
       {final String $type,
       @BlobConverter() required final Blob image,
       required final String alt,
-      @AspectRatioConverter() final AspectRatio? aspectRatio,
+      @AspectRatioConverter() required final AspectRatio aspectRatio,
       final Map<String, dynamic>? $unknown}) = _$EmbedGalleryImageImpl;
 
   factory _EmbedGalleryImage.fromJson(Map<String, dynamic> json) =
@@ -287,8 +279,6 @@ abstract class _EmbedGalleryImage implements EmbedGalleryImage {
 
   @override
   String get $type;
-
-  /// The raw image file. May be up to 2 MB, formerly limited to 1 MB.
   @override
   @BlobConverter()
   Blob get image;
@@ -298,7 +288,7 @@ abstract class _EmbedGalleryImage implements EmbedGalleryImage {
   String get alt;
   @override
   @AspectRatioConverter()
-  AspectRatio? get aspectRatio;
+  AspectRatio get aspectRatio;
   @override
   Map<String, dynamic>? get $unknown;
 

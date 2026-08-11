@@ -26,7 +26,7 @@ mixin _$UnspeccedSearchPostsSkeletonInput {
 
   /// Specifies the ranking order of results.
   @UnspeccedSearchPostsSkeletonSortConverter()
-  UnspeccedSearchPostsSkeletonSort? get sort =>
+  UnspeccedSearchPostsSkeletonSort get sort =>
       throw _privateConstructorUsedError;
 
   /// Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).
@@ -80,7 +80,7 @@ abstract class $UnspeccedSearchPostsSkeletonInputCopyWith<$Res> {
   $Res call(
       {String q,
       @UnspeccedSearchPostsSkeletonSortConverter()
-      UnspeccedSearchPostsSkeletonSort? sort,
+      UnspeccedSearchPostsSkeletonSort sort,
       String? since,
       String? until,
       String? mentions,
@@ -94,7 +94,7 @@ abstract class $UnspeccedSearchPostsSkeletonInputCopyWith<$Res> {
       String? cursor,
       Map<String, dynamic>? $unknown});
 
-  $UnspeccedSearchPostsSkeletonSortCopyWith<$Res>? get sort;
+  $UnspeccedSearchPostsSkeletonSortCopyWith<$Res> get sort;
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class _$UnspeccedSearchPostsSkeletonInputCopyWithImpl<$Res,
   @override
   $Res call({
     Object? q = null,
-    Object? sort = freezed,
+    Object? sort = null,
     Object? since = freezed,
     Object? until = freezed,
     Object? mentions = freezed,
@@ -133,10 +133,10 @@ class _$UnspeccedSearchPostsSkeletonInputCopyWithImpl<$Res,
           ? _value.q
           : q // ignore: cast_nullable_to_non_nullable
               as String,
-      sort: freezed == sort
+      sort: null == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as UnspeccedSearchPostsSkeletonSort?,
+              as UnspeccedSearchPostsSkeletonSort,
       since: freezed == since
           ? _value.since
           : since // ignore: cast_nullable_to_non_nullable
@@ -192,12 +192,8 @@ class _$UnspeccedSearchPostsSkeletonInputCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $UnspeccedSearchPostsSkeletonSortCopyWith<$Res>? get sort {
-    if (_value.sort == null) {
-      return null;
-    }
-
-    return $UnspeccedSearchPostsSkeletonSortCopyWith<$Res>(_value.sort!,
+  $UnspeccedSearchPostsSkeletonSortCopyWith<$Res> get sort {
+    return $UnspeccedSearchPostsSkeletonSortCopyWith<$Res>(_value.sort,
         (value) {
       return _then(_value.copyWith(sort: value) as $Val);
     });
@@ -216,7 +212,7 @@ abstract class _$$UnspeccedSearchPostsSkeletonInputImplCopyWith<$Res>
   $Res call(
       {String q,
       @UnspeccedSearchPostsSkeletonSortConverter()
-      UnspeccedSearchPostsSkeletonSort? sort,
+      UnspeccedSearchPostsSkeletonSort sort,
       String? since,
       String? until,
       String? mentions,
@@ -231,7 +227,7 @@ abstract class _$$UnspeccedSearchPostsSkeletonInputImplCopyWith<$Res>
       Map<String, dynamic>? $unknown});
 
   @override
-  $UnspeccedSearchPostsSkeletonSortCopyWith<$Res>? get sort;
+  $UnspeccedSearchPostsSkeletonSortCopyWith<$Res> get sort;
 }
 
 /// @nodoc
@@ -250,7 +246,7 @@ class __$$UnspeccedSearchPostsSkeletonInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? q = null,
-    Object? sort = freezed,
+    Object? sort = null,
     Object? since = freezed,
     Object? until = freezed,
     Object? mentions = freezed,
@@ -269,10 +265,10 @@ class __$$UnspeccedSearchPostsSkeletonInputImplCopyWithImpl<$Res>
           ? _value.q
           : q // ignore: cast_nullable_to_non_nullable
               as String,
-      sort: freezed == sort
+      sort: null == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as UnspeccedSearchPostsSkeletonSort?,
+              as UnspeccedSearchPostsSkeletonSort,
       since: freezed == since
           ? _value.since
           : since // ignore: cast_nullable_to_non_nullable
@@ -332,7 +328,9 @@ class _$UnspeccedSearchPostsSkeletonInputImpl
     implements _UnspeccedSearchPostsSkeletonInput {
   const _$UnspeccedSearchPostsSkeletonInputImpl(
       {required this.q,
-      @UnspeccedSearchPostsSkeletonSortConverter() this.sort,
+      @UnspeccedSearchPostsSkeletonSortConverter() this.sort =
+          const UnspeccedSearchPostsSkeletonSort.knownValue(
+              data: KnownUnspeccedSearchPostsSkeletonSort.latest),
       this.since,
       this.until,
       this.mentions,
@@ -358,8 +356,9 @@ class _$UnspeccedSearchPostsSkeletonInputImpl
 
   /// Specifies the ranking order of results.
   @override
+  @JsonKey()
   @UnspeccedSearchPostsSkeletonSortConverter()
-  final UnspeccedSearchPostsSkeletonSort? sort;
+  final UnspeccedSearchPostsSkeletonSort sort;
 
   /// Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).
   @override
@@ -487,7 +486,7 @@ abstract class _UnspeccedSearchPostsSkeletonInput
   const factory _UnspeccedSearchPostsSkeletonInput(
           {required final String q,
           @UnspeccedSearchPostsSkeletonSortConverter()
-          final UnspeccedSearchPostsSkeletonSort? sort,
+          final UnspeccedSearchPostsSkeletonSort sort,
           final String? since,
           final String? until,
           final String? mentions,
@@ -513,7 +512,7 @@ abstract class _UnspeccedSearchPostsSkeletonInput
   /// Specifies the ranking order of results.
   @override
   @UnspeccedSearchPostsSkeletonSortConverter()
-  UnspeccedSearchPostsSkeletonSort? get sort;
+  UnspeccedSearchPostsSkeletonSort get sort;
 
   /// Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).
   @override

@@ -27,6 +27,7 @@ mixin _$FeedThreadgateRecord {
   AtUri get post => throw _privateConstructorUsedError;
   @UFeedThreadgateAllowConverter()
   List<UFeedThreadgateAllow>? get allow => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @AtUriConverter()
   List<AtUri>? get hiddenReplies => throw _privateConstructorUsedError;
@@ -52,7 +53,7 @@ abstract class $FeedThreadgateRecordCopyWith<$Res> {
       {String $type,
       @AtUriConverter() AtUri post,
       @UFeedThreadgateAllowConverter() List<UFeedThreadgateAllow>? allow,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @AtUriConverter() List<AtUri>? hiddenReplies,
       Map<String, dynamic>? $unknown});
 }
@@ -121,7 +122,7 @@ abstract class _$$FeedThreadgateRecordImplCopyWith<$Res>
       {String $type,
       @AtUriConverter() AtUri post,
       @UFeedThreadgateAllowConverter() List<UFeedThreadgateAllow>? allow,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @AtUriConverter() List<AtUri>? hiddenReplies,
       Map<String, dynamic>? $unknown});
 }
@@ -183,7 +184,7 @@ class _$FeedThreadgateRecordImpl implements _FeedThreadgateRecord {
       {this.$type = 'app.bsky.feed.threadgate',
       @AtUriConverter() required this.post,
       @UFeedThreadgateAllowConverter() final List<UFeedThreadgateAllow>? allow,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @AtUriConverter() final List<AtUri>? hiddenReplies,
       final Map<String, dynamic>? $unknown})
       : _allow = allow,
@@ -213,6 +214,7 @@ class _$FeedThreadgateRecordImpl implements _FeedThreadgateRecord {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final List<AtUri>? _hiddenReplies;
   @override
@@ -289,7 +291,7 @@ abstract class _FeedThreadgateRecord implements FeedThreadgateRecord {
       {final String $type,
       @AtUriConverter() required final AtUri post,
       @UFeedThreadgateAllowConverter() final List<UFeedThreadgateAllow>? allow,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @AtUriConverter() final List<AtUri>? hiddenReplies,
       final Map<String, dynamic>? $unknown}) = _$FeedThreadgateRecordImpl;
 
@@ -307,6 +309,7 @@ abstract class _FeedThreadgateRecord implements FeedThreadgateRecord {
   @UFeedThreadgateAllowConverter()
   List<UFeedThreadgateAllow>? get allow;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @AtUriConverter()

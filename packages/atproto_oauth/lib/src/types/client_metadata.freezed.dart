@@ -26,8 +26,6 @@ mixin _$OAuthClientMetadata {
   String get clientUri => throw _privateConstructorUsedError;
   bool get dpopBoundAccessTokens => throw _privateConstructorUsedError;
   List<String> get grantTypes => throw _privateConstructorUsedError;
-  @JsonKey(name: 'redirect_uris_OLD')
-  List<String> get redirectUrisOLD => throw _privateConstructorUsedError;
   List<String> get redirectUris => throw _privateConstructorUsedError;
   List<String> get responseTypes => throw _privateConstructorUsedError;
   String get scope => throw _privateConstructorUsedError;
@@ -56,7 +54,6 @@ abstract class $OAuthClientMetadataCopyWith<$Res> {
       String clientUri,
       bool dpopBoundAccessTokens,
       List<String> grantTypes,
-      @JsonKey(name: 'redirect_uris_OLD') List<String> redirectUrisOLD,
       List<String> redirectUris,
       List<String> responseTypes,
       String scope,
@@ -84,7 +81,6 @@ class _$OAuthClientMetadataCopyWithImpl<$Res, $Val extends OAuthClientMetadata>
     Object? clientUri = null,
     Object? dpopBoundAccessTokens = null,
     Object? grantTypes = null,
-    Object? redirectUrisOLD = null,
     Object? redirectUris = null,
     Object? responseTypes = null,
     Object? scope = null,
@@ -114,10 +110,6 @@ class _$OAuthClientMetadataCopyWithImpl<$Res, $Val extends OAuthClientMetadata>
       grantTypes: null == grantTypes
           ? _value.grantTypes
           : grantTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      redirectUrisOLD: null == redirectUrisOLD
-          ? _value.redirectUrisOLD
-          : redirectUrisOLD // ignore: cast_nullable_to_non_nullable
               as List<String>,
       redirectUris: null == redirectUris
           ? _value.redirectUris
@@ -154,7 +146,6 @@ abstract class _$$OAuthClientMetadataImplCopyWith<$Res>
       String clientUri,
       bool dpopBoundAccessTokens,
       List<String> grantTypes,
-      @JsonKey(name: 'redirect_uris_OLD') List<String> redirectUrisOLD,
       List<String> redirectUris,
       List<String> responseTypes,
       String scope,
@@ -180,7 +171,6 @@ class __$$OAuthClientMetadataImplCopyWithImpl<$Res>
     Object? clientUri = null,
     Object? dpopBoundAccessTokens = null,
     Object? grantTypes = null,
-    Object? redirectUrisOLD = null,
     Object? redirectUris = null,
     Object? responseTypes = null,
     Object? scope = null,
@@ -210,10 +200,6 @@ class __$$OAuthClientMetadataImplCopyWithImpl<$Res>
       grantTypes: null == grantTypes
           ? _value._grantTypes
           : grantTypes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      redirectUrisOLD: null == redirectUrisOLD
-          ? _value._redirectUrisOLD
-          : redirectUrisOLD // ignore: cast_nullable_to_non_nullable
               as List<String>,
       redirectUris: null == redirectUris
           ? _value._redirectUris
@@ -246,14 +232,11 @@ class _$OAuthClientMetadataImpl implements _OAuthClientMetadata {
       required this.clientUri,
       this.dpopBoundAccessTokens = true,
       final List<String> grantTypes = const [],
-      @JsonKey(name: 'redirect_uris_OLD')
-      final List<String> redirectUrisOLD = const [],
       final List<String> redirectUris = const [],
       final List<String> responseTypes = const [],
       required this.scope,
       required this.tokenEndpointAuthMethod})
       : _grantTypes = grantTypes,
-        _redirectUrisOLD = redirectUrisOLD,
         _redirectUris = redirectUris,
         _responseTypes = responseTypes;
 
@@ -278,15 +261,6 @@ class _$OAuthClientMetadataImpl implements _OAuthClientMetadata {
     if (_grantTypes is EqualUnmodifiableListView) return _grantTypes;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_grantTypes);
-  }
-
-  final List<String> _redirectUrisOLD;
-  @override
-  @JsonKey(name: 'redirect_uris_OLD')
-  List<String> get redirectUrisOLD {
-    if (_redirectUrisOLD is EqualUnmodifiableListView) return _redirectUrisOLD;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_redirectUrisOLD);
   }
 
   final List<String> _redirectUris;
@@ -314,7 +288,7 @@ class _$OAuthClientMetadataImpl implements _OAuthClientMetadata {
 
   @override
   String toString() {
-    return 'OAuthClientMetadata(clientId: $clientId, applicationType: $applicationType, clientName: $clientName, clientUri: $clientUri, dpopBoundAccessTokens: $dpopBoundAccessTokens, grantTypes: $grantTypes, redirectUrisOLD: $redirectUrisOLD, redirectUris: $redirectUris, responseTypes: $responseTypes, scope: $scope, tokenEndpointAuthMethod: $tokenEndpointAuthMethod)';
+    return 'OAuthClientMetadata(clientId: $clientId, applicationType: $applicationType, clientName: $clientName, clientUri: $clientUri, dpopBoundAccessTokens: $dpopBoundAccessTokens, grantTypes: $grantTypes, redirectUris: $redirectUris, responseTypes: $responseTypes, scope: $scope, tokenEndpointAuthMethod: $tokenEndpointAuthMethod)';
   }
 
   @override
@@ -335,8 +309,6 @@ class _$OAuthClientMetadataImpl implements _OAuthClientMetadata {
             const DeepCollectionEquality()
                 .equals(other._grantTypes, _grantTypes) &&
             const DeepCollectionEquality()
-                .equals(other._redirectUrisOLD, _redirectUrisOLD) &&
-            const DeepCollectionEquality()
                 .equals(other._redirectUris, _redirectUris) &&
             const DeepCollectionEquality()
                 .equals(other._responseTypes, _responseTypes) &&
@@ -356,7 +328,6 @@ class _$OAuthClientMetadataImpl implements _OAuthClientMetadata {
       clientUri,
       dpopBoundAccessTokens,
       const DeepCollectionEquality().hash(_grantTypes),
-      const DeepCollectionEquality().hash(_redirectUrisOLD),
       const DeepCollectionEquality().hash(_redirectUris),
       const DeepCollectionEquality().hash(_responseTypes),
       scope,
@@ -381,18 +352,17 @@ class _$OAuthClientMetadataImpl implements _OAuthClientMetadata {
 
 abstract class _OAuthClientMetadata implements OAuthClientMetadata {
   const factory _OAuthClientMetadata(
-      {required final String clientId,
-      required final String applicationType,
-      required final String clientName,
-      required final String clientUri,
-      final bool dpopBoundAccessTokens,
-      final List<String> grantTypes,
-      @JsonKey(name: 'redirect_uris_OLD') final List<String> redirectUrisOLD,
-      final List<String> redirectUris,
-      final List<String> responseTypes,
-      required final String scope,
-      required final String
-          tokenEndpointAuthMethod}) = _$OAuthClientMetadataImpl;
+          {required final String clientId,
+          required final String applicationType,
+          required final String clientName,
+          required final String clientUri,
+          final bool dpopBoundAccessTokens,
+          final List<String> grantTypes,
+          final List<String> redirectUris,
+          final List<String> responseTypes,
+          required final String scope,
+          required final String tokenEndpointAuthMethod}) =
+      _$OAuthClientMetadataImpl;
 
   factory _OAuthClientMetadata.fromJson(Map<String, dynamic> json) =
       _$OAuthClientMetadataImpl.fromJson;
@@ -409,9 +379,6 @@ abstract class _OAuthClientMetadata implements OAuthClientMetadata {
   bool get dpopBoundAccessTokens;
   @override
   List<String> get grantTypes;
-  @override
-  @JsonKey(name: 'redirect_uris_OLD')
-  List<String> get redirectUrisOLD;
   @override
   List<String> get redirectUris;
   @override

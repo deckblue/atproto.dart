@@ -50,7 +50,7 @@ Map<String, dynamic> _$$TemplateViewImplToJson(_$TemplateViewImpl instance) =>
       'disabled': instance.disabled,
       if (instance.lang case final value?) 'lang': value,
       'lastUpdatedBy': instance.lastUpdatedBy,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
+      'updatedAt': iso8601(instance.updatedAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

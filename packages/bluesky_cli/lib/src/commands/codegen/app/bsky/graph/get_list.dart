@@ -31,11 +31,11 @@ final class GetListCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Gets a 'view' (with additional context) of a specified list.";
+      "Gets a 'view' (with additional context) of a specified list.";
 
   @override
   final String invocation =
-      "bsky app-bsky-graph get-list [list] [limit] [cursor]";
+      "bsky app-bsky-graph get-list --list=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.graph.getList";
@@ -43,7 +43,8 @@ final class GetListCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "list": argResults!["list"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

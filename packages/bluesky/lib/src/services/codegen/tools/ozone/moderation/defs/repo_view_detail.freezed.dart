@@ -26,6 +26,7 @@ mixin _$RepoViewDetail {
   String? get email => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get relatedRecords =>
       throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   @ModerationDetailConverter()
   ModerationDetail get moderation => throw _privateConstructorUsedError;
@@ -37,7 +38,9 @@ mixin _$RepoViewDetail {
   List<InviteCode>? get invites => throw _privateConstructorUsedError;
   bool? get invitesDisabled => throw _privateConstructorUsedError;
   String? get inviteNote => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get emailConfirmedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get deactivatedAt => throw _privateConstructorUsedError;
   @ThreatSignatureConverter()
   List<ThreatSignature>? get threatSignatures =>
@@ -66,15 +69,15 @@ abstract class $RepoViewDetailCopyWith<$Res> {
       String handle,
       String? email,
       List<Map<String, dynamic>> relatedRecords,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @ModerationDetailConverter() ModerationDetail moderation,
       @LabelConverter() List<Label>? labels,
       @InviteCodeConverter() InviteCode? invitedBy,
       @InviteCodeConverter() List<InviteCode>? invites,
       bool? invitesDisabled,
       String? inviteNote,
-      DateTime? emailConfirmedAt,
-      DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) DateTime? emailConfirmedAt,
+      @JsonKey(toJson: iso8601) DateTime? deactivatedAt,
       @ThreatSignatureConverter() List<ThreatSignature>? threatSignatures,
       Map<String, dynamic>? $unknown});
 
@@ -221,15 +224,15 @@ abstract class _$$RepoViewDetailImplCopyWith<$Res>
       String handle,
       String? email,
       List<Map<String, dynamic>> relatedRecords,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @ModerationDetailConverter() ModerationDetail moderation,
       @LabelConverter() List<Label>? labels,
       @InviteCodeConverter() InviteCode? invitedBy,
       @InviteCodeConverter() List<InviteCode>? invites,
       bool? invitesDisabled,
       String? inviteNote,
-      DateTime? emailConfirmedAt,
-      DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) DateTime? emailConfirmedAt,
+      @JsonKey(toJson: iso8601) DateTime? deactivatedAt,
       @ThreatSignatureConverter() List<ThreatSignature>? threatSignatures,
       Map<String, dynamic>? $unknown});
 
@@ -348,15 +351,15 @@ class _$RepoViewDetailImpl implements _RepoViewDetail {
       required this.handle,
       this.email,
       required final List<Map<String, dynamic>> relatedRecords,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       @ModerationDetailConverter() required this.moderation,
       @LabelConverter() final List<Label>? labels,
       @InviteCodeConverter() this.invitedBy,
       @InviteCodeConverter() final List<InviteCode>? invites,
       this.invitesDisabled,
       this.inviteNote,
-      this.emailConfirmedAt,
-      this.deactivatedAt,
+      @JsonKey(toJson: iso8601) this.emailConfirmedAt,
+      @JsonKey(toJson: iso8601) this.deactivatedAt,
       @ThreatSignatureConverter() final List<ThreatSignature>? threatSignatures,
       final Map<String, dynamic>? $unknown})
       : _relatedRecords = relatedRecords,
@@ -386,6 +389,7 @@ class _$RepoViewDetailImpl implements _RepoViewDetail {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   @override
   @ModerationDetailConverter()
@@ -420,8 +424,10 @@ class _$RepoViewDetailImpl implements _RepoViewDetail {
   @override
   final String? inviteNote;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? emailConfirmedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? deactivatedAt;
   final List<ThreatSignature>? _threatSignatures;
   @override
@@ -527,15 +533,15 @@ abstract class _RepoViewDetail implements RepoViewDetail {
       required final String handle,
       final String? email,
       required final List<Map<String, dynamic>> relatedRecords,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       @ModerationDetailConverter() required final ModerationDetail moderation,
       @LabelConverter() final List<Label>? labels,
       @InviteCodeConverter() final InviteCode? invitedBy,
       @InviteCodeConverter() final List<InviteCode>? invites,
       final bool? invitesDisabled,
       final String? inviteNote,
-      final DateTime? emailConfirmedAt,
-      final DateTime? deactivatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? emailConfirmedAt,
+      @JsonKey(toJson: iso8601) final DateTime? deactivatedAt,
       @ThreatSignatureConverter() final List<ThreatSignature>? threatSignatures,
       final Map<String, dynamic>? $unknown}) = _$RepoViewDetailImpl;
 
@@ -553,6 +559,7 @@ abstract class _RepoViewDetail implements RepoViewDetail {
   @override
   List<Map<String, dynamic>> get relatedRecords;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   @ModerationDetailConverter()
@@ -571,8 +578,10 @@ abstract class _RepoViewDetail implements RepoViewDetail {
   @override
   String? get inviteNote;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get emailConfirmedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get deactivatedAt;
   @override
   @ThreatSignatureConverter()

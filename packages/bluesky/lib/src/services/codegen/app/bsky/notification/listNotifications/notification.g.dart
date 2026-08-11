@@ -33,6 +33,11 @@ _$NotificationImpl _$$NotificationImplFromJson(Map json) => $checkedCreate(
                   v, const AtUriConverter().fromJson)),
           record: $checkedConvert(
               'record', (v) => Map<String, dynamic>.from(v as Map)),
+          starterPack: $checkedConvert(
+              'starterPack',
+              (v) => _$JsonConverterFromJson<Map<String, dynamic>,
+                      StarterPackViewBasic>(
+                  v, const StarterPackViewBasicConverter().fromJson)),
           isRead: $checkedConvert('isRead', (v) => v as bool),
           indexedAt:
               $checkedConvert('indexedAt', (v) => DateTime.parse(v as String)),
@@ -64,8 +69,13 @@ Map<String, dynamic> _$$NotificationImplToJson(_$NotificationImpl instance) =>
           case final value?)
         'reasonSubject': value,
       'record': instance.record,
+      if (_$JsonConverterToJson<Map<String, dynamic>, StarterPackViewBasic>(
+              instance.starterPack,
+              const StarterPackViewBasicConverter().toJson)
+          case final value?)
+        'starterPack': value,
       'isRead': instance.isRead,
-      'indexedAt': instance.indexedAt.toIso8601String(),
+      'indexedAt': iso8601(instance.indexedAt),
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)
         'labels': value,

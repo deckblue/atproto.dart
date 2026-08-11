@@ -21,8 +21,8 @@ EmbedGallery _$EmbedGalleryFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EmbedGallery {
   String get $type => throw _privateConstructorUsedError;
-  @EmbedGalleryImageConverter()
-  List<EmbedGalleryImage> get items => throw _privateConstructorUsedError;
+  @UEmbedGalleryItemsConverter()
+  List<UEmbedGalleryItems> get items => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this EmbedGallery to a JSON map.
@@ -43,7 +43,7 @@ abstract class $EmbedGalleryCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      @EmbedGalleryImageConverter() List<EmbedGalleryImage> items,
+      @UEmbedGalleryItemsConverter() List<UEmbedGalleryItems> items,
       Map<String, dynamic>? $unknown});
 }
 
@@ -74,7 +74,7 @@ class _$EmbedGalleryCopyWithImpl<$Res, $Val extends EmbedGallery>
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<EmbedGalleryImage>,
+              as List<UEmbedGalleryItems>,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -93,7 +93,7 @@ abstract class _$$EmbedGalleryImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      @EmbedGalleryImageConverter() List<EmbedGalleryImage> items,
+      @UEmbedGalleryItemsConverter() List<UEmbedGalleryItems> items,
       Map<String, dynamic>? $unknown});
 }
 
@@ -122,7 +122,7 @@ class __$$EmbedGalleryImplCopyWithImpl<$Res>
       items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<EmbedGalleryImage>,
+              as List<UEmbedGalleryItems>,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -137,8 +137,8 @@ class __$$EmbedGalleryImplCopyWithImpl<$Res>
 class _$EmbedGalleryImpl implements _EmbedGallery {
   const _$EmbedGalleryImpl(
       {this.$type = 'app.bsky.embed.gallery',
-      @EmbedGalleryImageConverter()
-      required final List<EmbedGalleryImage> items,
+      @UEmbedGalleryItemsConverter()
+      required final List<UEmbedGalleryItems> items,
       final Map<String, dynamic>? $unknown})
       : _items = items,
         _$unknown = $unknown;
@@ -149,10 +149,10 @@ class _$EmbedGalleryImpl implements _EmbedGallery {
   @override
   @JsonKey()
   final String $type;
-  final List<EmbedGalleryImage> _items;
+  final List<UEmbedGalleryItems> _items;
   @override
-  @EmbedGalleryImageConverter()
-  List<EmbedGalleryImage> get items {
+  @UEmbedGalleryItemsConverter()
+  List<UEmbedGalleryItems> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_items);
@@ -210,8 +210,8 @@ class _$EmbedGalleryImpl implements _EmbedGallery {
 abstract class _EmbedGallery implements EmbedGallery {
   const factory _EmbedGallery(
       {final String $type,
-      @EmbedGalleryImageConverter()
-      required final List<EmbedGalleryImage> items,
+      @UEmbedGalleryItemsConverter()
+      required final List<UEmbedGalleryItems> items,
       final Map<String, dynamic>? $unknown}) = _$EmbedGalleryImpl;
 
   factory _EmbedGallery.fromJson(Map<String, dynamic> json) =
@@ -220,8 +220,8 @@ abstract class _EmbedGallery implements EmbedGallery {
   @override
   String get $type;
   @override
-  @EmbedGalleryImageConverter()
-  List<EmbedGalleryImage> get items;
+  @UEmbedGalleryItemsConverter()
+  List<UEmbedGalleryItems> get items;
   @override
   Map<String, dynamic>? get $unknown;
 

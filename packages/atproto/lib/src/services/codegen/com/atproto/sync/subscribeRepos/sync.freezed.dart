@@ -35,6 +35,7 @@ mixin _$Sync {
   String get rev => throw _privateConstructorUsedError;
 
   /// Timestamp of when this message was originally broadcast.
+  @JsonKey(toJson: iso8601)
   DateTime get time => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -58,7 +59,7 @@ abstract class $SyncCopyWith<$Res> {
       String did,
       Map<String, dynamic> blocks,
       String rev,
-      DateTime time,
+      @JsonKey(toJson: iso8601) DateTime time,
       Map<String, dynamic>? $unknown});
 }
 
@@ -131,7 +132,7 @@ abstract class _$$SyncImplCopyWith<$Res> implements $SyncCopyWith<$Res> {
       String did,
       Map<String, dynamic> blocks,
       String rev,
-      DateTime time,
+      @JsonKey(toJson: iso8601) DateTime time,
       Map<String, dynamic>? $unknown});
 }
 
@@ -198,7 +199,7 @@ class _$SyncImpl implements _Sync {
       required this.did,
       required final Map<String, dynamic> blocks,
       required this.rev,
-      required this.time,
+      @JsonKey(toJson: iso8601) required this.time,
       final Map<String, dynamic>? $unknown})
       : _blocks = blocks,
         _$unknown = $unknown;
@@ -235,6 +236,7 @@ class _$SyncImpl implements _Sync {
 
   /// Timestamp of when this message was originally broadcast.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime time;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -300,7 +302,7 @@ abstract class _Sync implements Sync {
       required final String did,
       required final Map<String, dynamic> blocks,
       required final String rev,
-      required final DateTime time,
+      @JsonKey(toJson: iso8601) required final DateTime time,
       final Map<String, dynamic>? $unknown}) = _$SyncImpl;
 
   factory _Sync.fromJson(Map<String, dynamic> json) = _$SyncImpl.fromJson;
@@ -326,6 +328,7 @@ abstract class _Sync implements Sync {
 
   /// Timestamp of when this message was originally broadcast.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get time;
   @override
   Map<String, dynamic>? get $unknown;

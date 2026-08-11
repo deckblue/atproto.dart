@@ -127,6 +127,18 @@ const appBskyEmbedExternalViewExternalSourceTheme = NSID(
   ids.appBskyEmbedExternalViewExternalSourceTheme,
 );
 
+/// `app.bsky.embed.gallery`
+const appBskyEmbedGallery = NSID(ids.appBskyEmbedGallery);
+
+/// `app.bsky.embed.gallery#image`
+const appBskyEmbedGalleryImage = NSID(ids.appBskyEmbedGalleryImage);
+
+/// `app.bsky.embed.gallery#view`
+const appBskyEmbedGalleryView = NSID(ids.appBskyEmbedGalleryView);
+
+/// `app.bsky.embed.gallery#viewImage`
+const appBskyEmbedGalleryViewImage = NSID(ids.appBskyEmbedGalleryViewImage);
+
 /// `app.bsky.embed.getEmbedExternalView`
 const appBskyEmbedGetEmbedExternalView = NSID(
   ids.appBskyEmbedGetEmbedExternalView,
@@ -272,6 +284,9 @@ const appBskyFeedRepost = NSID(ids.appBskyFeedRepost);
 /// `app.bsky.feed.searchPosts`
 const appBskyFeedSearchPosts = NSID(ids.appBskyFeedSearchPosts);
 
+/// `app.bsky.feed.searchPostsV2`
+const appBskyFeedSearchPostsV2 = NSID(ids.appBskyFeedSearchPostsV2);
+
 /// `app.bsky.feed.sendInteractions`
 const appBskyFeedSendInteractions = NSID(ids.appBskyFeedSendInteractions);
 
@@ -388,6 +403,11 @@ const appBskyGraphMuteThread = NSID(ids.appBskyGraphMuteThread);
 
 /// `app.bsky.graph.searchStarterPacks`
 const appBskyGraphSearchStarterPacks = NSID(ids.appBskyGraphSearchStarterPacks);
+
+/// `app.bsky.graph.searchStarterPacksV2`
+const appBskyGraphSearchStarterPacksV2 = NSID(
+  ids.appBskyGraphSearchStarterPacksV2,
+);
 
 /// `app.bsky.graph.starterpack`
 const appBskyGraphStarterpack = NSID(ids.appBskyGraphStarterpack);
@@ -706,6 +726,9 @@ const chatBskyConvoGetLog = NSID(ids.chatBskyConvoGetLog);
 /// `chat.bsky.convo.getMessages`
 const chatBskyConvoGetMessages = NSID(ids.chatBskyConvoGetMessages);
 
+/// `chat.bsky.convo.getUnreadCounts`
+const chatBskyConvoGetUnreadCounts = NSID(ids.chatBskyConvoGetUnreadCounts);
+
 /// `chat.bsky.convo.leaveConvo`
 const chatBskyConvoLeaveConvo = NSID(ids.chatBskyConvoLeaveConvo);
 
@@ -902,6 +925,16 @@ const chatBskyModerationUpdateActorAccess = NSID(
   ids.chatBskyModerationUpdateActorAccess,
 );
 
+/// `chat.bsky.notification.getPreferences`
+const chatBskyNotificationGetPreferences = NSID(
+  ids.chatBskyNotificationGetPreferences,
+);
+
+/// `chat.bsky.notification.putPreferences`
+const chatBskyNotificationPutPreferences = NSID(
+  ids.chatBskyNotificationPutPreferences,
+);
+
 /// `tools.ozone.communication.createTemplate`
 const toolsOzoneCommunicationCreateTemplate = NSID(
   ids.toolsOzoneCommunicationCreateTemplate,
@@ -1096,6 +1129,9 @@ const toolsOzoneReportAssignModerator = NSID(
   ids.toolsOzoneReportAssignModerator,
 );
 
+/// `tools.ozone.report.closeReports`
+const toolsOzoneReportCloseReports = NSID(ids.toolsOzoneReportCloseReports);
+
 /// `tools.ozone.report.createActivity`
 const toolsOzoneReportCreateActivity = NSID(ids.toolsOzoneReportCreateActivity);
 
@@ -1120,6 +1156,11 @@ const toolsOzoneReportGetReport = NSID(ids.toolsOzoneReportGetReport);
 
 /// `tools.ozone.report.listActivities`
 const toolsOzoneReportListActivities = NSID(ids.toolsOzoneReportListActivities);
+
+/// `tools.ozone.report.queryActivities`
+const toolsOzoneReportQueryActivities = NSID(
+  ids.toolsOzoneReportQueryActivities,
+);
 
 /// `tools.ozone.report.queryReports`
 const toolsOzoneReportQueryReports = NSID(ids.toolsOzoneReportQueryReports);

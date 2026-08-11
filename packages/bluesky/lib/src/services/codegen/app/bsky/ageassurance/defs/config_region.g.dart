@@ -15,10 +15,23 @@ _$ConfigRegionImpl _$$ConfigRegionImplFromJson(Map json) => $checkedCreate(
         final val = _$ConfigRegionImpl(
           $type: $checkedConvert(r'$type',
               (v) => v as String? ?? 'app.bsky.ageassurance.defs#configRegion'),
+          platforms: $checkedConvert(
+              'platforms',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => const ConfigRegionPlatformsConverter()
+                      .fromJson(e as String))
+                  .toList()),
           countryCode: $checkedConvert('countryCode', (v) => v as String),
           regionCode: $checkedConvert('regionCode', (v) => v as String?),
           minAccessAge:
               $checkedConvert('minAccessAge', (v) => (v as num).toInt()),
+          additionalVerificationMethods: $checkedConvert(
+              'additionalVerificationMethods',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) =>
+                      const ConfigRegionAdditionalVerificationMethodsConverter()
+                          .fromJson(e as String))
+                  .toList()),
           rules: $checkedConvert(
               'rules',
               (v) => (v as List<dynamic>)
@@ -38,9 +51,20 @@ _$ConfigRegionImpl _$$ConfigRegionImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$ConfigRegionImplToJson(_$ConfigRegionImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
+      if (instance.platforms
+              ?.map(const ConfigRegionPlatformsConverter().toJson)
+              .toList()
+          case final value?)
+        'platforms': value,
       'countryCode': instance.countryCode,
       if (instance.regionCode case final value?) 'regionCode': value,
       'minAccessAge': instance.minAccessAge,
+      if (instance.additionalVerificationMethods
+              ?.map(const ConfigRegionAdditionalVerificationMethodsConverter()
+                  .toJson)
+              .toList()
+          case final value?)
+        'additionalVerificationMethods': value,
       'rules': instance.rules
           .map(const UConfigRegionRulesConverter().toJson)
           .toList(),

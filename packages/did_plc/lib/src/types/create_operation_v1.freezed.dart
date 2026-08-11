@@ -25,7 +25,13 @@ mixin _$CreateOperationV1 {
   String get signingKey => throw _privateConstructorUsedError;
   String get recoveryKey => throw _privateConstructorUsedError;
   String get handle => throw _privateConstructorUsedError;
-  String get service => throw _privateConstructorUsedError;
+  String get service =>
+      throw _privateConstructorUsedError; // A legacy `create` genesis operation carries an explicit `prev: null`,
+// and that key IS part of the signed DAG-CBOR bytes and the bytes
+// hashed for `did:plc` derivation. It must be serialized even when
+// null, so this field opts out of the class-level
+// `includeIfNull: false`.
+  @JsonKey(includeIfNull: true)
   String? get prev => throw _privateConstructorUsedError;
 
   /// Serializes this CreateOperationV1 to a JSON map.
@@ -51,7 +57,7 @@ abstract class $CreateOperationV1CopyWith<$Res> {
       String recoveryKey,
       String handle,
       String service,
-      String? prev});
+      @JsonKey(includeIfNull: true) String? prev});
 }
 
 /// @nodoc
@@ -125,7 +131,7 @@ abstract class _$$CreateOperationV1ImplCopyWith<$Res>
       String recoveryKey,
       String handle,
       String service,
-      String? prev});
+      @JsonKey(includeIfNull: true) String? prev});
 }
 
 /// @nodoc
@@ -193,7 +199,7 @@ class _$CreateOperationV1Impl implements _CreateOperationV1 {
       required this.recoveryKey,
       required this.handle,
       required this.service,
-      this.prev});
+      @JsonKey(includeIfNull: true) this.prev});
 
   factory _$CreateOperationV1Impl.fromJson(Map<String, dynamic> json) =>
       _$$CreateOperationV1ImplFromJson(json);
@@ -211,7 +217,13 @@ class _$CreateOperationV1Impl implements _CreateOperationV1 {
   final String handle;
   @override
   final String service;
+// A legacy `create` genesis operation carries an explicit `prev: null`,
+// and that key IS part of the signed DAG-CBOR bytes and the bytes
+// hashed for `did:plc` derivation. It must be serialized even when
+// null, so this field opts out of the class-level
+// `includeIfNull: false`.
   @override
+  @JsonKey(includeIfNull: true)
   final String? prev;
 
   @override
@@ -259,13 +271,14 @@ class _$CreateOperationV1Impl implements _CreateOperationV1 {
 
 abstract class _CreateOperationV1 implements CreateOperationV1 {
   const factory _CreateOperationV1(
-      {required final String sig,
-      final String type,
-      required final String signingKey,
-      required final String recoveryKey,
-      required final String handle,
-      required final String service,
-      final String? prev}) = _$CreateOperationV1Impl;
+          {required final String sig,
+          final String type,
+          required final String signingKey,
+          required final String recoveryKey,
+          required final String handle,
+          required final String service,
+          @JsonKey(includeIfNull: true) final String? prev}) =
+      _$CreateOperationV1Impl;
 
   factory _CreateOperationV1.fromJson(Map<String, dynamic> json) =
       _$CreateOperationV1Impl.fromJson;
@@ -281,8 +294,14 @@ abstract class _CreateOperationV1 implements CreateOperationV1 {
   @override
   String get handle;
   @override
-  String get service;
+  String
+      get service; // A legacy `create` genesis operation carries an explicit `prev: null`,
+// and that key IS part of the signed DAG-CBOR bytes and the bytes
+// hashed for `did:plc` derivation. It must be serialized even when
+// null, so this field opts out of the class-level
+// `includeIfNull: false`.
   @override
+  @JsonKey(includeIfNull: true)
   String? get prev;
 
   /// Create a copy of CreateOperationV1

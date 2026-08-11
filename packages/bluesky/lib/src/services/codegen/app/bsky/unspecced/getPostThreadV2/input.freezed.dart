@@ -36,7 +36,7 @@ mixin _$UnspeccedGetPostThreadV2Input {
 
   /// Sorting for the thread replies.
   @UnspeccedGetPostThreadV2SortConverter()
-  UnspeccedGetPostThreadV2Sort? get sort => throw _privateConstructorUsedError;
+  UnspeccedGetPostThreadV2Sort get sort => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this UnspeccedGetPostThreadV2Input to a JSON map.
@@ -63,10 +63,10 @@ abstract class $UnspeccedGetPostThreadV2InputCopyWith<$Res> {
       int below,
       int branchingFactor,
       @UnspeccedGetPostThreadV2SortConverter()
-      UnspeccedGetPostThreadV2Sort? sort,
+      UnspeccedGetPostThreadV2Sort sort,
       Map<String, dynamic>? $unknown});
 
-  $UnspeccedGetPostThreadV2SortCopyWith<$Res>? get sort;
+  $UnspeccedGetPostThreadV2SortCopyWith<$Res> get sort;
 }
 
 /// @nodoc
@@ -89,7 +89,7 @@ class _$UnspeccedGetPostThreadV2InputCopyWithImpl<$Res,
     Object? above = null,
     Object? below = null,
     Object? branchingFactor = null,
-    Object? sort = freezed,
+    Object? sort = null,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -109,10 +109,10 @@ class _$UnspeccedGetPostThreadV2InputCopyWithImpl<$Res,
           ? _value.branchingFactor
           : branchingFactor // ignore: cast_nullable_to_non_nullable
               as int,
-      sort: freezed == sort
+      sort: null == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as UnspeccedGetPostThreadV2Sort?,
+              as UnspeccedGetPostThreadV2Sort,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -124,12 +124,8 @@ class _$UnspeccedGetPostThreadV2InputCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $UnspeccedGetPostThreadV2SortCopyWith<$Res>? get sort {
-    if (_value.sort == null) {
-      return null;
-    }
-
-    return $UnspeccedGetPostThreadV2SortCopyWith<$Res>(_value.sort!, (value) {
+  $UnspeccedGetPostThreadV2SortCopyWith<$Res> get sort {
+    return $UnspeccedGetPostThreadV2SortCopyWith<$Res>(_value.sort, (value) {
       return _then(_value.copyWith(sort: value) as $Val);
     });
   }
@@ -150,11 +146,11 @@ abstract class _$$UnspeccedGetPostThreadV2InputImplCopyWith<$Res>
       int below,
       int branchingFactor,
       @UnspeccedGetPostThreadV2SortConverter()
-      UnspeccedGetPostThreadV2Sort? sort,
+      UnspeccedGetPostThreadV2Sort sort,
       Map<String, dynamic>? $unknown});
 
   @override
-  $UnspeccedGetPostThreadV2SortCopyWith<$Res>? get sort;
+  $UnspeccedGetPostThreadV2SortCopyWith<$Res> get sort;
 }
 
 /// @nodoc
@@ -176,7 +172,7 @@ class __$$UnspeccedGetPostThreadV2InputImplCopyWithImpl<$Res>
     Object? above = null,
     Object? below = null,
     Object? branchingFactor = null,
-    Object? sort = freezed,
+    Object? sort = null,
     Object? $unknown = freezed,
   }) {
     return _then(_$UnspeccedGetPostThreadV2InputImpl(
@@ -196,10 +192,10 @@ class __$$UnspeccedGetPostThreadV2InputImplCopyWithImpl<$Res>
           ? _value.branchingFactor
           : branchingFactor // ignore: cast_nullable_to_non_nullable
               as int,
-      sort: freezed == sort
+      sort: null == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as UnspeccedGetPostThreadV2Sort?,
+              as UnspeccedGetPostThreadV2Sort,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -218,7 +214,9 @@ class _$UnspeccedGetPostThreadV2InputImpl
       this.above = true,
       this.below = 6,
       this.branchingFactor = 10,
-      @UnspeccedGetPostThreadV2SortConverter() this.sort,
+      @UnspeccedGetPostThreadV2SortConverter() this.sort =
+          const UnspeccedGetPostThreadV2Sort.knownValue(
+              data: KnownUnspeccedGetPostThreadV2Sort.oldest),
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -248,8 +246,9 @@ class _$UnspeccedGetPostThreadV2InputImpl
 
   /// Sorting for the thread replies.
   @override
+  @JsonKey()
   @UnspeccedGetPostThreadV2SortConverter()
-  final UnspeccedGetPostThreadV2Sort? sort;
+  final UnspeccedGetPostThreadV2Sort sort;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -310,7 +309,7 @@ abstract class _UnspeccedGetPostThreadV2Input
           final int below,
           final int branchingFactor,
           @UnspeccedGetPostThreadV2SortConverter()
-          final UnspeccedGetPostThreadV2Sort? sort,
+          final UnspeccedGetPostThreadV2Sort sort,
           final Map<String, dynamic>? $unknown}) =
       _$UnspeccedGetPostThreadV2InputImpl;
 
@@ -337,7 +336,7 @@ abstract class _UnspeccedGetPostThreadV2Input
   /// Sorting for the thread replies.
   @override
   @UnspeccedGetPostThreadV2SortConverter()
-  UnspeccedGetPostThreadV2Sort? get sort;
+  UnspeccedGetPostThreadV2Sort get sort;
   @override
   Map<String, dynamic>? get $unknown;
 

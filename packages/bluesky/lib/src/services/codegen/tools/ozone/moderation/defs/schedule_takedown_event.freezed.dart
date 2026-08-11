@@ -23,8 +23,11 @@ ScheduleTakedownEvent _$ScheduleTakedownEventFromJson(
 mixin _$ScheduleTakedownEvent {
   String get $type => throw _privateConstructorUsedError;
   String? get comment => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAfter => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get executeUntil => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -47,9 +50,9 @@ abstract class $ScheduleTakedownEventCopyWith<$Res> {
   $Res call(
       {String $type,
       String? comment,
-      DateTime? executeAt,
-      DateTime? executeAfter,
-      DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) DateTime? executeAt,
+      @JsonKey(toJson: iso8601) DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) DateTime? executeUntil,
       Map<String, dynamic>? $unknown});
 }
 
@@ -117,9 +120,9 @@ abstract class _$$ScheduleTakedownEventImplCopyWith<$Res>
   $Res call(
       {String $type,
       String? comment,
-      DateTime? executeAt,
-      DateTime? executeAfter,
-      DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) DateTime? executeAt,
+      @JsonKey(toJson: iso8601) DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) DateTime? executeUntil,
       Map<String, dynamic>? $unknown});
 }
 
@@ -180,9 +183,9 @@ class _$ScheduleTakedownEventImpl implements _ScheduleTakedownEvent {
   const _$ScheduleTakedownEventImpl(
       {this.$type = 'tools.ozone.moderation.defs#scheduleTakedownEvent',
       this.comment,
-      this.executeAt,
-      this.executeAfter,
-      this.executeUntil,
+      @JsonKey(toJson: iso8601) this.executeAt,
+      @JsonKey(toJson: iso8601) this.executeAfter,
+      @JsonKey(toJson: iso8601) this.executeUntil,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -195,10 +198,13 @@ class _$ScheduleTakedownEventImpl implements _ScheduleTakedownEvent {
   @override
   final String? comment;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeAfter;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? executeUntil;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -263,9 +269,9 @@ abstract class _ScheduleTakedownEvent implements ScheduleTakedownEvent {
   const factory _ScheduleTakedownEvent(
       {final String $type,
       final String? comment,
-      final DateTime? executeAt,
-      final DateTime? executeAfter,
-      final DateTime? executeUntil,
+      @JsonKey(toJson: iso8601) final DateTime? executeAt,
+      @JsonKey(toJson: iso8601) final DateTime? executeAfter,
+      @JsonKey(toJson: iso8601) final DateTime? executeUntil,
       final Map<String, dynamic>? $unknown}) = _$ScheduleTakedownEventImpl;
 
   factory _ScheduleTakedownEvent.fromJson(Map<String, dynamic> json) =
@@ -276,10 +282,13 @@ abstract class _ScheduleTakedownEvent implements ScheduleTakedownEvent {
   @override
   String? get comment;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeAfter;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get executeUntil;
   @override
   Map<String, dynamic>? get $unknown;

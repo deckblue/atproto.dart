@@ -21,6 +21,10 @@ mixin _$ModerationOpts {
   Map<String, List<InterpretedLabelValueDefinition>> get labelDefs =>
       throw _privateConstructorUsedError;
 
+  /// The behaviors used to interpret moderation causes. Defaults to the
+  /// official Bluesky moderation behaviors.
+  ModerationBehaviors get behaviors => throw _privateConstructorUsedError;
+
   /// Create a copy of ModerationOpts
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,7 +41,8 @@ abstract class $ModerationOptsCopyWith<$Res> {
   $Res call(
       {String? userDid,
       ModerationPrefs prefs,
-      Map<String, List<InterpretedLabelValueDefinition>> labelDefs});
+      Map<String, List<InterpretedLabelValueDefinition>> labelDefs,
+      ModerationBehaviors behaviors});
 
   $ModerationPrefsCopyWith<$Res> get prefs;
 }
@@ -60,6 +65,7 @@ class _$ModerationOptsCopyWithImpl<$Res, $Val extends ModerationOpts>
     Object? userDid = freezed,
     Object? prefs = null,
     Object? labelDefs = null,
+    Object? behaviors = null,
   }) {
     return _then(_value.copyWith(
       userDid: freezed == userDid
@@ -74,6 +80,10 @@ class _$ModerationOptsCopyWithImpl<$Res, $Val extends ModerationOpts>
           ? _value.labelDefs
           : labelDefs // ignore: cast_nullable_to_non_nullable
               as Map<String, List<InterpretedLabelValueDefinition>>,
+      behaviors: null == behaviors
+          ? _value.behaviors
+          : behaviors // ignore: cast_nullable_to_non_nullable
+              as ModerationBehaviors,
     ) as $Val);
   }
 
@@ -99,7 +109,8 @@ abstract class _$$ModerationOptsImplCopyWith<$Res>
   $Res call(
       {String? userDid,
       ModerationPrefs prefs,
-      Map<String, List<InterpretedLabelValueDefinition>> labelDefs});
+      Map<String, List<InterpretedLabelValueDefinition>> labelDefs,
+      ModerationBehaviors behaviors});
 
   @override
   $ModerationPrefsCopyWith<$Res> get prefs;
@@ -121,6 +132,7 @@ class __$$ModerationOptsImplCopyWithImpl<$Res>
     Object? userDid = freezed,
     Object? prefs = null,
     Object? labelDefs = null,
+    Object? behaviors = null,
   }) {
     return _then(_$ModerationOptsImpl(
       userDid: freezed == userDid
@@ -135,6 +147,10 @@ class __$$ModerationOptsImplCopyWithImpl<$Res>
           ? _value._labelDefs
           : labelDefs // ignore: cast_nullable_to_non_nullable
               as Map<String, List<InterpretedLabelValueDefinition>>,
+      behaviors: null == behaviors
+          ? _value.behaviors
+          : behaviors // ignore: cast_nullable_to_non_nullable
+              as ModerationBehaviors,
     ));
   }
 }
@@ -146,7 +162,8 @@ class _$ModerationOptsImpl implements _ModerationOpts {
       {this.userDid,
       required this.prefs,
       final Map<String, List<InterpretedLabelValueDefinition>> labelDefs =
-          const {}})
+          const {},
+      this.behaviors = const ModerationBehaviors()})
       : _labelDefs = labelDefs;
 
   @override
@@ -162,9 +179,15 @@ class _$ModerationOptsImpl implements _ModerationOpts {
     return EqualUnmodifiableMapView(_labelDefs);
   }
 
+  /// The behaviors used to interpret moderation causes. Defaults to the
+  /// official Bluesky moderation behaviors.
+  @override
+  @JsonKey()
+  final ModerationBehaviors behaviors;
+
   @override
   String toString() {
-    return 'ModerationOpts(userDid: $userDid, prefs: $prefs, labelDefs: $labelDefs)';
+    return 'ModerationOpts(userDid: $userDid, prefs: $prefs, labelDefs: $labelDefs, behaviors: $behaviors)';
   }
 
   @override
@@ -175,12 +198,14 @@ class _$ModerationOptsImpl implements _ModerationOpts {
             (identical(other.userDid, userDid) || other.userDid == userDid) &&
             (identical(other.prefs, prefs) || other.prefs == prefs) &&
             const DeepCollectionEquality()
-                .equals(other._labelDefs, _labelDefs));
+                .equals(other._labelDefs, _labelDefs) &&
+            (identical(other.behaviors, behaviors) ||
+                other.behaviors == behaviors));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, userDid, prefs,
-      const DeepCollectionEquality().hash(_labelDefs));
+      const DeepCollectionEquality().hash(_labelDefs), behaviors);
 
   /// Create a copy of ModerationOpts
   /// with the given fields replaced by the non-null parameter values.
@@ -194,10 +219,10 @@ class _$ModerationOptsImpl implements _ModerationOpts {
 
 abstract class _ModerationOpts implements ModerationOpts {
   const factory _ModerationOpts(
-          {final String? userDid,
-          required final ModerationPrefs prefs,
-          final Map<String, List<InterpretedLabelValueDefinition>> labelDefs}) =
-      _$ModerationOptsImpl;
+      {final String? userDid,
+      required final ModerationPrefs prefs,
+      final Map<String, List<InterpretedLabelValueDefinition>> labelDefs,
+      final ModerationBehaviors behaviors}) = _$ModerationOptsImpl;
 
   @override
   String? get userDid;
@@ -205,6 +230,11 @@ abstract class _ModerationOpts implements ModerationOpts {
   ModerationPrefs get prefs;
   @override
   Map<String, List<InterpretedLabelValueDefinition>> get labelDefs;
+
+  /// The behaviors used to interpret moderation causes. Defaults to the
+  /// official Bluesky moderation behaviors.
+  @override
+  ModerationBehaviors get behaviors;
 
   /// Create a copy of ModerationOpts
   /// with the given fields replaced by the non-null parameter values.

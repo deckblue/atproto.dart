@@ -23,8 +23,11 @@ mixin _$RecordHosting {
   String get $type => throw _privateConstructorUsedError;
   @RecordHostingStatusConverter()
   RecordHostingStatus get status => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get deletedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -47,9 +50,9 @@ abstract class $RecordHostingCopyWith<$Res> {
   $Res call(
       {String $type,
       @RecordHostingStatusConverter() RecordHostingStatus status,
-      DateTime? updatedAt,
-      DateTime? createdAt,
-      DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? deletedAt,
       Map<String, dynamic>? $unknown});
 
   $RecordHostingStatusCopyWith<$Res> get status;
@@ -127,9 +130,9 @@ abstract class _$$RecordHostingImplCopyWith<$Res>
   $Res call(
       {String $type,
       @RecordHostingStatusConverter() RecordHostingStatus status,
-      DateTime? updatedAt,
-      DateTime? createdAt,
-      DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? deletedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -192,9 +195,9 @@ class _$RecordHostingImpl implements _RecordHosting {
   const _$RecordHostingImpl(
       {this.$type = 'tools.ozone.moderation.defs#recordHosting',
       @RecordHostingStatusConverter() required this.status,
-      this.updatedAt,
-      this.createdAt,
-      this.deletedAt,
+      @JsonKey(toJson: iso8601) this.updatedAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
+      @JsonKey(toJson: iso8601) this.deletedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -208,10 +211,13 @@ class _$RecordHostingImpl implements _RecordHosting {
   @RecordHostingStatusConverter()
   final RecordHostingStatus status;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? updatedAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? deletedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -269,9 +275,9 @@ abstract class _RecordHosting implements RecordHosting {
   const factory _RecordHosting(
       {final String $type,
       @RecordHostingStatusConverter() required final RecordHostingStatus status,
-      final DateTime? updatedAt,
-      final DateTime? createdAt,
-      final DateTime? deletedAt,
+      @JsonKey(toJson: iso8601) final DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? deletedAt,
       final Map<String, dynamic>? $unknown}) = _$RecordHostingImpl;
 
   factory _RecordHosting.fromJson(Map<String, dynamic> json) =
@@ -283,10 +289,13 @@ abstract class _RecordHosting implements RecordHosting {
   @RecordHostingStatusConverter()
   RecordHostingStatus get status;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get deletedAt;
   @override
   Map<String, dynamic>? get $unknown;

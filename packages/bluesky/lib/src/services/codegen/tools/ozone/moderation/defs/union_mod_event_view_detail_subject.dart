@@ -83,48 +83,52 @@ final class UModEventViewDetailSubjectConverter
 
   @override
   UModEventViewDetailSubject fromJson(Map<String, dynamic> json) {
-    try {
-      if (RepoView.validate(json)) {
-        return UModEventViewDetailSubject.repoView(
-          data: const RepoViewConverter().fromJson(json),
-        );
-      }
-      if (RepoViewNotFound.validate(json)) {
-        return UModEventViewDetailSubject.repoViewNotFound(
-          data: const RepoViewNotFoundConverter().fromJson(json),
-        );
-      }
-      if (RecordView.validate(json)) {
-        return UModEventViewDetailSubject.recordView(
-          data: const RecordViewConverter().fromJson(json),
-        );
-      }
-      if (RecordViewNotFound.validate(json)) {
-        return UModEventViewDetailSubject.recordViewNotFound(
-          data: const RecordViewNotFoundConverter().fromJson(json),
-        );
-      }
-      if (ConvoView.validate(json)) {
-        return UModEventViewDetailSubject.convoView(
-          data: const ConvoViewConverter().fromJson(json),
-        );
-      }
-
-      return UModEventViewDetailSubject.unknown(data: json);
-    } catch (_) {
-      return UModEventViewDetailSubject.unknown(data: json);
+    if (RepoView.validate(json)) {
+      return UModEventViewDetailSubject.repoView(
+        data: const RepoViewConverter().fromJson(json),
+      );
     }
+    if (RepoViewNotFound.validate(json)) {
+      return UModEventViewDetailSubject.repoViewNotFound(
+        data: const RepoViewNotFoundConverter().fromJson(json),
+      );
+    }
+    if (RecordView.validate(json)) {
+      return UModEventViewDetailSubject.recordView(
+        data: const RecordViewConverter().fromJson(json),
+      );
+    }
+    if (RecordViewNotFound.validate(json)) {
+      return UModEventViewDetailSubject.recordViewNotFound(
+        data: const RecordViewNotFoundConverter().fromJson(json),
+      );
+    }
+    if (ConvoView.validate(json)) {
+      return UModEventViewDetailSubject.convoView(
+        data: const ConvoViewConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UModEventViewDetailSubject.unknown(data: json);
   }
 
   @override
-  Map<String, dynamic> toJson(UModEventViewDetailSubject object) => object.when(
-        repoView: (data) => const RepoViewConverter().toJson(data),
-        repoViewNotFound: (data) =>
-            const RepoViewNotFoundConverter().toJson(data),
-        recordView: (data) => const RecordViewConverter().toJson(data),
-        recordViewNotFound: (data) =>
-            const RecordViewNotFoundConverter().toJson(data),
-        convoView: (data) => const ConvoViewConverter().toJson(data),
-        unknown: (data) => data,
-      );
+  Map<String, dynamic> toJson(UModEventViewDetailSubject object) =>
+      switch (object) {
+        UModEventViewDetailSubjectRepoView(:final data) =>
+          const RepoViewConverter().toJson(data),
+        UModEventViewDetailSubjectRepoViewNotFound(:final data) =>
+          const RepoViewNotFoundConverter().toJson(data),
+        UModEventViewDetailSubjectRecordView(:final data) =>
+          const RecordViewConverter().toJson(data),
+        UModEventViewDetailSubjectRecordViewNotFound(:final data) =>
+          const RecordViewNotFoundConverter().toJson(data),
+        UModEventViewDetailSubjectConvoView(:final data) =>
+          const ConvoViewConverter().toJson(data),
+        UModEventViewDetailSubjectUnknown(:final data) => data,
+      };
 }

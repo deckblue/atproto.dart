@@ -29,11 +29,11 @@ final class ResolveIdentityCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Resolves an identity (DID or Handle) to a full identity (DID document and verified handle).";
+      "Resolves an identity (DID or Handle) to a full identity (DID document and verified handle).";
 
   @override
   final String invocation =
-      "bsky com-atproto-identity resolve-identity [identifier]";
+      "bsky com-atproto-identity resolve-identity --identifier=<value>";
 
   @override
   String get methodId => "com.atproto.identity.resolveIdentity";

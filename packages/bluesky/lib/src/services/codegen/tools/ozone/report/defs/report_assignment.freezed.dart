@@ -30,6 +30,7 @@ mixin _$ReportAssignment {
   Member? get moderator => throw _privateConstructorUsedError;
 
   /// When the report was assigned
+  @JsonKey(toJson: iso8601)
   DateTime get assignedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -53,7 +54,7 @@ abstract class $ReportAssignmentCopyWith<$Res> {
       {String $type,
       String did,
       @MemberConverter() Member? moderator,
-      DateTime assignedAt,
+      @JsonKey(toJson: iso8601) DateTime assignedAt,
       Map<String, dynamic>? $unknown});
 
   $MemberCopyWith<$Res>? get moderator;
@@ -131,7 +132,7 @@ abstract class _$$ReportAssignmentImplCopyWith<$Res>
       {String $type,
       String did,
       @MemberConverter() Member? moderator,
-      DateTime assignedAt,
+      @JsonKey(toJson: iso8601) DateTime assignedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -190,7 +191,7 @@ class _$ReportAssignmentImpl implements _ReportAssignment {
       {this.$type = 'tools.ozone.report.defs#reportAssignment',
       required this.did,
       @MemberConverter() this.moderator,
-      required this.assignedAt,
+      @JsonKey(toJson: iso8601) required this.assignedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -212,6 +213,7 @@ class _$ReportAssignmentImpl implements _ReportAssignment {
 
   /// When the report was assigned
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime assignedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -269,7 +271,7 @@ abstract class _ReportAssignment implements ReportAssignment {
       {final String $type,
       required final String did,
       @MemberConverter() final Member? moderator,
-      required final DateTime assignedAt,
+      @JsonKey(toJson: iso8601) required final DateTime assignedAt,
       final Map<String, dynamic>? $unknown}) = _$ReportAssignmentImpl;
 
   factory _ReportAssignment.fromJson(Map<String, dynamic> json) =
@@ -289,6 +291,7 @@ abstract class _ReportAssignment implements ReportAssignment {
 
   /// When the report was assigned
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get assignedAt;
   @override
   Map<String, dynamic>? get $unknown;

@@ -25,6 +25,7 @@ mixin _$RecordEvent {
   @RecordEventOpConverter()
   RecordEventOp get op => throw _privateConstructorUsedError;
   String? get cid => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get timestamp => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -49,7 +50,7 @@ abstract class $RecordEventCopyWith<$Res> {
       String? comment,
       @RecordEventOpConverter() RecordEventOp op,
       String? cid,
-      DateTime timestamp,
+      @JsonKey(toJson: iso8601) DateTime timestamp,
       Map<String, dynamic>? $unknown});
 
   $RecordEventOpCopyWith<$Res> get op;
@@ -129,7 +130,7 @@ abstract class _$$RecordEventImplCopyWith<$Res>
       String? comment,
       @RecordEventOpConverter() RecordEventOp op,
       String? cid,
-      DateTime timestamp,
+      @JsonKey(toJson: iso8601) DateTime timestamp,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -194,7 +195,7 @@ class _$RecordEventImpl implements _RecordEvent {
       this.comment,
       @RecordEventOpConverter() required this.op,
       this.cid,
-      required this.timestamp,
+      @JsonKey(toJson: iso8601) required this.timestamp,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -212,6 +213,7 @@ class _$RecordEventImpl implements _RecordEvent {
   @override
   final String? cid;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime timestamp;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -269,7 +271,7 @@ abstract class _RecordEvent implements RecordEvent {
       final String? comment,
       @RecordEventOpConverter() required final RecordEventOp op,
       final String? cid,
-      required final DateTime timestamp,
+      @JsonKey(toJson: iso8601) required final DateTime timestamp,
       final Map<String, dynamic>? $unknown}) = _$RecordEventImpl;
 
   factory _RecordEvent.fromJson(Map<String, dynamic> json) =
@@ -285,6 +287,7 @@ abstract class _RecordEvent implements RecordEvent {
   @override
   String? get cid;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get timestamp;
   @override
   Map<String, dynamic>? get $unknown;

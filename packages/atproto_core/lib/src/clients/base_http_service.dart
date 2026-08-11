@@ -55,6 +55,7 @@ base class BaseHttpService {
         unencodedPath,
         protocol: _protocol ?? http.Protocol.https,
         service: _service,
+        headers: headers,
         body: body,
         to: to,
         postClient: _mockedPostClient,

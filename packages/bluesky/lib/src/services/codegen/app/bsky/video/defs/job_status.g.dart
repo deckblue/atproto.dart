@@ -25,6 +25,10 @@ _$JobStatusImpl _$$JobStatusImplFromJson(Map json) => $checkedCreate(
               (v) => _$JsonConverterFromJson<Map<String, dynamic>, Blob>(
                   v, const BlobConverter().fromJson)),
           error: $checkedConvert('error', (v) => v as String?),
+          failureCode: $checkedConvert(
+              'failureCode',
+              (v) => _$JsonConverterFromJson<String, JobStatusFailureCode>(
+                  v, const JobStatusFailureCodeConverter().fromJson)),
           message: $checkedConvert('message', (v) => v as String?),
           $unknown: $checkedConvert(
               r'$unknown',
@@ -48,6 +52,11 @@ Map<String, dynamic> _$$JobStatusImplToJson(_$JobStatusImpl instance) =>
           case final value?)
         'blob': value,
       if (instance.error case final value?) 'error': value,
+      if (_$JsonConverterToJson<String, JobStatusFailureCode>(
+              instance.failureCode,
+              const JobStatusFailureCodeConverter().toJson)
+          case final value?)
+        'failureCode': value,
       if (instance.message case final value?) 'message': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

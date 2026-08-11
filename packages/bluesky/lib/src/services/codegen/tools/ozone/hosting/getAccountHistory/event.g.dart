@@ -40,6 +40,6 @@ Map<String, dynamic> _$$EventImplToJson(_$EventImpl instance) =>
       r'$type': instance.$type,
       'details': const UEventDetailsConverter().toJson(instance.details),
       'createdBy': instance.createdBy,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

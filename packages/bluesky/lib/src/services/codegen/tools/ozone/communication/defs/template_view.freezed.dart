@@ -38,7 +38,9 @@ mixin _$TemplateView {
 
   /// DID of the user who last updated the template.
   String get lastUpdatedBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -67,8 +69,8 @@ abstract class $TemplateViewCopyWith<$Res> {
       bool disabled,
       String? lang,
       String lastUpdatedBy,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -165,8 +167,8 @@ abstract class _$$TemplateViewImplCopyWith<$Res>
       bool disabled,
       String? lang,
       String lastUpdatedBy,
-      DateTime createdAt,
-      DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -257,8 +259,8 @@ class _$TemplateViewImpl implements _TemplateView {
       required this.disabled,
       this.lang,
       required this.lastUpdatedBy,
-      required this.createdAt,
-      required this.updatedAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.updatedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -293,8 +295,10 @@ class _$TemplateViewImpl implements _TemplateView {
   @override
   final String lastUpdatedBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime updatedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -376,8 +380,8 @@ abstract class _TemplateView implements TemplateView {
       required final bool disabled,
       final String? lang,
       required final String lastUpdatedBy,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime updatedAt,
       final Map<String, dynamic>? $unknown}) = _$TemplateViewImpl;
 
   factory _TemplateView.fromJson(Map<String, dynamic> json) =
@@ -410,8 +414,10 @@ abstract class _TemplateView implements TemplateView {
   @override
   String get lastUpdatedBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get updatedAt;
   @override
   Map<String, dynamic>? get $unknown;

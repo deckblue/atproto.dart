@@ -66,6 +66,8 @@ _$ReportViewImpl _$$ReportViewImplFromJson(Map json) => $checkedCreate(
               (v) => _$JsonConverterFromJson<Map<String, dynamic>, QueueView>(
                   v, const QueueViewConverter().fromJson)),
           isMuted: $checkedConvert('isMuted', (v) => v as bool?),
+          isAutomated:
+              $checkedConvert('isAutomated', (v) => v as bool? ?? false),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -87,11 +89,9 @@ Map<String, dynamic> _$$ReportViewImplToJson(_$ReportViewImpl instance) =>
       'reportedBy': instance.reportedBy,
       'reporter': const SubjectViewConverter().toJson(instance.reporter),
       if (instance.comment case final value?) 'comment': value,
-      'createdAt': instance.createdAt.toIso8601String(),
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
-      if (instance.queuedAt?.toIso8601String() case final value?)
-        'queuedAt': value,
+      'createdAt': iso8601(instance.createdAt),
+      'updatedAt': iso8601(instance.updatedAt),
+      'queuedAt': iso8601(instance.queuedAt),
       if (instance.actionEventIds case final value?) 'actionEventIds': value,
       if (instance.actions?.map(const ModEventViewConverter().toJson).toList()
           case final value?)
@@ -112,6 +112,7 @@ Map<String, dynamic> _$$ReportViewImplToJson(_$ReportViewImpl instance) =>
           case final value?)
         'queue': value,
       if (instance.isMuted case final value?) 'isMuted': value,
+      'isAutomated': instance.isAutomated,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

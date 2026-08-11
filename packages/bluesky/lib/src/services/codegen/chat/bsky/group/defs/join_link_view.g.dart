@@ -41,6 +41,6 @@ Map<String, dynamic> _$$JoinLinkViewImplToJson(_$JoinLinkViewImpl instance) =>
           const LinkEnabledStatusConverter().toJson(instance.enabledStatus),
       'requireApproval': instance.requireApproval,
       'joinRule': const JoinRuleConverter().toJson(instance.joinRule),
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

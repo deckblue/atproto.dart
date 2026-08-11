@@ -38,7 +38,13 @@ abstract class FeedGetAuthorFeedInput with _$FeedGetAuthorFeedInput {
     String? cursor,
 
     /// Combinations of post/repost types to include in response.
-    @FeedGetAuthorFeedFilterConverter() FeedGetAuthorFeedFilter? filter,
+    @FeedGetAuthorFeedFilterConverter()
+    @Default(
+      FeedGetAuthorFeedFilter.knownValue(
+        data: KnownFeedGetAuthorFeedFilter.posts_with_replies,
+      ),
+    )
+    FeedGetAuthorFeedFilter filter,
     @Default(false) bool includePins,
     Map<String, dynamic>? $unknown,
   }) = _FeedGetAuthorFeedInput;
@@ -50,8 +56,6 @@ abstract class FeedGetAuthorFeedInput with _$FeedGetAuthorFeedInput {
 extension FeedGetAuthorFeedInputExtension on FeedGetAuthorFeedInput {
   bool get hasCursor => cursor != null;
   bool get hasNotCursor => !hasCursor;
-  bool get hasFilter => filter != null;
-  bool get hasNotFilter => !hasFilter;
   bool get isIncludePins => includePins;
   bool get isNotIncludePins => !isIncludePins;
 }

@@ -6,18 +6,21 @@
 import 'package:lexicon/lexicon.dart' as lex;
 
 // Project imports:
+import '../gen_context.dart';
 import '../object/lex_input.dart';
 import '../object/lex_output.dart';
 import '../rule.dart' as rule;
 import 'lex_property_generator.dart';
 
 (LexInput?, LexOutput?)? generateLexXrpcQuery(
+  final GenContext ctx,
   final lex.NSID lexiconId,
   final String defName,
   final lex.LexXrpcQuery query,
   final List<String> mainVariants,
 ) {
-  return _LexLexXrpcQueryGenerator(
+  return _LexXrpcQueryGenerator(
+    ctx,
     lexiconId,
     defName,
     query,
@@ -25,13 +28,15 @@ import 'lex_property_generator.dart';
   ).execute();
 }
 
-final class _LexLexXrpcQueryGenerator {
+final class _LexXrpcQueryGenerator {
+  final GenContext ctx;
   final lex.NSID lexiconId;
   final String defName;
   final lex.LexXrpcQuery query;
   final List<String> mainVariants;
 
-  _LexLexXrpcQueryGenerator(
+  _LexXrpcQueryGenerator(
+    this.ctx,
     this.lexiconId,
     this.defName,
     this.query,
@@ -49,6 +54,7 @@ final class _LexLexXrpcQueryGenerator {
     final parameters = query.parameters!;
 
     final properties = generateLexPropertiesFromLexXrpcParameters(
+      ctx,
       lexiconId,
       defName,
       parameters.properties,
@@ -81,9 +87,13 @@ final class _LexLexXrpcQueryGenerator {
       );
     }
 
-    final object = output?.schema?.whenOrNull(object: (e) => e);
+    final object = switch (output?.schema) {
+      lex.ULexXrpcSchemaObject(:final data) => data,
+      _ => null,
+    };
     if (object != null) {
       final properties = generateLexProperties(
+        ctx,
         lexiconId,
         defName,
         object.properties,
@@ -106,10 +116,14 @@ final class _LexLexXrpcQueryGenerator {
       );
     }
 
-    final refVariant = query.output?.schema?.whenOrNull(
-      refVariant: (data) => data,
-    );
-    final ref = refVariant?.whenOrNull(ref: (data) => data);
+    final refVariant = switch (query.output?.schema) {
+      lex.ULexXrpcSchemaRefVariant(:final data) => data,
+      _ => null,
+    };
+    final ref = switch (refVariant) {
+      lex.ULexRefVariantRef(:final data) => data,
+      _ => null,
+    };
     if (ref == null) return null;
 
     return LexOutput(

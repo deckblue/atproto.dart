@@ -25,6 +25,7 @@ mixin _$DeletedMessageView {
   String get rev => throw _privateConstructorUsedError;
   @MessageViewSenderConverter()
   MessageViewSender get sender => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get sentAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -49,7 +50,7 @@ abstract class $DeletedMessageViewCopyWith<$Res> {
       String id,
       String rev,
       @MessageViewSenderConverter() MessageViewSender sender,
-      DateTime sentAt,
+      @JsonKey(toJson: iso8601) DateTime sentAt,
       Map<String, dynamic>? $unknown});
 
   $MessageViewSenderCopyWith<$Res> get sender;
@@ -129,7 +130,7 @@ abstract class _$$DeletedMessageViewImplCopyWith<$Res>
       String id,
       String rev,
       @MessageViewSenderConverter() MessageViewSender sender,
-      DateTime sentAt,
+      @JsonKey(toJson: iso8601) DateTime sentAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -194,7 +195,7 @@ class _$DeletedMessageViewImpl implements _DeletedMessageView {
       required this.id,
       required this.rev,
       @MessageViewSenderConverter() required this.sender,
-      required this.sentAt,
+      @JsonKey(toJson: iso8601) required this.sentAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -212,6 +213,7 @@ class _$DeletedMessageViewImpl implements _DeletedMessageView {
   @MessageViewSenderConverter()
   final MessageViewSender sender;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime sentAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -269,7 +271,7 @@ abstract class _DeletedMessageView implements DeletedMessageView {
       required final String id,
       required final String rev,
       @MessageViewSenderConverter() required final MessageViewSender sender,
-      required final DateTime sentAt,
+      @JsonKey(toJson: iso8601) required final DateTime sentAt,
       final Map<String, dynamic>? $unknown}) = _$DeletedMessageViewImpl;
 
   factory _DeletedMessageView.fromJson(Map<String, dynamic> json) =
@@ -285,6 +287,7 @@ abstract class _DeletedMessageView implements DeletedMessageView {
   @MessageViewSenderConverter()
   MessageViewSender get sender;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get sentAt;
   @override
   Map<String, dynamic>? get $unknown;

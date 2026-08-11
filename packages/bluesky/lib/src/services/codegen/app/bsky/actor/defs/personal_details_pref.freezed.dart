@@ -23,6 +23,7 @@ mixin _$PersonalDetailsPref {
   String get $type => throw _privateConstructorUsedError;
 
   /// The birth date of account owner.
+  @JsonKey(toJson: iso8601)
   DateTime? get birthDate => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -43,7 +44,9 @@ abstract class $PersonalDetailsPrefCopyWith<$Res> {
       _$PersonalDetailsPrefCopyWithImpl<$Res, PersonalDetailsPref>;
   @useResult
   $Res call(
-      {String $type, DateTime? birthDate, Map<String, dynamic>? $unknown});
+      {String $type,
+      @JsonKey(toJson: iso8601) DateTime? birthDate,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -91,7 +94,9 @@ abstract class _$$PersonalDetailsPrefImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String $type, DateTime? birthDate, Map<String, dynamic>? $unknown});
+      {String $type,
+      @JsonKey(toJson: iso8601) DateTime? birthDate,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -134,7 +139,7 @@ class __$$PersonalDetailsPrefImplCopyWithImpl<$Res>
 class _$PersonalDetailsPrefImpl implements _PersonalDetailsPref {
   const _$PersonalDetailsPrefImpl(
       {this.$type = 'app.bsky.actor.defs#personalDetailsPref',
-      this.birthDate,
+      @JsonKey(toJson: iso8601) this.birthDate,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -147,6 +152,7 @@ class _$PersonalDetailsPrefImpl implements _PersonalDetailsPref {
 
   /// The birth date of account owner.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? birthDate;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -199,7 +205,7 @@ class _$PersonalDetailsPrefImpl implements _PersonalDetailsPref {
 abstract class _PersonalDetailsPref implements PersonalDetailsPref {
   const factory _PersonalDetailsPref(
       {final String $type,
-      final DateTime? birthDate,
+      @JsonKey(toJson: iso8601) final DateTime? birthDate,
       final Map<String, dynamic>? $unknown}) = _$PersonalDetailsPrefImpl;
 
   factory _PersonalDetailsPref.fromJson(Map<String, dynamic> json) =
@@ -210,6 +216,7 @@ abstract class _PersonalDetailsPref implements PersonalDetailsPref {
 
   /// The birth date of account owner.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get birthDate;
   @override
   Map<String, dynamic>? get $unknown;

@@ -31,6 +31,7 @@ mixin _$ProfileViewBasic {
   ViewerState? get viewer => throw _privateConstructorUsedError;
   @LabelConverter()
   List<Label>? get labels => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// Set to true when the actor cannot actively participate in conversations
@@ -66,7 +67,7 @@ abstract class $ProfileViewBasicCopyWith<$Res> {
       @ProfileAssociatedConverter() ProfileAssociated? associated,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       bool? chatDisabled,
       @VerificationStateConverter() VerificationState? verification,
       @UProfileViewBasicKindConverter() UProfileViewBasicKind? kind,
@@ -237,7 +238,7 @@ abstract class _$$ProfileViewBasicImplCopyWith<$Res>
       @ProfileAssociatedConverter() ProfileAssociated? associated,
       @ViewerStateConverter() ViewerState? viewer,
       @LabelConverter() List<Label>? labels,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       bool? chatDisabled,
       @VerificationStateConverter() VerificationState? verification,
       @UProfileViewBasicKindConverter() UProfileViewBasicKind? kind,
@@ -350,7 +351,7 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
       @ProfileAssociatedConverter() this.associated,
       @ViewerStateConverter() this.viewer,
       @LabelConverter() final List<Label>? labels,
-      this.createdAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
       this.chatDisabled,
       @VerificationStateConverter() this.verification,
       @UProfileViewBasicKindConverter() this.kind,
@@ -390,6 +391,7 @@ class _$ProfileViewBasicImpl implements _ProfileViewBasic {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
 
   /// Set to true when the actor cannot actively participate in conversations
@@ -486,7 +488,7 @@ abstract class _ProfileViewBasic implements ProfileViewBasic {
       @ProfileAssociatedConverter() final ProfileAssociated? associated,
       @ViewerStateConverter() final ViewerState? viewer,
       @LabelConverter() final List<Label>? labels,
-      final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
       final bool? chatDisabled,
       @VerificationStateConverter() final VerificationState? verification,
       @UProfileViewBasicKindConverter() final UProfileViewBasicKind? kind,
@@ -515,6 +517,7 @@ abstract class _ProfileViewBasic implements ProfileViewBasic {
   @LabelConverter()
   List<Label>? get labels;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
 
   /// Set to true when the actor cannot actively participate in conversations

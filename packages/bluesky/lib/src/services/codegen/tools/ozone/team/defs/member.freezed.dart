@@ -25,7 +25,9 @@ mixin _$Member {
   bool? get disabled => throw _privateConstructorUsedError;
   @ProfileViewDetailedConverter()
   ProfileViewDetailed? get profile => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   String? get lastUpdatedBy => throw _privateConstructorUsedError;
   @MemberRoleConverter()
@@ -51,8 +53,8 @@ abstract class $MemberCopyWith<$Res> {
       String did,
       bool? disabled,
       @ProfileViewDetailedConverter() ProfileViewDetailed? profile,
-      DateTime? createdAt,
-      DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
       String? lastUpdatedBy,
       @MemberRoleConverter() MemberRole role,
       Map<String, dynamic>? $unknown});
@@ -163,8 +165,8 @@ abstract class _$$MemberImplCopyWith<$Res> implements $MemberCopyWith<$Res> {
       String did,
       bool? disabled,
       @ProfileViewDetailedConverter() ProfileViewDetailed? profile,
-      DateTime? createdAt,
-      DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
       String? lastUpdatedBy,
       @MemberRoleConverter() MemberRole role,
       Map<String, dynamic>? $unknown});
@@ -248,8 +250,8 @@ class _$MemberImpl implements _Member {
       required this.did,
       this.disabled,
       @ProfileViewDetailedConverter() this.profile,
-      this.createdAt,
-      this.updatedAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
+      @JsonKey(toJson: iso8601) this.updatedAt,
       this.lastUpdatedBy,
       @MemberRoleConverter() required this.role,
       final Map<String, dynamic>? $unknown})
@@ -269,8 +271,10 @@ class _$MemberImpl implements _Member {
   @ProfileViewDetailedConverter()
   final ProfileViewDetailed? profile;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? updatedAt;
   @override
   final String? lastUpdatedBy;
@@ -348,8 +352,8 @@ abstract class _Member implements Member {
       required final String did,
       final bool? disabled,
       @ProfileViewDetailedConverter() final ProfileViewDetailed? profile,
-      final DateTime? createdAt,
-      final DateTime? updatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? updatedAt,
       final String? lastUpdatedBy,
       @MemberRoleConverter() required final MemberRole role,
       final Map<String, dynamic>? $unknown}) = _$MemberImpl;
@@ -366,8 +370,10 @@ abstract class _Member implements Member {
   @ProfileViewDetailedConverter()
   ProfileViewDetailed? get profile;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get updatedAt;
   @override
   String? get lastUpdatedBy;

@@ -21,8 +21,6 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Preferences {
   String get $type => throw _privateConstructorUsedError;
-  @ChatPreferenceConverter()
-  ChatPreference get chat => throw _privateConstructorUsedError;
   @FilterablePreferenceConverter()
   FilterablePreference get follow => throw _privateConstructorUsedError;
   @FilterablePreferenceConverter()
@@ -68,7 +66,6 @@ abstract class $PreferencesCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      @ChatPreferenceConverter() ChatPreference chat,
       @FilterablePreferenceConverter() FilterablePreference follow,
       @FilterablePreferenceConverter() FilterablePreference like,
       @FilterablePreferenceConverter() FilterablePreference likeViaRepost,
@@ -83,7 +80,6 @@ abstract class $PreferencesCopyWith<$Res> {
       @PreferenceConverter() Preference verified,
       Map<String, dynamic>? $unknown});
 
-  $ChatPreferenceCopyWith<$Res> get chat;
   $FilterablePreferenceCopyWith<$Res> get follow;
   $FilterablePreferenceCopyWith<$Res> get like;
   $FilterablePreferenceCopyWith<$Res> get likeViaRepost;
@@ -114,7 +110,6 @@ class _$PreferencesCopyWithImpl<$Res, $Val extends Preferences>
   @override
   $Res call({
     Object? $type = null,
-    Object? chat = null,
     Object? follow = null,
     Object? like = null,
     Object? likeViaRepost = null,
@@ -134,10 +129,6 @@ class _$PreferencesCopyWithImpl<$Res, $Val extends Preferences>
           ? _value.$type
           : $type // ignore: cast_nullable_to_non_nullable
               as String,
-      chat: null == chat
-          ? _value.chat
-          : chat // ignore: cast_nullable_to_non_nullable
-              as ChatPreference,
       follow: null == follow
           ? _value.follow
           : follow // ignore: cast_nullable_to_non_nullable
@@ -191,16 +182,6 @@ class _$PreferencesCopyWithImpl<$Res, $Val extends Preferences>
           : $unknown // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ) as $Val);
-  }
-
-  /// Create a copy of Preferences
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ChatPreferenceCopyWith<$Res> get chat {
-    return $ChatPreferenceCopyWith<$Res>(_value.chat, (value) {
-      return _then(_value.copyWith(chat: value) as $Val);
-    });
   }
 
   /// Create a copy of Preferences
@@ -334,7 +315,6 @@ abstract class _$$PreferencesImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      @ChatPreferenceConverter() ChatPreference chat,
       @FilterablePreferenceConverter() FilterablePreference follow,
       @FilterablePreferenceConverter() FilterablePreference like,
       @FilterablePreferenceConverter() FilterablePreference likeViaRepost,
@@ -349,8 +329,6 @@ abstract class _$$PreferencesImplCopyWith<$Res>
       @PreferenceConverter() Preference verified,
       Map<String, dynamic>? $unknown});
 
-  @override
-  $ChatPreferenceCopyWith<$Res> get chat;
   @override
   $FilterablePreferenceCopyWith<$Res> get follow;
   @override
@@ -391,7 +369,6 @@ class __$$PreferencesImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? $type = null,
-    Object? chat = null,
     Object? follow = null,
     Object? like = null,
     Object? likeViaRepost = null,
@@ -411,10 +388,6 @@ class __$$PreferencesImplCopyWithImpl<$Res>
           ? _value.$type
           : $type // ignore: cast_nullable_to_non_nullable
               as String,
-      chat: null == chat
-          ? _value.chat
-          : chat // ignore: cast_nullable_to_non_nullable
-              as ChatPreference,
       follow: null == follow
           ? _value.follow
           : follow // ignore: cast_nullable_to_non_nullable
@@ -477,7 +450,6 @@ class __$$PreferencesImplCopyWithImpl<$Res>
 class _$PreferencesImpl implements _Preferences {
   const _$PreferencesImpl(
       {this.$type = 'app.bsky.notification.defs#preferences',
-      @ChatPreferenceConverter() required this.chat,
       @FilterablePreferenceConverter() required this.follow,
       @FilterablePreferenceConverter() required this.like,
       @FilterablePreferenceConverter() required this.likeViaRepost,
@@ -499,9 +471,6 @@ class _$PreferencesImpl implements _Preferences {
   @override
   @JsonKey()
   final String $type;
-  @override
-  @ChatPreferenceConverter()
-  final ChatPreference chat;
   @override
   @FilterablePreferenceConverter()
   final FilterablePreference follow;
@@ -550,7 +519,7 @@ class _$PreferencesImpl implements _Preferences {
 
   @override
   String toString() {
-    return 'Preferences(\$type: ${$type}, chat: $chat, follow: $follow, like: $like, likeViaRepost: $likeViaRepost, mention: $mention, quote: $quote, reply: $reply, repost: $repost, repostViaRepost: $repostViaRepost, starterpackJoined: $starterpackJoined, subscribedPost: $subscribedPost, unverified: $unverified, verified: $verified, \$unknown: ${$unknown})';
+    return 'Preferences(\$type: ${$type}, follow: $follow, like: $like, likeViaRepost: $likeViaRepost, mention: $mention, quote: $quote, reply: $reply, repost: $repost, repostViaRepost: $repostViaRepost, starterpackJoined: $starterpackJoined, subscribedPost: $subscribedPost, unverified: $unverified, verified: $verified, \$unknown: ${$unknown})';
   }
 
   @override
@@ -559,7 +528,6 @@ class _$PreferencesImpl implements _Preferences {
         (other.runtimeType == runtimeType &&
             other is _$PreferencesImpl &&
             (identical(other.$type, $type) || other.$type == $type) &&
-            (identical(other.chat, chat) || other.chat == chat) &&
             (identical(other.follow, follow) || other.follow == follow) &&
             (identical(other.like, like) || other.like == like) &&
             (identical(other.likeViaRepost, likeViaRepost) ||
@@ -586,7 +554,6 @@ class _$PreferencesImpl implements _Preferences {
   int get hashCode => Object.hash(
       runtimeType,
       $type,
-      chat,
       follow,
       like,
       likeViaRepost,
@@ -620,7 +587,6 @@ class _$PreferencesImpl implements _Preferences {
 abstract class _Preferences implements Preferences {
   const factory _Preferences(
       {final String $type,
-      @ChatPreferenceConverter() required final ChatPreference chat,
       @FilterablePreferenceConverter()
       required final FilterablePreference follow,
       @FilterablePreferenceConverter() required final FilterablePreference like,
@@ -647,9 +613,6 @@ abstract class _Preferences implements Preferences {
 
   @override
   String get $type;
-  @override
-  @ChatPreferenceConverter()
-  ChatPreference get chat;
   @override
   @FilterablePreferenceConverter()
   FilterablePreference get follow;

@@ -23,6 +23,7 @@ mixin _$AgeAssuranceEvent {
   String get $type => throw _privateConstructorUsedError;
 
   /// The date and time of this write operation.
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// The unique identifier for this instance of the age assurance flow, in UUID format.
@@ -71,7 +72,7 @@ abstract class $AgeAssuranceEventCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String attemptId,
       @AgeAssuranceEventStatusConverter() AgeAssuranceEventStatus status,
       @AccessConverter() Access? access,
@@ -202,7 +203,7 @@ abstract class _$$AgeAssuranceEventImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String attemptId,
       @AgeAssuranceEventStatusConverter() AgeAssuranceEventStatus status,
       @AccessConverter() Access? access,
@@ -305,7 +306,7 @@ class __$$AgeAssuranceEventImplCopyWithImpl<$Res>
 class _$AgeAssuranceEventImpl implements _AgeAssuranceEvent {
   const _$AgeAssuranceEventImpl(
       {this.$type = 'tools.ozone.moderation.defs#ageAssuranceEvent',
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       required this.attemptId,
       @AgeAssuranceEventStatusConverter() required this.status,
       @AccessConverter() this.access,
@@ -327,6 +328,7 @@ class _$AgeAssuranceEventImpl implements _AgeAssuranceEvent {
 
   /// The date and time of this write operation.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// The unique identifier for this instance of the age assurance flow, in UUID format.
@@ -441,7 +443,7 @@ class _$AgeAssuranceEventImpl implements _AgeAssuranceEvent {
 abstract class _AgeAssuranceEvent implements AgeAssuranceEvent {
   const factory _AgeAssuranceEvent(
       {final String $type,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       required final String attemptId,
       @AgeAssuranceEventStatusConverter()
       required final AgeAssuranceEventStatus status,
@@ -462,6 +464,7 @@ abstract class _AgeAssuranceEvent implements AgeAssuranceEvent {
 
   /// The date and time of this write operation.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// The unique identifier for this instance of the age assurance flow, in UUID format.

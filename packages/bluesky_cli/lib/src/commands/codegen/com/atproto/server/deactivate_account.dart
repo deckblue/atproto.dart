@@ -29,18 +29,18 @@ final class DeactivateAccountCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Deactivates a currently active account. Stops serving of repo, and future writes to repo until reactivated. Used to finalize account migration with the old host after the account has been activated on the new host.";
+      "Deactivates a currently active account. Stops serving of repo, and future writes to repo until reactivated. Used to finalize account migration with the old host after the account has been activated on the new host.";
 
   @override
   final String invocation =
-      "bsky com-atproto-server deactivate-account [deleteAfter]";
+      "bsky com-atproto-server deactivate-account [--deleteAfter=<value>]";
 
   @override
   String get methodId => "com.atproto.server.deactivateAccount";
 
   @override
   Map<String, dynamic>? get body => {
-        if (argResults!["deleteAfter"] != null)
+        if (argResults!.wasParsed("deleteAfter"))
           "deleteAfter": argResults!["deleteAfter"],
       };
 }

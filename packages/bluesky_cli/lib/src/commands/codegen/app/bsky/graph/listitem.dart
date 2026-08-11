@@ -40,8 +40,8 @@ final class ListitemCommand extends Command<void> {
       "Record representing an account's inclusion on a specific list. The AppView will ignore duplicate listitem records.";
 }
 
-final class _CreateListitemCommand extends CreateRecordCommand {
-  _CreateListitemCommand() {
+mixin _ListitemCommandRecordArgs on Command<void> {
+  void _addRecordOptions() {
     argParser
       ..addOption(
         "subject",
@@ -53,8 +53,15 @@ final class _CreateListitemCommand extends CreateRecordCommand {
         help: r"Reference (AT-URI) to the list record (app.bsky.graph.list).",
         mandatory: true,
       )
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("rkey");
+      ..addOption("createdAt", mandatory: true);
+  }
+}
+
+final class _CreateListitemCommand extends CreateRecordCommand
+    with _ListitemCommandRecordArgs {
+  _CreateListitemCommand() {
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"Specific record key to use.");
   }
 
   @override
@@ -66,37 +73,28 @@ final class _CreateListitemCommand extends CreateRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph listitem create [subject] [list] [createdAt] [rkey]";
+      "bsky app-bsky-graph listitem create --subject=<value> --list=<value> --createdAt=<value> [--rkey=<value>]";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.listitem";
 
   @override
   Map<String, dynamic> get record => {
+        r"$type": "app.bsky.graph.listitem",
         "subject": argResults!["subject"],
         "list": argResults!["list"],
         "createdAt": argResults!["createdAt"],
       };
 }
 
-final class _PutListitemCommand extends PutRecordCommand {
+final class _PutListitemCommand extends PutRecordCommand
+    with _ListitemCommandRecordArgs {
   _PutListitemCommand() {
-    argParser
-      ..addOption(
-        "subject",
-        help: r"The account which is included on the list.",
-        mandatory: true,
-      )
-      ..addOption(
-        "list",
-        help: r"Reference (AT-URI) to the list record (app.bsky.graph.list).",
-        mandatory: true,
-      )
-      ..addOption("createdAt", mandatory: true)
-      ..addOption("rkey");
+    _addRecordOptions();
+    argParser.addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -107,16 +105,17 @@ final class _PutListitemCommand extends PutRecordCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph listitem put [subject] [list] [createdAt] [rkey]";
+      "bsky app-bsky-graph listitem put --subject=<value> --list=<value> --createdAt=<value> --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String? get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.listitem";
 
   @override
   Map<String, dynamic> get record => {
+        r"$type": "app.bsky.graph.listitem",
         "subject": argResults!["subject"],
         "list": argResults!["list"],
         "createdAt": argResults!["createdAt"],
@@ -125,7 +124,7 @@ final class _PutListitemCommand extends PutRecordCommand {
 
 final class _DeleteListitemCommand extends DeleteRecordCommand {
   _DeleteListitemCommand() {
-    argParser..addOption("rkey", mandatory: true);
+    argParser..addOption("rkey", help: r"The record key.", mandatory: true);
   }
 
   @override
@@ -135,10 +134,11 @@ final class _DeleteListitemCommand extends DeleteRecordCommand {
   final String description = r"Deletes a record for app.bsky.graph.listitem.";
 
   @override
-  final String invocation = "bsky app-bsky-graph listitem delete [rkey]";
+  final String invocation =
+      "bsky app-bsky-graph listitem delete --rkey=<value>";
 
   @override
-  String get rkey => "${argResults!['rkey']}";
+  String get rkey => argResults!['rkey'];
 
   @override
   String get collection => "app.bsky.graph.listitem";
@@ -147,7 +147,11 @@ final class _DeleteListitemCommand extends DeleteRecordCommand {
 final class _GetListitemCommand extends QueryCommand {
   _GetListitemCommand() {
     argParser
-      ..addOption("rkey", mandatory: true)
+      ..addOption("rkey", help: r"The record key.", mandatory: true)
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("cid");
   }
 
@@ -158,15 +162,16 @@ final class _GetListitemCommand extends QueryCommand {
   final String description = r"Gets a record for app.bsky.graph.listitem.";
 
   @override
-  final String invocation = "bsky app-bsky-graph listitem get [rkey] [cid]";
+  final String invocation =
+      "bsky app-bsky-graph listitem get --rkey=<value> [--repo=<value>] [--cid=<value>]";
 
   @override
   String get methodId => "com.atproto.repo.getRecord";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.listitem",
         'rkey': argResults!['rkey'],
         if (argResults!['cid'] != null) 'cid': argResults!['cid'],
       };
@@ -175,6 +180,10 @@ final class _GetListitemCommand extends QueryCommand {
 final class _ListListitemCommand extends QueryCommand {
   _ListListitemCommand() {
     argParser
+      ..addOption(
+        "repo",
+        help: r"The repo (handle or DID). Defaults to the authenticated user.",
+      )
       ..addOption("limit", defaultsTo: "50")
       ..addOption("cursor")
       ..addFlag("reverse", defaultsTo: false);
@@ -188,16 +197,17 @@ final class _ListListitemCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-graph listitem list [limit] [cursor] [reverse]";
+      "bsky app-bsky-graph listitem list [--repo=<value>] [--limit=<value>] [--cursor=<value>] [--reverse]";
 
   @override
-  String get methodId => "com.atproto.repo.listRecord";
+  String get methodId => "com.atproto.repo.listRecords";
 
   @override
   FutureOr<Map<String, dynamic>>? get parameters async => {
-        'repo': await did,
-        'collection': methodId,
-        'limit': argResults!['limit'],
+        'repo': argResults!['repo'] ?? await did,
+        'collection': "app.bsky.graph.listitem",
+        'limit': int.tryParse(argResults!['limit']) ??
+            usageException(r'Invalid integer value for option "limit".'),
         if (argResults!['cursor'] != null) 'cursor': argResults!['cursor'],
         'reverse': argResults!['reverse'],
       };

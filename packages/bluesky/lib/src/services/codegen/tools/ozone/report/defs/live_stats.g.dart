@@ -49,7 +49,6 @@ Map<String, dynamic> _$$LiveStatsImplToJson(_$LiveStatsImpl instance) =>
       if (instance.actionRate case final value?) 'actionRate': value,
       if (instance.avgHandlingTimeSec case final value?)
         'avgHandlingTimeSec': value,
-      if (instance.lastUpdated?.toIso8601String() case final value?)
-        'lastUpdated': value,
+      'lastUpdated': iso8601(instance.lastUpdated),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

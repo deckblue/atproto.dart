@@ -31,6 +31,7 @@ abstract class QueueView with _$QueueView {
     'collection',
     'reportTypes',
     'description',
+    'recommendedPolicies',
     'createdBy',
     'createdAt',
     'updatedAt',
@@ -48,26 +49,26 @@ abstract class QueueView with _$QueueView {
 
     /// Display name of the queue
     required String name,
-    @QueueViewSubjectTypesConverter()
-    required List<QueueViewSubjectTypes> subjectTypes,
+    @QueueViewSubjectTypesConverter() List<QueueViewSubjectTypes>? subjectTypes,
 
     /// Collection name for record subjects (e.g., 'app.bsky.feed.post')
     String? collection,
-    required List<String> reportTypes,
+    List<String>? reportTypes,
 
     /// Optional description of the queue
     String? description,
+    List<String>? recommendedPolicies,
 
     /// DID of moderator who created this queue
     required String createdBy,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+    @JsonKey(toJson: iso8601) required DateTime createdAt,
+    @JsonKey(toJson: iso8601) required DateTime updatedAt,
 
     /// Whether this queue is currently active
     required bool enabled,
 
     /// When the queue was deleted, if applicable
-    DateTime? deletedAt,
+    @JsonKey(toJson: iso8601) DateTime? deletedAt,
 
     /// Statistics about this queue
     @QueueStatsConverter() required QueueStats stats,

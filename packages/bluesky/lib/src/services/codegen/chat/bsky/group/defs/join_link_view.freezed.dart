@@ -27,6 +27,7 @@ mixin _$JoinLinkView {
   bool get requireApproval => throw _privateConstructorUsedError;
   @JoinRuleConverter()
   JoinRule get joinRule => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -52,7 +53,7 @@ abstract class $JoinLinkViewCopyWith<$Res> {
       @LinkEnabledStatusConverter() LinkEnabledStatus enabledStatus,
       bool requireApproval,
       @JoinRuleConverter() JoinRule joinRule,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $LinkEnabledStatusCopyWith<$Res> get enabledStatus;
@@ -149,7 +150,7 @@ abstract class _$$JoinLinkViewImplCopyWith<$Res>
       @LinkEnabledStatusConverter() LinkEnabledStatus enabledStatus,
       bool requireApproval,
       @JoinRuleConverter() JoinRule joinRule,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -222,7 +223,7 @@ class _$JoinLinkViewImpl implements _JoinLinkView {
       @LinkEnabledStatusConverter() required this.enabledStatus,
       required this.requireApproval,
       @JoinRuleConverter() required this.joinRule,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -243,6 +244,7 @@ class _$JoinLinkViewImpl implements _JoinLinkView {
   @JoinRuleConverter()
   final JoinRule joinRule;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -313,7 +315,7 @@ abstract class _JoinLinkView implements JoinLinkView {
       required final LinkEnabledStatus enabledStatus,
       required final bool requireApproval,
       @JoinRuleConverter() required final JoinRule joinRule,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$JoinLinkViewImpl;
 
   factory _JoinLinkView.fromJson(Map<String, dynamic> json) =
@@ -332,6 +334,7 @@ abstract class _JoinLinkView implements JoinLinkView {
   @JoinRuleConverter()
   JoinRule get joinRule;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

@@ -25,7 +25,7 @@ final class ListQueuesCommand extends QueryCommand {
       ..addOption(
         "subjectType",
         help:
-            r"Filter queues that handle this subject type ('account' or 'record').",
+            r"Filter queues that handle this subject type ('account', 'record', 'message', or 'conversation').",
       )
       ..addOption(
         "collection",
@@ -44,25 +44,26 @@ final class ListQueuesCommand extends QueryCommand {
 
   @override
   final String description =
-      r"List all configured moderation queues with statistics.";
+      "List all configured moderation queues with statistics.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-queue list-queues [enabled] [subjectType] [collection] [reportTypes] [limit] [cursor]";
+      "bsky tools-ozone-queue list-queues [--enabled] [--subjectType=<value>] [--collection=<value>] [--reportTypes=<value>...] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "tools.ozone.queue.listQueues";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["enabled"] != null) "enabled": argResults!["enabled"],
-        if (argResults!["subjectType"] != null)
+        if (argResults!.wasParsed("enabled")) "enabled": argResults!["enabled"],
+        if (argResults!.wasParsed("subjectType"))
           "subjectType": argResults!["subjectType"],
-        if (argResults!["collection"] != null)
+        if (argResults!.wasParsed("collection"))
           "collection": argResults!["collection"],
-        if (argResults!["reportTypes"] != null)
+        if (argResults!.wasParsed("reportTypes"))
           "reportTypes": argResults!["reportTypes"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

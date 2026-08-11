@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const { themes: prismThemes } = require("prism-react-renderer");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -10,32 +9,38 @@ const config = {
   tagline: "Build decentralized social apps with type-safe AT Protocol APIs",
   favicon: "img/favicon.ico",
 
-  // Custom fields for additional metadata
-  customFields: {
-    metadata: [
-      {
-        name: 'description',
-        content: 'Production-ready AT Protocol SDK for Flutter & Dart developers. Build decentralized social apps with type-safe APIs, comprehensive Bluesky integration, and battle-tested reliability.',
-      },
-      {
-        name: 'keywords',
-        content: 'AT Protocol, Bluesky, Flutter, Dart, SDK, decentralized, social media, API, type-safe, production-ready',
-      },
-      {
-        property: 'og:description',
-        content: 'Production-ready AT Protocol SDK for Flutter & Dart developers. Build decentralized social apps with type-safe APIs, comprehensive Bluesky integration, and battle-tested reliability.',
-      },
-      {
-        name: 'twitter:description',
-        content: 'Production-ready AT Protocol SDK for Flutter & Dart developers. Build decentralized social apps with type-safe APIs, comprehensive Bluesky integration, and battle-tested reliability.',
-      },
-    ],
-  },
-
-  staticDirectories: ["public", "static"],
+  staticDirectories: ["static"],
 
   plugins: [
     "docusaurus-plugin-sass",
+    [
+      // The package docs moved under /docs/products/ when Tools became a
+      // sibling of Packages. pub.dev READMEs and external posts still point at
+      // the old paths, so keep them alive rather than 404ing.
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          { from: "/docs/packages/overview", to: "/docs/products/overview" },
+          {
+            from: "/docs/packages/bluesky_cli",
+            to: "/docs/products/tools/bluesky_cli",
+          },
+          ...[
+            "atproto",
+            "atproto_identity",
+            "atproto_oauth",
+            "at_primitives",
+            "bluesky",
+            "bluesky_text",
+            "bluesky_text_flutter",
+            "did_plc",
+          ].map((name) => ({
+            from: `/docs/packages/${name}`,
+            to: `/docs/products/packages/${name}`,
+          })),
+        ],
+      },
+    ],
     [
       "@docusaurus/plugin-ideal-image",
       {
@@ -60,8 +65,7 @@ const config = {
   organizationName: "myConsciousness", // Usually your GitHub org/user name.
   projectName: "atproto.dart", // Usually your repo name.
 
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -81,11 +85,7 @@ const config = {
           editUrl:
             "https://github.com/myConsciousness/atproto.dart/blob/main/website",
         },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            "https://github.com/myConsciousness/atproto.dart/blob/main/website",
-        },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/scss/main.scss"),
         },
@@ -96,8 +96,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: "img/social_card.png",
+      metadata: [
+        {
+          name: "keywords",
+          content:
+            "AT Protocol, Bluesky, Flutter, Dart, SDK, decentralized, social media, API, type-safe, production-ready",
+        },
+        { name: "twitter:card", content: "summary_large_image" },
+      ],
       navbar: {
         title: "atproto.dart",
         logo: {
@@ -111,7 +118,7 @@ const config = {
             position: "left",
           },
           {
-            to: "/docs/packages/overview",
+            to: "/docs/products/overview",
             label: "Packages",
             position: "left",
           },
@@ -174,11 +181,11 @@ const config = {
               },
               {
                 label: "Bluesky",
-                href: "https://blueskyweb.xyz",
+                href: "https://bsky.social",
               },
               {
                 label: "Developer Community",
-                href: "https://discord.gg/zWed6y3V",
+                href: "https://github.com/myConsciousness/atproto.dart/discussions",
               },
             ],
           },
@@ -186,9 +193,10 @@ const config = {
         copyright: `© ${new Date().getFullYear()} Shinya Kato. Open source AT Protocol SDK for Flutter & Dart.`,
       },
       prism: {
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
         defaultLanguage: "dart",
         additionalLanguages: ["dart", "yaml"],
-        darkTheme: require("prism-react-renderer/themes/dracula"),
       },
       colorMode: {
         defaultMode: "dark",
@@ -204,6 +212,9 @@ const config = {
     }),
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
   themes: ["@docusaurus/theme-mermaid"],
 };

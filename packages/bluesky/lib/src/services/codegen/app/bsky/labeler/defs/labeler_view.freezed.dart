@@ -29,6 +29,7 @@ mixin _$LabelerView {
   int? get likeCount => throw _privateConstructorUsedError;
   @LabelerViewerStateConverter()
   LabelerViewerState? get viewer => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   @LabelConverter()
   List<Label>? get labels => throw _privateConstructorUsedError;
@@ -57,7 +58,7 @@ abstract class $LabelerViewCopyWith<$Res> {
       @ProfileViewConverter() ProfileView creator,
       int? likeCount,
       @LabelerViewerStateConverter() LabelerViewerState? viewer,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @LabelConverter() List<Label>? labels,
       Map<String, dynamic>? $unknown});
 
@@ -170,7 +171,7 @@ abstract class _$$LabelerViewImplCopyWith<$Res>
       @ProfileViewConverter() ProfileView creator,
       int? likeCount,
       @LabelerViewerStateConverter() LabelerViewerState? viewer,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @LabelConverter() List<Label>? labels,
       Map<String, dynamic>? $unknown});
 
@@ -255,7 +256,7 @@ class _$LabelerViewImpl implements _LabelerView {
       @ProfileViewConverter() required this.creator,
       this.likeCount,
       @LabelerViewerStateConverter() this.viewer,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       @LabelConverter() final List<Label>? labels,
       final Map<String, dynamic>? $unknown})
       : _labels = labels,
@@ -281,6 +282,7 @@ class _$LabelerViewImpl implements _LabelerView {
   @LabelerViewerStateConverter()
   final LabelerViewerState? viewer;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final List<Label>? _labels;
   @override
@@ -364,7 +366,7 @@ abstract class _LabelerView implements LabelerView {
       @ProfileViewConverter() required final ProfileView creator,
       final int? likeCount,
       @LabelerViewerStateConverter() final LabelerViewerState? viewer,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       @LabelConverter() final List<Label>? labels,
       final Map<String, dynamic>? $unknown}) = _$LabelerViewImpl;
 
@@ -387,6 +389,7 @@ abstract class _LabelerView implements LabelerView {
   @LabelerViewerStateConverter()
   LabelerViewerState? get viewer;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   @LabelConverter()

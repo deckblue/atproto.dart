@@ -113,23 +113,15 @@ Map<String, dynamic> _$$ModerationQueryStatusesInputImplToJson(
         'includeAllUserRecords': value,
       if (instance.subject case final value?) 'subject': value,
       if (instance.comment case final value?) 'comment': value,
-      if (instance.reportedAfter?.toIso8601String() case final value?)
-        'reportedAfter': value,
-      if (instance.reportedBefore?.toIso8601String() case final value?)
-        'reportedBefore': value,
-      if (instance.reviewedAfter?.toIso8601String() case final value?)
-        'reviewedAfter': value,
-      if (instance.hostingDeletedAfter?.toIso8601String() case final value?)
-        'hostingDeletedAfter': value,
-      if (instance.hostingDeletedBefore?.toIso8601String() case final value?)
-        'hostingDeletedBefore': value,
-      if (instance.hostingUpdatedAfter?.toIso8601String() case final value?)
-        'hostingUpdatedAfter': value,
-      if (instance.hostingUpdatedBefore?.toIso8601String() case final value?)
-        'hostingUpdatedBefore': value,
+      'reportedAfter': iso8601(instance.reportedAfter),
+      'reportedBefore': iso8601(instance.reportedBefore),
+      'reviewedAfter': iso8601(instance.reviewedAfter),
+      'hostingDeletedAfter': iso8601(instance.hostingDeletedAfter),
+      'hostingDeletedBefore': iso8601(instance.hostingDeletedBefore),
+      'hostingUpdatedAfter': iso8601(instance.hostingUpdatedAfter),
+      'hostingUpdatedBefore': iso8601(instance.hostingUpdatedBefore),
       if (instance.hostingStatuses case final value?) 'hostingStatuses': value,
-      if (instance.reviewedBefore?.toIso8601String() case final value?)
-        'reviewedBefore': value,
+      'reviewedBefore': iso8601(instance.reviewedBefore),
       if (instance.includeMuted case final value?) 'includeMuted': value,
       if (instance.onlyMuted case final value?) 'onlyMuted': value,
       if (_$JsonConverterToJson<String, ModerationQueryStatusesReviewState>(

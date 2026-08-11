@@ -23,10 +23,10 @@ final class UnmuteActorCommand extends ProcedureCommand {
   final String name = "unmute-actor";
 
   @override
-  final String description = r"Unmutes the specified account. Requires auth.";
+  final String description = "Unmutes the specified account. Requires auth.";
 
   @override
-  final String invocation = "bsky app-bsky-graph unmute-actor [actor]";
+  final String invocation = "bsky app-bsky-graph unmute-actor --actor=<value>";
 
   @override
   String get methodId => "app.bsky.graph.unmuteActor";

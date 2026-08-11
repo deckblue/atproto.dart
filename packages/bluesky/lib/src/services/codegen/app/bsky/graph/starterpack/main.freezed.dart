@@ -35,6 +35,7 @@ mixin _$GraphStarterpackRecord {
   AtUri get list => throw _privateConstructorUsedError;
   @FeedItemConverter()
   List<FeedItem>? get feeds => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -61,7 +62,7 @@ abstract class $GraphStarterpackRecordCopyWith<$Res> {
       @RichtextFacetConverter() List<RichtextFacet>? descriptionFacets,
       @AtUriConverter() AtUri list,
       @FeedItemConverter() List<FeedItem>? feeds,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -143,7 +144,7 @@ abstract class _$$GraphStarterpackRecordImplCopyWith<$Res>
       @RichtextFacetConverter() List<RichtextFacet>? descriptionFacets,
       @AtUriConverter() AtUri list,
       @FeedItemConverter() List<FeedItem>? feeds,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -219,7 +220,7 @@ class _$GraphStarterpackRecordImpl implements _GraphStarterpackRecord {
       @RichtextFacetConverter() final List<RichtextFacet>? descriptionFacets,
       @AtUriConverter() required this.list,
       @FeedItemConverter() final List<FeedItem>? feeds,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _descriptionFacets = descriptionFacets,
         _feeds = feeds,
@@ -265,6 +266,7 @@ class _$GraphStarterpackRecordImpl implements _GraphStarterpackRecord {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -337,7 +339,7 @@ abstract class _GraphStarterpackRecord implements GraphStarterpackRecord {
       @RichtextFacetConverter() final List<RichtextFacet>? descriptionFacets,
       @AtUriConverter() required final AtUri list,
       @FeedItemConverter() final List<FeedItem>? feeds,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$GraphStarterpackRecordImpl;
 
   factory _GraphStarterpackRecord.fromJson(Map<String, dynamic> json) =
@@ -363,6 +365,7 @@ abstract class _GraphStarterpackRecord implements GraphStarterpackRecord {
   @FeedItemConverter()
   List<FeedItem>? get feeds;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

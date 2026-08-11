@@ -23,6 +23,8 @@ mixin _$GraphGetFollowsInput {
   String get actor => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
   String? get cursor => throw _privateConstructorUsedError;
+  @GraphGetFollowsSortConverter()
+  GraphGetFollowsSort? get sort => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GraphGetFollowsInput to a JSON map.
@@ -45,7 +47,10 @@ abstract class $GraphGetFollowsInputCopyWith<$Res> {
       {String actor,
       int limit,
       String? cursor,
+      @GraphGetFollowsSortConverter() GraphGetFollowsSort? sort,
       Map<String, dynamic>? $unknown});
+
+  $GraphGetFollowsSortCopyWith<$Res>? get sort;
 }
 
 /// @nodoc
@@ -67,6 +72,7 @@ class _$GraphGetFollowsInputCopyWithImpl<$Res,
     Object? actor = null,
     Object? limit = null,
     Object? cursor = freezed,
+    Object? sort = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -82,11 +88,29 @@ class _$GraphGetFollowsInputCopyWithImpl<$Res,
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
+      sort: freezed == sort
+          ? _value.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as GraphGetFollowsSort?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ) as $Val);
+  }
+
+  /// Create a copy of GraphGetFollowsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GraphGetFollowsSortCopyWith<$Res>? get sort {
+    if (_value.sort == null) {
+      return null;
+    }
+
+    return $GraphGetFollowsSortCopyWith<$Res>(_value.sort!, (value) {
+      return _then(_value.copyWith(sort: value) as $Val);
+    });
   }
 }
 
@@ -102,7 +126,11 @@ abstract class _$$GraphGetFollowsInputImplCopyWith<$Res>
       {String actor,
       int limit,
       String? cursor,
+      @GraphGetFollowsSortConverter() GraphGetFollowsSort? sort,
       Map<String, dynamic>? $unknown});
+
+  @override
+  $GraphGetFollowsSortCopyWith<$Res>? get sort;
 }
 
 /// @nodoc
@@ -121,6 +149,7 @@ class __$$GraphGetFollowsInputImplCopyWithImpl<$Res>
     Object? actor = null,
     Object? limit = null,
     Object? cursor = freezed,
+    Object? sort = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$GraphGetFollowsInputImpl(
@@ -136,6 +165,10 @@ class __$$GraphGetFollowsInputImplCopyWithImpl<$Res>
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
+      sort: freezed == sort
+          ? _value.sort
+          : sort // ignore: cast_nullable_to_non_nullable
+              as GraphGetFollowsSort?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -152,6 +185,7 @@ class _$GraphGetFollowsInputImpl implements _GraphGetFollowsInput {
       {required this.actor,
       this.limit = 50,
       this.cursor,
+      @GraphGetFollowsSortConverter() this.sort,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -165,6 +199,9 @@ class _$GraphGetFollowsInputImpl implements _GraphGetFollowsInput {
   final int limit;
   @override
   final String? cursor;
+  @override
+  @GraphGetFollowsSortConverter()
+  final GraphGetFollowsSort? sort;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -177,7 +214,7 @@ class _$GraphGetFollowsInputImpl implements _GraphGetFollowsInput {
 
   @override
   String toString() {
-    return 'GraphGetFollowsInput(actor: $actor, limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
+    return 'GraphGetFollowsInput(actor: $actor, limit: $limit, cursor: $cursor, sort: $sort, \$unknown: ${$unknown})';
   }
 
   @override
@@ -188,12 +225,13 @@ class _$GraphGetFollowsInputImpl implements _GraphGetFollowsInput {
             (identical(other.actor, actor) || other.actor == actor) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            (identical(other.sort, sort) || other.sort == sort) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, actor, limit, cursor,
+  int get hashCode => Object.hash(runtimeType, actor, limit, cursor, sort,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of GraphGetFollowsInput
@@ -219,6 +257,7 @@ abstract class _GraphGetFollowsInput implements GraphGetFollowsInput {
       {required final String actor,
       final int limit,
       final String? cursor,
+      @GraphGetFollowsSortConverter() final GraphGetFollowsSort? sort,
       final Map<String, dynamic>? $unknown}) = _$GraphGetFollowsInputImpl;
 
   factory _GraphGetFollowsInput.fromJson(Map<String, dynamic> json) =
@@ -230,6 +269,9 @@ abstract class _GraphGetFollowsInput implements GraphGetFollowsInput {
   int get limit;
   @override
   String? get cursor;
+  @override
+  @GraphGetFollowsSortConverter()
+  GraphGetFollowsSort? get sort;
   @override
   Map<String, dynamic>? get $unknown;
 

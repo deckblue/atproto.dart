@@ -27,11 +27,11 @@ final class GetConvoMembersCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Returns a paginated list of members from a conversation.";
+      "Returns a paginated list of members from a conversation.";
 
   @override
   final String invocation =
-      "bsky chat-bsky-convo get-convo-members [convoId] [limit] [cursor]";
+      "bsky chat-bsky-convo get-convo-members --convoId=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "chat.bsky.convo.getConvoMembers";
@@ -39,7 +39,8 @@ final class GetConvoMembersCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "convoId": argResults!["convoId"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

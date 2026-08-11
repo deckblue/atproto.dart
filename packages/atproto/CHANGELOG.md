@@ -1,5 +1,86 @@
 # Release Note
 
+## v2.5.0
+
+- feat: added `Firehose`, a durable `com.atproto.sync.subscribeRepos` consumer. It connects, hands each decoded message to a handler, reconnects with exponential backoff and jitter when the relay drops the connection, and — the part that was missing — persists how far it got so a restart resumes instead of skipping to the live edge. `subscribeReposAsMessages` is unchanged; `Firehose` is a layer on top of it, not a replacement.
+- feat: added `CursorStore` (with an `InMemoryCursorStore` default), the injection point for durable cursor storage, matching the `OAuthStateStore` / `OAuthSessionStore` / `DPoPNonceCache` pattern. `delete()` is part of the interface because a relay answers a cursor that is ahead of its own stream with `FutureCursor` on every reconnect: without a way to discard the cursor, a consumer that has read past its relay never recovers.
+- feat: `Firehose` takes a handler rather than exposing a `Stream`. A stream can only report when a message was *delivered*, never when the consumer finished with it, so advancing the cursor on delivery would lose everything in flight when a process dies — the exact loss a persisted cursor exists to prevent. The completion of the handler's future is the only evidence a message was handled, so delivery is at-least-once and handlers should be idempotent.
+- feat: cursor writes are batched (`flushEveryEvents`, default 100; `flushEveryInterval`, default 5s) because the full-network firehose runs at hundreds to thousands of events per second and a write per message would put the store on the hot path. The replay window after a crash is bounded by those same settings, and a flush is forced before every reconnect and on `stop()`.
+- feat: an `#info` `OutdatedCursor` is surfaced through `onError` as `FirehoseOutdatedCursorException` instead of passing silently. It means the relay no longer holds the requested cursor and resumed from the oldest event it does hold, so events have already been lost — without the signal the caller has no way to notice the gap.
+
+## v2.4.2
+
+- fix: `ATProto.fromOAuthSession` passes its `timeout` through to the `OAuthSessionManager` it builds, so a hung restore or refresh is bounded by the timeout the caller asked for instead of running unbounded.
+
+## v2.4.1
+
+- feat: added `com.atproto.server.describeServer.output.blobUploadLimit`
+- chore: regenerated from synced lexicons
+
+## v2.4.0
+
+- chore: bump `atproto_core` to `^2.4.0`, picking up the `decodeCar` CAR-header validation, the true 5xx status code on `RetryContext`, the stale-401 refresh short-circuit and `ServiceContext.withAdditionalHeaders`.
+
+## v2.3.0
+
+- feat: added `ATProto.actorDid`, surfacing `ServiceContext.actorDid` so callers can ask which actor a client is authenticated as without branching on the auth kind. Named `actorDid` rather than `repo`, which is already the `com.atproto.repo.*` service on this class.
+- docs: `fromOAuth` now records that one shared `OAuthSessionManager` is what makes several clients share a session, and `fromOAuthSession` that it mints a fresh manager per call. Two managers restored from one `OAuthSession` do not merely fail to share: because a rotating refresh token is only honoured once, they revoke each other, surfacing `OAuthSessionRevokedException` from a session that was valid.
+- chore: bump `atproto_core` to `^2.3.0`.
+
+## v2.2.1
+
+- chore: widen `atproto_core` to `^2.2.0` and `xrpc` to `^1.1.3`.
+
+## v2.2.0
+
+- feat: added `ATProto.onSessionUpdated`, surfacing `ServiceContext.onSessionUpdated` so callers can re-persist credentials rotated by an automatic refresh. Without it an app that persists the session it constructed the client with ends up storing a spent refresh token, since refresh tokens are single-use.
+- chore: bump `atproto_core` to `^2.1.0`.
+
+## v2.1.0
+
+- feat: added `ATProto.ctx`, exposing the `ServiceContext` that backs every service. A wrapping client can now drive its own services from the same context instead of constructing a second one, which is required for correct session refresh because refresh tokens are single-use.
+
+## v2.0.1
+
+- docs: documented OAuth authentication in the README — `ATProto.fromOAuth(OAuthSessionManager)`, `ATProto.fromOAuthSession(session, {oauthClient})`, and the renamed `oAuthSessionManager` getter.
+- docs: the Firehose section now shows the recommended typed `atproto.sync.subscribeReposAsMessages()` API, keeping the raw `subscribeRepos()` + `SyncSubscribeReposAdaptor` path as the advanced alternative.
+- docs: noted that `retryConfig` accepts any `RetryStrategy`, with `RetryStrategy`/`RetryContext`/`RetryReason` re-exported from `core.dart`.
+- chore: bump `atproto_core` to `^2.0.1` and `xrpc` to `^1.1.2`.
+
+## v2.0.0
+
+- feat!: `ATProto.fromOAuth(OAuthSessionManager)`. `fromOAuthSession(session, {oauthClient})` now wraps a manager (pass `oauthClient` for auto-refresh); the `oAuthSession` getter is replaced by `oAuthSessionManager`.
+- fix: export `Subscription`, `SyncServiceImpl`, and `WebSocketChannelFactory` so subscription/sync return types are usable without a direct `atproto_core`/`xrpc` dependency.
+- fix: automatic session refresh preserves `email`/`emailConfirmed`/`emailAuthFactor`.
+- feat: the `retryConfig` parameter now accepts any `RetryStrategy`, not only `RetryConfig`, so callers can fully customize backoff and which failures retry. `RetryStrategy`/`RetryContext`/`RetryReason` are re-exported. By default a procedure (`POST`) is no longer retried after an ambiguous failure the server may already have applied (see `atproto_core`).
+
+## v1.7.0
+
+- feat: added `atproto.sync.subscribeReposAsMessages()`, a Firehose subscription that yields already-decoded, typed `USyncSubscribeReposMessage`s (CBOR/CAR-decoded `blocks`, normalized `ops`/`commit`/`prevData` CID links) instead of raw `Uint8List` frames. The existing `subscribeRepos()` (raw bytes) is unchanged, and a frame that fails to decode surfaces as a stream error without terminating the subscription.
+- feat: `package:atproto/firehose.dart` now re-exports the `com.atproto.sync.subscribeRepos` message types, so a single import provides the adaptors, the typed `USyncSubscribeReposMessage`, and its `isCommit`/`commit` accessors.
+
+## v1.6.0
+
+- feat: automatic access-token refresh in `ATProto.fromSession` (wired through `com.atproto.server.refreshSession`); `atproto.session` reflects the new credentials. `fromOAuthSession` is untouched, and all new parameters are optional (non-breaking).
+- fix!: hardened the Firehose against hostile input — removed the `ref` int-list heuristic in `cid_links` that allowed any network user to crash every Firehose consumer by publishing a record containing `"ref": [1,2,3]` (A-3).
+- fix: `#commit` `prevData`/`prev` CID links are now converted, so sync v1.1 commits no longer degrade to `unknown` (A-1).
+- fix: `#sync` frame blocks are decoded into a typed `Sync` event (account migration/recovery) (A-2).
+- fix: Firehose error frames (`op == -1`, e.g. `FutureCursor`/`ConsumerTooSlow`) now surface as a typed `FirehoseErrorException`, and text frames raise a typed `FirehoseFrameException` instead of a `TypeError` (A-8/A-10).
+- fix: CAR decode failures are surfaced instead of being silently turned into an empty map (A-9).
+- fix: `protocol` is now forwarded in `create`/`refresh`/`deleteSession` (A-7).
+- chore: removed dead, unexported repo adaptors (A-5/A-6/A-12) and regenerated services from the fixed `lex_gen` (`$type` injection, UTC datetime, required+nullable serialization).
+- chore: removed the internal, unexported `convertCidLinks` no-op (and its call in the firehose adaptor) — CID links and byte strings are already normalized by `decodeCar` in `atproto_core`.
+- fix!: regenerated from the fixed `lex_gen` — a string field with both `knownValues` and a `default` is now non-nullable and carries its spec default instead of reporting `null`: `com.atproto.label.defs#labelValueDefinition.defaultSetting` (`warn`) and `com.atproto.admin.getInviteCodes.sort` (`recent`). The corresponding `hasX`/`hasNotX` getters were removed (G-18).
+- chore: bump `atproto_core` to `^1.3.0`.
+
+## v1.5.1
+
+- chore: bump `atproto_core` to `^1.2.2`.
+
+## v1.5.0
+
+- feat: added `com.germnetwork.declaration` record.
+
 ## v1.4.3
 
 - core: generated code. ([#2350](https://github.com/myConsciousness/atproto.dart/pull/2350))

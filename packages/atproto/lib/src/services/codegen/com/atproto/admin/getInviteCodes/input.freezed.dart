@@ -22,7 +22,7 @@ AdminGetInviteCodesInput _$AdminGetInviteCodesInputFromJson(
 /// @nodoc
 mixin _$AdminGetInviteCodesInput {
   @AdminGetInviteCodesSortConverter()
-  AdminGetInviteCodesSort? get sort => throw _privateConstructorUsedError;
+  AdminGetInviteCodesSort get sort => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
   String? get cursor => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
@@ -44,12 +44,12 @@ abstract class $AdminGetInviteCodesInputCopyWith<$Res> {
       _$AdminGetInviteCodesInputCopyWithImpl<$Res, AdminGetInviteCodesInput>;
   @useResult
   $Res call(
-      {@AdminGetInviteCodesSortConverter() AdminGetInviteCodesSort? sort,
+      {@AdminGetInviteCodesSortConverter() AdminGetInviteCodesSort sort,
       int limit,
       String? cursor,
       Map<String, dynamic>? $unknown});
 
-  $AdminGetInviteCodesSortCopyWith<$Res>? get sort;
+  $AdminGetInviteCodesSortCopyWith<$Res> get sort;
 }
 
 /// @nodoc
@@ -68,16 +68,16 @@ class _$AdminGetInviteCodesInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sort = freezed,
+    Object? sort = null,
     Object? limit = null,
     Object? cursor = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
-      sort: freezed == sort
+      sort: null == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as AdminGetInviteCodesSort?,
+              as AdminGetInviteCodesSort,
       limit: null == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -97,12 +97,8 @@ class _$AdminGetInviteCodesInputCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AdminGetInviteCodesSortCopyWith<$Res>? get sort {
-    if (_value.sort == null) {
-      return null;
-    }
-
-    return $AdminGetInviteCodesSortCopyWith<$Res>(_value.sort!, (value) {
+  $AdminGetInviteCodesSortCopyWith<$Res> get sort {
+    return $AdminGetInviteCodesSortCopyWith<$Res>(_value.sort, (value) {
       return _then(_value.copyWith(sort: value) as $Val);
     });
   }
@@ -118,13 +114,13 @@ abstract class _$$AdminGetInviteCodesInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@AdminGetInviteCodesSortConverter() AdminGetInviteCodesSort? sort,
+      {@AdminGetInviteCodesSortConverter() AdminGetInviteCodesSort sort,
       int limit,
       String? cursor,
       Map<String, dynamic>? $unknown});
 
   @override
-  $AdminGetInviteCodesSortCopyWith<$Res>? get sort;
+  $AdminGetInviteCodesSortCopyWith<$Res> get sort;
 }
 
 /// @nodoc
@@ -142,16 +138,16 @@ class __$$AdminGetInviteCodesInputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sort = freezed,
+    Object? sort = null,
     Object? limit = null,
     Object? cursor = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$AdminGetInviteCodesInputImpl(
-      sort: freezed == sort
+      sort: null == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
-              as AdminGetInviteCodesSort?,
+              as AdminGetInviteCodesSort,
       limit: null == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
@@ -173,7 +169,9 @@ class __$$AdminGetInviteCodesInputImplCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$AdminGetInviteCodesInputImpl implements _AdminGetInviteCodesInput {
   const _$AdminGetInviteCodesInputImpl(
-      {@AdminGetInviteCodesSortConverter() this.sort,
+      {@AdminGetInviteCodesSortConverter() this.sort =
+          const AdminGetInviteCodesSort.knownValue(
+              data: KnownAdminGetInviteCodesSort.recent),
       this.limit = 100,
       this.cursor,
       final Map<String, dynamic>? $unknown})
@@ -183,8 +181,9 @@ class _$AdminGetInviteCodesInputImpl implements _AdminGetInviteCodesInput {
       _$$AdminGetInviteCodesInputImplFromJson(json);
 
   @override
+  @JsonKey()
   @AdminGetInviteCodesSortConverter()
-  final AdminGetInviteCodesSort? sort;
+  final AdminGetInviteCodesSort sort;
   @override
   @JsonKey()
   final int limit;
@@ -240,7 +239,7 @@ class _$AdminGetInviteCodesInputImpl implements _AdminGetInviteCodesInput {
 
 abstract class _AdminGetInviteCodesInput implements AdminGetInviteCodesInput {
   const factory _AdminGetInviteCodesInput(
-      {@AdminGetInviteCodesSortConverter() final AdminGetInviteCodesSort? sort,
+      {@AdminGetInviteCodesSortConverter() final AdminGetInviteCodesSort sort,
       final int limit,
       final String? cursor,
       final Map<String, dynamic>? $unknown}) = _$AdminGetInviteCodesInputImpl;
@@ -250,7 +249,7 @@ abstract class _AdminGetInviteCodesInput implements AdminGetInviteCodesInput {
 
   @override
   @AdminGetInviteCodesSortConverter()
-  AdminGetInviteCodesSort? get sort;
+  AdminGetInviteCodesSort get sort;
   @override
   int get limit;
   @override

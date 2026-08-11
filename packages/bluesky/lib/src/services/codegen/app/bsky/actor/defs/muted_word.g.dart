@@ -25,8 +25,11 @@ _$MutedWordImpl _$$MutedWordImplFromJson(Map json) => $checkedCreate(
                   .toList()),
           actorTarget: $checkedConvert(
               'actorTarget',
-              (v) => _$JsonConverterFromJson<String, MutedWordActorTarget>(
-                  v, const MutedWordActorTargetConverter().fromJson)),
+              (v) => v == null
+                  ? const MutedWordActorTarget.knownValue(
+                      data: KnownMutedWordActorTarget.all)
+                  : const MutedWordActorTargetConverter()
+                      .fromJson(v as String)),
           expiresAt: $checkedConvert('expiresAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           $unknown: $checkedConvert(
@@ -47,24 +50,8 @@ Map<String, dynamic> _$$MutedWordImplToJson(_$MutedWordImpl instance) =>
       'targets': instance.targets
           .map(const MutedWordTargetConverter().toJson)
           .toList(),
-      if (_$JsonConverterToJson<String, MutedWordActorTarget>(
-              instance.actorTarget,
-              const MutedWordActorTargetConverter().toJson)
-          case final value?)
-        'actorTarget': value,
-      if (instance.expiresAt?.toIso8601String() case final value?)
-        'expiresAt': value,
+      'actorTarget':
+          const MutedWordActorTargetConverter().toJson(instance.actorTarget),
+      'expiresAt': iso8601(instance.expiresAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

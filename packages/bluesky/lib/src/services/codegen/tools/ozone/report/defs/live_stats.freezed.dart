@@ -41,6 +41,7 @@ mixin _$LiveStats {
   int? get avgHandlingTimeSec => throw _privateConstructorUsedError;
 
   /// When these statistics were last computed.
+  @JsonKey(toJson: iso8601)
   DateTime? get lastUpdated => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -67,7 +68,7 @@ abstract class $LiveStatsCopyWith<$Res> {
       int? inboundCount,
       int? actionRate,
       int? avgHandlingTimeSec,
-      DateTime? lastUpdated,
+      @JsonKey(toJson: iso8601) DateTime? lastUpdated,
       Map<String, dynamic>? $unknown});
 }
 
@@ -153,7 +154,7 @@ abstract class _$$LiveStatsImplCopyWith<$Res>
       int? inboundCount,
       int? actionRate,
       int? avgHandlingTimeSec,
-      DateTime? lastUpdated,
+      @JsonKey(toJson: iso8601) DateTime? lastUpdated,
       Map<String, dynamic>? $unknown});
 }
 
@@ -233,7 +234,7 @@ class _$LiveStatsImpl implements _LiveStats {
       this.inboundCount,
       this.actionRate,
       this.avgHandlingTimeSec,
-      this.lastUpdated,
+      @JsonKey(toJson: iso8601) this.lastUpdated,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -270,6 +271,7 @@ class _$LiveStatsImpl implements _LiveStats {
 
   /// When these statistics were last computed.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastUpdated;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -348,7 +350,7 @@ abstract class _LiveStats implements LiveStats {
       final int? inboundCount,
       final int? actionRate,
       final int? avgHandlingTimeSec,
-      final DateTime? lastUpdated,
+      @JsonKey(toJson: iso8601) final DateTime? lastUpdated,
       final Map<String, dynamic>? $unknown}) = _$LiveStatsImpl;
 
   factory _LiveStats.fromJson(Map<String, dynamic> json) =
@@ -383,6 +385,7 @@ abstract class _LiveStats implements LiveStats {
 
   /// When these statistics were last computed.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastUpdated;
   @override
   Map<String, dynamic>? get $unknown;

@@ -17,6 +17,7 @@ _$TrendViewImpl _$$TrendViewImplFromJson(Map json) => $checkedCreate(
               (v) => v as String? ?? 'app.bsky.unspecced.defs#trendView'),
           topic: $checkedConvert('topic', (v) => v as String),
           displayName: $checkedConvert('displayName', (v) => v as String),
+          description: $checkedConvert('description', (v) => v as String?),
           link: $checkedConvert('link', (v) => v as String),
           startedAt:
               $checkedConvert('startedAt', (v) => DateTime.parse(v as String)),
@@ -47,8 +48,9 @@ Map<String, dynamic> _$$TrendViewImplToJson(_$TrendViewImpl instance) =>
       r'$type': instance.$type,
       'topic': instance.topic,
       'displayName': instance.displayName,
+      if (instance.description case final value?) 'description': value,
       'link': instance.link,
-      'startedAt': instance.startedAt.toIso8601String(),
+      'startedAt': iso8601(instance.startedAt),
       'postCount': instance.postCount,
       if (_$JsonConverterToJson<String, TrendViewStatus>(
               instance.status, const TrendViewStatusConverter().toJson)

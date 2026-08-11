@@ -24,15 +24,23 @@ final class FindCorrelationCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Find all correlated threat signatures between 2 or more accounts.";
+      "Find all correlated threat signatures between 2 or more accounts.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-signature find-correlation [dids]";
+      "bsky tools-ozone-signature find-correlation [--dids=<value>...]";
 
   @override
   String get methodId => "tools.ozone.signature.findCorrelation";
 
   @override
-  Map<String, dynamic>? get parameters => {"dids": argResults!["dids"]};
+  Map<String, dynamic>? get parameters => {
+        "dids": _requireNonEmpty("dids", argResults!["dids"]),
+      };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

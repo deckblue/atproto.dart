@@ -28,9 +28,11 @@ mixin _$ModerationQueryEventsInput {
   String get sortDirection => throw _privateConstructorUsedError;
 
   /// Retrieve events created after a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAfter => throw _privateConstructorUsedError;
 
   /// Retrieve events created before a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get createdBefore => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   List<String>? get collections => throw _privateConstructorUsedError;
@@ -93,8 +95,8 @@ abstract class $ModerationQueryEventsInputCopyWith<$Res> {
       {List<String>? types,
       String? createdBy,
       String sortDirection,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
+      @JsonKey(toJson: iso8601) DateTime? createdAfter,
+      @JsonKey(toJson: iso8601) DateTime? createdBefore,
       String? subject,
       List<String>? collections,
       @ModerationQueryEventsSubjectTypeConverter()
@@ -306,8 +308,8 @@ abstract class _$$ModerationQueryEventsInputImplCopyWith<$Res>
       {List<String>? types,
       String? createdBy,
       String sortDirection,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
+      @JsonKey(toJson: iso8601) DateTime? createdAfter,
+      @JsonKey(toJson: iso8601) DateTime? createdBefore,
       String? subject,
       List<String>? collections,
       @ModerationQueryEventsSubjectTypeConverter()
@@ -485,8 +487,8 @@ class _$ModerationQueryEventsInputImpl implements _ModerationQueryEventsInput {
       {final List<String>? types,
       this.createdBy,
       this.sortDirection = 'desc',
-      this.createdAfter,
-      this.createdBefore,
+      @JsonKey(toJson: iso8601) this.createdAfter,
+      @JsonKey(toJson: iso8601) this.createdBefore,
       this.subject,
       final List<String>? collections,
       @ModerationQueryEventsSubjectTypeConverter() this.subjectType,
@@ -541,10 +543,12 @@ class _$ModerationQueryEventsInputImpl implements _ModerationQueryEventsInput {
 
   /// Retrieve events created after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAfter;
 
   /// Retrieve events created before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdBefore;
   @override
   final String? subject;
@@ -779,8 +783,8 @@ abstract class _ModerationQueryEventsInput
       {final List<String>? types,
       final String? createdBy,
       final String sortDirection,
-      final DateTime? createdAfter,
-      final DateTime? createdBefore,
+      @JsonKey(toJson: iso8601) final DateTime? createdAfter,
+      @JsonKey(toJson: iso8601) final DateTime? createdBefore,
       final String? subject,
       final List<String>? collections,
       @ModerationQueryEventsSubjectTypeConverter()
@@ -817,10 +821,12 @@ abstract class _ModerationQueryEventsInput
 
   /// Retrieve events created after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAfter;
 
   /// Retrieve events created before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdBefore;
   @override
   String? get subject;

@@ -40,6 +40,6 @@ Map<String, dynamic> _$$DeletedMessageViewImplToJson(
       'id': instance.id,
       'rev': instance.rev,
       'sender': const MessageViewSenderConverter().toJson(instance.sender),
-      'sentAt': instance.sentAt.toIso8601String(),
+      'sentAt': iso8601(instance.sentAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

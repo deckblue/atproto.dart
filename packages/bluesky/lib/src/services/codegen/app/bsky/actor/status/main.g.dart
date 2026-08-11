@@ -47,7 +47,7 @@ Map<String, dynamic> _$$ActorStatusRecordImplToJson(
           case final value?)
         'embed': value,
       if (instance.durationMinutes case final value?) 'durationMinutes': value,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

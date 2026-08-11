@@ -9,29 +9,34 @@ import 'dart:io';
 import 'package:lexicon/lexicon.dart';
 
 // Project imports:
+import '../model/nsid.dart';
 import '../utils.dart';
 import 'fmt/lex_packages_generator.dart';
-import 'object/lex_package.dart';
+import 'gen_context.dart';
 import 'object/lex_service.dart';
 import 'object/lex_type.dart';
 import 'rule.dart' as rule;
+import 'services_common.dart';
 
 void generateLexServices(
+  final GenContext ctx,
   final List<String> services,
   final List<String> packages,
-  final List<LexType> types,
+  final List<GeneratableType> types,
   final List<LexiconDoc> docs,
 ) {
-  return _LexServiceGenerator(services, packages, types, docs).execute();
+  return _LexServiceGenerator(ctx, services, packages, types, docs).execute();
 }
 
 final class _LexServiceGenerator {
+  final GenContext ctx;
   final List<String> services;
   final List<String> packages;
-  final List<LexType> types;
+  final List<GeneratableType> types;
   final List<LexiconDoc> docs;
 
   const _LexServiceGenerator(
+    this.ctx,
     this.services,
     this.packages,
     this.types,
@@ -45,13 +50,14 @@ final class _LexServiceGenerator {
     for (final entry in docsByService.entries) {
       final apis = <LexApi>[];
       for (final doc in entry.value) {
-        final apiDef = _getApiDef(doc).entries.first.value;
-        final api = apiDef.whenOrNull(
-          xrpcQuery: (data) => data,
-          xrpcProcedure: (data) => data,
-          xrpcSubscription: (data) => data,
-          record: (data) => data,
-        );
+        final apiDef = firstApiDef(doc);
+        final api = switch (apiDef) {
+          ULexUserTypeXrpcQuery(:final data) => data,
+          ULexUserTypeXrpcProcedure(:final data) => data,
+          ULexUserTypeXrpcSubscription(:final data) => data,
+          ULexUserTypeRecord(:final data) => data,
+          _ => null,
+        };
         if (api == null) continue;
 
         final returnType = _getRelatedType(doc.id.toString(), const [
@@ -70,10 +76,7 @@ final class _LexServiceGenerator {
             inputType: inputType,
             returnType: returnType,
             rkey: api is LexRecord ? api.key : null,
-            isQuery: _isQuery(doc),
-            isProcedure: _isProcedure(doc),
-            isSubscription: _isSubscription(doc),
-            isRecord: _isRecord(doc),
+            kind: apiKindOf(doc),
           ),
         );
       }
@@ -88,18 +91,17 @@ final class _LexServiceGenerator {
     }
 
     for (final service in services) {
-      File(service.getFilePath())
+      File(service.getFilePath(ctx))
         ..createSync(recursive: true)
-        ..writeAsStringSync(service.format());
+        ..writeAsStringSync(service.format(ctx));
     }
 
-    _generateLexPackages(services);
+    writeLexPackages(generateLexPackagesForService(ctx, services));
   }
 
   List<LexiconDoc> _filterLexicons(final List<LexiconDoc> docs) {
     return docs.where((lexicon) {
-      final id = lexicon.id.toString();
-      final service = id.split('.').sublist(0, 2).join('.');
+      final service = Nsid(lexicon.id.toString()).authority;
 
       return services.contains(service);
     }).toList();
@@ -111,55 +113,18 @@ final class _LexServiceGenerator {
     final result = <String, List<LexiconDoc>>{};
 
     for (final doc in docs) {
-      if (!_isApi(doc)) continue;
+      if (!isApiDoc(doc)) continue;
       if (rule.isDeprecated(doc.description)) continue;
 
-      final key = doc.id.toString().split('.').sublist(0, 3).join('.');
+      final key = Nsid(doc.id.toString()).serviceId;
 
-      if (result.containsKey(key)) {
-        result[key]!.add(doc);
-      } else {
-        result[key] = [doc];
-      }
+      result.putIfAbsent(key, () => []).add(doc);
     }
 
     return result;
   }
 
-  bool _isApi(final LexiconDoc doc) {
-    return _isQuery(doc) ||
-        _isProcedure(doc) ||
-        _isSubscription(doc) ||
-        _isRecord(doc);
-  }
-
-  bool _isQuery(final LexiconDoc doc) {
-    return _isDocA<ULexUserTypeXrpcQuery>(doc);
-  }
-
-  bool _isProcedure(final LexiconDoc doc) {
-    return _isDocA<ULexUserTypeXrpcProcedure>(doc);
-  }
-
-  bool _isSubscription(final LexiconDoc doc) {
-    return _isDocA<ULexUserTypeXrpcSubscription>(doc);
-  }
-
-  bool _isRecord(final LexiconDoc doc) {
-    return _isDocA<ULexUserTypeRecord>(doc);
-  }
-
-  bool _isDocA<T>(final LexiconDoc doc) {
-    for (final def in doc.defs.entries) {
-      if (def.value is T) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  LexType? _getRelatedType(
+  GeneratableType? _getRelatedType(
     final String lexiconId,
     final List<LexTypeState> states, {
     String? refDefName,
@@ -203,19 +168,6 @@ final class _LexServiceGenerator {
     return null;
   }
 
-  Map<String, LexUserType> _getApiDef(final LexiconDoc doc) {
-    for (final def in doc.defs.entries) {
-      if (def.value is ULexUserTypeXrpcQuery ||
-          def.value is ULexUserTypeXrpcProcedure ||
-          def.value is ULexUserTypeXrpcSubscription ||
-          def.value is ULexUserTypeRecord) {
-        return Map.fromEntries([def]);
-      }
-    }
-
-    throw StateError('API definition does not exist');
-  }
-
   String? _getApiDescription(final Object data) {
     switch (data) {
       case LexXrpcQuery query:
@@ -229,37 +181,5 @@ final class _LexServiceGenerator {
       default:
         return null;
     }
-  }
-
-  void _generateLexPackages(final List<LexService> services) {
-    final packages = generateLexPackagesForService(services);
-    final basePackages = _getBasePackages(packages);
-
-    for (final package in packages) {
-      File('packages/${package.root}/lib/${package.name}.dart')
-        ..createSync(recursive: true)
-        ..writeAsStringSync(package.exportableDependencies);
-
-      if (package.root != 'atproto') {
-        for (final base in basePackages) {
-          File('packages/${package.root}/lib/${base.name}.dart')
-            ..createSync(recursive: true)
-            ..writeAsStringSync(base.exportableDependencies);
-        }
-      }
-    }
-  }
-
-  List<LexPackage> _getBasePackages(final List<LexPackage> packages) {
-    if (packages.isEmpty) return const [];
-
-    final result = <LexPackage>[];
-    for (final package in packages) {
-      if (package.root == 'atproto') {
-        result.add(package);
-      }
-    }
-
-    return result;
   }
 }

@@ -2,9 +2,6 @@
 // All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-// Dart imports:
-import 'dart:async';
-
 // Project imports:
 import 'cache_policy.dart';
 
@@ -14,8 +11,6 @@ class _CacheEntry<T> {
 
   final T data;
   final DateTime expiresAt;
-
-  bool get isExpired => DateTime.now().isAfter(expiresAt);
 }
 
 /// A memory-based cache implementation with TTL and LRU eviction support.
@@ -25,16 +20,21 @@ class _CacheEntry<T> {
 /// eviction when the cache reaches its maximum size.
 class MemoryCache<T> {
   /// Creates a new memory cache with the specified policy.
-  MemoryCache(this._policy) {
-    if (_policy.isEnabled) {
-      _startCleanupTimer();
-    }
-  }
+  ///
+  /// This cache does not start any background timers. Expired entries are
+  /// purged lazily on read and when new entries are inserted, so it never
+  /// keeps the isolate alive and is safe to leave un-disposed.
+  ///
+  /// [now] supplies the current time for TTL and LRU bookkeeping. It defaults
+  /// to [DateTime.now]; pass a controllable clock to make expiry deterministic
+  /// instead of dependent on wall-clock delays.
+  MemoryCache(this._policy, {final DateTime Function()? now})
+      : _now = now ?? DateTime.now;
 
   final CachePolicy _policy;
+  final DateTime Function() _now;
   final Map<String, _CacheEntry<T>> _cache = {};
   final Map<String, DateTime> _accessTimes = {};
-  Timer? _cleanupTimer;
 
   /// Gets a value from the cache by key.
   ///
@@ -52,7 +52,7 @@ class MemoryCache<T> {
       return null;
     }
 
-    if (entry.isExpired) {
+    if (_isExpired(entry)) {
       _remove(key);
       _recordMiss();
       return null;
@@ -60,7 +60,7 @@ class MemoryCache<T> {
 
     // Update access time for LRU tracking
     if (_policy.shouldUseLru) {
-      _accessTimes[key] = DateTime.now();
+      _accessTimes[key] = _now();
     }
 
     _recordHit();
@@ -74,17 +74,21 @@ class MemoryCache<T> {
   void put(String key, T value) {
     if (!_policy.isEnabled) return;
 
-    final expiresAt = DateTime.now().add(_policy.effectiveTtl);
+    final expiresAt = _now().add(_policy.effectiveTtl);
     final entry = _CacheEntry(value, expiresAt);
 
-    // Check if we need to evict entries
+    // Check if we need to evict entries. Purge expired entries first so we
+    // only evict a live entry when genuinely at capacity.
     if (_cache.length >= _policy.effectiveMaxSize && !_cache.containsKey(key)) {
-      _evictLeastRecentlyUsed();
+      _cleanupExpired();
+      if (_cache.length >= _policy.effectiveMaxSize) {
+        _evictLeastRecentlyUsed();
+      }
     }
 
     _cache[key] = entry;
     if (_policy.shouldUseLru) {
-      _accessTimes[key] = DateTime.now();
+      _accessTimes[key] = _now();
     }
   }
 
@@ -110,7 +114,7 @@ class MemoryCache<T> {
     final entry = _cache[key];
     if (entry == null) return false;
 
-    if (entry.isExpired) {
+    if (_isExpired(entry)) {
       _remove(key);
       return false;
     }
@@ -135,14 +139,17 @@ class MemoryCache<T> {
     );
   }
 
-  /// Disposes the cache and stops the cleanup timer.
+  /// Disposes the cache by clearing all entries.
+  ///
+  /// Because the cache uses no background timers, calling this is optional;
+  /// it simply releases the referenced entries eagerly.
   void dispose() {
-    _cleanupTimer?.cancel();
-    _cleanupTimer = null;
     clear();
   }
 
   // Private methods
+
+  bool _isExpired(_CacheEntry<T> entry) => _now().isAfter(entry.expiresAt);
 
   void _remove(String key) {
     _cache.remove(key);
@@ -176,7 +183,7 @@ class MemoryCache<T> {
   }
 
   void _cleanupExpired() {
-    final now = DateTime.now();
+    final now = _now();
     final expiredKeys = <String>[];
 
     for (final entry in _cache.entries) {
@@ -188,13 +195,6 @@ class MemoryCache<T> {
     for (final key in expiredKeys) {
       _remove(key);
     }
-  }
-
-  void _startCleanupTimer() {
-    // Run cleanup every minute to remove expired entries
-    _cleanupTimer = Timer.periodic(const Duration(minutes: 1), (_) {
-      _cleanupExpired();
-    });
   }
 
   // Hit rate tracking

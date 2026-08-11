@@ -22,7 +22,13 @@ LexRefUnion _$LexRefUnionFromJson(Map<String, dynamic> json) {
 mixin _$LexRefUnion {
   String get type => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  List<String>? get refs => throw _privateConstructorUsedError;
+  List<String>? get refs =>
+      throw _privateConstructorUsedError; // Whether the union is closed (the set of `refs` is exhaustive). This is
+// parsed for spec completeness but intentionally not enforced by the code
+// generator: generated unions always keep an `.unknown` fallback variant
+// so that a value with an unrecognized `$type` decodes gracefully rather
+// than throwing, which is the forward-compatible behavior even for a
+// closed union (upstream may add variants).
   bool? get closed => throw _privateConstructorUsedError;
 
   /// Serializes this LexRefUnion to a JSON map.
@@ -166,6 +172,12 @@ class _$LexRefUnionImpl implements _LexRefUnion {
     return EqualUnmodifiableListView(value);
   }
 
+// Whether the union is closed (the set of `refs` is exhaustive). This is
+// parsed for spec completeness but intentionally not enforced by the code
+// generator: generated unions always keep an `.unknown` fallback variant
+// so that a value with an unrecognized `$type` decodes gracefully rather
+// than throwing, which is the forward-compatible behavior even for a
+// closed union (upstream may add variants).
   @override
   final bool? closed;
 
@@ -222,7 +234,13 @@ abstract class _LexRefUnion implements LexRefUnion {
   @override
   String? get description;
   @override
-  List<String>? get refs;
+  List<String>?
+      get refs; // Whether the union is closed (the set of `refs` is exhaustive). This is
+// parsed for spec completeness but intentionally not enforced by the code
+// generator: generated unions always keep an `.unknown` fallback variant
+// so that a value with an unrecognized `$type` decodes gracefully rather
+// than throwing, which is the forward-compatible behavior even for a
+// closed union (upstream may add variants).
   @override
   bool? get closed;
 

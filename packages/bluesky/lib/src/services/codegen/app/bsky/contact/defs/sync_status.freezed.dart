@@ -23,6 +23,7 @@ mixin _$SyncStatus {
   String get $type => throw _privateConstructorUsedError;
 
   /// Last date when contacts where imported.
+  @JsonKey(toJson: iso8601)
   DateTime get syncedAt => throw _privateConstructorUsedError;
 
   /// Number of existing contact matches resulting of the user imports and of their imported contacts having imported the user. Matches stop being counted when the user either follows the matched contact or dismisses the match.
@@ -47,7 +48,7 @@ abstract class $SyncStatusCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime syncedAt,
+      @JsonKey(toJson: iso8601) DateTime syncedAt,
       int matchesCount,
       Map<String, dynamic>? $unknown});
 }
@@ -103,7 +104,7 @@ abstract class _$$SyncStatusImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime syncedAt,
+      @JsonKey(toJson: iso8601) DateTime syncedAt,
       int matchesCount,
       Map<String, dynamic>? $unknown});
 }
@@ -153,7 +154,7 @@ class __$$SyncStatusImplCopyWithImpl<$Res>
 class _$SyncStatusImpl implements _SyncStatus {
   const _$SyncStatusImpl(
       {this.$type = 'app.bsky.contact.defs#syncStatus',
-      required this.syncedAt,
+      @JsonKey(toJson: iso8601) required this.syncedAt,
       required this.matchesCount,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -167,6 +168,7 @@ class _$SyncStatusImpl implements _SyncStatus {
 
   /// Last date when contacts where imported.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime syncedAt;
 
   /// Number of existing contact matches resulting of the user imports and of their imported contacts having imported the user. Matches stop being counted when the user either follows the matched contact or dismisses the match.
@@ -224,7 +226,7 @@ class _$SyncStatusImpl implements _SyncStatus {
 abstract class _SyncStatus implements SyncStatus {
   const factory _SyncStatus(
       {final String $type,
-      required final DateTime syncedAt,
+      @JsonKey(toJson: iso8601) required final DateTime syncedAt,
       required final int matchesCount,
       final Map<String, dynamic>? $unknown}) = _$SyncStatusImpl;
 
@@ -236,6 +238,7 @@ abstract class _SyncStatus implements SyncStatus {
 
   /// Last date when contacts where imported.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get syncedAt;
 
   /// Number of existing contact matches resulting of the user imports and of their imported contacts having imported the user. Matches stop being counted when the user either follows the matched contact or dismisses the match.

@@ -39,22 +39,37 @@ final class ScheduleActionCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Schedule a moderation action to be executed at a future time";
+      "Schedule a moderation action to be executed at a future time";
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation schedule-action [action] [subjects] [createdBy] [scheduling] [modTool]";
+      "bsky tools-ozone-moderation schedule-action --action=<value> [--subjects=<value>...] --createdBy=<value> --scheduling=<value> [--modTool=<value>]";
 
   @override
   String get methodId => "tools.ozone.moderation.scheduleAction";
 
   @override
   Map<String, dynamic>? get body => {
-        "action": jsonDecode(argResults!["action"]),
-        "subjects": argResults!["subjects"],
+        "action": _decodeJson("action"),
+        "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
         "createdBy": argResults!["createdBy"],
-        "scheduling": jsonDecode(argResults!["scheduling"]),
-        if (argResults!["modTool"] != null)
-          "modTool": jsonDecode(argResults!["modTool"]),
+        "scheduling": _decodeJson("scheduling"),
+        if (argResults!.wasParsed("modTool")) "modTool": _decodeJson("modTool"),
       };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
+
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

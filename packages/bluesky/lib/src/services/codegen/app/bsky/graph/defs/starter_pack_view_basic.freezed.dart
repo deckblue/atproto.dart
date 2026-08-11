@@ -32,6 +32,7 @@ mixin _$StarterPackViewBasic {
   int? get joinedAllTimeCount => throw _privateConstructorUsedError;
   @LabelConverter()
   List<Label>? get labels => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -61,7 +62,7 @@ abstract class $StarterPackViewBasicCopyWith<$Res> {
       int? joinedWeekCount,
       int? joinedAllTimeCount,
       @LabelConverter() List<Label>? labels,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewBasicCopyWith<$Res> get creator;
@@ -172,7 +173,7 @@ abstract class _$$StarterPackViewBasicImplCopyWith<$Res>
       int? joinedWeekCount,
       int? joinedAllTimeCount,
       @LabelConverter() List<Label>? labels,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -267,7 +268,7 @@ class _$StarterPackViewBasicImpl implements _StarterPackViewBasic {
       this.joinedWeekCount,
       this.joinedAllTimeCount,
       @LabelConverter() final List<Label>? labels,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       final Map<String, dynamic>? $unknown})
       : _record = record,
         _labels = labels,
@@ -313,6 +314,7 @@ class _$StarterPackViewBasicImpl implements _StarterPackViewBasic {
   }
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -396,7 +398,7 @@ abstract class _StarterPackViewBasic implements StarterPackViewBasic {
       final int? joinedWeekCount,
       final int? joinedAllTimeCount,
       @LabelConverter() final List<Label>? labels,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       final Map<String, dynamic>? $unknown}) = _$StarterPackViewBasicImpl;
 
   factory _StarterPackViewBasic.fromJson(Map<String, dynamic> json) =
@@ -424,6 +426,7 @@ abstract class _StarterPackViewBasic implements StarterPackViewBasic {
   @LabelConverter()
   List<Label>? get labels;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   Map<String, dynamic>? get $unknown;

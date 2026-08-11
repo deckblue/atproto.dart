@@ -33,7 +33,7 @@ mixin _$SafelinkQueryEventsInput {
 
   /// Sort direction
   @SafelinkQueryEventsSortDirectionConverter()
-  SafelinkQueryEventsSortDirection? get sortDirection =>
+  SafelinkQueryEventsSortDirection get sortDirection =>
       throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -59,10 +59,10 @@ abstract class $SafelinkQueryEventsInputCopyWith<$Res> {
       List<String>? urls,
       String? patternType,
       @SafelinkQueryEventsSortDirectionConverter()
-      SafelinkQueryEventsSortDirection? sortDirection,
+      SafelinkQueryEventsSortDirection sortDirection,
       Map<String, dynamic>? $unknown});
 
-  $SafelinkQueryEventsSortDirectionCopyWith<$Res>? get sortDirection;
+  $SafelinkQueryEventsSortDirectionCopyWith<$Res> get sortDirection;
 }
 
 /// @nodoc
@@ -85,7 +85,7 @@ class _$SafelinkQueryEventsInputCopyWithImpl<$Res,
     Object? limit = null,
     Object? urls = freezed,
     Object? patternType = freezed,
-    Object? sortDirection = freezed,
+    Object? sortDirection = null,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -105,10 +105,10 @@ class _$SafelinkQueryEventsInputCopyWithImpl<$Res,
           ? _value.patternType
           : patternType // ignore: cast_nullable_to_non_nullable
               as String?,
-      sortDirection: freezed == sortDirection
+      sortDirection: null == sortDirection
           ? _value.sortDirection
           : sortDirection // ignore: cast_nullable_to_non_nullable
-              as SafelinkQueryEventsSortDirection?,
+              as SafelinkQueryEventsSortDirection,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -120,13 +120,9 @@ class _$SafelinkQueryEventsInputCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $SafelinkQueryEventsSortDirectionCopyWith<$Res>? get sortDirection {
-    if (_value.sortDirection == null) {
-      return null;
-    }
-
-    return $SafelinkQueryEventsSortDirectionCopyWith<$Res>(
-        _value.sortDirection!, (value) {
+  $SafelinkQueryEventsSortDirectionCopyWith<$Res> get sortDirection {
+    return $SafelinkQueryEventsSortDirectionCopyWith<$Res>(_value.sortDirection,
+        (value) {
       return _then(_value.copyWith(sortDirection: value) as $Val);
     });
   }
@@ -147,11 +143,11 @@ abstract class _$$SafelinkQueryEventsInputImplCopyWith<$Res>
       List<String>? urls,
       String? patternType,
       @SafelinkQueryEventsSortDirectionConverter()
-      SafelinkQueryEventsSortDirection? sortDirection,
+      SafelinkQueryEventsSortDirection sortDirection,
       Map<String, dynamic>? $unknown});
 
   @override
-  $SafelinkQueryEventsSortDirectionCopyWith<$Res>? get sortDirection;
+  $SafelinkQueryEventsSortDirectionCopyWith<$Res> get sortDirection;
 }
 
 /// @nodoc
@@ -173,7 +169,7 @@ class __$$SafelinkQueryEventsInputImplCopyWithImpl<$Res>
     Object? limit = null,
     Object? urls = freezed,
     Object? patternType = freezed,
-    Object? sortDirection = freezed,
+    Object? sortDirection = null,
     Object? $unknown = freezed,
   }) {
     return _then(_$SafelinkQueryEventsInputImpl(
@@ -193,10 +189,10 @@ class __$$SafelinkQueryEventsInputImplCopyWithImpl<$Res>
           ? _value.patternType
           : patternType // ignore: cast_nullable_to_non_nullable
               as String?,
-      sortDirection: freezed == sortDirection
+      sortDirection: null == sortDirection
           ? _value.sortDirection
           : sortDirection // ignore: cast_nullable_to_non_nullable
-              as SafelinkQueryEventsSortDirection?,
+              as SafelinkQueryEventsSortDirection,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -214,7 +210,9 @@ class _$SafelinkQueryEventsInputImpl implements _SafelinkQueryEventsInput {
       this.limit = 50,
       final List<String>? urls,
       this.patternType,
-      @SafelinkQueryEventsSortDirectionConverter() this.sortDirection,
+      @SafelinkQueryEventsSortDirectionConverter() this.sortDirection =
+          const SafelinkQueryEventsSortDirection.knownValue(
+              data: KnownSafelinkQueryEventsSortDirection.desc),
       final Map<String, dynamic>? $unknown})
       : _urls = urls,
         _$unknown = $unknown;
@@ -246,8 +244,9 @@ class _$SafelinkQueryEventsInputImpl implements _SafelinkQueryEventsInput {
 
   /// Sort direction
   @override
+  @JsonKey()
   @SafelinkQueryEventsSortDirectionConverter()
-  final SafelinkQueryEventsSortDirection? sortDirection;
+  final SafelinkQueryEventsSortDirection sortDirection;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -313,7 +312,7 @@ abstract class _SafelinkQueryEventsInput implements SafelinkQueryEventsInput {
       final List<String>? urls,
       final String? patternType,
       @SafelinkQueryEventsSortDirectionConverter()
-      final SafelinkQueryEventsSortDirection? sortDirection,
+      final SafelinkQueryEventsSortDirection sortDirection,
       final Map<String, dynamic>? $unknown}) = _$SafelinkQueryEventsInputImpl;
 
   factory _SafelinkQueryEventsInput.fromJson(Map<String, dynamic> json) =
@@ -336,7 +335,7 @@ abstract class _SafelinkQueryEventsInput implements SafelinkQueryEventsInput {
   /// Sort direction
   @override
   @SafelinkQueryEventsSortDirectionConverter()
-  SafelinkQueryEventsSortDirection? get sortDirection;
+  SafelinkQueryEventsSortDirection get sortDirection;
   @override
   Map<String, dynamic>? get $unknown;
 

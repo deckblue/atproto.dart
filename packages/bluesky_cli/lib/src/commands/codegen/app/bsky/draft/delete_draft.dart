@@ -23,10 +23,10 @@ final class DeleteDraftCommand extends ProcedureCommand {
   final String name = "delete-draft";
 
   @override
-  final String description = r"Deletes a draft by ID. Requires authentication.";
+  final String description = "Deletes a draft by ID. Requires authentication.";
 
   @override
-  final String invocation = "bsky app-bsky-draft delete-draft [id]";
+  final String invocation = "bsky app-bsky-draft delete-draft --id=<value>";
 
   @override
   String get methodId => "app.bsky.draft.deleteDraft";

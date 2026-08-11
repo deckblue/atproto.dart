@@ -21,6 +21,7 @@ JoinLinkPreviewView _$JoinLinkPreviewViewFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$JoinLinkPreviewView {
   String get $type => throw _privateConstructorUsedError;
+  String get convoId => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   @ProfileViewBasicConverter()
@@ -30,8 +31,6 @@ mixin _$JoinLinkPreviewView {
   bool get requireApproval => throw _privateConstructorUsedError;
   @JoinRuleConverter()
   JoinRule get joinRule => throw _privateConstructorUsedError;
-  @LinkEnabledStatusConverter()
-  LinkEnabledStatus get enabledStatus => throw _privateConstructorUsedError;
 
   /// Present only if the request is authenticated and the user is a member of the group.
   @ConvoViewConverter()
@@ -58,6 +57,7 @@ abstract class $JoinLinkPreviewViewCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
+      String convoId,
       String code,
       String name,
       @ProfileViewBasicConverter() ProfileViewBasic owner,
@@ -65,14 +65,12 @@ abstract class $JoinLinkPreviewViewCopyWith<$Res> {
       int memberLimit,
       bool requireApproval,
       @JoinRuleConverter() JoinRule joinRule,
-      @LinkEnabledStatusConverter() LinkEnabledStatus enabledStatus,
       @ConvoViewConverter() ConvoView? convo,
       @JoinLinkViewerStateConverter() JoinLinkViewerState? viewer,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewBasicCopyWith<$Res> get owner;
   $JoinRuleCopyWith<$Res> get joinRule;
-  $LinkEnabledStatusCopyWith<$Res> get enabledStatus;
   $ConvoViewCopyWith<$Res>? get convo;
   $JoinLinkViewerStateCopyWith<$Res>? get viewer;
 }
@@ -93,6 +91,7 @@ class _$JoinLinkPreviewViewCopyWithImpl<$Res, $Val extends JoinLinkPreviewView>
   @override
   $Res call({
     Object? $type = null,
+    Object? convoId = null,
     Object? code = null,
     Object? name = null,
     Object? owner = null,
@@ -100,7 +99,6 @@ class _$JoinLinkPreviewViewCopyWithImpl<$Res, $Val extends JoinLinkPreviewView>
     Object? memberLimit = null,
     Object? requireApproval = null,
     Object? joinRule = null,
-    Object? enabledStatus = null,
     Object? convo = freezed,
     Object? viewer = freezed,
     Object? $unknown = freezed,
@@ -109,6 +107,10 @@ class _$JoinLinkPreviewViewCopyWithImpl<$Res, $Val extends JoinLinkPreviewView>
       $type: null == $type
           ? _value.$type
           : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      convoId: null == convoId
+          ? _value.convoId
+          : convoId // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
           ? _value.code
@@ -138,10 +140,6 @@ class _$JoinLinkPreviewViewCopyWithImpl<$Res, $Val extends JoinLinkPreviewView>
           ? _value.joinRule
           : joinRule // ignore: cast_nullable_to_non_nullable
               as JoinRule,
-      enabledStatus: null == enabledStatus
-          ? _value.enabledStatus
-          : enabledStatus // ignore: cast_nullable_to_non_nullable
-              as LinkEnabledStatus,
       convo: freezed == convo
           ? _value.convo
           : convo // ignore: cast_nullable_to_non_nullable
@@ -174,16 +172,6 @@ class _$JoinLinkPreviewViewCopyWithImpl<$Res, $Val extends JoinLinkPreviewView>
   $JoinRuleCopyWith<$Res> get joinRule {
     return $JoinRuleCopyWith<$Res>(_value.joinRule, (value) {
       return _then(_value.copyWith(joinRule: value) as $Val);
-    });
-  }
-
-  /// Create a copy of JoinLinkPreviewView
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $LinkEnabledStatusCopyWith<$Res> get enabledStatus {
-    return $LinkEnabledStatusCopyWith<$Res>(_value.enabledStatus, (value) {
-      return _then(_value.copyWith(enabledStatus: value) as $Val);
     });
   }
 
@@ -226,6 +214,7 @@ abstract class _$$JoinLinkPreviewViewImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
+      String convoId,
       String code,
       String name,
       @ProfileViewBasicConverter() ProfileViewBasic owner,
@@ -233,7 +222,6 @@ abstract class _$$JoinLinkPreviewViewImplCopyWith<$Res>
       int memberLimit,
       bool requireApproval,
       @JoinRuleConverter() JoinRule joinRule,
-      @LinkEnabledStatusConverter() LinkEnabledStatus enabledStatus,
       @ConvoViewConverter() ConvoView? convo,
       @JoinLinkViewerStateConverter() JoinLinkViewerState? viewer,
       Map<String, dynamic>? $unknown});
@@ -242,8 +230,6 @@ abstract class _$$JoinLinkPreviewViewImplCopyWith<$Res>
   $ProfileViewBasicCopyWith<$Res> get owner;
   @override
   $JoinRuleCopyWith<$Res> get joinRule;
-  @override
-  $LinkEnabledStatusCopyWith<$Res> get enabledStatus;
   @override
   $ConvoViewCopyWith<$Res>? get convo;
   @override
@@ -264,6 +250,7 @@ class __$$JoinLinkPreviewViewImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? $type = null,
+    Object? convoId = null,
     Object? code = null,
     Object? name = null,
     Object? owner = null,
@@ -271,7 +258,6 @@ class __$$JoinLinkPreviewViewImplCopyWithImpl<$Res>
     Object? memberLimit = null,
     Object? requireApproval = null,
     Object? joinRule = null,
-    Object? enabledStatus = null,
     Object? convo = freezed,
     Object? viewer = freezed,
     Object? $unknown = freezed,
@@ -280,6 +266,10 @@ class __$$JoinLinkPreviewViewImplCopyWithImpl<$Res>
       $type: null == $type
           ? _value.$type
           : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      convoId: null == convoId
+          ? _value.convoId
+          : convoId // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
           ? _value.code
@@ -309,10 +299,6 @@ class __$$JoinLinkPreviewViewImplCopyWithImpl<$Res>
           ? _value.joinRule
           : joinRule // ignore: cast_nullable_to_non_nullable
               as JoinRule,
-      enabledStatus: null == enabledStatus
-          ? _value.enabledStatus
-          : enabledStatus // ignore: cast_nullable_to_non_nullable
-              as LinkEnabledStatus,
       convo: freezed == convo
           ? _value.convo
           : convo // ignore: cast_nullable_to_non_nullable
@@ -335,6 +321,7 @@ class __$$JoinLinkPreviewViewImplCopyWithImpl<$Res>
 class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
   const _$JoinLinkPreviewViewImpl(
       {this.$type = 'chat.bsky.group.defs#joinLinkPreviewView',
+      required this.convoId,
       required this.code,
       required this.name,
       @ProfileViewBasicConverter() required this.owner,
@@ -342,7 +329,6 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
       required this.memberLimit,
       required this.requireApproval,
       @JoinRuleConverter() required this.joinRule,
-      @LinkEnabledStatusConverter() required this.enabledStatus,
       @ConvoViewConverter() this.convo,
       @JoinLinkViewerStateConverter() this.viewer,
       final Map<String, dynamic>? $unknown})
@@ -354,6 +340,8 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
   @override
   @JsonKey()
   final String $type;
+  @override
+  final String convoId;
   @override
   final String code;
   @override
@@ -370,9 +358,6 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
   @override
   @JoinRuleConverter()
   final JoinRule joinRule;
-  @override
-  @LinkEnabledStatusConverter()
-  final LinkEnabledStatus enabledStatus;
 
   /// Present only if the request is authenticated and the user is a member of the group.
   @override
@@ -393,7 +378,7 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
 
   @override
   String toString() {
-    return 'JoinLinkPreviewView(\$type: ${$type}, code: $code, name: $name, owner: $owner, memberCount: $memberCount, memberLimit: $memberLimit, requireApproval: $requireApproval, joinRule: $joinRule, enabledStatus: $enabledStatus, convo: $convo, viewer: $viewer, \$unknown: ${$unknown})';
+    return 'JoinLinkPreviewView(\$type: ${$type}, convoId: $convoId, code: $code, name: $name, owner: $owner, memberCount: $memberCount, memberLimit: $memberLimit, requireApproval: $requireApproval, joinRule: $joinRule, convo: $convo, viewer: $viewer, \$unknown: ${$unknown})';
   }
 
   @override
@@ -402,6 +387,7 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
         (other.runtimeType == runtimeType &&
             other is _$JoinLinkPreviewViewImpl &&
             (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.convoId, convoId) || other.convoId == convoId) &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.owner, owner) || other.owner == owner) &&
@@ -413,8 +399,6 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
                 other.requireApproval == requireApproval) &&
             (identical(other.joinRule, joinRule) ||
                 other.joinRule == joinRule) &&
-            (identical(other.enabledStatus, enabledStatus) ||
-                other.enabledStatus == enabledStatus) &&
             (identical(other.convo, convo) || other.convo == convo) &&
             (identical(other.viewer, viewer) || other.viewer == viewer) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
@@ -425,6 +409,7 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
   int get hashCode => Object.hash(
       runtimeType,
       $type,
+      convoId,
       code,
       name,
       owner,
@@ -432,7 +417,6 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
       memberLimit,
       requireApproval,
       joinRule,
-      enabledStatus,
       convo,
       viewer,
       const DeepCollectionEquality().hash(_$unknown));
@@ -457,6 +441,7 @@ class _$JoinLinkPreviewViewImpl implements _JoinLinkPreviewView {
 abstract class _JoinLinkPreviewView implements JoinLinkPreviewView {
   const factory _JoinLinkPreviewView(
       {final String $type,
+      required final String convoId,
       required final String code,
       required final String name,
       @ProfileViewBasicConverter() required final ProfileViewBasic owner,
@@ -464,8 +449,6 @@ abstract class _JoinLinkPreviewView implements JoinLinkPreviewView {
       required final int memberLimit,
       required final bool requireApproval,
       @JoinRuleConverter() required final JoinRule joinRule,
-      @LinkEnabledStatusConverter()
-      required final LinkEnabledStatus enabledStatus,
       @ConvoViewConverter() final ConvoView? convo,
       @JoinLinkViewerStateConverter() final JoinLinkViewerState? viewer,
       final Map<String, dynamic>? $unknown}) = _$JoinLinkPreviewViewImpl;
@@ -475,6 +458,8 @@ abstract class _JoinLinkPreviewView implements JoinLinkPreviewView {
 
   @override
   String get $type;
+  @override
+  String get convoId;
   @override
   String get code;
   @override
@@ -491,9 +476,6 @@ abstract class _JoinLinkPreviewView implements JoinLinkPreviewView {
   @override
   @JoinRuleConverter()
   JoinRule get joinRule;
-  @override
-  @LinkEnabledStatusConverter()
-  LinkEnabledStatus get enabledStatus;
 
   /// Present only if the request is authenticated and the user is a member of the group.
   @override

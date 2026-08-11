@@ -41,11 +41,8 @@ Map<String, dynamic> _$$RecordHostingImplToJson(_$RecordHostingImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'status': const RecordHostingStatusConverter().toJson(instance.status),
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.deletedAt?.toIso8601String() case final value?)
-        'deletedAt': value,
+      'updatedAt': iso8601(instance.updatedAt),
+      'createdAt': iso8601(instance.createdAt),
+      'deletedAt': iso8601(instance.deletedAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -17,14 +17,16 @@ _$QueueCreateQueueInputImpl _$$QueueCreateQueueInputImplFromJson(Map json) =>
           name: $checkedConvert('name', (v) => v as String),
           subjectTypes: $checkedConvert(
               'subjectTypes',
-              (v) => (v as List<dynamic>)
-                  .map((e) => const QueueCreateQueueSubjectTypesConverter()
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => const QueueCreateQueueSubjectTypesConverter()
                       .fromJson(e as String))
                   .toList()),
           collection: $checkedConvert('collection', (v) => v as String?),
           reportTypes: $checkedConvert('reportTypes',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           description: $checkedConvert('description', (v) => v as String?),
+          recommendedPolicies: $checkedConvert('recommendedPolicies',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -39,11 +41,15 @@ Map<String, dynamic> _$$QueueCreateQueueInputImplToJson(
         _$QueueCreateQueueInputImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'subjectTypes': instance.subjectTypes
-          .map(const QueueCreateQueueSubjectTypesConverter().toJson)
-          .toList(),
+      if (instance.subjectTypes
+              ?.map(const QueueCreateQueueSubjectTypesConverter().toJson)
+              .toList()
+          case final value?)
+        'subjectTypes': value,
       if (instance.collection case final value?) 'collection': value,
-      'reportTypes': instance.reportTypes,
+      if (instance.reportTypes case final value?) 'reportTypes': value,
       if (instance.description case final value?) 'description': value,
+      if (instance.recommendedPolicies case final value?)
+        'recommendedPolicies': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

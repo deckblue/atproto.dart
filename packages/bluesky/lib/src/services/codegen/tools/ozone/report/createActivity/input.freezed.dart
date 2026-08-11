@@ -21,8 +21,11 @@ ReportCreateActivityInput _$ReportCreateActivityInputFromJson(
 
 /// @nodoc
 mixin _$ReportCreateActivityInput {
-  /// ID of the report to record activity on
-  int get reportId => throw _privateConstructorUsedError;
+  /// ID of the report to record activity on. Exactly one of reportId or eventId must be provided.
+  int? get reportId => throw _privateConstructorUsedError;
+
+  /// ID of the report moderation event. Resolves to the report created from that event. Exactly one of reportId or eventId must be provided.
+  int? get eventId => throw _privateConstructorUsedError;
   @UReportCreateActivityActivityConverter()
   UReportCreateActivityActivity get activity =>
       throw _privateConstructorUsedError;
@@ -54,7 +57,8 @@ abstract class $ReportCreateActivityInputCopyWith<$Res> {
       _$ReportCreateActivityInputCopyWithImpl<$Res, ReportCreateActivityInput>;
   @useResult
   $Res call(
-      {int reportId,
+      {int? reportId,
+      int? eventId,
       @UReportCreateActivityActivityConverter()
       UReportCreateActivityActivity activity,
       String? internalNote,
@@ -81,7 +85,8 @@ class _$ReportCreateActivityInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? reportId = null,
+    Object? reportId = freezed,
+    Object? eventId = freezed,
     Object? activity = null,
     Object? internalNote = freezed,
     Object? publicNote = freezed,
@@ -89,10 +94,14 @@ class _$ReportCreateActivityInputCopyWithImpl<$Res,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
-      reportId: null == reportId
+      reportId: freezed == reportId
           ? _value.reportId
           : reportId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      eventId: freezed == eventId
+          ? _value.eventId
+          : eventId // ignore: cast_nullable_to_non_nullable
+              as int?,
       activity: null == activity
           ? _value.activity
           : activity // ignore: cast_nullable_to_non_nullable
@@ -138,7 +147,8 @@ abstract class _$$ReportCreateActivityInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int reportId,
+      {int? reportId,
+      int? eventId,
       @UReportCreateActivityActivityConverter()
       UReportCreateActivityActivity activity,
       String? internalNote,
@@ -165,7 +175,8 @@ class __$$ReportCreateActivityInputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? reportId = null,
+    Object? reportId = freezed,
+    Object? eventId = freezed,
     Object? activity = null,
     Object? internalNote = freezed,
     Object? publicNote = freezed,
@@ -173,10 +184,14 @@ class __$$ReportCreateActivityInputImplCopyWithImpl<$Res>
     Object? $unknown = freezed,
   }) {
     return _then(_$ReportCreateActivityInputImpl(
-      reportId: null == reportId
+      reportId: freezed == reportId
           ? _value.reportId
           : reportId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      eventId: freezed == eventId
+          ? _value.eventId
+          : eventId // ignore: cast_nullable_to_non_nullable
+              as int?,
       activity: null == activity
           ? _value.activity
           : activity // ignore: cast_nullable_to_non_nullable
@@ -206,7 +221,8 @@ class __$$ReportCreateActivityInputImplCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$ReportCreateActivityInputImpl implements _ReportCreateActivityInput {
   const _$ReportCreateActivityInputImpl(
-      {required this.reportId,
+      {this.reportId,
+      this.eventId,
       @UReportCreateActivityActivityConverter() required this.activity,
       this.internalNote,
       this.publicNote,
@@ -217,9 +233,13 @@ class _$ReportCreateActivityInputImpl implements _ReportCreateActivityInput {
   factory _$ReportCreateActivityInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ReportCreateActivityInputImplFromJson(json);
 
-  /// ID of the report to record activity on
+  /// ID of the report to record activity on. Exactly one of reportId or eventId must be provided.
   @override
-  final int reportId;
+  final int? reportId;
+
+  /// ID of the report moderation event. Resolves to the report created from that event. Exactly one of reportId or eventId must be provided.
+  @override
+  final int? eventId;
   @override
   @UReportCreateActivityActivityConverter()
   final UReportCreateActivityActivity activity;
@@ -248,7 +268,7 @@ class _$ReportCreateActivityInputImpl implements _ReportCreateActivityInput {
 
   @override
   String toString() {
-    return 'ReportCreateActivityInput(reportId: $reportId, activity: $activity, internalNote: $internalNote, publicNote: $publicNote, isAutomated: $isAutomated, \$unknown: ${$unknown})';
+    return 'ReportCreateActivityInput(reportId: $reportId, eventId: $eventId, activity: $activity, internalNote: $internalNote, publicNote: $publicNote, isAutomated: $isAutomated, \$unknown: ${$unknown})';
   }
 
   @override
@@ -258,6 +278,7 @@ class _$ReportCreateActivityInputImpl implements _ReportCreateActivityInput {
             other is _$ReportCreateActivityInputImpl &&
             (identical(other.reportId, reportId) ||
                 other.reportId == reportId) &&
+            (identical(other.eventId, eventId) || other.eventId == eventId) &&
             (identical(other.activity, activity) ||
                 other.activity == activity) &&
             (identical(other.internalNote, internalNote) ||
@@ -271,8 +292,15 @@ class _$ReportCreateActivityInputImpl implements _ReportCreateActivityInput {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, reportId, activity, internalNote,
-      publicNote, isAutomated, const DeepCollectionEquality().hash(_$unknown));
+  int get hashCode => Object.hash(
+      runtimeType,
+      reportId,
+      eventId,
+      activity,
+      internalNote,
+      publicNote,
+      isAutomated,
+      const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ReportCreateActivityInput
   /// with the given fields replaced by the non-null parameter values.
@@ -293,7 +321,8 @@ class _$ReportCreateActivityInputImpl implements _ReportCreateActivityInput {
 
 abstract class _ReportCreateActivityInput implements ReportCreateActivityInput {
   const factory _ReportCreateActivityInput(
-      {required final int reportId,
+      {final int? reportId,
+      final int? eventId,
       @UReportCreateActivityActivityConverter()
       required final UReportCreateActivityActivity activity,
       final String? internalNote,
@@ -304,9 +333,13 @@ abstract class _ReportCreateActivityInput implements ReportCreateActivityInput {
   factory _ReportCreateActivityInput.fromJson(Map<String, dynamic> json) =
       _$ReportCreateActivityInputImpl.fromJson;
 
-  /// ID of the report to record activity on
+  /// ID of the report to record activity on. Exactly one of reportId or eventId must be provided.
   @override
-  int get reportId;
+  int? get reportId;
+
+  /// ID of the report moderation event. Resolves to the report created from that event. Exactly one of reportId or eventId must be provided.
+  @override
+  int? get eventId;
   @override
   @UReportCreateActivityActivityConverter()
   UReportCreateActivityActivity get activity;

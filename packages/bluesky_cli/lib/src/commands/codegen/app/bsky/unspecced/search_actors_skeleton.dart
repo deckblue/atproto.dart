@@ -45,11 +45,11 @@ final class SearchActorsSkeletonCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Backend Actors (profile) search, returns only skeleton.";
+      "Backend Actors (profile) search, returns only skeleton.";
 
   @override
   final String invocation =
-      "bsky app-bsky-unspecced search-actors-skeleton [q] [viewer] [typeahead] [limit] [cursor]";
+      "bsky app-bsky-unspecced search-actors-skeleton --q=<value> [--viewer=<value>] [--typeahead] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.unspecced.searchActorsSkeleton";
@@ -57,10 +57,11 @@ final class SearchActorsSkeletonCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "q": argResults!["q"],
-        if (argResults!["viewer"] != null) "viewer": argResults!["viewer"],
-        if (argResults!["typeahead"] != null)
+        if (argResults!.wasParsed("viewer")) "viewer": argResults!["viewer"],
+        if (argResults!.wasParsed("typeahead"))
           "typeahead": argResults!["typeahead"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

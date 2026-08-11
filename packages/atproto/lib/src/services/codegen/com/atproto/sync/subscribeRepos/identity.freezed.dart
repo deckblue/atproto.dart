@@ -23,6 +23,7 @@ mixin _$Identity {
   String get $type => throw _privateConstructorUsedError;
   int get seq => throw _privateConstructorUsedError;
   String get did => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get time => throw _privateConstructorUsedError;
 
   /// The current handle for the account, or 'handle.invalid' if validation fails. This field is optional, might have been validated or passed-through from an upstream source. Semantics and behaviors for PDS vs Relay may evolve in the future; see atproto specs for more details.
@@ -48,7 +49,7 @@ abstract class $IdentityCopyWith<$Res> {
       {String $type,
       int seq,
       String did,
-      DateTime time,
+      @JsonKey(toJson: iso8601) DateTime time,
       String? handle,
       Map<String, dynamic>? $unknown});
 }
@@ -116,7 +117,7 @@ abstract class _$$IdentityImplCopyWith<$Res>
       {String $type,
       int seq,
       String did,
-      DateTime time,
+      @JsonKey(toJson: iso8601) DateTime time,
       String? handle,
       Map<String, dynamic>? $unknown});
 }
@@ -178,7 +179,7 @@ class _$IdentityImpl implements _Identity {
       {this.$type = 'com.atproto.sync.subscribeRepos#identity',
       required this.seq,
       required this.did,
-      required this.time,
+      @JsonKey(toJson: iso8601) required this.time,
       this.handle,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -194,6 +195,7 @@ class _$IdentityImpl implements _Identity {
   @override
   final String did;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime time;
 
   /// The current handle for the account, or 'handle.invalid' if validation fails. This field is optional, might have been validated or passed-through from an upstream source. Semantics and behaviors for PDS vs Relay may evolve in the future; see atproto specs for more details.
@@ -253,7 +255,7 @@ abstract class _Identity implements Identity {
       {final String $type,
       required final int seq,
       required final String did,
-      required final DateTime time,
+      @JsonKey(toJson: iso8601) required final DateTime time,
       final String? handle,
       final Map<String, dynamic>? $unknown}) = _$IdentityImpl;
 
@@ -267,6 +269,7 @@ abstract class _Identity implements Identity {
   @override
   String get did;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get time;
 
   /// The current handle for the account, or 'handle.invalid' if validation fails. This field is optional, might have been validated or passed-through from an upstream source. Semantics and behaviors for PDS vs Relay may evolve in the future; see atproto specs for more details.

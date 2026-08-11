@@ -24,10 +24,10 @@ final class GetHeadCommand extends QueryCommand {
 
   @override
   final String description =
-      r"DEPRECATED - please use com.atproto.sync.getLatestCommit instead";
+      "DEPRECATED - please use com.atproto.sync.getLatestCommit instead";
 
   @override
-  final String invocation = "bsky com-atproto-sync get-head [did]";
+  final String invocation = "bsky com-atproto-sync get-head --did=<value>";
 
   @override
   String get methodId => "com.atproto.sync.getHead";

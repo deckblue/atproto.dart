@@ -77,10 +77,8 @@ Map<String, dynamic> _$$ProfileViewImplToJson(_$ProfileViewImpl instance) =>
               instance.associated, const ProfileAssociatedConverter().toJson)
           case final value?)
         'associated': value,
-      if (instance.indexedAt?.toIso8601String() case final value?)
-        'indexedAt': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
+      'indexedAt': iso8601(instance.indexedAt),
+      'createdAt': iso8601(instance.createdAt),
       if (_$JsonConverterToJson<Map<String, dynamic>, ViewerState>(
               instance.viewer, const ViewerStateConverter().toJson)
           case final value?)

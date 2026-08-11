@@ -44,10 +44,8 @@ Map<String, dynamic> _$$ReportGetHistoricalStatsInputImplToJson(
       if (instance.queueId case final value?) 'queueId': value,
       if (instance.moderatorDid case final value?) 'moderatorDid': value,
       if (instance.reportTypes case final value?) 'reportTypes': value,
-      if (instance.startDate?.toIso8601String() case final value?)
-        'startDate': value,
-      if (instance.endDate?.toIso8601String() case final value?)
-        'endDate': value,
+      'startDate': iso8601(instance.startDate),
+      'endDate': iso8601(instance.endDate),
       'limit': instance.limit,
       if (instance.cursor case final value?) 'cursor': value,
       if (instance.$unknown case final value?) r'$unknown': value,

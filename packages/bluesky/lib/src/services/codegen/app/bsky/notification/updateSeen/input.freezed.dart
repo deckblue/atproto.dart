@@ -21,6 +21,7 @@ NotificationUpdateSeenInput _$NotificationUpdateSeenInputFromJson(
 
 /// @nodoc
 mixin _$NotificationUpdateSeenInput {
+  @JsonKey(toJson: iso8601)
   DateTime get seenAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -42,7 +43,9 @@ abstract class $NotificationUpdateSeenInputCopyWith<$Res> {
       _$NotificationUpdateSeenInputCopyWithImpl<$Res,
           NotificationUpdateSeenInput>;
   @useResult
-  $Res call({DateTime seenAt, Map<String, dynamic>? $unknown});
+  $Res call(
+      {@JsonKey(toJson: iso8601) DateTime seenAt,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -86,7 +89,9 @@ abstract class _$$NotificationUpdateSeenInputImplCopyWith<$Res>
       __$$NotificationUpdateSeenInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DateTime seenAt, Map<String, dynamic>? $unknown});
+  $Res call(
+      {@JsonKey(toJson: iso8601) DateTime seenAt,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -126,7 +131,8 @@ class __$$NotificationUpdateSeenInputImplCopyWithImpl<$Res>
 class _$NotificationUpdateSeenInputImpl
     implements _NotificationUpdateSeenInput {
   const _$NotificationUpdateSeenInputImpl(
-      {required this.seenAt, final Map<String, dynamic>? $unknown})
+      {@JsonKey(toJson: iso8601) required this.seenAt,
+      final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
   factory _$NotificationUpdateSeenInputImpl.fromJson(
@@ -134,6 +140,7 @@ class _$NotificationUpdateSeenInputImpl
       _$$NotificationUpdateSeenInputImplFromJson(json);
 
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime seenAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -184,7 +191,7 @@ class _$NotificationUpdateSeenInputImpl
 abstract class _NotificationUpdateSeenInput
     implements NotificationUpdateSeenInput {
   const factory _NotificationUpdateSeenInput(
-          {required final DateTime seenAt,
+          {@JsonKey(toJson: iso8601) required final DateTime seenAt,
           final Map<String, dynamic>? $unknown}) =
       _$NotificationUpdateSeenInputImpl;
 
@@ -192,6 +199,7 @@ abstract class _NotificationUpdateSeenInput
       _$NotificationUpdateSeenInputImpl.fromJson;
 
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get seenAt;
   @override
   Map<String, dynamic>? get $unknown;

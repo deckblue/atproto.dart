@@ -32,7 +32,7 @@ mixin _$EmbedGalleryViewImage {
   /// Alt text description of the image, for accessibility.
   String get alt => throw _privateConstructorUsedError;
   @AspectRatioConverter()
-  AspectRatio? get aspectRatio => throw _privateConstructorUsedError;
+  AspectRatio get aspectRatio => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this EmbedGalleryViewImage to a JSON map.
@@ -56,10 +56,10 @@ abstract class $EmbedGalleryViewImageCopyWith<$Res> {
       String thumbnail,
       String fullsize,
       String alt,
-      @AspectRatioConverter() AspectRatio? aspectRatio,
+      @AspectRatioConverter() AspectRatio aspectRatio,
       Map<String, dynamic>? $unknown});
 
-  $AspectRatioCopyWith<$Res>? get aspectRatio;
+  $AspectRatioCopyWith<$Res> get aspectRatio;
 }
 
 /// @nodoc
@@ -82,7 +82,7 @@ class _$EmbedGalleryViewImageCopyWithImpl<$Res,
     Object? thumbnail = null,
     Object? fullsize = null,
     Object? alt = null,
-    Object? aspectRatio = freezed,
+    Object? aspectRatio = null,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -102,10 +102,10 @@ class _$EmbedGalleryViewImageCopyWithImpl<$Res,
           ? _value.alt
           : alt // ignore: cast_nullable_to_non_nullable
               as String,
-      aspectRatio: freezed == aspectRatio
+      aspectRatio: null == aspectRatio
           ? _value.aspectRatio
           : aspectRatio // ignore: cast_nullable_to_non_nullable
-              as AspectRatio?,
+              as AspectRatio,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -117,12 +117,8 @@ class _$EmbedGalleryViewImageCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AspectRatioCopyWith<$Res>? get aspectRatio {
-    if (_value.aspectRatio == null) {
-      return null;
-    }
-
-    return $AspectRatioCopyWith<$Res>(_value.aspectRatio!, (value) {
+  $AspectRatioCopyWith<$Res> get aspectRatio {
+    return $AspectRatioCopyWith<$Res>(_value.aspectRatio, (value) {
       return _then(_value.copyWith(aspectRatio: value) as $Val);
     });
   }
@@ -142,11 +138,11 @@ abstract class _$$EmbedGalleryViewImageImplCopyWith<$Res>
       String thumbnail,
       String fullsize,
       String alt,
-      @AspectRatioConverter() AspectRatio? aspectRatio,
+      @AspectRatioConverter() AspectRatio aspectRatio,
       Map<String, dynamic>? $unknown});
 
   @override
-  $AspectRatioCopyWith<$Res>? get aspectRatio;
+  $AspectRatioCopyWith<$Res> get aspectRatio;
 }
 
 /// @nodoc
@@ -167,7 +163,7 @@ class __$$EmbedGalleryViewImageImplCopyWithImpl<$Res>
     Object? thumbnail = null,
     Object? fullsize = null,
     Object? alt = null,
-    Object? aspectRatio = freezed,
+    Object? aspectRatio = null,
     Object? $unknown = freezed,
   }) {
     return _then(_$EmbedGalleryViewImageImpl(
@@ -187,10 +183,10 @@ class __$$EmbedGalleryViewImageImplCopyWithImpl<$Res>
           ? _value.alt
           : alt // ignore: cast_nullable_to_non_nullable
               as String,
-      aspectRatio: freezed == aspectRatio
+      aspectRatio: null == aspectRatio
           ? _value.aspectRatio
           : aspectRatio // ignore: cast_nullable_to_non_nullable
-              as AspectRatio?,
+              as AspectRatio,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -208,7 +204,7 @@ class _$EmbedGalleryViewImageImpl implements _EmbedGalleryViewImage {
       required this.thumbnail,
       required this.fullsize,
       required this.alt,
-      @AspectRatioConverter() this.aspectRatio,
+      @AspectRatioConverter() required this.aspectRatio,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -232,7 +228,7 @@ class _$EmbedGalleryViewImageImpl implements _EmbedGalleryViewImage {
   final String alt;
   @override
   @AspectRatioConverter()
-  final AspectRatio? aspectRatio;
+  final AspectRatio aspectRatio;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -292,7 +288,7 @@ abstract class _EmbedGalleryViewImage implements EmbedGalleryViewImage {
       required final String thumbnail,
       required final String fullsize,
       required final String alt,
-      @AspectRatioConverter() final AspectRatio? aspectRatio,
+      @AspectRatioConverter() required final AspectRatio aspectRatio,
       final Map<String, dynamic>? $unknown}) = _$EmbedGalleryViewImageImpl;
 
   factory _EmbedGalleryViewImage.fromJson(Map<String, dynamic> json) =
@@ -314,7 +310,7 @@ abstract class _EmbedGalleryViewImage implements EmbedGalleryViewImage {
   String get alt;
   @override
   @AspectRatioConverter()
-  AspectRatio? get aspectRatio;
+  AspectRatio get aspectRatio;
   @override
   Map<String, dynamic>? get $unknown;
 

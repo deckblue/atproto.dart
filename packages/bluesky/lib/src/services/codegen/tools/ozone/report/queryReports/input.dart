@@ -58,16 +58,16 @@ abstract class ReportQueryReportsInput with _$ReportQueryReportsInput {
     /// Filter to reports where the subject is this DID or any record owned by this DID. Unlike `subject` (which scopes to a specific account or record), this returns all reports tied to the DID across both account-level and record-level subjects.
     String? did,
 
-    /// If specified, reports of the given type (account or record) will be returned.
+    /// If specified, reports of the given subject type will be returned.
     @ReportQueryReportsSubjectTypeConverter()
     ReportQueryReportsSubjectType? subjectType,
     List<String>? collections,
 
     /// Retrieve reports created after a given timestamp
-    DateTime? reportedAfter,
+    @JsonKey(toJson: iso8601) DateTime? reportedAfter,
 
     /// Retrieve reports created before a given timestamp
-    DateTime? reportedBefore,
+    @JsonKey(toJson: iso8601) DateTime? reportedBefore,
 
     /// Filter by muted status. true returns only muted reports, false returns only unmuted reports. Defaults to false.
     @Default(false) bool isMuted,

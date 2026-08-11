@@ -32,20 +32,21 @@ final class SearchActorsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Find actors (profiles) matching search criteria. Does not require auth.";
+      "Find actors (profiles) matching search criteria. Does not require auth.";
 
   @override
   final String invocation =
-      "bsky app-bsky-actor search-actors [term] [q] [limit] [cursor]";
+      "bsky app-bsky-actor search-actors [--term=<value>] [--q=<value>] [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.actor.searchActors";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["term"] != null) "term": argResults!["term"],
-        if (argResults!["q"] != null) "q": argResults!["q"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("term")) "term": argResults!["term"],
+        if (argResults!.wasParsed("q")) "q": argResults!["q"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

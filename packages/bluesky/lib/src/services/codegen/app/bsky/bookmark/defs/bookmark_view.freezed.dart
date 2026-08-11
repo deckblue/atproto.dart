@@ -25,6 +25,7 @@ mixin _$BookmarkView {
   /// A strong ref to the bookmarked record.
   @RepoStrongRefConverter()
   RepoStrongRef get subject => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @UBookmarkViewItemConverter()
   UBookmarkViewItem get item => throw _privateConstructorUsedError;
@@ -49,7 +50,7 @@ abstract class $BookmarkViewCopyWith<$Res> {
   $Res call(
       {String $type,
       @RepoStrongRefConverter() RepoStrongRef subject,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       @UBookmarkViewItemConverter() UBookmarkViewItem item,
       Map<String, dynamic>? $unknown});
 
@@ -134,7 +135,7 @@ abstract class _$$BookmarkViewImplCopyWith<$Res>
   $Res call(
       {String $type,
       @RepoStrongRefConverter() RepoStrongRef subject,
-      DateTime? createdAt,
+      @JsonKey(toJson: iso8601) DateTime? createdAt,
       @UBookmarkViewItemConverter() UBookmarkViewItem item,
       Map<String, dynamic>? $unknown});
 
@@ -195,7 +196,7 @@ class _$BookmarkViewImpl implements _BookmarkView {
   const _$BookmarkViewImpl(
       {this.$type = 'app.bsky.bookmark.defs#bookmarkView',
       @RepoStrongRefConverter() required this.subject,
-      this.createdAt,
+      @JsonKey(toJson: iso8601) this.createdAt,
       @UBookmarkViewItemConverter() required this.item,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -212,6 +213,7 @@ class _$BookmarkViewImpl implements _BookmarkView {
   @RepoStrongRefConverter()
   final RepoStrongRef subject;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? createdAt;
   @override
   @UBookmarkViewItemConverter()
@@ -269,7 +271,7 @@ abstract class _BookmarkView implements BookmarkView {
   const factory _BookmarkView(
       {final String $type,
       @RepoStrongRefConverter() required final RepoStrongRef subject,
-      final DateTime? createdAt,
+      @JsonKey(toJson: iso8601) final DateTime? createdAt,
       @UBookmarkViewItemConverter() required final UBookmarkViewItem item,
       final Map<String, dynamic>? $unknown}) = _$BookmarkViewImpl;
 
@@ -284,6 +286,7 @@ abstract class _BookmarkView implements BookmarkView {
   @RepoStrongRefConverter()
   RepoStrongRef get subject;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get createdAt;
   @override
   @UBookmarkViewItemConverter()

@@ -31,6 +31,7 @@ mixin _$LabelerViewDetailed {
   int? get likeCount => throw _privateConstructorUsedError;
   @LabelerViewerStateConverter()
   LabelerViewerState? get viewer => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt => throw _privateConstructorUsedError;
   @LabelConverter()
   List<Label>? get labels => throw _privateConstructorUsedError;
@@ -65,7 +66,7 @@ abstract class $LabelerViewDetailedCopyWith<$Res> {
       @LabelerPoliciesConverter() LabelerPolicies policies,
       int? likeCount,
       @LabelerViewerStateConverter() LabelerViewerState? viewer,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @LabelConverter() List<Label>? labels,
       @ReasonTypeConverter() List<ReasonType>? reasonTypes,
       @SubjectTypeConverter() List<SubjectType>? subjectTypes,
@@ -213,7 +214,7 @@ abstract class _$$LabelerViewDetailedImplCopyWith<$Res>
       @LabelerPoliciesConverter() LabelerPolicies policies,
       int? likeCount,
       @LabelerViewerStateConverter() LabelerViewerState? viewer,
-      DateTime indexedAt,
+      @JsonKey(toJson: iso8601) DateTime indexedAt,
       @LabelConverter() List<Label>? labels,
       @ReasonTypeConverter() List<ReasonType>? reasonTypes,
       @SubjectTypeConverter() List<SubjectType>? subjectTypes,
@@ -324,7 +325,7 @@ class _$LabelerViewDetailedImpl implements _LabelerViewDetailed {
       @LabelerPoliciesConverter() required this.policies,
       this.likeCount,
       @LabelerViewerStateConverter() this.viewer,
-      required this.indexedAt,
+      @JsonKey(toJson: iso8601) required this.indexedAt,
       @LabelConverter() final List<Label>? labels,
       @ReasonTypeConverter() final List<ReasonType>? reasonTypes,
       @SubjectTypeConverter() final List<SubjectType>? subjectTypes,
@@ -359,6 +360,7 @@ class _$LabelerViewDetailedImpl implements _LabelerViewDetailed {
   @LabelerViewerStateConverter()
   final LabelerViewerState? viewer;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime indexedAt;
   final List<Label>? _labels;
   @override
@@ -489,7 +491,7 @@ abstract class _LabelerViewDetailed implements LabelerViewDetailed {
       @LabelerPoliciesConverter() required final LabelerPolicies policies,
       final int? likeCount,
       @LabelerViewerStateConverter() final LabelerViewerState? viewer,
-      required final DateTime indexedAt,
+      @JsonKey(toJson: iso8601) required final DateTime indexedAt,
       @LabelConverter() final List<Label>? labels,
       @ReasonTypeConverter() final List<ReasonType>? reasonTypes,
       @SubjectTypeConverter() final List<SubjectType>? subjectTypes,
@@ -518,6 +520,7 @@ abstract class _LabelerViewDetailed implements LabelerViewDetailed {
   @LabelerViewerStateConverter()
   LabelerViewerState? get viewer;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get indexedAt;
   @override
   @LabelConverter()

@@ -80,7 +80,7 @@ Map<String, dynamic> _$$LabelerViewDetailedImplToJson(
               instance.viewer, const LabelerViewerStateConverter().toJson)
           case final value?)
         'viewer': value,
-      'indexedAt': instance.indexedAt.toIso8601String(),
+      'indexedAt': iso8601(instance.indexedAt),
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)
         'labels': value,

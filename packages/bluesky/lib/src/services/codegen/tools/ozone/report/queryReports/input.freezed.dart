@@ -35,16 +35,18 @@ mixin _$ReportQueryReportsInput {
   /// Filter to reports where the subject is this DID or any record owned by this DID. Unlike `subject` (which scopes to a specific account or record), this returns all reports tied to the DID across both account-level and record-level subjects.
   String? get did => throw _privateConstructorUsedError;
 
-  /// If specified, reports of the given type (account or record) will be returned.
+  /// If specified, reports of the given subject type will be returned.
   @ReportQueryReportsSubjectTypeConverter()
   ReportQueryReportsSubjectType? get subjectType =>
       throw _privateConstructorUsedError;
   List<String>? get collections => throw _privateConstructorUsedError;
 
   /// Retrieve reports created after a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get reportedAfter => throw _privateConstructorUsedError;
 
   /// Retrieve reports created before a given timestamp
+  @JsonKey(toJson: iso8601)
   DateTime? get reportedBefore => throw _privateConstructorUsedError;
 
   /// Filter by muted status. true returns only muted reports, false returns only unmuted reports. Defaults to false.
@@ -83,8 +85,8 @@ abstract class $ReportQueryReportsInputCopyWith<$Res> {
       @ReportQueryReportsSubjectTypeConverter()
       ReportQueryReportsSubjectType? subjectType,
       List<String>? collections,
-      DateTime? reportedAfter,
-      DateTime? reportedBefore,
+      @JsonKey(toJson: iso8601) DateTime? reportedAfter,
+      @JsonKey(toJson: iso8601) DateTime? reportedBefore,
       bool isMuted,
       String? assignedTo,
       String sortField,
@@ -242,8 +244,8 @@ abstract class _$$ReportQueryReportsInputImplCopyWith<$Res>
       @ReportQueryReportsSubjectTypeConverter()
       ReportQueryReportsSubjectType? subjectType,
       List<String>? collections,
-      DateTime? reportedAfter,
-      DateTime? reportedBefore,
+      @JsonKey(toJson: iso8601) DateTime? reportedAfter,
+      @JsonKey(toJson: iso8601) DateTime? reportedBefore,
       bool isMuted,
       String? assignedTo,
       String sortField,
@@ -371,8 +373,8 @@ class _$ReportQueryReportsInputImpl implements _ReportQueryReportsInput {
       this.did,
       @ReportQueryReportsSubjectTypeConverter() this.subjectType,
       final List<String>? collections,
-      this.reportedAfter,
-      this.reportedBefore,
+      @JsonKey(toJson: iso8601) this.reportedAfter,
+      @JsonKey(toJson: iso8601) this.reportedBefore,
       this.isMuted = false,
       this.assignedTo,
       this.sortField = 'createdAt',
@@ -413,7 +415,7 @@ class _$ReportQueryReportsInputImpl implements _ReportQueryReportsInput {
   @override
   final String? did;
 
-  /// If specified, reports of the given type (account or record) will be returned.
+  /// If specified, reports of the given subject type will be returned.
   @override
   @ReportQueryReportsSubjectTypeConverter()
   final ReportQueryReportsSubjectType? subjectType;
@@ -429,10 +431,12 @@ class _$ReportQueryReportsInputImpl implements _ReportQueryReportsInput {
 
   /// Retrieve reports created after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? reportedAfter;
 
   /// Retrieve reports created before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? reportedBefore;
 
   /// Filter by muted status. true returns only muted reports, false returns only unmuted reports. Defaults to false.
@@ -549,8 +553,8 @@ abstract class _ReportQueryReportsInput implements ReportQueryReportsInput {
       @ReportQueryReportsSubjectTypeConverter()
       final ReportQueryReportsSubjectType? subjectType,
       final List<String>? collections,
-      final DateTime? reportedAfter,
-      final DateTime? reportedBefore,
+      @JsonKey(toJson: iso8601) final DateTime? reportedAfter,
+      @JsonKey(toJson: iso8601) final DateTime? reportedBefore,
       final bool isMuted,
       final String? assignedTo,
       final String sortField,
@@ -581,7 +585,7 @@ abstract class _ReportQueryReportsInput implements ReportQueryReportsInput {
   @override
   String? get did;
 
-  /// If specified, reports of the given type (account or record) will be returned.
+  /// If specified, reports of the given subject type will be returned.
   @override
   @ReportQueryReportsSubjectTypeConverter()
   ReportQueryReportsSubjectType? get subjectType;
@@ -590,10 +594,12 @@ abstract class _ReportQueryReportsInput implements ReportQueryReportsInput {
 
   /// Retrieve reports created after a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get reportedAfter;
 
   /// Retrieve reports created before a given timestamp
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get reportedBefore;
 
   /// Filter by muted status. true returns only muted reports, false returns only unmuted reports. Defaults to false.

@@ -30,11 +30,11 @@ _$LabelValueDefinitionImpl _$$LabelValueDefinitionImplFromJson(Map json) =>
                   .fromJson(v as String)),
           defaultSetting: $checkedConvert(
               'defaultSetting',
-              (v) => _$JsonConverterFromJson<String,
-                      LabelValueDefinitionDefaultSetting>(
-                  v,
-                  const LabelValueDefinitionDefaultSettingConverter()
-                      .fromJson)),
+              (v) => v == null
+                  ? const LabelValueDefinitionDefaultSetting.knownValue(
+                      data: KnownLabelValueDefinitionDefaultSetting.warn)
+                  : const LabelValueDefinitionDefaultSettingConverter()
+                      .fromJson(v as String)),
           adultOnly: $checkedConvert('adultOnly', (v) => v as bool?),
           locales: $checkedConvert(
               'locales',
@@ -61,26 +61,11 @@ Map<String, dynamic> _$$LabelValueDefinitionImplToJson(
           .toJson(instance.severity),
       'blurs':
           const LabelValueDefinitionBlursConverter().toJson(instance.blurs),
-      if (_$JsonConverterToJson<String, LabelValueDefinitionDefaultSetting>(
-              instance.defaultSetting,
-              const LabelValueDefinitionDefaultSettingConverter().toJson)
-          case final value?)
-        'defaultSetting': value,
+      'defaultSetting': const LabelValueDefinitionDefaultSettingConverter()
+          .toJson(instance.defaultSetting),
       if (instance.adultOnly case final value?) 'adultOnly': value,
       'locales': instance.locales
           .map(const LabelValueDefinitionStringsConverter().toJson)
           .toList(),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

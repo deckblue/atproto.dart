@@ -35,7 +35,11 @@ final class CreateQueueCommand extends ProcedureCommand {
         "reportTypes",
         help: r"Report reason types (fully qualified NSIDs)",
       )
-      ..addOption("description", help: r"Optional description of the queue");
+      ..addOption("description", help: r"Optional description of the queue")
+      ..addMultiOption(
+        "recommendedPolicies",
+        help: r"Policy keys to recommend when actioning reports in this queue",
+      );
   }
 
   @override
@@ -43,11 +47,11 @@ final class CreateQueueCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Create a new moderation queue. Will fail if the queue configuration conflicts with an existing queue.";
+      "Create a new moderation queue. A queue can have optional matching criteria that ozone's queue router will use to match reports. A queue with no criteria must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-queue create-queue [name] [subjectTypes] [collection] [reportTypes] [description]";
+      "bsky tools-ozone-queue create-queue --name=<value> [--subjectTypes=<value>...] [--collection=<value>] [--reportTypes=<value>...] [--description=<value>] [--recommendedPolicies=<value>...]";
 
   @override
   String get methodId => "tools.ozone.queue.createQueue";
@@ -55,11 +59,15 @@ final class CreateQueueCommand extends ProcedureCommand {
   @override
   Map<String, dynamic>? get body => {
         "name": argResults!["name"],
-        "subjectTypes": argResults!["subjectTypes"],
-        if (argResults!["collection"] != null)
+        if (argResults!.wasParsed("subjectTypes"))
+          "subjectTypes": argResults!["subjectTypes"],
+        if (argResults!.wasParsed("collection"))
           "collection": argResults!["collection"],
-        "reportTypes": argResults!["reportTypes"],
-        if (argResults!["description"] != null)
+        if (argResults!.wasParsed("reportTypes"))
+          "reportTypes": argResults!["reportTypes"],
+        if (argResults!.wasParsed("description"))
           "description": argResults!["description"],
+        if (argResults!.wasParsed("recommendedPolicies"))
+          "recommendedPolicies": argResults!["recommendedPolicies"],
       };
 }

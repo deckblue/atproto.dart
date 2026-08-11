@@ -23,6 +23,9 @@ UnspeccedGetTrendsOutput _$UnspeccedGetTrendsOutputFromJson(
 mixin _$UnspeccedGetTrendsOutput {
   @TrendViewConverter()
   List<TrendView> get trends => throw _privateConstructorUsedError;
+
+  /// Snowflake for this recommendation, use when submitting recommendation events.
+  String? get recIdStr => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this UnspeccedGetTrendsOutput to a JSON map.
@@ -43,6 +46,7 @@ abstract class $UnspeccedGetTrendsOutputCopyWith<$Res> {
   @useResult
   $Res call(
       {@TrendViewConverter() List<TrendView> trends,
+      String? recIdStr,
       Map<String, dynamic>? $unknown});
 }
 
@@ -63,6 +67,7 @@ class _$UnspeccedGetTrendsOutputCopyWithImpl<$Res,
   @override
   $Res call({
     Object? trends = null,
+    Object? recIdStr = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -70,6 +75,10 @@ class _$UnspeccedGetTrendsOutputCopyWithImpl<$Res,
           ? _value.trends
           : trends // ignore: cast_nullable_to_non_nullable
               as List<TrendView>,
+      recIdStr: freezed == recIdStr
+          ? _value.recIdStr
+          : recIdStr // ignore: cast_nullable_to_non_nullable
+              as String?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -89,6 +98,7 @@ abstract class _$$UnspeccedGetTrendsOutputImplCopyWith<$Res>
   @useResult
   $Res call(
       {@TrendViewConverter() List<TrendView> trends,
+      String? recIdStr,
       Map<String, dynamic>? $unknown});
 }
 
@@ -108,6 +118,7 @@ class __$$UnspeccedGetTrendsOutputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? trends = null,
+    Object? recIdStr = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$UnspeccedGetTrendsOutputImpl(
@@ -115,6 +126,10 @@ class __$$UnspeccedGetTrendsOutputImplCopyWithImpl<$Res>
           ? _value._trends
           : trends // ignore: cast_nullable_to_non_nullable
               as List<TrendView>,
+      recIdStr: freezed == recIdStr
+          ? _value.recIdStr
+          : recIdStr // ignore: cast_nullable_to_non_nullable
+              as String?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -129,6 +144,7 @@ class __$$UnspeccedGetTrendsOutputImplCopyWithImpl<$Res>
 class _$UnspeccedGetTrendsOutputImpl implements _UnspeccedGetTrendsOutput {
   const _$UnspeccedGetTrendsOutputImpl(
       {@TrendViewConverter() required final List<TrendView> trends,
+      this.recIdStr,
       final Map<String, dynamic>? $unknown})
       : _trends = trends,
         _$unknown = $unknown;
@@ -145,6 +161,9 @@ class _$UnspeccedGetTrendsOutputImpl implements _UnspeccedGetTrendsOutput {
     return EqualUnmodifiableListView(_trends);
   }
 
+  /// Snowflake for this recommendation, use when submitting recommendation events.
+  @override
+  final String? recIdStr;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -157,7 +176,7 @@ class _$UnspeccedGetTrendsOutputImpl implements _UnspeccedGetTrendsOutput {
 
   @override
   String toString() {
-    return 'UnspeccedGetTrendsOutput(trends: $trends, \$unknown: ${$unknown})';
+    return 'UnspeccedGetTrendsOutput(trends: $trends, recIdStr: $recIdStr, \$unknown: ${$unknown})';
   }
 
   @override
@@ -166,6 +185,8 @@ class _$UnspeccedGetTrendsOutputImpl implements _UnspeccedGetTrendsOutput {
         (other.runtimeType == runtimeType &&
             other is _$UnspeccedGetTrendsOutputImpl &&
             const DeepCollectionEquality().equals(other._trends, _trends) &&
+            (identical(other.recIdStr, recIdStr) ||
+                other.recIdStr == recIdStr) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -174,6 +195,7 @@ class _$UnspeccedGetTrendsOutputImpl implements _UnspeccedGetTrendsOutput {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_trends),
+      recIdStr,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of UnspeccedGetTrendsOutput
@@ -196,6 +218,7 @@ class _$UnspeccedGetTrendsOutputImpl implements _UnspeccedGetTrendsOutput {
 abstract class _UnspeccedGetTrendsOutput implements UnspeccedGetTrendsOutput {
   const factory _UnspeccedGetTrendsOutput(
       {@TrendViewConverter() required final List<TrendView> trends,
+      final String? recIdStr,
       final Map<String, dynamic>? $unknown}) = _$UnspeccedGetTrendsOutputImpl;
 
   factory _UnspeccedGetTrendsOutput.fromJson(Map<String, dynamic> json) =
@@ -204,6 +227,10 @@ abstract class _UnspeccedGetTrendsOutput implements UnspeccedGetTrendsOutput {
   @override
   @TrendViewConverter()
   List<TrendView> get trends;
+
+  /// Snowflake for this recommendation, use when submitting recommendation events.
+  @override
+  String? get recIdStr;
   @override
   Map<String, dynamic>? get $unknown;
 

@@ -102,55 +102,59 @@ final class UReportCreateActivityActivityConverter
 
   @override
   UReportCreateActivityActivity fromJson(Map<String, dynamic> json) {
-    try {
-      if (QueueActivity.validate(json)) {
-        return UReportCreateActivityActivity.queueActivity(
-          data: const QueueActivityConverter().fromJson(json),
-        );
-      }
-      if (AssignmentActivity.validate(json)) {
-        return UReportCreateActivityActivity.assignmentActivity(
-          data: const AssignmentActivityConverter().fromJson(json),
-        );
-      }
-      if (EscalationActivity.validate(json)) {
-        return UReportCreateActivityActivity.escalationActivity(
-          data: const EscalationActivityConverter().fromJson(json),
-        );
-      }
-      if (CloseActivity.validate(json)) {
-        return UReportCreateActivityActivity.closeActivity(
-          data: const CloseActivityConverter().fromJson(json),
-        );
-      }
-      if (ReopenActivity.validate(json)) {
-        return UReportCreateActivityActivity.reopenActivity(
-          data: const ReopenActivityConverter().fromJson(json),
-        );
-      }
-      if (NoteActivity.validate(json)) {
-        return UReportCreateActivityActivity.noteActivity(
-          data: const NoteActivityConverter().fromJson(json),
-        );
-      }
-
-      return UReportCreateActivityActivity.unknown(data: json);
-    } catch (_) {
-      return UReportCreateActivityActivity.unknown(data: json);
+    if (QueueActivity.validate(json)) {
+      return UReportCreateActivityActivity.queueActivity(
+        data: const QueueActivityConverter().fromJson(json),
+      );
     }
+    if (AssignmentActivity.validate(json)) {
+      return UReportCreateActivityActivity.assignmentActivity(
+        data: const AssignmentActivityConverter().fromJson(json),
+      );
+    }
+    if (EscalationActivity.validate(json)) {
+      return UReportCreateActivityActivity.escalationActivity(
+        data: const EscalationActivityConverter().fromJson(json),
+      );
+    }
+    if (CloseActivity.validate(json)) {
+      return UReportCreateActivityActivity.closeActivity(
+        data: const CloseActivityConverter().fromJson(json),
+      );
+    }
+    if (ReopenActivity.validate(json)) {
+      return UReportCreateActivityActivity.reopenActivity(
+        data: const ReopenActivityConverter().fromJson(json),
+      );
+    }
+    if (NoteActivity.validate(json)) {
+      return UReportCreateActivityActivity.noteActivity(
+        data: const NoteActivityConverter().fromJson(json),
+      );
+    }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UReportCreateActivityActivity.unknown(data: json);
   }
 
   @override
   Map<String, dynamic> toJson(UReportCreateActivityActivity object) =>
-      object.when(
-        queueActivity: (data) => const QueueActivityConverter().toJson(data),
-        assignmentActivity: (data) =>
-            const AssignmentActivityConverter().toJson(data),
-        escalationActivity: (data) =>
-            const EscalationActivityConverter().toJson(data),
-        closeActivity: (data) => const CloseActivityConverter().toJson(data),
-        reopenActivity: (data) => const ReopenActivityConverter().toJson(data),
-        noteActivity: (data) => const NoteActivityConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UReportCreateActivityActivityQueueActivity(:final data) =>
+          const QueueActivityConverter().toJson(data),
+        UReportCreateActivityActivityAssignmentActivity(:final data) =>
+          const AssignmentActivityConverter().toJson(data),
+        UReportCreateActivityActivityEscalationActivity(:final data) =>
+          const EscalationActivityConverter().toJson(data),
+        UReportCreateActivityActivityCloseActivity(:final data) =>
+          const CloseActivityConverter().toJson(data),
+        UReportCreateActivityActivityReopenActivity(:final data) =>
+          const ReopenActivityConverter().toJson(data),
+        UReportCreateActivityActivityNoteActivity(:final data) =>
+          const NoteActivityConverter().toJson(data),
+        UReportCreateActivityActivityUnknown(:final data) => data,
+      };
 }

@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 LexXrpcProcedure _$LexXrpcProcedureFromJson(Map<String, dynamic> json) {
-  return _LexXrpcQuery.fromJson(json);
+  return _LexXrpcProcedure.fromJson(json);
 }
 
 /// @nodoc
@@ -150,11 +150,11 @@ class _$LexXrpcProcedureCopyWithImpl<$Res, $Val extends LexXrpcProcedure>
 }
 
 /// @nodoc
-abstract class _$$LexXrpcQueryImplCopyWith<$Res>
+abstract class _$$LexXrpcProcedureImplCopyWith<$Res>
     implements $LexXrpcProcedureCopyWith<$Res> {
-  factory _$$LexXrpcQueryImplCopyWith(
-          _$LexXrpcQueryImpl value, $Res Function(_$LexXrpcQueryImpl) then) =
-      __$$LexXrpcQueryImplCopyWithImpl<$Res>;
+  factory _$$LexXrpcProcedureImplCopyWith(_$LexXrpcProcedureImpl value,
+          $Res Function(_$LexXrpcProcedureImpl) then) =
+      __$$LexXrpcProcedureImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -174,11 +174,11 @@ abstract class _$$LexXrpcQueryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LexXrpcQueryImplCopyWithImpl<$Res>
-    extends _$LexXrpcProcedureCopyWithImpl<$Res, _$LexXrpcQueryImpl>
-    implements _$$LexXrpcQueryImplCopyWith<$Res> {
-  __$$LexXrpcQueryImplCopyWithImpl(
-      _$LexXrpcQueryImpl _value, $Res Function(_$LexXrpcQueryImpl) _then)
+class __$$LexXrpcProcedureImplCopyWithImpl<$Res>
+    extends _$LexXrpcProcedureCopyWithImpl<$Res, _$LexXrpcProcedureImpl>
+    implements _$$LexXrpcProcedureImplCopyWith<$Res> {
+  __$$LexXrpcProcedureImplCopyWithImpl(_$LexXrpcProcedureImpl _value,
+      $Res Function(_$LexXrpcProcedureImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of LexXrpcProcedure
@@ -193,7 +193,7 @@ class __$$LexXrpcQueryImplCopyWithImpl<$Res>
     Object? output = freezed,
     Object? errors = freezed,
   }) {
-    return _then(_$LexXrpcQueryImpl(
+    return _then(_$LexXrpcProcedureImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -225,8 +225,8 @@ class __$$LexXrpcQueryImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$LexXrpcQueryImpl implements _LexXrpcQuery {
-  const _$LexXrpcQueryImpl(
+class _$LexXrpcProcedureImpl implements _LexXrpcProcedure {
+  const _$LexXrpcProcedureImpl(
       {this.type = 'procedure',
       this.description,
       this.parameters,
@@ -235,8 +235,8 @@ class _$LexXrpcQueryImpl implements _LexXrpcQuery {
       final List<LexXrpcError>? errors})
       : _errors = errors;
 
-  factory _$LexXrpcQueryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LexXrpcQueryImplFromJson(json);
+  factory _$LexXrpcProcedureImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LexXrpcProcedureImplFromJson(json);
 
   @override
   @JsonKey()
@@ -268,7 +268,7 @@ class _$LexXrpcQueryImpl implements _LexXrpcQuery {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LexXrpcQueryImpl &&
+            other is _$LexXrpcProcedureImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -289,28 +289,29 @@ class _$LexXrpcQueryImpl implements _LexXrpcQuery {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LexXrpcQueryImplCopyWith<_$LexXrpcQueryImpl> get copyWith =>
-      __$$LexXrpcQueryImplCopyWithImpl<_$LexXrpcQueryImpl>(this, _$identity);
+  _$$LexXrpcProcedureImplCopyWith<_$LexXrpcProcedureImpl> get copyWith =>
+      __$$LexXrpcProcedureImplCopyWithImpl<_$LexXrpcProcedureImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LexXrpcQueryImplToJson(
+    return _$$LexXrpcProcedureImplToJson(
       this,
     );
   }
 }
 
-abstract class _LexXrpcQuery implements LexXrpcProcedure {
-  const factory _LexXrpcQuery(
+abstract class _LexXrpcProcedure implements LexXrpcProcedure {
+  const factory _LexXrpcProcedure(
       {final String type,
       final String? description,
       final LexXrpcParameters? parameters,
       final LexXrpcBody? input,
       final LexXrpcBody? output,
-      final List<LexXrpcError>? errors}) = _$LexXrpcQueryImpl;
+      final List<LexXrpcError>? errors}) = _$LexXrpcProcedureImpl;
 
-  factory _LexXrpcQuery.fromJson(Map<String, dynamic> json) =
-      _$LexXrpcQueryImpl.fromJson;
+  factory _LexXrpcProcedure.fromJson(Map<String, dynamic> json) =
+      _$LexXrpcProcedureImpl.fromJson;
 
   @override
   String get type;
@@ -329,6 +330,6 @@ abstract class _LexXrpcQuery implements LexXrpcProcedure {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LexXrpcQueryImplCopyWith<_$LexXrpcQueryImpl> get copyWith =>
+  _$$LexXrpcProcedureImplCopyWith<_$LexXrpcProcedureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

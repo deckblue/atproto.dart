@@ -26,7 +26,11 @@ mixin _$Operation {
   List<String> get alsoKnownAs => throw _privateConstructorUsedError;
   List<String> get rotationKeys => throw _privateConstructorUsedError;
   Map<String, dynamic> get verificationMethods =>
-      throw _privateConstructorUsedError;
+      throw _privateConstructorUsedError; // A genesis `plc_operation` carries an explicit `prev: null`, and that
+// key IS part of the signed DAG-CBOR bytes and the bytes hashed for
+// `did:plc` derivation. It must be serialized even when null, so this
+// field opts out of the class-level `includeIfNull: false`.
+  @JsonKey(includeIfNull: true)
   String? get prev => throw _privateConstructorUsedError;
 
   /// Serializes this Operation to a JSON map.
@@ -51,7 +55,7 @@ abstract class $OperationCopyWith<$Res> {
       List<String> alsoKnownAs,
       List<String> rotationKeys,
       Map<String, dynamic> verificationMethods,
-      String? prev});
+      @JsonKey(includeIfNull: true) String? prev});
 }
 
 /// @nodoc
@@ -125,7 +129,7 @@ abstract class _$$OperationImplCopyWith<$Res>
       List<String> alsoKnownAs,
       List<String> rotationKeys,
       Map<String, dynamic> verificationMethods,
-      String? prev});
+      @JsonKey(includeIfNull: true) String? prev});
 }
 
 /// @nodoc
@@ -193,7 +197,7 @@ class _$OperationImpl implements _Operation {
       required final List<String> alsoKnownAs,
       required final List<String> rotationKeys,
       required final Map<String, dynamic> verificationMethods,
-      this.prev})
+      @JsonKey(includeIfNull: true) this.prev})
       : _services = services,
         _alsoKnownAs = alsoKnownAs,
         _rotationKeys = rotationKeys,
@@ -240,7 +244,12 @@ class _$OperationImpl implements _Operation {
     return EqualUnmodifiableMapView(_verificationMethods);
   }
 
+// A genesis `plc_operation` carries an explicit `prev: null`, and that
+// key IS part of the signed DAG-CBOR bytes and the bytes hashed for
+// `did:plc` derivation. It must be serialized even when null, so this
+// field opts out of the class-level `includeIfNull: false`.
   @override
+  @JsonKey(includeIfNull: true)
   final String? prev;
 
   @override
@@ -301,7 +310,7 @@ abstract class _Operation implements Operation {
       required final List<String> alsoKnownAs,
       required final List<String> rotationKeys,
       required final Map<String, dynamic> verificationMethods,
-      final String? prev}) = _$OperationImpl;
+      @JsonKey(includeIfNull: true) final String? prev}) = _$OperationImpl;
 
   factory _Operation.fromJson(Map<String, dynamic> json) =
       _$OperationImpl.fromJson;
@@ -317,8 +326,13 @@ abstract class _Operation implements Operation {
   @override
   List<String> get rotationKeys;
   @override
-  Map<String, dynamic> get verificationMethods;
+  Map<String, dynamic>
+      get verificationMethods; // A genesis `plc_operation` carries an explicit `prev: null`, and that
+// key IS part of the signed DAG-CBOR bytes and the bytes hashed for
+// `did:plc` derivation. It must be serialized even when null, so this
+// field opts out of the class-level `includeIfNull: false`.
   @override
+  @JsonKey(includeIfNull: true)
   String? get prev;
 
   /// Create a copy of Operation

@@ -61,29 +61,33 @@ final class UPostInteractionSettingsPrefPostgateEmbeddingRulesConverter
   UPostInteractionSettingsPrefPostgateEmbeddingRules fromJson(
     Map<String, dynamic> json,
   ) {
-    try {
-      if (DisableRule.validate(json)) {
-        return UPostInteractionSettingsPrefPostgateEmbeddingRules.disableRule(
-          data: const DisableRuleConverter().fromJson(json),
-        );
-      }
-
-      return UPostInteractionSettingsPrefPostgateEmbeddingRules.unknown(
-        data: json,
-      );
-    } catch (_) {
-      return UPostInteractionSettingsPrefPostgateEmbeddingRules.unknown(
-        data: json,
+    if (DisableRule.validate(json)) {
+      return UPostInteractionSettingsPrefPostgateEmbeddingRules.disableRule(
+        data: const DisableRuleConverter().fromJson(json),
       );
     }
+
+    // No known `$type` matched: preserve the payload verbatim as an unknown
+    // variant. A payload whose `$type` *does* match a known ref but fails to
+    // convert is intentionally left to throw, so malformed data surfaces
+    // instead of being silently degraded to `.unknown`.
+    return UPostInteractionSettingsPrefPostgateEmbeddingRules.unknown(
+      data: json,
+    );
   }
 
   @override
   Map<String, dynamic> toJson(
     UPostInteractionSettingsPrefPostgateEmbeddingRules object,
   ) =>
-      object.when(
-        disableRule: (data) => const DisableRuleConverter().toJson(data),
-        unknown: (data) => data,
-      );
+      switch (object) {
+        UPostInteractionSettingsPrefPostgateEmbeddingRulesDisableRule(
+          :final data,
+        ) =>
+          const DisableRuleConverter().toJson(data),
+        UPostInteractionSettingsPrefPostgateEmbeddingRulesUnknown(
+          :final data
+        ) =>
+          data,
+      };
 }

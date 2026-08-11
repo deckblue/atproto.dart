@@ -27,11 +27,11 @@ final class GetRecordCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get data blocks needed to prove the existence or non-existence of record in the current version of repo. Does not require auth.";
+      "Get data blocks needed to prove the existence or non-existence of record in the current version of repo. Does not require auth.";
 
   @override
   final String invocation =
-      "bsky com-atproto-sync get-record [did] [collection] [rkey]";
+      "bsky com-atproto-sync get-record --did=<value> --collection=<value> --rkey=<value>";
 
   @override
   String get methodId => "com.atproto.sync.getRecord";

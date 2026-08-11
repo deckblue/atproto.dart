@@ -18,11 +18,11 @@ _$UnspeccedSearchPostsSkeletonInputImpl
               q: $checkedConvert('q', (v) => v as String),
               sort: $checkedConvert(
                   'sort',
-                  (v) => _$JsonConverterFromJson<String,
-                          UnspeccedSearchPostsSkeletonSort>(
-                      v,
-                      const UnspeccedSearchPostsSkeletonSortConverter()
-                          .fromJson)),
+                  (v) => v == null
+                      ? const UnspeccedSearchPostsSkeletonSort.knownValue(
+                          data: KnownUnspeccedSearchPostsSkeletonSort.latest)
+                      : const UnspeccedSearchPostsSkeletonSortConverter()
+                          .fromJson(v as String)),
               since: $checkedConvert('since', (v) => v as String?),
               until: $checkedConvert('until', (v) => v as String?),
               mentions: $checkedConvert('mentions', (v) => v as String?),
@@ -52,11 +52,8 @@ Map<String, dynamic> _$$UnspeccedSearchPostsSkeletonInputImplToJson(
         _$UnspeccedSearchPostsSkeletonInputImpl instance) =>
     <String, dynamic>{
       'q': instance.q,
-      if (_$JsonConverterToJson<String, UnspeccedSearchPostsSkeletonSort>(
-              instance.sort,
-              const UnspeccedSearchPostsSkeletonSortConverter().toJson)
-          case final value?)
-        'sort': value,
+      'sort': const UnspeccedSearchPostsSkeletonSortConverter()
+          .toJson(instance.sort),
       if (instance.since case final value?) 'since': value,
       if (instance.until case final value?) 'until': value,
       if (instance.mentions case final value?) 'mentions': value,
@@ -70,15 +67,3 @@ Map<String, dynamic> _$$UnspeccedSearchPostsSkeletonInputImplToJson(
       if (instance.cursor case final value?) 'cursor': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

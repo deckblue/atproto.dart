@@ -19,6 +19,8 @@ _$ServerDescribeServerOutputImpl _$$ServerDescribeServerOutputImplFromJson(
               $checkedConvert('inviteCodeRequired', (v) => v as bool?),
           phoneVerificationRequired:
               $checkedConvert('phoneVerificationRequired', (v) => v as bool?),
+          blobUploadLimit:
+              $checkedConvert('blobUploadLimit', (v) => (v as num?)?.toInt()),
           availableUserDomains: $checkedConvert('availableUserDomains',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           links: $checkedConvert(
@@ -47,6 +49,7 @@ Map<String, dynamic> _$$ServerDescribeServerOutputImplToJson(
         'inviteCodeRequired': value,
       if (instance.phoneVerificationRequired case final value?)
         'phoneVerificationRequired': value,
+      if (instance.blobUploadLimit case final value?) 'blobUploadLimit': value,
       'availableUserDomains': instance.availableUserDomains,
       if (_$JsonConverterToJson<Map<String, dynamic>, Links>(
               instance.links, const LinksConverter().toJson)

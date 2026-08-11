@@ -14,6 +14,7 @@ import 'package:atproto_core/internals.dart' show protected;
 
 // Project imports:
 import '../../../../nsids.g.dart' as ns;
+import 'report/closeReports/output.dart';
 import 'report/createActivity/output.dart';
 import 'report/createActivity/union_main_activity.dart';
 import 'report/defs/assignment_view.dart';
@@ -23,6 +24,7 @@ import 'report/getHistoricalStats/output.dart';
 import 'report/getLatestReport/output.dart';
 import 'report/getLiveStats/output.dart';
 import 'report/listActivities/output.dart';
+import 'report/queryActivities/output.dart';
 import 'report/queryReports/main_status.dart';
 import 'report/queryReports/main_subject_type.dart';
 import 'report/queryReports/output.dart';
@@ -57,10 +59,36 @@ Future<XRPCResponse<AssignmentView>> toolsOzoneReportAssignModerator({
       to: const AssignmentViewConverter().fromJson,
     );
 
+/// Close all reports on a subject matching the given criteria. Reports whose current status does not permit a transition to closed are skipped silently. Intended for automated flows that resolve reports without taking action on the subject.
+Future<XRPCResponse<ReportCloseReportsOutput>> toolsOzoneReportCloseReports({
+  required String subject,
+  List<String>? reportTypes,
+  String? internalNote,
+  bool? isAutomated,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async =>
+    await $ctx.post(
+      ns.toolsOzoneReportCloseReports,
+      service: $service,
+      headers: {'Content-type': 'application/json', ...?$headers},
+      body: {
+        ...?$unknown,
+        'subject': subject,
+        if (reportTypes != null) 'reportTypes': reportTypes,
+        if (internalNote != null) 'internalNote': internalNote,
+        if (isAutomated != null) 'isAutomated': isAutomated,
+      },
+      to: const ReportCloseReportsOutputConverter().fromJson,
+    );
+
 /// Register an activity on a report. For state-change activity types, validates the transition and updates report.status atomically.
 Future<XRPCResponse<ReportCreateActivityOutput>>
     toolsOzoneReportCreateActivity({
-  required int reportId,
+  int? reportId,
+  int? eventId,
   required UReportCreateActivityActivity activity,
   String? internalNote,
   String? publicNote,
@@ -76,7 +104,8 @@ Future<XRPCResponse<ReportCreateActivityOutput>>
           headers: {'Content-type': 'application/json', ...?$headers},
           body: {
             ...?$unknown,
-            'reportId': reportId,
+            if (reportId != null) 'reportId': reportId,
+            if (eventId != null) 'eventId': eventId,
             'activity': activity.toJson(),
             if (internalNote != null) 'internalNote': internalNote,
             if (publicNote != null) 'publicNote': publicNote,
@@ -224,6 +253,36 @@ Future<XRPCResponse<ReportListActivitiesOutput>>
           to: const ReportListActivitiesOutputConverter().fromJson,
         );
 
+/// Query report activities across all reports, ordered by createdAt. Used by downstream pollers; for per-report activity history use listActivities.
+Future<XRPCResponse<ReportQueryActivitiesOutput>>
+    toolsOzoneReportQueryActivities({
+  List<String>? activityTypes,
+  DateTime? createdAfter,
+  DateTime? createdBefore,
+  String? sortDirection,
+  int? limit,
+  String? cursor,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async =>
+        await $ctx.get(
+          ns.toolsOzoneReportQueryActivities,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            if (activityTypes != null) 'activityTypes': activityTypes,
+            if (createdAfter != null) 'createdAfter': iso8601(createdAfter),
+            if (createdBefore != null) 'createdBefore': iso8601(createdBefore),
+            if (sortDirection != null) 'sortDirection': sortDirection,
+            if (limit != null) 'limit': limit,
+            if (cursor != null) 'cursor': cursor,
+          },
+          to: const ReportQueryActivitiesOutputConverter().fromJson,
+        );
+
 /// View moderation reports. Reports are individual instances of content being reported, as opposed to subject statuses which aggregate reports at the subject level.
 Future<XRPCResponse<ReportQueryReportsOutput>> toolsOzoneReportQueryReports({
   int? queueId,
@@ -360,9 +419,31 @@ base class ReportService {
         $unknown: $unknown,
       );
 
+  /// Close all reports on a subject matching the given criteria. Reports whose current status does not permit a transition to closed are skipped silently. Intended for automated flows that resolve reports without taking action on the subject.
+  Future<XRPCResponse<ReportCloseReportsOutput>> closeReports({
+    required String subject,
+    List<String>? reportTypes,
+    String? internalNote,
+    bool? isAutomated,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async =>
+      await toolsOzoneReportCloseReports(
+        subject: subject,
+        reportTypes: reportTypes,
+        internalNote: internalNote,
+        isAutomated: isAutomated,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
+
   /// Register an activity on a report. For state-change activity types, validates the transition and updates report.status atomically.
   Future<XRPCResponse<ReportCreateActivityOutput>> createActivity({
-    required int reportId,
+    int? reportId,
+    int? eventId,
     required UReportCreateActivityActivity activity,
     String? internalNote,
     String? publicNote,
@@ -373,6 +454,7 @@ base class ReportService {
   }) async =>
       await toolsOzoneReportCreateActivity(
         reportId: reportId,
+        eventId: eventId,
         activity: activity,
         internalNote: internalNote,
         publicNote: publicNote,
@@ -491,6 +573,31 @@ base class ReportService {
   }) async =>
       await toolsOzoneReportListActivities(
         reportId: reportId,
+        limit: limit,
+        cursor: cursor,
+        $ctx: ctx,
+        $service: $service,
+        $headers: $headers,
+        $unknown: $unknown,
+      );
+
+  /// Query report activities across all reports, ordered by createdAt. Used by downstream pollers; for per-report activity history use listActivities.
+  Future<XRPCResponse<ReportQueryActivitiesOutput>> queryActivities({
+    List<String>? activityTypes,
+    DateTime? createdAfter,
+    DateTime? createdBefore,
+    String? sortDirection,
+    int? limit,
+    String? cursor,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async =>
+      await toolsOzoneReportQueryActivities(
+        activityTypes: activityTypes,
+        createdAfter: createdAfter,
+        createdBefore: createdBefore,
+        sortDirection: sortDirection,
         limit: limit,
         cursor: cursor,
         $ctx: ctx,

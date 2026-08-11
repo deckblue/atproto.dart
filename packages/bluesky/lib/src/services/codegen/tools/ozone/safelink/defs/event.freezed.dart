@@ -38,6 +38,7 @@ mixin _$Event {
 
   /// DID of the user who created this rule
   String get createdBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// Optional comment about the decision
@@ -67,7 +68,7 @@ abstract class $EventCopyWith<$Res> {
       @ActionTypeConverter() ActionType action,
       @ReasonTypeConverter() ReasonType reason,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String? comment,
       Map<String, dynamic>? $unknown});
 
@@ -209,7 +210,7 @@ abstract class _$$EventImplCopyWith<$Res> implements $EventCopyWith<$Res> {
       @ActionTypeConverter() ActionType action,
       @ReasonTypeConverter() ReasonType reason,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String? comment,
       Map<String, dynamic>? $unknown});
 
@@ -310,7 +311,7 @@ class _$EventImpl implements _Event {
       @ActionTypeConverter() required this.action,
       @ReasonTypeConverter() required this.reason,
       required this.createdBy,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       this.comment,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -346,6 +347,7 @@ class _$EventImpl implements _Event {
   @override
   final String createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// Optional comment about the decision
@@ -429,7 +431,7 @@ abstract class _Event implements Event {
       @ActionTypeConverter() required final ActionType action,
       @ReasonTypeConverter() required final ReasonType reason,
       required final String createdBy,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final String? comment,
       final Map<String, dynamic>? $unknown}) = _$EventImpl;
 
@@ -462,6 +464,7 @@ abstract class _Event implements Event {
   @override
   String get createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// Optional comment about the decision

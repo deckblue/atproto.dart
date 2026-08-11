@@ -13,6 +13,7 @@ import 'dart:async';
 // Package imports:
 import 'package:atproto/com_atproto_lexicon_schema.dart';
 import 'package:atproto/com_atproto_sync_subscriberepos.dart';
+import 'package:atproto/com_germnetwork_declaration.dart';
 import 'package:atproto_core/atproto_core.dart';
 
 // Project imports:
@@ -108,6 +109,9 @@ final class RepoCommitHandler {
   final RepoCommitOnCreate<LexiconSchemaRecord>? _onCreateLexiconSchema;
   final RepoCommitOnUpdate<LexiconSchemaRecord>? _onUpdateLexiconSchema;
   final RepoCommitOnDelete? _onDeleteLexiconSchema;
+  final RepoCommitOnCreate<DeclarationRecord>? _onCreateDeclaration;
+  final RepoCommitOnUpdate<DeclarationRecord>? _onUpdateDeclaration;
+  final RepoCommitOnDelete? _onDeleteDeclaration;
 
   final RepoCommitOnCreate<Map<String, dynamic>>? _onCreateUnknown;
   final RepoCommitOnUpdate<Map<String, dynamic>>? _onUpdateUnknown;
@@ -175,6 +179,9 @@ final class RepoCommitHandler {
     final RepoCommitOnCreate<LexiconSchemaRecord>? onCreateLexiconSchema,
     final RepoCommitOnUpdate<LexiconSchemaRecord>? onUpdateLexiconSchema,
     final RepoCommitOnDelete? onDeleteLexiconSchema,
+    final RepoCommitOnCreate<DeclarationRecord>? onCreateDeclaration,
+    final RepoCommitOnUpdate<DeclarationRecord>? onUpdateDeclaration,
+    final RepoCommitOnDelete? onDeleteDeclaration,
     final RepoCommitOnCreate<Map<String, dynamic>>? onCreateUnknown,
     final RepoCommitOnUpdate<Map<String, dynamic>>? onUpdateUnknown,
     final RepoCommitOnDelete? onDeleteUnknown,
@@ -235,6 +242,9 @@ final class RepoCommitHandler {
         _onCreateLexiconSchema = onCreateLexiconSchema,
         _onUpdateLexiconSchema = onUpdateLexiconSchema,
         _onDeleteLexiconSchema = onDeleteLexiconSchema,
+        _onCreateDeclaration = onCreateDeclaration,
+        _onUpdateDeclaration = onUpdateDeclaration,
+        _onDeleteDeclaration = onDeleteDeclaration,
         _onCreateUnknown = onCreateUnknown,
         _onUpdateUnknown = onUpdateUnknown,
         _onDeleteUnknown = onDeleteUnknown;
@@ -263,6 +273,10 @@ final class RepoCommitHandler {
   Future<void> _onCreate(final Commit data, final RepoOp op) async {
     final uri = _getUri(data, op);
     final record = _getRecord(data, op);
+    // A commit op whose block is absent from `blocks` (relay quirk, partial CAR,
+    // or a `tooBig` commit) yields a null/typeless record; skip it rather than
+    // aborting the whole commit with an implicit-downcast `TypeError`.
+    if (record == null) return;
 
     if (uri.isActorProfile && ActorProfileRecord.validate(record)) {
       await _onCreateActorProfile?.call(
@@ -495,6 +509,18 @@ final class RepoCommitHandler {
       );
       return;
     }
+    if (uri.isDeclaration && DeclarationRecord.validate(record)) {
+      await _onCreateDeclaration?.call(
+        RepoCommitCreate<DeclarationRecord>(
+          record: const DeclarationRecordConverter().fromJson(record),
+          uri: uri,
+          cid: op.cid,
+          author: data.repo,
+          cursor: data.seq,
+        ),
+      );
+      return;
+    }
 
     await _onCreateUnknown?.call(
       RepoCommitCreate<Map<String, dynamic>>(
@@ -510,6 +536,10 @@ final class RepoCommitHandler {
   Future<void> _onUpdate(final Commit data, final RepoOp op) async {
     final uri = _getUri(data, op);
     final record = _getRecord(data, op);
+    // A commit op whose block is absent from `blocks` (relay quirk, partial CAR,
+    // or a `tooBig` commit) yields a null/typeless record; skip it rather than
+    // aborting the whole commit with an implicit-downcast `TypeError`.
+    if (record == null) return;
 
     if (uri.isActorProfile && ActorProfileRecord.validate(record)) {
       await _onUpdateActorProfile?.call(
@@ -761,6 +791,19 @@ final class RepoCommitHandler {
       );
       return;
     }
+    if (uri.isDeclaration && DeclarationRecord.validate(record)) {
+      await _onUpdateDeclaration?.call(
+        RepoCommitUpdate<DeclarationRecord>(
+          record: const DeclarationRecordConverter().fromJson(record),
+          uri: uri,
+          cid: op.cid,
+          author: data.repo,
+          cursor: data.seq,
+          createdAt: data.time,
+        ),
+      );
+      return;
+    }
 
     await _onUpdateUnknown?.call(
       RepoCommitUpdate<Map<String, dynamic>>(
@@ -986,6 +1029,17 @@ final class RepoCommitHandler {
       );
       return;
     }
+    if (uri.isDeclaration) {
+      await _onDeleteDeclaration?.call(
+        RepoCommitDelete(
+          uri: uri,
+          author: data.repo,
+          cursor: data.seq,
+          createdAt: data.time,
+        ),
+      );
+      return;
+    }
 
     await _onDeleteUnknown?.call(
       RepoCommitDelete(
@@ -1001,8 +1055,11 @@ final class RepoCommitHandler {
     return AtUri('at://${commit.repo}/${op.path}');
   }
 
-  Map<String, dynamic> _getRecord(final Commit commit, final RepoOp op) {
-    return commit.blocks[op.cid];
+  Map<String, dynamic>? _getRecord(final Commit commit, final RepoOp op) {
+    final record = commit.blocks[op.cid];
+    if (record is! Map<String, dynamic>) return null;
+
+    return record;
   }
 }
 

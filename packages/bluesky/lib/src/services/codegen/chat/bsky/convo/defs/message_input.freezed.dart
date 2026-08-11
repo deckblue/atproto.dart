@@ -26,6 +26,10 @@ mixin _$MessageInput {
   List<RichtextFacet>? get facets => throw _privateConstructorUsedError;
   @UMessageInputEmbedConverter()
   UMessageInputEmbed? get embed => throw _privateConstructorUsedError;
+
+  /// If set, the message this message is replying to. The referenced message must be in the same convo.
+  @ReplyRefConverter()
+  ReplyRef? get replyTo => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this MessageInput to a JSON map.
@@ -49,9 +53,11 @@ abstract class $MessageInputCopyWith<$Res> {
       String text,
       @RichtextFacetConverter() List<RichtextFacet>? facets,
       @UMessageInputEmbedConverter() UMessageInputEmbed? embed,
+      @ReplyRefConverter() ReplyRef? replyTo,
       Map<String, dynamic>? $unknown});
 
   $UMessageInputEmbedCopyWith<$Res>? get embed;
+  $ReplyRefCopyWith<$Res>? get replyTo;
 }
 
 /// @nodoc
@@ -73,6 +79,7 @@ class _$MessageInputCopyWithImpl<$Res, $Val extends MessageInput>
     Object? text = null,
     Object? facets = freezed,
     Object? embed = freezed,
+    Object? replyTo = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -92,6 +99,10 @@ class _$MessageInputCopyWithImpl<$Res, $Val extends MessageInput>
           ? _value.embed
           : embed // ignore: cast_nullable_to_non_nullable
               as UMessageInputEmbed?,
+      replyTo: freezed == replyTo
+          ? _value.replyTo
+          : replyTo // ignore: cast_nullable_to_non_nullable
+              as ReplyRef?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -112,6 +123,20 @@ class _$MessageInputCopyWithImpl<$Res, $Val extends MessageInput>
       return _then(_value.copyWith(embed: value) as $Val);
     });
   }
+
+  /// Create a copy of MessageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReplyRefCopyWith<$Res>? get replyTo {
+    if (_value.replyTo == null) {
+      return null;
+    }
+
+    return $ReplyRefCopyWith<$Res>(_value.replyTo!, (value) {
+      return _then(_value.copyWith(replyTo: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -127,10 +152,13 @@ abstract class _$$MessageInputImplCopyWith<$Res>
       String text,
       @RichtextFacetConverter() List<RichtextFacet>? facets,
       @UMessageInputEmbedConverter() UMessageInputEmbed? embed,
+      @ReplyRefConverter() ReplyRef? replyTo,
       Map<String, dynamic>? $unknown});
 
   @override
   $UMessageInputEmbedCopyWith<$Res>? get embed;
+  @override
+  $ReplyRefCopyWith<$Res>? get replyTo;
 }
 
 /// @nodoc
@@ -150,6 +178,7 @@ class __$$MessageInputImplCopyWithImpl<$Res>
     Object? text = null,
     Object? facets = freezed,
     Object? embed = freezed,
+    Object? replyTo = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$MessageInputImpl(
@@ -169,6 +198,10 @@ class __$$MessageInputImplCopyWithImpl<$Res>
           ? _value.embed
           : embed // ignore: cast_nullable_to_non_nullable
               as UMessageInputEmbed?,
+      replyTo: freezed == replyTo
+          ? _value.replyTo
+          : replyTo // ignore: cast_nullable_to_non_nullable
+              as ReplyRef?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -186,6 +219,7 @@ class _$MessageInputImpl implements _MessageInput {
       required this.text,
       @RichtextFacetConverter() final List<RichtextFacet>? facets,
       @UMessageInputEmbedConverter() this.embed,
+      @ReplyRefConverter() this.replyTo,
       final Map<String, dynamic>? $unknown})
       : _facets = facets,
         _$unknown = $unknown;
@@ -212,6 +246,11 @@ class _$MessageInputImpl implements _MessageInput {
   @override
   @UMessageInputEmbedConverter()
   final UMessageInputEmbed? embed;
+
+  /// If set, the message this message is replying to. The referenced message must be in the same convo.
+  @override
+  @ReplyRefConverter()
+  final ReplyRef? replyTo;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -224,7 +263,7 @@ class _$MessageInputImpl implements _MessageInput {
 
   @override
   String toString() {
-    return 'MessageInput(\$type: ${$type}, text: $text, facets: $facets, embed: $embed, \$unknown: ${$unknown})';
+    return 'MessageInput(\$type: ${$type}, text: $text, facets: $facets, embed: $embed, replyTo: $replyTo, \$unknown: ${$unknown})';
   }
 
   @override
@@ -236,6 +275,7 @@ class _$MessageInputImpl implements _MessageInput {
             (identical(other.text, text) || other.text == text) &&
             const DeepCollectionEquality().equals(other._facets, _facets) &&
             (identical(other.embed, embed) || other.embed == embed) &&
+            (identical(other.replyTo, replyTo) || other.replyTo == replyTo) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -247,6 +287,7 @@ class _$MessageInputImpl implements _MessageInput {
       text,
       const DeepCollectionEquality().hash(_facets),
       embed,
+      replyTo,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of MessageInput
@@ -271,6 +312,7 @@ abstract class _MessageInput implements MessageInput {
       required final String text,
       @RichtextFacetConverter() final List<RichtextFacet>? facets,
       @UMessageInputEmbedConverter() final UMessageInputEmbed? embed,
+      @ReplyRefConverter() final ReplyRef? replyTo,
       final Map<String, dynamic>? $unknown}) = _$MessageInputImpl;
 
   factory _MessageInput.fromJson(Map<String, dynamic> json) =
@@ -286,6 +328,11 @@ abstract class _MessageInput implements MessageInput {
   @override
   @UMessageInputEmbedConverter()
   UMessageInputEmbed? get embed;
+
+  /// If set, the message this message is replying to. The referenced message must be in the same convo.
+  @override
+  @ReplyRefConverter()
+  ReplyRef? get replyTo;
   @override
   Map<String, dynamic>? get $unknown;
 

@@ -114,27 +114,21 @@ Map<String, dynamic> _$$SubjectStatusViewImplToJson(
       if (instance.subjectBlobCids case final value?) 'subjectBlobCids': value,
       if (instance.subjectRepoHandle case final value?)
         'subjectRepoHandle': value,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'createdAt': instance.createdAt.toIso8601String(),
+      'updatedAt': iso8601(instance.updatedAt),
+      'createdAt': iso8601(instance.createdAt),
       'reviewState':
           const SubjectReviewStateConverter().toJson(instance.reviewState),
       if (instance.comment case final value?) 'comment': value,
       if (instance.priorityScore case final value?) 'priorityScore': value,
-      if (instance.muteUntil?.toIso8601String() case final value?)
-        'muteUntil': value,
-      if (instance.muteReportingUntil?.toIso8601String() case final value?)
-        'muteReportingUntil': value,
+      'muteUntil': iso8601(instance.muteUntil),
+      'muteReportingUntil': iso8601(instance.muteReportingUntil),
       if (instance.lastReviewedBy case final value?) 'lastReviewedBy': value,
-      if (instance.lastReviewedAt?.toIso8601String() case final value?)
-        'lastReviewedAt': value,
-      if (instance.lastReportedAt?.toIso8601String() case final value?)
-        'lastReportedAt': value,
-      if (instance.lastAppealedAt?.toIso8601String() case final value?)
-        'lastAppealedAt': value,
+      'lastReviewedAt': iso8601(instance.lastReviewedAt),
+      'lastReportedAt': iso8601(instance.lastReportedAt),
+      'lastAppealedAt': iso8601(instance.lastAppealedAt),
       if (instance.takendown case final value?) 'takendown': value,
       if (instance.appealed case final value?) 'appealed': value,
-      if (instance.suspendUntil?.toIso8601String() case final value?)
-        'suspendUntil': value,
+      'suspendUntil': iso8601(instance.suspendUntil),
       if (instance.tags case final value?) 'tags': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, AccountStats>(
               instance.accountStats, const AccountStatsConverter().toJson)

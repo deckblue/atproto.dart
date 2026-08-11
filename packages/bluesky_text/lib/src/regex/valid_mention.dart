@@ -11,7 +11,11 @@ const validMention = '($validMentionPrecedingChars)' // $1: Preceding character
     '($atSigns)' // $2: At mark
     '($validDomain)'; // $3: Domain
 
-final validMentionRegex = RegExp(validMention);
+//* `caseSensitive: false` mirrors the official `MENTION_REGEX`
+//* (`/(^|\s|\()(@)([a-zA-Z0-9.-]+)(\b)/g`) whose character class already
+//* allows upper-case letters, so mentions like `@Alice.Bsky.Social` and
+//* `@SHINYAKATO.DEV` are detected (the TLD alternations here are lower-case).
+final validMentionRegex = RegExp(validMention, caseSensitive: false);
 
 extension ValidMentionRegexExtension on RegExpMatch {
   String get atMark => group(2)!;

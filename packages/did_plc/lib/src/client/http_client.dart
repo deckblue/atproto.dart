@@ -5,10 +5,10 @@
 // Dart imports:
 import 'dart:async' as dart_async;
 import 'dart:convert';
-import 'dart:io';
 
 // Package imports:
 import 'package:http/http.dart' as http;
+import 'package:universal_io/io.dart';
 
 // Project imports:
 import '../exceptions.dart';
@@ -141,16 +141,25 @@ final class _HttpClientImpl implements HttpClient {
       final request = http.Request('GET', uri);
       request.headers.addAll(headers);
 
-      final response = await _client.send(request);
+      final response = await _client.send(request).timeout(_timeout);
 
       if (response.statusCode >= 200 && response.statusCode < 300) {
         if (fromJson != null) {
           // Handle streaming JSONL response
           yield* _handleStreamingResponse<T>(response, fromJson);
         } else {
-          // Handle raw string streaming
-          await for (final chunk in response.stream.transform(utf8.decoder)) {
-            yield chunk as T;
+          // Handle raw string streaming. A per-chunk idle timeout prevents
+          // a stalled connection from hanging the stream forever.
+          await for (final chunk
+              in response.stream.timeout(_timeout).transform(utf8.decoder)) {
+            if (chunk is T) {
+              yield chunk as T;
+            } else {
+              throw GenericPlcException(
+                'Streaming response is text but was requested as '
+                '${T.toString()}',
+              );
+            }
           }
         }
       } else {
@@ -190,8 +199,23 @@ final class _HttpClientImpl implements HttpClient {
     _client.close();
   }
 
+  /// Characters (and path-traversal sequences) that must never appear in a
+  /// request path; they would let a crafted value break out of the intended
+  /// path and reach a different endpoint or query.
+  static final _unsafePathChars = RegExp(r'[?#%\s\x00-\x1f\x7f]');
+
   /// Builds a URI from the base URL, path, and query parameters.
   Uri _buildUri(String path, [Map<String, dynamic>? queryParameters]) {
+    // Defense in depth: the path is interpolated verbatim into the request
+    // URL, so reject anything that could redirect the request to a different
+    // path or query. Legitimate paths here are DID-based (already validated
+    // upstream) or fixed endpoints like `export` / `_health`.
+    if (_unsafePathChars.hasMatch(path) || path.contains('..')) {
+      throw ValidationException('Unsafe characters in request path', {
+        'path': path,
+      });
+    }
+
     final fullPath = path.startsWith('/') ? path : '/$path';
     final url = '$_baseUrl$fullPath';
 
@@ -213,7 +237,7 @@ final class _HttpClientImpl implements HttpClient {
   /// Builds headers by merging default headers with additional ones.
   Map<String, String> _buildHeaders([Map<String, String>? additionalHeaders]) {
     final headers = <String, String>{
-      'User-Agent': 'did_plc/0.0.22 (Dart)',
+      'User-Agent': 'did_plc/1.1.0 (Dart)',
       ..._headers,
     };
 
@@ -238,16 +262,13 @@ final class _HttpClientImpl implements HttpClient {
         if (fromJson != null) {
           final jsonData = jsonDecode(response.body);
           // Handle both Map and List responses by wrapping Lists in a Map
-          final Map<String, dynamic> processedData;
-          if (jsonData is Map<String, dynamic>) {
-            processedData = jsonData;
-          } else if (jsonData is List) {
-            // For List responses (like operation logs), wrap in a map with 'log' key
-            processedData = {'log': jsonData};
-          } else {
+          final processedData = switch (jsonData) {
+            Map<String, dynamic> map => map,
+            // For List responses (like operation logs), wrap with a 'log' key
+            List() => {'log': jsonData},
             // For other types, wrap in a generic map
-            processedData = {'data': jsonData};
-          }
+            _ => {'data': jsonData},
+          };
           final data = fromJson(processedData);
           return HttpResponse.success(
             statusCode: statusCode,
@@ -312,20 +333,19 @@ final class _HttpClientImpl implements HttpClient {
         }
 
         // Handle error responses
-        final statusCode = response.when(
-          success: (statusCode, _, __) => statusCode,
-          error: (statusCode, _, __, ___) => statusCode,
-        );
-
-        final headers = response.when(
-          success: (_, headers, __) => headers,
-          error: (_, headers, __, ___) => headers,
-        );
-
-        final message = response.when(
-          success: (_, __, ___) => 'Unexpected success in retry logic',
-          error: (_, __, message, ___) => message,
-        );
+        final (statusCode, headers, message) = switch (response) {
+          HttpResponseSuccess(:final statusCode, :final headers) => (
+              statusCode,
+              headers,
+              'Unexpected success in retry logic',
+            ),
+          HttpResponseError(
+            :final statusCode,
+            :final headers,
+            :final message,
+          ) =>
+            (statusCode, headers, message),
+        };
 
         // Check if we should retry based on status code
         if (!_retryPolicy.shouldRetry(statusCode)) {
@@ -345,18 +365,14 @@ final class _HttpClientImpl implements HttpClient {
         );
 
         // Calculate delay, considering rate limiting
-        Duration delay;
-        if (statusCode == 429) {
-          // Rate limiting - check for Retry-After header
-          final retryAfter = headers['retry-after'] ?? headers['Retry-After'];
-          delay = _retryPolicy.delayForRateLimit(retryAfter, attempt);
-        } else if (statusCode == 503) {
-          // Service unavailable - check for Retry-After header
-          final retryAfter = headers['retry-after'] ?? headers['Retry-After'];
-          delay = _retryPolicy.delayForRateLimit(retryAfter, attempt);
-        } else {
-          delay = _retryPolicy.delayForAttempt(attempt);
-        }
+        final delay = switch (statusCode) {
+          // 429 rate limiting / 503 service unavailable - honor Retry-After
+          429 || 503 => _retryPolicy.delayForRateLimit(
+              headers['retry-after'] ?? headers['Retry-After'],
+              attempt,
+            ),
+          _ => _retryPolicy.delayForAttempt(attempt),
+        };
 
         // Wait before retrying
         if (delay > Duration.zero) {
@@ -460,8 +476,10 @@ final class _HttpClientImpl implements HttpClient {
     final parser = JsonlParser<T>(fromJson: fromJson);
 
     try {
-      // Convert byte stream to string stream
+      // Convert byte stream to string stream. The per-chunk idle timeout
+      // guards against a stalled connection hanging the stream.
       final stringStream = response.stream
+          .timeout(_timeout)
           .transform(utf8.decoder)
           .transform(const LineSplitter());
 

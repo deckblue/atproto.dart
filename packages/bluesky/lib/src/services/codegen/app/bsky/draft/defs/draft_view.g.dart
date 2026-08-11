@@ -39,7 +39,7 @@ Map<String, dynamic> _$$DraftViewImplToJson(_$DraftViewImpl instance) =>
       r'$type': instance.$type,
       'id': instance.id,
       'draft': const DraftConverter().toJson(instance.draft),
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
+      'updatedAt': iso8601(instance.updatedAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

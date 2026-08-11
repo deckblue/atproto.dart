@@ -47,22 +47,27 @@ final class GetMessageContextCommand extends QueryCommand {
   final String name = "get-message-context";
 
   @override
-  final String description = r"";
+  final String description = "";
 
   @override
   final String invocation =
-      "bsky chat-bsky-moderation get-message-context [convoId] [messageId] [before] [after] [maxInterleavedSystemMessages]";
+      "bsky chat-bsky-moderation get-message-context [--convoId=<value>] --messageId=<value> [--before=<value>] [--after=<value>] [--maxInterleavedSystemMessages=<value>]";
 
   @override
   String get methodId => "chat.bsky.moderation.getMessageContext";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["convoId"] != null) "convoId": argResults!["convoId"],
+        if (argResults!.wasParsed("convoId")) "convoId": argResults!["convoId"],
         "messageId": argResults!["messageId"],
-        "before": argResults!["before"],
-        "after": argResults!["after"],
+        "before": int.tryParse(argResults!["before"]) ??
+            usageException('Invalid integer value for option "before".'),
+        "after": int.tryParse(argResults!["after"]) ??
+            usageException('Invalid integer value for option "after".'),
         "maxInterleavedSystemMessages":
-            argResults!["maxInterleavedSystemMessages"],
+            int.tryParse(argResults!["maxInterleavedSystemMessages"]) ??
+                usageException(
+                  'Invalid integer value for option "maxInterleavedSystemMessages".',
+                ),
       };
 }

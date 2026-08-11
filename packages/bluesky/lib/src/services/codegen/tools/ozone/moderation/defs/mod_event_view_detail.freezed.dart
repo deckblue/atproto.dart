@@ -29,6 +29,7 @@ mixin _$ModEventViewDetail {
   @BlobViewConverter()
   List<BlobView> get subjectBlobs => throw _privateConstructorUsedError;
   String get createdBy => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @ModToolConverter()
   ModTool? get modTool => throw _privateConstructorUsedError;
@@ -57,7 +58,7 @@ abstract class $ModEventViewDetailCopyWith<$Res> {
       @UModEventViewDetailSubjectConverter() UModEventViewDetailSubject subject,
       @BlobViewConverter() List<BlobView> subjectBlobs,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @ModToolConverter() ModTool? modTool,
       Map<String, dynamic>? $unknown});
 
@@ -181,7 +182,7 @@ abstract class _$$ModEventViewDetailImplCopyWith<$Res>
       @UModEventViewDetailSubjectConverter() UModEventViewDetailSubject subject,
       @BlobViewConverter() List<BlobView> subjectBlobs,
       String createdBy,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @ModToolConverter() ModTool? modTool,
       Map<String, dynamic>? $unknown});
 
@@ -268,7 +269,7 @@ class _$ModEventViewDetailImpl implements _ModEventViewDetail {
       @UModEventViewDetailSubjectConverter() required this.subject,
       @BlobViewConverter() required final List<BlobView> subjectBlobs,
       required this.createdBy,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @ModToolConverter() this.modTool,
       final Map<String, dynamic>? $unknown})
       : _subjectBlobs = subjectBlobs,
@@ -300,6 +301,7 @@ class _$ModEventViewDetailImpl implements _ModEventViewDetail {
   @override
   final String createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @ModToolConverter()
@@ -379,7 +381,7 @@ abstract class _ModEventViewDetail implements ModEventViewDetail {
       required final UModEventViewDetailSubject subject,
       @BlobViewConverter() required final List<BlobView> subjectBlobs,
       required final String createdBy,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @ModToolConverter() final ModTool? modTool,
       final Map<String, dynamic>? $unknown}) = _$ModEventViewDetailImpl;
 
@@ -402,6 +404,7 @@ abstract class _ModEventViewDetail implements ModEventViewDetail {
   @override
   String get createdBy;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @ModToolConverter()

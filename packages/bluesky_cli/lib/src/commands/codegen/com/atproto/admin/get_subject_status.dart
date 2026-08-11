@@ -27,19 +27,19 @@ final class GetSubjectStatusCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get the service-specific admin status of a subject (account, record, or blob).";
+      "Get the service-specific admin status of a subject (account, record, or blob).";
 
   @override
   final String invocation =
-      "bsky com-atproto-admin get-subject-status [did] [uri] [blob]";
+      "bsky com-atproto-admin get-subject-status [--did=<value>] [--uri=<value>] [--blob=<value>]";
 
   @override
   String get methodId => "com.atproto.admin.getSubjectStatus";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["did"] != null) "did": argResults!["did"],
-        if (argResults!["uri"] != null) "uri": argResults!["uri"],
-        if (argResults!["blob"] != null) "blob": argResults!["blob"],
+        if (argResults!.wasParsed("did")) "did": argResults!["did"],
+        if (argResults!.wasParsed("uri")) "uri": argResults!["uri"],
+        if (argResults!.wasParsed("blob")) "blob": argResults!["blob"],
       };
 }

@@ -17,8 +17,9 @@ _$GroupGetJoinLinkPreviewsOutputImpl
               joinLinkPreviews: $checkedConvert(
                   'joinLinkPreviews',
                   (v) => (v as List<dynamic>)
-                      .map((e) => const JoinLinkPreviewViewConverter()
-                          .fromJson(e as Map<String, dynamic>))
+                      .map((e) =>
+                          const UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter()
+                              .fromJson(e as Map<String, dynamic>))
                       .toList()),
               $unknown: $checkedConvert(
                   r'$unknown',
@@ -34,7 +35,8 @@ Map<String, dynamic> _$$GroupGetJoinLinkPreviewsOutputImplToJson(
         _$GroupGetJoinLinkPreviewsOutputImpl instance) =>
     <String, dynamic>{
       'joinLinkPreviews': instance.joinLinkPreviews
-          .map(const JoinLinkPreviewViewConverter().toJson)
+          .map(
+              const UGroupGetJoinLinkPreviewsJoinLinkPreviewsConverter().toJson)
           .toList(),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

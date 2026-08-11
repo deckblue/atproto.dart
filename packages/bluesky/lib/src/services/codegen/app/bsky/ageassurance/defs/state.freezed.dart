@@ -23,6 +23,7 @@ mixin _$State {
   String get $type => throw _privateConstructorUsedError;
 
   /// The timestamp when this state was last updated.
+  @JsonKey(toJson: iso8601)
   DateTime? get lastInitiatedAt => throw _privateConstructorUsedError;
   @StatusConverter()
   Status get status => throw _privateConstructorUsedError;
@@ -46,7 +47,7 @@ abstract class $StateCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime? lastInitiatedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastInitiatedAt,
       @StatusConverter() Status status,
       @AccessConverter() Access access,
       Map<String, dynamic>? $unknown});
@@ -130,7 +131,7 @@ abstract class _$$StateImplCopyWith<$Res> implements $StateCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime? lastInitiatedAt,
+      @JsonKey(toJson: iso8601) DateTime? lastInitiatedAt,
       @StatusConverter() Status status,
       @AccessConverter() Access access,
       Map<String, dynamic>? $unknown});
@@ -191,7 +192,7 @@ class __$$StateImplCopyWithImpl<$Res>
 class _$StateImpl implements _State {
   const _$StateImpl(
       {this.$type = 'app.bsky.ageassurance.defs#state',
-      this.lastInitiatedAt,
+      @JsonKey(toJson: iso8601) this.lastInitiatedAt,
       @StatusConverter() required this.status,
       @AccessConverter() required this.access,
       final Map<String, dynamic>? $unknown})
@@ -206,6 +207,7 @@ class _$StateImpl implements _State {
 
   /// The timestamp when this state was last updated.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? lastInitiatedAt;
   @override
   @StatusConverter()
@@ -265,7 +267,7 @@ class _$StateImpl implements _State {
 abstract class _State implements State {
   const factory _State(
       {final String $type,
-      final DateTime? lastInitiatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? lastInitiatedAt,
       @StatusConverter() required final Status status,
       @AccessConverter() required final Access access,
       final Map<String, dynamic>? $unknown}) = _$StateImpl;
@@ -277,6 +279,7 @@ abstract class _State implements State {
 
   /// The timestamp when this state was last updated.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get lastInitiatedAt;
   @override
   @StatusConverter()

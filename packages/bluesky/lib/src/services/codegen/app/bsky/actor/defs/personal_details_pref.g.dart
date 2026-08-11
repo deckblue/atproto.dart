@@ -32,7 +32,6 @@ Map<String, dynamic> _$$PersonalDetailsPrefImplToJson(
         _$PersonalDetailsPrefImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      if (instance.birthDate?.toIso8601String() case final value?)
-        'birthDate': value,
+      'birthDate': iso8601(instance.birthDate),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

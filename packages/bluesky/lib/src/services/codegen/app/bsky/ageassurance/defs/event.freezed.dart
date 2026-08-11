@@ -23,6 +23,7 @@ mixin _$Event {
   String get $type => throw _privateConstructorUsedError;
 
   /// The date and time of this write operation.
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// The unique identifier for this instance of the Age Assurance flow, in UUID format.
@@ -74,7 +75,7 @@ abstract class $EventCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String attemptId,
       @EventStatusConverter() EventStatus status,
       @EventAccessConverter() EventAccess access,
@@ -206,7 +207,7 @@ abstract class _$$EventImplCopyWith<$Res> implements $EventCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       String attemptId,
       @EventStatusConverter() EventStatus status,
       @EventAccessConverter() EventAccess access,
@@ -315,7 +316,7 @@ class __$$EventImplCopyWithImpl<$Res>
 class _$EventImpl implements _Event {
   const _$EventImpl(
       {this.$type = 'app.bsky.ageassurance.defs#event',
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       required this.attemptId,
       @EventStatusConverter() required this.status,
       @EventAccessConverter() required this.access,
@@ -338,6 +339,7 @@ class _$EventImpl implements _Event {
 
   /// The date and time of this write operation.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// The unique identifier for this instance of the Age Assurance flow, in UUID format.
@@ -459,7 +461,7 @@ class _$EventImpl implements _Event {
 abstract class _Event implements Event {
   const factory _Event(
       {final String $type,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       required final String attemptId,
       @EventStatusConverter() required final EventStatus status,
       @EventAccessConverter() required final EventAccess access,
@@ -479,6 +481,7 @@ abstract class _Event implements Event {
 
   /// The date and time of this write operation.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// The unique identifier for this instance of the Age Assurance flow, in UUID format.

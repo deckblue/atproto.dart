@@ -1,5 +1,57 @@
 # Release Note
 
+## v1.2.9
+
+- chore: regenerated from synced lexicons
+
+## v1.2.8
+
+- chore: regenerated from synced lexicons
+
+## v1.2.7
+
+- chore: regenerated from synced lexicons
+
+## v1.2.6
+
+- chore: regenerated from synced lexicons
+
+## v1.2.5
+
+- chore: regenerated from synced lexicons
+
+## v1.2.4
+
+- chore: regenerated from synced lexicons
+
+## v1.2.3
+
+- chore: bump `at_primitives` to `^1.2.0`.
+
+## v1.2.2
+
+- chore: bump `at_primitives` to `^1.1.1`.
+
+## v1.2.1
+
+- fix: unknown top-level lexicon def types (e.g. `permission-set`) now degrade to an `unknown` variant instead of throwing from `LexiconDoc.fromJson`; the same graceful fallback is applied to unknown XRPC schema types. Round-trip fidelity for known types is unchanged.
+
+## v1.2.0
+
+- fix: nested inline `object` types no longer raise `UnsupportedError`; converters degrade gracefully so one such document no longer fails the whole load (G-12).
+- fix: an unknown string `format` value now decodes to `LexStringFormat.unknown` instead of throwing (G-13).
+- fix: `LexXrpcProcedure`'s implementation class name was a copy-paste `_LexXrpcQuery` (G-14).
+- docs: documented that `LexRefUnion.closed` is parsed but intentionally not enforced by the generator — generated unions always keep an `.unknown` fallback variant for forward compatibility (G-14).
+- test: added negative / graceful-degradation coverage (nested objects, unknown formats, refs-less unions) and per-converter unit tests (G-16).
+- chore: bump `at_primitives` to `^1.1.0`.
+
+## v1.1.0
+
+- feat: added `app.bsky.embed.gallery`, `chat.bsky.convo.getUnreadCounts`, and `tools.ozone.report.queryActivities` to the bundled lexicons.
+- feat: added `app.bsky.draft.defs#draftEmbedGallery` / `#draftEmbedGalleryItems`, `chat.bsky.convo.defs#replyRef`, and `chat.bsky.group.defs#disabledJoinLinkPreviewView` / `#invalidJoinLinkPreviewView`.
+- feat: added `com.germnetwork.declaration` to the bundled lexicons.
+- core: regenerated bundled lexicons.
+
 ## v1.0.3
 
 - **MIGRATION**: Updated to use the consolidated `at_primitives` package instead of separate primitive packages.

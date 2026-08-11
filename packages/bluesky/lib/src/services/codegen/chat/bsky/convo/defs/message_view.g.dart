@@ -35,6 +35,11 @@ _$MessageViewImpl _$$MessageViewImplFromJson(Map json) => $checkedCreate(
                   ?.map((e) => const ReactionViewConverter()
                       .fromJson(e as Map<String, dynamic>))
                   .toList()),
+          replyTo: $checkedConvert(
+              'replyTo',
+              (v) => _$JsonConverterFromJson<Map<String, dynamic>,
+                      UMessageViewReplyTo>(
+                  v, const UMessageViewReplyToConverter().fromJson)),
           sender: $checkedConvert(
               'sender',
               (v) => const MessageViewSenderConverter()
@@ -66,8 +71,12 @@ Map<String, dynamic> _$$MessageViewImplToJson(_$MessageViewImpl instance) =>
       if (instance.reactions?.map(const ReactionViewConverter().toJson).toList()
           case final value?)
         'reactions': value,
+      if (_$JsonConverterToJson<Map<String, dynamic>, UMessageViewReplyTo>(
+              instance.replyTo, const UMessageViewReplyToConverter().toJson)
+          case final value?)
+        'replyTo': value,
       'sender': const MessageViewSenderConverter().toJson(instance.sender),
-      'sentAt': instance.sentAt.toIso8601String(),
+      'sentAt': iso8601(instance.sentAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

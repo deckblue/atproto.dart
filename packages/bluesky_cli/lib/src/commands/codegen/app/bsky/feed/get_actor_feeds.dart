@@ -27,11 +27,11 @@ final class GetActorFeedsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Get a list of feeds (feed generator records) created by the actor (in the actor's repo).";
+      "Get a list of feeds (feed generator records) created by the actor (in the actor's repo).";
 
   @override
   final String invocation =
-      "bsky app-bsky-feed get-actor-feeds [actor] [limit] [cursor]";
+      "bsky app-bsky-feed get-actor-feeds --actor=<value> [--limit=<value>] [--cursor=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.getActorFeeds";
@@ -39,7 +39,8 @@ final class GetActorFeedsCommand extends QueryCommand {
   @override
   Map<String, dynamic>? get parameters => {
         "actor": argResults!["actor"],
-        "limit": argResults!["limit"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

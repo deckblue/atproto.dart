@@ -21,6 +21,7 @@ part 'join_request_view.g.dart';
 // LexGenerator
 // **************************************************************************
 
+/// A join request from the perspective of the group owner.
 @freezed
 abstract class JoinRequestView with _$JoinRequestView {
   static const knownProps = <String>['convoId', 'requestedBy', 'requestedAt'];
@@ -30,7 +31,7 @@ abstract class JoinRequestView with _$JoinRequestView {
     @Default('chat.bsky.group.defs#joinRequestView') String $type,
     required String convoId,
     @ProfileViewBasicConverter() required ProfileViewBasic requestedBy,
-    required DateTime requestedAt,
+    @JsonKey(toJson: iso8601) required DateTime requestedAt,
     Map<String, dynamic>? $unknown,
   }) = _JoinRequestView;
 

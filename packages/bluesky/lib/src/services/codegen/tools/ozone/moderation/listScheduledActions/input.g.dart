@@ -46,10 +46,8 @@ _$ModerationListScheduledActionsInputImpl
 Map<String, dynamic> _$$ModerationListScheduledActionsInputImplToJson(
         _$ModerationListScheduledActionsInputImpl instance) =>
     <String, dynamic>{
-      if (instance.startsAfter?.toIso8601String() case final value?)
-        'startsAfter': value,
-      if (instance.endsBefore?.toIso8601String() case final value?)
-        'endsBefore': value,
+      'startsAfter': iso8601(instance.startsAfter),
+      'endsBefore': iso8601(instance.endsBefore),
       if (instance.subjects case final value?) 'subjects': value,
       'statuses': instance.statuses
           .map(const ModerationListScheduledActionsStatusesConverter().toJson)

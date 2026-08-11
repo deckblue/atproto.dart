@@ -1,17 +1,191 @@
-# See: https://docs.github.com/ja/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/about-dependabot-version-updates
-# See: https://docs.github.com/ja/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/enabling-and-disabling-version-updates
-# REF: https://dependabot.com/docs/config-file/validator/
+# See: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates
+# See: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 version: 2
 
-enable-beta-ecosystems: true
-
-# See: https://docs.github.com/ja/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates
 updates:
-  # See: https://docs.github.com/ja/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/keeping-your-actions-up-to-date-with-dependabot
+  # --- Dart pub (root workspace) ------------------------------------------
+  # This repo is a Dart pub workspace (melos 8). `dart pub get` resolves the
+  # whole workspace from the root, so a single "/" entry covers every member
+  # package listed under `workspace:` in the root pubspec.yaml.
+  #
+  # NOTE: Dependabot's `pub` support for pub *workspaces* is relatively new.
+  # If Dependabot ever fails to resolve the workspace from the root, the
+  # fallback is to switch dependency automation to Renovate, which has
+  # stronger monorepo/workspace support. (Comment only — no action here.)
   - package-ecosystem: "pub"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "monday"
       timezone: "Asia/Tokyo"
       time: "12:00"
-    labels: ["GitHub Actions", "dependabot"]
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+    groups:
+      pub-dependencies:
+        patterns:
+          - "*"
+    ignore:
+      # Codegen toolchain: a MAJOR bump changes the generated `.freezed.dart` /
+      # `.g.dart` output, which requires regenerating and committing all sources
+      # (Verify Generated will fail otherwise). Keep these updates in human
+      # hands; minor/patch updates still flow through.
+      #
+      # `update-types` alone proved insufficient: PR #2508 proposed
+      # `freezed: ^4.0.0-dev.3` from ^3.2.0 despite the semver-major ignore
+      # below, because that release is a PRERELEASE and Dependabot does not
+      # classify it the same way as a stable major. freezed 4.0.0-dev.3 is
+      # the exact version that previously broke union codegen and left `main`
+      # unbuildable, so it is pinned out explicitly by version range as well.
+      # `>=4.0.0-0` sorts below every 4.x prerelease, so it covers -dev/-beta
+      # builds that a plain `>=4.0.0` would let through.
+      #
+      # This single pin also holds back build_runner and `test`, and that is
+      # intended rather than collateral damage. The whole codegen toolchain is
+      # coupled through `analyzer`:
+      #
+      #   freezed 3.x          -> analyzer <11.0.0
+      #   build_runner 2.15.2+ -> analyzer >=13.3.0
+      #   test 1.31.0+         -> analyzer >=13.0.0
+      #
+      # So neither build_runner nor `test` can move while freezed is on 3.x -
+      # verified by `dart pub get`, which fails version solving on either bump
+      # alone. That is exactly why Dependabot bundled the freezed prerelease
+      # into #2508: it is the only resolvable combination, not an oversight on
+      # its part. With freezed pinned, Dependabot finds no resolvable set and
+      # simply stops proposing the group, instead of opening PRs every week
+      # that cannot resolve.
+      #
+      # Lifting this is a deliberate migration, not a version bump: move to
+      # freezed 4 once it is stable, regenerate all sources, and confirm union
+      # codegen survives. build_runner and `test` then unblock on their own.
+      #
+      # These two are ignored UNCONDITIONALLY -- no `versions`, no
+      # `update-types` -- after three attempts at a narrower rule all failed to
+      # take effect:
+      #
+      #   #2510  versions + update-types, two entries    -> #2534, #2541 followed
+      #   #2543  the two entries merged into one         -> #2547 followed
+      #
+      # #2547 was opened an hour after #2543 merged and still proposed
+      # `^4.0.0-dev.3`. Whatever the reason -- Dependabot's `versions` matching
+      # for the pub ecosystem is not observable from here -- the narrow forms
+      # demonstrably do not hold, and re-triaging the same pull request every
+      # week has cost more than the rule is worth.
+      #
+      # The cost of the blunt form is close to nil. Dependabot only proposes
+      # changes to the CONSTRAINT in pubspec.yaml; `freezed: ^2.4.7` already
+      # floats to the newest 3.x at `dart pub get` time, so patch and minor
+      # releases still reach the build. What is suppressed is the constraint
+      # rewrite, which is exactly what was unwanted.
+      #
+      # Removing these is part of the freezed 4 migration, not a maintenance
+      # step: freezed 4 has no stable release (only 4.0.0-dev.1/2/3), it raises
+      # the SDK floor from 3.8.0 to 3.12.0 across every published package, and
+      # 4.0.0-dev.3 miscompiles single-variant sealed unions -- `copyWith`
+      # instantiates the abstract base class and drops its own argument.
+      # Reproduced against this repo: 3 of 263 unions fail to compile, and
+      # `dart analyze` does not report it -- only `dart test` does.
+      - dependency-name: "freezed"
+      - dependency-name: "freezed_annotation"
+      - dependency-name: "build_runner"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "json_serializable"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "json_annotation"
+        update-types: ["version-update:semver-major"]
+
+  # --- Dart/Flutter pub (bluesky_text_flutter) ----------------------------
+  # bluesky_text_flutter is a Flutter package that lives OUTSIDE the Dart pub
+  # workspace (it is not listed under `workspace:` in the root pubspec.yaml),
+  # so it resolves independently and needs its own Dependabot entry.
+  - package-ecosystem: "pub"
+    directory: "/packages/bluesky_text_flutter"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      timezone: "Asia/Tokyo"
+      time: "12:00"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+    groups:
+      flutter-dependencies:
+        patterns:
+          - "*"
+
+  # --- npm (Docusaurus website) -------------------------------------------
+  # website/ is a Docusaurus site with its own package-lock.json. It had no
+  # entry here until now, so its lockfile went un-updated long enough to
+  # accumulate 23 open Dependabot security alerts, every one of them in a
+  # TRANSITIVE dependency.
+  #
+  # Because the vulnerabilities are transitive, version updates alone cannot
+  # always clear them - some are pinned through `overrides` in
+  # website/package.json. When Dependabot bumps @docusaurus/* here, re-check
+  # whether any override has become redundant (see the "//overrides" note in
+  # website/package.json).
+  - package-ecosystem: "npm"
+    directory: "/website"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      timezone: "Asia/Tokyo"
+      time: "12:00"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+    groups:
+      # Docusaurus packages are released in lockstep and must move together;
+      # splitting them across PRs produces unresolvable peer-dependency sets.
+      docusaurus:
+        patterns:
+          - "@docusaurus/*"
+          - "docusaurus-plugin-*"
+      npm-dependencies:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "@docusaurus/*"
+          - "docusaurus-plugin-*"
+    ignore:
+      # The react/react-dom pin that lived here is gone: the site is on React 19
+      # as of the Floating UI port, which removed `react-popper` -- the direct
+      # dependency stuck on react 16-18 that made `npm ci` fail. Docusaurus
+      # itself accepts `^18.0.0 || ^19.0.0` and never needed pinning.
+      #
+      # @babel/preset-* 8 requires `@babel/core` ^8, and `@babel/core` is held
+      # at ^7.29.6 by the security override below (arbitrary file read via
+      # `sourceMappingURL`, #2505). Taking preset 8 means unpinning that fix.
+      # Lift once a patched `@babel/core` 8 exists and the override can move
+      # with it.
+      - dependency-name: "@babel/preset-env"
+        versions: [">=8.0.0-0"]
+      - dependency-name: "@babel/preset-react"
+        versions: [">=8.0.0-0"]
+
+  # --- GitHub Actions ------------------------------------------------------
+  # Keep `uses:` action versions in .github/workflows/* up to date.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      timezone: "Asia/Tokyo"
+      time: "12:00"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - "dependencies"
+    groups:
+      github-actions:
+        patterns:
+          - "*"

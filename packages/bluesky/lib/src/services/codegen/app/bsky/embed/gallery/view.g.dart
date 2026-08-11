@@ -15,11 +15,11 @@ _$EmbedGalleryViewImpl _$$EmbedGalleryViewImplFromJson(Map json) =>
       ($checkedConvert) {
         final val = _$EmbedGalleryViewImpl(
           $type: $checkedConvert(
-              r'$type', (v) => v as String? ?? 'app.bsky.embed.images#view'),
+              r'$type', (v) => v as String? ?? 'app.bsky.embed.gallery#view'),
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>)
-                  .map((e) => const EmbedGalleryViewImageConverter()
+                  .map((e) => const UEmbedGalleryViewItemsConverter()
                       .fromJson(e as Map<String, dynamic>))
                   .toList()),
           $unknown: $checkedConvert(
@@ -37,7 +37,7 @@ Map<String, dynamic> _$$EmbedGalleryViewImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       'items': instance.items
-          .map(const EmbedGalleryViewImageConverter().toJson)
+          .map(const UEmbedGalleryViewItemsConverter().toJson)
           .toList(),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

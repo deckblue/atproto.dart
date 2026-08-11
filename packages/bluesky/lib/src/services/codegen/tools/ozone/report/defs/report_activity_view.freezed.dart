@@ -48,7 +48,12 @@ mixin _$ReportActivityView {
   @MemberConverter()
   Member? get moderator => throw _privateConstructorUsedError;
 
+  /// Full view of the report this activity belongs to.
+  @ReportViewConverter()
+  ReportView? get report => throw _privateConstructorUsedError;
+
   /// When this activity was created
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -80,11 +85,13 @@ abstract class $ReportActivityViewCopyWith<$Res> {
       bool isAutomated,
       String createdBy,
       @MemberConverter() Member? moderator,
-      DateTime createdAt,
+      @ReportViewConverter() ReportView? report,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $UReportActivityViewActivityCopyWith<$Res> get activity;
   $MemberCopyWith<$Res>? get moderator;
+  $ReportViewCopyWith<$Res>? get report;
 }
 
 /// @nodoc
@@ -112,6 +119,7 @@ class _$ReportActivityViewCopyWithImpl<$Res, $Val extends ReportActivityView>
     Object? isAutomated = null,
     Object? createdBy = null,
     Object? moderator = freezed,
+    Object? report = freezed,
     Object? createdAt = null,
     Object? $unknown = freezed,
   }) {
@@ -156,6 +164,10 @@ class _$ReportActivityViewCopyWithImpl<$Res, $Val extends ReportActivityView>
           ? _value.moderator
           : moderator // ignore: cast_nullable_to_non_nullable
               as Member?,
+      report: freezed == report
+          ? _value.report
+          : report // ignore: cast_nullable_to_non_nullable
+              as ReportView?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -190,6 +202,20 @@ class _$ReportActivityViewCopyWithImpl<$Res, $Val extends ReportActivityView>
       return _then(_value.copyWith(moderator: value) as $Val);
     });
   }
+
+  /// Create a copy of ReportActivityView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReportViewCopyWith<$Res>? get report {
+    if (_value.report == null) {
+      return null;
+    }
+
+    return $ReportViewCopyWith<$Res>(_value.report!, (value) {
+      return _then(_value.copyWith(report: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -212,13 +238,16 @@ abstract class _$$ReportActivityViewImplCopyWith<$Res>
       bool isAutomated,
       String createdBy,
       @MemberConverter() Member? moderator,
-      DateTime createdAt,
+      @ReportViewConverter() ReportView? report,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
   $UReportActivityViewActivityCopyWith<$Res> get activity;
   @override
   $MemberCopyWith<$Res>? get moderator;
+  @override
+  $ReportViewCopyWith<$Res>? get report;
 }
 
 /// @nodoc
@@ -244,6 +273,7 @@ class __$$ReportActivityViewImplCopyWithImpl<$Res>
     Object? isAutomated = null,
     Object? createdBy = null,
     Object? moderator = freezed,
+    Object? report = freezed,
     Object? createdAt = null,
     Object? $unknown = freezed,
   }) {
@@ -288,6 +318,10 @@ class __$$ReportActivityViewImplCopyWithImpl<$Res>
           ? _value.moderator
           : moderator // ignore: cast_nullable_to_non_nullable
               as Member?,
+      report: freezed == report
+          ? _value.report
+          : report // ignore: cast_nullable_to_non_nullable
+              as ReportView?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -315,7 +349,8 @@ class _$ReportActivityViewImpl implements _ReportActivityView {
       required this.isAutomated,
       required this.createdBy,
       @MemberConverter() this.moderator,
-      required this.createdAt,
+      @ReportViewConverter() this.report,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _meta = meta,
         _$unknown = $unknown;
@@ -368,8 +403,14 @@ class _$ReportActivityViewImpl implements _ReportActivityView {
   @MemberConverter()
   final Member? moderator;
 
+  /// Full view of the report this activity belongs to.
+  @override
+  @ReportViewConverter()
+  final ReportView? report;
+
   /// When this activity was created
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -383,7 +424,7 @@ class _$ReportActivityViewImpl implements _ReportActivityView {
 
   @override
   String toString() {
-    return 'ReportActivityView(\$type: ${$type}, id: $id, reportId: $reportId, activity: $activity, internalNote: $internalNote, publicNote: $publicNote, meta: $meta, isAutomated: $isAutomated, createdBy: $createdBy, moderator: $moderator, createdAt: $createdAt, \$unknown: ${$unknown})';
+    return 'ReportActivityView(\$type: ${$type}, id: $id, reportId: $reportId, activity: $activity, internalNote: $internalNote, publicNote: $publicNote, meta: $meta, isAutomated: $isAutomated, createdBy: $createdBy, moderator: $moderator, report: $report, createdAt: $createdAt, \$unknown: ${$unknown})';
   }
 
   @override
@@ -408,6 +449,7 @@ class _$ReportActivityViewImpl implements _ReportActivityView {
                 other.createdBy == createdBy) &&
             (identical(other.moderator, moderator) ||
                 other.moderator == moderator) &&
+            (identical(other.report, report) || other.report == report) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
@@ -427,6 +469,7 @@ class _$ReportActivityViewImpl implements _ReportActivityView {
       isAutomated,
       createdBy,
       moderator,
+      report,
       createdAt,
       const DeepCollectionEquality().hash(_$unknown));
 
@@ -460,7 +503,8 @@ abstract class _ReportActivityView implements ReportActivityView {
       required final bool isAutomated,
       required final String createdBy,
       @MemberConverter() final Member? moderator,
-      required final DateTime createdAt,
+      @ReportViewConverter() final ReportView? report,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$ReportActivityViewImpl;
 
   factory _ReportActivityView.fromJson(Map<String, dynamic> json) =
@@ -503,8 +547,14 @@ abstract class _ReportActivityView implements ReportActivityView {
   @MemberConverter()
   Member? get moderator;
 
+  /// Full view of the report this activity belongs to.
+  @override
+  @ReportViewConverter()
+  ReportView? get report;
+
   /// When this activity was created
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

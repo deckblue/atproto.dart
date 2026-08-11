@@ -29,18 +29,19 @@ final class UnassignModeratorCommand extends ProcedureCommand {
   final String name = "unassign-moderator";
 
   @override
-  final String description = r"Remove a user's assignment from a queue.";
+  final String description = "Remove a user's assignment from a queue.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-queue unassign-moderator [queueId] [did]";
+      "bsky tools-ozone-queue unassign-moderator --queueId=<value> --did=<value>";
 
   @override
   String get methodId => "tools.ozone.queue.unassignModerator";
 
   @override
   Map<String, dynamic>? get body => {
-        "queueId": argResults!["queueId"],
+        "queueId": int.tryParse(argResults!["queueId"]) ??
+            usageException('Invalid integer value for option "queueId".'),
         "did": argResults!["did"],
       };
 }

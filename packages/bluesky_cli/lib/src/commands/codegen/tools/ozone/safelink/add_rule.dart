@@ -39,11 +39,11 @@ final class AddRuleCommand extends ProcedureCommand {
   final String name = "add-rule";
 
   @override
-  final String description = r"Add a new URL safety rule";
+  final String description = "Add a new URL safety rule";
 
   @override
   final String invocation =
-      "bsky tools-ozone-safelink add-rule [url] [pattern] [action] [reason] [comment] [createdBy]";
+      "bsky tools-ozone-safelink add-rule --url=<value> --pattern=<value> --action=<value> --reason=<value> [--comment=<value>] [--createdBy=<value>]";
 
   @override
   String get methodId => "tools.ozone.safelink.addRule";
@@ -51,11 +51,20 @@ final class AddRuleCommand extends ProcedureCommand {
   @override
   Map<String, dynamic>? get body => {
         "url": argResults!["url"],
-        "pattern": jsonDecode(argResults!["pattern"]),
-        "action": jsonDecode(argResults!["action"]),
-        "reason": jsonDecode(argResults!["reason"]),
-        if (argResults!["comment"] != null) "comment": argResults!["comment"],
-        if (argResults!["createdBy"] != null)
+        "pattern": _decodeJson("pattern"),
+        "action": _decodeJson("action"),
+        "reason": _decodeJson("reason"),
+        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+        if (argResults!.wasParsed("createdBy"))
           "createdBy": argResults!["createdBy"],
       };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

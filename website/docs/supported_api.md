@@ -4,9 +4,29 @@ sidebar_position: 4
 
 # Supported API
 
-## [atproto](packages/atproto)
+## [atproto](products/packages/atproto)
 
 [![pub package](https://img.shields.io/pub/v/atproto.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/atproto) [![Dart SDK Version](https://badgen.net/pub/sdk-version/atproto)](https://pub.dev/packages/atproto/)
+
+### com.atproto.admin
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[com.atproto.admin.deleteAccount](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/deleteAccount.html)** | [Reference](lexicons/com/atproto/admin/deleteAccount.md) | ❌ |
+| **[com.atproto.admin.disableAccountInvites](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/disableAccountInvites.html)** | [Reference](lexicons/com/atproto/admin/disableAccountInvites.md) | ❌ |
+| **[com.atproto.admin.disableInviteCodes](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/disableInviteCodes.html)** | [Reference](lexicons/com/atproto/admin/disableInviteCodes.md) | ❌ |
+| **[com.atproto.admin.enableAccountInvites](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/enableAccountInvites.html)** | [Reference](lexicons/com/atproto/admin/enableAccountInvites.md) | ❌ |
+| **[com.atproto.admin.getAccountInfo](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/getAccountInfo.html)** | [Reference](lexicons/com/atproto/admin/getAccountInfo.md) | ❌ |
+| **[com.atproto.admin.getAccountInfos](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/getAccountInfos.html)** | [Reference](lexicons/com/atproto/admin/getAccountInfos.md) | ❌ |
+| **[com.atproto.admin.getInviteCodes](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/getInviteCodes.html)** | [Reference](lexicons/com/atproto/admin/getInviteCodes.md) | ✅ |
+| **[com.atproto.admin.getSubjectStatus](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/getSubjectStatus.html)** | [Reference](lexicons/com/atproto/admin/getSubjectStatus.md) | ❌ |
+| **[com.atproto.admin.searchAccounts](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/searchAccounts.html)** | [Reference](lexicons/com/atproto/admin/searchAccounts.md) | ✅ |
+| **[com.atproto.admin.sendEmail](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/sendEmail.html)** | [Reference](lexicons/com/atproto/admin/sendEmail.md) | ❌ |
+| **[com.atproto.admin.updateAccountEmail](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateAccountEmail.html)** | [Reference](lexicons/com/atproto/admin/updateAccountEmail.md) | ❌ |
+| **[com.atproto.admin.updateAccountHandle](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateAccountHandle.html)** | [Reference](lexicons/com/atproto/admin/updateAccountHandle.md) | ❌ |
+| **[com.atproto.admin.updateAccountPassword](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateAccountPassword.html)** | [Reference](lexicons/com/atproto/admin/updateAccountPassword.md) | ❌ |
+| **[com.atproto.admin.updateAccountSigningKey](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateAccountSigningKey.html)** | [Reference](lexicons/com/atproto/admin/updateAccountSigningKey.md) | ❌ |
+| **[com.atproto.admin.updateSubjectStatus](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateSubjectStatus.html)** | [Reference](lexicons/com/atproto/admin/updateSubjectStatus.md) | ❌ |
 
 ### com.atproto.identity
 
@@ -21,6 +41,20 @@ sidebar_position: 4
 | **[com.atproto.identity.signPlcOperation](https://pub.dev/documentation/atproto/latest/com_atproto_services/IdentityService/signPlcOperation.html)** | [Reference](lexicons/com/atproto/identity/signPlcOperation.md) | ❌ |
 | **[com.atproto.identity.submitPlcOperation](https://pub.dev/documentation/atproto/latest/com_atproto_services/IdentityService/submitPlcOperation.html)** | [Reference](lexicons/com/atproto/identity/submitPlcOperation.md) | ❌ |
 | **[com.atproto.identity.updateHandle](https://pub.dev/documentation/atproto/latest/com_atproto_services/IdentityService/updateHandle.html)** | [Reference](lexicons/com/atproto/identity/updateHandle.md) | ❌ |
+
+### com.atproto.label
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[com.atproto.label.queryLabels](https://pub.dev/documentation/atproto/latest/com_atproto_services/LabelService/queryLabels.html)** | [Reference](lexicons/com/atproto/label/queryLabels.md) | ✅ |
+| **[com.atproto.label.subscribeLabels](https://pub.dev/documentation/atproto/latest/com_atproto_services/LabelService/subscribeLabels.html)** | [Reference](lexicons/com/atproto/label/subscribeLabels.md) | ✅ |
+
+### com.atproto.lexicon
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[com.atproto.lexicon.resolveLexicon](https://pub.dev/documentation/atproto/latest/com_atproto_services/LexiconService/resolveLexicon.html)** | [Reference](lexicons/com/atproto/lexicon/resolveLexicon.md) | ❌ |
+| **[com.atproto.lexicon.schema](https://pub.dev/documentation/atproto/latest/com_atproto_services/LexiconService/schema.html)** | [Reference](lexicons/com/atproto/lexicon/schema.md) | ❌ |
 
 ### com.atproto.moderation
 
@@ -42,34 +76,6 @@ sidebar_position: 4
 | **[com.atproto.repo.listRecords](https://pub.dev/documentation/atproto/latest/com_atproto_services/RepoService/listRecords.html)** | [Reference](lexicons/com/atproto/repo/listRecords.md) | ✅ |
 | **[com.atproto.repo.putRecord](https://pub.dev/documentation/atproto/latest/com_atproto_services/RepoService/putRecord.html)** | [Reference](lexicons/com/atproto/repo/putRecord.md) | ❌ |
 | **[com.atproto.repo.uploadBlob](https://pub.dev/documentation/atproto/latest/com_atproto_services/RepoService/uploadBlob.html)** | [Reference](lexicons/com/atproto/repo/uploadBlob.md) | ❌ |
-
-### com.atproto.sync
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[com.atproto.sync.getBlob](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getBlob.html)** | [Reference](lexicons/com/atproto/sync/getBlob.md) | ❌ |
-| **[com.atproto.sync.getBlocks](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getBlocks.html)** | [Reference](lexicons/com/atproto/sync/getBlocks.md) | ❌ |
-| **[com.atproto.sync.getCheckout](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getCheckout.html)** | [Reference](lexicons/com/atproto/sync/getCheckout.md) | ❌ |
-| **[com.atproto.sync.getHead](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getHead.html)** | [Reference](lexicons/com/atproto/sync/getHead.md) | ❌ |
-| **[com.atproto.sync.getHostStatus](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getHostStatus.html)** | [Reference](lexicons/com/atproto/sync/getHostStatus.md) | ❌ |
-| **[com.atproto.sync.getLatestCommit](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getLatestCommit.html)** | [Reference](lexicons/com/atproto/sync/getLatestCommit.md) | ❌ |
-| **[com.atproto.sync.getRecord](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getRecord.html)** | [Reference](lexicons/com/atproto/sync/getRecord.md) | ❌ |
-| **[com.atproto.sync.getRepo](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getRepo.html)** | [Reference](lexicons/com/atproto/sync/getRepo.md) | ❌ |
-| **[com.atproto.sync.getRepoStatus](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getRepoStatus.html)** | [Reference](lexicons/com/atproto/sync/getRepoStatus.md) | ❌ |
-| **[com.atproto.sync.listBlobs](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/listBlobs.html)** | [Reference](lexicons/com/atproto/sync/listBlobs.md) | ✅ |
-| **[com.atproto.sync.listHosts](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/listHosts.html)** | [Reference](lexicons/com/atproto/sync/listHosts.md) | ✅ |
-| **[com.atproto.sync.listRepos](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/listRepos.html)** | [Reference](lexicons/com/atproto/sync/listRepos.md) | ✅ |
-| **[com.atproto.sync.listReposByCollection](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/listReposByCollection.html)** | [Reference](lexicons/com/atproto/sync/listReposByCollection.md) | ✅ |
-| **[com.atproto.sync.notifyOfUpdate](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/notifyOfUpdate.html)** | [Reference](lexicons/com/atproto/sync/notifyOfUpdate.md) | ❌ |
-| **[com.atproto.sync.requestCrawl](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/requestCrawl.html)** | [Reference](lexicons/com/atproto/sync/requestCrawl.md) | ❌ |
-| **[com.atproto.sync.subscribeRepos](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/subscribeRepos.html)** | [Reference](lexicons/com/atproto/sync/subscribeRepos.md) | ✅ |
-
-### com.atproto.label
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[com.atproto.label.queryLabels](https://pub.dev/documentation/atproto/latest/com_atproto_services/LabelService/queryLabels.html)** | [Reference](lexicons/com/atproto/label/queryLabels.md) | ✅ |
-| **[com.atproto.label.subscribeLabels](https://pub.dev/documentation/atproto/latest/com_atproto_services/LabelService/subscribeLabels.html)** | [Reference](lexicons/com/atproto/label/subscribeLabels.md) | ✅ |
 
 ### com.atproto.server
 
@@ -101,6 +107,27 @@ sidebar_position: 4
 | **[com.atproto.server.revokeAppPassword](https://pub.dev/documentation/atproto/latest/com_atproto_services/ServerService/revokeAppPassword.html)** | [Reference](lexicons/com/atproto/server/revokeAppPassword.md) | ❌ |
 | **[com.atproto.server.updateEmail](https://pub.dev/documentation/atproto/latest/com_atproto_services/ServerService/updateEmail.html)** | [Reference](lexicons/com/atproto/server/updateEmail.md) | ❌ |
 
+### com.atproto.sync
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[com.atproto.sync.getBlob](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getBlob.html)** | [Reference](lexicons/com/atproto/sync/getBlob.md) | ❌ |
+| **[com.atproto.sync.getBlocks](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getBlocks.html)** | [Reference](lexicons/com/atproto/sync/getBlocks.md) | ❌ |
+| **[com.atproto.sync.getCheckout](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getCheckout.html)** | [Reference](lexicons/com/atproto/sync/getCheckout.md) | ❌ |
+| **[com.atproto.sync.getHead](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getHead.html)** | [Reference](lexicons/com/atproto/sync/getHead.md) | ❌ |
+| **[com.atproto.sync.getHostStatus](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getHostStatus.html)** | [Reference](lexicons/com/atproto/sync/getHostStatus.md) | ❌ |
+| **[com.atproto.sync.getLatestCommit](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getLatestCommit.html)** | [Reference](lexicons/com/atproto/sync/getLatestCommit.md) | ❌ |
+| **[com.atproto.sync.getRecord](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getRecord.html)** | [Reference](lexicons/com/atproto/sync/getRecord.md) | ❌ |
+| **[com.atproto.sync.getRepo](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getRepo.html)** | [Reference](lexicons/com/atproto/sync/getRepo.md) | ❌ |
+| **[com.atproto.sync.getRepoStatus](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/getRepoStatus.html)** | [Reference](lexicons/com/atproto/sync/getRepoStatus.md) | ❌ |
+| **[com.atproto.sync.listBlobs](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/listBlobs.html)** | [Reference](lexicons/com/atproto/sync/listBlobs.md) | ✅ |
+| **[com.atproto.sync.listHosts](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/listHosts.html)** | [Reference](lexicons/com/atproto/sync/listHosts.md) | ✅ |
+| **[com.atproto.sync.listRepos](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/listRepos.html)** | [Reference](lexicons/com/atproto/sync/listRepos.md) | ✅ |
+| **[com.atproto.sync.listReposByCollection](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/listReposByCollection.html)** | [Reference](lexicons/com/atproto/sync/listReposByCollection.md) | ✅ |
+| **[com.atproto.sync.notifyOfUpdate](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/notifyOfUpdate.html)** | [Reference](lexicons/com/atproto/sync/notifyOfUpdate.md) | ❌ |
+| **[com.atproto.sync.requestCrawl](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/requestCrawl.html)** | [Reference](lexicons/com/atproto/sync/requestCrawl.md) | ❌ |
+| **[com.atproto.sync.subscribeRepos](https://pub.dev/documentation/atproto/latest/com_atproto_services/SyncService/subscribeRepos.html)** | [Reference](lexicons/com/atproto/sync/subscribeRepos.md) | ✅ |
+
 ### com.atproto.temp
 
 | Method | Docs | Paging (cursor) |
@@ -113,34 +140,7 @@ sidebar_position: 4
 | **[com.atproto.temp.requestPhoneVerification](https://pub.dev/documentation/atproto/latest/com_atproto_services/TempService/requestPhoneVerification.html)** | [Reference](lexicons/com/atproto/temp/requestPhoneVerification.md) | ❌ |
 | **[com.atproto.temp.revokeAccountCredentials](https://pub.dev/documentation/atproto/latest/com_atproto_services/TempService/revokeAccountCredentials.html)** | [Reference](lexicons/com/atproto/temp/revokeAccountCredentials.md) | ❌ |
 
-### com.atproto.lexicon
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[com.atproto.lexicon.resolveLexicon](https://pub.dev/documentation/atproto/latest/com_atproto_services/LexiconService/resolveLexicon.html)** | [Reference](lexicons/com/atproto/lexicon/resolveLexicon.md) | ❌ |
-| **[com.atproto.lexicon.schema](https://pub.dev/documentation/atproto/latest/com_atproto_services/LexiconService/schema.html)** | [Reference](lexicons/com/atproto/lexicon/schema.md) | ❌ |
-
-### com.atproto.admin
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[com.atproto.admin.deleteAccount](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/deleteAccount.html)** | [Reference](lexicons/com/atproto/admin/deleteAccount.md) | ❌ |
-| **[com.atproto.admin.disableAccountInvites](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/disableAccountInvites.html)** | [Reference](lexicons/com/atproto/admin/disableAccountInvites.md) | ❌ |
-| **[com.atproto.admin.disableInviteCodes](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/disableInviteCodes.html)** | [Reference](lexicons/com/atproto/admin/disableInviteCodes.md) | ❌ |
-| **[com.atproto.admin.enableAccountInvites](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/enableAccountInvites.html)** | [Reference](lexicons/com/atproto/admin/enableAccountInvites.md) | ❌ |
-| **[com.atproto.admin.getAccountInfo](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/getAccountInfo.html)** | [Reference](lexicons/com/atproto/admin/getAccountInfo.md) | ❌ |
-| **[com.atproto.admin.getAccountInfos](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/getAccountInfos.html)** | [Reference](lexicons/com/atproto/admin/getAccountInfos.md) | ❌ |
-| **[com.atproto.admin.getInviteCodes](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/getInviteCodes.html)** | [Reference](lexicons/com/atproto/admin/getInviteCodes.md) | ✅ |
-| **[com.atproto.admin.getSubjectStatus](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/getSubjectStatus.html)** | [Reference](lexicons/com/atproto/admin/getSubjectStatus.md) | ❌ |
-| **[com.atproto.admin.searchAccounts](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/searchAccounts.html)** | [Reference](lexicons/com/atproto/admin/searchAccounts.md) | ✅ |
-| **[com.atproto.admin.sendEmail](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/sendEmail.html)** | [Reference](lexicons/com/atproto/admin/sendEmail.md) | ❌ |
-| **[com.atproto.admin.updateAccountEmail](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateAccountEmail.html)** | [Reference](lexicons/com/atproto/admin/updateAccountEmail.md) | ❌ |
-| **[com.atproto.admin.updateAccountHandle](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateAccountHandle.html)** | [Reference](lexicons/com/atproto/admin/updateAccountHandle.md) | ❌ |
-| **[com.atproto.admin.updateAccountPassword](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateAccountPassword.html)** | [Reference](lexicons/com/atproto/admin/updateAccountPassword.md) | ❌ |
-| **[com.atproto.admin.updateAccountSigningKey](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateAccountSigningKey.html)** | [Reference](lexicons/com/atproto/admin/updateAccountSigningKey.md) | ❌ |
-| **[com.atproto.admin.updateSubjectStatus](https://pub.dev/documentation/atproto/latest/com_atproto_services/AdminService/updateSubjectStatus.html)** | [Reference](lexicons/com/atproto/admin/updateSubjectStatus.md) | ❌ |
-
-## [bluesky](packages/bluesky)
+## [bluesky](products/packages/bluesky)
 
 [![pub package](https://img.shields.io/pub/v/bluesky.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/bluesky) [![Dart SDK Version](https://badgen.net/pub/sdk-version/bluesky)](https://pub.dev/packages/bluesky/)
 
@@ -148,6 +148,36 @@ sidebar_position: 4
 The [bluesky](#bluesky) package is designed based on the [atproto](#atproto) package.
 So all endpoints in the [atproto](#atproto) table are also available from [bluesky](#bluesky) package.
 :::
+
+### app.bsky.actor
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[app.bsky.actor.getPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getPreferences.html)** | [Reference](lexicons/app/bsky/actor/getPreferences.md) | ❌ |
+| **[app.bsky.actor.getProfile](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getProfile.html)** | [Reference](lexicons/app/bsky/actor/getProfile.md) | ❌ |
+| **[app.bsky.actor.getProfiles](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getProfiles.html)** | [Reference](lexicons/app/bsky/actor/getProfiles.md) | ❌ |
+| **[app.bsky.actor.getSuggestions](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getSuggestions.html)** | [Reference](lexicons/app/bsky/actor/getSuggestions.md) | ✅ |
+| **[app.bsky.actor.profile](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/profile.html)** | [Reference](lexicons/app/bsky/actor/profile.md) | ❌ |
+| **[app.bsky.actor.putPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/putPreferences.html)** | [Reference](lexicons/app/bsky/actor/putPreferences.md) | ❌ |
+| **[app.bsky.actor.searchActors](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/searchActors.html)** | [Reference](lexicons/app/bsky/actor/searchActors.md) | ✅ |
+| **[app.bsky.actor.searchActorsTypeahead](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/searchActorsTypeahead.html)** | [Reference](lexicons/app/bsky/actor/searchActorsTypeahead.md) | ❌ |
+| **[app.bsky.actor.status](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/status.html)** | [Reference](lexicons/app/bsky/actor/status.md) | ❌ |
+
+### app.bsky.ageassurance
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[app.bsky.ageassurance.begin](https://pub.dev/documentation/bluesky/latest/app_bsky_services/AgeassuranceService/begin.html)** | [Reference](lexicons/app/bsky/ageassurance/begin.md) | ❌ |
+| **[app.bsky.ageassurance.getConfig](https://pub.dev/documentation/bluesky/latest/app_bsky_services/AgeassuranceService/getConfig.html)** | [Reference](lexicons/app/bsky/ageassurance/getConfig.md) | ❌ |
+| **[app.bsky.ageassurance.getState](https://pub.dev/documentation/bluesky/latest/app_bsky_services/AgeassuranceService/getState.html)** | [Reference](lexicons/app/bsky/ageassurance/getState.md) | ❌ |
+
+### app.bsky.bookmark
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[app.bsky.bookmark.createBookmark](https://pub.dev/documentation/bluesky/latest/app_bsky_services/BookmarkService/createBookmark.html)** | [Reference](lexicons/app/bsky/bookmark/createBookmark.md) | ❌ |
+| **[app.bsky.bookmark.deleteBookmark](https://pub.dev/documentation/bluesky/latest/app_bsky_services/BookmarkService/deleteBookmark.html)** | [Reference](lexicons/app/bsky/bookmark/deleteBookmark.md) | ❌ |
+| **[app.bsky.bookmark.getBookmarks](https://pub.dev/documentation/bluesky/latest/app_bsky_services/BookmarkService/getBookmarks.html)** | [Reference](lexicons/app/bsky/bookmark/getBookmarks.md) | ✅ |
 
 ### app.bsky.contact
 
@@ -162,11 +192,50 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[app.bsky.contact.startPhoneVerification](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ContactService/startPhoneVerification.html)** | [Reference](lexicons/app/bsky/contact/startPhoneVerification.md) | ❌ |
 | **[app.bsky.contact.verifyPhone](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ContactService/verifyPhone.html)** | [Reference](lexicons/app/bsky/contact/verifyPhone.md) | ❌ |
 
+### app.bsky.draft
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[app.bsky.draft.createDraft](https://pub.dev/documentation/bluesky/latest/app_bsky_services/DraftService/createDraft.html)** | [Reference](lexicons/app/bsky/draft/createDraft.md) | ❌ |
+| **[app.bsky.draft.deleteDraft](https://pub.dev/documentation/bluesky/latest/app_bsky_services/DraftService/deleteDraft.html)** | [Reference](lexicons/app/bsky/draft/deleteDraft.md) | ❌ |
+| **[app.bsky.draft.getDrafts](https://pub.dev/documentation/bluesky/latest/app_bsky_services/DraftService/getDrafts.html)** | [Reference](lexicons/app/bsky/draft/getDrafts.md) | ✅ |
+| **[app.bsky.draft.updateDraft](https://pub.dev/documentation/bluesky/latest/app_bsky_services/DraftService/updateDraft.html)** | [Reference](lexicons/app/bsky/draft/updateDraft.md) | ❌ |
+
 ### app.bsky.embed
 
 | Method | Docs | Paging (cursor) |
 | --- | --- | :---: |
 | **[app.bsky.embed.getEmbedExternalView](https://pub.dev/documentation/bluesky/latest/app_bsky_services/EmbedService/getEmbedExternalView.html)** | [Reference](lexicons/app/bsky/embed/getEmbedExternalView.md) | ❌ |
+
+### app.bsky.feed
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[app.bsky.feed.describeFeedGenerator](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/describeFeedGenerator.html)** | [Reference](lexicons/app/bsky/feed/describeFeedGenerator.md) | ❌ |
+| **[app.bsky.feed.generator](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/generator.html)** | [Reference](lexicons/app/bsky/feed/generator.md) | ❌ |
+| **[app.bsky.feed.getActorFeeds](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getActorFeeds.html)** | [Reference](lexicons/app/bsky/feed/getActorFeeds.md) | ✅ |
+| **[app.bsky.feed.getActorLikes](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getActorLikes.html)** | [Reference](lexicons/app/bsky/feed/getActorLikes.md) | ✅ |
+| **[app.bsky.feed.getAuthorFeed](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getAuthorFeed.html)** | [Reference](lexicons/app/bsky/feed/getAuthorFeed.md) | ✅ |
+| **[app.bsky.feed.getFeed](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getFeed.html)** | [Reference](lexicons/app/bsky/feed/getFeed.md) | ✅ |
+| **[app.bsky.feed.getFeedGenerator](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getFeedGenerator.html)** | [Reference](lexicons/app/bsky/feed/getFeedGenerator.md) | ❌ |
+| **[app.bsky.feed.getFeedGenerators](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getFeedGenerators.html)** | [Reference](lexicons/app/bsky/feed/getFeedGenerators.md) | ❌ |
+| **[app.bsky.feed.getFeedSkeleton](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getFeedSkeleton.html)** | [Reference](lexicons/app/bsky/feed/getFeedSkeleton.md) | ✅ |
+| **[app.bsky.feed.getLikes](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getLikes.html)** | [Reference](lexicons/app/bsky/feed/getLikes.md) | ✅ |
+| **[app.bsky.feed.getListFeed](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getListFeed.html)** | [Reference](lexicons/app/bsky/feed/getListFeed.md) | ✅ |
+| **[app.bsky.feed.getPostThread](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getPostThread.html)** | [Reference](lexicons/app/bsky/feed/getPostThread.md) | ❌ |
+| **[app.bsky.feed.getPosts](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getPosts.html)** | [Reference](lexicons/app/bsky/feed/getPosts.md) | ❌ |
+| **[app.bsky.feed.getQuotes](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getQuotes.html)** | [Reference](lexicons/app/bsky/feed/getQuotes.md) | ✅ |
+| **[app.bsky.feed.getRepostedBy](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getRepostedBy.html)** | [Reference](lexicons/app/bsky/feed/getRepostedBy.md) | ✅ |
+| **[app.bsky.feed.getSuggestedFeeds](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getSuggestedFeeds.html)** | [Reference](lexicons/app/bsky/feed/getSuggestedFeeds.md) | ✅ |
+| **[app.bsky.feed.getTimeline](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getTimeline.html)** | [Reference](lexicons/app/bsky/feed/getTimeline.md) | ✅ |
+| **[app.bsky.feed.like](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/like.html)** | [Reference](lexicons/app/bsky/feed/like.md) | ❌ |
+| **[app.bsky.feed.post](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/post.html)** | [Reference](lexicons/app/bsky/feed/post.md) | ❌ |
+| **[app.bsky.feed.postgate](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/postgate.html)** | [Reference](lexicons/app/bsky/feed/postgate.md) | ❌ |
+| **[app.bsky.feed.repost](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/repost.html)** | [Reference](lexicons/app/bsky/feed/repost.md) | ❌ |
+| **[app.bsky.feed.searchPosts](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/searchPosts.html)** | [Reference](lexicons/app/bsky/feed/searchPosts.md) | ✅ |
+| **[app.bsky.feed.searchPostsV2](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/searchPostsV2.html)** | [Reference](lexicons/app/bsky/feed/searchPostsV2.md) | ✅ |
+| **[app.bsky.feed.sendInteractions](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/sendInteractions.html)** | [Reference](lexicons/app/bsky/feed/sendInteractions.md) | ❌ |
+| **[app.bsky.feed.threadgate](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/threadgate.html)** | [Reference](lexicons/app/bsky/feed/threadgate.md) | ❌ |
 
 ### app.bsky.graph
 
@@ -197,11 +266,35 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[app.bsky.graph.muteActorList](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/muteActorList.html)** | [Reference](lexicons/app/bsky/graph/muteActorList.md) | ❌ |
 | **[app.bsky.graph.muteThread](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/muteThread.html)** | [Reference](lexicons/app/bsky/graph/muteThread.md) | ❌ |
 | **[app.bsky.graph.searchStarterPacks](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/searchStarterPacks.html)** | [Reference](lexicons/app/bsky/graph/searchStarterPacks.md) | ✅ |
+| **[app.bsky.graph.searchStarterPacksV2](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/searchStarterPacksV2.html)** | [Reference](lexicons/app/bsky/graph/searchStarterPacksV2.md) | ✅ |
 | **[app.bsky.graph.starterpack](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/starterpack.html)** | [Reference](lexicons/app/bsky/graph/starterpack.md) | ❌ |
 | **[app.bsky.graph.unmuteActor](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/unmuteActor.html)** | [Reference](lexicons/app/bsky/graph/unmuteActor.md) | ❌ |
 | **[app.bsky.graph.unmuteActorList](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/unmuteActorList.html)** | [Reference](lexicons/app/bsky/graph/unmuteActorList.md) | ❌ |
 | **[app.bsky.graph.unmuteThread](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/unmuteThread.html)** | [Reference](lexicons/app/bsky/graph/unmuteThread.md) | ❌ |
 | **[app.bsky.graph.verification](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/verification.html)** | [Reference](lexicons/app/bsky/graph/verification.md) | ❌ |
+
+### app.bsky.labeler
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[app.bsky.labeler.getServices](https://pub.dev/documentation/bluesky/latest/app_bsky_services/LabelerService/getServices.html)** | [Reference](lexicons/app/bsky/labeler/getServices.md) | ❌ |
+| **[app.bsky.labeler.service](https://pub.dev/documentation/bluesky/latest/app_bsky_services/LabelerService/service.html)** | [Reference](lexicons/app/bsky/labeler/service.md) | ❌ |
+
+### app.bsky.notification
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[app.bsky.notification.declaration](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/declaration.html)** | [Reference](lexicons/app/bsky/notification/declaration.md) | ❌ |
+| **[app.bsky.notification.getPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/getPreferences.html)** | [Reference](lexicons/app/bsky/notification/getPreferences.md) | ❌ |
+| **[app.bsky.notification.getUnreadCount](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/getUnreadCount.html)** | [Reference](lexicons/app/bsky/notification/getUnreadCount.md) | ❌ |
+| **[app.bsky.notification.listActivitySubscriptions](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/listActivitySubscriptions.html)** | [Reference](lexicons/app/bsky/notification/listActivitySubscriptions.md) | ✅ |
+| **[app.bsky.notification.listNotifications](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/listNotifications.html)** | [Reference](lexicons/app/bsky/notification/listNotifications.md) | ✅ |
+| **[app.bsky.notification.putActivitySubscription](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/putActivitySubscription.html)** | [Reference](lexicons/app/bsky/notification/putActivitySubscription.md) | ❌ |
+| **[app.bsky.notification.putPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/putPreferences.html)** | [Reference](lexicons/app/bsky/notification/putPreferences.md) | ❌ |
+| **[app.bsky.notification.putPreferencesV2](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/putPreferencesV2.html)** | [Reference](lexicons/app/bsky/notification/putPreferencesV2.md) | ❌ |
+| **[app.bsky.notification.registerPush](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/registerPush.html)** | [Reference](lexicons/app/bsky/notification/registerPush.md) | ❌ |
+| **[app.bsky.notification.unregisterPush](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/unregisterPush.html)** | [Reference](lexicons/app/bsky/notification/unregisterPush.md) | ❌ |
+| **[app.bsky.notification.updateSeen](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/updateSeen.html)** | [Reference](lexicons/app/bsky/notification/updateSeen.md) | ❌ |
 
 ### app.bsky.unspecced
 
@@ -238,81 +331,6 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[app.bsky.unspecced.searchPostsSkeleton](https://pub.dev/documentation/bluesky/latest/app_bsky_services/UnspeccedService/searchPostsSkeleton.html)** | [Reference](lexicons/app/bsky/unspecced/searchPostsSkeleton.md) | ✅ |
 | **[app.bsky.unspecced.searchStarterPacksSkeleton](https://pub.dev/documentation/bluesky/latest/app_bsky_services/UnspeccedService/searchStarterPacksSkeleton.html)** | [Reference](lexicons/app/bsky/unspecced/searchStarterPacksSkeleton.md) | ✅ |
 
-### app.bsky.labeler
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[app.bsky.labeler.getServices](https://pub.dev/documentation/bluesky/latest/app_bsky_services/LabelerService/getServices.html)** | [Reference](lexicons/app/bsky/labeler/getServices.md) | ❌ |
-| **[app.bsky.labeler.service](https://pub.dev/documentation/bluesky/latest/app_bsky_services/LabelerService/service.html)** | [Reference](lexicons/app/bsky/labeler/service.md) | ❌ |
-
-### app.bsky.feed
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[app.bsky.feed.describeFeedGenerator](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/describeFeedGenerator.html)** | [Reference](lexicons/app/bsky/feed/describeFeedGenerator.md) | ❌ |
-| **[app.bsky.feed.generator](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/generator.html)** | [Reference](lexicons/app/bsky/feed/generator.md) | ❌ |
-| **[app.bsky.feed.getActorFeeds](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getActorFeeds.html)** | [Reference](lexicons/app/bsky/feed/getActorFeeds.md) | ✅ |
-| **[app.bsky.feed.getActorLikes](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getActorLikes.html)** | [Reference](lexicons/app/bsky/feed/getActorLikes.md) | ✅ |
-| **[app.bsky.feed.getAuthorFeed](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getAuthorFeed.html)** | [Reference](lexicons/app/bsky/feed/getAuthorFeed.md) | ✅ |
-| **[app.bsky.feed.getFeed](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getFeed.html)** | [Reference](lexicons/app/bsky/feed/getFeed.md) | ✅ |
-| **[app.bsky.feed.getFeedGenerator](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getFeedGenerator.html)** | [Reference](lexicons/app/bsky/feed/getFeedGenerator.md) | ❌ |
-| **[app.bsky.feed.getFeedGenerators](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getFeedGenerators.html)** | [Reference](lexicons/app/bsky/feed/getFeedGenerators.md) | ❌ |
-| **[app.bsky.feed.getFeedSkeleton](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getFeedSkeleton.html)** | [Reference](lexicons/app/bsky/feed/getFeedSkeleton.md) | ✅ |
-| **[app.bsky.feed.getLikes](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getLikes.html)** | [Reference](lexicons/app/bsky/feed/getLikes.md) | ✅ |
-| **[app.bsky.feed.getListFeed](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getListFeed.html)** | [Reference](lexicons/app/bsky/feed/getListFeed.md) | ✅ |
-| **[app.bsky.feed.getPostThread](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getPostThread.html)** | [Reference](lexicons/app/bsky/feed/getPostThread.md) | ❌ |
-| **[app.bsky.feed.getPosts](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getPosts.html)** | [Reference](lexicons/app/bsky/feed/getPosts.md) | ❌ |
-| **[app.bsky.feed.getQuotes](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getQuotes.html)** | [Reference](lexicons/app/bsky/feed/getQuotes.md) | ✅ |
-| **[app.bsky.feed.getRepostedBy](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getRepostedBy.html)** | [Reference](lexicons/app/bsky/feed/getRepostedBy.md) | ✅ |
-| **[app.bsky.feed.getSuggestedFeeds](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getSuggestedFeeds.html)** | [Reference](lexicons/app/bsky/feed/getSuggestedFeeds.md) | ✅ |
-| **[app.bsky.feed.getTimeline](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/getTimeline.html)** | [Reference](lexicons/app/bsky/feed/getTimeline.md) | ✅ |
-| **[app.bsky.feed.like](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/like.html)** | [Reference](lexicons/app/bsky/feed/like.md) | ❌ |
-| **[app.bsky.feed.post](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/post.html)** | [Reference](lexicons/app/bsky/feed/post.md) | ❌ |
-| **[app.bsky.feed.postgate](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/postgate.html)** | [Reference](lexicons/app/bsky/feed/postgate.md) | ❌ |
-| **[app.bsky.feed.repost](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/repost.html)** | [Reference](lexicons/app/bsky/feed/repost.md) | ❌ |
-| **[app.bsky.feed.searchPosts](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/searchPosts.html)** | [Reference](lexicons/app/bsky/feed/searchPosts.md) | ✅ |
-| **[app.bsky.feed.sendInteractions](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/sendInteractions.html)** | [Reference](lexicons/app/bsky/feed/sendInteractions.md) | ❌ |
-| **[app.bsky.feed.threadgate](https://pub.dev/documentation/bluesky/latest/app_bsky_services/FeedService/threadgate.html)** | [Reference](lexicons/app/bsky/feed/threadgate.md) | ❌ |
-
-### app.bsky.ageassurance
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[app.bsky.ageassurance.begin](https://pub.dev/documentation/bluesky/latest/app_bsky_services/AgeassuranceService/begin.html)** | [Reference](lexicons/app/bsky/ageassurance/begin.md) | ❌ |
-| **[app.bsky.ageassurance.getConfig](https://pub.dev/documentation/bluesky/latest/app_bsky_services/AgeassuranceService/getConfig.html)** | [Reference](lexicons/app/bsky/ageassurance/getConfig.md) | ❌ |
-| **[app.bsky.ageassurance.getState](https://pub.dev/documentation/bluesky/latest/app_bsky_services/AgeassuranceService/getState.html)** | [Reference](lexicons/app/bsky/ageassurance/getState.md) | ❌ |
-
-### app.bsky.actor
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[app.bsky.actor.getPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getPreferences.html)** | [Reference](lexicons/app/bsky/actor/getPreferences.md) | ❌ |
-| **[app.bsky.actor.getProfile](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getProfile.html)** | [Reference](lexicons/app/bsky/actor/getProfile.md) | ❌ |
-| **[app.bsky.actor.getProfiles](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getProfiles.html)** | [Reference](lexicons/app/bsky/actor/getProfiles.md) | ❌ |
-| **[app.bsky.actor.getSuggestions](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getSuggestions.html)** | [Reference](lexicons/app/bsky/actor/getSuggestions.md) | ✅ |
-| **[app.bsky.actor.profile](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/profile.html)** | [Reference](lexicons/app/bsky/actor/profile.md) | ❌ |
-| **[app.bsky.actor.putPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/putPreferences.html)** | [Reference](lexicons/app/bsky/actor/putPreferences.md) | ❌ |
-| **[app.bsky.actor.searchActors](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/searchActors.html)** | [Reference](lexicons/app/bsky/actor/searchActors.md) | ✅ |
-| **[app.bsky.actor.searchActorsTypeahead](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/searchActorsTypeahead.html)** | [Reference](lexicons/app/bsky/actor/searchActorsTypeahead.md) | ❌ |
-| **[app.bsky.actor.status](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/status.html)** | [Reference](lexicons/app/bsky/actor/status.md) | ❌ |
-
-### app.bsky.draft
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[app.bsky.draft.createDraft](https://pub.dev/documentation/bluesky/latest/app_bsky_services/DraftService/createDraft.html)** | [Reference](lexicons/app/bsky/draft/createDraft.md) | ❌ |
-| **[app.bsky.draft.deleteDraft](https://pub.dev/documentation/bluesky/latest/app_bsky_services/DraftService/deleteDraft.html)** | [Reference](lexicons/app/bsky/draft/deleteDraft.md) | ❌ |
-| **[app.bsky.draft.getDrafts](https://pub.dev/documentation/bluesky/latest/app_bsky_services/DraftService/getDrafts.html)** | [Reference](lexicons/app/bsky/draft/getDrafts.md) | ✅ |
-| **[app.bsky.draft.updateDraft](https://pub.dev/documentation/bluesky/latest/app_bsky_services/DraftService/updateDraft.html)** | [Reference](lexicons/app/bsky/draft/updateDraft.md) | ❌ |
-
-### app.bsky.bookmark
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[app.bsky.bookmark.createBookmark](https://pub.dev/documentation/bluesky/latest/app_bsky_services/BookmarkService/createBookmark.html)** | [Reference](lexicons/app/bsky/bookmark/createBookmark.md) | ❌ |
-| **[app.bsky.bookmark.deleteBookmark](https://pub.dev/documentation/bluesky/latest/app_bsky_services/BookmarkService/deleteBookmark.html)** | [Reference](lexicons/app/bsky/bookmark/deleteBookmark.md) | ❌ |
-| **[app.bsky.bookmark.getBookmarks](https://pub.dev/documentation/bluesky/latest/app_bsky_services/BookmarkService/getBookmarks.html)** | [Reference](lexicons/app/bsky/bookmark/getBookmarks.md) | ✅ |
-
 ### app.bsky.video
 
 | Method | Docs | Paging (cursor) |
@@ -320,34 +338,6 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[app.bsky.video.getJobStatus](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/getJobStatus.html)** | [Reference](lexicons/app/bsky/video/getJobStatus.md) | ❌ |
 | **[app.bsky.video.getUploadLimits](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/getUploadLimits.html)** | [Reference](lexicons/app/bsky/video/getUploadLimits.md) | ❌ |
 | **[app.bsky.video.uploadVideo](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/uploadVideo.html)** | [Reference](lexicons/app/bsky/video/uploadVideo.md) | ❌ |
-
-### app.bsky.notification
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[app.bsky.notification.declaration](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/declaration.html)** | [Reference](lexicons/app/bsky/notification/declaration.md) | ❌ |
-| **[app.bsky.notification.getPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/getPreferences.html)** | [Reference](lexicons/app/bsky/notification/getPreferences.md) | ❌ |
-| **[app.bsky.notification.getUnreadCount](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/getUnreadCount.html)** | [Reference](lexicons/app/bsky/notification/getUnreadCount.md) | ❌ |
-| **[app.bsky.notification.listActivitySubscriptions](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/listActivitySubscriptions.html)** | [Reference](lexicons/app/bsky/notification/listActivitySubscriptions.md) | ✅ |
-| **[app.bsky.notification.listNotifications](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/listNotifications.html)** | [Reference](lexicons/app/bsky/notification/listNotifications.md) | ✅ |
-| **[app.bsky.notification.putActivitySubscription](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/putActivitySubscription.html)** | [Reference](lexicons/app/bsky/notification/putActivitySubscription.md) | ❌ |
-| **[app.bsky.notification.putPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/putPreferences.html)** | [Reference](lexicons/app/bsky/notification/putPreferences.md) | ❌ |
-| **[app.bsky.notification.putPreferencesV2](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/putPreferencesV2.html)** | [Reference](lexicons/app/bsky/notification/putPreferencesV2.md) | ❌ |
-| **[app.bsky.notification.registerPush](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/registerPush.html)** | [Reference](lexicons/app/bsky/notification/registerPush.md) | ❌ |
-| **[app.bsky.notification.unregisterPush](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/unregisterPush.html)** | [Reference](lexicons/app/bsky/notification/unregisterPush.md) | ❌ |
-| **[app.bsky.notification.updateSeen](https://pub.dev/documentation/bluesky/latest/app_bsky_services/NotificationService/updateSeen.html)** | [Reference](lexicons/app/bsky/notification/updateSeen.md) | ❌ |
-
-### chat.bsky.moderation
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[chat.bsky.moderation.getActorMetadata](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getActorMetadata.html)** | [Reference](lexicons/chat/bsky/moderation/getActorMetadata.md) | ❌ |
-| **[chat.bsky.moderation.getConvo](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getConvo.html)** | [Reference](lexicons/chat/bsky/moderation/getConvo.md) | ❌ |
-| **[chat.bsky.moderation.getConvoMembers](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getConvoMembers.html)** | [Reference](lexicons/chat/bsky/moderation/getConvoMembers.md) | ✅ |
-| **[chat.bsky.moderation.getConvos](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getConvos.html)** | [Reference](lexicons/chat/bsky/moderation/getConvos.md) | ❌ |
-| **[chat.bsky.moderation.getMessageContext](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getMessageContext.html)** | [Reference](lexicons/chat/bsky/moderation/getMessageContext.md) | ❌ |
-| **[chat.bsky.moderation.subscribeModEvents](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/subscribeModEvents.html)** | [Reference](lexicons/chat/bsky/moderation/subscribeModEvents.md) | ✅ |
-| **[chat.bsky.moderation.updateActorAccess](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/updateActorAccess.html)** | [Reference](lexicons/chat/bsky/moderation/updateActorAccess.md) | ❌ |
 
 ### chat.bsky.actor
 
@@ -371,6 +361,7 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[chat.bsky.convo.getConvoMembers](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ConvoService/getConvoMembers.html)** | [Reference](lexicons/chat/bsky/convo/getConvoMembers.md) | ✅ |
 | **[chat.bsky.convo.getLog](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ConvoService/getLog.html)** | [Reference](lexicons/chat/bsky/convo/getLog.md) | ✅ |
 | **[chat.bsky.convo.getMessages](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ConvoService/getMessages.html)** | [Reference](lexicons/chat/bsky/convo/getMessages.md) | ✅ |
+| **[chat.bsky.convo.getUnreadCounts](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ConvoService/getUnreadCounts.html)** | [Reference](lexicons/chat/bsky/convo/getUnreadCounts.md) | ❌ |
 | **[chat.bsky.convo.leaveConvo](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ConvoService/leaveConvo.html)** | [Reference](lexicons/chat/bsky/convo/leaveConvo.md) | ❌ |
 | **[chat.bsky.convo.listConvoRequests](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ConvoService/listConvoRequests.html)** | [Reference](lexicons/chat/bsky/convo/listConvoRequests.md) | ✅ |
 | **[chat.bsky.convo.listConvos](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ConvoService/listConvos.html)** | [Reference](lexicons/chat/bsky/convo/listConvos.md) | ✅ |
@@ -405,6 +396,40 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[chat.bsky.group.updateJoinRequestsRead](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/GroupService/updateJoinRequestsRead.html)** | [Reference](lexicons/chat/bsky/group/updateJoinRequestsRead.md) | ❌ |
 | **[chat.bsky.group.withdrawJoinRequest](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/GroupService/withdrawJoinRequest.html)** | [Reference](lexicons/chat/bsky/group/withdrawJoinRequest.md) | ❌ |
 
+### chat.bsky.moderation
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[chat.bsky.moderation.getActorMetadata](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getActorMetadata.html)** | [Reference](lexicons/chat/bsky/moderation/getActorMetadata.md) | ❌ |
+| **[chat.bsky.moderation.getConvo](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getConvo.html)** | [Reference](lexicons/chat/bsky/moderation/getConvo.md) | ❌ |
+| **[chat.bsky.moderation.getConvoMembers](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getConvoMembers.html)** | [Reference](lexicons/chat/bsky/moderation/getConvoMembers.md) | ✅ |
+| **[chat.bsky.moderation.getConvos](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getConvos.html)** | [Reference](lexicons/chat/bsky/moderation/getConvos.md) | ❌ |
+| **[chat.bsky.moderation.getMessageContext](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/getMessageContext.html)** | [Reference](lexicons/chat/bsky/moderation/getMessageContext.md) | ❌ |
+| **[chat.bsky.moderation.subscribeModEvents](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/subscribeModEvents.html)** | [Reference](lexicons/chat/bsky/moderation/subscribeModEvents.md) | ✅ |
+| **[chat.bsky.moderation.updateActorAccess](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/ModerationService/updateActorAccess.html)** | [Reference](lexicons/chat/bsky/moderation/updateActorAccess.md) | ❌ |
+
+### chat.bsky.notification
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[chat.bsky.notification.getPreferences](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/NotificationService/getPreferences.html)** | [Reference](lexicons/chat/bsky/notification/getPreferences.md) | ❌ |
+| **[chat.bsky.notification.putPreferences](https://pub.dev/documentation/bluesky/latest/chat_bsky_services/NotificationService/putPreferences.html)** | [Reference](lexicons/chat/bsky/notification/putPreferences.md) | ❌ |
+
+### tools.ozone.communication
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[tools.ozone.communication.createTemplate](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/CommunicationService/createTemplate.html)** | [Reference](lexicons/tools/ozone/communication/createTemplate.md) | ❌ |
+| **[tools.ozone.communication.deleteTemplate](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/CommunicationService/deleteTemplate.html)** | [Reference](lexicons/tools/ozone/communication/deleteTemplate.md) | ❌ |
+| **[tools.ozone.communication.listTemplates](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/CommunicationService/listTemplates.html)** | [Reference](lexicons/tools/ozone/communication/listTemplates.md) | ❌ |
+| **[tools.ozone.communication.updateTemplate](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/CommunicationService/updateTemplate.html)** | [Reference](lexicons/tools/ozone/communication/updateTemplate.md) | ❌ |
+
+### tools.ozone.hosting
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[tools.ozone.hosting.getAccountHistory](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/HostingService/getAccountHistory.html)** | [Reference](lexicons/tools/ozone/hosting/getAccountHistory.md) | ✅ |
+
 ### tools.ozone.moderation
 
 | Method | Docs | Paging (cursor) |
@@ -425,29 +450,64 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[tools.ozone.moderation.scheduleAction](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ModerationService/scheduleAction.html)** | [Reference](lexicons/tools/ozone/moderation/scheduleAction.md) | ❌ |
 | **[tools.ozone.moderation.searchRepos](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ModerationService/searchRepos.html)** | [Reference](lexicons/tools/ozone/moderation/searchRepos.md) | ✅ |
 
-### tools.ozone.team
+### tools.ozone.queue
 
 | Method | Docs | Paging (cursor) |
 | --- | --- | :---: |
-| **[tools.ozone.team.addMember](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/TeamService/addMember.html)** | [Reference](lexicons/tools/ozone/team/addMember.md) | ❌ |
-| **[tools.ozone.team.deleteMember](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/TeamService/deleteMember.html)** | [Reference](lexicons/tools/ozone/team/deleteMember.md) | ❌ |
-| **[tools.ozone.team.listMembers](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/TeamService/listMembers.html)** | [Reference](lexicons/tools/ozone/team/listMembers.md) | ✅ |
-| **[tools.ozone.team.updateMember](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/TeamService/updateMember.html)** | [Reference](lexicons/tools/ozone/team/updateMember.md) | ❌ |
+| **[tools.ozone.queue.assignModerator](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/assignModerator.html)** | [Reference](lexicons/tools/ozone/queue/assignModerator.md) | ❌ |
+| **[tools.ozone.queue.createQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/createQueue.html)** | [Reference](lexicons/tools/ozone/queue/createQueue.md) | ❌ |
+| **[tools.ozone.queue.deleteQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/deleteQueue.html)** | [Reference](lexicons/tools/ozone/queue/deleteQueue.md) | ❌ |
+| **[tools.ozone.queue.getAssignments](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/getAssignments.html)** | [Reference](lexicons/tools/ozone/queue/getAssignments.md) | ✅ |
+| **[tools.ozone.queue.listQueues](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/listQueues.html)** | [Reference](lexicons/tools/ozone/queue/listQueues.md) | ✅ |
+| **[tools.ozone.queue.routeReports](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/routeReports.html)** | [Reference](lexicons/tools/ozone/queue/routeReports.md) | ❌ |
+| **[tools.ozone.queue.unassignModerator](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/unassignModerator.html)** | [Reference](lexicons/tools/ozone/queue/unassignModerator.md) | ❌ |
+| **[tools.ozone.queue.updateQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/updateQueue.html)** | [Reference](lexicons/tools/ozone/queue/updateQueue.md) | ❌ |
 
-### tools.ozone.communication
+### tools.ozone.report
 
 | Method | Docs | Paging (cursor) |
 | --- | --- | :---: |
-| **[tools.ozone.communication.createTemplate](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/CommunicationService/createTemplate.html)** | [Reference](lexicons/tools/ozone/communication/createTemplate.md) | ❌ |
-| **[tools.ozone.communication.deleteTemplate](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/CommunicationService/deleteTemplate.html)** | [Reference](lexicons/tools/ozone/communication/deleteTemplate.md) | ❌ |
-| **[tools.ozone.communication.listTemplates](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/CommunicationService/listTemplates.html)** | [Reference](lexicons/tools/ozone/communication/listTemplates.md) | ❌ |
-| **[tools.ozone.communication.updateTemplate](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/CommunicationService/updateTemplate.html)** | [Reference](lexicons/tools/ozone/communication/updateTemplate.md) | ❌ |
+| **[tools.ozone.report.assignModerator](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/assignModerator.html)** | [Reference](lexicons/tools/ozone/report/assignModerator.md) | ❌ |
+| **[tools.ozone.report.closeReports](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/closeReports.html)** | [Reference](lexicons/tools/ozone/report/closeReports.md) | ❌ |
+| **[tools.ozone.report.createActivity](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/createActivity.html)** | [Reference](lexicons/tools/ozone/report/createActivity.md) | ❌ |
+| **[tools.ozone.report.getAssignments](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getAssignments.html)** | [Reference](lexicons/tools/ozone/report/getAssignments.md) | ✅ |
+| **[tools.ozone.report.getHistoricalStats](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getHistoricalStats.html)** | [Reference](lexicons/tools/ozone/report/getHistoricalStats.md) | ✅ |
+| **[tools.ozone.report.getLatestReport](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getLatestReport.html)** | [Reference](lexicons/tools/ozone/report/getLatestReport.md) | ❌ |
+| **[tools.ozone.report.getLiveStats](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getLiveStats.html)** | [Reference](lexicons/tools/ozone/report/getLiveStats.md) | ❌ |
+| **[tools.ozone.report.getReport](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getReport.html)** | [Reference](lexicons/tools/ozone/report/getReport.md) | ❌ |
+| **[tools.ozone.report.listActivities](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/listActivities.html)** | [Reference](lexicons/tools/ozone/report/listActivities.md) | ✅ |
+| **[tools.ozone.report.queryActivities](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/queryActivities.html)** | [Reference](lexicons/tools/ozone/report/queryActivities.md) | ✅ |
+| **[tools.ozone.report.queryReports](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/queryReports.html)** | [Reference](lexicons/tools/ozone/report/queryReports.md) | ✅ |
+| **[tools.ozone.report.reassignQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/reassignQueue.html)** | [Reference](lexicons/tools/ozone/report/reassignQueue.md) | ❌ |
+| **[tools.ozone.report.refreshStats](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/refreshStats.html)** | [Reference](lexicons/tools/ozone/report/refreshStats.md) | ❌ |
+| **[tools.ozone.report.unassignModerator](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/unassignModerator.html)** | [Reference](lexicons/tools/ozone/report/unassignModerator.md) | ❌ |
+
+### tools.ozone.safelink
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[tools.ozone.safelink.addRule](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/addRule.html)** | [Reference](lexicons/tools/ozone/safelink/addRule.md) | ❌ |
+| **[tools.ozone.safelink.queryEvents](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/queryEvents.html)** | [Reference](lexicons/tools/ozone/safelink/queryEvents.md) | ❌ |
+| **[tools.ozone.safelink.queryRules](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/queryRules.html)** | [Reference](lexicons/tools/ozone/safelink/queryRules.md) | ❌ |
+| **[tools.ozone.safelink.removeRule](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/removeRule.html)** | [Reference](lexicons/tools/ozone/safelink/removeRule.md) | ❌ |
+| **[tools.ozone.safelink.updateRule](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/updateRule.html)** | [Reference](lexicons/tools/ozone/safelink/updateRule.md) | ❌ |
 
 ### tools.ozone.server
 
 | Method | Docs | Paging (cursor) |
 | --- | --- | :---: |
 | **[tools.ozone.server.getConfig](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ServerService/getConfig.html)** | [Reference](lexicons/tools/ozone/server/getConfig.md) | ❌ |
+
+### tools.ozone.set
+
+| Method | Docs | Paging (cursor) |
+| --- | --- | :---: |
+| **[tools.ozone.set.addValues](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/addValues.html)** | [Reference](lexicons/tools/ozone/set/addValues.md) | ❌ |
+| **[tools.ozone.set.deleteSet](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/deleteSet.html)** | [Reference](lexicons/tools/ozone/set/deleteSet.md) | ❌ |
+| **[tools.ozone.set.deleteValues](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/deleteValues.html)** | [Reference](lexicons/tools/ozone/set/deleteValues.md) | ❌ |
+| **[tools.ozone.set.getValues](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/getValues.html)** | [Reference](lexicons/tools/ozone/set/getValues.md) | ✅ |
+| **[tools.ozone.set.querySets](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/querySets.html)** | [Reference](lexicons/tools/ozone/set/querySets.md) | ✅ |
+| **[tools.ozone.set.upsertSet](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/upsertSet.html)** | [Reference](lexicons/tools/ozone/set/upsertSet.md) | ❌ |
 
 ### tools.ozone.setting
 
@@ -465,38 +525,14 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[tools.ozone.signature.findRelatedAccounts](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SignatureService/findRelatedAccounts.html)** | [Reference](lexicons/tools/ozone/signature/findRelatedAccounts.md) | ✅ |
 | **[tools.ozone.signature.searchAccounts](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SignatureService/searchAccounts.html)** | [Reference](lexicons/tools/ozone/signature/searchAccounts.md) | ✅ |
 
-### tools.ozone.hosting
+### tools.ozone.team
 
 | Method | Docs | Paging (cursor) |
 | --- | --- | :---: |
-| **[tools.ozone.hosting.getAccountHistory](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/HostingService/getAccountHistory.html)** | [Reference](lexicons/tools/ozone/hosting/getAccountHistory.md) | ✅ |
-
-### tools.ozone.report
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[tools.ozone.report.assignModerator](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/assignModerator.html)** | [Reference](lexicons/tools/ozone/report/assignModerator.md) | ❌ |
-| **[tools.ozone.report.createActivity](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/createActivity.html)** | [Reference](lexicons/tools/ozone/report/createActivity.md) | ❌ |
-| **[tools.ozone.report.getAssignments](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getAssignments.html)** | [Reference](lexicons/tools/ozone/report/getAssignments.md) | ✅ |
-| **[tools.ozone.report.getHistoricalStats](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getHistoricalStats.html)** | [Reference](lexicons/tools/ozone/report/getHistoricalStats.md) | ✅ |
-| **[tools.ozone.report.getLatestReport](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getLatestReport.html)** | [Reference](lexicons/tools/ozone/report/getLatestReport.md) | ❌ |
-| **[tools.ozone.report.getLiveStats](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getLiveStats.html)** | [Reference](lexicons/tools/ozone/report/getLiveStats.md) | ❌ |
-| **[tools.ozone.report.getReport](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getReport.html)** | [Reference](lexicons/tools/ozone/report/getReport.md) | ❌ |
-| **[tools.ozone.report.listActivities](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/listActivities.html)** | [Reference](lexicons/tools/ozone/report/listActivities.md) | ✅ |
-| **[tools.ozone.report.queryReports](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/queryReports.html)** | [Reference](lexicons/tools/ozone/report/queryReports.md) | ✅ |
-| **[tools.ozone.report.reassignQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/reassignQueue.html)** | [Reference](lexicons/tools/ozone/report/reassignQueue.md) | ❌ |
-| **[tools.ozone.report.refreshStats](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/refreshStats.html)** | [Reference](lexicons/tools/ozone/report/refreshStats.md) | ❌ |
-| **[tools.ozone.report.unassignModerator](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/unassignModerator.html)** | [Reference](lexicons/tools/ozone/report/unassignModerator.md) | ❌ |
-
-### tools.ozone.safelink
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[tools.ozone.safelink.addRule](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/addRule.html)** | [Reference](lexicons/tools/ozone/safelink/addRule.md) | ❌ |
-| **[tools.ozone.safelink.queryEvents](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/queryEvents.html)** | [Reference](lexicons/tools/ozone/safelink/queryEvents.md) | ❌ |
-| **[tools.ozone.safelink.queryRules](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/queryRules.html)** | [Reference](lexicons/tools/ozone/safelink/queryRules.md) | ❌ |
-| **[tools.ozone.safelink.removeRule](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/removeRule.html)** | [Reference](lexicons/tools/ozone/safelink/removeRule.md) | ❌ |
-| **[tools.ozone.safelink.updateRule](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SafelinkService/updateRule.html)** | [Reference](lexicons/tools/ozone/safelink/updateRule.md) | ❌ |
+| **[tools.ozone.team.addMember](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/TeamService/addMember.html)** | [Reference](lexicons/tools/ozone/team/addMember.md) | ❌ |
+| **[tools.ozone.team.deleteMember](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/TeamService/deleteMember.html)** | [Reference](lexicons/tools/ozone/team/deleteMember.md) | ❌ |
+| **[tools.ozone.team.listMembers](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/TeamService/listMembers.html)** | [Reference](lexicons/tools/ozone/team/listMembers.md) | ✅ |
+| **[tools.ozone.team.updateMember](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/TeamService/updateMember.html)** | [Reference](lexicons/tools/ozone/team/updateMember.md) | ❌ |
 
 ### tools.ozone.verification
 
@@ -505,27 +541,3 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[tools.ozone.verification.grantVerifications](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/VerificationService/grantVerifications.html)** | [Reference](lexicons/tools/ozone/verification/grantVerifications.md) | ❌ |
 | **[tools.ozone.verification.listVerifications](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/VerificationService/listVerifications.html)** | [Reference](lexicons/tools/ozone/verification/listVerifications.md) | ✅ |
 | **[tools.ozone.verification.revokeVerifications](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/VerificationService/revokeVerifications.html)** | [Reference](lexicons/tools/ozone/verification/revokeVerifications.md) | ❌ |
-
-### tools.ozone.queue
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[tools.ozone.queue.assignModerator](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/assignModerator.html)** | [Reference](lexicons/tools/ozone/queue/assignModerator.md) | ❌ |
-| **[tools.ozone.queue.createQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/createQueue.html)** | [Reference](lexicons/tools/ozone/queue/createQueue.md) | ❌ |
-| **[tools.ozone.queue.deleteQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/deleteQueue.html)** | [Reference](lexicons/tools/ozone/queue/deleteQueue.md) | ❌ |
-| **[tools.ozone.queue.getAssignments](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/getAssignments.html)** | [Reference](lexicons/tools/ozone/queue/getAssignments.md) | ✅ |
-| **[tools.ozone.queue.listQueues](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/listQueues.html)** | [Reference](lexicons/tools/ozone/queue/listQueues.md) | ✅ |
-| **[tools.ozone.queue.routeReports](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/routeReports.html)** | [Reference](lexicons/tools/ozone/queue/routeReports.md) | ❌ |
-| **[tools.ozone.queue.unassignModerator](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/unassignModerator.html)** | [Reference](lexicons/tools/ozone/queue/unassignModerator.md) | ❌ |
-| **[tools.ozone.queue.updateQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/QueueService/updateQueue.html)** | [Reference](lexicons/tools/ozone/queue/updateQueue.md) | ❌ |
-
-### tools.ozone.set
-
-| Method | Docs | Paging (cursor) |
-| --- | --- | :---: |
-| **[tools.ozone.set.addValues](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/addValues.html)** | [Reference](lexicons/tools/ozone/set/addValues.md) | ❌ |
-| **[tools.ozone.set.deleteSet](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/deleteSet.html)** | [Reference](lexicons/tools/ozone/set/deleteSet.md) | ❌ |
-| **[tools.ozone.set.deleteValues](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/deleteValues.html)** | [Reference](lexicons/tools/ozone/set/deleteValues.md) | ❌ |
-| **[tools.ozone.set.getValues](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/getValues.html)** | [Reference](lexicons/tools/ozone/set/getValues.md) | ✅ |
-| **[tools.ozone.set.querySets](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/querySets.html)** | [Reference](lexicons/tools/ozone/set/querySets.md) | ✅ |
-| **[tools.ozone.set.upsertSet](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/SetService/upsertSet.html)** | [Reference](lexicons/tools/ozone/set/upsertSet.md) | ❌ |

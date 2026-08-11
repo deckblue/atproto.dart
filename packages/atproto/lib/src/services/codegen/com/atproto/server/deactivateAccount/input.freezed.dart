@@ -22,6 +22,7 @@ ServerDeactivateAccountInput _$ServerDeactivateAccountInputFromJson(
 /// @nodoc
 mixin _$ServerDeactivateAccountInput {
   /// A recommendation to server as to how long they should hold onto the deactivated account before deleting.
+  @JsonKey(toJson: iso8601)
   DateTime? get deleteAfter => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -43,7 +44,9 @@ abstract class $ServerDeactivateAccountInputCopyWith<$Res> {
       _$ServerDeactivateAccountInputCopyWithImpl<$Res,
           ServerDeactivateAccountInput>;
   @useResult
-  $Res call({DateTime? deleteAfter, Map<String, dynamic>? $unknown});
+  $Res call(
+      {@JsonKey(toJson: iso8601) DateTime? deleteAfter,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -87,7 +90,9 @@ abstract class _$$ServerDeactivateAccountInputImplCopyWith<$Res>
       __$$ServerDeactivateAccountInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DateTime? deleteAfter, Map<String, dynamic>? $unknown});
+  $Res call(
+      {@JsonKey(toJson: iso8601) DateTime? deleteAfter,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -127,7 +132,8 @@ class __$$ServerDeactivateAccountInputImplCopyWithImpl<$Res>
 class _$ServerDeactivateAccountInputImpl
     implements _ServerDeactivateAccountInput {
   const _$ServerDeactivateAccountInputImpl(
-      {this.deleteAfter, final Map<String, dynamic>? $unknown})
+      {@JsonKey(toJson: iso8601) this.deleteAfter,
+      final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
   factory _$ServerDeactivateAccountInputImpl.fromJson(
@@ -136,6 +142,7 @@ class _$ServerDeactivateAccountInputImpl
 
   /// A recommendation to server as to how long they should hold onto the deactivated account before deleting.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? deleteAfter;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -188,7 +195,8 @@ class _$ServerDeactivateAccountInputImpl
 abstract class _ServerDeactivateAccountInput
     implements ServerDeactivateAccountInput {
   const factory _ServerDeactivateAccountInput(
-          {final DateTime? deleteAfter, final Map<String, dynamic>? $unknown}) =
+          {@JsonKey(toJson: iso8601) final DateTime? deleteAfter,
+          final Map<String, dynamic>? $unknown}) =
       _$ServerDeactivateAccountInputImpl;
 
   factory _ServerDeactivateAccountInput.fromJson(Map<String, dynamic> json) =
@@ -196,6 +204,7 @@ abstract class _ServerDeactivateAccountInput
 
   /// A recommendation to server as to how long they should hold onto the deactivated account before deleting.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get deleteAfter;
   @override
   Map<String, dynamic>? get $unknown;

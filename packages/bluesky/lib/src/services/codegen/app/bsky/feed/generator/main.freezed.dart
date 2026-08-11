@@ -37,6 +37,7 @@ mixin _$FeedGeneratorRecord {
   @FeedGeneratorContentModeConverter()
   FeedGeneratorContentMode? get contentMode =>
       throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -67,7 +68,7 @@ abstract class $FeedGeneratorRecordCopyWith<$Res> {
       @UFeedGeneratorLabelsConverter() UFeedGeneratorLabels? labels,
       @FeedGeneratorContentModeConverter()
       FeedGeneratorContentMode? contentMode,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   $BlobCopyWith<$Res>? get avatar;
@@ -213,7 +214,7 @@ abstract class _$$FeedGeneratorRecordImplCopyWith<$Res>
       @UFeedGeneratorLabelsConverter() UFeedGeneratorLabels? labels,
       @FeedGeneratorContentModeConverter()
       FeedGeneratorContentMode? contentMode,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -312,7 +313,7 @@ class _$FeedGeneratorRecordImpl implements _FeedGeneratorRecord {
       this.acceptsInteractions,
       @UFeedGeneratorLabelsConverter() this.labels,
       @FeedGeneratorContentModeConverter() this.contentMode,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       final Map<String, dynamic>? $unknown})
       : _descriptionFacets = descriptionFacets,
         _$unknown = $unknown;
@@ -355,6 +356,7 @@ class _$FeedGeneratorRecordImpl implements _FeedGeneratorRecord {
   @FeedGeneratorContentModeConverter()
   final FeedGeneratorContentMode? contentMode;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -440,7 +442,7 @@ abstract class _FeedGeneratorRecord implements FeedGeneratorRecord {
       @UFeedGeneratorLabelsConverter() final UFeedGeneratorLabels? labels,
       @FeedGeneratorContentModeConverter()
       final FeedGeneratorContentMode? contentMode,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final Map<String, dynamic>? $unknown}) = _$FeedGeneratorRecordImpl;
 
   factory _FeedGeneratorRecord.fromJson(Map<String, dynamic> json) =
@@ -471,6 +473,7 @@ abstract class _FeedGeneratorRecord implements FeedGeneratorRecord {
   @FeedGeneratorContentModeConverter()
   FeedGeneratorContentMode? get contentMode;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get $unknown;

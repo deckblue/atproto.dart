@@ -67,7 +67,7 @@ Map<String, dynamic> _$$RecordViewDetailImplToJson(
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)
         'labels': value,
-      'indexedAt': instance.indexedAt.toIso8601String(),
+      'indexedAt': iso8601(instance.indexedAt),
       'moderation':
           const ModerationDetailConverter().toJson(instance.moderation),
       'repo': const RepoViewConverter().toJson(instance.repo),

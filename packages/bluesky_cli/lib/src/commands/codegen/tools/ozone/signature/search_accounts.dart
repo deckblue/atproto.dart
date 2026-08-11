@@ -27,19 +27,26 @@ final class SearchAccountsCommand extends QueryCommand {
 
   @override
   final String description =
-      r"Search for accounts that match one or more threat signature values.";
+      "Search for accounts that match one or more threat signature values.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-signature search-accounts [values] [cursor] [limit]";
+      "bsky tools-ozone-signature search-accounts [--values=<value>...] [--cursor=<value>] [--limit=<value>]";
 
   @override
   String get methodId => "tools.ozone.signature.searchAccounts";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "values": argResults!["values"],
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
-        "limit": argResults!["limit"],
+        "values": _requireNonEmpty("values", argResults!["values"]),
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+        "limit": int.tryParse(argResults!["limit"]) ??
+            usageException('Invalid integer value for option "limit".'),
       };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

@@ -30,9 +30,10 @@ mixin _$MutedWord {
 
   /// Groups of users to apply the muted word to. If undefined, applies to all users.
   @MutedWordActorTargetConverter()
-  MutedWordActorTarget? get actorTarget => throw _privateConstructorUsedError;
+  MutedWordActorTarget get actorTarget => throw _privateConstructorUsedError;
 
   /// The date and time at which the muted word will expire and no longer be applied.
+  @JsonKey(toJson: iso8601)
   DateTime? get expiresAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -56,11 +57,11 @@ abstract class $MutedWordCopyWith<$Res> {
       String? id,
       String value,
       @MutedWordTargetConverter() List<MutedWordTarget> targets,
-      @MutedWordActorTargetConverter() MutedWordActorTarget? actorTarget,
-      DateTime? expiresAt,
+      @MutedWordActorTargetConverter() MutedWordActorTarget actorTarget,
+      @JsonKey(toJson: iso8601) DateTime? expiresAt,
       Map<String, dynamic>? $unknown});
 
-  $MutedWordActorTargetCopyWith<$Res>? get actorTarget;
+  $MutedWordActorTargetCopyWith<$Res> get actorTarget;
 }
 
 /// @nodoc
@@ -82,7 +83,7 @@ class _$MutedWordCopyWithImpl<$Res, $Val extends MutedWord>
     Object? id = freezed,
     Object? value = null,
     Object? targets = null,
-    Object? actorTarget = freezed,
+    Object? actorTarget = null,
     Object? expiresAt = freezed,
     Object? $unknown = freezed,
   }) {
@@ -103,10 +104,10 @@ class _$MutedWordCopyWithImpl<$Res, $Val extends MutedWord>
           ? _value.targets
           : targets // ignore: cast_nullable_to_non_nullable
               as List<MutedWordTarget>,
-      actorTarget: freezed == actorTarget
+      actorTarget: null == actorTarget
           ? _value.actorTarget
           : actorTarget // ignore: cast_nullable_to_non_nullable
-              as MutedWordActorTarget?,
+              as MutedWordActorTarget,
       expiresAt: freezed == expiresAt
           ? _value.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
@@ -122,12 +123,8 @@ class _$MutedWordCopyWithImpl<$Res, $Val extends MutedWord>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $MutedWordActorTargetCopyWith<$Res>? get actorTarget {
-    if (_value.actorTarget == null) {
-      return null;
-    }
-
-    return $MutedWordActorTargetCopyWith<$Res>(_value.actorTarget!, (value) {
+  $MutedWordActorTargetCopyWith<$Res> get actorTarget {
+    return $MutedWordActorTargetCopyWith<$Res>(_value.actorTarget, (value) {
       return _then(_value.copyWith(actorTarget: value) as $Val);
     });
   }
@@ -146,12 +143,12 @@ abstract class _$$MutedWordImplCopyWith<$Res>
       String? id,
       String value,
       @MutedWordTargetConverter() List<MutedWordTarget> targets,
-      @MutedWordActorTargetConverter() MutedWordActorTarget? actorTarget,
-      DateTime? expiresAt,
+      @MutedWordActorTargetConverter() MutedWordActorTarget actorTarget,
+      @JsonKey(toJson: iso8601) DateTime? expiresAt,
       Map<String, dynamic>? $unknown});
 
   @override
-  $MutedWordActorTargetCopyWith<$Res>? get actorTarget;
+  $MutedWordActorTargetCopyWith<$Res> get actorTarget;
 }
 
 /// @nodoc
@@ -171,7 +168,7 @@ class __$$MutedWordImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? value = null,
     Object? targets = null,
-    Object? actorTarget = freezed,
+    Object? actorTarget = null,
     Object? expiresAt = freezed,
     Object? $unknown = freezed,
   }) {
@@ -192,10 +189,10 @@ class __$$MutedWordImplCopyWithImpl<$Res>
           ? _value._targets
           : targets // ignore: cast_nullable_to_non_nullable
               as List<MutedWordTarget>,
-      actorTarget: freezed == actorTarget
+      actorTarget: null == actorTarget
           ? _value.actorTarget
           : actorTarget // ignore: cast_nullable_to_non_nullable
-              as MutedWordActorTarget?,
+              as MutedWordActorTarget,
       expiresAt: freezed == expiresAt
           ? _value.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
@@ -217,8 +214,10 @@ class _$MutedWordImpl implements _MutedWord {
       this.id,
       required this.value,
       @MutedWordTargetConverter() required final List<MutedWordTarget> targets,
-      @MutedWordActorTargetConverter() this.actorTarget,
-      this.expiresAt,
+      @MutedWordActorTargetConverter() this.actorTarget =
+          const MutedWordActorTarget.knownValue(
+              data: KnownMutedWordActorTarget.all),
+      @JsonKey(toJson: iso8601) this.expiresAt,
       final Map<String, dynamic>? $unknown})
       : _targets = targets,
         _$unknown = $unknown;
@@ -246,11 +245,13 @@ class _$MutedWordImpl implements _MutedWord {
 
   /// Groups of users to apply the muted word to. If undefined, applies to all users.
   @override
+  @JsonKey()
   @MutedWordActorTargetConverter()
-  final MutedWordActorTarget? actorTarget;
+  final MutedWordActorTarget actorTarget;
 
   /// The date and time at which the muted word will expire and no longer be applied.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? expiresAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -317,8 +318,8 @@ abstract class _MutedWord implements MutedWord {
       final String? id,
       required final String value,
       @MutedWordTargetConverter() required final List<MutedWordTarget> targets,
-      @MutedWordActorTargetConverter() final MutedWordActorTarget? actorTarget,
-      final DateTime? expiresAt,
+      @MutedWordActorTargetConverter() final MutedWordActorTarget actorTarget,
+      @JsonKey(toJson: iso8601) final DateTime? expiresAt,
       final Map<String, dynamic>? $unknown}) = _$MutedWordImpl;
 
   factory _MutedWord.fromJson(Map<String, dynamic> json) =
@@ -339,10 +340,11 @@ abstract class _MutedWord implements MutedWord {
   /// Groups of users to apply the muted word to. If undefined, applies to all users.
   @override
   @MutedWordActorTargetConverter()
-  MutedWordActorTarget? get actorTarget;
+  MutedWordActorTarget get actorTarget;
 
   /// The date and time at which the muted word will expire and no longer be applied.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get expiresAt;
   @override
   Map<String, dynamic>? get $unknown;

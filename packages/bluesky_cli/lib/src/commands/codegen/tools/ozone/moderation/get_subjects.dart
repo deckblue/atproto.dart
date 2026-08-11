@@ -23,15 +23,23 @@ final class GetSubjectsCommand extends QueryCommand {
   final String name = "get-subjects";
 
   @override
-  final String description = r"Get details about subjects.";
+  final String description = "Get details about subjects.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation get-subjects [subjects]";
+      "bsky tools-ozone-moderation get-subjects [--subjects=<value>...]";
 
   @override
   String get methodId => "tools.ozone.moderation.getSubjects";
 
   @override
-  Map<String, dynamic>? get parameters => {"subjects": argResults!["subjects"]};
+  Map<String, dynamic>? get parameters => {
+        "subjects": _requireNonEmpty("subjects", argResults!["subjects"]),
+      };
+  List<T> _requireNonEmpty<T>(final String name, final List<T> values) {
+    if (values.isEmpty) {
+      usageException('Option "$name" is required and must not be empty.');
+    }
+    return values;
+  }
 }

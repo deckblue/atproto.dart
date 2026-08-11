@@ -30,7 +30,9 @@ mixin _$AssignmentView {
   @QueueViewConverter()
   QueueView? get queue => throw _privateConstructorUsedError;
   int get reportId => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get startAt => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime? get endAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -57,8 +59,8 @@ abstract class $AssignmentViewCopyWith<$Res> {
       @MemberConverter() Member? moderator,
       @QueueViewConverter() QueueView? queue,
       int reportId,
-      DateTime startAt,
-      DateTime? endAt,
+      @JsonKey(toJson: iso8601) DateTime startAt,
+      @JsonKey(toJson: iso8601) DateTime? endAt,
       Map<String, dynamic>? $unknown});
 
   $MemberCopyWith<$Res>? get moderator;
@@ -174,8 +176,8 @@ abstract class _$$AssignmentViewImplCopyWith<$Res>
       @MemberConverter() Member? moderator,
       @QueueViewConverter() QueueView? queue,
       int reportId,
-      DateTime startAt,
-      DateTime? endAt,
+      @JsonKey(toJson: iso8601) DateTime startAt,
+      @JsonKey(toJson: iso8601) DateTime? endAt,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -259,8 +261,8 @@ class _$AssignmentViewImpl implements _AssignmentView {
       @MemberConverter() this.moderator,
       @QueueViewConverter() this.queue,
       required this.reportId,
-      required this.startAt,
-      this.endAt,
+      @JsonKey(toJson: iso8601) required this.startAt,
+      @JsonKey(toJson: iso8601) this.endAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -285,8 +287,10 @@ class _$AssignmentViewImpl implements _AssignmentView {
   @override
   final int reportId;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime startAt;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? endAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -351,8 +355,8 @@ abstract class _AssignmentView implements AssignmentView {
       @MemberConverter() final Member? moderator,
       @QueueViewConverter() final QueueView? queue,
       required final int reportId,
-      required final DateTime startAt,
-      final DateTime? endAt,
+      @JsonKey(toJson: iso8601) required final DateTime startAt,
+      @JsonKey(toJson: iso8601) final DateTime? endAt,
       final Map<String, dynamic>? $unknown}) = _$AssignmentViewImpl;
 
   factory _AssignmentView.fromJson(Map<String, dynamic> json) =
@@ -375,8 +379,10 @@ abstract class _AssignmentView implements AssignmentView {
   @override
   int get reportId;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get startAt;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get endAt;
   @override
   Map<String, dynamic>? get $unknown;

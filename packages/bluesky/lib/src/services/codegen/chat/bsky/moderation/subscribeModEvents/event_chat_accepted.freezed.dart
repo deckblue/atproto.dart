@@ -26,8 +26,10 @@ mixin _$EventChatAccepted {
   String get actorDid => throw _privateConstructorUsedError;
 
   /// When the convo was originally created.
+  @JsonKey(toJson: iso8601)
   DateTime get convoCreatedAt => throw _privateConstructorUsedError;
   String get convoId => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// Current member count at the time of the event. Only present for group convos.
@@ -64,9 +66,9 @@ abstract class $EventChatAcceptedCopyWith<$Res> {
   $Res call(
       {String $type,
       String actorDid,
-      DateTime convoCreatedAt,
+      @JsonKey(toJson: iso8601) DateTime convoCreatedAt,
       String convoId,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       int? groupMemberCount,
       String? groupName,
       @EventChatAcceptedMethodConverter() EventChatAcceptedMethod method,
@@ -174,9 +176,9 @@ abstract class _$$EventChatAcceptedImplCopyWith<$Res>
   $Res call(
       {String $type,
       String actorDid,
-      DateTime convoCreatedAt,
+      @JsonKey(toJson: iso8601) DateTime convoCreatedAt,
       String convoId,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       int? groupMemberCount,
       String? groupName,
       @EventChatAcceptedMethodConverter() EventChatAcceptedMethod method,
@@ -269,9 +271,9 @@ class _$EventChatAcceptedImpl implements _EventChatAccepted {
   const _$EventChatAcceptedImpl(
       {this.$type = 'chat.bsky.moderation.subscribeModEvents#eventChatAccepted',
       required this.actorDid,
-      required this.convoCreatedAt,
+      @JsonKey(toJson: iso8601) required this.convoCreatedAt,
       required this.convoId,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       this.groupMemberCount,
       this.groupName,
       @EventChatAcceptedMethodConverter() required this.method,
@@ -293,10 +295,12 @@ class _$EventChatAcceptedImpl implements _EventChatAccepted {
 
   /// When the convo was originally created.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime convoCreatedAt;
   @override
   final String convoId;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
 
   /// Current member count at the time of the event. Only present for group convos.
@@ -393,9 +397,9 @@ abstract class _EventChatAccepted implements EventChatAccepted {
   const factory _EventChatAccepted(
       {final String $type,
       required final String actorDid,
-      required final DateTime convoCreatedAt,
+      @JsonKey(toJson: iso8601) required final DateTime convoCreatedAt,
       required final String convoId,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       final int? groupMemberCount,
       final String? groupName,
       @EventChatAcceptedMethodConverter()
@@ -416,10 +420,12 @@ abstract class _EventChatAccepted implements EventChatAccepted {
 
   /// When the convo was originally created.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get convoCreatedAt;
   @override
   String get convoId;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
 
   /// Current member count at the time of the event. Only present for group convos.

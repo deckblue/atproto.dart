@@ -23,6 +23,7 @@ mixin _$FeedRepostRecord {
   String get $type => throw _privateConstructorUsedError;
   @RepoStrongRefConverter()
   RepoStrongRef get subject => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt => throw _privateConstructorUsedError;
   @RepoStrongRefConverter()
   RepoStrongRef? get via => throw _privateConstructorUsedError;
@@ -47,7 +48,7 @@ abstract class $FeedRepostRecordCopyWith<$Res> {
   $Res call(
       {String $type,
       @RepoStrongRefConverter() RepoStrongRef subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @RepoStrongRefConverter() RepoStrongRef? via,
       Map<String, dynamic>? $unknown});
 
@@ -136,7 +137,7 @@ abstract class _$$FeedRepostRecordImplCopyWith<$Res>
   $Res call(
       {String $type,
       @RepoStrongRefConverter() RepoStrongRef subject,
-      DateTime createdAt,
+      @JsonKey(toJson: iso8601) DateTime createdAt,
       @RepoStrongRefConverter() RepoStrongRef? via,
       Map<String, dynamic>? $unknown});
 
@@ -197,7 +198,7 @@ class _$FeedRepostRecordImpl implements _FeedRepostRecord {
   const _$FeedRepostRecordImpl(
       {this.$type = 'app.bsky.feed.repost',
       @RepoStrongRefConverter() required this.subject,
-      required this.createdAt,
+      @JsonKey(toJson: iso8601) required this.createdAt,
       @RepoStrongRefConverter() this.via,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
@@ -212,6 +213,7 @@ class _$FeedRepostRecordImpl implements _FeedRepostRecord {
   @RepoStrongRefConverter()
   final RepoStrongRef subject;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime createdAt;
   @override
   @RepoStrongRefConverter()
@@ -270,7 +272,7 @@ abstract class _FeedRepostRecord implements FeedRepostRecord {
   const factory _FeedRepostRecord(
       {final String $type,
       @RepoStrongRefConverter() required final RepoStrongRef subject,
-      required final DateTime createdAt,
+      @JsonKey(toJson: iso8601) required final DateTime createdAt,
       @RepoStrongRefConverter() final RepoStrongRef? via,
       final Map<String, dynamic>? $unknown}) = _$FeedRepostRecordImpl;
 
@@ -283,6 +285,7 @@ abstract class _FeedRepostRecord implements FeedRepostRecord {
   @RepoStrongRefConverter()
   RepoStrongRef get subject;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get createdAt;
   @override
   @RepoStrongRefConverter()

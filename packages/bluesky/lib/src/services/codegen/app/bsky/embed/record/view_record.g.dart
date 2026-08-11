@@ -76,6 +76,6 @@ Map<String, dynamic> _$$EmbedRecordViewRecordImplToJson(
               .toList()
           case final value?)
         'embeds': value,
-      'indexedAt': instance.indexedAt.toIso8601String(),
+      'indexedAt': iso8601(instance.indexedAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

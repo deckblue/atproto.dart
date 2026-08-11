@@ -24,11 +24,11 @@ final class RequestPhoneVerificationCommand extends ProcedureCommand {
 
   @override
   final String description =
-      r"Request a verification code to be sent to the supplied phone number";
+      "Request a verification code to be sent to the supplied phone number";
 
   @override
   final String invocation =
-      "bsky com-atproto-temp request-phone-verification [phoneNumber]";
+      "bsky com-atproto-temp request-phone-verification --phoneNumber=<value>";
 
   @override
   String get methodId => "com.atproto.temp.requestPhoneVerification";

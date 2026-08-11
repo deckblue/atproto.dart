@@ -23,16 +23,16 @@ final class GetLogCommand extends QueryCommand {
   final String name = "get-log";
 
   @override
-  final String description = r"";
+  final String description = "";
 
   @override
-  final String invocation = "bsky chat-bsky-convo get-log [cursor]";
+  final String invocation = "bsky chat-bsky-convo get-log [--cursor=<value>]";
 
   @override
   String get methodId => "chat.bsky.convo.getLog";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!["cursor"] != null) "cursor": argResults!["cursor"],
+        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
       };
 }

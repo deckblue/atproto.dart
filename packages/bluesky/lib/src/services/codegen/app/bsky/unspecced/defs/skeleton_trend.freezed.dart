@@ -23,7 +23,9 @@ mixin _$SkeletonTrend {
   String get $type => throw _privateConstructorUsedError;
   String get topic => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
+  @JsonKey(toJson: iso8601)
   DateTime get startedAt => throw _privateConstructorUsedError;
   int get postCount => throw _privateConstructorUsedError;
   @SkeletonTrendStatusConverter()
@@ -52,8 +54,9 @@ abstract class $SkeletonTrendCopyWith<$Res> {
       {String $type,
       String topic,
       String displayName,
+      String? description,
       String link,
-      DateTime startedAt,
+      @JsonKey(toJson: iso8601) DateTime startedAt,
       int postCount,
       @SkeletonTrendStatusConverter() SkeletonTrendStatus? status,
       String? category,
@@ -81,6 +84,7 @@ class _$SkeletonTrendCopyWithImpl<$Res, $Val extends SkeletonTrend>
     Object? $type = null,
     Object? topic = null,
     Object? displayName = null,
+    Object? description = freezed,
     Object? link = null,
     Object? startedAt = null,
     Object? postCount = null,
@@ -102,6 +106,10 @@ class _$SkeletonTrendCopyWithImpl<$Res, $Val extends SkeletonTrend>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
       link: null == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
@@ -160,8 +168,9 @@ abstract class _$$SkeletonTrendImplCopyWith<$Res>
       {String $type,
       String topic,
       String displayName,
+      String? description,
       String link,
-      DateTime startedAt,
+      @JsonKey(toJson: iso8601) DateTime startedAt,
       int postCount,
       @SkeletonTrendStatusConverter() SkeletonTrendStatus? status,
       String? category,
@@ -188,6 +197,7 @@ class __$$SkeletonTrendImplCopyWithImpl<$Res>
     Object? $type = null,
     Object? topic = null,
     Object? displayName = null,
+    Object? description = freezed,
     Object? link = null,
     Object? startedAt = null,
     Object? postCount = null,
@@ -209,6 +219,10 @@ class __$$SkeletonTrendImplCopyWithImpl<$Res>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
       link: null == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
@@ -249,8 +263,9 @@ class _$SkeletonTrendImpl implements _SkeletonTrend {
       {this.$type = 'app.bsky.unspecced.defs#skeletonTrend',
       required this.topic,
       required this.displayName,
+      this.description,
       required this.link,
-      required this.startedAt,
+      @JsonKey(toJson: iso8601) required this.startedAt,
       required this.postCount,
       @SkeletonTrendStatusConverter() this.status,
       this.category,
@@ -270,8 +285,11 @@ class _$SkeletonTrendImpl implements _SkeletonTrend {
   @override
   final String displayName;
   @override
+  final String? description;
+  @override
   final String link;
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime startedAt;
   @override
   final int postCount;
@@ -300,7 +318,7 @@ class _$SkeletonTrendImpl implements _SkeletonTrend {
 
   @override
   String toString() {
-    return 'SkeletonTrend(\$type: ${$type}, topic: $topic, displayName: $displayName, link: $link, startedAt: $startedAt, postCount: $postCount, status: $status, category: $category, dids: $dids, \$unknown: ${$unknown})';
+    return 'SkeletonTrend(\$type: ${$type}, topic: $topic, displayName: $displayName, description: $description, link: $link, startedAt: $startedAt, postCount: $postCount, status: $status, category: $category, dids: $dids, \$unknown: ${$unknown})';
   }
 
   @override
@@ -312,6 +330,8 @@ class _$SkeletonTrendImpl implements _SkeletonTrend {
             (identical(other.topic, topic) || other.topic == topic) &&
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.link, link) || other.link == link) &&
             (identical(other.startedAt, startedAt) ||
                 other.startedAt == startedAt) &&
@@ -331,6 +351,7 @@ class _$SkeletonTrendImpl implements _SkeletonTrend {
       $type,
       topic,
       displayName,
+      description,
       link,
       startedAt,
       postCount,
@@ -360,8 +381,9 @@ abstract class _SkeletonTrend implements SkeletonTrend {
       {final String $type,
       required final String topic,
       required final String displayName,
+      final String? description,
       required final String link,
-      required final DateTime startedAt,
+      @JsonKey(toJson: iso8601) required final DateTime startedAt,
       required final int postCount,
       @SkeletonTrendStatusConverter() final SkeletonTrendStatus? status,
       final String? category,
@@ -378,8 +400,11 @@ abstract class _SkeletonTrend implements SkeletonTrend {
   @override
   String get displayName;
   @override
+  String? get description;
+  @override
   String get link;
   @override
+  @JsonKey(toJson: iso8601)
   DateTime get startedAt;
   @override
   int get postCount;

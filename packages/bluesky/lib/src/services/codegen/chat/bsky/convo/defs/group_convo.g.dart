@@ -26,6 +26,8 @@ _$GroupConvoImpl _$$GroupConvoImplFromJson(Map json) => $checkedCreate(
               $checkedConvert('joinRequestCount', (v) => (v as num?)?.toInt()),
           lockStatus: $checkedConvert('lockStatus',
               (v) => const ConvoLockStatusConverter().fromJson(v as String)),
+          lockStatusModerationOverride:
+              $checkedConvert('lockStatusModerationOverride', (v) => v as bool),
           memberCount:
               $checkedConvert('memberCount', (v) => (v as num).toInt()),
           memberLimit:
@@ -46,7 +48,7 @@ _$GroupConvoImpl _$$GroupConvoImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$GroupConvoImplToJson(_$GroupConvoImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'createdAt': iso8601(instance.createdAt),
       if (_$JsonConverterToJson<Map<String, dynamic>, JoinLinkView>(
               instance.joinLink, const JoinLinkViewConverter().toJson)
           case final value?)
@@ -55,6 +57,7 @@ Map<String, dynamic> _$$GroupConvoImplToJson(_$GroupConvoImpl instance) =>
         'joinRequestCount': value,
       'lockStatus':
           const ConvoLockStatusConverter().toJson(instance.lockStatus),
+      'lockStatusModerationOverride': instance.lockStatusModerationOverride,
       'memberCount': instance.memberCount,
       'memberLimit': instance.memberLimit,
       'name': instance.name,

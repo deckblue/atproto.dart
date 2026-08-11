@@ -49,9 +49,11 @@ The Age Assurance configuration for a specific region.
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
+| **platforms** | array of string | - | ❌ | The platforms this configuration applies to. If omitted, the configuration applies to all platforms. |
 | **countryCode** | string | - | ✅ | The ISO 3166-1 alpha-2 country code this configuration applies to. |
 | **regionCode** | string | - | ❌ | The ISO 3166-2 region code this configuration applies to. If omitted, the configuration applies to the entire country. |
 | **minAccessAge** | integer | - | ✅ | The minimum age (as a whole integer) required to use Bluesky in this region. |
+| **additionalVerificationMethods** | array of string | - | ❌ | Verification methods permitted in this region in addition to the third-party (KWS) flow, which is always supported. `device` permits using the native on-device age APIs (e.g. Apple Declared Age Range, Google Play Age Signals). |
 | **rules** | array of union<br/>[#configRegionRuleDefault](#configregionruledefault)<br/>[#configRegionRuleIfDeclaredOverAge](#configregionruleifdeclaredoverage)<br/>[#configRegionRuleIfDeclaredUnderAge](#configregionruleifdeclaredunderage)<br/>[#configRegionRuleIfAssuredOverAge](#configregionruleifassuredoverage)<br/>[#configRegionRuleIfAssuredUnderAge](#configregionruleifassuredunderage)<br/>[#configRegionRuleIfAccountNewerThan](#configregionruleifaccountnewerthan)<br/>[#configRegionRuleIfAccountOlderThan](#configregionruleifaccountolderthan) | - | ✅ | The ordered list of Age Assurance rules that apply to this region. Rules should be applied in order, and the first matching rule determines the access level granted. The rules array should always include a default rule as the last item. |
 
 ## #configRegionRuleDefault

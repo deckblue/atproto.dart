@@ -23,6 +23,7 @@ mixin _$StateMetadata {
   String get $type => throw _privateConstructorUsedError;
 
   /// The account creation timestamp.
+  @JsonKey(toJson: iso8601)
   DateTime? get accountCreatedAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -44,7 +45,7 @@ abstract class $StateMetadataCopyWith<$Res> {
   @useResult
   $Res call(
       {String $type,
-      DateTime? accountCreatedAt,
+      @JsonKey(toJson: iso8601) DateTime? accountCreatedAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -94,7 +95,7 @@ abstract class _$$StateMetadataImplCopyWith<$Res>
   @useResult
   $Res call(
       {String $type,
-      DateTime? accountCreatedAt,
+      @JsonKey(toJson: iso8601) DateTime? accountCreatedAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -138,7 +139,7 @@ class __$$StateMetadataImplCopyWithImpl<$Res>
 class _$StateMetadataImpl implements _StateMetadata {
   const _$StateMetadataImpl(
       {this.$type = 'app.bsky.ageassurance.defs#stateMetadata',
-      this.accountCreatedAt,
+      @JsonKey(toJson: iso8601) this.accountCreatedAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -151,6 +152,7 @@ class _$StateMetadataImpl implements _StateMetadata {
 
   /// The account creation timestamp.
   @override
+  @JsonKey(toJson: iso8601)
   final DateTime? accountCreatedAt;
   final Map<String, dynamic>? _$unknown;
   @override
@@ -202,7 +204,7 @@ class _$StateMetadataImpl implements _StateMetadata {
 abstract class _StateMetadata implements StateMetadata {
   const factory _StateMetadata(
       {final String $type,
-      final DateTime? accountCreatedAt,
+      @JsonKey(toJson: iso8601) final DateTime? accountCreatedAt,
       final Map<String, dynamic>? $unknown}) = _$StateMetadataImpl;
 
   factory _StateMetadata.fromJson(Map<String, dynamic> json) =
@@ -213,6 +215,7 @@ abstract class _StateMetadata implements StateMetadata {
 
   /// The account creation timestamp.
   @override
+  @JsonKey(toJson: iso8601)
   DateTime? get accountCreatedAt;
   @override
   Map<String, dynamic>? get $unknown;

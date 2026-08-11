@@ -21,8 +21,8 @@ _$EmbedGalleryViewImageImpl _$$EmbedGalleryViewImageImplFromJson(Map json) =>
           alt: $checkedConvert('alt', (v) => v as String),
           aspectRatio: $checkedConvert(
               'aspectRatio',
-              (v) => _$JsonConverterFromJson<Map<String, dynamic>, AspectRatio>(
-                  v, const AspectRatioConverter().fromJson)),
+              (v) => const AspectRatioConverter()
+                  .fromJson(v as Map<String, dynamic>)),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -40,21 +40,6 @@ Map<String, dynamic> _$$EmbedGalleryViewImageImplToJson(
       'thumbnail': instance.thumbnail,
       'fullsize': instance.fullsize,
       'alt': instance.alt,
-      if (_$JsonConverterToJson<Map<String, dynamic>, AspectRatio>(
-              instance.aspectRatio, const AspectRatioConverter().toJson)
-          case final value?)
-        'aspectRatio': value,
+      'aspectRatio': const AspectRatioConverter().toJson(instance.aspectRatio),
       if (instance.$unknown case final value?) r'$unknown': value,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);

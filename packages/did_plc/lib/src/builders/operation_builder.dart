@@ -69,7 +69,7 @@ final class _OperationBuilderImpl implements OperationBuilder {
 
   _OperationBuilderImpl.update() : _operationType = 'plc_operation';
 
-  final String _operationType;
+  String _operationType;
   String? _prev;
   String? _sig;
   final Map<String, String> _verificationMethods = {};
@@ -81,7 +81,10 @@ final class _OperationBuilderImpl implements OperationBuilder {
 
   @override
   OperationBuilder type(String type) {
-    // Type is set by the factory constructor, but allow override
+    if (type.isEmpty) {
+      throw ArgumentError('Operation type cannot be empty');
+    }
+    _operationType = type;
     return this;
   }
 
@@ -195,10 +198,11 @@ final class _OperationBuilderImpl implements OperationBuilder {
       'services': Map<String, dynamic>.from(_services),
     };
 
-    // Add prev only if it's not null
-    if (_prev != null) {
-      operation['prev'] = _prev;
-    }
+    // Always set `prev`, including a genesis `null`. A genesis
+    // `plc_operation` carries an explicit `prev: null`, and that key is part
+    // of the signed DAG-CBOR bytes and the bytes hashed for `did:plc`
+    // derivation, so it must never be omitted.
+    operation['prev'] = _prev;
 
     return operation;
   }
