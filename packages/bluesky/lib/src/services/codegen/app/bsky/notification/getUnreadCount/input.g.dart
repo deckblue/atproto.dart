@@ -14,7 +14,6 @@ _$NotificationGetUnreadCountInputImpl
           json,
           ($checkedConvert) {
             final val = _$NotificationGetUnreadCountInputImpl(
-              priority: $checkedConvert('priority', (v) => v as bool?),
               seenAt: $checkedConvert('seenAt',
                   (v) => v == null ? null : DateTime.parse(v as String)),
               $unknown: $checkedConvert(
@@ -30,7 +29,6 @@ _$NotificationGetUnreadCountInputImpl
 Map<String, dynamic> _$$NotificationGetUnreadCountInputImplToJson(
         _$NotificationGetUnreadCountInputImpl instance) =>
     <String, dynamic>{
-      if (instance.priority case final value?) 'priority': value,
       'seenAt': iso8601(instance.seenAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

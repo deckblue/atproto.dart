@@ -25,6 +25,9 @@ mixin _$ListItemView {
   AtUri get uri => throw _privateConstructorUsedError;
   @ProfileViewConverter()
   ProfileView get subject => throw _privateConstructorUsedError;
+
+  /// Set to true when the subject has opted out of appearing in the reference list. Only set when the viewer owns the list.
+  bool? get subjectOptedOut => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ListItemView to a JSON map.
@@ -47,6 +50,7 @@ abstract class $ListItemViewCopyWith<$Res> {
       {String $type,
       @AtUriConverter() AtUri uri,
       @ProfileViewConverter() ProfileView subject,
+      bool? subjectOptedOut,
       Map<String, dynamic>? $unknown});
 
   $ProfileViewCopyWith<$Res> get subject;
@@ -70,6 +74,7 @@ class _$ListItemViewCopyWithImpl<$Res, $Val extends ListItemView>
     Object? $type = null,
     Object? uri = null,
     Object? subject = null,
+    Object? subjectOptedOut = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -85,6 +90,10 @@ class _$ListItemViewCopyWithImpl<$Res, $Val extends ListItemView>
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as ProfileView,
+      subjectOptedOut: freezed == subjectOptedOut
+          ? _value.subjectOptedOut
+          : subjectOptedOut // ignore: cast_nullable_to_non_nullable
+              as bool?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -115,6 +124,7 @@ abstract class _$$ListItemViewImplCopyWith<$Res>
       {String $type,
       @AtUriConverter() AtUri uri,
       @ProfileViewConverter() ProfileView subject,
+      bool? subjectOptedOut,
       Map<String, dynamic>? $unknown});
 
   @override
@@ -137,6 +147,7 @@ class __$$ListItemViewImplCopyWithImpl<$Res>
     Object? $type = null,
     Object? uri = null,
     Object? subject = null,
+    Object? subjectOptedOut = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ListItemViewImpl(
@@ -152,6 +163,10 @@ class __$$ListItemViewImplCopyWithImpl<$Res>
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as ProfileView,
+      subjectOptedOut: freezed == subjectOptedOut
+          ? _value.subjectOptedOut
+          : subjectOptedOut // ignore: cast_nullable_to_non_nullable
+              as bool?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -168,6 +183,7 @@ class _$ListItemViewImpl implements _ListItemView {
       {this.$type = 'app.bsky.graph.defs#listItemView',
       @AtUriConverter() required this.uri,
       @ProfileViewConverter() required this.subject,
+      this.subjectOptedOut,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -183,6 +199,10 @@ class _$ListItemViewImpl implements _ListItemView {
   @override
   @ProfileViewConverter()
   final ProfileView subject;
+
+  /// Set to true when the subject has opted out of appearing in the reference list. Only set when the viewer owns the list.
+  @override
+  final bool? subjectOptedOut;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -195,7 +215,7 @@ class _$ListItemViewImpl implements _ListItemView {
 
   @override
   String toString() {
-    return 'ListItemView(\$type: ${$type}, uri: $uri, subject: $subject, \$unknown: ${$unknown})';
+    return 'ListItemView(\$type: ${$type}, uri: $uri, subject: $subject, subjectOptedOut: $subjectOptedOut, \$unknown: ${$unknown})';
   }
 
   @override
@@ -206,13 +226,15 @@ class _$ListItemViewImpl implements _ListItemView {
             (identical(other.$type, $type) || other.$type == $type) &&
             (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.subjectOptedOut, subjectOptedOut) ||
+                other.subjectOptedOut == subjectOptedOut) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, $type, uri, subject,
-      const DeepCollectionEquality().hash(_$unknown));
+      subjectOptedOut, const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ListItemView
   /// with the given fields replaced by the non-null parameter values.
@@ -235,6 +257,7 @@ abstract class _ListItemView implements ListItemView {
       {final String $type,
       @AtUriConverter() required final AtUri uri,
       @ProfileViewConverter() required final ProfileView subject,
+      final bool? subjectOptedOut,
       final Map<String, dynamic>? $unknown}) = _$ListItemViewImpl;
 
   factory _ListItemView.fromJson(Map<String, dynamic> json) =
@@ -248,6 +271,10 @@ abstract class _ListItemView implements ListItemView {
   @override
   @ProfileViewConverter()
   ProfileView get subject;
+
+  /// Set to true when the subject has opted out of appearing in the reference list. Only set when the viewer owns the list.
+  @override
+  bool? get subjectOptedOut;
   @override
   Map<String, dynamic>? get $unknown;
 

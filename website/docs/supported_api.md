@@ -153,6 +153,7 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 
 | Method | Docs | Paging (cursor) |
 | --- | --- | :---: |
+| **[app.bsky.actor.contentVisibilityDeclaration](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/contentVisibilityDeclaration.html)** | [Reference](lexicons/app/bsky/actor/contentVisibilityDeclaration.md) | ❌ |
 | **[app.bsky.actor.getPreferences](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getPreferences.html)** | [Reference](lexicons/app/bsky/actor/getPreferences.md) | ❌ |
 | **[app.bsky.actor.getProfile](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getProfile.html)** | [Reference](lexicons/app/bsky/actor/getProfile.md) | ❌ |
 | **[app.bsky.actor.getProfiles](https://pub.dev/documentation/bluesky/latest/app_bsky_services/ActorService/getProfiles.html)** | [Reference](lexicons/app/bsky/actor/getProfiles.md) | ❌ |
@@ -265,6 +266,7 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[app.bsky.graph.muteActor](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/muteActor.html)** | [Reference](lexicons/app/bsky/graph/muteActor.md) | ❌ |
 | **[app.bsky.graph.muteActorList](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/muteActorList.html)** | [Reference](lexicons/app/bsky/graph/muteActorList.md) | ❌ |
 | **[app.bsky.graph.muteThread](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/muteThread.html)** | [Reference](lexicons/app/bsky/graph/muteThread.md) | ❌ |
+| **[app.bsky.graph.referencelistoptout](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/referencelistoptout.html)** | [Reference](lexicons/app/bsky/graph/referencelistoptout.md) | ❌ |
 | **[app.bsky.graph.searchStarterPacks](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/searchStarterPacks.html)** | [Reference](lexicons/app/bsky/graph/searchStarterPacks.md) | ✅ |
 | **[app.bsky.graph.searchStarterPacksV2](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/searchStarterPacksV2.html)** | [Reference](lexicons/app/bsky/graph/searchStarterPacksV2.md) | ✅ |
 | **[app.bsky.graph.starterpack](https://pub.dev/documentation/bluesky/latest/app_bsky_services/GraphService/starterpack.html)** | [Reference](lexicons/app/bsky/graph/starterpack.md) | ❌ |
@@ -335,8 +337,13 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 
 | Method | Docs | Paging (cursor) |
 | --- | --- | :---: |
+| **[app.bsky.video.abortUpload](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/abortUpload.html)** | [Reference](lexicons/app/bsky/video/abortUpload.md) | ❌ |
+| **[app.bsky.video.finishUpload](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/finishUpload.html)** | [Reference](lexicons/app/bsky/video/finishUpload.md) | ❌ |
 | **[app.bsky.video.getJobStatus](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/getJobStatus.html)** | [Reference](lexicons/app/bsky/video/getJobStatus.md) | ❌ |
 | **[app.bsky.video.getUploadLimits](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/getUploadLimits.html)** | [Reference](lexicons/app/bsky/video/getUploadLimits.md) | ❌ |
+| **[app.bsky.video.getUploadStatus](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/getUploadStatus.html)** | [Reference](lexicons/app/bsky/video/getUploadStatus.md) | ❌ |
+| **[app.bsky.video.startUpload](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/startUpload.html)** | [Reference](lexicons/app/bsky/video/startUpload.md) | ❌ |
+| **[app.bsky.video.uploadPart](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/uploadPart.html)** | [Reference](lexicons/app/bsky/video/uploadPart.md) | ❌ |
 | **[app.bsky.video.uploadVideo](https://pub.dev/documentation/bluesky/latest/app_bsky_services/VideoService/uploadVideo.html)** | [Reference](lexicons/app/bsky/video/uploadVideo.md) | ❌ |
 
 ### chat.bsky.actor
@@ -436,6 +443,7 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | --- | --- | :---: |
 | **[tools.ozone.moderation.cancelScheduledActions](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ModerationService/cancelScheduledActions.html)** | [Reference](lexicons/tools/ozone/moderation/cancelScheduledActions.md) | ❌ |
 | **[tools.ozone.moderation.emitEvent](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ModerationService/emitEvent.html)** | [Reference](lexicons/tools/ozone/moderation/emitEvent.md) | ❌ |
+| **[tools.ozone.moderation.getAccountPreferences](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ModerationService/getAccountPreferences.html)** | [Reference](lexicons/tools/ozone/moderation/getAccountPreferences.md) | ❌ |
 | **[tools.ozone.moderation.getAccountTimeline](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ModerationService/getAccountTimeline.html)** | [Reference](lexicons/tools/ozone/moderation/getAccountTimeline.md) | ❌ |
 | **[tools.ozone.moderation.getEvent](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ModerationService/getEvent.html)** | [Reference](lexicons/tools/ozone/moderation/getEvent.md) | ❌ |
 | **[tools.ozone.moderation.getRecord](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ModerationService/getRecord.html)** | [Reference](lexicons/tools/ozone/moderation/getRecord.md) | ❌ |

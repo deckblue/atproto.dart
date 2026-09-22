@@ -24,10 +24,7 @@ mixin _$NotificationListNotificationsInput {
   /// A reason that matches the reason property of #notification.
   List<String>? get reasons => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
-  bool? get priority => throw _privateConstructorUsedError;
   String? get cursor => throw _privateConstructorUsedError;
-  @JsonKey(toJson: iso8601)
-  DateTime? get seenAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this NotificationListNotificationsInput to a JSON map.
@@ -52,9 +49,7 @@ abstract class $NotificationListNotificationsInputCopyWith<$Res> {
   $Res call(
       {List<String>? reasons,
       int limit,
-      bool? priority,
       String? cursor,
-      @JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -76,9 +71,7 @@ class _$NotificationListNotificationsInputCopyWithImpl<$Res,
   $Res call({
     Object? reasons = freezed,
     Object? limit = null,
-    Object? priority = freezed,
     Object? cursor = freezed,
-    Object? seenAt = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -90,18 +83,10 @@ class _$NotificationListNotificationsInputCopyWithImpl<$Res,
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int,
-      priority: freezed == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as bool?,
       cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      seenAt: freezed == seenAt
-          ? _value.seenAt
-          : seenAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -122,9 +107,7 @@ abstract class _$$NotificationListNotificationsInputImplCopyWith<$Res>
   $Res call(
       {List<String>? reasons,
       int limit,
-      bool? priority,
       String? cursor,
-      @JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -145,9 +128,7 @@ class __$$NotificationListNotificationsInputImplCopyWithImpl<$Res>
   $Res call({
     Object? reasons = freezed,
     Object? limit = null,
-    Object? priority = freezed,
     Object? cursor = freezed,
-    Object? seenAt = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$NotificationListNotificationsInputImpl(
@@ -159,18 +140,10 @@ class __$$NotificationListNotificationsInputImplCopyWithImpl<$Res>
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int,
-      priority: freezed == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as bool?,
       cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      seenAt: freezed == seenAt
-          ? _value.seenAt
-          : seenAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -187,9 +160,7 @@ class _$NotificationListNotificationsInputImpl
   const _$NotificationListNotificationsInputImpl(
       {final List<String>? reasons,
       this.limit = 50,
-      this.priority,
       this.cursor,
-      @JsonKey(toJson: iso8601) this.seenAt,
       final Map<String, dynamic>? $unknown})
       : _reasons = reasons,
         _$unknown = $unknown;
@@ -215,12 +186,7 @@ class _$NotificationListNotificationsInputImpl
   @JsonKey()
   final int limit;
   @override
-  final bool? priority;
-  @override
   final String? cursor;
-  @override
-  @JsonKey(toJson: iso8601)
-  final DateTime? seenAt;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -233,7 +199,7 @@ class _$NotificationListNotificationsInputImpl
 
   @override
   String toString() {
-    return 'NotificationListNotificationsInput(reasons: $reasons, limit: $limit, priority: $priority, cursor: $cursor, seenAt: $seenAt, \$unknown: ${$unknown})';
+    return 'NotificationListNotificationsInput(reasons: $reasons, limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
   }
 
   @override
@@ -243,10 +209,7 @@ class _$NotificationListNotificationsInputImpl
             other is _$NotificationListNotificationsInputImpl &&
             const DeepCollectionEquality().equals(other._reasons, _reasons) &&
             (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.priority, priority) ||
-                other.priority == priority) &&
             (identical(other.cursor, cursor) || other.cursor == cursor) &&
-            (identical(other.seenAt, seenAt) || other.seenAt == seenAt) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -256,9 +219,7 @@ class _$NotificationListNotificationsInputImpl
       runtimeType,
       const DeepCollectionEquality().hash(_reasons),
       limit,
-      priority,
       cursor,
-      seenAt,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of NotificationListNotificationsInput
@@ -284,9 +245,7 @@ abstract class _NotificationListNotificationsInput
   const factory _NotificationListNotificationsInput(
           {final List<String>? reasons,
           final int limit,
-          final bool? priority,
           final String? cursor,
-          @JsonKey(toJson: iso8601) final DateTime? seenAt,
           final Map<String, dynamic>? $unknown}) =
       _$NotificationListNotificationsInputImpl;
 
@@ -300,12 +259,7 @@ abstract class _NotificationListNotificationsInput
   @override
   int get limit;
   @override
-  bool? get priority;
-  @override
   String? get cursor;
-  @override
-  @JsonKey(toJson: iso8601)
-  DateTime? get seenAt;
   @override
   Map<String, dynamic>? get $unknown;
 

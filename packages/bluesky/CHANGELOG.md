@@ -1,5 +1,80 @@
 # Release Note
 
+## v2.9.1
+
+- feat: added `app.bsky.notification.getUnreadCount.parameters.priority`
+- feat: added `app.bsky.notification.listNotifications.output.priority`
+- feat: added `app.bsky.notification.listNotifications.parameters.priority`
+- chore: updated `app.bsky.notification.listNotifications.parameters.seenAt`
+- chore: regenerated from synced lexicons
+
+## v2.9.0
+
+- fix!: removed `app.bsky.notification.getUnreadCount.parameters.priority` (BREAKING)
+- fix!: removed `app.bsky.notification.listNotifications.output.priority` (BREAKING)
+- fix!: removed `app.bsky.notification.listNotifications.parameters.priority` (BREAKING)
+- chore: regenerated from synced lexicons
+
+## v2.8.3
+
+- feat: added `app.bsky.actor.defs#interestsPref.updatedAt`
+- feat: added `tools.ozone.moderation.getAccountPreferences`
+- chore: regenerated from synced lexicons
+
+## v2.8.2
+
+- feat: added `app.bsky.graph.defs#listItemView.subjectOptedOut`
+- feat: added `app.bsky.graph.defs#listViewerState.referenceListOptOut`
+- feat: added `app.bsky.graph.referencelistoptout`
+- chore: regenerated from synced lexicons
+
+## v2.8.1
+
+- fix: the feed generator test behind `GroupedNotificationReason.customFeedLike` compares the AT URI's collection segment instead of searching the whole URI for `app.bsky.feed.generator`. An rkey may legally contain dots, so a like on `at://<did>/app.bsky.feed.post/app.bsky.feed.generator` is a like on a post, and the substring test grouped it as a feed like. **If you relied on the old grouping for such a URI, it now groups as `like`.** The check reads `AtUri.collectionOrNull` rather than `collection` (or the generated `isFeedGenerator`, which is built on it) because those throw when the URI has no collection segment, and the substring test being replaced never threw.
+- docs: `GroupedNotificationReason` says where `customFeedLike` comes from — it is synthesised here rather than mirrored from the lexicon — and that `like` therefore means "a like on something that is not a feed generator".
+- test: `GroupedNotificationReason` is checked against `lexicons/app/bsky/notification/listNotifications.json` directly, so a value added there fails a test naming it instead of drifting unnoticed.
+
+## v2.8.0
+
+- fix: `KnownLabelValue` was missing `bot`, which `com.atproto.label.defs#labelValue` lists among its `knownValues`. `KnownLabelValue.valueOf('bot')` answered null, so a caller using this enum to tell a global label value from a labeler-defined one got the wrong answer for it. Note that `bot` deliberately gets no entry in `kLabels` or `kLabelDefinitions`: the lexicon declares the value but not how to interpret it, and inventing a severity and a blur here would make this package decide moderation behaviour the protocol does not specify — so a `bot` label still flows through with no interpreted definition, exactly as before. This changes what the enum says, not what the moderation engine does.
+- docs: `gore` is documented as what it is — a value the lexicon has since dropped from `knownValues`, kept because labels already applied to existing content still carry it — rather than as a "deprecated alias".
+- test: the enum is now checked against `lexicons/com/atproto/label/defs.json` directly, so a value added there fails a test naming it instead of drifting unnoticed.
+
+**If you `switch` exhaustively over `KnownLabelValue`,** this release adds a case you will need to handle. Shipped as a minor because that is how lexicon-driven enum additions have shipped here before, not because the risk is zero.
+
+## v2.7.0
+
+- feat: `Bluesky.fromAtproto` takes `additionalHeaders`, which sends extra headers on this client's `app.bsky.*` calls only and leaves the `ATProto` it was built from alone. `Bluesky.fromSession` has always taken `headers`; `fromAtproto` took none, so a caller who builds the `ATProto` themselves — the entire reason that constructor exists — could either put the header on the shared `ATProto`, where it also went out on `com.atproto.*` calls that were never meant to carry it, or build a second `ATProto` and lose the single-session guarantee. `atproto-accept-labelers` is the obvious case: the AppView only attaches labels from labelers named in that header, and it has no business on `com.atproto.*`.
+- chore: the header is merged through `ServiceContext.withAdditionalHeaders` on a *derived* context, matching `BlueskyChat.fromAtproto`. Derived rather than copied, so the session stays shared and only one refresh ever spends the single-use token; merged rather than spread, because header names are case-insensitive and a key-exact spread would leave `Atproto-Proxy` alongside a lowercase one for a custom `getClient` to emit twice. Omitting the parameter passes the original context through untouched, so nothing changes for an existing caller.
+
+## v2.6.4
+
+- feat: added `app.bsky.feed.defs#knownLikers`
+- feat: added `app.bsky.feed.defs#viewerState.knownLikers`
+- chore: regenerated from synced lexicons
+
+## v2.6.3
+
+- feat: added `app.bsky.actor.contentVisibilityDeclaration`
+- chore: updated `app.bsky.embed.video.alt`
+- chore: updated `app.bsky.embed.video#view.alt`
+- chore: regenerated from synced lexicons
+
+## v2.6.2
+
+- feat: added `app.bsky.video.abortUpload`
+- chore: updated `app.bsky.video.defs#jobStatus.state`
+- feat: added `app.bsky.video.finishUpload`
+- feat: added `app.bsky.video.getUploadStatus`
+- feat: added `app.bsky.video.startUpload`
+- feat: added `app.bsky.video.uploadPart`
+- chore: regenerated from synced lexicons
+
+## v2.6.1
+
+- chore: updated `app.bsky.embed.video.video`
+- chore: regenerated from synced lexicons
+
 ## v2.6.0
 
 - feat: added `feed.buildPostText` and `feed.postText`, which turn plain text into a faceted `app.bsky.feed.post` in one call. Getting this right by hand took three steps the docs had to spell out — format first (markdown links only become link facets after formatting), post the *formatted* text rather than the input (facet ranges are byte offsets into it, so the original string points every link at the wrong characters), and convert `bluesky_text`'s facet maps into `RichtextFacet` models. `buildPostText` returns a `PostText` holding the formatted text and its facets together so the two cannot be separated by accident, and `postText` builds and publishes in one call.

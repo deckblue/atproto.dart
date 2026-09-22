@@ -29,6 +29,10 @@ _$ViewerStateImpl _$$ViewerStateImplFromJson(Map json) => $checkedCreate(
           embeddingDisabled:
               $checkedConvert('embeddingDisabled', (v) => v as bool?),
           pinned: $checkedConvert('pinned', (v) => v as bool?),
+          knownLikers: $checkedConvert(
+              'knownLikers',
+              (v) => _$JsonConverterFromJson<Map<String, dynamic>, KnownLikers>(
+                  v, const KnownLikersConverter().fromJson)),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -56,6 +60,10 @@ Map<String, dynamic> _$$ViewerStateImplToJson(_$ViewerStateImpl instance) =>
       if (instance.embeddingDisabled case final value?)
         'embeddingDisabled': value,
       if (instance.pinned case final value?) 'pinned': value,
+      if (_$JsonConverterToJson<Map<String, dynamic>, KnownLikers>(
+              instance.knownLikers, const KnownLikersConverter().toJson)
+          case final value?)
+        'knownLikers': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

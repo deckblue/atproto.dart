@@ -21,10 +21,7 @@ _$NotificationListNotificationsInputImpl
                       (v as List<dynamic>?)?.map((e) => e as String).toList()),
               limit:
                   $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-              priority: $checkedConvert('priority', (v) => v as bool?),
               cursor: $checkedConvert('cursor', (v) => v as String?),
-              seenAt: $checkedConvert('seenAt',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
               $unknown: $checkedConvert(
                   r'$unknown',
                   (v) => (v as Map?)?.map(
@@ -40,8 +37,6 @@ Map<String, dynamic> _$$NotificationListNotificationsInputImplToJson(
     <String, dynamic>{
       if (instance.reasons case final value?) 'reasons': value,
       'limit': instance.limit,
-      if (instance.priority case final value?) 'priority': value,
       if (instance.cursor case final value?) 'cursor': value,
-      'seenAt': iso8601(instance.seenAt),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

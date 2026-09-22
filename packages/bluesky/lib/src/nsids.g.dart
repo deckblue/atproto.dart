@@ -12,6 +12,11 @@ import 'package:atproto_core/atproto_core.dart';
 // Project imports:
 import 'ids.g.dart' as ids;
 
+/// `app.bsky.actor.contentVisibilityDeclaration`
+const appBskyActorContentVisibilityDeclaration = NSID(
+  ids.appBskyActorContentVisibilityDeclaration,
+);
+
 /// `app.bsky.actor.getPreferences`
 const appBskyActorGetPreferences = NSID(ids.appBskyActorGetPreferences);
 
@@ -401,6 +406,11 @@ const appBskyGraphMuteActorList = NSID(ids.appBskyGraphMuteActorList);
 /// `app.bsky.graph.muteThread`
 const appBskyGraphMuteThread = NSID(ids.appBskyGraphMuteThread);
 
+/// `app.bsky.graph.referencelistoptout`
+const appBskyGraphReferencelistoptout = NSID(
+  ids.appBskyGraphReferencelistoptout,
+);
+
 /// `app.bsky.graph.searchStarterPacks`
 const appBskyGraphSearchStarterPacks = NSID(ids.appBskyGraphSearchStarterPacks);
 
@@ -672,11 +682,26 @@ const appBskyUnspeccedSearchStarterPacksSkeleton = NSID(
   ids.appBskyUnspeccedSearchStarterPacksSkeleton,
 );
 
+/// `app.bsky.video.abortUpload`
+const appBskyVideoAbortUpload = NSID(ids.appBskyVideoAbortUpload);
+
+/// `app.bsky.video.finishUpload`
+const appBskyVideoFinishUpload = NSID(ids.appBskyVideoFinishUpload);
+
 /// `app.bsky.video.getJobStatus`
 const appBskyVideoGetJobStatus = NSID(ids.appBskyVideoGetJobStatus);
 
 /// `app.bsky.video.getUploadLimits`
 const appBskyVideoGetUploadLimits = NSID(ids.appBskyVideoGetUploadLimits);
+
+/// `app.bsky.video.getUploadStatus`
+const appBskyVideoGetUploadStatus = NSID(ids.appBskyVideoGetUploadStatus);
+
+/// `app.bsky.video.startUpload`
+const appBskyVideoStartUpload = NSID(ids.appBskyVideoStartUpload);
+
+/// `app.bsky.video.uploadPart`
+const appBskyVideoUploadPart = NSID(ids.appBskyVideoUploadPart);
 
 /// `app.bsky.video.uploadVideo`
 const appBskyVideoUploadVideo = NSID(ids.appBskyVideoUploadVideo);
@@ -1011,6 +1036,11 @@ const toolsOzoneModerationEmitEvent = NSID(ids.toolsOzoneModerationEmitEvent);
 /// `tools.ozone.moderation.emitEvent#reportAction`
 const toolsOzoneModerationEmitEventReportAction = NSID(
   ids.toolsOzoneModerationEmitEventReportAction,
+);
+
+/// `tools.ozone.moderation.getAccountPreferences`
+const toolsOzoneModerationGetAccountPreferences = NSID(
+  ids.toolsOzoneModerationGetAccountPreferences,
 );
 
 /// `tools.ozone.moderation.getAccountTimeline`

@@ -22,7 +22,7 @@ EmbedVideo _$EmbedVideoFromJson(Map<String, dynamic> json) {
 mixin _$EmbedVideo {
   String get $type => throw _privateConstructorUsedError;
 
-  /// The mp4 video file. May be up to 100mb, formerly limited to 50mb.
+  /// The mp4 video file. May be up to 300mb, formerly limited to 100mb.
   @BlobConverter()
   Blob get video => throw _privateConstructorUsedError;
   @EmbedVideoCaptionConverter()
@@ -264,7 +264,7 @@ class _$EmbedVideoImpl implements _EmbedVideo {
   @JsonKey()
   final String $type;
 
-  /// The mp4 video file. May be up to 100mb, formerly limited to 50mb.
+  /// The mp4 video file. May be up to 300mb, formerly limited to 100mb.
   @override
   @BlobConverter()
   final Blob video;
@@ -366,7 +366,7 @@ abstract class _EmbedVideo implements EmbedVideo {
   @override
   String get $type;
 
-  /// The mp4 video file. May be up to 100mb, formerly limited to 50mb.
+  /// The mp4 video file. May be up to 300mb, formerly limited to 100mb.
   @override
   @BlobConverter()
   Blob get video;

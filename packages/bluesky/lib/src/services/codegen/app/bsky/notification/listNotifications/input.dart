@@ -21,43 +21,35 @@ part 'input.g.dart';
 @freezed
 abstract class NotificationListNotificationsInput
     with _$NotificationListNotificationsInput {
-  static const knownProps = <String>[
-    'reasons',
-    'limit',
-    'priority',
-    'cursor',
-    'seenAt',
-  ];
+  static const knownProps = <String>['reasons', 'limit', 'cursor'];
 
   @JsonSerializable(includeIfNull: false)
   const factory NotificationListNotificationsInput({
     /// A reason that matches the reason property of #notification.
     List<String>? reasons,
     @Default(50) int limit,
-    bool? priority,
     String? cursor,
-    @JsonKey(toJson: iso8601) DateTime? seenAt,
+
     Map<String, dynamic>? $unknown,
   }) = _NotificationListNotificationsInput;
 
   factory NotificationListNotificationsInput.fromJson(
     Map<String, Object?> json,
-  ) =>
-      _$NotificationListNotificationsInputFromJson(json);
+  ) => _$NotificationListNotificationsInputFromJson(json);
 }
 
 extension NotificationListNotificationsInputExtension
     on NotificationListNotificationsInput {
-  bool get isPriority => priority ?? false;
-  bool get isNotPriority => !isPriority;
   bool get hasCursor => cursor != null;
   bool get hasNotCursor => !hasCursor;
-  bool get hasSeenAt => seenAt != null;
-  bool get hasNotSeenAt => !hasSeenAt;
 }
 
-final class NotificationListNotificationsInputConverter extends JsonConverter<
-    NotificationListNotificationsInput, Map<String, dynamic>> {
+final class NotificationListNotificationsInputConverter
+    extends
+        JsonConverter<
+          NotificationListNotificationsInput,
+          Map<String, dynamic>
+        > {
   const NotificationListNotificationsInputConverter();
 
   @override

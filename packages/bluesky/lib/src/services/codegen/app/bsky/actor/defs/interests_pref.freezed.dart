@@ -21,6 +21,10 @@ InterestsPref _$InterestsPrefFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$InterestsPref {
   String get $type => throw _privateConstructorUsedError;
+
+  /// The timestamp when the account owner last updated their interests.
+  @JsonKey(toJson: iso8601)
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
@@ -40,7 +44,11 @@ abstract class $InterestsPrefCopyWith<$Res> {
           InterestsPref value, $Res Function(InterestsPref) then) =
       _$InterestsPrefCopyWithImpl<$Res, InterestsPref>;
   @useResult
-  $Res call({String $type, List<String> tags, Map<String, dynamic>? $unknown});
+  $Res call(
+      {String $type,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
+      List<String> tags,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -59,6 +67,7 @@ class _$InterestsPrefCopyWithImpl<$Res, $Val extends InterestsPref>
   @override
   $Res call({
     Object? $type = null,
+    Object? updatedAt = freezed,
     Object? tags = null,
     Object? $unknown = freezed,
   }) {
@@ -67,6 +76,10 @@ class _$InterestsPrefCopyWithImpl<$Res, $Val extends InterestsPref>
           ? _value.$type
           : $type // ignore: cast_nullable_to_non_nullable
               as String,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -87,7 +100,11 @@ abstract class _$$InterestsPrefImplCopyWith<$Res>
       __$$InterestsPrefImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String $type, List<String> tags, Map<String, dynamic>? $unknown});
+  $Res call(
+      {String $type,
+      @JsonKey(toJson: iso8601) DateTime? updatedAt,
+      List<String> tags,
+      Map<String, dynamic>? $unknown});
 }
 
 /// @nodoc
@@ -104,6 +121,7 @@ class __$$InterestsPrefImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? $type = null,
+    Object? updatedAt = freezed,
     Object? tags = null,
     Object? $unknown = freezed,
   }) {
@@ -112,6 +130,10 @@ class __$$InterestsPrefImplCopyWithImpl<$Res>
           ? _value.$type
           : $type // ignore: cast_nullable_to_non_nullable
               as String,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -130,6 +152,7 @@ class __$$InterestsPrefImplCopyWithImpl<$Res>
 class _$InterestsPrefImpl implements _InterestsPref {
   const _$InterestsPrefImpl(
       {this.$type = 'app.bsky.actor.defs#interestsPref',
+      @JsonKey(toJson: iso8601) this.updatedAt,
       required final List<String> tags,
       final Map<String, dynamic>? $unknown})
       : _tags = tags,
@@ -141,6 +164,11 @@ class _$InterestsPrefImpl implements _InterestsPref {
   @override
   @JsonKey()
   final String $type;
+
+  /// The timestamp when the account owner last updated their interests.
+  @override
+  @JsonKey(toJson: iso8601)
+  final DateTime? updatedAt;
   final List<String> _tags;
   @override
   List<String> get tags {
@@ -161,7 +189,7 @@ class _$InterestsPrefImpl implements _InterestsPref {
 
   @override
   String toString() {
-    return 'InterestsPref(\$type: ${$type}, tags: $tags, \$unknown: ${$unknown})';
+    return 'InterestsPref(\$type: ${$type}, updatedAt: $updatedAt, tags: $tags, \$unknown: ${$unknown})';
   }
 
   @override
@@ -170,6 +198,8 @@ class _$InterestsPrefImpl implements _InterestsPref {
         (other.runtimeType == runtimeType &&
             other is _$InterestsPrefImpl &&
             (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
@@ -179,6 +209,7 @@ class _$InterestsPrefImpl implements _InterestsPref {
   int get hashCode => Object.hash(
       runtimeType,
       $type,
+      updatedAt,
       const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(_$unknown));
 
@@ -201,6 +232,7 @@ class _$InterestsPrefImpl implements _InterestsPref {
 abstract class _InterestsPref implements InterestsPref {
   const factory _InterestsPref(
       {final String $type,
+      @JsonKey(toJson: iso8601) final DateTime? updatedAt,
       required final List<String> tags,
       final Map<String, dynamic>? $unknown}) = _$InterestsPrefImpl;
 
@@ -209,6 +241,11 @@ abstract class _InterestsPref implements InterestsPref {
 
   @override
   String get $type;
+
+  /// The timestamp when the account owner last updated their interests.
+  @override
+  @JsonKey(toJson: iso8601)
+  DateTime? get updatedAt;
   @override
   List<String> get tags;
   @override

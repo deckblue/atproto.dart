@@ -15,6 +15,14 @@ import 'package:atproto_core/atproto_core.dart' show AtUri;
 // **************************************************************************
 
 extension AtUriExtension on AtUri {
+  /// Returns true if this uri is `app.bsky.actor.contentVisibilityDeclaration`, otherwise false.
+  bool get isActorContentVisibilityDeclaration =>
+      collection.toString() == 'app.bsky.actor.contentVisibilityDeclaration';
+
+  /// Returns true if this uri is not `app.bsky.actor.contentVisibilityDeclaration`, otherwise false.
+  bool get isNotActorContentVisibilityDeclaration =>
+      !isActorContentVisibilityDeclaration;
+
   /// Returns true if this uri is `app.bsky.actor.profile`, otherwise false.
   bool get isActorProfile => collection.toString() == 'app.bsky.actor.profile';
 
@@ -96,6 +104,13 @@ extension AtUriExtension on AtUri {
 
   /// Returns true if this uri is not `app.bsky.graph.listitem`, otherwise false.
   bool get isNotGraphListitem => !isGraphListitem;
+
+  /// Returns true if this uri is `app.bsky.graph.referencelistoptout`, otherwise false.
+  bool get isGraphReferencelistoptout =>
+      collection.toString() == 'app.bsky.graph.referencelistoptout';
+
+  /// Returns true if this uri is not `app.bsky.graph.referencelistoptout`, otherwise false.
+  bool get isNotGraphReferencelistoptout => !isGraphReferencelistoptout;
 
   /// Returns true if this uri is `app.bsky.graph.starterpack`, otherwise false.
   bool get isGraphStarterpack =>

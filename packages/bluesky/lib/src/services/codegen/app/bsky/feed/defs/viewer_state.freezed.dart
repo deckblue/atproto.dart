@@ -30,6 +30,10 @@ mixin _$ViewerState {
   bool? get replyDisabled => throw _privateConstructorUsedError;
   bool? get embeddingDisabled => throw _privateConstructorUsedError;
   bool? get pinned => throw _privateConstructorUsedError;
+
+  /// This property is present only in selected cases, as an optimization.
+  @KnownLikersConverter()
+  KnownLikers? get knownLikers => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ViewerState to a JSON map.
@@ -57,7 +61,10 @@ abstract class $ViewerStateCopyWith<$Res> {
       bool? replyDisabled,
       bool? embeddingDisabled,
       bool? pinned,
+      @KnownLikersConverter() KnownLikers? knownLikers,
       Map<String, dynamic>? $unknown});
+
+  $KnownLikersCopyWith<$Res>? get knownLikers;
 }
 
 /// @nodoc
@@ -83,6 +90,7 @@ class _$ViewerStateCopyWithImpl<$Res, $Val extends ViewerState>
     Object? replyDisabled = freezed,
     Object? embeddingDisabled = freezed,
     Object? pinned = freezed,
+    Object? knownLikers = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -118,11 +126,29 @@ class _$ViewerStateCopyWithImpl<$Res, $Val extends ViewerState>
           ? _value.pinned
           : pinned // ignore: cast_nullable_to_non_nullable
               as bool?,
+      knownLikers: freezed == knownLikers
+          ? _value.knownLikers
+          : knownLikers // ignore: cast_nullable_to_non_nullable
+              as KnownLikers?,
       $unknown: freezed == $unknown
           ? _value.$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ) as $Val);
+  }
+
+  /// Create a copy of ViewerState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $KnownLikersCopyWith<$Res>? get knownLikers {
+    if (_value.knownLikers == null) {
+      return null;
+    }
+
+    return $KnownLikersCopyWith<$Res>(_value.knownLikers!, (value) {
+      return _then(_value.copyWith(knownLikers: value) as $Val);
+    });
   }
 }
 
@@ -143,7 +169,11 @@ abstract class _$$ViewerStateImplCopyWith<$Res>
       bool? replyDisabled,
       bool? embeddingDisabled,
       bool? pinned,
+      @KnownLikersConverter() KnownLikers? knownLikers,
       Map<String, dynamic>? $unknown});
+
+  @override
+  $KnownLikersCopyWith<$Res>? get knownLikers;
 }
 
 /// @nodoc
@@ -167,6 +197,7 @@ class __$$ViewerStateImplCopyWithImpl<$Res>
     Object? replyDisabled = freezed,
     Object? embeddingDisabled = freezed,
     Object? pinned = freezed,
+    Object? knownLikers = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ViewerStateImpl(
@@ -202,6 +233,10 @@ class __$$ViewerStateImplCopyWithImpl<$Res>
           ? _value.pinned
           : pinned // ignore: cast_nullable_to_non_nullable
               as bool?,
+      knownLikers: freezed == knownLikers
+          ? _value.knownLikers
+          : knownLikers // ignore: cast_nullable_to_non_nullable
+              as KnownLikers?,
       $unknown: freezed == $unknown
           ? _value._$unknown
           : $unknown // ignore: cast_nullable_to_non_nullable
@@ -223,6 +258,7 @@ class _$ViewerStateImpl implements _ViewerState {
       this.replyDisabled,
       this.embeddingDisabled,
       this.pinned,
+      @KnownLikersConverter() this.knownLikers,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -248,6 +284,11 @@ class _$ViewerStateImpl implements _ViewerState {
   final bool? embeddingDisabled;
   @override
   final bool? pinned;
+
+  /// This property is present only in selected cases, as an optimization.
+  @override
+  @KnownLikersConverter()
+  final KnownLikers? knownLikers;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -260,7 +301,7 @@ class _$ViewerStateImpl implements _ViewerState {
 
   @override
   String toString() {
-    return 'ViewerState(\$type: ${$type}, repost: $repost, like: $like, bookmarked: $bookmarked, threadMuted: $threadMuted, replyDisabled: $replyDisabled, embeddingDisabled: $embeddingDisabled, pinned: $pinned, \$unknown: ${$unknown})';
+    return 'ViewerState(\$type: ${$type}, repost: $repost, like: $like, bookmarked: $bookmarked, threadMuted: $threadMuted, replyDisabled: $replyDisabled, embeddingDisabled: $embeddingDisabled, pinned: $pinned, knownLikers: $knownLikers, \$unknown: ${$unknown})';
   }
 
   @override
@@ -280,6 +321,8 @@ class _$ViewerStateImpl implements _ViewerState {
             (identical(other.embeddingDisabled, embeddingDisabled) ||
                 other.embeddingDisabled == embeddingDisabled) &&
             (identical(other.pinned, pinned) || other.pinned == pinned) &&
+            (identical(other.knownLikers, knownLikers) ||
+                other.knownLikers == knownLikers) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
@@ -295,6 +338,7 @@ class _$ViewerStateImpl implements _ViewerState {
       replyDisabled,
       embeddingDisabled,
       pinned,
+      knownLikers,
       const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ViewerState
@@ -323,6 +367,7 @@ abstract class _ViewerState implements ViewerState {
       final bool? replyDisabled,
       final bool? embeddingDisabled,
       final bool? pinned,
+      @KnownLikersConverter() final KnownLikers? knownLikers,
       final Map<String, dynamic>? $unknown}) = _$ViewerStateImpl;
 
   factory _ViewerState.fromJson(Map<String, dynamic> json) =
@@ -346,6 +391,11 @@ abstract class _ViewerState implements ViewerState {
   bool? get embeddingDisabled;
   @override
   bool? get pinned;
+
+  /// This property is present only in selected cases, as an optimization.
+  @override
+  @KnownLikersConverter()
+  KnownLikers? get knownLikers;
   @override
   Map<String, dynamic>? get $unknown;
 
