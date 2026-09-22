@@ -24,7 +24,6 @@ mixin _$NotificationListNotificationsOutput {
   String? get cursor => throw _privateConstructorUsedError;
   @NotificationConverter()
   List<Notification> get notifications => throw _privateConstructorUsedError;
-  bool? get priority => throw _privateConstructorUsedError;
   @JsonKey(toJson: iso8601)
   DateTime? get seenAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
@@ -51,7 +50,6 @@ abstract class $NotificationListNotificationsOutputCopyWith<$Res> {
   $Res call(
       {String? cursor,
       @NotificationConverter() List<Notification> notifications,
-      bool? priority,
       @JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
@@ -74,7 +72,6 @@ class _$NotificationListNotificationsOutputCopyWithImpl<$Res,
   $Res call({
     Object? cursor = freezed,
     Object? notifications = null,
-    Object? priority = freezed,
     Object? seenAt = freezed,
     Object? $unknown = freezed,
   }) {
@@ -87,10 +84,6 @@ class _$NotificationListNotificationsOutputCopyWithImpl<$Res,
           ? _value.notifications
           : notifications // ignore: cast_nullable_to_non_nullable
               as List<Notification>,
-      priority: freezed == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as bool?,
       seenAt: freezed == seenAt
           ? _value.seenAt
           : seenAt // ignore: cast_nullable_to_non_nullable
@@ -115,7 +108,6 @@ abstract class _$$NotificationListNotificationsOutputImplCopyWith<$Res>
   $Res call(
       {String? cursor,
       @NotificationConverter() List<Notification> notifications,
-      bool? priority,
       @JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
@@ -137,7 +129,6 @@ class __$$NotificationListNotificationsOutputImplCopyWithImpl<$Res>
   $Res call({
     Object? cursor = freezed,
     Object? notifications = null,
-    Object? priority = freezed,
     Object? seenAt = freezed,
     Object? $unknown = freezed,
   }) {
@@ -150,10 +141,6 @@ class __$$NotificationListNotificationsOutputImplCopyWithImpl<$Res>
           ? _value._notifications
           : notifications // ignore: cast_nullable_to_non_nullable
               as List<Notification>,
-      priority: freezed == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as bool?,
       seenAt: freezed == seenAt
           ? _value.seenAt
           : seenAt // ignore: cast_nullable_to_non_nullable
@@ -174,7 +161,6 @@ class _$NotificationListNotificationsOutputImpl
   const _$NotificationListNotificationsOutputImpl(
       {this.cursor,
       @NotificationConverter() required final List<Notification> notifications,
-      this.priority,
       @JsonKey(toJson: iso8601) this.seenAt,
       final Map<String, dynamic>? $unknown})
       : _notifications = notifications,
@@ -196,8 +182,6 @@ class _$NotificationListNotificationsOutputImpl
   }
 
   @override
-  final bool? priority;
-  @override
   @JsonKey(toJson: iso8601)
   final DateTime? seenAt;
   final Map<String, dynamic>? _$unknown;
@@ -212,7 +196,7 @@ class _$NotificationListNotificationsOutputImpl
 
   @override
   String toString() {
-    return 'NotificationListNotificationsOutput(cursor: $cursor, notifications: $notifications, priority: $priority, seenAt: $seenAt, \$unknown: ${$unknown})';
+    return 'NotificationListNotificationsOutput(cursor: $cursor, notifications: $notifications, seenAt: $seenAt, \$unknown: ${$unknown})';
   }
 
   @override
@@ -223,8 +207,6 @@ class _$NotificationListNotificationsOutputImpl
             (identical(other.cursor, cursor) || other.cursor == cursor) &&
             const DeepCollectionEquality()
                 .equals(other._notifications, _notifications) &&
-            (identical(other.priority, priority) ||
-                other.priority == priority) &&
             (identical(other.seenAt, seenAt) || other.seenAt == seenAt) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
@@ -235,7 +217,6 @@ class _$NotificationListNotificationsOutputImpl
       runtimeType,
       cursor,
       const DeepCollectionEquality().hash(_notifications),
-      priority,
       seenAt,
       const DeepCollectionEquality().hash(_$unknown));
 
@@ -262,7 +243,6 @@ abstract class _NotificationListNotificationsOutput
   const factory _NotificationListNotificationsOutput(
       {final String? cursor,
       @NotificationConverter() required final List<Notification> notifications,
-      final bool? priority,
       @JsonKey(toJson: iso8601) final DateTime? seenAt,
       final Map<String, dynamic>?
           $unknown}) = _$NotificationListNotificationsOutputImpl;
@@ -276,8 +256,6 @@ abstract class _NotificationListNotificationsOutput
   @override
   @NotificationConverter()
   List<Notification> get notifications;
-  @override
-  bool? get priority;
   @override
   @JsonKey(toJson: iso8601)
   DateTime? get seenAt;

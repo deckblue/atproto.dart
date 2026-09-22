@@ -21,7 +21,6 @@ NotificationGetUnreadCountInput _$NotificationGetUnreadCountInputFromJson(
 
 /// @nodoc
 mixin _$NotificationGetUnreadCountInput {
-  bool? get priority => throw _privateConstructorUsedError;
   @JsonKey(toJson: iso8601)
   DateTime? get seenAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
@@ -45,8 +44,7 @@ abstract class $NotificationGetUnreadCountInputCopyWith<$Res> {
           NotificationGetUnreadCountInput>;
   @useResult
   $Res call(
-      {bool? priority,
-      @JsonKey(toJson: iso8601) DateTime? seenAt,
+      {@JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -66,15 +64,10 @@ class _$NotificationGetUnreadCountInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? priority = freezed,
     Object? seenAt = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
-      priority: freezed == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as bool?,
       seenAt: freezed == seenAt
           ? _value.seenAt
           : seenAt // ignore: cast_nullable_to_non_nullable
@@ -97,8 +90,7 @@ abstract class _$$NotificationGetUnreadCountInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool? priority,
-      @JsonKey(toJson: iso8601) DateTime? seenAt,
+      {@JsonKey(toJson: iso8601) DateTime? seenAt,
       Map<String, dynamic>? $unknown});
 }
 
@@ -117,15 +109,10 @@ class __$$NotificationGetUnreadCountInputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? priority = freezed,
     Object? seenAt = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$NotificationGetUnreadCountInputImpl(
-      priority: freezed == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as bool?,
       seenAt: freezed == seenAt
           ? _value.seenAt
           : seenAt // ignore: cast_nullable_to_non_nullable
@@ -144,8 +131,7 @@ class __$$NotificationGetUnreadCountInputImplCopyWithImpl<$Res>
 class _$NotificationGetUnreadCountInputImpl
     implements _NotificationGetUnreadCountInput {
   const _$NotificationGetUnreadCountInputImpl(
-      {this.priority,
-      @JsonKey(toJson: iso8601) this.seenAt,
+      {@JsonKey(toJson: iso8601) this.seenAt,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -153,8 +139,6 @@ class _$NotificationGetUnreadCountInputImpl
           Map<String, dynamic> json) =>
       _$$NotificationGetUnreadCountInputImplFromJson(json);
 
-  @override
-  final bool? priority;
   @override
   @JsonKey(toJson: iso8601)
   final DateTime? seenAt;
@@ -170,7 +154,7 @@ class _$NotificationGetUnreadCountInputImpl
 
   @override
   String toString() {
-    return 'NotificationGetUnreadCountInput(priority: $priority, seenAt: $seenAt, \$unknown: ${$unknown})';
+    return 'NotificationGetUnreadCountInput(seenAt: $seenAt, \$unknown: ${$unknown})';
   }
 
   @override
@@ -178,16 +162,14 @@ class _$NotificationGetUnreadCountInputImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotificationGetUnreadCountInputImpl &&
-            (identical(other.priority, priority) ||
-                other.priority == priority) &&
             (identical(other.seenAt, seenAt) || other.seenAt == seenAt) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, priority, seenAt,
-      const DeepCollectionEquality().hash(_$unknown));
+  int get hashCode => Object.hash(
+      runtimeType, seenAt, const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of NotificationGetUnreadCountInput
   /// with the given fields replaced by the non-null parameter values.
@@ -210,16 +192,13 @@ class _$NotificationGetUnreadCountInputImpl
 abstract class _NotificationGetUnreadCountInput
     implements NotificationGetUnreadCountInput {
   const factory _NotificationGetUnreadCountInput(
-          {final bool? priority,
-          @JsonKey(toJson: iso8601) final DateTime? seenAt,
+          {@JsonKey(toJson: iso8601) final DateTime? seenAt,
           final Map<String, dynamic>? $unknown}) =
       _$NotificationGetUnreadCountInputImpl;
 
   factory _NotificationGetUnreadCountInput.fromJson(Map<String, dynamic> json) =
       _$NotificationGetUnreadCountInputImpl.fromJson;
 
-  @override
-  bool? get priority;
   @override
   @JsonKey(toJson: iso8601)
   DateTime? get seenAt;

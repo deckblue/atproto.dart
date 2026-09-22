@@ -21,6 +21,10 @@ _$ListViewerStateImpl _$$ListViewerStateImplFromJson(Map json) =>
               'blocked',
               (v) => _$JsonConverterFromJson<String, AtUri>(
                   v, const AtUriConverter().fromJson)),
+          referenceListOptOut: $checkedConvert(
+              'referenceListOptOut',
+              (v) => _$JsonConverterFromJson<String, AtUri>(
+                  v, const AtUriConverter().fromJson)),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -40,6 +44,10 @@ Map<String, dynamic> _$$ListViewerStateImplToJson(
               instance.blocked, const AtUriConverter().toJson)
           case final value?)
         'blocked': value,
+      if (_$JsonConverterToJson<String, AtUri>(
+              instance.referenceListOptOut, const AtUriConverter().toJson)
+          case final value?)
+        'referenceListOptOut': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

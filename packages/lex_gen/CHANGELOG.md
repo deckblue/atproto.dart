@@ -1,5 +1,41 @@
 # Release Note
 
+## v0.4.20
+
+- chore: bump `lexicon` to `^1.2.17`
+
+## v0.4.19
+
+- chore: bump `lexicon` to `^1.2.16`
+
+## v0.4.18
+
+- chore: bump `lexicon` to `^1.2.15`
+
+## v0.4.17
+
+- fix: do not prefix a cross-package barrel import with `union_`
+
+## v0.4.16
+
+- chore: bump `lexicon` to `^1.2.14`
+
+## v0.4.15
+
+- chore: bump `lexicon` to `^1.2.13`
+
+## v0.4.14
+
+- chore: bump `lexicon` to `^1.2.12`
+
+## v0.4.13
+
+- chore: bump `lexicon` to `^1.2.11`
+
+## v0.4.12
+
+- chore: bump `lexicon` to `^1.2.10`
+
 ## v0.4.11
 
 - **fix**: a `knownValues` entry whose camelCased form is a Dart reserved word (`new`, `in`, `is`, `class`, …) is now suffixed with `Value`, the same escape `default` already received, instead of emitting an uncompilable enum member. Generated output for the current lexicon corpus is unchanged — no value other than `default` triggers it.

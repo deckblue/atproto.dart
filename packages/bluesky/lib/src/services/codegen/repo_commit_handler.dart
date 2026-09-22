@@ -17,6 +17,7 @@ import 'package:atproto/com_germnetwork_declaration.dart';
 import 'package:atproto_core/atproto_core.dart';
 
 // Project imports:
+import 'app/bsky/actor/contentVisibilityDeclaration/main.dart';
 import 'app/bsky/actor/profile/main.dart';
 import 'app/bsky/actor/status/main.dart';
 import 'app/bsky/feed/generator/main.dart';
@@ -30,6 +31,7 @@ import 'app/bsky/graph/follow/main.dart';
 import 'app/bsky/graph/list/main.dart';
 import 'app/bsky/graph/listblock/main.dart';
 import 'app/bsky/graph/listitem/main.dart';
+import 'app/bsky/graph/referencelistoptout/main.dart';
 import 'app/bsky/graph/starterpack/main.dart';
 import 'app/bsky/graph/verification/main.dart';
 import 'app/bsky/labeler/service/main.dart';
@@ -41,15 +43,20 @@ import 'chat/bsky/actor/declaration/main.dart';
 // LexGenerator
 // **************************************************************************
 
-typedef RepoCommitOnCreate<T> = FutureOr<void> Function(
-    RepoCommitCreate<T> data);
+typedef RepoCommitOnCreate<T> =
+    FutureOr<void> Function(RepoCommitCreate<T> data);
 
-typedef RepoCommitOnUpdate<T> = FutureOr<void> Function(
-    RepoCommitUpdate<T> data);
+typedef RepoCommitOnUpdate<T> =
+    FutureOr<void> Function(RepoCommitUpdate<T> data);
 
 typedef RepoCommitOnDelete = FutureOr<void> Function(RepoCommitDelete data);
 
 final class RepoCommitHandler {
+  final RepoCommitOnCreate<ActorContentVisibilityDeclarationRecord>?
+  _onCreateActorContentVisibilityDeclaration;
+  final RepoCommitOnUpdate<ActorContentVisibilityDeclarationRecord>?
+  _onUpdateActorContentVisibilityDeclaration;
+  final RepoCommitOnDelete? _onDeleteActorContentVisibilityDeclaration;
   final RepoCommitOnCreate<ActorProfileRecord>? _onCreateActorProfile;
   final RepoCommitOnUpdate<ActorProfileRecord>? _onUpdateActorProfile;
   final RepoCommitOnDelete? _onDeleteActorProfile;
@@ -89,6 +96,11 @@ final class RepoCommitHandler {
   final RepoCommitOnCreate<GraphListitemRecord>? _onCreateGraphListitem;
   final RepoCommitOnUpdate<GraphListitemRecord>? _onUpdateGraphListitem;
   final RepoCommitOnDelete? _onDeleteGraphListitem;
+  final RepoCommitOnCreate<GraphReferencelistoptoutRecord>?
+  _onCreateGraphReferencelistoptout;
+  final RepoCommitOnUpdate<GraphReferencelistoptoutRecord>?
+  _onUpdateGraphReferencelistoptout;
+  final RepoCommitOnDelete? _onDeleteGraphReferencelistoptout;
   final RepoCommitOnCreate<GraphStarterpackRecord>? _onCreateGraphStarterpack;
   final RepoCommitOnUpdate<GraphStarterpackRecord>? _onUpdateGraphStarterpack;
   final RepoCommitOnDelete? _onDeleteGraphStarterpack;
@@ -99,9 +111,9 @@ final class RepoCommitHandler {
   final RepoCommitOnUpdate<LabelerServiceRecord>? _onUpdateLabelerService;
   final RepoCommitOnDelete? _onDeleteLabelerService;
   final RepoCommitOnCreate<NotificationDeclarationRecord>?
-      _onCreateNotificationDeclaration;
+  _onCreateNotificationDeclaration;
   final RepoCommitOnUpdate<NotificationDeclarationRecord>?
-      _onUpdateNotificationDeclaration;
+  _onUpdateNotificationDeclaration;
   final RepoCommitOnDelete? _onDeleteNotificationDeclaration;
   final RepoCommitOnCreate<ActorDeclarationRecord>? _onCreateActorDeclaration;
   final RepoCommitOnUpdate<ActorDeclarationRecord>? _onUpdateActorDeclaration;
@@ -118,6 +130,11 @@ final class RepoCommitHandler {
   final RepoCommitOnDelete? _onDeleteUnknown;
 
   const RepoCommitHandler({
+    final RepoCommitOnCreate<ActorContentVisibilityDeclarationRecord>?
+    onCreateActorContentVisibilityDeclaration,
+    final RepoCommitOnUpdate<ActorContentVisibilityDeclarationRecord>?
+    onUpdateActorContentVisibilityDeclaration,
+    final RepoCommitOnDelete? onDeleteActorContentVisibilityDeclaration,
     final RepoCommitOnCreate<ActorProfileRecord>? onCreateActorProfile,
     final RepoCommitOnUpdate<ActorProfileRecord>? onUpdateActorProfile,
     final RepoCommitOnDelete? onDeleteActorProfile,
@@ -157,21 +174,26 @@ final class RepoCommitHandler {
     final RepoCommitOnCreate<GraphListitemRecord>? onCreateGraphListitem,
     final RepoCommitOnUpdate<GraphListitemRecord>? onUpdateGraphListitem,
     final RepoCommitOnDelete? onDeleteGraphListitem,
+    final RepoCommitOnCreate<GraphReferencelistoptoutRecord>?
+    onCreateGraphReferencelistoptout,
+    final RepoCommitOnUpdate<GraphReferencelistoptoutRecord>?
+    onUpdateGraphReferencelistoptout,
+    final RepoCommitOnDelete? onDeleteGraphReferencelistoptout,
     final RepoCommitOnCreate<GraphStarterpackRecord>? onCreateGraphStarterpack,
     final RepoCommitOnUpdate<GraphStarterpackRecord>? onUpdateGraphStarterpack,
     final RepoCommitOnDelete? onDeleteGraphStarterpack,
     final RepoCommitOnCreate<GraphVerificationRecord>?
-        onCreateGraphVerification,
+    onCreateGraphVerification,
     final RepoCommitOnUpdate<GraphVerificationRecord>?
-        onUpdateGraphVerification,
+    onUpdateGraphVerification,
     final RepoCommitOnDelete? onDeleteGraphVerification,
     final RepoCommitOnCreate<LabelerServiceRecord>? onCreateLabelerService,
     final RepoCommitOnUpdate<LabelerServiceRecord>? onUpdateLabelerService,
     final RepoCommitOnDelete? onDeleteLabelerService,
     final RepoCommitOnCreate<NotificationDeclarationRecord>?
-        onCreateNotificationDeclaration,
+    onCreateNotificationDeclaration,
     final RepoCommitOnUpdate<NotificationDeclarationRecord>?
-        onUpdateNotificationDeclaration,
+    onUpdateNotificationDeclaration,
     final RepoCommitOnDelete? onDeleteNotificationDeclaration,
     final RepoCommitOnCreate<ActorDeclarationRecord>? onCreateActorDeclaration,
     final RepoCommitOnUpdate<ActorDeclarationRecord>? onUpdateActorDeclaration,
@@ -182,72 +204,83 @@ final class RepoCommitHandler {
     final RepoCommitOnCreate<DeclarationRecord>? onCreateDeclaration,
     final RepoCommitOnUpdate<DeclarationRecord>? onUpdateDeclaration,
     final RepoCommitOnDelete? onDeleteDeclaration,
+
     final RepoCommitOnCreate<Map<String, dynamic>>? onCreateUnknown,
     final RepoCommitOnUpdate<Map<String, dynamic>>? onUpdateUnknown,
     final RepoCommitOnDelete? onDeleteUnknown,
-  })  : _onCreateActorProfile = onCreateActorProfile,
-        _onUpdateActorProfile = onUpdateActorProfile,
-        _onDeleteActorProfile = onDeleteActorProfile,
-        _onCreateActorStatus = onCreateActorStatus,
-        _onUpdateActorStatus = onUpdateActorStatus,
-        _onDeleteActorStatus = onDeleteActorStatus,
-        _onCreateFeedGenerator = onCreateFeedGenerator,
-        _onUpdateFeedGenerator = onUpdateFeedGenerator,
-        _onDeleteFeedGenerator = onDeleteFeedGenerator,
-        _onCreateFeedLike = onCreateFeedLike,
-        _onUpdateFeedLike = onUpdateFeedLike,
-        _onDeleteFeedLike = onDeleteFeedLike,
-        _onCreateFeedPost = onCreateFeedPost,
-        _onUpdateFeedPost = onUpdateFeedPost,
-        _onDeleteFeedPost = onDeleteFeedPost,
-        _onCreateFeedPostgate = onCreateFeedPostgate,
-        _onUpdateFeedPostgate = onUpdateFeedPostgate,
-        _onDeleteFeedPostgate = onDeleteFeedPostgate,
-        _onCreateFeedRepost = onCreateFeedRepost,
-        _onUpdateFeedRepost = onUpdateFeedRepost,
-        _onDeleteFeedRepost = onDeleteFeedRepost,
-        _onCreateFeedThreadgate = onCreateFeedThreadgate,
-        _onUpdateFeedThreadgate = onUpdateFeedThreadgate,
-        _onDeleteFeedThreadgate = onDeleteFeedThreadgate,
-        _onCreateGraphBlock = onCreateGraphBlock,
-        _onUpdateGraphBlock = onUpdateGraphBlock,
-        _onDeleteGraphBlock = onDeleteGraphBlock,
-        _onCreateGraphFollow = onCreateGraphFollow,
-        _onUpdateGraphFollow = onUpdateGraphFollow,
-        _onDeleteGraphFollow = onDeleteGraphFollow,
-        _onCreateGraphList = onCreateGraphList,
-        _onUpdateGraphList = onUpdateGraphList,
-        _onDeleteGraphList = onDeleteGraphList,
-        _onCreateGraphListblock = onCreateGraphListblock,
-        _onUpdateGraphListblock = onUpdateGraphListblock,
-        _onDeleteGraphListblock = onDeleteGraphListblock,
-        _onCreateGraphListitem = onCreateGraphListitem,
-        _onUpdateGraphListitem = onUpdateGraphListitem,
-        _onDeleteGraphListitem = onDeleteGraphListitem,
-        _onCreateGraphStarterpack = onCreateGraphStarterpack,
-        _onUpdateGraphStarterpack = onUpdateGraphStarterpack,
-        _onDeleteGraphStarterpack = onDeleteGraphStarterpack,
-        _onCreateGraphVerification = onCreateGraphVerification,
-        _onUpdateGraphVerification = onUpdateGraphVerification,
-        _onDeleteGraphVerification = onDeleteGraphVerification,
-        _onCreateLabelerService = onCreateLabelerService,
-        _onUpdateLabelerService = onUpdateLabelerService,
-        _onDeleteLabelerService = onDeleteLabelerService,
-        _onCreateNotificationDeclaration = onCreateNotificationDeclaration,
-        _onUpdateNotificationDeclaration = onUpdateNotificationDeclaration,
-        _onDeleteNotificationDeclaration = onDeleteNotificationDeclaration,
-        _onCreateActorDeclaration = onCreateActorDeclaration,
-        _onUpdateActorDeclaration = onUpdateActorDeclaration,
-        _onDeleteActorDeclaration = onDeleteActorDeclaration,
-        _onCreateLexiconSchema = onCreateLexiconSchema,
-        _onUpdateLexiconSchema = onUpdateLexiconSchema,
-        _onDeleteLexiconSchema = onDeleteLexiconSchema,
-        _onCreateDeclaration = onCreateDeclaration,
-        _onUpdateDeclaration = onUpdateDeclaration,
-        _onDeleteDeclaration = onDeleteDeclaration,
-        _onCreateUnknown = onCreateUnknown,
-        _onUpdateUnknown = onUpdateUnknown,
-        _onDeleteUnknown = onDeleteUnknown;
+  }) : _onCreateActorContentVisibilityDeclaration =
+           onCreateActorContentVisibilityDeclaration,
+       _onUpdateActorContentVisibilityDeclaration =
+           onUpdateActorContentVisibilityDeclaration,
+       _onDeleteActorContentVisibilityDeclaration =
+           onDeleteActorContentVisibilityDeclaration,
+       _onCreateActorProfile = onCreateActorProfile,
+       _onUpdateActorProfile = onUpdateActorProfile,
+       _onDeleteActorProfile = onDeleteActorProfile,
+       _onCreateActorStatus = onCreateActorStatus,
+       _onUpdateActorStatus = onUpdateActorStatus,
+       _onDeleteActorStatus = onDeleteActorStatus,
+       _onCreateFeedGenerator = onCreateFeedGenerator,
+       _onUpdateFeedGenerator = onUpdateFeedGenerator,
+       _onDeleteFeedGenerator = onDeleteFeedGenerator,
+       _onCreateFeedLike = onCreateFeedLike,
+       _onUpdateFeedLike = onUpdateFeedLike,
+       _onDeleteFeedLike = onDeleteFeedLike,
+       _onCreateFeedPost = onCreateFeedPost,
+       _onUpdateFeedPost = onUpdateFeedPost,
+       _onDeleteFeedPost = onDeleteFeedPost,
+       _onCreateFeedPostgate = onCreateFeedPostgate,
+       _onUpdateFeedPostgate = onUpdateFeedPostgate,
+       _onDeleteFeedPostgate = onDeleteFeedPostgate,
+       _onCreateFeedRepost = onCreateFeedRepost,
+       _onUpdateFeedRepost = onUpdateFeedRepost,
+       _onDeleteFeedRepost = onDeleteFeedRepost,
+       _onCreateFeedThreadgate = onCreateFeedThreadgate,
+       _onUpdateFeedThreadgate = onUpdateFeedThreadgate,
+       _onDeleteFeedThreadgate = onDeleteFeedThreadgate,
+       _onCreateGraphBlock = onCreateGraphBlock,
+       _onUpdateGraphBlock = onUpdateGraphBlock,
+       _onDeleteGraphBlock = onDeleteGraphBlock,
+       _onCreateGraphFollow = onCreateGraphFollow,
+       _onUpdateGraphFollow = onUpdateGraphFollow,
+       _onDeleteGraphFollow = onDeleteGraphFollow,
+       _onCreateGraphList = onCreateGraphList,
+       _onUpdateGraphList = onUpdateGraphList,
+       _onDeleteGraphList = onDeleteGraphList,
+       _onCreateGraphListblock = onCreateGraphListblock,
+       _onUpdateGraphListblock = onUpdateGraphListblock,
+       _onDeleteGraphListblock = onDeleteGraphListblock,
+       _onCreateGraphListitem = onCreateGraphListitem,
+       _onUpdateGraphListitem = onUpdateGraphListitem,
+       _onDeleteGraphListitem = onDeleteGraphListitem,
+       _onCreateGraphReferencelistoptout = onCreateGraphReferencelistoptout,
+       _onUpdateGraphReferencelistoptout = onUpdateGraphReferencelistoptout,
+       _onDeleteGraphReferencelistoptout = onDeleteGraphReferencelistoptout,
+       _onCreateGraphStarterpack = onCreateGraphStarterpack,
+       _onUpdateGraphStarterpack = onUpdateGraphStarterpack,
+       _onDeleteGraphStarterpack = onDeleteGraphStarterpack,
+       _onCreateGraphVerification = onCreateGraphVerification,
+       _onUpdateGraphVerification = onUpdateGraphVerification,
+       _onDeleteGraphVerification = onDeleteGraphVerification,
+       _onCreateLabelerService = onCreateLabelerService,
+       _onUpdateLabelerService = onUpdateLabelerService,
+       _onDeleteLabelerService = onDeleteLabelerService,
+       _onCreateNotificationDeclaration = onCreateNotificationDeclaration,
+       _onUpdateNotificationDeclaration = onUpdateNotificationDeclaration,
+       _onDeleteNotificationDeclaration = onDeleteNotificationDeclaration,
+       _onCreateActorDeclaration = onCreateActorDeclaration,
+       _onUpdateActorDeclaration = onUpdateActorDeclaration,
+       _onDeleteActorDeclaration = onDeleteActorDeclaration,
+       _onCreateLexiconSchema = onCreateLexiconSchema,
+       _onUpdateLexiconSchema = onUpdateLexiconSchema,
+       _onDeleteLexiconSchema = onDeleteLexiconSchema,
+       _onCreateDeclaration = onCreateDeclaration,
+       _onUpdateDeclaration = onUpdateDeclaration,
+       _onDeleteDeclaration = onDeleteDeclaration,
+
+       _onCreateUnknown = onCreateUnknown,
+       _onUpdateUnknown = onUpdateUnknown,
+       _onDeleteUnknown = onDeleteUnknown;
 
   /// Performs actions based on [data].
   FutureOr<void> execute(final Commit data) async {
@@ -278,6 +311,20 @@ final class RepoCommitHandler {
     // aborting the whole commit with an implicit-downcast `TypeError`.
     if (record == null) return;
 
+    if (uri.isActorContentVisibilityDeclaration &&
+        ActorContentVisibilityDeclarationRecord.validate(record)) {
+      await _onCreateActorContentVisibilityDeclaration?.call(
+        RepoCommitCreate<ActorContentVisibilityDeclarationRecord>(
+          record: const ActorContentVisibilityDeclarationRecordConverter()
+              .fromJson(record),
+          uri: uri,
+          cid: op.cid,
+          author: data.repo,
+          cursor: data.seq,
+        ),
+      );
+      return;
+    }
     if (uri.isActorProfile && ActorProfileRecord.validate(record)) {
       await _onCreateActorProfile?.call(
         RepoCommitCreate<ActorProfileRecord>(
@@ -434,6 +481,21 @@ final class RepoCommitHandler {
       );
       return;
     }
+    if (uri.isGraphReferencelistoptout &&
+        GraphReferencelistoptoutRecord.validate(record)) {
+      await _onCreateGraphReferencelistoptout?.call(
+        RepoCommitCreate<GraphReferencelistoptoutRecord>(
+          record: const GraphReferencelistoptoutRecordConverter().fromJson(
+            record,
+          ),
+          uri: uri,
+          cid: op.cid,
+          author: data.repo,
+          cursor: data.seq,
+        ),
+      );
+      return;
+    }
     if (uri.isGraphStarterpack && GraphStarterpackRecord.validate(record)) {
       await _onCreateGraphStarterpack?.call(
         RepoCommitCreate<GraphStarterpackRecord>(
@@ -541,6 +603,21 @@ final class RepoCommitHandler {
     // aborting the whole commit with an implicit-downcast `TypeError`.
     if (record == null) return;
 
+    if (uri.isActorContentVisibilityDeclaration &&
+        ActorContentVisibilityDeclarationRecord.validate(record)) {
+      await _onUpdateActorContentVisibilityDeclaration?.call(
+        RepoCommitUpdate<ActorContentVisibilityDeclarationRecord>(
+          record: const ActorContentVisibilityDeclarationRecordConverter()
+              .fromJson(record),
+          uri: uri,
+          cid: op.cid,
+          author: data.repo,
+          cursor: data.seq,
+          createdAt: data.time,
+        ),
+      );
+      return;
+    }
     if (uri.isActorProfile && ActorProfileRecord.validate(record)) {
       await _onUpdateActorProfile?.call(
         RepoCommitUpdate<ActorProfileRecord>(
@@ -710,6 +787,22 @@ final class RepoCommitHandler {
       );
       return;
     }
+    if (uri.isGraphReferencelistoptout &&
+        GraphReferencelistoptoutRecord.validate(record)) {
+      await _onUpdateGraphReferencelistoptout?.call(
+        RepoCommitUpdate<GraphReferencelistoptoutRecord>(
+          record: const GraphReferencelistoptoutRecordConverter().fromJson(
+            record,
+          ),
+          uri: uri,
+          cid: op.cid,
+          author: data.repo,
+          cursor: data.seq,
+          createdAt: data.time,
+        ),
+      );
+      return;
+    }
     if (uri.isGraphStarterpack && GraphStarterpackRecord.validate(record)) {
       await _onUpdateGraphStarterpack?.call(
         RepoCommitUpdate<GraphStarterpackRecord>(
@@ -820,6 +913,17 @@ final class RepoCommitHandler {
   Future<void> _onDelete(final Commit data, final RepoOp op) async {
     final uri = _getUri(data, op);
 
+    if (uri.isActorContentVisibilityDeclaration) {
+      await _onDeleteActorContentVisibilityDeclaration?.call(
+        RepoCommitDelete(
+          uri: uri,
+          author: data.repo,
+          cursor: data.seq,
+          createdAt: data.time,
+        ),
+      );
+      return;
+    }
     if (uri.isActorProfile) {
       await _onDeleteActorProfile?.call(
         RepoCommitDelete(
@@ -954,6 +1058,17 @@ final class RepoCommitHandler {
     }
     if (uri.isGraphListitem) {
       await _onDeleteGraphListitem?.call(
+        RepoCommitDelete(
+          uri: uri,
+          author: data.repo,
+          cursor: data.seq,
+          createdAt: data.time,
+        ),
+      );
+      return;
+    }
+    if (uri.isGraphReferencelistoptout) {
+      await _onDeleteGraphReferencelistoptout?.call(
         RepoCommitDelete(
           uri: uri,
           author: data.repo,

@@ -17,7 +17,7 @@ import '../../../../query_command.dart';
 final class GetUnreadCountCommand extends QueryCommand {
   GetUnreadCountCommand() {
     argParser
-      ..addFlag("priority")
+      ..addFlag("priority", help: r"Deprecated: this parameter is ignored.")
       ..addOption("seenAt");
   }
 

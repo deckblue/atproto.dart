@@ -24,6 +24,10 @@ mixin _$ListViewerState {
   bool? get muted => throw _privateConstructorUsedError;
   @AtUriConverter()
   AtUri? get blocked => throw _privateConstructorUsedError;
+
+  /// The authenticated viewer's app.bsky.graph.referencelistoptout record URI for this reference list. Only set for reference lists. A client can delete this record to undo the opt-out.
+  @AtUriConverter()
+  AtUri? get referenceListOptOut => throw _privateConstructorUsedError;
   Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ListViewerState to a JSON map.
@@ -46,6 +50,7 @@ abstract class $ListViewerStateCopyWith<$Res> {
       {String $type,
       bool? muted,
       @AtUriConverter() AtUri? blocked,
+      @AtUriConverter() AtUri? referenceListOptOut,
       Map<String, dynamic>? $unknown});
 }
 
@@ -67,6 +72,7 @@ class _$ListViewerStateCopyWithImpl<$Res, $Val extends ListViewerState>
     Object? $type = null,
     Object? muted = freezed,
     Object? blocked = freezed,
+    Object? referenceListOptOut = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_value.copyWith(
@@ -81,6 +87,10 @@ class _$ListViewerStateCopyWithImpl<$Res, $Val extends ListViewerState>
       blocked: freezed == blocked
           ? _value.blocked
           : blocked // ignore: cast_nullable_to_non_nullable
+              as AtUri?,
+      referenceListOptOut: freezed == referenceListOptOut
+          ? _value.referenceListOptOut
+          : referenceListOptOut // ignore: cast_nullable_to_non_nullable
               as AtUri?,
       $unknown: freezed == $unknown
           ? _value.$unknown
@@ -102,6 +112,7 @@ abstract class _$$ListViewerStateImplCopyWith<$Res>
       {String $type,
       bool? muted,
       @AtUriConverter() AtUri? blocked,
+      @AtUriConverter() AtUri? referenceListOptOut,
       Map<String, dynamic>? $unknown});
 }
 
@@ -121,6 +132,7 @@ class __$$ListViewerStateImplCopyWithImpl<$Res>
     Object? $type = null,
     Object? muted = freezed,
     Object? blocked = freezed,
+    Object? referenceListOptOut = freezed,
     Object? $unknown = freezed,
   }) {
     return _then(_$ListViewerStateImpl(
@@ -135,6 +147,10 @@ class __$$ListViewerStateImplCopyWithImpl<$Res>
       blocked: freezed == blocked
           ? _value.blocked
           : blocked // ignore: cast_nullable_to_non_nullable
+              as AtUri?,
+      referenceListOptOut: freezed == referenceListOptOut
+          ? _value.referenceListOptOut
+          : referenceListOptOut // ignore: cast_nullable_to_non_nullable
               as AtUri?,
       $unknown: freezed == $unknown
           ? _value._$unknown
@@ -152,6 +168,7 @@ class _$ListViewerStateImpl implements _ListViewerState {
       {this.$type = 'app.bsky.graph.defs#listViewerState',
       this.muted,
       @AtUriConverter() this.blocked,
+      @AtUriConverter() this.referenceListOptOut,
       final Map<String, dynamic>? $unknown})
       : _$unknown = $unknown;
 
@@ -166,6 +183,11 @@ class _$ListViewerStateImpl implements _ListViewerState {
   @override
   @AtUriConverter()
   final AtUri? blocked;
+
+  /// The authenticated viewer's app.bsky.graph.referencelistoptout record URI for this reference list. Only set for reference lists. A client can delete this record to undo the opt-out.
+  @override
+  @AtUriConverter()
+  final AtUri? referenceListOptOut;
   final Map<String, dynamic>? _$unknown;
   @override
   Map<String, dynamic>? get $unknown {
@@ -178,7 +200,7 @@ class _$ListViewerStateImpl implements _ListViewerState {
 
   @override
   String toString() {
-    return 'ListViewerState(\$type: ${$type}, muted: $muted, blocked: $blocked, \$unknown: ${$unknown})';
+    return 'ListViewerState(\$type: ${$type}, muted: $muted, blocked: $blocked, referenceListOptOut: $referenceListOptOut, \$unknown: ${$unknown})';
   }
 
   @override
@@ -189,13 +211,15 @@ class _$ListViewerStateImpl implements _ListViewerState {
             (identical(other.$type, $type) || other.$type == $type) &&
             (identical(other.muted, muted) || other.muted == muted) &&
             (identical(other.blocked, blocked) || other.blocked == blocked) &&
+            (identical(other.referenceListOptOut, referenceListOptOut) ||
+                other.referenceListOptOut == referenceListOptOut) &&
             const DeepCollectionEquality().equals(other._$unknown, _$unknown));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, $type, muted, blocked,
-      const DeepCollectionEquality().hash(_$unknown));
+      referenceListOptOut, const DeepCollectionEquality().hash(_$unknown));
 
   /// Create a copy of ListViewerState
   /// with the given fields replaced by the non-null parameter values.
@@ -219,6 +243,7 @@ abstract class _ListViewerState implements ListViewerState {
       {final String $type,
       final bool? muted,
       @AtUriConverter() final AtUri? blocked,
+      @AtUriConverter() final AtUri? referenceListOptOut,
       final Map<String, dynamic>? $unknown}) = _$ListViewerStateImpl;
 
   factory _ListViewerState.fromJson(Map<String, dynamic> json) =
@@ -231,6 +256,11 @@ abstract class _ListViewerState implements ListViewerState {
   @override
   @AtUriConverter()
   AtUri? get blocked;
+
+  /// The authenticated viewer's app.bsky.graph.referencelistoptout record URI for this reference list. Only set for reference lists. A client can delete this record to undo the opt-out.
+  @override
+  @AtUriConverter()
+  AtUri? get referenceListOptOut;
   @override
   Map<String, dynamic>? get $unknown;
 

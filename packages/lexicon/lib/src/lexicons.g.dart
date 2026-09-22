@@ -6,6 +6,31 @@
 // Lexicon Docs Generator
 // **************************************************************************
 
+/// `app.bsky.actor.contentVisibilityDeclaration`
+const appBskyActorContentVisibilityDeclaration = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.actor.contentVisibilityDeclaration",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description":
+          "A declaration of an account's preferences for appearing in content discovery surfaces.",
+      "key": "literal:self",
+      "record": {
+        "type": "object",
+        "required": ["hideFromAlgorithmicRecommendations"],
+        "properties": {
+          "hideFromAlgorithmicRecommendations": {
+            "type": "boolean",
+            "description":
+                "Whether the account requests that its posts be hidden from algorithmic recommendations. Consumers must treat a missing record as false.",
+          },
+        },
+      },
+    },
+  },
+};
+
 /// `app.bsky.actor.defs`
 const appBskyActorDefs = <String, dynamic>{
   "lexicon": 1,
@@ -447,6 +472,12 @@ const appBskyActorDefs = <String, dynamic>{
       "type": "object",
       "required": ["tags"],
       "properties": {
+        "updatedAt": {
+          "type": "string",
+          "format": "datetime",
+          "description":
+              "The timestamp when the account owner last updated their interests.",
+        },
         "tags": {
           "type": "array",
           "description":
@@ -2853,9 +2884,9 @@ const appBskyEmbedVideo = <String, dynamic>{
         "video": {
           "type": "blob",
           "description":
-              "The mp4 video file. May be up to 100mb, formerly limited to 50mb.",
+              "The mp4 video file. May be up to 300mb, formerly limited to 100mb.",
           "accept": ["video/mp4"],
-          "maxSize": 100000000,
+          "maxSize": 300000000,
         },
         "captions": {
           "type": "array",
@@ -2866,8 +2897,6 @@ const appBskyEmbedVideo = <String, dynamic>{
           "type": "string",
           "description":
               "Alt text description of the video, for accessibility.",
-          "maxLength": 10000,
-          "maxGraphemes": 1000,
         },
         "aspectRatio": {
           "type": "ref",
@@ -2899,7 +2928,7 @@ const appBskyEmbedVideo = <String, dynamic>{
         "cid": {"type": "string", "format": "cid"},
         "playlist": {"type": "string", "format": "uri"},
         "thumbnail": {"type": "string", "format": "uri"},
-        "alt": {"type": "string", "maxLength": 10000, "maxGraphemes": 1000},
+        "alt": {"type": "string"},
         "aspectRatio": {
           "type": "ref",
           "ref": "app.bsky.embed.defs#aspectRatio",
@@ -2971,6 +3000,29 @@ const appBskyFeedDefs = <String, dynamic>{
         "replyDisabled": {"type": "boolean"},
         "embeddingDisabled": {"type": "boolean"},
         "pinned": {"type": "boolean"},
+        "knownLikers": {
+          "type": "ref",
+          "description":
+              "This property is present only in selected cases, as an optimization.",
+          "ref": "#knownLikers",
+        },
+      },
+    },
+    "knownLikers": {
+      "type": "object",
+      "description": "The post's likers whom you also follow",
+      "required": ["count", "actors"],
+      "properties": {
+        "count": {"type": "integer"},
+        "actors": {
+          "type": "array",
+          "items": {
+            "type": "ref",
+            "ref": "app.bsky.actor.defs#profileViewBasic",
+          },
+          "minLength": 0,
+          "maxLength": 5,
+        },
       },
     },
     "threadContext": {
@@ -4810,6 +4862,12 @@ const appBskyGraphDefs = <String, dynamic>{
       "properties": {
         "uri": {"type": "string", "format": "at-uri"},
         "subject": {"type": "ref", "ref": "app.bsky.actor.defs#profileView"},
+        "subjectOptedOut": {
+          "type": "boolean",
+          "description":
+              "Set to true when the subject has opted out of appearing in the reference list. Only set when the viewer owns the list.",
+          "const": true,
+        },
       },
     },
     "starterPackView": {
@@ -4892,6 +4950,12 @@ const appBskyGraphDefs = <String, dynamic>{
       "properties": {
         "muted": {"type": "boolean"},
         "blocked": {"type": "string", "format": "at-uri"},
+        "referenceListOptOut": {
+          "type": "string",
+          "format": "at-uri",
+          "description":
+              "The authenticated viewer's app.bsky.graph.referencelistoptout record URI for this reference list. Only set for reference lists. A client can delete this record to undo the opt-out.",
+        },
       },
     },
     "notFoundActor": {
@@ -5928,6 +5992,33 @@ const appBskyGraphMuteThread = <String, dynamic>{
   },
 };
 
+/// `app.bsky.graph.referencelistoptout`
+const appBskyGraphReferencelistoptout = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.graph.referencelistoptout",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description":
+          "Record requesting that its author be omitted from the public presentation of a reference list. This record is only enforced when the subject list's current purpose is app.bsky.graph.defs#referencelist. AppView indexes at most one record per actor and list pair, and ignores duplicate records.",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["subject", "createdAt"],
+        "properties": {
+          "subject": {
+            "type": "string",
+            "format": "at-uri",
+            "description":
+                "Canonical, DID-based AT URI of the app.bsky.graph.list record from which the author requests omission.",
+          },
+          "createdAt": {"type": "string", "format": "datetime"},
+        },
+      },
+    },
+  },
+};
+
 /// `app.bsky.graph.searchStarterPacks`
 const appBskyGraphSearchStarterPacks = <String, dynamic>{
   "lexicon": 1,
@@ -6542,7 +6633,10 @@ const appBskyNotificationGetUnreadCount = <String, dynamic>{
       "parameters": {
         "type": "params",
         "properties": {
-          "priority": {"type": "boolean"},
+          "priority": {
+            "type": "boolean",
+            "description": "Deprecated: this parameter is ignored.",
+          },
           "seenAt": {"type": "string", "format": "datetime"},
         },
       },
@@ -6629,9 +6723,17 @@ const appBskyNotificationListNotifications = <String, dynamic>{
             "minimum": 1,
             "maximum": 100,
           },
-          "priority": {"type": "boolean"},
+          "priority": {
+            "type": "boolean",
+            "description": "Deprecated: this parameter is ignored.",
+          },
           "cursor": {"type": "string"},
-          "seenAt": {"type": "string", "format": "datetime"},
+          "seenAt": {
+            "type": "string",
+            "format": "datetime",
+            "description":
+                "Deprecated: this parameter is unsupported and will cause an error.",
+          },
         },
       },
       "output": {
@@ -6645,7 +6747,10 @@ const appBskyNotificationListNotifications = <String, dynamic>{
               "type": "array",
               "items": {"type": "ref", "ref": "#notification"},
             },
-            "priority": {"type": "boolean"},
+            "priority": {
+              "type": "boolean",
+              "description": "Deprecated: this field is no longer populated.",
+            },
             "seenAt": {"type": "string", "format": "datetime"},
           },
         },
@@ -8776,6 +8881,66 @@ const appBskyUnspeccedSearchStarterPacksSkeleton = <String, dynamic>{
   },
 };
 
+/// `app.bsky.video.abortUpload`
+const appBskyVideoAbortUpload = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.video.abortUpload",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description":
+          "Abort an upload only while it is created, releasing its quota reservation immediately. Terminal sessions are unchanged and return their terminal outcome. A finishing session returns UploadNotReady.",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["jobId"],
+          "properties": {
+            "jobId": {"type": "string", "minLength": 1, "maxLength": 256},
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["state"],
+          "properties": {
+            "state": {
+              "type": "string",
+              "maxLength": 32,
+              "knownValues": ["aborted", "completed", "failed", "expired"],
+            },
+            "completedJobId": {
+              "type": "string",
+              "description": "Present only when state is completed.",
+              "minLength": 1,
+              "maxLength": 256,
+            },
+            "failureReason": {
+              "type": "string",
+              "description": "Present only when state is failed.",
+              "maxLength": 1024,
+            },
+          },
+        },
+      },
+      "errors": [
+        {
+          "name": "UploadNotFound",
+          "description":
+              "The job ID is unknown or aged out of retention; known terminal sessions return their outcome and are never reported as not found.",
+        },
+        {
+          "name": "UploadNotReady",
+          "description":
+              "A finish is in progress; check getUploadStatus and retry.",
+        },
+      ],
+    },
+  },
+};
+
 /// `app.bsky.video.defs`
 const appBskyVideoDefs = <String, dynamic>{
   "lexicon": 1,
@@ -8791,7 +8956,17 @@ const appBskyVideoDefs = <String, dynamic>{
           "type": "string",
           "description":
               "The state of the video processing job. All values not listed as a known value indicate that the job is in process.",
-          "knownValues": ["JOB_STATE_COMPLETED", "JOB_STATE_FAILED"],
+          "knownValues": [
+            "JOB_STATE_CREATED",
+            "JOB_STATE_ENCODING",
+            "JOB_STATE_ENCODED",
+            "JOB_STATE_SCANNING",
+            "JOB_STATE_SCANNED",
+            "JOB_STATE_UPLOADING",
+            "JOB_STATE_UPLOADED",
+            "JOB_STATE_COMPLETED",
+            "JOB_STATE_FAILED",
+          ],
         },
         "progress": {
           "type": "integer",
@@ -8815,6 +8990,90 @@ const appBskyVideoDefs = <String, dynamic>{
         },
         "message": {"type": "string"},
       },
+    },
+  },
+};
+
+/// `app.bsky.video.finishUpload`
+const appBskyVideoFinishUpload = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.video.finishUpload",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description":
+          "Finish an upload. This call is idempotent and safe to retry. On deduplication completedJobId may differ from the input jobId; poll getJobStatus with completedJobId. Probe-based validation failures surface later as JOB_STATE_FAILED from getJobStatus, not as errors from this call.",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["jobId"],
+          "properties": {
+            "jobId": {"type": "string", "minLength": 1, "maxLength": 256},
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["completedJobId", "jobStatus"],
+          "properties": {
+            "completedJobId": {
+              "type": "string",
+              "description":
+                  "The processing job to poll with getJobStatus; on deduplication this may differ from the input jobId.",
+              "minLength": 1,
+              "maxLength": 256,
+            },
+            "jobStatus": {
+              "type": "ref",
+              "ref": "app.bsky.video.defs#jobStatus",
+            },
+          },
+        },
+      },
+      "errors": [
+        {
+          "name": "UploadNotFound",
+          "description":
+              "The job ID is unknown or aged out of retention; known terminal sessions are never reported as not found.",
+        },
+        {
+          "name": "UploadExpired",
+          "description":
+              "The upload session expired before finalization began.",
+        },
+        {
+          "name": "MissingParts",
+          "description":
+              "Not all parts are recorded; the error message lists the missing part numbers.",
+        },
+        {
+          "name": "UploadNotReady",
+          "description":
+              "A finish is in progress; check getUploadStatus and retry.",
+        },
+        {
+          "name": "UnsupportedContentType",
+          "description":
+              "The assembled object's detected content type is not supported.",
+        },
+        {
+          "name": "UploadFailed",
+          "description":
+              "The session is known to have failed; the error carries its failure reason.",
+        },
+        {
+          "name": "UploadAborted",
+          "description": "The session is known to have been aborted.",
+        },
+        {
+          "name": "ServiceOverloaded",
+          "description":
+              "The service is draining or temporarily at capacity; retry later.",
+        },
+      ],
     },
   },
 };
@@ -8873,6 +9132,269 @@ const appBskyVideoGetUploadLimits = <String, dynamic>{
           },
         },
       },
+    },
+  },
+};
+
+/// `app.bsky.video.getUploadStatus`
+const appBskyVideoGetUploadStatus = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.video.getUploadStatus",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Get the authoritative status of the upload phase. Terminal states remain readable. completedJobId and jobStatus are present only for completed sessions; failureReason is present only for failed sessions.",
+      "parameters": {
+        "type": "params",
+        "required": ["jobId"],
+        "properties": {
+          "jobId": {"type": "string", "minLength": 1, "maxLength": 256},
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": [
+            "jobId",
+            "partSizeBytes",
+            "partCount",
+            "receivedParts",
+            "expiresAt",
+            "state",
+          ],
+          "properties": {
+            "jobId": {"type": "string", "minLength": 1, "maxLength": 256},
+            "partSizeBytes": {"type": "integer"},
+            "partCount": {"type": "integer"},
+            "receivedParts": {
+              "type": "array",
+              "items": {"type": "integer", "minimum": 1},
+            },
+            "expiresAt": {"type": "string", "format": "datetime"},
+            "state": {
+              "type": "string",
+              "maxLength": 32,
+              "knownValues": [
+                "created",
+                "finishing",
+                "completed",
+                "failed",
+                "aborted",
+                "expired",
+              ],
+            },
+            "completedJobId": {
+              "type": "string",
+              "description":
+                  "Present only when state is completed; may differ from jobId on deduplication.",
+              "minLength": 1,
+              "maxLength": 256,
+            },
+            "jobStatus": {
+              "type": "ref",
+              "description": "Present only when state is completed.",
+              "ref": "app.bsky.video.defs#jobStatus",
+            },
+            "failureReason": {
+              "type": "string",
+              "description": "Present only when state is failed.",
+              "maxLength": 1024,
+            },
+          },
+        },
+      },
+      "errors": [
+        {
+          "name": "UploadNotFound",
+          "description":
+              "The job ID is unknown or aged out of retention; known terminal sessions remain readable and are never reported as not found.",
+        },
+      ],
+    },
+  },
+};
+
+/// `app.bsky.video.startUpload`
+const appBskyVideoStartUpload = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.video.startUpload",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description":
+          "Start a multipart video upload. The declared size is exact, while optional media properties are advisory and used only for early failure; the authoritative probe runs asynchronously after upload.",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["sizeBytes", "mimeType"],
+          "properties": {
+            "sizeBytes": {
+              "type": "integer",
+              "description":
+                  "Exact byte size of the complete upload-ready video file before it is split into parts.",
+              "minimum": 1,
+            },
+            "mimeType": {
+              "type": "string",
+              "description": "Declared MIME type of the video.",
+              "minLength": 3,
+              "maxLength": 255,
+            },
+            "name": {
+              "type": "string",
+              "description": "Optional client-provided file name.",
+              "maxLength": 256,
+            },
+            "durationMs": {
+              "type": "integer",
+              "description":
+                  "Advisory, non-authoritative duration used only for early failure; the authoritative probe runs asynchronously after upload.",
+            },
+            "width": {
+              "type": "integer",
+              "description":
+                  "Advisory, non-authoritative width used only for early failure; the authoritative probe runs asynchronously after upload.",
+            },
+            "height": {
+              "type": "integer",
+              "description":
+                  "Advisory, non-authoritative height used only for early failure; the authoritative probe runs asynchronously after upload.",
+            },
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["jobId", "partSizeBytes", "partCount", "expiresAt"],
+          "properties": {
+            "jobId": {"type": "string", "minLength": 1, "maxLength": 256},
+            "partSizeBytes": {"type": "integer"},
+            "partCount": {"type": "integer"},
+            "expiresAt": {"type": "string", "format": "datetime"},
+          },
+        },
+      },
+      "errors": [
+        {
+          "name": "UnsupportedContentType",
+          "description": "The declared MIME type is not supported.",
+        },
+        {
+          "name": "VideoTooLarge",
+          "description":
+              "The exact file size exceeds the per-file cap or remaining daily byte allowance.",
+        },
+        {
+          "name": "VideoTooLong",
+          "description": "The advisory declared duration exceeds the limit.",
+        },
+        {
+          "name": "BadAspectRatio",
+          "description":
+              "The advisory declared dimensions have an unsupported aspect ratio.",
+        },
+        {
+          "name": "DailyLimitExceeded",
+          "description":
+              "The daily video or byte allowance, including active reservations, is exhausted.",
+        },
+        {
+          "name": "TooManyOpenUploads",
+          "description":
+              "The account has reached its open multipart upload limit.",
+        },
+        {
+          "name": "UploadForbidden",
+          "description": "The account is not permitted to upload video.",
+        },
+        {
+          "name": "ServiceOverloaded",
+          "description":
+              "The service is draining, at capacity, or temporarily unable to create the multipart upload.",
+        },
+      ],
+    },
+  },
+};
+
+/// `app.bsky.video.uploadPart`
+const appBskyVideoUploadPart = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.video.uploadPart",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description":
+          "Upload one part. Parts are idempotent and may be retried or re-sent while the session is created. Each expected length is derived from the upload size and part size, and Content-Length must match exactly. ETags are never exposed to clients.",
+      "parameters": {
+        "type": "params",
+        "required": ["jobId", "partNumber"],
+        "properties": {
+          "jobId": {"type": "string", "minLength": 1, "maxLength": 256},
+          "partNumber": {"type": "integer", "minimum": 1},
+        },
+      },
+      "input": {"encoding": "application/octet-stream"},
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["partNumber", "sizeBytes"],
+          "properties": {
+            "partNumber": {"type": "integer", "minimum": 1},
+            "sizeBytes": {"type": "integer"},
+          },
+        },
+      },
+      "errors": [
+        {
+          "name": "UploadNotFound",
+          "description":
+              "The job ID is unknown or aged out of retention; known terminal sessions are never reported as not found.",
+        },
+        {
+          "name": "UploadExpired",
+          "description": "The upload session expired before completion.",
+        },
+        {
+          "name": "InvalidPartNumber",
+          "description":
+              "The part number is outside the upload's valid part range.",
+        },
+        {
+          "name": "PartSizeMismatch",
+          "description":
+              "Content-Length does not exactly match the expected size for this part.",
+        },
+        {
+          "name": "UploadNotReady",
+          "description":
+              "A finish is in progress; check getUploadStatus and retry.",
+        },
+        {
+          "name": "UploadFailed",
+          "description":
+              "The session is known to have failed; the error carries its failure reason.",
+        },
+        {
+          "name": "UploadAborted",
+          "description": "The session is known to have been aborted.",
+        },
+        {
+          "name": "UploadAlreadyCompleted",
+          "description": "The session is known to have already completed.",
+        },
+        {
+          "name": "ServiceOverloaded",
+          "description":
+              "The service is draining or temporarily at capacity; retry on another worker.",
+        },
+      ],
     },
   },
 };
@@ -19153,6 +19675,39 @@ const toolsOzoneModerationEmitEvent = <String, dynamic>{
   },
 };
 
+/// `tools.ozone.moderation.getAccountPreferences`
+const toolsOzoneModerationGetAccountPreferences = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.moderation.getAccountPreferences",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Get private preferences for an account. Requires moderator or admin auth.",
+      "parameters": {
+        "type": "params",
+        "required": ["did"],
+        "properties": {
+          "did": {"type": "string", "format": "did"},
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["preferences"],
+          "properties": {
+            "preferences": {
+              "type": "ref",
+              "ref": "app.bsky.actor.defs#preferences",
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
 /// `tools.ozone.moderation.getAccountTimeline`
 const toolsOzoneModerationGetAccountTimeline = <String, dynamic>{
   "lexicon": 1,
@@ -23731,6 +24286,7 @@ const toolsOzoneVerificationRevokeVerifications = <String, dynamic>{
 
 /// The collection of official lexicons.
 const lexicons = <Map<String, dynamic>>[
+  appBskyActorContentVisibilityDeclaration,
   appBskyActorDefs,
   appBskyActorGetPreferences,
   appBskyActorGetProfile,
@@ -23822,6 +24378,7 @@ const lexicons = <Map<String, dynamic>>[
   appBskyGraphMuteActor,
   appBskyGraphMuteActorList,
   appBskyGraphMuteThread,
+  appBskyGraphReferencelistoptout,
   appBskyGraphSearchStarterPacks,
   appBskyGraphSearchStarterPacksV2,
   appBskyGraphStarterpack,
@@ -23876,9 +24433,14 @@ const lexicons = <Map<String, dynamic>>[
   appBskyUnspeccedSearchActorsSkeleton,
   appBskyUnspeccedSearchPostsSkeleton,
   appBskyUnspeccedSearchStarterPacksSkeleton,
+  appBskyVideoAbortUpload,
   appBskyVideoDefs,
+  appBskyVideoFinishUpload,
   appBskyVideoGetJobStatus,
   appBskyVideoGetUploadLimits,
+  appBskyVideoGetUploadStatus,
+  appBskyVideoStartUpload,
+  appBskyVideoUploadPart,
   appBskyVideoUploadVideo,
   chatBskyActorDeclaration,
   chatBskyActorDefs,
@@ -24048,6 +24610,7 @@ const lexicons = <Map<String, dynamic>>[
   toolsOzoneModerationCancelScheduledActions,
   toolsOzoneModerationDefs,
   toolsOzoneModerationEmitEvent,
+  toolsOzoneModerationGetAccountPreferences,
   toolsOzoneModerationGetAccountTimeline,
   toolsOzoneModerationGetEvent,
   toolsOzoneModerationGetRecord,

@@ -22,9 +22,13 @@ final class ListNotificationsCommand extends QueryCommand {
         help: r"Notification reasons to include in response.",
       )
       ..addOption("limit", defaultsTo: "50")
-      ..addFlag("priority")
+      ..addFlag("priority", help: r"Deprecated: this parameter is ignored.")
       ..addOption("cursor")
-      ..addOption("seenAt");
+      ..addOption(
+        "seenAt",
+        help:
+            r"Deprecated: this parameter is unsupported and will cause an error.",
+      );
   }
 
   @override

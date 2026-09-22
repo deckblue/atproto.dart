@@ -6,6 +6,10 @@
 // Lexicon IDs Generator
 // **************************************************************************
 
+/// `app.bsky.actor.contentVisibilityDeclaration`
+const appBskyActorContentVisibilityDeclaration =
+    'app.bsky.actor.contentVisibilityDeclaration';
+
 /// `app.bsky.actor.defs`
 const appBskyActorDefs = 'app.bsky.actor.defs';
 
@@ -481,6 +485,9 @@ const appBskyFeedDefsInteractionSeen = 'app.bsky.feed.defs#interactionSeen';
 /// `app.bsky.feed.defs#interactionShare`
 const appBskyFeedDefsInteractionShare = 'app.bsky.feed.defs#interactionShare';
 
+/// `app.bsky.feed.defs#knownLikers`
+const appBskyFeedDefsKnownLikers = 'app.bsky.feed.defs#knownLikers';
+
 /// `app.bsky.feed.defs#notFoundPost`
 const appBskyFeedDefsNotFoundPost = 'app.bsky.feed.defs#notFoundPost';
 
@@ -758,6 +765,9 @@ const appBskyGraphMuteActorList = 'app.bsky.graph.muteActorList';
 
 /// `app.bsky.graph.muteThread`
 const appBskyGraphMuteThread = 'app.bsky.graph.muteThread';
+
+/// `app.bsky.graph.referencelistoptout`
+const appBskyGraphReferencelistoptout = 'app.bsky.graph.referencelistoptout';
 
 /// `app.bsky.graph.searchStarterPacks`
 const appBskyGraphSearchStarterPacks = 'app.bsky.graph.searchStarterPacks';
@@ -1080,17 +1090,32 @@ const appBskyUnspeccedSearchPostsSkeleton =
 const appBskyUnspeccedSearchStarterPacksSkeleton =
     'app.bsky.unspecced.searchStarterPacksSkeleton';
 
+/// `app.bsky.video.abortUpload`
+const appBskyVideoAbortUpload = 'app.bsky.video.abortUpload';
+
 /// `app.bsky.video.defs`
 const appBskyVideoDefs = 'app.bsky.video.defs';
 
 /// `app.bsky.video.defs#jobStatus`
 const appBskyVideoDefsJobStatus = 'app.bsky.video.defs#jobStatus';
 
+/// `app.bsky.video.finishUpload`
+const appBskyVideoFinishUpload = 'app.bsky.video.finishUpload';
+
 /// `app.bsky.video.getJobStatus`
 const appBskyVideoGetJobStatus = 'app.bsky.video.getJobStatus';
 
 /// `app.bsky.video.getUploadLimits`
 const appBskyVideoGetUploadLimits = 'app.bsky.video.getUploadLimits';
+
+/// `app.bsky.video.getUploadStatus`
+const appBskyVideoGetUploadStatus = 'app.bsky.video.getUploadStatus';
+
+/// `app.bsky.video.startUpload`
+const appBskyVideoStartUpload = 'app.bsky.video.startUpload';
+
+/// `app.bsky.video.uploadPart`
+const appBskyVideoUploadPart = 'app.bsky.video.uploadPart';
 
 /// `app.bsky.video.uploadVideo`
 const appBskyVideoUploadVideo = 'app.bsky.video.uploadVideo';
@@ -1914,6 +1939,10 @@ const toolsOzoneModerationEmitEvent = 'tools.ozone.moderation.emitEvent';
 /// `tools.ozone.moderation.emitEvent#reportAction`
 const toolsOzoneModerationEmitEventReportAction =
     'tools.ozone.moderation.emitEvent#reportAction';
+
+/// `tools.ozone.moderation.getAccountPreferences`
+const toolsOzoneModerationGetAccountPreferences =
+    'tools.ozone.moderation.getAccountPreferences';
 
 /// `tools.ozone.moderation.getAccountTimeline`
 const toolsOzoneModerationGetAccountTimeline =

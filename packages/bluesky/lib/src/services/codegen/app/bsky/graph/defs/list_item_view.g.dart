@@ -21,6 +21,8 @@ _$ListItemViewImpl _$$ListItemViewImplFromJson(Map json) => $checkedCreate(
               'subject',
               (v) => const ProfileViewConverter()
                   .fromJson(v as Map<String, dynamic>)),
+          subjectOptedOut:
+              $checkedConvert('subjectOptedOut', (v) => v as bool?),
           $unknown: $checkedConvert(
               r'$unknown',
               (v) => (v as Map?)?.map(
@@ -36,5 +38,6 @@ Map<String, dynamic> _$$ListItemViewImplToJson(_$ListItemViewImpl instance) =>
       r'$type': instance.$type,
       'uri': const AtUriConverter().toJson(instance.uri),
       'subject': const ProfileViewConverter().toJson(instance.subject),
+      if (instance.subjectOptedOut case final value?) 'subjectOptedOut': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
