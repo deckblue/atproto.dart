@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1528 +9,4977 @@ part of 'union_group_kind.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$UGroupKind {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKind&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'UGroupKind(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $UGroupKindCopyWith<$Res>  {
-$UGroupKindCopyWith(UGroupKind _, $Res Function(UGroupKind) __);
+abstract class $UGroupKindCopyWith<$Res> {
+  factory $UGroupKindCopyWith(
+          UGroupKind value, $Res Function(UGroupKind) then) =
+      _$UGroupKindCopyWithImpl<$Res, UGroupKind>;
 }
 
+/// @nodoc
+class _$UGroupKindCopyWithImpl<$Res, $Val extends UGroupKind>
+    implements $UGroupKindCopyWith<$Res> {
+  _$UGroupKindCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [UGroupKind].
-extension UGroupKindPatterns on UGroupKind {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UGroupKindLikeGroup value)?  likeGroup,TResult Function( UGroupKindMultiPostLikeGroup value)?  multiPostLikeGroup,TResult Function( UGroupKindRepostGroup value)?  repostGroup,TResult Function( UGroupKindLikeViaRepostGroup value)?  likeViaRepostGroup,TResult Function( UGroupKindRepostViaRepostGroup value)?  repostViaRepostGroup,TResult Function( UGroupKindFollowGroup value)?  followGroup,TResult Function( UGroupKindSubscribedPostGroup value)?  subscribedPostGroup,TResult Function( UGroupKindGeneratorLikeGroup value)?  generatorLikeGroup,TResult Function( UGroupKindReplyNotification value)?  replyNotification,TResult Function( UGroupKindQuoteNotification value)?  quoteNotification,TResult Function( UGroupKindMentionNotification value)?  mentionNotification,TResult Function( UGroupKindFollowBackNotification value)?  followBackNotification,TResult Function( UGroupKindVerifiedNotification value)?  verifiedNotification,TResult Function( UGroupKindUnverifiedNotification value)?  unverifiedNotification,TResult Function( UGroupKindStarterPackJoinedNotification value)?  starterPackJoinedNotification,TResult Function( UGroupKindContactMatchNotification value)?  contactMatchNotification,TResult Function( UGroupKindUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case UGroupKindLikeGroup() when likeGroup != null:
-return likeGroup(_that);case UGroupKindMultiPostLikeGroup() when multiPostLikeGroup != null:
-return multiPostLikeGroup(_that);case UGroupKindRepostGroup() when repostGroup != null:
-return repostGroup(_that);case UGroupKindLikeViaRepostGroup() when likeViaRepostGroup != null:
-return likeViaRepostGroup(_that);case UGroupKindRepostViaRepostGroup() when repostViaRepostGroup != null:
-return repostViaRepostGroup(_that);case UGroupKindFollowGroup() when followGroup != null:
-return followGroup(_that);case UGroupKindSubscribedPostGroup() when subscribedPostGroup != null:
-return subscribedPostGroup(_that);case UGroupKindGeneratorLikeGroup() when generatorLikeGroup != null:
-return generatorLikeGroup(_that);case UGroupKindReplyNotification() when replyNotification != null:
-return replyNotification(_that);case UGroupKindQuoteNotification() when quoteNotification != null:
-return quoteNotification(_that);case UGroupKindMentionNotification() when mentionNotification != null:
-return mentionNotification(_that);case UGroupKindFollowBackNotification() when followBackNotification != null:
-return followBackNotification(_that);case UGroupKindVerifiedNotification() when verifiedNotification != null:
-return verifiedNotification(_that);case UGroupKindUnverifiedNotification() when unverifiedNotification != null:
-return unverifiedNotification(_that);case UGroupKindStarterPackJoinedNotification() when starterPackJoinedNotification != null:
-return starterPackJoinedNotification(_that);case UGroupKindContactMatchNotification() when contactMatchNotification != null:
-return contactMatchNotification(_that);case UGroupKindUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UGroupKindLikeGroup value)  likeGroup,required TResult Function( UGroupKindMultiPostLikeGroup value)  multiPostLikeGroup,required TResult Function( UGroupKindRepostGroup value)  repostGroup,required TResult Function( UGroupKindLikeViaRepostGroup value)  likeViaRepostGroup,required TResult Function( UGroupKindRepostViaRepostGroup value)  repostViaRepostGroup,required TResult Function( UGroupKindFollowGroup value)  followGroup,required TResult Function( UGroupKindSubscribedPostGroup value)  subscribedPostGroup,required TResult Function( UGroupKindGeneratorLikeGroup value)  generatorLikeGroup,required TResult Function( UGroupKindReplyNotification value)  replyNotification,required TResult Function( UGroupKindQuoteNotification value)  quoteNotification,required TResult Function( UGroupKindMentionNotification value)  mentionNotification,required TResult Function( UGroupKindFollowBackNotification value)  followBackNotification,required TResult Function( UGroupKindVerifiedNotification value)  verifiedNotification,required TResult Function( UGroupKindUnverifiedNotification value)  unverifiedNotification,required TResult Function( UGroupKindStarterPackJoinedNotification value)  starterPackJoinedNotification,required TResult Function( UGroupKindContactMatchNotification value)  contactMatchNotification,required TResult Function( UGroupKindUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case UGroupKindLikeGroup():
-return likeGroup(_that);case UGroupKindMultiPostLikeGroup():
-return multiPostLikeGroup(_that);case UGroupKindRepostGroup():
-return repostGroup(_that);case UGroupKindLikeViaRepostGroup():
-return likeViaRepostGroup(_that);case UGroupKindRepostViaRepostGroup():
-return repostViaRepostGroup(_that);case UGroupKindFollowGroup():
-return followGroup(_that);case UGroupKindSubscribedPostGroup():
-return subscribedPostGroup(_that);case UGroupKindGeneratorLikeGroup():
-return generatorLikeGroup(_that);case UGroupKindReplyNotification():
-return replyNotification(_that);case UGroupKindQuoteNotification():
-return quoteNotification(_that);case UGroupKindMentionNotification():
-return mentionNotification(_that);case UGroupKindFollowBackNotification():
-return followBackNotification(_that);case UGroupKindVerifiedNotification():
-return verifiedNotification(_that);case UGroupKindUnverifiedNotification():
-return unverifiedNotification(_that);case UGroupKindStarterPackJoinedNotification():
-return starterPackJoinedNotification(_that);case UGroupKindContactMatchNotification():
-return contactMatchNotification(_that);case UGroupKindUnknown():
-return unknown(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UGroupKindLikeGroup value)?  likeGroup,TResult? Function( UGroupKindMultiPostLikeGroup value)?  multiPostLikeGroup,TResult? Function( UGroupKindRepostGroup value)?  repostGroup,TResult? Function( UGroupKindLikeViaRepostGroup value)?  likeViaRepostGroup,TResult? Function( UGroupKindRepostViaRepostGroup value)?  repostViaRepostGroup,TResult? Function( UGroupKindFollowGroup value)?  followGroup,TResult? Function( UGroupKindSubscribedPostGroup value)?  subscribedPostGroup,TResult? Function( UGroupKindGeneratorLikeGroup value)?  generatorLikeGroup,TResult? Function( UGroupKindReplyNotification value)?  replyNotification,TResult? Function( UGroupKindQuoteNotification value)?  quoteNotification,TResult? Function( UGroupKindMentionNotification value)?  mentionNotification,TResult? Function( UGroupKindFollowBackNotification value)?  followBackNotification,TResult? Function( UGroupKindVerifiedNotification value)?  verifiedNotification,TResult? Function( UGroupKindUnverifiedNotification value)?  unverifiedNotification,TResult? Function( UGroupKindStarterPackJoinedNotification value)?  starterPackJoinedNotification,TResult? Function( UGroupKindContactMatchNotification value)?  contactMatchNotification,TResult? Function( UGroupKindUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case UGroupKindLikeGroup() when likeGroup != null:
-return likeGroup(_that);case UGroupKindMultiPostLikeGroup() when multiPostLikeGroup != null:
-return multiPostLikeGroup(_that);case UGroupKindRepostGroup() when repostGroup != null:
-return repostGroup(_that);case UGroupKindLikeViaRepostGroup() when likeViaRepostGroup != null:
-return likeViaRepostGroup(_that);case UGroupKindRepostViaRepostGroup() when repostViaRepostGroup != null:
-return repostViaRepostGroup(_that);case UGroupKindFollowGroup() when followGroup != null:
-return followGroup(_that);case UGroupKindSubscribedPostGroup() when subscribedPostGroup != null:
-return subscribedPostGroup(_that);case UGroupKindGeneratorLikeGroup() when generatorLikeGroup != null:
-return generatorLikeGroup(_that);case UGroupKindReplyNotification() when replyNotification != null:
-return replyNotification(_that);case UGroupKindQuoteNotification() when quoteNotification != null:
-return quoteNotification(_that);case UGroupKindMentionNotification() when mentionNotification != null:
-return mentionNotification(_that);case UGroupKindFollowBackNotification() when followBackNotification != null:
-return followBackNotification(_that);case UGroupKindVerifiedNotification() when verifiedNotification != null:
-return verifiedNotification(_that);case UGroupKindUnverifiedNotification() when unverifiedNotification != null:
-return unverifiedNotification(_that);case UGroupKindStarterPackJoinedNotification() when starterPackJoinedNotification != null:
-return starterPackJoinedNotification(_that);case UGroupKindContactMatchNotification() when contactMatchNotification != null:
-return contactMatchNotification(_that);case UGroupKindUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( LikeGroup data)?  likeGroup,TResult Function( MultiPostLikeGroup data)?  multiPostLikeGroup,TResult Function( RepostGroup data)?  repostGroup,TResult Function( LikeViaRepostGroup data)?  likeViaRepostGroup,TResult Function( RepostViaRepostGroup data)?  repostViaRepostGroup,TResult Function( FollowGroup data)?  followGroup,TResult Function( SubscribedPostGroup data)?  subscribedPostGroup,TResult Function( GeneratorLikeGroup data)?  generatorLikeGroup,TResult Function( ReplyNotification data)?  replyNotification,TResult Function( QuoteNotification data)?  quoteNotification,TResult Function( MentionNotification data)?  mentionNotification,TResult Function( FollowBackNotification data)?  followBackNotification,TResult Function( VerifiedNotification data)?  verifiedNotification,TResult Function( UnverifiedNotification data)?  unverifiedNotification,TResult Function( StarterPackJoinedNotification data)?  starterPackJoinedNotification,TResult Function( ContactMatchNotification data)?  contactMatchNotification,TResult Function( Map<String, dynamic> data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case UGroupKindLikeGroup() when likeGroup != null:
-return likeGroup(_that.data);case UGroupKindMultiPostLikeGroup() when multiPostLikeGroup != null:
-return multiPostLikeGroup(_that.data);case UGroupKindRepostGroup() when repostGroup != null:
-return repostGroup(_that.data);case UGroupKindLikeViaRepostGroup() when likeViaRepostGroup != null:
-return likeViaRepostGroup(_that.data);case UGroupKindRepostViaRepostGroup() when repostViaRepostGroup != null:
-return repostViaRepostGroup(_that.data);case UGroupKindFollowGroup() when followGroup != null:
-return followGroup(_that.data);case UGroupKindSubscribedPostGroup() when subscribedPostGroup != null:
-return subscribedPostGroup(_that.data);case UGroupKindGeneratorLikeGroup() when generatorLikeGroup != null:
-return generatorLikeGroup(_that.data);case UGroupKindReplyNotification() when replyNotification != null:
-return replyNotification(_that.data);case UGroupKindQuoteNotification() when quoteNotification != null:
-return quoteNotification(_that.data);case UGroupKindMentionNotification() when mentionNotification != null:
-return mentionNotification(_that.data);case UGroupKindFollowBackNotification() when followBackNotification != null:
-return followBackNotification(_that.data);case UGroupKindVerifiedNotification() when verifiedNotification != null:
-return verifiedNotification(_that.data);case UGroupKindUnverifiedNotification() when unverifiedNotification != null:
-return unverifiedNotification(_that.data);case UGroupKindStarterPackJoinedNotification() when starterPackJoinedNotification != null:
-return starterPackJoinedNotification(_that.data);case UGroupKindContactMatchNotification() when contactMatchNotification != null:
-return contactMatchNotification(_that.data);case UGroupKindUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( LikeGroup data)  likeGroup,required TResult Function( MultiPostLikeGroup data)  multiPostLikeGroup,required TResult Function( RepostGroup data)  repostGroup,required TResult Function( LikeViaRepostGroup data)  likeViaRepostGroup,required TResult Function( RepostViaRepostGroup data)  repostViaRepostGroup,required TResult Function( FollowGroup data)  followGroup,required TResult Function( SubscribedPostGroup data)  subscribedPostGroup,required TResult Function( GeneratorLikeGroup data)  generatorLikeGroup,required TResult Function( ReplyNotification data)  replyNotification,required TResult Function( QuoteNotification data)  quoteNotification,required TResult Function( MentionNotification data)  mentionNotification,required TResult Function( FollowBackNotification data)  followBackNotification,required TResult Function( VerifiedNotification data)  verifiedNotification,required TResult Function( UnverifiedNotification data)  unverifiedNotification,required TResult Function( StarterPackJoinedNotification data)  starterPackJoinedNotification,required TResult Function( ContactMatchNotification data)  contactMatchNotification,required TResult Function( Map<String, dynamic> data)  unknown,}) {final _that = this;
-switch (_that) {
-case UGroupKindLikeGroup():
-return likeGroup(_that.data);case UGroupKindMultiPostLikeGroup():
-return multiPostLikeGroup(_that.data);case UGroupKindRepostGroup():
-return repostGroup(_that.data);case UGroupKindLikeViaRepostGroup():
-return likeViaRepostGroup(_that.data);case UGroupKindRepostViaRepostGroup():
-return repostViaRepostGroup(_that.data);case UGroupKindFollowGroup():
-return followGroup(_that.data);case UGroupKindSubscribedPostGroup():
-return subscribedPostGroup(_that.data);case UGroupKindGeneratorLikeGroup():
-return generatorLikeGroup(_that.data);case UGroupKindReplyNotification():
-return replyNotification(_that.data);case UGroupKindQuoteNotification():
-return quoteNotification(_that.data);case UGroupKindMentionNotification():
-return mentionNotification(_that.data);case UGroupKindFollowBackNotification():
-return followBackNotification(_that.data);case UGroupKindVerifiedNotification():
-return verifiedNotification(_that.data);case UGroupKindUnverifiedNotification():
-return unverifiedNotification(_that.data);case UGroupKindStarterPackJoinedNotification():
-return starterPackJoinedNotification(_that.data);case UGroupKindContactMatchNotification():
-return contactMatchNotification(_that.data);case UGroupKindUnknown():
-return unknown(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( LikeGroup data)?  likeGroup,TResult? Function( MultiPostLikeGroup data)?  multiPostLikeGroup,TResult? Function( RepostGroup data)?  repostGroup,TResult? Function( LikeViaRepostGroup data)?  likeViaRepostGroup,TResult? Function( RepostViaRepostGroup data)?  repostViaRepostGroup,TResult? Function( FollowGroup data)?  followGroup,TResult? Function( SubscribedPostGroup data)?  subscribedPostGroup,TResult? Function( GeneratorLikeGroup data)?  generatorLikeGroup,TResult? Function( ReplyNotification data)?  replyNotification,TResult? Function( QuoteNotification data)?  quoteNotification,TResult? Function( MentionNotification data)?  mentionNotification,TResult? Function( FollowBackNotification data)?  followBackNotification,TResult? Function( VerifiedNotification data)?  verifiedNotification,TResult? Function( UnverifiedNotification data)?  unverifiedNotification,TResult? Function( StarterPackJoinedNotification data)?  starterPackJoinedNotification,TResult? Function( ContactMatchNotification data)?  contactMatchNotification,TResult? Function( Map<String, dynamic> data)?  unknown,}) {final _that = this;
-switch (_that) {
-case UGroupKindLikeGroup() when likeGroup != null:
-return likeGroup(_that.data);case UGroupKindMultiPostLikeGroup() when multiPostLikeGroup != null:
-return multiPostLikeGroup(_that.data);case UGroupKindRepostGroup() when repostGroup != null:
-return repostGroup(_that.data);case UGroupKindLikeViaRepostGroup() when likeViaRepostGroup != null:
-return likeViaRepostGroup(_that.data);case UGroupKindRepostViaRepostGroup() when repostViaRepostGroup != null:
-return repostViaRepostGroup(_that.data);case UGroupKindFollowGroup() when followGroup != null:
-return followGroup(_that.data);case UGroupKindSubscribedPostGroup() when subscribedPostGroup != null:
-return subscribedPostGroup(_that.data);case UGroupKindGeneratorLikeGroup() when generatorLikeGroup != null:
-return generatorLikeGroup(_that.data);case UGroupKindReplyNotification() when replyNotification != null:
-return replyNotification(_that.data);case UGroupKindQuoteNotification() when quoteNotification != null:
-return quoteNotification(_that.data);case UGroupKindMentionNotification() when mentionNotification != null:
-return mentionNotification(_that.data);case UGroupKindFollowBackNotification() when followBackNotification != null:
-return followBackNotification(_that.data);case UGroupKindVerifiedNotification() when verifiedNotification != null:
-return verifiedNotification(_that.data);case UGroupKindUnverifiedNotification() when unverifiedNotification != null:
-return unverifiedNotification(_that.data);case UGroupKindStarterPackJoinedNotification() when starterPackJoinedNotification != null:
-return starterPackJoinedNotification(_that.data);case UGroupKindContactMatchNotification() when contactMatchNotification != null:
-return contactMatchNotification(_that.data);case UGroupKindUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$UGroupKindLikeGroupImplCopyWith<$Res> {
+  factory _$$UGroupKindLikeGroupImplCopyWith(_$UGroupKindLikeGroupImpl value,
+          $Res Function(_$UGroupKindLikeGroupImpl) then) =
+      __$$UGroupKindLikeGroupImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LikeGroup data});
+
+  $LikeGroupCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindLikeGroupImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindLikeGroupImpl>
+    implements _$$UGroupKindLikeGroupImplCopyWith<$Res> {
+  __$$UGroupKindLikeGroupImplCopyWithImpl(_$UGroupKindLikeGroupImpl _value,
+      $Res Function(_$UGroupKindLikeGroupImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindLikeGroupImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as LikeGroup,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LikeGroupCopyWith<$Res> get data {
+    return $LikeGroupCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UGroupKindLikeGroupImpl extends UGroupKindLikeGroup {
+  const _$UGroupKindLikeGroupImpl({required this.data}) : super._();
 
-class UGroupKindLikeGroup extends UGroupKind {
-  const UGroupKindLikeGroup({required this.data}): super._();
-  
+  @override
+  final LikeGroup data;
 
-@override final  LikeGroup data;
+  @override
+  String toString() {
+    return 'UGroupKind.likeGroup(data: $data)';
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindLikeGroupCopyWith<UGroupKindLikeGroup> get copyWith => _$UGroupKindLikeGroupCopyWithImpl<UGroupKindLikeGroup>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindLikeGroupImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindLikeGroupImplCopyWith<_$UGroupKindLikeGroupImpl> get copyWith =>
+      __$$UGroupKindLikeGroupImplCopyWithImpl<_$UGroupKindLikeGroupImpl>(
+          this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindLikeGroup&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return likeGroup(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return likeGroup?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (likeGroup != null) {
+      return likeGroup(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return likeGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return likeGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (likeGroup != null) {
+      return likeGroup(this);
+    }
+    return orElse();
+  }
 }
 
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.likeGroup(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindLikeGroupCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindLikeGroupCopyWith(UGroupKindLikeGroup value, $Res Function(UGroupKindLikeGroup) _then) = _$UGroupKindLikeGroupCopyWithImpl;
-@useResult
-$Res call({
- LikeGroup data
-});
-
-
-$LikeGroupCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindLikeGroupCopyWithImpl<$Res>
-    implements $UGroupKindLikeGroupCopyWith<$Res> {
-  _$UGroupKindLikeGroupCopyWithImpl(this._self, this._then);
-
-  final UGroupKindLikeGroup _self;
-  final $Res Function(UGroupKindLikeGroup) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindLikeGroup(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as LikeGroup,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$LikeGroupCopyWith<$Res> get data {
-  
-  return $LikeGroupCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindMultiPostLikeGroup extends UGroupKind {
-  const UGroupKindMultiPostLikeGroup({required this.data}): super._();
-  
-
-@override final  MultiPostLikeGroup data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindMultiPostLikeGroupCopyWith<UGroupKindMultiPostLikeGroup> get copyWith => _$UGroupKindMultiPostLikeGroupCopyWithImpl<UGroupKindMultiPostLikeGroup>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindMultiPostLikeGroup&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.multiPostLikeGroup(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindMultiPostLikeGroupCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindMultiPostLikeGroupCopyWith(UGroupKindMultiPostLikeGroup value, $Res Function(UGroupKindMultiPostLikeGroup) _then) = _$UGroupKindMultiPostLikeGroupCopyWithImpl;
-@useResult
-$Res call({
- MultiPostLikeGroup data
-});
-
-
-$MultiPostLikeGroupCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindMultiPostLikeGroupCopyWithImpl<$Res>
-    implements $UGroupKindMultiPostLikeGroupCopyWith<$Res> {
-  _$UGroupKindMultiPostLikeGroupCopyWithImpl(this._self, this._then);
-
-  final UGroupKindMultiPostLikeGroup _self;
-  final $Res Function(UGroupKindMultiPostLikeGroup) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindMultiPostLikeGroup(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as MultiPostLikeGroup,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$MultiPostLikeGroupCopyWith<$Res> get data {
-  
-  return $MultiPostLikeGroupCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindRepostGroup extends UGroupKind {
-  const UGroupKindRepostGroup({required this.data}): super._();
-  
-
-@override final  RepostGroup data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindRepostGroupCopyWith<UGroupKindRepostGroup> get copyWith => _$UGroupKindRepostGroupCopyWithImpl<UGroupKindRepostGroup>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindRepostGroup&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.repostGroup(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindRepostGroupCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindRepostGroupCopyWith(UGroupKindRepostGroup value, $Res Function(UGroupKindRepostGroup) _then) = _$UGroupKindRepostGroupCopyWithImpl;
-@useResult
-$Res call({
- RepostGroup data
-});
-
-
-$RepostGroupCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindRepostGroupCopyWithImpl<$Res>
-    implements $UGroupKindRepostGroupCopyWith<$Res> {
-  _$UGroupKindRepostGroupCopyWithImpl(this._self, this._then);
-
-  final UGroupKindRepostGroup _self;
-  final $Res Function(UGroupKindRepostGroup) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindRepostGroup(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as RepostGroup,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$RepostGroupCopyWith<$Res> get data {
-  
-  return $RepostGroupCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindLikeViaRepostGroup extends UGroupKind {
-  const UGroupKindLikeViaRepostGroup({required this.data}): super._();
-  
-
-@override final  LikeViaRepostGroup data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindLikeViaRepostGroupCopyWith<UGroupKindLikeViaRepostGroup> get copyWith => _$UGroupKindLikeViaRepostGroupCopyWithImpl<UGroupKindLikeViaRepostGroup>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindLikeViaRepostGroup&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.likeViaRepostGroup(data: $data)';
-}
-
-
+abstract class UGroupKindLikeGroup extends UGroupKind {
+  const factory UGroupKindLikeGroup({required final LikeGroup data}) =
+      _$UGroupKindLikeGroupImpl;
+  const UGroupKindLikeGroup._() : super._();
+
+  @override
+  LikeGroup get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindLikeGroupImplCopyWith<_$UGroupKindLikeGroupImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UGroupKindLikeViaRepostGroupCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindLikeViaRepostGroupCopyWith(UGroupKindLikeViaRepostGroup value, $Res Function(UGroupKindLikeViaRepostGroup) _then) = _$UGroupKindLikeViaRepostGroupCopyWithImpl;
-@useResult
-$Res call({
- LikeViaRepostGroup data
-});
+abstract class _$$UGroupKindMultiPostLikeGroupImplCopyWith<$Res> {
+  factory _$$UGroupKindMultiPostLikeGroupImplCopyWith(
+          _$UGroupKindMultiPostLikeGroupImpl value,
+          $Res Function(_$UGroupKindMultiPostLikeGroupImpl) then) =
+      __$$UGroupKindMultiPostLikeGroupImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MultiPostLikeGroup data});
 
-
-$LikeViaRepostGroupCopyWith<$Res> get data;
-
+  $MultiPostLikeGroupCopyWith<$Res> get data;
 }
+
 /// @nodoc
-class _$UGroupKindLikeViaRepostGroupCopyWithImpl<$Res>
-    implements $UGroupKindLikeViaRepostGroupCopyWith<$Res> {
-  _$UGroupKindLikeViaRepostGroupCopyWithImpl(this._self, this._then);
+class __$$UGroupKindMultiPostLikeGroupImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindMultiPostLikeGroupImpl>
+    implements _$$UGroupKindMultiPostLikeGroupImplCopyWith<$Res> {
+  __$$UGroupKindMultiPostLikeGroupImplCopyWithImpl(
+      _$UGroupKindMultiPostLikeGroupImpl _value,
+      $Res Function(_$UGroupKindMultiPostLikeGroupImpl) _then)
+      : super(_value, _then);
 
-  final UGroupKindLikeViaRepostGroup _self;
-  final $Res Function(UGroupKindLikeViaRepostGroup) _then;
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindMultiPostLikeGroupImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as MultiPostLikeGroup,
+    ));
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindLikeViaRepostGroup(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as LikeViaRepostGroup,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$LikeViaRepostGroupCopyWith<$Res> get data {
-  
-  return $LikeViaRepostGroupCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MultiPostLikeGroupCopyWith<$Res> get data {
+    return $MultiPostLikeGroupCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UGroupKindMultiPostLikeGroupImpl extends UGroupKindMultiPostLikeGroup {
+  const _$UGroupKindMultiPostLikeGroupImpl({required this.data}) : super._();
 
-class UGroupKindRepostViaRepostGroup extends UGroupKind {
-  const UGroupKindRepostViaRepostGroup({required this.data}): super._();
-  
+  @override
+  final MultiPostLikeGroup data;
 
-@override final  RepostViaRepostGroup data;
+  @override
+  String toString() {
+    return 'UGroupKind.multiPostLikeGroup(data: $data)';
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindRepostViaRepostGroupCopyWith<UGroupKindRepostViaRepostGroup> get copyWith => _$UGroupKindRepostViaRepostGroupCopyWithImpl<UGroupKindRepostViaRepostGroup>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindMultiPostLikeGroupImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindMultiPostLikeGroupImplCopyWith<
+          _$UGroupKindMultiPostLikeGroupImpl>
+      get copyWith => __$$UGroupKindMultiPostLikeGroupImplCopyWithImpl<
+          _$UGroupKindMultiPostLikeGroupImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindRepostViaRepostGroup&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return multiPostLikeGroup(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return multiPostLikeGroup?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (multiPostLikeGroup != null) {
+      return multiPostLikeGroup(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return multiPostLikeGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return multiPostLikeGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (multiPostLikeGroup != null) {
+      return multiPostLikeGroup(this);
+    }
+    return orElse();
+  }
 }
 
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.repostViaRepostGroup(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindRepostViaRepostGroupCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindRepostViaRepostGroupCopyWith(UGroupKindRepostViaRepostGroup value, $Res Function(UGroupKindRepostViaRepostGroup) _then) = _$UGroupKindRepostViaRepostGroupCopyWithImpl;
-@useResult
-$Res call({
- RepostViaRepostGroup data
-});
-
-
-$RepostViaRepostGroupCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindRepostViaRepostGroupCopyWithImpl<$Res>
-    implements $UGroupKindRepostViaRepostGroupCopyWith<$Res> {
-  _$UGroupKindRepostViaRepostGroupCopyWithImpl(this._self, this._then);
-
-  final UGroupKindRepostViaRepostGroup _self;
-  final $Res Function(UGroupKindRepostViaRepostGroup) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindRepostViaRepostGroup(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as RepostViaRepostGroup,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$RepostViaRepostGroupCopyWith<$Res> get data {
-  
-  return $RepostViaRepostGroupCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindFollowGroup extends UGroupKind {
-  const UGroupKindFollowGroup({required this.data}): super._();
-  
-
-@override final  FollowGroup data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindFollowGroupCopyWith<UGroupKindFollowGroup> get copyWith => _$UGroupKindFollowGroupCopyWithImpl<UGroupKindFollowGroup>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindFollowGroup&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.followGroup(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindFollowGroupCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindFollowGroupCopyWith(UGroupKindFollowGroup value, $Res Function(UGroupKindFollowGroup) _then) = _$UGroupKindFollowGroupCopyWithImpl;
-@useResult
-$Res call({
- FollowGroup data
-});
-
-
-$FollowGroupCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindFollowGroupCopyWithImpl<$Res>
-    implements $UGroupKindFollowGroupCopyWith<$Res> {
-  _$UGroupKindFollowGroupCopyWithImpl(this._self, this._then);
-
-  final UGroupKindFollowGroup _self;
-  final $Res Function(UGroupKindFollowGroup) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindFollowGroup(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as FollowGroup,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$FollowGroupCopyWith<$Res> get data {
-  
-  return $FollowGroupCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindSubscribedPostGroup extends UGroupKind {
-  const UGroupKindSubscribedPostGroup({required this.data}): super._();
-  
-
-@override final  SubscribedPostGroup data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindSubscribedPostGroupCopyWith<UGroupKindSubscribedPostGroup> get copyWith => _$UGroupKindSubscribedPostGroupCopyWithImpl<UGroupKindSubscribedPostGroup>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindSubscribedPostGroup&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.subscribedPostGroup(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindSubscribedPostGroupCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindSubscribedPostGroupCopyWith(UGroupKindSubscribedPostGroup value, $Res Function(UGroupKindSubscribedPostGroup) _then) = _$UGroupKindSubscribedPostGroupCopyWithImpl;
-@useResult
-$Res call({
- SubscribedPostGroup data
-});
-
-
-$SubscribedPostGroupCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindSubscribedPostGroupCopyWithImpl<$Res>
-    implements $UGroupKindSubscribedPostGroupCopyWith<$Res> {
-  _$UGroupKindSubscribedPostGroupCopyWithImpl(this._self, this._then);
-
-  final UGroupKindSubscribedPostGroup _self;
-  final $Res Function(UGroupKindSubscribedPostGroup) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindSubscribedPostGroup(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as SubscribedPostGroup,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$SubscribedPostGroupCopyWith<$Res> get data {
-  
-  return $SubscribedPostGroupCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindGeneratorLikeGroup extends UGroupKind {
-  const UGroupKindGeneratorLikeGroup({required this.data}): super._();
-  
-
-@override final  GeneratorLikeGroup data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindGeneratorLikeGroupCopyWith<UGroupKindGeneratorLikeGroup> get copyWith => _$UGroupKindGeneratorLikeGroupCopyWithImpl<UGroupKindGeneratorLikeGroup>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindGeneratorLikeGroup&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.generatorLikeGroup(data: $data)';
-}
-
-
+abstract class UGroupKindMultiPostLikeGroup extends UGroupKind {
+  const factory UGroupKindMultiPostLikeGroup(
+          {required final MultiPostLikeGroup data}) =
+      _$UGroupKindMultiPostLikeGroupImpl;
+  const UGroupKindMultiPostLikeGroup._() : super._();
+
+  @override
+  MultiPostLikeGroup get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindMultiPostLikeGroupImplCopyWith<
+          _$UGroupKindMultiPostLikeGroupImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UGroupKindGeneratorLikeGroupCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindGeneratorLikeGroupCopyWith(UGroupKindGeneratorLikeGroup value, $Res Function(UGroupKindGeneratorLikeGroup) _then) = _$UGroupKindGeneratorLikeGroupCopyWithImpl;
-@useResult
-$Res call({
- GeneratorLikeGroup data
-});
+abstract class _$$UGroupKindRepostGroupImplCopyWith<$Res> {
+  factory _$$UGroupKindRepostGroupImplCopyWith(
+          _$UGroupKindRepostGroupImpl value,
+          $Res Function(_$UGroupKindRepostGroupImpl) then) =
+      __$$UGroupKindRepostGroupImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RepostGroup data});
 
-
-$GeneratorLikeGroupCopyWith<$Res> get data;
-
+  $RepostGroupCopyWith<$Res> get data;
 }
+
 /// @nodoc
-class _$UGroupKindGeneratorLikeGroupCopyWithImpl<$Res>
-    implements $UGroupKindGeneratorLikeGroupCopyWith<$Res> {
-  _$UGroupKindGeneratorLikeGroupCopyWithImpl(this._self, this._then);
+class __$$UGroupKindRepostGroupImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindRepostGroupImpl>
+    implements _$$UGroupKindRepostGroupImplCopyWith<$Res> {
+  __$$UGroupKindRepostGroupImplCopyWithImpl(_$UGroupKindRepostGroupImpl _value,
+      $Res Function(_$UGroupKindRepostGroupImpl) _then)
+      : super(_value, _then);
 
-  final UGroupKindGeneratorLikeGroup _self;
-  final $Res Function(UGroupKindGeneratorLikeGroup) _then;
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindRepostGroupImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as RepostGroup,
+    ));
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindGeneratorLikeGroup(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as GeneratorLikeGroup,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$GeneratorLikeGroupCopyWith<$Res> get data {
-  
-  return $GeneratorLikeGroupCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RepostGroupCopyWith<$Res> get data {
+    return $RepostGroupCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UGroupKindRepostGroupImpl extends UGroupKindRepostGroup {
+  const _$UGroupKindRepostGroupImpl({required this.data}) : super._();
 
-class UGroupKindReplyNotification extends UGroupKind {
-  const UGroupKindReplyNotification({required this.data}): super._();
-  
+  @override
+  final RepostGroup data;
 
-@override final  ReplyNotification data;
+  @override
+  String toString() {
+    return 'UGroupKind.repostGroup(data: $data)';
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindReplyNotificationCopyWith<UGroupKindReplyNotification> get copyWith => _$UGroupKindReplyNotificationCopyWithImpl<UGroupKindReplyNotification>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindRepostGroupImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindRepostGroupImplCopyWith<_$UGroupKindRepostGroupImpl>
+      get copyWith => __$$UGroupKindRepostGroupImplCopyWithImpl<
+          _$UGroupKindRepostGroupImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindReplyNotification&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return repostGroup(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return repostGroup?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (repostGroup != null) {
+      return repostGroup(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return repostGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return repostGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (repostGroup != null) {
+      return repostGroup(this);
+    }
+    return orElse();
+  }
 }
 
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.replyNotification(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindReplyNotificationCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindReplyNotificationCopyWith(UGroupKindReplyNotification value, $Res Function(UGroupKindReplyNotification) _then) = _$UGroupKindReplyNotificationCopyWithImpl;
-@useResult
-$Res call({
- ReplyNotification data
-});
-
-
-$ReplyNotificationCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindReplyNotificationCopyWithImpl<$Res>
-    implements $UGroupKindReplyNotificationCopyWith<$Res> {
-  _$UGroupKindReplyNotificationCopyWithImpl(this._self, this._then);
-
-  final UGroupKindReplyNotification _self;
-  final $Res Function(UGroupKindReplyNotification) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindReplyNotification(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as ReplyNotification,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ReplyNotificationCopyWith<$Res> get data {
-  
-  return $ReplyNotificationCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindQuoteNotification extends UGroupKind {
-  const UGroupKindQuoteNotification({required this.data}): super._();
-  
-
-@override final  QuoteNotification data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindQuoteNotificationCopyWith<UGroupKindQuoteNotification> get copyWith => _$UGroupKindQuoteNotificationCopyWithImpl<UGroupKindQuoteNotification>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindQuoteNotification&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.quoteNotification(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindQuoteNotificationCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindQuoteNotificationCopyWith(UGroupKindQuoteNotification value, $Res Function(UGroupKindQuoteNotification) _then) = _$UGroupKindQuoteNotificationCopyWithImpl;
-@useResult
-$Res call({
- QuoteNotification data
-});
-
-
-$QuoteNotificationCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindQuoteNotificationCopyWithImpl<$Res>
-    implements $UGroupKindQuoteNotificationCopyWith<$Res> {
-  _$UGroupKindQuoteNotificationCopyWithImpl(this._self, this._then);
-
-  final UGroupKindQuoteNotification _self;
-  final $Res Function(UGroupKindQuoteNotification) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindQuoteNotification(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as QuoteNotification,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$QuoteNotificationCopyWith<$Res> get data {
-  
-  return $QuoteNotificationCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindMentionNotification extends UGroupKind {
-  const UGroupKindMentionNotification({required this.data}): super._();
-  
-
-@override final  MentionNotification data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindMentionNotificationCopyWith<UGroupKindMentionNotification> get copyWith => _$UGroupKindMentionNotificationCopyWithImpl<UGroupKindMentionNotification>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindMentionNotification&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.mentionNotification(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindMentionNotificationCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindMentionNotificationCopyWith(UGroupKindMentionNotification value, $Res Function(UGroupKindMentionNotification) _then) = _$UGroupKindMentionNotificationCopyWithImpl;
-@useResult
-$Res call({
- MentionNotification data
-});
-
-
-$MentionNotificationCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindMentionNotificationCopyWithImpl<$Res>
-    implements $UGroupKindMentionNotificationCopyWith<$Res> {
-  _$UGroupKindMentionNotificationCopyWithImpl(this._self, this._then);
-
-  final UGroupKindMentionNotification _self;
-  final $Res Function(UGroupKindMentionNotification) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindMentionNotification(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as MentionNotification,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$MentionNotificationCopyWith<$Res> get data {
-  
-  return $MentionNotificationCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindFollowBackNotification extends UGroupKind {
-  const UGroupKindFollowBackNotification({required this.data}): super._();
-  
-
-@override final  FollowBackNotification data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindFollowBackNotificationCopyWith<UGroupKindFollowBackNotification> get copyWith => _$UGroupKindFollowBackNotificationCopyWithImpl<UGroupKindFollowBackNotification>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindFollowBackNotification&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.followBackNotification(data: $data)';
-}
-
-
+abstract class UGroupKindRepostGroup extends UGroupKind {
+  const factory UGroupKindRepostGroup({required final RepostGroup data}) =
+      _$UGroupKindRepostGroupImpl;
+  const UGroupKindRepostGroup._() : super._();
+
+  @override
+  RepostGroup get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindRepostGroupImplCopyWith<_$UGroupKindRepostGroupImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UGroupKindFollowBackNotificationCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindFollowBackNotificationCopyWith(UGroupKindFollowBackNotification value, $Res Function(UGroupKindFollowBackNotification) _then) = _$UGroupKindFollowBackNotificationCopyWithImpl;
-@useResult
-$Res call({
- FollowBackNotification data
-});
+abstract class _$$UGroupKindLikeViaRepostGroupImplCopyWith<$Res> {
+  factory _$$UGroupKindLikeViaRepostGroupImplCopyWith(
+          _$UGroupKindLikeViaRepostGroupImpl value,
+          $Res Function(_$UGroupKindLikeViaRepostGroupImpl) then) =
+      __$$UGroupKindLikeViaRepostGroupImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LikeViaRepostGroup data});
 
-
-$FollowBackNotificationCopyWith<$Res> get data;
-
+  $LikeViaRepostGroupCopyWith<$Res> get data;
 }
+
 /// @nodoc
-class _$UGroupKindFollowBackNotificationCopyWithImpl<$Res>
-    implements $UGroupKindFollowBackNotificationCopyWith<$Res> {
-  _$UGroupKindFollowBackNotificationCopyWithImpl(this._self, this._then);
+class __$$UGroupKindLikeViaRepostGroupImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindLikeViaRepostGroupImpl>
+    implements _$$UGroupKindLikeViaRepostGroupImplCopyWith<$Res> {
+  __$$UGroupKindLikeViaRepostGroupImplCopyWithImpl(
+      _$UGroupKindLikeViaRepostGroupImpl _value,
+      $Res Function(_$UGroupKindLikeViaRepostGroupImpl) _then)
+      : super(_value, _then);
 
-  final UGroupKindFollowBackNotification _self;
-  final $Res Function(UGroupKindFollowBackNotification) _then;
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindLikeViaRepostGroupImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as LikeViaRepostGroup,
+    ));
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindFollowBackNotification(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as FollowBackNotification,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$FollowBackNotificationCopyWith<$Res> get data {
-  
-  return $FollowBackNotificationCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LikeViaRepostGroupCopyWith<$Res> get data {
+    return $LikeViaRepostGroupCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UGroupKindLikeViaRepostGroupImpl extends UGroupKindLikeViaRepostGroup {
+  const _$UGroupKindLikeViaRepostGroupImpl({required this.data}) : super._();
 
-class UGroupKindVerifiedNotification extends UGroupKind {
-  const UGroupKindVerifiedNotification({required this.data}): super._();
-  
+  @override
+  final LikeViaRepostGroup data;
 
-@override final  VerifiedNotification data;
+  @override
+  String toString() {
+    return 'UGroupKind.likeViaRepostGroup(data: $data)';
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindVerifiedNotificationCopyWith<UGroupKindVerifiedNotification> get copyWith => _$UGroupKindVerifiedNotificationCopyWithImpl<UGroupKindVerifiedNotification>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindLikeViaRepostGroupImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindLikeViaRepostGroupImplCopyWith<
+          _$UGroupKindLikeViaRepostGroupImpl>
+      get copyWith => __$$UGroupKindLikeViaRepostGroupImplCopyWithImpl<
+          _$UGroupKindLikeViaRepostGroupImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindVerifiedNotification&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return likeViaRepostGroup(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return likeViaRepostGroup?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (likeViaRepostGroup != null) {
+      return likeViaRepostGroup(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return likeViaRepostGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return likeViaRepostGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (likeViaRepostGroup != null) {
+      return likeViaRepostGroup(this);
+    }
+    return orElse();
+  }
 }
 
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.verifiedNotification(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindVerifiedNotificationCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindVerifiedNotificationCopyWith(UGroupKindVerifiedNotification value, $Res Function(UGroupKindVerifiedNotification) _then) = _$UGroupKindVerifiedNotificationCopyWithImpl;
-@useResult
-$Res call({
- VerifiedNotification data
-});
-
-
-$VerifiedNotificationCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindVerifiedNotificationCopyWithImpl<$Res>
-    implements $UGroupKindVerifiedNotificationCopyWith<$Res> {
-  _$UGroupKindVerifiedNotificationCopyWithImpl(this._self, this._then);
-
-  final UGroupKindVerifiedNotification _self;
-  final $Res Function(UGroupKindVerifiedNotification) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindVerifiedNotification(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as VerifiedNotification,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$VerifiedNotificationCopyWith<$Res> get data {
-  
-  return $VerifiedNotificationCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindUnverifiedNotification extends UGroupKind {
-  const UGroupKindUnverifiedNotification({required this.data}): super._();
-  
-
-@override final  UnverifiedNotification data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindUnverifiedNotificationCopyWith<UGroupKindUnverifiedNotification> get copyWith => _$UGroupKindUnverifiedNotificationCopyWithImpl<UGroupKindUnverifiedNotification>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindUnverifiedNotification&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.unverifiedNotification(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindUnverifiedNotificationCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindUnverifiedNotificationCopyWith(UGroupKindUnverifiedNotification value, $Res Function(UGroupKindUnverifiedNotification) _then) = _$UGroupKindUnverifiedNotificationCopyWithImpl;
-@useResult
-$Res call({
- UnverifiedNotification data
-});
-
-
-$UnverifiedNotificationCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindUnverifiedNotificationCopyWithImpl<$Res>
-    implements $UGroupKindUnverifiedNotificationCopyWith<$Res> {
-  _$UGroupKindUnverifiedNotificationCopyWithImpl(this._self, this._then);
-
-  final UGroupKindUnverifiedNotification _self;
-  final $Res Function(UGroupKindUnverifiedNotification) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindUnverifiedNotification(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as UnverifiedNotification,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UnverifiedNotificationCopyWith<$Res> get data {
-  
-  return $UnverifiedNotificationCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindStarterPackJoinedNotification extends UGroupKind {
-  const UGroupKindStarterPackJoinedNotification({required this.data}): super._();
-  
-
-@override final  StarterPackJoinedNotification data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindStarterPackJoinedNotificationCopyWith<UGroupKindStarterPackJoinedNotification> get copyWith => _$UGroupKindStarterPackJoinedNotificationCopyWithImpl<UGroupKindStarterPackJoinedNotification>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindStarterPackJoinedNotification&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.starterPackJoinedNotification(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UGroupKindStarterPackJoinedNotificationCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindStarterPackJoinedNotificationCopyWith(UGroupKindStarterPackJoinedNotification value, $Res Function(UGroupKindStarterPackJoinedNotification) _then) = _$UGroupKindStarterPackJoinedNotificationCopyWithImpl;
-@useResult
-$Res call({
- StarterPackJoinedNotification data
-});
-
-
-$StarterPackJoinedNotificationCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UGroupKindStarterPackJoinedNotificationCopyWithImpl<$Res>
-    implements $UGroupKindStarterPackJoinedNotificationCopyWith<$Res> {
-  _$UGroupKindStarterPackJoinedNotificationCopyWithImpl(this._self, this._then);
-
-  final UGroupKindStarterPackJoinedNotification _self;
-  final $Res Function(UGroupKindStarterPackJoinedNotification) _then;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindStarterPackJoinedNotification(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as StarterPackJoinedNotification,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$StarterPackJoinedNotificationCopyWith<$Res> get data {
-  
-  return $StarterPackJoinedNotificationCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-/// @nodoc
-
-
-class UGroupKindContactMatchNotification extends UGroupKind {
-  const UGroupKindContactMatchNotification({required this.data}): super._();
-  
-
-@override final  ContactMatchNotification data;
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindContactMatchNotificationCopyWith<UGroupKindContactMatchNotification> get copyWith => _$UGroupKindContactMatchNotificationCopyWithImpl<UGroupKindContactMatchNotification>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindContactMatchNotification&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'UGroupKind.contactMatchNotification(data: $data)';
-}
-
-
+abstract class UGroupKindLikeViaRepostGroup extends UGroupKind {
+  const factory UGroupKindLikeViaRepostGroup(
+          {required final LikeViaRepostGroup data}) =
+      _$UGroupKindLikeViaRepostGroupImpl;
+  const UGroupKindLikeViaRepostGroup._() : super._();
+
+  @override
+  LikeViaRepostGroup get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindLikeViaRepostGroupImplCopyWith<
+          _$UGroupKindLikeViaRepostGroupImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UGroupKindContactMatchNotificationCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindContactMatchNotificationCopyWith(UGroupKindContactMatchNotification value, $Res Function(UGroupKindContactMatchNotification) _then) = _$UGroupKindContactMatchNotificationCopyWithImpl;
-@useResult
-$Res call({
- ContactMatchNotification data
-});
+abstract class _$$UGroupKindRepostViaRepostGroupImplCopyWith<$Res> {
+  factory _$$UGroupKindRepostViaRepostGroupImplCopyWith(
+          _$UGroupKindRepostViaRepostGroupImpl value,
+          $Res Function(_$UGroupKindRepostViaRepostGroupImpl) then) =
+      __$$UGroupKindRepostViaRepostGroupImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RepostViaRepostGroup data});
 
-
-$ContactMatchNotificationCopyWith<$Res> get data;
-
+  $RepostViaRepostGroupCopyWith<$Res> get data;
 }
+
 /// @nodoc
-class _$UGroupKindContactMatchNotificationCopyWithImpl<$Res>
-    implements $UGroupKindContactMatchNotificationCopyWith<$Res> {
-  _$UGroupKindContactMatchNotificationCopyWithImpl(this._self, this._then);
+class __$$UGroupKindRepostViaRepostGroupImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindRepostViaRepostGroupImpl>
+    implements _$$UGroupKindRepostViaRepostGroupImplCopyWith<$Res> {
+  __$$UGroupKindRepostViaRepostGroupImplCopyWithImpl(
+      _$UGroupKindRepostViaRepostGroupImpl _value,
+      $Res Function(_$UGroupKindRepostViaRepostGroupImpl) _then)
+      : super(_value, _then);
 
-  final UGroupKindContactMatchNotification _self;
-  final $Res Function(UGroupKindContactMatchNotification) _then;
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindRepostViaRepostGroupImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as RepostViaRepostGroup,
+    ));
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindContactMatchNotification(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as ContactMatchNotification,
-  ));
-}
-
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ContactMatchNotificationCopyWith<$Res> get data {
-  
-  return $ContactMatchNotificationCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RepostViaRepostGroupCopyWith<$Res> get data {
+    return $RepostViaRepostGroupCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UGroupKindRepostViaRepostGroupImpl
+    extends UGroupKindRepostViaRepostGroup {
+  const _$UGroupKindRepostViaRepostGroupImpl({required this.data}) : super._();
 
-class UGroupKindUnknown extends UGroupKind {
-  const UGroupKindUnknown({required final  Map<String, dynamic> data}): _data = data,super._();
-  
+  @override
+  final RepostViaRepostGroup data;
 
- final  Map<String, dynamic> _data;
-@override Map<String, dynamic> get data {
-  if (_data is EqualUnmodifiableMapView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_data);
+  @override
+  String toString() {
+    return 'UGroupKind.repostViaRepostGroup(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindRepostViaRepostGroupImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindRepostViaRepostGroupImplCopyWith<
+          _$UGroupKindRepostViaRepostGroupImpl>
+      get copyWith => __$$UGroupKindRepostViaRepostGroupImplCopyWithImpl<
+          _$UGroupKindRepostViaRepostGroupImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return repostViaRepostGroup(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return repostViaRepostGroup?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (repostViaRepostGroup != null) {
+      return repostViaRepostGroup(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return repostViaRepostGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return repostViaRepostGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (repostViaRepostGroup != null) {
+      return repostViaRepostGroup(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UGroupKindRepostViaRepostGroup extends UGroupKind {
+  const factory UGroupKindRepostViaRepostGroup(
+          {required final RepostViaRepostGroup data}) =
+      _$UGroupKindRepostViaRepostGroupImpl;
+  const UGroupKindRepostViaRepostGroup._() : super._();
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UGroupKindUnknownCopyWith<UGroupKindUnknown> get copyWith => _$UGroupKindUnknownCopyWithImpl<UGroupKindUnknown>(this, _$identity);
+  @override
+  RepostViaRepostGroup get data;
 
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UGroupKindUnknown&&const DeepCollectionEquality().equals(other._data, _data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
-
-@override
-String toString() {
-  return 'UGroupKind.unknown(data: $data)';
-}
-
-
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindRepostViaRepostGroupImplCopyWith<
+          _$UGroupKindRepostViaRepostGroupImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UGroupKindUnknownCopyWith<$Res> implements $UGroupKindCopyWith<$Res> {
-  factory $UGroupKindUnknownCopyWith(UGroupKindUnknown value, $Res Function(UGroupKindUnknown) _then) = _$UGroupKindUnknownCopyWithImpl;
-@useResult
-$Res call({
- Map<String, dynamic> data
-});
+abstract class _$$UGroupKindFollowGroupImplCopyWith<$Res> {
+  factory _$$UGroupKindFollowGroupImplCopyWith(
+          _$UGroupKindFollowGroupImpl value,
+          $Res Function(_$UGroupKindFollowGroupImpl) then) =
+      __$$UGroupKindFollowGroupImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({FollowGroup data});
 
-
-
-
+  $FollowGroupCopyWith<$Res> get data;
 }
+
 /// @nodoc
-class _$UGroupKindUnknownCopyWithImpl<$Res>
-    implements $UGroupKindUnknownCopyWith<$Res> {
-  _$UGroupKindUnknownCopyWithImpl(this._self, this._then);
+class __$$UGroupKindFollowGroupImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindFollowGroupImpl>
+    implements _$$UGroupKindFollowGroupImplCopyWith<$Res> {
+  __$$UGroupKindFollowGroupImplCopyWithImpl(_$UGroupKindFollowGroupImpl _value,
+      $Res Function(_$UGroupKindFollowGroupImpl) _then)
+      : super(_value, _then);
 
-  final UGroupKindUnknown _self;
-  final $Res Function(UGroupKindUnknown) _then;
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindFollowGroupImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as FollowGroup,
+    ));
+  }
 
-/// Create a copy of UGroupKind
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UGroupKindUnknown(
-data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
-  ));
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FollowGroupCopyWith<$Res> get data {
+    return $FollowGroupCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
+/// @nodoc
 
+class _$UGroupKindFollowGroupImpl extends UGroupKindFollowGroup {
+  const _$UGroupKindFollowGroupImpl({required this.data}) : super._();
+
+  @override
+  final FollowGroup data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.followGroup(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindFollowGroupImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindFollowGroupImplCopyWith<_$UGroupKindFollowGroupImpl>
+      get copyWith => __$$UGroupKindFollowGroupImplCopyWithImpl<
+          _$UGroupKindFollowGroupImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return followGroup(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return followGroup?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (followGroup != null) {
+      return followGroup(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return followGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return followGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (followGroup != null) {
+      return followGroup(this);
+    }
+    return orElse();
+  }
 }
 
-// dart format on
+abstract class UGroupKindFollowGroup extends UGroupKind {
+  const factory UGroupKindFollowGroup({required final FollowGroup data}) =
+      _$UGroupKindFollowGroupImpl;
+  const UGroupKindFollowGroup._() : super._();
+
+  @override
+  FollowGroup get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindFollowGroupImplCopyWith<_$UGroupKindFollowGroupImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindSubscribedPostGroupImplCopyWith<$Res> {
+  factory _$$UGroupKindSubscribedPostGroupImplCopyWith(
+          _$UGroupKindSubscribedPostGroupImpl value,
+          $Res Function(_$UGroupKindSubscribedPostGroupImpl) then) =
+      __$$UGroupKindSubscribedPostGroupImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SubscribedPostGroup data});
+
+  $SubscribedPostGroupCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindSubscribedPostGroupImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindSubscribedPostGroupImpl>
+    implements _$$UGroupKindSubscribedPostGroupImplCopyWith<$Res> {
+  __$$UGroupKindSubscribedPostGroupImplCopyWithImpl(
+      _$UGroupKindSubscribedPostGroupImpl _value,
+      $Res Function(_$UGroupKindSubscribedPostGroupImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindSubscribedPostGroupImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as SubscribedPostGroup,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SubscribedPostGroupCopyWith<$Res> get data {
+    return $SubscribedPostGroupCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindSubscribedPostGroupImpl
+    extends UGroupKindSubscribedPostGroup {
+  const _$UGroupKindSubscribedPostGroupImpl({required this.data}) : super._();
+
+  @override
+  final SubscribedPostGroup data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.subscribedPostGroup(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindSubscribedPostGroupImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindSubscribedPostGroupImplCopyWith<
+          _$UGroupKindSubscribedPostGroupImpl>
+      get copyWith => __$$UGroupKindSubscribedPostGroupImplCopyWithImpl<
+          _$UGroupKindSubscribedPostGroupImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return subscribedPostGroup(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return subscribedPostGroup?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (subscribedPostGroup != null) {
+      return subscribedPostGroup(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return subscribedPostGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return subscribedPostGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (subscribedPostGroup != null) {
+      return subscribedPostGroup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindSubscribedPostGroup extends UGroupKind {
+  const factory UGroupKindSubscribedPostGroup(
+          {required final SubscribedPostGroup data}) =
+      _$UGroupKindSubscribedPostGroupImpl;
+  const UGroupKindSubscribedPostGroup._() : super._();
+
+  @override
+  SubscribedPostGroup get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindSubscribedPostGroupImplCopyWith<
+          _$UGroupKindSubscribedPostGroupImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindGeneratorLikeGroupImplCopyWith<$Res> {
+  factory _$$UGroupKindGeneratorLikeGroupImplCopyWith(
+          _$UGroupKindGeneratorLikeGroupImpl value,
+          $Res Function(_$UGroupKindGeneratorLikeGroupImpl) then) =
+      __$$UGroupKindGeneratorLikeGroupImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GeneratorLikeGroup data});
+
+  $GeneratorLikeGroupCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindGeneratorLikeGroupImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindGeneratorLikeGroupImpl>
+    implements _$$UGroupKindGeneratorLikeGroupImplCopyWith<$Res> {
+  __$$UGroupKindGeneratorLikeGroupImplCopyWithImpl(
+      _$UGroupKindGeneratorLikeGroupImpl _value,
+      $Res Function(_$UGroupKindGeneratorLikeGroupImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindGeneratorLikeGroupImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as GeneratorLikeGroup,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GeneratorLikeGroupCopyWith<$Res> get data {
+    return $GeneratorLikeGroupCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindGeneratorLikeGroupImpl extends UGroupKindGeneratorLikeGroup {
+  const _$UGroupKindGeneratorLikeGroupImpl({required this.data}) : super._();
+
+  @override
+  final GeneratorLikeGroup data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.generatorLikeGroup(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindGeneratorLikeGroupImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindGeneratorLikeGroupImplCopyWith<
+          _$UGroupKindGeneratorLikeGroupImpl>
+      get copyWith => __$$UGroupKindGeneratorLikeGroupImplCopyWithImpl<
+          _$UGroupKindGeneratorLikeGroupImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return generatorLikeGroup(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return generatorLikeGroup?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (generatorLikeGroup != null) {
+      return generatorLikeGroup(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return generatorLikeGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return generatorLikeGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (generatorLikeGroup != null) {
+      return generatorLikeGroup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindGeneratorLikeGroup extends UGroupKind {
+  const factory UGroupKindGeneratorLikeGroup(
+          {required final GeneratorLikeGroup data}) =
+      _$UGroupKindGeneratorLikeGroupImpl;
+  const UGroupKindGeneratorLikeGroup._() : super._();
+
+  @override
+  GeneratorLikeGroup get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindGeneratorLikeGroupImplCopyWith<
+          _$UGroupKindGeneratorLikeGroupImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindReplyNotificationImplCopyWith<$Res> {
+  factory _$$UGroupKindReplyNotificationImplCopyWith(
+          _$UGroupKindReplyNotificationImpl value,
+          $Res Function(_$UGroupKindReplyNotificationImpl) then) =
+      __$$UGroupKindReplyNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ReplyNotification data});
+
+  $ReplyNotificationCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindReplyNotificationImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindReplyNotificationImpl>
+    implements _$$UGroupKindReplyNotificationImplCopyWith<$Res> {
+  __$$UGroupKindReplyNotificationImplCopyWithImpl(
+      _$UGroupKindReplyNotificationImpl _value,
+      $Res Function(_$UGroupKindReplyNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindReplyNotificationImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ReplyNotification,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReplyNotificationCopyWith<$Res> get data {
+    return $ReplyNotificationCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindReplyNotificationImpl extends UGroupKindReplyNotification {
+  const _$UGroupKindReplyNotificationImpl({required this.data}) : super._();
+
+  @override
+  final ReplyNotification data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.replyNotification(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindReplyNotificationImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindReplyNotificationImplCopyWith<_$UGroupKindReplyNotificationImpl>
+      get copyWith => __$$UGroupKindReplyNotificationImplCopyWithImpl<
+          _$UGroupKindReplyNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return replyNotification(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return replyNotification?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (replyNotification != null) {
+      return replyNotification(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return replyNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return replyNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (replyNotification != null) {
+      return replyNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindReplyNotification extends UGroupKind {
+  const factory UGroupKindReplyNotification(
+          {required final ReplyNotification data}) =
+      _$UGroupKindReplyNotificationImpl;
+  const UGroupKindReplyNotification._() : super._();
+
+  @override
+  ReplyNotification get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindReplyNotificationImplCopyWith<_$UGroupKindReplyNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindQuoteNotificationImplCopyWith<$Res> {
+  factory _$$UGroupKindQuoteNotificationImplCopyWith(
+          _$UGroupKindQuoteNotificationImpl value,
+          $Res Function(_$UGroupKindQuoteNotificationImpl) then) =
+      __$$UGroupKindQuoteNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({QuoteNotification data});
+
+  $QuoteNotificationCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindQuoteNotificationImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindQuoteNotificationImpl>
+    implements _$$UGroupKindQuoteNotificationImplCopyWith<$Res> {
+  __$$UGroupKindQuoteNotificationImplCopyWithImpl(
+      _$UGroupKindQuoteNotificationImpl _value,
+      $Res Function(_$UGroupKindQuoteNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindQuoteNotificationImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as QuoteNotification,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $QuoteNotificationCopyWith<$Res> get data {
+    return $QuoteNotificationCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindQuoteNotificationImpl extends UGroupKindQuoteNotification {
+  const _$UGroupKindQuoteNotificationImpl({required this.data}) : super._();
+
+  @override
+  final QuoteNotification data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.quoteNotification(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindQuoteNotificationImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindQuoteNotificationImplCopyWith<_$UGroupKindQuoteNotificationImpl>
+      get copyWith => __$$UGroupKindQuoteNotificationImplCopyWithImpl<
+          _$UGroupKindQuoteNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return quoteNotification(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return quoteNotification?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (quoteNotification != null) {
+      return quoteNotification(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return quoteNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return quoteNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (quoteNotification != null) {
+      return quoteNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindQuoteNotification extends UGroupKind {
+  const factory UGroupKindQuoteNotification(
+          {required final QuoteNotification data}) =
+      _$UGroupKindQuoteNotificationImpl;
+  const UGroupKindQuoteNotification._() : super._();
+
+  @override
+  QuoteNotification get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindQuoteNotificationImplCopyWith<_$UGroupKindQuoteNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindMentionNotificationImplCopyWith<$Res> {
+  factory _$$UGroupKindMentionNotificationImplCopyWith(
+          _$UGroupKindMentionNotificationImpl value,
+          $Res Function(_$UGroupKindMentionNotificationImpl) then) =
+      __$$UGroupKindMentionNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MentionNotification data});
+
+  $MentionNotificationCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindMentionNotificationImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindMentionNotificationImpl>
+    implements _$$UGroupKindMentionNotificationImplCopyWith<$Res> {
+  __$$UGroupKindMentionNotificationImplCopyWithImpl(
+      _$UGroupKindMentionNotificationImpl _value,
+      $Res Function(_$UGroupKindMentionNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindMentionNotificationImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as MentionNotification,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MentionNotificationCopyWith<$Res> get data {
+    return $MentionNotificationCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindMentionNotificationImpl
+    extends UGroupKindMentionNotification {
+  const _$UGroupKindMentionNotificationImpl({required this.data}) : super._();
+
+  @override
+  final MentionNotification data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.mentionNotification(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindMentionNotificationImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindMentionNotificationImplCopyWith<
+          _$UGroupKindMentionNotificationImpl>
+      get copyWith => __$$UGroupKindMentionNotificationImplCopyWithImpl<
+          _$UGroupKindMentionNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return mentionNotification(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return mentionNotification?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (mentionNotification != null) {
+      return mentionNotification(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return mentionNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return mentionNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (mentionNotification != null) {
+      return mentionNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindMentionNotification extends UGroupKind {
+  const factory UGroupKindMentionNotification(
+          {required final MentionNotification data}) =
+      _$UGroupKindMentionNotificationImpl;
+  const UGroupKindMentionNotification._() : super._();
+
+  @override
+  MentionNotification get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindMentionNotificationImplCopyWith<
+          _$UGroupKindMentionNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindFollowBackNotificationImplCopyWith<$Res> {
+  factory _$$UGroupKindFollowBackNotificationImplCopyWith(
+          _$UGroupKindFollowBackNotificationImpl value,
+          $Res Function(_$UGroupKindFollowBackNotificationImpl) then) =
+      __$$UGroupKindFollowBackNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({FollowBackNotification data});
+
+  $FollowBackNotificationCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindFollowBackNotificationImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res,
+        _$UGroupKindFollowBackNotificationImpl>
+    implements _$$UGroupKindFollowBackNotificationImplCopyWith<$Res> {
+  __$$UGroupKindFollowBackNotificationImplCopyWithImpl(
+      _$UGroupKindFollowBackNotificationImpl _value,
+      $Res Function(_$UGroupKindFollowBackNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindFollowBackNotificationImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as FollowBackNotification,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FollowBackNotificationCopyWith<$Res> get data {
+    return $FollowBackNotificationCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindFollowBackNotificationImpl
+    extends UGroupKindFollowBackNotification {
+  const _$UGroupKindFollowBackNotificationImpl({required this.data})
+      : super._();
+
+  @override
+  final FollowBackNotification data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.followBackNotification(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindFollowBackNotificationImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindFollowBackNotificationImplCopyWith<
+          _$UGroupKindFollowBackNotificationImpl>
+      get copyWith => __$$UGroupKindFollowBackNotificationImplCopyWithImpl<
+          _$UGroupKindFollowBackNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return followBackNotification(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return followBackNotification?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (followBackNotification != null) {
+      return followBackNotification(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return followBackNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return followBackNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (followBackNotification != null) {
+      return followBackNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindFollowBackNotification extends UGroupKind {
+  const factory UGroupKindFollowBackNotification(
+          {required final FollowBackNotification data}) =
+      _$UGroupKindFollowBackNotificationImpl;
+  const UGroupKindFollowBackNotification._() : super._();
+
+  @override
+  FollowBackNotification get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindFollowBackNotificationImplCopyWith<
+          _$UGroupKindFollowBackNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindVerifiedNotificationImplCopyWith<$Res> {
+  factory _$$UGroupKindVerifiedNotificationImplCopyWith(
+          _$UGroupKindVerifiedNotificationImpl value,
+          $Res Function(_$UGroupKindVerifiedNotificationImpl) then) =
+      __$$UGroupKindVerifiedNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({VerifiedNotification data});
+
+  $VerifiedNotificationCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindVerifiedNotificationImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindVerifiedNotificationImpl>
+    implements _$$UGroupKindVerifiedNotificationImplCopyWith<$Res> {
+  __$$UGroupKindVerifiedNotificationImplCopyWithImpl(
+      _$UGroupKindVerifiedNotificationImpl _value,
+      $Res Function(_$UGroupKindVerifiedNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindVerifiedNotificationImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as VerifiedNotification,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $VerifiedNotificationCopyWith<$Res> get data {
+    return $VerifiedNotificationCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindVerifiedNotificationImpl
+    extends UGroupKindVerifiedNotification {
+  const _$UGroupKindVerifiedNotificationImpl({required this.data}) : super._();
+
+  @override
+  final VerifiedNotification data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.verifiedNotification(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindVerifiedNotificationImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindVerifiedNotificationImplCopyWith<
+          _$UGroupKindVerifiedNotificationImpl>
+      get copyWith => __$$UGroupKindVerifiedNotificationImplCopyWithImpl<
+          _$UGroupKindVerifiedNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return verifiedNotification(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return verifiedNotification?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (verifiedNotification != null) {
+      return verifiedNotification(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return verifiedNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return verifiedNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (verifiedNotification != null) {
+      return verifiedNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindVerifiedNotification extends UGroupKind {
+  const factory UGroupKindVerifiedNotification(
+          {required final VerifiedNotification data}) =
+      _$UGroupKindVerifiedNotificationImpl;
+  const UGroupKindVerifiedNotification._() : super._();
+
+  @override
+  VerifiedNotification get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindVerifiedNotificationImplCopyWith<
+          _$UGroupKindVerifiedNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindUnverifiedNotificationImplCopyWith<$Res> {
+  factory _$$UGroupKindUnverifiedNotificationImplCopyWith(
+          _$UGroupKindUnverifiedNotificationImpl value,
+          $Res Function(_$UGroupKindUnverifiedNotificationImpl) then) =
+      __$$UGroupKindUnverifiedNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UnverifiedNotification data});
+
+  $UnverifiedNotificationCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindUnverifiedNotificationImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res,
+        _$UGroupKindUnverifiedNotificationImpl>
+    implements _$$UGroupKindUnverifiedNotificationImplCopyWith<$Res> {
+  __$$UGroupKindUnverifiedNotificationImplCopyWithImpl(
+      _$UGroupKindUnverifiedNotificationImpl _value,
+      $Res Function(_$UGroupKindUnverifiedNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindUnverifiedNotificationImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as UnverifiedNotification,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UnverifiedNotificationCopyWith<$Res> get data {
+    return $UnverifiedNotificationCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindUnverifiedNotificationImpl
+    extends UGroupKindUnverifiedNotification {
+  const _$UGroupKindUnverifiedNotificationImpl({required this.data})
+      : super._();
+
+  @override
+  final UnverifiedNotification data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.unverifiedNotification(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindUnverifiedNotificationImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindUnverifiedNotificationImplCopyWith<
+          _$UGroupKindUnverifiedNotificationImpl>
+      get copyWith => __$$UGroupKindUnverifiedNotificationImplCopyWithImpl<
+          _$UGroupKindUnverifiedNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return unverifiedNotification(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return unverifiedNotification?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unverifiedNotification != null) {
+      return unverifiedNotification(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return unverifiedNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return unverifiedNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unverifiedNotification != null) {
+      return unverifiedNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindUnverifiedNotification extends UGroupKind {
+  const factory UGroupKindUnverifiedNotification(
+          {required final UnverifiedNotification data}) =
+      _$UGroupKindUnverifiedNotificationImpl;
+  const UGroupKindUnverifiedNotification._() : super._();
+
+  @override
+  UnverifiedNotification get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindUnverifiedNotificationImplCopyWith<
+          _$UGroupKindUnverifiedNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindStarterPackJoinedNotificationImplCopyWith<$Res> {
+  factory _$$UGroupKindStarterPackJoinedNotificationImplCopyWith(
+          _$UGroupKindStarterPackJoinedNotificationImpl value,
+          $Res Function(_$UGroupKindStarterPackJoinedNotificationImpl) then) =
+      __$$UGroupKindStarterPackJoinedNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({StarterPackJoinedNotification data});
+
+  $StarterPackJoinedNotificationCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindStarterPackJoinedNotificationImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res,
+        _$UGroupKindStarterPackJoinedNotificationImpl>
+    implements _$$UGroupKindStarterPackJoinedNotificationImplCopyWith<$Res> {
+  __$$UGroupKindStarterPackJoinedNotificationImplCopyWithImpl(
+      _$UGroupKindStarterPackJoinedNotificationImpl _value,
+      $Res Function(_$UGroupKindStarterPackJoinedNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindStarterPackJoinedNotificationImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as StarterPackJoinedNotification,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StarterPackJoinedNotificationCopyWith<$Res> get data {
+    return $StarterPackJoinedNotificationCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindStarterPackJoinedNotificationImpl
+    extends UGroupKindStarterPackJoinedNotification {
+  const _$UGroupKindStarterPackJoinedNotificationImpl({required this.data})
+      : super._();
+
+  @override
+  final StarterPackJoinedNotification data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.starterPackJoinedNotification(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindStarterPackJoinedNotificationImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindStarterPackJoinedNotificationImplCopyWith<
+          _$UGroupKindStarterPackJoinedNotificationImpl>
+      get copyWith =>
+          __$$UGroupKindStarterPackJoinedNotificationImplCopyWithImpl<
+              _$UGroupKindStarterPackJoinedNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return starterPackJoinedNotification(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return starterPackJoinedNotification?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (starterPackJoinedNotification != null) {
+      return starterPackJoinedNotification(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return starterPackJoinedNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return starterPackJoinedNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (starterPackJoinedNotification != null) {
+      return starterPackJoinedNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindStarterPackJoinedNotification extends UGroupKind {
+  const factory UGroupKindStarterPackJoinedNotification(
+          {required final StarterPackJoinedNotification data}) =
+      _$UGroupKindStarterPackJoinedNotificationImpl;
+  const UGroupKindStarterPackJoinedNotification._() : super._();
+
+  @override
+  StarterPackJoinedNotification get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindStarterPackJoinedNotificationImplCopyWith<
+          _$UGroupKindStarterPackJoinedNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindContactMatchNotificationImplCopyWith<$Res> {
+  factory _$$UGroupKindContactMatchNotificationImplCopyWith(
+          _$UGroupKindContactMatchNotificationImpl value,
+          $Res Function(_$UGroupKindContactMatchNotificationImpl) then) =
+      __$$UGroupKindContactMatchNotificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ContactMatchNotification data});
+
+  $ContactMatchNotificationCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UGroupKindContactMatchNotificationImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res,
+        _$UGroupKindContactMatchNotificationImpl>
+    implements _$$UGroupKindContactMatchNotificationImplCopyWith<$Res> {
+  __$$UGroupKindContactMatchNotificationImplCopyWithImpl(
+      _$UGroupKindContactMatchNotificationImpl _value,
+      $Res Function(_$UGroupKindContactMatchNotificationImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindContactMatchNotificationImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ContactMatchNotification,
+    ));
+  }
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactMatchNotificationCopyWith<$Res> get data {
+    return $ContactMatchNotificationCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindContactMatchNotificationImpl
+    extends UGroupKindContactMatchNotification {
+  const _$UGroupKindContactMatchNotificationImpl({required this.data})
+      : super._();
+
+  @override
+  final ContactMatchNotification data;
+
+  @override
+  String toString() {
+    return 'UGroupKind.contactMatchNotification(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindContactMatchNotificationImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindContactMatchNotificationImplCopyWith<
+          _$UGroupKindContactMatchNotificationImpl>
+      get copyWith => __$$UGroupKindContactMatchNotificationImplCopyWithImpl<
+          _$UGroupKindContactMatchNotificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return contactMatchNotification(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return contactMatchNotification?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (contactMatchNotification != null) {
+      return contactMatchNotification(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return contactMatchNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return contactMatchNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (contactMatchNotification != null) {
+      return contactMatchNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindContactMatchNotification extends UGroupKind {
+  const factory UGroupKindContactMatchNotification(
+          {required final ContactMatchNotification data}) =
+      _$UGroupKindContactMatchNotificationImpl;
+  const UGroupKindContactMatchNotification._() : super._();
+
+  @override
+  ContactMatchNotification get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindContactMatchNotificationImplCopyWith<
+          _$UGroupKindContactMatchNotificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UGroupKindUnknownImplCopyWith<$Res> {
+  factory _$$UGroupKindUnknownImplCopyWith(_$UGroupKindUnknownImpl value,
+          $Res Function(_$UGroupKindUnknownImpl) then) =
+      __$$UGroupKindUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Map<String, dynamic> data});
+}
+
+/// @nodoc
+class __$$UGroupKindUnknownImplCopyWithImpl<$Res>
+    extends _$UGroupKindCopyWithImpl<$Res, _$UGroupKindUnknownImpl>
+    implements _$$UGroupKindUnknownImplCopyWith<$Res> {
+  __$$UGroupKindUnknownImplCopyWithImpl(_$UGroupKindUnknownImpl _value,
+      $Res Function(_$UGroupKindUnknownImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UGroupKindUnknownImpl(
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UGroupKindUnknownImpl extends UGroupKindUnknown {
+  const _$UGroupKindUnknownImpl({required final Map<String, dynamic> data})
+      : _data = data,
+        super._();
+
+  final Map<String, dynamic> _data;
+  @override
+  Map<String, dynamic> get data {
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'UGroupKind.unknown(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UGroupKindUnknownImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UGroupKindUnknownImplCopyWith<_$UGroupKindUnknownImpl> get copyWith =>
+      __$$UGroupKindUnknownImplCopyWithImpl<_$UGroupKindUnknownImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LikeGroup data) likeGroup,
+    required TResult Function(MultiPostLikeGroup data) multiPostLikeGroup,
+    required TResult Function(RepostGroup data) repostGroup,
+    required TResult Function(LikeViaRepostGroup data) likeViaRepostGroup,
+    required TResult Function(RepostViaRepostGroup data) repostViaRepostGroup,
+    required TResult Function(FollowGroup data) followGroup,
+    required TResult Function(SubscribedPostGroup data) subscribedPostGroup,
+    required TResult Function(GeneratorLikeGroup data) generatorLikeGroup,
+    required TResult Function(ReplyNotification data) replyNotification,
+    required TResult Function(QuoteNotification data) quoteNotification,
+    required TResult Function(MentionNotification data) mentionNotification,
+    required TResult Function(FollowBackNotification data)
+        followBackNotification,
+    required TResult Function(VerifiedNotification data) verifiedNotification,
+    required TResult Function(UnverifiedNotification data)
+        unverifiedNotification,
+    required TResult Function(StarterPackJoinedNotification data)
+        starterPackJoinedNotification,
+    required TResult Function(ContactMatchNotification data)
+        contactMatchNotification,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LikeGroup data)? likeGroup,
+    TResult? Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult? Function(RepostGroup data)? repostGroup,
+    TResult? Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult? Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult? Function(FollowGroup data)? followGroup,
+    TResult? Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult? Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult? Function(ReplyNotification data)? replyNotification,
+    TResult? Function(QuoteNotification data)? quoteNotification,
+    TResult? Function(MentionNotification data)? mentionNotification,
+    TResult? Function(FollowBackNotification data)? followBackNotification,
+    TResult? Function(VerifiedNotification data)? verifiedNotification,
+    TResult? Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult? Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult? Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LikeGroup data)? likeGroup,
+    TResult Function(MultiPostLikeGroup data)? multiPostLikeGroup,
+    TResult Function(RepostGroup data)? repostGroup,
+    TResult Function(LikeViaRepostGroup data)? likeViaRepostGroup,
+    TResult Function(RepostViaRepostGroup data)? repostViaRepostGroup,
+    TResult Function(FollowGroup data)? followGroup,
+    TResult Function(SubscribedPostGroup data)? subscribedPostGroup,
+    TResult Function(GeneratorLikeGroup data)? generatorLikeGroup,
+    TResult Function(ReplyNotification data)? replyNotification,
+    TResult Function(QuoteNotification data)? quoteNotification,
+    TResult Function(MentionNotification data)? mentionNotification,
+    TResult Function(FollowBackNotification data)? followBackNotification,
+    TResult Function(VerifiedNotification data)? verifiedNotification,
+    TResult Function(UnverifiedNotification data)? unverifiedNotification,
+    TResult Function(StarterPackJoinedNotification data)?
+        starterPackJoinedNotification,
+    TResult Function(ContactMatchNotification data)? contactMatchNotification,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UGroupKindLikeGroup value) likeGroup,
+    required TResult Function(UGroupKindMultiPostLikeGroup value)
+        multiPostLikeGroup,
+    required TResult Function(UGroupKindRepostGroup value) repostGroup,
+    required TResult Function(UGroupKindLikeViaRepostGroup value)
+        likeViaRepostGroup,
+    required TResult Function(UGroupKindRepostViaRepostGroup value)
+        repostViaRepostGroup,
+    required TResult Function(UGroupKindFollowGroup value) followGroup,
+    required TResult Function(UGroupKindSubscribedPostGroup value)
+        subscribedPostGroup,
+    required TResult Function(UGroupKindGeneratorLikeGroup value)
+        generatorLikeGroup,
+    required TResult Function(UGroupKindReplyNotification value)
+        replyNotification,
+    required TResult Function(UGroupKindQuoteNotification value)
+        quoteNotification,
+    required TResult Function(UGroupKindMentionNotification value)
+        mentionNotification,
+    required TResult Function(UGroupKindFollowBackNotification value)
+        followBackNotification,
+    required TResult Function(UGroupKindVerifiedNotification value)
+        verifiedNotification,
+    required TResult Function(UGroupKindUnverifiedNotification value)
+        unverifiedNotification,
+    required TResult Function(UGroupKindStarterPackJoinedNotification value)
+        starterPackJoinedNotification,
+    required TResult Function(UGroupKindContactMatchNotification value)
+        contactMatchNotification,
+    required TResult Function(UGroupKindUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult? Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult? Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult? Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult? Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult? Function(UGroupKindFollowGroup value)? followGroup,
+    TResult? Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult? Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult? Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult? Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult? Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult? Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult? Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult? Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult? Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult? Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult? Function(UGroupKindUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UGroupKindLikeGroup value)? likeGroup,
+    TResult Function(UGroupKindMultiPostLikeGroup value)? multiPostLikeGroup,
+    TResult Function(UGroupKindRepostGroup value)? repostGroup,
+    TResult Function(UGroupKindLikeViaRepostGroup value)? likeViaRepostGroup,
+    TResult Function(UGroupKindRepostViaRepostGroup value)?
+        repostViaRepostGroup,
+    TResult Function(UGroupKindFollowGroup value)? followGroup,
+    TResult Function(UGroupKindSubscribedPostGroup value)? subscribedPostGroup,
+    TResult Function(UGroupKindGeneratorLikeGroup value)? generatorLikeGroup,
+    TResult Function(UGroupKindReplyNotification value)? replyNotification,
+    TResult Function(UGroupKindQuoteNotification value)? quoteNotification,
+    TResult Function(UGroupKindMentionNotification value)? mentionNotification,
+    TResult Function(UGroupKindFollowBackNotification value)?
+        followBackNotification,
+    TResult Function(UGroupKindVerifiedNotification value)?
+        verifiedNotification,
+    TResult Function(UGroupKindUnverifiedNotification value)?
+        unverifiedNotification,
+    TResult Function(UGroupKindStarterPackJoinedNotification value)?
+        starterPackJoinedNotification,
+    TResult Function(UGroupKindContactMatchNotification value)?
+        contactMatchNotification,
+    TResult Function(UGroupKindUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UGroupKindUnknown extends UGroupKind {
+  const factory UGroupKindUnknown({required final Map<String, dynamic> data}) =
+      _$UGroupKindUnknownImpl;
+  const UGroupKindUnknown._() : super._();
+
+  @override
+  Map<String, dynamic> get data;
+
+  /// Create a copy of UGroupKind
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UGroupKindUnknownImplCopyWith<_$UGroupKindUnknownImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

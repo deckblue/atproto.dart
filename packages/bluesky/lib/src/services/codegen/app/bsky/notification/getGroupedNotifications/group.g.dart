@@ -8,37 +8,42 @@ part of 'group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Group _$GroupFromJson(Map json) => $checkedCreate('_Group', json, (
-  $checkedConvert,
-) {
-  final val = _Group(
-    $type: $checkedConvert(
-      r'$type',
-      (v) =>
-          v as String? ?? 'app.bsky.notification.getGroupedNotifications#group',
-    ),
-    id: $checkedConvert('id', (v) => v as String),
-    isRead: $checkedConvert('isRead', (v) => v as bool),
-    indexedAt: $checkedConvert('indexedAt', (v) => DateTime.parse(v as String)),
-    count: $checkedConvert('count', (v) => (v as num).toInt()),
-    kind: $checkedConvert(
-      'kind',
-      (v) => const UGroupKindConverter().fromJson(v as Map<String, dynamic>),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$GroupImpl _$$GroupImplFromJson(Map json) => $checkedCreate(
+      r'_$GroupImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GroupImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.notification.getGroupedNotifications#group'),
+          id: $checkedConvert('id', (v) => v as String),
+          isRead: $checkedConvert('isRead', (v) => v as bool),
+          indexedAt:
+              $checkedConvert('indexedAt', (v) => DateTime.parse(v as String)),
+          count: $checkedConvert('count', (v) => (v as num).toInt()),
+          kind: $checkedConvert(
+              'kind',
+              (v) => const UGroupKindConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GroupToJson(_Group instance) => <String, dynamic>{
-  r'$type': instance.$type,
-  'id': instance.id,
-  'isRead': instance.isRead,
-  'indexedAt': iso8601(instance.indexedAt),
-  'count': instance.count,
-  'kind': const UGroupKindConverter().toJson(instance.kind),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$GroupImplToJson(_$GroupImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'id': instance.id,
+      'isRead': instance.isRead,
+      'indexedAt': iso8601(instance.indexedAt),
+      'count': instance.count,
+      'kind': const UGroupKindConverter().toJson(instance.kind),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

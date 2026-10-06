@@ -8,59 +8,64 @@ part of 'unassignment_activity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnassignmentActivity _$UnassignmentActivityFromJson(
-  Map json,
-) => $checkedCreate('_UnassignmentActivity', json, ($checkedConvert) {
-  final val = _UnassignmentActivity(
-    $type: $checkedConvert(
-      r'$type',
-      (v) => v as String? ?? 'tools.ozone.report.defs#unassignmentActivity',
-    ),
-    previousStatus: $checkedConvert(
-      'previousStatus',
-      (v) =>
-          _$JsonConverterFromJson<String, UnassignmentActivityPreviousStatus>(
-            v,
-            const UnassignmentActivityPreviousStatusConverter().fromJson,
-          ),
-    ),
-    nextStatus: $checkedConvert(
-      'nextStatus',
-      (v) => _$JsonConverterFromJson<String, UnassignmentActivityNextStatus>(
-        v,
-        const UnassignmentActivityNextStatusConverter().fromJson,
-      ),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$UnassignmentActivityImpl _$$UnassignmentActivityImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$UnassignmentActivityImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$UnassignmentActivityImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.report.defs#unassignmentActivity'),
+          previousStatus: $checkedConvert(
+              'previousStatus',
+              (v) => _$JsonConverterFromJson<String,
+                      UnassignmentActivityPreviousStatus>(
+                  v,
+                  const UnassignmentActivityPreviousStatusConverter()
+                      .fromJson)),
+          nextStatus: $checkedConvert(
+              'nextStatus',
+              (v) => _$JsonConverterFromJson<String,
+                      UnassignmentActivityNextStatus>(
+                  v, const UnassignmentActivityNextStatusConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$UnassignmentActivityToJson(
-  _UnassignmentActivity instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'previousStatus':
-      ?_$JsonConverterToJson<String, UnassignmentActivityPreviousStatus>(
-        instance.previousStatus,
-        const UnassignmentActivityPreviousStatusConverter().toJson,
-      ),
-  'nextStatus': ?_$JsonConverterToJson<String, UnassignmentActivityNextStatus>(
-    instance.nextStatus,
-    const UnassignmentActivityNextStatusConverter().toJson,
-  ),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$UnassignmentActivityImplToJson(
+        _$UnassignmentActivityImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      if (_$JsonConverterToJson<String, UnassignmentActivityPreviousStatus>(
+              instance.previousStatus,
+              const UnassignmentActivityPreviousStatusConverter().toJson)
+          case final value?)
+        'previousStatus': value,
+      if (_$JsonConverterToJson<String, UnassignmentActivityNextStatus>(
+              instance.nextStatus,
+              const UnassignmentActivityNextStatusConverter().toJson)
+          case final value?)
+        'nextStatus': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

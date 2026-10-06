@@ -8,27 +8,32 @@ part of 'generator_like_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GeneratorLikeItem _$GeneratorLikeItemFromJson(Map json) =>
-    $checkedCreate('_GeneratorLikeItem', json, ($checkedConvert) {
-      final val = _GeneratorLikeItem(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'app.bsky.notification.getGroupedNotifications#generatorLikeItem',
-        ),
-        actor: $checkedConvert('actor', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$GeneratorLikeItemImpl _$$GeneratorLikeItemImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$GeneratorLikeItemImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$GeneratorLikeItemImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.notification.getGroupedNotifications#generatorLikeItem'),
+          actor: $checkedConvert('actor', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$GeneratorLikeItemToJson(_GeneratorLikeItem instance) =>
+Map<String, dynamic> _$$GeneratorLikeItemImplToJson(
+        _$GeneratorLikeItemImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'actor': instance.actor,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -8,34 +8,35 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_FeedGetListFeedOutput _$FeedGetListFeedOutputFromJson(Map json) =>
-    $checkedCreate('_FeedGetListFeedOutput', json, ($checkedConvert) {
-      final val = _FeedGetListFeedOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        startCursor: $checkedConvert('startCursor', (v) => v as String?),
-        feed: $checkedConvert(
-          'feed',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const FeedViewPostConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$FeedGetListFeedOutputImpl _$$FeedGetListFeedOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$FeedGetListFeedOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$FeedGetListFeedOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          startCursor: $checkedConvert('startCursor', (v) => v as String?),
+          feed: $checkedConvert(
+              'feed',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const FeedViewPostConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$FeedGetListFeedOutputToJson(
-  _FeedGetListFeedOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'startCursor': ?instance.startCursor,
-  'feed': instance.feed.map(const FeedViewPostConverter().toJson).toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$FeedGetListFeedOutputImplToJson(
+        _$FeedGetListFeedOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.startCursor case final value?) 'startCursor': value,
+      'feed': instance.feed.map(const FeedViewPostConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

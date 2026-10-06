@@ -8,26 +8,30 @@ part of 'like_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LikeItem _$LikeItemFromJson(Map json) =>
-    $checkedCreate('_LikeItem', json, ($checkedConvert) {
-      final val = _LikeItem(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'app.bsky.notification.getGroupedNotifications#likeItem',
-        ),
-        actor: $checkedConvert('actor', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$LikeItemImpl _$$LikeItemImplFromJson(Map json) => $checkedCreate(
+      r'_$LikeItemImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$LikeItemImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.notification.getGroupedNotifications#likeItem'),
+          actor: $checkedConvert('actor', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$LikeItemToJson(_LikeItem instance) => <String, dynamic>{
-  r'$type': instance.$type,
-  'actor': instance.actor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$LikeItemImplToJson(_$LikeItemImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'actor': instance.actor,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

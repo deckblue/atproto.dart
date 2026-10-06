@@ -8,27 +8,30 @@ part of 'action_ref.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ActionRef _$ActionRefFromJson(Map json) => $checkedCreate('_ActionRef', json, (
-  $checkedConvert,
-) {
-  final val = _ActionRef(
-    $type: $checkedConvert(
-      r'$type',
-      (v) =>
-          v as String? ?? 'tools.ozone.inbox.appealActionedSubject#actionRef',
-    ),
-    id: $checkedConvert('id', (v) => (v as num).toInt()),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$ActionRefImpl _$$ActionRefImplFromJson(Map json) => $checkedCreate(
+      r'_$ActionRefImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$ActionRefImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.inbox.appealActionedSubject#actionRef'),
+          id: $checkedConvert('id', (v) => (v as num).toInt()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$ActionRefToJson(_ActionRef instance) =>
+Map<String, dynamic> _$$ActionRefImplToJson(_$ActionRefImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'id': instance.id,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

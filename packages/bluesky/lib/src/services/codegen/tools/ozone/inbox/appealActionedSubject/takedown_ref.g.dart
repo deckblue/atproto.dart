@@ -8,25 +8,28 @@ part of 'takedown_ref.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TakedownRef _$TakedownRefFromJson(Map json) =>
-    $checkedCreate('_TakedownRef', json, ($checkedConvert) {
-      final val = _TakedownRef(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'tools.ozone.inbox.appealActionedSubject#takedownRef',
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$TakedownRefImpl _$$TakedownRefImplFromJson(Map json) => $checkedCreate(
+      r'_$TakedownRefImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$TakedownRefImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.inbox.appealActionedSubject#takedownRef'),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$TakedownRefToJson(_TakedownRef instance) =>
+Map<String, dynamic> _$$TakedownRefImplToJson(_$TakedownRefImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

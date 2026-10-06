@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,292 +9,247 @@ part of 'like_group.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+LikeGroup _$LikeGroupFromJson(Map<String, dynamic> json) {
+  return _LikeGroup.fromJson(json);
+}
 
 /// @nodoc
 mixin _$LikeGroup {
-
- String get $type;@AtUriConverter() AtUri get post;@LikeItemConverter() List<LikeItem> get items; Map<String, dynamic>? get $unknown;
-/// Create a copy of LikeGroup
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$LikeGroupCopyWith<LikeGroup> get copyWith => _$LikeGroupCopyWithImpl<LikeGroup>(this as LikeGroup, _$identity);
+  String get $type => throw _privateConstructorUsedError;
+  @AtUriConverter()
+  AtUri get post => throw _privateConstructorUsedError;
+  @LikeItemConverter()
+  List<LikeItem> get items => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this LikeGroup to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LikeGroup&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.post, post) || other.post == post)&&const DeepCollectionEquality().equals(other.items, items)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,post,const DeepCollectionEquality().hash(items),const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'LikeGroup(\$type: ${$type}, post: $post, items: $items, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of LikeGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LikeGroupCopyWith<LikeGroup> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $LikeGroupCopyWith<$Res>  {
-  factory $LikeGroupCopyWith(LikeGroup value, $Res Function(LikeGroup) _then) = _$LikeGroupCopyWithImpl;
-@useResult
-$Res call({
- String $type,@AtUriConverter() AtUri post,@LikeItemConverter() List<LikeItem> items, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $LikeGroupCopyWith<$Res> {
+  factory $LikeGroupCopyWith(LikeGroup value, $Res Function(LikeGroup) then) =
+      _$LikeGroupCopyWithImpl<$Res, LikeGroup>;
+  @useResult
+  $Res call(
+      {String $type,
+      @AtUriConverter() AtUri post,
+      @LikeItemConverter() List<LikeItem> items,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$LikeGroupCopyWithImpl<$Res>
+class _$LikeGroupCopyWithImpl<$Res, $Val extends LikeGroup>
     implements $LikeGroupCopyWith<$Res> {
-  _$LikeGroupCopyWithImpl(this._self, this._then);
+  _$LikeGroupCopyWithImpl(this._value, this._then);
 
-  final LikeGroup _self;
-  final $Res Function(LikeGroup) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of LikeGroup
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? post = null,Object? items = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,post: null == post ? _self.post : post // ignore: cast_nullable_to_non_nullable
-as AtUri,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
-as List<LikeItem>,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of LikeGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? post = null,
+    Object? items = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      post: null == post
+          ? _value.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as AtUri,
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<LikeItem>,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$LikeGroupImplCopyWith<$Res>
+    implements $LikeGroupCopyWith<$Res> {
+  factory _$$LikeGroupImplCopyWith(
+          _$LikeGroupImpl value, $Res Function(_$LikeGroupImpl) then) =
+      __$$LikeGroupImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      @AtUriConverter() AtUri post,
+      @LikeItemConverter() List<LikeItem> items,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$LikeGroupImplCopyWithImpl<$Res>
+    extends _$LikeGroupCopyWithImpl<$Res, _$LikeGroupImpl>
+    implements _$$LikeGroupImplCopyWith<$Res> {
+  __$$LikeGroupImplCopyWithImpl(
+      _$LikeGroupImpl _value, $Res Function(_$LikeGroupImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [LikeGroup].
-extension LikeGroupPatterns on LikeGroup {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _LikeGroup value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _LikeGroup() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _LikeGroup value)  $default,){
-final _that = this;
-switch (_that) {
-case _LikeGroup():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _LikeGroup value)?  $default,){
-final _that = this;
-switch (_that) {
-case _LikeGroup() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type, @AtUriConverter()  AtUri post, @LikeItemConverter()  List<LikeItem> items,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _LikeGroup() when $default != null:
-return $default(_that.$type,_that.post,_that.items,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type, @AtUriConverter()  AtUri post, @LikeItemConverter()  List<LikeItem> items,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _LikeGroup():
-return $default(_that.$type,_that.post,_that.items,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type, @AtUriConverter()  AtUri post, @LikeItemConverter()  List<LikeItem> items,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _LikeGroup() when $default != null:
-return $default(_that.$type,_that.post,_that.items,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of LikeGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? post = null,
+    Object? items = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$LikeGroupImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      post: null == post
+          ? _value.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as AtUri,
+      items: null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<LikeItem>,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _LikeGroup implements LikeGroup {
-  const _LikeGroup({this.$type = 'app.bsky.notification.getGroupedNotifications#likeGroup', @AtUriConverter() required this.post, @LikeItemConverter() required final  List<LikeItem> items, final  Map<String, dynamic>? $unknown}): _items = items,_$unknown = $unknown;
-  factory _LikeGroup.fromJson(Map<String, dynamic> json) => _$LikeGroupFromJson(json);
+class _$LikeGroupImpl implements _LikeGroup {
+  const _$LikeGroupImpl(
+      {this.$type = 'app.bsky.notification.getGroupedNotifications#likeGroup',
+      @AtUriConverter() required this.post,
+      @LikeItemConverter() required final List<LikeItem> items,
+      final Map<String, dynamic>? $unknown})
+      : _items = items,
+        _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-@override@AtUriConverter() final  AtUri post;
- final  List<LikeItem> _items;
-@override@LikeItemConverter() List<LikeItem> get items {
-  if (_items is EqualUnmodifiableListView) return _items;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_items);
+  factory _$LikeGroupImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LikeGroupImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+  @override
+  @AtUriConverter()
+  final AtUri post;
+  final List<LikeItem> _items;
+  @override
+  @LikeItemConverter()
+  List<LikeItem> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'LikeGroup(\$type: ${$type}, post: $post, items: $items, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LikeGroupImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.post, post) || other.post == post) &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      $type,
+      post,
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of LikeGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LikeGroupImplCopyWith<_$LikeGroupImpl> get copyWith =>
+      __$$LikeGroupImplCopyWithImpl<_$LikeGroupImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LikeGroupImplToJson(
+      this,
+    );
+  }
 }
 
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+abstract class _LikeGroup implements LikeGroup {
+  const factory _LikeGroup(
+      {final String $type,
+      @AtUriConverter() required final AtUri post,
+      @LikeItemConverter() required final List<LikeItem> items,
+      final Map<String, dynamic>? $unknown}) = _$LikeGroupImpl;
+
+  factory _LikeGroup.fromJson(Map<String, dynamic> json) =
+      _$LikeGroupImpl.fromJson;
+
+  @override
+  String get $type;
+  @override
+  @AtUriConverter()
+  AtUri get post;
+  @override
+  @LikeItemConverter()
+  List<LikeItem> get items;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of LikeGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LikeGroupImplCopyWith<_$LikeGroupImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-
-/// Create a copy of LikeGroup
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$LikeGroupCopyWith<_LikeGroup> get copyWith => __$LikeGroupCopyWithImpl<_LikeGroup>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$LikeGroupToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LikeGroup&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.post, post) || other.post == post)&&const DeepCollectionEquality().equals(other._items, _items)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,post,const DeepCollectionEquality().hash(_items),const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'LikeGroup(\$type: ${$type}, post: $post, items: $items, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$LikeGroupCopyWith<$Res> implements $LikeGroupCopyWith<$Res> {
-  factory _$LikeGroupCopyWith(_LikeGroup value, $Res Function(_LikeGroup) _then) = __$LikeGroupCopyWithImpl;
-@override @useResult
-$Res call({
- String $type,@AtUriConverter() AtUri post,@LikeItemConverter() List<LikeItem> items, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$LikeGroupCopyWithImpl<$Res>
-    implements _$LikeGroupCopyWith<$Res> {
-  __$LikeGroupCopyWithImpl(this._self, this._then);
-
-  final _LikeGroup _self;
-  final $Res Function(_LikeGroup) _then;
-
-/// Create a copy of LikeGroup
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? post = null,Object? items = null,Object? $unknown = freezed,}) {
-  return _then(_LikeGroup(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,post: null == post ? _self.post : post // ignore: cast_nullable_to_non_nullable
-as AtUri,items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
-as List<LikeItem>,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

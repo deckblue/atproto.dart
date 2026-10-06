@@ -8,45 +8,39 @@ part of 'like_via_repost_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LikeViaRepostGroup _$LikeViaRepostGroupFromJson(Map json) => $checkedCreate(
-  '_LikeViaRepostGroup',
-  json,
-  ($checkedConvert) {
-    final val = _LikeViaRepostGroup(
-      $type: $checkedConvert(
-        r'$type',
-        (v) =>
-            v as String? ??
-            'app.bsky.notification.getGroupedNotifications#likeViaRepostGroup',
-      ),
-      post: $checkedConvert(
-        'post',
-        (v) => const AtUriConverter().fromJson(v as String),
-      ),
-      viaRepost: $checkedConvert(
-        'viaRepost',
-        (v) => const AtUriConverter().fromJson(v as String),
-      ),
-      items: $checkedConvert(
-        'items',
-        (v) => (v as List<dynamic>)
-            .map(
-              (e) => const LikeViaRepostItemConverter().fromJson(
-                e as Map<String, dynamic>,
-              ),
-            )
-            .toList(),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
+_$LikeViaRepostGroupImpl _$$LikeViaRepostGroupImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$LikeViaRepostGroupImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$LikeViaRepostGroupImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.notification.getGroupedNotifications#likeViaRepostGroup'),
+          post: $checkedConvert(
+              'post', (v) => const AtUriConverter().fromJson(v as String)),
+          viaRepost: $checkedConvert(
+              'viaRepost', (v) => const AtUriConverter().fromJson(v as String)),
+          items: $checkedConvert(
+              'items',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const LikeViaRepostItemConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
     );
-    return val;
-  },
-);
 
-Map<String, dynamic> _$LikeViaRepostGroupToJson(_LikeViaRepostGroup instance) =>
+Map<String, dynamic> _$$LikeViaRepostGroupImplToJson(
+        _$LikeViaRepostGroupImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'post': const AtUriConverter().toJson(instance.post),
@@ -54,5 +48,5 @@ Map<String, dynamic> _$LikeViaRepostGroupToJson(_LikeViaRepostGroup instance) =>
       'items': instance.items
           .map(const LikeViaRepostItemConverter().toJson)
           .toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

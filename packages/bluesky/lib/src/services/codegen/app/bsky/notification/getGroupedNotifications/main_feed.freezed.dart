@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,298 +9,429 @@ part of 'main_feed.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$NotificationGetGroupedNotificationsFeed {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationGetGroupedNotificationsFeed&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'NotificationGetGroupedNotificationsFeed(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownNotificationGetGroupedNotificationsFeed data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationGetGroupedNotificationsFeed data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationGetGroupedNotificationsFeed data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationGetGroupedNotificationsFeedKnownValue value)
+        knownValue,
+    required TResult Function(
+            NotificationGetGroupedNotificationsFeedUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationGetGroupedNotificationsFeedKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationGetGroupedNotificationsFeedUnknown value)?
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationGetGroupedNotificationsFeedKnownValue value)?
+        knownValue,
+    TResult Function(NotificationGetGroupedNotificationsFeedUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $NotificationGetGroupedNotificationsFeedCopyWith<$Res>  {
-$NotificationGetGroupedNotificationsFeedCopyWith(NotificationGetGroupedNotificationsFeed _, $Res Function(NotificationGetGroupedNotificationsFeed) __);
+abstract class $NotificationGetGroupedNotificationsFeedCopyWith<$Res> {
+  factory $NotificationGetGroupedNotificationsFeedCopyWith(
+          NotificationGetGroupedNotificationsFeed value,
+          $Res Function(NotificationGetGroupedNotificationsFeed) then) =
+      _$NotificationGetGroupedNotificationsFeedCopyWithImpl<$Res,
+          NotificationGetGroupedNotificationsFeed>;
 }
 
+/// @nodoc
+class _$NotificationGetGroupedNotificationsFeedCopyWithImpl<$Res,
+        $Val extends NotificationGetGroupedNotificationsFeed>
+    implements $NotificationGetGroupedNotificationsFeedCopyWith<$Res> {
+  _$NotificationGetGroupedNotificationsFeedCopyWithImpl(
+      this._value, this._then);
 
-/// Adds pattern-matching-related methods to [NotificationGetGroupedNotificationsFeed].
-extension NotificationGetGroupedNotificationsFeedPatterns on NotificationGetGroupedNotificationsFeed {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( NotificationGetGroupedNotificationsFeedKnownValue value)?  knownValue,TResult Function( NotificationGetGroupedNotificationsFeedUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case NotificationGetGroupedNotificationsFeedKnownValue() when knownValue != null:
-return knownValue(_that);case NotificationGetGroupedNotificationsFeedUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( NotificationGetGroupedNotificationsFeedKnownValue value)  knownValue,required TResult Function( NotificationGetGroupedNotificationsFeedUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case NotificationGetGroupedNotificationsFeedKnownValue():
-return knownValue(_that);case NotificationGetGroupedNotificationsFeedUnknown():
-return unknown(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( NotificationGetGroupedNotificationsFeedKnownValue value)?  knownValue,TResult? Function( NotificationGetGroupedNotificationsFeedUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case NotificationGetGroupedNotificationsFeedKnownValue() when knownValue != null:
-return knownValue(_that);case NotificationGetGroupedNotificationsFeedUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownNotificationGetGroupedNotificationsFeed data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case NotificationGetGroupedNotificationsFeedKnownValue() when knownValue != null:
-return knownValue(_that.data);case NotificationGetGroupedNotificationsFeedUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownNotificationGetGroupedNotificationsFeed data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case NotificationGetGroupedNotificationsFeedKnownValue():
-return knownValue(_that.data);case NotificationGetGroupedNotificationsFeedUnknown():
-return unknown(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownNotificationGetGroupedNotificationsFeed data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case NotificationGetGroupedNotificationsFeedKnownValue() when knownValue != null:
-return knownValue(_that.data);case NotificationGetGroupedNotificationsFeedUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of NotificationGetGroupedNotificationsFeed
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWith<
+    $Res> {
+  factory _$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWith(
+          _$NotificationGetGroupedNotificationsFeedKnownValueImpl value,
+          $Res Function(_$NotificationGetGroupedNotificationsFeedKnownValueImpl)
+              then) =
+      __$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({KnownNotificationGetGroupedNotificationsFeed data});
+}
+
+/// @nodoc
+class __$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWithImpl<
+        $Res>
+    extends _$NotificationGetGroupedNotificationsFeedCopyWithImpl<$Res,
+        _$NotificationGetGroupedNotificationsFeedKnownValueImpl>
+    implements
+        _$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWith<$Res> {
+  __$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWithImpl(
+      _$NotificationGetGroupedNotificationsFeedKnownValueImpl _value,
+      $Res Function(_$NotificationGetGroupedNotificationsFeedKnownValueImpl)
+          _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationGetGroupedNotificationsFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$NotificationGetGroupedNotificationsFeedKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownNotificationGetGroupedNotificationsFeed,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$NotificationGetGroupedNotificationsFeedKnownValueImpl
+    extends NotificationGetGroupedNotificationsFeedKnownValue {
+  const _$NotificationGetGroupedNotificationsFeedKnownValueImpl(
+      {required this.data})
+      : super._();
 
-class NotificationGetGroupedNotificationsFeedKnownValue extends NotificationGetGroupedNotificationsFeed {
-  const NotificationGetGroupedNotificationsFeedKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownNotificationGetGroupedNotificationsFeed data;
 
-@override final  KnownNotificationGetGroupedNotificationsFeed data;
+  @override
+  String toString() {
+    return 'NotificationGetGroupedNotificationsFeed.knownValue(data: $data)';
+  }
 
-/// Create a copy of NotificationGetGroupedNotificationsFeed
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$NotificationGetGroupedNotificationsFeedKnownValueCopyWith<NotificationGetGroupedNotificationsFeedKnownValue> get copyWith => _$NotificationGetGroupedNotificationsFeedKnownValueCopyWithImpl<NotificationGetGroupedNotificationsFeedKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationGetGroupedNotificationsFeedKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of NotificationGetGroupedNotificationsFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWith<
+          _$NotificationGetGroupedNotificationsFeedKnownValueImpl>
+      get copyWith =>
+          __$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWithImpl<
+                  _$NotificationGetGroupedNotificationsFeedKnownValueImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationGetGroupedNotificationsFeedKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownNotificationGetGroupedNotificationsFeed data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationGetGroupedNotificationsFeed data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationGetGroupedNotificationsFeed data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationGetGroupedNotificationsFeedKnownValue value)
+        knownValue,
+    required TResult Function(
+            NotificationGetGroupedNotificationsFeedUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationGetGroupedNotificationsFeedKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationGetGroupedNotificationsFeedUnknown value)?
+        unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationGetGroupedNotificationsFeedKnownValue value)?
+        knownValue,
+    TResult Function(NotificationGetGroupedNotificationsFeedUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class NotificationGetGroupedNotificationsFeedKnownValue
+    extends NotificationGetGroupedNotificationsFeed {
+  const factory NotificationGetGroupedNotificationsFeedKnownValue(
+          {required final KnownNotificationGetGroupedNotificationsFeed data}) =
+      _$NotificationGetGroupedNotificationsFeedKnownValueImpl;
+  const NotificationGetGroupedNotificationsFeedKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownNotificationGetGroupedNotificationsFeed get data;
 
-@override
-String toString() {
-  return 'NotificationGetGroupedNotificationsFeed.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of NotificationGetGroupedNotificationsFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NotificationGetGroupedNotificationsFeedKnownValueImplCopyWith<
+          _$NotificationGetGroupedNotificationsFeedKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $NotificationGetGroupedNotificationsFeedKnownValueCopyWith<$Res> implements $NotificationGetGroupedNotificationsFeedCopyWith<$Res> {
-  factory $NotificationGetGroupedNotificationsFeedKnownValueCopyWith(NotificationGetGroupedNotificationsFeedKnownValue value, $Res Function(NotificationGetGroupedNotificationsFeedKnownValue) _then) = _$NotificationGetGroupedNotificationsFeedKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownNotificationGetGroupedNotificationsFeed data
-});
-
-
-
-
-}
-/// @nodoc
-class _$NotificationGetGroupedNotificationsFeedKnownValueCopyWithImpl<$Res>
-    implements $NotificationGetGroupedNotificationsFeedKnownValueCopyWith<$Res> {
-  _$NotificationGetGroupedNotificationsFeedKnownValueCopyWithImpl(this._self, this._then);
-
-  final NotificationGetGroupedNotificationsFeedKnownValue _self;
-  final $Res Function(NotificationGetGroupedNotificationsFeedKnownValue) _then;
-
-/// Create a copy of NotificationGetGroupedNotificationsFeed
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(NotificationGetGroupedNotificationsFeedKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownNotificationGetGroupedNotificationsFeed,
-  ));
-}
-
-
+abstract class _$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWith<
+    $Res> {
+  factory _$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWith(
+          _$NotificationGetGroupedNotificationsFeedUnknownImpl value,
+          $Res Function(_$NotificationGetGroupedNotificationsFeedUnknownImpl)
+              then) =
+      __$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWithImpl<$Res>
+    extends _$NotificationGetGroupedNotificationsFeedCopyWithImpl<$Res,
+        _$NotificationGetGroupedNotificationsFeedUnknownImpl>
+    implements
+        _$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWith<$Res> {
+  __$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWithImpl(
+      _$NotificationGetGroupedNotificationsFeedUnknownImpl _value,
+      $Res Function(_$NotificationGetGroupedNotificationsFeedUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class NotificationGetGroupedNotificationsFeedUnknown extends NotificationGetGroupedNotificationsFeed {
-  const NotificationGetGroupedNotificationsFeedUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of NotificationGetGroupedNotificationsFeed
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$NotificationGetGroupedNotificationsFeedUnknownCopyWith<NotificationGetGroupedNotificationsFeedUnknown> get copyWith => _$NotificationGetGroupedNotificationsFeedUnknownCopyWithImpl<NotificationGetGroupedNotificationsFeedUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotificationGetGroupedNotificationsFeedUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'NotificationGetGroupedNotificationsFeed.unknown(data: $data)';
-}
-
-
+  /// Create a copy of NotificationGetGroupedNotificationsFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$NotificationGetGroupedNotificationsFeedUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $NotificationGetGroupedNotificationsFeedUnknownCopyWith<$Res> implements $NotificationGetGroupedNotificationsFeedCopyWith<$Res> {
-  factory $NotificationGetGroupedNotificationsFeedUnknownCopyWith(NotificationGetGroupedNotificationsFeedUnknown value, $Res Function(NotificationGetGroupedNotificationsFeedUnknown) _then) = _$NotificationGetGroupedNotificationsFeedUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$NotificationGetGroupedNotificationsFeedUnknownImpl
+    extends NotificationGetGroupedNotificationsFeedUnknown {
+  const _$NotificationGetGroupedNotificationsFeedUnknownImpl(
+      {required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'NotificationGetGroupedNotificationsFeed.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotificationGetGroupedNotificationsFeedUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of NotificationGetGroupedNotificationsFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWith<
+          _$NotificationGetGroupedNotificationsFeedUnknownImpl>
+      get copyWith =>
+          __$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWithImpl<
+                  _$NotificationGetGroupedNotificationsFeedUnknownImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownNotificationGetGroupedNotificationsFeed data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownNotificationGetGroupedNotificationsFeed data)?
+        knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownNotificationGetGroupedNotificationsFeed data)?
+        knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            NotificationGetGroupedNotificationsFeedKnownValue value)
+        knownValue,
+    required TResult Function(
+            NotificationGetGroupedNotificationsFeedUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotificationGetGroupedNotificationsFeedKnownValue value)?
+        knownValue,
+    TResult? Function(NotificationGetGroupedNotificationsFeedUnknown value)?
+        unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotificationGetGroupedNotificationsFeedKnownValue value)?
+        knownValue,
+    TResult Function(NotificationGetGroupedNotificationsFeedUnknown value)?
+        unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$NotificationGetGroupedNotificationsFeedUnknownCopyWithImpl<$Res>
-    implements $NotificationGetGroupedNotificationsFeedUnknownCopyWith<$Res> {
-  _$NotificationGetGroupedNotificationsFeedUnknownCopyWithImpl(this._self, this._then);
 
-  final NotificationGetGroupedNotificationsFeedUnknown _self;
-  final $Res Function(NotificationGetGroupedNotificationsFeedUnknown) _then;
+abstract class NotificationGetGroupedNotificationsFeedUnknown
+    extends NotificationGetGroupedNotificationsFeed {
+  const factory NotificationGetGroupedNotificationsFeedUnknown(
+          {required final String data}) =
+      _$NotificationGetGroupedNotificationsFeedUnknownImpl;
+  const NotificationGetGroupedNotificationsFeedUnknown._() : super._();
 
-/// Create a copy of NotificationGetGroupedNotificationsFeed
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(NotificationGetGroupedNotificationsFeedUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of NotificationGetGroupedNotificationsFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NotificationGetGroupedNotificationsFeedUnknownImplCopyWith<
+          _$NotificationGetGroupedNotificationsFeedUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

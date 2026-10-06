@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,285 +9,210 @@ part of 'action_ref.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+ActionRef _$ActionRefFromJson(Map<String, dynamic> json) {
+  return _ActionRef.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ActionRef {
+  String get $type => throw _privateConstructorUsedError;
 
- String get $type;/// ID of the moderation action being appealed, available via actions in mod inbox.
- int get id; Map<String, dynamic>? get $unknown;
-/// Create a copy of ActionRef
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ActionRefCopyWith<ActionRef> get copyWith => _$ActionRefCopyWithImpl<ActionRef>(this as ActionRef, _$identity);
+  /// ID of the moderation action being appealed, available via actions in mod inbox.
+  int get id => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this ActionRef to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActionRef&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,id,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'ActionRef(\$type: ${$type}, id: $id, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of ActionRef
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ActionRefCopyWith<ActionRef> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActionRefCopyWith<$Res>  {
-  factory $ActionRefCopyWith(ActionRef value, $Res Function(ActionRef) _then) = _$ActionRefCopyWithImpl;
-@useResult
-$Res call({
- String $type, int id, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $ActionRefCopyWith<$Res> {
+  factory $ActionRefCopyWith(ActionRef value, $Res Function(ActionRef) then) =
+      _$ActionRefCopyWithImpl<$Res, ActionRef>;
+  @useResult
+  $Res call({String $type, int id, Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$ActionRefCopyWithImpl<$Res>
+class _$ActionRefCopyWithImpl<$Res, $Val extends ActionRef>
     implements $ActionRefCopyWith<$Res> {
-  _$ActionRefCopyWithImpl(this._self, this._then);
+  _$ActionRefCopyWithImpl(this._value, this._then);
 
-  final ActionRef _self;
-  final $Res Function(ActionRef) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ActionRef
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? id = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of ActionRef
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? id = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$ActionRefImplCopyWith<$Res>
+    implements $ActionRefCopyWith<$Res> {
+  factory _$$ActionRefImplCopyWith(
+          _$ActionRefImpl value, $Res Function(_$ActionRefImpl) then) =
+      __$$ActionRefImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String $type, int id, Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$ActionRefImplCopyWithImpl<$Res>
+    extends _$ActionRefCopyWithImpl<$Res, _$ActionRefImpl>
+    implements _$$ActionRefImplCopyWith<$Res> {
+  __$$ActionRefImplCopyWithImpl(
+      _$ActionRefImpl _value, $Res Function(_$ActionRefImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [ActionRef].
-extension ActionRefPatterns on ActionRef {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ActionRef value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ActionRef() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ActionRef value)  $default,){
-final _that = this;
-switch (_that) {
-case _ActionRef():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ActionRef value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ActionRef() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  int id,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ActionRef() when $default != null:
-return $default(_that.$type,_that.id,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  int id,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _ActionRef():
-return $default(_that.$type,_that.id,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  int id,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _ActionRef() when $default != null:
-return $default(_that.$type,_that.id,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of ActionRef
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? id = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$ActionRefImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _ActionRef implements ActionRef {
-  const _ActionRef({this.$type = 'tools.ozone.inbox.appealActionedSubject#actionRef', required this.id, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _ActionRef.fromJson(Map<String, dynamic> json) => _$ActionRefFromJson(json);
+class _$ActionRefImpl implements _ActionRef {
+  const _$ActionRefImpl(
+      {this.$type = 'tools.ozone.inbox.appealActionedSubject#actionRef',
+      required this.id,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-/// ID of the moderation action being appealed, available via actions in mod inbox.
-@override final  int id;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$ActionRefImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActionRefImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+
+  /// ID of the moderation action being appealed, available via actions in mod inbox.
+  @override
+  final int id;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ActionRef(\$type: ${$type}, id: $id, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ActionRefImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, $type, id, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of ActionRef
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ActionRefImplCopyWith<_$ActionRefImpl> get copyWith =>
+      __$$ActionRefImplCopyWithImpl<_$ActionRefImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ActionRefImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _ActionRef implements ActionRef {
+  const factory _ActionRef(
+      {final String $type,
+      required final int id,
+      final Map<String, dynamic>? $unknown}) = _$ActionRefImpl;
 
-/// Create a copy of ActionRef
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ActionRefCopyWith<_ActionRef> get copyWith => __$ActionRefCopyWithImpl<_ActionRef>(this, _$identity);
+  factory _ActionRef.fromJson(Map<String, dynamic> json) =
+      _$ActionRefImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ActionRefToJson(this, );
+  @override
+  String get $type;
+
+  /// ID of the moderation action being appealed, available via actions in mod inbox.
+  @override
+  int get id;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of ActionRef
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActionRefImplCopyWith<_$ActionRefImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ActionRef&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,id,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'ActionRef(\$type: ${$type}, id: $id, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ActionRefCopyWith<$Res> implements $ActionRefCopyWith<$Res> {
-  factory _$ActionRefCopyWith(_ActionRef value, $Res Function(_ActionRef) _then) = __$ActionRefCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, int id, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$ActionRefCopyWithImpl<$Res>
-    implements _$ActionRefCopyWith<$Res> {
-  __$ActionRefCopyWithImpl(this._self, this._then);
-
-  final _ActionRef _self;
-  final $Res Function(_ActionRef) _then;
-
-/// Create a copy of ActionRef
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? id = null,Object? $unknown = freezed,}) {
-  return _then(_ActionRef(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

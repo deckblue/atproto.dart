@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,338 +9,300 @@ part of 'unassignment_activity.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+UnassignmentActivity _$UnassignmentActivityFromJson(Map<String, dynamic> json) {
+  return _UnassignmentActivity.fromJson(json);
+}
 
 /// @nodoc
 mixin _$UnassignmentActivity {
+  String get $type => throw _privateConstructorUsedError;
 
- String get $type;/// The report's status immediately before the moderator was unassigned. May be absent on older activities.
-@UnassignmentActivityPreviousStatusConverter() UnassignmentActivityPreviousStatus? get previousStatus;/// The report's status immediately after the moderator was unassigned. May equal previousStatus if unassignment did not change the report's status, or be absent on older activities.
-@UnassignmentActivityNextStatusConverter() UnassignmentActivityNextStatus? get nextStatus; Map<String, dynamic>? get $unknown;
-/// Create a copy of UnassignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UnassignmentActivityCopyWith<UnassignmentActivity> get copyWith => _$UnassignmentActivityCopyWithImpl<UnassignmentActivity>(this as UnassignmentActivity, _$identity);
+  /// The report's status immediately before the moderator was unassigned. May be absent on older activities.
+  @UnassignmentActivityPreviousStatusConverter()
+  UnassignmentActivityPreviousStatus? get previousStatus =>
+      throw _privateConstructorUsedError;
+
+  /// The report's status immediately after the moderator was unassigned. May equal previousStatus if unassignment did not change the report's status, or be absent on older activities.
+  @UnassignmentActivityNextStatusConverter()
+  UnassignmentActivityNextStatus? get nextStatus =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this UnassignmentActivity to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnassignmentActivity&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.previousStatus, previousStatus) || other.previousStatus == previousStatus)&&(identical(other.nextStatus, nextStatus) || other.nextStatus == nextStatus)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,previousStatus,nextStatus,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'UnassignmentActivity(\$type: ${$type}, previousStatus: $previousStatus, nextStatus: $nextStatus, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of UnassignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UnassignmentActivityCopyWith<UnassignmentActivity> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UnassignmentActivityCopyWith<$Res>  {
-  factory $UnassignmentActivityCopyWith(UnassignmentActivity value, $Res Function(UnassignmentActivity) _then) = _$UnassignmentActivityCopyWithImpl;
-@useResult
-$Res call({
- String $type,@UnassignmentActivityPreviousStatusConverter() UnassignmentActivityPreviousStatus? previousStatus,@UnassignmentActivityNextStatusConverter() UnassignmentActivityNextStatus? nextStatus, Map<String, dynamic>? $unknown
-});
+abstract class $UnassignmentActivityCopyWith<$Res> {
+  factory $UnassignmentActivityCopyWith(UnassignmentActivity value,
+          $Res Function(UnassignmentActivity) then) =
+      _$UnassignmentActivityCopyWithImpl<$Res, UnassignmentActivity>;
+  @useResult
+  $Res call(
+      {String $type,
+      @UnassignmentActivityPreviousStatusConverter()
+      UnassignmentActivityPreviousStatus? previousStatus,
+      @UnassignmentActivityNextStatusConverter()
+      UnassignmentActivityNextStatus? nextStatus,
+      Map<String, dynamic>? $unknown});
 
-
-$UnassignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus;$UnassignmentActivityNextStatusCopyWith<$Res>? get nextStatus;
-
+  $UnassignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus;
+  $UnassignmentActivityNextStatusCopyWith<$Res>? get nextStatus;
 }
+
 /// @nodoc
-class _$UnassignmentActivityCopyWithImpl<$Res>
+class _$UnassignmentActivityCopyWithImpl<$Res,
+        $Val extends UnassignmentActivity>
     implements $UnassignmentActivityCopyWith<$Res> {
-  _$UnassignmentActivityCopyWithImpl(this._self, this._then);
+  _$UnassignmentActivityCopyWithImpl(this._value, this._then);
 
-  final UnassignmentActivity _self;
-  final $Res Function(UnassignmentActivity) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of UnassignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? previousStatus = freezed,Object? nextStatus = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,previousStatus: freezed == previousStatus ? _self.previousStatus : previousStatus // ignore: cast_nullable_to_non_nullable
-as UnassignmentActivityPreviousStatus?,nextStatus: freezed == nextStatus ? _self.nextStatus : nextStatus // ignore: cast_nullable_to_non_nullable
-as UnassignmentActivityNextStatus?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of UnassignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UnassignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus {
-    if (_self.previousStatus == null) {
-    return null;
+  /// Create a copy of UnassignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? previousStatus = freezed,
+    Object? nextStatus = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      previousStatus: freezed == previousStatus
+          ? _value.previousStatus
+          : previousStatus // ignore: cast_nullable_to_non_nullable
+              as UnassignmentActivityPreviousStatus?,
+      nextStatus: freezed == nextStatus
+          ? _value.nextStatus
+          : nextStatus // ignore: cast_nullable_to_non_nullable
+              as UnassignmentActivityNextStatus?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
   }
 
-  return $UnassignmentActivityPreviousStatusCopyWith<$Res>(_self.previousStatus!, (value) {
-    return _then(_self.copyWith(previousStatus: value));
-  });
-}/// Create a copy of UnassignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UnassignmentActivityNextStatusCopyWith<$Res>? get nextStatus {
-    if (_self.nextStatus == null) {
-    return null;
+  /// Create a copy of UnassignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UnassignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus {
+    if (_value.previousStatus == null) {
+      return null;
+    }
+
+    return $UnassignmentActivityPreviousStatusCopyWith<$Res>(
+        _value.previousStatus!, (value) {
+      return _then(_value.copyWith(previousStatus: value) as $Val);
+    });
   }
 
-  return $UnassignmentActivityNextStatusCopyWith<$Res>(_self.nextStatus!, (value) {
-    return _then(_self.copyWith(nextStatus: value));
-  });
-}
-}
+  /// Create a copy of UnassignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UnassignmentActivityNextStatusCopyWith<$Res>? get nextStatus {
+    if (_value.nextStatus == null) {
+      return null;
+    }
 
-
-/// Adds pattern-matching-related methods to [UnassignmentActivity].
-extension UnassignmentActivityPatterns on UnassignmentActivity {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UnassignmentActivity value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _UnassignmentActivity() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UnassignmentActivity value)  $default,){
-final _that = this;
-switch (_that) {
-case _UnassignmentActivity():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UnassignmentActivity value)?  $default,){
-final _that = this;
-switch (_that) {
-case _UnassignmentActivity() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type, @UnassignmentActivityPreviousStatusConverter()  UnassignmentActivityPreviousStatus? previousStatus, @UnassignmentActivityNextStatusConverter()  UnassignmentActivityNextStatus? nextStatus,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _UnassignmentActivity() when $default != null:
-return $default(_that.$type,_that.previousStatus,_that.nextStatus,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type, @UnassignmentActivityPreviousStatusConverter()  UnassignmentActivityPreviousStatus? previousStatus, @UnassignmentActivityNextStatusConverter()  UnassignmentActivityNextStatus? nextStatus,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _UnassignmentActivity():
-return $default(_that.$type,_that.previousStatus,_that.nextStatus,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type, @UnassignmentActivityPreviousStatusConverter()  UnassignmentActivityPreviousStatus? previousStatus, @UnassignmentActivityNextStatusConverter()  UnassignmentActivityNextStatus? nextStatus,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _UnassignmentActivity() when $default != null:
-return $default(_that.$type,_that.previousStatus,_that.nextStatus,_that.$unknown);case _:
-  return null;
-
-}
+    return $UnassignmentActivityNextStatusCopyWith<$Res>(_value.nextStatus!,
+        (value) {
+      return _then(_value.copyWith(nextStatus: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$UnassignmentActivityImplCopyWith<$Res>
+    implements $UnassignmentActivityCopyWith<$Res> {
+  factory _$$UnassignmentActivityImplCopyWith(_$UnassignmentActivityImpl value,
+          $Res Function(_$UnassignmentActivityImpl) then) =
+      __$$UnassignmentActivityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      @UnassignmentActivityPreviousStatusConverter()
+      UnassignmentActivityPreviousStatus? previousStatus,
+      @UnassignmentActivityNextStatusConverter()
+      UnassignmentActivityNextStatus? nextStatus,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $UnassignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus;
+  @override
+  $UnassignmentActivityNextStatusCopyWith<$Res>? get nextStatus;
+}
+
+/// @nodoc
+class __$$UnassignmentActivityImplCopyWithImpl<$Res>
+    extends _$UnassignmentActivityCopyWithImpl<$Res, _$UnassignmentActivityImpl>
+    implements _$$UnassignmentActivityImplCopyWith<$Res> {
+  __$$UnassignmentActivityImplCopyWithImpl(_$UnassignmentActivityImpl _value,
+      $Res Function(_$UnassignmentActivityImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UnassignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? previousStatus = freezed,
+    Object? nextStatus = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$UnassignmentActivityImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      previousStatus: freezed == previousStatus
+          ? _value.previousStatus
+          : previousStatus // ignore: cast_nullable_to_non_nullable
+              as UnassignmentActivityPreviousStatus?,
+      nextStatus: freezed == nextStatus
+          ? _value.nextStatus
+          : nextStatus // ignore: cast_nullable_to_non_nullable
+              as UnassignmentActivityNextStatus?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _UnassignmentActivity implements UnassignmentActivity {
-  const _UnassignmentActivity({this.$type = 'tools.ozone.report.defs#unassignmentActivity', @UnassignmentActivityPreviousStatusConverter() this.previousStatus, @UnassignmentActivityNextStatusConverter() this.nextStatus, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _UnassignmentActivity.fromJson(Map<String, dynamic> json) => _$UnassignmentActivityFromJson(json);
+class _$UnassignmentActivityImpl implements _UnassignmentActivity {
+  const _$UnassignmentActivityImpl(
+      {this.$type = 'tools.ozone.report.defs#unassignmentActivity',
+      @UnassignmentActivityPreviousStatusConverter() this.previousStatus,
+      @UnassignmentActivityNextStatusConverter() this.nextStatus,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-/// The report's status immediately before the moderator was unassigned. May be absent on older activities.
-@override@UnassignmentActivityPreviousStatusConverter() final  UnassignmentActivityPreviousStatus? previousStatus;
-/// The report's status immediately after the moderator was unassigned. May equal previousStatus if unassignment did not change the report's status, or be absent on older activities.
-@override@UnassignmentActivityNextStatusConverter() final  UnassignmentActivityNextStatus? nextStatus;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+  factory _$UnassignmentActivityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnassignmentActivityImplFromJson(json);
 
+  @override
+  @JsonKey()
+  final String $type;
 
-/// Create a copy of UnassignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$UnassignmentActivityCopyWith<_UnassignmentActivity> get copyWith => __$UnassignmentActivityCopyWithImpl<_UnassignmentActivity>(this, _$identity);
+  /// The report's status immediately before the moderator was unassigned. May be absent on older activities.
+  @override
+  @UnassignmentActivityPreviousStatusConverter()
+  final UnassignmentActivityPreviousStatus? previousStatus;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$UnassignmentActivityToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnassignmentActivity&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.previousStatus, previousStatus) || other.previousStatus == previousStatus)&&(identical(other.nextStatus, nextStatus) || other.nextStatus == nextStatus)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,previousStatus,nextStatus,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'UnassignmentActivity(\$type: ${$type}, previousStatus: $previousStatus, nextStatus: $nextStatus, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$UnassignmentActivityCopyWith<$Res> implements $UnassignmentActivityCopyWith<$Res> {
-  factory _$UnassignmentActivityCopyWith(_UnassignmentActivity value, $Res Function(_UnassignmentActivity) _then) = __$UnassignmentActivityCopyWithImpl;
-@override @useResult
-$Res call({
- String $type,@UnassignmentActivityPreviousStatusConverter() UnassignmentActivityPreviousStatus? previousStatus,@UnassignmentActivityNextStatusConverter() UnassignmentActivityNextStatus? nextStatus, Map<String, dynamic>? $unknown
-});
-
-
-@override $UnassignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus;@override $UnassignmentActivityNextStatusCopyWith<$Res>? get nextStatus;
-
-}
-/// @nodoc
-class __$UnassignmentActivityCopyWithImpl<$Res>
-    implements _$UnassignmentActivityCopyWith<$Res> {
-  __$UnassignmentActivityCopyWithImpl(this._self, this._then);
-
-  final _UnassignmentActivity _self;
-  final $Res Function(_UnassignmentActivity) _then;
-
-/// Create a copy of UnassignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? previousStatus = freezed,Object? nextStatus = freezed,Object? $unknown = freezed,}) {
-  return _then(_UnassignmentActivity(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,previousStatus: freezed == previousStatus ? _self.previousStatus : previousStatus // ignore: cast_nullable_to_non_nullable
-as UnassignmentActivityPreviousStatus?,nextStatus: freezed == nextStatus ? _self.nextStatus : nextStatus // ignore: cast_nullable_to_non_nullable
-as UnassignmentActivityNextStatus?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of UnassignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UnassignmentActivityPreviousStatusCopyWith<$Res>? get previousStatus {
-    if (_self.previousStatus == null) {
-    return null;
+  /// The report's status immediately after the moderator was unassigned. May equal previousStatus if unassignment did not change the report's status, or be absent on older activities.
+  @override
+  @UnassignmentActivityNextStatusConverter()
+  final UnassignmentActivityNextStatus? nextStatus;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
   }
 
-  return $UnassignmentActivityPreviousStatusCopyWith<$Res>(_self.previousStatus!, (value) {
-    return _then(_self.copyWith(previousStatus: value));
-  });
-}/// Create a copy of UnassignmentActivity
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$UnassignmentActivityNextStatusCopyWith<$Res>? get nextStatus {
-    if (_self.nextStatus == null) {
-    return null;
+  @override
+  String toString() {
+    return 'UnassignmentActivity(\$type: ${$type}, previousStatus: $previousStatus, nextStatus: $nextStatus, \$unknown: ${$unknown})';
   }
 
-  return $UnassignmentActivityNextStatusCopyWith<$Res>(_self.nextStatus!, (value) {
-    return _then(_self.copyWith(nextStatus: value));
-  });
-}
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnassignmentActivityImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.previousStatus, previousStatus) ||
+                other.previousStatus == previousStatus) &&
+            (identical(other.nextStatus, nextStatus) ||
+                other.nextStatus == nextStatus) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, previousStatus,
+      nextStatus, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of UnassignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnassignmentActivityImplCopyWith<_$UnassignmentActivityImpl>
+      get copyWith =>
+          __$$UnassignmentActivityImplCopyWithImpl<_$UnassignmentActivityImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnassignmentActivityImplToJson(
+      this,
+    );
+  }
 }
 
-// dart format on
+abstract class _UnassignmentActivity implements UnassignmentActivity {
+  const factory _UnassignmentActivity(
+      {final String $type,
+      @UnassignmentActivityPreviousStatusConverter()
+      final UnassignmentActivityPreviousStatus? previousStatus,
+      @UnassignmentActivityNextStatusConverter()
+      final UnassignmentActivityNextStatus? nextStatus,
+      final Map<String, dynamic>? $unknown}) = _$UnassignmentActivityImpl;
+
+  factory _UnassignmentActivity.fromJson(Map<String, dynamic> json) =
+      _$UnassignmentActivityImpl.fromJson;
+
+  @override
+  String get $type;
+
+  /// The report's status immediately before the moderator was unassigned. May be absent on older activities.
+  @override
+  @UnassignmentActivityPreviousStatusConverter()
+  UnassignmentActivityPreviousStatus? get previousStatus;
+
+  /// The report's status immediately after the moderator was unassigned. May equal previousStatus if unassignment did not change the report's status, or be absent on older activities.
+  @override
+  @UnassignmentActivityNextStatusConverter()
+  UnassignmentActivityNextStatus? get nextStatus;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of UnassignmentActivity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnassignmentActivityImplCopyWith<_$UnassignmentActivityImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

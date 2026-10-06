@@ -8,55 +8,53 @@ part of 'mention_notification.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_MentionNotification _$MentionNotificationFromJson(Map json) => $checkedCreate(
-  '_MentionNotification',
-  json,
-  ($checkedConvert) {
-    final val = _MentionNotification(
-      $type: $checkedConvert(
-        r'$type',
-        (v) =>
-            v as String? ??
-            'app.bsky.notification.getGroupedNotifications#mentionNotification',
-      ),
-      post: $checkedConvert(
-        'post',
-        (v) => const AtUriConverter().fromJson(v as String),
-      ),
-      parent: $checkedConvert(
-        'parent',
-        (v) => _$JsonConverterFromJson<String, AtUri>(
-          v,
-          const AtUriConverter().fromJson,
-        ),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
+_$MentionNotificationImpl _$$MentionNotificationImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$MentionNotificationImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$MentionNotificationImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.notification.getGroupedNotifications#mentionNotification'),
+          post: $checkedConvert(
+              'post', (v) => const AtUriConverter().fromJson(v as String)),
+          parent: $checkedConvert(
+              'parent',
+              (v) => _$JsonConverterFromJson<String, AtUri>(
+                  v, const AtUriConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
     );
-    return val;
-  },
-);
 
-Map<String, dynamic> _$MentionNotificationToJson(
-  _MentionNotification instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'post': const AtUriConverter().toJson(instance.post),
-  'parent': ?_$JsonConverterToJson<String, AtUri>(
-    instance.parent,
-    const AtUriConverter().toJson,
-  ),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$MentionNotificationImplToJson(
+        _$MentionNotificationImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'post': const AtUriConverter().toJson(instance.post),
+      if (_$JsonConverterToJson<String, AtUri>(
+              instance.parent, const AtUriConverter().toJson)
+          case final value?)
+        'parent': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

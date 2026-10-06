@@ -8,27 +8,30 @@ part of 'repost_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RepostItem _$RepostItemFromJson(Map json) =>
-    $checkedCreate('_RepostItem', json, ($checkedConvert) {
-      final val = _RepostItem(
-        $type: $checkedConvert(
-          r'$type',
-          (v) =>
-              v as String? ??
-              'app.bsky.notification.getGroupedNotifications#repostItem',
-        ),
-        actor: $checkedConvert('actor', (v) => v as String),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$RepostItemImpl _$$RepostItemImplFromJson(Map json) => $checkedCreate(
+      r'_$RepostItemImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$RepostItemImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.notification.getGroupedNotifications#repostItem'),
+          actor: $checkedConvert('actor', (v) => v as String),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$RepostItemToJson(_RepostItem instance) =>
+Map<String, dynamic> _$$RepostItemImplToJson(_$RepostItemImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'actor': instance.actor,
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -8,40 +8,41 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotificationGetGroupedNotificationsInput
-_$NotificationGetGroupedNotificationsInputFromJson(Map json) => $checkedCreate(
-  '_NotificationGetGroupedNotificationsInput',
-  json,
-  ($checkedConvert) {
-    final val = _NotificationGetGroupedNotificationsInput(
-      feed: $checkedConvert(
-        'feed',
-        (v) => v == null
-            ? const NotificationGetGroupedNotificationsFeed.knownValue(
-                data: KnownNotificationGetGroupedNotificationsFeed.all,
-              )
-            : const NotificationGetGroupedNotificationsFeedConverter().fromJson(
-                v as String,
-              ),
-      ),
-      limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 30),
-      cursor: $checkedConvert('cursor', (v) => v as String?),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$NotificationGetGroupedNotificationsInputImpl
+    _$$NotificationGetGroupedNotificationsInputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$NotificationGetGroupedNotificationsInputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$NotificationGetGroupedNotificationsInputImpl(
+              feed: $checkedConvert(
+                  'feed',
+                  (v) => v == null
+                      ? const NotificationGetGroupedNotificationsFeed
+                          .knownValue(
+                          data:
+                              KnownNotificationGetGroupedNotificationsFeed.all)
+                      : const NotificationGetGroupedNotificationsFeedConverter()
+                          .fromJson(v as String)),
+              limit:
+                  $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 30),
+              cursor: $checkedConvert('cursor', (v) => v as String?),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$NotificationGetGroupedNotificationsInputToJson(
-  _NotificationGetGroupedNotificationsInput instance,
-) => <String, dynamic>{
-  'feed': const NotificationGetGroupedNotificationsFeedConverter().toJson(
-    instance.feed,
-  ),
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$NotificationGetGroupedNotificationsInputImplToJson(
+        _$NotificationGetGroupedNotificationsInputImpl instance) =>
+    <String, dynamic>{
+      'feed': const NotificationGetGroupedNotificationsFeedConverter()
+          .toJson(instance.feed),
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };
