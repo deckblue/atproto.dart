@@ -8,31 +8,30 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FeedGetListFeedInputImpl _$$FeedGetListFeedInputImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$FeedGetListFeedInputImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$FeedGetListFeedInputImpl(
-          list: $checkedConvert(
-              'list', (v) => const AtUriConverter().fromJson(v as String)),
-          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-          cursor: $checkedConvert('cursor', (v) => v as String?),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_FeedGetListFeedInput _$FeedGetListFeedInputFromJson(Map json) =>
+    $checkedCreate('_FeedGetListFeedInput', json, ($checkedConvert) {
+      final val = _FeedGetListFeedInput(
+        list: $checkedConvert(
+          'list',
+          (v) => const AtUriConverter().fromJson(v as String),
+        ),
+        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+        cursor: $checkedConvert('cursor', (v) => v as String?),
+        since: $checkedConvert('since', (v) => v as String?),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$FeedGetListFeedInputImplToJson(
-        _$FeedGetListFeedInputImpl instance) =>
-    <String, dynamic>{
-      'list': const AtUriConverter().toJson(instance.list),
-      'limit': instance.limit,
-      if (instance.cursor case final value?) 'cursor': value,
-      if (instance.$unknown case final value?) r'$unknown': value,
-    };
+Map<String, dynamic> _$FeedGetListFeedInputToJson(
+  _FeedGetListFeedInput instance,
+) => <String, dynamic>{
+  'list': const AtUriConverter().toJson(instance.list),
+  'limit': instance.limit,
+  'cursor': ?instance.cursor,
+  'since': ?instance.since,
+  r'$unknown': ?instance.$unknown,
+};

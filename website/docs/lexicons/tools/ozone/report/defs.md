@@ -196,7 +196,7 @@ Information about the moderator currently assigned to a report.
 | **createdAt** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ✅ | When the report was created |
 | **updatedAt** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ❌ | When the report was last updated |
 | **queuedAt** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ❌ | When the report was assigned to its current queue |
-| **actionEventIds** | array of integer | - | ❌ | Array of moderation event IDs representing actions taken on this report (sorted DESC, most recent first) |
+| **actionEventIds** | array of integer | - | ❌ | Array of moderation event IDs representing actions taken on this report, in append order (most recently linked event last) |
 | **actions** | array of [tools.ozone.moderation.defs#modEventView](../../../../lexicons/tools/ozone/moderation/defs.md#modeventview) | - | ❌ | Optional: expanded action events |
 | **actionNote** | string | - | ❌ | Note sent to reporter when report was actioned |
 | **subjectStatus** | [tools.ozone.moderation.defs#subjectStatusView](../../../../lexicons/tools/ozone/moderation/defs.md#subjectstatusview) | - | ❌ | - |
@@ -221,6 +221,15 @@ Activity recording a moderator being assigned to a report.
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
 | **previousStatus** | string | open<br/>closed<br/>escalated<br/>queued<br/>assigned | ❌ | The report's status before this activity. Populated automatically from the report row; not required in input. |
+
+## #unassignmentActivity
+
+Activity recording a moderator being unassigned from a report.
+
+| Property | Type | Known Values | Required | Description |
+| --- | --- | --- | :---: | --- |
+| **previousStatus** | string | open<br/>closed<br/>escalated<br/>queued<br/>assigned | ❌ | The report's status immediately before the moderator was unassigned. May be absent on older activities. |
+| **nextStatus** | string | open<br/>closed<br/>escalated<br/>queued<br/>assigned | ❌ | The report's status immediately after the moderator was unassigned. May equal previousStatus if unassignment did not change the report's status, or be absent on older activities. |
 
 ## #escalationActivity
 
@@ -258,7 +267,7 @@ A single activity entry on a report.
 | --- | --- | --- | :---: | --- |
 | **id** | integer | - | ✅ | Activity ID |
 | **reportId** | integer | - | ✅ | ID of the report this activity belongs to |
-| **activity** | union of <br/>[#queueActivity](#queueactivity)<br/>[#assignmentActivity](#assignmentactivity)<br/>[#escalationActivity](#escalationactivity)<br/>[#closeActivity](#closeactivity)<br/>[#reopenActivity](#reopenactivity)<br/>[#noteActivity](#noteactivity) | - | ✅ | - |
+| **activity** | union of <br/>[#queueActivity](#queueactivity)<br/>[#assignmentActivity](#assignmentactivity)<br/>[#unassignmentActivity](#unassignmentactivity)<br/>[#escalationActivity](#escalationactivity)<br/>[#closeActivity](#closeactivity)<br/>[#reopenActivity](#reopenactivity)<br/>[#noteActivity](#noteactivity) | - | ✅ | - |
 | **internalNote** | string | - | ❌ | Optional moderator-only note. Not visible to reporters. |
 | **publicNote** | string | - | ❌ | Optional public note, potentially visible to the reporter. |
 | **meta** | unknown | - | ❌ | Extensible JSON payload for loose activity-specific metadata (e.g. assignmentId). |
@@ -275,11 +284,21 @@ Live statistics for reports for the current calendar day, filterable by queue, m
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
 | **pendingCount** | integer | - | ❌ | Number of reports currently not closed. |
-| **actionedCount** | integer | - | ❌ | Number of reports closed today. |
-| **escalatedCount** | integer | - | ❌ | Number of reports escalated today. |
-| **inboundCount** | integer | - | ❌ | Reports received today. |
-| **actionRate** | integer | - | ❌ | Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer. |
-| **avgHandlingTimeSec** | integer | - | ❌ | Average time in seconds from report creation (or moderator assignment) to close. |
+| **closedCount** | integer | - | ❌ | Number of close transitions. |
+| **actionedCount** | integer | - | ❌ | Number of closures whose last report action is label, tag, or takedown. |
+| **acknowledgedCount** | integer | - | ❌ | Number of closures whose last report action is not label, tag, or takedown. |
+| **escalatedCount** | integer | - | ❌ | Number of reports escalated. |
+| **inboundCount** | integer | - | ❌ | Reports received. |
+| **labelActionCount** | integer | - | ❌ | Closures whose last report action is a label event. |
+| **tagActionCount** | integer | - | ❌ | Closures whose last report action is a tag event. |
+| **takedownActionCount** | integer | - | ❌ | Closures whose last report action is a takedown event. |
+| **ahtDurationSec** | integer | - | ❌ | Sum of report assignment-to-close seconds. |
+| **ahtSampleCount** | integer | - | ❌ | Number of assigned closed-report samples in ahtDurationSec. |
+| **resolutionDurationSec** | integer | - | ❌ | Sum of report creation-to-close seconds. |
+| **resolutionSampleCount** | integer | - | ❌ | Number of closed-report samples in resolutionDurationSec. |
+| **actionRate** | integer | - | ❌ | Percentage of closures actioned (actionedCount / closedCount * 100), rounded to nearest integer. |
+| **avgHandlingTimeSec** | integer | - | ❌ | Average handling time in seconds from report assignment to close. |
+| **avgResolutionTimeSec** | integer | - | ❌ | Average resolution time in seconds from report creation to close. |
 | **lastUpdated** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ❌ | When these statistics were last computed. |
 
 ## #historicalStats
@@ -291,11 +310,21 @@ A single daily snapshot of report statistics for a calendar date.
 | **date** | string | - | ✅ | The calendar date this snapshot covers (YYYY-MM-DD). |
 | **computedAt** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ❌ | When this snapshot was last computed. |
 | **pendingCount** | integer | - | ❌ | Number of reports not closed at time of computation. |
-| **actionedCount** | integer | - | ❌ | Number of reports closed during this day. |
+| **closedCount** | integer | - | ❌ | Number of close transitions during this day. |
+| **actionedCount** | integer | - | ❌ | Number of closures whose last report action is label, tag, or takedown during this day. |
+| **acknowledgedCount** | integer | - | ❌ | Number of closures whose last report action is not label, tag, or takedown during this day. |
 | **escalatedCount** | integer | - | ❌ | Number of reports escalated during this day. |
 | **inboundCount** | integer | - | ❌ | Reports received during this day. |
-| **actionRate** | integer | - | ❌ | Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer. |
-| **avgHandlingTimeSec** | integer | - | ❌ | Average time in seconds from report creation (or moderator assignment) to close. |
+| **labelActionCount** | integer | - | ❌ | Closures whose last report action is a label event during this day. |
+| **tagActionCount** | integer | - | ❌ | Closures whose last report action is a tag event during this day. |
+| **takedownActionCount** | integer | - | ❌ | Closures whose last report action is a takedown event during this day. |
+| **ahtDurationSec** | integer | - | ❌ | Sum of report assignment-to-close seconds for this day's samples. |
+| **ahtSampleCount** | integer | - | ❌ | Number of assigned closed-report samples in ahtDurationSec. |
+| **resolutionDurationSec** | integer | - | ❌ | Sum of report creation-to-close seconds for this day's samples. |
+| **resolutionSampleCount** | integer | - | ❌ | Number of closed-report samples in resolutionDurationSec. |
+| **actionRate** | integer | - | ❌ | Percentage of closures actioned (actionedCount / closedCount * 100), rounded to nearest integer. |
+| **avgHandlingTimeSec** | integer | - | ❌ | Average handling time in seconds from report assignment to close. |
+| **avgResolutionTimeSec** | integer | - | ❌ | Average resolution time in seconds from report creation to close. |
 
 ## #assignmentView
 

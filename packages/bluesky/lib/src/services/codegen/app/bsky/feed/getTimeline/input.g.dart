@@ -8,30 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FeedGetTimelineInputImpl _$$FeedGetTimelineInputImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$FeedGetTimelineInputImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$FeedGetTimelineInputImpl(
-          algorithm: $checkedConvert('algorithm', (v) => v as String?),
-          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-          cursor: $checkedConvert('cursor', (v) => v as String?),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_FeedGetTimelineInput _$FeedGetTimelineInputFromJson(Map json) =>
+    $checkedCreate('_FeedGetTimelineInput', json, ($checkedConvert) {
+      final val = _FeedGetTimelineInput(
+        algorithm: $checkedConvert('algorithm', (v) => v as String?),
+        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+        cursor: $checkedConvert('cursor', (v) => v as String?),
+        since: $checkedConvert('since', (v) => v as String?),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$FeedGetTimelineInputImplToJson(
-        _$FeedGetTimelineInputImpl instance) =>
-    <String, dynamic>{
-      if (instance.algorithm case final value?) 'algorithm': value,
-      'limit': instance.limit,
-      if (instance.cursor case final value?) 'cursor': value,
-      if (instance.$unknown case final value?) r'$unknown': value,
-    };
+Map<String, dynamic> _$FeedGetTimelineInputToJson(
+  _FeedGetTimelineInput instance,
+) => <String, dynamic>{
+  'algorithm': ?instance.algorithm,
+  'limit': instance.limit,
+  'cursor': ?instance.cursor,
+  'since': ?instance.since,
+  r'$unknown': ?instance.$unknown,
+};

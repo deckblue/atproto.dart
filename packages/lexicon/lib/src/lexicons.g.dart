@@ -3039,6 +3039,16 @@ const appBskyFeedDefs = <String, dynamic>{
       "properties": {
         "post": {"type": "ref", "ref": "#postView"},
         "reply": {"type": "ref", "ref": "#replyRef"},
+        "opThreadPostIndex": {
+          "type": "integer",
+          "description":
+              "The 1-indexed position of this post within the contiguous OP thread. Only present when this post is part of the OP thread.",
+        },
+        "opThreadPostCount": {
+          "type": "integer",
+          "description":
+              "The total number of posts in the contiguous OP thread that this post belongs to. Only present when this post is part of the OP thread.",
+        },
         "reason": {
           "type": "union",
           "refs": ["#reasonRepost", "#reasonPin"],
@@ -3837,6 +3847,11 @@ const appBskyFeedGetListFeed = <String, dynamic>{
             "maximum": 100,
           },
           "cursor": {"type": "string"},
+          "since": {
+            "type": "string",
+            "description":
+                "Return only items newer than the position identified by this cursor value, newest first. Use the startCursor from a previous response. The item at that position is not returned because the caller already holds it. When the bounded range is exhausted, the returned cursor equals this value so that pagination continues below the boundary.",
+          },
         },
       },
       "output": {
@@ -3846,6 +3861,11 @@ const appBskyFeedGetListFeed = <String, dynamic>{
           "required": ["feed"],
           "properties": {
             "cursor": {"type": "string"},
+            "startCursor": {
+              "type": "string",
+              "description":
+                  "Cursor identifying the newest item in this page. Pass it as since on a later request to fetch only newer content.",
+            },
             "feed": {
               "type": "array",
               "items": {
@@ -3995,6 +4015,12 @@ const appBskyFeedGetQuotes = <String, dynamic>{
             "maximum": 100,
           },
           "cursor": {"type": "string"},
+          "sort": {
+            "type": "string",
+            "description":
+                "Ordering of results. 'latest' (default when unset) is newest first; 'top' orders quotes by their like count.",
+            "knownValues": ["latest", "top"],
+          },
         },
       },
       "output": {
@@ -4138,6 +4164,11 @@ const appBskyFeedGetTimeline = <String, dynamic>{
             "maximum": 100,
           },
           "cursor": {"type": "string"},
+          "since": {
+            "type": "string",
+            "description":
+                "Return only items newer than the position identified by this cursor value, newest first. Use the startCursor from a previous response. The item at that position is not returned because the caller already holds it. When the bounded range is exhausted, the returned cursor equals this value so that pagination continues below the boundary.",
+          },
         },
       },
       "output": {
@@ -4147,6 +4178,11 @@ const appBskyFeedGetTimeline = <String, dynamic>{
           "required": ["feed"],
           "properties": {
             "cursor": {"type": "string"},
+            "startCursor": {
+              "type": "string",
+              "description":
+                  "Cursor identifying the newest item in this page. Pass it as since on a later request to fetch only newer content.",
+            },
             "feed": {
               "type": "array",
               "items": {
@@ -6589,6 +6625,362 @@ const appBskyNotificationDefs = <String, dynamic>{
       "properties": {
         "subject": {"type": "string", "format": "did"},
         "activitySubscription": {"type": "ref", "ref": "#activitySubscription"},
+      },
+    },
+  },
+};
+
+/// `app.bsky.notification.getGroupedNotifications`
+const appBskyNotificationGetGroupedNotifications = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.notification.getGroupedNotifications",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "[UNSTABLE - DO NOT USE THIS ENDPOINT WHILE THIS NOTE IS HERE] Enumerate notifications for the requesting account, pre-grouped for rendering. Supersedes listNotifications. Requires auth.",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "feed": {
+            "type": "string",
+            "description":
+                "Which notification feed to return. Grouping behavior varies by feed: notifications about follows might be grouped in 'all' and ungrouped (or rather, in single-item groups) in 'followers'.",
+            "default": "all",
+            "maxLength": 32,
+            "knownValues": [
+              "all",
+              "people-i-follow",
+              "conversations",
+              "followers",
+              "activity",
+            ],
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of groups to return.",
+            "default": 30,
+            "minimum": 1,
+            "maximum": 50,
+          },
+          "cursor": {"type": "string", "maxLength": 1024},
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["groups"],
+          "properties": {
+            "cursor": {"type": "string", "maxLength": 1024},
+            "groups": {
+              "type": "array",
+              "description":
+                  "Notification groups or individual notifications, newest first. Clients should ignore kinds they do not recognize. Grouping behavior depends on the kind and selected feed.",
+              "items": {"type": "ref", "ref": "#group"},
+            },
+            "seenAt": {"type": "string", "format": "datetime"},
+            "relatedViews": {
+              "type": "array",
+              "description":
+                  "Reusable views referenced by notifications. Views shared across notifications appear once to avoid duplication. Each group contributes only its first 10 of each related view to this array. Ex: for a group containing likes in a post, we might have a large number of likeItem (e.g., 50) in a group, but only the profile views for the newest 10 items will be included here.",
+              "items": {
+                "type": "union",
+                "refs": [
+                  "app.bsky.actor.defs#profileViewDetailed",
+                  "app.bsky.feed.defs#blockedPost",
+                  "app.bsky.feed.defs#generatorView",
+                  "app.bsky.feed.defs#notFoundPost",
+                  "app.bsky.feed.defs#postView",
+                  "app.bsky.graph.defs#starterPackView",
+                ],
+              },
+            },
+          },
+        },
+      },
+    },
+    "group": {
+      "type": "object",
+      "description":
+          "Contains common metadata and kind-specific data for a notification group or individual notification.",
+      "required": ["id", "isRead", "indexedAt", "count", "kind"],
+      "properties": {
+        "id": {"type": "string", "maxLength": 256},
+        "isRead": {"type": "boolean"},
+        "indexedAt": {"type": "string", "format": "datetime"},
+        "count": {"type": "integer", "minimum": 1},
+        "kind": {
+          "type": "union",
+          "refs": [
+            "#likeGroup",
+            "#multiPostLikeGroup",
+            "#repostGroup",
+            "#likeViaRepostGroup",
+            "#repostViaRepostGroup",
+            "#followGroup",
+            "#subscribedPostGroup",
+            "#generatorLikeGroup",
+            "#replyNotification",
+            "#quoteNotification",
+            "#mentionNotification",
+            "#followBackNotification",
+            "#verifiedNotification",
+            "#unverifiedNotification",
+            "#starterPackJoinedNotification",
+            "#contactMatchNotification",
+          ],
+        },
+      },
+    },
+    "likeGroup": {
+      "type": "object",
+      "description": "Group of likes by different actors on the same post.",
+      "required": ["post", "items"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#likeItem"},
+          "minLength": 1,
+        },
+      },
+    },
+    "likeItem": {
+      "type": "object",
+      "description": "One actor who liked the group's post.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+      },
+    },
+    "multiPostLikeGroup": {
+      "type": "object",
+      "description": "Group of likes by the same actor on different posts.",
+      "required": ["actor", "items"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#multiPostLikeItem"},
+          "minLength": 2,
+        },
+      },
+    },
+    "multiPostLikeItem": {
+      "type": "object",
+      "description": "One post which was liked by the group's actor.",
+      "required": ["post"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "repostGroup": {
+      "type": "object",
+      "description": "Group of reposts by different actors of the same post.",
+      "required": ["post", "items"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#repostItem"},
+          "minLength": 1,
+        },
+      },
+    },
+    "repostItem": {
+      "type": "object",
+      "description": "One actor who reposted the group's post.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+      },
+    },
+    "likeViaRepostGroup": {
+      "type": "object",
+      "description":
+          "Group of likes by different actors on the same post via the requesting account's repost.",
+      "required": ["post", "viaRepost", "items"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "viaRepost": {"type": "string", "format": "at-uri"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#likeViaRepostItem"},
+          "minLength": 1,
+        },
+      },
+    },
+    "likeViaRepostItem": {
+      "type": "object",
+      "description":
+          "One actor who liked the group's post via the requesting account's repost.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+      },
+    },
+    "repostViaRepostGroup": {
+      "type": "object",
+      "description":
+          "Group of reposts by different actors of the same post via the requesting account's repost.",
+      "required": ["post", "viaRepost", "items"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "viaRepost": {"type": "string", "format": "at-uri"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#repostViaRepostItem"},
+          "minLength": 1,
+        },
+      },
+    },
+    "repostViaRepostItem": {
+      "type": "object",
+      "description":
+          "One actor who reposted the group's post via the requesting account's repost.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+      },
+    },
+    "followGroup": {
+      "type": "object",
+      "description": "Group of actors who followed the requesting account.",
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#followItem"},
+          "minLength": 1,
+        },
+      },
+    },
+    "followItem": {
+      "type": "object",
+      "description":
+          "An actor who followed the requesting account, possibly via a starter pack.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+        "starterPack": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "subscribedPostGroup": {
+      "type": "object",
+      "description":
+          "Group of new posts by actors the requesting account subscribes to.",
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#subscribedPostItem"},
+          "minLength": 1,
+        },
+      },
+    },
+    "subscribedPostItem": {
+      "type": "object",
+      "description":
+          "One new post by an actor the requesting account subscribes to.",
+      "required": ["actor", "post"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+        "post": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "generatorLikeGroup": {
+      "type": "object",
+      "description":
+          "Group of likes by different actors on the same feed generator.",
+      "required": ["generator", "items"],
+      "properties": {
+        "generator": {"type": "string", "format": "at-uri"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#generatorLikeItem"},
+          "minLength": 1,
+        },
+      },
+    },
+    "generatorLikeItem": {
+      "type": "object",
+      "description": "One actor who liked the feed generator in the group.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+      },
+    },
+    "replyNotification": {
+      "type": "object",
+      "description":
+          "A reply to a post by the requesting account or to a thread they are participating in.",
+      "required": ["post", "parent"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "parent": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "quoteNotification": {
+      "type": "object",
+      "description": "A post quoting a post by the requesting account.",
+      "required": ["post"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "parent": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "mentionNotification": {
+      "type": "object",
+      "description": "A post mentioning the requesting account.",
+      "required": ["post"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "parent": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "followBackNotification": {
+      "type": "object",
+      "description":
+          "An actor followed the requesting account back, possibly via a starter pack.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+        "starterPack": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "verifiedNotification": {
+      "type": "object",
+      "description": "An actor verified the requesting account.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+      },
+    },
+    "unverifiedNotification": {
+      "type": "object",
+      "description": "A verification of the requesting account was removed.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+      },
+    },
+    "starterPackJoinedNotification": {
+      "type": "object",
+      "description":
+          "An actor joined Bluesky via a starter pack created by the requesting account.",
+      "required": ["actor", "starterPack"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+        "starterPack": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "contactMatchNotification": {
+      "type": "object",
+      "description": "A contact of the requesting account joined Bluesky.",
+      "required": ["actor"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
       },
     },
   },
@@ -18269,6 +18661,226 @@ const toolsOzoneHostingGetAccountHistory = <String, dynamic>{
   },
 };
 
+/// `tools.ozone.inbox.appealActionedSubject`
+const toolsOzoneInboxAppealActionedSubject = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.appealActionedSubject",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description":
+          "Appeal a moderation action affecting the user's account or content.",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["subject"],
+          "properties": {
+            "action": {
+              "type": "union",
+              "description": "Moderation action being appealed.",
+              "refs": ["#actionRef", "#labelRef", "#takedownRef"],
+              "closed": true,
+            },
+            "subject": {
+              "type": "union",
+              "description": "Subject being appealed.",
+              "refs": [
+                "com.atproto.admin.defs#repoRef",
+                "com.atproto.repo.strongRef",
+              ],
+            },
+            "reason": {
+              "type": "string",
+              "description": "Optional explanation supplied by the user.",
+              "maxLength": 20000,
+              "maxGraphemes": 2000,
+            },
+            "modTool": {
+              "type": "ref",
+              "ref": "com.atproto.moderation.createReport#modTool",
+            },
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {"type": "ref", "ref": "tools.ozone.inbox.defs#subjectView"},
+      },
+      "errors": [
+        {
+          "name": "InvalidAppealSubject",
+          "description": "Invalid appeal subject input.",
+        },
+        {
+          "name": "AlreadyAppealed",
+          "description": "An active appeal already exists for this action.",
+        },
+        {
+          "name": "NotAppealable",
+          "description": "The subject cannot be appealed.",
+        },
+        {
+          "name": "AppealWindowExpired",
+          "description": "The appeal window for this action has closed.",
+        },
+      ],
+    },
+    "actionRef": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description":
+              "ID of the moderation action being appealed, available via actions in mod inbox.",
+          "minimum": 1,
+        },
+      },
+    },
+    "labelRef": {
+      "type": "object",
+      "required": ["val"],
+      "properties": {
+        "val": {
+          "type": "string",
+          "description": "Label being appealed.",
+          "minLength": 1,
+        },
+      },
+    },
+    "takedownRef": {"type": "object", "properties": {}},
+  },
+};
+
+/// `tools.ozone.inbox.defs`
+const toolsOzoneInboxDefs = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.defs",
+  "defs": {
+    "subjectView": {
+      "type": "object",
+      "description":
+          "A subject belonging to the viewer that has moderation actions against it.",
+      "required": ["src", "subject", "enforcement", "createdAt", "updatedAt"],
+      "properties": {
+        "src": {
+          "type": "string",
+          "format": "did",
+          "description": "DID of the moderation service that took the actions.",
+        },
+        "subject": {
+          "type": "union",
+          "refs": [
+            "com.atproto.admin.defs#repoRef",
+            "com.atproto.repo.strongRef",
+          ],
+        },
+        "enforcement": {"type": "ref", "ref": "#enforcementView"},
+        "appeal": {"type": "ref", "ref": "#appealView"},
+        "availableActions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "knownValues": ["appeal"],
+          },
+        },
+        "latestAction": {"type": "ref", "ref": "#actionView"},
+        "actionCount": {"type": "integer"},
+        "createdAt": {"type": "string", "format": "datetime"},
+        "updatedAt": {"type": "string", "format": "datetime"},
+      },
+    },
+    "enforcementView": {
+      "type": "object",
+      "description": "The current enforcement state of a subject.",
+      "required": ["state"],
+      "properties": {
+        "state": {
+          "type": "string",
+          "knownValues": [
+            "none",
+            "labeled",
+            "removed",
+            "suspended",
+            "takendown",
+          ],
+        },
+        "scope": {
+          "type": "string",
+          "knownValues": ["network", "app", "labelOnly"],
+        },
+        "expiresAt": {"type": "string", "format": "datetime"},
+        "labels": {
+          "type": "array",
+          "description":
+              "Active label values on the subject, excluding negated and expired labels.",
+          "items": {"type": "string"},
+        },
+      },
+    },
+    "appealView": {
+      "type": "object",
+      "description":
+          "The state of the viewer's appeal against the actions on a subject.",
+      "required": ["state"],
+      "properties": {
+        "state": {
+          "type": "string",
+          "knownValues": [
+            "none",
+            "pending",
+            "resolved",
+            "superseded",
+            "expired",
+          ],
+        },
+        "appealedAt": {"type": "string", "format": "datetime"},
+        "resolvedAt": {
+          "type": "string",
+          "format": "datetime",
+          "description": "When the appeal's report was closed.",
+        },
+        "note": {
+          "type": "string",
+          "description":
+              "Moderator explanation, from the publicNote on the closing activity. Absent if none was written.",
+        },
+        "appealableUntil": {"type": "string", "format": "datetime"},
+      },
+    },
+    "actionView": {
+      "type": "object",
+      "description": "A single moderation action taken against a subject.",
+      "required": ["id", "type", "createdAt"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Action ID (moderation event ID).",
+        },
+        "type": {"type": "string", "description": "Public action type."},
+        "scope": {
+          "type": "string",
+          "knownValues": ["network", "app", "labelOnly"],
+        },
+        "createdAt": {"type": "string", "format": "datetime"},
+        "reversedAt": {"type": "string", "format": "datetime"},
+        "expiresAt": {"type": "string", "format": "datetime"},
+        "labels": {
+          "type": "array",
+          "description": "Label values, for labelApplied/labelRemoved.",
+          "items": {"type": "string"},
+        },
+        "policies": {
+          "type": "array",
+          "description": "Policies that were applied in this action.",
+          "items": {"type": "string"},
+        },
+      },
+    },
+  },
+};
+
 /// `tools.ozone.moderation.cancelScheduledActions`
 const toolsOzoneModerationCancelScheduledActions = <String, dynamic>{
   "lexicon": 1,
@@ -20801,6 +21413,12 @@ const toolsOzoneQueueCreateQueue = <String, dynamic>{
                   "Policy keys to recommend when actioning reports in this queue",
               "items": {"type": "string"},
             },
+            "recommendedLabels": {
+              "type": "array",
+              "description":
+                  "Labels to recommend for this queue and use as fallback appeal routing mappings",
+              "items": {"type": "string"},
+            },
           },
         },
       },
@@ -20877,6 +21495,12 @@ const toolsOzoneQueueDefs = <String, dynamic>{
           "type": "array",
           "description":
               "Policy keys recommended when actioning reports in this queue",
+          "items": {"type": "string"},
+        },
+        "recommendedLabels": {
+          "type": "array",
+          "description":
+              "Labels recommended for this queue and used as a fallback when routing label appeals",
           "items": {"type": "string"},
         },
         "createdBy": {
@@ -21254,6 +21878,12 @@ const toolsOzoneQueueUpdateQueue = <String, dynamic>{
                   "Policy keys to recommend when actioning reports in this queue",
               "items": {"type": "string"},
             },
+            "recommendedLabels": {
+              "type": "array",
+              "description":
+                  "Labels to recommend for this queue and use as fallback appeal routing mappings",
+              "items": {"type": "string"},
+            },
           },
         },
       },
@@ -21272,6 +21902,11 @@ const toolsOzoneQueueUpdateQueue = <String, dynamic>{
           "name": "InvalidRecommendedPolicies",
           "description":
               "One or more recommended policy keys do not exist in the configured policy list",
+        },
+        {
+          "name": "ConflictingQueue",
+          "description":
+              "The queue configuration conflicts with an existing queue",
         },
       ],
     },
@@ -21774,7 +22409,7 @@ const toolsOzoneReportDefs = <String, dynamic>{
         "actionEventIds": {
           "type": "array",
           "description":
-              "Array of moderation event IDs representing actions taken on this report (sorted DESC, most recent first)",
+              "Array of moderation event IDs representing actions taken on this report, in append order (most recently linked event last)",
           "items": {"type": "integer"},
         },
         "actions": {
@@ -21847,6 +22482,25 @@ const toolsOzoneReportDefs = <String, dynamic>{
         },
       },
     },
+    "unassignmentActivity": {
+      "type": "object",
+      "description":
+          "Activity recording a moderator being unassigned from a report.",
+      "properties": {
+        "previousStatus": {
+          "type": "string",
+          "description":
+              "The report's status immediately before the moderator was unassigned. May be absent on older activities.",
+          "knownValues": ["open", "closed", "escalated", "queued", "assigned"],
+        },
+        "nextStatus": {
+          "type": "string",
+          "description":
+              "The report's status immediately after the moderator was unassigned. May equal previousStatus if unassignment did not change the report's status, or be absent on older activities.",
+          "knownValues": ["open", "closed", "escalated", "queued", "assigned"],
+        },
+      },
+    },
     "escalationActivity": {
       "type": "object",
       "description": "Activity recording a report being escalated.",
@@ -21913,6 +22567,7 @@ const toolsOzoneReportDefs = <String, dynamic>{
           "refs": [
             "#queueActivity",
             "#assignmentActivity",
+            "#unassignmentActivity",
             "#escalationActivity",
             "#closeActivity",
             "#reopenActivity",
@@ -21972,27 +22627,70 @@ const toolsOzoneReportDefs = <String, dynamic>{
           "type": "integer",
           "description": "Number of reports currently not closed.",
         },
+        "closedCount": {
+          "type": "integer",
+          "description": "Number of close transitions.",
+        },
         "actionedCount": {
           "type": "integer",
-          "description": "Number of reports closed today.",
+          "description":
+              "Number of closures whose last report action is label, tag, or takedown.",
+        },
+        "acknowledgedCount": {
+          "type": "integer",
+          "description":
+              "Number of closures whose last report action is not label, tag, or takedown.",
         },
         "escalatedCount": {
           "type": "integer",
-          "description": "Number of reports escalated today.",
+          "description": "Number of reports escalated.",
         },
-        "inboundCount": {
+        "inboundCount": {"type": "integer", "description": "Reports received."},
+        "labelActionCount": {
           "type": "integer",
-          "description": "Reports received today.",
+          "description": "Closures whose last report action is a label event.",
+        },
+        "tagActionCount": {
+          "type": "integer",
+          "description": "Closures whose last report action is a tag event.",
+        },
+        "takedownActionCount": {
+          "type": "integer",
+          "description":
+              "Closures whose last report action is a takedown event.",
+        },
+        "ahtDurationSec": {
+          "type": "integer",
+          "description": "Sum of report assignment-to-close seconds.",
+        },
+        "ahtSampleCount": {
+          "type": "integer",
+          "description":
+              "Number of assigned closed-report samples in ahtDurationSec.",
+        },
+        "resolutionDurationSec": {
+          "type": "integer",
+          "description": "Sum of report creation-to-close seconds.",
+        },
+        "resolutionSampleCount": {
+          "type": "integer",
+          "description":
+              "Number of closed-report samples in resolutionDurationSec.",
         },
         "actionRate": {
           "type": "integer",
           "description":
-              "Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer.",
+              "Percentage of closures actioned (actionedCount / closedCount * 100), rounded to nearest integer.",
         },
         "avgHandlingTimeSec": {
           "type": "integer",
           "description":
-              "Average time in seconds from report creation (or moderator assignment) to close.",
+              "Average handling time in seconds from report assignment to close.",
+        },
+        "avgResolutionTimeSec": {
+          "type": "integer",
+          "description":
+              "Average resolution time in seconds from report creation to close.",
         },
         "lastUpdated": {
           "type": "string",
@@ -22020,9 +22718,19 @@ const toolsOzoneReportDefs = <String, dynamic>{
           "type": "integer",
           "description": "Number of reports not closed at time of computation.",
         },
+        "closedCount": {
+          "type": "integer",
+          "description": "Number of close transitions during this day.",
+        },
         "actionedCount": {
           "type": "integer",
-          "description": "Number of reports closed during this day.",
+          "description":
+              "Number of closures whose last report action is label, tag, or takedown during this day.",
+        },
+        "acknowledgedCount": {
+          "type": "integer",
+          "description":
+              "Number of closures whose last report action is not label, tag, or takedown during this day.",
         },
         "escalatedCount": {
           "type": "integer",
@@ -22032,15 +22740,55 @@ const toolsOzoneReportDefs = <String, dynamic>{
           "type": "integer",
           "description": "Reports received during this day.",
         },
+        "labelActionCount": {
+          "type": "integer",
+          "description":
+              "Closures whose last report action is a label event during this day.",
+        },
+        "tagActionCount": {
+          "type": "integer",
+          "description":
+              "Closures whose last report action is a tag event during this day.",
+        },
+        "takedownActionCount": {
+          "type": "integer",
+          "description":
+              "Closures whose last report action is a takedown event during this day.",
+        },
+        "ahtDurationSec": {
+          "type": "integer",
+          "description":
+              "Sum of report assignment-to-close seconds for this day's samples.",
+        },
+        "ahtSampleCount": {
+          "type": "integer",
+          "description":
+              "Number of assigned closed-report samples in ahtDurationSec.",
+        },
+        "resolutionDurationSec": {
+          "type": "integer",
+          "description":
+              "Sum of report creation-to-close seconds for this day's samples.",
+        },
+        "resolutionSampleCount": {
+          "type": "integer",
+          "description":
+              "Number of closed-report samples in resolutionDurationSec.",
+        },
         "actionRate": {
           "type": "integer",
           "description":
-              "Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer.",
+              "Percentage of closures actioned (actionedCount / closedCount * 100), rounded to nearest integer.",
         },
         "avgHandlingTimeSec": {
           "type": "integer",
           "description":
-              "Average time in seconds from report creation (or moderator assignment) to close.",
+              "Average handling time in seconds from report assignment to close.",
+        },
+        "avgResolutionTimeSec": {
+          "type": "integer",
+          "description":
+              "Average resolution time in seconds from report creation to close.",
         },
       },
     },
@@ -22229,7 +22977,7 @@ const toolsOzoneReportGetLiveStats = <String, dynamic>{
     "main": {
       "type": "query",
       "description":
-          "Get live report statistics from the past 24 hours. Filter by queue, moderator, or report type. Omit all parameters for aggregate stats.",
+          "Get live report statistics for the current UTC calendar day. Filter by queue, moderator, or report type. Omit all parameters for aggregate stats.",
       "parameters": {
         "type": "params",
         "properties": {
@@ -22611,8 +23359,7 @@ const toolsOzoneReportRefreshStats = <String, dynamic>{
   "defs": {
     "main": {
       "type": "procedure",
-      "description":
-          "Recompute report statistics for a date range. Useful for backfilling after failures or data corrections.",
+      "description": "Recompute report statistics for a date range.",
       "input": {
         "encoding": "application/json",
         "schema": {
@@ -24391,6 +25138,7 @@ const lexicons = <Map<String, dynamic>>[
   appBskyLabelerService,
   appBskyNotificationDeclaration,
   appBskyNotificationDefs,
+  appBskyNotificationGetGroupedNotifications,
   appBskyNotificationGetPreferences,
   appBskyNotificationGetUnreadCount,
   appBskyNotificationListActivitySubscriptions,
@@ -24607,6 +25355,8 @@ const lexicons = <Map<String, dynamic>>[
   toolsOzoneCommunicationListTemplates,
   toolsOzoneCommunicationUpdateTemplate,
   toolsOzoneHostingGetAccountHistory,
+  toolsOzoneInboxAppealActionedSubject,
+  toolsOzoneInboxDefs,
   toolsOzoneModerationCancelScheduledActions,
   toolsOzoneModerationDefs,
   toolsOzoneModerationEmitEvent,

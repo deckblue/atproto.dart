@@ -39,6 +39,11 @@ final class CreateQueueCommand extends ProcedureCommand {
       ..addMultiOption(
         "recommendedPolicies",
         help: r"Policy keys to recommend when actioning reports in this queue",
+      )
+      ..addMultiOption(
+        "recommendedLabels",
+        help:
+            r"Labels to recommend for this queue and use as fallback appeal routing mappings",
       );
   }
 
@@ -51,23 +56,25 @@ final class CreateQueueCommand extends ProcedureCommand {
 
   @override
   final String invocation =
-      "bsky tools-ozone-queue create-queue --name=<value> [--subjectTypes=<value>...] [--collection=<value>] [--reportTypes=<value>...] [--description=<value>] [--recommendedPolicies=<value>...]";
+      "bsky tools-ozone-queue create-queue --name=<value> [--subjectTypes=<value>...] [--collection=<value>] [--reportTypes=<value>...] [--description=<value>] [--recommendedPolicies=<value>...] [--recommendedLabels=<value>...]";
 
   @override
   String get methodId => "tools.ozone.queue.createQueue";
 
   @override
   Map<String, dynamic>? get body => {
-        "name": argResults!["name"],
-        if (argResults!.wasParsed("subjectTypes"))
-          "subjectTypes": argResults!["subjectTypes"],
-        if (argResults!.wasParsed("collection"))
-          "collection": argResults!["collection"],
-        if (argResults!.wasParsed("reportTypes"))
-          "reportTypes": argResults!["reportTypes"],
-        if (argResults!.wasParsed("description"))
-          "description": argResults!["description"],
-        if (argResults!.wasParsed("recommendedPolicies"))
-          "recommendedPolicies": argResults!["recommendedPolicies"],
-      };
+    "name": argResults!["name"],
+    if (argResults!.wasParsed("subjectTypes"))
+      "subjectTypes": argResults!["subjectTypes"],
+    if (argResults!.wasParsed("collection"))
+      "collection": argResults!["collection"],
+    if (argResults!.wasParsed("reportTypes"))
+      "reportTypes": argResults!["reportTypes"],
+    if (argResults!.wasParsed("description"))
+      "description": argResults!["description"],
+    if (argResults!.wasParsed("recommendedPolicies"))
+      "recommendedPolicies": argResults!["recommendedPolicies"],
+    if (argResults!.wasParsed("recommendedLabels"))
+      "recommendedLabels": argResults!["recommendedLabels"],
+  };
 }

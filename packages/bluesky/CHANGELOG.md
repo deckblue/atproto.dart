@@ -1,5 +1,99 @@
 # Release Note
 
+## v2.10.0
+
+- feat: added `app.bsky.notification.getGroupedNotifications#contactMatchNotification`
+- feat: added `app.bsky.notification.getGroupedNotifications#followBackNotification`
+- feat: added `app.bsky.notification.getGroupedNotifications#followGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#followItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#generatorLikeGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#generatorLikeItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#group`
+- feat: added `app.bsky.notification.getGroupedNotifications#likeGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#likeItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#likeViaRepostGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#likeViaRepostItem`
+- feat: added `app.bsky.notification.getGroupedNotifications`
+- feat: added `app.bsky.notification.getGroupedNotifications#mentionNotification`
+- feat: added `app.bsky.notification.getGroupedNotifications#multiPostLikeGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#multiPostLikeItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#quoteNotification`
+- feat: added `app.bsky.notification.getGroupedNotifications#replyNotification`
+- feat: added `app.bsky.notification.getGroupedNotifications#repostGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#repostItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#repostViaRepostGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#repostViaRepostItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#starterPackJoinedNotification`
+- feat: added `app.bsky.notification.getGroupedNotifications#subscribedPostGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#subscribedPostItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#unverifiedNotification`
+- feat: added `app.bsky.notification.getGroupedNotifications#verifiedNotification`
+- fix!: `tools.ozone.report.defs#reportActivityView.activity` changed type (union([#queueActivity, #assignmentActivity, #escalationActivity, #closeActivity, #reopenActivity, #noteActivity]) -> union([#queueActivity, #assignmentActivity, #unassignmentActivity, #escalationActivity, #closeActivity, #reopenActivity, #noteActivity])) (BREAKING)
+- feat: added `tools.ozone.report.defs#unassignmentActivity`
+- chore: regenerated from synced lexicons
+
+## v2.9.4
+
+- feat: added `app.bsky.feed.getListFeed.output.startCursor`
+- feat: added `app.bsky.feed.getListFeed.parameters.since`
+- feat: added `app.bsky.feed.getTimeline.output.startCursor`
+- feat: added `app.bsky.feed.getTimeline.parameters.since`
+- chore: regenerated from synced lexicons
+
+## v2.9.3
+
+- feat: added `app.bsky.feed.getQuotes.parameters.sort`
+- feat: added `tools.ozone.inbox.appealActionedSubject#actionRef`
+- feat: added `tools.ozone.inbox.appealActionedSubject#labelRef`
+- feat: added `tools.ozone.inbox.appealActionedSubject`
+- feat: added `tools.ozone.inbox.appealActionedSubject#takedownRef`
+- feat: added `tools.ozone.inbox.defs#actionView`
+- feat: added `tools.ozone.inbox.defs#appealView`
+- feat: added `tools.ozone.inbox.defs#enforcementView`
+- feat: added `tools.ozone.inbox.defs#subjectView`
+- feat: added `tools.ozone.queue.createQueue.input.recommendedLabels`
+- feat: added `tools.ozone.queue.defs#queueView.recommendedLabels`
+- feat: added `tools.ozone.queue.updateQueue.errors.ConflictingQueue`
+- feat: added `tools.ozone.queue.updateQueue.input.recommendedLabels`
+- chore: regenerated from synced lexicons
+
+## v2.9.2
+
+- feat: added `app.bsky.feed.defs#feedViewPost.opThreadPostCount`
+- feat: added `app.bsky.feed.defs#feedViewPost.opThreadPostIndex`
+- feat: added `tools.ozone.report.defs#historicalStats.acknowledgedCount`
+- chore: updated `tools.ozone.report.defs#historicalStats.actionRate`
+- chore: updated `tools.ozone.report.defs#historicalStats.actionedCount`
+- feat: added `tools.ozone.report.defs#historicalStats.ahtDurationSec`
+- feat: added `tools.ozone.report.defs#historicalStats.ahtSampleCount`
+- chore: updated `tools.ozone.report.defs#historicalStats.avgHandlingTimeSec`
+- feat: added `tools.ozone.report.defs#historicalStats.avgResolutionTimeSec`
+- feat: added `tools.ozone.report.defs#historicalStats.closedCount`
+- feat: added `tools.ozone.report.defs#historicalStats.labelActionCount`
+- feat: added `tools.ozone.report.defs#historicalStats.resolutionDurationSec`
+- feat: added `tools.ozone.report.defs#historicalStats.resolutionSampleCount`
+- feat: added `tools.ozone.report.defs#historicalStats.tagActionCount`
+- feat: added `tools.ozone.report.defs#historicalStats.takedownActionCount`
+- feat: added `tools.ozone.report.defs#liveStats.acknowledgedCount`
+- chore: updated `tools.ozone.report.defs#liveStats.actionRate`
+- chore: updated `tools.ozone.report.defs#liveStats.actionedCount`
+- feat: added `tools.ozone.report.defs#liveStats.ahtDurationSec`
+- feat: added `tools.ozone.report.defs#liveStats.ahtSampleCount`
+- chore: updated `tools.ozone.report.defs#liveStats.avgHandlingTimeSec`
+- feat: added `tools.ozone.report.defs#liveStats.avgResolutionTimeSec`
+- feat: added `tools.ozone.report.defs#liveStats.closedCount`
+- chore: updated `tools.ozone.report.defs#liveStats.escalatedCount`
+- chore: updated `tools.ozone.report.defs#liveStats.inboundCount`
+- feat: added `tools.ozone.report.defs#liveStats.labelActionCount`
+- feat: added `tools.ozone.report.defs#liveStats.resolutionDurationSec`
+- feat: added `tools.ozone.report.defs#liveStats.resolutionSampleCount`
+- feat: added `tools.ozone.report.defs#liveStats.tagActionCount`
+- feat: added `tools.ozone.report.defs#liveStats.takedownActionCount`
+- chore: updated `tools.ozone.report.defs#reportView.actionEventIds`
+- chore: updated `tools.ozone.report.getLiveStats`
+- chore: updated `tools.ozone.report.refreshStats`
+- chore: regenerated from synced lexicons
+
 ## v2.9.1
 
 - feat: added `app.bsky.notification.getUnreadCount.parameters.priority`

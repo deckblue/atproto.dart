@@ -851,6 +851,110 @@ const appBskyNotificationDefsRecordDeleted =
 const appBskyNotificationDefsSubjectActivitySubscription =
     'app.bsky.notification.defs#subjectActivitySubscription';
 
+/// `app.bsky.notification.getGroupedNotifications`
+const appBskyNotificationGetGroupedNotifications =
+    'app.bsky.notification.getGroupedNotifications';
+
+/// `app.bsky.notification.getGroupedNotifications#contactMatchNotification`
+const appBskyNotificationGetGroupedNotificationsContactMatchNotification =
+    'app.bsky.notification.getGroupedNotifications#contactMatchNotification';
+
+/// `app.bsky.notification.getGroupedNotifications#followBackNotification`
+const appBskyNotificationGetGroupedNotificationsFollowBackNotification =
+    'app.bsky.notification.getGroupedNotifications#followBackNotification';
+
+/// `app.bsky.notification.getGroupedNotifications#followGroup`
+const appBskyNotificationGetGroupedNotificationsFollowGroup =
+    'app.bsky.notification.getGroupedNotifications#followGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#followItem`
+const appBskyNotificationGetGroupedNotificationsFollowItem =
+    'app.bsky.notification.getGroupedNotifications#followItem';
+
+/// `app.bsky.notification.getGroupedNotifications#generatorLikeGroup`
+const appBskyNotificationGetGroupedNotificationsGeneratorLikeGroup =
+    'app.bsky.notification.getGroupedNotifications#generatorLikeGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#generatorLikeItem`
+const appBskyNotificationGetGroupedNotificationsGeneratorLikeItem =
+    'app.bsky.notification.getGroupedNotifications#generatorLikeItem';
+
+/// `app.bsky.notification.getGroupedNotifications#group`
+const appBskyNotificationGetGroupedNotificationsGroup =
+    'app.bsky.notification.getGroupedNotifications#group';
+
+/// `app.bsky.notification.getGroupedNotifications#likeGroup`
+const appBskyNotificationGetGroupedNotificationsLikeGroup =
+    'app.bsky.notification.getGroupedNotifications#likeGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#likeItem`
+const appBskyNotificationGetGroupedNotificationsLikeItem =
+    'app.bsky.notification.getGroupedNotifications#likeItem';
+
+/// `app.bsky.notification.getGroupedNotifications#likeViaRepostGroup`
+const appBskyNotificationGetGroupedNotificationsLikeViaRepostGroup =
+    'app.bsky.notification.getGroupedNotifications#likeViaRepostGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#likeViaRepostItem`
+const appBskyNotificationGetGroupedNotificationsLikeViaRepostItem =
+    'app.bsky.notification.getGroupedNotifications#likeViaRepostItem';
+
+/// `app.bsky.notification.getGroupedNotifications#mentionNotification`
+const appBskyNotificationGetGroupedNotificationsMentionNotification =
+    'app.bsky.notification.getGroupedNotifications#mentionNotification';
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostLikeGroup`
+const appBskyNotificationGetGroupedNotificationsMultiPostLikeGroup =
+    'app.bsky.notification.getGroupedNotifications#multiPostLikeGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostLikeItem`
+const appBskyNotificationGetGroupedNotificationsMultiPostLikeItem =
+    'app.bsky.notification.getGroupedNotifications#multiPostLikeItem';
+
+/// `app.bsky.notification.getGroupedNotifications#quoteNotification`
+const appBskyNotificationGetGroupedNotificationsQuoteNotification =
+    'app.bsky.notification.getGroupedNotifications#quoteNotification';
+
+/// `app.bsky.notification.getGroupedNotifications#replyNotification`
+const appBskyNotificationGetGroupedNotificationsReplyNotification =
+    'app.bsky.notification.getGroupedNotifications#replyNotification';
+
+/// `app.bsky.notification.getGroupedNotifications#repostGroup`
+const appBskyNotificationGetGroupedNotificationsRepostGroup =
+    'app.bsky.notification.getGroupedNotifications#repostGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#repostItem`
+const appBskyNotificationGetGroupedNotificationsRepostItem =
+    'app.bsky.notification.getGroupedNotifications#repostItem';
+
+/// `app.bsky.notification.getGroupedNotifications#repostViaRepostGroup`
+const appBskyNotificationGetGroupedNotificationsRepostViaRepostGroup =
+    'app.bsky.notification.getGroupedNotifications#repostViaRepostGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#repostViaRepostItem`
+const appBskyNotificationGetGroupedNotificationsRepostViaRepostItem =
+    'app.bsky.notification.getGroupedNotifications#repostViaRepostItem';
+
+/// `app.bsky.notification.getGroupedNotifications#starterPackJoinedNotification`
+const appBskyNotificationGetGroupedNotificationsStarterPackJoinedNotification =
+    'app.bsky.notification.getGroupedNotifications#starterPackJoinedNotification';
+
+/// `app.bsky.notification.getGroupedNotifications#subscribedPostGroup`
+const appBskyNotificationGetGroupedNotificationsSubscribedPostGroup =
+    'app.bsky.notification.getGroupedNotifications#subscribedPostGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#subscribedPostItem`
+const appBskyNotificationGetGroupedNotificationsSubscribedPostItem =
+    'app.bsky.notification.getGroupedNotifications#subscribedPostItem';
+
+/// `app.bsky.notification.getGroupedNotifications#unverifiedNotification`
+const appBskyNotificationGetGroupedNotificationsUnverifiedNotification =
+    'app.bsky.notification.getGroupedNotifications#unverifiedNotification';
+
+/// `app.bsky.notification.getGroupedNotifications#verifiedNotification`
+const appBskyNotificationGetGroupedNotificationsVerifiedNotification =
+    'app.bsky.notification.getGroupedNotifications#verifiedNotification';
+
 /// `app.bsky.notification.getPreferences`
 const appBskyNotificationGetPreferences =
     'app.bsky.notification.getPreferences';
@@ -1693,6 +1797,38 @@ const toolsOzoneHostingGetAccountHistoryHandleUpdated =
 const toolsOzoneHostingGetAccountHistoryPasswordUpdated =
     'tools.ozone.hosting.getAccountHistory#passwordUpdated';
 
+/// `tools.ozone.inbox.appealActionedSubject`
+const toolsOzoneInboxAppealActionedSubject =
+    'tools.ozone.inbox.appealActionedSubject';
+
+/// `tools.ozone.inbox.appealActionedSubject#actionRef`
+const toolsOzoneInboxAppealActionedSubjectActionRef =
+    'tools.ozone.inbox.appealActionedSubject#actionRef';
+
+/// `tools.ozone.inbox.appealActionedSubject#labelRef`
+const toolsOzoneInboxAppealActionedSubjectLabelRef =
+    'tools.ozone.inbox.appealActionedSubject#labelRef';
+
+/// `tools.ozone.inbox.appealActionedSubject#takedownRef`
+const toolsOzoneInboxAppealActionedSubjectTakedownRef =
+    'tools.ozone.inbox.appealActionedSubject#takedownRef';
+
+/// `tools.ozone.inbox.defs`
+const toolsOzoneInboxDefs = 'tools.ozone.inbox.defs';
+
+/// `tools.ozone.inbox.defs#actionView`
+const toolsOzoneInboxDefsActionView = 'tools.ozone.inbox.defs#actionView';
+
+/// `tools.ozone.inbox.defs#appealView`
+const toolsOzoneInboxDefsAppealView = 'tools.ozone.inbox.defs#appealView';
+
+/// `tools.ozone.inbox.defs#enforcementView`
+const toolsOzoneInboxDefsEnforcementView =
+    'tools.ozone.inbox.defs#enforcementView';
+
+/// `tools.ozone.inbox.defs#subjectView`
+const toolsOzoneInboxDefsSubjectView = 'tools.ozone.inbox.defs#subjectView';
+
 /// `tools.ozone.moderation.cancelScheduledActions`
 const toolsOzoneModerationCancelScheduledActions =
     'tools.ozone.moderation.cancelScheduledActions';
@@ -2266,6 +2402,10 @@ const toolsOzoneReportDefsReportAssignment =
 
 /// `tools.ozone.report.defs#reportView`
 const toolsOzoneReportDefsReportView = 'tools.ozone.report.defs#reportView';
+
+/// `tools.ozone.report.defs#unassignmentActivity`
+const toolsOzoneReportDefsUnassignmentActivity =
+    'tools.ozone.report.defs#unassignmentActivity';
 
 /// `tools.ozone.report.getAssignments`
 const toolsOzoneReportGetAssignments = 'tools.ozone.report.getAssignments';

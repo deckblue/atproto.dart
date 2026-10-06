@@ -28,7 +28,12 @@ final class GetQuotesCommand extends QueryCommand {
             r"If supplied, filters to quotes of specific version (by CID) of the post record.",
       )
       ..addOption("limit", defaultsTo: "50")
-      ..addOption("cursor");
+      ..addOption("cursor")
+      ..addOption(
+        "sort",
+        help:
+            r"Ordering of results. 'latest' (default when unset) is newest first; 'top' orders quotes by their like count.",
+      );
   }
 
   @override
@@ -39,17 +44,19 @@ final class GetQuotesCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-feed get-quotes --uri=<value> [--cid=<value>] [--limit=<value>] [--cursor=<value>]";
+      "bsky app-bsky-feed get-quotes --uri=<value> [--cid=<value>] [--limit=<value>] [--cursor=<value>] [--sort=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.getQuotes";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "uri": argResults!["uri"],
-        if (argResults!.wasParsed("cid")) "cid": argResults!["cid"],
-        "limit": int.tryParse(argResults!["limit"]) ??
-            usageException('Invalid integer value for option "limit".'),
-        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-      };
+    "uri": argResults!["uri"],
+    if (argResults!.wasParsed("cid")) "cid": argResults!["cid"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+    if (argResults!.wasParsed("sort")) "sort": argResults!["sort"],
+  };
 }

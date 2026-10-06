@@ -23,7 +23,12 @@ final class GetListFeedCommand extends QueryCommand {
         mandatory: true,
       )
       ..addOption("limit", defaultsTo: "50")
-      ..addOption("cursor");
+      ..addOption("cursor")
+      ..addOption(
+        "since",
+        help:
+            r"Return only items newer than the position identified by this cursor value, newest first. Use the startCursor from a previous response. The item at that position is not returned because the caller already holds it. When the bounded range is exhausted, the returned cursor equals this value so that pagination continues below the boundary.",
+      );
   }
 
   @override
@@ -35,16 +40,18 @@ final class GetListFeedCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky app-bsky-feed get-list-feed --list=<value> [--limit=<value>] [--cursor=<value>]";
+      "bsky app-bsky-feed get-list-feed --list=<value> [--limit=<value>] [--cursor=<value>] [--since=<value>]";
 
   @override
   String get methodId => "app.bsky.feed.getListFeed";
 
   @override
   Map<String, dynamic>? get parameters => {
-        "list": argResults!["list"],
-        "limit": int.tryParse(argResults!["limit"]) ??
-            usageException('Invalid integer value for option "limit".'),
-        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-      };
+    "list": argResults!["list"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+    if (argResults!.wasParsed("since")) "since": argResults!["since"],
+  };
 }
