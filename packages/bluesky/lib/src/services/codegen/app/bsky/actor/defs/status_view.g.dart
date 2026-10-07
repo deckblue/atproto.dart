@@ -66,7 +66,7 @@ Map<String, dynamic> _$$StatusViewImplToJson(_$StatusViewImpl instance) =>
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)
         'labels': value,
-      'expiresAt': iso8601(instance.expiresAt),
+      if (iso8601(instance.expiresAt) case final value?) 'expiresAt': value,
       if (instance.isActive case final value?) 'isActive': value,
       if (instance.isDisabled case final value?) 'isDisabled': value,
       if (instance.$unknown case final value?) r'$unknown': value,

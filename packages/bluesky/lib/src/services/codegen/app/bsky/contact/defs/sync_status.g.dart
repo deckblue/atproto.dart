@@ -32,7 +32,7 @@ _$SyncStatusImpl _$$SyncStatusImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$SyncStatusImplToJson(_$SyncStatusImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'syncedAt': iso8601(instance.syncedAt),
+      if (iso8601(instance.syncedAt) case final value?) 'syncedAt': value,
       'matchesCount': instance.matchesCount,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

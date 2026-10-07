@@ -72,17 +72,20 @@ Map<String, dynamic> _$$ScheduledActionViewImplToJson(
           const ScheduledActionViewActionConverter().toJson(instance.action),
       if (instance.eventData case final value?) 'eventData': value,
       'did': instance.did,
-      'executeAt': iso8601(instance.executeAt),
-      'executeAfter': iso8601(instance.executeAfter),
-      'executeUntil': iso8601(instance.executeUntil),
+      if (iso8601(instance.executeAt) case final value?) 'executeAt': value,
+      if (iso8601(instance.executeAfter) case final value?)
+        'executeAfter': value,
+      if (iso8601(instance.executeUntil) case final value?)
+        'executeUntil': value,
       if (instance.randomizeExecution case final value?)
         'randomizeExecution': value,
       'createdBy': instance.createdBy,
-      'createdAt': iso8601(instance.createdAt),
-      'updatedAt': iso8601(instance.updatedAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
+      if (iso8601(instance.updatedAt) case final value?) 'updatedAt': value,
       'status':
           const ScheduledActionViewStatusConverter().toJson(instance.status),
-      'lastExecutedAt': iso8601(instance.lastExecutedAt),
+      if (iso8601(instance.lastExecutedAt) case final value?)
+        'lastExecutedAt': value,
       if (instance.lastFailureReason case final value?)
         'lastFailureReason': value,
       if (instance.executionEventId case final value?)

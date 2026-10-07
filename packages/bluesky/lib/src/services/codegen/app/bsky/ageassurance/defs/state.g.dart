@@ -34,7 +34,8 @@ _$StateImpl _$$StateImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$StateImplToJson(_$StateImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'lastInitiatedAt': iso8601(instance.lastInitiatedAt),
+      if (iso8601(instance.lastInitiatedAt) case final value?)
+        'lastInitiatedAt': value,
       'status': const StatusConverter().toJson(instance.status),
       'access': const AccessConverter().toJson(instance.access),
       if (instance.$unknown case final value?) r'$unknown': value,

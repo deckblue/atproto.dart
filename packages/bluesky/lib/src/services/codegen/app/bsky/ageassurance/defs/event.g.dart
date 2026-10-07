@@ -42,7 +42,7 @@ _$EventImpl _$$EventImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$EventImplToJson(_$EventImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       'attemptId': instance.attemptId,
       'status': const EventStatusConverter().toJson(instance.status),
       'access': const EventAccessConverter().toJson(instance.access),

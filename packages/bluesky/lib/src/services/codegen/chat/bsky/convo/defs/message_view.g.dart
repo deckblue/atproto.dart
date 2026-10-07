@@ -76,7 +76,7 @@ Map<String, dynamic> _$$MessageViewImplToJson(_$MessageViewImpl instance) =>
           case final value?)
         'replyTo': value,
       'sender': const MessageViewSenderConverter().toJson(instance.sender),
-      'sentAt': iso8601(instance.sentAt),
+      if (iso8601(instance.sentAt) case final value?) 'sentAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

@@ -50,8 +50,8 @@ Map<String, dynamic> _$$AssignmentViewImplToJson(
           case final value?)
         'moderator': value,
       'queue': const QueueViewConverter().toJson(instance.queue),
-      'startAt': iso8601(instance.startAt),
-      'endAt': iso8601(instance.endAt),
+      if (iso8601(instance.startAt) case final value?) 'startAt': value,
+      if (iso8601(instance.endAt) case final value?) 'endAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

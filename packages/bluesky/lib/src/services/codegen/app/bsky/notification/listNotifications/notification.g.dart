@@ -75,7 +75,7 @@ Map<String, dynamic> _$$NotificationImplToJson(_$NotificationImpl instance) =>
           case final value?)
         'starterPack': value,
       'isRead': instance.isRead,
-      'indexedAt': iso8601(instance.indexedAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)
         'labels': value,

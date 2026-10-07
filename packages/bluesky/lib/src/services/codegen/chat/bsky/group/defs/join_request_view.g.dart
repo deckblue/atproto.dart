@@ -40,6 +40,6 @@ Map<String, dynamic> _$$JoinRequestViewImplToJson(
       'convoId': instance.convoId,
       'requestedBy':
           const ProfileViewBasicConverter().toJson(instance.requestedBy),
-      'requestedAt': iso8601(instance.requestedAt),
+      if (iso8601(instance.requestedAt) case final value?) 'requestedAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

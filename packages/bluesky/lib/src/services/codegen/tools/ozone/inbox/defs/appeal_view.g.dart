@@ -38,9 +38,10 @@ Map<String, dynamic> _$$AppealViewImplToJson(_$AppealViewImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'state': const AppealViewStateConverter().toJson(instance.state),
-      'appealedAt': iso8601(instance.appealedAt),
-      'resolvedAt': iso8601(instance.resolvedAt),
+      if (iso8601(instance.appealedAt) case final value?) 'appealedAt': value,
+      if (iso8601(instance.resolvedAt) case final value?) 'resolvedAt': value,
       if (instance.note case final value?) 'note': value,
-      'appealableUntil': iso8601(instance.appealableUntil),
+      if (iso8601(instance.appealableUntil) case final value?)
+        'appealableUntil': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

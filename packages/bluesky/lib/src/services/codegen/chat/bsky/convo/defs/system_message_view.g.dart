@@ -39,7 +39,7 @@ Map<String, dynamic> _$$SystemMessageViewImplToJson(
       r'$type': instance.$type,
       'id': instance.id,
       'rev': instance.rev,
-      'sentAt': iso8601(instance.sentAt),
+      if (iso8601(instance.sentAt) case final value?) 'sentAt': value,
       'data': const USystemMessageViewDataConverter().toJson(instance.data),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

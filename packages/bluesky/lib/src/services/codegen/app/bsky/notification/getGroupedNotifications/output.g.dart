@@ -46,7 +46,7 @@ Map<String, dynamic> _$$NotificationGetGroupedNotificationsOutputImplToJson(
     <String, dynamic>{
       if (instance.cursor case final value?) 'cursor': value,
       'groups': instance.groups.map(const GroupConverter().toJson).toList(),
-      'seenAt': iso8601(instance.seenAt),
+      if (iso8601(instance.seenAt) case final value?) 'seenAt': value,
       if (instance.relatedViews
               ?.map(
                   const UNotificationGetGroupedNotificationsRelatedViewsConverter()

@@ -41,8 +41,10 @@ Map<String, dynamic> _$$ScheduleTakedownEventImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       if (instance.comment case final value?) 'comment': value,
-      'executeAt': iso8601(instance.executeAt),
-      'executeAfter': iso8601(instance.executeAfter),
-      'executeUntil': iso8601(instance.executeUntil),
+      if (iso8601(instance.executeAt) case final value?) 'executeAt': value,
+      if (iso8601(instance.executeAfter) case final value?)
+        'executeAfter': value,
+      if (iso8601(instance.executeUntil) case final value?)
+        'executeUntil': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

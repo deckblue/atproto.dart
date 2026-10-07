@@ -114,21 +114,26 @@ Map<String, dynamic> _$$SubjectStatusViewImplToJson(
       if (instance.subjectBlobCids case final value?) 'subjectBlobCids': value,
       if (instance.subjectRepoHandle case final value?)
         'subjectRepoHandle': value,
-      'updatedAt': iso8601(instance.updatedAt),
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.updatedAt) case final value?) 'updatedAt': value,
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       'reviewState':
           const SubjectReviewStateConverter().toJson(instance.reviewState),
       if (instance.comment case final value?) 'comment': value,
       if (instance.priorityScore case final value?) 'priorityScore': value,
-      'muteUntil': iso8601(instance.muteUntil),
-      'muteReportingUntil': iso8601(instance.muteReportingUntil),
+      if (iso8601(instance.muteUntil) case final value?) 'muteUntil': value,
+      if (iso8601(instance.muteReportingUntil) case final value?)
+        'muteReportingUntil': value,
       if (instance.lastReviewedBy case final value?) 'lastReviewedBy': value,
-      'lastReviewedAt': iso8601(instance.lastReviewedAt),
-      'lastReportedAt': iso8601(instance.lastReportedAt),
-      'lastAppealedAt': iso8601(instance.lastAppealedAt),
+      if (iso8601(instance.lastReviewedAt) case final value?)
+        'lastReviewedAt': value,
+      if (iso8601(instance.lastReportedAt) case final value?)
+        'lastReportedAt': value,
+      if (iso8601(instance.lastAppealedAt) case final value?)
+        'lastAppealedAt': value,
       if (instance.takendown case final value?) 'takendown': value,
       if (instance.appealed case final value?) 'appealed': value,
-      'suspendUntil': iso8601(instance.suspendUntil),
+      if (iso8601(instance.suspendUntil) case final value?)
+        'suspendUntil': value,
       if (instance.tags case final value?) 'tags': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, AccountStats>(
               instance.accountStats, const AccountStatsConverter().toJson)

@@ -68,8 +68,10 @@ Map<String, dynamic> _$$ReportQueryReportsInputImplToJson(
           case final value?)
         'subjectType': value,
       if (instance.collections case final value?) 'collections': value,
-      'reportedAfter': iso8601(instance.reportedAfter),
-      'reportedBefore': iso8601(instance.reportedBefore),
+      if (iso8601(instance.reportedAfter) case final value?)
+        'reportedAfter': value,
+      if (iso8601(instance.reportedBefore) case final value?)
+        'reportedBefore': value,
       'isMuted': instance.isMuted,
       if (instance.assignedTo case final value?) 'assignedTo': value,
       'sortField': instance.sortField,

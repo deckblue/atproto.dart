@@ -49,7 +49,7 @@ Map<String, dynamic> _$$RecordViewImplToJson(_$RecordViewImpl instance) =>
       'cid': instance.cid,
       'value': instance.value,
       'blobCids': instance.blobCids,
-      'indexedAt': iso8601(instance.indexedAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
       'moderation': const ModerationConverter().toJson(instance.moderation),
       'repo': const RepoViewConverter().toJson(instance.repo),
       if (instance.$unknown case final value?) r'$unknown': value,

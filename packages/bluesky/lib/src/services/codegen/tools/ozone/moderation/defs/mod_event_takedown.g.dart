@@ -63,6 +63,7 @@ Map<String, dynamic> _$$ModEventTakedownImplToJson(
           case final value?)
         'targetServices': value,
       if (instance.strikeCount case final value?) 'strikeCount': value,
-      'strikeExpiresAt': iso8601(instance.strikeExpiresAt),
+      if (iso8601(instance.strikeExpiresAt) case final value?)
+        'strikeExpiresAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

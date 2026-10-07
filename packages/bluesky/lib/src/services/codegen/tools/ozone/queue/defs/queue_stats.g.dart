@@ -49,6 +49,6 @@ Map<String, dynamic> _$$QueueStatsImplToJson(_$QueueStatsImpl instance) =>
       if (instance.actionRate case final value?) 'actionRate': value,
       if (instance.avgHandlingTimeSec case final value?)
         'avgHandlingTimeSec': value,
-      'lastUpdated': iso8601(instance.lastUpdated),
+      if (iso8601(instance.lastUpdated) case final value?) 'lastUpdated': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -39,8 +39,10 @@ Map<String, dynamic> _$$ReportQueryActivitiesInputImplToJson(
         _$ReportQueryActivitiesInputImpl instance) =>
     <String, dynamic>{
       if (instance.activityTypes case final value?) 'activityTypes': value,
-      'createdAfter': iso8601(instance.createdAfter),
-      'createdBefore': iso8601(instance.createdBefore),
+      if (iso8601(instance.createdAfter) case final value?)
+        'createdAfter': value,
+      if (iso8601(instance.createdBefore) case final value?)
+        'createdBefore': value,
       'sortDirection': instance.sortDirection,
       'limit': instance.limit,
       if (instance.cursor case final value?) 'cursor': value,

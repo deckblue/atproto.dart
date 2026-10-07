@@ -77,8 +77,10 @@ Map<String, dynamic> _$$ModerationQueryEventsInputImplToJson(
       if (instance.types case final value?) 'types': value,
       if (instance.createdBy case final value?) 'createdBy': value,
       'sortDirection': instance.sortDirection,
-      'createdAfter': iso8601(instance.createdAfter),
-      'createdBefore': iso8601(instance.createdBefore),
+      if (iso8601(instance.createdAfter) case final value?)
+        'createdAfter': value,
+      if (iso8601(instance.createdBefore) case final value?)
+        'createdBefore': value,
       if (instance.subject case final value?) 'subject': value,
       if (instance.collections case final value?) 'collections': value,
       if (_$JsonConverterToJson<String, ModerationQueryEventsSubjectType>(

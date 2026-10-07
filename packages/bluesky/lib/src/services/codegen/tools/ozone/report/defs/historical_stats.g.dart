@@ -66,7 +66,7 @@ Map<String, dynamic> _$$HistoricalStatsImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       'date': instance.date,
-      'computedAt': iso8601(instance.computedAt),
+      if (iso8601(instance.computedAt) case final value?) 'computedAt': value,
       if (instance.pendingCount case final value?) 'pendingCount': value,
       if (instance.closedCount case final value?) 'closedCount': value,
       if (instance.actionedCount case final value?) 'actionedCount': value,

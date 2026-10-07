@@ -68,8 +68,8 @@ Map<String, dynamic> _$$EmbedExternalViewExternalImplToJson(
       'title': instance.title,
       'description': instance.description,
       if (instance.thumb case final value?) 'thumb': value,
-      'createdAt': iso8601(instance.createdAt),
-      'updatedAt': iso8601(instance.updatedAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
+      if (iso8601(instance.updatedAt) case final value?) 'updatedAt': value,
       if (instance.readingTime case final value?) 'readingTime': value,
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)

@@ -32,7 +32,7 @@ _$InterestsPrefImpl _$$InterestsPrefImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$InterestsPrefImplToJson(_$InterestsPrefImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'updatedAt': iso8601(instance.updatedAt),
+      if (iso8601(instance.updatedAt) case final value?) 'updatedAt': value,
       'tags': instance.tags,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

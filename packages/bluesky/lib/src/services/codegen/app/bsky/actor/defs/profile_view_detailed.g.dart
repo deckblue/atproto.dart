@@ -107,8 +107,8 @@ Map<String, dynamic> _$$ProfileViewDetailedImplToJson(
               const StarterPackViewBasicConverter().toJson)
           case final value?)
         'joinedViaStarterPack': value,
-      'indexedAt': iso8601(instance.indexedAt),
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, ViewerState>(
               instance.viewer, const ViewerStateConverter().toJson)
           case final value?)

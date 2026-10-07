@@ -48,7 +48,7 @@ _$GroupConvoImpl _$$GroupConvoImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$GroupConvoImplToJson(_$GroupConvoImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, JoinLinkView>(
               instance.joinLink, const JoinLinkViewConverter().toJson)
           case final value?)

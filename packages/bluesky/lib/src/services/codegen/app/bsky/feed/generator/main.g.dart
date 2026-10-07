@@ -79,7 +79,7 @@ Map<String, dynamic> _$$FeedGeneratorRecordImplToJson(
               const FeedGeneratorContentModeConverter().toJson)
           case final value?)
         'contentMode': value,
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

@@ -89,9 +89,9 @@ Map<String, dynamic> _$$ReportViewImplToJson(_$ReportViewImpl instance) =>
       'reportedBy': instance.reportedBy,
       'reporter': const SubjectViewConverter().toJson(instance.reporter),
       if (instance.comment case final value?) 'comment': value,
-      'createdAt': iso8601(instance.createdAt),
-      'updatedAt': iso8601(instance.updatedAt),
-      'queuedAt': iso8601(instance.queuedAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
+      if (iso8601(instance.updatedAt) case final value?) 'updatedAt': value,
+      if (iso8601(instance.queuedAt) case final value?) 'queuedAt': value,
       if (instance.actionEventIds case final value?) 'actionEventIds': value,
       if (instance.actions?.map(const ModEventViewConverter().toJson).toList()
           case final value?)

@@ -85,6 +85,6 @@ Map<String, dynamic> _$$LiveStatsImplToJson(_$LiveStatsImpl instance) =>
         'avgHandlingTimeSec': value,
       if (instance.avgResolutionTimeSec case final value?)
         'avgResolutionTimeSec': value,
-      'lastUpdated': iso8601(instance.lastUpdated),
+      if (iso8601(instance.lastUpdated) case final value?) 'lastUpdated': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -90,7 +90,7 @@ Map<String, dynamic> _$$StarterPackViewImplToJson(
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)
         'labels': value,
-      'indexedAt': iso8601(instance.indexedAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

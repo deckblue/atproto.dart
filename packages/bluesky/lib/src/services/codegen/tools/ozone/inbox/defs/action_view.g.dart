@@ -50,9 +50,9 @@ Map<String, dynamic> _$$ActionViewImplToJson(_$ActionViewImpl instance) =>
               instance.scope, const ActionViewScopeConverter().toJson)
           case final value?)
         'scope': value,
-      'createdAt': iso8601(instance.createdAt),
-      'reversedAt': iso8601(instance.reversedAt),
-      'expiresAt': iso8601(instance.expiresAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
+      if (iso8601(instance.reversedAt) case final value?) 'reversedAt': value,
+      if (iso8601(instance.expiresAt) case final value?) 'expiresAt': value,
       if (instance.labels case final value?) 'labels': value,
       if (instance.policies case final value?) 'policies': value,
       if (instance.$unknown case final value?) r'$unknown': value,

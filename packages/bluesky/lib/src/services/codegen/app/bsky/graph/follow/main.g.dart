@@ -39,7 +39,7 @@ Map<String, dynamic> _$$GraphFollowRecordImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       'subject': instance.subject,
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, RepoStrongRef>(
               instance.via, const RepoStrongRefConverter().toJson)
           case final value?)

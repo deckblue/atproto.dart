@@ -39,8 +39,10 @@ Map<String, dynamic> _$$SchedulingConfigImplToJson(
         _$SchedulingConfigImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'executeAt': iso8601(instance.executeAt),
-      'executeAfter': iso8601(instance.executeAfter),
-      'executeUntil': iso8601(instance.executeUntil),
+      if (iso8601(instance.executeAt) case final value?) 'executeAt': value,
+      if (iso8601(instance.executeAfter) case final value?)
+        'executeAfter': value,
+      if (iso8601(instance.executeUntil) case final value?)
+        'executeUntil': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

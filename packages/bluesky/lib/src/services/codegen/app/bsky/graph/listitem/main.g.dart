@@ -37,6 +37,6 @@ Map<String, dynamic> _$$GraphListitemRecordImplToJson(
       r'$type': instance.$type,
       'subject': instance.subject,
       'list': const AtUriConverter().toJson(instance.list),
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -52,7 +52,8 @@ Map<String, dynamic> _$$TakedownImplToJson(_$TakedownImpl instance) =>
       if (instance.policies case final value?) 'policies': value,
       if (instance.severityLevel case final value?) 'severityLevel': value,
       if (instance.strikeCount case final value?) 'strikeCount': value,
-      'strikeExpiresAt': iso8601(instance.strikeExpiresAt),
+      if (iso8601(instance.strikeExpiresAt) case final value?)
+        'strikeExpiresAt': value,
       if (instance.emailContent case final value?) 'emailContent': value,
       if (instance.emailSubject case final value?) 'emailSubject': value,
       if (instance.$unknown case final value?) r'$unknown': value,

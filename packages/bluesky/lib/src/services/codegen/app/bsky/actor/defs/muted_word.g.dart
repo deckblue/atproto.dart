@@ -52,6 +52,6 @@ Map<String, dynamic> _$$MutedWordImplToJson(_$MutedWordImpl instance) =>
           .toList(),
       'actorTarget':
           const MutedWordActorTargetConverter().toJson(instance.actorTarget),
-      'expiresAt': iso8601(instance.expiresAt),
+      if (iso8601(instance.expiresAt) case final value?) 'expiresAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

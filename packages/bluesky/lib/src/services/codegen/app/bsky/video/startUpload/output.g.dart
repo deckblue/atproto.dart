@@ -36,6 +36,6 @@ Map<String, dynamic> _$$VideoStartUploadOutputImplToJson(
       'jobId': instance.jobId,
       'partSizeBytes': instance.partSizeBytes,
       'partCount': instance.partCount,
-      'expiresAt': iso8601(instance.expiresAt),
+      if (iso8601(instance.expiresAt) case final value?) 'expiresAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

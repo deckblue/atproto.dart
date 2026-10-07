@@ -5,5 +5,5 @@
 bool isA<T>(final Object? object) => object is T;
 
 /// Returns the [dateTime] in UTC time zone and ISO8601 format.
-String iso8601(final DateTime? dateTime) =>
-    (dateTime ?? DateTime.now()).toUtc().toIso8601String();
+String? iso8601(final DateTime? dateTime) =>
+    dateTime?.toUtc().toIso8601String();

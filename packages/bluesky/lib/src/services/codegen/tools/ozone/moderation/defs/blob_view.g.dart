@@ -45,7 +45,7 @@ Map<String, dynamic> _$$BlobViewImplToJson(_$BlobViewImpl instance) =>
       'cid': instance.cid,
       'mimeType': instance.mimeType,
       'size': instance.size,
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, UBlobViewDetails>(
               instance.details, const UBlobViewDetailsConverter().toJson)
           case final value?)

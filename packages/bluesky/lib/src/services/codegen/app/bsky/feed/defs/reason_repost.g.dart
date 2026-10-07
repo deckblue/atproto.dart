@@ -45,7 +45,7 @@ Map<String, dynamic> _$$ReasonRepostImplToJson(_$ReasonRepostImpl instance) =>
           case final value?)
         'uri': value,
       if (instance.cid case final value?) 'cid': value,
-      'indexedAt': iso8601(instance.indexedAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

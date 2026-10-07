@@ -46,7 +46,7 @@ Map<String, dynamic> _$$SkeletonTrendImplToJson(_$SkeletonTrendImpl instance) =>
       'displayName': instance.displayName,
       if (instance.description case final value?) 'description': value,
       'link': instance.link,
-      'startedAt': iso8601(instance.startedAt),
+      if (iso8601(instance.startedAt) case final value?) 'startedAt': value,
       'postCount': instance.postCount,
       if (_$JsonConverterToJson<String, SkeletonTrendStatus>(
               instance.status, const SkeletonTrendStatusConverter().toJson)

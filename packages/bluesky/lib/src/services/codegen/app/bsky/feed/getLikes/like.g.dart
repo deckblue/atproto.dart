@@ -36,8 +36,8 @@ _$LikeImpl _$$LikeImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$LikeImplToJson(_$LikeImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'indexedAt': iso8601(instance.indexedAt),
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       'actor': const ProfileViewConverter().toJson(instance.actor),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

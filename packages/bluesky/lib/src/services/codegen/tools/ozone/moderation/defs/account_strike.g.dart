@@ -42,7 +42,9 @@ Map<String, dynamic> _$$AccountStrikeImplToJson(_$AccountStrikeImpl instance) =>
         'activeStrikeCount': value,
       if (instance.totalStrikeCount case final value?)
         'totalStrikeCount': value,
-      'firstStrikeAt': iso8601(instance.firstStrikeAt),
-      'lastStrikeAt': iso8601(instance.lastStrikeAt),
+      if (iso8601(instance.firstStrikeAt) case final value?)
+        'firstStrikeAt': value,
+      if (iso8601(instance.lastStrikeAt) case final value?)
+        'lastStrikeAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

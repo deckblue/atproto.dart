@@ -42,7 +42,7 @@ Map<String, dynamic> _$$GroupImplToJson(_$GroupImpl instance) =>
       r'$type': instance.$type,
       'id': instance.id,
       'isRead': instance.isRead,
-      'indexedAt': iso8601(instance.indexedAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
       'count': instance.count,
       'kind': const UGroupKindConverter().toJson(instance.kind),
       if (instance.$unknown case final value?) r'$unknown': value,

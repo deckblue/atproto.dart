@@ -39,7 +39,7 @@ Map<String, dynamic> _$$BookmarkViewImplToJson(_$BookmarkViewImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'subject': const RepoStrongRefConverter().toJson(instance.subject),
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       'item': const UBookmarkViewItemConverter().toJson(instance.item),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

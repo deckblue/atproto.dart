@@ -50,7 +50,7 @@ Map<String, dynamic> _$$TrendViewImplToJson(_$TrendViewImpl instance) =>
       'displayName': instance.displayName,
       if (instance.description case final value?) 'description': value,
       'link': instance.link,
-      'startedAt': iso8601(instance.startedAt),
+      if (iso8601(instance.startedAt) case final value?) 'startedAt': value,
       'postCount': instance.postCount,
       if (_$JsonConverterToJson<String, TrendViewStatus>(
               instance.status, const TrendViewStatusConverter().toJson)

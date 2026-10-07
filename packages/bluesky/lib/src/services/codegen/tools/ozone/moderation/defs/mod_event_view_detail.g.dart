@@ -62,7 +62,7 @@ Map<String, dynamic> _$$ModEventViewDetailImplToJson(
       'subjectBlobs':
           instance.subjectBlobs.map(const BlobViewConverter().toJson).toList(),
       'createdBy': instance.createdBy,
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, ModTool>(
               instance.modTool, const ModToolConverter().toJson)
           case final value?)

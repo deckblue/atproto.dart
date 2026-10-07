@@ -71,10 +71,10 @@ Map<String, dynamic> _$$QueueViewImplToJson(_$QueueViewImpl instance) =>
       if (instance.recommendedLabels case final value?)
         'recommendedLabels': value,
       'createdBy': instance.createdBy,
-      'createdAt': iso8601(instance.createdAt),
-      'updatedAt': iso8601(instance.updatedAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
+      if (iso8601(instance.updatedAt) case final value?) 'updatedAt': value,
       'enabled': instance.enabled,
-      'deletedAt': iso8601(instance.deletedAt),
+      if (iso8601(instance.deletedAt) case final value?) 'deletedAt': value,
       'stats': const QueueStatsConverter().toJson(instance.stats),
       if (instance.$unknown case final value?) r'$unknown': value,
     };

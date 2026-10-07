@@ -53,7 +53,7 @@ Map<String, dynamic> _$$VideoGetUploadStatusOutputImplToJson(
       'partSizeBytes': instance.partSizeBytes,
       'partCount': instance.partCount,
       'receivedParts': instance.receivedParts,
-      'expiresAt': iso8601(instance.expiresAt),
+      if (iso8601(instance.expiresAt) case final value?) 'expiresAt': value,
       'state':
           const VideoGetUploadStatusStateConverter().toJson(instance.state),
       if (instance.completedJobId case final value?) 'completedJobId': value,

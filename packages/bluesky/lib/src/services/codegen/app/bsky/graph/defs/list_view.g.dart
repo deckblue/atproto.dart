@@ -81,7 +81,7 @@ Map<String, dynamic> _$$ListViewImplToJson(_$ListViewImpl instance) =>
               instance.viewer, const ListViewerStateConverter().toJson)
           case final value?)
         'viewer': value,
-      'indexedAt': iso8601(instance.indexedAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
 

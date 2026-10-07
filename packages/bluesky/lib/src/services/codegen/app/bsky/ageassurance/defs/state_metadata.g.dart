@@ -32,6 +32,7 @@ _$StateMetadataImpl _$$StateMetadataImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$StateMetadataImplToJson(_$StateMetadataImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'accountCreatedAt': iso8601(instance.accountCreatedAt),
+      if (iso8601(instance.accountCreatedAt) case final value?)
+        'accountCreatedAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

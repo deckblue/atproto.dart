@@ -77,7 +77,7 @@ Map<String, dynamic> _$$ProfileViewBasicImplToJson(
       if (instance.labels?.map(const LabelConverter().toJson).toList()
           case final value?)
         'labels': value,
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (instance.chatDisabled case final value?) 'chatDisabled': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, VerificationState>(
               instance.verification, const VerificationStateConverter().toJson)

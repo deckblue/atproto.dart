@@ -48,8 +48,8 @@ Map<String, dynamic> _$$MemberImplToJson(_$MemberImpl instance) =>
               instance.profile, const ProfileViewDetailedConverter().toJson)
           case final value?)
         'profile': value,
-      'createdAt': iso8601(instance.createdAt),
-      'updatedAt': iso8601(instance.updatedAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
+      if (iso8601(instance.updatedAt) case final value?) 'updatedAt': value,
       if (instance.lastUpdatedBy case final value?) 'lastUpdatedBy': value,
       'role': const MemberRoleConverter().toJson(instance.role),
       if (instance.$unknown case final value?) r'$unknown': value,

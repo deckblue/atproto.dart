@@ -29,6 +29,6 @@ _$NotificationGetUnreadCountInputImpl
 Map<String, dynamic> _$$NotificationGetUnreadCountInputImplToJson(
         _$NotificationGetUnreadCountInputImpl instance) =>
     <String, dynamic>{
-      'seenAt': iso8601(instance.seenAt),
+      if (iso8601(instance.seenAt) case final value?) 'seenAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

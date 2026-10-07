@@ -41,7 +41,7 @@ Map<String, dynamic> _$$FeedLikeRecordImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       'subject': const RepoStrongRefConverter().toJson(instance.subject),
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, RepoStrongRef>(
               instance.via, const RepoStrongRefConverter().toJson)
           case final value?)

@@ -46,10 +46,12 @@ Map<String, dynamic> _$$AccountHostingImplToJson(
     <String, dynamic>{
       r'$type': instance.$type,
       'status': const AccountHostingStatusConverter().toJson(instance.status),
-      'updatedAt': iso8601(instance.updatedAt),
-      'createdAt': iso8601(instance.createdAt),
-      'deletedAt': iso8601(instance.deletedAt),
-      'deactivatedAt': iso8601(instance.deactivatedAt),
-      'reactivatedAt': iso8601(instance.reactivatedAt),
+      if (iso8601(instance.updatedAt) case final value?) 'updatedAt': value,
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
+      if (iso8601(instance.deletedAt) case final value?) 'deletedAt': value,
+      if (iso8601(instance.deactivatedAt) case final value?)
+        'deactivatedAt': value,
+      if (iso8601(instance.reactivatedAt) case final value?)
+        'reactivatedAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };
