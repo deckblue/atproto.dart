@@ -48,8 +48,8 @@ Map<String, dynamic> _$$LabelImplToJson(_$LabelImpl instance) =>
       if (instance.cid case final value?) 'cid': value,
       'val': instance.val,
       if (instance.neg case final value?) 'neg': value,
-      'cts': iso8601(instance.cts),
-      'exp': iso8601(instance.exp),
+      if (iso8601(instance.cts) case final value?) 'cts': value,
+      if (iso8601(instance.exp) case final value?) 'exp': value,
       if (instance.sig case final value?) 'sig': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

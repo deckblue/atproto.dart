@@ -38,6 +38,6 @@ Map<String, dynamic> _$$SyncImplToJson(_$SyncImpl instance) =>
       'did': instance.did,
       'blocks': instance.blocks,
       'rev': instance.rev,
-      'time': iso8601(instance.time),
+      if (iso8601(instance.time) case final value?) 'time': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

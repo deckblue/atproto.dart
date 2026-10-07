@@ -51,6 +51,6 @@ Map<String, dynamic> _$$CommitImplToJson(_$CommitImpl instance) =>
       'blocks': instance.blocks,
       'ops': instance.ops.map(const RepoOpConverter().toJson).toList(),
       if (instance.prevData case final value?) 'prevData': value,
-      'time': iso8601(instance.time),
+      if (iso8601(instance.time) case final value?) 'time': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

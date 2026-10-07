@@ -65,7 +65,7 @@ Map<String, dynamic> _$$AccountViewImplToJson(_$AccountViewImpl instance) =>
       'handle': instance.handle,
       if (instance.email case final value?) 'email': value,
       if (instance.relatedRecords case final value?) 'relatedRecords': value,
-      'indexedAt': iso8601(instance.indexedAt),
+      if (iso8601(instance.indexedAt) case final value?) 'indexedAt': value,
       if (_$JsonConverterToJson<Map<String, dynamic>, InviteCode>(
               instance.invitedBy, const InviteCodeConverter().toJson)
           case final value?)
@@ -74,9 +74,11 @@ Map<String, dynamic> _$$AccountViewImplToJson(_$AccountViewImpl instance) =>
           case final value?)
         'invites': value,
       if (instance.invitesDisabled case final value?) 'invitesDisabled': value,
-      'emailConfirmedAt': iso8601(instance.emailConfirmedAt),
+      if (iso8601(instance.emailConfirmedAt) case final value?)
+        'emailConfirmedAt': value,
       if (instance.inviteNote case final value?) 'inviteNote': value,
-      'deactivatedAt': iso8601(instance.deactivatedAt),
+      if (iso8601(instance.deactivatedAt) case final value?)
+        'deactivatedAt': value,
       if (instance.threatSignatures
               ?.map(const ThreatSignatureConverter().toJson)
               .toList()

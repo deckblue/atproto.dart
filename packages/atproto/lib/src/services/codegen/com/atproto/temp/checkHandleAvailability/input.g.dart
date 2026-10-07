@@ -33,6 +33,6 @@ Map<String, dynamic> _$$TempCheckHandleAvailabilityInputImplToJson(
     <String, dynamic>{
       'handle': instance.handle,
       if (instance.email case final value?) 'email': value,
-      'birthDate': iso8601(instance.birthDate),
+      if (iso8601(instance.birthDate) case final value?) 'birthDate': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

@@ -31,6 +31,6 @@ Map<String, dynamic> _$$InviteCodeUseImplToJson(_$InviteCodeUseImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'usedBy': instance.usedBy,
-      'usedAt': iso8601(instance.usedAt),
+      if (iso8601(instance.usedAt) case final value?) 'usedAt': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

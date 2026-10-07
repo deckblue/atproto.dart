@@ -38,7 +38,7 @@ Map<String, dynamic> _$$AppPasswordImplToJson(_$AppPasswordImpl instance) =>
       r'$type': instance.$type,
       'name': instance.name,
       'password': instance.password,
-      'createdAt': iso8601(instance.createdAt),
+      if (iso8601(instance.createdAt) case final value?) 'createdAt': value,
       if (instance.privileged case final value?) 'privileged': value,
       if (instance.$unknown case final value?) r'$unknown': value,
     };

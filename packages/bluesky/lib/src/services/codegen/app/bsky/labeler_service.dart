@@ -152,7 +152,7 @@ final class LabelerServiceRecordAccessor {
           ...?$unknown,
           'policies': const LabelerPoliciesConverter().toJson(policies),
           if (labels != null) 'labels': labels.toJson(),
-          if (createdAt != null) 'createdAt': iso8601(createdAt),
+          'createdAt': iso8601(createdAt ?? DateTime.now()),
           if (reasonTypes != null)
             'reasonTypes': reasonTypes
                 .map((e) => const ReasonTypeConverter().toJson(e))
@@ -193,7 +193,7 @@ final class LabelerServiceRecordAccessor {
           ...?$unknown,
           'policies': const LabelerPoliciesConverter().toJson(policies),
           if (labels != null) 'labels': labels.toJson(),
-          if (createdAt != null) 'createdAt': iso8601(createdAt),
+          'createdAt': iso8601(createdAt ?? DateTime.now()),
           if (reasonTypes != null)
             'reasonTypes': reasonTypes
                 .map((e) => const ReasonTypeConverter().toJson(e))

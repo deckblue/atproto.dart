@@ -104,7 +104,7 @@ Future<XRPCResponse<NotificationGetUnreadCountOutput>>
           parameters: {
             ...?$unknown,
             if (priority != null) 'priority': priority,
-            if (seenAt != null) 'seenAt': iso8601(seenAt),
+            'seenAt': iso8601(seenAt ?? DateTime.now()),
           },
           to: const NotificationGetUnreadCountOutputConverter().fromJson,
         );
@@ -155,7 +155,7 @@ Future<XRPCResponse<NotificationListNotificationsOutput>>
             if (limit != null) 'limit': limit,
             if (priority != null) 'priority': priority,
             if (cursor != null) 'cursor': cursor,
-            if (seenAt != null) 'seenAt': iso8601(seenAt),
+            'seenAt': iso8601(seenAt ?? DateTime.now()),
           },
           to: const NotificationListNotificationsOutputConverter().fromJson,
         );
