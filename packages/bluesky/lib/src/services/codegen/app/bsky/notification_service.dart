@@ -50,7 +50,7 @@ import 'package:atproto/com_atproto_services.dart'
 
 /// [UNSTABLE - DO NOT USE THIS ENDPOINT WHILE THIS NOTE IS HERE] Enumerate notifications for the requesting account, pre-grouped for rendering. Supersedes listNotifications. Requires auth.
 Future<XRPCResponse<NotificationGetGroupedNotificationsOutput>>
-appBskyNotificationGetGroupedNotifications({
+    appBskyNotificationGetGroupedNotifications({
   NotificationGetGroupedNotificationsFeed? feed,
   int? limit,
   String? cursor,
@@ -58,18 +58,20 @@ appBskyNotificationGetGroupedNotifications({
   String? $service,
   Map<String, String>? $headers,
   Map<String, String>? $unknown,
-}) async => await $ctx.get(
-  ns.appBskyNotificationGetGroupedNotifications,
-  service: $service,
-  headers: $headers,
-  parameters: {
-    ...?$unknown,
-    if (feed != null) 'feed': feed.toJson(),
-    if (limit != null) 'limit': limit,
-    if (cursor != null) 'cursor': cursor,
-  },
-  to: const NotificationGetGroupedNotificationsOutputConverter().fromJson,
-);
+}) async =>
+        await $ctx.get(
+          ns.appBskyNotificationGetGroupedNotifications,
+          service: $service,
+          headers: $headers,
+          parameters: {
+            ...?$unknown,
+            if (feed != null) 'feed': feed.toJson(),
+            if (limit != null) 'limit': limit,
+            if (cursor != null) 'cursor': cursor,
+          },
+          to: const NotificationGetGroupedNotificationsOutputConverter()
+              .fromJson,
+        );
 
 /// Get notification-related preferences for an account. Requires auth.
 Future<XRPCResponse<NotificationGetPreferencesOutput>>
@@ -104,7 +106,7 @@ Future<XRPCResponse<NotificationGetUnreadCountOutput>>
           parameters: {
             ...?$unknown,
             if (priority != null) 'priority': priority,
-            'seenAt': iso8601(seenAt ?? DateTime.now()),
+            if (seenAt != null) 'seenAt': iso8601(seenAt),
           },
           to: const NotificationGetUnreadCountOutputConverter().fromJson,
         );
@@ -155,7 +157,7 @@ Future<XRPCResponse<NotificationListNotificationsOutput>>
             if (limit != null) 'limit': limit,
             if (priority != null) 'priority': priority,
             if (cursor != null) 'cursor': cursor,
-            'seenAt': iso8601(seenAt ?? DateTime.now()),
+            if (seenAt != null) 'seenAt': iso8601(seenAt),
           },
           to: const NotificationListNotificationsOutputConverter().fromJson,
         );
@@ -345,22 +347,23 @@ base class NotificationService {
 
   /// [UNSTABLE - DO NOT USE THIS ENDPOINT WHILE THIS NOTE IS HERE] Enumerate notifications for the requesting account, pre-grouped for rendering. Supersedes listNotifications. Requires auth.
   Future<XRPCResponse<NotificationGetGroupedNotificationsOutput>>
-  getGroupedNotifications({
+      getGroupedNotifications({
     NotificationGetGroupedNotificationsFeed? feed,
     int? limit,
     String? cursor,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
-  }) async => await appBskyNotificationGetGroupedNotifications(
-    feed: feed,
-    limit: limit,
-    cursor: cursor,
-    $ctx: ctx,
-    $service: $service,
-    $headers: $headers,
-    $unknown: $unknown,
-  );
+  }) async =>
+          await appBskyNotificationGetGroupedNotifications(
+            feed: feed,
+            limit: limit,
+            cursor: cursor,
+            $ctx: ctx,
+            $service: $service,
+            $headers: $headers,
+            $unknown: $unknown,
+          );
 
   /// Get notification-related preferences for an account. Requires auth.
   Future<XRPCResponse<NotificationGetPreferencesOutput>> getPreferences({
