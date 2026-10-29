@@ -49,6 +49,11 @@ final class CreateActivityCommand extends ProcedureCommand {
         help:
             r"Set true when this activity is triggered by an automated process. Defaults to false.",
         defaultsTo: false,
+      )
+      ..addOption(
+        "meta",
+        help:
+            r"Optional metadata for the report activities. Lifecycle and resolution fields are controlled by the service.",
       );
   }
 
@@ -61,26 +66,29 @@ final class CreateActivityCommand extends ProcedureCommand {
 
   @override
   final String invocation =
-      "bsky tools-ozone-report create-activity [--reportId=<value>] [--eventId=<value>] --activity=<value> [--internalNote=<value>] [--publicNote=<value>] [--isAutomated]";
+      "bsky tools-ozone-report create-activity [--reportId=<value>] [--eventId=<value>] --activity=<value> [--internalNote=<value>] [--publicNote=<value>] [--isAutomated] [--meta=<value>]";
 
   @override
   String get methodId => "tools.ozone.report.createActivity";
 
   @override
   Map<String, dynamic>? get body => {
-        if (argResults!.wasParsed("reportId"))
-          "reportId": int.tryParse(argResults!["reportId"]) ??
-              usageException('Invalid integer value for option "reportId".'),
-        if (argResults!.wasParsed("eventId"))
-          "eventId": int.tryParse(argResults!["eventId"]) ??
-              usageException('Invalid integer value for option "eventId".'),
-        "activity": _decodeJson("activity"),
-        if (argResults!.wasParsed("internalNote"))
-          "internalNote": argResults!["internalNote"],
-        if (argResults!.wasParsed("publicNote"))
-          "publicNote": argResults!["publicNote"],
-        "isAutomated": argResults!["isAutomated"],
-      };
+    if (argResults!.wasParsed("reportId"))
+      "reportId":
+          int.tryParse(argResults!["reportId"]) ??
+          usageException('Invalid integer value for option "reportId".'),
+    if (argResults!.wasParsed("eventId"))
+      "eventId":
+          int.tryParse(argResults!["eventId"]) ??
+          usageException('Invalid integer value for option "eventId".'),
+    "activity": _decodeJson("activity"),
+    if (argResults!.wasParsed("internalNote"))
+      "internalNote": argResults!["internalNote"],
+    if (argResults!.wasParsed("publicNote"))
+      "publicNote": argResults!["publicNote"],
+    "isAutomated": argResults!["isAutomated"],
+    if (argResults!.wasParsed("meta")) "meta": _decodeJson("meta"),
+  };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

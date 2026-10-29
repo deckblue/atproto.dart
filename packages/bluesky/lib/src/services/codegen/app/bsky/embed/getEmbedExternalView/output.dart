@@ -14,6 +14,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
 import '../../../../app/bsky/embed/external/view.dart';
+import './union_main_data.dart';
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -27,16 +28,24 @@ abstract class EmbedGetEmbedExternalViewOutput
     with _$EmbedGetEmbedExternalViewOutput {
   static const knownProps = <String>[
     'view',
+    'data',
     'associatedRefs',
     'associatedRecords',
+    'unverifiedAssociatedRefs',
+    'unverifiedAssociatedRecords',
   ];
 
   @JsonSerializable(includeIfNull: false)
   const factory EmbedGetEmbedExternalViewOutput({
-    /// Hydrated view of the embed. Present only when the resolved records back the requested URL and supply enough information to populate the required `viewExternal` fields. Omitted alongside the rest of the response when no records resolved or validation failed.
+    /// Legacy hydrated view of the embed, returned for Standard.site records only. Present only when validation passed and the records supply enough information to populate the required `viewExternal` fields.
     @EmbedExternalViewConverter() EmbedExternalView? view,
+    @UEmbedGetEmbedExternalViewDataConverter()
+    UEmbedGetEmbedExternalViewData? data,
     @RepoStrongRefConverter() List<RepoStrongRef>? associatedRefs,
     List<Map<String, dynamic>>? associatedRecords,
+    @RepoStrongRefConverter() List<RepoStrongRef>? unverifiedAssociatedRefs,
+    List<Map<String, dynamic>>? unverifiedAssociatedRecords,
+
     Map<String, dynamic>? $unknown,
   }) = _EmbedGetEmbedExternalViewOutput;
 
@@ -48,10 +57,13 @@ extension EmbedGetEmbedExternalViewOutputExtension
     on EmbedGetEmbedExternalViewOutput {
   bool get hasView => view != null;
   bool get hasNotView => !hasView;
+  bool get hasData => data != null;
+  bool get hasNotData => !hasData;
 }
 
-final class EmbedGetEmbedExternalViewOutputConverter extends JsonConverter<
-    EmbedGetEmbedExternalViewOutput, Map<String, dynamic>> {
+final class EmbedGetEmbedExternalViewOutputConverter
+    extends
+        JsonConverter<EmbedGetEmbedExternalViewOutput, Map<String, dynamic>> {
   const EmbedGetEmbedExternalViewOutputConverter();
 
   @override

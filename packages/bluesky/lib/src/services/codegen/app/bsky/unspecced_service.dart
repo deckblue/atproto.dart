@@ -14,6 +14,8 @@ import 'package:atproto_core/internals.dart' show protected;
 // Project imports:
 import '../../../../nsids.g.dart' as ns;
 import 'unspecced/defs/age_assurance_state.dart';
+import 'unspecced/getAtmosphereExploreArticleRecommendations/output.dart';
+import 'unspecced/getAtmosphereExploreTab/output.dart';
 import 'unspecced/getConfig/output.dart';
 import 'unspecced/getOnboardingSuggestedStarterPacks/output.dart';
 import 'unspecced/getOnboardingSuggestedStarterPacksSkeleton/output.dart';
@@ -63,6 +65,51 @@ Future<XRPCResponse<AgeAssuranceState>> appBskyUnspeccedGetAgeAssuranceState({
       parameters: {...?$unknown},
       to: const AgeAssuranceStateConverter().fromJson,
     );
+
+/// Get a skeleton of recommended Atmosphere Explore articles. Intended to be called and hydrated by app.bsky.unspecced.getAtmosphereExploreTab
+Future<XRPCResponse<UnspeccedGetAtmosphereExploreArticleRecommendationsOutput>>
+appBskyUnspeccedGetAtmosphereExploreArticleRecommendations({
+  String? viewer,
+  int? limit,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async => await $ctx.get(
+  ns.appBskyUnspeccedGetAtmosphereExploreArticleRecommendations,
+  service: $service,
+  headers: $headers,
+  parameters: {
+    ...?$unknown,
+    if (viewer != null) 'viewer': viewer,
+    if (limit != null) 'limit': limit,
+  },
+  to: const UnspeccedGetAtmosphereExploreArticleRecommendationsOutputConverter()
+      .fromJson,
+);
+
+/// Get Atmosphere Explore content. Articles are recommended when algorithmic recommendations are enabled for the request, and curated otherwise; other sections are curated. Authentication is optional; authenticated requests include viewer-specific profile state.
+Future<XRPCResponse<UnspeccedGetAtmosphereExploreTabOutput>>
+appBskyUnspeccedGetAtmosphereExploreTab({
+  List<String>? langs,
+  String? countryCode,
+  String? regionCode,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async => await $ctx.get(
+  ns.appBskyUnspeccedGetAtmosphereExploreTab,
+  service: $service,
+  headers: $headers,
+  parameters: {
+    ...?$unknown,
+    if (langs != null) 'langs': langs,
+    if (countryCode != null) 'countryCode': countryCode,
+    if (regionCode != null) 'regionCode': regionCode,
+  },
+  to: const UnspeccedGetAtmosphereExploreTabOutputConverter().fromJson,
+);
 
 /// Get miscellaneous runtime configuration.
 Future<XRPCResponse<UnspeccedGetConfigOutput>> appBskyUnspeccedGetConfig({
@@ -744,6 +791,44 @@ base class UnspeccedService {
         $headers: $headers,
         $unknown: $unknown,
       );
+
+  /// Get a skeleton of recommended Atmosphere Explore articles. Intended to be called and hydrated by app.bsky.unspecced.getAtmosphereExploreTab
+  Future<
+    XRPCResponse<UnspeccedGetAtmosphereExploreArticleRecommendationsOutput>
+  >
+  getAtmosphereExploreArticleRecommendations({
+    String? viewer,
+    int? limit,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async => await appBskyUnspeccedGetAtmosphereExploreArticleRecommendations(
+    viewer: viewer,
+    limit: limit,
+    $ctx: ctx,
+    $service: $service,
+    $headers: $headers,
+    $unknown: $unknown,
+  );
+
+  /// Get Atmosphere Explore content. Articles are recommended when algorithmic recommendations are enabled for the request, and curated otherwise; other sections are curated. Authentication is optional; authenticated requests include viewer-specific profile state.
+  Future<XRPCResponse<UnspeccedGetAtmosphereExploreTabOutput>>
+  getAtmosphereExploreTab({
+    List<String>? langs,
+    String? countryCode,
+    String? regionCode,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async => await appBskyUnspeccedGetAtmosphereExploreTab(
+    langs: langs,
+    countryCode: countryCode,
+    regionCode: regionCode,
+    $ctx: ctx,
+    $service: $service,
+    $headers: $headers,
+    $unknown: $unknown,
+  );
 
   /// Get miscellaneous runtime configuration.
   Future<XRPCResponse<UnspeccedGetConfigOutput>> getConfig({

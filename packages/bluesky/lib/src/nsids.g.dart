@@ -29,6 +29,9 @@ const appBskyActorGetProfiles = NSID(ids.appBskyActorGetProfiles);
 /// `app.bsky.actor.getSuggestions`
 const appBskyActorGetSuggestions = NSID(ids.appBskyActorGetSuggestions);
 
+/// `app.bsky.actor.link`
+const appBskyActorLink = NSID(ids.appBskyActorLink);
+
 /// `app.bsky.actor.profile`
 const appBskyActorProfile = NSID(ids.appBskyActorProfile);
 
@@ -117,6 +120,21 @@ const appBskyEmbedExternalExternal = NSID(ids.appBskyEmbedExternalExternal);
 /// `app.bsky.embed.external#view`
 const appBskyEmbedExternalView = NSID(ids.appBskyEmbedExternalView);
 
+/// `app.bsky.embed.external#viewArticle`
+const appBskyEmbedExternalViewArticle = NSID(
+  ids.appBskyEmbedExternalViewArticle,
+);
+
+/// `app.bsky.embed.external#viewArticlePublication`
+const appBskyEmbedExternalViewArticlePublication = NSID(
+  ids.appBskyEmbedExternalViewArticlePublication,
+);
+
+/// `app.bsky.embed.external#viewArticlePublicationTheme`
+const appBskyEmbedExternalViewArticlePublicationTheme = NSID(
+  ids.appBskyEmbedExternalViewArticlePublicationTheme,
+);
+
 /// `app.bsky.embed.external#viewExternal`
 const appBskyEmbedExternalViewExternal = NSID(
   ids.appBskyEmbedExternalViewExternal,
@@ -130,6 +148,21 @@ const appBskyEmbedExternalViewExternalSource = NSID(
 /// `app.bsky.embed.external#viewExternalSourceTheme`
 const appBskyEmbedExternalViewExternalSourceTheme = NSID(
   ids.appBskyEmbedExternalViewExternalSourceTheme,
+);
+
+/// `app.bsky.embed.external#viewGallery`
+const appBskyEmbedExternalViewGallery = NSID(
+  ids.appBskyEmbedExternalViewGallery,
+);
+
+/// `app.bsky.embed.external#viewGalleryImage`
+const appBskyEmbedExternalViewGalleryImage = NSID(
+  ids.appBskyEmbedExternalViewGalleryImage,
+);
+
+/// `app.bsky.embed.external#viewLivestream`
+const appBskyEmbedExternalViewLivestream = NSID(
+  ids.appBskyEmbedExternalViewLivestream,
 );
 
 /// `app.bsky.embed.gallery`
@@ -523,6 +556,40 @@ const appBskyNotificationGetGroupedNotificationsMultiPostLikeItem = NSID(
   ids.appBskyNotificationGetGroupedNotificationsMultiPostLikeItem,
 );
 
+/// `app.bsky.notification.getGroupedNotifications#multiPostLikeViaRepostGroup`
+const appBskyNotificationGetGroupedNotificationsMultiPostLikeViaRepostGroup =
+    NSID(
+      ids.appBskyNotificationGetGroupedNotificationsMultiPostLikeViaRepostGroup,
+    );
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostLikeViaRepostItem`
+const appBskyNotificationGetGroupedNotificationsMultiPostLikeViaRepostItem =
+    NSID(
+      ids.appBskyNotificationGetGroupedNotificationsMultiPostLikeViaRepostItem,
+    );
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostRepostGroup`
+const appBskyNotificationGetGroupedNotificationsMultiPostRepostGroup = NSID(
+  ids.appBskyNotificationGetGroupedNotificationsMultiPostRepostGroup,
+);
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostRepostItem`
+const appBskyNotificationGetGroupedNotificationsMultiPostRepostItem = NSID(
+  ids.appBskyNotificationGetGroupedNotificationsMultiPostRepostItem,
+);
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostRepostViaRepostGroup`
+const appBskyNotificationGetGroupedNotificationsMultiPostRepostViaRepostGroup =
+    NSID(
+      ids.appBskyNotificationGetGroupedNotificationsMultiPostRepostViaRepostGroup,
+    );
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostRepostViaRepostItem`
+const appBskyNotificationGetGroupedNotificationsMultiPostRepostViaRepostItem =
+    NSID(
+      ids.appBskyNotificationGetGroupedNotificationsMultiPostRepostViaRepostItem,
+    );
+
 /// `app.bsky.notification.getGroupedNotifications#quoteNotification`
 const appBskyNotificationGetGroupedNotificationsQuoteNotification = NSID(
   ids.appBskyNotificationGetGroupedNotificationsQuoteNotification,
@@ -650,6 +717,71 @@ const appBskyRichtextFacetTag = NSID(ids.appBskyRichtextFacetTag);
 /// `app.bsky.unspecced.getAgeAssuranceState`
 const appBskyUnspeccedGetAgeAssuranceState = NSID(
   ids.appBskyUnspeccedGetAgeAssuranceState,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreArticleRecommendations`
+const appBskyUnspeccedGetAtmosphereExploreArticleRecommendations = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreArticleRecommendations,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreArticleRecommendations#article`
+const appBskyUnspeccedGetAtmosphereExploreArticleRecommendationsArticle = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreArticleRecommendationsArticle,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab`
+const appBskyUnspeccedGetAtmosphereExploreTab = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTab,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#announcementBanner`
+const appBskyUnspeccedGetAtmosphereExploreTabAnnouncementBanner = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabAnnouncementBanner,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#appCard`
+const appBskyUnspeccedGetAtmosphereExploreTabAppCard = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabAppCard,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#articleItem`
+const appBskyUnspeccedGetAtmosphereExploreTabArticleItem = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabArticleItem,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#articleList`
+const appBskyUnspeccedGetAtmosphereExploreTabArticleList = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabArticleList,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#galleryItem`
+const appBskyUnspeccedGetAtmosphereExploreTabGalleryItem = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabGalleryItem,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#galleryList`
+const appBskyUnspeccedGetAtmosphereExploreTabGalleryList = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabGalleryList,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#livestreamItem`
+const appBskyUnspeccedGetAtmosphereExploreTabLivestreamItem = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabLivestreamItem,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#livestreamList`
+const appBskyUnspeccedGetAtmosphereExploreTabLivestreamList = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabLivestreamList,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#publicationItem`
+const appBskyUnspeccedGetAtmosphereExploreTabPublicationItem = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabPublicationItem,
+);
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#publicationList`
+const appBskyUnspeccedGetAtmosphereExploreTabPublicationList = NSID(
+  ids.appBskyUnspeccedGetAtmosphereExploreTabPublicationList,
 );
 
 /// `app.bsky.unspecced.getConfig`
@@ -1166,6 +1298,68 @@ const toolsOzoneInboxAppealActionedSubjectTakedownRef = NSID(
   ids.toolsOzoneInboxAppealActionedSubjectTakedownRef,
 );
 
+/// `tools.ozone.inbox.getAccountStatus`
+const toolsOzoneInboxGetAccountStatus = NSID(
+  ids.toolsOzoneInboxGetAccountStatus,
+);
+
+/// `tools.ozone.inbox.getActionedSubject`
+const toolsOzoneInboxGetActionedSubject = NSID(
+  ids.toolsOzoneInboxGetActionedSubject,
+);
+
+/// `tools.ozone.inbox.getNotificationPreferences`
+const toolsOzoneInboxGetNotificationPreferences = NSID(
+  ids.toolsOzoneInboxGetNotificationPreferences,
+);
+
+/// `tools.ozone.inbox.getReport`
+const toolsOzoneInboxGetReport = NSID(ids.toolsOzoneInboxGetReport);
+
+/// `tools.ozone.inbox.getReport#reportView`
+const toolsOzoneInboxGetReportReportView = NSID(
+  ids.toolsOzoneInboxGetReportReportView,
+);
+
+/// `tools.ozone.inbox.getReport#resolutionView`
+const toolsOzoneInboxGetReportResolutionView = NSID(
+  ids.toolsOzoneInboxGetReportResolutionView,
+);
+
+/// `tools.ozone.inbox.getUnreadCount`
+const toolsOzoneInboxGetUnreadCount = NSID(ids.toolsOzoneInboxGetUnreadCount);
+
+/// `tools.ozone.inbox.getUnreadCount#unreadCounts`
+const toolsOzoneInboxGetUnreadCountUnreadCounts = NSID(
+  ids.toolsOzoneInboxGetUnreadCountUnreadCounts,
+);
+
+/// `tools.ozone.inbox.listActionedSubjects`
+const toolsOzoneInboxListActionedSubjects = NSID(
+  ids.toolsOzoneInboxListActionedSubjects,
+);
+
+/// `tools.ozone.inbox.listNotifications`
+const toolsOzoneInboxListNotifications = NSID(
+  ids.toolsOzoneInboxListNotifications,
+);
+
+/// `tools.ozone.inbox.listReports`
+const toolsOzoneInboxListReports = NSID(ids.toolsOzoneInboxListReports);
+
+/// `tools.ozone.inbox.listReports#reportView`
+const toolsOzoneInboxListReportsReportView = NSID(
+  ids.toolsOzoneInboxListReportsReportView,
+);
+
+/// `tools.ozone.inbox.putNotificationPreferences`
+const toolsOzoneInboxPutNotificationPreferences = NSID(
+  ids.toolsOzoneInboxPutNotificationPreferences,
+);
+
+/// `tools.ozone.inbox.updateSeen`
+const toolsOzoneInboxUpdateSeen = NSID(ids.toolsOzoneInboxUpdateSeen);
+
 /// `tools.ozone.moderation.cancelScheduledActions`
 const toolsOzoneModerationCancelScheduledActions = NSID(
   ids.toolsOzoneModerationCancelScheduledActions,
@@ -1369,8 +1563,26 @@ const toolsOzoneSafelinkQueryRules = NSID(ids.toolsOzoneSafelinkQueryRules);
 /// `tools.ozone.safelink.removeRule`
 const toolsOzoneSafelinkRemoveRule = NSID(ids.toolsOzoneSafelinkRemoveRule);
 
+/// `tools.ozone.safelink.syncSource`
+const toolsOzoneSafelinkSyncSource = NSID(ids.toolsOzoneSafelinkSyncSource);
+
+/// `tools.ozone.safelink.syncSource#sourceRule`
+const toolsOzoneSafelinkSyncSourceSourceRule = NSID(
+  ids.toolsOzoneSafelinkSyncSourceSourceRule,
+);
+
 /// `tools.ozone.safelink.updateRule`
 const toolsOzoneSafelinkUpdateRule = NSID(ids.toolsOzoneSafelinkUpdateRule);
+
+/// `tools.ozone.server.getCapabilities`
+const toolsOzoneServerGetCapabilities = NSID(
+  ids.toolsOzoneServerGetCapabilities,
+);
+
+/// `tools.ozone.server.getCapabilities#notificationConfig`
+const toolsOzoneServerGetCapabilitiesNotificationConfig = NSID(
+  ids.toolsOzoneServerGetCapabilitiesNotificationConfig,
+);
 
 /// `tools.ozone.server.getConfig`
 const toolsOzoneServerGetConfig = NSID(ids.toolsOzoneServerGetConfig);
@@ -1440,6 +1652,16 @@ const toolsOzoneTeamDeleteMember = NSID(ids.toolsOzoneTeamDeleteMember);
 
 /// `tools.ozone.team.listMembers`
 const toolsOzoneTeamListMembers = NSID(ids.toolsOzoneTeamListMembers);
+
+/// `tools.ozone.team.listOnlineMembers`
+const toolsOzoneTeamListOnlineMembers = NSID(
+  ids.toolsOzoneTeamListOnlineMembers,
+);
+
+/// `tools.ozone.team.listOnlineMembers#onlineMember`
+const toolsOzoneTeamListOnlineMembersOnlineMember = NSID(
+  ids.toolsOzoneTeamListOnlineMembersOnlineMember,
+);
 
 /// `tools.ozone.team.updateMember`
 const toolsOzoneTeamUpdateMember = NSID(ids.toolsOzoneTeamUpdateMember);

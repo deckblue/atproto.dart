@@ -159,6 +159,7 @@ Revert take down action on a subject
 | **policies** | array of string | - | ❌ | Names/Keywords of the policy infraction for which takedown is being reversed. |
 | **severityLevel** | string | - | ❌ | Severity level of the violation. Usually set from the last policy infraction's severity. |
 | **strikeCount** | integer | - | ❌ | Number of strikes to subtract from the user's strike count. Usually set from the last policy infraction's severity. |
+| **strikeExpiresAt** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ❌ | When the strike should expire. If not provided, the strike never expires. |
 
 ## #modEventResolveAppeal
 
@@ -183,6 +184,10 @@ Report a subject
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
+| **appealSubmittedBy** | string ([did](https://atproto.com/specs/did)) | - | ❌ | Moderator who submitted this appeal on behalf of the affected account. Returned by moderator event APIs. |
+| **appealActionType** | string | - | ❌ | Action reference type recorded when this appeal was submitted. |
+| **appealActionId** | integer | - | ❌ | - |
+| **appealLabel** | string | - | ❌ | - |
 | **comment** | string | - | ❌ | - |
 | **isReporterMuted** | boolean | - | ❌ | Set to true if the reporter was muted from reporting at the time of the event. These reports won't impact the reviewState of the subject. |
 | **reportType** | [com.atproto.moderation.defs#reasonType](../../../../lexicons/com/atproto/moderation/defs.md#reasontype) | - | ✅ | - |

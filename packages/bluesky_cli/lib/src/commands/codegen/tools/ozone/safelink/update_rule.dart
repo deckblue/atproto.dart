@@ -28,6 +28,11 @@ final class UpdateRuleCommand extends ProcedureCommand {
       ..addOption("pattern", mandatory: true)
       ..addOption("action", mandatory: true)
       ..addOption("reason", mandatory: true)
+      ..addOption(
+        "source",
+        help: r"Source of the rule to update",
+        defaultsTo: "ozone/default",
+      )
       ..addOption("comment", help: r"Optional comment about the update")
       ..addOption(
         "createdBy",
@@ -44,21 +49,22 @@ final class UpdateRuleCommand extends ProcedureCommand {
 
   @override
   final String invocation =
-      "bsky tools-ozone-safelink update-rule --url=<value> --pattern=<value> --action=<value> --reason=<value> [--comment=<value>] [--createdBy=<value>]";
+      "bsky tools-ozone-safelink update-rule --url=<value> --pattern=<value> --action=<value> --reason=<value> [--source=<value>] [--comment=<value>] [--createdBy=<value>]";
 
   @override
   String get methodId => "tools.ozone.safelink.updateRule";
 
   @override
   Map<String, dynamic>? get body => {
-        "url": argResults!["url"],
-        "pattern": _decodeJson("pattern"),
-        "action": _decodeJson("action"),
-        "reason": _decodeJson("reason"),
-        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
-        if (argResults!.wasParsed("createdBy"))
-          "createdBy": argResults!["createdBy"],
-      };
+    "url": argResults!["url"],
+    "pattern": _decodeJson("pattern"),
+    "action": _decodeJson("action"),
+    "reason": _decodeJson("reason"),
+    "source": argResults!["source"],
+    if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+    if (argResults!.wasParsed("createdBy"))
+      "createdBy": argResults!["createdBy"],
+  };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

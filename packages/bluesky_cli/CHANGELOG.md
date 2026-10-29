@@ -1,5 +1,65 @@
 # Release Note
 
+## v0.6.39
+
+- chore: regenerated from synced lexicons
+
+## v0.6.38
+
+- chore: regenerated from synced lexicons
+
+## v0.6.37
+
+- chore: regenerated from synced lexicons
+
+## v0.6.36
+
+- chore: regenerated from synced lexicons
+
+## v0.6.35
+
+- chore: regenerated from synced lexicons
+
+## v0.6.34
+
+- chore: regenerated from synced lexicons
+
+## v0.6.33
+
+- chore: regenerated from synced lexicons
+
+## v0.6.32
+
+- chore: regenerated from synced lexicons
+
+## v0.6.31
+
+- chore: regenerated from synced lexicons
+
+## v0.6.30
+
+- chore: regenerated from synced lexicons
+
+## v0.6.29
+
+- chore: regenerated from synced lexicons
+
+## v0.6.28
+
+- chore: regenerated from synced lexicons
+
+## v0.6.27
+
+- chore: regenerated from synced lexicons
+
+## v0.6.26
+
+- chore: regenerated from synced lexicons
+
+## v0.6.25
+
+- chore: regenerated from synced lexicons
+
 ## v0.6.24
 
 - chore: regenerated from synced lexicons

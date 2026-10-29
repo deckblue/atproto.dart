@@ -7,6 +7,9 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+// Dart imports:
+import 'dart:convert';
+
 // Project imports:
 import '../../../../procedure_command.dart';
 
@@ -23,10 +26,21 @@ final class CloseReportsCommand extends ProcedureCommand {
             r"Subject DID (account-level reports) or AT-URI (record-level reports) whose reports should be closed.",
         mandatory: true,
       )
+      ..addFlag(
+        "includeAllOwned",
+        help:
+            r"If true, also close reports on all subjects owned by the account, including records, messages, and conversations. Only valid when subject is an account DID.",
+        defaultsTo: false,
+      )
       ..addMultiOption(
         "reportTypes",
         help:
-            r"If specified, only reports of the given report types (fully qualified reason NSIDs) are closed. When omitted, all non-closed reports on the subject are targeted.",
+            r"If nonempty, only reports of the given report types (fully qualified reason NSIDs) are closed. When omitted or empty, all eligible reports in the requested subject scope are targeted, except excludedReportTypes. Assigned and escalated reports are always excluded.",
+      )
+      ..addMultiOption(
+        "excludedReportTypes",
+        help:
+            r"Reports of these types (fully qualified reason NSIDs) are excluded from closure and left unchanged. When omitted or empty, no report types are excluded.",
       )
       ..addOption(
         "internalNote",
@@ -38,6 +52,11 @@ final class CloseReportsCommand extends ProcedureCommand {
         help:
             r"Set true when this action is triggered by an automated process. Defaults to false.",
         defaultsTo: false,
+      )
+      ..addOption(
+        "meta",
+        help:
+            r"Optional metadata for the report activities. Lifecycle and resolution fields are controlled by the service.",
       );
   }
 
@@ -46,22 +65,35 @@ final class CloseReportsCommand extends ProcedureCommand {
 
   @override
   final String description =
-      "Close all reports on a subject matching the given criteria. Reports whose current status does not permit a transition to closed are skipped silently. Intended for automated flows that resolve reports without taking action on the subject.";
+      "Close eligible reports on a subject matching the given criteria. Assigned and escalated reports are excluded. Reports whose current status does not permit a transition to closed are skipped silently. Intended for automated flows that resolve reports without taking action on the subject.";
 
   @override
   final String invocation =
-      "bsky tools-ozone-report close-reports --subject=<value> [--reportTypes=<value>...] [--internalNote=<value>] [--isAutomated]";
+      "bsky tools-ozone-report close-reports --subject=<value> [--includeAllOwned] [--reportTypes=<value>...] [--excludedReportTypes=<value>...] [--internalNote=<value>] [--isAutomated] [--meta=<value>]";
 
   @override
   String get methodId => "tools.ozone.report.closeReports";
 
   @override
   Map<String, dynamic>? get body => {
-        "subject": argResults!["subject"],
-        if (argResults!.wasParsed("reportTypes"))
-          "reportTypes": argResults!["reportTypes"],
-        if (argResults!.wasParsed("internalNote"))
-          "internalNote": argResults!["internalNote"],
-        "isAutomated": argResults!["isAutomated"],
-      };
+    "subject": argResults!["subject"],
+    "includeAllOwned": argResults!["includeAllOwned"],
+    if (argResults!.wasParsed("reportTypes"))
+      "reportTypes": argResults!["reportTypes"],
+    if (argResults!.wasParsed("excludedReportTypes"))
+      "excludedReportTypes": argResults!["excludedReportTypes"],
+    if (argResults!.wasParsed("internalNote"))
+      "internalNote": argResults!["internalNote"],
+    "isAutomated": argResults!["isAutomated"],
+    if (argResults!.wasParsed("meta")) "meta": _decodeJson("meta"),
+  };
+  Object? _decodeJson(final String name) {
+    final raw = argResults![name];
+    if (raw == null) return null;
+    try {
+      return jsonDecode(raw);
+    } on FormatException catch (e) {
+      usageException('Invalid JSON for option "$name": ${e.message}');
+    }
+  }
 }

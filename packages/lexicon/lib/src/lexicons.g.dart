@@ -103,7 +103,11 @@ const appBskyActorDefs = <String, dynamic>{
           "maxGraphemes": 256,
         },
         "pronouns": {"type": "string"},
-        "website": {"type": "string", "format": "uri"},
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Deprecated: use links instead.",
+        },
         "avatar": {"type": "string", "format": "uri"},
         "banner": {"type": "string", "format": "uri"},
         "followersCount": {"type": "integer"},
@@ -122,6 +126,12 @@ const appBskyActorDefs = <String, dynamic>{
           "items": {"type": "ref", "ref": "com.atproto.label.defs#label"},
         },
         "pinnedPost": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
+        "links": {
+          "type": "array",
+          "description":
+              "The profile's links, in display order. Links that were taken down or don't resolve are left out.",
+          "items": {"type": "ref", "ref": "#profileLinkView"},
+        },
         "verification": {"type": "ref", "ref": "#verificationState"},
         "status": {"type": "ref", "ref": "#statusView"},
         "debug": {
@@ -167,6 +177,34 @@ const appBskyActorDefs = <String, dynamic>{
         "showButtonTo": {
           "type": "string",
           "knownValues": ["usersIFollow", "everyone"],
+        },
+      },
+    },
+    "profileLinkView": {
+      "type": "object",
+      "required": ["uri", "cid", "url"],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "at-uri",
+          "description":
+              "The app.bsky.actor.link record, e.g. for reporting the link.",
+        },
+        "cid": {"type": "string", "format": "cid"},
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "The link destination.",
+        },
+        "title": {"type": "string", "maxLength": 320, "maxGraphemes": 40},
+        "icon": {
+          "type": "string",
+          "format": "uri",
+          "description": "Image URL for the destination site's icon.",
+        },
+        "labels": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.label.defs#label"},
         },
       },
     },
@@ -878,6 +916,51 @@ const appBskyActorGetSuggestions = <String, dynamic>{
   },
 };
 
+/// `app.bsky.actor.link`
+const appBskyActorLink = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.actor.link",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description":
+          "A link shown on the account's profile. The profile record's links field sets which links are shown, and in what order.",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["url", "createdAt"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "The link destination, an https URL.",
+          },
+          "title": {
+            "type": "string",
+            "description":
+                "Optional label for the link. Clients can fall back to the destination's domain.",
+            "maxLength": 320,
+            "maxGraphemes": 40,
+          },
+          "icon": {
+            "type": "blob",
+            "description":
+                "The destination site's icon, uploaded when the link is saved.",
+            "accept": ["image/png", "image/jpeg", "image/webp"],
+            "maxSize": 100000,
+          },
+          "createdAt": {"type": "string", "format": "datetime"},
+          "labels": {
+            "type": "union",
+            "description": "Self-label values for this link.",
+            "refs": ["com.atproto.label.defs#selfLabels"],
+          },
+        },
+      },
+    },
+  },
+};
+
 /// `app.bsky.actor.profile`
 const appBskyActorProfile = <String, dynamic>{
   "lexicon": 1,
@@ -907,7 +990,11 @@ const appBskyActorProfile = <String, dynamic>{
             "maxLength": 200,
             "maxGraphemes": 20,
           },
-          "website": {"type": "string", "format": "uri"},
+          "website": {
+            "type": "string",
+            "format": "uri",
+            "description": "Deprecated: use links instead.",
+          },
           "avatar": {
             "type": "blob",
             "description":
@@ -933,6 +1020,13 @@ const appBskyActorProfile = <String, dynamic>{
             "ref": "com.atproto.repo.strongRef",
           },
           "pinnedPost": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
+          "links": {
+            "type": "array",
+            "description":
+                "Links shown on the profile, in display order. Each ref points to an app.bsky.actor.link record in this repo.",
+            "items": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
+            "maxLength": 10,
+          },
           "createdAt": {"type": "string", "format": "datetime"},
         },
       },
@@ -2501,6 +2595,214 @@ const appBskyEmbedExternal = <String, dynamic>{
         "b": {"type": "integer", "minimum": 0, "maximum": 255},
       },
     },
+    "viewArticle": {
+      "type": "object",
+      "required": ["uri", "title", "description"],
+      "properties": {
+        "uri": {"type": "string", "format": "uri"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "createdAt": {"type": "string", "format": "datetime"},
+        "updatedAt": {"type": "string", "format": "datetime"},
+        "labels": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.label.defs#label"},
+        },
+        "associatedRefs": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
+        },
+        "associatedProfiles": {
+          "type": "array",
+          "items": {
+            "type": "ref",
+            "ref": "app.bsky.actor.defs#profileViewBasic",
+          },
+        },
+        "image": {"type": "string", "format": "uri"},
+        "publisher": {"type": "ref", "ref": "#viewArticlePublication"},
+        "readingTime": {"type": "integer", "minimum": 1},
+        "likeCount": {"type": "integer", "minimum": 0},
+        "likers": {
+          "type": "array",
+          "description":
+              "Available profile previews. Selected deterministically by DID; not a ranking.",
+          "items": {
+            "type": "ref",
+            "ref": "app.bsky.actor.defs#profileViewBasic",
+          },
+          "maxLength": 3,
+        },
+      },
+    },
+    "viewArticlePublication": {
+      "type": "object",
+      "required": ["uri", "title", "description"],
+      "properties": {
+        "uri": {"type": "string", "format": "uri"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "createdAt": {"type": "string", "format": "datetime"},
+        "updatedAt": {"type": "string", "format": "datetime"},
+        "labels": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.label.defs#label"},
+        },
+        "associatedRefs": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
+        },
+        "associatedProfiles": {
+          "type": "array",
+          "items": {
+            "type": "ref",
+            "ref": "app.bsky.actor.defs#profileViewBasic",
+          },
+        },
+        "logo": {"type": "string", "format": "uri"},
+        "image": {"type": "string", "format": "uri"},
+        "theme": {"type": "ref", "ref": "#viewArticlePublicationTheme"},
+        "subscriptionCount": {"type": "integer", "minimum": 0},
+        "subscribers": {
+          "type": "array",
+          "description":
+              "Available profile previews. Selected deterministically by DID; not a ranking.",
+          "items": {
+            "type": "ref",
+            "ref": "app.bsky.actor.defs#profileViewBasic",
+          },
+          "maxLength": 3,
+        },
+      },
+    },
+    "viewArticlePublicationTheme": {
+      "type": "object",
+      "properties": {
+        "background": {
+          "type": "string",
+          "description": "Hex color string, if available. Example: '#ffffff'.",
+        },
+        "foreground": {
+          "type": "string",
+          "description": "Hex color string, if available. Example: '#ffffff'.",
+        },
+        "accent": {
+          "type": "string",
+          "description": "Hex color string, if available. Example: '#ffffff'.",
+        },
+        "accentForeground": {
+          "type": "string",
+          "description": "Hex color string, if available. Example: '#ffffff'.",
+        },
+      },
+    },
+    "viewGallery": {
+      "type": "object",
+      "required": ["uri", "title", "description", "items"],
+      "properties": {
+        "uri": {"type": "string", "format": "uri"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "createdAt": {"type": "string", "format": "datetime"},
+        "updatedAt": {"type": "string", "format": "datetime"},
+        "labels": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.label.defs#label"},
+        },
+        "associatedRefs": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
+        },
+        "associatedProfiles": {
+          "type": "array",
+          "items": {
+            "type": "ref",
+            "ref": "app.bsky.actor.defs#profileViewBasic",
+          },
+        },
+        "items": {
+          "type": "array",
+          "description":
+              "The media items in the gallery. Each item may be of a different type, but all types must be supported by the client.",
+          "items": {
+            "type": "union",
+            "refs": ["#viewGalleryImage"],
+          },
+        },
+        "likeCount": {"type": "integer", "minimum": 0},
+        "likers": {
+          "type": "array",
+          "description":
+              "Available profile previews. Selected deterministically by DID; not a ranking.",
+          "items": {
+            "type": "ref",
+            "ref": "app.bsky.actor.defs#profileViewBasic",
+          },
+          "maxLength": 3,
+        },
+      },
+    },
+    "viewGalleryImage": {
+      "type": "object",
+      "required": ["thumbnail", "fullsize"],
+      "properties": {
+        "thumbnail": {
+          "type": "string",
+          "format": "uri",
+          "description":
+              "Fully-qualified URL where a thumbnail of the image can be fetched. For example, CDN location provided by the App View.",
+        },
+        "fullsize": {
+          "type": "string",
+          "format": "uri",
+          "description":
+              "Fully-qualified URL where a large version of the image can be fetched. May or may not be the exact original blob. For example, CDN location provided by the App View.",
+        },
+        "alt": {
+          "type": "string",
+          "description":
+              "Alt text description of the image, for accessibility.",
+        },
+        "aspectRatio": {
+          "type": "ref",
+          "ref": "app.bsky.embed.defs#aspectRatio",
+        },
+      },
+    },
+    "viewLivestream": {
+      "type": "object",
+      "required": ["uri", "title", "description", "active"],
+      "properties": {
+        "uri": {"type": "string", "format": "uri"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "createdAt": {"type": "string", "format": "datetime"},
+        "updatedAt": {"type": "string", "format": "datetime"},
+        "labels": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.label.defs#label"},
+        },
+        "associatedRefs": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
+        },
+        "associatedProfiles": {
+          "type": "array",
+          "items": {
+            "type": "ref",
+            "ref": "app.bsky.actor.defs#profileViewBasic",
+          },
+        },
+        "image": {"type": "string", "format": "uri"},
+        "active": {
+          "type": "boolean",
+          "description":
+              "True if the livestream is currently active at the time this view is served, false if it has ended.",
+        },
+        "startedAt": {"type": "string", "format": "datetime"},
+        "endedAt": {"type": "string", "format": "datetime"},
+      },
+    },
   },
 };
 
@@ -2600,21 +2902,27 @@ const appBskyEmbedGetEmbedExternalView = <String, dynamic>{
     "main": {
       "type": "query",
       "description":
-          "Resolve one or more AT-URIs into the data needed to render an enhanced external embed. Returns `associatedRefs` (strongRefs to embed into a post's external.associatedRefs), the raw `associatedRecords`, and a hydrated `view`. The response is empty (`{}`) when no records were resolvable, or when validation determined the resolved records don't actually back the requested URL; clients should fall back to their own link-card rendering in that case and skip writing strongRefs to the post.",
+          "Resolve one AT-URI record into the data needed to render an enhanced external embed. The records are validated against the requested `url` before any view is built. When validation passes, returns `data`, `associatedRefs` (strongRefs to embed into a post's external.associatedRefs) and the raw `associatedRecords`, plus a legacy `view` for Standard.site records only. When validation fails, only `unverifiedAssociatedRefs` and `unverifiedAssociatedRecords` are returned and no view or data is built. The response is empty (`{}`) when no record URI was usable or the record could not be resolved; clients should fall back to their own link-card rendering in that case and skip writing strongRefs to the post.",
       "parameters": {
         "type": "params",
-        "required": ["url", "uris"],
+        "required": ["url"],
         "properties": {
           "url": {
             "type": "string",
             "format": "uri",
             "description":
-                "The canonical web URL the embed represents (typically the URL the user pasted into the composer). Used as the returned view's `uri`. May be used for validation in the future.",
+                "The canonical web URL the embed represents (typically the URL the user pasted into the composer). Used as the returned view's `uri`, and validated against the resolved records.",
+          },
+          "canonicalUri": {
+            "type": "string",
+            "format": "at-uri",
+            "description":
+                "The canonical AT URI of the atproto record found on the webpage. When provided, takes precedence over `uris`, which is then ignored.",
           },
           "uris": {
             "type": "array",
             "description":
-                "AT-URIs of any Atmosphere records that can be resolved and used to construct #externalView views. Example: a site.standard.document and optionally its associated site.standard.publication.",
+                "Legacy input for Standard.site callers, ignored when `canonicalUri` is provided. A single record is selected from it: the first site.standard.document URI, otherwise the first site.standard.publication URI. Other entries are ignored; a document's publication is discovered from the document itself.",
             "items": {"type": "string", "format": "at-uri"},
             "maxLength": 4,
           },
@@ -2628,13 +2936,24 @@ const appBskyEmbedGetEmbedExternalView = <String, dynamic>{
             "view": {
               "type": "ref",
               "description":
-                  "Hydrated view of the embed. Present only when the resolved records back the requested URL and supply enough information to populate the required `viewExternal` fields. Omitted alongside the rest of the response when no records resolved or validation failed.",
+                  "Legacy hydrated view of the embed, returned for Standard.site records only. Present only when validation passed and the records supply enough information to populate the required `viewExternal` fields.",
               "ref": "app.bsky.embed.external#view",
+            },
+            "data": {
+              "type": "union",
+              "description":
+                  "Preferred to #view. Hydrated data of the embed. Present only when validation passed and the records supply enough information to populate the required fields.",
+              "refs": [
+                "app.bsky.embed.external#viewArticle",
+                "app.bsky.embed.external#viewArticlePublication",
+                "app.bsky.embed.external#viewGallery",
+                "app.bsky.embed.external#viewLivestream",
+              ],
             },
             "associatedRefs": {
               "type": "array",
               "description":
-                  "StrongRefs (URI+CID) of the Atmosphere records that backed this view, suitable for embedding into a post's external.associatedRefs.",
+                  "StrongRefs (URI+CID) of the Atmosphere records selected for persistence in a post, suitable for embedding into its external.associatedRefs: the canonical record, plus only the additional records the service chooses to persist for its collection. This can be a subset of the records used to render `data`, which may also draw on other hydrated records such as recommendations, subscriptions, or favorites. Present only when validation passed. Index-aligned with `associatedRecords`.",
               "items": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
             },
             "associatedRecords": {
@@ -2642,7 +2961,21 @@ const appBskyEmbedGetEmbedExternalView = <String, dynamic>{
               "items": {
                 "type": "unknown",
                 "description":
-                    "The raw record data of the Atmosphere records that backed this view. This is returned for convenience, to avoid the need for the client to separately fetch the record data for the associatedRefs. Example: the site.standard.document and site.standard.publication records that backed this view.",
+                    "The raw record data of the Atmosphere records selected for persistence, index-aligned with `associatedRefs`. Returned for convenience, to avoid the client separately fetching them. Present only when validation passed.",
+              },
+            },
+            "unverifiedAssociatedRefs": {
+              "type": "array",
+              "description":
+                  "StrongRefs (URI+CID) of the same persistence-selected Atmosphere records (the canonical record plus chosen additional records) when validation of the requested `url` failed. These must not be written to a post. Index-aligned with `unverifiedAssociatedRecords`.",
+              "items": {"type": "ref", "ref": "com.atproto.repo.strongRef"},
+            },
+            "unverifiedAssociatedRecords": {
+              "type": "array",
+              "items": {
+                "type": "unknown",
+                "description":
+                    "The raw record data of the persistence-selected Atmosphere records, index-aligned with `unverifiedAssociatedRefs`. Present only when validation failed.",
               },
             },
           },
@@ -2784,6 +3117,16 @@ const appBskyEmbedRecord = <String, dynamic>{
         "repostCount": {"type": "integer"},
         "likeCount": {"type": "integer"},
         "quoteCount": {"type": "integer"},
+        "opThreadPostIndex": {
+          "type": "integer",
+          "description":
+              "The 1-indexed position of this post within the contiguous OP thread. Only present when this post is part of the OP thread.",
+        },
+        "opThreadPostCount": {
+          "type": "integer",
+          "description":
+              "The total number of posts in the contiguous OP thread that this post belongs to. Only present when this post is part of the OP thread.",
+        },
         "embeds": {
           "type": "array",
           "items": {
@@ -5182,6 +5525,7 @@ const appBskyGraphGetFollowers = <String, dynamic>{
           "cursor": {"type": "string"},
           "sort": {
             "type": "string",
+            "description": "Sort order of the returned followers.",
             "knownValues": ["latest", "top"],
           },
         },
@@ -5234,6 +5578,7 @@ const appBskyGraphGetFollows = <String, dynamic>{
           "cursor": {"type": "string"},
           "sort": {
             "type": "string",
+            "description": "Sort order of the returned follows.",
             "knownValues": ["latest", "top"],
           },
         },
@@ -6687,12 +7032,12 @@ const appBskyNotificationGetGroupedNotifications = <String, dynamic>{
               "items": {
                 "type": "union",
                 "refs": [
-                  "app.bsky.actor.defs#profileViewDetailed",
+                  "app.bsky.actor.defs#profileViewBasic",
                   "app.bsky.feed.defs#blockedPost",
                   "app.bsky.feed.defs#generatorView",
                   "app.bsky.feed.defs#notFoundPost",
                   "app.bsky.feed.defs#postView",
-                  "app.bsky.graph.defs#starterPackView",
+                  "app.bsky.graph.defs#starterPackViewBasic",
                 ],
               },
             },
@@ -6715,6 +7060,9 @@ const appBskyNotificationGetGroupedNotifications = <String, dynamic>{
           "refs": [
             "#likeGroup",
             "#multiPostLikeGroup",
+            "#multiPostRepostGroup",
+            "#multiPostLikeViaRepostGroup",
+            "#multiPostRepostViaRepostGroup",
             "#repostGroup",
             "#likeViaRepostGroup",
             "#repostViaRepostGroup",
@@ -6773,6 +7121,75 @@ const appBskyNotificationGetGroupedNotifications = <String, dynamic>{
       "required": ["post"],
       "properties": {
         "post": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "multiPostRepostGroup": {
+      "type": "object",
+      "description": "Group of reposts by the same actor of different posts.",
+      "required": ["actor", "items"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#multiPostRepostItem"},
+          "minLength": 2,
+        },
+      },
+    },
+    "multiPostRepostItem": {
+      "type": "object",
+      "description": "One post which was reposted by the group's actor.",
+      "required": ["post"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "multiPostLikeViaRepostGroup": {
+      "type": "object",
+      "description":
+          "Group of likes by the same actor on different posts via the requesting account's reposts.",
+      "required": ["actor", "items"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#multiPostLikeViaRepostItem"},
+          "minLength": 2,
+        },
+      },
+    },
+    "multiPostLikeViaRepostItem": {
+      "type": "object",
+      "description":
+          "One post which was liked by the group's actor via the requesting account's repost.",
+      "required": ["post", "viaRepost"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "viaRepost": {"type": "string", "format": "at-uri"},
+      },
+    },
+    "multiPostRepostViaRepostGroup": {
+      "type": "object",
+      "description":
+          "Group of reposts by the same actor of different posts via the requesting account's reposts.",
+      "required": ["actor", "items"],
+      "properties": {
+        "actor": {"type": "string", "format": "did"},
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#multiPostRepostViaRepostItem"},
+          "minLength": 2,
+        },
+      },
+    },
+    "multiPostRepostViaRepostItem": {
+      "type": "object",
+      "description":
+          "One post which was reposted by the group's actor via the requesting account's repost.",
+      "required": ["post", "viaRepost"],
+      "properties": {
+        "post": {"type": "string", "format": "at-uri"},
+        "viaRepost": {"type": "string", "format": "at-uri"},
       },
     },
     "repostGroup": {
@@ -6887,6 +7304,11 @@ const appBskyNotificationGetGroupedNotifications = <String, dynamic>{
       "properties": {
         "actor": {"type": "string", "format": "did"},
         "post": {"type": "string", "format": "at-uri"},
+        "parent": {
+          "type": "string",
+          "format": "at-uri",
+          "description": "The post this one replies to, if it is a reply.",
+        },
       },
     },
     "generatorLikeGroup": {
@@ -7727,6 +8149,249 @@ const appBskyUnspeccedGetAgeAssuranceState = <String, dynamic>{
           "type": "ref",
           "ref": "app.bsky.unspecced.defs#ageAssuranceState",
         },
+      },
+    },
+  },
+};
+
+/// `app.bsky.unspecced.getAtmosphereExploreArticleRecommendations`
+const appBskyUnspeccedGetAtmosphereExploreArticleRecommendations = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.unspecced.getAtmosphereExploreArticleRecommendations",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Get a skeleton of recommended Atmosphere Explore articles. Intended to be called and hydrated by app.bsky.unspecced.getAtmosphereExploreTab",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "viewer": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "DID of the account making the request (not included for public/unauthenticated queries).",
+          },
+          "limit": {
+            "type": "integer",
+            "default": 25,
+            "minimum": 1,
+            "maximum": 100,
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["articles", "recIdStr"],
+          "properties": {
+            "articles": {
+              "type": "array",
+              "items": {"type": "ref", "ref": "#article"},
+              "maxLength": 100,
+            },
+            "recIdStr": {
+              "type": "string",
+              "description":
+                  "Snowflake for this recommendation, use when submitting recommendation events.",
+            },
+          },
+        },
+      },
+    },
+    "article": {
+      "type": "object",
+      "required": ["uri"],
+      "properties": {
+        "uri": {"type": "string", "format": "at-uri"},
+      },
+    },
+  },
+};
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab`
+const appBskyUnspeccedGetAtmosphereExploreTab = <String, dynamic>{
+  "lexicon": 1,
+  "id": "app.bsky.unspecced.getAtmosphereExploreTab",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Get Atmosphere Explore content. Articles are recommended when algorithmic recommendations are enabled for the request, and curated otherwise; other sections are curated. Authentication is optional; authenticated requests include viewer-specific profile state.",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "langs": {
+            "type": "array",
+            "description":
+                "Preferred languages for article recommendations when algorithmic recommendations are enabled. Ignored otherwise.",
+            "items": {"type": "string", "format": "language"},
+          },
+          "countryCode": {
+            "type": "string",
+            "description":
+                "The ISO 3166-1 alpha-2 country code used to select curated content.",
+          },
+          "regionCode": {
+            "type": "string",
+            "description":
+                "The ISO 3166-2 region code used to select curated content.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": [
+            "articles",
+            "publications",
+            "photos",
+            "livestreams",
+            "apps",
+          ],
+          "properties": {
+            "announcementBanner": {"type": "ref", "ref": "#announcementBanner"},
+            "articles": {"type": "ref", "ref": "#articleList"},
+            "publications": {"type": "ref", "ref": "#publicationList"},
+            "photos": {"type": "ref", "ref": "#galleryList"},
+            "livestreams": {"type": "ref", "ref": "#livestreamList"},
+            "apps": {
+              "type": "array",
+              "items": {"type": "ref", "ref": "#appCard"},
+              "maxLength": 100,
+            },
+          },
+        },
+      },
+    },
+    "articleList": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#articleItem"},
+        },
+        "recIdStr": {
+          "type": "string",
+          "description":
+              "Snowflake for this list's recommendation, use when submitting recommendation events. Omitted when the list is not algorithmically recommended.",
+        },
+      },
+    },
+    "publicationList": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#publicationItem"},
+        },
+        "recIdStr": {
+          "type": "string",
+          "description":
+              "Snowflake for this list's recommendation, use when submitting recommendation events. Omitted when the list is not algorithmically recommended.",
+        },
+      },
+    },
+    "galleryList": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#galleryItem"},
+        },
+        "recIdStr": {
+          "type": "string",
+          "description":
+              "Snowflake for this list's recommendation, use when submitting recommendation events. Omitted when the list is not algorithmically recommended.",
+        },
+      },
+    },
+    "livestreamList": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#livestreamItem"},
+        },
+        "recIdStr": {
+          "type": "string",
+          "description":
+              "Snowflake for this list's recommendation, use when submitting recommendation events. Omitted when the list is not algorithmically recommended.",
+        },
+      },
+    },
+    "articleItem": {
+      "type": "object",
+      "required": ["featured", "view"],
+      "properties": {
+        "featured": {"type": "boolean"},
+        "view": {"type": "ref", "ref": "app.bsky.embed.external#viewArticle"},
+      },
+    },
+    "publicationItem": {
+      "type": "object",
+      "required": ["featured", "view"],
+      "properties": {
+        "featured": {"type": "boolean"},
+        "view": {
+          "type": "ref",
+          "ref": "app.bsky.embed.external#viewArticlePublication",
+        },
+      },
+    },
+    "galleryItem": {
+      "type": "object",
+      "required": ["featured", "view"],
+      "properties": {
+        "featured": {"type": "boolean"},
+        "view": {"type": "ref", "ref": "app.bsky.embed.external#viewGallery"},
+      },
+    },
+    "livestreamItem": {
+      "type": "object",
+      "required": ["featured", "view"],
+      "properties": {
+        "featured": {"type": "boolean"},
+        "view": {
+          "type": "ref",
+          "ref": "app.bsky.embed.external#viewLivestream",
+        },
+      },
+    },
+    "announcementBanner": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string", "maxLength": 4096},
+        "title": {"type": "string", "maxLength": 4096},
+        "description": {"type": "string", "maxLength": 4096},
+        "url": {"type": "string", "format": "uri", "maxLength": 4096},
+        "image": {"type": "string", "format": "uri", "maxLength": 4096},
+        "overlayColor": {"type": "string", "maxLength": 4096},
+        "textColor": {"type": "string", "maxLength": 4096},
+      },
+    },
+    "appCard": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string", "maxLength": 4096},
+        "title": {"type": "string", "maxLength": 4096},
+        "description": {"type": "string", "maxLength": 4096},
+        "logo": {"type": "string", "format": "uri", "maxLength": 4096},
+        "backgroundImage": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 4096,
+        },
+        "overlayColor": {"type": "string", "maxLength": 4096},
+        "textColor": {"type": "string", "maxLength": 4096},
+        "url": {"type": "string", "format": "uri", "maxLength": 4096},
+        "category": {"type": "string", "maxLength": 4096},
       },
     },
   },
@@ -11409,6 +12074,11 @@ const chatBskyConvoLeaveConvo = <String, dynamic>{
       },
       "errors": [
         {"name": "InvalidConvo"},
+        {
+          "name": "AlreadyLeftConvo",
+          "description":
+              "The user has already left the conversation and is not back in (a direct conversation can be restarted by a new message, which allows leaving again).",
+        },
         {
           "name": "OwnerCannotLeave",
           "description":
@@ -18048,24 +18718,600 @@ const comGermnetworkDeclaration = <String, dynamic>{
   },
 };
 
+/// `place.stream.badge.defs`
+const placeStreamBadgeDefs = <String, dynamic>{
+  "lexicon": 1,
+  "id": "place.stream.badge.defs",
+  "defs": {
+    "bot": {
+      "type": "token",
+      "description":
+          "This user is a bot. Self-applied via place.stream.chat.profile selfLabels.",
+    },
+    "mod": {
+      "type": "token",
+      "description": "This user is a moderator. Displayed with a sword icon.",
+    },
+    "vip": {
+      "type": "token",
+      "description": "This user is a very important person.",
+    },
+    "event": {
+      "type": "token",
+      "description":
+          "This user has won or earned a special event or contest badge.",
+    },
+    "streamer": {
+      "type": "token",
+      "description": "This user is the streamer. Displayed with a star icon.",
+    },
+    "badgeSlot": {
+      "type": "object",
+      "description":
+          "A display slot containing available issuance-based badges and which one (if any) is currently selected.",
+      "required": ["available"],
+      "properties": {
+        "selected": {
+          "type": "ref",
+          "description": "The currently selected badge in this slot, if any.",
+          "ref": "#badgeIssuanceView",
+        },
+        "available": {
+          "type": "array",
+          "description": "All badges available for this slot.",
+          "items": {"type": "ref", "ref": "#badgeIssuanceView"},
+        },
+      },
+    },
+    "badgeView": {
+      "type": "object",
+      "description":
+          "View of a badge record, with fields resolved for display. If the DID in issuer is not the current streamplace node, the signature field shall be required.",
+      "required": ["badgeType", "issuer", "recipient"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Display name from the badge definition.",
+        },
+        "issuer": {
+          "type": "string",
+          "format": "did",
+          "description": "DID of the badge issuer.",
+        },
+        "imageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Resolved image URL for the badge icon.",
+        },
+        "badgeType": {
+          "type": "string",
+          "knownValues": [
+            "place.stream.badge.defs#mod",
+            "place.stream.badge.defs#streamer",
+            "place.stream.badge.defs#vip",
+            "place.stream.badge.defs#event",
+            "place.stream.badge.defs#bot",
+          ],
+        },
+        "recipient": {
+          "type": "string",
+          "format": "did",
+          "description": "DID of the badge recipient.",
+        },
+        "signature": {
+          "type": "string",
+          "description":
+              "TODO: Cryptographic signature of the badge (of a place.stream.key).",
+        },
+        "description": {
+          "type": "string",
+          "description": "Description from the badge definition.",
+        },
+      },
+    },
+    "badgeIssuanceView": {
+      "type": "object",
+      "description":
+          "A resolved view of a badge issuance, including def fields for display.",
+      "required": ["issuanceUri", "badgeType", "issuer"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Display name from the badge definition.",
+        },
+        "issuer": {
+          "type": "string",
+          "format": "did",
+          "description": "DID of the badge issuer.",
+        },
+        "imageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Resolved image URL for the badge icon.",
+        },
+        "selected": {
+          "type": "boolean",
+          "description":
+              "Whether this badge is currently in the user's chat profile selection.",
+        },
+        "badgeType": {
+          "type": "string",
+          "knownValues": [
+            "place.stream.badge.defs#vip",
+            "place.stream.badge.defs#event",
+          ],
+        },
+        "description": {
+          "type": "string",
+          "description": "Description from the badge definition.",
+        },
+        "issuanceCid": {
+          "type": "string",
+          "description": "CID of the place.stream.badge.issuance record.",
+        },
+        "issuanceUri": {
+          "type": "string",
+          "format": "at-uri",
+          "description": "AT URI of the place.stream.badge.issuance record.",
+        },
+      },
+    },
+  },
+};
+
+/// `place.stream.chat.defs`
+const placeStreamChatDefs = <String, dynamic>{
+  "lexicon": 1,
+  "id": "place.stream.chat.defs",
+  "defs": {
+    "messageView": {
+      "type": "object",
+      "required": ["uri", "cid", "author", "record", "indexedAt"],
+      "properties": {
+        "cid": {"type": "string", "format": "cid"},
+        "uri": {"type": "string", "format": "at-uri"},
+        "author": {
+          "type": "ref",
+          "ref": "app.bsky.actor.defs#profileViewBasic",
+        },
+        "badges": {
+          "type": "array",
+          "description":
+              "Up to 3 badge tokens to display with the message. First badge is server-controlled, remaining badges are user-settable. Tokens are looked up in badges.json for display info.",
+          "items": {"type": "ref", "ref": "place.stream.badge.defs#badgeView"},
+          "maxLength": 3,
+        },
+        "record": {"type": "unknown"},
+        "deleted": {
+          "type": "boolean",
+          "description":
+              "If true, this message has been deleted or labeled and should be cleared from the cache",
+        },
+        "replyTo": {
+          "type": "union",
+          "refs": ["#messageView"],
+        },
+        "indexedAt": {"type": "string", "format": "datetime"},
+        "chatProfile": {"type": "ref", "ref": "place.stream.chat.profile"},
+      },
+    },
+    "pinnedRecordView": {
+      "type": "object",
+      "description": "View of a pinned chat record with hydrated message data.",
+      "required": ["uri", "cid", "record", "indexedAt"],
+      "properties": {
+        "cid": {"type": "string", "format": "cid"},
+        "uri": {"type": "string", "format": "at-uri"},
+        "record": {"type": "ref", "ref": "place.stream.chat.pinnedRecord"},
+        "message": {"type": "ref", "ref": "#messageView"},
+        "pinnedBy": {"type": "ref", "ref": "place.stream.chat.profile"},
+        "indexedAt": {"type": "string", "format": "datetime"},
+      },
+    },
+  },
+};
+
+/// `place.stream.chat.pinnedRecord`
+const placeStreamChatPinnedRecord = <String, dynamic>{
+  "lexicon": 1,
+  "id": "place.stream.chat.pinnedRecord",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description": "Record pinning a chat message for prominent display.",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["pinnedMessage", "createdAt"],
+        "properties": {
+          "pinnedBy": {
+            "type": "string",
+            "format": "did",
+            "description": "DID of the user who pinned the message.",
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime",
+            "description": "When this pin was created.",
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "datetime",
+            "description":
+                "Optional expiration time. If set, the pin is considered inactive after this time.",
+          },
+          "pinnedMessage": {
+            "type": "string",
+            "format": "at-uri",
+            "description": "AT-URI of the pinned chat message.",
+          },
+        },
+      },
+    },
+  },
+};
+
+/// `place.stream.chat.profile`
+const placeStreamChatProfile = <String, dynamic>{
+  "lexicon": 1,
+  "id": "place.stream.chat.profile",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description":
+          "Record containing customizations for a user's chat profile.",
+      "key": "literal:self",
+      "record": {
+        "type": "object",
+        "properties": {
+          "color": {"type": "ref", "ref": "#color"},
+          "badges": {
+            "type": "ref",
+            "description": "Badge selections for display in chat.",
+            "ref": "#badgeSelections",
+          },
+          "selfLabels": {
+            "type": "array",
+            "description": "Self-applied labels for this profile, e.g. 'bot'.",
+            "items": {"type": "ref", "ref": "#selfLabel"},
+            "maxLength": 10,
+          },
+        },
+      },
+    },
+    "color": {
+      "type": "object",
+      "description": "Customizations for the color of a user's name in chat",
+      "required": ["red", "green", "blue"],
+      "properties": {
+        "red": {"type": "integer", "minimum": 0, "maximum": 255},
+        "blue": {"type": "integer", "minimum": 0, "maximum": 255},
+        "green": {"type": "integer", "minimum": 0, "maximum": 255},
+      },
+    },
+    "selfLabel": {
+      "type": "string",
+      "description": "Label that a user can apply to their own profile.",
+      "knownValues": ["bot"],
+    },
+    "badgeSelections": {
+      "type": "object",
+      "description": "Selected badges for display in chat, organized by slot.",
+      "properties": {
+        "global": {
+          "type": "ref",
+          "description": "Selected globally-issued badge (e.g. event badge).",
+          "ref": "com.atproto.repo.strongRef",
+        },
+        "streamer": {
+          "type": "array",
+          "description":
+              "Selected streamer-issued badges, one per streamer channel.",
+          "items": {"type": "ref", "ref": "#streamerBadgeSelection"},
+          "maxLength": 20,
+        },
+      },
+    },
+    "streamerBadgeSelection": {
+      "type": "object",
+      "description": "A selected badge for a specific streamer's channel.",
+      "required": ["streamer", "badge"],
+      "properties": {
+        "badge": {
+          "type": "ref",
+          "description":
+              "Strong reference to the selected place.stream.badge.issuance record.",
+          "ref": "com.atproto.repo.strongRef",
+        },
+        "streamer": {
+          "type": "string",
+          "format": "did",
+          "description":
+              "DID of the streamer whose channel this selection applies to.",
+        },
+      },
+    },
+  },
+};
+
+/// `place.stream.defs`
+const placeStreamDefs = <String, dynamic>{
+  "lexicon": 1,
+  "id": "place.stream.defs",
+  "defs": {
+    "blockView": {
+      "type": "object",
+      "required": ["uri", "cid", "blocker", "record", "indexedAt"],
+      "properties": {
+        "cid": {"type": "string", "format": "cid"},
+        "uri": {"type": "string", "format": "at-uri"},
+        "record": {"type": "ref", "ref": "app.bsky.graph.block"},
+        "blocker": {
+          "type": "ref",
+          "ref": "app.bsky.actor.defs#profileViewBasic",
+        },
+        "indexedAt": {"type": "string", "format": "datetime"},
+      },
+    },
+    "rendition": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+      },
+    },
+    "renditions": {
+      "type": "object",
+      "required": ["renditions"],
+      "properties": {
+        "renditions": {
+          "type": "array",
+          "items": {"type": "ref", "ref": "#rendition"},
+        },
+      },
+    },
+    "activityGame": {
+      "type": "object",
+      "description":
+          "A game from the gamesgamesgamesgames catalog, identified by its AT URI.",
+      "required": ["uri"],
+      "properties": {
+        "uri": {"type": "string", "format": "at-uri"},
+        "name": {
+          "type": "string",
+          "description": "Cached display name of the game.",
+        },
+      },
+    },
+    "activityLabel": {
+      "type": "object",
+      "description": "A non-game activity with a well-known label.",
+      "required": ["label"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "knownValues": [
+            "events",
+            "just_chatting",
+            "podcasting",
+            "music",
+            "art",
+            "software_dev",
+            "cooking",
+            "miniatures",
+            "makers_crafting",
+            "fitness",
+            "sports",
+          ],
+        },
+      },
+    },
+  },
+};
+
+/// `place.stream.livestream`
+const placeStreamLivestream = <String, dynamic>{
+  "lexicon": 1,
+  "id": "place.stream.livestream",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description": "Record announcing a livestream is happening",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["title", "createdAt"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description":
+                "The URL where this stream can be found. This is primarily a hint for other Streamplace nodes to locate and replicate the stream.",
+          },
+          "post": {
+            "type": "ref",
+            "description": "The post that announced this livestream.",
+            "ref": "com.atproto.repo.strongRef",
+          },
+          "tags": {
+            "type": "array",
+            "description":
+                "Freeform tags for this stream. Each tag must be alphanumeric (a-z, A-Z, 0-9) plus colon. Tags with colons indicate a specific tag group (e.g. 'lang:en' indicates the stream's primary language).",
+            "items": {"type": "string", "maxLength": 640, "maxGraphemes": 64},
+            "maxLength": 10,
+          },
+          "agent": {
+            "type": "string",
+            "description":
+                "The source of the livestream, if available, in a User Agent format: `<product> / <product-version> <comment>` e.g. Streamplace/0.7.5 iOS",
+          },
+          "thumb": {
+            "type": "blob",
+            "accept": ["image/*"],
+            "maxSize": 1000000,
+          },
+          "title": {
+            "type": "string",
+            "description":
+                "The title of the livestream, as it will be announced to followers.",
+            "maxLength": 1400,
+            "maxGraphemes": 140,
+          },
+          "endedAt": {
+            "type": "string",
+            "format": "datetime",
+            "description":
+                "Client-declared timestamp when this livestream ended. Ended livestreams are not supposed to start up again.",
+          },
+          "activity": {
+            "type": "union",
+            "description": "The game or activity being streamed.",
+            "refs": [
+              "place.stream.defs#activityGame",
+              "place.stream.defs#activityLabel",
+            ],
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime",
+            "description":
+                "Client-declared timestamp when this livestream started.",
+          },
+          "lastSeenAt": {
+            "type": "string",
+            "format": "datetime",
+            "description":
+                "Client-declared timestamp when this livestream was last seen by the Streamplace station.",
+          },
+          "canonicalUrl": {
+            "type": "string",
+            "format": "uri",
+            "description":
+                "The primary URL where this livestream can be viewed, if available.",
+          },
+          "idleTimeoutSeconds": {
+            "type": "integer",
+            "description":
+                "Time in seconds after which this livestream should be automatically ended if idle. Zero means no timeout.",
+          },
+          "notificationSettings": {
+            "type": "ref",
+            "ref": "place.stream.livestream#notificationSettings",
+          },
+        },
+      },
+    },
+    "viewerCount": {
+      "type": "object",
+      "required": ["count"],
+      "properties": {
+        "count": {"type": "integer"},
+      },
+    },
+    "livestreamView": {
+      "type": "object",
+      "required": ["uri", "cid", "author", "record", "indexedAt"],
+      "properties": {
+        "cid": {"type": "string", "format": "cid"},
+        "uri": {"type": "string", "format": "at-uri"},
+        "author": {
+          "type": "ref",
+          "ref": "app.bsky.actor.defs#profileViewBasic",
+        },
+        "record": {"type": "unknown"},
+        "indexedAt": {"type": "string", "format": "datetime"},
+        "viewerCount": {
+          "type": "ref",
+          "description":
+              "The number of viewers watching this livestream. Use when you can't reasonably use #viewerCount directly.",
+          "ref": "#viewerCount",
+        },
+      },
+    },
+    "teleportArrival": {
+      "type": "object",
+      "required": ["teleportUri", "source", "viewerCount", "startsAt"],
+      "properties": {
+        "source": {
+          "type": "ref",
+          "description": "The streamer who is teleporting their viewers here",
+          "ref": "app.bsky.actor.defs#profileViewBasic",
+        },
+        "startsAt": {
+          "type": "string",
+          "format": "datetime",
+          "description": "When this teleport started",
+        },
+        "chatProfile": {
+          "type": "ref",
+          "description": "The chat profile of the source streamer",
+          "ref": "place.stream.chat.profile",
+        },
+        "teleportUri": {
+          "type": "string",
+          "format": "at-uri",
+          "description": "The URI of the teleport record",
+        },
+        "viewerCount": {
+          "type": "integer",
+          "description": "How many viewers are arriving from this teleport",
+        },
+      },
+    },
+    "teleportCanceled": {
+      "type": "object",
+      "required": ["teleportUri", "reason"],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "description": "Why this teleport was canceled",
+          "enum": ["deleted", "denied", "expired"],
+        },
+        "teleportUri": {
+          "type": "string",
+          "format": "at-uri",
+          "description": "The URI of the teleport record that was canceled",
+        },
+      },
+    },
+    "streamplaceAnything": {
+      "type": "object",
+      "required": ["livestream"],
+      "properties": {
+        "livestream": {
+          "type": "union",
+          "refs": [
+            "#livestreamView",
+            "#viewerCount",
+            "#teleportArrival",
+            "#teleportCanceled",
+            "place.stream.defs#blockView",
+            "place.stream.defs#renditions",
+            "place.stream.defs#rendition",
+            "place.stream.chat.defs#messageView",
+            "place.stream.chat.defs#pinnedRecordView",
+          ],
+        },
+      },
+    },
+    "notificationSettings": {
+      "type": "object",
+      "properties": {
+        "pushNotification": {
+          "type": "boolean",
+          "description":
+              "Whether this livestream should trigger a push notification to followers.",
+        },
+      },
+    },
+  },
+};
+
 /// `site.standard.document`
 const siteStandardDocument = <String, dynamic>{
   "lexicon": 1,
   "id": "site.standard.document",
   "defs": {
-    "contributor": {
-      "type": "object",
-      "required": ["did"],
-      "properties": {
-        "did": {"type": "string", "format": "did"},
-        "displayName": {
-          "type": "string",
-          "maxLength": 1000,
-          "maxGraphemes": 100,
-        },
-        "role": {"type": "string", "maxLength": 1000, "maxGraphemes": 100},
-      },
-    },
     "main": {
       "type": "record",
       "description":
@@ -18075,57 +19321,10 @@ const siteStandardDocument = <String, dynamic>{
         "type": "object",
         "required": ["site", "title", "publishedAt"],
         "properties": {
-          "bskyPostRef": {
-            "type": "ref",
-            "description":
-                "Strong reference to a Bluesky post. Useful to keep track of comments off-platform.",
-            "ref": "com.atproto.repo.strongRef",
-          },
-          "content": {
-            "type": "union",
-            "description":
-                "Open union used to define the record's content. Each entry must specify a \$type and may be extended with other lexicons to support additional content formats.",
-            "refs": [],
-            "closed": false,
-          },
-          "contributors": {
-            "type": "array",
-            "items": {"type": "ref", "ref": "#contributor"},
-          },
-          "coverImage": {
-            "type": "blob",
-            "description":
-                "Image to used for thumbnail or cover image. Less than 1MB is size.",
-            "accept": ["image/*"],
-            "maxSize": 1000000,
-          },
-          "description": {
-            "type": "string",
-            "description": "A brief description or excerpt from the document.",
-            "maxLength": 30000,
-            "maxGraphemes": 3000,
-          },
-          "labels": {
-            "type": "union",
-            "description":
-                "Self-label values for this post. Effectively content warnings.",
-            "refs": ["com.atproto.label.defs#selfLabels"],
-          },
-          "links": {
-            "type": "union",
-            "description":
-                "Array of values describing relationships between this document and external resources",
-            "refs": [],
-          },
           "path": {
             "type": "string",
             "description":
                 "Combine with site or publication url to construct a canonical URL to the document. Prepend with a leading slash.",
-          },
-          "publishedAt": {
-            "type": "string",
-            "format": "datetime",
-            "description": "Timestamp of the documents publish time.",
           },
           "site": {
             "type": "string",
@@ -18139,10 +19338,11 @@ const siteStandardDocument = <String, dynamic>{
                 "Array of strings used to tag or categorize the document. Avoid prepending tags with hashtags.",
             "items": {"type": "string", "maxLength": 1280, "maxGraphemes": 128},
           },
-          "textContent": {
-            "type": "string",
+          "links": {
+            "type": "union",
             "description":
-                "Plaintext representation of the documents contents. Should not contain markdown or other formatting.",
+                "Array of values describing relationships between this document and external resources",
+            "refs": [],
           },
           "title": {
             "type": "string",
@@ -18150,11 +19350,70 @@ const siteStandardDocument = <String, dynamic>{
             "maxLength": 5000,
             "maxGraphemes": 500,
           },
+          "labels": {
+            "type": "union",
+            "description":
+                "Self-label values for this post. Effectively content warnings.",
+            "refs": ["com.atproto.label.defs#selfLabels"],
+          },
+          "content": {
+            "type": "union",
+            "description":
+                "Open union used to define the record's content. Each entry must specify a \$type and may be extended with other lexicons to support additional content formats.",
+            "refs": [],
+            "closed": false,
+          },
           "updatedAt": {
             "type": "string",
             "format": "datetime",
             "description": "Timestamp of the documents last edit.",
           },
+          "coverImage": {
+            "type": "blob",
+            "description":
+                "Image to used for thumbnail or cover image. Less than 1MB is size.",
+            "accept": ["image/*"],
+            "maxSize": 1000000,
+          },
+          "bskyPostRef": {
+            "type": "ref",
+            "description":
+                "Strong reference to a Bluesky post. Useful to keep track of comments off-platform.",
+            "ref": "com.atproto.repo.strongRef",
+          },
+          "description": {
+            "type": "string",
+            "description": "A brief description or excerpt from the document.",
+            "maxLength": 30000,
+            "maxGraphemes": 3000,
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "datetime",
+            "description": "Timestamp of the documents publish time.",
+          },
+          "textContent": {
+            "type": "string",
+            "description":
+                "Plaintext representation of the documents contents. Should not contain markdown or other formatting.",
+          },
+          "contributors": {
+            "type": "array",
+            "items": {"type": "ref", "ref": "#contributor"},
+          },
+        },
+      },
+    },
+    "contributor": {
+      "type": "object",
+      "required": ["did"],
+      "properties": {
+        "did": {"type": "string", "format": "did"},
+        "role": {"type": "string", "maxLength": 1000, "maxGraphemes": 100},
+        "displayName": {
+          "type": "string",
+          "maxLength": 1000,
+          "maxGraphemes": 100,
         },
       },
     },
@@ -18174,13 +19433,13 @@ const siteStandardGraphRecommend = <String, dynamic>{
         "type": "object",
         "required": ["document", "createdAt"],
         "properties": {
-          "createdAt": {"type": "string", "format": "datetime"},
           "document": {
             "type": "string",
             "format": "at-uri",
             "description":
                 "AT-URI reference to the document record being recommended (ex: at://did:plc:abc123/site.standard.document/xyz789).",
           },
+          "createdAt": {"type": "string", "format": "datetime"},
         },
       },
     },
@@ -18227,6 +19486,31 @@ const siteStandardPublication = <String, dynamic>{
         "type": "object",
         "required": ["url", "name"],
         "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description":
+                "Base publication url (ex: https://standard.site). The canonical document URL is formed by combining this value with the document path.",
+          },
+          "icon": {
+            "type": "blob",
+            "description":
+                "Square image to identify the publication. Should be at least 256x256.",
+            "accept": ["image/*"],
+            "maxSize": 1000000,
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the publication.",
+            "maxLength": 5000,
+            "maxGraphemes": 500,
+          },
+          "labels": {
+            "type": "union",
+            "description":
+                "Self-label values for this publication. Effectively content warnings.",
+            "refs": ["com.atproto.label.defs#selfLabels"],
+          },
           "basicTheme": {
             "type": "ref",
             "description":
@@ -18239,36 +19523,11 @@ const siteStandardPublication = <String, dynamic>{
             "maxLength": 30000,
             "maxGraphemes": 3000,
           },
-          "icon": {
-            "type": "blob",
-            "description":
-                "Square image to identify the publication. Should be at least 256x256.",
-            "accept": ["image/*"],
-            "maxSize": 1000000,
-          },
-          "labels": {
-            "type": "union",
-            "description":
-                "Self-label values for this publication. Effectively content warnings.",
-            "refs": ["com.atproto.label.defs#selfLabels"],
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the publication.",
-            "maxLength": 5000,
-            "maxGraphemes": 500,
-          },
           "preferences": {
             "type": "ref",
             "description":
                 "Object containing platform specific preferences (with a few shared properties).",
             "ref": "#preferences",
-          },
-          "url": {
-            "type": "string",
-            "format": "uri",
-            "description":
-                "Base publication url (ex: https://standard.site). The canonical document URL is formed by combining this value with the document path.",
           },
         },
       },
@@ -18306,11 +19565,6 @@ const siteStandardThemeBasic = <String, dynamic>{
             "description": "Color used for links and button backgrounds.",
             "refs": ["site.standard.theme.color#rgb"],
           },
-          "accentForeground": {
-            "type": "union",
-            "description": "Color used for button text.",
-            "refs": ["site.standard.theme.color#rgb"],
-          },
           "background": {
             "type": "union",
             "description": "Color used for content background.",
@@ -18319,6 +19573,11 @@ const siteStandardThemeBasic = <String, dynamic>{
           "foreground": {
             "type": "union",
             "description": "Color used for content text.",
+            "refs": ["site.standard.theme.color#rgb"],
+          },
+          "accentForeground": {
+            "type": "union",
+            "description": "Color used for button text.",
             "refs": ["site.standard.theme.color#rgb"],
           },
         },
@@ -18349,6 +19608,126 @@ const siteStandardThemeColor = <String, dynamic>{
         "b": {"type": "integer", "minimum": 0, "maximum": 255},
         "g": {"type": "integer", "minimum": 0, "maximum": 255},
         "r": {"type": "integer", "minimum": 0, "maximum": 255},
+      },
+    },
+  },
+};
+
+/// `social.grain.defs`
+const socialGrainDefs = <String, dynamic>{
+  "lexicon": 1,
+  "id": "social.grain.defs",
+  "defs": {
+    "aspectRatio": {
+      "type": "object",
+      "description":
+          "width:height represents an aspect ratio. It may be approximate, and may not correspond to absolute dimensions in any given unit.",
+      "required": ["width", "height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+      },
+    },
+  },
+};
+
+/// `social.grain.favorite`
+const socialGrainFavorite = <String, dynamic>{
+  "lexicon": 1,
+  "id": "social.grain.favorite",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["createdAt", "subject"],
+        "properties": {
+          "subject": {"type": "string", "format": "at-uri"},
+          "createdAt": {"type": "string", "format": "datetime"},
+        },
+      },
+    },
+  },
+};
+
+/// `social.grain.gallery`
+const socialGrainGallery = <String, dynamic>{
+  "lexicon": 1,
+  "id": "social.grain.gallery",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["title", "createdAt"],
+        "properties": {
+          "title": {"type": "string", "maxLength": 100},
+          "labels": {
+            "type": "union",
+            "description":
+                "Self-label values for this post. Effectively content warnings.",
+            "refs": ["com.atproto.label.defs#selfLabels"],
+          },
+          "createdAt": {"type": "string", "format": "datetime"},
+          "description": {"type": "string", "maxLength": 1000},
+        },
+      },
+    },
+  },
+};
+
+/// `social.grain.gallery.item`
+const socialGrainGalleryItem = <String, dynamic>{
+  "lexicon": 1,
+  "id": "social.grain.gallery.item",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["createdAt", "gallery", "item"],
+        "properties": {
+          "item": {"type": "string", "format": "at-uri"},
+          "gallery": {"type": "string", "format": "at-uri"},
+          "position": {"type": "integer", "default": 0},
+          "createdAt": {"type": "string", "format": "datetime"},
+        },
+      },
+    },
+  },
+};
+
+/// `social.grain.photo`
+const socialGrainPhoto = <String, dynamic>{
+  "lexicon": 1,
+  "id": "social.grain.photo",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["photo", "alt"],
+        "properties": {
+          "alt": {
+            "type": "string",
+            "description":
+                "Alt text description of the image, for accessibility.",
+          },
+          "photo": {
+            "type": "blob",
+            "accept": ["image/*"],
+            "maxSize": 1000000,
+          },
+          "createdAt": {"type": "string", "format": "datetime"},
+          "aspectRatio": {
+            "type": "ref",
+            "ref": "social.grain.defs#aspectRatio",
+          },
+        },
       },
     },
   },
@@ -18762,7 +20141,14 @@ const toolsOzoneInboxDefs = <String, dynamic>{
       "type": "object",
       "description":
           "A subject belonging to the viewer that has moderation actions against it.",
-      "required": ["src", "subject", "enforcement", "createdAt", "updatedAt"],
+      "required": [
+        "src",
+        "subject",
+        "enforcement",
+        "isRead",
+        "createdAt",
+        "updatedAt",
+      ],
       "properties": {
         "src": {
           "type": "string",
@@ -18789,6 +20175,7 @@ const toolsOzoneInboxDefs = <String, dynamic>{
         "actionCount": {"type": "integer"},
         "createdAt": {"type": "string", "format": "datetime"},
         "updatedAt": {"type": "string", "format": "datetime"},
+        "isRead": {"type": "boolean"},
       },
     },
     "enforcementView": {
@@ -18841,10 +20228,10 @@ const toolsOzoneInboxDefs = <String, dynamic>{
           "format": "datetime",
           "description": "When the appeal's report was closed.",
         },
-        "note": {
+        "outcome": {
           "type": "string",
-          "description":
-              "Moderator explanation, from the publicNote on the closing activity. Absent if none was written.",
+          "description": "Decision on a resolved appeal.",
+          "knownValues": ["approved", "denied"],
         },
         "appealableUntil": {"type": "string", "format": "datetime"},
       },
@@ -18873,8 +20260,874 @@ const toolsOzoneInboxDefs = <String, dynamic>{
         },
         "policies": {
           "type": "array",
-          "description": "Policies that were applied in this action.",
+          "description": "Policies applied by a takedown action.",
+          "items": {"type": "ref", "ref": "#policyView"},
+        },
+      },
+    },
+    "policyView": {
+      "type": "object",
+      "required": ["key", "displayName", "link"],
+      "properties": {
+        "key": {"type": "string"},
+        "displayName": {"type": "string"},
+        "link": {"type": "string", "format": "uri"},
+      },
+    },
+    "subjectViewDetail": {
+      "type": "object",
+      "description":
+          "A subject with a page of its action history and an aggregate report summary. Follow cursor to retrieve older actions; enforcement and appeal describe the current subject state on every page.",
+      "required": [
+        "src",
+        "subject",
+        "enforcement",
+        "isRead",
+        "actions",
+        "createdAt",
+        "updatedAt",
+      ],
+      "properties": {
+        "src": {"type": "string", "format": "did"},
+        "isRead": {"type": "boolean"},
+        "subject": {
+          "type": "union",
+          "refs": [
+            "com.atproto.admin.defs#repoRef",
+            "com.atproto.repo.strongRef",
+          ],
+        },
+        "record": {
+          "type": "unknown",
+          "description":
+              "Raw record JSON for the subject, when the subject is a record and the record is available.",
+        },
+        "enforcement": {"type": "ref", "ref": "#enforcementView"},
+        "appeal": {"type": "ref", "ref": "#appealView"},
+        "availableActions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "knownValues": ["appeal"],
+          },
+        },
+        "actions": {
+          "type": "array",
+          "description":
+              "A page of action history, most recent first. Reversal timestamps include changes outside this page.",
+          "items": {"type": "ref", "ref": "#actionView"},
+          "maxLength": 100,
+        },
+        "cursor": {
+          "type": "string",
+          "description":
+              "Cursor for the next page of action history. Omitted when no older actions remain.",
+        },
+        "reports": {
+          "type": "ref",
+          "description":
+              "Omitted when the subject has never been reported, e.g. proactive enforcement.",
+          "ref": "#reportsSummary",
+        },
+        "createdAt": {"type": "string", "format": "datetime"},
+        "updatedAt": {"type": "string", "format": "datetime"},
+      },
+    },
+    "reportsSummary": {
+      "type": "object",
+      "description":
+          "Aggregate view of reports filed against this subject. Deliberately carries no report IDs, no count, and no reporter identities.",
+      "required": ["reasonTypes", "firstReportedOn", "lastReportedOn"],
+      "properties": {
+        "reasonTypes": {
+          "type": "array",
+          "description":
+              "Distinct reason types reported, deduplicated and unordered. Excludes reasonAppeal.",
           "items": {"type": "string"},
+        },
+        "firstReportedOn": {
+          "type": "string",
+          "format": "datetime",
+          "description":
+              "Day of the earliest report, truncated to midnight UTC. Render as a date; the time component is not meaningful.",
+        },
+        "lastReportedOn": {
+          "type": "string",
+          "format": "datetime",
+          "description":
+              "Day of the most recent report, truncated to midnight UTC. Render as a date; the time component is not meaningful.",
+        },
+      },
+    },
+    "notification": {
+      "type": "object",
+      "required": ["id", "reason", "target", "isRead", "createdAt"],
+      "properties": {
+        "id": {"type": "integer"},
+        "reason": {
+          "type": "string",
+          "knownValues": [
+            "reportResolved",
+            "reportReopened",
+            "actionTaken",
+            "actionReversed",
+            "appealResolved",
+            "standingChanged",
+          ],
+        },
+        "target": {
+          "type": "union",
+          "refs": ["#reportRef", "#subjectRef", "#standingRef"],
+        },
+        "isRead": {"type": "boolean"},
+        "createdAt": {"type": "string", "format": "datetime"},
+      },
+    },
+    "notificationPreferences": {
+      "type": "object",
+      "description":
+          "Push notification preferences by moderation notification category. These preferences do not hide in-app inbox activity. Each category defaults to enabled.",
+      "required": ["reports", "account", "labels"],
+      "properties": {
+        "reports": {
+          "type": "boolean",
+          "description":
+              "Notify about outcomes of reports filed by the account (reportResolved and reportReopened).",
+        },
+        "account": {
+          "type": "boolean",
+          "description":
+              "Notify about moderation actions against the account or its content, action reversals, appeal outcomes, and standing changes. Label application and removal are controlled by labels.",
+        },
+        "labels": {
+          "type": "boolean",
+          "description":
+              "Notify when labels are applied to or removed from the account or its content (labelApplied and labelRemoved actions).",
+        },
+      },
+    },
+    "reportRef": {
+      "type": "object",
+      "description":
+          "Reference to a report by its report table ID, as used by getReport and Ozone's report detail page.",
+      "required": ["reportId"],
+      "properties": {
+        "reportId": {"type": "integer"},
+        "subject": {
+          "type": "union",
+          "refs": [
+            "com.atproto.admin.defs#repoRef",
+            "com.atproto.repo.strongRef",
+          ],
+        },
+        "status": {
+          "type": "string",
+          "knownValues": ["pending", "resolved"],
+        },
+      },
+    },
+    "subjectRef": {
+      "type": "object",
+      "required": ["subject"],
+      "properties": {
+        "appealOutcome": {
+          "type": "string",
+          "description":
+              "Decision captured when an appealResolved notification was created. Omitted when the outcome is unknown.",
+          "knownValues": ["approved", "denied"],
+        },
+        "subject": {
+          "type": "union",
+          "refs": [
+            "com.atproto.admin.defs#repoRef",
+            "com.atproto.repo.strongRef",
+          ],
+        },
+        "actionType": {"type": "string"},
+        "actionId": {"type": "integer"},
+      },
+    },
+    "standingRef": {
+      "type": "object",
+      "required": ["standing"],
+      "properties": {
+        "standing": {
+          "type": "string",
+          "knownValues": ["good", "warning", "atRisk"],
+        },
+        "previousStanding": {
+          "type": "string",
+          "knownValues": ["good", "warning", "atRisk"],
+        },
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.getAccountStatus`
+const toolsOzoneInboxGetAccountStatus = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.getAccountStatus",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Get the authenticated account's current standing with this moderation service.",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "did": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "Account to preview. Only Ozone staff can read another account; this does not change its read state.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["src", "standing", "updatedAt"],
+          "properties": {
+            "src": {
+              "type": "string",
+              "format": "did",
+              "description":
+                  "DID of the moderation service returning this status.",
+            },
+            "standing": {
+              "type": "string",
+              "knownValues": ["good", "warning", "atRisk"],
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "datetime",
+              "description":
+                  "Newest account-status update or strike timestamp used to derive this standing, or the Unix epoch when neither exists. This is not a standing-transition timestamp; expiry can change standing without changing this value.",
+            },
+            "expiresAt": {
+              "type": "string",
+              "format": "datetime",
+              "description":
+                  "Time at which the current suspension expires. Present only for a temporary suspension.",
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.getActionedSubject`
+const toolsOzoneInboxGetActionedSubject = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.getActionedSubject",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Get a subject belonging to the authenticated account, including its moderation action history from this moderation service.",
+      "parameters": {
+        "type": "params",
+        "required": ["subject"],
+        "properties": {
+          "did": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "Account to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.",
+          },
+          "subject": {
+            "type": "string",
+            "format": "uri",
+            "description": "DID or AT-URI of the subject to retrieve.",
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of actions to return.",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 100,
+          },
+          "cursor": {
+            "type": "string",
+            "description":
+                "Opaque cursor for the next page of this subject's action history.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "ref",
+          "ref": "tools.ozone.inbox.defs#subjectViewDetail",
+        },
+      },
+      "errors": [
+        {
+          "name": "NotFound",
+          "description":
+              "No subject was found, or the authenticated account does not own the subject.",
+        },
+      ],
+    },
+  },
+};
+
+/// `tools.ozone.inbox.getNotificationPreferences`
+const toolsOzoneInboxGetNotificationPreferences = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.getNotificationPreferences",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Get moderation push notification preferences for report outcomes, account actions, and labeling. Returns all three categories, defaulting to enabled for an account without saved preferences.",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "did": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "Account to preview. Only Ozone staff can read another account; this does not change its read state.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["preferences"],
+          "properties": {
+            "preferences": {
+              "type": "ref",
+              "ref": "tools.ozone.inbox.defs#notificationPreferences",
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.getReport`
+const toolsOzoneInboxGetReport = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.getReport",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Get a moderation report submitted by the authenticated account to this moderation service.",
+      "parameters": {
+        "type": "params",
+        "required": ["id"],
+        "properties": {
+          "did": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "Reporter to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.",
+          },
+          "id": {
+            "type": "integer",
+            "description":
+                "Report ID (report table ID), as returned by listReports.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["report"],
+          "properties": {
+            "report": {"type": "ref", "ref": "#reportView"},
+            "resolution": {
+              "type": "ref",
+              "description": "Present only when the report is resolved.",
+              "ref": "#resolutionView",
+            },
+          },
+        },
+      },
+      "errors": [
+        {
+          "name": "NotFound",
+          "description":
+              "No report was found, or the authenticated account did not submit it.",
+        },
+      ],
+    },
+    "reportView": {
+      "type": "object",
+      "required": [
+        "src",
+        "id",
+        "reasonType",
+        "subject",
+        "status",
+        "createdAt",
+        "updatedAt",
+      ],
+      "properties": {
+        "src": {
+          "type": "string",
+          "format": "did",
+          "description":
+              "DID of the moderation service that received the report.",
+        },
+        "id": {
+          "type": "integer",
+          "description":
+              "Report ID (report table ID), used by Ozone's report detail page.",
+        },
+        "reasonType": {
+          "type": "string",
+          "description":
+              "The exact fully-qualified reason NSID submitted with and stored on the report.",
+        },
+        "reason": {"type": "string", "maxLength": 20000, "maxGraphemes": 2000},
+        "subject": {
+          "type": "union",
+          "refs": [
+            "com.atproto.admin.defs#repoRef",
+            "com.atproto.repo.strongRef",
+            "chat.bsky.convo.defs#messageRef",
+            "chat.bsky.convo.defs#convoRef",
+          ],
+        },
+        "record": {
+          "type": "unknown",
+          "description":
+              "Raw record JSON for the subject, when the subject is a record and the record is available.",
+        },
+        "status": {
+          "type": "string",
+          "knownValues": ["pending", "resolved"],
+        },
+        "createdAt": {"type": "string", "format": "datetime"},
+        "updatedAt": {"type": "string", "format": "datetime"},
+      },
+    },
+    "resolutionView": {
+      "type": "object",
+      "required": ["outcome", "resolvedAt"],
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "knownValues": ["actionTaken", "noAction", "other"],
+        },
+        "actionTaken": {
+          "type": "string",
+          "description":
+              "Public action associated with this report's resolution. See the public action vocabulary table.",
+        },
+        "scope": {
+          "type": "string",
+          "knownValues": ["network", "app", "labelOnly"],
+        },
+        "resolvedAt": {"type": "string", "format": "datetime"},
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.getUnreadCount`
+const toolsOzoneInboxGetUnreadCount = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.getUnreadCount",
+  "defs": {
+    "main": {
+      "type": "query",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "section": {
+            "type": "string",
+            "knownValues": ["reports", "subjects", "accountStatus"],
+          },
+          "did": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "Account to preview. Only Ozone staff can read another account; this does not change its read state.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["unreadCounts"],
+          "properties": {
+            "unreadCounts": {"type": "ref", "ref": "#unreadCounts"},
+          },
+        },
+      },
+    },
+    "unreadCounts": {
+      "type": "object",
+      "required": ["total"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "reports": {"type": "integer", "minimum": 0},
+        "subjects": {"type": "integer", "minimum": 0},
+        "accountStatus": {"type": "integer", "minimum": 0, "maximum": 1},
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.listActionedSubjects`
+const toolsOzoneInboxListActionedSubjects = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.listActionedSubjects",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "List subjects belonging to the authenticated account that have moderation actions from this moderation service.",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "did": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "Account to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.",
+          },
+          "filter": {
+            "type": "string",
+            "description":
+                "Filter subject activity. pending includes subjects whose latest appeal report is not closed; resolved includes subjects whose latest appeal report is closed. unread includes subjects whose public updatedAt is after the subjects section's seenAt watermark.",
+            "default": "all",
+            "enum": ["all", "pending", "resolved", "unread"],
+          },
+          "sortField": {
+            "type": "string",
+            "default": "updatedAt",
+            "enum": ["createdAt", "updatedAt"],
+          },
+          "sortDirection": {
+            "type": "string",
+            "default": "desc",
+            "enum": ["asc", "desc"],
+          },
+          "limit": {
+            "type": "integer",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 100,
+          },
+          "cursor": {
+            "type": "string",
+            "description": "An opaque cursor for pagination.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["subjects"],
+          "properties": {
+            "cursor": {"type": "string"},
+            "subjects": {
+              "type": "array",
+              "items": {
+                "type": "ref",
+                "ref": "tools.ozone.inbox.defs#subjectView",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.listNotifications`
+const toolsOzoneInboxListNotifications = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.listNotifications",
+  "defs": {
+    "main": {
+      "type": "query",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "section": {
+            "type": "string",
+            "knownValues": ["reports", "subjects", "accountStatus"],
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "knownValues": [
+                "reportResolved",
+                "reportReopened",
+                "actionTaken",
+                "actionReversed",
+                "appealResolved",
+                "standingChanged",
+              ],
+            },
+          },
+          "unreadOnly": {"type": "boolean", "default": false},
+          "limit": {
+            "type": "integer",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 100,
+          },
+          "cursor": {"type": "string"},
+          "did": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "Account to preview. Only Ozone staff can read another account; this does not change its read state.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["notifications"],
+          "properties": {
+            "cursor": {"type": "string"},
+            "notifications": {
+              "type": "array",
+              "items": {
+                "type": "ref",
+                "ref": "tools.ozone.inbox.defs#notification",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.listReports`
+const toolsOzoneInboxListReports = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.listReports",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "List moderation reports submitted by the authenticated account to this moderation service.",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "did": {
+            "type": "string",
+            "format": "did",
+            "description":
+                "Account to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.",
+          },
+          "filter": {
+            "type": "string",
+            "description":
+                "Filter report activity. unread includes reports whose updatedAt is after the reports section's seenAt watermark.",
+            "default": "all",
+            "enum": ["all", "pending", "resolved", "unread"],
+          },
+          "sortField": {
+            "type": "string",
+            "default": "updatedAt",
+            "enum": ["createdAt", "updatedAt"],
+          },
+          "sortDirection": {
+            "type": "string",
+            "default": "desc",
+            "enum": ["asc", "desc"],
+          },
+          "limit": {
+            "type": "integer",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 100,
+          },
+          "cursor": {
+            "type": "string",
+            "description": "An opaque cursor for pagination.",
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["reports"],
+          "properties": {
+            "cursor": {"type": "string"},
+            "reports": {
+              "type": "array",
+              "items": {"type": "ref", "ref": "#reportView"},
+            },
+          },
+        },
+      },
+    },
+    "reportView": {
+      "type": "object",
+      "required": [
+        "src",
+        "id",
+        "isRead",
+        "reasonType",
+        "subject",
+        "status",
+        "createdAt",
+        "updatedAt",
+      ],
+      "properties": {
+        "src": {
+          "type": "string",
+          "format": "did",
+          "description":
+              "DID of the moderation service that received the report.",
+        },
+        "id": {
+          "type": "integer",
+          "description":
+              "Report ID (report table ID), used by getReport and Ozone's report detail page.",
+        },
+        "isRead": {"type": "boolean"},
+        "reasonType": {
+          "type": "string",
+          "description":
+              "The exact fully-qualified reason NSID submitted with and stored on the report.",
+        },
+        "reason": {"type": "string", "maxLength": 20000, "maxGraphemes": 2000},
+        "lastActionTaken": {
+          "type": "string",
+          "description":
+              "Public action associated with this report's transition to resolved. See the public action vocabulary table.",
+        },
+        "scope": {
+          "type": "string",
+          "knownValues": ["network", "app", "labelOnly"],
+        },
+        "subject": {
+          "type": "union",
+          "refs": [
+            "com.atproto.admin.defs#repoRef",
+            "com.atproto.repo.strongRef",
+            "chat.bsky.convo.defs#messageRef",
+            "chat.bsky.convo.defs#convoRef",
+          ],
+        },
+        "status": {
+          "type": "string",
+          "knownValues": ["pending", "resolved"],
+        },
+        "createdAt": {"type": "string", "format": "datetime"},
+        "updatedAt": {"type": "string", "format": "datetime"},
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.putNotificationPreferences`
+const toolsOzoneInboxPutNotificationPreferences = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.putNotificationPreferences",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description":
+          "Update the authenticated account's moderation push notification preferences. Only provided categories are updated; omitted categories retain their values. At least one category must be provided. Returns all three preferences. These preferences do not hide in-app inbox activity.",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "reports": {
+              "type": "boolean",
+              "description":
+                  "Notify about outcomes of reports filed by the account.",
+            },
+            "account": {
+              "type": "boolean",
+              "description":
+                  "Notify about moderation actions against the account or its content, excluding labeling.",
+            },
+            "labels": {
+              "type": "boolean",
+              "description":
+                  "Notify about labels applied to or removed from the account or its content.",
+            },
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["preferences"],
+          "properties": {
+            "preferences": {
+              "type": "ref",
+              "ref": "tools.ozone.inbox.defs#notificationPreferences",
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+/// `tools.ozone.inbox.updateSeen`
+const toolsOzoneInboxUpdateSeen = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.inbox.updateSeen",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["sections"],
+          "properties": {
+            "sections": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "knownValues": ["reports", "subjects", "accountStatus"],
+              },
+              "minLength": 1,
+            },
+            "seenAt": {
+              "type": "string",
+              "format": "datetime",
+              "description":
+                  "Mark each requested section read up to this instant. Defaults to server time and is clamped to server time when in the future. Newer existing watermarks are preserved independently for each section.",
+            },
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["seenAt"],
+          "properties": {
+            "seenAt": {
+              "type": "string",
+              "format": "datetime",
+              "description":
+                  "The earliest resulting watermark across the requested sections, in UTC. Every requested section is read through this instant; individual sections may already have newer watermarks.",
+            },
+          },
         },
       },
     },
@@ -19387,6 +21640,12 @@ const toolsOzoneModerationDefs = <String, dynamic>{
           "description":
               "Number of strikes to subtract from the user's strike count. Usually set from the last policy infraction's severity.",
         },
+        "strikeExpiresAt": {
+          "type": "string",
+          "format": "datetime",
+          "description":
+              "When the strike should expire. If not provided, the strike never expires.",
+        },
       },
     },
     "modEventResolveAppeal": {
@@ -19413,6 +21672,19 @@ const toolsOzoneModerationDefs = <String, dynamic>{
       "description": "Report a subject",
       "required": ["reportType"],
       "properties": {
+        "appealSubmittedBy": {
+          "type": "string",
+          "format": "did",
+          "description":
+              "Moderator who submitted this appeal on behalf of the affected account. Returned by moderator event APIs.",
+        },
+        "appealActionType": {
+          "type": "string",
+          "description":
+              "Action reference type recorded when this appeal was submitted.",
+        },
+        "appealActionId": {"type": "integer"},
+        "appealLabel": {"type": "string"},
         "comment": {"type": "string"},
         "isReporterMuted": {
           "type": "boolean",
@@ -20270,17 +22542,23 @@ const toolsOzoneModerationEmitEvent = <String, dynamic>{
         "types": {
           "type": "array",
           "description":
-              "Target reports matching these report types on the subject (fully qualified NSIDs)",
+              "Target reports matching these report types on the subject (fully qualified NSIDs). Excludes assigned and escalated reports.",
           "items": {"type": "string"},
         },
         "all": {
           "type": "boolean",
-          "description": "Target ALL reports on the subject",
+          "description":
+              "Target ALL reports on the subject. Excludes assigned and escalated reports.",
         },
         "note": {
           "type": "string",
           "description":
               "Note to send to reporter(s) when actioning their report",
+        },
+        "isAutomated": {
+          "type": "boolean",
+          "description":
+              "Set true when the report activities are created by an automated process.",
         },
       },
     },
@@ -21372,7 +23650,7 @@ const toolsOzoneQueueCreateQueue = <String, dynamic>{
     "main": {
       "type": "procedure",
       "description":
-          "Create a new moderation queue. A queue can have optional matching criteria that ozone's queue router will use to match reports. A queue with no criteria must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.",
+          "Create a new moderation queue. A queue with omitted or empty subjectTypes or reportTypes must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.",
       "input": {
         "encoding": "application/json",
         "schema": {
@@ -21395,12 +23673,25 @@ const toolsOzoneQueueCreateQueue = <String, dynamic>{
               "type": "string",
               "format": "nsid",
               "description":
-                  "Collection name for record subjects. Required if subjectTypes includes 'record'.",
+                  "Collection name for record subjects. Omit to accept every collection.",
             },
             "reportTypes": {
               "type": "array",
               "description": "Report reason types (fully qualified NSIDs)",
               "items": {"type": "string"},
+            },
+            "reporterTags": {
+              "type": "array",
+              "description":
+                  "Match any listed tag on the account submitting the report.",
+              "items": {"type": "string", "minLength": 1},
+              "maxLength": 25,
+            },
+            "accountTags": {
+              "type": "array",
+              "description":
+                  "Match any of these tags on the account that is being reported against.",
+              "items": {"type": "string", "minLength": 1},
               "maxLength": 25,
             },
             "description": {
@@ -21418,6 +23709,11 @@ const toolsOzoneQueueCreateQueue = <String, dynamic>{
               "description":
                   "Labels to recommend for this queue and use as fallback appeal routing mappings",
               "items": {"type": "string"},
+            },
+            "strictAccess": {
+              "type": "boolean",
+              "description":
+                  "Admins can always list this queue and browse its reports. Other roles require an active queue assignment. Individual report and moderation event access is unchanged.",
             },
           },
         },
@@ -21479,13 +23775,27 @@ const toolsOzoneQueueDefs = <String, dynamic>{
           "type": "string",
           "format": "nsid",
           "description":
-              "Collection name for record subjects (e.g., 'app.bsky.feed.post')",
+              "Collection name for record subjects. Omit to accept every collection.",
         },
         "reportTypes": {
           "type": "array",
           "description":
               "Report reason types this queue accepts (fully qualified NSIDs)",
           "items": {"type": "string"},
+        },
+        "reporterTags": {
+          "type": "array",
+          "description":
+              "Match any listed tag on the account submitting the report.",
+          "items": {"type": "string", "minLength": 1},
+          "maxLength": 25,
+        },
+        "accountTags": {
+          "type": "array",
+          "description":
+              "Match tags on the account that is being reported against. For record subjects, use the author account. Match any listed tag.",
+          "items": {"type": "string", "minLength": 1},
+          "maxLength": 25,
         },
         "description": {
           "type": "string",
@@ -21524,6 +23834,11 @@ const toolsOzoneQueueDefs = <String, dynamic>{
           "description": "Statistics about this queue",
           "ref": "#queueStats",
         },
+        "strictAccess": {
+          "type": "boolean",
+          "description":
+              "Admins can always list this queue and browse its reports. Other roles require an active queue assignment. Individual report and moderation event access is unchanged.",
+        },
       },
     },
     "queueStats": {
@@ -21532,34 +23847,104 @@ const toolsOzoneQueueDefs = <String, dynamic>{
       "properties": {
         "pendingCount": {
           "type": "integer",
-          "description": "Number of reports in 'open' status",
+          "description": "Number of unmuted reports currently not closed.",
+        },
+        "closureTargetOverdueCount": {
+          "type": "integer",
+          "description": "Unmuted pending reports past their closure target.",
+          "minimum": 0,
+        },
+        "closureTargetMetCount": {
+          "type": "integer",
+          "description": "Reports whose closure meets their closure target.",
+          "minimum": 0,
+        },
+        "closureTargetMissedCount": {
+          "type": "integer",
+          "description": "Reports whose closure exceeds their closure target.",
+          "minimum": 0,
+        },
+        "closureTargetMetRate": {
+          "type": "integer",
+          "description": "Percent of reports meeting their closure target.",
+          "minimum": 0,
+          "maximum": 100,
+        },
+        "closedCount": {
+          "type": "integer",
+          "description":
+              "Number of reports whose current closure falls within this UTC calendar day.",
         },
         "actionedCount": {
           "type": "integer",
-          "description": "Number of reports in 'closed' status",
+          "description":
+              "Number of closures whose last report action is label, tag, or takedown.",
+        },
+        "acknowledgedCount": {
+          "type": "integer",
+          "description":
+              "Number of closures whose last report action is not label, tag, or takedown.",
         },
         "escalatedCount": {
           "type": "integer",
-          "description": "Number of reports in 'escalated' status",
+          "description":
+              "Number of report escalation events during this UTC calendar day.",
         },
         "inboundCount": {
           "type": "integer",
-          "description": "Reports received in this queue in the last 24 hours.",
+          "description":
+              "Reports received in this queue during this UTC calendar day.",
+        },
+        "labelActionCount": {
+          "type": "integer",
+          "description": "Closures whose last report action is a label event.",
+        },
+        "tagActionCount": {
+          "type": "integer",
+          "description": "Closures whose last report action is a tag event.",
+        },
+        "takedownActionCount": {
+          "type": "integer",
+          "description":
+              "Closures whose last report action is a takedown event.",
+        },
+        "ahtDurationSec": {
+          "type": "integer",
+          "description": "Sum of report assignment-to-close seconds.",
+        },
+        "ahtSampleCount": {
+          "type": "integer",
+          "description":
+              "Number of assigned closed-report samples in ahtDurationSec.",
+        },
+        "resolutionDurationSec": {
+          "type": "integer",
+          "description": "Sum of report creation-to-close seconds.",
+        },
+        "resolutionSampleCount": {
+          "type": "integer",
+          "description":
+              "Number of closed-report samples in resolutionDurationSec.",
         },
         "actionRate": {
           "type": "integer",
           "description":
-              "Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer. Absent when inboundCount is 0.",
+              "Percentage of closures actioned (actionedCount / closedCount * 100), rounded to nearest integer.",
         },
         "avgHandlingTimeSec": {
           "type": "integer",
           "description":
-              "Average time in seconds from report creation to close, for reports closed in this period.",
+              "Average handling time in seconds from report assignment to close.",
+        },
+        "avgResolutionTimeSec": {
+          "type": "integer",
+          "description":
+              "Average resolution time in seconds from report creation to close.",
         },
         "lastUpdated": {
           "type": "string",
           "format": "datetime",
-          "description": "When these statistics were last computed",
+          "description": "When these statistics were last computed.",
         },
       },
     },
@@ -21884,6 +24269,11 @@ const toolsOzoneQueueUpdateQueue = <String, dynamic>{
                   "Labels to recommend for this queue and use as fallback appeal routing mappings",
               "items": {"type": "string"},
             },
+            "strictAccess": {
+              "type": "boolean",
+              "description":
+                  "Admins can always list this queue and browse its reports. Other roles require an active queue assignment. Individual report and moderation event access is unchanged.",
+            },
           },
         },
       },
@@ -21980,7 +24370,7 @@ const toolsOzoneReportCloseReports = <String, dynamic>{
     "main": {
       "type": "procedure",
       "description":
-          "Close all reports on a subject matching the given criteria. Reports whose current status does not permit a transition to closed are skipped silently. Intended for automated flows that resolve reports without taking action on the subject.",
+          "Close eligible reports on a subject matching the given criteria. Assigned and escalated reports are excluded. Reports whose current status does not permit a transition to closed are skipped silently. Intended for automated flows that resolve reports without taking action on the subject.",
       "input": {
         "encoding": "application/json",
         "schema": {
@@ -21993,10 +24383,22 @@ const toolsOzoneReportCloseReports = <String, dynamic>{
               "description":
                   "Subject DID (account-level reports) or AT-URI (record-level reports) whose reports should be closed.",
             },
+            "includeAllOwned": {
+              "type": "boolean",
+              "description":
+                  "If true, also close reports on all subjects owned by the account, including records, messages, and conversations. Only valid when subject is an account DID.",
+              "default": false,
+            },
             "reportTypes": {
               "type": "array",
               "description":
-                  "If specified, only reports of the given report types (fully qualified reason NSIDs) are closed. When omitted, all non-closed reports on the subject are targeted.",
+                  "If nonempty, only reports of the given report types (fully qualified reason NSIDs) are closed. When omitted or empty, all eligible reports in the requested subject scope are targeted, except excludedReportTypes. Assigned and escalated reports are always excluded.",
+              "items": {"type": "string"},
+            },
+            "excludedReportTypes": {
+              "type": "array",
+              "description":
+                  "Reports of these types (fully qualified reason NSIDs) are excluded from closure and left unchanged. When omitted or empty, no report types are excluded.",
               "items": {"type": "string"},
             },
             "internalNote": {
@@ -22009,6 +24411,11 @@ const toolsOzoneReportCloseReports = <String, dynamic>{
               "description":
                   "Set true when this action is triggered by an automated process. Defaults to false.",
               "default": false,
+            },
+            "meta": {
+              "type": "unknown",
+              "description":
+                  "Optional metadata for the report activities. Lifecycle and resolution fields are controlled by the service.",
             },
           },
         },
@@ -22088,6 +24495,11 @@ const toolsOzoneReportCreateActivity = <String, dynamic>{
               "description":
                   "Set true when this activity is triggered by an automated process. Defaults to false.",
               "default": false,
+            },
+            "meta": {
+              "type": "unknown",
+              "description":
+                  "Optional metadata for the report activities. Lifecycle and resolution fields are controlled by the service.",
             },
           },
         },
@@ -22377,6 +24789,33 @@ const toolsOzoneReportDefs = <String, dynamic>{
           "description": "Type of report",
           "ref": "com.atproto.moderation.defs#reasonType",
         },
+        "priorityLevel": {
+          "type": "string",
+          "description": "Priority level assigned to the report.",
+        },
+        "priorityScore": {
+          "type": "integer",
+          "description":
+              "Report priority score. Higher scores have higher priority.",
+          "minimum": 0,
+          "maximum": 100,
+        },
+        "priorityTargetMinutes": {
+          "type": "integer",
+          "description": "Target resolution duration in minutes.",
+          "minimum": 1,
+          "maximum": 2147483647,
+        },
+        "resolutionTimeSec": {
+          "type": "integer",
+          "description": "Time from report creation to its last closure.",
+          "minimum": 0,
+        },
+        "priorityTargetMet": {
+          "type": "boolean",
+          "description":
+              "Whether the current closure occurred within the report's snapshotted target.",
+        },
         "reportedBy": {
           "type": "string",
           "format": "did",
@@ -22625,7 +25064,28 @@ const toolsOzoneReportDefs = <String, dynamic>{
       "properties": {
         "pendingCount": {
           "type": "integer",
-          "description": "Number of reports currently not closed.",
+          "description": "Number of unmuted reports currently not closed.",
+        },
+        "closureTargetOverdueCount": {
+          "type": "integer",
+          "description": "Unmuted pending reports past their closure target.",
+          "minimum": 0,
+        },
+        "closureTargetMetCount": {
+          "type": "integer",
+          "description": "Reports whose closure meets their closure target.",
+          "minimum": 0,
+        },
+        "closureTargetMissedCount": {
+          "type": "integer",
+          "description": "Reports whose closure exceeds their closure target.",
+          "minimum": 0,
+        },
+        "closureTargetMetRate": {
+          "type": "integer",
+          "description": "Percent of reports meeting their closure target.",
+          "minimum": 0,
+          "maximum": 100,
         },
         "closedCount": {
           "type": "integer",
@@ -22716,7 +25176,30 @@ const toolsOzoneReportDefs = <String, dynamic>{
         },
         "pendingCount": {
           "type": "integer",
-          "description": "Number of reports not closed at time of computation.",
+          "description":
+              "Number of unmuted reports not closed at the end of this UTC day, or at computation time for the current day.",
+        },
+        "closureTargetOverdueCount": {
+          "type": "integer",
+          "description":
+              "Unmuted pending reports past their closure target at the snapshot time.",
+          "minimum": 0,
+        },
+        "closureTargetMetCount": {
+          "type": "integer",
+          "description": "Reports whose closure meets their closure target.",
+          "minimum": 0,
+        },
+        "closureTargetMissedCount": {
+          "type": "integer",
+          "description": "Reports whose closure exceeds their closure target.",
+          "minimum": 0,
+        },
+        "closureTargetMetRate": {
+          "type": "integer",
+          "description": "Percent of reports meeting their closure target.",
+          "minimum": 0,
+          "maximum": 100,
         },
         "closedCount": {
           "type": "integer",
@@ -23461,6 +25944,12 @@ const toolsOzoneSafelinkAddRule = <String, dynamic>{
               "type": "ref",
               "ref": "tools.ozone.safelink.defs#reasonType",
             },
+            "source": {
+              "type": "string",
+              "description": "Source of the rule",
+              "default": "ozone/default",
+              "maxLength": 128,
+            },
             "comment": {
               "type": "string",
               "description": "Optional comment about the decision",
@@ -23482,6 +25971,11 @@ const toolsOzoneSafelinkAddRule = <String, dynamic>{
         {
           "name": "RuleAlreadyExists",
           "description": "A rule for this URL/domain already exists",
+        },
+        {
+          "name": "RuleSourceConflict",
+          "description":
+              "A rule for this URL/domain is owned by another source",
         },
       ],
     },
@@ -23516,6 +26010,11 @@ const toolsOzoneSafelinkDefs = <String, dynamic>{
         "pattern": {"type": "ref", "ref": "#patternType"},
         "action": {"type": "ref", "ref": "#actionType"},
         "reason": {"type": "ref", "ref": "#reasonType"},
+        "source": {
+          "type": "string",
+          "description": "Source of the decision",
+          "default": "ozone/default",
+        },
         "createdBy": {
           "type": "string",
           "format": "did",
@@ -23546,7 +26045,7 @@ const toolsOzoneSafelinkDefs = <String, dynamic>{
     },
     "urlRule": {
       "type": "object",
-      "description": "Input for creating a URL safety rule",
+      "description": "An active URL safety rule",
       "required": [
         "url",
         "pattern",
@@ -23564,6 +26063,11 @@ const toolsOzoneSafelinkDefs = <String, dynamic>{
         "pattern": {"type": "ref", "ref": "#patternType"},
         "action": {"type": "ref", "ref": "#actionType"},
         "reason": {"type": "ref", "ref": "#reasonType"},
+        "source": {
+          "type": "string",
+          "description": "Source of the rule",
+          "default": "ozone/default",
+        },
         "comment": {
           "type": "string",
           "description": "Optional comment about the decision",
@@ -23697,6 +26201,12 @@ const toolsOzoneSafelinkQueryRules = <String, dynamic>{
               "type": "string",
               "description": "Filter by reason type",
             },
+            "source": {
+              "type": "string",
+              "description":
+                  "Filter by exact rule source. Omit to include all sources.",
+              "maxLength": 128,
+            },
             "createdBy": {
               "type": "string",
               "format": "did",
@@ -23758,6 +26268,12 @@ const toolsOzoneSafelinkRemoveRule = <String, dynamic>{
               "type": "ref",
               "ref": "tools.ozone.safelink.defs#patternType",
             },
+            "source": {
+              "type": "string",
+              "description": "Source of the rule to remove",
+              "default": "ozone/default",
+              "maxLength": 128,
+            },
             "comment": {
               "type": "string",
               "description":
@@ -23782,6 +26298,69 @@ const toolsOzoneSafelinkRemoveRule = <String, dynamic>{
           "description": "No active rule found for this URL/domain",
         },
       ],
+    },
+  },
+};
+
+/// `tools.ozone.safelink.syncSource`
+const toolsOzoneSafelinkSyncSource = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.safelink.syncSource",
+  "defs": {
+    "main": {
+      "type": "procedure",
+      "description":
+          "Replace stored rules for one source from a complete snapshot. Existing rules owned by another source remain unchanged.",
+      "input": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["source", "rules"],
+          "properties": {
+            "source": {
+              "type": "string",
+              "description": "Source whose rules are being synchronized",
+              "maxLength": 128,
+            },
+            "rules": {
+              "type": "array",
+              "items": {"type": "ref", "ref": "#sourceRule"},
+            },
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["added", "updated", "removed", "events"],
+          "properties": {
+            "added": {"type": "integer"},
+            "updated": {"type": "integer"},
+            "removed": {"type": "integer"},
+            "events": {"type": "integer"},
+          },
+        },
+      },
+    },
+    "sourceRule": {
+      "type": "object",
+      "required": ["url", "pattern", "action", "reason"],
+      "properties": {
+        "url": {"type": "string"},
+        "pattern": {
+          "type": "ref",
+          "ref": "tools.ozone.safelink.defs#patternType",
+        },
+        "action": {
+          "type": "ref",
+          "ref": "tools.ozone.safelink.defs#actionType",
+        },
+        "reason": {
+          "type": "ref",
+          "ref": "tools.ozone.safelink.defs#reasonType",
+        },
+      },
     },
   },
 };
@@ -23816,6 +26395,12 @@ const toolsOzoneSafelinkUpdateRule = <String, dynamic>{
               "type": "ref",
               "ref": "tools.ozone.safelink.defs#reasonType",
             },
+            "source": {
+              "type": "string",
+              "description": "Source of the rule to update",
+              "default": "ozone/default",
+              "maxLength": 128,
+            },
             "comment": {
               "type": "string",
               "description": "Optional comment about the update",
@@ -23838,7 +26423,46 @@ const toolsOzoneSafelinkUpdateRule = <String, dynamic>{
           "name": "RuleNotFound",
           "description": "No active rule found for this URL/domain",
         },
+        {
+          "name": "RuleSourceConflict",
+          "description":
+              "A rule for this URL/domain is owned by another source",
+        },
       ],
+    },
+  },
+};
+
+/// `tools.ozone.server.getCapabilities`
+const toolsOzoneServerGetCapabilities = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.server.getCapabilities",
+  "defs": {
+    "main": {
+      "type": "query",
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "notifications": {"type": "ref", "ref": "#notificationConfig"},
+          },
+        },
+      },
+    },
+    "notificationConfig": {
+      "type": "object",
+      "required": ["channels"],
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "knownValues": ["inApp", "push"],
+          },
+          "minLength": 1,
+        },
+      },
     },
   },
 };
@@ -24658,6 +27282,52 @@ const toolsOzoneTeamListMembers = <String, dynamic>{
   },
 };
 
+/// `tools.ozone.team.listOnlineMembers`
+const toolsOzoneTeamListOnlineMembers = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.team.listOnlineMembers",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "List recent active team members, ordered by latest activity.",
+      "parameters": {
+        "type": "params",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 100,
+          },
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["members"],
+          "properties": {
+            "members": {
+              "type": "array",
+              "items": {"type": "ref", "ref": "#onlineMember"},
+              "maxLength": 100,
+            },
+          },
+        },
+      },
+    },
+    "onlineMember": {
+      "type": "object",
+      "required": ["did", "lastActive"],
+      "properties": {
+        "did": {"type": "string", "format": "did"},
+        "lastActive": {"type": "string", "format": "datetime"},
+      },
+    },
+  },
+};
+
 /// `tools.ozone.team.updateMember`
 const toolsOzoneTeamUpdateMember = <String, dynamic>{
   "lexicon": 1,
@@ -25039,6 +27709,7 @@ const lexicons = <Map<String, dynamic>>[
   appBskyActorGetProfile,
   appBskyActorGetProfiles,
   appBskyActorGetSuggestions,
+  appBskyActorLink,
   appBskyActorProfile,
   appBskyActorPutPreferences,
   appBskyActorSearchActors,
@@ -25152,6 +27823,8 @@ const lexicons = <Map<String, dynamic>>[
   appBskyRichtextFacet,
   appBskyUnspeccedDefs,
   appBskyUnspeccedGetAgeAssuranceState,
+  appBskyUnspeccedGetAtmosphereExploreArticleRecommendations,
+  appBskyUnspeccedGetAtmosphereExploreTab,
   appBskyUnspeccedGetConfig,
   appBskyUnspeccedGetOnboardingSuggestedStarterPacks,
   appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton,
@@ -25343,12 +28016,23 @@ const lexicons = <Map<String, dynamic>>[
   comAtprotoTempRequestPhoneVerification,
   comAtprotoTempRevokeAccountCredentials,
   comGermnetworkDeclaration,
+  placeStreamBadgeDefs,
+  placeStreamChatDefs,
+  placeStreamChatPinnedRecord,
+  placeStreamChatProfile,
+  placeStreamDefs,
+  placeStreamLivestream,
   siteStandardDocument,
   siteStandardGraphRecommend,
   siteStandardGraphSubscription,
   siteStandardPublication,
   siteStandardThemeBasic,
   siteStandardThemeColor,
+  socialGrainDefs,
+  socialGrainFavorite,
+  socialGrainGallery,
+  socialGrainGalleryItem,
+  socialGrainPhoto,
   toolsOzoneCommunicationCreateTemplate,
   toolsOzoneCommunicationDefs,
   toolsOzoneCommunicationDeleteTemplate,
@@ -25357,6 +28041,16 @@ const lexicons = <Map<String, dynamic>>[
   toolsOzoneHostingGetAccountHistory,
   toolsOzoneInboxAppealActionedSubject,
   toolsOzoneInboxDefs,
+  toolsOzoneInboxGetAccountStatus,
+  toolsOzoneInboxGetActionedSubject,
+  toolsOzoneInboxGetNotificationPreferences,
+  toolsOzoneInboxGetReport,
+  toolsOzoneInboxGetUnreadCount,
+  toolsOzoneInboxListActionedSubjects,
+  toolsOzoneInboxListNotifications,
+  toolsOzoneInboxListReports,
+  toolsOzoneInboxPutNotificationPreferences,
+  toolsOzoneInboxUpdateSeen,
   toolsOzoneModerationCancelScheduledActions,
   toolsOzoneModerationDefs,
   toolsOzoneModerationEmitEvent,
@@ -25403,7 +28097,9 @@ const lexicons = <Map<String, dynamic>>[
   toolsOzoneSafelinkQueryEvents,
   toolsOzoneSafelinkQueryRules,
   toolsOzoneSafelinkRemoveRule,
+  toolsOzoneSafelinkSyncSource,
   toolsOzoneSafelinkUpdateRule,
+  toolsOzoneServerGetCapabilities,
   toolsOzoneServerGetConfig,
   toolsOzoneSetAddValues,
   toolsOzoneSetDefs,
@@ -25424,6 +28120,7 @@ const lexicons = <Map<String, dynamic>>[
   toolsOzoneTeamDefs,
   toolsOzoneTeamDeleteMember,
   toolsOzoneTeamListMembers,
+  toolsOzoneTeamListOnlineMembers,
   toolsOzoneTeamUpdateMember,
   toolsOzoneVerificationDefs,
   toolsOzoneVerificationGrantVerifications,

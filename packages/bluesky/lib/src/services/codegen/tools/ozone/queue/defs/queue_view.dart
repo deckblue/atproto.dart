@@ -30,6 +30,8 @@ abstract class QueueView with _$QueueView {
     'subjectTypes',
     'collection',
     'reportTypes',
+    'reporterTags',
+    'accountTags',
     'description',
     'recommendedPolicies',
     'recommendedLabels',
@@ -39,6 +41,7 @@ abstract class QueueView with _$QueueView {
     'enabled',
     'deletedAt',
     'stats',
+    'strictAccess',
   ];
 
   @JsonSerializable(includeIfNull: false)
@@ -52,9 +55,11 @@ abstract class QueueView with _$QueueView {
     required String name,
     @QueueViewSubjectTypesConverter() List<QueueViewSubjectTypes>? subjectTypes,
 
-    /// Collection name for record subjects (e.g., 'app.bsky.feed.post')
+    /// Collection name for record subjects. Omit to accept every collection.
     String? collection,
     List<String>? reportTypes,
+    List<String>? reporterTags,
+    List<String>? accountTags,
 
     /// Optional description of the queue
     String? description,
@@ -74,6 +79,10 @@ abstract class QueueView with _$QueueView {
 
     /// Statistics about this queue
     @QueueStatsConverter() required QueueStats stats,
+
+    /// Admins can always list this queue and browse its reports. Other roles require an active queue assignment. Individual report and moderation event access is unchanged.
+    bool? strictAccess,
+
     Map<String, dynamic>? $unknown,
   }) = _QueueView;
 
@@ -95,6 +104,8 @@ extension QueueViewExtension on QueueView {
   bool get isNotEnabled => !isEnabled;
   bool get hasDeletedAt => deletedAt != null;
   bool get hasNotDeletedAt => !hasDeletedAt;
+  bool get isStrictAccess => strictAccess ?? false;
+  bool get isNotStrictAccess => !isStrictAccess;
 }
 
 final class QueueViewConverter

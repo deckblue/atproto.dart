@@ -16,6 +16,7 @@ import '../../../../nsids.g.dart' as ns;
 import 'team/addMember/main_role.dart';
 import 'team/defs/member.dart';
 import 'team/listMembers/output.dart';
+import 'team/listOnlineMembers/output.dart';
 import 'team/updateMember/main_role.dart';
 
 // **************************************************************************
@@ -80,6 +81,22 @@ Future<XRPCResponse<TeamListMembersOutput>> toolsOzoneTeamListMembers({
       },
       to: const TeamListMembersOutputConverter().fromJson,
     );
+
+/// List recent active team members, ordered by latest activity.
+Future<XRPCResponse<TeamListOnlineMembersOutput>>
+toolsOzoneTeamListOnlineMembers({
+  int? limit,
+  required ServiceContext $ctx,
+  String? $service,
+  Map<String, String>? $headers,
+  Map<String, String>? $unknown,
+}) async => await $ctx.get(
+  ns.toolsOzoneTeamListOnlineMembers,
+  service: $service,
+  headers: $headers,
+  parameters: {...?$unknown, if (limit != null) 'limit': limit},
+  to: const TeamListOnlineMembersOutputConverter().fromJson,
+);
 
 /// Update a member in the ozone service. Requires admin role.
 Future<XRPCResponse<Member>> toolsOzoneTeamUpdateMember({
@@ -165,6 +182,20 @@ base class TeamService {
         $headers: $headers,
         $unknown: $unknown,
       );
+
+  /// List recent active team members, ordered by latest activity.
+  Future<XRPCResponse<TeamListOnlineMembersOutput>> listOnlineMembers({
+    int? limit,
+    String? $service,
+    Map<String, String>? $headers,
+    Map<String, String>? $unknown,
+  }) async => await toolsOzoneTeamListOnlineMembers(
+    limit: limit,
+    $ctx: ctx,
+    $service: $service,
+    $headers: $headers,
+    $unknown: $unknown,
+  );
 
   /// Update a member in the ozone service. Requires admin role.
   Future<XRPCResponse<Member>> updateMember({

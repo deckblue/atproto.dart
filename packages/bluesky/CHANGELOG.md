@@ -1,5 +1,250 @@
 # Release Note
 
+## v2.15.4
+
+- chore: updated `tools.ozone.moderation.emitEvent#reportAction.all`
+- chore: updated `tools.ozone.moderation.emitEvent#reportAction.types`
+- chore: updated `tools.ozone.report.closeReports`
+- chore: updated `tools.ozone.report.closeReports.input.reportTypes`
+- feat: added `tools.ozone.team.listOnlineMembers`
+- feat: added `tools.ozone.team.listOnlineMembers#onlineMember`
+- chore: regenerated from synced lexicons
+
+## v2.15.3
+
+- feat: added `tools.ozone.moderation.emitEvent#reportAction.isAutomated`
+- feat: added `tools.ozone.report.closeReports.input.excludedReportTypes`
+- feat: added `tools.ozone.report.closeReports.input.meta`
+- chore: updated `tools.ozone.report.closeReports.input.reportTypes`
+- feat: added `tools.ozone.report.createActivity.input.meta`
+- chore: regenerated from synced lexicons
+
+## v2.15.2
+
+- chore: updated `app.bsky.actor.defs#profileViewDetailed.website`
+- chore: updated `app.bsky.actor.profile.website`
+- feat: added `tools.ozone.report.closeReports.input.includeAllOwned`
+- chore: regenerated from synced lexicons
+
+## v2.15.1
+
+- feat: added `tools.ozone.queue.createQueue.input.strictAccess`
+- feat: added `tools.ozone.queue.defs#queueView.strictAccess`
+- feat: added `tools.ozone.queue.updateQueue.input.strictAccess`
+- feat: added `tools.ozone.safelink.queryRules.input.source`
+- chore: regenerated from synced lexicons
+
+## v2.15.0
+
+- chore: updated `app.bsky.graph.getFollowers.parameters.sort`
+- chore: updated `app.bsky.graph.getFollows.parameters.sort`
+- fix!: removed `app.bsky.unspecced.getOnboardingSuggestedStarterPacks.output.recIdStr` (BREAKING)
+- fix!: removed `app.bsky.unspecced.getOnboardingSuggestedStarterPacksSkeleton.output.recIdStr` (BREAKING)
+- fix!: removed `app.bsky.unspecced.getSuggestedFeeds.output.recIdStr` (BREAKING)
+- fix!: removed `app.bsky.unspecced.getSuggestedFeedsSkeleton.output.recIdStr` (BREAKING)
+- fix!: removed `app.bsky.unspecced.getSuggestedStarterPacks.output.recIdStr` (BREAKING)
+- fix!: removed `app.bsky.unspecced.getSuggestedStarterPacksSkeleton.output.recIdStr` (BREAKING)
+- feat: added `chat.bsky.convo.leaveConvo.errors.AlreadyLeftConvo`
+- feat: added `tools.ozone.moderation.defs#modEventReverseTakedown.strikeExpiresAt`
+- chore: updated `tools.ozone.queue.createQueue`
+- feat: added `tools.ozone.queue.createQueue.input.accountTags`
+- chore: updated `tools.ozone.queue.createQueue.input.collection`
+- chore: updated `tools.ozone.queue.createQueue.input.reportTypes`
+- feat: added `tools.ozone.queue.createQueue.input.reporterTags`
+- feat: added `tools.ozone.queue.defs#queueView.accountTags`
+- chore: updated `tools.ozone.queue.defs#queueView.collection`
+- feat: added `tools.ozone.queue.defs#queueView.reporterTags`
+- chore: regenerated from synced lexicons
+
+## v2.14.1
+
+- feat: added `tools.ozone.safelink.addRule.errors.RuleSourceConflict`
+- feat: added `tools.ozone.safelink.addRule.input.source`
+- feat: added `tools.ozone.safelink.defs#event.source`
+- chore: updated `tools.ozone.safelink.defs#urlRule`
+- feat: added `tools.ozone.safelink.defs#urlRule.source`
+- feat: added `tools.ozone.safelink.removeRule.input.source`
+- feat: added `tools.ozone.safelink.syncSource`
+- feat: added `tools.ozone.safelink.syncSource#sourceRule`
+- feat: added `tools.ozone.safelink.updateRule.errors.RuleSourceConflict`
+- feat: added `tools.ozone.safelink.updateRule.input.source`
+- chore: regenerated from synced lexicons
+
+## v2.14.0
+
+- feat: added `app.bsky.unspecced.getAtmosphereExploreArticleRecommendations#article`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreArticleRecommendations`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#articleList`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#galleryList`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#livestreamList`
+- chore: updated `app.bsky.unspecced.getAtmosphereExploreTab`
+- fix!: `app.bsky.unspecced.getAtmosphereExploreTab.output.articles` changed type (array<ref(#articleItem)> -> ref(#articleList)) (BREAKING)
+- fix!: `app.bsky.unspecced.getAtmosphereExploreTab.output.livestreams` changed type (array<ref(#livestreamItem)> -> ref(#livestreamList)) (BREAKING)
+- fix!: `app.bsky.unspecced.getAtmosphereExploreTab.output.photos` changed type (array<ref(#galleryItem)> -> ref(#galleryList)) (BREAKING)
+- fix!: `app.bsky.unspecced.getAtmosphereExploreTab.output.publications` changed type (array<ref(#publicationItem)> -> ref(#publicationList)) (BREAKING)
+- chore: updated `app.bsky.unspecced.getAtmosphereExploreTab.parameters.langs`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#publicationList`
+- feat: added `tools.ozone.queue.defs#queueStats.acknowledgedCount`
+- chore: updated `tools.ozone.queue.defs#queueStats.actionRate`
+- chore: updated `tools.ozone.queue.defs#queueStats.actionedCount`
+- feat: added `tools.ozone.queue.defs#queueStats.ahtDurationSec`
+- feat: added `tools.ozone.queue.defs#queueStats.ahtSampleCount`
+- chore: updated `tools.ozone.queue.defs#queueStats.avgHandlingTimeSec`
+- feat: added `tools.ozone.queue.defs#queueStats.avgResolutionTimeSec`
+- feat: added `tools.ozone.queue.defs#queueStats.closedCount`
+- chore: updated `tools.ozone.queue.defs#queueStats.escalatedCount`
+- chore: updated `tools.ozone.queue.defs#queueStats.inboundCount`
+- feat: added `tools.ozone.queue.defs#queueStats.labelActionCount`
+- chore: updated `tools.ozone.queue.defs#queueStats.lastUpdated`
+- feat: added `tools.ozone.queue.defs#queueStats.resolutionDurationSec`
+- feat: added `tools.ozone.queue.defs#queueStats.resolutionSampleCount`
+- feat: added `tools.ozone.queue.defs#queueStats.tagActionCount`
+- feat: added `tools.ozone.queue.defs#queueStats.takedownActionCount`
+- chore: regenerated from synced lexicons
+
+## v2.13.1
+
+- feat: added `app.bsky.notification.getGroupedNotifications#subscribedPostItem.parent`
+- feat: added `tools.ozone.inbox.defs#appealView.outcome`
+- feat: added `tools.ozone.inbox.defs#subjectRef.appealOutcome`
+- chore: regenerated from synced lexicons
+
+## v2.13.0
+
+- feat: added `app.bsky.actor.defs#profileLinkView.labels`
+- feat: added `app.bsky.actor.link.labels`
+- chore: updated `tools.ozone.inbox.defs#notificationPreferences`
+- feat: added `tools.ozone.inbox.defs#notificationPreferences.account`
+- feat: added `tools.ozone.inbox.defs#notificationPreferences.labels`
+- fix!: removed `tools.ozone.inbox.defs#notificationPreferences.push` (BREAKING)
+- feat: added `tools.ozone.inbox.defs#notificationPreferences.reports`
+- chore: updated `tools.ozone.inbox.getNotificationPreferences`
+- chore: updated `tools.ozone.inbox.putNotificationPreferences`
+- feat: added `tools.ozone.inbox.putNotificationPreferences.input.account`
+- feat: added `tools.ozone.inbox.putNotificationPreferences.input.labels`
+- fix!: removed `tools.ozone.inbox.putNotificationPreferences.input.push` (BREAKING)
+- feat: added `tools.ozone.inbox.putNotificationPreferences.input.reports`
+- chore: regenerated from synced lexicons
+
+## v2.12.1
+
+- chore: updated `app.bsky.embed.getEmbedExternalView`
+- chore: updated `app.bsky.embed.getEmbedExternalView.output.associatedRecords`
+- chore: updated `app.bsky.embed.getEmbedExternalView.output.associatedRefs`
+- chore: updated `app.bsky.embed.getEmbedExternalView.output.data`
+- feat: added `app.bsky.embed.getEmbedExternalView.output.unverifiedAssociatedRecords`
+- feat: added `app.bsky.embed.getEmbedExternalView.output.unverifiedAssociatedRefs`
+- chore: updated `app.bsky.embed.getEmbedExternalView.output.view`
+- feat: added `app.bsky.embed.getEmbedExternalView.parameters.canonicalUri`
+- chore: `app.bsky.embed.getEmbedExternalView.parameters.uris` is now optional
+- chore: updated `app.bsky.embed.getEmbedExternalView.parameters.url`
+- chore: regenerated from synced lexicons
+
+## v2.12.0
+
+- fix!: `app.bsky.notification.getGroupedNotifications#group.kind` changed type (union([#likeGroup, #multiPostLikeGroup, #repostGroup, #likeViaRepostGroup, #repostViaRepostGroup, #followGroup, #subscribedPostGroup, #generatorLikeGroup, #replyNotification, #quoteNotification, #mentionNotification, #followBackNotification, #verifiedNotification, #unverifiedNotification, #starterPackJoinedNotification, #contactMatchNotification]) -> union([#likeGroup, #multiPostLikeGroup, #multiPostRepostGroup, #multiPostLikeViaRepostGroup, #multiPostRepostViaRepostGroup, #repostGroup, #likeViaRepostGroup, #repostViaRepostGroup, #followGroup, #subscribedPostGroup, #generatorLikeGroup, #replyNotification, #quoteNotification, #mentionNotification, #followBackNotification, #verifiedNotification, #unverifiedNotification, #starterPackJoinedNotification, #contactMatchNotification])) (BREAKING)
+- fix!: `app.bsky.notification.getGroupedNotifications.output.relatedViews` changed type (array<union([app.bsky.actor.defs#profileViewDetailed, app.bsky.feed.defs#blockedPost, app.bsky.feed.defs#generatorView, app.bsky.feed.defs#notFoundPost, app.bsky.feed.defs#postView, app.bsky.graph.defs#starterPackView])> -> array<union([app.bsky.actor.defs#profileViewBasic, app.bsky.feed.defs#blockedPost, app.bsky.feed.defs#generatorView, app.bsky.feed.defs#notFoundPost, app.bsky.feed.defs#postView, app.bsky.graph.defs#starterPackViewBasic])>) (BREAKING)
+- feat: added `app.bsky.notification.getGroupedNotifications#multiPostLikeViaRepostGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#multiPostLikeViaRepostItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#multiPostRepostGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#multiPostRepostItem`
+- feat: added `app.bsky.notification.getGroupedNotifications#multiPostRepostViaRepostGroup`
+- feat: added `app.bsky.notification.getGroupedNotifications#multiPostRepostViaRepostItem`
+- chore: regenerated from synced lexicons
+
+## v2.11.2
+
+- feat: added `app.bsky.actor.defs#profileLinkView`
+- feat: added `app.bsky.actor.defs#profileViewDetailed.links`
+- feat: added `app.bsky.actor.link`
+- feat: added `app.bsky.actor.profile.links`
+- chore: regenerated from synced lexicons
+
+## v2.11.1
+
+- feat: added `app.bsky.embed.external#viewArticle`
+- feat: added `app.bsky.embed.external#viewArticlePublication`
+- feat: added `app.bsky.embed.external#viewArticlePublicationTheme`
+- feat: added `app.bsky.embed.external#viewGallery`
+- feat: added `app.bsky.embed.external#viewGalleryImage`
+- feat: added `app.bsky.embed.external#viewLivestream`
+- feat: added `app.bsky.embed.getEmbedExternalView.output.data`
+- feat: added `app.bsky.embed.record#viewRecord.opThreadPostCount`
+- feat: added `app.bsky.embed.record#viewRecord.opThreadPostIndex`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#announcementBanner`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#appCard`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#articleItem`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#galleryItem`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#livestreamItem`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab`
+- feat: added `app.bsky.unspecced.getAtmosphereExploreTab#publicationItem`
+- feat: added `tools.ozone.queue.defs#queueStats.closureTargetMetCount`
+- feat: added `tools.ozone.queue.defs#queueStats.closureTargetMetRate`
+- feat: added `tools.ozone.queue.defs#queueStats.closureTargetMissedCount`
+- feat: added `tools.ozone.queue.defs#queueStats.closureTargetOverdueCount`
+- chore: updated `tools.ozone.queue.defs#queueStats.pendingCount`
+- feat: added `tools.ozone.report.defs#historicalStats.closureTargetMetCount`
+- feat: added `tools.ozone.report.defs#historicalStats.closureTargetMetRate`
+- feat: added `tools.ozone.report.defs#historicalStats.closureTargetMissedCount`
+- feat: added `tools.ozone.report.defs#historicalStats.closureTargetOverdueCount`
+- chore: updated `tools.ozone.report.defs#historicalStats.pendingCount`
+- feat: added `tools.ozone.report.defs#liveStats.closureTargetMetCount`
+- feat: added `tools.ozone.report.defs#liveStats.closureTargetMetRate`
+- feat: added `tools.ozone.report.defs#liveStats.closureTargetMissedCount`
+- feat: added `tools.ozone.report.defs#liveStats.closureTargetOverdueCount`
+- chore: updated `tools.ozone.report.defs#liveStats.pendingCount`
+- feat: added `tools.ozone.report.defs#reportView.priorityLevel`
+- feat: added `tools.ozone.report.defs#reportView.priorityScore`
+- feat: added `tools.ozone.report.defs#reportView.priorityTargetMet`
+- feat: added `tools.ozone.report.defs#reportView.priorityTargetMinutes`
+- feat: added `tools.ozone.report.defs#reportView.resolutionTimeSec`
+- chore: regenerated from synced lexicons
+
+## v2.11.0
+
+- fix!: `tools.ozone.inbox.defs#actionView.policies` changed type (array<string> -> array<ref(#policyView)>) (BREAKING)
+- fix!: removed `tools.ozone.inbox.defs#appealView.note` (BREAKING)
+- feat: added `tools.ozone.inbox.defs#notification`
+- feat: added `tools.ozone.inbox.defs#notificationPreferences`
+- feat: added `tools.ozone.inbox.defs#policyView`
+- feat: added `tools.ozone.inbox.defs#reportRef`
+- feat: added `tools.ozone.inbox.defs#reportsSummary`
+- feat: added `tools.ozone.inbox.defs#standingRef`
+- feat: added `tools.ozone.inbox.defs#subjectRef`
+- feat: added `tools.ozone.inbox.defs#subjectView.isRead`
+- feat: added `tools.ozone.inbox.defs#subjectViewDetail`
+- feat: added `tools.ozone.inbox.getAccountStatus`
+- feat: added `tools.ozone.inbox.getActionedSubject`
+- feat: added `tools.ozone.inbox.getNotificationPreferences`
+- feat: added `tools.ozone.inbox.getReport`
+- feat: added `tools.ozone.inbox.getReport#reportView`
+- feat: added `tools.ozone.inbox.getReport#resolutionView`
+- feat: added `tools.ozone.inbox.getUnreadCount`
+- feat: added `tools.ozone.inbox.getUnreadCount#unreadCounts`
+- feat: added `tools.ozone.inbox.listActionedSubjects`
+- feat: added `tools.ozone.inbox.listNotifications`
+- feat: added `tools.ozone.inbox.listReports`
+- feat: added `tools.ozone.inbox.listReports#reportView`
+- feat: added `tools.ozone.inbox.putNotificationPreferences`
+- feat: added `tools.ozone.inbox.updateSeen`
+- feat: added `tools.ozone.moderation.defs#modEventReport.appealActionId`
+- feat: added `tools.ozone.moderation.defs#modEventReport.appealActionType`
+- feat: added `tools.ozone.moderation.defs#modEventReport.appealLabel`
+- feat: added `tools.ozone.moderation.defs#modEventReport.appealSubmittedBy`
+- feat: added `tools.ozone.server.getCapabilities`
+- feat: added `tools.ozone.server.getCapabilities#notificationConfig`
+- chore: regenerated from synced lexicons
+
+## v2.10.1
+
+- feat: added `app.bsky.unspecced.getOnboardingSuggestedStarterPacks.output.recIdStr`
+- feat: added `app.bsky.unspecced.getOnboardingSuggestedStarterPacksSkeleton.output.recIdStr`
+- feat: added `app.bsky.unspecced.getSuggestedFeeds.output.recIdStr`
+- feat: added `app.bsky.unspecced.getSuggestedFeedsSkeleton.output.recIdStr`
+- feat: added `app.bsky.unspecced.getSuggestedStarterPacks.output.recIdStr`
+- feat: added `app.bsky.unspecced.getSuggestedStarterPacksSkeleton.output.recIdStr`
+- chore: regenerated from synced lexicons
+
 ## v2.10.0
 
 - feat: added `app.bsky.notification.getGroupedNotifications#contactMatchNotification`

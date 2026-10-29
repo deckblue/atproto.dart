@@ -90,6 +90,9 @@ const appBskyActorDefsProfileAssociatedChat =
 const appBskyActorDefsProfileAssociatedGerm =
     'app.bsky.actor.defs#profileAssociatedGerm';
 
+/// `app.bsky.actor.defs#profileLinkView`
+const appBskyActorDefsProfileLinkView = 'app.bsky.actor.defs#profileLinkView';
+
 /// `app.bsky.actor.defs#profileView`
 const appBskyActorDefsProfileView = 'app.bsky.actor.defs#profileView';
 
@@ -140,6 +143,9 @@ const appBskyActorGetProfiles = 'app.bsky.actor.getProfiles';
 
 /// `app.bsky.actor.getSuggestions`
 const appBskyActorGetSuggestions = 'app.bsky.actor.getSuggestions';
+
+/// `app.bsky.actor.link`
+const appBskyActorLink = 'app.bsky.actor.link';
 
 /// `app.bsky.actor.profile`
 const appBskyActorProfile = 'app.bsky.actor.profile';
@@ -353,6 +359,17 @@ const appBskyEmbedExternalExternal = 'app.bsky.embed.external#external';
 /// `app.bsky.embed.external#view`
 const appBskyEmbedExternalView = 'app.bsky.embed.external#view';
 
+/// `app.bsky.embed.external#viewArticle`
+const appBskyEmbedExternalViewArticle = 'app.bsky.embed.external#viewArticle';
+
+/// `app.bsky.embed.external#viewArticlePublication`
+const appBskyEmbedExternalViewArticlePublication =
+    'app.bsky.embed.external#viewArticlePublication';
+
+/// `app.bsky.embed.external#viewArticlePublicationTheme`
+const appBskyEmbedExternalViewArticlePublicationTheme =
+    'app.bsky.embed.external#viewArticlePublicationTheme';
+
 /// `app.bsky.embed.external#viewExternal`
 const appBskyEmbedExternalViewExternal = 'app.bsky.embed.external#viewExternal';
 
@@ -363,6 +380,17 @@ const appBskyEmbedExternalViewExternalSource =
 /// `app.bsky.embed.external#viewExternalSourceTheme`
 const appBskyEmbedExternalViewExternalSourceTheme =
     'app.bsky.embed.external#viewExternalSourceTheme';
+
+/// `app.bsky.embed.external#viewGallery`
+const appBskyEmbedExternalViewGallery = 'app.bsky.embed.external#viewGallery';
+
+/// `app.bsky.embed.external#viewGalleryImage`
+const appBskyEmbedExternalViewGalleryImage =
+    'app.bsky.embed.external#viewGalleryImage';
+
+/// `app.bsky.embed.external#viewLivestream`
+const appBskyEmbedExternalViewLivestream =
+    'app.bsky.embed.external#viewLivestream';
 
 /// `app.bsky.embed.gallery`
 const appBskyEmbedGallery = 'app.bsky.embed.gallery';
@@ -911,6 +939,30 @@ const appBskyNotificationGetGroupedNotificationsMultiPostLikeGroup =
 const appBskyNotificationGetGroupedNotificationsMultiPostLikeItem =
     'app.bsky.notification.getGroupedNotifications#multiPostLikeItem';
 
+/// `app.bsky.notification.getGroupedNotifications#multiPostLikeViaRepostGroup`
+const appBskyNotificationGetGroupedNotificationsMultiPostLikeViaRepostGroup =
+    'app.bsky.notification.getGroupedNotifications#multiPostLikeViaRepostGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostLikeViaRepostItem`
+const appBskyNotificationGetGroupedNotificationsMultiPostLikeViaRepostItem =
+    'app.bsky.notification.getGroupedNotifications#multiPostLikeViaRepostItem';
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostRepostGroup`
+const appBskyNotificationGetGroupedNotificationsMultiPostRepostGroup =
+    'app.bsky.notification.getGroupedNotifications#multiPostRepostGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostRepostItem`
+const appBskyNotificationGetGroupedNotificationsMultiPostRepostItem =
+    'app.bsky.notification.getGroupedNotifications#multiPostRepostItem';
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostRepostViaRepostGroup`
+const appBskyNotificationGetGroupedNotificationsMultiPostRepostViaRepostGroup =
+    'app.bsky.notification.getGroupedNotifications#multiPostRepostViaRepostGroup';
+
+/// `app.bsky.notification.getGroupedNotifications#multiPostRepostViaRepostItem`
+const appBskyNotificationGetGroupedNotificationsMultiPostRepostViaRepostItem =
+    'app.bsky.notification.getGroupedNotifications#multiPostRepostViaRepostItem';
+
 /// `app.bsky.notification.getGroupedNotifications#quoteNotification`
 const appBskyNotificationGetGroupedNotificationsQuoteNotification =
     'app.bsky.notification.getGroupedNotifications#quoteNotification';
@@ -1065,6 +1117,58 @@ const appBskyUnspeccedDefsTrendingTopic =
 /// `app.bsky.unspecced.getAgeAssuranceState`
 const appBskyUnspeccedGetAgeAssuranceState =
     'app.bsky.unspecced.getAgeAssuranceState';
+
+/// `app.bsky.unspecced.getAtmosphereExploreArticleRecommendations`
+const appBskyUnspeccedGetAtmosphereExploreArticleRecommendations =
+    'app.bsky.unspecced.getAtmosphereExploreArticleRecommendations';
+
+/// `app.bsky.unspecced.getAtmosphereExploreArticleRecommendations#article`
+const appBskyUnspeccedGetAtmosphereExploreArticleRecommendationsArticle =
+    'app.bsky.unspecced.getAtmosphereExploreArticleRecommendations#article';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab`
+const appBskyUnspeccedGetAtmosphereExploreTab =
+    'app.bsky.unspecced.getAtmosphereExploreTab';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#announcementBanner`
+const appBskyUnspeccedGetAtmosphereExploreTabAnnouncementBanner =
+    'app.bsky.unspecced.getAtmosphereExploreTab#announcementBanner';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#appCard`
+const appBskyUnspeccedGetAtmosphereExploreTabAppCard =
+    'app.bsky.unspecced.getAtmosphereExploreTab#appCard';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#articleItem`
+const appBskyUnspeccedGetAtmosphereExploreTabArticleItem =
+    'app.bsky.unspecced.getAtmosphereExploreTab#articleItem';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#articleList`
+const appBskyUnspeccedGetAtmosphereExploreTabArticleList =
+    'app.bsky.unspecced.getAtmosphereExploreTab#articleList';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#galleryItem`
+const appBskyUnspeccedGetAtmosphereExploreTabGalleryItem =
+    'app.bsky.unspecced.getAtmosphereExploreTab#galleryItem';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#galleryList`
+const appBskyUnspeccedGetAtmosphereExploreTabGalleryList =
+    'app.bsky.unspecced.getAtmosphereExploreTab#galleryList';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#livestreamItem`
+const appBskyUnspeccedGetAtmosphereExploreTabLivestreamItem =
+    'app.bsky.unspecced.getAtmosphereExploreTab#livestreamItem';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#livestreamList`
+const appBskyUnspeccedGetAtmosphereExploreTabLivestreamList =
+    'app.bsky.unspecced.getAtmosphereExploreTab#livestreamList';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#publicationItem`
+const appBskyUnspeccedGetAtmosphereExploreTabPublicationItem =
+    'app.bsky.unspecced.getAtmosphereExploreTab#publicationItem';
+
+/// `app.bsky.unspecced.getAtmosphereExploreTab#publicationList`
+const appBskyUnspeccedGetAtmosphereExploreTabPublicationList =
+    'app.bsky.unspecced.getAtmosphereExploreTab#publicationList';
 
 /// `app.bsky.unspecced.getConfig`
 const appBskyUnspeccedGetConfig = 'app.bsky.unspecced.getConfig';
@@ -1826,8 +1930,85 @@ const toolsOzoneInboxDefsAppealView = 'tools.ozone.inbox.defs#appealView';
 const toolsOzoneInboxDefsEnforcementView =
     'tools.ozone.inbox.defs#enforcementView';
 
+/// `tools.ozone.inbox.defs#notification`
+const toolsOzoneInboxDefsNotification = 'tools.ozone.inbox.defs#notification';
+
+/// `tools.ozone.inbox.defs#notificationPreferences`
+const toolsOzoneInboxDefsNotificationPreferences =
+    'tools.ozone.inbox.defs#notificationPreferences';
+
+/// `tools.ozone.inbox.defs#policyView`
+const toolsOzoneInboxDefsPolicyView = 'tools.ozone.inbox.defs#policyView';
+
+/// `tools.ozone.inbox.defs#reportRef`
+const toolsOzoneInboxDefsReportRef = 'tools.ozone.inbox.defs#reportRef';
+
+/// `tools.ozone.inbox.defs#reportsSummary`
+const toolsOzoneInboxDefsReportsSummary =
+    'tools.ozone.inbox.defs#reportsSummary';
+
+/// `tools.ozone.inbox.defs#standingRef`
+const toolsOzoneInboxDefsStandingRef = 'tools.ozone.inbox.defs#standingRef';
+
+/// `tools.ozone.inbox.defs#subjectRef`
+const toolsOzoneInboxDefsSubjectRef = 'tools.ozone.inbox.defs#subjectRef';
+
 /// `tools.ozone.inbox.defs#subjectView`
 const toolsOzoneInboxDefsSubjectView = 'tools.ozone.inbox.defs#subjectView';
+
+/// `tools.ozone.inbox.defs#subjectViewDetail`
+const toolsOzoneInboxDefsSubjectViewDetail =
+    'tools.ozone.inbox.defs#subjectViewDetail';
+
+/// `tools.ozone.inbox.getAccountStatus`
+const toolsOzoneInboxGetAccountStatus = 'tools.ozone.inbox.getAccountStatus';
+
+/// `tools.ozone.inbox.getActionedSubject`
+const toolsOzoneInboxGetActionedSubject =
+    'tools.ozone.inbox.getActionedSubject';
+
+/// `tools.ozone.inbox.getNotificationPreferences`
+const toolsOzoneInboxGetNotificationPreferences =
+    'tools.ozone.inbox.getNotificationPreferences';
+
+/// `tools.ozone.inbox.getReport`
+const toolsOzoneInboxGetReport = 'tools.ozone.inbox.getReport';
+
+/// `tools.ozone.inbox.getReport#reportView`
+const toolsOzoneInboxGetReportReportView =
+    'tools.ozone.inbox.getReport#reportView';
+
+/// `tools.ozone.inbox.getReport#resolutionView`
+const toolsOzoneInboxGetReportResolutionView =
+    'tools.ozone.inbox.getReport#resolutionView';
+
+/// `tools.ozone.inbox.getUnreadCount`
+const toolsOzoneInboxGetUnreadCount = 'tools.ozone.inbox.getUnreadCount';
+
+/// `tools.ozone.inbox.getUnreadCount#unreadCounts`
+const toolsOzoneInboxGetUnreadCountUnreadCounts =
+    'tools.ozone.inbox.getUnreadCount#unreadCounts';
+
+/// `tools.ozone.inbox.listActionedSubjects`
+const toolsOzoneInboxListActionedSubjects =
+    'tools.ozone.inbox.listActionedSubjects';
+
+/// `tools.ozone.inbox.listNotifications`
+const toolsOzoneInboxListNotifications = 'tools.ozone.inbox.listNotifications';
+
+/// `tools.ozone.inbox.listReports`
+const toolsOzoneInboxListReports = 'tools.ozone.inbox.listReports';
+
+/// `tools.ozone.inbox.listReports#reportView`
+const toolsOzoneInboxListReportsReportView =
+    'tools.ozone.inbox.listReports#reportView';
+
+/// `tools.ozone.inbox.putNotificationPreferences`
+const toolsOzoneInboxPutNotificationPreferences =
+    'tools.ozone.inbox.putNotificationPreferences';
+
+/// `tools.ozone.inbox.updateSeen`
+const toolsOzoneInboxUpdateSeen = 'tools.ozone.inbox.updateSeen';
 
 /// `tools.ozone.moderation.cancelScheduledActions`
 const toolsOzoneModerationCancelScheduledActions =
@@ -2476,8 +2657,22 @@ const toolsOzoneSafelinkQueryRules = 'tools.ozone.safelink.queryRules';
 /// `tools.ozone.safelink.removeRule`
 const toolsOzoneSafelinkRemoveRule = 'tools.ozone.safelink.removeRule';
 
+/// `tools.ozone.safelink.syncSource`
+const toolsOzoneSafelinkSyncSource = 'tools.ozone.safelink.syncSource';
+
+/// `tools.ozone.safelink.syncSource#sourceRule`
+const toolsOzoneSafelinkSyncSourceSourceRule =
+    'tools.ozone.safelink.syncSource#sourceRule';
+
 /// `tools.ozone.safelink.updateRule`
 const toolsOzoneSafelinkUpdateRule = 'tools.ozone.safelink.updateRule';
+
+/// `tools.ozone.server.getCapabilities`
+const toolsOzoneServerGetCapabilities = 'tools.ozone.server.getCapabilities';
+
+/// `tools.ozone.server.getCapabilities#notificationConfig`
+const toolsOzoneServerGetCapabilitiesNotificationConfig =
+    'tools.ozone.server.getCapabilities#notificationConfig';
 
 /// `tools.ozone.server.getConfig`
 const toolsOzoneServerGetConfig = 'tools.ozone.server.getConfig';
@@ -2580,6 +2775,13 @@ const toolsOzoneTeamDeleteMember = 'tools.ozone.team.deleteMember';
 
 /// `tools.ozone.team.listMembers`
 const toolsOzoneTeamListMembers = 'tools.ozone.team.listMembers';
+
+/// `tools.ozone.team.listOnlineMembers`
+const toolsOzoneTeamListOnlineMembers = 'tools.ozone.team.listOnlineMembers';
+
+/// `tools.ozone.team.listOnlineMembers#onlineMember`
+const toolsOzoneTeamListOnlineMembersOnlineMember =
+    'tools.ozone.team.listOnlineMembers#onlineMember';
 
 /// `tools.ozone.team.updateMember`
 const toolsOzoneTeamUpdateMember = 'tools.ozone.team.updateMember';

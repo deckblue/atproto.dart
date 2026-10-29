@@ -42,15 +42,18 @@ Future<XRPCResponse<AssignmentView>> toolsOzoneQueueAssignModerator({
   to: const AssignmentViewConverter().fromJson,
 );
 
-/// Create a new moderation queue. A queue can have optional matching criteria that ozone's queue router will use to match reports. A queue with no criteria must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.
+/// Create a new moderation queue. A queue with omitted or empty subjectTypes or reportTypes must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.
 Future<XRPCResponse<QueueCreateQueueOutput>> toolsOzoneQueueCreateQueue({
   required String name,
   List<QueueCreateQueueSubjectTypes>? subjectTypes,
   String? collection,
   List<String>? reportTypes,
+  List<String>? reporterTags,
+  List<String>? accountTags,
   String? description,
   List<String>? recommendedPolicies,
   List<String>? recommendedLabels,
+  bool? strictAccess,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
@@ -66,9 +69,12 @@ Future<XRPCResponse<QueueCreateQueueOutput>> toolsOzoneQueueCreateQueue({
       'subjectTypes': subjectTypes.map((e) => e.toJson()).toList(),
     if (collection != null) 'collection': collection,
     if (reportTypes != null) 'reportTypes': reportTypes,
+    if (reporterTags != null) 'reporterTags': reporterTags,
+    if (accountTags != null) 'accountTags': accountTags,
     if (description != null) 'description': description,
     if (recommendedPolicies != null) 'recommendedPolicies': recommendedPolicies,
     if (recommendedLabels != null) 'recommendedLabels': recommendedLabels,
+    if (strictAccess != null) 'strictAccess': strictAccess,
   },
   to: const QueueCreateQueueOutputConverter().fromJson,
 );
@@ -190,6 +196,7 @@ Future<XRPCResponse<QueueUpdateQueueOutput>> toolsOzoneQueueUpdateQueue({
   String? description,
   List<String>? recommendedPolicies,
   List<String>? recommendedLabels,
+  bool? strictAccess,
   required ServiceContext $ctx,
   String? $service,
   Map<String, String>? $headers,
@@ -206,6 +213,7 @@ Future<XRPCResponse<QueueUpdateQueueOutput>> toolsOzoneQueueUpdateQueue({
     if (description != null) 'description': description,
     if (recommendedPolicies != null) 'recommendedPolicies': recommendedPolicies,
     if (recommendedLabels != null) 'recommendedLabels': recommendedLabels,
+    if (strictAccess != null) 'strictAccess': strictAccess,
   },
   to: const QueueUpdateQueueOutputConverter().fromJson,
 );
@@ -233,15 +241,18 @@ base class QueueService {
     $unknown: $unknown,
   );
 
-  /// Create a new moderation queue. A queue can have optional matching criteria that ozone's queue router will use to match reports. A queue with no criteria must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.
+  /// Create a new moderation queue. A queue with omitted or empty subjectTypes or reportTypes must have reports assigned to it manually via (1) `modTool.meta.queueId` in `tools.ozone.moderation.emitEvent` or (2) `tools.ozone.report.reassignQueue`.
   Future<XRPCResponse<QueueCreateQueueOutput>> createQueue({
     required String name,
     List<QueueCreateQueueSubjectTypes>? subjectTypes,
     String? collection,
     List<String>? reportTypes,
+    List<String>? reporterTags,
+    List<String>? accountTags,
     String? description,
     List<String>? recommendedPolicies,
     List<String>? recommendedLabels,
+    bool? strictAccess,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
@@ -250,9 +261,12 @@ base class QueueService {
     subjectTypes: subjectTypes,
     collection: collection,
     reportTypes: reportTypes,
+    reporterTags: reporterTags,
+    accountTags: accountTags,
     description: description,
     recommendedPolicies: recommendedPolicies,
     recommendedLabels: recommendedLabels,
+    strictAccess: strictAccess,
     $ctx: ctx,
     $service: $service,
     $headers: $headers,
@@ -361,6 +375,7 @@ base class QueueService {
     String? description,
     List<String>? recommendedPolicies,
     List<String>? recommendedLabels,
+    bool? strictAccess,
     String? $service,
     Map<String, String>? $headers,
     Map<String, String>? $unknown,
@@ -371,6 +386,7 @@ base class QueueService {
     description: description,
     recommendedPolicies: recommendedPolicies,
     recommendedLabels: recommendedLabels,
+    strictAccess: strictAccess,
     $ctx: ctx,
     $service: $service,
     $headers: $headers,

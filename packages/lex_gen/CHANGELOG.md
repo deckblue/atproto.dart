@@ -1,5 +1,65 @@
 # Release Note
 
+## v0.4.39
+
+- chore: bump `lexicon` to `^1.2.36`
+
+## v0.4.38
+
+- chore: bump `lexicon` to `^1.2.35`
+
+## v0.4.37
+
+- chore: bump `lexicon` to `^1.2.34`
+
+## v0.4.36
+
+- chore: bump `lexicon` to `^1.2.33`
+
+## v0.4.35
+
+- chore: bump `lexicon` to `^1.2.32`
+
+## v0.4.34
+
+- chore: bump `lexicon` to `^1.2.31`
+
+## v0.4.33
+
+- chore: bump `lexicon` to `^1.2.30`
+
+## v0.4.32
+
+- chore: bump `lexicon` to `^1.2.29`
+
+## v0.4.31
+
+- chore: bump `lexicon` to `^1.2.28`
+
+## v0.4.30
+
+- chore: bump `lexicon` to `^1.2.27`
+
+## v0.4.29
+
+- chore: bump `lexicon` to `^1.2.26`
+
+## v0.4.28
+
+- chore: bump `lexicon` to `^1.2.25`
+
+## v0.4.27
+
+- chore: bump `lexicon` to `^1.2.24`
+
+## v0.4.26
+
+- chore: bump `lexicon` to `^1.2.23`
+
+## v0.4.25
+
+- chore: bump `lexicon` to `^1.2.22`
+
 ## v0.4.24
 
 - chore: bump `lexicon` to `^1.2.21`

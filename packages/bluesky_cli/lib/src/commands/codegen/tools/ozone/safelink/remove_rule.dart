@@ -27,6 +27,11 @@ final class RemoveRuleCommand extends ProcedureCommand {
       )
       ..addOption("pattern", mandatory: true)
       ..addOption(
+        "source",
+        help: r"Source of the rule to remove",
+        defaultsTo: "ozone/default",
+      )
+      ..addOption(
         "comment",
         help: r"Optional comment about why the rule is being removed",
       )
@@ -45,19 +50,20 @@ final class RemoveRuleCommand extends ProcedureCommand {
 
   @override
   final String invocation =
-      "bsky tools-ozone-safelink remove-rule --url=<value> --pattern=<value> [--comment=<value>] [--createdBy=<value>]";
+      "bsky tools-ozone-safelink remove-rule --url=<value> --pattern=<value> [--source=<value>] [--comment=<value>] [--createdBy=<value>]";
 
   @override
   String get methodId => "tools.ozone.safelink.removeRule";
 
   @override
   Map<String, dynamic>? get body => {
-        "url": argResults!["url"],
-        "pattern": _decodeJson("pattern"),
-        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
-        if (argResults!.wasParsed("createdBy"))
-          "createdBy": argResults!["createdBy"],
-      };
+    "url": argResults!["url"],
+    "pattern": _decodeJson("pattern"),
+    "source": argResults!["source"],
+    if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+    if (argResults!.wasParsed("createdBy"))
+      "createdBy": argResults!["createdBy"],
+  };
   Object? _decodeJson(final String name) {
     final raw = argResults![name];
     if (raw == null) return null;

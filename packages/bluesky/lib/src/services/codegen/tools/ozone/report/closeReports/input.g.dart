@@ -8,35 +8,45 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ReportCloseReportsInputImpl _$$ReportCloseReportsInputImplFromJson(
-        Map json) =>
-    $checkedCreate(
-      r'_$ReportCloseReportsInputImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$ReportCloseReportsInputImpl(
-          subject: $checkedConvert('subject', (v) => v as String),
-          reportTypes: $checkedConvert('reportTypes',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-          internalNote: $checkedConvert('internalNote', (v) => v as String?),
-          isAutomated:
-              $checkedConvert('isAutomated', (v) => v as bool? ?? false),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_ReportCloseReportsInput _$ReportCloseReportsInputFromJson(Map json) =>
+    $checkedCreate('_ReportCloseReportsInput', json, ($checkedConvert) {
+      final val = _ReportCloseReportsInput(
+        subject: $checkedConvert('subject', (v) => v as String),
+        includeAllOwned: $checkedConvert(
+          'includeAllOwned',
+          (v) => v as bool? ?? false,
+        ),
+        reportTypes: $checkedConvert(
+          'reportTypes',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+        excludedReportTypes: $checkedConvert(
+          'excludedReportTypes',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+        internalNote: $checkedConvert('internalNote', (v) => v as String?),
+        isAutomated: $checkedConvert('isAutomated', (v) => v as bool? ?? false),
+        meta: $checkedConvert(
+          'meta',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$ReportCloseReportsInputImplToJson(
-        _$ReportCloseReportsInputImpl instance) =>
-    <String, dynamic>{
-      'subject': instance.subject,
-      if (instance.reportTypes case final value?) 'reportTypes': value,
-      if (instance.internalNote case final value?) 'internalNote': value,
-      'isAutomated': instance.isAutomated,
-      if (instance.$unknown case final value?) r'$unknown': value,
-    };
+Map<String, dynamic> _$ReportCloseReportsInputToJson(
+  _ReportCloseReportsInput instance,
+) => <String, dynamic>{
+  'subject': instance.subject,
+  'includeAllOwned': instance.includeAllOwned,
+  'reportTypes': ?instance.reportTypes,
+  'excludedReportTypes': ?instance.excludedReportTypes,
+  'internalNote': ?instance.internalNote,
+  'isAutomated': instance.isAutomated,
+  'meta': ?instance.meta,
+  r'$unknown': ?instance.$unknown,
+};

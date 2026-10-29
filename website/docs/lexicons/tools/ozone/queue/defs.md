@@ -12,8 +12,10 @@ description: tools.ozone.queue.defs
 | **id** | integer | - | ✅ | Queue ID |
 | **name** | string | - | ✅ | Display name of the queue |
 | **subjectTypes** | array of string | - | ❌ | Subject types this queue accepts. |
-| **collection** | string ([nsid](https://atproto.com/specs/nsid)) | - | ❌ | Collection name for record subjects (e.g., 'app.bsky.feed.post') |
+| **collection** | string ([nsid](https://atproto.com/specs/nsid)) | - | ❌ | Collection name for record subjects. Omit to accept every collection. |
 | **reportTypes** | array of string | - | ❌ | Report reason types this queue accepts (fully qualified NSIDs) |
+| **reporterTags** | array of string | - | ❌ | Match any listed tag on the account submitting the report. |
+| **accountTags** | array of string | - | ❌ | Match tags on the account that is being reported against. For record subjects, use the author account. Match any listed tag. |
 | **description** | string | - | ❌ | Optional description of the queue |
 | **recommendedPolicies** | array of string | - | ❌ | Policy keys recommended when actioning reports in this queue |
 | **recommendedLabels** | array of string | - | ❌ | Labels recommended for this queue and used as a fallback when routing label appeals |
@@ -23,18 +25,33 @@ description: tools.ozone.queue.defs
 | **enabled** | boolean | - | ✅ | Whether this queue is currently active |
 | **deletedAt** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ❌ | When the queue was deleted, if applicable |
 | **stats** | [#queueStats](#queuestats) | - | ✅ | - |
+| **strictAccess** | boolean | - | ❌ | Admins can always list this queue and browse its reports. Other roles require an active queue assignment. Individual report and moderation event access is unchanged. |
 
 ## #queueStats
 
 | Property | Type | Known Values | Required | Description |
 | --- | --- | --- | :---: | --- |
-| **pendingCount** | integer | - | ❌ | Number of reports in 'open' status |
-| **actionedCount** | integer | - | ❌ | Number of reports in 'closed' status |
-| **escalatedCount** | integer | - | ❌ | Number of reports in 'escalated' status |
-| **inboundCount** | integer | - | ❌ | Reports received in this queue in the last 24 hours. |
-| **actionRate** | integer | - | ❌ | Percentage of reports actioned (actionedCount / inboundCount * 100), rounded to nearest integer. Absent when inboundCount is 0. |
-| **avgHandlingTimeSec** | integer | - | ❌ | Average time in seconds from report creation to close, for reports closed in this period. |
-| **lastUpdated** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ❌ | When these statistics were last computed |
+| **pendingCount** | integer | - | ❌ | Number of unmuted reports currently not closed. |
+| **closureTargetOverdueCount** | integer | - | ❌ | Unmuted pending reports past their closure target. |
+| **closureTargetMetCount** | integer | - | ❌ | Reports whose closure meets their closure target. |
+| **closureTargetMissedCount** | integer | - | ❌ | Reports whose closure exceeds their closure target. |
+| **closureTargetMetRate** | integer | - | ❌ | Percent of reports meeting their closure target. |
+| **closedCount** | integer | - | ❌ | Number of reports whose current closure falls within this UTC calendar day. |
+| **actionedCount** | integer | - | ❌ | Number of closures whose last report action is label, tag, or takedown. |
+| **acknowledgedCount** | integer | - | ❌ | Number of closures whose last report action is not label, tag, or takedown. |
+| **escalatedCount** | integer | - | ❌ | Number of report escalation events during this UTC calendar day. |
+| **inboundCount** | integer | - | ❌ | Reports received in this queue during this UTC calendar day. |
+| **labelActionCount** | integer | - | ❌ | Closures whose last report action is a label event. |
+| **tagActionCount** | integer | - | ❌ | Closures whose last report action is a tag event. |
+| **takedownActionCount** | integer | - | ❌ | Closures whose last report action is a takedown event. |
+| **ahtDurationSec** | integer | - | ❌ | Sum of report assignment-to-close seconds. |
+| **ahtSampleCount** | integer | - | ❌ | Number of assigned closed-report samples in ahtDurationSec. |
+| **resolutionDurationSec** | integer | - | ❌ | Sum of report creation-to-close seconds. |
+| **resolutionSampleCount** | integer | - | ❌ | Number of closed-report samples in resolutionDurationSec. |
+| **actionRate** | integer | - | ❌ | Percentage of closures actioned (actionedCount / closedCount * 100), rounded to nearest integer. |
+| **avgHandlingTimeSec** | integer | - | ❌ | Average handling time in seconds from report assignment to close. |
+| **avgResolutionTimeSec** | integer | - | ❌ | Average resolution time in seconds from report creation to close. |
+| **lastUpdated** | string ([datetime](https://atproto.com/specs/lexicon#datetime)) | - | ❌ | When these statistics were last computed. |
 
 ## #assignmentView
 
