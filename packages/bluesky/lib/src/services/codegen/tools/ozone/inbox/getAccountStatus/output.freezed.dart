@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,313 +9,309 @@ part of 'output.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+InboxGetAccountStatusOutput _$InboxGetAccountStatusOutputFromJson(
+    Map<String, dynamic> json) {
+  return _InboxGetAccountStatusOutput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$InboxGetAccountStatusOutput {
+  /// DID of the moderation service returning this status.
+  String get src => throw _privateConstructorUsedError;
+  @InboxGetAccountStatusStandingConverter()
+  InboxGetAccountStatusStanding get standing =>
+      throw _privateConstructorUsedError;
 
-/// DID of the moderation service returning this status.
- String get src;@InboxGetAccountStatusStandingConverter() InboxGetAccountStatusStanding get standing;/// Newest account-status update or strike timestamp used to derive this standing, or the Unix epoch when neither exists. This is not a standing-transition timestamp; expiry can change standing without changing this value.
-@JsonKey(toJson: iso8601) DateTime get updatedAt;/// Time at which the current suspension expires. Present only for a temporary suspension.
-@JsonKey(toJson: iso8601) DateTime? get expiresAt; Map<String, dynamic>? get $unknown;
-/// Create a copy of InboxGetAccountStatusOutput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InboxGetAccountStatusOutputCopyWith<InboxGetAccountStatusOutput> get copyWith => _$InboxGetAccountStatusOutputCopyWithImpl<InboxGetAccountStatusOutput>(this as InboxGetAccountStatusOutput, _$identity);
+  /// Newest account-status update or strike timestamp used to derive this standing, or the Unix epoch when neither exists. This is not a standing-transition timestamp; expiry can change standing without changing this value.
+  @JsonKey(toJson: iso8601)
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+
+  /// Time at which the current suspension expires. Present only for a temporary suspension.
+  @JsonKey(toJson: iso8601)
+  DateTime? get expiresAt => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this InboxGetAccountStatusOutput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InboxGetAccountStatusOutput&&(identical(other.src, src) || other.src == src)&&(identical(other.standing, standing) || other.standing == standing)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,src,standing,updatedAt,expiresAt,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'InboxGetAccountStatusOutput(src: $src, standing: $standing, updatedAt: $updatedAt, expiresAt: $expiresAt, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of InboxGetAccountStatusOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $InboxGetAccountStatusOutputCopyWith<InboxGetAccountStatusOutput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $InboxGetAccountStatusOutputCopyWith<$Res>  {
-  factory $InboxGetAccountStatusOutputCopyWith(InboxGetAccountStatusOutput value, $Res Function(InboxGetAccountStatusOutput) _then) = _$InboxGetAccountStatusOutputCopyWithImpl;
-@useResult
-$Res call({
- String src,@InboxGetAccountStatusStandingConverter() InboxGetAccountStatusStanding standing,@JsonKey(toJson: iso8601) DateTime updatedAt,@JsonKey(toJson: iso8601) DateTime? expiresAt, Map<String, dynamic>? $unknown
-});
+abstract class $InboxGetAccountStatusOutputCopyWith<$Res> {
+  factory $InboxGetAccountStatusOutputCopyWith(
+          InboxGetAccountStatusOutput value,
+          $Res Function(InboxGetAccountStatusOutput) then) =
+      _$InboxGetAccountStatusOutputCopyWithImpl<$Res,
+          InboxGetAccountStatusOutput>;
+  @useResult
+  $Res call(
+      {String src,
+      @InboxGetAccountStatusStandingConverter()
+      InboxGetAccountStatusStanding standing,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? expiresAt,
+      Map<String, dynamic>? $unknown});
 
-
-$InboxGetAccountStatusStandingCopyWith<$Res> get standing;
-
+  $InboxGetAccountStatusStandingCopyWith<$Res> get standing;
 }
+
 /// @nodoc
-class _$InboxGetAccountStatusOutputCopyWithImpl<$Res>
+class _$InboxGetAccountStatusOutputCopyWithImpl<$Res,
+        $Val extends InboxGetAccountStatusOutput>
     implements $InboxGetAccountStatusOutputCopyWith<$Res> {
-  _$InboxGetAccountStatusOutputCopyWithImpl(this._self, this._then);
+  _$InboxGetAccountStatusOutputCopyWithImpl(this._value, this._then);
 
-  final InboxGetAccountStatusOutput _self;
-  final $Res Function(InboxGetAccountStatusOutput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of InboxGetAccountStatusOutput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? src = null,Object? standing = null,Object? updatedAt = null,Object? expiresAt = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-src: null == src ? _self.src : src // ignore: cast_nullable_to_non_nullable
-as String,standing: null == standing ? _self.standing : standing // ignore: cast_nullable_to_non_nullable
-as InboxGetAccountStatusStanding,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of InboxGetAccountStatusOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$InboxGetAccountStatusStandingCopyWith<$Res> get standing {
-  
-  return $InboxGetAccountStatusStandingCopyWith<$Res>(_self.standing, (value) {
-    return _then(_self.copyWith(standing: value));
-  });
-}
-}
+  /// Create a copy of InboxGetAccountStatusOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? src = null,
+    Object? standing = null,
+    Object? updatedAt = null,
+    Object? expiresAt = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      src: null == src
+          ? _value.src
+          : src // ignore: cast_nullable_to_non_nullable
+              as String,
+      standing: null == standing
+          ? _value.standing
+          : standing // ignore: cast_nullable_to_non_nullable
+              as InboxGetAccountStatusStanding,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiresAt: freezed == expiresAt
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [InboxGetAccountStatusOutput].
-extension InboxGetAccountStatusOutputPatterns on InboxGetAccountStatusOutput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InboxGetAccountStatusOutput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _InboxGetAccountStatusOutput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InboxGetAccountStatusOutput value)  $default,){
-final _that = this;
-switch (_that) {
-case _InboxGetAccountStatusOutput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InboxGetAccountStatusOutput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _InboxGetAccountStatusOutput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String src, @InboxGetAccountStatusStandingConverter()  InboxGetAccountStatusStanding standing, @JsonKey(toJson: iso8601)  DateTime updatedAt, @JsonKey(toJson: iso8601)  DateTime? expiresAt,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _InboxGetAccountStatusOutput() when $default != null:
-return $default(_that.src,_that.standing,_that.updatedAt,_that.expiresAt,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String src, @InboxGetAccountStatusStandingConverter()  InboxGetAccountStatusStanding standing, @JsonKey(toJson: iso8601)  DateTime updatedAt, @JsonKey(toJson: iso8601)  DateTime? expiresAt,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _InboxGetAccountStatusOutput():
-return $default(_that.src,_that.standing,_that.updatedAt,_that.expiresAt,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String src, @InboxGetAccountStatusStandingConverter()  InboxGetAccountStatusStanding standing, @JsonKey(toJson: iso8601)  DateTime updatedAt, @JsonKey(toJson: iso8601)  DateTime? expiresAt,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _InboxGetAccountStatusOutput() when $default != null:
-return $default(_that.src,_that.standing,_that.updatedAt,_that.expiresAt,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of InboxGetAccountStatusOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $InboxGetAccountStatusStandingCopyWith<$Res> get standing {
+    return $InboxGetAccountStatusStandingCopyWith<$Res>(_value.standing,
+        (value) {
+      return _then(_value.copyWith(standing: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$InboxGetAccountStatusOutputImplCopyWith<$Res>
+    implements $InboxGetAccountStatusOutputCopyWith<$Res> {
+  factory _$$InboxGetAccountStatusOutputImplCopyWith(
+          _$InboxGetAccountStatusOutputImpl value,
+          $Res Function(_$InboxGetAccountStatusOutputImpl) then) =
+      __$$InboxGetAccountStatusOutputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String src,
+      @InboxGetAccountStatusStandingConverter()
+      InboxGetAccountStatusStanding standing,
+      @JsonKey(toJson: iso8601) DateTime updatedAt,
+      @JsonKey(toJson: iso8601) DateTime? expiresAt,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $InboxGetAccountStatusStandingCopyWith<$Res> get standing;
+}
+
+/// @nodoc
+class __$$InboxGetAccountStatusOutputImplCopyWithImpl<$Res>
+    extends _$InboxGetAccountStatusOutputCopyWithImpl<$Res,
+        _$InboxGetAccountStatusOutputImpl>
+    implements _$$InboxGetAccountStatusOutputImplCopyWith<$Res> {
+  __$$InboxGetAccountStatusOutputImplCopyWithImpl(
+      _$InboxGetAccountStatusOutputImpl _value,
+      $Res Function(_$InboxGetAccountStatusOutputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of InboxGetAccountStatusOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? src = null,
+    Object? standing = null,
+    Object? updatedAt = null,
+    Object? expiresAt = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$InboxGetAccountStatusOutputImpl(
+      src: null == src
+          ? _value.src
+          : src // ignore: cast_nullable_to_non_nullable
+              as String,
+      standing: null == standing
+          ? _value.standing
+          : standing // ignore: cast_nullable_to_non_nullable
+              as InboxGetAccountStatusStanding,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiresAt: freezed == expiresAt
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _InboxGetAccountStatusOutput implements InboxGetAccountStatusOutput {
-  const _InboxGetAccountStatusOutput({required this.src, @InboxGetAccountStatusStandingConverter() required this.standing, @JsonKey(toJson: iso8601) required this.updatedAt, @JsonKey(toJson: iso8601) this.expiresAt, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _InboxGetAccountStatusOutput.fromJson(Map<String, dynamic> json) => _$InboxGetAccountStatusOutputFromJson(json);
+class _$InboxGetAccountStatusOutputImpl
+    implements _InboxGetAccountStatusOutput {
+  const _$InboxGetAccountStatusOutputImpl(
+      {required this.src,
+      @InboxGetAccountStatusStandingConverter() required this.standing,
+      @JsonKey(toJson: iso8601) required this.updatedAt,
+      @JsonKey(toJson: iso8601) this.expiresAt,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// DID of the moderation service returning this status.
-@override final  String src;
-@override@InboxGetAccountStatusStandingConverter() final  InboxGetAccountStatusStanding standing;
-/// Newest account-status update or strike timestamp used to derive this standing, or the Unix epoch when neither exists. This is not a standing-transition timestamp; expiry can change standing without changing this value.
-@override@JsonKey(toJson: iso8601) final  DateTime updatedAt;
-/// Time at which the current suspension expires. Present only for a temporary suspension.
-@override@JsonKey(toJson: iso8601) final  DateTime? expiresAt;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$InboxGetAccountStatusOutputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$InboxGetAccountStatusOutputImplFromJson(json);
+
+  /// DID of the moderation service returning this status.
+  @override
+  final String src;
+  @override
+  @InboxGetAccountStatusStandingConverter()
+  final InboxGetAccountStatusStanding standing;
+
+  /// Newest account-status update or strike timestamp used to derive this standing, or the Unix epoch when neither exists. This is not a standing-transition timestamp; expiry can change standing without changing this value.
+  @override
+  @JsonKey(toJson: iso8601)
+  final DateTime updatedAt;
+
+  /// Time at which the current suspension expires. Present only for a temporary suspension.
+  @override
+  @JsonKey(toJson: iso8601)
+  final DateTime? expiresAt;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'InboxGetAccountStatusOutput(src: $src, standing: $standing, updatedAt: $updatedAt, expiresAt: $expiresAt, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InboxGetAccountStatusOutputImpl &&
+            (identical(other.src, src) || other.src == src) &&
+            (identical(other.standing, standing) ||
+                other.standing == standing) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.expiresAt, expiresAt) ||
+                other.expiresAt == expiresAt) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, src, standing, updatedAt,
+      expiresAt, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of InboxGetAccountStatusOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboxGetAccountStatusOutputImplCopyWith<_$InboxGetAccountStatusOutputImpl>
+      get copyWith => __$$InboxGetAccountStatusOutputImplCopyWithImpl<
+          _$InboxGetAccountStatusOutputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboxGetAccountStatusOutputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _InboxGetAccountStatusOutput
+    implements InboxGetAccountStatusOutput {
+  const factory _InboxGetAccountStatusOutput(
+          {required final String src,
+          @InboxGetAccountStatusStandingConverter()
+          required final InboxGetAccountStatusStanding standing,
+          @JsonKey(toJson: iso8601) required final DateTime updatedAt,
+          @JsonKey(toJson: iso8601) final DateTime? expiresAt,
+          final Map<String, dynamic>? $unknown}) =
+      _$InboxGetAccountStatusOutputImpl;
 
-/// Create a copy of InboxGetAccountStatusOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$InboxGetAccountStatusOutputCopyWith<_InboxGetAccountStatusOutput> get copyWith => __$InboxGetAccountStatusOutputCopyWithImpl<_InboxGetAccountStatusOutput>(this, _$identity);
+  factory _InboxGetAccountStatusOutput.fromJson(Map<String, dynamic> json) =
+      _$InboxGetAccountStatusOutputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$InboxGetAccountStatusOutputToJson(this, );
+  /// DID of the moderation service returning this status.
+  @override
+  String get src;
+  @override
+  @InboxGetAccountStatusStandingConverter()
+  InboxGetAccountStatusStanding get standing;
+
+  /// Newest account-status update or strike timestamp used to derive this standing, or the Unix epoch when neither exists. This is not a standing-transition timestamp; expiry can change standing without changing this value.
+  @override
+  @JsonKey(toJson: iso8601)
+  DateTime get updatedAt;
+
+  /// Time at which the current suspension expires. Present only for a temporary suspension.
+  @override
+  @JsonKey(toJson: iso8601)
+  DateTime? get expiresAt;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of InboxGetAccountStatusOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InboxGetAccountStatusOutputImplCopyWith<_$InboxGetAccountStatusOutputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboxGetAccountStatusOutput&&(identical(other.src, src) || other.src == src)&&(identical(other.standing, standing) || other.standing == standing)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,src,standing,updatedAt,expiresAt,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'InboxGetAccountStatusOutput(src: $src, standing: $standing, updatedAt: $updatedAt, expiresAt: $expiresAt, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$InboxGetAccountStatusOutputCopyWith<$Res> implements $InboxGetAccountStatusOutputCopyWith<$Res> {
-  factory _$InboxGetAccountStatusOutputCopyWith(_InboxGetAccountStatusOutput value, $Res Function(_InboxGetAccountStatusOutput) _then) = __$InboxGetAccountStatusOutputCopyWithImpl;
-@override @useResult
-$Res call({
- String src,@InboxGetAccountStatusStandingConverter() InboxGetAccountStatusStanding standing,@JsonKey(toJson: iso8601) DateTime updatedAt,@JsonKey(toJson: iso8601) DateTime? expiresAt, Map<String, dynamic>? $unknown
-});
-
-
-@override $InboxGetAccountStatusStandingCopyWith<$Res> get standing;
-
-}
-/// @nodoc
-class __$InboxGetAccountStatusOutputCopyWithImpl<$Res>
-    implements _$InboxGetAccountStatusOutputCopyWith<$Res> {
-  __$InboxGetAccountStatusOutputCopyWithImpl(this._self, this._then);
-
-  final _InboxGetAccountStatusOutput _self;
-  final $Res Function(_InboxGetAccountStatusOutput) _then;
-
-/// Create a copy of InboxGetAccountStatusOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? src = null,Object? standing = null,Object? updatedAt = null,Object? expiresAt = freezed,Object? $unknown = freezed,}) {
-  return _then(_InboxGetAccountStatusOutput(
-src: null == src ? _self.src : src // ignore: cast_nullable_to_non_nullable
-as String,standing: null == standing ? _self.standing : standing // ignore: cast_nullable_to_non_nullable
-as InboxGetAccountStatusStanding,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of InboxGetAccountStatusOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$InboxGetAccountStatusStandingCopyWith<$Res> get standing {
-  
-  return $InboxGetAccountStatusStandingCopyWith<$Res>(_self.standing, (value) {
-    return _then(_self.copyWith(standing: value));
-  });
-}
-}
-
-// dart format on

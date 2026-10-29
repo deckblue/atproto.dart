@@ -8,32 +8,31 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_InboxPutNotificationPreferencesOutput
-_$InboxPutNotificationPreferencesOutputFromJson(Map json) => $checkedCreate(
-  '_InboxPutNotificationPreferencesOutput',
-  json,
-  ($checkedConvert) {
-    final val = _InboxPutNotificationPreferencesOutput(
-      preferences: $checkedConvert(
-        'preferences',
-        (v) => const NotificationPreferencesConverter().fromJson(
-          v as Map<String, dynamic>,
-        ),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
-    );
-    return val;
-  },
-);
+_$InboxPutNotificationPreferencesOutputImpl
+    _$$InboxPutNotificationPreferencesOutputImplFromJson(Map json) =>
+        $checkedCreate(
+          r'_$InboxPutNotificationPreferencesOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$InboxPutNotificationPreferencesOutputImpl(
+              preferences: $checkedConvert(
+                  'preferences',
+                  (v) => const NotificationPreferencesConverter()
+                      .fromJson(v as Map<String, dynamic>)),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$InboxPutNotificationPreferencesOutputToJson(
-  _InboxPutNotificationPreferencesOutput instance,
-) => <String, dynamic>{
-  'preferences': const NotificationPreferencesConverter().toJson(
-    instance.preferences,
-  ),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$InboxPutNotificationPreferencesOutputImplToJson(
+        _$InboxPutNotificationPreferencesOutputImpl instance) =>
+    <String, dynamic>{
+      'preferences':
+          const NotificationPreferencesConverter().toJson(instance.preferences),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

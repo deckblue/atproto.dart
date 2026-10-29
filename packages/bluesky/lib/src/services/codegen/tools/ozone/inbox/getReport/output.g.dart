@@ -8,46 +8,50 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_InboxGetReportOutput _$InboxGetReportOutputFromJson(Map json) =>
-    $checkedCreate('_InboxGetReportOutput', json, ($checkedConvert) {
-      final val = _InboxGetReportOutput(
-        report: $checkedConvert(
-          'report',
-          (v) =>
-              const ReportViewConverter().fromJson(v as Map<String, dynamic>),
-        ),
-        resolution: $checkedConvert(
-          'resolution',
-          (v) => _$JsonConverterFromJson<Map<String, dynamic>, ResolutionView>(
-            v,
-            const ResolutionViewConverter().fromJson,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$InboxGetReportOutputImpl _$$InboxGetReportOutputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$InboxGetReportOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$InboxGetReportOutputImpl(
+          report: $checkedConvert(
+              'report',
+              (v) => const ReportViewConverter()
+                  .fromJson(v as Map<String, dynamic>)),
+          resolution: $checkedConvert(
+              'resolution',
+              (v) =>
+                  _$JsonConverterFromJson<Map<String, dynamic>, ResolutionView>(
+                      v, const ResolutionViewConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$InboxGetReportOutputToJson(
-  _InboxGetReportOutput instance,
-) => <String, dynamic>{
-  'report': const ReportViewConverter().toJson(instance.report),
-  'resolution': ?_$JsonConverterToJson<Map<String, dynamic>, ResolutionView>(
-    instance.resolution,
-    const ResolutionViewConverter().toJson,
-  ),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$InboxGetReportOutputImplToJson(
+        _$InboxGetReportOutputImpl instance) =>
+    <String, dynamic>{
+      'report': const ReportViewConverter().toJson(instance.report),
+      if (_$JsonConverterToJson<Map<String, dynamic>, ResolutionView>(
+              instance.resolution, const ResolutionViewConverter().toJson)
+          case final value?)
+        'resolution': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

@@ -8,41 +8,39 @@ part of 'notification_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_NotificationConfig _$NotificationConfigFromJson(Map json) => $checkedCreate(
-  '_NotificationConfig',
-  json,
-  ($checkedConvert) {
-    final val = _NotificationConfig(
-      $type: $checkedConvert(
-        r'$type',
-        (v) =>
-            v as String? ??
-            'tools.ozone.server.getCapabilities#notificationConfig',
-      ),
-      channels: $checkedConvert(
-        'channels',
-        (v) => (v as List<dynamic>)
-            .map(
-              (e) => const NotificationConfigChannelsConverter().fromJson(
-                e as String,
-              ),
-            )
-            .toList(),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
+_$NotificationConfigImpl _$$NotificationConfigImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$NotificationConfigImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$NotificationConfigImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'tools.ozone.server.getCapabilities#notificationConfig'),
+          channels: $checkedConvert(
+              'channels',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const NotificationConfigChannelsConverter()
+                      .fromJson(e as String))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
     );
-    return val;
-  },
-);
 
-Map<String, dynamic> _$NotificationConfigToJson(_NotificationConfig instance) =>
+Map<String, dynamic> _$$NotificationConfigImplToJson(
+        _$NotificationConfigImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'channels': instance.channels
           .map(const NotificationConfigChannelsConverter().toJson)
           .toList(),
-      r'$unknown': ?instance.$unknown,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

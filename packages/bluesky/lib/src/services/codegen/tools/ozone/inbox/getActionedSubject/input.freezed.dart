@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,297 +9,286 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+InboxGetActionedSubjectInput _$InboxGetActionedSubjectInputFromJson(
+    Map<String, dynamic> json) {
+  return _InboxGetActionedSubjectInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$InboxGetActionedSubjectInput {
+  /// Account to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.
+  String? get did => throw _privateConstructorUsedError;
 
-/// Account to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.
- String? get did;/// DID or AT-URI of the subject to retrieve.
- String get subject;/// Maximum number of actions to return.
- int get limit;/// Opaque cursor for the next page of this subject's action history.
- String? get cursor; Map<String, dynamic>? get $unknown;
-/// Create a copy of InboxGetActionedSubjectInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InboxGetActionedSubjectInputCopyWith<InboxGetActionedSubjectInput> get copyWith => _$InboxGetActionedSubjectInputCopyWithImpl<InboxGetActionedSubjectInput>(this as InboxGetActionedSubjectInput, _$identity);
+  /// DID or AT-URI of the subject to retrieve.
+  String get subject => throw _privateConstructorUsedError;
+
+  /// Maximum number of actions to return.
+  int get limit => throw _privateConstructorUsedError;
+
+  /// Opaque cursor for the next page of this subject's action history.
+  String? get cursor => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this InboxGetActionedSubjectInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InboxGetActionedSubjectInput&&(identical(other.did, did) || other.did == did)&&(identical(other.subject, subject) || other.subject == subject)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,did,subject,limit,cursor,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'InboxGetActionedSubjectInput(did: $did, subject: $subject, limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of InboxGetActionedSubjectInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $InboxGetActionedSubjectInputCopyWith<InboxGetActionedSubjectInput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $InboxGetActionedSubjectInputCopyWith<$Res>  {
-  factory $InboxGetActionedSubjectInputCopyWith(InboxGetActionedSubjectInput value, $Res Function(InboxGetActionedSubjectInput) _then) = _$InboxGetActionedSubjectInputCopyWithImpl;
-@useResult
-$Res call({
- String? did, String subject, int limit, String? cursor, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $InboxGetActionedSubjectInputCopyWith<$Res> {
+  factory $InboxGetActionedSubjectInputCopyWith(
+          InboxGetActionedSubjectInput value,
+          $Res Function(InboxGetActionedSubjectInput) then) =
+      _$InboxGetActionedSubjectInputCopyWithImpl<$Res,
+          InboxGetActionedSubjectInput>;
+  @useResult
+  $Res call(
+      {String? did,
+      String subject,
+      int limit,
+      String? cursor,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$InboxGetActionedSubjectInputCopyWithImpl<$Res>
+class _$InboxGetActionedSubjectInputCopyWithImpl<$Res,
+        $Val extends InboxGetActionedSubjectInput>
     implements $InboxGetActionedSubjectInputCopyWith<$Res> {
-  _$InboxGetActionedSubjectInputCopyWithImpl(this._self, this._then);
+  _$InboxGetActionedSubjectInputCopyWithImpl(this._value, this._then);
 
-  final InboxGetActionedSubjectInput _self;
-  final $Res Function(InboxGetActionedSubjectInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of InboxGetActionedSubjectInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? did = freezed,Object? subject = null,Object? limit = null,Object? cursor = freezed,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-did: freezed == did ? _self.did : did // ignore: cast_nullable_to_non_nullable
-as String?,subject: null == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as String,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of InboxGetActionedSubjectInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? did = freezed,
+    Object? subject = null,
+    Object? limit = null,
+    Object? cursor = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      did: freezed == did
+          ? _value.did
+          : did // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subject: null == subject
+          ? _value.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$InboxGetActionedSubjectInputImplCopyWith<$Res>
+    implements $InboxGetActionedSubjectInputCopyWith<$Res> {
+  factory _$$InboxGetActionedSubjectInputImplCopyWith(
+          _$InboxGetActionedSubjectInputImpl value,
+          $Res Function(_$InboxGetActionedSubjectInputImpl) then) =
+      __$$InboxGetActionedSubjectInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? did,
+      String subject,
+      int limit,
+      String? cursor,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$InboxGetActionedSubjectInputImplCopyWithImpl<$Res>
+    extends _$InboxGetActionedSubjectInputCopyWithImpl<$Res,
+        _$InboxGetActionedSubjectInputImpl>
+    implements _$$InboxGetActionedSubjectInputImplCopyWith<$Res> {
+  __$$InboxGetActionedSubjectInputImplCopyWithImpl(
+      _$InboxGetActionedSubjectInputImpl _value,
+      $Res Function(_$InboxGetActionedSubjectInputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [InboxGetActionedSubjectInput].
-extension InboxGetActionedSubjectInputPatterns on InboxGetActionedSubjectInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InboxGetActionedSubjectInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _InboxGetActionedSubjectInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InboxGetActionedSubjectInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _InboxGetActionedSubjectInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InboxGetActionedSubjectInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _InboxGetActionedSubjectInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? did,  String subject,  int limit,  String? cursor,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _InboxGetActionedSubjectInput() when $default != null:
-return $default(_that.did,_that.subject,_that.limit,_that.cursor,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? did,  String subject,  int limit,  String? cursor,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _InboxGetActionedSubjectInput():
-return $default(_that.did,_that.subject,_that.limit,_that.cursor,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? did,  String subject,  int limit,  String? cursor,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _InboxGetActionedSubjectInput() when $default != null:
-return $default(_that.did,_that.subject,_that.limit,_that.cursor,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of InboxGetActionedSubjectInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? did = freezed,
+    Object? subject = null,
+    Object? limit = null,
+    Object? cursor = freezed,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$InboxGetActionedSubjectInputImpl(
+      did: freezed == did
+          ? _value.did
+          : did // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subject: null == subject
+          ? _value.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursor: freezed == cursor
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _InboxGetActionedSubjectInput implements InboxGetActionedSubjectInput {
-  const _InboxGetActionedSubjectInput({this.did, required this.subject, this.limit = 50, this.cursor, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _InboxGetActionedSubjectInput.fromJson(Map<String, dynamic> json) => _$InboxGetActionedSubjectInputFromJson(json);
+class _$InboxGetActionedSubjectInputImpl
+    implements _InboxGetActionedSubjectInput {
+  const _$InboxGetActionedSubjectInputImpl(
+      {this.did,
+      required this.subject,
+      this.limit = 50,
+      this.cursor,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// Account to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.
-@override final  String? did;
-/// DID or AT-URI of the subject to retrieve.
-@override final  String subject;
-/// Maximum number of actions to return.
-@override@JsonKey() final  int limit;
-/// Opaque cursor for the next page of this subject's action history.
-@override final  String? cursor;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$InboxGetActionedSubjectInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$InboxGetActionedSubjectInputImplFromJson(json);
+
+  /// Account to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.
+  @override
+  final String? did;
+
+  /// DID or AT-URI of the subject to retrieve.
+  @override
+  final String subject;
+
+  /// Maximum number of actions to return.
+  @override
+  @JsonKey()
+  final int limit;
+
+  /// Opaque cursor for the next page of this subject's action history.
+  @override
+  final String? cursor;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'InboxGetActionedSubjectInput(did: $did, subject: $subject, limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InboxGetActionedSubjectInputImpl &&
+            (identical(other.did, did) || other.did == did) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, did, subject, limit, cursor,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of InboxGetActionedSubjectInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboxGetActionedSubjectInputImplCopyWith<
+          _$InboxGetActionedSubjectInputImpl>
+      get copyWith => __$$InboxGetActionedSubjectInputImplCopyWithImpl<
+          _$InboxGetActionedSubjectInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboxGetActionedSubjectInputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _InboxGetActionedSubjectInput
+    implements InboxGetActionedSubjectInput {
+  const factory _InboxGetActionedSubjectInput(
+          {final String? did,
+          required final String subject,
+          final int limit,
+          final String? cursor,
+          final Map<String, dynamic>? $unknown}) =
+      _$InboxGetActionedSubjectInputImpl;
 
-/// Create a copy of InboxGetActionedSubjectInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$InboxGetActionedSubjectInputCopyWith<_InboxGetActionedSubjectInput> get copyWith => __$InboxGetActionedSubjectInputCopyWithImpl<_InboxGetActionedSubjectInput>(this, _$identity);
+  factory _InboxGetActionedSubjectInput.fromJson(Map<String, dynamic> json) =
+      _$InboxGetActionedSubjectInputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$InboxGetActionedSubjectInputToJson(this, );
+  /// Account to preview. Defaults to the authenticated account; another account requires an active moderator, triage, or admin credential.
+  @override
+  String? get did;
+
+  /// DID or AT-URI of the subject to retrieve.
+  @override
+  String get subject;
+
+  /// Maximum number of actions to return.
+  @override
+  int get limit;
+
+  /// Opaque cursor for the next page of this subject's action history.
+  @override
+  String? get cursor;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of InboxGetActionedSubjectInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InboxGetActionedSubjectInputImplCopyWith<
+          _$InboxGetActionedSubjectInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboxGetActionedSubjectInput&&(identical(other.did, did) || other.did == did)&&(identical(other.subject, subject) || other.subject == subject)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.cursor, cursor) || other.cursor == cursor)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,did,subject,limit,cursor,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'InboxGetActionedSubjectInput(did: $did, subject: $subject, limit: $limit, cursor: $cursor, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$InboxGetActionedSubjectInputCopyWith<$Res> implements $InboxGetActionedSubjectInputCopyWith<$Res> {
-  factory _$InboxGetActionedSubjectInputCopyWith(_InboxGetActionedSubjectInput value, $Res Function(_InboxGetActionedSubjectInput) _then) = __$InboxGetActionedSubjectInputCopyWithImpl;
-@override @useResult
-$Res call({
- String? did, String subject, int limit, String? cursor, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$InboxGetActionedSubjectInputCopyWithImpl<$Res>
-    implements _$InboxGetActionedSubjectInputCopyWith<$Res> {
-  __$InboxGetActionedSubjectInputCopyWithImpl(this._self, this._then);
-
-  final _InboxGetActionedSubjectInput _self;
-  final $Res Function(_InboxGetActionedSubjectInput) _then;
-
-/// Create a copy of InboxGetActionedSubjectInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? did = freezed,Object? subject = null,Object? limit = null,Object? cursor = freezed,Object? $unknown = freezed,}) {
-  return _then(_InboxGetActionedSubjectInput(
-did: freezed == did ? _self.did : did // ignore: cast_nullable_to_non_nullable
-as String?,subject: null == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as String,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,cursor: freezed == cursor ? _self.cursor : cursor // ignore: cast_nullable_to_non_nullable
-as String?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

@@ -8,28 +8,33 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_InboxGetActionedSubjectInput _$InboxGetActionedSubjectInputFromJson(
-  Map json,
-) => $checkedCreate('_InboxGetActionedSubjectInput', json, ($checkedConvert) {
-  final val = _InboxGetActionedSubjectInput(
-    did: $checkedConvert('did', (v) => v as String?),
-    subject: $checkedConvert('subject', (v) => v as String),
-    limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
-    cursor: $checkedConvert('cursor', (v) => v as String?),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$InboxGetActionedSubjectInputImpl _$$InboxGetActionedSubjectInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$InboxGetActionedSubjectInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$InboxGetActionedSubjectInputImpl(
+          did: $checkedConvert('did', (v) => v as String?),
+          subject: $checkedConvert('subject', (v) => v as String),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 50),
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$InboxGetActionedSubjectInputToJson(
-  _InboxGetActionedSubjectInput instance,
-) => <String, dynamic>{
-  'did': ?instance.did,
-  'subject': instance.subject,
-  'limit': instance.limit,
-  'cursor': ?instance.cursor,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$InboxGetActionedSubjectInputImplToJson(
+        _$InboxGetActionedSubjectInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.did case final value?) 'did': value,
+      'subject': instance.subject,
+      'limit': instance.limit,
+      if (instance.cursor case final value?) 'cursor': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,42 +8,41 @@ part of 'multi_post_repost_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_MultiPostRepostGroup _$MultiPostRepostGroupFromJson(
-  Map json,
-) => $checkedCreate('_MultiPostRepostGroup', json, ($checkedConvert) {
-  final val = _MultiPostRepostGroup(
-    $type: $checkedConvert(
-      r'$type',
-      (v) =>
-          v as String? ??
-          'app.bsky.notification.getGroupedNotifications#multiPostRepostGroup',
-    ),
-    actor: $checkedConvert('actor', (v) => v as String),
-    items: $checkedConvert(
-      'items',
-      (v) => (v as List<dynamic>)
-          .map(
-            (e) => const MultiPostRepostItemConverter().fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$MultiPostRepostGroupImpl _$$MultiPostRepostGroupImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$MultiPostRepostGroupImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$MultiPostRepostGroupImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.notification.getGroupedNotifications#multiPostRepostGroup'),
+          actor: $checkedConvert('actor', (v) => v as String),
+          items: $checkedConvert(
+              'items',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const MultiPostRepostItemConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$MultiPostRepostGroupToJson(
-  _MultiPostRepostGroup instance,
-) => <String, dynamic>{
-  r'$type': instance.$type,
-  'actor': instance.actor,
-  'items': instance.items
-      .map(const MultiPostRepostItemConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$MultiPostRepostGroupImplToJson(
+        _$MultiPostRepostGroupImpl instance) =>
+    <String, dynamic>{
+      r'$type': instance.$type,
+      'actor': instance.actor,
+      'items': instance.items
+          .map(const MultiPostRepostItemConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

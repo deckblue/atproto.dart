@@ -8,39 +8,42 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_QueueUpdateQueueInput _$QueueUpdateQueueInputFromJson(Map json) =>
-    $checkedCreate('_QueueUpdateQueueInput', json, ($checkedConvert) {
-      final val = _QueueUpdateQueueInput(
-        queueId: $checkedConvert('queueId', (v) => (v as num).toInt()),
-        name: $checkedConvert('name', (v) => v as String?),
-        enabled: $checkedConvert('enabled', (v) => v as bool?),
-        description: $checkedConvert('description', (v) => v as String?),
-        recommendedPolicies: $checkedConvert(
-          'recommendedPolicies',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        recommendedLabels: $checkedConvert(
-          'recommendedLabels',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        strictAccess: $checkedConvert('strictAccess', (v) => v as bool?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$QueueUpdateQueueInputImpl _$$QueueUpdateQueueInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$QueueUpdateQueueInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$QueueUpdateQueueInputImpl(
+          queueId: $checkedConvert('queueId', (v) => (v as num).toInt()),
+          name: $checkedConvert('name', (v) => v as String?),
+          enabled: $checkedConvert('enabled', (v) => v as bool?),
+          description: $checkedConvert('description', (v) => v as String?),
+          recommendedPolicies: $checkedConvert('recommendedPolicies',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          recommendedLabels: $checkedConvert('recommendedLabels',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          strictAccess: $checkedConvert('strictAccess', (v) => v as bool?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$QueueUpdateQueueInputToJson(
-  _QueueUpdateQueueInput instance,
-) => <String, dynamic>{
-  'queueId': instance.queueId,
-  'name': ?instance.name,
-  'enabled': ?instance.enabled,
-  'description': ?instance.description,
-  'recommendedPolicies': ?instance.recommendedPolicies,
-  'recommendedLabels': ?instance.recommendedLabels,
-  'strictAccess': ?instance.strictAccess,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$QueueUpdateQueueInputImplToJson(
+        _$QueueUpdateQueueInputImpl instance) =>
+    <String, dynamic>{
+      'queueId': instance.queueId,
+      if (instance.name case final value?) 'name': value,
+      if (instance.enabled case final value?) 'enabled': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.recommendedPolicies case final value?)
+        'recommendedPolicies': value,
+      if (instance.recommendedLabels case final value?)
+        'recommendedLabels': value,
+      if (instance.strictAccess case final value?) 'strictAccess': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

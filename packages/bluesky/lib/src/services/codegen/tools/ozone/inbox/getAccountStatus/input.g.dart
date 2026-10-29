@@ -8,18 +8,27 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_InboxGetAccountStatusInput _$InboxGetAccountStatusInputFromJson(Map json) =>
-    $checkedCreate('_InboxGetAccountStatusInput', json, ($checkedConvert) {
-      final val = _InboxGetAccountStatusInput(
-        did: $checkedConvert('did', (v) => v as String?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$InboxGetAccountStatusInputImpl _$$InboxGetAccountStatusInputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$InboxGetAccountStatusInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$InboxGetAccountStatusInputImpl(
+          did: $checkedConvert('did', (v) => v as String?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$InboxGetAccountStatusInputToJson(
-  _InboxGetAccountStatusInput instance,
-) => <String, dynamic>{'did': ?instance.did, r'$unknown': ?instance.$unknown};
+Map<String, dynamic> _$$InboxGetAccountStatusInputImplToJson(
+        _$InboxGetAccountStatusInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.did case final value?) 'did': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

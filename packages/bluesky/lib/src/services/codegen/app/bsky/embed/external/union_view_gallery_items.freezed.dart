@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,313 +9,445 @@ part of 'union_view_gallery_items.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$UEmbedExternalViewGalleryItems {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UEmbedExternalViewGalleryItems&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'UEmbedExternalViewGalleryItems(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(EmbedExternalViewGalleryImage data)
+        embedExternalViewGalleryImage,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(EmbedExternalViewGalleryImage data)?
+        embedExternalViewGalleryImage,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(EmbedExternalViewGalleryImage data)?
+        embedExternalViewGalleryImage,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)
+        embedExternalViewGalleryImage,
+    required TResult Function(UEmbedExternalViewGalleryItemsUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)?
+        embedExternalViewGalleryImage,
+    TResult? Function(UEmbedExternalViewGalleryItemsUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)?
+        embedExternalViewGalleryImage,
+    TResult Function(UEmbedExternalViewGalleryItemsUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $UEmbedExternalViewGalleryItemsCopyWith<$Res>  {
-$UEmbedExternalViewGalleryItemsCopyWith(UEmbedExternalViewGalleryItems _, $Res Function(UEmbedExternalViewGalleryItems) __);
+abstract class $UEmbedExternalViewGalleryItemsCopyWith<$Res> {
+  factory $UEmbedExternalViewGalleryItemsCopyWith(
+          UEmbedExternalViewGalleryItems value,
+          $Res Function(UEmbedExternalViewGalleryItems) then) =
+      _$UEmbedExternalViewGalleryItemsCopyWithImpl<$Res,
+          UEmbedExternalViewGalleryItems>;
 }
 
+/// @nodoc
+class _$UEmbedExternalViewGalleryItemsCopyWithImpl<$Res,
+        $Val extends UEmbedExternalViewGalleryItems>
+    implements $UEmbedExternalViewGalleryItemsCopyWith<$Res> {
+  _$UEmbedExternalViewGalleryItemsCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [UEmbedExternalViewGalleryItems].
-extension UEmbedExternalViewGalleryItemsPatterns on UEmbedExternalViewGalleryItems {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)?  embedExternalViewGalleryImage,TResult Function( UEmbedExternalViewGalleryItemsUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage() when embedExternalViewGalleryImage != null:
-return embedExternalViewGalleryImage(_that);case UEmbedExternalViewGalleryItemsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)  embedExternalViewGalleryImage,required TResult Function( UEmbedExternalViewGalleryItemsUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage():
-return embedExternalViewGalleryImage(_that);case UEmbedExternalViewGalleryItemsUnknown():
-return unknown(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)?  embedExternalViewGalleryImage,TResult? Function( UEmbedExternalViewGalleryItemsUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage() when embedExternalViewGalleryImage != null:
-return embedExternalViewGalleryImage(_that);case UEmbedExternalViewGalleryItemsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( EmbedExternalViewGalleryImage data)?  embedExternalViewGalleryImage,TResult Function( Map<String, dynamic> data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage() when embedExternalViewGalleryImage != null:
-return embedExternalViewGalleryImage(_that.data);case UEmbedExternalViewGalleryItemsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( EmbedExternalViewGalleryImage data)  embedExternalViewGalleryImage,required TResult Function( Map<String, dynamic> data)  unknown,}) {final _that = this;
-switch (_that) {
-case UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage():
-return embedExternalViewGalleryImage(_that.data);case UEmbedExternalViewGalleryItemsUnknown():
-return unknown(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( EmbedExternalViewGalleryImage data)?  embedExternalViewGalleryImage,TResult? Function( Map<String, dynamic> data)?  unknown,}) {final _that = this;
-switch (_that) {
-case UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage() when embedExternalViewGalleryImage != null:
-return embedExternalViewGalleryImage(_that.data);case UEmbedExternalViewGalleryItemsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of UEmbedExternalViewGalleryItems
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWith<
+    $Res> {
+  factory _$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWith(
+          _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl value,
+          $Res Function(
+                  _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl)
+              then) =
+      __$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({EmbedExternalViewGalleryImage data});
+
+  $EmbedExternalViewGalleryImageCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWithImpl<
+        $Res>
+    extends _$UEmbedExternalViewGalleryItemsCopyWithImpl<$Res,
+        _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl>
+    implements
+        _$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWith<
+            $Res> {
+  __$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWithImpl(
+      _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl _value,
+      $Res Function(
+              _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl)
+          _then)
+      : super(_value, _then);
+
+  /// Create a copy of UEmbedExternalViewGalleryItems
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(
+        _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as EmbedExternalViewGalleryImage,
+    ));
+  }
+
+  /// Create a copy of UEmbedExternalViewGalleryItems
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EmbedExternalViewGalleryImageCopyWith<$Res> get data {
+    return $EmbedExternalViewGalleryImageCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
+class _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl
+    extends UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage {
+  const _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl(
+      {required this.data})
+      : super._();
 
-class UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage extends UEmbedExternalViewGalleryItems {
-  const UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage({required this.data}): super._();
-  
+  @override
+  final EmbedExternalViewGalleryImage data;
 
-@override final  EmbedExternalViewGalleryImage data;
+  @override
+  String toString() {
+    return 'UEmbedExternalViewGalleryItems.embedExternalViewGalleryImage(data: $data)';
+  }
 
-/// Create a copy of UEmbedExternalViewGalleryItems
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageCopyWith<UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage> get copyWith => _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageCopyWithImpl<UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other
+                is _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of UEmbedExternalViewGalleryItems
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWith<
+          _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl>
+      get copyWith =>
+          __$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWithImpl<
+                  _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(EmbedExternalViewGalleryImage data)
+        embedExternalViewGalleryImage,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return embedExternalViewGalleryImage(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(EmbedExternalViewGalleryImage data)?
+        embedExternalViewGalleryImage,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return embedExternalViewGalleryImage?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(EmbedExternalViewGalleryImage data)?
+        embedExternalViewGalleryImage,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (embedExternalViewGalleryImage != null) {
+      return embedExternalViewGalleryImage(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)
+        embedExternalViewGalleryImage,
+    required TResult Function(UEmbedExternalViewGalleryItemsUnknown value)
+        unknown,
+  }) {
+    return embedExternalViewGalleryImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)?
+        embedExternalViewGalleryImage,
+    TResult? Function(UEmbedExternalViewGalleryItemsUnknown value)? unknown,
+  }) {
+    return embedExternalViewGalleryImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)?
+        embedExternalViewGalleryImage,
+    TResult Function(UEmbedExternalViewGalleryItemsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (embedExternalViewGalleryImage != null) {
+      return embedExternalViewGalleryImage(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage
+    extends UEmbedExternalViewGalleryItems {
+  const factory UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage(
+          {required final EmbedExternalViewGalleryImage data}) =
+      _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl;
+  const UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage._()
+      : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  EmbedExternalViewGalleryImage get data;
 
-@override
-String toString() {
-  return 'UEmbedExternalViewGalleryItems.embedExternalViewGalleryImage(data: $data)';
-}
-
-
+  /// Create a copy of UEmbedExternalViewGalleryItems
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImplCopyWith<
+          _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageCopyWith<$Res> implements $UEmbedExternalViewGalleryItemsCopyWith<$Res> {
-  factory $UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageCopyWith(UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value, $Res Function(UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage) _then) = _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageCopyWithImpl;
-@useResult
-$Res call({
- EmbedExternalViewGalleryImage data
-});
-
-
-$EmbedExternalViewGalleryImageCopyWith<$Res> get data;
-
+abstract class _$$UEmbedExternalViewGalleryItemsUnknownImplCopyWith<$Res> {
+  factory _$$UEmbedExternalViewGalleryItemsUnknownImplCopyWith(
+          _$UEmbedExternalViewGalleryItemsUnknownImpl value,
+          $Res Function(_$UEmbedExternalViewGalleryItemsUnknownImpl) then) =
+      __$$UEmbedExternalViewGalleryItemsUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Map<String, dynamic> data});
 }
+
 /// @nodoc
-class _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageCopyWithImpl<$Res>
-    implements $UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageCopyWith<$Res> {
-  _$UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImageCopyWithImpl(this._self, this._then);
+class __$$UEmbedExternalViewGalleryItemsUnknownImplCopyWithImpl<$Res>
+    extends _$UEmbedExternalViewGalleryItemsCopyWithImpl<$Res,
+        _$UEmbedExternalViewGalleryItemsUnknownImpl>
+    implements _$$UEmbedExternalViewGalleryItemsUnknownImplCopyWith<$Res> {
+  __$$UEmbedExternalViewGalleryItemsUnknownImplCopyWithImpl(
+      _$UEmbedExternalViewGalleryItemsUnknownImpl _value,
+      $Res Function(_$UEmbedExternalViewGalleryItemsUnknownImpl) _then)
+      : super(_value, _then);
 
-  final UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage _self;
-  final $Res Function(UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage) _then;
-
-/// Create a copy of UEmbedExternalViewGalleryItems
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as EmbedExternalViewGalleryImage,
-  ));
-}
-
-/// Create a copy of UEmbedExternalViewGalleryItems
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$EmbedExternalViewGalleryImageCopyWith<$Res> get data {
-  
-  return $EmbedExternalViewGalleryImageCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
+  /// Create a copy of UEmbedExternalViewGalleryItems
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UEmbedExternalViewGalleryItemsUnknownImpl(
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$UEmbedExternalViewGalleryItemsUnknownImpl
+    extends UEmbedExternalViewGalleryItemsUnknown {
+  const _$UEmbedExternalViewGalleryItemsUnknownImpl(
+      {required final Map<String, dynamic> data})
+      : _data = data,
+        super._();
 
-class UEmbedExternalViewGalleryItemsUnknown extends UEmbedExternalViewGalleryItems {
-  const UEmbedExternalViewGalleryItemsUnknown({required final  Map<String, dynamic> data}): _data = data,super._();
-  
+  final Map<String, dynamic> _data;
+  @override
+  Map<String, dynamic> get data {
+    if (_data is EqualUnmodifiableMapView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_data);
+  }
 
- final  Map<String, dynamic> _data;
-@override Map<String, dynamic> get data {
-  if (_data is EqualUnmodifiableMapView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_data);
+  @override
+  String toString() {
+    return 'UEmbedExternalViewGalleryItems.unknown(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UEmbedExternalViewGalleryItemsUnknownImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of UEmbedExternalViewGalleryItems
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UEmbedExternalViewGalleryItemsUnknownImplCopyWith<
+          _$UEmbedExternalViewGalleryItemsUnknownImpl>
+      get copyWith => __$$UEmbedExternalViewGalleryItemsUnknownImplCopyWithImpl<
+          _$UEmbedExternalViewGalleryItemsUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(EmbedExternalViewGalleryImage data)
+        embedExternalViewGalleryImage,
+    required TResult Function(Map<String, dynamic> data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(EmbedExternalViewGalleryImage data)?
+        embedExternalViewGalleryImage,
+    TResult? Function(Map<String, dynamic> data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(EmbedExternalViewGalleryImage data)?
+        embedExternalViewGalleryImage,
+    TResult Function(Map<String, dynamic> data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)
+        embedExternalViewGalleryImage,
+    required TResult Function(UEmbedExternalViewGalleryItemsUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)?
+        embedExternalViewGalleryImage,
+    TResult? Function(UEmbedExternalViewGalleryItemsUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(
+            UEmbedExternalViewGalleryItemsEmbedExternalViewGalleryImage value)?
+        embedExternalViewGalleryImage,
+    TResult Function(UEmbedExternalViewGalleryItemsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UEmbedExternalViewGalleryItemsUnknown
+    extends UEmbedExternalViewGalleryItems {
+  const factory UEmbedExternalViewGalleryItemsUnknown(
+          {required final Map<String, dynamic> data}) =
+      _$UEmbedExternalViewGalleryItemsUnknownImpl;
+  const UEmbedExternalViewGalleryItemsUnknown._() : super._();
 
-/// Create a copy of UEmbedExternalViewGalleryItems
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UEmbedExternalViewGalleryItemsUnknownCopyWith<UEmbedExternalViewGalleryItemsUnknown> get copyWith => _$UEmbedExternalViewGalleryItemsUnknownCopyWithImpl<UEmbedExternalViewGalleryItemsUnknown>(this, _$identity);
+  @override
+  Map<String, dynamic> get data;
 
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UEmbedExternalViewGalleryItemsUnknown&&const DeepCollectionEquality().equals(other._data, _data));
+  /// Create a copy of UEmbedExternalViewGalleryItems
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UEmbedExternalViewGalleryItemsUnknownImplCopyWith<
+          _$UEmbedExternalViewGalleryItemsUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
-
-@override
-String toString() {
-  return 'UEmbedExternalViewGalleryItems.unknown(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $UEmbedExternalViewGalleryItemsUnknownCopyWith<$Res> implements $UEmbedExternalViewGalleryItemsCopyWith<$Res> {
-  factory $UEmbedExternalViewGalleryItemsUnknownCopyWith(UEmbedExternalViewGalleryItemsUnknown value, $Res Function(UEmbedExternalViewGalleryItemsUnknown) _then) = _$UEmbedExternalViewGalleryItemsUnknownCopyWithImpl;
-@useResult
-$Res call({
- Map<String, dynamic> data
-});
-
-
-
-
-}
-/// @nodoc
-class _$UEmbedExternalViewGalleryItemsUnknownCopyWithImpl<$Res>
-    implements $UEmbedExternalViewGalleryItemsUnknownCopyWith<$Res> {
-  _$UEmbedExternalViewGalleryItemsUnknownCopyWithImpl(this._self, this._then);
-
-  final UEmbedExternalViewGalleryItemsUnknown _self;
-  final $Res Function(UEmbedExternalViewGalleryItemsUnknown) _then;
-
-/// Create a copy of UEmbedExternalViewGalleryItems
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UEmbedExternalViewGalleryItemsUnknown(
-data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
-  ));
-}
-
-
-}
-
-// dart format on

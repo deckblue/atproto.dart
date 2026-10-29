@@ -8,29 +8,34 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_UnspeccedGetAtmosphereExploreArticleRecommendationsInput
-_$UnspeccedGetAtmosphereExploreArticleRecommendationsInputFromJson(Map json) =>
-    $checkedCreate(
-      '_UnspeccedGetAtmosphereExploreArticleRecommendationsInput',
-      json,
-      ($checkedConvert) {
-        final val = _UnspeccedGetAtmosphereExploreArticleRecommendationsInput(
-          viewer: $checkedConvert('viewer', (v) => v as String?),
-          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
-          $unknown: $checkedConvert(
-            r'$unknown',
-            (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-          ),
+_$UnspeccedGetAtmosphereExploreArticleRecommendationsInputImpl
+    _$$UnspeccedGetAtmosphereExploreArticleRecommendationsInputImplFromJson(
+            Map json) =>
+        $checkedCreate(
+          r'_$UnspeccedGetAtmosphereExploreArticleRecommendationsInputImpl',
+          json,
+          ($checkedConvert) {
+            final val =
+                _$UnspeccedGetAtmosphereExploreArticleRecommendationsInputImpl(
+              viewer: $checkedConvert('viewer', (v) => v as String?),
+              limit:
+                  $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
         );
-        return val;
-      },
-    );
 
 Map<String, dynamic>
-_$UnspeccedGetAtmosphereExploreArticleRecommendationsInputToJson(
-  _UnspeccedGetAtmosphereExploreArticleRecommendationsInput instance,
-) => <String, dynamic>{
-  'viewer': ?instance.viewer,
-  'limit': instance.limit,
-  r'$unknown': ?instance.$unknown,
-};
+    _$$UnspeccedGetAtmosphereExploreArticleRecommendationsInputImplToJson(
+            _$UnspeccedGetAtmosphereExploreArticleRecommendationsInputImpl
+                instance) =>
+        <String, dynamic>{
+          if (instance.viewer case final value?) 'viewer': value,
+          'limit': instance.limit,
+          if (instance.$unknown case final value?) r'$unknown': value,
+        };

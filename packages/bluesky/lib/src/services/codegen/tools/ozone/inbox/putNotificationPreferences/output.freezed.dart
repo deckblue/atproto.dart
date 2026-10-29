@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,298 +9,226 @@ part of 'output.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+InboxPutNotificationPreferencesOutput
+    _$InboxPutNotificationPreferencesOutputFromJson(Map<String, dynamic> json) {
+  return _InboxPutNotificationPreferencesOutput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$InboxPutNotificationPreferencesOutput {
-
-@NotificationPreferencesConverter() NotificationPreferences get preferences; Map<String, dynamic>? get $unknown;
-/// Create a copy of InboxPutNotificationPreferencesOutput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InboxPutNotificationPreferencesOutputCopyWith<InboxPutNotificationPreferencesOutput> get copyWith => _$InboxPutNotificationPreferencesOutputCopyWithImpl<InboxPutNotificationPreferencesOutput>(this as InboxPutNotificationPreferencesOutput, _$identity);
+  @NotificationPreferencesConverter()
+  NotificationPreferences get preferences => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this InboxPutNotificationPreferencesOutput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InboxPutNotificationPreferencesOutput&&(identical(other.preferences, preferences) || other.preferences == preferences)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,preferences,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'InboxPutNotificationPreferencesOutput(preferences: $preferences, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of InboxPutNotificationPreferencesOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $InboxPutNotificationPreferencesOutputCopyWith<
+          InboxPutNotificationPreferencesOutput>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $InboxPutNotificationPreferencesOutputCopyWith<$Res>  {
-  factory $InboxPutNotificationPreferencesOutputCopyWith(InboxPutNotificationPreferencesOutput value, $Res Function(InboxPutNotificationPreferencesOutput) _then) = _$InboxPutNotificationPreferencesOutputCopyWithImpl;
-@useResult
-$Res call({
-@NotificationPreferencesConverter() NotificationPreferences preferences, Map<String, dynamic>? $unknown
-});
+abstract class $InboxPutNotificationPreferencesOutputCopyWith<$Res> {
+  factory $InboxPutNotificationPreferencesOutputCopyWith(
+          InboxPutNotificationPreferencesOutput value,
+          $Res Function(InboxPutNotificationPreferencesOutput) then) =
+      _$InboxPutNotificationPreferencesOutputCopyWithImpl<$Res,
+          InboxPutNotificationPreferencesOutput>;
+  @useResult
+  $Res call(
+      {@NotificationPreferencesConverter() NotificationPreferences preferences,
+      Map<String, dynamic>? $unknown});
 
-
-$NotificationPreferencesCopyWith<$Res> get preferences;
-
+  $NotificationPreferencesCopyWith<$Res> get preferences;
 }
+
 /// @nodoc
-class _$InboxPutNotificationPreferencesOutputCopyWithImpl<$Res>
+class _$InboxPutNotificationPreferencesOutputCopyWithImpl<$Res,
+        $Val extends InboxPutNotificationPreferencesOutput>
     implements $InboxPutNotificationPreferencesOutputCopyWith<$Res> {
-  _$InboxPutNotificationPreferencesOutputCopyWithImpl(this._self, this._then);
+  _$InboxPutNotificationPreferencesOutputCopyWithImpl(this._value, this._then);
 
-  final InboxPutNotificationPreferencesOutput _self;
-  final $Res Function(InboxPutNotificationPreferencesOutput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of InboxPutNotificationPreferencesOutput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? preferences = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-preferences: null == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as NotificationPreferences,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of InboxPutNotificationPreferencesOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$NotificationPreferencesCopyWith<$Res> get preferences {
-  
-  return $NotificationPreferencesCopyWith<$Res>(_self.preferences, (value) {
-    return _then(_self.copyWith(preferences: value));
-  });
-}
-}
+  /// Create a copy of InboxPutNotificationPreferencesOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? preferences = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      preferences: null == preferences
+          ? _value.preferences
+          : preferences // ignore: cast_nullable_to_non_nullable
+              as NotificationPreferences,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [InboxPutNotificationPreferencesOutput].
-extension InboxPutNotificationPreferencesOutputPatterns on InboxPutNotificationPreferencesOutput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InboxPutNotificationPreferencesOutput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _InboxPutNotificationPreferencesOutput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InboxPutNotificationPreferencesOutput value)  $default,){
-final _that = this;
-switch (_that) {
-case _InboxPutNotificationPreferencesOutput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InboxPutNotificationPreferencesOutput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _InboxPutNotificationPreferencesOutput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@NotificationPreferencesConverter()  NotificationPreferences preferences,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _InboxPutNotificationPreferencesOutput() when $default != null:
-return $default(_that.preferences,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@NotificationPreferencesConverter()  NotificationPreferences preferences,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _InboxPutNotificationPreferencesOutput():
-return $default(_that.preferences,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@NotificationPreferencesConverter()  NotificationPreferences preferences,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _InboxPutNotificationPreferencesOutput() when $default != null:
-return $default(_that.preferences,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of InboxPutNotificationPreferencesOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NotificationPreferencesCopyWith<$Res> get preferences {
+    return $NotificationPreferencesCopyWith<$Res>(_value.preferences, (value) {
+      return _then(_value.copyWith(preferences: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$InboxPutNotificationPreferencesOutputImplCopyWith<$Res>
+    implements $InboxPutNotificationPreferencesOutputCopyWith<$Res> {
+  factory _$$InboxPutNotificationPreferencesOutputImplCopyWith(
+          _$InboxPutNotificationPreferencesOutputImpl value,
+          $Res Function(_$InboxPutNotificationPreferencesOutputImpl) then) =
+      __$$InboxPutNotificationPreferencesOutputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@NotificationPreferencesConverter() NotificationPreferences preferences,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $NotificationPreferencesCopyWith<$Res> get preferences;
+}
+
+/// @nodoc
+class __$$InboxPutNotificationPreferencesOutputImplCopyWithImpl<$Res>
+    extends _$InboxPutNotificationPreferencesOutputCopyWithImpl<$Res,
+        _$InboxPutNotificationPreferencesOutputImpl>
+    implements _$$InboxPutNotificationPreferencesOutputImplCopyWith<$Res> {
+  __$$InboxPutNotificationPreferencesOutputImplCopyWithImpl(
+      _$InboxPutNotificationPreferencesOutputImpl _value,
+      $Res Function(_$InboxPutNotificationPreferencesOutputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of InboxPutNotificationPreferencesOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? preferences = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$InboxPutNotificationPreferencesOutputImpl(
+      preferences: null == preferences
+          ? _value.preferences
+          : preferences // ignore: cast_nullable_to_non_nullable
+              as NotificationPreferences,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _InboxPutNotificationPreferencesOutput implements InboxPutNotificationPreferencesOutput {
-  const _InboxPutNotificationPreferencesOutput({@NotificationPreferencesConverter() required this.preferences, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _InboxPutNotificationPreferencesOutput.fromJson(Map<String, dynamic> json) => _$InboxPutNotificationPreferencesOutputFromJson(json);
+class _$InboxPutNotificationPreferencesOutputImpl
+    implements _InboxPutNotificationPreferencesOutput {
+  const _$InboxPutNotificationPreferencesOutputImpl(
+      {@NotificationPreferencesConverter() required this.preferences,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@NotificationPreferencesConverter() final  NotificationPreferences preferences;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$InboxPutNotificationPreferencesOutputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$InboxPutNotificationPreferencesOutputImplFromJson(json);
+
+  @override
+  @NotificationPreferencesConverter()
+  final NotificationPreferences preferences;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'InboxPutNotificationPreferencesOutput(preferences: $preferences, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InboxPutNotificationPreferencesOutputImpl &&
+            (identical(other.preferences, preferences) ||
+                other.preferences == preferences) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, preferences, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of InboxPutNotificationPreferencesOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboxPutNotificationPreferencesOutputImplCopyWith<
+          _$InboxPutNotificationPreferencesOutputImpl>
+      get copyWith => __$$InboxPutNotificationPreferencesOutputImplCopyWithImpl<
+          _$InboxPutNotificationPreferencesOutputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboxPutNotificationPreferencesOutputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _InboxPutNotificationPreferencesOutput
+    implements InboxPutNotificationPreferencesOutput {
+  const factory _InboxPutNotificationPreferencesOutput(
+          {@NotificationPreferencesConverter()
+          required final NotificationPreferences preferences,
+          final Map<String, dynamic>? $unknown}) =
+      _$InboxPutNotificationPreferencesOutputImpl;
 
-/// Create a copy of InboxPutNotificationPreferencesOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$InboxPutNotificationPreferencesOutputCopyWith<_InboxPutNotificationPreferencesOutput> get copyWith => __$InboxPutNotificationPreferencesOutputCopyWithImpl<_InboxPutNotificationPreferencesOutput>(this, _$identity);
+  factory _InboxPutNotificationPreferencesOutput.fromJson(
+          Map<String, dynamic> json) =
+      _$InboxPutNotificationPreferencesOutputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$InboxPutNotificationPreferencesOutputToJson(this, );
+  @override
+  @NotificationPreferencesConverter()
+  NotificationPreferences get preferences;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of InboxPutNotificationPreferencesOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InboxPutNotificationPreferencesOutputImplCopyWith<
+          _$InboxPutNotificationPreferencesOutputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboxPutNotificationPreferencesOutput&&(identical(other.preferences, preferences) || other.preferences == preferences)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,preferences,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'InboxPutNotificationPreferencesOutput(preferences: $preferences, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$InboxPutNotificationPreferencesOutputCopyWith<$Res> implements $InboxPutNotificationPreferencesOutputCopyWith<$Res> {
-  factory _$InboxPutNotificationPreferencesOutputCopyWith(_InboxPutNotificationPreferencesOutput value, $Res Function(_InboxPutNotificationPreferencesOutput) _then) = __$InboxPutNotificationPreferencesOutputCopyWithImpl;
-@override @useResult
-$Res call({
-@NotificationPreferencesConverter() NotificationPreferences preferences, Map<String, dynamic>? $unknown
-});
-
-
-@override $NotificationPreferencesCopyWith<$Res> get preferences;
-
-}
-/// @nodoc
-class __$InboxPutNotificationPreferencesOutputCopyWithImpl<$Res>
-    implements _$InboxPutNotificationPreferencesOutputCopyWith<$Res> {
-  __$InboxPutNotificationPreferencesOutputCopyWithImpl(this._self, this._then);
-
-  final _InboxPutNotificationPreferencesOutput _self;
-  final $Res Function(_InboxPutNotificationPreferencesOutput) _then;
-
-/// Create a copy of InboxPutNotificationPreferencesOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? preferences = null,Object? $unknown = freezed,}) {
-  return _then(_InboxPutNotificationPreferencesOutput(
-preferences: null == preferences ? _self.preferences : preferences // ignore: cast_nullable_to_non_nullable
-as NotificationPreferences,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of InboxPutNotificationPreferencesOutput
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$NotificationPreferencesCopyWith<$Res> get preferences {
-  
-  return $NotificationPreferencesCopyWith<$Res>(_self.preferences, (value) {
-    return _then(_self.copyWith(preferences: value));
-  });
-}
-}
-
-// dart format on

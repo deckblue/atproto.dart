@@ -8,36 +8,34 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_InboxListActionedSubjectsOutput _$InboxListActionedSubjectsOutputFromJson(
-  Map json,
-) =>
-    $checkedCreate('_InboxListActionedSubjectsOutput', json, ($checkedConvert) {
-      final val = _InboxListActionedSubjectsOutput(
-        cursor: $checkedConvert('cursor', (v) => v as String?),
-        subjects: $checkedConvert(
-          'subjects',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const SubjectViewConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$InboxListActionedSubjectsOutputImpl
+    _$$InboxListActionedSubjectsOutputImplFromJson(Map json) => $checkedCreate(
+          r'_$InboxListActionedSubjectsOutputImpl',
+          json,
+          ($checkedConvert) {
+            final val = _$InboxListActionedSubjectsOutputImpl(
+              cursor: $checkedConvert('cursor', (v) => v as String?),
+              subjects: $checkedConvert(
+                  'subjects',
+                  (v) => (v as List<dynamic>)
+                      .map((e) => const SubjectViewConverter()
+                          .fromJson(e as Map<String, dynamic>))
+                      .toList()),
+              $unknown: $checkedConvert(
+                  r'$unknown',
+                  (v) => (v as Map?)?.map(
+                        (k, e) => MapEntry(k as String, e),
+                      )),
+            );
+            return val;
+          },
+        );
 
-Map<String, dynamic> _$InboxListActionedSubjectsOutputToJson(
-  _InboxListActionedSubjectsOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'subjects': instance.subjects
-      .map(const SubjectViewConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$InboxListActionedSubjectsOutputImplToJson(
+        _$InboxListActionedSubjectsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'subjects':
+          instance.subjects.map(const SubjectViewConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

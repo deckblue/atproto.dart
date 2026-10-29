@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,291 +9,232 @@ part of 'input.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+SafelinkSyncSourceInput _$SafelinkSyncSourceInputFromJson(
+    Map<String, dynamic> json) {
+  return _SafelinkSyncSourceInput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$SafelinkSyncSourceInput {
-
-/// Source whose rules are being synchronized
- String get source;@SourceRuleConverter() List<SourceRule> get rules; Map<String, dynamic>? get $unknown;
-/// Create a copy of SafelinkSyncSourceInput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SafelinkSyncSourceInputCopyWith<SafelinkSyncSourceInput> get copyWith => _$SafelinkSyncSourceInputCopyWithImpl<SafelinkSyncSourceInput>(this as SafelinkSyncSourceInput, _$identity);
+  /// Source whose rules are being synchronized
+  String get source => throw _privateConstructorUsedError;
+  @SourceRuleConverter()
+  List<SourceRule> get rules => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this SafelinkSyncSourceInput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SafelinkSyncSourceInput&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other.rules, rules)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,source,const DeepCollectionEquality().hash(rules),const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'SafelinkSyncSourceInput(source: $source, rules: $rules, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of SafelinkSyncSourceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SafelinkSyncSourceInputCopyWith<SafelinkSyncSourceInput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SafelinkSyncSourceInputCopyWith<$Res>  {
-  factory $SafelinkSyncSourceInputCopyWith(SafelinkSyncSourceInput value, $Res Function(SafelinkSyncSourceInput) _then) = _$SafelinkSyncSourceInputCopyWithImpl;
-@useResult
-$Res call({
- String source,@SourceRuleConverter() List<SourceRule> rules, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $SafelinkSyncSourceInputCopyWith<$Res> {
+  factory $SafelinkSyncSourceInputCopyWith(SafelinkSyncSourceInput value,
+          $Res Function(SafelinkSyncSourceInput) then) =
+      _$SafelinkSyncSourceInputCopyWithImpl<$Res, SafelinkSyncSourceInput>;
+  @useResult
+  $Res call(
+      {String source,
+      @SourceRuleConverter() List<SourceRule> rules,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$SafelinkSyncSourceInputCopyWithImpl<$Res>
+class _$SafelinkSyncSourceInputCopyWithImpl<$Res,
+        $Val extends SafelinkSyncSourceInput>
     implements $SafelinkSyncSourceInputCopyWith<$Res> {
-  _$SafelinkSyncSourceInputCopyWithImpl(this._self, this._then);
+  _$SafelinkSyncSourceInputCopyWithImpl(this._value, this._then);
 
-  final SafelinkSyncSourceInput _self;
-  final $Res Function(SafelinkSyncSourceInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of SafelinkSyncSourceInput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? source = null,Object? rules = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
-as String,rules: null == rules ? _self.rules : rules // ignore: cast_nullable_to_non_nullable
-as List<SourceRule>,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of SafelinkSyncSourceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? rules = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      rules: null == rules
+          ? _value.rules
+          : rules // ignore: cast_nullable_to_non_nullable
+              as List<SourceRule>,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$SafelinkSyncSourceInputImplCopyWith<$Res>
+    implements $SafelinkSyncSourceInputCopyWith<$Res> {
+  factory _$$SafelinkSyncSourceInputImplCopyWith(
+          _$SafelinkSyncSourceInputImpl value,
+          $Res Function(_$SafelinkSyncSourceInputImpl) then) =
+      __$$SafelinkSyncSourceInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String source,
+      @SourceRuleConverter() List<SourceRule> rules,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$SafelinkSyncSourceInputImplCopyWithImpl<$Res>
+    extends _$SafelinkSyncSourceInputCopyWithImpl<$Res,
+        _$SafelinkSyncSourceInputImpl>
+    implements _$$SafelinkSyncSourceInputImplCopyWith<$Res> {
+  __$$SafelinkSyncSourceInputImplCopyWithImpl(
+      _$SafelinkSyncSourceInputImpl _value,
+      $Res Function(_$SafelinkSyncSourceInputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [SafelinkSyncSourceInput].
-extension SafelinkSyncSourceInputPatterns on SafelinkSyncSourceInput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SafelinkSyncSourceInput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _SafelinkSyncSourceInput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SafelinkSyncSourceInput value)  $default,){
-final _that = this;
-switch (_that) {
-case _SafelinkSyncSourceInput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SafelinkSyncSourceInput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _SafelinkSyncSourceInput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String source, @SourceRuleConverter()  List<SourceRule> rules,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _SafelinkSyncSourceInput() when $default != null:
-return $default(_that.source,_that.rules,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String source, @SourceRuleConverter()  List<SourceRule> rules,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _SafelinkSyncSourceInput():
-return $default(_that.source,_that.rules,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String source, @SourceRuleConverter()  List<SourceRule> rules,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _SafelinkSyncSourceInput() when $default != null:
-return $default(_that.source,_that.rules,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of SafelinkSyncSourceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? rules = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$SafelinkSyncSourceInputImpl(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      rules: null == rules
+          ? _value._rules
+          : rules // ignore: cast_nullable_to_non_nullable
+              as List<SourceRule>,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _SafelinkSyncSourceInput implements SafelinkSyncSourceInput {
-  const _SafelinkSyncSourceInput({required this.source, @SourceRuleConverter() required final  List<SourceRule> rules, final  Map<String, dynamic>? $unknown}): _rules = rules,_$unknown = $unknown;
-  factory _SafelinkSyncSourceInput.fromJson(Map<String, dynamic> json) => _$SafelinkSyncSourceInputFromJson(json);
+class _$SafelinkSyncSourceInputImpl implements _SafelinkSyncSourceInput {
+  const _$SafelinkSyncSourceInputImpl(
+      {required this.source,
+      @SourceRuleConverter() required final List<SourceRule> rules,
+      final Map<String, dynamic>? $unknown})
+      : _rules = rules,
+        _$unknown = $unknown;
 
-/// Source whose rules are being synchronized
-@override final  String source;
- final  List<SourceRule> _rules;
-@override@SourceRuleConverter() List<SourceRule> get rules {
-  if (_rules is EqualUnmodifiableListView) return _rules;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_rules);
+  factory _$SafelinkSyncSourceInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SafelinkSyncSourceInputImplFromJson(json);
+
+  /// Source whose rules are being synchronized
+  @override
+  final String source;
+  final List<SourceRule> _rules;
+  @override
+  @SourceRuleConverter()
+  List<SourceRule> get rules {
+    if (_rules is EqualUnmodifiableListView) return _rules;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rules);
+  }
+
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'SafelinkSyncSourceInput(source: $source, rules: $rules, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SafelinkSyncSourceInputImpl &&
+            (identical(other.source, source) || other.source == source) &&
+            const DeepCollectionEquality().equals(other._rules, _rules) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      source,
+      const DeepCollectionEquality().hash(_rules),
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of SafelinkSyncSourceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SafelinkSyncSourceInputImplCopyWith<_$SafelinkSyncSourceInputImpl>
+      get copyWith => __$$SafelinkSyncSourceInputImplCopyWithImpl<
+          _$SafelinkSyncSourceInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SafelinkSyncSourceInputImplToJson(
+      this,
+    );
+  }
 }
 
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+abstract class _SafelinkSyncSourceInput implements SafelinkSyncSourceInput {
+  const factory _SafelinkSyncSourceInput(
+      {required final String source,
+      @SourceRuleConverter() required final List<SourceRule> rules,
+      final Map<String, dynamic>? $unknown}) = _$SafelinkSyncSourceInputImpl;
+
+  factory _SafelinkSyncSourceInput.fromJson(Map<String, dynamic> json) =
+      _$SafelinkSyncSourceInputImpl.fromJson;
+
+  /// Source whose rules are being synchronized
+  @override
+  String get source;
+  @override
+  @SourceRuleConverter()
+  List<SourceRule> get rules;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of SafelinkSyncSourceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SafelinkSyncSourceInputImplCopyWith<_$SafelinkSyncSourceInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-/// Create a copy of SafelinkSyncSourceInput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$SafelinkSyncSourceInputCopyWith<_SafelinkSyncSourceInput> get copyWith => __$SafelinkSyncSourceInputCopyWithImpl<_SafelinkSyncSourceInput>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$SafelinkSyncSourceInputToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SafelinkSyncSourceInput&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other._rules, _rules)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,source,const DeepCollectionEquality().hash(_rules),const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'SafelinkSyncSourceInput(source: $source, rules: $rules, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$SafelinkSyncSourceInputCopyWith<$Res> implements $SafelinkSyncSourceInputCopyWith<$Res> {
-  factory _$SafelinkSyncSourceInputCopyWith(_SafelinkSyncSourceInput value, $Res Function(_SafelinkSyncSourceInput) _then) = __$SafelinkSyncSourceInputCopyWithImpl;
-@override @useResult
-$Res call({
- String source,@SourceRuleConverter() List<SourceRule> rules, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$SafelinkSyncSourceInputCopyWithImpl<$Res>
-    implements _$SafelinkSyncSourceInputCopyWith<$Res> {
-  __$SafelinkSyncSourceInputCopyWithImpl(this._self, this._then);
-
-  final _SafelinkSyncSourceInput _self;
-  final $Res Function(_SafelinkSyncSourceInput) _then;
-
-/// Create a copy of SafelinkSyncSourceInput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? source = null,Object? rules = null,Object? $unknown = freezed,}) {
-  return _then(_SafelinkSyncSourceInput(
-source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
-as String,rules: null == rules ? _self._rules : rules // ignore: cast_nullable_to_non_nullable
-as List<SourceRule>,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on

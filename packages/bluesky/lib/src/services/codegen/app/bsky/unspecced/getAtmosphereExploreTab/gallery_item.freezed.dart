@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,251 @@ part of 'gallery_item.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+GalleryItem _$GalleryItemFromJson(Map<String, dynamic> json) {
+  return _GalleryItem.fromJson(json);
+}
 
 /// @nodoc
 mixin _$GalleryItem {
-
- String get $type; bool get featured;@EmbedExternalViewGalleryConverter() EmbedExternalViewGallery get view; Map<String, dynamic>? get $unknown;
-/// Create a copy of GalleryItem
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$GalleryItemCopyWith<GalleryItem> get copyWith => _$GalleryItemCopyWithImpl<GalleryItem>(this as GalleryItem, _$identity);
+  String get $type => throw _privateConstructorUsedError;
+  bool get featured => throw _privateConstructorUsedError;
+  @EmbedExternalViewGalleryConverter()
+  EmbedExternalViewGallery get view => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this GalleryItem to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GalleryItem&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.featured, featured) || other.featured == featured)&&(identical(other.view, view) || other.view == view)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,featured,view,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'GalleryItem(\$type: ${$type}, featured: $featured, view: $view, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of GalleryItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GalleryItemCopyWith<GalleryItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $GalleryItemCopyWith<$Res>  {
-  factory $GalleryItemCopyWith(GalleryItem value, $Res Function(GalleryItem) _then) = _$GalleryItemCopyWithImpl;
-@useResult
-$Res call({
- String $type, bool featured,@EmbedExternalViewGalleryConverter() EmbedExternalViewGallery view, Map<String, dynamic>? $unknown
-});
+abstract class $GalleryItemCopyWith<$Res> {
+  factory $GalleryItemCopyWith(
+          GalleryItem value, $Res Function(GalleryItem) then) =
+      _$GalleryItemCopyWithImpl<$Res, GalleryItem>;
+  @useResult
+  $Res call(
+      {String $type,
+      bool featured,
+      @EmbedExternalViewGalleryConverter() EmbedExternalViewGallery view,
+      Map<String, dynamic>? $unknown});
 
-
-$EmbedExternalViewGalleryCopyWith<$Res> get view;
-
+  $EmbedExternalViewGalleryCopyWith<$Res> get view;
 }
+
 /// @nodoc
-class _$GalleryItemCopyWithImpl<$Res>
+class _$GalleryItemCopyWithImpl<$Res, $Val extends GalleryItem>
     implements $GalleryItemCopyWith<$Res> {
-  _$GalleryItemCopyWithImpl(this._self, this._then);
+  _$GalleryItemCopyWithImpl(this._value, this._then);
 
-  final GalleryItem _self;
-  final $Res Function(GalleryItem) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of GalleryItem
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? $type = null,Object? featured = null,Object? view = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,featured: null == featured ? _self.featured : featured // ignore: cast_nullable_to_non_nullable
-as bool,view: null == view ? _self.view : view // ignore: cast_nullable_to_non_nullable
-as EmbedExternalViewGallery,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-/// Create a copy of GalleryItem
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$EmbedExternalViewGalleryCopyWith<$Res> get view {
-  
-  return $EmbedExternalViewGalleryCopyWith<$Res>(_self.view, (value) {
-    return _then(_self.copyWith(view: value));
-  });
-}
-}
+  /// Create a copy of GalleryItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? featured = null,
+    Object? view = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      featured: null == featured
+          ? _value.featured
+          : featured // ignore: cast_nullable_to_non_nullable
+              as bool,
+      view: null == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as EmbedExternalViewGallery,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [GalleryItem].
-extension GalleryItemPatterns on GalleryItem {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GalleryItem value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _GalleryItem() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GalleryItem value)  $default,){
-final _that = this;
-switch (_that) {
-case _GalleryItem():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GalleryItem value)?  $default,){
-final _that = this;
-switch (_that) {
-case _GalleryItem() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String $type,  bool featured, @EmbedExternalViewGalleryConverter()  EmbedExternalViewGallery view,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _GalleryItem() when $default != null:
-return $default(_that.$type,_that.featured,_that.view,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String $type,  bool featured, @EmbedExternalViewGalleryConverter()  EmbedExternalViewGallery view,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _GalleryItem():
-return $default(_that.$type,_that.featured,_that.view,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String $type,  bool featured, @EmbedExternalViewGalleryConverter()  EmbedExternalViewGallery view,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _GalleryItem() when $default != null:
-return $default(_that.$type,_that.featured,_that.view,_that.$unknown);case _:
-  return null;
-
-}
+  /// Create a copy of GalleryItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EmbedExternalViewGalleryCopyWith<$Res> get view {
+    return $EmbedExternalViewGalleryCopyWith<$Res>(_value.view, (value) {
+      return _then(_value.copyWith(view: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$GalleryItemImplCopyWith<$Res>
+    implements $GalleryItemCopyWith<$Res> {
+  factory _$$GalleryItemImplCopyWith(
+          _$GalleryItemImpl value, $Res Function(_$GalleryItemImpl) then) =
+      __$$GalleryItemImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String $type,
+      bool featured,
+      @EmbedExternalViewGalleryConverter() EmbedExternalViewGallery view,
+      Map<String, dynamic>? $unknown});
+
+  @override
+  $EmbedExternalViewGalleryCopyWith<$Res> get view;
+}
+
+/// @nodoc
+class __$$GalleryItemImplCopyWithImpl<$Res>
+    extends _$GalleryItemCopyWithImpl<$Res, _$GalleryItemImpl>
+    implements _$$GalleryItemImplCopyWith<$Res> {
+  __$$GalleryItemImplCopyWithImpl(
+      _$GalleryItemImpl _value, $Res Function(_$GalleryItemImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GalleryItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? $type = null,
+    Object? featured = null,
+    Object? view = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$GalleryItemImpl(
+      $type: null == $type
+          ? _value.$type
+          : $type // ignore: cast_nullable_to_non_nullable
+              as String,
+      featured: null == featured
+          ? _value.featured
+          : featured // ignore: cast_nullable_to_non_nullable
+              as bool,
+      view: null == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as EmbedExternalViewGallery,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GalleryItem implements GalleryItem {
-  const _GalleryItem({this.$type = 'app.bsky.unspecced.getAtmosphereExploreTab#galleryItem', required this.featured, @EmbedExternalViewGalleryConverter() required this.view, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _GalleryItem.fromJson(Map<String, dynamic> json) => _$GalleryItemFromJson(json);
+class _$GalleryItemImpl implements _GalleryItem {
+  const _$GalleryItemImpl(
+      {this.$type = 'app.bsky.unspecced.getAtmosphereExploreTab#galleryItem',
+      required this.featured,
+      @EmbedExternalViewGalleryConverter() required this.view,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-@override@JsonKey() final  String $type;
-@override final  bool featured;
-@override@EmbedExternalViewGalleryConverter() final  EmbedExternalViewGallery view;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$GalleryItemImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GalleryItemImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String $type;
+  @override
+  final bool featured;
+  @override
+  @EmbedExternalViewGalleryConverter()
+  final EmbedExternalViewGallery view;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'GalleryItem(\$type: ${$type}, featured: $featured, view: $view, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GalleryItemImpl &&
+            (identical(other.$type, $type) || other.$type == $type) &&
+            (identical(other.featured, featured) ||
+                other.featured == featured) &&
+            (identical(other.view, view) || other.view == view) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, $type, featured, view,
+      const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of GalleryItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GalleryItemImplCopyWith<_$GalleryItemImpl> get copyWith =>
+      __$$GalleryItemImplCopyWithImpl<_$GalleryItemImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GalleryItemImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _GalleryItem implements GalleryItem {
+  const factory _GalleryItem(
+      {final String $type,
+      required final bool featured,
+      @EmbedExternalViewGalleryConverter()
+      required final EmbedExternalViewGallery view,
+      final Map<String, dynamic>? $unknown}) = _$GalleryItemImpl;
 
-/// Create a copy of GalleryItem
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$GalleryItemCopyWith<_GalleryItem> get copyWith => __$GalleryItemCopyWithImpl<_GalleryItem>(this, _$identity);
+  factory _GalleryItem.fromJson(Map<String, dynamic> json) =
+      _$GalleryItemImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GalleryItemToJson(this, );
+  @override
+  String get $type;
+  @override
+  bool get featured;
+  @override
+  @EmbedExternalViewGalleryConverter()
+  EmbedExternalViewGallery get view;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of GalleryItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GalleryItemImplCopyWith<_$GalleryItemImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GalleryItem&&(identical(other.$type, $type) || other.$type == $type)&&(identical(other.featured, featured) || other.featured == featured)&&(identical(other.view, view) || other.view == view)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,$type,featured,view,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'GalleryItem(\$type: ${$type}, featured: $featured, view: $view, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$GalleryItemCopyWith<$Res> implements $GalleryItemCopyWith<$Res> {
-  factory _$GalleryItemCopyWith(_GalleryItem value, $Res Function(_GalleryItem) _then) = __$GalleryItemCopyWithImpl;
-@override @useResult
-$Res call({
- String $type, bool featured,@EmbedExternalViewGalleryConverter() EmbedExternalViewGallery view, Map<String, dynamic>? $unknown
-});
-
-
-@override $EmbedExternalViewGalleryCopyWith<$Res> get view;
-
-}
-/// @nodoc
-class __$GalleryItemCopyWithImpl<$Res>
-    implements _$GalleryItemCopyWith<$Res> {
-  __$GalleryItemCopyWithImpl(this._self, this._then);
-
-  final _GalleryItem _self;
-  final $Res Function(_GalleryItem) _then;
-
-/// Create a copy of GalleryItem
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? $type = null,Object? featured = null,Object? view = null,Object? $unknown = freezed,}) {
-  return _then(_GalleryItem(
-$type: null == $type ? _self.$type : $type // ignore: cast_nullable_to_non_nullable
-as String,featured: null == featured ? _self.featured : featured // ignore: cast_nullable_to_non_nullable
-as bool,view: null == view ? _self.view : view // ignore: cast_nullable_to_non_nullable
-as EmbedExternalViewGallery,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-/// Create a copy of GalleryItem
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$EmbedExternalViewGalleryCopyWith<$Res> get view {
-  
-  return $EmbedExternalViewGalleryCopyWith<$Res>(_self.view, (value) {
-    return _then(_self.copyWith(view: value));
-  });
-}
-}
-
-// dart format on

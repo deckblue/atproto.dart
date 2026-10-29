@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,298 +9,378 @@ part of 'main_sections.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$InboxUpdateSeenSections {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InboxUpdateSeenSections&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'InboxUpdateSeenSections(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownInboxUpdateSeenSections data) knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownInboxUpdateSeenSections data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownInboxUpdateSeenSections data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InboxUpdateSeenSectionsKnownValue value)
+        knownValue,
+    required TResult Function(InboxUpdateSeenSectionsUnknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InboxUpdateSeenSectionsKnownValue value)? knownValue,
+    TResult? Function(InboxUpdateSeenSectionsUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InboxUpdateSeenSectionsKnownValue value)? knownValue,
+    TResult Function(InboxUpdateSeenSectionsUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $InboxUpdateSeenSectionsCopyWith<$Res>  {
-$InboxUpdateSeenSectionsCopyWith(InboxUpdateSeenSections _, $Res Function(InboxUpdateSeenSections) __);
+abstract class $InboxUpdateSeenSectionsCopyWith<$Res> {
+  factory $InboxUpdateSeenSectionsCopyWith(InboxUpdateSeenSections value,
+          $Res Function(InboxUpdateSeenSections) then) =
+      _$InboxUpdateSeenSectionsCopyWithImpl<$Res, InboxUpdateSeenSections>;
 }
 
+/// @nodoc
+class _$InboxUpdateSeenSectionsCopyWithImpl<$Res,
+        $Val extends InboxUpdateSeenSections>
+    implements $InboxUpdateSeenSectionsCopyWith<$Res> {
+  _$InboxUpdateSeenSectionsCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [InboxUpdateSeenSections].
-extension InboxUpdateSeenSectionsPatterns on InboxUpdateSeenSections {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( InboxUpdateSeenSectionsKnownValue value)?  knownValue,TResult Function( InboxUpdateSeenSectionsUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case InboxUpdateSeenSectionsKnownValue() when knownValue != null:
-return knownValue(_that);case InboxUpdateSeenSectionsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( InboxUpdateSeenSectionsKnownValue value)  knownValue,required TResult Function( InboxUpdateSeenSectionsUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case InboxUpdateSeenSectionsKnownValue():
-return knownValue(_that);case InboxUpdateSeenSectionsUnknown():
-return unknown(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( InboxUpdateSeenSectionsKnownValue value)?  knownValue,TResult? Function( InboxUpdateSeenSectionsUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case InboxUpdateSeenSectionsKnownValue() when knownValue != null:
-return knownValue(_that);case InboxUpdateSeenSectionsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownInboxUpdateSeenSections data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case InboxUpdateSeenSectionsKnownValue() when knownValue != null:
-return knownValue(_that.data);case InboxUpdateSeenSectionsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownInboxUpdateSeenSections data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case InboxUpdateSeenSectionsKnownValue():
-return knownValue(_that.data);case InboxUpdateSeenSectionsUnknown():
-return unknown(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownInboxUpdateSeenSections data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case InboxUpdateSeenSectionsKnownValue() when knownValue != null:
-return knownValue(_that.data);case InboxUpdateSeenSectionsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of InboxUpdateSeenSections
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$InboxUpdateSeenSectionsKnownValueImplCopyWith<$Res> {
+  factory _$$InboxUpdateSeenSectionsKnownValueImplCopyWith(
+          _$InboxUpdateSeenSectionsKnownValueImpl value,
+          $Res Function(_$InboxUpdateSeenSectionsKnownValueImpl) then) =
+      __$$InboxUpdateSeenSectionsKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownInboxUpdateSeenSections data});
+}
+
+/// @nodoc
+class __$$InboxUpdateSeenSectionsKnownValueImplCopyWithImpl<$Res>
+    extends _$InboxUpdateSeenSectionsCopyWithImpl<$Res,
+        _$InboxUpdateSeenSectionsKnownValueImpl>
+    implements _$$InboxUpdateSeenSectionsKnownValueImplCopyWith<$Res> {
+  __$$InboxUpdateSeenSectionsKnownValueImplCopyWithImpl(
+      _$InboxUpdateSeenSectionsKnownValueImpl _value,
+      $Res Function(_$InboxUpdateSeenSectionsKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of InboxUpdateSeenSections
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$InboxUpdateSeenSectionsKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownInboxUpdateSeenSections,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$InboxUpdateSeenSectionsKnownValueImpl
+    extends InboxUpdateSeenSectionsKnownValue {
+  const _$InboxUpdateSeenSectionsKnownValueImpl({required this.data})
+      : super._();
 
-class InboxUpdateSeenSectionsKnownValue extends InboxUpdateSeenSections {
-  const InboxUpdateSeenSectionsKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownInboxUpdateSeenSections data;
 
-@override final  KnownInboxUpdateSeenSections data;
+  @override
+  String toString() {
+    return 'InboxUpdateSeenSections.knownValue(data: $data)';
+  }
 
-/// Create a copy of InboxUpdateSeenSections
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InboxUpdateSeenSectionsKnownValueCopyWith<InboxUpdateSeenSectionsKnownValue> get copyWith => _$InboxUpdateSeenSectionsKnownValueCopyWithImpl<InboxUpdateSeenSectionsKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InboxUpdateSeenSectionsKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of InboxUpdateSeenSections
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboxUpdateSeenSectionsKnownValueImplCopyWith<
+          _$InboxUpdateSeenSectionsKnownValueImpl>
+      get copyWith => __$$InboxUpdateSeenSectionsKnownValueImplCopyWithImpl<
+          _$InboxUpdateSeenSectionsKnownValueImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InboxUpdateSeenSectionsKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownInboxUpdateSeenSections data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownInboxUpdateSeenSections data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownInboxUpdateSeenSections data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InboxUpdateSeenSectionsKnownValue value)
+        knownValue,
+    required TResult Function(InboxUpdateSeenSectionsUnknown value) unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InboxUpdateSeenSectionsKnownValue value)? knownValue,
+    TResult? Function(InboxUpdateSeenSectionsUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InboxUpdateSeenSectionsKnownValue value)? knownValue,
+    TResult Function(InboxUpdateSeenSectionsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class InboxUpdateSeenSectionsKnownValue
+    extends InboxUpdateSeenSections {
+  const factory InboxUpdateSeenSectionsKnownValue(
+          {required final KnownInboxUpdateSeenSections data}) =
+      _$InboxUpdateSeenSectionsKnownValueImpl;
+  const InboxUpdateSeenSectionsKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownInboxUpdateSeenSections get data;
 
-@override
-String toString() {
-  return 'InboxUpdateSeenSections.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of InboxUpdateSeenSections
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InboxUpdateSeenSectionsKnownValueImplCopyWith<
+          _$InboxUpdateSeenSectionsKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $InboxUpdateSeenSectionsKnownValueCopyWith<$Res> implements $InboxUpdateSeenSectionsCopyWith<$Res> {
-  factory $InboxUpdateSeenSectionsKnownValueCopyWith(InboxUpdateSeenSectionsKnownValue value, $Res Function(InboxUpdateSeenSectionsKnownValue) _then) = _$InboxUpdateSeenSectionsKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownInboxUpdateSeenSections data
-});
-
-
-
-
-}
-/// @nodoc
-class _$InboxUpdateSeenSectionsKnownValueCopyWithImpl<$Res>
-    implements $InboxUpdateSeenSectionsKnownValueCopyWith<$Res> {
-  _$InboxUpdateSeenSectionsKnownValueCopyWithImpl(this._self, this._then);
-
-  final InboxUpdateSeenSectionsKnownValue _self;
-  final $Res Function(InboxUpdateSeenSectionsKnownValue) _then;
-
-/// Create a copy of InboxUpdateSeenSections
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(InboxUpdateSeenSectionsKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownInboxUpdateSeenSections,
-  ));
-}
-
-
+abstract class _$$InboxUpdateSeenSectionsUnknownImplCopyWith<$Res> {
+  factory _$$InboxUpdateSeenSectionsUnknownImplCopyWith(
+          _$InboxUpdateSeenSectionsUnknownImpl value,
+          $Res Function(_$InboxUpdateSeenSectionsUnknownImpl) then) =
+      __$$InboxUpdateSeenSectionsUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$InboxUpdateSeenSectionsUnknownImplCopyWithImpl<$Res>
+    extends _$InboxUpdateSeenSectionsCopyWithImpl<$Res,
+        _$InboxUpdateSeenSectionsUnknownImpl>
+    implements _$$InboxUpdateSeenSectionsUnknownImplCopyWith<$Res> {
+  __$$InboxUpdateSeenSectionsUnknownImplCopyWithImpl(
+      _$InboxUpdateSeenSectionsUnknownImpl _value,
+      $Res Function(_$InboxUpdateSeenSectionsUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class InboxUpdateSeenSectionsUnknown extends InboxUpdateSeenSections {
-  const InboxUpdateSeenSectionsUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of InboxUpdateSeenSections
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InboxUpdateSeenSectionsUnknownCopyWith<InboxUpdateSeenSectionsUnknown> get copyWith => _$InboxUpdateSeenSectionsUnknownCopyWithImpl<InboxUpdateSeenSectionsUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InboxUpdateSeenSectionsUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'InboxUpdateSeenSections.unknown(data: $data)';
-}
-
-
+  /// Create a copy of InboxUpdateSeenSections
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$InboxUpdateSeenSectionsUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $InboxUpdateSeenSectionsUnknownCopyWith<$Res> implements $InboxUpdateSeenSectionsCopyWith<$Res> {
-  factory $InboxUpdateSeenSectionsUnknownCopyWith(InboxUpdateSeenSectionsUnknown value, $Res Function(InboxUpdateSeenSectionsUnknown) _then) = _$InboxUpdateSeenSectionsUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$InboxUpdateSeenSectionsUnknownImpl
+    extends InboxUpdateSeenSectionsUnknown {
+  const _$InboxUpdateSeenSectionsUnknownImpl({required this.data}) : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'InboxUpdateSeenSections.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InboxUpdateSeenSectionsUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of InboxUpdateSeenSections
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboxUpdateSeenSectionsUnknownImplCopyWith<
+          _$InboxUpdateSeenSectionsUnknownImpl>
+      get copyWith => __$$InboxUpdateSeenSectionsUnknownImplCopyWithImpl<
+          _$InboxUpdateSeenSectionsUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownInboxUpdateSeenSections data) knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownInboxUpdateSeenSections data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownInboxUpdateSeenSections data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InboxUpdateSeenSectionsKnownValue value)
+        knownValue,
+    required TResult Function(InboxUpdateSeenSectionsUnknown value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InboxUpdateSeenSectionsKnownValue value)? knownValue,
+    TResult? Function(InboxUpdateSeenSectionsUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InboxUpdateSeenSectionsKnownValue value)? knownValue,
+    TResult Function(InboxUpdateSeenSectionsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$InboxUpdateSeenSectionsUnknownCopyWithImpl<$Res>
-    implements $InboxUpdateSeenSectionsUnknownCopyWith<$Res> {
-  _$InboxUpdateSeenSectionsUnknownCopyWithImpl(this._self, this._then);
 
-  final InboxUpdateSeenSectionsUnknown _self;
-  final $Res Function(InboxUpdateSeenSectionsUnknown) _then;
+abstract class InboxUpdateSeenSectionsUnknown extends InboxUpdateSeenSections {
+  const factory InboxUpdateSeenSectionsUnknown({required final String data}) =
+      _$InboxUpdateSeenSectionsUnknownImpl;
+  const InboxUpdateSeenSectionsUnknown._() : super._();
 
-/// Create a copy of InboxUpdateSeenSections
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(InboxUpdateSeenSectionsUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of InboxUpdateSeenSections
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InboxUpdateSeenSectionsUnknownImplCopyWith<
+          _$InboxUpdateSeenSectionsUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

@@ -8,65 +8,60 @@ part of 'input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_QueueCreateQueueInput _$QueueCreateQueueInputFromJson(Map json) =>
-    $checkedCreate('_QueueCreateQueueInput', json, ($checkedConvert) {
-      final val = _QueueCreateQueueInput(
-        name: $checkedConvert('name', (v) => v as String),
-        subjectTypes: $checkedConvert(
-          'subjectTypes',
-          (v) => (v as List<dynamic>?)
-              ?.map(
-                (e) => const QueueCreateQueueSubjectTypesConverter().fromJson(
-                  e as String,
-                ),
-              )
-              .toList(),
-        ),
-        collection: $checkedConvert('collection', (v) => v as String?),
-        reportTypes: $checkedConvert(
-          'reportTypes',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        reporterTags: $checkedConvert(
-          'reporterTags',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        accountTags: $checkedConvert(
-          'accountTags',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        description: $checkedConvert('description', (v) => v as String?),
-        recommendedPolicies: $checkedConvert(
-          'recommendedPolicies',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        recommendedLabels: $checkedConvert(
-          'recommendedLabels',
-          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-        ),
-        strictAccess: $checkedConvert('strictAccess', (v) => v as bool?),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$QueueCreateQueueInputImpl _$$QueueCreateQueueInputImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$QueueCreateQueueInputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$QueueCreateQueueInputImpl(
+          name: $checkedConvert('name', (v) => v as String),
+          subjectTypes: $checkedConvert(
+              'subjectTypes',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => const QueueCreateQueueSubjectTypesConverter()
+                      .fromJson(e as String))
+                  .toList()),
+          collection: $checkedConvert('collection', (v) => v as String?),
+          reportTypes: $checkedConvert('reportTypes',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          reporterTags: $checkedConvert('reporterTags',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          accountTags: $checkedConvert('accountTags',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          description: $checkedConvert('description', (v) => v as String?),
+          recommendedPolicies: $checkedConvert('recommendedPolicies',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          recommendedLabels: $checkedConvert('recommendedLabels',
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          strictAccess: $checkedConvert('strictAccess', (v) => v as bool?),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$QueueCreateQueueInputToJson(
-  _QueueCreateQueueInput instance,
-) => <String, dynamic>{
-  'name': instance.name,
-  'subjectTypes': ?instance.subjectTypes
-      ?.map(const QueueCreateQueueSubjectTypesConverter().toJson)
-      .toList(),
-  'collection': ?instance.collection,
-  'reportTypes': ?instance.reportTypes,
-  'reporterTags': ?instance.reporterTags,
-  'accountTags': ?instance.accountTags,
-  'description': ?instance.description,
-  'recommendedPolicies': ?instance.recommendedPolicies,
-  'recommendedLabels': ?instance.recommendedLabels,
-  'strictAccess': ?instance.strictAccess,
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$QueueCreateQueueInputImplToJson(
+        _$QueueCreateQueueInputImpl instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      if (instance.subjectTypes
+              ?.map(const QueueCreateQueueSubjectTypesConverter().toJson)
+              .toList()
+          case final value?)
+        'subjectTypes': value,
+      if (instance.collection case final value?) 'collection': value,
+      if (instance.reportTypes case final value?) 'reportTypes': value,
+      if (instance.reporterTags case final value?) 'reporterTags': value,
+      if (instance.accountTags case final value?) 'accountTags': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.recommendedPolicies case final value?)
+        'recommendedPolicies': value,
+      if (instance.recommendedLabels case final value?)
+        'recommendedLabels': value,
+      if (instance.strictAccess case final value?) 'strictAccess': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

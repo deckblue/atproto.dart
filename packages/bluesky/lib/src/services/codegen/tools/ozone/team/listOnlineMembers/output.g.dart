@@ -8,32 +8,33 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TeamListOnlineMembersOutput _$TeamListOnlineMembersOutputFromJson(Map json) =>
-    $checkedCreate('_TeamListOnlineMembersOutput', json, ($checkedConvert) {
-      final val = _TeamListOnlineMembersOutput(
-        members: $checkedConvert(
-          'members',
-          (v) => (v as List<dynamic>)
-              .map(
-                (e) => const OnlineMemberConverter().fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList(),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$TeamListOnlineMembersOutputImpl _$$TeamListOnlineMembersOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$TeamListOnlineMembersOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$TeamListOnlineMembersOutputImpl(
+          members: $checkedConvert(
+              'members',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const OnlineMemberConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$TeamListOnlineMembersOutputToJson(
-  _TeamListOnlineMembersOutput instance,
-) => <String, dynamic>{
-  'members': instance.members
-      .map(const OnlineMemberConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$TeamListOnlineMembersOutputImplToJson(
+        _$TeamListOnlineMembersOutputImpl instance) =>
+    <String, dynamic>{
+      'members':
+          instance.members.map(const OnlineMemberConverter().toJson).toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

@@ -8,56 +8,55 @@ part of 'subscribed_post_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SubscribedPostItem _$SubscribedPostItemFromJson(Map json) => $checkedCreate(
-  '_SubscribedPostItem',
-  json,
-  ($checkedConvert) {
-    final val = _SubscribedPostItem(
-      $type: $checkedConvert(
-        r'$type',
-        (v) =>
-            v as String? ??
-            'app.bsky.notification.getGroupedNotifications#subscribedPostItem',
-      ),
-      actor: $checkedConvert('actor', (v) => v as String),
-      post: $checkedConvert(
-        'post',
-        (v) => const AtUriConverter().fromJson(v as String),
-      ),
-      parent: $checkedConvert(
-        'parent',
-        (v) => _$JsonConverterFromJson<String, AtUri>(
-          v,
-          const AtUriConverter().fromJson,
-        ),
-      ),
-      $unknown: $checkedConvert(
-        r'$unknown',
-        (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-      ),
+_$SubscribedPostItemImpl _$$SubscribedPostItemImplFromJson(Map json) =>
+    $checkedCreate(
+      r'_$SubscribedPostItemImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$SubscribedPostItemImpl(
+          $type: $checkedConvert(
+              r'$type',
+              (v) =>
+                  v as String? ??
+                  'app.bsky.notification.getGroupedNotifications#subscribedPostItem'),
+          actor: $checkedConvert('actor', (v) => v as String),
+          post: $checkedConvert(
+              'post', (v) => const AtUriConverter().fromJson(v as String)),
+          parent: $checkedConvert(
+              'parent',
+              (v) => _$JsonConverterFromJson<String, AtUri>(
+                  v, const AtUriConverter().fromJson)),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
     );
-    return val;
-  },
-);
 
-Map<String, dynamic> _$SubscribedPostItemToJson(_SubscribedPostItem instance) =>
+Map<String, dynamic> _$$SubscribedPostItemImplToJson(
+        _$SubscribedPostItemImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
       'actor': instance.actor,
       'post': const AtUriConverter().toJson(instance.post),
-      'parent': ?_$JsonConverterToJson<String, AtUri>(
-        instance.parent,
-        const AtUriConverter().toJson,
-      ),
-      r'$unknown': ?instance.$unknown,
+      if (_$JsonConverterToJson<String, AtUri>(
+              instance.parent, const AtUriConverter().toJson)
+          case final value?)
+        'parent': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) => json == null ? null : fromJson(json as Json);
+) =>
+    json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) => value == null ? null : toJson(value);
+) =>
+    value == null ? null : toJson(value);

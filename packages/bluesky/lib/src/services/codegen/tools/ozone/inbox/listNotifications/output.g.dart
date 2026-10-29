@@ -8,35 +8,36 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_InboxListNotificationsOutput _$InboxListNotificationsOutputFromJson(
-  Map json,
-) => $checkedCreate('_InboxListNotificationsOutput', json, ($checkedConvert) {
-  final val = _InboxListNotificationsOutput(
-    cursor: $checkedConvert('cursor', (v) => v as String?),
-    notifications: $checkedConvert(
-      'notifications',
-      (v) => (v as List<dynamic>)
-          .map(
-            (e) => const NotificationConverter().fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList(),
-    ),
-    $unknown: $checkedConvert(
-      r'$unknown',
-      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    ),
-  );
-  return val;
-});
+_$InboxListNotificationsOutputImpl _$$InboxListNotificationsOutputImplFromJson(
+        Map json) =>
+    $checkedCreate(
+      r'_$InboxListNotificationsOutputImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$InboxListNotificationsOutputImpl(
+          cursor: $checkedConvert('cursor', (v) => v as String?),
+          notifications: $checkedConvert(
+              'notifications',
+              (v) => (v as List<dynamic>)
+                  .map((e) => const NotificationConverter()
+                      .fromJson(e as Map<String, dynamic>))
+                  .toList()),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$InboxListNotificationsOutputToJson(
-  _InboxListNotificationsOutput instance,
-) => <String, dynamic>{
-  'cursor': ?instance.cursor,
-  'notifications': instance.notifications
-      .map(const NotificationConverter().toJson)
-      .toList(),
-  r'$unknown': ?instance.$unknown,
-};
+Map<String, dynamic> _$$InboxListNotificationsOutputImplToJson(
+        _$InboxListNotificationsOutputImpl instance) =>
+    <String, dynamic>{
+      if (instance.cursor case final value?) 'cursor': value,
+      'notifications': instance.notifications
+          .map(const NotificationConverter().toJson)
+          .toList(),
+      if (instance.$unknown case final value?) r'$unknown': value,
+    };

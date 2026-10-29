@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,298 +9,401 @@ part of 'subject_view_detail_available_actions.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$SubjectViewDetailAvailableActions {
-
- Object get data;
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubjectViewDetailAvailableActions&&const DeepCollectionEquality().equals(other.data, data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
-
-@override
-String toString() {
-  return 'SubjectViewDetailAvailableActions(data: $data)';
-}
-
-
+  Object get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownSubjectViewDetailAvailableActions data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownSubjectViewDetailAvailableActions data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownSubjectViewDetailAvailableActions data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubjectViewDetailAvailableActionsKnownValue value)
+        knownValue,
+    required TResult Function(SubjectViewDetailAvailableActionsUnknown value)
+        unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SubjectViewDetailAvailableActionsKnownValue value)?
+        knownValue,
+    TResult? Function(SubjectViewDetailAvailableActionsUnknown value)? unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubjectViewDetailAvailableActionsKnownValue value)?
+        knownValue,
+    TResult Function(SubjectViewDetailAvailableActionsUnknown value)? unknown,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $SubjectViewDetailAvailableActionsCopyWith<$Res>  {
-$SubjectViewDetailAvailableActionsCopyWith(SubjectViewDetailAvailableActions _, $Res Function(SubjectViewDetailAvailableActions) __);
+abstract class $SubjectViewDetailAvailableActionsCopyWith<$Res> {
+  factory $SubjectViewDetailAvailableActionsCopyWith(
+          SubjectViewDetailAvailableActions value,
+          $Res Function(SubjectViewDetailAvailableActions) then) =
+      _$SubjectViewDetailAvailableActionsCopyWithImpl<$Res,
+          SubjectViewDetailAvailableActions>;
 }
 
+/// @nodoc
+class _$SubjectViewDetailAvailableActionsCopyWithImpl<$Res,
+        $Val extends SubjectViewDetailAvailableActions>
+    implements $SubjectViewDetailAvailableActionsCopyWith<$Res> {
+  _$SubjectViewDetailAvailableActionsCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [SubjectViewDetailAvailableActions].
-extension SubjectViewDetailAvailableActionsPatterns on SubjectViewDetailAvailableActions {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( SubjectViewDetailAvailableActionsKnownValue value)?  knownValue,TResult Function( SubjectViewDetailAvailableActionsUnknown value)?  unknown,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case SubjectViewDetailAvailableActionsKnownValue() when knownValue != null:
-return knownValue(_that);case SubjectViewDetailAvailableActionsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( SubjectViewDetailAvailableActionsKnownValue value)  knownValue,required TResult Function( SubjectViewDetailAvailableActionsUnknown value)  unknown,}){
-final _that = this;
-switch (_that) {
-case SubjectViewDetailAvailableActionsKnownValue():
-return knownValue(_that);case SubjectViewDetailAvailableActionsUnknown():
-return unknown(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( SubjectViewDetailAvailableActionsKnownValue value)?  knownValue,TResult? Function( SubjectViewDetailAvailableActionsUnknown value)?  unknown,}){
-final _that = this;
-switch (_that) {
-case SubjectViewDetailAvailableActionsKnownValue() when knownValue != null:
-return knownValue(_that);case SubjectViewDetailAvailableActionsUnknown() when unknown != null:
-return unknown(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( KnownSubjectViewDetailAvailableActions data)?  knownValue,TResult Function( String data)?  unknown,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case SubjectViewDetailAvailableActionsKnownValue() when knownValue != null:
-return knownValue(_that.data);case SubjectViewDetailAvailableActionsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( KnownSubjectViewDetailAvailableActions data)  knownValue,required TResult Function( String data)  unknown,}) {final _that = this;
-switch (_that) {
-case SubjectViewDetailAvailableActionsKnownValue():
-return knownValue(_that.data);case SubjectViewDetailAvailableActionsUnknown():
-return unknown(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( KnownSubjectViewDetailAvailableActions data)?  knownValue,TResult? Function( String data)?  unknown,}) {final _that = this;
-switch (_that) {
-case SubjectViewDetailAvailableActionsKnownValue() when knownValue != null:
-return knownValue(_that.data);case SubjectViewDetailAvailableActionsUnknown() when unknown != null:
-return unknown(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of SubjectViewDetailAvailableActions
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$SubjectViewDetailAvailableActionsKnownValueImplCopyWith<
+    $Res> {
+  factory _$$SubjectViewDetailAvailableActionsKnownValueImplCopyWith(
+          _$SubjectViewDetailAvailableActionsKnownValueImpl value,
+          $Res Function(_$SubjectViewDetailAvailableActionsKnownValueImpl)
+              then) =
+      __$$SubjectViewDetailAvailableActionsKnownValueImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KnownSubjectViewDetailAvailableActions data});
+}
+
+/// @nodoc
+class __$$SubjectViewDetailAvailableActionsKnownValueImplCopyWithImpl<$Res>
+    extends _$SubjectViewDetailAvailableActionsCopyWithImpl<$Res,
+        _$SubjectViewDetailAvailableActionsKnownValueImpl>
+    implements
+        _$$SubjectViewDetailAvailableActionsKnownValueImplCopyWith<$Res> {
+  __$$SubjectViewDetailAvailableActionsKnownValueImplCopyWithImpl(
+      _$SubjectViewDetailAvailableActionsKnownValueImpl _value,
+      $Res Function(_$SubjectViewDetailAvailableActionsKnownValueImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SubjectViewDetailAvailableActions
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SubjectViewDetailAvailableActionsKnownValueImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as KnownSubjectViewDetailAvailableActions,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$SubjectViewDetailAvailableActionsKnownValueImpl
+    extends SubjectViewDetailAvailableActionsKnownValue {
+  const _$SubjectViewDetailAvailableActionsKnownValueImpl({required this.data})
+      : super._();
 
-class SubjectViewDetailAvailableActionsKnownValue extends SubjectViewDetailAvailableActions {
-  const SubjectViewDetailAvailableActionsKnownValue({required this.data}): super._();
-  
+  @override
+  final KnownSubjectViewDetailAvailableActions data;
 
-@override final  KnownSubjectViewDetailAvailableActions data;
+  @override
+  String toString() {
+    return 'SubjectViewDetailAvailableActions.knownValue(data: $data)';
+  }
 
-/// Create a copy of SubjectViewDetailAvailableActions
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SubjectViewDetailAvailableActionsKnownValueCopyWith<SubjectViewDetailAvailableActionsKnownValue> get copyWith => _$SubjectViewDetailAvailableActionsKnownValueCopyWithImpl<SubjectViewDetailAvailableActionsKnownValue>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SubjectViewDetailAvailableActionsKnownValueImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of SubjectViewDetailAvailableActions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SubjectViewDetailAvailableActionsKnownValueImplCopyWith<
+          _$SubjectViewDetailAvailableActionsKnownValueImpl>
+      get copyWith =>
+          __$$SubjectViewDetailAvailableActionsKnownValueImplCopyWithImpl<
+                  _$SubjectViewDetailAvailableActionsKnownValueImpl>(
+              this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubjectViewDetailAvailableActionsKnownValue&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownSubjectViewDetailAvailableActions data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return knownValue(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownSubjectViewDetailAvailableActions data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return knownValue?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownSubjectViewDetailAvailableActions data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubjectViewDetailAvailableActionsKnownValue value)
+        knownValue,
+    required TResult Function(SubjectViewDetailAvailableActionsUnknown value)
+        unknown,
+  }) {
+    return knownValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SubjectViewDetailAvailableActionsKnownValue value)?
+        knownValue,
+    TResult? Function(SubjectViewDetailAvailableActionsUnknown value)? unknown,
+  }) {
+    return knownValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubjectViewDetailAvailableActionsKnownValue value)?
+        knownValue,
+    TResult Function(SubjectViewDetailAvailableActionsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (knownValue != null) {
+      return knownValue(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class SubjectViewDetailAvailableActionsKnownValue
+    extends SubjectViewDetailAvailableActions {
+  const factory SubjectViewDetailAvailableActionsKnownValue(
+          {required final KnownSubjectViewDetailAvailableActions data}) =
+      _$SubjectViewDetailAvailableActionsKnownValueImpl;
+  const SubjectViewDetailAvailableActionsKnownValue._() : super._();
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  KnownSubjectViewDetailAvailableActions get data;
 
-@override
-String toString() {
-  return 'SubjectViewDetailAvailableActions.knownValue(data: $data)';
-}
-
-
+  /// Create a copy of SubjectViewDetailAvailableActions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SubjectViewDetailAvailableActionsKnownValueImplCopyWith<
+          _$SubjectViewDetailAvailableActionsKnownValueImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SubjectViewDetailAvailableActionsKnownValueCopyWith<$Res> implements $SubjectViewDetailAvailableActionsCopyWith<$Res> {
-  factory $SubjectViewDetailAvailableActionsKnownValueCopyWith(SubjectViewDetailAvailableActionsKnownValue value, $Res Function(SubjectViewDetailAvailableActionsKnownValue) _then) = _$SubjectViewDetailAvailableActionsKnownValueCopyWithImpl;
-@useResult
-$Res call({
- KnownSubjectViewDetailAvailableActions data
-});
-
-
-
-
-}
-/// @nodoc
-class _$SubjectViewDetailAvailableActionsKnownValueCopyWithImpl<$Res>
-    implements $SubjectViewDetailAvailableActionsKnownValueCopyWith<$Res> {
-  _$SubjectViewDetailAvailableActionsKnownValueCopyWithImpl(this._self, this._then);
-
-  final SubjectViewDetailAvailableActionsKnownValue _self;
-  final $Res Function(SubjectViewDetailAvailableActionsKnownValue) _then;
-
-/// Create a copy of SubjectViewDetailAvailableActions
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(SubjectViewDetailAvailableActionsKnownValue(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as KnownSubjectViewDetailAvailableActions,
-  ));
-}
-
-
+abstract class _$$SubjectViewDetailAvailableActionsUnknownImplCopyWith<$Res> {
+  factory _$$SubjectViewDetailAvailableActionsUnknownImplCopyWith(
+          _$SubjectViewDetailAvailableActionsUnknownImpl value,
+          $Res Function(_$SubjectViewDetailAvailableActionsUnknownImpl) then) =
+      __$$SubjectViewDetailAvailableActionsUnknownImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
 }
 
 /// @nodoc
+class __$$SubjectViewDetailAvailableActionsUnknownImplCopyWithImpl<$Res>
+    extends _$SubjectViewDetailAvailableActionsCopyWithImpl<$Res,
+        _$SubjectViewDetailAvailableActionsUnknownImpl>
+    implements _$$SubjectViewDetailAvailableActionsUnknownImplCopyWith<$Res> {
+  __$$SubjectViewDetailAvailableActionsUnknownImplCopyWithImpl(
+      _$SubjectViewDetailAvailableActionsUnknownImpl _value,
+      $Res Function(_$SubjectViewDetailAvailableActionsUnknownImpl) _then)
+      : super(_value, _then);
 
-
-class SubjectViewDetailAvailableActionsUnknown extends SubjectViewDetailAvailableActions {
-  const SubjectViewDetailAvailableActionsUnknown({required this.data}): super._();
-  
-
-@override final  String data;
-
-/// Create a copy of SubjectViewDetailAvailableActions
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SubjectViewDetailAvailableActionsUnknownCopyWith<SubjectViewDetailAvailableActionsUnknown> get copyWith => _$SubjectViewDetailAvailableActionsUnknownCopyWithImpl<SubjectViewDetailAvailableActionsUnknown>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubjectViewDetailAvailableActionsUnknown&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'SubjectViewDetailAvailableActions.unknown(data: $data)';
-}
-
-
+  /// Create a copy of SubjectViewDetailAvailableActions
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SubjectViewDetailAvailableActionsUnknownImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract mixin class $SubjectViewDetailAvailableActionsUnknownCopyWith<$Res> implements $SubjectViewDetailAvailableActionsCopyWith<$Res> {
-  factory $SubjectViewDetailAvailableActionsUnknownCopyWith(SubjectViewDetailAvailableActionsUnknown value, $Res Function(SubjectViewDetailAvailableActionsUnknown) _then) = _$SubjectViewDetailAvailableActionsUnknownCopyWithImpl;
-@useResult
-$Res call({
- String data
-});
 
+class _$SubjectViewDetailAvailableActionsUnknownImpl
+    extends SubjectViewDetailAvailableActionsUnknown {
+  const _$SubjectViewDetailAvailableActionsUnknownImpl({required this.data})
+      : super._();
 
+  @override
+  final String data;
 
+  @override
+  String toString() {
+    return 'SubjectViewDetailAvailableActions.unknown(data: $data)';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SubjectViewDetailAvailableActionsUnknownImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of SubjectViewDetailAvailableActions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SubjectViewDetailAvailableActionsUnknownImplCopyWith<
+          _$SubjectViewDetailAvailableActionsUnknownImpl>
+      get copyWith =>
+          __$$SubjectViewDetailAvailableActionsUnknownImplCopyWithImpl<
+              _$SubjectViewDetailAvailableActionsUnknownImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(KnownSubjectViewDetailAvailableActions data)
+        knownValue,
+    required TResult Function(String data) unknown,
+  }) {
+    return unknown(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(KnownSubjectViewDetailAvailableActions data)? knownValue,
+    TResult? Function(String data)? unknown,
+  }) {
+    return unknown?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(KnownSubjectViewDetailAvailableActions data)? knownValue,
+    TResult Function(String data)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubjectViewDetailAvailableActionsKnownValue value)
+        knownValue,
+    required TResult Function(SubjectViewDetailAvailableActionsUnknown value)
+        unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SubjectViewDetailAvailableActionsKnownValue value)?
+        knownValue,
+    TResult? Function(SubjectViewDetailAvailableActionsUnknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubjectViewDetailAvailableActionsKnownValue value)?
+        knownValue,
+    TResult Function(SubjectViewDetailAvailableActionsUnknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
 }
-/// @nodoc
-class _$SubjectViewDetailAvailableActionsUnknownCopyWithImpl<$Res>
-    implements $SubjectViewDetailAvailableActionsUnknownCopyWith<$Res> {
-  _$SubjectViewDetailAvailableActionsUnknownCopyWithImpl(this._self, this._then);
 
-  final SubjectViewDetailAvailableActionsUnknown _self;
-  final $Res Function(SubjectViewDetailAvailableActionsUnknown) _then;
+abstract class SubjectViewDetailAvailableActionsUnknown
+    extends SubjectViewDetailAvailableActions {
+  const factory SubjectViewDetailAvailableActionsUnknown(
+          {required final String data}) =
+      _$SubjectViewDetailAvailableActionsUnknownImpl;
+  const SubjectViewDetailAvailableActionsUnknown._() : super._();
 
-/// Create a copy of SubjectViewDetailAvailableActions
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(SubjectViewDetailAvailableActionsUnknown(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  @override
+  String get data;
+
+  /// Create a copy of SubjectViewDetailAvailableActions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SubjectViewDetailAvailableActionsUnknownImplCopyWith<
+          _$SubjectViewDetailAvailableActionsUnknownImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-// dart format on

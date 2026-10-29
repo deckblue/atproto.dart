@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,282 +9,201 @@ part of 'output.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+InboxUpdateSeenOutput _$InboxUpdateSeenOutputFromJson(
+    Map<String, dynamic> json) {
+  return _InboxUpdateSeenOutput.fromJson(json);
+}
 
 /// @nodoc
 mixin _$InboxUpdateSeenOutput {
-
-/// The earliest resulting watermark across the requested sections, in UTC. Every requested section is read through this instant; individual sections may already have newer watermarks.
-@JsonKey(toJson: iso8601) DateTime get seenAt; Map<String, dynamic>? get $unknown;
-/// Create a copy of InboxUpdateSeenOutput
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$InboxUpdateSeenOutputCopyWith<InboxUpdateSeenOutput> get copyWith => _$InboxUpdateSeenOutputCopyWithImpl<InboxUpdateSeenOutput>(this as InboxUpdateSeenOutput, _$identity);
+  /// The earliest resulting watermark across the requested sections, in UTC. Every requested section is read through this instant; individual sections may already have newer watermarks.
+  @JsonKey(toJson: iso8601)
+  DateTime get seenAt => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get $unknown => throw _privateConstructorUsedError;
 
   /// Serializes this InboxUpdateSeenOutput to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InboxUpdateSeenOutput&&(identical(other.seenAt, seenAt) || other.seenAt == seenAt)&&const DeepCollectionEquality().equals(other.$unknown, $unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,seenAt,const DeepCollectionEquality().hash($unknown));
-
-@override
-String toString() {
-  return 'InboxUpdateSeenOutput(seenAt: $seenAt, \$unknown: ${$unknown})';
-}
-
-
+  /// Create a copy of InboxUpdateSeenOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $InboxUpdateSeenOutputCopyWith<InboxUpdateSeenOutput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $InboxUpdateSeenOutputCopyWith<$Res>  {
-  factory $InboxUpdateSeenOutputCopyWith(InboxUpdateSeenOutput value, $Res Function(InboxUpdateSeenOutput) _then) = _$InboxUpdateSeenOutputCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(toJson: iso8601) DateTime seenAt, Map<String, dynamic>? $unknown
-});
-
-
-
-
+abstract class $InboxUpdateSeenOutputCopyWith<$Res> {
+  factory $InboxUpdateSeenOutputCopyWith(InboxUpdateSeenOutput value,
+          $Res Function(InboxUpdateSeenOutput) then) =
+      _$InboxUpdateSeenOutputCopyWithImpl<$Res, InboxUpdateSeenOutput>;
+  @useResult
+  $Res call(
+      {@JsonKey(toJson: iso8601) DateTime seenAt,
+      Map<String, dynamic>? $unknown});
 }
+
 /// @nodoc
-class _$InboxUpdateSeenOutputCopyWithImpl<$Res>
+class _$InboxUpdateSeenOutputCopyWithImpl<$Res,
+        $Val extends InboxUpdateSeenOutput>
     implements $InboxUpdateSeenOutputCopyWith<$Res> {
-  _$InboxUpdateSeenOutputCopyWithImpl(this._self, this._then);
+  _$InboxUpdateSeenOutputCopyWithImpl(this._value, this._then);
 
-  final InboxUpdateSeenOutput _self;
-  final $Res Function(InboxUpdateSeenOutput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of InboxUpdateSeenOutput
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? seenAt = null,Object? $unknown = freezed,}) {
-  return _then(_self.copyWith(
-seenAt: null == seenAt ? _self.seenAt : seenAt // ignore: cast_nullable_to_non_nullable
-as DateTime,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
+  /// Create a copy of InboxUpdateSeenOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? seenAt = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_value.copyWith(
+      seenAt: null == seenAt
+          ? _value.seenAt
+          : seenAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      $unknown: freezed == $unknown
+          ? _value.$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$InboxUpdateSeenOutputImplCopyWith<$Res>
+    implements $InboxUpdateSeenOutputCopyWith<$Res> {
+  factory _$$InboxUpdateSeenOutputImplCopyWith(
+          _$InboxUpdateSeenOutputImpl value,
+          $Res Function(_$InboxUpdateSeenOutputImpl) then) =
+      __$$InboxUpdateSeenOutputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(toJson: iso8601) DateTime seenAt,
+      Map<String, dynamic>? $unknown});
 }
 
+/// @nodoc
+class __$$InboxUpdateSeenOutputImplCopyWithImpl<$Res>
+    extends _$InboxUpdateSeenOutputCopyWithImpl<$Res,
+        _$InboxUpdateSeenOutputImpl>
+    implements _$$InboxUpdateSeenOutputImplCopyWith<$Res> {
+  __$$InboxUpdateSeenOutputImplCopyWithImpl(_$InboxUpdateSeenOutputImpl _value,
+      $Res Function(_$InboxUpdateSeenOutputImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [InboxUpdateSeenOutput].
-extension InboxUpdateSeenOutputPatterns on InboxUpdateSeenOutput {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InboxUpdateSeenOutput value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _InboxUpdateSeenOutput() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InboxUpdateSeenOutput value)  $default,){
-final _that = this;
-switch (_that) {
-case _InboxUpdateSeenOutput():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InboxUpdateSeenOutput value)?  $default,){
-final _that = this;
-switch (_that) {
-case _InboxUpdateSeenOutput() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(toJson: iso8601)  DateTime seenAt,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _InboxUpdateSeenOutput() when $default != null:
-return $default(_that.seenAt,_that.$unknown);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(toJson: iso8601)  DateTime seenAt,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
-switch (_that) {
-case _InboxUpdateSeenOutput():
-return $default(_that.seenAt,_that.$unknown);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(toJson: iso8601)  DateTime seenAt,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
-switch (_that) {
-case _InboxUpdateSeenOutput() when $default != null:
-return $default(_that.seenAt,_that.$unknown);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of InboxUpdateSeenOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? seenAt = null,
+    Object? $unknown = freezed,
+  }) {
+    return _then(_$InboxUpdateSeenOutputImpl(
+      seenAt: null == seenAt
+          ? _value.seenAt
+          : seenAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      $unknown: freezed == $unknown
+          ? _value._$unknown
+          : $unknown // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _InboxUpdateSeenOutput implements InboxUpdateSeenOutput {
-  const _InboxUpdateSeenOutput({@JsonKey(toJson: iso8601) required this.seenAt, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
-  factory _InboxUpdateSeenOutput.fromJson(Map<String, dynamic> json) => _$InboxUpdateSeenOutputFromJson(json);
+class _$InboxUpdateSeenOutputImpl implements _InboxUpdateSeenOutput {
+  const _$InboxUpdateSeenOutputImpl(
+      {@JsonKey(toJson: iso8601) required this.seenAt,
+      final Map<String, dynamic>? $unknown})
+      : _$unknown = $unknown;
 
-/// The earliest resulting watermark across the requested sections, in UTC. Every requested section is read through this instant; individual sections may already have newer watermarks.
-@override@JsonKey(toJson: iso8601) final  DateTime seenAt;
- final  Map<String, dynamic>? _$unknown;
-@override Map<String, dynamic>? get $unknown {
-  final value = _$unknown;
-  if (value == null) return null;
-  if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
+  factory _$InboxUpdateSeenOutputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InboxUpdateSeenOutputImplFromJson(json);
+
+  /// The earliest resulting watermark across the requested sections, in UTC. Every requested section is read through this instant; individual sections may already have newer watermarks.
+  @override
+  @JsonKey(toJson: iso8601)
+  final DateTime seenAt;
+  final Map<String, dynamic>? _$unknown;
+  @override
+  Map<String, dynamic>? get $unknown {
+    final value = _$unknown;
+    if (value == null) return null;
+    if (_$unknown is EqualUnmodifiableMapView) return _$unknown;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'InboxUpdateSeenOutput(seenAt: $seenAt, \$unknown: ${$unknown})';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InboxUpdateSeenOutputImpl &&
+            (identical(other.seenAt, seenAt) || other.seenAt == seenAt) &&
+            const DeepCollectionEquality().equals(other._$unknown, _$unknown));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, seenAt, const DeepCollectionEquality().hash(_$unknown));
+
+  /// Create a copy of InboxUpdateSeenOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboxUpdateSeenOutputImplCopyWith<_$InboxUpdateSeenOutputImpl>
+      get copyWith => __$$InboxUpdateSeenOutputImplCopyWithImpl<
+          _$InboxUpdateSeenOutputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboxUpdateSeenOutputImplToJson(
+      this,
+    );
+  }
 }
 
+abstract class _InboxUpdateSeenOutput implements InboxUpdateSeenOutput {
+  const factory _InboxUpdateSeenOutput(
+      {@JsonKey(toJson: iso8601) required final DateTime seenAt,
+      final Map<String, dynamic>? $unknown}) = _$InboxUpdateSeenOutputImpl;
 
-/// Create a copy of InboxUpdateSeenOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$InboxUpdateSeenOutputCopyWith<_InboxUpdateSeenOutput> get copyWith => __$InboxUpdateSeenOutputCopyWithImpl<_InboxUpdateSeenOutput>(this, _$identity);
+  factory _InboxUpdateSeenOutput.fromJson(Map<String, dynamic> json) =
+      _$InboxUpdateSeenOutputImpl.fromJson;
 
-@override
-Map<String, dynamic> toJson() {
-  return _$InboxUpdateSeenOutputToJson(this, );
+  /// The earliest resulting watermark across the requested sections, in UTC. Every requested section is read through this instant; individual sections may already have newer watermarks.
+  @override
+  @JsonKey(toJson: iso8601)
+  DateTime get seenAt;
+  @override
+  Map<String, dynamic>? get $unknown;
+
+  /// Create a copy of InboxUpdateSeenOutput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InboxUpdateSeenOutputImplCopyWith<_$InboxUpdateSeenOutputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InboxUpdateSeenOutput&&(identical(other.seenAt, seenAt) || other.seenAt == seenAt)&&const DeepCollectionEquality().equals(other._$unknown, _$unknown));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,seenAt,const DeepCollectionEquality().hash(_$unknown));
-
-@override
-String toString() {
-  return 'InboxUpdateSeenOutput(seenAt: $seenAt, \$unknown: ${$unknown})';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$InboxUpdateSeenOutputCopyWith<$Res> implements $InboxUpdateSeenOutputCopyWith<$Res> {
-  factory _$InboxUpdateSeenOutputCopyWith(_InboxUpdateSeenOutput value, $Res Function(_InboxUpdateSeenOutput) _then) = __$InboxUpdateSeenOutputCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(toJson: iso8601) DateTime seenAt, Map<String, dynamic>? $unknown
-});
-
-
-
-
-}
-/// @nodoc
-class __$InboxUpdateSeenOutputCopyWithImpl<$Res>
-    implements _$InboxUpdateSeenOutputCopyWith<$Res> {
-  __$InboxUpdateSeenOutputCopyWithImpl(this._self, this._then);
-
-  final _InboxUpdateSeenOutput _self;
-  final $Res Function(_InboxUpdateSeenOutput) _then;
-
-/// Create a copy of InboxUpdateSeenOutput
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? seenAt = null,Object? $unknown = freezed,}) {
-  return _then(_InboxUpdateSeenOutput(
-seenAt: null == seenAt ? _self.seenAt : seenAt // ignore: cast_nullable_to_non_nullable
-as DateTime,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
-  ));
-}
-
-
-}
-
-// dart format on
