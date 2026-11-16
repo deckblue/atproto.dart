@@ -8,30 +8,34 @@ part of 'account_preview.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AccountPreview _$AccountPreviewFromJson(Map json) =>
-    $checkedCreate('_AccountPreview', json, ($checkedConvert) {
-      final val = _AccountPreview(
-        $type: $checkedConvert(
-          r'$type',
-          (v) => v as String? ?? 'tools.ozone.inbox.defs#accountPreview',
-        ),
-        handle: $checkedConvert('handle', (v) => v as String?),
-        profile: $checkedConvert(
-          'profile',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+_$AccountPreviewImpl _$$AccountPreviewImplFromJson(Map json) => $checkedCreate(
+      r'_$AccountPreviewImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$AccountPreviewImpl(
+          $type: $checkedConvert(r'$type',
+              (v) => v as String? ?? 'tools.ozone.inbox.defs#accountPreview'),
+          handle: $checkedConvert('handle', (v) => v as String?),
+          profile: $checkedConvert(
+              'profile',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+          $unknown: $checkedConvert(
+              r'$unknown',
+              (v) => (v as Map?)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )),
+        );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$AccountPreviewToJson(_AccountPreview instance) =>
+Map<String, dynamic> _$$AccountPreviewImplToJson(
+        _$AccountPreviewImpl instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      'handle': ?instance.handle,
-      'profile': ?instance.profile,
-      r'$unknown': ?instance.$unknown,
+      if (instance.handle case final value?) 'handle': value,
+      if (instance.profile case final value?) 'profile': value,
+      if (instance.$unknown case final value?) r'$unknown': value,
     };

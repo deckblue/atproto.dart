@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,275 +9,253 @@ part of 'moderation_subject_profile_link.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
 /// @nodoc
 mixin _$ModerationSubjectProfileLink {
+  ProfileLinkView get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ProfileLinkView data) profileLinkView,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ProfileLinkView data)? profileLinkView,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ProfileLinkView data)? profileLinkView,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UModerationSubjectProfileLink value)
+        profileLinkView,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UModerationSubjectProfileLink value)? profileLinkView,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UModerationSubjectProfileLink value)? profileLinkView,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
- ProfileLinkView get data;
-/// Create a copy of ModerationSubjectProfileLink
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ModerationSubjectProfileLinkCopyWith<ModerationSubjectProfileLink> get copyWith => _$ModerationSubjectProfileLinkCopyWithImpl<ModerationSubjectProfileLink>(this as ModerationSubjectProfileLink, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ModerationSubjectProfileLink&&(identical(other.data, data) || other.data == data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,data);
-
-@override
-String toString() {
-  return 'ModerationSubjectProfileLink(data: $data)';
-}
-
-
+  /// Create a copy of ModerationSubjectProfileLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ModerationSubjectProfileLinkCopyWith<ModerationSubjectProfileLink>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ModerationSubjectProfileLinkCopyWith<$Res>  {
-  factory $ModerationSubjectProfileLinkCopyWith(ModerationSubjectProfileLink value, $Res Function(ModerationSubjectProfileLink) _then) = _$ModerationSubjectProfileLinkCopyWithImpl;
-@useResult
-$Res call({
- ProfileLinkView data
-});
+abstract class $ModerationSubjectProfileLinkCopyWith<$Res> {
+  factory $ModerationSubjectProfileLinkCopyWith(
+          ModerationSubjectProfileLink value,
+          $Res Function(ModerationSubjectProfileLink) then) =
+      _$ModerationSubjectProfileLinkCopyWithImpl<$Res,
+          ModerationSubjectProfileLink>;
+  @useResult
+  $Res call({ProfileLinkView data});
 
-
-$ProfileLinkViewCopyWith<$Res> get data;
-
+  $ProfileLinkViewCopyWith<$Res> get data;
 }
+
 /// @nodoc
-class _$ModerationSubjectProfileLinkCopyWithImpl<$Res>
+class _$ModerationSubjectProfileLinkCopyWithImpl<$Res,
+        $Val extends ModerationSubjectProfileLink>
     implements $ModerationSubjectProfileLinkCopyWith<$Res> {
-  _$ModerationSubjectProfileLinkCopyWithImpl(this._self, this._then);
+  _$ModerationSubjectProfileLinkCopyWithImpl(this._value, this._then);
 
-  final ModerationSubjectProfileLink _self;
-  final $Res Function(ModerationSubjectProfileLink) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ModerationSubjectProfileLink
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? data = null,}) {
-  return _then(_self.copyWith(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as ProfileLinkView,
-  ));
-}
-/// Create a copy of ModerationSubjectProfileLink
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ProfileLinkViewCopyWith<$Res> get data {
-  
-  return $ProfileLinkViewCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
+  /// Create a copy of ModerationSubjectProfileLink
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_value.copyWith(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ProfileLinkView,
+    ) as $Val);
+  }
 
-
-/// Adds pattern-matching-related methods to [ModerationSubjectProfileLink].
-extension ModerationSubjectProfileLinkPatterns on ModerationSubjectProfileLink {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( UModerationSubjectProfileLink value)?  profileLinkView,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case UModerationSubjectProfileLink() when profileLinkView != null:
-return profileLinkView(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( UModerationSubjectProfileLink value)  profileLinkView,}){
-final _that = this;
-switch (_that) {
-case UModerationSubjectProfileLink():
-return profileLinkView(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( UModerationSubjectProfileLink value)?  profileLinkView,}){
-final _that = this;
-switch (_that) {
-case UModerationSubjectProfileLink() when profileLinkView != null:
-return profileLinkView(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( ProfileLinkView data)?  profileLinkView,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case UModerationSubjectProfileLink() when profileLinkView != null:
-return profileLinkView(_that.data);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( ProfileLinkView data)  profileLinkView,}) {final _that = this;
-switch (_that) {
-case UModerationSubjectProfileLink():
-return profileLinkView(_that.data);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( ProfileLinkView data)?  profileLinkView,}) {final _that = this;
-switch (_that) {
-case UModerationSubjectProfileLink() when profileLinkView != null:
-return profileLinkView(_that.data);case _:
-  return null;
-
-}
+  /// Create a copy of ModerationSubjectProfileLink
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileLinkViewCopyWith<$Res> get data {
+    return $ProfileLinkViewCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$UModerationSubjectProfileLinkImplCopyWith<$Res>
+    implements $ModerationSubjectProfileLinkCopyWith<$Res> {
+  factory _$$UModerationSubjectProfileLinkImplCopyWith(
+          _$UModerationSubjectProfileLinkImpl value,
+          $Res Function(_$UModerationSubjectProfileLinkImpl) then) =
+      __$$UModerationSubjectProfileLinkImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ProfileLinkView data});
+
+  @override
+  $ProfileLinkViewCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$UModerationSubjectProfileLinkImplCopyWithImpl<$Res>
+    extends _$ModerationSubjectProfileLinkCopyWithImpl<$Res,
+        _$UModerationSubjectProfileLinkImpl>
+    implements _$$UModerationSubjectProfileLinkImplCopyWith<$Res> {
+  __$$UModerationSubjectProfileLinkImplCopyWithImpl(
+      _$UModerationSubjectProfileLinkImpl _value,
+      $Res Function(_$UModerationSubjectProfileLinkImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ModerationSubjectProfileLink
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UModerationSubjectProfileLinkImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ProfileLinkView,
+    ));
+  }
 }
 
 /// @nodoc
 
+class _$UModerationSubjectProfileLinkImpl
+    implements UModerationSubjectProfileLink {
+  const _$UModerationSubjectProfileLinkImpl({required this.data});
 
-class UModerationSubjectProfileLink implements ModerationSubjectProfileLink {
-  const UModerationSubjectProfileLink({required this.data});
-  
+  @override
+  final ProfileLinkView data;
 
-@override final  ProfileLinkView data;
+  @override
+  String toString() {
+    return 'ModerationSubjectProfileLink.profileLinkView(data: $data)';
+  }
 
-/// Create a copy of ModerationSubjectProfileLink
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$UModerationSubjectProfileLinkCopyWith<UModerationSubjectProfileLink> get copyWith => _$UModerationSubjectProfileLinkCopyWithImpl<UModerationSubjectProfileLink>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UModerationSubjectProfileLinkImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
 
+  /// Create a copy of ModerationSubjectProfileLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UModerationSubjectProfileLinkImplCopyWith<
+          _$UModerationSubjectProfileLinkImpl>
+      get copyWith => __$$UModerationSubjectProfileLinkImplCopyWithImpl<
+          _$UModerationSubjectProfileLinkImpl>(this, _$identity);
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UModerationSubjectProfileLink&&(identical(other.data, data) || other.data == data));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ProfileLinkView data) profileLinkView,
+  }) {
+    return profileLinkView(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ProfileLinkView data)? profileLinkView,
+  }) {
+    return profileLinkView?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ProfileLinkView data)? profileLinkView,
+    required TResult orElse(),
+  }) {
+    if (profileLinkView != null) {
+      return profileLinkView(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UModerationSubjectProfileLink value)
+        profileLinkView,
+  }) {
+    return profileLinkView(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UModerationSubjectProfileLink value)? profileLinkView,
+  }) {
+    return profileLinkView?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UModerationSubjectProfileLink value)? profileLinkView,
+    required TResult orElse(),
+  }) {
+    if (profileLinkView != null) {
+      return profileLinkView(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class UModerationSubjectProfileLink
+    implements ModerationSubjectProfileLink {
+  const factory UModerationSubjectProfileLink(
+          {required final ProfileLinkView data}) =
+      _$UModerationSubjectProfileLinkImpl;
 
-@override
-int get hashCode => Object.hash(runtimeType,data);
+  @override
+  ProfileLinkView get data;
 
-@override
-String toString() {
-  return 'ModerationSubjectProfileLink.profileLinkView(data: $data)';
+  /// Create a copy of ModerationSubjectProfileLink
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UModerationSubjectProfileLinkImplCopyWith<
+          _$UModerationSubjectProfileLinkImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class $UModerationSubjectProfileLinkCopyWith<$Res> implements $ModerationSubjectProfileLinkCopyWith<$Res> {
-  factory $UModerationSubjectProfileLinkCopyWith(UModerationSubjectProfileLink value, $Res Function(UModerationSubjectProfileLink) _then) = _$UModerationSubjectProfileLinkCopyWithImpl;
-@override @useResult
-$Res call({
- ProfileLinkView data
-});
-
-
-@override $ProfileLinkViewCopyWith<$Res> get data;
-
-}
-/// @nodoc
-class _$UModerationSubjectProfileLinkCopyWithImpl<$Res>
-    implements $UModerationSubjectProfileLinkCopyWith<$Res> {
-  _$UModerationSubjectProfileLinkCopyWithImpl(this._self, this._then);
-
-  final UModerationSubjectProfileLink _self;
-  final $Res Function(UModerationSubjectProfileLink) _then;
-
-/// Create a copy of ModerationSubjectProfileLink
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(UModerationSubjectProfileLink(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as ProfileLinkView,
-  ));
-}
-
-/// Create a copy of ModerationSubjectProfileLink
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$ProfileLinkViewCopyWith<$Res> get data {
-  
-  return $ProfileLinkViewCopyWith<$Res>(_self.data, (value) {
-    return _then(_self.copyWith(data: value));
-  });
-}
-}
-
-// dart format on
