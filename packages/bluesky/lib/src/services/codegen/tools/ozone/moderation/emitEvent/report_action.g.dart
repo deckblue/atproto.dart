@@ -8,43 +8,60 @@ part of 'report_action.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ReportActionImpl _$$ReportActionImplFromJson(Map json) => $checkedCreate(
-      r'_$ReportActionImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$ReportActionImpl(
-          $type: $checkedConvert(
-              r'$type',
-              (v) =>
-                  v as String? ??
-                  'tools.ozone.moderation.emitEvent#reportAction'),
-          ids: $checkedConvert(
-              'ids',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) => (e as num).toInt())
-                  .toList()),
-          types: $checkedConvert('types',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-          all: $checkedConvert('all', (v) => v as bool?),
-          note: $checkedConvert('note', (v) => v as String?),
-          isAutomated: $checkedConvert('isAutomated', (v) => v as bool?),
-          $unknown: $checkedConvert(
-              r'$unknown',
-              (v) => (v as Map?)?.map(
-                    (k, e) => MapEntry(k as String, e),
-                  )),
-        );
-        return val;
-      },
-    );
+_ReportAction _$ReportActionFromJson(Map json) =>
+    $checkedCreate('_ReportAction', json, ($checkedConvert) {
+      final val = _ReportAction(
+        $type: $checkedConvert(
+          r'$type',
+          (v) =>
+              v as String? ?? 'tools.ozone.moderation.emitEvent#reportAction',
+        ),
+        ids: $checkedConvert(
+          'ids',
+          (v) => (v as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+        ),
+        types: $checkedConvert(
+          'types',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+        all: $checkedConvert('all', (v) => v as bool?),
+        allOwned: $checkedConvert('allOwned', (v) => v as bool?),
+        subjects: $checkedConvert(
+          'subjects',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) => const UReportActionSubjectsConverter().fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList(),
+        ),
+        subjectTypes: $checkedConvert(
+          'subjectTypes',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+        note: $checkedConvert('note', (v) => v as String?),
+        isAutomated: $checkedConvert('isAutomated', (v) => v as bool?),
+        $unknown: $checkedConvert(
+          r'$unknown',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$ReportActionImplToJson(_$ReportActionImpl instance) =>
+Map<String, dynamic> _$ReportActionToJson(_ReportAction instance) =>
     <String, dynamic>{
       r'$type': instance.$type,
-      if (instance.ids case final value?) 'ids': value,
-      if (instance.types case final value?) 'types': value,
-      if (instance.all case final value?) 'all': value,
-      if (instance.note case final value?) 'note': value,
-      if (instance.isAutomated case final value?) 'isAutomated': value,
-      if (instance.$unknown case final value?) r'$unknown': value,
+      'ids': ?instance.ids,
+      'types': ?instance.types,
+      'all': ?instance.all,
+      'allOwned': ?instance.allOwned,
+      'subjects': ?instance.subjects
+          ?.map(const UReportActionSubjectsConverter().toJson)
+          .toList(),
+      'subjectTypes': ?instance.subjectTypes,
+      'note': ?instance.note,
+      'isAutomated': ?instance.isAutomated,
+      r'$unknown': ?instance.$unknown,
     };

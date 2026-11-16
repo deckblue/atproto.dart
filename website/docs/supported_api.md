@@ -47,6 +47,7 @@ sidebar_position: 4
 | Method | Docs | Paging (cursor) |
 | --- | --- | :---: |
 | **[com.atproto.label.queryLabels](https://pub.dev/documentation/atproto/latest/com_atproto_services/LabelService/queryLabels.html)** | [Reference](lexicons/com/atproto/label/queryLabels.md) | ✅ |
+| **[com.atproto.label.record](https://pub.dev/documentation/atproto/latest/com_atproto_services/LabelService/record.html)** | [Reference](lexicons/com/atproto/label/record.md) | ❌ |
 | **[com.atproto.label.subscribeLabels](https://pub.dev/documentation/atproto/latest/com_atproto_services/LabelService/subscribeLabels.html)** | [Reference](lexicons/com/atproto/label/subscribeLabels.md) | ✅ |
 
 ### com.atproto.lexicon
@@ -505,6 +506,7 @@ So all endpoints in the [atproto](#atproto) table are also available from [blues
 | **[tools.ozone.report.getReport](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/getReport.html)** | [Reference](lexicons/tools/ozone/report/getReport.md) | ❌ |
 | **[tools.ozone.report.listActivities](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/listActivities.html)** | [Reference](lexicons/tools/ozone/report/listActivities.md) | ✅ |
 | **[tools.ozone.report.queryActivities](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/queryActivities.html)** | [Reference](lexicons/tools/ozone/report/queryActivities.md) | ✅ |
+| **[tools.ozone.report.queryModeratorActivity](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/queryModeratorActivity.html)** | [Reference](lexicons/tools/ozone/report/queryModeratorActivity.md) | ✅ |
 | **[tools.ozone.report.queryReports](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/queryReports.html)** | [Reference](lexicons/tools/ozone/report/queryReports.md) | ✅ |
 | **[tools.ozone.report.reassignQueue](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/reassignQueue.html)** | [Reference](lexicons/tools/ozone/report/reassignQueue.md) | ❌ |
 | **[tools.ozone.report.refreshStats](https://pub.dev/documentation/bluesky/latest/tools_ozone_services/ReportService/refreshStats.html)** | [Reference](lexicons/tools/ozone/report/refreshStats.md) | ❌ |

@@ -1920,6 +1920,10 @@ const toolsOzoneInboxAppealActionedSubjectTakedownRef =
 /// `tools.ozone.inbox.defs`
 const toolsOzoneInboxDefs = 'tools.ozone.inbox.defs';
 
+/// `tools.ozone.inbox.defs#accountPreview`
+const toolsOzoneInboxDefsAccountPreview =
+    'tools.ozone.inbox.defs#accountPreview';
+
 /// `tools.ozone.inbox.defs#actionView`
 const toolsOzoneInboxDefsActionView = 'tools.ozone.inbox.defs#actionView';
 
@@ -2032,10 +2036,6 @@ const toolsOzoneModerationDefsAccountEvent =
 /// `tools.ozone.moderation.defs#accountHosting`
 const toolsOzoneModerationDefsAccountHosting =
     'tools.ozone.moderation.defs#accountHosting';
-
-/// `tools.ozone.moderation.defs#accountStats`
-const toolsOzoneModerationDefsAccountStats =
-    'tools.ozone.moderation.defs#accountStats';
 
 /// `tools.ozone.moderation.defs#accountStrike`
 const toolsOzoneModerationDefsAccountStrike =
@@ -2174,10 +2174,6 @@ const toolsOzoneModerationDefsRecordViewDetail =
 /// `tools.ozone.moderation.defs#recordViewNotFound`
 const toolsOzoneModerationDefsRecordViewNotFound =
     'tools.ozone.moderation.defs#recordViewNotFound';
-
-/// `tools.ozone.moderation.defs#recordsStats`
-const toolsOzoneModerationDefsRecordsStats =
-    'tools.ozone.moderation.defs#recordsStats';
 
 /// `tools.ozone.moderation.defs#repoView`
 const toolsOzoneModerationDefsRepoView = 'tools.ozone.moderation.defs#repoView';
@@ -2609,6 +2605,14 @@ const toolsOzoneReportListActivities = 'tools.ozone.report.listActivities';
 
 /// `tools.ozone.report.queryActivities`
 const toolsOzoneReportQueryActivities = 'tools.ozone.report.queryActivities';
+
+/// `tools.ozone.report.queryModeratorActivity`
+const toolsOzoneReportQueryModeratorActivity =
+    'tools.ozone.report.queryModeratorActivity';
+
+/// `tools.ozone.report.queryModeratorActivity#activityRow`
+const toolsOzoneReportQueryModeratorActivityActivityRow =
+    'tools.ozone.report.queryModeratorActivity#activityRow';
 
 /// `tools.ozone.report.queryReports`
 const toolsOzoneReportQueryReports = 'tools.ozone.report.queryReports';

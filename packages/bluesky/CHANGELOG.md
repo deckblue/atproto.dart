@@ -1,5 +1,55 @@
 # Release Note
 
+## v2.18.0
+
+- fix!: removed `app.bsky.feed.hydrateFeedSkeleton` (BREAKING)
+- chore: regenerated from synced lexicons
+
+## v2.17.1
+
+- feat: added `app.bsky.feed.defs#postView.viewCount`
+- feat: added `app.bsky.feed.hydrateFeedSkeleton`
+- feat: added `tools.ozone.moderation.emitEvent#reportAction.subjectTypes`
+- feat: added `tools.ozone.moderation.emitEvent#reportAction.subjects`
+- feat: added `tools.ozone.report.queryModeratorActivity#activityRow`
+- feat: added `tools.ozone.report.queryModeratorActivity`
+- chore: regenerated from synced lexicons
+
+## v2.17.0
+
+- feat: added `moderateExternalView` and `ModerationSubjectExternalView` to moderate `app.bsky.embed.external` views, including the article, publication, gallery and livestream views
+- feat: added `moderateViewExternal` to moderate an `app.bsky.embed.external#viewExternal`
+- feat: added `moderateProfileLink` and `ModerationSubjectProfileLink` to moderate an `app.bsky.actor.defs#profileLinkView`
+- feat: added `mergeModUIResults` to merge several `ModerationUI` results into one
+
+## v2.16.0
+
+- fix!: removed `tools.ozone.moderation.defs#accountStats` (BREAKING)
+- fix!: removed `tools.ozone.moderation.defs#recordsStats` (BREAKING)
+- fix!: removed `tools.ozone.moderation.defs#subjectStatusView.accountStats` (BREAKING)
+- fix!: removed `tools.ozone.moderation.defs#subjectStatusView.recordsStats` (BREAKING)
+- fix!: removed `tools.ozone.moderation.queryStatuses.parameters.minAccountSuspendCount` (BREAKING)
+- fix!: removed `tools.ozone.moderation.queryStatuses.parameters.minReportedRecordsCount` (BREAKING)
+- fix!: removed `tools.ozone.moderation.queryStatuses.parameters.minTakendownRecordsCount` (BREAKING)
+- chore: updated `tools.ozone.moderation.queryStatuses.parameters.sortField`
+- chore: regenerated from synced lexicons
+
+## v2.15.6
+
+- feat: added `tools.ozone.moderation.emitEvent#reportAction.allOwned`
+- chore: updated `tools.ozone.report.closeReports`
+- feat: added `tools.ozone.report.closeReports.input.actionEventId`
+- chore: regenerated from synced lexicons
+
+## v2.15.5
+
+- feat: added `tools.ozone.inbox.defs#accountPreview`
+- feat: added `tools.ozone.inbox.defs#subjectViewDetail.account`
+- feat: added `tools.ozone.inbox.getAccountStatus.output.enforcement`
+- feat: added `tools.ozone.inbox.getAccountStatus.output.hasActiveStrikes`
+- chore: regenerated from synced lexicons
+- chore: bump `atproto` to `^2.5.1`
+
 ## v2.15.4
 
 - chore: updated `tools.ozone.moderation.emitEvent#reportAction.all`

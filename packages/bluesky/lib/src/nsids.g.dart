@@ -1537,6 +1537,16 @@ const toolsOzoneReportQueryActivities = NSID(
   ids.toolsOzoneReportQueryActivities,
 );
 
+/// `tools.ozone.report.queryModeratorActivity`
+const toolsOzoneReportQueryModeratorActivity = NSID(
+  ids.toolsOzoneReportQueryModeratorActivity,
+);
+
+/// `tools.ozone.report.queryModeratorActivity#activityRow`
+const toolsOzoneReportQueryModeratorActivityActivityRow = NSID(
+  ids.toolsOzoneReportQueryModeratorActivityActivityRow,
+);
+
 /// `tools.ozone.report.queryReports`
 const toolsOzoneReportQueryReports = NSID(ids.toolsOzoneReportQueryReports);
 

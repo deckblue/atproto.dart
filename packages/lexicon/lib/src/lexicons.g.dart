@@ -3318,6 +3318,11 @@ const appBskyFeedDefs = <String, dynamic>{
         "repostCount": {"type": "integer"},
         "likeCount": {"type": "integer"},
         "quoteCount": {"type": "integer"},
+        "viewCount": {
+          "type": "integer",
+          "description":
+              "Approximate number of times the post has been viewed. Only included in authenticated responses to the post's author when eligible to see the count. Counts less than 100 are omitted.",
+        },
         "indexedAt": {"type": "string", "format": "datetime"},
         "viewer": {"type": "ref", "ref": "#viewerState"},
         "labels": {
@@ -15564,6 +15569,55 @@ const comAtprotoLabelQueryLabels = <String, dynamic>{
   },
 };
 
+/// `com.atproto.label.record`
+const comAtprotoLabelRecord = <String, dynamic>{
+  "lexicon": 1,
+  "id": "com.atproto.label.record",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description":
+          "Metadata tag on an atproto resource (eg, repo or record), published as a record in the labeler's repository. Currently ONLY intended to be used in atproto space repos, not the public broadcast repository. For public data, continue to use signed label objects. This guidance may be updated in the future.",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["uri", "val", "cts"],
+        "properties": {
+          "uri": {
+            "type": "string",
+            "format": "uri",
+            "description":
+                "URI of the record, repository (account), or other resource that this label applies to. Currently only intended for use in the context of atproto spaces.",
+          },
+          "cid": {
+            "type": "string",
+            "format": "cid",
+            "description":
+                "Optionally, CID specifying the specific version of 'uri' resource this label applies to.",
+          },
+          "val": {
+            "type": "string",
+            "description":
+                "The short string name of the value or type of this label.",
+            "maxLength": 128,
+          },
+          "cts": {
+            "type": "string",
+            "format": "datetime",
+            "description": "Timestamp when this label was created.",
+          },
+          "exp": {
+            "type": "string",
+            "format": "datetime",
+            "description":
+                "Timestamp at which this label expires (no longer applies).",
+          },
+        },
+      },
+    },
+  },
+};
+
 /// `com.atproto.label.subscribeLabels`
 const comAtprotoLabelSubscribeLabels = <String, dynamic>{
   "lexicon": 1,
@@ -20302,6 +20356,12 @@ const toolsOzoneInboxDefs = <String, dynamic>{
           "description":
               "Raw record JSON for the subject, when the subject is a record and the record is available.",
         },
+        "account": {
+          "type": "ref",
+          "description":
+              "Best-effort current profile information for an account subject.",
+          "ref": "#accountPreview",
+        },
         "enforcement": {"type": "ref", "ref": "#enforcementView"},
         "appeal": {"type": "ref", "ref": "#appealView"},
         "availableActions": {
@@ -20331,6 +20391,18 @@ const toolsOzoneInboxDefs = <String, dynamic>{
         },
         "createdAt": {"type": "string", "format": "datetime"},
         "updatedAt": {"type": "string", "format": "datetime"},
+      },
+    },
+    "accountPreview": {
+      "type": "object",
+      "description":
+          "Current account information, when available; this is not a snapshot of the account at the time of the action.",
+      "properties": {
+        "handle": {"type": "string", "format": "handle"},
+        "profile": {
+          "type": "unknown",
+          "description": "Raw app.bsky.actor.profile record, when available.",
+        },
       },
     },
     "reportsSummary": {
@@ -20499,6 +20571,17 @@ const toolsOzoneInboxGetAccountStatus = <String, dynamic>{
             "standing": {
               "type": "string",
               "knownValues": ["good", "warning", "atRisk"],
+            },
+            "hasActiveStrikes": {
+              "type": "boolean",
+              "description":
+                  "Whether the account currently has any active strikes.",
+            },
+            "enforcement": {
+              "type": "ref",
+              "description":
+                  "Current account takedown or suspension, independent of strike standing.",
+              "ref": "tools.ozone.inbox.defs#enforcementView",
             },
             "updatedAt": {
               "type": "string",
@@ -21396,17 +21479,6 @@ const toolsOzoneModerationDefs = <String, dynamic>{
           "type": "array",
           "items": {"type": "string"},
         },
-        "accountStats": {
-          "type": "ref",
-          "description": "Statistics related to the account subject",
-          "ref": "#accountStats",
-        },
-        "recordsStats": {
-          "type": "ref",
-          "description":
-              "Statistics related to the record subjects authored by the subject's account",
-          "ref": "#recordsStats",
-        },
         "accountStrike": {
           "type": "ref",
           "description":
@@ -21441,74 +21513,6 @@ const toolsOzoneModerationDefs = <String, dynamic>{
         "repo": {"type": "ref", "ref": "#repoViewDetail"},
         "profile": {"type": "union", "refs": []},
         "record": {"type": "ref", "ref": "#recordViewDetail"},
-      },
-    },
-    "accountStats": {
-      "type": "object",
-      "description": "Statistics about a particular account subject",
-      "properties": {
-        "reportCount": {
-          "type": "integer",
-          "description": "Total number of reports on the account",
-        },
-        "appealCount": {
-          "type": "integer",
-          "description":
-              "Total number of appeals against a moderation action on the account",
-        },
-        "suspendCount": {
-          "type": "integer",
-          "description": "Number of times the account was suspended",
-        },
-        "escalateCount": {
-          "type": "integer",
-          "description": "Number of times the account was escalated",
-        },
-        "takedownCount": {
-          "type": "integer",
-          "description": "Number of times the account was taken down",
-        },
-      },
-    },
-    "recordsStats": {
-      "type": "object",
-      "description": "Statistics about a set of record subject items",
-      "properties": {
-        "totalReports": {
-          "type": "integer",
-          "description":
-              "Cumulative sum of the number of reports on the items in the set",
-        },
-        "reportedCount": {
-          "type": "integer",
-          "description": "Number of items that were reported at least once",
-        },
-        "escalatedCount": {
-          "type": "integer",
-          "description": "Number of items that were escalated at least once",
-        },
-        "appealedCount": {
-          "type": "integer",
-          "description": "Number of items that were appealed at least once",
-        },
-        "subjectCount": {
-          "type": "integer",
-          "description": "Total number of item in the set",
-        },
-        "pendingCount": {
-          "type": "integer",
-          "description":
-              "Number of item currently in \"reviewOpen\" or \"reviewEscalated\" state",
-        },
-        "processedCount": {
-          "type": "integer",
-          "description":
-              "Number of item currently in \"reviewNone\" or \"reviewClosed\" state",
-        },
-        "takendownCount": {
-          "type": "integer",
-          "description": "Number of item currently taken down",
-        },
       },
     },
     "accountStrike": {
@@ -22550,6 +22554,34 @@ const toolsOzoneModerationEmitEvent = <String, dynamic>{
           "description":
               "Target ALL reports on the subject. Excludes assigned and escalated reports.",
         },
+        "allOwned": {
+          "type": "boolean",
+          "description":
+              "Target all eligible reports on the account and its owned subjects, including records, messages, and conversations. Only valid for account subjects and events that close reports. Excludes assigned, escalated, and actively assigned reports unless explicitly targeted by ID.",
+        },
+        "subjects": {
+          "type": "array",
+          "description":
+              "Expands report targeting to include additional subjects. Requires event subject to be an account. Mutually exclusive with `subjectTypes`.",
+          "items": {
+            "type": "union",
+            "refs": [
+              "com.atproto.admin.defs#repoRef",
+              "com.atproto.repo.strongRef",
+            ],
+          },
+          "maxLength": 100,
+        },
+        "subjectTypes": {
+          "type": "array",
+          "description":
+              "Expands report targeting to include owned subjects of these types. Requires event subject to be an account. Mutually exclusive with `subjects`.",
+          "items": {
+            "type": "string",
+            "enum": ["account", "record", "message", "conversation"],
+          },
+          "maxLength": 4,
+        },
         "note": {
           "type": "string",
           "description":
@@ -23299,13 +23331,15 @@ const toolsOzoneModerationQueryStatuses = <String, dynamic>{
           },
           "sortField": {
             "type": "string",
+            "description":
+                "The reportedRecordsCount and takendownRecordsCount values are deprecated and use lastReportedAt instead.",
             "default": "lastReportedAt",
             "enum": [
               "lastReviewedAt",
               "lastReportedAt",
+              "priorityScore",
               "reportedRecordsCount",
               "takendownRecordsCount",
-              "priorityScore",
             ],
           },
           "sortDirection": {
@@ -23353,21 +23387,6 @@ const toolsOzoneModerationQueryStatuses = <String, dynamic>{
             "description":
                 "If specified, subjects of the given type (account, record, or conversation) will be returned. When this is set to 'account' the 'collections' parameter will be ignored. When includeAllUserRecords or subject is set, this will be ignored.",
             "knownValues": ["account", "record", "conversation"],
-          },
-          "minAccountSuspendCount": {
-            "type": "integer",
-            "description":
-                "If specified, only subjects that belong to an account that has at least this many suspensions will be returned.",
-          },
-          "minReportedRecordsCount": {
-            "type": "integer",
-            "description":
-                "If specified, only subjects that belong to an account that has at least this many reported records will be returned.",
-          },
-          "minTakendownRecordsCount": {
-            "type": "integer",
-            "description":
-                "If specified, only subjects that belong to an account that has at least this many taken down records will be returned.",
           },
           "minPriorityScore": {
             "type": "integer",
@@ -24370,7 +24389,7 @@ const toolsOzoneReportCloseReports = <String, dynamic>{
     "main": {
       "type": "procedure",
       "description":
-          "Close eligible reports on a subject matching the given criteria. Assigned and escalated reports are excluded. Reports whose current status does not permit a transition to closed are skipped silently. Intended for automated flows that resolve reports without taking action on the subject.",
+          "Close eligible reports on a subject matching the given criteria, optionally linking an existing moderation action. Assigned, escalated, and actively assigned reports are excluded. Reports whose current status does not permit a transition to closed are skipped silently.",
       "input": {
         "encoding": "application/json",
         "schema": {
@@ -24400,6 +24419,12 @@ const toolsOzoneReportCloseReports = <String, dynamic>{
               "description":
                   "Reports of these types (fully qualified reason NSIDs) are excluded from closure and left unchanged. When omitted or empty, no report types are excluded.",
               "items": {"type": "string"},
+            },
+            "actionEventId": {
+              "type": "integer",
+              "description":
+                  "Optional existing moderation event that closes reports. It must target the exact subject or its owning account; account-wide closure requires an account event. The event is linked to each closed report and may predate the report. The link does not imply the action is still in effect.",
+              "minimum": 1,
             },
             "internalNote": {
               "type": "string",
@@ -25637,6 +25662,87 @@ const toolsOzoneReportQueryActivities = <String, dynamic>{
             },
             "cursor": {"type": "string"},
           },
+        },
+      },
+    },
+  },
+};
+
+/// `tools.ozone.report.queryModeratorActivity`
+const toolsOzoneReportQueryModeratorActivity = <String, dynamic>{
+  "lexicon": 1,
+  "id": "tools.ozone.report.queryModeratorActivity",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description":
+          "Read authorized moderator events and report activity in one chronological history.",
+      "parameters": {
+        "type": "params",
+        "required": ["moderator", "createdAfter", "createdBefore"],
+        "properties": {
+          "moderator": {"type": "string", "format": "did"},
+          "createdAfter": {
+            "type": "string",
+            "format": "datetime",
+            "description": "Inclusive UTC lower bound.",
+          },
+          "createdBefore": {
+            "type": "string",
+            "format": "datetime",
+            "description": "Exclusive UTC upper bound.",
+          },
+          "types": {
+            "type": "array",
+            "items": {"type": "string"},
+            "maxLength": 40,
+          },
+          "limit": {
+            "type": "integer",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 100,
+          },
+          "cursor": {"type": "string", "maxLength": 512},
+        },
+      },
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["rows"],
+          "properties": {
+            "rows": {
+              "type": "array",
+              "items": {"type": "ref", "ref": "#activityRow"},
+            },
+            "cursor": {"type": "string"},
+          },
+        },
+      },
+    },
+    "activityRow": {
+      "type": "object",
+      "required": ["source", "id", "createdAt", "createdBy", "type"],
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": ["event", "activity"],
+        },
+        "id": {"type": "integer"},
+        "createdAt": {"type": "string", "format": "datetime"},
+        "createdBy": {"type": "string", "format": "did"},
+        "type": {"type": "string"},
+        "subject": {"type": "string"},
+        "reportId": {"type": "integer"},
+        "actionEventId": {"type": "integer"},
+        "event": {
+          "type": "ref",
+          "ref": "tools.ozone.moderation.defs#modEventView",
+        },
+        "activity": {
+          "type": "ref",
+          "ref": "tools.ozone.report.defs#reportActivityView",
         },
       },
     },
@@ -27948,6 +28054,7 @@ const lexicons = <Map<String, dynamic>>[
   comAtprotoIdentityUpdateHandle,
   comAtprotoLabelDefs,
   comAtprotoLabelQueryLabels,
+  comAtprotoLabelRecord,
   comAtprotoLabelSubscribeLabels,
   comAtprotoLexiconResolveLexicon,
   comAtprotoLexiconSchema,
@@ -28088,6 +28195,7 @@ const lexicons = <Map<String, dynamic>>[
   toolsOzoneReportGetReport,
   toolsOzoneReportListActivities,
   toolsOzoneReportQueryActivities,
+  toolsOzoneReportQueryModeratorActivity,
   toolsOzoneReportQueryReports,
   toolsOzoneReportReassignQueue,
   toolsOzoneReportRefreshStats,

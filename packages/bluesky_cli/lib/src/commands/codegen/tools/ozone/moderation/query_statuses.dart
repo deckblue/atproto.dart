@@ -98,7 +98,12 @@ final class QueryStatusesCommand extends QueryCommand {
         help:
             r"Get all subject statuses that were reviewed by a specific moderator",
       )
-      ..addOption("sortField", defaultsTo: "lastReportedAt")
+      ..addOption(
+        "sortField",
+        help:
+            r"The reportedRecordsCount and takendownRecordsCount values are deprecated and use lastReportedAt instead.",
+        defaultsTo: "lastReportedAt",
+      )
       ..addOption("sortDirection", defaultsTo: "desc")
       ..addFlag("takendown", help: r"Get subjects that were taken down")
       ..addFlag("appealed", help: r"Get subjects in unresolved appealed status")
@@ -115,21 +120,6 @@ final class QueryStatusesCommand extends QueryCommand {
         "subjectType",
         help:
             r"If specified, subjects of the given type (account, record, or conversation) will be returned. When this is set to 'account' the 'collections' parameter will be ignored. When includeAllUserRecords or subject is set, this will be ignored.",
-      )
-      ..addOption(
-        "minAccountSuspendCount",
-        help:
-            r"If specified, only subjects that belong to an account that has at least this many suspensions will be returned.",
-      )
-      ..addOption(
-        "minReportedRecordsCount",
-        help:
-            r"If specified, only subjects that belong to an account that has at least this many reported records will be returned.",
-      )
-      ..addOption(
-        "minTakendownRecordsCount",
-        help:
-            r"If specified, only subjects that belong to an account that has at least this many taken down records will be returned.",
       )
       ..addOption(
         "minPriorityScore",
@@ -157,97 +147,82 @@ final class QueryStatusesCommand extends QueryCommand {
 
   @override
   final String invocation =
-      "bsky tools-ozone-moderation query-statuses [--queueCount=<value>] [--queueIndex=<value>] [--queueSeed=<value>] [--includeAllUserRecords] [--subject=<value>] [--comment=<value>] [--reportedAfter=<value>] [--reportedBefore=<value>] [--reviewedAfter=<value>] [--hostingDeletedAfter=<value>] [--hostingDeletedBefore=<value>] [--hostingUpdatedAfter=<value>] [--hostingUpdatedBefore=<value>] [--hostingStatuses=<value>...] [--reviewedBefore=<value>] [--includeMuted] [--onlyMuted] [--reviewState=<value>] [--ignoreSubjects=<value>...] [--lastReviewedBy=<value>] [--sortField=<value>] [--sortDirection=<value>] [--takendown] [--appealed] [--limit=<value>] [--tags=<value>...] [--excludeTags=<value>...] [--cursor=<value>] [--collections=<value>...] [--subjectType=<value>] [--minAccountSuspendCount=<value>] [--minReportedRecordsCount=<value>] [--minTakendownRecordsCount=<value>] [--minPriorityScore=<value>] [--minStrikeCount=<value>] [--ageAssuranceState=<value>]";
+      "bsky tools-ozone-moderation query-statuses [--queueCount=<value>] [--queueIndex=<value>] [--queueSeed=<value>] [--includeAllUserRecords] [--subject=<value>] [--comment=<value>] [--reportedAfter=<value>] [--reportedBefore=<value>] [--reviewedAfter=<value>] [--hostingDeletedAfter=<value>] [--hostingDeletedBefore=<value>] [--hostingUpdatedAfter=<value>] [--hostingUpdatedBefore=<value>] [--hostingStatuses=<value>...] [--reviewedBefore=<value>] [--includeMuted] [--onlyMuted] [--reviewState=<value>] [--ignoreSubjects=<value>...] [--lastReviewedBy=<value>] [--sortField=<value>] [--sortDirection=<value>] [--takendown] [--appealed] [--limit=<value>] [--tags=<value>...] [--excludeTags=<value>...] [--cursor=<value>] [--collections=<value>...] [--subjectType=<value>] [--minPriorityScore=<value>] [--minStrikeCount=<value>] [--ageAssuranceState=<value>]";
 
   @override
   String get methodId => "tools.ozone.moderation.queryStatuses";
 
   @override
   Map<String, dynamic>? get parameters => {
-        if (argResults!.wasParsed("queueCount"))
-          "queueCount": int.tryParse(argResults!["queueCount"]) ??
-              usageException('Invalid integer value for option "queueCount".'),
-        if (argResults!.wasParsed("queueIndex"))
-          "queueIndex": int.tryParse(argResults!["queueIndex"]) ??
-              usageException('Invalid integer value for option "queueIndex".'),
-        if (argResults!.wasParsed("queueSeed"))
-          "queueSeed": argResults!["queueSeed"],
-        if (argResults!.wasParsed("includeAllUserRecords"))
-          "includeAllUserRecords": argResults!["includeAllUserRecords"],
-        if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
-        if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
-        if (argResults!.wasParsed("reportedAfter"))
-          "reportedAfter": argResults!["reportedAfter"],
-        if (argResults!.wasParsed("reportedBefore"))
-          "reportedBefore": argResults!["reportedBefore"],
-        if (argResults!.wasParsed("reviewedAfter"))
-          "reviewedAfter": argResults!["reviewedAfter"],
-        if (argResults!.wasParsed("hostingDeletedAfter"))
-          "hostingDeletedAfter": argResults!["hostingDeletedAfter"],
-        if (argResults!.wasParsed("hostingDeletedBefore"))
-          "hostingDeletedBefore": argResults!["hostingDeletedBefore"],
-        if (argResults!.wasParsed("hostingUpdatedAfter"))
-          "hostingUpdatedAfter": argResults!["hostingUpdatedAfter"],
-        if (argResults!.wasParsed("hostingUpdatedBefore"))
-          "hostingUpdatedBefore": argResults!["hostingUpdatedBefore"],
-        if (argResults!.wasParsed("hostingStatuses"))
-          "hostingStatuses": argResults!["hostingStatuses"],
-        if (argResults!.wasParsed("reviewedBefore"))
-          "reviewedBefore": argResults!["reviewedBefore"],
-        if (argResults!.wasParsed("includeMuted"))
-          "includeMuted": argResults!["includeMuted"],
-        if (argResults!.wasParsed("onlyMuted"))
-          "onlyMuted": argResults!["onlyMuted"],
-        if (argResults!.wasParsed("reviewState"))
-          "reviewState": argResults!["reviewState"],
-        if (argResults!.wasParsed("ignoreSubjects"))
-          "ignoreSubjects": argResults!["ignoreSubjects"],
-        if (argResults!.wasParsed("lastReviewedBy"))
-          "lastReviewedBy": argResults!["lastReviewedBy"],
-        "sortField": argResults!["sortField"],
-        "sortDirection": argResults!["sortDirection"],
-        if (argResults!.wasParsed("takendown"))
-          "takendown": argResults!["takendown"],
-        if (argResults!.wasParsed("appealed"))
-          "appealed": argResults!["appealed"],
-        "limit": int.tryParse(argResults!["limit"]) ??
-            usageException('Invalid integer value for option "limit".'),
-        if (argResults!.wasParsed("tags")) "tags": argResults!["tags"],
-        if (argResults!.wasParsed("excludeTags"))
-          "excludeTags": argResults!["excludeTags"],
-        if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
-        if (argResults!.wasParsed("collections"))
-          "collections": argResults!["collections"],
-        if (argResults!.wasParsed("subjectType"))
-          "subjectType": argResults!["subjectType"],
-        if (argResults!.wasParsed("minAccountSuspendCount"))
-          "minAccountSuspendCount":
-              int.tryParse(argResults!["minAccountSuspendCount"]) ??
-                  usageException(
-                    'Invalid integer value for option "minAccountSuspendCount".',
-                  ),
-        if (argResults!.wasParsed("minReportedRecordsCount"))
-          "minReportedRecordsCount":
-              int.tryParse(argResults!["minReportedRecordsCount"]) ??
-                  usageException(
-                    'Invalid integer value for option "minReportedRecordsCount".',
-                  ),
-        if (argResults!.wasParsed("minTakendownRecordsCount"))
-          "minTakendownRecordsCount":
-              int.tryParse(argResults!["minTakendownRecordsCount"]) ??
-                  usageException(
-                    'Invalid integer value for option "minTakendownRecordsCount".',
-                  ),
-        if (argResults!.wasParsed("minPriorityScore"))
-          "minPriorityScore": int.tryParse(argResults!["minPriorityScore"]) ??
-              usageException(
-                'Invalid integer value for option "minPriorityScore".',
-              ),
-        if (argResults!.wasParsed("minStrikeCount"))
-          "minStrikeCount": int.tryParse(argResults!["minStrikeCount"]) ??
-              usageException(
-                  'Invalid integer value for option "minStrikeCount".'),
-        if (argResults!.wasParsed("ageAssuranceState"))
-          "ageAssuranceState": argResults!["ageAssuranceState"],
-      };
+    if (argResults!.wasParsed("queueCount"))
+      "queueCount":
+          int.tryParse(argResults!["queueCount"]) ??
+          usageException('Invalid integer value for option "queueCount".'),
+    if (argResults!.wasParsed("queueIndex"))
+      "queueIndex":
+          int.tryParse(argResults!["queueIndex"]) ??
+          usageException('Invalid integer value for option "queueIndex".'),
+    if (argResults!.wasParsed("queueSeed"))
+      "queueSeed": argResults!["queueSeed"],
+    if (argResults!.wasParsed("includeAllUserRecords"))
+      "includeAllUserRecords": argResults!["includeAllUserRecords"],
+    if (argResults!.wasParsed("subject")) "subject": argResults!["subject"],
+    if (argResults!.wasParsed("comment")) "comment": argResults!["comment"],
+    if (argResults!.wasParsed("reportedAfter"))
+      "reportedAfter": argResults!["reportedAfter"],
+    if (argResults!.wasParsed("reportedBefore"))
+      "reportedBefore": argResults!["reportedBefore"],
+    if (argResults!.wasParsed("reviewedAfter"))
+      "reviewedAfter": argResults!["reviewedAfter"],
+    if (argResults!.wasParsed("hostingDeletedAfter"))
+      "hostingDeletedAfter": argResults!["hostingDeletedAfter"],
+    if (argResults!.wasParsed("hostingDeletedBefore"))
+      "hostingDeletedBefore": argResults!["hostingDeletedBefore"],
+    if (argResults!.wasParsed("hostingUpdatedAfter"))
+      "hostingUpdatedAfter": argResults!["hostingUpdatedAfter"],
+    if (argResults!.wasParsed("hostingUpdatedBefore"))
+      "hostingUpdatedBefore": argResults!["hostingUpdatedBefore"],
+    if (argResults!.wasParsed("hostingStatuses"))
+      "hostingStatuses": argResults!["hostingStatuses"],
+    if (argResults!.wasParsed("reviewedBefore"))
+      "reviewedBefore": argResults!["reviewedBefore"],
+    if (argResults!.wasParsed("includeMuted"))
+      "includeMuted": argResults!["includeMuted"],
+    if (argResults!.wasParsed("onlyMuted"))
+      "onlyMuted": argResults!["onlyMuted"],
+    if (argResults!.wasParsed("reviewState"))
+      "reviewState": argResults!["reviewState"],
+    if (argResults!.wasParsed("ignoreSubjects"))
+      "ignoreSubjects": argResults!["ignoreSubjects"],
+    if (argResults!.wasParsed("lastReviewedBy"))
+      "lastReviewedBy": argResults!["lastReviewedBy"],
+    "sortField": argResults!["sortField"],
+    "sortDirection": argResults!["sortDirection"],
+    if (argResults!.wasParsed("takendown"))
+      "takendown": argResults!["takendown"],
+    if (argResults!.wasParsed("appealed")) "appealed": argResults!["appealed"],
+    "limit":
+        int.tryParse(argResults!["limit"]) ??
+        usageException('Invalid integer value for option "limit".'),
+    if (argResults!.wasParsed("tags")) "tags": argResults!["tags"],
+    if (argResults!.wasParsed("excludeTags"))
+      "excludeTags": argResults!["excludeTags"],
+    if (argResults!.wasParsed("cursor")) "cursor": argResults!["cursor"],
+    if (argResults!.wasParsed("collections"))
+      "collections": argResults!["collections"],
+    if (argResults!.wasParsed("subjectType"))
+      "subjectType": argResults!["subjectType"],
+    if (argResults!.wasParsed("minPriorityScore"))
+      "minPriorityScore":
+          int.tryParse(argResults!["minPriorityScore"]) ??
+          usageException(
+            'Invalid integer value for option "minPriorityScore".',
+          ),
+    if (argResults!.wasParsed("minStrikeCount"))
+      "minStrikeCount":
+          int.tryParse(argResults!["minStrikeCount"]) ??
+          usageException('Invalid integer value for option "minStrikeCount".'),
+    if (argResults!.wasParsed("ageAssuranceState"))
+      "ageAssuranceState": argResults!["ageAssuranceState"],
+  };
 }
